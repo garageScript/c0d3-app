@@ -10,4 +10,6 @@ Repo for c0d3.com powered by NextJS. A website to train people to be full stack 
 
 ## Contributing
 
-Before submitting your code run `npm run autofix`
+Find out how to use TypeScript with React [here](https://www.youtube.com/watch?v=Z5iWr6Srsj8).
+
+Before submitting your code run `npm run autofix`.
