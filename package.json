@@ -5,6 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint . --ext .ts --ext .tsx",
+    "autofix": "eslint . --ext .ts --ext .tsx --fix",
     "type-check": "tsc"
   },
   "dependencies": {
