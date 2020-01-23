@@ -19,7 +19,7 @@ Repo for c0d3.com powered by NextJS. A website to train people to be full stack 
 
 ## Contributing
 
-To find out how to use TypeScript with React
+Watch the video below to find out how to develop with TypeScript in React
 
 [![React TypeScript Tutorial](http://i3.ytimg.com/vi/Z5iWr6Srsj8/hqdefault.jpg)](https://www.youtube.com/watch?v=Z5iWr6Srsj8)
 
