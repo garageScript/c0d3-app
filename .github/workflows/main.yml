@@ -9,9 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/typescript-action@v1
-    - name: Run ESLint
-      run: npm run autofix
-    - name: Run Test
-      run: npm run test
+    - name: Install packages
+      run: npm install
+    - name: Check Lint and Tests
+      run: |
+        npm run autofix
+        npm run test
 
