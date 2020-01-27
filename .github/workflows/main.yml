@@ -1,6 +1,10 @@
 name: CI
 
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+    - master
 
 jobs:
   build:
@@ -9,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install packages
+    - name: Install Dependencies
       run: npm install
     - name: Check Lint and Tests
       run: |
