@@ -1,5 +1,7 @@
 # c0d3.com
 
+![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
+
 Repo for c0d3.com powered by NextJS. A website to train people to be full stack software engineers.
 
 ## Prerequisites
