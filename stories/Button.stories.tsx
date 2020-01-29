@@ -1,11 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import Button from '../components/Button'
-<<<<<<< HEAD
+import Button from '../components/NavButton'
 import '../styles/tailwind.css'
-=======
-// import ColorButton from '../components/ColorButton'
->>>>>>> nav
 
 storiesOf('Button', module)
   .add('with text', () => {

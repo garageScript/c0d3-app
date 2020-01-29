@@ -1,0 +1,9 @@
+.light {
+  background: #fff;
+  border-color: #eaeced;
+  @apply border;
+}
+.dark {
+  background: rgb(84, 64, 216);
+  @apply text-white;
+}
