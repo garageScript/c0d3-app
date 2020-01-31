@@ -8,13 +8,6 @@ const IndexPage: React.FC = () => {
       <div className="block">
         <h2 className="text-purple-400 block">Under Construction</h2>
       </div>
-      <style jsx>
-        {`
-          h2 {
-            font-size: 1.6rem;
-          }
-        `}
-      </style>
     </div>
   )
 }
