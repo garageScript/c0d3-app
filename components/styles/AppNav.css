@@ -18,3 +18,7 @@
   color: rgb(160,160,160);
   margin-left: 3em;
 }
+
+.navbar__link:hover {
+  color: black;
+}

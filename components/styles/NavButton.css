@@ -3,9 +3,18 @@
   border-color: #eaeced;
 }
 
+.secondary:hover {
+  font-weight: bold;
+}
+
+
 .primary {
   background: rgb(84, 64, 216);
   color: #fff;
+}
+
+.primary:hover {
+  background: rgb(104, 84, 236);
 }
 
 .navBtn {
