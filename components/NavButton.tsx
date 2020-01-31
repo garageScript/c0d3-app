@@ -7,12 +7,8 @@ type Props = {
 }
 
 const Button = ({ children, style }: Props) => {
-  const btnClasses = style === 'dark' ? 'dark' : 'light'
-  return (
-    <button className={`py-2 px-8 mx-4 rounded-lg ${btnClasses}`}>
-      {children}
-    </button>
-  )
+  const btnClasses = style === 'dark' ? 'primary' : 'secondary'
+  return <button className={` navBtn ${btnClasses}`}>{children}</button>
 }
 
 export default Button

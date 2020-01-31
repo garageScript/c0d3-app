@@ -1,9 +1,18 @@
-.light {
+.secondary {
   background: #fff;
   border-color: #eaeced;
-  @apply border;
 }
-.dark {
+
+.primary {
   background: rgb(84, 64, 216);
-  @apply text-white;
+  color: #fff;
+}
+
+.navBtn {
+  width: auto;
+  height: auto;
+  border: solid 1px #eaeced;
+  border-radius: 3px;
+  margin-left: 1em;
+  padding: 0.4em 1em 0.4em 1em;
 }

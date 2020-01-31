@@ -1,0 +1,20 @@
+.navbar__logo {
+  font-family: 'PT Mono', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(84, 64, 216);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 0.8rem;
+}
+
+.navbar__link {
+  color: rgb(160,160,160);
+  margin-left: 3em;
+}
