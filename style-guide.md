@@ -8,16 +8,7 @@
 ## Styles
 
 - CSS Reset
-```css
-  html, body {
-    margin: 0;
-    padding: 0
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-```
+Tailwind comes default with css reset. There's no need to normalize your CSS.
 
 ## Fonts (WIP)
 
