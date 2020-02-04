@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { AppProps } from 'next/app'
-import '../styles/tailwind.css'
+import '../scss/index.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
