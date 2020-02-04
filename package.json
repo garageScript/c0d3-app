@@ -14,6 +14,7 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.4.1",
+    "identity-obj-proxy": "^3.0.0",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
     "node-sass": "^4.13.1",
@@ -44,5 +45,10 @@
     "react-test-renderer": "^16.12.0",
     "typescript": "3.7.3"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    }
+  }
 }
