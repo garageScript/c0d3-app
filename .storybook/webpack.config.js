@@ -10,20 +10,8 @@ module.exports = ({ config }) => {
   })
 
   config.module.rules.push({
-    test: /\.css$/,
-    use: [
-      {
-        loader: 'postcss-loader',
-        options: {
-          ident: 'postcss',
-          plugins: [
-            require('postcss-import'),
-            require('tailwindcss'),
-            require('autoprefixer')
-          ]
-        }
-      }
-    ],
+    test: /\.scss$/,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../')
   })
 
