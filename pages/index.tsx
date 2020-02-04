@@ -1,7 +1,12 @@
 import * as React from 'react'
+import LandingNav from '../components/LandingNav'
 
 const IndexPage: React.FC = () => {
-  return <h1 className="text-purple-400">Under Construction</h1>
+  return (
+    <div>
+      <LandingNav />
+    </div>
+  )
 }
 
 export default IndexPage
