@@ -4,7 +4,7 @@ import '../scss/navbar.scss'
 const LandingNav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between">
-      <a className="navbar-brand text-primary" href="#">
+      <a className="navbar-brand text-primary font-weight-bold" href="#">
         C0D3
       </a>
       <div className="" id="navbarNav">
