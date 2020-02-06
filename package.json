@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .ts --ext .tsx",
     "autofix": "eslint . --ext .ts --ext .tsx --fix",
     "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook",
     "test": "jest --coverage",
     "type-check": "tsc"
   },
