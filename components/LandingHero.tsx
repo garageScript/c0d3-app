@@ -17,7 +17,7 @@ const LandingHero = () => {
       </div>
       <div className="row justify-center mt-4">
         <div className="col-md-6 offset-md-3">
-          <h4 style={{ lineHeight: 1.5 }} className="font-weight-normal">
+          <h4 style={{ lineHeight: 1.5 }} className="font-weight-light">
             Learn all the foundations you would need to be a full stack software
             engineer
           </h4>
