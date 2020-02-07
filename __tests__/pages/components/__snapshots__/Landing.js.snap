@@ -163,18 +163,12 @@ Array [
     </div>
   </div>,
   <div
-    className="row mt-5"
+    className="row mt-5 align-items-end"
   >
     <div
       className="col-md-4"
     >
-      <div
-        style={
-          Object {
-            "height": "170px",
-          }
-        }
-      >
+      <div>
         <img
           alt="Curriculum"
           src="choose-01.svg"
@@ -194,13 +188,7 @@ Array [
     <div
       className="col-md-4"
     >
-      <div
-        style={
-          Object {
-            "height": "170px",
-          }
-        }
-      >
+      <div>
         <img
           alt="Mentors and Peers"
           src="choose-02.svg"
@@ -220,13 +208,7 @@ Array [
     <div
       className="col-md-4"
     >
-      <div
-        style={
-          Object {
-            "height": "170px",
-          }
-        }
-      >
+      <div>
         <img
           alt="Curriculum Image"
           src="choose-03.svg"

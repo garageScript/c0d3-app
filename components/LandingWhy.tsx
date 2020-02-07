@@ -18,9 +18,9 @@ const LandingWhy = () => {
           </h4>
         </div>
       </div>
-      <div className="row mt-5">
+      <div className="row mt-5 align-items-end">
         <div className="col-md-4">
-          <div style={{ height: '170px' }}>
+          <div>
             <img src="choose-01.svg" alt="Curriculum"></img>
           </div>
           <h4 className="mt-3 font-weight-bold">
@@ -34,7 +34,7 @@ const LandingWhy = () => {
           </p>
         </div>
         <div className="col-md-4">
-          <div style={{ height: '170px' }}>
+          <div>
             <img src="choose-02.svg" alt="Mentors and Peers"></img>
           </div>
           <h4 className="mt-3 font-weight-bold">
@@ -48,7 +48,7 @@ const LandingWhy = () => {
           </p>
         </div>
         <div className="col-md-4">
-          <div style={{ height: '170px' }}>
+          <div>
             <img src="choose-03.svg" alt="Curriculum Image" />
           </div>
           <h4 className="mt-3 font-weight-bold">
