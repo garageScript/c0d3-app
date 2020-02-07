@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot for InputGroup Default InputGroup 1`] = `
+<div
+  className="input-group  col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={false}
+    placeholder=""
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="button-addon2"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`Snapshot for InputGroup Large InputGroup 1`] = `
+<div
+  className="input-group input-group-lg col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={false}
+    placeholder=""
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="button-addon2"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`Snapshot for InputGroup Large InputGroup 2`] = `
+<div
+  className="input-group  col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={true}
+    placeholder=""
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={true}
+      id="button-addon2"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`Snapshot for InputGroup Small InputGroup 1`] = `
+<div
+  className="input-group input-group-sm col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={false}
+    placeholder=""
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="button-addon2"
+      type="button"
+    />
+  </div>
+</div>
+`;

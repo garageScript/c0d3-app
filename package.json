@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .ts --ext .tsx",
     "autofix": "eslint . --ext .ts --ext .tsx --fix",
     "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook",
     "test": "jest --coverage",
     "type-check": "tsc"
   },
@@ -26,6 +27,7 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.12",
     "@storybook/react": "^5.3.8",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
