@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import LandingNav from '../components/LandingNav'
-import '../scss/index.scss'
 import LandingPage from '../components/LandingPage'
+import '../scss/index.scss'
 
 storiesOf('Landing Page', module)
   .add('nav', () => {
