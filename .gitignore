@@ -108,3 +108,6 @@ dist
 
 # Mac Files
 .DS_Store
+
+# Zeit Now
+.now

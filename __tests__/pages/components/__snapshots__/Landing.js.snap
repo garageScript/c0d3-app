@@ -9,7 +9,8 @@ Array [
       className="col-md-6 offset-md-3"
     >
       <img
-        src="https://dummyimage.com/325x361/000/fff"
+        alt="Hero Image"
+        src="header-01.svg"
       />
     </div>
   </div>,
@@ -167,9 +168,18 @@ Array [
     <div
       className="col-md-4"
     >
-      <img
-        src="https://dummyimage.com/212x141/000/fff"
-      />
+      <div
+        style={
+          Object {
+            "height": "170px",
+          }
+        }
+      >
+        <img
+          alt="Curriculum"
+          src="choose-01.svg"
+        />
+      </div>
       <h4
         className="mt-3 font-weight-bold"
       >
@@ -184,9 +194,18 @@ Array [
     <div
       className="col-md-4"
     >
-      <img
-        src="https://dummyimage.com/212x141/000/fff"
-      />
+      <div
+        style={
+          Object {
+            "height": "170px",
+          }
+        }
+      >
+        <img
+          alt="Mentors and Peers"
+          src="choose-02.svg"
+        />
+      </div>
       <h4
         className="mt-3 font-weight-bold"
       >
@@ -201,9 +220,18 @@ Array [
     <div
       className="col-md-4"
     >
-      <img
-        src="https://dummyimage.com/212x141/000/fff"
-      />
+      <div
+        style={
+          Object {
+            "height": "170px",
+          }
+        }
+      >
+        <img
+          alt="Curriculum Image"
+          src="choose-03.svg"
+        />
+      </div>
       <h4
         className="mt-3 font-weight-bold"
       >

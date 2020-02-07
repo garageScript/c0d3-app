@@ -5,7 +5,7 @@ const LandingHero = () => {
     <React.Fragment>
       <div className="row justify-center mt-5">
         <div className="col-md-6 offset-md-3">
-          <img src="https://dummyimage.com/325x361/000/fff"></img>
+          <img src="header-01.svg" alt="Hero Image"></img>
         </div>
       </div>
       <div className="row justify-center mt-5">

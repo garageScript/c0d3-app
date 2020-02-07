@@ -20,7 +20,9 @@ const LandingWhy = () => {
       </div>
       <div className="row mt-5">
         <div className="col-md-4">
-          <img src="https://dummyimage.com/212x141/000/fff"></img>
+          <div style={{ height: '170px' }}>
+            <img src="choose-01.svg" alt="Curriculum"></img>
+          </div>
           <h4 className="mt-3 font-weight-bold">
             Updated and modern curriculum
           </h4>
@@ -32,7 +34,9 @@ const LandingWhy = () => {
           </p>
         </div>
         <div className="col-md-4">
-          <img src="https://dummyimage.com/212x141/000/fff"></img>
+          <div style={{ height: '170px' }}>
+            <img src="choose-02.svg" alt="Mentors and Peers"></img>
+          </div>
           <h4 className="mt-3 font-weight-bold">
             Real-time help from your mentors and peer
           </h4>
@@ -44,7 +48,9 @@ const LandingWhy = () => {
           </p>
         </div>
         <div className="col-md-4">
-          <img src="https://dummyimage.com/212x141/000/fff" />
+          <div style={{ height: '170px' }}>
+            <img src="choose-03.svg" alt="Curriculum Image" />
+          </div>
           <h4 className="mt-3 font-weight-bold">
             Practical experience by working with other engineers
           </h4>
