@@ -12,8 +12,8 @@ const LandingNav = () => {
           <a className="nav-item nav-link active" href="#">
             Home <span className="sr-only">(current)</span>
           </a>
-          <a className="nav-item nav-link" href="#">
-            Why Us?
+          <a className="nav-item nav-link" href="#learning">
+            Learning Process
           </a>
           <a className="nav-item nav-link" href="#">
             Journey

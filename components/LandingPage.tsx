@@ -11,15 +11,17 @@ const LandingPage: React.FC = () => {
       <div className="row justify-center mt-5">
         <div className="col-md-8 offset-md-2">
           <h1 style={{ fontWeight: 900, fontSize: '3.8rem' }}>
-            Learn Javascript the old school way
+            Become a Software Engineer the Hard Way
           </h1>
         </div>
       </div>
       <div className="row justify-center mt-4">
-        <div className="col-md-6 offset-md-3">
+        <div className="col-md-10 offset-md-1">
           <h4 style={{ lineHeight: 1.5 }} className="font-weight-light">
-            Learn all the foundations you would need to be a full stack software
-            engineer
+            Learn the right foundations you need to become a full stack software
+            engineer. Our curriculum takes no shortcuts and effectively trains
+            students with no technical background to become effective software
+            engineers.
           </h4>
         </div>
       </div>
@@ -30,7 +32,9 @@ const LandingPage: React.FC = () => {
       </div>
       <div className="row mt-5">
         <div className="col-md-6 offset-md-3">
-          <h1 className="display-4 font-weight-bold">Why choose us?</h1>
+          <h1 className="display-4 font-weight-bold" id="learning">
+            Learning Process
+          </h1>
         </div>
       </div>
       <div className="row mt-5">
@@ -43,47 +47,46 @@ const LandingPage: React.FC = () => {
           </h4>
         </div>
       </div>
-      <div className="row mt-5 align-items-end">
+      <div className="row mt-5 align-items-start">
         <div className="col-md-4">
-          <div>
-            <img src="choose-01.svg" alt="Curriculum"></img>
-          </div>
-          <h4 className="mt-3 font-weight-bold">
-            Updated and modern curriculum
-          </h4>
+          <img
+            src="choose-01.svg"
+            alt="Curriculum"
+            style={{ height: '170px' }}
+          ></img>
+          <h4 className="mt-3 font-weight-bold">Modern Curriculum</h4>
           <p className="mt-4 font-weight-light">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            illum consectetur earum temporibus obcaecati repudiandae esse, sed
-            necessitatibus, voluptas dolorum adipisci molestiae magni
-            praesentium doloribus odio laudantium, consequuntur aliquam? Ad?
+            First the curriculum will help you achieve mastery in JavaScript.
+            Using JavaScript, you will learn about different branches of
+            software engineering: websites, mobile applications, servers, and
+            machine learning.
           </p>
         </div>
         <div className="col-md-4">
-          <div>
-            <img src="choose-02.svg" alt="Mentors and Peers"></img>
-          </div>
-          <h4 className="mt-3 font-weight-bold">
-            Real-time help from your mentors and peer
-          </h4>
+          <img
+            src="choose-02.svg"
+            alt="Support"
+            style={{ height: '170px' }}
+          ></img>
+          <h4 className="mt-3 font-weight-bold">Support</h4>
           <p className="mt-4 font-weight-light">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            quos magni cum voluptates autem molestiae vel, eligendi ipsam
-            eveniet omnis laudantium ipsa similique distinctio numquam aliquid
-            quis odio? Nostrum, aspernatur!
+            One of the most important skills in a challenging workplace is
+            knowing how to ask for help. Our curriculum is intentionally
+            difficult and we have dedicated mentors to answer your questions and
+            guide you how to communicate effectively.
           </p>
         </div>
         <div className="col-md-4">
-          <div>
-            <img src="choose-03.svg" alt="Curriculum Image" />
-          </div>
-          <h4 className="mt-3 font-weight-bold">
-            Practical experience by working with other engineers
-          </h4>
+          <img
+            src="choose-03.svg"
+            alt="Curriculum Image"
+            style={{ height: '170px' }}
+          />
+          <h4 className="mt-3 font-weight-bold">Work Experience</h4>
           <p className="mt-4 font-weight-light">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            recusandae dolorum fuga tempore officiis exercitationem eum debitis
-            necessitatibus facere praesentium molestiae, iure iusto accusantium
-            a ullam cumque atque sapiente accusamus.
+            Once you have completed our curriculum and learned to communicate
+            effectively, you will be invited to contribute to this open-source
+            project to improve the learning experience for future students.
           </p>
         </div>
       </div>
