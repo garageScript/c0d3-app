@@ -65,11 +65,7 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <img
-              src="choose-02.svg"
-              alt="Support"
-              style={{ height: '170px' }}
-            />
+            <img src="choose-02.svg" alt="" style={{ height: '170px' }} />
             <h4 className="mt-3 font-weight-bold">Support</h4>
             <p className="mt-4 font-weight-light">
               One of the most important skills in a challenging workplace is
@@ -79,11 +75,7 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <img
-              src="choose-03.svg"
-              alt="Curriculum Image"
-              style={{ height: '170px' }}
-            />
+            <img src="choose-03.svg" alt="" style={{ height: '170px' }} />
             <h4 className="mt-3 font-weight-bold">Work Experience</h4>
             <p className="mt-4 font-weight-light">
               Once you have completed our curriculum and learned to communicate
@@ -115,11 +107,7 @@ const LandingPage: React.FC = () => {
           </p>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 offset-md-2 order-md-2 text-center">
-              <img
-                src="journey-01.svg"
-                alt="Creating an account"
-                className="mb-3 img-fluid"
-              />
+              <img src="journey-01.svg" alt="" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Creating an account</h2>
@@ -134,11 +122,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 text-center">
-              <img
-                src="journey-02.svg"
-                alt="curriculum"
-                className="mb-3 img-fluid"
-              />
+              <img src="journey-02.svg" alt="" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-5 offset-md-2">
               <h2 className="font-weight-bold">Curriculum</h2>
@@ -157,11 +141,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 order-md-2 offset-md-2 text-center">
-              <img
-                src="journey-03.svg"
-                className="mb-3 img-fluid"
-                alt="Conducting Code Reviews"
-              />
+              <img src="journey-03.svg" className="mb-3 img-fluid" alt="" />
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Conducting Code Reviews</h2>
@@ -178,11 +158,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 text-center">
-              <img
-                src="journey-04.svg"
-                className="mb-3 img-fluid"
-                alt="Work Experience"
-              />
+              <img src="journey-04.svg" className="mb-3 img-fluid" alt="" />
             </div>
             <div className="col-md-5 offset-md-2">
               <h2 className="font-weight-bold">Work Experience</h2>
