@@ -22,12 +22,15 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row justify-center mt-4">
           <div className="col-md-10 offset-md-1">
-            <h4 style={{ lineHeight: 1.5 }} className="font-weight-light">
+            <p
+              style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
+              className="font-weight-light"
+            >
               Learn the right foundations you need to become a full stack
               software engineer. Our curriculum takes no shortcuts and
               effectively trains students with no technical background to become
               effective software engineers.
-            </h4>
+            </p>
           </div>
         </div>
         <div className="row mt-5">
@@ -49,21 +52,20 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row mt-5">
           <div className="col-md-10 offset-md-1">
-            <h4 className="font-weight-light" style={{ lineHeight: 1.5 }}>
+            <p
+              className="font-weight-light"
+              style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
+            >
               Our learning process is interactive and follows the same practice
               as a well functioning engineering team. From the first line of
               code you write, you will be code reviewed by engineers to ensure
               you are always following industry best practices.
-            </h4>
+            </p>
           </div>
         </div>
         <div className="row mt-5 align-items-start mb-5">
           <div className="col-md-4">
-            <img
-              src="choose-01.svg"
-              alt="Curriculum"
-              style={{ height: '170px' }}
-            ></img>
+            <img src="choose-01.svg" alt="" style={{ height: '170px' }}></img>
             <h4 className="mt-3 font-weight-bold">Modern Curriculum</h4>
             <p className="mt-4 font-weight-light">
               First the curriculum will help you achieve mastery in JavaScript.
@@ -112,18 +114,22 @@ const LandingPage: React.FC = () => {
           >
             Your Learning Journey
           </h1>
-          <h4
+          <p
             className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center"
-            style={{ lineHeight: 1.5 }}
+            style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
           >
             Our learning process is interactive and follows the same practice as
             a well functioning engineering team. From the first line of code you
             write, you will be code reviewed by engineers to ensure you are
             always following industry best practice
-          </h4>
+          </p>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 offset-md-2 order-md-2 text-center">
-              <img src="journey-01.svg" className="mb-3 img-fluid"></img>
+              <img
+                src="journey-01.svg"
+                alt="Creating an account"
+                className="mb-3 img-fluid"
+              ></img>
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Creating an account</h2>
@@ -138,7 +144,11 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 text-center">
-              <img src="journey-02.svg" className="mb-3 img-fluid" />
+              <img
+                src="journey-02.svg"
+                alt="curriculum"
+                className="mb-3 img-fluid"
+              />
             </div>
             <div className="col-md-5 offset-md-2">
               <h2 className="font-weight-bold">Curriculum</h2>
@@ -157,7 +167,11 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 order-md-2 offset-md-2 text-center">
-              <img src="journey-03.svg" className="mb-3 img-fluid" />
+              <img
+                src="journey-03.svg"
+                className="mb-3 img-fluid"
+                alt="Conducting Code Reviews"
+              />
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Conducting Code Reviews</h2>
@@ -174,7 +188,11 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 text-center">
-              <img src="journey-04.svg" className="mb-3 img-fluid" />
+              <img
+                src="journey-04.svg"
+                className="mb-3 img-fluid"
+                alt="Work Experience"
+              />
             </div>
             <div className="col-md-5 offset-md-2">
               <h2 className="font-weight-bold">Work Experience</h2>
@@ -196,9 +214,12 @@ const LandingPage: React.FC = () => {
       </div>
       <div className="container my-5 py-5 text-center">
         <h1 className="display-4 font-weight-bold">Get Started Now</h1>
-        <h4 className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
+        <p
+          className="mt-3 font-weight-light"
+          style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
+        >
           Start your journey to being a full stack software engineer
-        </h4>
+        </p>
         <a
           href="https://c0d3.com/book"
           className="btn btn-primary py-3 px-5 mt-4"
