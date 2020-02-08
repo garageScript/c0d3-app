@@ -235,7 +235,7 @@ Array [
     </div>
   </div>,
   <div
-    className="container-fluid text-center py-5"
+    className="container-fluid py-5"
     style={
       Object {
         "background": "rgb(84,64,216)",
@@ -247,13 +247,13 @@ Array [
       className="container mt-5"
     >
       <h1
-        className="mt-5 display-4 font-weight-bold"
+        className="mt-5 display-4 font-weight-bold text-center"
         id="journey"
       >
         Your Learning Journey
       </h1>
       <h4
-        className="mt-5 font-weight-light col-md-10 offset-md-1 pb-5"
+        className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center"
         style={
           Object {
             "lineHeight": 1.5,
@@ -266,7 +266,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-6 order-md-2"
+          className="col-md-5 offset-md-2 order-md-2 text-center"
         >
           <img
             className="mb-3 img-fluid"
@@ -274,7 +274,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-6 order-md-1"
+          className="col-md-5 order-md-1"
         >
           <h2
             className="font-weight-bold"
@@ -283,6 +283,11 @@ Array [
           </h2>
           <p
             className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
           >
             After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
           </p>
@@ -292,7 +297,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-6"
+          className="col-md-5 text-center"
         >
           <img
             className="mb-3 img-fluid"
@@ -300,7 +305,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-6"
+          className="col-md-5 offset-md-2"
         >
           <h2
             className="font-weight-bold"
@@ -309,6 +314,11 @@ Array [
           </h2>
           <p
             className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
           >
             Each lesson in our curriculum is designed to be hands on and you will learn by working through plenty of exercises. There will be video lectures to guide you along as well as lecture notes. In the interactive lessons where you write server code and build web applications, you will be able to create your own subdomains and your code is immediately available on c0d3.com around the world. If you get stuck, you can ask for help in our chat channel, where students who passed the lessons would be helping you along.
           </p>
@@ -318,7 +328,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-6 order-md-2"
+          className="col-md-5 order-md-2 offset-md-2 text-center"
         >
           <img
             className="mb-3 img-fluid"
@@ -326,7 +336,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-6 order-md-1"
+          className="col-md-5 order-md-1"
         >
           <h2
             className="font-weight-bold"
@@ -335,6 +345,11 @@ Array [
           </h2>
           <p
             className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
           >
             When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
           </p>
@@ -344,7 +359,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-6"
+          className="col-md-5 text-center"
         >
           <img
             className="mb-3 img-fluid"
@@ -352,7 +367,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-6"
+          className="col-md-5 offset-md-2"
         >
           <h2
             className="font-weight-bold"
@@ -361,6 +376,11 @@ Array [
           </h2>
           <p
             className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
           >
             After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
           </p>
