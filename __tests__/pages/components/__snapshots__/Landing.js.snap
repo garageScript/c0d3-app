@@ -11,7 +11,6 @@ exports[`Landing <LandingNav /> 1`] = `
     C0D3
   </a>
   <div
-    className=""
     id="navbarNav"
   >
     <div

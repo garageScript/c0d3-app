@@ -8,7 +8,7 @@ const LandingNav = () => {
       <a className="navbar-brand text-primary font-weight-bold" href="#">
         C0D3
       </a>
-      <div className="" id="navbarNav">
+      <div id="navbarNav">
         <div className="navbar-nav collapse navbar-collapse">
           <a className="nav-item nav-link active" href="#">
             Home <span className="sr-only">(current)</span>
