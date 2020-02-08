@@ -18,10 +18,7 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row justify-center mt-4">
           <div className="col-md-10 offset-md-1">
-            <p
-              style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
-              className="font-weight-light"
-            >
+            <p style={{ lineHeight: 1.5 }} className="font-weight-light h4">
               Learn the right foundations you need to become a full stack
               software engineer. Our curriculum takes no shortcuts and
               effectively trains students with no technical background to become
@@ -48,10 +45,7 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row mt-5">
           <div className="col-md-10 offset-md-1">
-            <p
-              className="font-weight-light"
-              style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
-            >
+            <p className="font-weight-light h4" style={{ lineHeight: 1.5 }}>
               Our learning process is interactive and follows the same practice
               as a well functioning engineering team. From the first line of
               code you write, you will be code reviewed by engineers to ensure
@@ -71,11 +65,7 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <img
-              src="choose-02.svg"
-              alt="Support"
-              style={{ height: '170px' }}
-            />
+            <img src="choose-02.svg" alt="" style={{ height: '170px' }} />
             <h4 className="mt-3 font-weight-bold">Support</h4>
             <p className="mt-4 font-weight-light">
               One of the most important skills in a challenging workplace is
@@ -85,11 +75,7 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <img
-              src="choose-03.svg"
-              alt="Curriculum Image"
-              style={{ height: '170px' }}
-            />
+            <img src="choose-03.svg" alt="" style={{ height: '170px' }} />
             <h4 className="mt-3 font-weight-bold">Work Experience</h4>
             <p className="mt-4 font-weight-light">
               Once you have completed our curriculum and learned to communicate
@@ -111,8 +97,8 @@ const LandingPage: React.FC = () => {
             Your Learning Journey
           </h1>
           <p
-            className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center"
-            style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
+            className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+            style={{ lineHeight: 1.5 }}
           >
             Our learning process is interactive and follows the same practice as
             a well functioning engineering team. From the first line of code you
@@ -121,11 +107,7 @@ const LandingPage: React.FC = () => {
           </p>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 offset-md-2 order-md-2 text-center">
-              <img
-                src="journey-01.svg"
-                alt="Creating an account"
-                className="mb-3 img-fluid"
-              />
+              <img src="journey-01.svg" alt="" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Creating an account</h2>
@@ -140,11 +122,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 text-center">
-              <img
-                src="journey-02.svg"
-                alt="curriculum"
-                className="mb-3 img-fluid"
-              />
+              <img src="journey-02.svg" alt="" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-5 offset-md-2">
               <h2 className="font-weight-bold">Curriculum</h2>
@@ -163,11 +141,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 order-md-2 offset-md-2 text-center">
-              <img
-                src="journey-03.svg"
-                className="mb-3 img-fluid"
-                alt="Conducting Code Reviews"
-              />
+              <img src="journey-03.svg" className="mb-3 img-fluid" alt="" />
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Conducting Code Reviews</h2>
@@ -184,11 +158,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 text-center">
-              <img
-                src="journey-04.svg"
-                className="mb-3 img-fluid"
-                alt="Work Experience"
-              />
+              <img src="journey-04.svg" className="mb-3 img-fluid" alt="" />
             </div>
             <div className="col-md-5 offset-md-2">
               <h2 className="font-weight-bold">Work Experience</h2>
