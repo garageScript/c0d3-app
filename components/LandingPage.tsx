@@ -6,11 +6,7 @@ const LandingPage: React.FC = () => {
       <div className="container text-center pb-5">
         <div className="row justify-center mt-5">
           <div className="col-md-6 offset-md-3">
-            <img
-              src="header-01.svg"
-              alt="Hero Image"
-              className="img-fluid"
-            ></img>
+            <img src="header-01.svg" alt="Hero Image" className="img-fluid" />
           </div>
         </div>
         <div className="row justify-center mt-5">
@@ -65,7 +61,7 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row mt-5 align-items-start mb-5">
           <div className="col-md-4">
-            <img src="choose-01.svg" alt="" style={{ height: '170px' }}></img>
+            <img src="choose-01.svg" alt="" style={{ height: '170px' }} />
             <h4 className="mt-3 font-weight-bold">Modern Curriculum</h4>
             <p className="mt-4 font-weight-light">
               First the curriculum will help you achieve mastery in JavaScript.
@@ -79,7 +75,7 @@ const LandingPage: React.FC = () => {
               src="choose-02.svg"
               alt="Support"
               style={{ height: '170px' }}
-            ></img>
+            />
             <h4 className="mt-3 font-weight-bold">Support</h4>
             <p className="mt-4 font-weight-light">
               One of the most important skills in a challenging workplace is
@@ -129,7 +125,7 @@ const LandingPage: React.FC = () => {
                 src="journey-01.svg"
                 alt="Creating an account"
                 className="mb-3 img-fluid"
-              ></img>
+              />
             </div>
             <div className="col-md-5 order-md-1">
               <h2 className="font-weight-bold">Creating an account</h2>
