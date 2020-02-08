@@ -6,7 +6,11 @@ const LandingPage: React.FC = () => {
       <div className="container text-center pb-5">
         <div className="row justify-center mt-5">
           <div className="col-md-6 offset-md-3">
-            <img src="header-01.svg" alt="Hero Image"></img>
+            <img
+              src="header-01.svg"
+              alt="Hero Image"
+              className="img-fluid"
+            ></img>
           </div>
         </div>
         <div className="row justify-center mt-5">
@@ -116,7 +120,7 @@ const LandingPage: React.FC = () => {
           </h4>
           <div className="row mt-5 pb-5">
             <div className="col-md-6 order-md-2">
-              <img src="journey-01.svg" className="mb-3"></img>
+              <img src="journey-01.svg" className="mb-3 img-fluid"></img>
             </div>
             <div className="col-md-6 order-md-1">
               <h2 className="font-weight-bold">Creating an account</h2>
@@ -124,14 +128,14 @@ const LandingPage: React.FC = () => {
                 After creating an account, you will gain access to our code
                 reviewed curriculum and our community chat. You will be able to
                 setup c0d3.com CLI which will allow you to submit code for
-                reivew. The CLI allows you to code in Javascript from any code
+                review. The CLI allows you to code in Javascript from any code
                 editor of your choice.
               </p>
             </div>
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-6">
-              <img src="journey-02.svg" className="mb-3" />
+              <img src="journey-02.svg" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-6">
               <h2 className="font-weight-bold">Curriculum</h2>
@@ -150,7 +154,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-6 order-md-2">
-              <img src="journey-03.svg" className="mb-3" />
+              <img src="journey-03.svg" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-6 order-md-1">
               <h2 className="font-weight-bold">Conducting Code Reviews</h2>
@@ -167,7 +171,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-6">
-              <img src="journey-04.svg" className="mb-3" />
+              <img src="journey-04.svg" className="mb-3 img-fluid" />
             </div>
             <div className="col-md-6">
               <h2 className="font-weight-bold">Work Experience</h2>
@@ -179,7 +183,7 @@ const LandingPage: React.FC = () => {
                 and feature list on our issue board for you to contribute to and
                 you will be held to the same expectations as any respected
                 engineer: high quality code and proper testing. Every feature
-                contribution will be documented and recogized on our
+                contribution will be documented and recognized on our
                 contribution list and you would be able to list your
                 contributions as work experience on your resume.
               </p>
@@ -200,7 +204,7 @@ const LandingPage: React.FC = () => {
         </a>
       </div>
       <footer className="mt-5 font-weight-light text-center mb-5 text-secondary">
-        &copy; Copyright 2020 Garagescript
+        &copy; Copyright 2020 GarageScript
         <br />
         All Rights Reserved
       </footer>
