@@ -102,16 +102,17 @@ Array [
       <div
         className="col-md-10 offset-md-1"
       >
-        <h4
+        <p
           className="font-weight-light"
           style={
             Object {
+              "fontSize": "1.5rem",
               "lineHeight": 1.5,
             }
           }
         >
           Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become effective software engineers.
-        </h4>
+        </p>
       </div>
     </div>
     <div
@@ -148,16 +149,17 @@ Array [
       <div
         className="col-md-10 offset-md-1"
       >
-        <h4
+        <p
           className="font-weight-light"
           style={
             Object {
+              "fontSize": "1.5rem",
               "lineHeight": 1.5,
             }
           }
         >
           Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
-        </h4>
+        </p>
       </div>
     </div>
     <div
@@ -167,7 +169,7 @@ Array [
         className="col-md-4"
       >
         <img
-          alt="Curriculum"
+          alt=""
           src="choose-01.svg"
           style={
             Object {
@@ -252,16 +254,17 @@ Array [
       >
         Your Learning Journey
       </h1>
-      <h4
+      <p
         className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center"
         style={
           Object {
+            "fontSize": "1.5rem",
             "lineHeight": 1.5,
           }
         }
       >
         Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
-      </h4>
+      </p>
       <div
         className="row mt-5 pb-5"
       >
@@ -269,6 +272,7 @@ Array [
           className="col-md-5 offset-md-2 order-md-2 text-center"
         >
           <img
+            alt="Creating an account"
             className="mb-3 img-fluid"
             src="journey-01.svg"
           />
@@ -300,6 +304,7 @@ Array [
           className="col-md-5 text-center"
         >
           <img
+            alt="curriculum"
             className="mb-3 img-fluid"
             src="journey-02.svg"
           />
@@ -331,6 +336,7 @@ Array [
           className="col-md-5 order-md-2 offset-md-2 text-center"
         >
           <img
+            alt="Conducting Code Reviews"
             className="mb-3 img-fluid"
             src="journey-03.svg"
           />
@@ -362,6 +368,7 @@ Array [
           className="col-md-5 text-center"
         >
           <img
+            alt="Work Experience"
             className="mb-3 img-fluid"
             src="journey-04.svg"
           />
@@ -396,16 +403,17 @@ Array [
     >
       Get Started Now
     </h1>
-    <h4
+    <p
       className="mt-3 font-weight-light"
       style={
         Object {
+          "fontSize": "1.5rem",
           "lineHeight": 1.5,
         }
       }
     >
       Start your journey to being a full stack software engineer
-    </h4>
+    </p>
     <a
       className="btn btn-primary py-3 px-5 mt-4"
       href="https://c0d3.com/book"
