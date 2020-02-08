@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import '../scss/navbar.scss'
 
 const LandingNav = () => {
@@ -24,8 +25,9 @@ const LandingNav = () => {
         </div>
       </div>
       <div>
-        <button className="btn border mr-3">Login</button>
-        <button className="btn btn-primary">Join Waitlist</button>
+        <Link href="/login">
+          <a className="btn border mr-3">Login</a>
+        </Link>
       </div>
     </nav>
   )

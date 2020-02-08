@@ -49,16 +49,14 @@ exports[`Landing <LandingNav /> 1`] = `
     </div>
   </div>
   <div>
-    <button
+    <a
       className="btn border mr-3"
+      href="/login"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Login
-    </button>
-    <button
-      className="btn btn-primary"
-    >
-      Join Waitlist
-    </button>
+    </a>
   </div>
 </nav>
 `;
@@ -121,11 +119,12 @@ exports[`Landing <LandingPage /> 1`] = `
     <div
       className="col-md-6 offset-md-3 mb-5"
     >
-      <button
+      <a
         className="btn btn-primary py-3 px-5"
+        href="https://c0d3.com/book"
       >
         Get Started
-      </button>
+      </a>
     </div>
   </div>
   <div
