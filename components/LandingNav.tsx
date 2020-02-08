@@ -16,7 +16,7 @@ const LandingNav = () => {
           <a className="nav-item nav-link" href="#learning">
             Learning Process
           </a>
-          <a className="nav-item nav-link" href="#">
+          <a className="nav-item nav-link" href="#journey">
             Journey
           </a>
           <a className="nav-item nav-link" href="#">
@@ -26,7 +26,7 @@ const LandingNav = () => {
       </div>
       <div>
         <Link href="/login">
-          <a className="btn border mr-3">Login</a>
+          <a className="btn btn-primary mr-3">Login</a>
         </Link>
       </div>
     </nav>
