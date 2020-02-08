@@ -116,27 +116,25 @@ const LandingPage: React.FC = () => {
           </h4>
           <div className="row mt-5 pb-5">
             <div className="col-md-6 order-md-2">
-              <img src="journey-01.svg"></img>
+              <img src="journey-01.svg" className="mb-3"></img>
             </div>
             <div className="col-md-6 order-md-1">
-              <h2>Creating an account</h2>
+              <h2 className="font-weight-bold">Creating an account</h2>
               <p className="mt-3 font-weight-light">
                 After creating an account, you will gain access to our code
-                reviewed curriculum and our community chat. When you create
-                account, you get access to a code reviewed curriculum, and our
-                community chat. Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Voluptatum, suscipit? Dolor, omnis quis. Quae,
-                necessitatibus. Natus facere incidunt cum voluptatem tempore
-                non! Deserunt ut fuga aliquid nobis, repudiandae eum harum.
+                reviewed curriculum and our community chat. You will be able to
+                setup c0d3.com CLI which will allow you to submit code for
+                reivew. The CLI allows you to code in Javascript from any code
+                editor of your choice.
               </p>
             </div>
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-6">
-              <img src="journey-02.svg" />
+              <img src="journey-02.svg" className="mb-3" />
             </div>
             <div className="col-md-6">
-              <h2>Curriculum</h2>
+              <h2 className="font-weight-bold">Curriculum</h2>
               <p className="mt-3 font-weight-light">
                 Each lesson in our curriculum is designed to be hands on and you
                 will learn by working through plenty of exercises. There will be
@@ -152,29 +150,38 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-6 order-md-2">
-              <img src="journey-03.svg" />
+              <img src="journey-03.svg" className="mb-3" />
             </div>
             <div className="col-md-6 order-md-1">
-              <h2>Conducting Code Reviews</h2>
+              <h2 className="font-weight-bold">Conducting Code Reviews</h2>
               <p className="mt-3 font-weight-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-                mollitia tempore nesciunt fugiat a? Iusto id mollitia obcaecati,
-                nobis sunt quaerat sequi vel ducimus, dolor commodi ab, repellat
-                minima consectetur.
+                When you finish your lesson, you will have the opportunity to
+                help new students who are starting the lesson. By code reviewing
+                students to the same standard that you were code reviewed, you
+                help ensure that new students are writing good code and becoming
+                better engineers. At the same time, conducting regular code
+                reviews helps you improve your ability to read/debug code as
+                well as understand the lesson concepts at a deeper level.
               </p>
             </div>
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-6">
-              <img src="journey-04.svg" />
+              <img src="journey-04.svg" className="mb-3" />
             </div>
             <div className="col-md-6">
-              <h2>Work Experience</h2>
+              <h2 className="font-weight-bold">Work Experience</h2>
               <p className="mt-3 font-weight-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-                mollitia tempore nesciunt fugiat a? Iusto id mollitia obcaecati,
-                nobis sunt quaerat sequi vel ducimus, dolor commodi ab, repellat
-                minima consectetur.
+                After completing our curriculum, you will gain access to our
+                internal code repository that powers c0d3.com and have the
+                opportunity to work with our engineers and experience the entire
+                workflow of a full stack software engineer. There will be bugs
+                and feature list on our issue board for you to contribute to and
+                you will be held to the same expectations as any respected
+                engineer: high quality code and proper testing. Every feature
+                contribution will be documented and recogized on our
+                contribution list and you would be able to list your
+                contributions as work experience on your resume.
               </p>
             </div>
           </div>
