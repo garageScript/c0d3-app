@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing <LandingNav /> 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light justify-content-between"
+>
+  <a
+    className="navbar-brand text-primary font-weight-bold"
+    href="#"
+  >
+    C0D3
+  </a>
+  <div
+    id="navbarNav"
+  >
+    <div
+      className="navbar-nav collapse navbar-collapse"
+    >
+      <a
+        className="nav-item nav-link active"
+        href="#"
+      >
+        Home 
+        <span
+          className="sr-only"
+        >
+          (current)
+        </span>
+      </a>
+      <a
+        className="nav-item nav-link"
+        href="#learning"
+      >
+        Learning Process
+      </a>
+      <a
+        className="nav-item nav-link"
+        href="#"
+      >
+        Journey
+      </a>
+      <a
+        className="nav-item nav-link"
+        href="#"
+      >
+        Contact Us
+      </a>
+    </div>
+  </div>
+  <div>
+    <a
+      className="btn border mr-3"
+      href="/login"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Login
+    </a>
+  </div>
+</nav>
+`;
+
+exports[`Landing <LandingPage /> 1`] = `
+<div
+  className="container text-center"
+>
+  <div
+    className="row justify-center mt-5"
+  >
+    <div
+      className="col-md-6 offset-md-3"
+    >
+      <img
+        alt="Hero Image"
+        src="header-01.svg"
+      />
+    </div>
+  </div>
+  <div
+    className="row justify-center mt-5"
+  >
+    <div
+      className="col-md-8 offset-md-2"
+    >
+      <h1
+        style={
+          Object {
+            "fontSize": "3.8rem",
+            "fontWeight": 900,
+          }
+        }
+      >
+        Become a Software Engineer the Hard Way
+      </h1>
+    </div>
+  </div>
+  <div
+    className="row justify-center mt-4"
+  >
+    <div
+      className="col-md-10 offset-md-1"
+    >
+      <h4
+        className="font-weight-light"
+        style={
+          Object {
+            "lineHeight": 1.5,
+          }
+        }
+      >
+        Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become effective software engineers.
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row mt-5"
+  >
+    <div
+      className="col-md-6 offset-md-3 mb-5"
+    >
+      <a
+        className="btn btn-primary py-3 px-5"
+        href="https://c0d3.com/book"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+  <div
+    className="row mt-5"
+  >
+    <div
+      className="col-md-6 offset-md-3"
+    >
+      <h1
+        className="display-4 font-weight-bold"
+        id="learning"
+      >
+        Learning Process
+      </h1>
+    </div>
+  </div>
+  <div
+    className="row mt-5"
+  >
+    <div
+      className="col-md-10 offset-md-1"
+    >
+      <h4
+        className="font-weight-light"
+        style={
+          Object {
+            "lineHeight": 1.5,
+          }
+        }
+      >
+        Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
+      </h4>
+    </div>
+  </div>
+  <div
+    className="row mt-5 align-items-start"
+  >
+    <div
+      className="col-md-4"
+    >
+      <img
+        alt="Curriculum"
+        src="choose-01.svg"
+        style={
+          Object {
+            "height": "170px",
+          }
+        }
+      />
+      <h4
+        className="mt-3 font-weight-bold"
+      >
+        Modern Curriculum
+      </h4>
+      <p
+        className="mt-4 font-weight-light"
+      >
+        First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
+      </p>
+    </div>
+    <div
+      className="col-md-4"
+    >
+      <img
+        alt="Support"
+        src="choose-02.svg"
+        style={
+          Object {
+            "height": "170px",
+          }
+        }
+      />
+      <h4
+        className="mt-3 font-weight-bold"
+      >
+        Support
+      </h4>
+      <p
+        className="mt-4 font-weight-light"
+      >
+        One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
+      </p>
+    </div>
+    <div
+      className="col-md-4"
+    >
+      <img
+        alt="Curriculum Image"
+        src="choose-03.svg"
+        style={
+          Object {
+            "height": "170px",
+          }
+        }
+      />
+      <h4
+        className="mt-3 font-weight-bold"
+      >
+        Work Experience
+      </h4>
+      <p
+        className="mt-4 font-weight-light"
+      >
+        Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
+      </p>
+    </div>
+  </div>
+</div>
+`;
