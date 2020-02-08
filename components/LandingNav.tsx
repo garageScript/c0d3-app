@@ -19,8 +19,8 @@ const LandingNav = () => {
           <a className="nav-item nav-link" href="#journey">
             Journey
           </a>
-          <a className="nav-item nav-link" href="#">
-            Contact Us
+          <a className="nav-item nav-link" href="https://chat.c0d3.com">
+            Help
           </a>
         </div>
       </div>

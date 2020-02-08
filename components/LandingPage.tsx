@@ -30,7 +30,7 @@ const LandingPage: React.FC = () => {
           <div className="col-md-6 offset-md-3 mb-5">
             <a
               href="https://c0d3.com/book"
-              className="btn btn-primary py-3 px-5"
+              className="btn btn-primary py-2 px-5"
             >
               Get Started
             </a>
@@ -187,6 +187,23 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <div className="container my-5 py-5 text-center">
+        <h1 className="display-4 font-weight-bold">Get Started Now</h1>
+        <h4 className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
+          Start your journey to being a full stack software engineer
+        </h4>
+        <a
+          href="https://c0d3.com/book"
+          className="btn btn-primary py-2 px-5 mt-4"
+        >
+          Get Started
+        </a>
+      </div>
+      <footer className="mt-5 font-weight-light text-center mb-5 text-secondary">
+        &copy; Copyright 2020 Garagescript
+        <br />
+        All Rights Reserved
+      </footer>
     </React.Fragment>
   )
 }
