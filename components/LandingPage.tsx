@@ -34,7 +34,7 @@ const LandingPage: React.FC = () => {
           <div className="col-md-6 offset-md-3 mb-5">
             <a
               href="https://c0d3.com/book"
-              className="btn btn-primary py-2 px-5"
+              className="btn btn-primary py-3 px-5"
             >
               Get Started
             </a>
@@ -198,7 +198,7 @@ const LandingPage: React.FC = () => {
         </h4>
         <a
           href="https://c0d3.com/book"
-          className="btn btn-primary py-2 px-5 mt-4"
+          className="btn btn-primary py-3 px-5 mt-4"
         >
           Get Started
         </a>
