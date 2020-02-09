@@ -34,7 +34,7 @@ export const withChildren: React.FC = () => (
       />
       <div className="col-5">
         <button type="button" className="btn btn-dark">
-          Primary
+          Dark
         </button>
       </div>
     </div>
@@ -46,5 +46,13 @@ export const withSuccess: React.FC = () => (
     success
     title="Title of the card"
     text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+  />
+)
+
+export const withClasses: React.FC = () => (
+  <Card
+    title="Title of the card"
+    text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    classes="col-3 offset-8 bg-dark text-white-50 "
   />
 )
