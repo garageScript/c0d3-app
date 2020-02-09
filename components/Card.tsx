@@ -5,13 +5,16 @@ type Props = {
   children?: React.ReactNode
   success?: boolean
   text?: string
+  classes?: string
   title: string
 }
 
-const Card: React.FC<Props> = props => (
-  <div className="row mt-5">
-    <div className="col-sm-5 m-auto" style={{ maxWidth: '604px' }}>
-      <div className="card shadow-sm">
+const Card: React.FC<Props> = props => {
+  const classes = `col-sm-${props.classes ||
+    'col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto'}`
+  return (
+    <div className="row mt-5">
+      <div className={`card shadow-sm ${classes}`}>
         <div className="card-body text-center pt-5 pb-5">
           {props.success && (
             <Checked className="mb-4" width="100px" height="100px" />
@@ -22,7 +25,7 @@ const Card: React.FC<Props> = props => (
         </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Card
