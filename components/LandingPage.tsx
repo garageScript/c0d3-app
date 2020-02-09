@@ -22,7 +22,7 @@ const LandingPage: React.FC = () => {
               Learn the right foundations you need to become a full stack
               software engineer. Our curriculum takes no shortcuts and
               effectively trains students with no technical background to become
-              effective software engineers.
+              great software engineers.
             </p>
           </div>
         </div>
@@ -106,10 +106,10 @@ const LandingPage: React.FC = () => {
             always following industry best practice
           </p>
           <div className="row mt-5 pb-5">
-            <div className="col-md-5 offset-md-2 order-md-2 text-center">
+            <div className="col-md-5 order-md-2 text-center">
               <img src="journey-01.svg" alt="" className="mb-3 img-fluid" />
             </div>
-            <div className="col-md-5 order-md-1">
+            <div className="col-md-5 offset-md-1 order-md-1">
               <h2 className="font-weight-bold">Creating an account</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 After creating an account, you will gain access to our code
@@ -121,10 +121,10 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           <div className="row mt-5 pb-5">
-            <div className="col-md-5 text-center">
+            <div className="col-md-5 offset-md-1 text-center">
               <img src="journey-02.svg" alt="" className="mb-3 img-fluid" />
             </div>
-            <div className="col-md-5 offset-md-2">
+            <div className="col-md-5">
               <h2 className="font-weight-bold">Curriculum</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 Each lesson in our curriculum is designed to be hands on and you
@@ -140,10 +140,10 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           <div className="row mt-5 pb-5">
-            <div className="col-md-5 order-md-2 offset-md-2 text-center">
+            <div className="col-md-5 order-md-2 text-center">
               <img src="journey-03.svg" className="mb-3 img-fluid" alt="" />
             </div>
-            <div className="col-md-5 order-md-1">
+            <div className="col-md-5 order-md-1 offset-md-1">
               <h2 className="font-weight-bold">Conducting Code Reviews</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 When you finish your lesson, you will have the opportunity to
@@ -157,10 +157,10 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           <div className="row mt-5 pb-5">
-            <div className="col-md-5 text-center">
+            <div className="col-md-5 offset-md-1 text-center">
               <img src="journey-04.svg" className="mb-3 img-fluid" alt="" />
             </div>
-            <div className="col-md-5 offset-md-2">
+            <div className="col-md-5">
               <h2 className="font-weight-bold">Work Experience</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 After completing our curriculum, you will gain access to our
