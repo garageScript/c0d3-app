@@ -110,7 +110,7 @@ Array [
             }
           }
         >
-          Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become effective software engineers.
+          Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
         </p>
       </div>
     </div>
@@ -266,7 +266,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-5 offset-md-2 order-md-2 text-center"
+          className="col-md-5 order-md-2 text-center"
         >
           <img
             alt=""
@@ -275,7 +275,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-5 order-md-1"
+          className="col-md-5 offset-md-1 order-md-1"
         >
           <h2
             className="font-weight-bold"
@@ -298,7 +298,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-5 text-center"
+          className="col-md-5 offset-md-1 text-center"
         >
           <img
             alt=""
@@ -307,7 +307,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-5 offset-md-2"
+          className="col-md-5"
         >
           <h2
             className="font-weight-bold"
@@ -322,7 +322,15 @@ Array [
               }
             }
           >
-            Each lesson in our curriculum is designed to be hands on and you will learn by working through plenty of exercises. There will be video lectures to guide you along as well as lecture notes. In the interactive lessons where you write server code and build web applications, you will be able to create your own subdomains and your code is immediately available on c0d3.com around the world. If you get stuck, you can ask for help in our chat channel, where students who passed the lessons would be helping you along.
+            Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
+             
+            <a
+              className="text-warning"
+              href="https://www.meetup.com/San-Jose-C0D3/"
+            >
+              meetup groups
+            </a>
+            . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
           </p>
         </div>
       </div>
@@ -330,7 +338,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-5 order-md-2 offset-md-2 text-center"
+          className="col-md-5 order-md-2 text-center"
         >
           <img
             alt=""
@@ -339,12 +347,12 @@ Array [
           />
         </div>
         <div
-          className="col-md-5 order-md-1"
+          className="col-md-5 order-md-1 offset-md-1"
         >
           <h2
             className="font-weight-bold"
           >
-            Conducting Code Reviews
+            Pay It Forward
           </h2>
           <p
             className="mt-3 font-weight-light"
@@ -362,7 +370,7 @@ Array [
         className="row mt-5 pb-5"
       >
         <div
-          className="col-md-5 text-center"
+          className="col-md-5 offset-md-1 text-center"
         >
           <img
             alt=""
@@ -371,7 +379,7 @@ Array [
           />
         </div>
         <div
-          className="col-md-5 offset-md-2"
+          className="col-md-5"
         >
           <h2
             className="font-weight-bold"

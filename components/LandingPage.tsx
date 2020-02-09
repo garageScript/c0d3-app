@@ -128,14 +128,20 @@ const LandingPage: React.FC = () => {
               <h2 className="font-weight-bold">Curriculum</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 Each lesson in our curriculum is designed to be hands on and you
-                will learn by working through plenty of exercises. There will be
-                video lectures to guide you along as well as lecture notes. In
-                the interactive lessons where you write server code and build
-                web applications, you will be able to create your own subdomains
-                and your code is immediately available on c0d3.com around the
-                world. If you get stuck, you can ask for help in our chat
-                channel, where students who passed the lessons would be helping
-                you along.
+                will learn by working through the exercises in the curriculum.
+                All hosting will be provided for you so you can proudly share
+                your accomplishments with the world without spending a penny.
+                The exercises and challenges are designed to be difficult to
+                force you to ask questions. Support is available in our chat
+                channel or in-person at one of our{' '}
+                <a
+                  href="https://www.meetup.com/San-Jose-C0D3/"
+                  className="text-warning"
+                >
+                  meetup groups
+                </a>
+                . Students who have passed the lessons may be available at the
+                meetup or in the chatroom to help you with your questions.
               </p>
             </div>
           </div>
@@ -144,7 +150,7 @@ const LandingPage: React.FC = () => {
               <img src="journey-03.svg" className="mb-3 img-fluid" alt="" />
             </div>
             <div className="col-md-5 order-md-1 offset-md-1">
-              <h2 className="font-weight-bold">Conducting Code Reviews</h2>
+              <h2 className="font-weight-bold">Pay It Forward</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 When you finish your lesson, you will have the opportunity to
                 help new students who are starting the lesson. By code reviewing
