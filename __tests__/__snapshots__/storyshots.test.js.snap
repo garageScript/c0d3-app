@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button border with text 1`] = `
+exports[`Storyshots Button Border With Text 1`] = `
 <button
   className="btn border"
 >
@@ -8,7 +8,7 @@ exports[`Storyshots Button border with text 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button color badge button 1`] = `
+exports[`Storyshots Button Color Badge Button 1`] = `
 <button
   className="btn border"
 >
@@ -21,7 +21,7 @@ exports[`Storyshots Button color badge button 1`] = `
 </button>
 `;
 
-exports[`Storyshots Button color with text 1`] = `
+exports[`Storyshots Button Color With Text 1`] = `
 <button
   className="btn btn-primary"
 >

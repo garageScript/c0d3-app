@@ -4,9 +4,5 @@ module.exports = {
     '@babel/preset-react',
     '@babel/preset-typescript'
   ],
-  plugins: [
-    'inline-react-svg',
-    '@babel/syntax-dynamic-import',
-    'require-context-hook'
-  ]
+  plugins: ['inline-react-svg', '@babel/syntax-dynamic-import']
 }
