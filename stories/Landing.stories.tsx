@@ -1,17 +1,21 @@
 import * as React from 'react'
-import { storiesOf } from '@storybook/react'
 import LandingNav from '../components/LandingNav'
 import LandingPage from '../components/LandingPage'
+import Footer from '../components/Footer'
 import '../scss/index.scss'
 
-storiesOf('Landing Page', module)
-  .add('nav', () => {
-    return <LandingNav />
-  })
-  .add('page', () => {
-    return (
-      <div className="container text-center">
-        <LandingPage />
-      </div>
-    )
-  })
+export default {
+  title: 'Landing Page'
+}
+
+export const Page: React.FC = () => (
+  <>
+    <LandingNav />
+    <LandingPage />
+    <Footer />
+  </>
+)
+
+export const landingNav: React.FC = () => <LandingNav />
+export const landingPage: React.FC = () => <LandingPage />
+export const footer: React.FC = () => <Footer />
