@@ -1623,6 +1623,23 @@
     react-inspector "^4.0.0"
     uuid "^3.3.2"
 
+"@storybook/addon-viewport@^5.3.12":
+  version "5.3.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-5.3.12.tgz#2f1e415d3f070e454818074faf2ccfb2b4a99ffa"
+  integrity sha512-SvSoRTMYLvHU8ulWwOdzISlNbkdQMPgYGW18HuZ80AA52Q9KoVPC+hXI6rWq8HJ5iP47K9K2fpsIjqQSqzY/hQ==
+  dependencies:
+    "@storybook/addons" "5.3.12"
+    "@storybook/api" "5.3.12"
+    "@storybook/client-logger" "5.3.12"
+    "@storybook/components" "5.3.12"
+    "@storybook/core-events" "5.3.12"
+    "@storybook/theming" "5.3.12"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    memoizerific "^1.11.3"
+    prop-types "^15.7.2"
+    util-deprecate "^1.0.2"
+
 "@storybook/addons@5.3.12":
   version "5.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-5.3.12.tgz#77fb0e0d3ac9eb70414bff4b03c12bbccfe31716"
