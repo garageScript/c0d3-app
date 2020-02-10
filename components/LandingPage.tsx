@@ -2,9 +2,9 @@ import * as React from 'react'
 
 const LandingPage: React.FC = () => {
   return (
-    <React.Fragment>
+    <div className="bg-white">
       <div className="container text-center pb-5">
-        <div className="row justify-center mt-5">
+        <div className="row justify-center pt-5">
           <div className="col-md-6 offset-md-3">
             <img src="header-01.svg" alt="Hero Image" className="img-fluid" />
           </div>
@@ -199,12 +199,7 @@ const LandingPage: React.FC = () => {
           Get Started
         </a>
       </div>
-      <footer className="mt-5 font-weight-light text-center mb-5 text-secondary">
-        &copy; Copyright 2020 GarageScript
-        <br />
-        All Rights Reserved
-      </footer>
-    </React.Fragment>
+    </div>
   )
 }
 

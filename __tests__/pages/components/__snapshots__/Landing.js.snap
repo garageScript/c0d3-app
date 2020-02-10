@@ -2,71 +2,77 @@
 
 exports[`Landing <LandingNav /> 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light justify-content-between"
+  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
 >
-  <a
-    className="navbar-brand text-primary font-weight-bold"
-    href="#"
-  >
-    C0D3
-  </a>
   <div
-    id="navbarNav"
+    className="container"
   >
-    <div
-      className="navbar-nav collapse navbar-collapse"
+    <a
+      className="navbar-brand text-primary font-weight-bold"
+      href="#"
     >
-      <a
-        className="nav-item nav-link active"
-        href="#"
+      C0D3
+    </a>
+    <div
+      id="navbarNav"
+    >
+      <div
+        className="navbar-nav collapse navbar-collapse"
       >
-        Home 
-        <span
-          className="sr-only"
+        <a
+          className="nav-item nav-link active"
+          href="#"
         >
-          (current)
-        </span>
-      </a>
+          Home 
+          <span
+            className="sr-only"
+          >
+            (current)
+          </span>
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="#learning"
+        >
+          Learning Process
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="#journey"
+        >
+          Journey
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="https://chat.c0d3.com"
+        >
+          Help
+        </a>
+      </div>
+    </div>
+    <div>
       <a
-        className="nav-item nav-link"
-        href="#learning"
+        className="btn border mr-3"
+        href="/login"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
-        Learning Process
-      </a>
-      <a
-        className="nav-item nav-link"
-        href="#journey"
-      >
-        Journey
-      </a>
-      <a
-        className="nav-item nav-link"
-        href="https://chat.c0d3.com"
-      >
-        Help
+        Login
       </a>
     </div>
-  </div>
-  <div>
-    <a
-      className="btn border mr-3"
-      href="/login"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      Login
-    </a>
   </div>
 </nav>
 `;
 
 exports[`Landing <LandingPage /> 1`] = `
-Array [
+<div
+  className="bg-white"
+>
   <div
     className="container text-center pb-5"
   >
     <div
-      className="row justify-center mt-5"
+      className="row justify-center pt-5"
     >
       <div
         className="col-md-6 offset-md-3"
@@ -233,7 +239,7 @@ Array [
         </p>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="container-fluid py-5"
     style={
@@ -399,7 +405,7 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="container my-5 py-5 text-center"
   >
@@ -425,13 +431,6 @@ Array [
     >
       Get Started
     </a>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center mb-5 text-secondary"
-  >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
-  </footer>,
-]
+  </div>
+</div>
 `;
