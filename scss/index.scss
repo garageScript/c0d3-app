@@ -1,8 +1,9 @@
 // Override default variables before the import
-$body-bg: #fff;
+$body-bg: rgba(84, 56, 220, 0.03);
 
 $theme-colors: (
-  "primary": rgb(84,64,216)
+  "primary": rgb(84,64,216),
+  "secondary": #fff
 );
 
 $font-family-sans-serif:  Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI","Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

@@ -8,8 +8,8 @@ storiesOf('Button', module)
     return <Button text="Click Me" color="primary" />
   })
   .add('border with text', () => {
-    return <Button text="Click Me" color="secondary" />
+    return <Button text="Click Me" />
   })
   .add('color badge button', () => {
-    return <Button text="Song" initial="SZ" color="secondary" />
+    return <Button text="Song" initial="SZ" />
   })
