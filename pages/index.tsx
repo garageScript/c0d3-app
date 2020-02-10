@@ -1,13 +1,15 @@
 import * as React from 'react'
 import LandingNav from '../components/LandingNav'
 import LandingPage from '../components/LandingPage'
+import Footer from '../components/Footer'
 
 const IndexPage: React.FC = () => {
   return (
-    <div>
+    <>
       <LandingNav />
       <LandingPage />
-    </div>
+      <Footer />
+    </>
   )
 }
 
