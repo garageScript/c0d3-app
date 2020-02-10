@@ -10,7 +10,7 @@ type Props = {
 }
 
 const Card: React.FC<Props> = props => {
-  const classes = `col-sm-${props.classes ||
+  const classes = `${props.classes ||
     'col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto'}`
   return (
     <div className="row mt-5">
