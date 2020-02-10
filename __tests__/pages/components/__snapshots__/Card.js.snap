@@ -5,7 +5,7 @@ exports[`Snapshot for Card Card 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
   >
     <div
       className="card-body text-center pt-5 pb-5"
@@ -28,7 +28,7 @@ exports[`Snapshot for Card Card with Childrens 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
   >
     <div
       className="card-body text-center pt-5 pb-5"
@@ -83,7 +83,7 @@ exports[`Snapshot for Card Card with Success 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
   >
     <div
       className="card-body text-center pt-5 pb-5"
@@ -130,7 +130,7 @@ exports[`Snapshot for Card Card with Text 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
   >
     <div
       className="card-body text-center pt-5 pb-5"
