@@ -5,7 +5,7 @@ import '../scss/index.scss'
 
 storiesOf('Button', module)
   .add('color with text', () => {
-    return <Button text="Click Me" color="primary" />
+    return <Button text="Click Me" btnType="primary" />
   })
   .add('border with text', () => {
     return <Button text="Click Me" />
