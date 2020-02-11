@@ -27,7 +27,7 @@ const LandingNav = () => {
         </div>
         <div>
           <Link href="/login">
-            <a className="btn border mr-3">Login</a>
+            <a className="btn btn-secondary border mr-3">Login</a>
           </Link>
         </div>
       </div>

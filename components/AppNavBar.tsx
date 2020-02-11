@@ -21,8 +21,8 @@ const AppNavBar = () => {
           </li>
         </ul>
       </div>
-      <Button color="secondary" initial="SZ" text="Song" />
-      <Button color="secondary" text="Logout" />
+      <Button btnType="secondary" initial="SZ" text="Song" />
+      <Button btnType="secondary" text="Logout" />
     </nav>
   )
 }

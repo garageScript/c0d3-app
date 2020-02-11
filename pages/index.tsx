@@ -8,7 +8,7 @@ const IndexPage: React.FC = () => {
     <>
       <LandingNav />
       <LandingPage />
-      <Footer />
+      <Footer footerType="py-5 bg-white text-muted" />
     </>
   )
 }
