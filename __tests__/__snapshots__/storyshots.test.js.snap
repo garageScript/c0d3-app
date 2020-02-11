@@ -1351,3 +1351,149 @@ exports[`Storyshots Layout Without Layout 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Signup Page Signup Page 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <a
+            className="nav-item nav-link active"
+            href="#"
+          >
+            Home 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#learning"
+          >
+            Learning Process
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#journey"
+          >
+            Journey
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            className="card-text"
+          />
+          <form>
+            <div
+              className="form-group "
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3"
+                placeholder="Email address"
+                type="text"
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3"
+                placeholder="Username"
+                type="text"
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3"
+                placeholder="Password"
+                type="password"
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3"
+                placeholder="First name"
+                type="text"
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3"
+                placeholder="Last name"
+                type="text"
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                type="button"
+              >
+                Create Account
+              </button>
+              <p
+                className="text-black-50"
+              >
+                Already have an account?
+                 
+                <a
+                  className="text-primary"
+                  href="/login"
+                >
+                  Login
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
