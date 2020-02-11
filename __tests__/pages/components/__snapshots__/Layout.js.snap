@@ -53,7 +53,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn border mr-3"
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}

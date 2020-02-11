@@ -52,7 +52,7 @@ exports[`Landing <LandingNav /> 1`] = `
     </div>
     <div>
       <a
-        className="btn border mr-3"
+        className="btn btn-secondary border mr-3"
         href="/login"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -432,5 +432,17 @@ exports[`Landing <LandingPage /> 1`] = `
       Get Started
     </a>
   </div>
+  <footer
+    className="mt-5 font-weight-light text-center pb-5"
+    style={
+      Object {
+        "color": "#9da3a6",
+      }
+    }
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;

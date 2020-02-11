@@ -199,6 +199,14 @@ const LandingPage: React.FC = () => {
           Get Started
         </a>
       </div>
+      <footer
+        className="mt-5 font-weight-light text-center pb-5"
+        style={{ color: '#9da3a6' }}
+      >
+        &copy; Copyright 2020 GarageScript
+        <br />
+        All Rights Reserved
+      </footer>
     </div>
   )
 }
