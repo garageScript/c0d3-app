@@ -1,0 +1,1353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Border With Text 1`] = `
+<button
+  className="btn border"
+>
+  Click Me
+</button>
+`;
+
+exports[`Storyshots Button Color Badge Button 1`] = `
+<button
+  className="btn border"
+>
+  <small
+    className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"
+  >
+    SZ
+  </small>
+  Song
+</button>
+`;
+
+exports[`Storyshots Button Color With Text 1`] = `
+<button
+  className="btn btn-primary"
+>
+  Click Me
+</button>
+`;
+
+exports[`Storyshots Card Basic 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card With Children 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      >
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+      </p>
+      <div
+        className="input-group mb-3"
+      >
+        <div
+          className="input-group-prepend"
+        >
+          <span
+            className="input-group-text"
+            id="inputGroup-sizing-default"
+          >
+            Default
+          </span>
+        </div>
+        <input
+          aria-describedby="inputGroup-sizing-default"
+          aria-label="Sizing example input"
+          className="form-control"
+          type="text"
+        />
+        <div
+          className="col-5"
+        >
+          <button
+            className="btn btn-dark"
+            type="button"
+          >
+            Dark
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card With Classes 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-3 offset-8 bg-dark text-white-50 "
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      >
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card With Success 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <svg
+        className="mb-4"
+        height="100px"
+        viewBox="0 0 426.667 426.667"
+        width="100px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          'data-old_color'="#000000"
+          'data-original'="#000000"
+          className="active-path"
+          d="M293.333 135.04L190.08 240.213l-52.907-53.12-28.373 28.374 83.413 83.2 133.974-129.92z"
+          fill="#00CF92"
+        />
+        <path
+          'data-old_color'="#000000"
+          'data-original'="#000000"
+          className="active-path"
+          d="M213.333 0C95.513 0 0 95.513 0 213.333s95.513 213.333 213.333 213.333 213.333-95.513 213.333-213.333S331.154 0 213.333 0zm0 388.053c-96.495 0-174.72-78.225-174.72-174.72s78.225-174.72 174.72-174.72c96.446.117 174.602 78.273 174.72 174.72 0 96.496-78.224 174.72-174.72 174.72z"
+          fill="#00CF92"
+        />
+      </svg>
+      <h1
+        className="card-title h2 font-weight-bold"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      >
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card With Text 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      >
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputGroup Disabled 1`] = `
+<div
+  className="input-group  col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={true}
+    onChange={[Function]}
+    placeholder="Type in your email address"
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={true}
+      id="button-addon2"
+      onClick={[Function]}
+      type="button"
+    >
+      Join Waitlist
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputGroup Size Default 1`] = `
+<div
+  className="input-group  col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={false}
+    onChange={[Function]}
+    placeholder="Type in your email address"
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="button-addon2"
+      onClick={[Function]}
+      type="button"
+    >
+      Join Waitlist
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputGroup Size Large 1`] = `
+<div
+  className="input-group input-group-lg col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={false}
+    onChange={[Function]}
+    placeholder="Type in your email address"
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="button-addon2"
+      onClick={[Function]}
+      type="button"
+    >
+      Join Waitlist
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots InputGroup Size Small 1`] = `
+<div
+  className="input-group input-group-sm col-6"
+>
+  <input
+    aria-describedby="basic-addon2"
+    aria-label="email"
+    className="form-control"
+    disabled={false}
+    onChange={[Function]}
+    placeholder="Type in your email address"
+    type="text"
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      id="button-addon2"
+      onClick={[Function]}
+      type="button"
+    >
+      Join Waitlist
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Landing Page Footer 1`] = `
+<footer
+  className="mt-5 font-weight-light text-center pb-5 text-secondary"
+>
+  © Copyright 2020 GarageScript
+  <br />
+  All Rights Reserved
+</footer>
+`;
+
+exports[`Storyshots Landing Page Landing Nav 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+>
+  <div
+    className="container"
+  >
+    <a
+      className="navbar-brand text-primary font-weight-bold"
+      href="#"
+    >
+      C0D3
+    </a>
+    <div
+      id="navbarNav"
+    >
+      <div
+        className="navbar-nav collapse navbar-collapse"
+      >
+        <a
+          className="nav-item nav-link active"
+          href="#"
+        >
+          Home 
+          <span
+            className="sr-only"
+          >
+            (current)
+          </span>
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="#learning"
+        >
+          Learning Process
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="#journey"
+        >
+          Journey
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="https://chat.c0d3.com"
+        >
+          Help
+        </a>
+      </div>
+    </div>
+    <div>
+      <a
+        className="btn border mr-3"
+        href="/login"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Login
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots Landing Page Landing Page 1`] = `
+<div
+  className="bg-white"
+>
+  <div
+    className="container text-center pb-5"
+  >
+    <div
+      className="row justify-center pt-5"
+    >
+      <div
+        className="col-md-6 offset-md-3"
+      >
+        <img
+          alt="Hero Image"
+          className="img-fluid"
+          src="header-01.svg"
+        />
+      </div>
+    </div>
+    <div
+      className="row justify-center mt-5"
+    >
+      <div
+        className="col-md-8 offset-md-2"
+      >
+        <h1
+          style={
+            Object {
+              "fontSize": "3.8rem",
+              "fontWeight": 900,
+            }
+          }
+        >
+          Become a Software Engineer the Hard Way
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row justify-center mt-4"
+    >
+      <div
+        className="col-md-10 offset-md-1"
+      >
+        <p
+          className="font-weight-light h4"
+          style={
+            Object {
+              "lineHeight": 1.5,
+            }
+          }
+        >
+          Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
+        </p>
+      </div>
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col-md-6 offset-md-3 mb-5"
+      >
+        <a
+          className="btn btn-primary py-3 px-5"
+          href="https://c0d3.com/book"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col-md-6 offset-md-3"
+      >
+        <h1
+          className="display-4 font-weight-bold"
+          id="learning"
+        >
+          Learning Process
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col-md-10 offset-md-1"
+      >
+        <p
+          className="font-weight-light h4"
+          style={
+            Object {
+              "lineHeight": 1.5,
+            }
+          }
+        >
+          Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
+        </p>
+      </div>
+    </div>
+    <div
+      className="row mt-5 align-items-start mb-5"
+    >
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt=""
+          src="choose-01.svg"
+          style={
+            Object {
+              "height": "170px",
+            }
+          }
+        />
+        <h4
+          className="mt-3 font-weight-bold"
+        >
+          Modern Curriculum
+        </h4>
+        <p
+          className="mt-4 font-weight-light"
+        >
+          First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
+        </p>
+      </div>
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt=""
+          src="choose-02.svg"
+          style={
+            Object {
+              "height": "170px",
+            }
+          }
+        />
+        <h4
+          className="mt-3 font-weight-bold"
+        >
+          Support
+        </h4>
+        <p
+          className="mt-4 font-weight-light"
+        >
+          One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
+        </p>
+      </div>
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt=""
+          src="choose-03.svg"
+          style={
+            Object {
+              "height": "170px",
+            }
+          }
+        />
+        <h4
+          className="mt-3 font-weight-bold"
+        >
+          Work Experience
+        </h4>
+        <p
+          className="mt-4 font-weight-light"
+        >
+          Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container-fluid py-5"
+    style={
+      Object {
+        "background": "rgb(84,64,216)",
+        "color": "white",
+      }
+    }
+  >
+    <div
+      className="container mt-5"
+    >
+      <h1
+        className="mt-5 display-4 font-weight-bold text-center"
+        id="journey"
+      >
+        Your Learning Journey
+      </h1>
+      <p
+        className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+        style={
+          Object {
+            "lineHeight": 1.5,
+          }
+        }
+      >
+        Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
+      </p>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 order-md-2 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-01.svg"
+          />
+        </div>
+        <div
+          className="col-md-5 offset-md-1 order-md-1"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Creating an account
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 offset-md-1 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-02.svg"
+          />
+        </div>
+        <div
+          className="col-md-5"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Curriculum
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
+             
+            <a
+              className="text-warning"
+              href="https://www.meetup.com/San-Jose-C0D3/"
+            >
+              meetup groups
+            </a>
+            . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 order-md-2 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-03.svg"
+          />
+        </div>
+        <div
+          className="col-md-5 order-md-1 offset-md-1"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Pay It Forward
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 offset-md-1 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-04.svg"
+          />
+        </div>
+        <div
+          className="col-md-5"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Work Experience
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container my-5 py-5 text-center"
+  >
+    <h1
+      className="display-4 font-weight-bold"
+    >
+      Get Started Now
+    </h1>
+    <p
+      className="mt-3 font-weight-light"
+      style={
+        Object {
+          "fontSize": "1.5rem",
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      Start your journey to being a full stack software engineer
+    </p>
+    <a
+      className="btn btn-primary py-3 px-5 mt-4"
+      href="https://c0d3.com/book"
+    >
+      Get Started
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Landing Page Page 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <a
+            className="nav-item nav-link active"
+            href="#"
+          >
+            Home 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#learning"
+          >
+            Learning Process
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#journey"
+          >
+            Journey
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="bg-white"
+  >
+    <div
+      className="container text-center pb-5"
+    >
+      <div
+        className="row justify-center pt-5"
+      >
+        <div
+          className="col-md-6 offset-md-3"
+        >
+          <img
+            alt="Hero Image"
+            className="img-fluid"
+            src="header-01.svg"
+          />
+        </div>
+      </div>
+      <div
+        className="row justify-center mt-5"
+      >
+        <div
+          className="col-md-8 offset-md-2"
+        >
+          <h1
+            style={
+              Object {
+                "fontSize": "3.8rem",
+                "fontWeight": 900,
+              }
+            }
+          >
+            Become a Software Engineer the Hard Way
+          </h1>
+        </div>
+      </div>
+      <div
+        className="row justify-center mt-4"
+      >
+        <div
+          className="col-md-10 offset-md-1"
+        >
+          <p
+            className="font-weight-light h4"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5"
+      >
+        <div
+          className="col-md-6 offset-md-3 mb-5"
+        >
+          <a
+            className="btn btn-primary py-3 px-5"
+            href="https://c0d3.com/book"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+      <div
+        className="row mt-5"
+      >
+        <div
+          className="col-md-6 offset-md-3"
+        >
+          <h1
+            className="display-4 font-weight-bold"
+            id="learning"
+          >
+            Learning Process
+          </h1>
+        </div>
+      </div>
+      <div
+        className="row mt-5"
+      >
+        <div
+          className="col-md-10 offset-md-1"
+        >
+          <p
+            className="font-weight-light h4"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 align-items-start mb-5"
+      >
+        <div
+          className="col-md-4"
+        >
+          <img
+            alt=""
+            src="choose-01.svg"
+            style={
+              Object {
+                "height": "170px",
+              }
+            }
+          />
+          <h4
+            className="mt-3 font-weight-bold"
+          >
+            Modern Curriculum
+          </h4>
+          <p
+            className="mt-4 font-weight-light"
+          >
+            First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
+          </p>
+        </div>
+        <div
+          className="col-md-4"
+        >
+          <img
+            alt=""
+            src="choose-02.svg"
+            style={
+              Object {
+                "height": "170px",
+              }
+            }
+          />
+          <h4
+            className="mt-3 font-weight-bold"
+          >
+            Support
+          </h4>
+          <p
+            className="mt-4 font-weight-light"
+          >
+            One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
+          </p>
+        </div>
+        <div
+          className="col-md-4"
+        >
+          <img
+            alt=""
+            src="choose-03.svg"
+            style={
+              Object {
+                "height": "170px",
+              }
+            }
+          />
+          <h4
+            className="mt-3 font-weight-bold"
+          >
+            Work Experience
+          </h4>
+          <p
+            className="mt-4 font-weight-light"
+          >
+            Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="container-fluid py-5"
+      style={
+        Object {
+          "background": "rgb(84,64,216)",
+          "color": "white",
+        }
+      }
+    >
+      <div
+        className="container mt-5"
+      >
+        <h1
+          className="mt-5 display-4 font-weight-bold text-center"
+          id="journey"
+        >
+          Your Learning Journey
+        </h1>
+        <p
+          className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+          style={
+            Object {
+              "lineHeight": 1.5,
+            }
+          }
+        >
+          Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
+        </p>
+        <div
+          className="row mt-5 pb-5"
+        >
+          <div
+            className="col-md-5 order-md-2 text-center"
+          >
+            <img
+              alt=""
+              className="mb-3 img-fluid"
+              src="journey-01.svg"
+            />
+          </div>
+          <div
+            className="col-md-5 offset-md-1 order-md-1"
+          >
+            <h2
+              className="font-weight-bold"
+            >
+              Creating an account
+            </h2>
+            <p
+              className="mt-3 font-weight-light"
+              style={
+                Object {
+                  "lineHeight": 1.5,
+                }
+              }
+            >
+              After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
+            </p>
+          </div>
+        </div>
+        <div
+          className="row mt-5 pb-5"
+        >
+          <div
+            className="col-md-5 offset-md-1 text-center"
+          >
+            <img
+              alt=""
+              className="mb-3 img-fluid"
+              src="journey-02.svg"
+            />
+          </div>
+          <div
+            className="col-md-5"
+          >
+            <h2
+              className="font-weight-bold"
+            >
+              Curriculum
+            </h2>
+            <p
+              className="mt-3 font-weight-light"
+              style={
+                Object {
+                  "lineHeight": 1.5,
+                }
+              }
+            >
+              Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
+               
+              <a
+                className="text-warning"
+                href="https://www.meetup.com/San-Jose-C0D3/"
+              >
+                meetup groups
+              </a>
+              . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
+            </p>
+          </div>
+        </div>
+        <div
+          className="row mt-5 pb-5"
+        >
+          <div
+            className="col-md-5 order-md-2 text-center"
+          >
+            <img
+              alt=""
+              className="mb-3 img-fluid"
+              src="journey-03.svg"
+            />
+          </div>
+          <div
+            className="col-md-5 order-md-1 offset-md-1"
+          >
+            <h2
+              className="font-weight-bold"
+            >
+              Pay It Forward
+            </h2>
+            <p
+              className="mt-3 font-weight-light"
+              style={
+                Object {
+                  "lineHeight": 1.5,
+                }
+              }
+            >
+              When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
+            </p>
+          </div>
+        </div>
+        <div
+          className="row mt-5 pb-5"
+        >
+          <div
+            className="col-md-5 offset-md-1 text-center"
+          >
+            <img
+              alt=""
+              className="mb-3 img-fluid"
+              src="journey-04.svg"
+            />
+          </div>
+          <div
+            className="col-md-5"
+          >
+            <h2
+              className="font-weight-bold"
+            >
+              Work Experience
+            </h2>
+            <p
+              className="mt-3 font-weight-light"
+              style={
+                Object {
+                  "lineHeight": 1.5,
+                }
+              }
+            >
+              After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="container my-5 py-5 text-center"
+    >
+      <h1
+        className="display-4 font-weight-bold"
+      >
+        Get Started Now
+      </h1>
+      <p
+        className="mt-3 font-weight-light"
+        style={
+          Object {
+            "fontSize": "1.5rem",
+            "lineHeight": 1.5,
+          }
+        }
+      >
+        Start your journey to being a full stack software engineer
+      </p>
+      <a
+        className="btn btn-primary py-3 px-5 mt-4"
+        href="https://c0d3.com/book"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Layout With Layout 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <a
+            className="nav-item nav-link active"
+            href="#"
+          >
+            Home 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#learning"
+          >
+            Learning Process
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#journey"
+          >
+            Journey
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+      style={
+        Object {
+          "height": "100vh",
+        }
+      }
+    >
+      <div
+        className="card col-6"
+      >
+        <div
+          className="card-body"
+        >
+          <h5
+            className="card-title"
+          >
+            Card title
+          </h5>
+          <p
+            className="card-text"
+          >
+            Some quick example text to build on the card title and content.
+          </p>
+          <a
+            className="btn btn-primary"
+            href="#"
+          >
+            Go somewhere
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Layout Without Layout 1`] = `
+<div
+  className="row"
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <div
+    className="card col-6"
+  >
+    <div
+      className="card-body"
+    >
+      <h5
+        className="card-title"
+      >
+        Card title
+      </h5>
+      <p
+        className="card-text"
+      >
+        Some quick example text to build on the card title and content.
+      </p>
+      <a
+        className="btn btn-primary"
+        href="#"
+      >
+        Go somewhere
+      </a>
+    </div>
+  </div>
+</div>
+`;
