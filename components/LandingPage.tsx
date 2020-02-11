@@ -184,7 +184,7 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 py-5 text-center">
+      <div className="container mt-5 py-5 text-center">
         <h1 className="display-4 font-weight-bold">Get Started Now</h1>
         <p
           className="mt-3 font-weight-light"

@@ -2,7 +2,7 @@
 
 exports[`Storyshots Button Border With Text 1`] = `
 <button
-  className="btn border"
+  className="btn border btn-secondary"
 >
   Click Me
 </button>
@@ -10,7 +10,7 @@ exports[`Storyshots Button Border With Text 1`] = `
 
 exports[`Storyshots Button Color Badge Button 1`] = `
 <button
-  className="btn border"
+  className="btn border btn-secondary"
 >
   <small
     className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"
@@ -382,7 +382,7 @@ exports[`Storyshots Landing Page Landing Nav 1`] = `
     </div>
     <div>
       <a
-        className="btn border mr-3"
+        className="btn btn-secondary border mr-3"
         href="/login"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -737,7 +737,7 @@ exports[`Storyshots Landing Page Landing Page 1`] = `
     </div>
   </div>
   <div
-    className="container my-5 py-5 text-center"
+    className="container mt-5 py-5 text-center"
   >
     <h1
       className="display-4 font-weight-bold"
@@ -818,7 +818,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn border mr-3"
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1170,7 +1170,7 @@ Array [
       </div>
     </div>
     <div
-      className="container my-5 py-5 text-center"
+      className="container mt-5 py-5 text-center"
     >
       <h1
         className="display-4 font-weight-bold"
@@ -1259,7 +1259,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn border mr-3"
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}

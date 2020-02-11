@@ -1,25 +1,18 @@
 import * as React from 'react'
 
 type Props = {
-  color: string
+  btnType?: string
   text: string
   initial?: string | undefined
 }
 
-const Button = ({ color, initial, text }: Props) => {
+const Button = ({ btnType, initial, text }: Props) => {
+  const btnClass = btnType ? `btn-${btnType}` : 'border btn-secondary'
   if (!initial) {
-    return (
-      <button
-        className={`btn ${color === 'primary' ? 'btn-primary' : 'border'}`}
-      >
-        {text}
-      </button>
-    )
+    return <button className={`btn ${btnClass}`}>{text}</button>
   } else {
     return (
-      <button
-        className={`btn ${color === 'primary' ? 'btn-primary' : 'border'}`}
-      >
+      <button className={`btn ${btnClass}`}>
         <small className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1">
           {initial}
         </small>

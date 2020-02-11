@@ -8,11 +8,9 @@ export default {
 }
 
 export const colorWithText: React.FC = () => (
-  <Button text="Click Me" color="primary" />
+  <Button text="Click Me" btnType="primary" />
 )
-export const borderWithText: React.FC = () => (
-  <Button text="Click Me" color="secondary" />
-)
+export const borderWithText: React.FC = () => <Button text="Click Me" />
 export const colorBadgeButton: React.FC = () => (
-  <Button text="Song" initial="SZ" color="secondary" />
+  <Button text="Song" initial="SZ" />
 )
