@@ -2,7 +2,7 @@
 
 exports[`Storyshots Button Border With Text 1`] = `
 <button
-  className="btn btn-secondary"
+  className="btn border btn-secondary"
 >
   Click Me
 </button>
@@ -10,7 +10,7 @@ exports[`Storyshots Button Border With Text 1`] = `
 
 exports[`Storyshots Button Color Badge Button 1`] = `
 <button
-  className="btn btn-secondary"
+  className="btn border btn-secondary"
 >
   <small
     className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"
