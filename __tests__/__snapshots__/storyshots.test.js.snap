@@ -737,7 +737,7 @@ exports[`Storyshots Landing Page Landing Page 1`] = `
     </div>
   </div>
   <div
-    className="container my-5 py-5 text-center"
+    className="container mt-5 py-5 text-center"
   >
     <h1
       className="display-4 font-weight-bold"
@@ -762,18 +762,6 @@ exports[`Storyshots Landing Page Landing Page 1`] = `
       Get Started
     </a>
   </div>
-  <footer
-    className="mt-5 font-weight-light text-center pb-5"
-    style={
-      Object {
-        "color": "#9da3a6",
-      }
-    }
-  >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
-  </footer>
 </div>
 `;
 
@@ -1182,7 +1170,7 @@ Array [
       </div>
     </div>
     <div
-      className="container my-5 py-5 text-center"
+      className="container mt-5 py-5 text-center"
     >
       <h1
         className="display-4 font-weight-bold"
@@ -1207,18 +1195,6 @@ Array [
         Get Started
       </a>
     </div>
-    <footer
-      className="mt-5 font-weight-light text-center pb-5"
-      style={
-        Object {
-          "color": "#9da3a6",
-        }
-      }
-    >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
-    </footer>
   </div>,
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-secondary"
