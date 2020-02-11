@@ -34,13 +34,13 @@ exports[`Storyshots Card Basic 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold"
+        className="card-title h2 font-weight-bold mb-5"
       >
         Title of the card
       </h1>
@@ -57,13 +57,13 @@ exports[`Storyshots Card With Children 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold"
+        className="card-title h2 font-weight-bold mb-5"
       >
         Title of the card
       </h1>
@@ -118,7 +118,7 @@ exports[`Storyshots Card With Classes 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold"
+        className="card-title h2 font-weight-bold mb-5"
       >
         Title of the card
       </h1>
@@ -137,7 +137,7 @@ exports[`Storyshots Card With Success 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
       className="card-body text-center pt-5 pb-5"
@@ -165,7 +165,7 @@ exports[`Storyshots Card With Success 1`] = `
         />
       </svg>
       <h1
-        className="card-title h2 font-weight-bold"
+        className="card-title h2 font-weight-bold mb-5"
       >
         Title of the card
       </h1>
@@ -184,13 +184,13 @@ exports[`Storyshots Card With Text 1`] = `
   className="row mt-5"
 >
   <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold"
+        className="card-title h2 font-weight-bold mb-5"
       >
         Title of the card
       </h1>

@@ -11,7 +11,7 @@ type Props = {
 
 const Card: React.FC<Props> = props => {
   const classes = `${props.classes ||
-    'col-sm-8 col-md-7 col-lg-6 col-xl-4 m-auto'}`
+    'col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0'}`
   return (
     <div className="row mt-5">
       <div className={`card shadow-sm ${classes}`}>
@@ -19,7 +19,7 @@ const Card: React.FC<Props> = props => {
           {props.success && (
             <Checked className="mb-4" width="100px" height="100px" />
           )}
-          <h1 className="card-title h2 font-weight-bold">{props.title}</h1>
+          <h1 className="card-title h2 font-weight-bold mb-5">{props.title}</h1>
           <p className="card-text">{props.text}</p>
           {props.children}
         </div>
