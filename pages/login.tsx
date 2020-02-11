@@ -1,16 +1,34 @@
 import * as React from 'react'
+import Layout from '../components/Layout'
+import Card from '../components/Card'
 
 const Login: React.FC = () => {
   return (
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Panel title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Panel subtitle</h6>
-        <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-        <a href="#!" class="card-link">Card link</a>
-        <a href="#!" class="card-link">Another link</a>
-      </div>
-    </div>
+    <Layout>
+      <Card title="Login">
+        <form>
+          <div className="form-group">
+            <input
+              placeholder="Email address or username"
+              type="text"
+              className="form-control form-control-lg font-weight-light mb-3"
+            />
+          </div>
+          <input
+            placeholder="Password"
+            type="text"
+            className="form-control form-control-lg font-weight-light mb-3"
+          />
+          <button
+            type="button"
+            className="btn btn-primary btn-lg btn-block mb-3"
+          >
+            Login to Your Account
+          </button>
+          <a href="">Forgot your password?</a>
+        </form>
+      </Card>
+    </Layout>
   )
 }
 
