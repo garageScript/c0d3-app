@@ -6,20 +6,22 @@ const LandingNav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
-        <a className="navbar-brand text-primary font-weight-bold" href="#">
-          C0D3
-        </a>
+        <Link href="/#">
+          <a className="navbar-brand text-primary font-weight-bold">C0D3</a>
+        </Link>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            <a className="nav-item nav-link active" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-            <a className="nav-item nav-link" href="#learning">
-              Learning Process
-            </a>
-            <a className="nav-item nav-link" href="#journey">
-              Journey
-            </a>
+            <Link href="/#">
+              <a className="nav-item nav-link active">
+                Home <span className="sr-only">(current)</span>
+              </a>
+            </Link>
+            <Link href="/#learning">
+              <a className="nav-item nav-link">Learning Process</a>
+            </Link>
+            <Link href="/#journey">
+              <a className="nav-item nav-link">Journey</a>
+            </Link>
             <a className="nav-item nav-link" href="https://chat.c0d3.com">
               Help
             </a>
