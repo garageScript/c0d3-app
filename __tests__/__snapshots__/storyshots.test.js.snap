@@ -1435,55 +1435,124 @@ Array [
           <p
             className="card-text"
           />
-          <form>
+          <form
+            action="#"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
             <div
               className="form-group "
             >
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                autoComplete="on"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                id="email"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Email address"
-                type="text"
+                type="email"
+                value={
+                  Object {
+                    "email": "",
+                    "firstName": "",
+                    "lastName": "",
+                    "password": "",
+                    "userName": "",
+                  }
+                }
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                autoComplete="on"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                id="userName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Username"
                 type="text"
+                value={
+                  Object {
+                    "email": "",
+                    "firstName": "",
+                    "lastName": "",
+                    "password": "",
+                    "userName": "",
+                  }
+                }
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                autoComplete="on"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                id="password"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Password"
                 type="password"
+                value={
+                  Object {
+                    "email": "",
+                    "firstName": "",
+                    "lastName": "",
+                    "password": "",
+                    "userName": "",
+                  }
+                }
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                autoComplete="on"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                id="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="First name"
                 type="text"
+                value={
+                  Object {
+                    "email": "",
+                    "firstName": "",
+                    "lastName": "",
+                    "password": "",
+                    "userName": "",
+                  }
+                }
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                autoComplete="on"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                id="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Last name"
                 type="text"
+                value={
+                  Object {
+                    "email": "",
+                    "firstName": "",
+                    "lastName": "",
+                    "password": "",
+                    "userName": "",
+                  }
+                }
               />
               <button
                 className="btn btn-primary btn-lg btn-block mb-3"
-                type="button"
+                type="submit"
               >
                 Create Account
               </button>
-              <p
-                className="text-black-50"
-              >
-                Already have an account?
-                 
-                <a
-                  className="text-primary"
-                  href="/login"
-                >
-                  Login
-                </a>
-              </p>
             </div>
           </form>
+          <p
+            className="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              className="text-primary"
+              href="/login"
+            >
+              Login
+            </a>
+          </p>
         </div>
       </div>
     </div>
