@@ -13,6 +13,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@types/yup": "^0.26.30",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.4.1",
     "formik": "^2.1.4",
