@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
+import Link from 'next/link'
 
 const Login: React.FC = () => {
   return (
@@ -25,7 +26,9 @@ const Login: React.FC = () => {
           >
             Login to Your Account
           </button>
-          <a href="">Forgot your password?</a>
+          <Link href="/forgotPassword">
+            <a href="">Forgot your password?</a>
+          </Link>
         </form>
       </Card>
     </Layout>
