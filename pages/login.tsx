@@ -27,7 +27,7 @@ const Login: React.FC = () => {
             Login to Your Account
           </button>
           <Link href="/forgotPassword">
-            <a href="">Forgot your password?</a>
+            <a>Forgot your password?</a>
           </Link>
         </form>
       </Card>
