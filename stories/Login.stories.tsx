@@ -6,4 +6,4 @@ export default {
   title: 'Login Page'
 }
 
-export const signupPage: React.FC = () => <Login />
+export const loginPage: React.FC = () => <Login />
