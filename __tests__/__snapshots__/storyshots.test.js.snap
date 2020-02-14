@@ -1435,55 +1435,76 @@ Array [
           <p
             className="card-text"
           />
-          <form>
+          <form
+            action="#"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
             <div
               className="form-group "
             >
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Email address"
-                type="text"
+                type="email"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="userName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Username"
-                type="text"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Password"
                 type="password"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="First name"
-                type="text"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Last name"
-                type="text"
+                value=""
               />
               <button
                 className="btn btn-primary btn-lg btn-block mb-3"
-                type="button"
+                type="submit"
               >
                 Create Account
               </button>
-              <p
-                className="text-black-50"
-              >
-                Already have an account?
-                 
-                <a
-                  className="text-primary"
-                  href="/login"
-                >
-                  Login
-                </a>
-              </p>
             </div>
           </form>
+          <p
+            className="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              className="text-primary"
+              href="/login"
+            >
+              Login
+            </a>
+          </p>
         </div>
       </div>
     </div>
