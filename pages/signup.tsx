@@ -1,55 +1,67 @@
 import React from 'react'
+import { Formik, Form, Field } from 'formik'
+
 import Card from '../components/Card'
 import Layout from '../components/Layout'
+import Input from '../components/Input'
+import { signupValidation } from '../helpers/formValidation'
 
-const Signup: React.FC = () => {
-  return (
-    <Layout>
-      <Card title="Create Account">
-        <form>
+const initialValues = {
+  email: '',
+  username: '',
+  password: '',
+  firstName: '',
+  lastName: ''
+}
+
+const Signup: React.FC = () => (
+  <Layout>
+    <Card title="Create Account">
+      <Formik
+        validateOnBlur
+        initialValues={initialValues}
+        validationSchema={signupValidation}
+        onSubmit={values => console.log('Submited values', values)}
+      >
+        <Form>
           <div className="form-group ">
-            <input
+            <Field
+              name="email"
               placeholder="Email address"
-              type="text"
-              className="form-control form-control-lg font-weight-light mb-3"
+              type="email"
+              as={Input}
             />
-            <input
-              placeholder="Username"
-              type="text"
-              className="form-control form-control-lg font-weight-light mb-3"
-            />
-            <input
+
+            <Field name="username" placeholder="Username" as={Input} />
+
+            <Field
+              name="password"
               placeholder="Password"
               type="password"
-              className="form-control form-control-lg font-weight-light mb-3"
+              as={Input}
             />
-            <input
-              placeholder="First name"
-              type="text"
-              className="form-control form-control-lg font-weight-light mb-3"
-            />
-            <input
-              placeholder="Last name"
-              type="text"
-              className="form-control form-control-lg font-weight-light mb-3"
-            />
+
+            <Field name="firstName" placeholder="First name" as={Input} />
+
+            <Field name="lastName" placeholder="Last name" as={Input} />
+
             <button
-              type="button"
               className="btn btn-primary btn-lg btn-block mb-3"
+              type="submit"
             >
               Create Account
             </button>
-            <p className="text-black-50">
-              Already have an account?{' '}
-              <a href="/login" className="text-primary">
-                Login
-              </a>
-            </p>
           </div>
-        </form>
-      </Card>
-    </Layout>
-  )
-}
+        </Form>
+      </Formik>
+      <p className="text-black-50">
+        Already have an account?{' '}
+        <a href="/login" className="text-primary">
+          Login
+        </a>
+      </p>
+    </Card>
+  </Layout>
+)
 
 export default Signup

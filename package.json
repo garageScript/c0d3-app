@@ -13,14 +13,17 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@types/yup": "^0.26.30",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.4.1",
+    "formik": "^2.1.4",
     "identity-obj-proxy": "^3.0.0",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "yup": "^0.28.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

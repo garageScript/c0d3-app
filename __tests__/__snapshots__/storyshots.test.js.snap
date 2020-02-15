@@ -1352,6 +1352,132 @@ exports[`Storyshots Layout Without Layout 1`] = `
 </div>
 `;
 
+exports[`Storyshots Login Page Login Page 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <a
+            className="nav-item nav-link active"
+            href="#"
+          >
+            Home 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#learning"
+          >
+            Learning Process
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#journey"
+          >
+            Journey
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Login
+          </h1>
+          <p
+            className="card-text"
+          />
+          <form>
+            <div
+              className="form-group"
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3"
+                placeholder="Email address or username"
+                type="text"
+              />
+            </div>
+            <input
+              className="form-control form-control-lg font-weight-light mb-3"
+              placeholder="Password"
+              type="text"
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              type="button"
+            >
+              Login to Your Account
+            </button>
+            <a
+              href="/forgotPassword"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Forgot your password?
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
 exports[`Storyshots Signup Page Signup Page 1`] = `
 Array [
   <nav
@@ -1435,55 +1561,76 @@ Array [
           <p
             className="card-text"
           />
-          <form>
+          <form
+            action="#"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
             <div
               className="form-group "
             >
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Email address"
-                type="text"
+                type="email"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="username"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Username"
-                type="text"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Password"
                 type="password"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="First name"
-                type="text"
+                value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                name="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
                 placeholder="Last name"
-                type="text"
+                value=""
               />
               <button
                 className="btn btn-primary btn-lg btn-block mb-3"
-                type="button"
+                type="submit"
               >
                 Create Account
               </button>
-              <p
-                className="text-black-50"
-              >
-                Already have an account?
-                 
-                <a
-                  className="text-primary"
-                  href="/login"
-                >
-                  Login
-                </a>
-              </p>
             </div>
           </form>
+          <p
+            className="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              className="text-primary"
+              href="/login"
+            >
+              Login
+            </a>
+          </p>
         </div>
       </div>
     </div>
