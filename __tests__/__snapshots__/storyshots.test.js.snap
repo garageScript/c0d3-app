@@ -1679,7 +1679,7 @@ Array [
               />
               <input
                 className="form-control form-control-lg font-weight-light mb-3 "
-                name="userName"
+                name="username"
                 onBlur={[Function]}
                 onChange={[Function]}
                 placeholder="Username"
