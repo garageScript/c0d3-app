@@ -8,7 +8,7 @@ import { signupValidation } from '../helpers/formValidation'
 
 const initialValues = {
   email: '',
-  userName: '',
+  username: '',
   password: '',
   firstName: '',
   lastName: ''
@@ -32,7 +32,7 @@ const Signup: React.FC = () => (
               as={Input}
             />
 
-            <Field name="userName" placeholder="Username" as={Input} />
+            <Field name="username" placeholder="Username" as={Input} />
 
             <Field
               name="password"
