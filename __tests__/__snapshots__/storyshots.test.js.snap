@@ -204,6 +204,105 @@ exports[`Storyshots Card With Text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Input Email Input 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="email"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Email address"
+    type="email"
+    value="email@domain.com"
+  />
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="emailError"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Email address"
+    type="email"
+    value="inv@lid^email@domain.con"
+  />
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Input Password Input 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="password"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+    value="password"
+  />
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="passwordError"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Email address"
+    type="password"
+    value="123"
+  />
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Input Text Input 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="text"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your text"
+    type="text"
+    value="Some text"
+  />
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="textError"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your text"
+    type="text"
+    value="Wrong value"
+  />
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
 exports[`Storyshots InputGroup Disabled 1`] = `
 <div
   className="input-group  col-6"
