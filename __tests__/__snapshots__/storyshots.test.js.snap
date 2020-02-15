@@ -1,5 +1,156 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots App NavBar Logged In 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+>
+  <div
+    className="container"
+  >
+    <a
+      className="navbar-brand text-primary font-weight-bold"
+      href="/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      C0D3
+    </a>
+    <div
+      id="navbarNav"
+    >
+      <div
+        className="navbar-nav collapse navbar-collapse"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <a
+            className="nav-item nav-link active"
+            href="#"
+          >
+            Curriculum 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="#"
+          >
+            Journey
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        className="btn border btn-secondary"
+      >
+        <small
+          className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"
+        >
+          HW
+        </small>
+        hwong0305
+      </button>
+      <button
+        className="btn border btn-secondary ml-2"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Storyshots App NavBar Logged Out 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+>
+  <div
+    className="container"
+  >
+    <a
+      className="navbar-brand text-primary font-weight-bold"
+      href="/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      C0D3
+    </a>
+    <div
+      id="navbarNav"
+    >
+      <div
+        className="navbar-nav collapse navbar-collapse"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <a
+            className="nav-item nav-link active"
+            href="/#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Home 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/#learning"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learning Process
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://c0d3.com/book"
+          >
+            Resources
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a
+        className="btn btn-secondary border mr-3"
+        href="/login"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Login
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
 exports[`Storyshots Button Border With Text 1`] = `
 <button
   className="btn border btn-secondary"
@@ -322,7 +473,7 @@ exports[`Storyshots InputGroup Size Small 1`] = `
 
 exports[`Storyshots Landing Page Footer 1`] = `
 <footer
-  className="mt-5 font-weight-light text-center pb-5 text-secondary"
+  className="mt-5 font-weight-light text-center pb-5 text-muted"
 >
   © Copyright 2020 GarageScript
   <br />
@@ -339,7 +490,9 @@ exports[`Storyshots Landing Page Landing Nav 1`] = `
   >
     <a
       className="navbar-brand text-primary font-weight-bold"
-      href="#"
+      href="/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       C0D3
     </a>
@@ -349,35 +502,43 @@ exports[`Storyshots Landing Page Landing Nav 1`] = `
       <div
         className="navbar-nav collapse navbar-collapse"
       >
-        <a
-          className="nav-item nav-link active"
-          href="#"
+        <div
+          className="navbar-nav collapse navbar-collapse"
         >
-          Home 
-          <span
-            className="sr-only"
+          <a
+            className="nav-item nav-link active"
+            href="/#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
-            (current)
-          </span>
-        </a>
-        <a
-          className="nav-item nav-link"
-          href="#learning"
-        >
-          Learning Process
-        </a>
-        <a
-          className="nav-item nav-link"
-          href="#journey"
-        >
-          Journey
-        </a>
-        <a
-          className="nav-item nav-link"
-          href="https://chat.c0d3.com"
-        >
-          Help
-        </a>
+            Home 
+            <span
+              className="sr-only"
+            >
+              (current)
+            </span>
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/#learning"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learning Process
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://c0d3.com/book"
+          >
+            Resources
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://chat.c0d3.com"
+          >
+            Help
+          </a>
+        </div>
       </div>
     </div>
     <div>
@@ -775,7 +936,9 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="#"
+        href="/#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
       </a>
@@ -785,35 +948,43 @@ Array [
         <div
           className="navbar-nav collapse navbar-collapse"
         >
-          <a
-            className="nav-item nav-link active"
-            href="#"
+          <div
+            className="navbar-nav collapse navbar-collapse"
           >
-            Home 
-            <span
-              className="sr-only"
+            <a
+              className="nav-item nav-link active"
+              href="/#"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              (current)
-            </span>
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#learning"
-          >
-            Learning Process
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#journey"
-          >
-            Journey
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://chat.c0d3.com"
-          >
-            Help
-          </a>
+              Home 
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
         </div>
       </div>
       <div>
@@ -1197,7 +1368,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
     © Copyright 2020 GarageScript
     <br />
@@ -1216,7 +1387,9 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="#"
+        href="/#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
       </a>
@@ -1226,35 +1399,43 @@ Array [
         <div
           className="navbar-nav collapse navbar-collapse"
         >
-          <a
-            className="nav-item nav-link active"
-            href="#"
+          <div
+            className="navbar-nav collapse navbar-collapse"
           >
-            Home 
-            <span
-              className="sr-only"
+            <a
+              className="nav-item nav-link active"
+              href="/#"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              (current)
-            </span>
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#learning"
-          >
-            Learning Process
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#journey"
-          >
-            Journey
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://chat.c0d3.com"
-          >
-            Help
-          </a>
+              Home 
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
         </div>
       </div>
       <div>
@@ -1307,7 +1488,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
     © Copyright 2020 GarageScript
     <br />
@@ -1362,7 +1543,9 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="#"
+        href="/#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
       </a>
@@ -1372,35 +1555,43 @@ Array [
         <div
           className="navbar-nav collapse navbar-collapse"
         >
-          <a
-            className="nav-item nav-link active"
-            href="#"
+          <div
+            className="navbar-nav collapse navbar-collapse"
           >
-            Home 
-            <span
-              className="sr-only"
+            <a
+              className="nav-item nav-link active"
+              href="/#"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              (current)
-            </span>
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#learning"
-          >
-            Learning Process
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#journey"
-          >
-            Journey
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://chat.c0d3.com"
-          >
-            Help
-          </a>
+              Home 
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
         </div>
       </div>
       <div>
@@ -1469,7 +1660,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
     © Copyright 2020 GarageScript
     <br />
@@ -1488,7 +1679,9 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="#"
+        href="/#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
       </a>
@@ -1498,35 +1691,43 @@ Array [
         <div
           className="navbar-nav collapse navbar-collapse"
         >
-          <a
-            className="nav-item nav-link active"
-            href="#"
+          <div
+            className="navbar-nav collapse navbar-collapse"
           >
-            Home 
-            <span
-              className="sr-only"
+            <a
+              className="nav-item nav-link active"
+              href="/#"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              (current)
-            </span>
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#learning"
-          >
-            Learning Process
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="#journey"
-          >
-            Journey
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://chat.c0d3.com"
-          >
-            Help
-          </a>
+              Home 
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
         </div>
       </div>
       <div>
@@ -1636,7 +1837,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-secondary"
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
     © Copyright 2020 GarageScript
     <br />

@@ -3,11 +3,11 @@ import * as React from 'react'
 type Props = {
   btnType?: string
   text: string
-  initial?: string | undefined
+  initial?: string | null
 }
 
 const Button = ({ btnType, initial, text }: Props) => {
-  const btnClass = btnType ? `btn-${btnType}` : 'border btn-secondary'
+  const btnClass = btnType ? `${btnType}` : 'border btn-secondary'
   if (!initial) {
     return <button className={`btn ${btnClass}`}>{text}</button>
   } else {
