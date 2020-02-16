@@ -58,7 +58,13 @@ exports[`Storyshots App NavBar Logged In 1`] = `
     </div>
     <div>
       <button
-        className="btn border btn-secondary"
+        className="btn border btn-secondary overflow-hidden p-2 text-truncate"
+        style={
+          Object {
+            "fontSize": "13px",
+            "maxWidth": "125px",
+          }
+        }
       >
         <small
           className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"
@@ -153,7 +159,7 @@ exports[`Storyshots App NavBar Logged Out 1`] = `
 
 exports[`Storyshots Button Border With Text 1`] = `
 <button
-  className="btn border btn-secondary"
+  className="btn border btn-secondary overflow-hidden text-truncate"
 >
   Click Me
 </button>
@@ -161,7 +167,13 @@ exports[`Storyshots Button Border With Text 1`] = `
 
 exports[`Storyshots Button Color Badge Button 1`] = `
 <button
-  className="btn border btn-secondary"
+  className="btn border btn-secondary overflow-hidden text-truncate"
+  style={
+    Object {
+      "fontSize": "13px",
+      "maxWidth": "125px",
+    }
+  }
 >
   <small
     className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"

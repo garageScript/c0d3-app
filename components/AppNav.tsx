@@ -66,7 +66,7 @@ const AppNav: React.FC<Props> = ({
   const AuthButton = () => (
     <div>
       <Button
-        btnType="border btn-secondary"
+        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
         initial={initial}
         text={username ?? ''}
       />
