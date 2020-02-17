@@ -13,7 +13,7 @@ const initialValues = {
   firstName: '',
   lastName: ''
 }
-
+const submitSignup = (values: object) => values
 const Signup: React.FC = () => (
   <Layout>
     <Card title="Create Account">
@@ -21,7 +21,10 @@ const Signup: React.FC = () => (
         validateOnBlur
         initialValues={initialValues}
         validationSchema={signupValidation}
-        onSubmit={values => console.log('Submited values', values)}
+        onSubmit={values => {
+          submitSignup(values)
+          // console.log('Submited values', values)
+        }}
       >
         <Form>
           <div className="form-group ">
