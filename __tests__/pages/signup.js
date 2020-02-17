@@ -31,39 +31,28 @@ describe('Signup Page', () => {
     const lastNameField = getByTestId('lastName')
     const submitButton = getByTestId('submit')
 
-    await wait(() =>
-      fireEvent.change(emailField, {
-        target: {
-          value: 'email@domain.com'
-        }
-      })
-    )
-
-    await wait(() =>
+    await wait(
+      () =>
+        fireEvent.change(emailField, {
+          target: {
+            value: 'email@domain.com'
+          }
+        }),
       fireEvent.change(usernameField, {
         target: {
           value: 'user name'
         }
-      })
-    )
-
-    await wait(() =>
+      }),
       fireEvent.change(passwordField, {
         target: {
           value: 'password123'
         }
-      })
-    )
-
-    await wait(() =>
+      }),
       fireEvent.change(firstNameField, {
         target: {
           value: 'user'
         }
-      })
-    )
-
-    await wait(() =>
+      }),
       fireEvent.change(lastNameField, {
         target: {
           value: 'name'
@@ -71,17 +60,16 @@ describe('Signup Page', () => {
       })
     )
 
-    fireEvent.click(submitButton)
-
-    await wait(() => expect(submitSignup).toHaveBeenCalledTimes(1))
-    await wait(() =>
-      expect(submitSignup.mock.calls[0][0]).toEqual({
-        email: 'email@domain.com',
-        username: 'user name',
-        password: 'password123',
-        firstName: 'user',
-        lastName: 'name'
-      })
-    )
+    await wait(() => {
+      fireEvent.click(submitButton),
+        expect(submitSignup).toHaveBeenCalledTimes(1),
+        expect(submitSignup.mock.calls[0][0]).toEqual({
+          email: 'email@domain.com',
+          username: 'user name',
+          password: 'password123',
+          firstName: 'user',
+          lastName: 'name'
+        })
+    })
   })
 })
