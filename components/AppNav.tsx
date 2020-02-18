@@ -38,7 +38,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
     <Button
       btnType="border btn-secondary overflow-hidden p-2 text-truncate"
       initial={initial}
-      text={username ?? ''}
+      text={username}
     />
     <Button text="Logout" btnType="border btn-secondary ml-2" />
   </div>
@@ -46,7 +46,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
 
 const UnAuthButton = () => (
   <div>
-    <Link href="#/login">
+    <Link href="/login">
       <a className="btn btn-secondary border mr-3">Login</a>
     </Link>
   </div>
@@ -73,11 +73,11 @@ const UnAuthLink = () => (
 
 const AppNav: React.FC<Props> = ({
   loggedIn = false,
-  username,
+  username = '',
   firstName,
   lastName
 }) => {
-  const initial = firstName && lastName ? firstName[0] + lastName[0] : null
+  const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
@@ -91,7 +91,7 @@ const AppNav: React.FC<Props> = ({
           </div>
         </div>
         {loggedIn ? (
-          <AuthButton initial={initial || ''} username={username || ''} />
+          <AuthButton initial={initial} username={username} />
         ) : (
           <UnAuthButton />
         )}
