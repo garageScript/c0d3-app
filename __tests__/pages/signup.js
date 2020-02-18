@@ -31,45 +31,45 @@ describe('Signup Page', () => {
     const lastNameField = getByTestId('lastName')
     const submitButton = getByTestId('submit')
 
-    await wait(
-      () =>
-        fireEvent.change(emailField, {
+    await wait(() => {
+      fireEvent.change(emailField, {
+        target: {
+          value: 'email@domain.com'
+        }
+      }),
+        fireEvent.change(usernameField, {
           target: {
-            value: 'email@domain.com'
+            value: 'user name'
           }
         }),
-      fireEvent.change(usernameField, {
-        target: {
-          value: 'user name'
-        }
-      }),
-      fireEvent.change(passwordField, {
-        target: {
-          value: 'password123'
-        }
-      }),
-      fireEvent.change(firstNameField, {
-        target: {
-          value: 'user'
-        }
-      }),
-      fireEvent.change(lastNameField, {
-        target: {
-          value: 'name'
-        }
-      })
-    )
-
-    await wait(() => {
-      fireEvent.click(submitButton),
-        expect(submitSignup).toHaveBeenCalledTimes(1),
-        expect(submitSignup.mock.calls[0][0]).toEqual({
-          email: 'email@domain.com',
-          username: 'user name',
-          password: 'password123',
-          firstName: 'user',
-          lastName: 'name'
+        fireEvent.change(passwordField, {
+          target: {
+            value: 'password123'
+          }
+        }),
+        fireEvent.change(firstNameField, {
+          target: {
+            value: 'user'
+          }
+        }),
+        fireEvent.change(lastNameField, {
+          target: {
+            value: 'name'
+          }
         })
+    })
+    await (async () => {
+      fireEvent.click(submitButton)
+      await wait(() => {
+        expect(submitSignup).toHaveBeenCalledTimes(1),
+          expect(submitSignup.mock.calls[0][0]).toEqual({
+            email: 'email@domain.com',
+            username: 'user name',
+            password: 'password123',
+            firstName: 'user',
+            lastName: 'name'
+          })
+      })
     })
   })
 })

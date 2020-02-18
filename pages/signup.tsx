@@ -1,5 +1,6 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
+import Router from 'next/router'
 
 import Card from '../components/Card'
 import Layout from '../components/Layout'
@@ -15,14 +16,28 @@ const initialValues = {
   lastName: ''
 }
 
-const Signup: React.FC<Props> = props => (
+const Signup: React.FC<Props> = () => (
   <Layout>
     <Card title="Create Account">
       <Formik
         validateOnBlur
         initialValues={initialValues}
         validationSchema={signupValidation}
-        onSubmit={values => props.submitSignup(values)}
+        onSubmit={async values => {
+          const response = await fetch('/api/signup', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(values)
+          })
+
+          const data = await response.json()
+
+          if (data) {
+            Router.push('/api/graphql')
+          }
+        }}
       >
         <Form data-testid="form">
           <div className="form-group ">
