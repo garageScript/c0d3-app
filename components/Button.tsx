@@ -6,7 +6,7 @@ type Props = {
   initial?: string | null
 }
 
-const Button = ({ btnType, initial, text }: Props) => {
+const Button: React.FC<Props> = ({ btnType, initial, text }) => {
   const btnClass = btnType
     ? `${btnType}`
     : 'border btn-secondary overflow-hidden text-truncate'
