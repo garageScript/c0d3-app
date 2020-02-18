@@ -2,10 +2,12 @@ import * as React from 'react'
 import Link from 'next/link'
 
 import '../scss/navbar.scss'
-import AuthLink from './util/AuthLink'
-import UnAuthLink from './util/UnAuthLink'
-import AuthButton from './util/AuthButton'
-import UnAuthButton from './util/UnAuthButton'
+import Button from './Button'
+
+type AuthButtonProps = {
+  initial: string
+  username: string
+}
 
 type Props = {
   loggedIn?: boolean
@@ -13,6 +15,61 @@ type Props = {
   firstName?: string
   lastName?: string
 }
+
+const AuthLink = () => (
+  <div className="navbar-nav collapse navbar-collapse">
+    <a href="#" className="nav-item nav-link active">
+      Curriculum <span className="sr-only">(current)</span>
+    </a>
+    <a href="#" className="nav-item nav-link">
+      Repo
+    </a>
+    <a href="#" className="nav-item nav-link">
+      Journey
+    </a>
+    <a href="https://chat.c0d3.com" className="nav-item nav-link">
+      Help
+    </a>
+  </div>
+)
+
+const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
+  <div>
+    <Button
+      btnType="border btn-secondary overflow-hidden p-2 text-truncate"
+      initial={initial}
+      text={username ?? ''}
+    />
+    <Button text="Logout" btnType="border btn-secondary ml-2" />
+  </div>
+)
+
+const UnAuthButton = () => (
+  <div>
+    <Link href="#/login">
+      <a className="btn btn-secondary border mr-3">Login</a>
+    </Link>
+  </div>
+)
+
+const UnAuthLink = () => (
+  <div className="navbar-nav collapse navbar-collapse">
+    <Link href="/#">
+      <a className="nav-item nav-link active">
+        Home <span className="sr-only">(current)</span>
+      </a>
+    </Link>
+    <Link href="/#learning">
+      <a className="nav-item nav-link">Learning Process</a>
+    </Link>
+    <a href="https://c0d3.com/book" className="nav-item nav-link">
+      Resources
+    </a>
+    <a href="https://chat.c0d3.com" className="nav-item nav-link">
+      Help
+    </a>
+  </div>
+)
 
 const AppNav: React.FC<Props> = ({
   loggedIn = false,
