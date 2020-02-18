@@ -146,7 +146,7 @@ exports[`Storyshots App NavBar Logged Out 1`] = `
     <div>
       <a
         className="btn btn-secondary border mr-3"
-        href="#/login"
+        href="/login"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -655,7 +655,7 @@ exports[`Storyshots Landing Page Landing Nav 1`] = `
     <div>
       <a
         className="btn btn-secondary border mr-3"
-        href="#/login"
+        href="/login"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -1101,7 +1101,7 @@ Array [
       <div>
         <a
           className="btn btn-secondary border mr-3"
-          href="#/login"
+          href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -1552,7 +1552,7 @@ Array [
       <div>
         <a
           className="btn btn-secondary border mr-3"
-          href="#/login"
+          href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -1708,7 +1708,7 @@ Array [
       <div>
         <a
           className="btn btn-secondary border mr-3"
-          href="#/login"
+          href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -1844,7 +1844,7 @@ Array [
       <div>
         <a
           className="btn btn-secondary border mr-3"
-          href="#/login"
+          href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
