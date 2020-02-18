@@ -12,13 +12,13 @@ type Props = {
 const InputGroup: React.FC<Props> = props => {
   const {
     text,
-    placeholder = '',
-    size = '',
+    placeholder,
+    size,
     isDisabled = false,
     onClick,
     onChange
   } = props
-  let className = ''
+  let className
   if (size === 'large') className = 'input-group-lg'
   if (size === 'small') className = 'input-group-sm'
 

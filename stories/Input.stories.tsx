@@ -8,7 +8,7 @@ export default {
   title: 'Input'
 }
 
-export const textInput: React.FC = () => {
+export const TextInput: React.FC = () => {
   return (
     <Formik
       initialValues={{ text: 'Some text', textError: 'Wrong value' }}
@@ -31,7 +31,7 @@ export const textInput: React.FC = () => {
   )
 }
 
-export const emailInput: React.FC = () => (
+export const EmailInput: React.FC = () => (
   <Formik
     initialValues={{
       email: 'email@domain.com',
@@ -55,7 +55,7 @@ export const emailInput: React.FC = () => (
   </Formik>
 )
 
-export const passwordInput: React.FC = () => (
+export const PasswordInput: React.FC = () => (
   <Formik
     initialValues={{
       password: 'password',
