@@ -9,7 +9,7 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <AppNav loggedIn={false} />
+      <AppNav />
       <div className="container">{children}</div>
       <Footer />
     </>
