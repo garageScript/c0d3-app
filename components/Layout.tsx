@@ -1,16 +1,16 @@
 import React from 'react'
-import LandingNav from './LandingNav'
+import AppNav from './AppNav'
 import Footer from './Footer'
 
 type Props = {
   children: React.ReactElement
 }
 
-const Layout: React.FC<Props> = props => {
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <LandingNav />
-      <div className="container">{props.children}</div>
+      <AppNav />
+      <div className="container">{children}</div>
       <Footer />
     </>
   )

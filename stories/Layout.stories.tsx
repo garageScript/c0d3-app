@@ -1,6 +1,6 @@
 import React from 'react'
 import { addParameters } from '@storybook/react'
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import Layout from '../components/Layout'
 
 const customViewports = {
@@ -22,7 +22,7 @@ const customViewports = {
 
 addParameters({
   viewport: {
-    viewports: { ...customViewports, ...MINIMAL_VIEWPORTS },
+    viewports: { ...customViewports, ...INITIAL_VIEWPORTS },
     defaultViewport: 'LaptopHiDPI'
   }
 })
