@@ -14,7 +14,7 @@ const UnAuthLink = () => (
     <a href="https://c0d3.com/book" className="nav-item nav-link">
       Resources
     </a>
-    <a href="https://chat.c0d3.com" className="nav-item navl">
+    <a href="https://chat.c0d3.com" className="nav-item nav-link">
       Help
     </a>
   </div>
