@@ -1,11 +1,11 @@
 import React from 'react'
-import { ErrorMessage, useField, FieldHookConfig } from 'formik'
+import { ErrorMessage, useField, FieldInputProps } from 'formik'
 
 type Props = {
   type?: string
   placeholder?: string
   classes?: string
-} & FieldHookConfig<any>
+} & FieldInputProps<any>
 
 const Input: React.FC<Props> = ({ ...props }) => {
   const [field, { error, touched }] = useField(props)
@@ -17,6 +17,7 @@ const Input: React.FC<Props> = ({ ...props }) => {
     <>
       <input
         {...field}
+        {...props}
         type={props.type}
         placeholder={props.placeholder}
         className={classes}
