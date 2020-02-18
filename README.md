@@ -1,6 +1,7 @@
 # c0d3.com
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
 
 Repo for c0d3.com powered by NextJS. A website to train people to be full stack software engineers.
 
