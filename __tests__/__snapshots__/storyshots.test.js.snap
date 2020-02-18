@@ -468,7 +468,7 @@ exports[`Storyshots Input Text Input 1`] = `
 
 exports[`Storyshots InputGroup Disabled 1`] = `
 <div
-  className="input-group undefined col-6"
+  className="input-group  col-6"
 >
   <input
     aria-describedby="basic-addon2"
@@ -497,7 +497,7 @@ exports[`Storyshots InputGroup Disabled 1`] = `
 
 exports[`Storyshots InputGroup Size Default 1`] = `
 <div
-  className="input-group undefined col-6"
+  className="input-group  col-6"
 >
   <input
     aria-describedby="basic-addon2"

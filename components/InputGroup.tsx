@@ -18,7 +18,7 @@ const InputGroup: React.FC<Props> = props => {
     onClick,
     onChange
   } = props
-  let className
+  let className = ''
   if (size === 'large') className = 'input-group-lg'
   if (size === 'small') className = 'input-group-sm'
 
