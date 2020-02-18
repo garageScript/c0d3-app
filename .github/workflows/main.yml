@@ -13,12 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Install Dependencies
       run: npm install
+      
     - name: Check Lint and Tests
       run: |
         npm run autofix
         npm run test
+        
+    - name: Code Quality ( Codecov )
+      run: bash <(curl -s https://codecov.io/bash)
 
 #     - uses: actions/checkout@master
 #     - uses: codecov/codecov-action@v1
