@@ -135,7 +135,7 @@ exports[`Storyshots App NavBar Logged Out 1`] = `
             Resources
           </a>
           <a
-            className="nav-item navl"
+            className="nav-item nav-link"
             href="https://chat.c0d3.com"
           >
             Help
@@ -545,7 +545,7 @@ exports[`Storyshots Landing Page Landing Nav 1`] = `
             Resources
           </a>
           <a
-            className="nav-item navl"
+            className="nav-item nav-link"
             href="https://chat.c0d3.com"
           >
             Help
@@ -991,7 +991,7 @@ Array [
               Resources
             </a>
             <a
-              className="nav-item navl"
+              className="nav-item nav-link"
               href="https://chat.c0d3.com"
             >
               Help
@@ -1442,7 +1442,7 @@ Array [
               Resources
             </a>
             <a
-              className="nav-item navl"
+              className="nav-item nav-link"
               href="https://chat.c0d3.com"
             >
               Help
@@ -1598,7 +1598,7 @@ Array [
               Resources
             </a>
             <a
-              className="nav-item navl"
+              className="nav-item nav-link"
               href="https://chat.c0d3.com"
             >
               Help
@@ -1734,7 +1734,7 @@ Array [
               Resources
             </a>
             <a
-              className="nav-item navl"
+              className="nav-item nav-link"
               href="https://chat.c0d3.com"
             >
               Help
