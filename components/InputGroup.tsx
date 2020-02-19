@@ -12,8 +12,8 @@ type Props = {
 const InputGroup: React.FC<Props> = props => {
   const {
     text,
-    placeholder = '',
-    size = '',
+    placeholder,
+    size,
     isDisabled = false,
     onClick,
     onChange
