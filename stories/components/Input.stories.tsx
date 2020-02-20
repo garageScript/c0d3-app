@@ -1,11 +1,11 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Field, Form, Formik } from 'formik'
-import Input from '../components/Input'
+import Input from '../../components/Input'
 
 export default {
   component: Input,
-  title: 'Input'
+  title: 'Components/Input'
 }
 
 export const TextInput: React.FC = () => {

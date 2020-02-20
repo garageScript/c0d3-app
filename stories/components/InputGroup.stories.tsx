@@ -1,13 +1,13 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import InputGroup from '../components/InputGroup'
+import InputGroup from '../../components/InputGroup'
 
 export default {
   component: InputGroup,
-  title: 'InputGroup'
+  title: 'Components/InputGroup'
 }
 
-export const sizeSmall: React.FC = () => {
+export const SizeSmall: React.FC = () => {
   return (
     <InputGroup
       text="Join Waitlist"
@@ -19,7 +19,7 @@ export const sizeSmall: React.FC = () => {
   )
 }
 
-export const sizeDefault: React.FC = () => {
+export const SizeDefault: React.FC = () => {
   return (
     <InputGroup
       text="Join Waitlist"
@@ -30,7 +30,7 @@ export const sizeDefault: React.FC = () => {
   )
 }
 
-export const sizeLarge: React.FC = () => {
+export const SizeLarge: React.FC = () => {
   return (
     <InputGroup
       text="Join Waitlist"
@@ -42,7 +42,7 @@ export const sizeLarge: React.FC = () => {
   )
 }
 
-export const disabled: React.FC = () => {
+export const Disabled: React.FC = () => {
   return (
     <InputGroup
       text="Join Waitlist"

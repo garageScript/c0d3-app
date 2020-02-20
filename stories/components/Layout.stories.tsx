@@ -1,7 +1,7 @@
 import React from 'react'
 import { addParameters } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import Layout from '../components/Layout'
+import Layout from '../../components/Layout'
 
 const customViewports = {
   LaptopHiDPI: {
@@ -22,17 +22,16 @@ const customViewports = {
 
 addParameters({
   viewport: {
-    viewports: { ...customViewports, ...INITIAL_VIEWPORTS },
-    defaultViewport: 'LaptopHiDPI'
+    viewports: { ...customViewports, ...INITIAL_VIEWPORTS }
   }
 })
 
 export default {
   component: Layout,
-  title: 'Layout'
+  title: 'Components/Layout'
 }
 
-export const withLayout: React.FC = () => {
+export const WithLayout: React.FC = () => {
   return (
     <Layout>
       <div className="row" style={{ height: '100vh' }}>
@@ -52,7 +51,7 @@ export const withLayout: React.FC = () => {
   )
 }
 
-export const withoutLayout: React.FC = () => {
+export const WithoutLayout: React.FC = () => {
   return (
     <div className="row" style={{ height: '100vh' }}>
       <div className="card col-6">

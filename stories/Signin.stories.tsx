@@ -3,7 +3,7 @@ import Login from '../pages/login'
 
 export default {
   component: Login,
-  title: 'Login Page'
+  title: 'Pages/signin'
 }
 
-export const loginPage: React.FC = () => <Login />
+export const Signin: React.FC = () => <Login />
