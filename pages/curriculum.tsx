@@ -1,25 +1,20 @@
 import withApollo from '../utils/withApollo'
+import { useQuery } from '@apollo/react-hooks'
 import * as React from 'react'
 import Layout from '../components/Layout'
-
-import { useLessonQuery } from '../graphql/lesson.graphql'
-
-type Lesson = {
-  id: string
-  title: string
-}
+import { GET_LESSONS } from '../graphql/queries'
 
 const Course: React.FC = () => {
-  const { data } = useLessonQuery()
+  const { data } = useQuery(GET_LESSONS)
 
   if (data) {
-    const { lessons } = data as { lessons: Lesson[] }
+    const { lessons } = data
     return (
       <Layout>
         <>
           <h2>Courses</h2>
           <ul>
-            {lessons.map(e => (
+            {lessons.map((e: any) => (
               <li key={e.id}>
                 <strong>{e.id}:</strong> {e.title}
               </li>

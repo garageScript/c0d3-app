@@ -1,6 +1,0 @@
-query Lesson {
-  lessons {
-    id
-    title
-  }
-}
