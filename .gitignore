@@ -111,3 +111,6 @@ dist
 
 # Zeit Now
 .now
+
+# GraphQL Generator Files
+__generated__
