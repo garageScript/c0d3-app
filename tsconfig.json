@@ -14,7 +14,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true, // This needs to be true for GraphQL to work properly
     "strict": true,
     "target": "esnext"
   },
