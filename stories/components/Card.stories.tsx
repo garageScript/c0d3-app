@@ -1,21 +1,21 @@
 import React from 'react'
-import Card from '../components/Card'
+import Card from '../../components/Card'
 
 export default {
   component: Card,
-  title: 'Card'
+  title: 'Components/Card'
 }
 
-export const basic: React.FC = () => <Card title="Title of the card" />
+export const Basic: React.FC = () => <Card title="Title of the card" />
 
-export const withText: React.FC = () => (
+export const WithText: React.FC = () => (
   <Card
     title="Title of the card"
     text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
   />
 )
 
-export const withChildren: React.FC = () => (
+export const WithChildren: React.FC = () => (
   <Card
     title="Title of the card"
     text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
@@ -41,7 +41,7 @@ export const withChildren: React.FC = () => (
   </Card>
 )
 
-export const withSuccess: React.FC = () => (
+export const WithSuccess: React.FC = () => (
   <Card
     success
     title="Title of the card"
@@ -49,7 +49,7 @@ export const withSuccess: React.FC = () => (
   />
 )
 
-export const withClasses: React.FC = () => (
+export const WithClasses: React.FC = () => (
   <Card
     title="Title of the card"
     text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."

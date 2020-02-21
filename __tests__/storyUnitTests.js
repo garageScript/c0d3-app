@@ -1,6 +1,10 @@
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
-import { TextInput, EmailInput, PasswordInput } from '../stories/Input.stories'
+import {
+  TextInput,
+  EmailInput,
+  PasswordInput
+} from '../stories/components/Input.stories'
 
 describe('Input stories', () => {
   test('Should display Error message on TextInput', async () => {

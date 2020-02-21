@@ -1,11 +1,11 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 
-import Card from '../components/Card'
-import Layout from '../components/Layout'
-import Input from '../components/Input'
-import { signupValidation } from '../helpers/formValidation'
-import { Props } from '../@types/signup'
+import Card from '../../components/Card'
+import Layout from '../../components/Layout'
+import Input from '../../components/Input'
+import { signupValidation } from '../../helpers/formValidation'
+import { Props } from '../../@types/signup'
 
 const initialValues = {
   email: '',
