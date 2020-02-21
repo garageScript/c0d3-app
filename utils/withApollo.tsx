@@ -1,3 +1,4 @@
+/* 
 import { NextPage, NextPageContext } from 'next'
 import React from 'react'
 import Head from 'next/head'
@@ -19,11 +20,10 @@ type WithApolloPageContext = {
 
 let globalApolloClient: TApolloClient
 
-/**
  * Creates and provides the apolloContext
  * to a next.js PageTree. Use it by wrapping
  * your PageComponent via HOC pattern.
- */
+  
 export default function withApollo(
   PageComponent: NextPage,
   { ssr = true } = {}
@@ -114,11 +114,6 @@ export default function withApollo(
   return WithApollo
 }
 
-/**
- * Always creates a new apollo client on the server
- * Creates or reuses apollo client in the browser.
- * @param  {Object} initialState
- */
 function initApolloClient(initialState?: any) {
   // Make sure to create a new client for every server-side request so that data
   // isn't shared between connections (which would be bad)
@@ -134,10 +129,6 @@ function initApolloClient(initialState?: any) {
   return globalApolloClient
 }
 
-/**
- * Creates and configures the ApolloClient
- * @param  {Object} [initialState={}]
- */
 function createApolloClient(initialState = {}) {
   const ssrMode = typeof window === 'undefined'
   const cache = new InMemoryCache().restore(initialState)
@@ -157,4 +148,16 @@ function createIsomorphLink() {
     credentials: 'include',
     fetch
   })
-}
+
+*/
+
+import withApollo from 'next-with-apollo'
+import ApolloClient, { InMemoryCache } from 'apollo-boost'
+
+export default withApollo(
+  ({ initialState }) =>
+    new ApolloClient({
+      uri: 'https://api.graphql.jobs',
+      cache: new InMemoryCache().restore(initialState || {})
+    })
+)

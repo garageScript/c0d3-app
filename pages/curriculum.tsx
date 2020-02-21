@@ -2,19 +2,19 @@ import withApollo from '../utils/withApollo'
 import { useQuery } from '@apollo/react-hooks'
 import * as React from 'react'
 import Layout from '../components/Layout'
-import { GET_LESSONS } from '../graphql/queries'
+import { GET_JOBS } from '../graphql/queries'
 
 const Course: React.FC = () => {
-  const { data } = useQuery(GET_LESSONS)
+  const { data } = useQuery(GET_JOBS)
 
   if (data) {
-    const { lessons } = data
+    const { jobs } = data
     return (
       <Layout>
         <>
           <h2>Courses</h2>
           <ul>
-            {lessons.map((e: any) => (
+            {jobs.map((e: any) => (
               <li key={e.id}>
                 <strong>{e.id}:</strong> {e.title}
               </li>
