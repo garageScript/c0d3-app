@@ -1,9 +1,24 @@
 import * as React from 'react'
-import { AppProps } from 'next/app'
+import App from 'next/app'
+import { ApolloProvider } from "@apollo/react-hooks"
+import withApollo from "../hooks/withApollo"
+import { ApolloClient, NormalizedCacheObject } from "apollo-boost"
 import '../scss/index.scss'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+// since "apollo" isn't a native Next.js prop we have to declare it's type.
+interface IProps {
+  apollo: ApolloClient<NormalizedCacheObject>;
 }
 
-export default MyApp
+class MyApp extends App<IProps> {
+  render() {
+    const { Component, pageProps, apollo } = this.props
+    return (
+      <ApolloProvider client={apollo}>
+      <Component {...pageProps} />
+      </ApolloProvider>
+    )
+  }
+}
+
+export default withApollo(MyApp)
