@@ -5,6 +5,11 @@ export const GET_LESSONS = gql`
     lessons {
       id
       title
+      description
+      order
+      challenges {
+        id
+      }
     }
   }
 `

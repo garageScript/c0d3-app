@@ -13,15 +13,20 @@ const Curriculum = () => {
 
   if (data) {
     const { lessons } = data
+    console.log(lessons)
+
     return (
       <Layout>
-        <Card title="Curriculum">
-          <ul>
-            {lessons.map((e: any) => (
-              <li key={e.id}>{e.title}</li>
-            ))}
-          </ul>
-        </Card>
+        {lessons
+          .sort((a: any, b: any) => a.order - b.order)
+          .map((lesson: any) => {
+            return (
+              <Card key={lesson.id} title={lesson.title}>
+                <p>{lesson.challenges.length} Challenges</p>
+                <p>{lesson.description}</p>
+              </Card>
+            )
+          })}
       </Layout>
     )
   }
