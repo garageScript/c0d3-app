@@ -3,7 +3,7 @@ import AppNav from './AppNav'
 import Footer from './Footer'
 
 type Props = {
-  children: React.ReactElement
+  children: React.ReactElement | {}
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
