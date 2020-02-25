@@ -16,7 +16,7 @@ type Lesson = {
   challenges: Challenge[]
 }
 
-const Curriculum: React.FC<any> = () => {
+const Curriculum: React.FC = () => {
   const { loading, data } = useQuery(GET_LESSONS)
   if (loading) {
     return <h1>Loading</h1>
@@ -24,18 +24,22 @@ const Curriculum: React.FC<any> = () => {
 
   if (data) {
     const { lessons }: { lessons: Lesson[] } = data
-    const sortedLessons: Lesson[] = lessons.sort((a, b) => {
-      return a.order - b.order
-    })
+    const sortedLessons: React.ReactElement[] = lessons
+      .sort((a, b) => a.order - b.order)
+      .map((e: Lesson) => (
+        <Card key={e.id} title={e.title}>
+          <p>{e.challenges.length} Challenges</p>
+          <p>{e.description}</p>
+        </Card>
+      ))
 
     return (
       <Layout>
-        {sortedLessons.map((e: Lesson) => (
-          <Card key={e.id} title={e.title}>
-            <p>{e.challenges.length} Challenges</p>
-            <p>{e.description}</p>
-          </Card>
-        ))}
+        <>
+          {sortedLessons}
+          <Card title="Progress"></Card>
+          <Card title="General Announcements"></Card>
+        </>
       </Layout>
     )
   }
