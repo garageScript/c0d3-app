@@ -7,4 +7,4 @@ export default {
   title: 'Pages/signin'
 }
 
-export const Signin: React.FC<Props> = props => <Login submitLogin={() => {}} />
+export const Signin: React.FC<Props> = () => <Login submitLogin={() => {}} />
