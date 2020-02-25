@@ -35,6 +35,7 @@ const Login: React.FC<Props> = props => {
                 name="password"
                 placeholder="Password"
                 data-testid="password"
+                type="password"
                 as={Input}
               />
 
