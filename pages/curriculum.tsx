@@ -26,9 +26,30 @@ const Curriculum: React.FC = () => {
     const { lessons }: { lessons: Lesson[] } = data
     const sortedLessons: React.ReactElement[] = lessons
       .sort((a, b) => a.order - b.order)
-      .map((e: Lesson) => (
+      .map((e: Lesson, idx: number) => (
         <Card key={e.id} title={e.title}>
-          <p>{e.challenges.length} Challenges</p>
+          <img
+            src={`/curriculumAssets/lessonCoversSvg/js-${idx}-cover.svg`}
+            alt={`js${idx}-cover`}
+          />
+          <div>
+            <img
+              src="/curriculumAssets/icons/icon-lesson.svg"
+              alt="icon-lessons"
+            />
+            10 Lessons
+          </div>
+          <div>
+            <img
+              src="/curriculumAssets/icons/icon-challenge.svg"
+              alt="icon-challenge"
+            />
+            {e.challenges.length} Challenges
+          </div>
+          <div>
+            <img src="/curriculumAssets/icons/icon-time.svg" alt="icon-time" />2
+            Hours
+          </div>
           <p>{e.description}</p>
         </Card>
       ))
