@@ -4,27 +4,26 @@ on:
   pull_request:
   push:
     branches:
-    - master
+      - master
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      
-    - name: Install Dependencies
-      run: npm install
-      
-    - name: Check Lint and Tests
-      run: |
-        npm run autofix
-        npm run test
-        
-    - name: Code Quality ( Codecov )
-      run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+      - uses: actions/checkout@v2
 
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check Lint and Tests
+        run: |
+          npm run autofix
+          npm run test
+          npm run type-check
+
+      - name: Code Quality ( Codecov )
+        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
 #     - uses: actions/checkout@master
 #     - uses: codecov/codecov-action@v1
 #       with:
