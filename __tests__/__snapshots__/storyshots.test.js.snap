@@ -1366,35 +1366,50 @@ Array [
           <p
             className="card-text"
           />
-          <form>
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
             <div
               className="form-group"
             >
               <input
-                className="form-control form-control-lg font-weight-light mb-3"
-                placeholder="Email address or username"
-                type="text"
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Username"
+                value=""
               />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Login to Your Account
+              </button>
             </div>
-            <input
-              className="form-control form-control-lg font-weight-light mb-3"
-              placeholder="Password"
-              type="text"
-            />
-            <button
-              className="btn btn-primary btn-lg btn-block mb-3"
-              type="button"
-            >
-              Login to Your Account
-            </button>
-            <a
-              href="/forgotPassword"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Forgot your password?
-            </a>
           </form>
+          <a
+            href="/forgotPassword"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Forgot your password?
+          </a>
         </div>
       </div>
     </div>
