@@ -1,36 +1,10 @@
 .icon-messages {
   display: flex;
-  width: 75%;
+  flex-wrap: wrap;
+  max-width: 75%;
   justify-content: space-between;
   white-space: nowrap;
 }
 .icon-text {
   font-size: 0.8125rem;
-}
-.cover-img {
-  max-width: 23%;
-}
-
-@media (min-width: 576px) {
-  .cover-img {
-    max-width: 30%;
-  }
-}
-
-@media (min-width: 768px) {
-  .cover-img {
-    max-width: 30%;
-  }
-}
-
-@media (min-width: 992px) {
-  .cover-img {
-    max-width: 30%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .cover-img {
-    max-width: 20%;
-  }
 }
