@@ -33,7 +33,7 @@ const Curriculum: React.FC = () => {
           title={e.title}
           lessonCount={10}
           challengeCount={e.challenges.length}
-          hourCount={2}
+          hourCount="-"
           description={e.description}
         ></LessonCard>
       ))
@@ -41,10 +41,10 @@ const Curriculum: React.FC = () => {
       <Layout>
         <>
           <div className="row">
-            <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div className="cards-container col-12 col-sm-9">
               {sortedLessons}
             </div>
-            <div className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+            <div className="col-10 col-sm-3"></div>
           </div>
         </>
       </Layout>

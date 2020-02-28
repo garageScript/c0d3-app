@@ -1,10 +1,43 @@
+* {
+  color: #292929;
+}
+.card {
+  max-width: 308px;
+}
+// .cover-img {
+//   margin: auto;
+// }
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.33;
+}
 .icon-messages {
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
   max-width: 75%;
   justify-content: space-between;
   white-space: nowrap;
 }
+.icon-stat {
+  width: 100%;
+}
 .icon-text {
   font-size: 0.8125rem;
+  line-height: 1.38;
+}
+.lesson-description {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-top: 0.7rem;
+}
+.cover-img {
+  height: 165px;
+}
+
+@media (min-width: 576px) {
+  .card {
+    max-width: 730px;
+  }
 }
