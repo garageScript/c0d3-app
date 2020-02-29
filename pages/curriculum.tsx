@@ -39,12 +39,10 @@ const Curriculum: React.FC = () => {
       ))
     return (
       <Layout>
-        <>
-          <div className="row">
-            <div className="cards-container col-9">{sortedLessons}</div>
-            <div className="col-3"></div>
-          </div>
-        </>
+        <div className="row">
+          <div className="col-9">{sortedLessons}</div>
+          <div className="col-3"></div>
+        </div>
       </Layout>
     )
   }

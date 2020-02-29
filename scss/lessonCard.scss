@@ -1,21 +1,18 @@
-.card-title {
+.lesson-card__title {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.33;
+  margin-bottom: 0.75rem;
 }
-.icon-messages {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 75%;
-  justify-content: space-between;
-  white-space: nowrap;
+.lesson-card__icon-container {
+  display: inline-block;
+  margin-right: 40px;
 }
-.icon-text {
+.lesson-card__icon-text {
   font-size: 0.8125rem;
   line-height: 1.38;
 }
-.lesson-description {
+.lesson-card__description {
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-top: 0.7rem;
 }
