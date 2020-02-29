@@ -39,7 +39,7 @@ const Curriculum: React.FC = () => {
       ))
     return (
       <Layout>
-        <div className="row">
+        <div className="row mt-4">
           <div className="col-9">{sortedLessons}</div>
           <div className="col-3"></div>
         </div>

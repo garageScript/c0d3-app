@@ -6,17 +6,13 @@ export default {
   title: 'Components/LessonCard'
 }
 
-const numberOfChallenges = 10
-const numberOfLessons = 10
-const numberOfHours = 10
-
 export const Basic: React.FC = () => (
   <LessonCard
-    coverImg="Name of Image File"
-    title="Title of Lesson"
-    challengeCount={numberOfChallenges}
-    lessonCount={numberOfLessons}
-    hourCount={numberOfHours}
-    description="Lesson Description"
+    coverImg={`js-4-cover.svg`}
+    title={`HTML, CSS, JavaScript`}
+    challengeCount={7}
+    lessonCount={10}
+    hourCount="-"
+    description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
   ></LessonCard>
 )
