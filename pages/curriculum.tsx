@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
+import ProgressCard from '../components/ProgressCard'
 
 import { GET_LESSONS } from '../graphql/queries'
 type Challenge = {
@@ -40,8 +41,10 @@ const Curriculum: React.FC = () => {
     return (
       <Layout>
         <div className="row mt-4">
-          <div className="col-9">{sortedLessons}</div>
-          <div className="col-3"></div>
+          <div className="col-8">{sortedLessons}</div>
+          <div className="col-4">
+            <ProgressCard progressCount={0}></ProgressCard>
+          </div>
         </div>
       </Layout>
     )
