@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
+import AnnouncementCard from '../components/AnnouncementCard'
 
 import { GET_LESSONS } from '../graphql/queries'
 type Challenge = {
@@ -22,6 +23,17 @@ const Curriculum: React.FC = () => {
   if (loading) {
     return <h1>Loading</h1>
   }
+
+  const announcementOne =
+    'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.'
+
+  const announcementTwo =
+    'Take each lesson challenges seriously and do them over and over again until you can solve the.With the exception end to end, all challenges are questions and exercises taken from real interviews.'
+
+  const announcementThree =
+    'This lesson will not only prepare you for interviews, but it will also help you teach you the skills that need to become an effective engineer.'
+  const announcementFour =
+    'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML / CSS / JavaScript, React / GraphQL / SocketIO, you will be technically ready to contribute to our codebase.'
 
   if (data) {
     const { lessons }: { lessons: Lesson[] } = data
@@ -44,6 +56,12 @@ const Curriculum: React.FC = () => {
           <div className="col-8">{sortedLessons}</div>
           <div className="col-4">
             <ProgressCard progressCount={0}></ProgressCard>
+            <AnnouncementCard
+              announcementOne={announcementOne}
+              announcementTwo={announcementTwo}
+              announcementThree={announcementThree}
+              announcementFour={announcementFour}
+            ></AnnouncementCard>
           </div>
         </div>
       </Layout>
