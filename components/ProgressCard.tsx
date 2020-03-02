@@ -11,21 +11,23 @@ const ProgressCard: React.FC<Props> = ({ progressCount }) => {
     <div className="progress-card__container card shadow-sm mt-3">
       <div className="card-body">
         <div className="progress-card__progress-bar">
-          <span className="d-block font-weight-bold pt-2">
-            {progressCount}%
-          </span>
+          <span className="font-weight-bold">{progressCount}%</span>
         </div>
-        <div className="progress-card__title mt-3">{`You're off to a great start!`}</div>
+        <h4 className="progress-card__title mt-3">
+          You&#39;re off to a great start!
+        </h4>
         <div className="mt-3">
           <p className="progress-card__paragraph">
-            {`Start by `}
-            <a className="progress-card__link" href="#">
-              setting up your development environment
-            </a>
-            {` and then follow the lessons in the course.`}
+            Start by setting up your development environment and then follow the
+            lessons in the course.
           </p>
         </div>
-        <button className="btn progress-card__button mt-2">{`Setup Development Environment`}</button>
+        <a
+          className="btn progress-card__button mt-2"
+          href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+        >
+          Setup Development Environment
+        </a>
       </div>
     </div>
   )

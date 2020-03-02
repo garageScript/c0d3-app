@@ -1,6 +1,5 @@
 .progress-card__container {
-  width: 350px;
-  height: 323px;
+  display: flex;
   border-radius: 8px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
   background-color: #5438dc;
@@ -9,7 +8,9 @@
 }
 
 .progress-card__progress-bar {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 62px;
   height: 62px;
   border-radius: 50%;
@@ -18,26 +19,13 @@
 }
 
 .progress-card__title {
-  width: 289px;
-  height: 38px;
-  font-size: 24px;
   font-weight: bold;
   line-height: 1.58;
 }
 
 .progress-card__paragraph {
-  width: 262px;
-  height: 72px;
   font-size: 16px;
   line-height: 1.5;
-}
-
-.progress-card__link {
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid #ffffff;
 }
 
 .progress-card__button {
