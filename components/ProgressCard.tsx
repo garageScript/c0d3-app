@@ -17,7 +17,7 @@ const ProgressCard: React.FC<Props> = ({ progressCount }) => {
           You&#39;re off to a great start!
         </h4>
         <div className="mt-3">
-          <p className="progress-card__paragraph">
+          <p>
             Start by setting up your development environment and then follow the
             lessons in the course.
           </p>
