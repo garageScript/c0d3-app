@@ -1,31 +1,17 @@
 .progress-card__container {
-  display: flex;
-  border-radius: 8px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
-  background-color: #5438dc;
-  color: #ffffff;
-  padding: 0.5rem;
 }
 
 .progress-card__progress-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 62px;
   height: 62px;
-  border-radius: 50%;
   border: solid 7.3px #3a22b8;
-  background-color: #5438dc;
 }
 
 .progress-card__title {
   line-height: 1.58;
 }
 
-
 .progress-card__button {
-  background-color: #ffffff;
   font-size: 13px;
-  text-align: center;
-  color: #5438dc;
 }
