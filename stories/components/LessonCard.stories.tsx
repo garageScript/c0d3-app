@@ -14,5 +14,5 @@ export const Basic: React.FC = () => (
     lessonCount={10}
     hourCount="-"
     description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
-  ></LessonCard>
+  />
 )

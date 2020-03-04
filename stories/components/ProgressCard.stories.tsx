@@ -6,6 +6,4 @@ export default {
   title: 'Components/ProgressCard'
 }
 
-export const Basic: React.FC = () => (
-  <ProgressCard progressCount={0}></ProgressCard>
-)
+export const Basic: React.FC = () => <ProgressCard progressCount={0} />
