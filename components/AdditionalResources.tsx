@@ -8,19 +8,22 @@ const AdditionalResources: React.FC = () => {
         ADDITIONAL RESOURCES
       </h1>
       <hr className="my-2" />
-      <a className="mx-3 font-weight-bold" href="#">
+      <a
+        className="mx-3 "
+        href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
+      >
         Setup Instructions
       </a>
       <hr className="my-2" />
-      <a className="mx-3 font-weight-bold" href="#">
+      <a className="mx-3 " href="#">
         Github Basics
       </a>
       <hr className="my-2" />
-      <a className="mx-3 font-weight-bold" href="#">
+      <a className="mx-3 " href="https://stackoverflow.com/">
         Stack Overflow
       </a>
       <hr className="my-2" />
-      <a className="mx-3 font-weight-bold" href="#">
+      <a className="mx-3 " href="https://chat.c0d3.com/">
         Help & Support
       </a>
       <hr className="my-2" />
