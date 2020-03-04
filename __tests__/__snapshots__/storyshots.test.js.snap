@@ -857,9 +857,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     <div
       className="mt-3"
     >
-      <p
-        className="progress-card__paragraph"
-      >
+      <p>
         Start by setting up your development environment and then follow the lessons in the course.
       </p>
     </div>

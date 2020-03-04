@@ -18,11 +18,11 @@ const AnnouncementCard: React.FC<Props> = ({
   return (
     <div className="announcement-card__container card shadow-sm mt-3">
       <div className="card-body">
-        <h4>General Announcements</h4>
-        <div className="announcement-card__paragraph-container">
-          <h6 className="announcement-card__subheading font-weight-bold mt-4">
+        <h1 className="announcement-card__title">General Announcements</h1>
+        <div className="announcement-card__paragraph-container mt-3">
+          <h2 className="announcement-card__subtitle font-weight-bold">
             Updates and Guidelines
-          </h6>
+          </h2>
           <p className="mt-4">{announcementOne}</p>
           <p className="mt-4">{announcementTwo}</p>
           <p className="mt-4">{announcementThree}</p>
