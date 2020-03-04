@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components/AdditionalResources Basic 1`] = `
+<div
+  className="additional-resources__container mt-4 mb-0"
+>
+  <h1
+    className="additional-resources__title text-muted"
+  >
+    ADDITIONAL RESOURCES
+  </h1>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 font-weight-bold"
+    href="#"
+  >
+    Setup Instructions
+  </a>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 font-weight-bold"
+    href="#"
+  >
+    Github Basics
+  </a>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 font-weight-bold"
+    href="#"
+  >
+    Stack Overflow
+  </a>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 font-weight-bold"
+    href="#"
+  >
+    Help & Support
+  </a>
+  <hr
+    className="my-2"
+  />
+</div>
+`;
+
 exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 <div
   className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
