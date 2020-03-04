@@ -1,5 +1,101 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components/AdditionalResources Basic 1`] = `
+<div
+  className="additional-resources__container mt-4 mb-0"
+>
+  <h1
+    className="additional-resources__title text-muted"
+  >
+    ADDITIONAL RESOURCES
+  </h1>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 "
+    href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
+  >
+    Setup Instructions
+  </a>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 "
+    href="#"
+  >
+    Github Basics
+  </a>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 "
+    href="https://stackoverflow.com/"
+  >
+    Stack Overflow
+  </a>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="mx-3 "
+    href="https://chat.c0d3.com/"
+  >
+    Help & Support
+  </a>
+  <hr
+    className="my-2"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
+<div
+  className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+>
+  <div
+    className="card-body"
+  >
+    <h1
+      className="announcement-card__title"
+    >
+      General Announcements
+    </h1>
+    <div
+      className="mt-3"
+    >
+      <p
+        className="font-weight-bold"
+      >
+        Updates and Guidelines
+      </p>
+      <p
+        className="mt-4"
+      >
+        To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+      </p>
+      <p
+        className="mt-4"
+      >
+        Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+      </p>
+      <p
+        className="mt-4"
+      >
+        This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+      </p>
+      <p
+        className="mt-4"
+      >
+        After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/AppNavBar Logged In 1`] = `
 <nav
   className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
