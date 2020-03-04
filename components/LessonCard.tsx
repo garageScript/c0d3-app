@@ -9,6 +9,8 @@ type Props = {
   lessonCount: number
   hourCount: string | number
   description: string
+  complete?: boolean
+  inProgress?: boolean
 }
 
 const LessonCard: React.FC<Props> = props => {
