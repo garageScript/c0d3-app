@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
+import AdditionalResources from '../components/AdditionalResources'
 
 import { GET_LESSONS } from '../graphql/queries'
 type Challenge = {
@@ -63,6 +64,7 @@ const Curriculum: React.FC = () => {
               announcementThree={announcementThree}
               announcementFour={announcementFour}
             />
+            <AdditionalResources />
           </div>
         </div>
       </Layout>

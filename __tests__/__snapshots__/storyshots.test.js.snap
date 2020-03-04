@@ -1,5 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
+<div
+  className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+>
+  <div
+    className="card-body"
+  >
+    <h1
+      className="announcement-card__title"
+    >
+      General Announcements
+    </h1>
+    <div
+      className="announcement-card__paragraph-container mt-3"
+    >
+      <h2
+        className="announcement-card__subtitle font-weight-bold"
+      >
+        Updates and Guidelines
+      </h2>
+      <p
+        className="mt-4"
+      >
+        To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+      </p>
+      <p
+        className="mt-4"
+      >
+        Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+      </p>
+      <p
+        className="mt-4"
+      >
+        This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+      </p>
+      <p
+        className="mt-4"
+      >
+        After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/AppNavBar Logged In 1`] = `
 <nav
   className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
