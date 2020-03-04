@@ -61,7 +61,7 @@ const Curriculum: React.FC = () => {
               announcementTwo={announcementTwo}
               announcementThree={announcementThree}
               announcementFour={announcementFour}
-            ></AnnouncementCard>
+            />
           </div>
         </div>
       </Layout>

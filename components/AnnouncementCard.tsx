@@ -16,7 +16,7 @@ const AnnouncementCard: React.FC<Props> = ({
   announcementFour
 }) => {
   return (
-    <div className="announcement-card__container card shadow-sm mt-3">
+    <div className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0">
       <div className="card-body">
         <h1 className="announcement-card__title">General Announcements</h1>
         <div className="announcement-card__paragraph-container mt-3">

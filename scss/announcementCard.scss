@@ -1,15 +1,10 @@
 .announcement-card__container {
-  display: flex;
-  border-radius: 8px;
   background-color: #edf1f6;
-  border-style: none;
-  color: #292929;
-  padding: 0.5rem;
 }
 
 .announcement-card__title {
   font-size: 1.5rem;
-  line-height: 1.58;
+  line-height: 1.5;
 }
 
 .announcement-card__paragraph-container {
@@ -20,5 +15,4 @@
 .announcement-card__subtitle {
   font-size: 15px;
   line-height: 1.6;
-  font-weight: bold;
 }
