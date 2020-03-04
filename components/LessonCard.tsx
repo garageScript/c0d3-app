@@ -62,6 +62,22 @@ const LessonCard: React.FC<Props> = props => {
           </div>
         </div>
       </div>
+      {props.inProgress && (
+        <div className="card-footer bg-primary">
+          <a
+            className="lesson-card__button btn btn-light my-1 text-primary"
+            href="#"
+          >
+            Start Lesson
+          </a>
+          <a
+            className="lesson-card__button btn bg-primary my-1 text-white ml-2 border border-white"
+            href="#"
+          >
+            View Challenges
+          </a>
+        </div>
+      )}
     </div>
   )
 }
