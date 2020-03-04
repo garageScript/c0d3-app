@@ -9,6 +9,7 @@ type Props = {
   lessonCount: number
   hourCount: string | number
   description: string
+  complete?: boolean
 }
 
 const LessonCard: React.FC<Props> = props => {
@@ -23,6 +24,13 @@ const LessonCard: React.FC<Props> = props => {
             />
           </div>
           <div className="col-9">
+            {props.complete && (
+              <img
+                className=" lesson-card__complete-icon mr-1 justify-end"
+                src="/curriculumAssets/icons/icon-complete.svg"
+                alt="icon-complete"
+              />
+            )}
             <h4 className="lesson-card__title mt-3">{props.title}</h4>
             <div>
               <div className="lesson-card__icon-container">
