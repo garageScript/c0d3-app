@@ -32,6 +32,7 @@ const Curriculum: React.FC = () => {
 
   const announcementThree =
     'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.'
+
   const announcementFour =
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
 

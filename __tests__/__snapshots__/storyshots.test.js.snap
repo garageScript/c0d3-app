@@ -28,7 +28,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
             className="nav-item nav-link active"
             href="#"
           >
-            Curriculum
+            Curriculum 
             <span
               className="sr-only"
             >
@@ -113,7 +113,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Home
+            Home 
             <span
               className="sr-only"
             >
@@ -623,7 +623,7 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
+              Home 
               <span
                 className="sr-only"
               >
@@ -901,7 +901,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Home
+            Home 
             <span
               className="sr-only"
             >
@@ -976,7 +976,7 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
+              Home 
               <span
                 className="sr-only"
               >
@@ -1282,7 +1282,7 @@ Array [
               }
             >
               Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
-
+               
               <a
                 className="text-warning"
                 href="https://www.meetup.com/San-Jose-C0D3/"
@@ -1427,7 +1427,7 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
+              Home 
               <span
                 className="sr-only"
               >
@@ -1578,7 +1578,7 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
+              Home 
               <span
                 className="sr-only"
               >
@@ -1709,7 +1709,7 @@ Array [
             className="text-black-50"
           >
             Already have an account?
-
+             
             <a
               className="text-primary"
               href="/login"
@@ -1762,7 +1762,7 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
+              Home 
               <span
                 className="sr-only"
               >
