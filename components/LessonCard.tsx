@@ -20,7 +20,7 @@ const LessonCard: React.FC<Props> = props => {
         <div className="row no-gutters">
           {props.currentState === 'completed' && (
             <span className="badge badge-pill badge-success position-absolute lesson-card__container_completed">
-              <CheckCircle style={{ height: '13px' }} className="mr-1" />
+              <CheckCircle style={{ height: '15px', marginTop: '-2px' }} />
               <span className="mr-1">COMPLETED</span>
             </span>
           )}

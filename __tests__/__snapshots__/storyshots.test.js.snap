@@ -939,16 +939,35 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       className="row no-gutters"
     >
       <span
-        className="badge badge-pill text-white position-absolute lesson-card__container_completed"
+        className="badge badge-pill badge-success position-absolute lesson-card__container_completed"
       >
-        <img
-          alt="icon-complete"
-          className="lesson-card__completed-icon mr-1"
+        <svg
+          className="mr-1"
+          fill="none"
           height="24"
-          src="/curriculumAssets/icons/check-circle.svg"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "height": "13px",
+            }
+          }
+          viewBox="0 0 24 24"
           width="24"
-        />
-        <span>
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+          />
+          <polyline
+            points="22 4 12 14.01 9 11.01"
+          />
+        </svg>
+        <span
+          className="mr-1"
+        >
           COMPLETED
         </span>
       </span>
