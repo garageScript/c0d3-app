@@ -9,7 +9,7 @@ type Props = {
   lessonCount: number
   hourCount: string | number
   description: string
-  complete?: boolean
+  currentState?: string
 }
 
 const LessonCard: React.FC<Props> = props => {
@@ -17,6 +17,13 @@ const LessonCard: React.FC<Props> = props => {
     <div className="card shadow-sm mt-3">
       <div className="card-body p-2">
         <div className="row no-gutters">
+          {props.currentState === 'completed' && (
+            <img
+              className="lesson-card__completed-icon position-absolute"
+              src="/curriculumAssets/icons/icon-complete.svg"
+              alt="icon-complete"
+            />
+          )}
           <div className="mw-100 col-2 mr-4">
             <img
               src={`/curriculumAssets/lessonCoversSvg/${props.coverImg}`}
@@ -24,16 +31,11 @@ const LessonCard: React.FC<Props> = props => {
             />
           </div>
           <div className="col-9">
-            {props.complete && (
-              <img
-                className=" lesson-card__complete-icon mr-1 justify-end"
-                src="/curriculumAssets/icons/icon-complete.svg"
-                alt="icon-complete"
-              />
-            )}
-            <h4 className="lesson-card__title mt-3">{props.title}</h4>
+            <h4 className="lesson-card__title font-weight-bold mt-3">
+              {props.title}
+            </h4>
             <div>
-              <div className="lesson-card__icon-container">
+              <div className="d-inline-block mr-4">
                 <img
                   className="mr-1"
                   src="/curriculumAssets/icons/icon-lesson.svg"
@@ -43,7 +45,7 @@ const LessonCard: React.FC<Props> = props => {
                   {props.lessonCount} LESSONS
                 </span>
               </div>
-              <div className="lesson-card__icon-container">
+              <div className="d-inline-block mr-4">
                 <img
                   className="mr-1"
                   src="/curriculumAssets/icons/icon-challenge.svg"
@@ -53,7 +55,7 @@ const LessonCard: React.FC<Props> = props => {
                   {props.challengeCount} CHALLENGES
                 </span>
               </div>
-              <div className="lesson-card__icon-container">
+              <div className="d-inline-block mr-4">
                 <img
                   className="mr-1"
                   src="/curriculumAssets/icons/icon-time.svg"
