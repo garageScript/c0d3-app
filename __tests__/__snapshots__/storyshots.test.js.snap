@@ -938,11 +938,20 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     <div
       className="row no-gutters"
     >
-      <img
-        alt="icon-complete"
-        className="lesson-card__completed-icon position-absolute"
-        src="/curriculumAssets/icons/icon-complete.svg"
-      />
+      <span
+        className="badge badge-pill text-white position-absolute lesson-card__container_completed"
+      >
+        <img
+          alt="icon-complete"
+          className="lesson-card__completed-icon mr-1"
+          height="24"
+          src="/curriculumAssets/icons/check-circle.svg"
+          width="24"
+        />
+        <span>
+          COMPLETED
+        </span>
+      </span>
       <div
         className="mw-100 col-2 mr-4"
       >
