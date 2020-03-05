@@ -25,6 +25,6 @@ export const withInProgress: React.FC = () => (
     lessonCount={10}
     hourCount="-"
     description={`Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.`}
-    inProgress
+    currentState="inProgress"
   />
 )

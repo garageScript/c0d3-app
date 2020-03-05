@@ -50,7 +50,7 @@ const Curriculum: React.FC = () => {
           challengeCount={e.challenges.length}
           hourCount="-"
           description={e.description}
-          inProgress
+          currentState="inProgress"
         ></LessonCard>
       ))
     return (

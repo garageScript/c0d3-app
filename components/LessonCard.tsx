@@ -9,14 +9,14 @@ type Props = {
   lessonCount: number
   hourCount: string | number
   description: string
-  complete?: boolean
-  inProgress?: boolean
+  currentState?: string
 }
 
 const LessonCard: React.FC<Props> = props => {
-  const containerClass = props.inProgress
-    ? 'lesson-card__container card shadow-sm mt-3 border-primary'
-    : 'card shadow-sm mt-3'
+  const containerClass =
+    props.currentState === 'inProgress'
+      ? 'lesson-card__container_inprogress card shadow-sm mt-3 border-primary'
+      : 'card shadow-sm mt-3'
   return (
     <div className={containerClass}>
       <div className="card-body p-2">
@@ -65,16 +65,16 @@ const LessonCard: React.FC<Props> = props => {
           </div>
         </div>
       </div>
-      {props.inProgress && (
+      {props.currentState === 'inProgress' && (
         <div className="card-footer bg-primary">
           <a
-            className="lesson-card__button btn btn-light my-1 text-primary"
+            className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
             href="#"
           >
             Start Lesson
           </a>
           <a
-            className="lesson-card__button btn bg-primary my-1 text-white ml-2 border border-white"
+            className="lesson-card__button btn bg-primary my-1 text-white border border-white"
             href="#"
           >
             View Challenges
