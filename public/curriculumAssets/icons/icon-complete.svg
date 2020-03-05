@@ -2,7 +2,7 @@
     <g fill="none" fill-rule="evenodd">
         <rect width="116" height="29" fill="#00CF92" rx="14.5"/>
         <text fill="#FFF" font-family="Roboto-Bold, Roboto" font-size="12" font-weight="bold">
-            <tspan x="31" y="18">COMPLETED</tspan>
+            <tspan x="31" y="16">COMPLETED</tspan>
         </text>
         <g fill="#FFF">
             <path d="M8 16.5c-4.41 0-8-3.589-8-8 0-4.412 3.59-8 8-8 4.412 0 8 3.589 8 8 0 4.412-3.589 8-8 8zM8 1.598A6.91 6.91 0 001.098 8.5 6.91 6.91 0 008 15.402 6.91 6.91 0 0014.902 8.5 6.91 6.91 0 008 1.598z" transform="translate(8 6)"/>
