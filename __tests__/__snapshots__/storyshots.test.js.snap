@@ -930,7 +930,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
-  className="lesson-card__container card shadow-sm mt-3 border-primary"
+  className="lesson-card__container_inprogress card shadow-sm mt-3 border-primary"
 >
   <div
     className="card-body p-2"
@@ -1013,13 +1013,13 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     className="card-footer bg-primary"
   >
     <a
-      className="lesson-card__button btn btn-light my-1 text-primary"
+      className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
       href="#"
     >
       Start Lesson
     </a>
     <a
-      className="lesson-card__button btn bg-primary my-1 text-white ml-2 border border-white"
+      className="lesson-card__button btn bg-primary my-1 text-white border border-white"
       href="#"
     >
       View Challenges
