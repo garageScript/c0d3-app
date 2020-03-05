@@ -1045,6 +1045,90 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/LessonCard With In Progress 1`] = `
+<div
+  className="card shadow-sm mt-3"
+>
+  <div
+    className="card-body p-2"
+  >
+    <div
+      className="row no-gutters"
+    >
+      <div
+        className="mw-100 col-2 mr-4"
+      >
+        <img
+          alt="js-4-cover.svg"
+          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+        />
+      </div>
+      <div
+        className="col-9"
+      >
+        <h4
+          className="lesson-card__title font-weight-bold mt-3"
+        >
+          HTML, CSS, JavaScript
+        </h4>
+        <div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-lessons"
+              className="mr-1"
+              src="/curriculumAssets/icons/icon-lesson.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              10
+               LESSONS
+            </span>
+          </div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-challenge"
+              className="mr-1"
+              src="/curriculumAssets/icons/icon-challenge.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              7
+               CHALLENGES
+            </span>
+          </div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-time"
+              className="mr-1"
+              src="/curriculumAssets/icons/icon-time.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              -
+               HOURS
+            </span>
+          </div>
+        </div>
+        <p
+          className="lesson-card__description mt-2"
+        >
+          Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
   className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2"
