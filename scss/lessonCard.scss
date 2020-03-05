@@ -1,3 +1,6 @@
+.lesson-card__container_inprogress {
+  border-width: 2px;
+}
 .lesson-card__title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -15,4 +18,7 @@
 .lesson-card__description {
   font-size: 0.9375rem;
   line-height: 1.6;
+}
+.lesson-card__button {
+  font-size: 13px;
 }
