@@ -942,7 +942,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         className="badge badge-pill badge-success position-absolute lesson-card__container_completed"
       >
         <svg
-          className="mr-1"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -951,7 +950,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           strokeWidth="2"
           style={
             Object {
-              "height": "13px",
+              "height": "15px",
+              "marginTop": "-2px",
             }
           }
           viewBox="0 0 24 24"
