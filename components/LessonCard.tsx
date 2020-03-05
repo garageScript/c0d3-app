@@ -1,4 +1,5 @@
 import React from 'react'
+import { CheckCircle } from 'react-feather'
 
 import '../scss/lessonCard.scss'
 
@@ -18,15 +19,9 @@ const LessonCard: React.FC<Props> = props => {
       <div className="card-body p-2">
         <div className="row no-gutters">
           {props.currentState === 'completed' && (
-            <span className="badge badge-pill text-white position-absolute lesson-card__container_completed">
-              <img
-                className="lesson-card__completed-icon mr-1"
-                width="24"
-                height="24"
-                src="/curriculumAssets/icons/check-circle.svg"
-                alt="icon-complete"
-              />
-              <span>COMPLETED</span>
+            <span className="badge badge-pill badge-success position-absolute lesson-card__container_completed">
+              <CheckCircle style={{ height: '13px' }} className="mr-1" />
+              <span className="mr-1">COMPLETED</span>
             </span>
           )}
           <div className="mw-100 col-2 mr-4">

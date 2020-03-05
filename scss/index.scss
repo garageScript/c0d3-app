@@ -8,11 +8,15 @@ $theme-colors: (
 
 $font-family-sans-serif:  Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI","Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
+// available variables: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+$green: #00cf92 !default;
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
 // Import Fonts
 @import "../public/PTMono-Regular.ttf";
+
 
 // Global CSS
 .outline-danger{
@@ -26,4 +30,8 @@ $font-family-sans-serif:  Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
 p {
   font-size: 15px;
   line-height: 1.6;
+}
+
+.badge-success {
+  background-color: $green;
 }
