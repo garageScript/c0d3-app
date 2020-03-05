@@ -18,11 +18,16 @@ const LessonCard: React.FC<Props> = props => {
       <div className="card-body p-2">
         <div className="row no-gutters">
           {props.currentState === 'completed' && (
-            <img
-              className="lesson-card__completed-icon position-absolute"
-              src="/curriculumAssets/icons/icon-complete.svg"
-              alt="icon-complete"
-            />
+            <span className="badge badge-pill text-white position-absolute lesson-card__container_completed">
+              <img
+                className="lesson-card__completed-icon mr-1"
+                width="24"
+                height="24"
+                src="/curriculumAssets/icons/check-circle.svg"
+                alt="icon-complete"
+              />
+              <span>COMPLETED</span>
+            </span>
           )}
           <div className="mw-100 col-2 mr-4">
             <img
