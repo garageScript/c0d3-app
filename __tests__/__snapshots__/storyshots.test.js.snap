@@ -1047,7 +1047,11 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
+<<<<<<< HEAD
   className="card shadow-sm mt-3"
+=======
+  className="lesson-card__container_inprogress card shadow-sm mt-3 border-primary"
+>>>>>>> d52be596314cc99c6b0875723165d74f552cb936
 >
   <div
     className="card-body p-2"
@@ -1067,13 +1071,21 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         className="col-9"
       >
         <h4
+<<<<<<< HEAD
           className="lesson-card__title font-weight-bold mt-3"
+=======
+          className="lesson-card__title mt-3"
+>>>>>>> d52be596314cc99c6b0875723165d74f552cb936
         >
           HTML, CSS, JavaScript
         </h4>
         <div>
           <div
+<<<<<<< HEAD
             className="d-inline-block mr-4"
+=======
+            className="lesson-card__icon-container"
+>>>>>>> d52be596314cc99c6b0875723165d74f552cb936
           >
             <img
               alt="icon-lessons"
@@ -1088,7 +1100,11 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             </span>
           </div>
           <div
+<<<<<<< HEAD
             className="d-inline-block mr-4"
+=======
+            className="lesson-card__icon-container"
+>>>>>>> d52be596314cc99c6b0875723165d74f552cb936
           >
             <img
               alt="icon-challenge"
@@ -1103,7 +1119,11 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             </span>
           </div>
           <div
+<<<<<<< HEAD
             className="d-inline-block mr-4"
+=======
+            className="lesson-card__icon-container"
+>>>>>>> d52be596314cc99c6b0875723165d74f552cb936
           >
             <img
               alt="icon-time"
@@ -1126,6 +1146,25 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+  <div
+    className="card-footer bg-primary"
+  >
+    <a
+      className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+      href="#"
+    >
+      Start Lesson
+    </a>
+    <a
+      className="lesson-card__button btn bg-primary my-1 text-white border border-white"
+      href="#"
+    >
+      View Challenges
+    </a>
+  </div>
+>>>>>>> d52be596314cc99c6b0875723165d74f552cb936
 </div>
 `;
 

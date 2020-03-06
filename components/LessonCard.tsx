@@ -14,8 +14,12 @@ type Props = {
 }
 
 const LessonCard: React.FC<Props> = props => {
+  const containerClass =
+    props.currentState === 'inProgress'
+      ? 'lesson-card__container_inprogress card shadow-sm mt-3 border-primary'
+      : 'card shadow-sm mt-3'
   return (
-    <div className="card shadow-sm mt-3">
+    <div className={containerClass}>
       <div className="card-body p-2">
         <div className="row no-gutters">
           {props.currentState === 'completed' && (
@@ -70,6 +74,22 @@ const LessonCard: React.FC<Props> = props => {
           </div>
         </div>
       </div>
+      {props.currentState === 'inProgress' && (
+        <div className="card-footer bg-primary">
+          <a
+            className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+            href="#"
+          >
+            Start Lesson
+          </a>
+          <a
+            className="lesson-card__button btn bg-primary my-1 text-white border border-white"
+            href="#"
+          >
+            View Challenges
+          </a>
+        </div>
+      )}
     </div>
   )
 }
