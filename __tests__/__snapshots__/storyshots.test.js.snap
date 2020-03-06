@@ -866,13 +866,13 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         className="col-9"
       >
         <h4
-          className="lesson-card__title mt-3"
+          className="lesson-card__title font-weight-bold mt-3"
         >
           HTML, CSS, JavaScript
         </h4>
         <div>
           <div
-            className="lesson-card__icon-container"
+            className="d-inline-block mr-4"
           >
             <img
               alt="icon-lessons"
@@ -887,7 +887,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             </span>
           </div>
           <div
-            className="lesson-card__icon-container"
+            className="d-inline-block mr-4"
           >
             <img
               alt="icon-challenge"
@@ -902,7 +902,124 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             </span>
           </div>
           <div
-            className="lesson-card__icon-container"
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-time"
+              className="mr-1"
+              src="/curriculumAssets/icons/icon-time.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              -
+               HOURS
+            </span>
+          </div>
+        </div>
+        <p
+          className="lesson-card__description mt-2"
+        >
+          Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LessonCard With Completed 1`] = `
+<div
+  className="card shadow-sm mt-3"
+>
+  <div
+    className="card-body p-2"
+  >
+    <div
+      className="row no-gutters"
+    >
+      <span
+        className="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+      >
+        <svg
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "height": "15px",
+              "marginTop": "-2px",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+          />
+          <polyline
+            points="22 4 12 14.01 9 11.01"
+          />
+        </svg>
+        <span
+          className="mr-1"
+        >
+          COMPLETED
+        </span>
+      </span>
+      <div
+        className="mw-100 col-2 mr-4"
+      >
+        <img
+          alt="js-4-cover.svg"
+          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+        />
+      </div>
+      <div
+        className="col-9"
+      >
+        <h4
+          className="lesson-card__title font-weight-bold mt-3"
+        >
+          HTML, CSS, JavaScript
+        </h4>
+        <div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-lessons"
+              className="mr-1"
+              src="/curriculumAssets/icons/icon-lesson.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              10
+               LESSONS
+            </span>
+          </div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-challenge"
+              className="mr-1"
+              src="/curriculumAssets/icons/icon-challenge.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              7
+               CHALLENGES
+            </span>
+          </div>
+          <div
+            className="d-inline-block mr-4"
           >
             <img
               alt="icon-time"
@@ -950,13 +1067,13 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         className="col-9"
       >
         <h4
-          className="lesson-card__title mt-3"
+          className="lesson-card__title font-weight-bold mt-3"
         >
           HTML, CSS, JavaScript
         </h4>
         <div>
           <div
-            className="lesson-card__icon-container"
+            className="d-inline-block mr-4"
           >
             <img
               alt="icon-lessons"
@@ -971,7 +1088,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             </span>
           </div>
           <div
-            className="lesson-card__icon-container"
+            className="d-inline-block mr-4"
           >
             <img
               alt="icon-challenge"
@@ -986,7 +1103,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             </span>
           </div>
           <div
-            className="lesson-card__icon-container"
+            className="d-inline-block mr-4"
           >
             <img
               alt="icon-time"

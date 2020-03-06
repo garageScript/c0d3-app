@@ -28,6 +28,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-feather": "^2.0.3",
     "yup": "^0.28.1"
   },
   "devDependencies": {

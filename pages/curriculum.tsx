@@ -51,7 +51,7 @@ const Curriculum: React.FC = () => {
           hourCount="-"
           description={e.description}
           currentState="inProgress"
-        ></LessonCard>
+        />
       ))
     return (
       <Layout>
