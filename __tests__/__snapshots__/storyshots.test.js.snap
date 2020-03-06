@@ -1162,7 +1162,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       />
       <div>
         <p
-          className="m-0 font-weight-bold"
+          className="m-0"
         >
           <a
             href="#"
@@ -1171,7 +1171,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           </a>
         </p>
         <h1
-          className="lessonTitleCard__lesson-title font-weight-bold"
+          className="lessonTitleCard__lesson-title"
         >
           Foundations
         </h1>
