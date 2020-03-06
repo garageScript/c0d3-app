@@ -18,10 +18,10 @@ const LessonTitleCard: React.FC<Props> = props => {
             alt="lesson-cover"
           />
           <div>
-            <p className="m-0 font-weight-bold">
+            <p className="m-0">
               <a href={`${props.lessonUrl}`}>Go Back</a>
             </p>
-            <h1 className="lessonTitleCard__lesson-title font-weight-bold">
+            <h1 className="lessonTitleCard__lesson-title">
               {props.lessonTitle}
             </h1>
           </div>

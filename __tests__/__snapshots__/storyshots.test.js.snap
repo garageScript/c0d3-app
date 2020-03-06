@@ -1145,6 +1145,58 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
+<div
+  className="card shadow-sm mt-3 col-12 px-0 pt-3"
+>
+  <div
+    className="card-body p-0"
+  >
+    <div
+      className="d-flex mb-3 px-3"
+    >
+      <img
+        alt="lesson-cover"
+        className="lessonTitleCard__lesson-cover mr-3"
+        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+      />
+      <div>
+        <p
+          className="m-0 font-weight-bold"
+        >
+          <a
+            href="#"
+          >
+            Go Back
+          </a>
+        </p>
+        <h1
+          className="lessonTitleCard__lesson-title font-weight-bold"
+        >
+          Foundations
+        </h1>
+      </div>
+    </div>
+    <div
+      className="card-footer bg-white p-0"
+    >
+      <a
+        className="btn border-right rounded-0 px-4 py-3"
+        href="#"
+      >
+        LESSON
+      </a>
+      <a
+        className="btn border-right rounded-0 px-4 py-3"
+        href="#"
+      >
+        CHALLENGES
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
   className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2"
