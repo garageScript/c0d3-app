@@ -58,7 +58,7 @@ exports[`Storyshots Components/Alert Basic 1`] = `
 >
   <img
     className="mr-3"
-    src="curriculumAssets/icons/icon-tip.svg"
+    src="/curriculumAssets/icons/icon-tip.svg"
   />
   Set up your computer to submit challenges. 
   <a

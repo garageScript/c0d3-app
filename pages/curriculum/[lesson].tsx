@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Layout from '../components/Layout'
-import LessonTitleCard from '../components/LessonTitleCard'
-import Alert from '../components/Alert'
+import Layout from '../../components/Layout'
+import LessonTitleCard from '../../components/LessonTitleCard'
+import Alert from '../../components/Alert'
 
 const Challenges: React.FC = () => {
   return (
