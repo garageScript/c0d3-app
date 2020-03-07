@@ -51,6 +51,25 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Alert Basic 1`] = `
+<div
+  className="alert bg-primary text-white col-12 mt-4"
+  role="alert"
+>
+  <img
+    className="mr-3"
+    src="curriculumAssets/icons/icon-tip.svg"
+  />
+  Set up your computer to submit challenges. 
+  <a
+    className="text-white"
+    href="#"
+  >
+    View Instructions
+  </a>
+</div>
+`;
+
 exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 <div
   className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
