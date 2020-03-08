@@ -4,7 +4,7 @@ import ChallengeQuestionCard from '../components/ChallengeQuestionCard'
 
 const ChallengeMaterial: React.FC = () => {
   return (
-    <div className="row col-12">
+    <div className="row">
       <div className="col-4">
         <ChallengeTitleCard challengeNum={1} title="Less Than or Equal to 5" />
       </div>
