@@ -2,6 +2,7 @@ import * as React from 'react'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
+import ChallengeMaterial from '../../components/ChallengeMaterial'
 
 const Challenges: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Challenges: React.FC = () => {
             lessonTitle="Foundations"
           />
           <Alert alertText="Set up your computer to submit challenges." />
+          <ChallengeMaterial />
         </div>
       </Layout>
     </div>
