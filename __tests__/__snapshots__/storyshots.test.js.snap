@@ -948,7 +948,7 @@ exports[`Storyshots Components/Layout Without Layout 1`] = `
 
 exports[`Storyshots Components/LessonCard Basic 1`] = `
 <div
-  className="card shadow-sm mt-3"
+  className="card shadow-sm mt-3 border-0"
 >
   <div
     className="card-body p-2"
@@ -1032,7 +1032,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
 
 exports[`Storyshots Components/LessonCard With Completed 1`] = `
 <div
-  className="card shadow-sm mt-3"
+  className="card shadow-sm mt-3 border-0"
 >
   <div
     className="card-body p-2"
@@ -1149,7 +1149,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
-  className="lesson-card__container_inprogress card shadow-sm mt-3 border-primary"
+  className="lesson-card__container_inprogress card shadow-sm mt-3 border-primary border-0"
 >
   <div
     className="card-body p-2"
@@ -1249,7 +1249,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 
 exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
 <div
-  className="card shadow-sm mt-3 col-12 px-0 pt-3"
+  className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
 >
   <div
     className="card-body p-0"
@@ -1301,7 +1301,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2"
+  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
 >
   <div
     className="card-body"

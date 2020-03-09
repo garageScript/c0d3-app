@@ -16,8 +16,8 @@ type Props = {
 const LessonCard: React.FC<Props> = props => {
   const containerClass =
     props.currentState === 'inProgress'
-      ? 'lesson-card__container_inprogress card shadow-sm mt-3 border-primary'
-      : 'card shadow-sm mt-3'
+      ? 'lesson-card__container_inprogress card shadow-sm mt-3 border-primary border-0'
+      : 'card shadow-sm mt-3 border-0'
   return (
     <div className={containerClass}>
       <div className="card-body p-2">
