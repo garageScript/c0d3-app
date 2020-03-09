@@ -1,5 +1,5 @@
 import * as React from 'react'
-import ChallengeTitleCard from '../../components/ChallengeTitleCard'
+import { ChallengeTitleCard } from '../../components/ChallengeMaterial'
 
 export default {
   component: ChallengeTitleCard,
