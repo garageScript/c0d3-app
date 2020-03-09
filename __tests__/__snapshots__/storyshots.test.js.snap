@@ -482,6 +482,89 @@ exports[`Storyshots Components/Card With Text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-4"
+  >
+    <div
+      className="card shadow-sm border-0"
+    >
+      <div
+        className="card-body"
+      >
+        <div>
+          1. Less Than or Equal to 5
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="col-8"
+  >
+    <div
+      className="card shadow-sm border-0"
+    >
+      <div
+        className="card-body"
+      >
+        <h1
+          className="challenge-question-card__title"
+        >
+          Less Than or Equal to 5
+        </h1>
+        <div>
+          <p
+            className="challenge-question-card__question bg-light p-3 mt-3"
+          >
+            Write a function that takes in an array, and returns an array of same length where all elements &lt;= 5 is changed to 0.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
+<div
+  className="card shadow-sm border-0"
+>
+  <div
+    className="card-body"
+  >
+    <h1
+      className="challenge-question-card__title"
+    >
+      Less Than or Equal to 5
+    </h1>
+    <div>
+      <p
+        className="challenge-question-card__question bg-light p-3 mt-3"
+      >
+        Write a function that takes in an array, and returns an array of same length where all elements &lt;= 5 is changed to 0.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
+<div
+  className="card shadow-sm border-0"
+>
+  <div
+    className="card-body"
+  >
+    <div>
+      1. Less Than or Equal to 5.
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
   className="mt-5 font-weight-light text-center pb-5 text-muted"
