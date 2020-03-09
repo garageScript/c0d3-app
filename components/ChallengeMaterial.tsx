@@ -1,6 +1,39 @@
 import React from 'react'
-import ChallengeTitleCard from '../components/ChallengeTitleCard'
-import ChallengeQuestionCard from '../components/ChallengeQuestionCard'
+
+type ChallengeTitleCardProps = {
+  title: string
+  challengeNum: number
+  currentState?: string
+}
+
+type ChallengeQuestionCardProps = {
+  title: string
+  question: string
+}
+
+export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
+  return (
+    <div className="card shadow-sm border-0">
+      <div className="card-body">
+        <div>{`${props.challengeNum}. ${props.title}`}</div>
+      </div>
+    </div>
+  )
+}
+
+export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = props => {
+  const content = (
+    <div className="card-body">
+      <h1 className="challenge-question-card__title">{props.title}</h1>
+      <div>
+        <p className="challenge-question-card__question bg-light p-3 mt-3">
+          {props.question}
+        </p>
+      </div>
+    </div>
+  )
+  return <div className="card shadow-sm border-0">{content}</div>
+}
 
 const ChallengeMaterial: React.FC = () => {
   return (
