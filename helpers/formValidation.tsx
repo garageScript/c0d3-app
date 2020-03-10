@@ -37,4 +37,19 @@ const signupValidation = Yup.object({
     .required('Required')
 })
 
-export { signupValidation }
+const loginValidation = Yup.object({
+  username: Yup.string()
+    .strict(true)
+    .lowercase('Must be a lowercase string')
+    .matches(REGEX_ALPHANUMERICS_AND_SPACE, 'Must be alphanumerics characters')
+    .min(TEXT_MIN, `Must be at least ${TEXT_MIN} characters`)
+    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
+    .trim('Leading and trailing value must be alphanumeric character')
+    .required('Required'),
+  password: Yup.string()
+    .min(PASSWORD_MIN, `Must be at least ${PASSWORD_MIN} characters`)
+    .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
+    .required('Required')
+})
+
+export { signupValidation, loginValidation }

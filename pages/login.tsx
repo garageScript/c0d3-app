@@ -1,7 +1,8 @@
 import * as React from 'react'
+import Router from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
-import { signupValidation } from '../helpers/formValidation'
+import { loginValidation } from '../helpers/formValidation'
 import { Props } from '../@types/login'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
@@ -12,15 +13,38 @@ const initialValues = {
   password: ''
 }
 
-const Login: React.FC<Props> = props => {
+type Values = {
+  username: string
+  password: string
+}
+
+async function handleSubmit(values: Values) {
+  const res = await fetch('https://c0d3.com/signin', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: values.username,
+      password: values.password
+    })
+  })
+  const data = await res.json()
+  if (data.success) {
+    Router.push('/curriculum')
+  }
+  return
+}
+
+const Login: React.FC<Props> = () => {
   return (
     <Layout>
       <Card title="Login">
         <Formik
           validateOnBlur
           initialValues={initialValues}
-          validationSchema={signupValidation}
-          onSubmit={values => props.submitLogin(values)}
+          validationSchema={loginValidation}
+          onSubmit={handleSubmit}
         >
           <Form data-testid="form">
             <div className="form-group">
