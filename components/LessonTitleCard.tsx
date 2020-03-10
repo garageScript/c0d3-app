@@ -9,7 +9,7 @@ type Props = {
 
 const LessonTitleCard: React.FC<Props> = props => {
   return (
-    <div className="card shadow-sm mt-3 col-12 px-0 pt-3">
+    <div className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0">
       <div className="card-body p-0">
         <div className="d-flex mb-3 px-3">
           <img

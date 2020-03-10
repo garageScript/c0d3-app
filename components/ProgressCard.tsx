@@ -8,7 +8,7 @@ type Props = {
 
 const ProgressCard: React.FC<Props> = ({ progressCount }) => {
   return (
-    <div className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2">
+    <div className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0">
       <div className="card-body">
         <div className="progress-card__progress-bar d-flex justify-content-center align-items-center rounded-circle">
           <span className="font-weight-bold">{progressCount}%</span>
