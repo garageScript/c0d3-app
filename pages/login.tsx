@@ -18,8 +18,8 @@ type Values = {
   password: string
 }
 
-async function handleSubmit(values: Values) {
-  const res = await fetch('https://c0d3.com/signin', {
+const handleSubmit = async (values: Values) => {
+  const res = await fetch(`${process.env.SERVER_URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
