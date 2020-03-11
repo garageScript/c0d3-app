@@ -8,6 +8,8 @@ import Layout from '../components/Layout'
 import Card from '../components/Card'
 import Link from 'next/link'
 
+const SERVER_URL = process.env.SERVER_URL
+
 const initialValues = {
   username: '',
   password: ''
@@ -19,7 +21,7 @@ type Values = {
 }
 
 const handleSubmit = async (values: Values) => {
-  const res = await fetch(`${process.env.SERVER_URL}/signin`, {
+  const res = await fetch(`${SERVER_URL}/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

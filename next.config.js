@@ -1,6 +1,8 @@
 const withSass = require('@zeit/next-sass')
+require('dotenv').config()
 module.exports = withSass({
   env: {
-    SERVER_URL: 'https://c0d3.com/'
+    SERVER_URL: process.env.SERVER_URL,
+    URI: process.env.URI
   }
 })
