@@ -19,7 +19,7 @@ type Values = {
 }
 
 const handleSubmit = async (values: Values) => {
-  const res = await fetch(`${process.env.SERVER_URL}`, {
+  const res = await fetch(`${process.env.SERVER_URL}/signin`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
