@@ -20,11 +20,12 @@ type Values = {
   password: string
 }
 
+// TODO: Error Handling for login / signup. Blocked by backend implementation.
 const handleSubmit = async (values: Values) => {
   const res = await fetch(`${SERVER_URL}/signin`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'content-type': 'application/json'
     },
     body: JSON.stringify({
       username: values.username,
