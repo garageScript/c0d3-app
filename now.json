@@ -1,0 +1,10 @@
+{
+  "env": {
+    "SERVER_URL": "@server_url"
+  },
+  "build": {
+    "env": {
+      "SERVER_URL": "@server_url"
+    }
+  }
+}

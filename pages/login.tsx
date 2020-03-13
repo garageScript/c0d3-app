@@ -1,26 +1,53 @@
 import * as React from 'react'
+import Router from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
-import { signupValidation } from '../helpers/formValidation'
+import { loginValidation } from '../helpers/formValidation'
 import { Props } from '../@types/login'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import Link from 'next/link'
+
+const SERVER_URL = process.env.SERVER_URL
 
 const initialValues = {
   username: '',
   password: ''
 }
 
-const Login: React.FC<Props> = props => {
+type Values = {
+  username: string
+  password: string
+}
+
+// TODO: Error Handling for login / signup. Blocked by backend implementation.
+const handleSubmit = async (values: Values) => {
+  const res = await fetch(`${SERVER_URL}/signin`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      username: values.username,
+      password: values.password
+    })
+  })
+  const data = await res.json()
+  if (data.success) {
+    Router.push('/curriculum')
+  }
+  return
+}
+
+const Login: React.FC<Props> = () => {
   return (
     <Layout>
       <Card title="Login">
         <Formik
           validateOnBlur
           initialValues={initialValues}
-          validationSchema={signupValidation}
-          onSubmit={values => props.submitLogin(values)}
+          validationSchema={loginValidation}
+          onSubmit={handleSubmit}
         >
           <Form data-testid="form">
             <div className="form-group">
