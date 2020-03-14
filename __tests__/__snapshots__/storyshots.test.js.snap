@@ -60,6 +60,43 @@ exports[`Storyshots Components/Alert Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Alert With Classes 1`] = `
+<div
+  className="alert col-12 mt-4 alert-danger"
+  role="alert"
+>
+  Set up your computer to submit challenges. 
+</div>
+`;
+
+exports[`Storyshots Components/Alert With Icon 1`] = `
+<div
+  className="alert col-12 mt-4 bg-primary text-white"
+  role="alert"
+>
+  <img
+    className="mr-3"
+    src="/curriculumAssets/icons/icon-tip.svg"
+  />
+  Set up your computer to submit challenges. 
+</div>
+`;
+
+exports[`Storyshots Components/Alert With Instructions 1`] = `
+<div
+  className="alert col-12 mt-4 bg-primary text-white"
+  role="alert"
+>
+  Set up your computer to submit challenges. 
+  <a
+    className="text-white"
+    href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+  >
+    View Instructions
+  </a>
+</div>
+`;
+
 exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 <div
   className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
