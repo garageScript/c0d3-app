@@ -7,5 +7,5 @@ export default {
 }
 
 export const Basic: React.FC = () => (
-  <Alert alertText="Set up your computer to submit challenges." />
+  <Alert text="Set up your computer to submit challenges." />
 )
