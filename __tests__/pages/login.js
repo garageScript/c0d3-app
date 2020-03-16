@@ -1,12 +1,16 @@
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent, wait, getByText } from '@testing-library/react'
+import * as loginHelper from '../../helpers/loginUser'
 import Login from '../../pages/login'
+import Router from 'next/router'
 
 describe('Login Page', () => {
-  const handleSubmit = jest.fn(obj => null)
+  test('Should redirect to curriculum', async () => {
+    loginHelper.loginUser = jest
+      .fn()
+      .mockReturnValue(Promise.resolve({ username: 'hello' }))
+    Router.push = jest.fn()
 
-  test('Should return data', async () => {
-    // const loginUser = jest.fn((username, password) => {})
     const { getByTestId } = render(<Login />)
     const usernameField = getByTestId('username')
     const passwordField = getByTestId('password')
@@ -25,13 +29,44 @@ describe('Login Page', () => {
         }
       })
     )
+
     await wait(() => {
-      fireEvent.click(submitButton),
-        expect(handleSubmit).toHaveBeenCalledTimes(1),
-        expect(handleSubmit.mock.calls[0][0]).toEqual({
-          username: 'username123',
-          password: 'password123'
-        })
+      fireEvent.click(submitButton)
     })
+    expect(Router.push).toHaveBeenCalledWith('/curriculum')
+    expect(loginHelper.loginUser).toHaveBeenCalledWith(
+      'username123',
+      'password123'
+    )
+  })
+
+  test('Should set alert visible on invalid credentials', async () => {
+    loginHelper.loginUser = jest.fn().mockReturnValue(null)
+    Router.push = jest.fn()
+
+    const { getByTestId, getByText } = render(<Login />)
+    const usernameField = getByTestId('username')
+    const passwordField = getByTestId('password')
+    const submitButton = getByTestId('submit')
+
+    await wait(
+      () =>
+        fireEvent.change(usernameField, {
+          target: {
+            value: 'username123'
+          }
+        }),
+      fireEvent.change(passwordField, {
+        target: {
+          value: 'password123'
+        }
+      })
+    )
+
+    await wait(() => {
+      fireEvent.click(submitButton)
+    })
+    getByText('Incorrect username or password: please try again')
+    expect(Router.push).toHaveBeenCalledTimes(0)
   })
 })

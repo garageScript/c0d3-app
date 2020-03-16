@@ -19,13 +19,12 @@ type Values = {
   password: string
 }
 
-const Login: React.FC<Props> = () => {
+const Login: React.FC = () => {
   const [isAlertVisible, setIsAlertVisible] = useState(false)
 
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
   const handleSubmit = async (values: Values) => {
     const data = await loginUser(values.username, values.password)
-    console.log('handleSubmit -> data', data)
     if (data) {
       Router.push('/curriculum')
       return
