@@ -3,13 +3,11 @@ import Router from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
-import { Props } from '../@types/login'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import Link from 'next/link'
 import Alert from '../components/Alert'
-
-const SERVER_URL = process.env.SERVER_URL
+import { loginUser } from '../helpers/loginUser'
 
 const initialValues = {
   username: '',
@@ -22,25 +20,17 @@ type Values = {
 }
 
 const Login: React.FC<Props> = () => {
-  const [invalidCredentials, setInvalidCredentials] = useState(false)
+  const [isAlertVisible, setIsAlertVisible] = useState(false)
 
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
   const handleSubmit = async (values: Values) => {
-    const res = await fetch(`${SERVER_URL}/signin`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: values.username,
-        password: values.password
-      })
-    })
-    if (res.redirected) {
-      setInvalidCredentials(true)
+    const data = await loginUser(values.username, values.password)
+    console.log('handleSubmit -> data', data)
+    if (data) {
+      Router.push('/curriculum')
       return
     }
-    Router.push('/curriculum')
+    setIsAlertVisible(true)
   }
   return (
     <Layout>
@@ -53,7 +43,7 @@ const Login: React.FC<Props> = () => {
         >
           <Form data-testid="form">
             <div className="form-group">
-              {invalidCredentials && (
+              {isAlertVisible && (
                 <Alert
                   error
                   text="Incorrect username or password: please try again"
