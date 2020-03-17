@@ -49,19 +49,18 @@ describe('Login Page', () => {
     const passwordField = getByTestId('password')
     const submitButton = getByTestId('submit')
 
-    await wait(
-      () =>
-        fireEvent.change(usernameField, {
-          target: {
-            value: 'username123'
-          }
-        }),
+    await wait(() => {
+      fireEvent.change(usernameField, {
+        target: {
+          value: 'username123'
+        }
+      })
       fireEvent.change(passwordField, {
         target: {
           value: 'password123'
         }
       })
-    )
+    })
 
     await wait(() => {
       fireEvent.click(submitButton)
