@@ -1,14 +1,13 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import Router from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
-import { Props } from '../@types/login'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import Link from 'next/link'
-
-const SERVER_URL = process.env.SERVER_URL
+import Alert from '../components/Alert'
+import { loginUser } from '../helpers/loginUser'
 
 const initialValues = {
   username: '',
@@ -20,26 +19,18 @@ type Values = {
   password: string
 }
 
-// TODO: Error Handling for login / signup. Blocked by backend implementation.
-const handleSubmit = async (values: Values) => {
-  const res = await fetch(`${SERVER_URL}/signin`, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      username: values.username,
-      password: values.password
-    })
-  })
-  const data = await res.json()
-  if (data.success) {
-    Router.push('/curriculum')
-  }
-  return
-}
+const Login: React.FC = () => {
+  const [isAlertVisible, setIsAlertVisible] = useState(false)
 
-const Login: React.FC<Props> = () => {
+  // TODO: Error Handling for login / signup. Blocked by backend implementation.
+  const handleSubmit = async (values: Values) => {
+    const data = await loginUser(values.username, values.password)
+    if (data) {
+      Router.push('/curriculum')
+      return
+    }
+    setIsAlertVisible(true)
+  }
   return (
     <Layout>
       <Card title="Login">
@@ -51,6 +42,12 @@ const Login: React.FC<Props> = () => {
         >
           <Form data-testid="form">
             <div className="form-group">
+              {isAlertVisible && (
+                <Alert
+                  error
+                  text="Incorrect username or password: please try again"
+                />
+              )}
               <Field
                 name="username"
                 placeholder="Username"
