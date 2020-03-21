@@ -5,10 +5,21 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
+// import { getSession } from '../helpers/getSession'
 
 import { GET_LESSONS } from '../graphql/queries'
 type Challenge = {
   id: number
+}
+
+type LessonStatus = {
+  isEnrolled: string | null
+  isPassed?: string
+  isTeaching: string | null
+}
+
+type User = {
+  userLesson: LessonStatus
 }
 
 type Lesson = {
@@ -17,6 +28,7 @@ type Lesson = {
   description: string
   order: number
   challenges: Challenge[]
+  currentUser: User
 }
 
 const Curriculum: React.FC = () => {
@@ -38,21 +50,31 @@ const Curriculum: React.FC = () => {
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
 
   if (data) {
-    const { lessons }: { lessons: Lesson[] } = data
-    const sortedLessons: React.ReactElement[] = lessons
+    const { curriculumStatus }: { curriculumStatus: Lesson[] } = data
+    const sortedLessons: React.ReactElement[] = curriculumStatus
       .sort((a, b) => a.order - b.order)
-      .map((e, idx) => (
-        <LessonCard
-          key={e.id}
-          coverImg={`js-${idx}-cover.svg`}
-          title={e.title}
-          lessonCount={10}
-          challengeCount={e.challenges.length}
-          hourCount="-"
-          description={e.description}
-          currentState="inProgress"
-        />
-      ))
+      .map((e, idx) => {
+        console.log('E:', e.currentUser)
+        let lessonState = ''
+        if (e.currentUser.userLesson.isEnrolled) {
+          lessonState = 'inProgress'
+        }
+        if (e.currentUser.userLesson.isPassed) {
+          lessonState = 'completed'
+        }
+        return (
+          <LessonCard
+            key={e.id}
+            coverImg={`js-${idx}-cover.svg`}
+            title={e.title}
+            lessonCount={10}
+            challengeCount={e.challenges.length}
+            hourCount="-"
+            description={e.description}
+            currentState={lessonState}
+          />
+        )
+      })
     return (
       <Layout>
         <div className="row mt-4">
