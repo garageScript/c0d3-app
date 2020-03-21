@@ -54,7 +54,6 @@ const Curriculum: React.FC = () => {
     const sortedLessons: React.ReactElement[] = curriculumStatus
       .sort((a, b) => a.order - b.order)
       .map((e, idx) => {
-        console.log('E:', e.currentUser)
         let lessonState = ''
         if (e.currentUser.userLesson.isEnrolled) {
           lessonState = 'inProgress'
