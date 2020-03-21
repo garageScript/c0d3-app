@@ -5,7 +5,6 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
-// import { getSession } from '../helpers/getSession'
 
 import { GET_LESSONS } from '../graphql/queries'
 type Challenge = {
