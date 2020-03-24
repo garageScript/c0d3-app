@@ -1,0 +1,310 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         2  0.0  0.0      0     0 ?        S    Mar18   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kworker/0:0H-kblockd]
+root         8  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    Mar18   0:03  \_ [ksoftirqd/0]
+root        10  0.0  0.0      0     0 ?        I    Mar18   1:41  \_ [rcu_sched]
+root        11  0.0  0.0      0     0 ?        S    Mar18   0:02  \_ [migration/0]
+root        12  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [idle_inject/0]
+root        14  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [cpuhp/0]
+root        15  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [cpuhp/1]
+root        16  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [idle_inject/1]
+root        17  0.0  0.0      0     0 ?        S    Mar18   0:02  \_ [migration/1]
+root        18  0.0  0.0      0     0 ?        S    Mar18   0:04  \_ [ksoftirqd/1]
+root        20  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kworker/1:0H-kblockd]
+root        21  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [cpuhp/2]
+root        22  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [idle_inject/2]
+root        23  0.0  0.0      0     0 ?        S    Mar18   0:02  \_ [migration/2]
+root        24  0.0  0.0      0     0 ?        S    Mar18   0:10  \_ [ksoftirqd/2]
+root        26  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kworker/2:0H-kblockd]
+root        27  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [cpuhp/3]
+root        28  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [idle_inject/3]
+root        29  0.0  0.0      0     0 ?        S    Mar18   0:02  \_ [migration/3]
+root        30  0.0  0.0      0     0 ?        S    Mar18   0:02  \_ [ksoftirqd/3]
+root        32  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kworker/3:0H-kblockd]
+root        33  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [kdevtmpfs]
+root        34  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [netns]
+root        35  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [rcu_tasks_kthre]
+root        36  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [kauditd]
+root        37  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [khungtaskd]
+root        38  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [oom_reaper]
+root        39  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [writeback]
+root        40  0.0  0.0      0     0 ?        D    Mar18   0:01  \_ [kcompactd0]
+root        41  0.0  0.0      0     0 ?        SN   Mar18   0:00  \_ [ksmd]
+root        42  0.0  0.0      0     0 ?        SN   Mar18   0:01  \_ [khugepaged]
+root       135  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kintegrityd]
+root       136  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kblockd]
+root       137  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [blkcg_punt_bio]
+root       138  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [tpm_dev_wq]
+root       139  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [ata_sff]
+root       140  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [md]
+root       141  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [edac-poller]
+root       142  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [devfreq_wq]
+root       144  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [watchdogd]
+root       145  0.0  0.0      0     0 ?        S    Mar18   5:37  \_ [kswapd0]
+root       147  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [ecryptfs-kthrea]
+root       150  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kthrotld]
+root       151  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [acpi_thermal_pm]
+root       153  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [ipv6_addrconf]
+root       166  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [kstrp]
+root       185  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [charger_manager]
+root       229  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [scsi_eh_0]
+root       230  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [scsi_tmf_0]
+root       232  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [scsi_eh_1]
+root       233  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [scsi_tmf_1]
+root       236  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [scsi_eh_2]
+root       237  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [scsi_tmf_2]
+root       238  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [scsi_eh_3]
+root       239  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [scsi_tmf_3]
+root       240  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [scsi_eh_4]
+root       241  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [scsi_tmf_4]
+root       243  0.0  0.0      0     0 ?        S    Mar18   0:00  \_ [scsi_eh_5]
+root       244  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [scsi_tmf_5]
+root       257  0.0  0.0      0     0 ?        I<   Mar18   0:11  \_ [kworker/0:1H-kblockd]
+root       259  0.0  0.0      0     0 ?        I<   Mar18   0:13  \_ [kworker/2:1H-kblockd]
+root       272  0.0  0.0      0     0 ?        I<   Mar18   1:40  \_ [kworker/1:1H-kblockd]
+root       274  0.0  0.0      0     0 ?        I<   Mar18   0:11  \_ [kworker/3:1H-kblockd]
+root       275  0.0  0.0      0     0 ?        S    Mar18   0:40  \_ [jbd2/sda1-8]
+root       276  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [ext4-rsv-conver]
+root       351  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop0]
+root       374  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop1]
+root       381  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop2]
+root       393  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop3]
+root       400  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop4]
+root       401  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop5]
+root       402  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop6]
+root       403  0.0  0.0      0     0 ?        S<   Mar18   0:04  \_ [loop7]
+root       406  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop8]
+root       417  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop9]
+root       425  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop10]
+root       427  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop11]
+root       434  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop12]
+root       445  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop13]
+root       447  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [loop14]
+root       453  0.0  0.0      0     0 ?        S<   Mar18   0:11  \_ [loop15]
+root       536  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [nvkm-disp]
+root       569  0.0  0.0      0     0 ?        I<   Mar18   0:03  \_ [kworker/u13:1-hci0]
+root       634  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [cfg80211]
+root       635  0.0  0.0      0     0 ?        I<   Mar18   0:00  \_ [ttm_swap]
+root      1536  0.0  0.0      0     0 ?        S<   Mar18   0:00  \_ [krfcommd]
+root     21919  0.0  0.0      0     0 ?        S<   Mar21   0:00  \_ [loop16]
+root     32675  0.0  0.0      0     0 ?        I    Mar21   0:29  \_ [kworker/3:0-events]
+root      6526  0.0  0.0      0     0 ?        D    Mar21   0:00  \_ [kworker/u12:0+events_unbound]
+root      7733  0.0  0.0      0     0 ?        I    Mar21   0:00  \_ [kworker/3:3-events]
+root      7755  0.0  0.0      0     0 ?        D    Mar21   0:00  \_ [kworker/u12:2+events_unbound]
+root      7860  0.0  0.0      0     0 ?        I<   Mar21   0:00  \_ [kworker/u13:2-hci0]
+root      9831  0.1  0.0      0     0 ?        I    Mar21   2:40  \_ [kworker/2:1-events]
+root     10131  0.1  0.0      0     0 ?        I    Mar21   2:36  \_ [kworker/1:0-events]
+root     27747  0.1  0.0      0     0 ?        I    20:02   0:18  \_ [kworker/0:1-events]
+root     27852  0.0  0.0      0     0 ?        I    20:07   0:00  \_ [kworker/0:0-events]
+root     27853  0.0  0.0      0     0 ?        I    20:07   0:00  \_ [kworker/1:2-events]
+root     29423  0.0  0.0      0     0 ?        I    21:30   0:00  \_ [kworker/2:2]
+root     30789  0.0  0.0      0     0 ?        I    22:58   0:00  \_ [kworker/u12:3-events_unbound]
+root     30829  0.0  0.0      0     0 ?        I    23:03   0:00  \_ [kworker/u12:4-events_unbound]
+root     31729  0.0  0.0      0     0 ?        I    23:13   0:00  \_ [kworker/u12:5-events_unbound]
+root         1  0.0  0.0 168460  7244 ?        Ss   Mar18   0:50 /sbin/init splash
+root       319  0.0  0.5 180944 44052 ?        S<s  Mar18   0:31 /lib/systemd/systemd-journald
+root       343  0.0  0.0  21628  2876 ?        Ss   Mar18   0:07 /lib/systemd/systemd-udevd
+systemd+   637  0.0  0.0  21656  3616 ?        Ss   Mar18   1:06 /lib/systemd/systemd-resolved
+systemd+   639  0.0  0.0  92016    84 ?        Ssl  Mar18   0:01 /lib/systemd/systemd-timesyncd
+root       678  0.0  0.0 313336  3504 ?        Ssl  Mar18   0:00 /usr/sbin/ModemManager --filter-policy=strict
+avahi      682  0.0  0.0   8780  1656 ?        Ss   Mar18   0:13 avahi-daemon: running [alexis-computer.local]
+avahi      747  0.0  0.0   8572    24 ?        S    Mar18   0:00  \_ avahi-daemon: chroot helper
+root       690  0.0  0.0   9584  1524 ?        Ss   Mar18   0:01 /usr/sbin/cron -f
+root       694  0.0  0.0  38764     0 ?        Ss   Mar18   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+message+   701  0.0  0.0  11396  5140 ?        Ss   Mar18   0:27 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       703  0.0  0.0 413292  7256 ?        Ssl  Mar18   0:23 /usr/sbin/NetworkManager --no-daemon
+root       705  0.0  0.0  81852   124 ?        Ssl  Mar18   0:27 /usr/sbin/irqbalance --foreground
+syslog     707  0.0  0.0 226772  2168 ?        Ssl  Mar18   0:06 /usr/sbin/rsyslogd -n -iNONE
+root       708  0.0  0.0  13616    60 ?        Ss   Mar18   0:02 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root       709  0.0  0.0   2528   736 ?        Ss   Mar18   0:04 /usr/sbin/acpid
+root       710  0.0  0.0 393080  6036 ?        Ssl  Mar18   1:00 /usr/lib/udisks2/udisksd
+root       712  0.0  0.0 238536  3708 ?        Ssl  Mar18   0:15 /usr/lib/accountsservice/accounts-daemon
+root       713  0.0  0.0   8560  3324 ?        Ss   Mar18   0:00 /usr/lib/bluetooth/bluetoothd
+root       717  0.0  0.0  16900  3104 ?        Ss   Mar18   0:02 /lib/systemd/systemd-logind
+root       755  0.0  0.0 241140  7616 ?        Ssl  Mar18   0:11 /usr/lib/policykit-1/polkitd --no-debug
+root       780  0.0  0.0 117864     0 ?        Ssl  Mar18   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root       785  0.0  0.0  12140  1668 ?        Ss   Mar18   0:10 /usr/sbin/sshd -D
+root     29021  0.0  0.1  13388  8552 ?        Ss   21:27   0:00  \_ sshd: aortizoj [priv]
+aortizoj 29104  0.0  0.0  13388  5616 ?        S    21:27   0:01  |   \_ sshd: aortizoj@pts/6
+aortizoj 29105  0.0  0.0  14328  8128 pts/6    Ss   21:27   0:00  |       \_ -bash
+aortizoj 30184  0.0  0.0  13736  2620 pts/6    S+   22:17   0:00  |           \_ tmux attach-session -t c0d3
+root     29710  0.0  0.1  13384  8540 ?        Ss   21:58   0:00  \_ sshd: aortizoj [priv]
+aortizoj 29769  0.0  0.0  13524  5576 ?        S    21:58   0:01  |   \_ sshd: aortizoj@pts/18
+aortizoj 29770  0.0  0.0  14328  8088 pts/18   Ss   21:58   0:00  |       \_ -bash
+aortizoj 31467  0.0  0.0  13736  3492 pts/18   S+   23:09   0:00  |           \_ tmux a -t old-c0d3
+root     32101  0.0  0.0  12140  6940 ?        Ss   23:19   0:00  \_ sshd: [accepted]
+root     32127  0.0  0.0  12140  6888 ?        Ss   23:20   0:00  \_ sshd: [accepted]
+root       795  0.0  0.0 239564  2932 ?        Ssl  Mar18   0:00 /usr/sbin/gdm3
+root      1238  0.0  0.0 314324  4460 ?        Sl   Mar18   0:00  \_ gdm-session-worker [pam/gdm-password]
+aortizoj  1284  0.0  0.0 163872  1444 tty2     Ssl+ Mar18   0:00      \_ /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+aortizoj  1286  0.3  0.8 383404 71532 tty2     Dl+  Mar18  19:32          \_ /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+aortizoj  1303  0.0  0.0 189484     4 tty2     Sl+  Mar18   0:00          \_ /usr/lib/gnome-session/gnome-session-binary --systemd --systemd --session=ubuntu
+aortizoj  1375  0.0  0.0   5996    40 ?        Ss   Mar18   0:02              \_ /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+whoopsie   838  0.0  0.0 257080  3180 ?        Ssl  Mar18   0:00 /usr/bin/whoopsie -f
+kernoops   849  0.0  0.0  11100  1840 ?        Ss   Mar18   0:15 /usr/sbin/kerneloops --test
+kernoops   854  0.0  0.0  11100  1828 ?        Ss   Mar18   0:15 /usr/sbin/kerneloops
+rtkit      985  0.0  0.0 153096    60 ?        SNsl Mar18   0:07 /usr/libexec/rtkit-daemon
+root      1038  0.0  0.0 251876  3700 ?        Ssl  Mar18   0:00 /usr/lib/upower/upowerd
+colord    1184  0.0  0.0 246368  5032 ?        Ssl  Mar18   0:08 /usr/lib/colord/colord
+aortizoj  1257  0.0  0.0  21244  6872 ?        Ds   Mar18   0:02 /lib/systemd/systemd --user
+aortizoj  1258  0.0  0.0 169076    68 ?        S    Mar18   0:00  \_ (sd-pam)
+aortizoj  1275  0.7  0.1 3056596 8548 ?        S<sl Mar18  48:54  \_ /usr/bin/pulseaudio --daemonize=no
+aortizoj  1287  0.0  0.1  14116  8780 ?        Ss   Mar18   0:31  \_ /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+aortizoj  1395  0.0  0.0 239524  3540 ?        Ssl  Mar18   0:00  \_ /usr/lib/gvfs/gvfsd
+aortizoj  1611  0.0  0.0 313760  2204 ?        Sl   Mar18   0:00  |   \_ /usr/lib/gvfs/gvfsd-trash --spawner :1.7 /org/gtk/gvfs/exec_spaw/0
+aortizoj  5459  0.0  0.0 278756  6100 ?        Sl   Mar19   0:00  |   \_ /usr/lib/gvfs/gvfsd-http --spawner :1.7 /org/gtk/gvfs/exec_spaw/1
+aortizoj 15304  0.0  0.0 387644  4968 ?        Sl   Mar20   0:00  |   \_ /usr/lib/gvfs/gvfsd-network --spawner :1.7 /org/gtk/gvfs/exec_spaw/2
+aortizoj 15339  0.0  0.0 314748  5380 ?        Sl   Mar20   0:00  |   \_ /usr/lib/gvfs/gvfsd-dnssd --spawner :1.7 /org/gtk/gvfs/exec_spaw/4
+aortizoj  1401  0.0  0.0 378224  1332 ?        Sl   Mar18   0:00  \_ /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+aortizoj  1424  0.0  0.0 305312  1320 ?        Ssl  Mar18   0:00  \_ /usr/lib/at-spi2-core/at-spi-bus-launcher
+aortizoj  1429  0.0  0.0   7552   720 ?        S    Mar18   0:01  |   \_ /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+aortizoj  1439  0.0  0.0 162680  2540 ?        Sl   Mar18   0:04  \_ /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+aortizoj  1441  0.0  0.0 678404  2316 ?        Ssl  Mar18   0:23  \_ /usr/libexec/xdg-desktop-portal
+aortizoj  1450  0.0  0.0 457272   340 ?        Ssl  Mar18   0:02  \_ /usr/libexec/xdg-document-portal
+aortizoj  1453  0.0  0.0 235480  1564 ?        Ssl  Mar18   0:03  \_ /usr/libexec/xdg-permission-store
+aortizoj  1462  0.0  0.0 491124  5912 ?        Ssl  Mar18   0:17  \_ /usr/libexec/xdg-desktop-portal-gtk
+aortizoj  1472  0.0  0.0 156244  2408 ?        Sl   Mar18   0:00  \_ /usr/lib/dconf/dconf-service
+aortizoj  1481  0.0  0.0  89916     0 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-session/gnome-session-ctl --monitor
+aortizoj  1485  0.0  0.0 485352  3724 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-session/gnome-session-binary --systemd-service --session=ubuntu
+aortizoj  1696  0.0  0.0 231680  3344 ?        Sl   Mar18   0:00  |   \_ /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+aortizoj  1701  0.0  0.0 641224  3048 ?        Sl   Mar18   0:02  |   \_ /usr/libexec/evolution-data-server/evolution-alarm-notify
+aortizoj  1751  0.0  0.0 586184  7576 ?        SNl  Mar18   0:00  |   \_ /usr/lib/tracker/tracker-miner-fs
+aortizoj  2874  0.0  1.4 1465552 121384 ?      SLl  Mar18   0:42  |   \_ /usr/bin/gnome-software --gapplication-service
+aortizoj  2876  0.0  0.0 725024  6900 ?        Sl   Mar18   0:12  |   \_ update-notifier
+aortizoj  1512  0.3  2.0 3259460 164876 ?      Ssl  Mar18  22:11  \_ /usr/bin/gnome-shell
+aortizoj  1594  0.0  0.0 311408  3608 ?        Sl   Mar18   1:38  |   \_ ibus-daemon --panel disable -r --xim
+aortizoj  1601  0.0  0.0 162592  1900 ?        Sl   Mar18   0:00  |       \_ /usr/lib/ibus/ibus-memconf
+aortizoj  1602  0.0  0.0 274460  5096 ?        Sl   Mar18   0:12  |       \_ /usr/lib/ibus/ibus-extension-gtk3
+aortizoj  1823  0.0  0.0 162712   588 ?        Sl   Mar18   0:30  |       \_ /usr/lib/ibus/ibus-engine-simple
+aortizoj  1544  0.0  0.0 518828  2056 ?        Sl   Mar18   0:00  \_ /usr/lib/gnome-shell/gnome-shell-calendar-server
+aortizoj  1548  0.0  0.0 1083048 3524 ?        Ssl  Mar18   0:00  \_ /usr/libexec/evolution-source-registry
+aortizoj  1556  0.0  0.0 537220  2152 ?        Sl   Mar18   0:00  \_ /usr/lib/gnome-online-accounts/goa-daemon
+aortizoj  1565  0.0  0.0 314608   304 ?        Sl   Mar18   0:01  \_ /usr/lib/gnome-online-accounts/goa-identity-service
+aortizoj  1570  0.0  0.0 313940  1240 ?        Ssl  Mar18   0:12  \_ /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+aortizoj  1575  0.0  0.0 237984  1280 ?        Ssl  Mar18   0:00  \_ /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+aortizoj  1579  0.0  0.0 235764  1052 ?        Ssl  Mar18   0:00  \_ /usr/lib/gvfs/gvfs-goa-volume-monitor
+aortizoj  1583  0.0  0.0 235580   788 ?        Ssl  Mar18   0:00  \_ /usr/lib/gvfs/gvfs-mtp-volume-monitor
+aortizoj  1587  0.0  0.0 316480   412 ?        Ssl  Mar18   0:00  \_ /usr/lib/gvfs/gvfs-afc-volume-monitor
+aortizoj  1606  0.0  0.0 195560  3304 ?        Sl   Mar18   0:00  \_ /usr/lib/ibus/ibus-x11 --kill-daemon
+aortizoj  1610  0.0  0.0 236392  1212 ?        Sl   Mar18   0:02  \_ /usr/lib/ibus/ibus-portal
+aortizoj  1626  0.0  0.0 851360  2496 ?        Ssl  Mar18   0:00  \_ /usr/libexec/evolution-calendar-factory
+aortizoj  1638  0.0  0.0 464664  3428 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-sharing
+aortizoj  1640  0.0  0.0 314928   784 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-smartcard
+aortizoj  1642  0.0  0.0 343016  5000 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-wacom
+aortizoj  1643  0.0  0.0 319100   328 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-sound
+aortizoj  1645  0.0  0.1 1174356 11200 ?       Ssl  Mar18   0:10  \_ /usr/lib/gnome-settings-daemon/gsd-media-keys
+aortizoj  1646  0.0  0.0 235440   384 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+aortizoj  1651  0.0  0.0 248140  2980 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-print-notifications
+aortizoj  1653  0.0  0.0 343396  4304 ?        Ssl  Mar18   0:09  \_ /usr/lib/gnome-settings-daemon/gsd-xsettings
+aortizoj  1658  0.0  0.0 309592  1888 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+aortizoj  1662  0.0  0.0 313884   276 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-wwan
+aortizoj  1668  0.0  0.0 373868  1840 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-datetime
+aortizoj  1669  0.0  0.0 491720  4668 ?        Ssl  Mar18   0:01  \_ /usr/lib/gnome-settings-daemon/gsd-power
+aortizoj  1677  0.0  0.0 457028  2152 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-rfkill
+aortizoj  1683  0.0  0.0 343768  4280 ?        Ssl  Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-keyboard
+aortizoj  1684  0.0  0.0 311652  3140 ?        Ssl  Mar18   0:16  \_ /usr/lib/gnome-settings-daemon/gsd-housekeeping
+aortizoj  1689  0.0  0.0 343160   464 ?        Sl   Mar18   0:00  \_ /usr/lib/gnome-settings-daemon/gsd-printer
+aortizoj  1690  0.0  0.0 575596  6768 ?        Ssl  Mar18   0:25  \_ /usr/lib/gnome-settings-daemon/gsd-color
+aortizoj  1691  0.0  0.0 678296  2388 ?        Ssl  Mar18   0:00  \_ /usr/libexec/evolution-addressbook-factory
+aortizoj  1752  0.0  0.0 162172  2604 ?        Ssl  Mar18   0:00  \_ /usr/lib/gvfs/gvfsd-metadata
+aortizoj  1935  0.1  0.0      0     0 ?        Zsl  Mar18  11:01  \_ [code] <defunct>
+aortizoj  1937  0.0  0.0      0     0 ?        Z    Mar18   0:00  \_ [code] <defunct>
+aortizoj  1973  0.2  0.0      0     0 ?        Z    Mar18  15:01  \_ [code] <defunct>
+aortizoj  1974  0.0  0.0      0     0 ?        D    Mar18   0:23  \_ [code]
+aortizoj  1984  0.8  0.0      0     0 ?        Zl   Mar18  52:32  \_ [code] <defunct>
+aortizoj  2297  0.4  0.0      0     0 ?        Zl   Mar18  25:35  |   \_ [code] <defunct>
+aortizoj  2362  0.0  0.0      0     0 ?        Z    Mar18   0:32  |   |   \_ [code] <defunct>
+aortizoj  2364  0.3  0.0      0     0 ?        Zl   Mar18  18:55  |   |   \_ [code] <defunct>
+aortizoj  2381  0.1  0.0      0     0 ?        Zl   Mar18   7:13  |   |   |   \_ [code] <defunct>
+aortizoj  2390  0.0  0.0      0     0 ?        Z    Mar18   2:24  |   |   \_ [code] <defunct>
+aortizoj  2418  0.0  0.0      0     0 ?        Z    Mar18   1:29  |   |   \_ [code] <defunct>
+aortizoj  2711  0.0  0.0      0     0 ?        Z    Mar18   0:22  |   |   \_ [code] <defunct>
+aortizoj  2317  0.0  0.0      0     0 ?        Zl   Mar18   0:50  |   \_ [code] <defunct>
+aortizoj 25240  0.0  0.0      0     0 ?        Zs   Mar21   0:00  |   \_ [bash] <defunct>
+aortizoj  2279  0.0  0.0      0     0 ?        D    Mar18   2:55  \_ [code]
+aortizoj  2528  3.3  7.4 4577884 604692 ?      Sl   Mar18 209:23  \_ /home/aortizoj/firefox_dev/firefox
+aortizoj  2579  0.0  2.2 2706832 183092 ?      Sl   Mar18   5:40  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj  2620  0.0  0.6 2446412 56776 ?       Sl   Mar18   5:45  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 2 -isForBrowser -prefsLen 7376 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj  2719  0.2  2.7 2771148 221476 ?      Sl   Mar18  12:49  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 4 -isForBrowser -prefsLen 8145 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj  3258  1.4  4.2 2843848 346496 ?      Sl   Mar18  89:04  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 6 -isForBrowser -prefsLen 8503 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj  5124  0.0  0.8 2602964 68892 ?       Sl   Mar18   5:38  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 8 -isForBrowser -prefsLen 10678 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj  5375  0.0  0.0 182144  4480 ?        Sl   Mar18   0:04  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -parentBuildID 20200317211402 -prefsLen 10723 -prefMapSize 217866 -appdir /home/aortizoj/firefox_dev/browser 2528 true rdd
+aortizoj  3424  0.2  1.1 2917388 94256 ?       Sl   Mar19  12:52  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 14 -isForBrowser -prefsLen 11077 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj 20882  0.6  1.6 2557552 137284 ?      Sl   Mar21  16:58  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 24 -isForBrowser -prefsLen 12485 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj 27286  0.0  1.1 2565552 96424 ?       Sl   Mar21   1:09  |   \_ /home/aortizoj/firefox_dev/firefox-bin -contentproc -childID 25 -isForBrowser -prefsLen 12936 -prefMapSize 217866 -parentBuildID 20200317211402 -appdir /home/aortizoj/firefox_dev/browser 2528 true tab
+aortizoj  4680  0.0  0.1 390768 14840 ?        SLl  Mar19   0:01  \_ /usr/bin/seahorse --gapplication-service
+aortizoj  4681  0.0  0.3 988868 24812 ?        Ssl  Mar19   1:00  \_ /usr/libexec/gnome-terminal-server
+aortizoj  4776  0.0  0.0  14212  6732 pts/0    Ss   Mar19   0:00  |   \_ bash
+aortizoj 11362  0.0  0.0  13744  2560 pts/0    S+   Mar19   0:00  |       \_ tmux new -s c0d3
+aortizoj 22342  0.0  0.1 616444 10540 ?        Sl   Mar21   0:00  \_ /usr/bin/snap userd
+aortizoj 22512  0.0  0.0  42944  3092 ?        Ss   Mar21   0:00  \_ /usr/lib/bluetooth/obexd
+aortizoj 24174  0.0  0.0      0     0 ?        Zs   Mar21   0:00  \_ [tracker-store] <defunct>
+aortizoj  1280  0.0  0.0 240136  3396 ?        Sl   Mar18   0:35 /usr/bin/gnome-keyring-daemon --daemonize --login
+root      2914  0.0  0.0 238536  2556 ?        Ssl  Mar18   0:01 /usr/lib/bolt/boltd
+aortizoj  4718  1.8  0.0  19356  7596 ?        Ss   Mar18 110:03 tmux new -t system
+aortizoj 16601  0.0  0.0  14380  8152 pts/13   Ss+  Mar21   0:00  \_ -bash
+aortizoj 18303  0.0  0.1  14380  8184 pts/16   Ss+  00:10   0:00  \_ -bash
+aortizoj 19335  0.0  0.1  14380  8316 pts/17   Ss   00:39   0:00  \_ -bash
+aortizoj 30835  0.2  0.4  53288 37008 pts/17   S+   23:04   0:02  |   \_ vim
+aortizoj 30968  0.0  0.1  14380  8660 pts/21   Ss+  23:05   0:00  \_ -bash
+aortizoj 31473  0.0  0.1  14380  8492 pts/3    Ss+  23:10   0:00  \_ -bash
+aortizoj 31752  0.0  0.1  14380  8544 pts/9    Ss   23:14   0:00  \_ -bash
+aortizoj 32131  0.0  0.0  12100  4008 pts/9    R+   23:21   0:00      \_ ps faux
+root     27090  0.0  0.4 873428 39272 ?        Ssl  Mar19   3:49 PM2 v4.2.3: God Daemon (/root/.pm2)
+root     16217  0.6  0.6 747572 49404 ?        Sl   Mar21  10:41  \_ node /root/myProxy/build/app.js
+myproxy  27311  0.0  0.3 800840 24540 ?        Ssl  Mar19   0:06 PM2 v4.2.3: God Daemon (/home/myproxy/.pm2)
+root      5262  0.0  0.2 1812696 18000 ?       Ssl  Mar19   0:57 /usr/lib/snapd/snapd
+song      5997  0.0  0.0  18384  7592 ?        Ss   Mar19   0:00 /lib/systemd/systemd --user
+song      6000  0.0  0.0 169076  1608 ?        S    Mar19   0:00  \_ (sd-pam)
+song      6091  0.0  0.0   7296  3628 ?        Ss   Mar19   0:00  \_ /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+song      8361  0.0  0.0  83776  2948 ?        SLs  Mar20   0:00  \_ /usr/bin/gpg-agent --supervised
+song     10694  0.0  0.0  15920  4592 ?        Ss   Mar19   0:12 tmux new -s c0d3
+song     10695  0.0  0.0  13976  3608 pts/4    Ss+  Mar19   0:00  \_ -bash
+song      8411  0.0  0.0  14368  6712 pts/2    Ss+  Mar20   0:00  \_ -bash
+song      8603  0.0  0.0  14240  8124 pts/7    Ss   Mar20   0:00  \_ -bash
+song     20830  0.0  0.0      0     0 pts/7    D+   03:03   0:00  |   \_ [node]
+song     20867  0.0  0.0      0     0 pts/7    Z+   03:04   0:00  |       \_ [ps] <defunct>
+song      8909  0.0  0.0  14368  8148 pts/8    Ss+  Mar20   0:00  \_ -bash
+aortizoj 15257  0.0  0.0      0     0 ?        Zl   Mar20   3:58 [node] <defunct>
+aortizoj 15269  2.0  0.0      0     0 ?        Zl   Mar20  86:52  \_ [node] <defunct>
+root     20325  0.0  0.0  28048  6192 ?        Ss   Mar21   0:00 /usr/sbin/cupsd -l
+root     20326  0.0  0.0 181812  7228 ?        Ssl  Mar21   0:00 /usr/sbin/cups-browsed
+root      7793  0.0  0.0 168464  6372 ?        Ds   Mar21   0:00 (fprintd)
+aortizoj  8009  0.0  0.0      0     0 ?        Zl   Mar21   0:15 [node] <defunct>
+aortizoj  8110  0.0  0.0      0     0 ?        Zl   Mar21   0:05  \_ [node] <defunct>
+aortizoj  8331  0.0  0.0      0     0 ?        D    Mar21   0:02  \_ [node]
+aortizoj  8359  0.0  0.0      0     0 ?        Zl   Mar21   0:13  |   \_ [node] <defunct>
+aortizoj  8530  0.0  0.0      0     0 ?        Z    Mar21   0:00  |       \_ [node] <defunct>
+aortizoj  8628  0.0  0.0      0     0 ?        Zl   Mar21   0:39  \_ [node] <defunct>
+aortizoj  8904  0.0  0.0      0     0 ?        Zl   Mar21   1:08  |   \_ [node] <defunct>
+aortizoj  8913  0.1  0.0      0     0 ?        Zl   Mar21   2:25  |       \_ [node] <defunct>
+aortizoj  8635  0.0  0.0      0     0 ?        Zl   Mar21   0:07  \_ [node] <defunct>
+root     11012  0.0  0.0      0     0 ?        Ds   Mar21   0:00 [gpg-agent]
+root     11523  0.0  0.0      0     0 ?        Ds   Mar21   0:00 [packagekitd]
+root     11586  0.0  0.0 168464  6580 ?        Ds   Mar21   0:00 (fwupd)
+aortizoj 12036  0.0  0.0      0     0 ?        D    Mar21   0:01 [node]
+aortizoj 12075  0.0  0.0      0     0 ?        Z    Mar21   0:00  \_ [ps] <defunct>
+aortizoj 12372  0.0  0.0      0     0 ?        D    Mar21   0:01 [node]
+aortizoj 13876  0.0  0.0      0     0 ?        Z    Mar21   0:00  \_ [ps] <defunct>
+aortizoj 12665  0.0  0.0      0     0 ?        Zl   Mar21   1:14 [node] <defunct>
+aortizoj 12689  0.0  0.0      0     0 ?        Zl   Mar21   0:00 [gio] <defunct>
+aortizoj 14588  0.0  0.0      0     0 ?        D    Mar21   0:38 [node]
+aortizoj 14600  0.0  0.0      0     0 ?        Z    Mar21   0:00  \_ [xdg-open] <defunct>
+aortizoj 14612  0.0  0.0      0     0 ?        Zl   Mar21   0:00 [gio] <defunct>
+aortizoj 16378  0.1  0.0      0     0 ?        Zl   Mar21   2:15 [node] <defunct>
+aortizoj 16390  3.0  0.0      0     0 ?        D    Mar21  48:49  \_ [node]
+aortizoj 16580  0.0  0.0      0     0 ?        D    Mar21   0:01 [node]
+aortizoj 18630  0.0  0.0      0     0 ?        Z    00:13   0:00  \_ [ps] <defunct>
+root     18014  0.0  0.0 168464  6436 ?        DNs  00:00   0:00 (ogrotate)
+aortizoj 19257  0.0  0.0      0     0 ?        Ds   00:37   0:15 [node]
+aortizoj 19264  0.0  0.0      0     0 ?        Z    00:37   0:00  \_ [node] <defunct>
+aortizoj 19554  0.0  0.0      0     0 ?        Zsl  00:40   0:17 [node] <defunct>
+aortizoj 19561  0.0  0.0      0     0 ?        Z    00:40   0:00  \_ [node] <defunct>
+root     21536  0.0  0.0      0     0 ?        Ds   03:41   0:00 [packagekitd]
+aortizoj 29527  0.6  0.0      0     0 ?        Zsl  21:38   0:37 [node] <defunct>
+aortizoj 29534  0.0  0.0      0     0 ?        Z    21:39   0:00  \_ [node] <defunct>
+aortizoj 30419  1.5  0.0      0     0 ?        Zsl  22:19   0:58 [node] <defunct>
+aortizoj 30426  0.0  0.0      0     0 ?        Z    22:19   0:00  \_ [node] <defunct>
