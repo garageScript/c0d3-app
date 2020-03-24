@@ -10,6 +10,7 @@ describe('loginUser function', () => {
     await loginUser('hello', 'hpass')
     expect(fetch).toBeCalledWith('undefined/signin', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'content-type': 'application/json'
       },
