@@ -13,6 +13,7 @@ const link = createHttpLink({
 export default withApollo(
   ({ initialState }) =>
     new ApolloClient({
+      // Cache is used to rehydrating the store for Server Side Rendering.
       cache: new InMemoryCache().restore(initialState || {}),
       link
     })
