@@ -65,9 +65,7 @@ const Curriculum: React.FC = () => {
             key={e.id}
             coverImg={`js-${idx}-cover.svg`}
             title={e.title}
-            lessonCount={10}
             challengeCount={e.challenges.length}
-            hourCount="-"
             description={e.description}
             currentState={lessonState}
           />

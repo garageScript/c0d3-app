@@ -1,14 +1,11 @@
 import React from 'react'
 import { CheckCircle } from 'react-feather'
-
 import '../scss/lessonCard.scss'
 
 type Props = {
   coverImg: string
   title: string
   challengeCount: number
-  lessonCount: number
-  hourCount: string | number
   description: string
   currentState?: string
 }
@@ -42,16 +39,6 @@ const LessonCard: React.FC<Props> = props => {
               <div className="d-inline-block mr-4">
                 <img
                   className="mr-1"
-                  src="/curriculumAssets/icons/icon-lesson.svg"
-                  alt="icon-lessons"
-                />
-                <span className="lesson-card__icon-text">
-                  {props.lessonCount} LESSONS
-                </span>
-              </div>
-              <div className="d-inline-block mr-4">
-                <img
-                  className="mr-1"
                   src="/curriculumAssets/icons/icon-challenge.svg"
                   alt="icon-challenge"
                 />
@@ -59,19 +46,16 @@ const LessonCard: React.FC<Props> = props => {
                   {props.challengeCount} CHALLENGES
                 </span>
               </div>
-              <div className="d-inline-block mr-4">
-                <img
-                  className="mr-1"
-                  src="/curriculumAssets/icons/icon-time.svg"
-                  alt="icon-time"
-                />
-                <span className="lesson-card__icon-text">
-                  {props.hourCount} HOURS
-                </span>
-              </div>
             </div>
             <p className="lesson-card__description mt-2">{props.description}</p>
           </div>
+          {props.currentState === 'completed' && (
+            <span className="position-absolute lesson-card__container_review">
+              <a href="#" className="btn btn-sm bg-primary text-white">
+                Review Submissions
+              </a>
+            </span>
+          )}
         </div>
       </div>
       {props.currentState === 'inProgress' && (
