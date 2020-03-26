@@ -68,6 +68,7 @@ const Curriculum: React.FC = () => {
             challengeCount={e.challenges.length}
             description={e.description}
             currentState={lessonState}
+            reviewUrl={`https://c0d3.com/teacher/${e.id}`}
           />
         )
       })

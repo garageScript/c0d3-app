@@ -1114,7 +1114,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       >
         <a
           className="btn btn-sm bg-primary text-white"
-          href="#"
+          href="https://c0d3.com/teacher/5"
         >
           Review Submissions
         </a>

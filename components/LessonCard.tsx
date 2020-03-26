@@ -8,6 +8,7 @@ type Props = {
   challengeCount: number
   description: string
   currentState?: string
+  reviewUrl: string
 }
 
 const LessonCard: React.FC<Props> = props => {
@@ -51,7 +52,10 @@ const LessonCard: React.FC<Props> = props => {
           </div>
           {props.currentState === 'completed' && (
             <span className="position-absolute lesson-card__container_review">
-              <a href="#" className="btn btn-sm bg-primary text-white">
+              <a
+                href={props.reviewUrl}
+                className="btn btn-sm bg-primary text-white"
+              >
                 Review Submissions
               </a>
             </span>
