@@ -1365,6 +1365,60 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="card-header"
+  >
+    <div
+      className="d-flex mt-1"
+    >
+      <h6
+        className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+      >
+        NB
+      </h6>
+      <div>
+        <h5
+          className="m-0"
+        >
+          noob101
+        </h5>
+        <div
+          className="text-muted"
+        >
+          <small>
+            Submitted on 
+            Mar 25th 1:37pm
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="card-body"
+  >
+    <p
+      className="card-text text-primary"
+    >
+      Getting To Know Your Computer, pt. 1 - All Except You!
+    </p>
+    <a
+      className="d-inline-block"
+      href="#"
+    >
+      <button
+        className="btn btn-primary"
+      >
+        Review
+      </button>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/landingNav Landing Nav 1`] = `
 <nav
   className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
