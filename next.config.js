@@ -4,6 +4,6 @@ module.exports = withSass({
     SERVER_URL:
       process.env.NODE_ENV === 'production'
         ? process.env.SERVER_URL
-        : 'https://song.c0d3.com'
+        : 'https://c0d3-back.a0d3.com'
   }
 })
