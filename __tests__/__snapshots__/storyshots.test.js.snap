@@ -1004,21 +1004,6 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             className="d-inline-block mr-4"
           >
             <img
-              alt="icon-lessons"
-              className="mr-1"
-              src="/curriculumAssets/icons/icon-lesson.svg"
-            />
-            <span
-              className="lesson-card__icon-text"
-            >
-              10
-               LESSONS
-            </span>
-          </div>
-          <div
-            className="d-inline-block mr-4"
-          >
-            <img
               alt="icon-challenge"
               className="mr-1"
               src="/curriculumAssets/icons/icon-challenge.svg"
@@ -1028,21 +1013,6 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             >
               7
                CHALLENGES
-            </span>
-          </div>
-          <div
-            className="d-inline-block mr-4"
-          >
-            <img
-              alt="icon-time"
-              className="mr-1"
-              src="/curriculumAssets/icons/icon-time.svg"
-            />
-            <span
-              className="lesson-card__icon-text"
-            >
-              -
-               HOURS
             </span>
           </div>
         </div>
@@ -1121,21 +1091,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             className="d-inline-block mr-4"
           >
             <img
-              alt="icon-lessons"
-              className="mr-1"
-              src="/curriculumAssets/icons/icon-lesson.svg"
-            />
-            <span
-              className="lesson-card__icon-text"
-            >
-              10
-               LESSONS
-            </span>
-          </div>
-          <div
-            className="d-inline-block mr-4"
-          >
-            <img
               alt="icon-challenge"
               className="mr-1"
               src="/curriculumAssets/icons/icon-challenge.svg"
@@ -1147,21 +1102,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
                CHALLENGES
             </span>
           </div>
-          <div
-            className="d-inline-block mr-4"
-          >
-            <img
-              alt="icon-time"
-              className="mr-1"
-              src="/curriculumAssets/icons/icon-time.svg"
-            />
-            <span
-              className="lesson-card__icon-text"
-            >
-              -
-               HOURS
-            </span>
-          </div>
         </div>
         <p
           className="lesson-card__description mt-2"
@@ -1169,6 +1109,16 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
       </div>
+      <span
+        className="position-absolute lesson-card__container_review"
+      >
+        <a
+          className="btn btn-sm bg-primary text-white"
+          href="https://c0d3.com/teacher/5"
+        >
+          Review Submissions
+        </a>
+      </span>
     </div>
   </div>
 </div>
@@ -1205,21 +1155,6 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             className="d-inline-block mr-4"
           >
             <img
-              alt="icon-lessons"
-              className="mr-1"
-              src="/curriculumAssets/icons/icon-lesson.svg"
-            />
-            <span
-              className="lesson-card__icon-text"
-            >
-              10
-               LESSONS
-            </span>
-          </div>
-          <div
-            className="d-inline-block mr-4"
-          >
-            <img
               alt="icon-challenge"
               className="mr-1"
               src="/curriculumAssets/icons/icon-challenge.svg"
@@ -1229,21 +1164,6 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             >
               7
                CHALLENGES
-            </span>
-          </div>
-          <div
-            className="d-inline-block mr-4"
-          >
-            <img
-              alt="icon-time"
-              className="mr-1"
-              src="/curriculumAssets/icons/icon-time.svg"
-            />
-            <span
-              className="lesson-card__icon-text"
-            >
-              -
-               HOURS
             </span>
           </div>
         </div>
