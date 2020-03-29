@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from './Button'
 
+import '../scss/submissionCard.scss'
+
 type Props = {
   userId: string
   initial: string
@@ -11,15 +13,17 @@ type Props = {
 
 const SubmissionCard: React.FC<Props> = props => {
   return (
-    <div className="card shadow-sm">
-      <div className="card-header">
-        <div className="d-flex mt-1">
-          <h6 className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3">
-            {props.initial}
-          </h6>
-          <div>
+    <div className="card shadow-sm mr-3">
+      <div className="card-header bg-white">
+        <div className="row no-gutters">
+          <div className="col-0">
+            <h6 className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3">
+              {props.initial}
+            </h6>
+          </div>
+          <div className="col-8">
             <h5 className="m-0">{props.userId}</h5>
-            <div className="text-muted">
+            <div className="text-muted submissionTime">
               <small>Submitted on {props.time}</small>
             </div>
           </div>
