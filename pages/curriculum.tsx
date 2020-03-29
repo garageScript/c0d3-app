@@ -50,11 +50,19 @@ const Curriculum: React.FC = () => {
 
   if (data) {
     const { curriculumStatus }: { curriculumStatus: Lesson[] } = data
-    const sortedLessons: React.ReactElement[] = curriculumStatus
-      .sort((a, b) => a.order - b.order)
-      .map((e, idx) => {
+    const sortedLessons: Lesson[] = curriculumStatus.sort(
+      (a, b) => a.order - b.order
+    )
+    const lessonInProgressIdx = sortedLessons.findIndex(
+      lesson => !lesson.currentUser.userLesson.isPassed
+    )
+    const lessonsToRender: React.ReactElement[] = sortedLessons.map(
+      (e, idx) => {
         let lessonState = ''
-        if (e.currentUser.userLesson.isEnrolled) {
+        if (
+          e.currentUser.userLesson.isEnrolled ||
+          idx === lessonInProgressIdx
+        ) {
           lessonState = 'inProgress'
         }
         if (e.currentUser.userLesson.isPassed) {
@@ -71,11 +79,12 @@ const Curriculum: React.FC = () => {
             reviewUrl={`https://c0d3.com/teacher/${e.id}`}
           />
         )
-      })
+      }
+    )
     return (
       <Layout>
         <div className="row mt-4">
-          <div className="col-8">{sortedLessons}</div>
+          <div className="col-8">{lessonsToRender}</div>
           <div className="col-4">
             <ProgressCard progressCount={0} />
             <AnnouncementCard
