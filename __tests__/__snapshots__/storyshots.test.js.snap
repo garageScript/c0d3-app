@@ -1285,29 +1285,213 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
+exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
 <div
-  className="card shadow-sm"
+  className="card-group"
 >
   <div
-    className="card-header"
+    className="card shadow-sm mr-3"
   >
     <div
-      className="d-flex mt-1"
+      className="card-header bg-white"
     >
-      <h6
-        className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+      <div
+        className="row no-gutters"
       >
-        NB
-      </h6>
-      <div>
+        <div
+          className="col-0"
+        >
+          <h6
+            className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+          >
+            NB
+          </h6>
+        </div>
+        <div
+          className="col-8"
+        >
+          <h5
+            className="m-0"
+          >
+            noob101
+          </h5>
+          <div
+            className="text-muted submissionTime"
+          >
+            <small>
+              Submitted on 
+              Mar 25th 1:37pm
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text text-primary"
+      >
+        Getting To Know Your Computer, pt. 1 - All Except You!
+      </p>
+      <a
+        className="d-inline-block"
+        href="#"
+      >
+        <button
+          className="btn btn-primary"
+        >
+          Review
+        </button>
+      </a>
+    </div>
+  </div>
+  <div
+    className="card shadow-sm mr-3"
+  >
+    <div
+      className="card-header bg-white"
+    >
+      <div
+        className="row no-gutters"
+      >
+        <div
+          className="col-0"
+        >
+          <h6
+            className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+          >
+            HG
+          </h6>
+        </div>
+        <div
+          className="col-8"
+        >
+          <h5
+            className="m-0"
+          >
+            hwong0305
+          </h5>
+          <div
+            className="text-muted submissionTime"
+          >
+            <small>
+              Submitted on 
+              Mar 29th 12:09am
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text text-primary"
+      >
+        Uploading a File From Your Computer to Your Website
+      </p>
+      <a
+        className="d-inline-block"
+        href="#"
+      >
+        <button
+          className="btn btn-primary"
+        >
+          Review
+        </button>
+      </a>
+    </div>
+  </div>
+  <div
+    className="card shadow-sm mr-3"
+  >
+    <div
+      className="card-header bg-white"
+    >
+      <div
+        className="row no-gutters"
+      >
+        <div
+          className="col-0"
+        >
+          <h6
+            className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+          >
+            AZ
+          </h6>
+        </div>
+        <div
+          className="col-8"
+        >
+          <h5
+            className="m-0"
+          >
+            aortizoj
+          </h5>
+          <div
+            className="text-muted submissionTime"
+          >
+            <small>
+              Submitted on 
+              Mar 27th 9:58pm
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card-body"
+    >
+      <p
+        className="card-text text-primary"
+      >
+        Biggest Num out of 2
+      </p>
+      <a
+        className="d-inline-block"
+        href="#"
+      >
+        <button
+          className="btn btn-primary"
+        >
+          Review
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
+<div
+  className="card shadow-sm mr-3"
+>
+  <div
+    className="card-header bg-white"
+  >
+    <div
+      className="row no-gutters"
+    >
+      <div
+        className="col-0"
+      >
+        <h6
+          className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+        >
+          NB
+        </h6>
+      </div>
+      <div
+        className="col-8"
+      >
         <h5
           className="m-0"
         >
           noob101
         </h5>
         <div
-          className="text-muted"
+          className="text-muted submissionTime"
         >
           <small>
             Submitted on 
