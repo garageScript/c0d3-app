@@ -54,7 +54,7 @@ const Curriculum: React.FC = () => {
       (a, b) => a.order - b.order
     )
     const lessonInProgressIdx = sortedLessons.findIndex(
-      lesson => lesson.currentUser.userLesson.isEnrolled === null
+      lesson => !lesson.currentUser.userLesson.isPassed
     )
     const lessonsToRender: React.ReactElement[] = sortedLessons.map(
       (e, idx) => {
