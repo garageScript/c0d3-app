@@ -28,6 +28,7 @@ type Lesson = {
   order: number
   challenges: Challenge[]
   currentUser: User
+  docUrl: string
 }
 
 const Curriculum: React.FC = () => {
@@ -77,6 +78,7 @@ const Curriculum: React.FC = () => {
             description={e.description}
             currentState={lessonState}
             reviewUrl={`https://c0d3.com/teacher/${e.id}`}
+            docUrl={e.docUrl}
           />
         )
       }
