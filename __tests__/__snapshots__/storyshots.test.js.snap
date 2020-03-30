@@ -1316,7 +1316,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
             noob101
           </h5>
           <div
-            className="text-muted submissionTime"
+            className="text-muted"
           >
             <small>
               Submitted on 
@@ -1373,7 +1373,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
             hwong0305
           </h5>
           <div
-            className="text-muted submissionTime"
+            className="text-muted"
           >
             <small>
               Submitted on 
@@ -1430,7 +1430,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
             aortizoj
           </h5>
           <div
-            className="text-muted submissionTime"
+            className="text-muted"
           >
             <small>
               Submitted on 
@@ -1491,7 +1491,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
           noob101
         </h5>
         <div
-          className="text-muted submissionTime"
+          className="text-muted"
         >
           <small>
             Submitted on 

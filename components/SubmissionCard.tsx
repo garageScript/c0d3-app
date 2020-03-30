@@ -1,8 +1,6 @@
 import React from 'react'
 import Button from './Button'
 
-import '../scss/submissionCard.scss'
-
 type Props = {
   userId: string
   initial: string
@@ -23,7 +21,7 @@ const SubmissionCard: React.FC<Props> = props => {
           </div>
           <div className="col-8">
             <h5 className="m-0">{props.userId}</h5>
-            <div className="text-muted submissionTime">
+            <div className="text-muted">
               <small>Submitted on {props.time}</small>
             </div>
           </div>
