@@ -1180,7 +1180,9 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   >
     <a
       className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-      href="#"
+      href="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Start Lesson
     </a>
