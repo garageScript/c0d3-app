@@ -5862,7 +5862,7 @@ fake-tag@^1.0.0:
   resolved "https://registry.yarnpkg.com/fake-tag/-/fake-tag-1.0.1.tgz#1d59da482240a02bd83500ca98976530ed154b0d"
   integrity sha512-qmewZoBpa71mM+y6oxXYW/d1xOYQmeIvnEXAt1oCmdP0sqcogWYLepR87QL1jQVLSVMVYDq2cjY6ec/Wu8/4pg==
 
-fast-deep-equal@^2.0.1:
+fast-deep-equal@2.0.1, fast-deep-equal@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
@@ -12590,6 +12590,13 @@ svgo@^1.2.2, svgo@^1.3.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swr@^0.1.18:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-0.1.18.tgz#be62df4cb8d188dc092305b35ecda1f3be8e61c1"
+  integrity sha512-lD31JxsD0bXdT7dyGVIB7MHcwgFp+HbBBOLt075hJT0sEgW01E3+EuCeB6fsavxZ2UjUZ3f+SbNMo9c8pv9uiA==
+  dependencies:
+    fast-deep-equal "2.0.1"
 
 symbol-observable@^1.0.2:
   version "1.2.0"

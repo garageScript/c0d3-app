@@ -58,27 +58,27 @@ const Curriculum: React.FC = () => {
       lesson => !lesson.currentUser.userLesson.isPassed
     )
     const lessonsToRender: React.ReactElement[] = sortedLessons.map(
-      (e, idx) => {
+      (lesson, idx) => {
         let lessonState = ''
         if (
-          e.currentUser.userLesson.isEnrolled ||
+          lesson.currentUser.userLesson.isEnrolled ||
           idx === lessonInProgressIdx
         ) {
           lessonState = 'inProgress'
         }
-        if (e.currentUser.userLesson.isPassed) {
+        if (lesson.currentUser.userLesson.isPassed) {
           lessonState = 'completed'
         }
         return (
           <LessonCard
-            key={e.id}
+            key={lesson.id}
             coverImg={`js-${idx}-cover.svg`}
-            title={e.title}
-            challengeCount={e.challenges.length}
-            description={e.description}
+            title={lesson.title}
+            challengeCount={lesson.challenges.length}
+            description={lesson.description}
             currentState={lessonState}
-            reviewUrl={`https://c0d3.com/teacher/${e.id}`}
-            docUrl={e.docUrl}
+            reviewUrl={`https://c0d3.com/teacher/${lesson.id}`}
+            docUrl={lesson.docUrl}
           />
         )
       }
