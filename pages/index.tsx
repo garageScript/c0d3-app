@@ -17,7 +17,7 @@ const IndexPage: any = () => {
   }
   // while loading, don't show anything to user
   if (!data && !error) {
-    return ''
+    return null
   }
   return (
     <>

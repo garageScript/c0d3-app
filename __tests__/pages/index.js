@@ -10,12 +10,12 @@ import LandingPage from '../../components/LandingPage'
 import useSWR from 'swr'
 
 describe('Index Page', () => {
-  test('function', async () => {
+  test('fetcher should return a promise', async () => {
     window.fetch = () => Promise.resolve({json: () => 5})
     const data = await fetcher()
     expect(data).toEqual(5)
   })
-  test('Should render curriculum', async () => {
+  test('Should render curriculum if user is identified', async () => {
     useSWR.mockReturnValue({
       data: {
         userInfo: {name:'tester'}
@@ -26,7 +26,7 @@ describe('Index Page', () => {
     const { getByText } = render(<IndexPage />)
     getByText('Hello Curriculum')
   })
-  test('Should return IndexPage', async () => {
+  test('Should render landing page if user is not identified', async () => {
     useSWR.mockReturnValue({
       error: undefined,
       data: {
@@ -34,15 +34,14 @@ describe('Index Page', () => {
         errorMessage: "unauthorized"
       }
     })
-    // IndexPage.mockReturnValue( <h1>Hello Landing</h1> )
     LandingPage.mockReturnValue(<h1>Hello Landing</h1>)
-    // const { getByText } = render(<LandingPage />)
+    
     const { getByText } = render(<IndexPage />)
     getByText('Hello Landing')
   })
-  test('Should return empty string', async () => {
+  test('Should not render while page is loading', async () => {
     useSWR.mockReturnValue({})
-
+    
     const { container } = render(<IndexPage />)
     expect(container).toMatchSnapshot()
   })
