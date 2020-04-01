@@ -7,7 +7,7 @@ import useSWR from 'swr'
 
 const SERVER_URL = process.env.SERVER_URL
 
-const fetcher = (url: string) =>
+export const fetcher = (url: string) =>
   fetch(url, { credentials: 'include' }).then(r => r.json())
 
 const IndexPage: any = () => {
