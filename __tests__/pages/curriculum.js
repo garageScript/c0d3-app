@@ -34,8 +34,7 @@ describe('Curriculum Page', () => {
               id: 4
             }],
             currentUser: {
-              userLesson: {
-              }
+              userLesson: {}
             },
             docUrl: 'lesson4.com',
           },
@@ -48,8 +47,7 @@ describe('Curriculum Page', () => {
               id: 1
             }],
             currentUser: {
-              userLesson: {
-              }
+              userLesson: {}
             },
             docUrl: 'lesson1.com',
           }
