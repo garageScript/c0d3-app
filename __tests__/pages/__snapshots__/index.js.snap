@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Page Should not render while page is loading 1`] = `<div />`;
