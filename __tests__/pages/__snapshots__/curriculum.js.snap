@@ -129,7 +129,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
           >
             <a
               class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-              href="lesson4.com"
+              href="lesson1.com"
               rel="noopener noreferrer"
               target="_blank"
             >

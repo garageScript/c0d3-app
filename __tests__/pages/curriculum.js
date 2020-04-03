@@ -51,7 +51,7 @@ describe('Curriculum Page', () => {
               userLesson: {
               }
             },
-            docUrl: 'lesson4.com',
+            docUrl: 'lesson1.com',
           }
         ]
       }
@@ -92,7 +92,7 @@ describe('Curriculum Page', () => {
                 isPassed: '9878990'
               }
             },
-            docUrl: 'lesson4.com',
+            docUrl: 'lesson1.com',
           }
         ]
       }
