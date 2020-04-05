@@ -81,7 +81,6 @@ const AppNav: React.FC<Props> = ({
   lastName
 }) => {
   const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
-  console.log(loggedIn)
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">

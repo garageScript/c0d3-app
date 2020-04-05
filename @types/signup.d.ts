@@ -9,3 +9,10 @@ export type Values = {
 export type Props = {
   submitSignup: (values: Values) => void
 }
+
+export type SignupErrors = {
+  signupErrors: {
+    userName?: string[]
+    confirmEmail?: string[]
+  }
+}
