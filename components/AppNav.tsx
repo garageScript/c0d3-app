@@ -49,6 +49,9 @@ const UnAuthButton = () => (
     <Link href="/login">
       <a className="btn btn-secondary border mr-3">Login</a>
     </Link>
+    <Link href="/signup">
+      <a className="btn btn-secondary border mr-3">Signup</a>
+    </Link>
   </div>
 )
 
@@ -78,7 +81,7 @@ const AppNav: React.FC<Props> = ({
   lastName
 }) => {
   const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
-
+  console.log(loggedIn)
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">

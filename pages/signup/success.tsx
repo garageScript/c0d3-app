@@ -8,8 +8,8 @@ const success: React.FC = () => {
   return (
     <Layout>
       <Card success title="Account created successfully!">
-        <Link href="/dashboard">
-          <a className="btn btn-primary btn-lg mb-3"> Continue to Dashboard</a>
+        <Link href="/curriculum">
+          <a className="btn btn-primary btn-lg mb-3"> Continue to Curriculum</a>
         </Link>
       </Card>
     </Layout>
