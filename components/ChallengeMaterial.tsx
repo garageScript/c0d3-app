@@ -41,34 +41,34 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = props
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
-  if (props.challenges) {
-    const sortedChallenges: Challenge[] = props.challenges.sort(
-      (a, b) => a.order - b.order
-    )
-    const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
-      challenge => {
-        return (
-          <ChallengeTitleCard
-            key={challenge.id}
-            challengeNum={challenge.order}
-            title={challenge.title}
-          />
-        )
-      }
-    )
-    return (
-      <div className="row">
-        <div className="col-4">{challengeTitleCards}</div>
-        <div className="col-8">
-          <ChallengeQuestionCard
-            title="Less Than or Equal to 5"
-            question="Write a function that takes in an array, and returns an array of same length where all elements <= 5 is changed to 0."
-          />
-        </div>
-      </div>
-    )
+  if (!props.challenges) {
+    return <h1>No Challenges for this lesson</h1>
   }
-  return <h1>No Challenges for this lesson</h1>
+  const sortedChallenges: Challenge[] = props.challenges.sort(
+    (a, b) => a.order - b.order
+  )
+  const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
+    challenge => {
+      return (
+        <ChallengeTitleCard
+          key={challenge.id}
+          challengeNum={challenge.order}
+          title={challenge.title}
+        />
+      )
+    }
+  )
+  return (
+    <div className="row">
+      <div className="col-4">{challengeTitleCards}</div>
+      <div className="col-8">
+        <ChallengeQuestionCard
+          title="Less Than or Equal to 5"
+          question="Write a function that takes in an array, and returns an array of same length where all elements <= 5 is changed to 0."
+        />
+      </div>
+    </div>
+  )
 }
 
 export default ChallengeMaterial
