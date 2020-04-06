@@ -9,6 +9,7 @@ type Props = {
   description: string
   currentState?: string
   reviewUrl: string
+  challengesUrl: string
   docUrl: string
 }
 
@@ -75,7 +76,7 @@ const LessonCard: React.FC<Props> = props => {
           </a>
           <a
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            href="#"
+            href={props.challengesUrl}
           >
             View Challenges
           </a>

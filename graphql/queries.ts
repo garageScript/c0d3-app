@@ -24,8 +24,12 @@ export const GET_LESSONS = gql`
       title
       description
       order
+      docUrl
       challenges {
         id
+        description
+        title
+        order
       }
     }
   }

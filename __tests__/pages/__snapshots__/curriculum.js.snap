@@ -137,7 +137,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             </a>
             <a
               class="lesson-card__button btn bg-primary my-1 text-white border border-white"
-              href="#"
+              href="https://c0d3.com/student/1"
             >
               View Challenges
             </a>

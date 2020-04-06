@@ -5,11 +5,9 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
+import { Challenge } from '../@types/challenge'
 
 import { GET_LESSONS } from '../graphql/queries'
-type Challenge = {
-  id: number
-}
 
 type LessonStatus = {
   isEnrolled: string | null
@@ -78,6 +76,7 @@ const Curriculum: React.FC = () => {
             description={lesson.description}
             currentState={lessonState}
             reviewUrl={`https://c0d3.com/teacher/${lesson.id}`}
+            challengesUrl={`https://c0d3.com/student/${lesson.id}`}
             docUrl={lesson.docUrl}
           />
         )
