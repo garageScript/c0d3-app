@@ -14,13 +14,12 @@ describe('Signup Page', () => {
     getByTestId('lastName')
   })
 
-  //to be readded once validation of form takes place in real time
-  // test('Should not submit values', async () => {
-  //   const { getByTestId } = render(<Signup {...props} />)
-  //   const submitButton = getByTestId('submit')
-  //   fireEvent.click(submitButton)
-  //   await wait(() => expect(submitSignup).not.toBeCalled())
-  // })
+  test('Should not submit values if form is empty', async () => {
+    const { getByTestId } = render(<Signup {...props} />)
+    const submitButton = getByTestId('submit')
+    fireEvent.click(submitButton)
+    await wait(() => expect(submitSignup).not.toBeCalled())
+  })
 
   test('Should submit signup form values and redirect upon successful submission', async () => {
     signupHelper.signupUser = jest
