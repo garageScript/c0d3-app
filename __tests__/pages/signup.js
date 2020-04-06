@@ -15,7 +15,7 @@ describe('Signup Page', () => {
   })
 
   test('Should not submit values if form is empty', async () => {
-    const { getByTestId } = render(<Signup {...props} />)
+    const { getByTestId } = render(<Signup />)
     const submitButton = getByTestId('submit')
     fireEvent.click(submitButton)
     await wait(() => expect(submitSignup).not.toBeCalled())
