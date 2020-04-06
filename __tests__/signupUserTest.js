@@ -39,5 +39,14 @@ describe('Signup User Helper function', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       throw new Error()
     })
+    await signupUser({
+      email: 'emailman@emailman.com',
+      firstName: 'Mitch',
+      lastName: 'Dinh',
+      userName: 'rogerrabbit',
+      username: 'rogerrabbit',
+      password: 'hello1234'
+    })
+    expect(fetch).toThrowError()
   })
 })
