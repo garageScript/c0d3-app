@@ -294,6 +294,14 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
       >
         Login
       </a>
+      <a
+        className="btn btn-secondary border mr-3"
+        href="/signup"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Signup
+      </a>
     </div>
   </div>
 </nav>
@@ -886,6 +894,14 @@ Array [
           onMouseEnter={[Function]}
         >
           Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
         </a>
       </div>
     </div>
@@ -1594,6 +1610,14 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
       >
         Login
       </a>
+      <a
+        className="btn btn-secondary border mr-3"
+        href="/signup"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Signup
+      </a>
     </div>
   </div>
 </nav>
@@ -1668,6 +1692,14 @@ Array [
           onMouseEnter={[Function]}
         >
           Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
         </a>
       </div>
     </div>
@@ -1819,6 +1851,14 @@ Array [
           onMouseEnter={[Function]}
         >
           Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
         </a>
       </div>
     </div>
@@ -2271,6 +2311,14 @@ Array [
         >
           Login
         </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
       </div>
     </div>
   </nav>,
@@ -2455,6 +2503,14 @@ Array [
         >
           Login
         </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
       </div>
     </div>
   </nav>,
@@ -2502,11 +2558,11 @@ Array [
           />
           <a
             className="btn btn-primary btn-lg mb-3"
-            href="/dashboard"
+            href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-             Continue to Dashboard
+             Continue to Curriculum
           </a>
         </div>
       </div>

@@ -1,13 +1,12 @@
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
 import Signup from '../../pages/signup'
+import * as signupHelper from '../../helpers/signupUser'
+import Router from 'next/router'
 
 describe('Signup Page', () => {
-  const submitSignup = jest.fn()
-  const props = { submitSignup }
-
   test('Should render without crashing', () => {
-    const { getByTestId } = render(<Signup {...props} />)
+    const { getByTestId } = render(<Signup />)
     getByTestId('email')
     getByTestId('username')
     getByTestId('password')
@@ -15,15 +14,20 @@ describe('Signup Page', () => {
     getByTestId('lastName')
   })
 
-  test('Should not submit values', async () => {
-    const { getByTestId } = render(<Signup {...props} />)
-    const submitButton = getByTestId('submit')
-    fireEvent.click(submitButton)
-    await wait(() => expect(submitSignup).not.toBeCalled())
-  })
+  //to be readded once validation of form takes place in real time
+  // test('Should not submit values', async () => {
+  //   const { getByTestId } = render(<Signup {...props} />)
+  //   const submitButton = getByTestId('submit')
+  //   fireEvent.click(submitButton)
+  //   await wait(() => expect(submitSignup).not.toBeCalled())
+  // })
 
-  test('Should submit values', async () => {
-    const { getByTestId } = render(<Signup {...props} />)
+  test('Should submit signup form values and redirect upon successful submission', async () => {
+    signupHelper.signupUser = jest
+      .fn()
+      .mockReturnValue(Promise.resolve({ success: 'true' }))
+    Router.push = jest.fn()
+    const { getByTestId } = render(<Signup />)
     const emailField = getByTestId('email')
     const usernameField = getByTestId('username')
     const passwordField = getByTestId('password')
@@ -62,14 +66,8 @@ describe('Signup Page', () => {
 
     await wait(() => {
       fireEvent.click(submitButton),
-        expect(submitSignup).toHaveBeenCalledTimes(1),
-        expect(submitSignup.mock.calls[0][0]).toEqual({
-          email: 'email@domain.com',
-          username: 'user name',
-          password: 'password123',
-          firstName: 'user',
-          lastName: 'name'
-        })
+        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
+        expect(Router.push).toHaveBeenCalledWith('/signup/success')
     })
   })
 })

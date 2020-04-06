@@ -4,9 +4,11 @@ import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
 import useSWR from 'swr'
-import { fetcher } from '../helpers/sessionFetcher'
 
 const SERVER_URL = process.env.SERVER_URL
+
+export const fetcher = (url: string) =>
+  fetch(url, { credentials: 'include' }).then(r => r.json())
 
 const IndexPage: any = () => {
   const { data, error } = useSWR(`${SERVER_URL}/session`, fetcher)

@@ -18,10 +18,8 @@ export const signupUser = async (values: Values) => {
         password: values.password
       })
     })
-    if (!res.redirected) {
-      return res.json()
-    }
+    return res.json()
   } catch (e) {
-    return e
+    console.log(e)
   }
 }

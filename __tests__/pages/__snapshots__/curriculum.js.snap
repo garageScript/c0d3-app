@@ -62,6 +62,12 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
         >
           Login
         </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
       </div>
     </div>
   </nav>
@@ -398,6 +404,12 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
           href="/login"
         >
           Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
         </a>
       </div>
     </div>
