@@ -1,8 +1,11 @@
 import React from 'react'
+import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import '../scss/lessonCard.scss'
+import { GET_SUBMISSIONS } from '../graphql/queries'
 
 type Props = {
+  lessonId: number
   coverImg: string
   title: string
   challengeCount: number
@@ -10,6 +13,70 @@ type Props = {
   currentState?: string
   reviewUrl: string
   docUrl: string
+  shouldNotGetCount?: boolean
+}
+
+type ReviewButtonProps = {
+  isCompleted: boolean
+  reviewUrl: string
+  lessonId: number
+  shouldNotGetCount?: boolean
+}
+
+type ReviewCountProps = {
+  shouldNotGetCount?: boolean
+  lessonId: number
+}
+
+const ReviewCount: React.FC<ReviewCountProps> = (props) => {
+  if (props.shouldNotGetCount) {
+    return null
+  }
+
+  const { loading, data } = useQuery(GET_SUBMISSIONS, {
+    variables: {
+      in: {
+        id: `${props.lessonId}`
+      }
+    }
+  })
+
+  if (loading) {
+    return <span> ... </span>
+  }
+
+  if (!data) {
+    return null
+  }
+  const pendingSubmissionsCount = data.submissions.reduce(
+    (acc: number, val: any) => {
+      if (val.status === 'underReview') {
+        acc = acc + 1
+        return acc
+      }
+      return acc
+    },
+    0
+  )
+
+  return (
+    <span> {pendingSubmissionsCount} </span>
+  )
+}
+
+const ReviewButton: React.FC<ReviewButtonProps> = props => {
+  if (!props.isCompleted) {
+    return null
+  }
+  return (
+    <span className="position-absolute lesson-card__container_review">
+      <a href={props.reviewUrl} className="btn btn-sm bg-primary text-white">
+      Review 
+        <ReviewCount shouldNotGetCount={props.shouldNotGetCount} lessonId={props.lessonId} />
+      Submissions
+      </a>
+    </span>
+  )
 }
 
 const LessonCard: React.FC<Props> = props => {
@@ -51,16 +118,12 @@ const LessonCard: React.FC<Props> = props => {
             </div>
             <p className="lesson-card__description mt-2">{props.description}</p>
           </div>
-          {props.currentState === 'completed' && (
-            <span className="position-absolute lesson-card__container_review">
-              <a
-                href={props.reviewUrl}
-                className="btn btn-sm bg-primary text-white"
-              >
-                Review Submissions
-              </a>
-            </span>
-          )}
+          <ReviewButton
+            isCompleted={props.currentState === 'completed'}
+            reviewUrl={props.reviewUrl}
+            shouldNotGetCount={props.shouldNotGetCount}
+            lessonId={props.lessonId}
+          />
         </div>
       </div>
       {props.currentState === 'inProgress' && (

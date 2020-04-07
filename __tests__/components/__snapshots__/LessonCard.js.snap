@@ -1,0 +1,540 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lesson Card Complet State Should render lessonCard with loading... 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <span
+          class="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+        >
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="height: 15px; margin-top: -2px;"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <span
+            class="mr-1"
+          >
+            COMPLETED
+          </span>
+        </span>
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+        <span
+          class="position-absolute lesson-card__container_review"
+        >
+          <a
+            class="btn btn-sm bg-primary text-white"
+          >
+            Review
+            <span>
+               ... 
+            </span>
+            Submissions
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Complet State Should render lessonCard with null if no data 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <span
+          class="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+        >
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="height: 15px; margin-top: -2px;"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <span
+            class="mr-1"
+          >
+            COMPLETED
+          </span>
+        </span>
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+        <span
+          class="position-absolute lesson-card__container_review"
+        >
+          <a
+            class="btn btn-sm bg-primary text-white"
+          >
+            Review
+            Submissions
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Complet State Should render lessonCard with submission count 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <span
+          class="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+        >
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="height: 15px; margin-top: -2px;"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <span
+            class="mr-1"
+          >
+            COMPLETED
+          </span>
+        </span>
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+        <span
+          class="position-absolute lesson-card__container_review"
+        >
+          <a
+            class="btn btn-sm bg-primary text-white"
+          >
+            Review
+            <span>
+               
+              2
+               
+            </span>
+            Submissions
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Should render lessonCard with inProgress currentState prop 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 lesson-card__container_inprogress border-primary"
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="card-footer bg-primary"
+    >
+      <a
+        class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Start Lesson
+      </a>
+      <a
+        class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+        href="#"
+      >
+        View Challenges
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lesson Card Should render loading card when loading 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 border-0 "
+  >
+    <div
+      class="card-body p-2"
+    >
+      <div
+        class="row no-gutters"
+      >
+        <div
+          class="mw-100 col-2 mr-4"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/undefined"
+          />
+        </div>
+        <div
+          class="col-9"
+        >
+          <h4
+            class="lesson-card__title font-weight-bold mt-3"
+          />
+          <div>
+            <div
+              class="d-inline-block mr-4"
+            >
+              <img
+                alt="icon-challenge"
+                class="mr-1"
+                src="/curriculumAssets/icons/icon-challenge.svg"
+              />
+              <span
+                class="lesson-card__icon-text"
+              >
+                 CHALLENGES
+              </span>
+            </div>
+          </div>
+          <p
+            class="lesson-card__description mt-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

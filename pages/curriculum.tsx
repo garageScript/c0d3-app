@@ -7,6 +7,7 @@ import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
 
 import { GET_LESSONS } from '../graphql/queries'
+
 type Challenge = {
   id: number
 }
@@ -32,11 +33,6 @@ type Lesson = {
 }
 
 const Curriculum: React.FC = () => {
-  const { loading, data } = useQuery(GET_LESSONS)
-  if (loading) {
-    return <h1>Loading</h1>
-  }
-
   const announcementOne =
     'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.'
 
@@ -48,6 +44,11 @@ const Curriculum: React.FC = () => {
 
   const announcementFour =
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
+
+  const { loading, data } = useQuery(GET_LESSONS)
+  if (loading) {
+    return <h1>Loading</h1>
+  }
 
   if (data) {
     const { curriculumStatus }: { curriculumStatus: Lesson[] } = data
@@ -72,6 +73,7 @@ const Curriculum: React.FC = () => {
         return (
           <LessonCard
             key={lesson.id}
+            lessonId={lesson.id}
             coverImg={`js-${idx}-cover.svg`}
             title={lesson.title}
             challengeCount={lesson.challenges.length}
