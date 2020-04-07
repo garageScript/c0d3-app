@@ -1,8 +1,10 @@
 jest.mock('@apollo/react-hooks')
+jest.mock('../../components/LessonCard')
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import Curriculum from '../../pages/curriculum'
 import { render } from '@testing-library/react'
+import LessonCard from '../../components/LessonCard'
 
 describe('Curriculum Page', () => {
   test('Should render loading when loading', async () => {
@@ -54,6 +56,7 @@ describe('Curriculum Page', () => {
         ]
       }
     })
+    LessonCard.mockReturnValue(<h1>LessonCard</h1>)
 
     const { container } = render(<Curriculum />)
     expect(container).toMatchSnapshot()
@@ -95,6 +98,7 @@ describe('Curriculum Page', () => {
         ]
       }
     })
+    LessonCard.mockReturnValue(<h1>LessonCard</h1>)
 
     const { container } = render(<Curriculum />)
     expect(container).toMatchSnapshot()
