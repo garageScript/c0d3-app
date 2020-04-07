@@ -5,29 +5,8 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
-import { Challenge } from '../@types/challenge'
-
+import { Lesson } from '../@types/lesson'
 import { GET_LESSONS } from '../graphql/queries'
-
-type LessonStatus = {
-  isEnrolled: string | null
-  isPassed?: string
-  isTeaching: string | null
-}
-
-type User = {
-  userLesson: LessonStatus
-}
-
-type Lesson = {
-  id: number
-  title: string
-  description: string
-  order: number
-  challenges: Challenge[]
-  currentUser: User
-  docUrl: string
-}
 
 const Curriculum: React.FC = () => {
   const { loading, data } = useQuery(GET_LESSONS)
