@@ -6,13 +6,16 @@ export type Values = {
   lastName: string
 }
 
-export type Props = {
-  submitSignup: (values: Values) => void
+export type SignupFormProps = {
+  handleSubmit: (values: Values) => void
+  signupErrors: SignupErrors
+}
+
+export type ErrorDisplayProps = {
+  signupErrors: SignupErrors
 }
 
 export type SignupErrors = {
-  signupErrors: {
-    userName?: string[]
-    confirmEmail?: string[]
-  }
+  userName?: string[]
+  confirmEmail?: string[]
 }

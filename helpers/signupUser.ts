@@ -19,7 +19,5 @@ export const signupUser = async (values: Values) => {
       })
     })
     return res.json()
-  } catch (e) {
-    console.log(e)
-  }
+  } catch (e) {}
 }

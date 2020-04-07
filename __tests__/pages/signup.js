@@ -2,7 +2,6 @@ import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
 import Signup from '../../pages/signup'
 import * as signupHelper from '../../helpers/signupUser'
-import Router from 'next/router'
 
 describe('Signup Page', () => {
   const fillOutSignupForm = async getByTestId => {
@@ -61,11 +60,10 @@ describe('Signup Page', () => {
     })
   })
 
-  test('Should submit signup form values and redirect upon successful submission', async () => {
+  test('Should submit signup form values and render success component', async () => {
     signupHelper.signupUser = jest
       .fn()
       .mockReturnValue(Promise.resolve({ success: true }))
-    Router.push = jest.fn()
     const { getByTestId } = render(<Signup />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
@@ -74,8 +72,7 @@ describe('Signup Page', () => {
       act(() => {
         fireEvent.click(submitButton)
       }),
-        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(Router.push).toHaveBeenCalledWith('/signup/success')
+        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1)
     })
   })
 
@@ -88,7 +85,6 @@ describe('Signup Page', () => {
         }
       })
     )
-    Router.push = jest.fn()
     const { container, getByTestId } = render(<Signup />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
@@ -98,7 +94,6 @@ describe('Signup Page', () => {
         fireEvent.click(submitButton)
       }),
         expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(Router.push).toHaveBeenCalledTimes(0),
         expect(container).toMatchSnapshot()
     })
   })
@@ -112,7 +107,6 @@ describe('Signup Page', () => {
         }
       })
     )
-    Router.push = jest.fn()
     const { container, getByTestId } = render(<Signup />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
@@ -122,7 +116,6 @@ describe('Signup Page', () => {
         fireEvent.click(submitButton)
       }),
         expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(Router.push).toHaveBeenCalledTimes(0),
         expect(container).toMatchSnapshot()
     })
   })
@@ -137,7 +130,6 @@ describe('Signup Page', () => {
         }
       })
     )
-    Router.push = jest.fn()
     const { container, getByTestId } = render(<Signup />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
@@ -147,7 +139,6 @@ describe('Signup Page', () => {
         fireEvent.click(submitButton)
       }),
         expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(Router.push).toHaveBeenCalledTimes(0),
         expect(container).toMatchSnapshot()
     })
   })
