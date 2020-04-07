@@ -2,7 +2,7 @@
   "name": "with-typescript",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next -p 3003",
+    "dev": "next -p $PORT",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .ts --ext .tsx",
