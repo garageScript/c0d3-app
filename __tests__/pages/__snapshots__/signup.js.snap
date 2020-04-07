@@ -1,0 +1,545 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup Page Should submit signup form values and display error component upon failure of both username and email 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/#"
+            >
+              Home 
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            class="card-text"
+          />
+          <div
+            class="bg-light m-auto px-5 border-0'"
+          >
+            <h5
+              class="text-danger"
+            >
+              An account has already been registered with this email
+            </h5>
+            <h5
+              class="text-danger"
+            >
+              Username is already taken
+            </h5>
+          </div>
+          <form
+            action="#"
+            data-testid="form"
+          >
+            <div
+              class="form-group "
+            >
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="email"
+                name="email"
+                placeholder="Email address"
+                type="email"
+                value="email@domain.com"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                placeholder="Username"
+                value="user name"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                placeholder="Password"
+                type="password"
+                value="password123"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="firstName"
+                name="firstName"
+                placeholder="First name"
+                value="user"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="lastName"
+                name="lastName"
+                placeholder="Last name"
+                value="name"
+              />
+              <button
+                class="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          <p
+            class="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              class="text-primary"
+              href="/login"
+            >
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Signup Page Should submit signup form values and display error component upon failure of email 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/#"
+            >
+              Home 
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            class="card-text"
+          />
+          <div
+            class="bg-light m-auto px-5 border-0'"
+          >
+            <h5
+              class="text-danger"
+            >
+              An account has already been registered with this email
+            </h5>
+            
+          </div>
+          <form
+            action="#"
+            data-testid="form"
+          >
+            <div
+              class="form-group "
+            >
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="email"
+                name="email"
+                placeholder="Email address"
+                type="email"
+                value="email@domain.com"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                placeholder="Username"
+                value="user name"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                placeholder="Password"
+                type="password"
+                value="password123"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="firstName"
+                name="firstName"
+                placeholder="First name"
+                value="user"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="lastName"
+                name="lastName"
+                placeholder="Last name"
+                value="name"
+              />
+              <button
+                class="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          <p
+            class="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              class="text-primary"
+              href="/login"
+            >
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Signup Page Should submit signup form values and display error component upon failure of username 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/#"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/#"
+            >
+              Home 
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            class="card-text"
+          />
+          <div
+            class="bg-light m-auto px-5 border-0'"
+          >
+            
+            <h5
+              class="text-danger"
+            >
+              Username is already taken
+            </h5>
+          </div>
+          <form
+            action="#"
+            data-testid="form"
+          >
+            <div
+              class="form-group "
+            >
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="email"
+                name="email"
+                placeholder="Email address"
+                type="email"
+                value="email@domain.com"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                placeholder="Username"
+                value="user name"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                placeholder="Password"
+                type="password"
+                value="password123"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="firstName"
+                name="firstName"
+                placeholder="First name"
+                value="user"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="lastName"
+                name="lastName"
+                placeholder="Last name"
+                value="name"
+              />
+              <button
+                class="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          <p
+            class="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              class="text-primary"
+              href="/login"
+            >
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
