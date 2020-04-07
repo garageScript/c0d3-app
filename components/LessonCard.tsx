@@ -12,6 +12,7 @@ type Props = {
   description: string
   currentState?: string
   reviewUrl: string
+  challengesUrl: string
   docUrl: string
   shouldNotGetCount?: boolean
 }
@@ -139,7 +140,7 @@ const LessonCard: React.FC<Props> = props => {
           </a>
           <a
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            href={`https://www.c0d3.com/student/${props.lessonId}`}
+            href={props.challengesUrl}
           >
             View Challenges
           </a>

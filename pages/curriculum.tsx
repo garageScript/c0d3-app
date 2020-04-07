@@ -5,32 +5,8 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
-
+import { Lesson } from '../@types/lesson'
 import { GET_LESSONS } from '../graphql/queries'
-
-type Challenge = {
-  id: number
-}
-
-type LessonStatus = {
-  isEnrolled: string | null
-  isPassed?: string
-  isTeaching: string | null
-}
-
-type User = {
-  userLesson: LessonStatus
-}
-
-type Lesson = {
-  id: number
-  title: string
-  description: string
-  order: number
-  challenges: Challenge[]
-  currentUser: User
-  docUrl: string
-}
 
 const Curriculum: React.FC = () => {
   const announcementOne =
@@ -80,6 +56,7 @@ const Curriculum: React.FC = () => {
             description={lesson.description}
             currentState={lessonState}
             reviewUrl={`https://c0d3.com/teacher/${lesson.id}`}
+            challengesUrl={`https://c0d3.com/student/${lesson.id}`}
             docUrl={lesson.docUrl}
           />
         )

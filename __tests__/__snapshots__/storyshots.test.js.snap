@@ -517,13 +517,24 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-      className="card shadow-sm border-0"
+      className="card shadow-sm border-0 mb-2"
     >
       <div
         className="card-body"
       >
         <div>
-          1. Less Than or Equal to 5
+          0. Greater than 5
+        </div>
+      </div>
+    </div>
+    <div
+      className="card shadow-sm border-0 mb-2"
+    >
+      <div
+        className="card-body"
+      >
+        <div>
+          1. Sum of 2 Numbers
         </div>
       </div>
     </div>
@@ -555,6 +566,12 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ChallengeMaterial No Challenges 1`] = `
+<h1>
+  No Challenges for this lesson
+</h1>
+`;
+
 exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 <div
   className="card shadow-sm border-0"
@@ -580,7 +597,7 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
-  className="card shadow-sm border-0"
+  className="card shadow-sm border-0 mb-2"
 >
   <div
     className="card-body"
@@ -1189,7 +1206,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     </a>
     <a
       className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-      href="https://www.c0d3.com/student/4"
+      href="https://c0d3.com/student/24"
     >
       View Challenges
     </a>
@@ -1217,7 +1234,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
-            href="#"
+            href="/curriculum"
           >
             Go Back
           </a>
