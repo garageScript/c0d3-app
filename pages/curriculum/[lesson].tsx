@@ -19,9 +19,8 @@ const Challenges: React.FC = () => {
   }
   const { lessons }: { lessons: Lesson[] } = data
   const sortedLessons: Lesson[] = lessons.sort((a, b) => a.order - b.order)
-  const lessonId = router.query.lesson
   const currentLesson = sortedLessons.find(
-    lesson => lessonId === lesson.id.toString()
+    lesson => router.query.lesson === lesson.id.toString()
   )
   return (
     <div>
