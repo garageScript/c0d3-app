@@ -28,7 +28,7 @@ type ReviewCountProps = {
   lessonId: number
 }
 
-const ReviewCount: React.FC<ReviewCountProps> = (props) => {
+const ReviewCount: React.FC<ReviewCountProps> = props => {
   if (props.shouldNotGetCount) {
     return null
   }
@@ -59,9 +59,7 @@ const ReviewCount: React.FC<ReviewCountProps> = (props) => {
     0
   )
 
-  return (
-    <span> {pendingSubmissionsCount} </span>
-  )
+  return <span> {pendingSubmissionsCount} </span>
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
@@ -71,9 +69,12 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
   return (
     <span className="position-absolute lesson-card__container_review">
       <a href={props.reviewUrl} className="btn btn-sm bg-primary text-white">
-      Review 
-        <ReviewCount shouldNotGetCount={props.shouldNotGetCount} lessonId={props.lessonId} />
-      Submissions
+        Review
+        <ReviewCount
+          shouldNotGetCount={props.shouldNotGetCount}
+          lessonId={props.lessonId}
+        />
+        Submissions
       </a>
     </span>
   )
