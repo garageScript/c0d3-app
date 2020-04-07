@@ -34,3 +34,11 @@ export const GET_LESSONS = gql`
     }
   }
 `
+
+export const GET_SUBMISSIONS = gql`
+  query submissions($in: LessonId) {
+    submissions(input: $in) {
+      status
+    }
+  }
+`
