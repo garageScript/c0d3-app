@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Lesson Card Complet State Should render lessonCard with loading... 1`] = `
+exports[`Lesson Card Complete State Should render lessonCard with loading... 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 border-0 "
@@ -91,7 +91,7 @@ exports[`Lesson Card Complet State Should render lessonCard with loading... 1`] 
 </div>
 `;
 
-exports[`Lesson Card Complet State Should render lessonCard with null if no data 1`] = `
+exports[`Lesson Card Complete State Should render lessonCard with null if no data 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 border-0 "
@@ -179,7 +179,7 @@ exports[`Lesson Card Complet State Should render lessonCard with null if no data
 </div>
 `;
 
-exports[`Lesson Card Complet State Should render lessonCard with submission count 1`] = `
+exports[`Lesson Card Complete State Should render lessonCard with submission count 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 border-0 "

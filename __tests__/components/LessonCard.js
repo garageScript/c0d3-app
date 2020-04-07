@@ -1,11 +1,10 @@
 jest.mock('@apollo/react-hooks')
-//jest.mock('../../components/LessonCard')
 import * as React from 'react'
 import LessonCard  from '../../components/LessonCard'
 import { useQuery } from '@apollo/react-hooks'
 import { render } from '@testing-library/react'
 
-describe('Lesson Card Complet State', () => {
+describe('Lesson Card Complete State', () => {
   test('Should render lessonCard with null if no data', async () => {
     useQuery.mockReturnValue({
       data: null
