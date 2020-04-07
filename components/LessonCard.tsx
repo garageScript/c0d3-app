@@ -51,7 +51,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
-      if (val.status === 'underReview') {
+      if (val.status === 'open') {
         acc = acc + 1
         return acc
       }

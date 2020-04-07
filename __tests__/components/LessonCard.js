@@ -26,10 +26,10 @@ describe('Lesson Card Complete State', () => {
       data: {
         submissions: [
           {
-            status: 'underReview',
+            status: 'open',
           },
           {
-            status: 'underReview'
+            status: 'open'
           },
           {
             status: 'needMoreWork'
@@ -65,10 +65,10 @@ describe('Lesson Card', () => {
       data: {
         submissions: [
           {
-            status: 'open',
+            status: 'underReview',
           },
           {
-            status: 'open'
+            status: 'underReview'
           }
         ]
       }
