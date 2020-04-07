@@ -139,7 +139,7 @@ const LessonCard: React.FC<Props> = props => {
           </a>
           <a
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            href="#"
+            href={`https://v2.c0d3.app/curriculum/${props.lessonId}`}
           >
             View Challenges
           </a>
