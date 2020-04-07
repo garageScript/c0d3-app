@@ -380,7 +380,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       </a>
       <a
         class="lesson-card__button btn bg-primary my-1 text-white border border-white"
-        href="www.c0d3.com/students/undefined"
+        href="https://www.c0d3.com/student/undefined"
       >
         View Challenges
       </a>

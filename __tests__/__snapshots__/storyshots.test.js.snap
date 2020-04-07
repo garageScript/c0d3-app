@@ -1189,7 +1189,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     </a>
     <a
       className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-      href="www.c0d3.com/students/4"
+      href="https://www.c0d3.com/student/4"
     >
       View Challenges
     </a>
