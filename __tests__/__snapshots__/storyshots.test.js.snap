@@ -2338,6 +2338,12 @@ Array [
           <p
             className="card-text"
           />
+          <div
+            className="bg-light m-auto px-5 border-0'"
+          >
+            
+            
+          </div>
           <form
             action="#"
             data-testid="form"

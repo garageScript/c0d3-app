@@ -55,11 +55,7 @@ const Signup: React.FC<Props> = () => {
   return (
     <Layout>
       <Card title="Create Account">
-        {Object.keys(signupErrors).length > 0 ? (
-          <ErrorMessage signupErrors={{ ...signupErrors }} />
-        ) : (
-          <></>
-        )}
+        <ErrorMessage signupErrors={signupErrors} />
         <Formik
           validateOnBlur
           initialValues={initialValues}

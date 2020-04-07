@@ -1,6 +1,14 @@
 import { signupUser } from '../helpers/signupUser'
 
 describe('Signup User Helper function', () => {
+  const userFormFields = {
+    email: 'emailman@emailman.com',
+    firstName: 'Mitch',
+    lastName: 'Dinh',
+    userName: 'rogerrabbit',
+    username: 'rogerrabbit',
+    password: 'hello1234'
+  }
   test('should submit a fetch with the signup form data', async () => {
     window.fetch = jest.fn().mockReturnValue(
       Promise.resolve({
@@ -12,14 +20,7 @@ describe('Signup User Helper function', () => {
         }
       })
     )
-    await signupUser({
-      email: 'emailman@emailman.com',
-      firstName: 'Mitch',
-      lastName: 'Dinh',
-      userName: 'rogerrabbit',
-      username: 'rogerrabbit',
-      password: 'hello1234'
-    })
+    await signupUser(userFormFields)
     expect(fetch).toBeCalledWith('undefined/signup', {
       method: 'POST',
       credentials: 'include',
@@ -39,14 +40,7 @@ describe('Signup User Helper function', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       throw new Error()
     })
-    await signupUser({
-      email: 'emailman@emailman.com',
-      firstName: 'Mitch',
-      lastName: 'Dinh',
-      userName: 'rogerrabbit',
-      username: 'rogerrabbit',
-      password: 'hello1234'
-    })
+    await signupUser(userFormFields)
     expect(fetch).toThrowError()
   })
 })
