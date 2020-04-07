@@ -9,6 +9,11 @@ describe('Signup User Helper function', () => {
     username: 'rogerrabbit',
     password: 'hello1234'
   }
+
+  const invalidFormFields = {
+    email: 'emailman@emailman.com'
+  }
+
   test('should submit a fetch with the signup form data', async () => {
     window.fetch = jest.fn().mockReturnValue(
       Promise.resolve({
@@ -36,11 +41,15 @@ describe('Signup User Helper function', () => {
       })
     })
   })
-  test('should return server response when receives response from server for invalid signup information', async () => {
+  test('should throw error when receives response from server for invalid signup information', async () => {
+    const error = new Error()
     window.fetch = jest.fn().mockImplementation(() => {
-      throw new Error()
+      throw error
     })
-    await signupUser(userFormFields)
-    expect(fetch).toThrowError()
+    try {
+      await signupUser(invalidFormFields)
+    } catch (e) {
+      expect(e).toEqual(error)
+    }
   })
 })
