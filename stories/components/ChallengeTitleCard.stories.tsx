@@ -25,3 +25,11 @@ export const Pending: React.FC = () => (
     challengeNum={1}
   />
 )
+
+export const Current: React.FC = () => (
+  <ChallengeTitleCard
+    currentState="current"
+    title="Less Than or Equal to 5."
+    challengeNum={1}
+  />
+)
