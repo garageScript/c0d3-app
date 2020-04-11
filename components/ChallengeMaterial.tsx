@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Challenge } from '../@types/challenge'
 
-import '../scss/challengeMaterial.scss'
-
 type CurrentChallengeID = string | null
 
 type ChallengeTitleCardProps = {
@@ -25,14 +23,14 @@ type ChallengeMaterialProps = {
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
   const { currentState: state, active } = props
-  const cardStyles = []
+  const cardStyles = ['challenge-title-card']
   if (state === 'complete') {
-    cardStyles.push('challenge-title-card--done')
+    cardStyles[0] += '--done'
   } else {
     cardStyles.push('shadow-sm', 'border-0')
   }
   if (active) {
-    cardStyles.push('challenge-title-card--active')
+    cardStyles[0] += '--active'
   }
   return (
     <div

@@ -531,7 +531,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-      className="card shadow-sm border-0 mb-2 challenge-title"
+      className="card mb-2 challenge-title-card shadow-sm border-0"
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -544,7 +544,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
-      className="card shadow-sm border-0 mb-2 challenge-title"
+      className="card mb-2 challenge-title-card shadow-sm border-0"
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -619,40 +619,7 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0 challenge-title-card--active"
->
-  <div
-    className="card-body d-flex justify-content-between"
-  >
-    <div>
-      1. Less Than or Equal to 5.
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
-<div
-  className="card mb-2 shadow-sm border-0 challenge-title-card--active"
->
-  <div
-    className="card-body d-flex justify-content-between"
-  >
-    <div>
-      1. Less Than or Equal to 5.
-    </div>
-    <img
-      height="25px"
-      src="/curriculumAssets/icons/pending.svg"
-      width="25px"
-    />
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
-<div
-  className="card shadow-sm border-0 mb-2 challenge-title"
+  className="card mb-2 challenge-title-card--active shadow-sm border-0"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -660,7 +627,39 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
+<div
+  className="card mb-2 challenge-title-card--active shadow-sm border-0"
+  data-testid="challenge-title"
+  onClick={[Function]}
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      0. Greater than 5
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
+<div
+  className="card mb-2 challenge-title-card shadow-sm border-0"
+  data-testid="challenge-title"
+  onClick={[Function]}
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      0. Greater than 5
     </div>
   </div>
 </div>
@@ -669,6 +668,8 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 <div
   className="card mb-2 challenge-title-card--done"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
@@ -687,13 +688,15 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0"
+  className="card mb-2 challenge-title-card shadow-sm border-0"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
     </div>
     <img
       height="25px"
