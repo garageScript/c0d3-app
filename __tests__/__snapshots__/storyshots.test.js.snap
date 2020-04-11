@@ -521,10 +521,10 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-      className="card shadow-sm border-0 mb-2"
+      className="card mb-2 shadow-sm border-0"
     >
       <div
-        className="card-body"
+        className="card-body d-flex justify-content-between"
       >
         <div>
           0. Greater than 5
@@ -532,10 +532,10 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
-      className="card shadow-sm border-0 mb-2"
+      className="card mb-2 shadow-sm border-0"
     >
       <div
-        className="card-body"
+        className="card-body d-flex justify-content-between"
       >
         <div>
           1. Sum of 2 Numbers
@@ -601,14 +601,66 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
-  className="card shadow-sm border-0 mb-2"
+  className="card mb-2 shadow-sm border-0"
 >
   <div
-    className="card-body"
+    className="card-body d-flex justify-content-between"
   >
     <div>
       1. Less Than or Equal to 5.
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
+<div
+  className="card mb-2 challenge-title-card--done"
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      1. Less Than or Equal to 5.
+    </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/checkmark.svg"
+      width="25px"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Current 1`] = `
+<div
+  className="card mb-2 challenge-title-card--current"
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      1. Less Than or Equal to 5.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
+<div
+  className="card mb-2 shadow-sm border-0"
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      1. Less Than or Equal to 5.
+    </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
   </div>
 </div>
 `;
