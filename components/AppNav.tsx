@@ -4,21 +4,16 @@ import Link from 'next/link'
 import '../scss/navbar.scss'
 import Button from './Button'
 
+import { AuthUserContext } from '../pages/_app'
+
 type AuthButtonProps = {
-  initial: string
+  initial?: string
   username: string
 }
 
-type Props = {
-  loggedIn?: boolean
-  username?: string
-  firstName?: string
-  lastName?: string
-}
-
-const AuthLink = () => (
+const AuthLinks = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <a href="#" className="nav-item nav-link active">
+    <a href="/curriculumn" className="nav-item nav-link active">
       Curriculum <span className="sr-only">(current)</span>
     </a>
     <a href="#" className="nav-item nav-link">
@@ -27,7 +22,12 @@ const AuthLink = () => (
     <a href="#" className="nav-item nav-link">
       Journey
     </a>
-    <a href="https://chat.c0d3.com" className="nav-item nav-link">
+    <a
+      href="https://chat.c0d3.com"
+      className="nav-item nav-link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Help
     </a>
   </div>
@@ -55,7 +55,7 @@ const UnAuthButton = () => (
   </div>
 )
 
-const UnAuthLink = () => (
+const UnAuthLinks = () => (
   <div className="navbar-nav collapse navbar-collapse">
     <Link href="/">
       <a className="nav-item nav-link active">
@@ -84,31 +84,33 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<Props> = ({
-  loggedIn = false,
-  username = '',
-  firstName,
-  lastName
-}) => {
-  const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
+const AppNav: React.FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
-      <div className="container">
-        <Link href="/">
-          <a className="navbar-brand text-primary font-weight-bold">C0D3</a>
-        </Link>
-        <div id="navbarNav">
-          <div className="navbar-nav collapse navbar-collapse">
-            {loggedIn ? <AuthLink /> : <UnAuthLink />}
-          </div>
-        </div>
-        {loggedIn ? (
-          <AuthButton initial={initial} username={username} />
-        ) : (
-          <UnAuthButton />
-        )}
-      </div>
-    </nav>
+    <AuthUserContext.Consumer>
+      {user => {
+        return (
+          <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
+            <div className="container">
+              <Link href="/">
+                <a className="navbar-brand text-primary font-weight-bold">
+                  C0D3
+                </a>
+              </Link>
+              <div id="navbarNav">
+                <div className="navbar-nav collapse navbar-collapse">
+                  {user ? <AuthLinks /> : <UnAuthLinks />}
+                </div>
+              </div>
+              {user ? (
+                <AuthButton username={user.username} />
+              ) : (
+                <UnAuthButton />
+              )}
+            </div>
+          </nav>
+        )
+      }}
+    </AuthUserContext.Consumer>
   )
 }
 
