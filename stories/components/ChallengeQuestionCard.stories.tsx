@@ -6,9 +6,14 @@ export default {
   title: 'Components/ChallengeQuestionCard'
 }
 
+const currentChallenge = {
+  description:
+    'Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.',
+  id: '105',
+  order: 0,
+  title: 'Greater than 5'
+}
+
 export const Basic: React.FC = () => (
-  <ChallengeQuestionCard
-    title="Less Than or Equal to 5"
-    question="Write a function that takes in an array, and returns an array of same length where all elements <= 5 is changed to 0."
-  />
+  <ChallengeQuestionCard currentChallenge={currentChallenge} />
 )
