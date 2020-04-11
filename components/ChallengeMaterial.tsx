@@ -1,11 +1,11 @@
 import React from 'react'
 import { Challenge } from '../@types/challenge'
-import '../scss/challengeTitleCard.scss'
 
 type ChallengeTitleCardProps = {
   title: string
   challengeNum: number
   currentState?: string
+  active?: boolean
 }
 
 type ChallengeQuestionCardProps = {
@@ -18,12 +18,13 @@ type ChallengeMaterialProps = {
 }
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
-  const state = props.currentState
-  let cardStyles = 'shadow-sm border-0'
-  if (state === 'complete') cardStyles = 'challenge-title-card--done'
-  if (state === 'current') cardStyles = 'challenge-title-card--current'
+  const { currentState: state, active } = props
+  let cardStyles = []
+  if (state === 'complete') cardStyles.push('challenge-title-card--done')
+  else cardStyles.push('shadow-sm', 'border-0')
+  if (active) cardStyles.push('challenge-title-card--active')
   return (
-    <div className={`card mb-2 ${cardStyles}`}>
+    <div className={`card mb-2 ${cardStyles.join(' ')}`}>
       <div className="card-body d-flex justify-content-between">
         <div>{`${props.challengeNum}. ${props.title}`}</div>
         {state === 'complete' && (

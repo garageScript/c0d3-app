@@ -609,6 +609,39 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
+<div
+  className="card mb-2 shadow-sm border-0 challenge-title-card--active"
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      1. Less Than or Equal to 5.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
+<div
+  className="card mb-2 shadow-sm border-0 challenge-title-card--active"
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      1. Less Than or Equal to 5.
+    </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
   className="card mb-2 shadow-sm border-0"
@@ -638,20 +671,6 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
       src="/curriculumAssets/icons/checkmark.svg"
       width="25px"
     />
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/ChallengeTitleCard Current 1`] = `
-<div
-  className="card mb-2 challenge-title-card--current"
->
-  <div
-    className="card-body d-flex justify-content-between"
-  >
-    <div>
-      1. Less Than or Equal to 5.
-    </div>
   </div>
 </div>
 `;
@@ -1094,6 +1113,8 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         >
           <a
             href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -1185,6 +1206,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         >
           <a
             href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             HTML, CSS, JavaScript
           </a>
@@ -1254,6 +1277,8 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         >
           <a
             href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             HTML, CSS, JavaScript
           </a>

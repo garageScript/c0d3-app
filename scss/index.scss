@@ -17,7 +17,6 @@ $green: #00cf92 !default;
 // Import Fonts
 @import "../public/PTMono-Regular.ttf";
 
-
 // Global CSS
 .outline-danger{
   border: 1px solid rgba(220,53,69, 1);
@@ -31,3 +30,6 @@ p {
   font-size: 15px;
   line-height: 1.6;
 }
+
+// Local SCSS Imports
+@import './challengeTitleCard.scss';
