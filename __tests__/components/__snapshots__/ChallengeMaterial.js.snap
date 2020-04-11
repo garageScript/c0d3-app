@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Curriculum challenge page Should render appropriately when no challenges are passed to component 1`] = `
+<div>
+  <h1>
+    No Challenges for this lesson
+  </h1>
+</div>
+`;
+
+exports[`Curriculum challenge page Should render clicked challenge within challenge question 1`] = `
+<div>
+  <div
+    class="row challenge-display"
+  >
+    <div
+      class="col-4"
+    >
+      <div
+        class="card shadow-sm border-0 mb-2 challenge-title"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body"
+        >
+          <div>
+            0. Greater than 5
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-sm border-0 mb-2 challenge-title"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body"
+        >
+          <div>
+            1. Sum of 2 Numbers
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-8"
+    >
+      <div
+        class="card shadow-sm border-0"
+      >
+        <div
+          class="card-body challenge-question"
+        >
+          <h1
+            class="card-title"
+            data-testid="challenge-question-title"
+          >
+            Sum of 2 Numbers
+          </h1>
+          <div>
+            <p
+              class="card-question bg-light p-3 mt-3"
+              data-testid="challenge-question-description"
+            >
+              Write a function that takes in 2 numbers and returns their sum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Curriculum challenge page Should render first challenge by default 1`] = `
+<div>
+  <div
+    class="row challenge-display"
+  >
+    <div
+      class="col-4"
+    >
+      <div
+        class="card shadow-sm border-0 mb-2 challenge-title"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body"
+        >
+          <div>
+            0. Greater than 5
+          </div>
+        </div>
+      </div>
+      <div
+        class="card shadow-sm border-0 mb-2 challenge-title"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body"
+        >
+          <div>
+            1. Sum of 2 Numbers
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-8"
+    >
+      <div
+        class="card shadow-sm border-0"
+      >
+        <div
+          class="card-body challenge-question"
+        >
+          <h1
+            class="card-title"
+            data-testid="challenge-question-title"
+          >
+            Greater than 5
+          </h1>
+          <div>
+            <p
+              class="card-question bg-light p-3 mt-3"
+              data-testid="challenge-question-description"
+            >
+              Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

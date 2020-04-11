@@ -1,0 +1,19 @@
+.challenge-display {
+  .challenge-title {
+    :hover {
+      cursor: hand;
+      cursor: pointer;
+    }
+  }
+  .challenge-question {
+    .card-title {
+      font-size: 1.5rem;
+    }
+    
+    .card-question {
+      font-family: 'Courier New', Courier, monospace;
+    }
+  }
+}
+
+
