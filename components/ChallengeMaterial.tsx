@@ -5,6 +5,7 @@ type ChallengeTitleCardProps = {
   title: string
   challengeNum: number
   currentState?: string
+  active?: boolean
 }
 
 type ChallengeQuestionCardProps = {
@@ -17,10 +18,34 @@ type ChallengeMaterialProps = {
 }
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
+  const { currentState: state, active } = props
+  const cardStyles = []
+  if (state === 'complete') {
+    cardStyles.push('challenge-title-card--done')
+  } else {
+    cardStyles.push('shadow-sm', 'border-0')
+  }
+  if (active) {
+    cardStyles.push('challenge-title-card--active')
+  }
   return (
-    <div className="card shadow-sm border-0 mb-2">
-      <div className="card-body">
+    <div className={`card mb-2 ${cardStyles.join(' ')}`}>
+      <div className="card-body d-flex justify-content-between">
         <div>{`${props.challengeNum}. ${props.title}`}</div>
+        {state === 'complete' && (
+          <img
+            width="25px"
+            height="25px"
+            src="/curriculumAssets/icons/checkmark.svg"
+          />
+        )}
+        {state === 'pending' && (
+          <img
+            width="25px"
+            height="25px"
+            src="/curriculumAssets/icons/pending.svg"
+          />
+        )}
       </div>
     </div>
   )

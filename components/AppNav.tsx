@@ -57,7 +57,7 @@ const UnAuthButton = () => (
 
 const UnAuthLink = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <Link href="/#">
+    <Link href="/">
       <a className="nav-item nav-link active">
         Home <span className="sr-only">(current)</span>
       </a>
@@ -65,10 +65,20 @@ const UnAuthLink = () => (
     <Link href="/#learning">
       <a className="nav-item nav-link">Learning Process</a>
     </Link>
-    <a href="https://c0d3.com/book" className="nav-item nav-link">
+    <a
+      className="nav-item nav-link"
+      href="https://c0d3.com/book"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Resources
     </a>
-    <a href="https://chat.c0d3.com" className="nav-item nav-link">
+    <a
+      className="nav-item nav-link"
+      href="https://chat.c0d3.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Help
     </a>
   </div>
@@ -84,7 +94,7 @@ const AppNav: React.FC<Props> = ({
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
-        <Link href="/#">
+        <Link href="/">
           <a className="navbar-brand text-primary font-weight-bold">C0D3</a>
         </Link>
         <div id="navbarNav">

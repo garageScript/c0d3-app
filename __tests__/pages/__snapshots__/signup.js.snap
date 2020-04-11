@@ -10,7 +10,7 @@ exports[`Signup Page Should submit signup form values and display error componen
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
       >
         C0D3
       </a>
@@ -25,7 +25,7 @@ exports[`Signup Page Should submit signup form values and display error componen
           >
             <a
               class="nav-item nav-link active"
-              href="/#"
+              href="/"
             >
               Home 
               <span
@@ -43,12 +43,16 @@ exports[`Signup Page Should submit signup form values and display error componen
             <a
               class="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               class="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>
@@ -194,7 +198,7 @@ exports[`Signup Page Should submit signup form values and display error componen
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
       >
         C0D3
       </a>
@@ -209,7 +213,7 @@ exports[`Signup Page Should submit signup form values and display error componen
           >
             <a
               class="nav-item nav-link active"
-              href="/#"
+              href="/"
             >
               Home 
               <span
@@ -227,12 +231,16 @@ exports[`Signup Page Should submit signup form values and display error componen
             <a
               class="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               class="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>
@@ -374,7 +382,7 @@ exports[`Signup Page Should submit signup form values and display error componen
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
       >
         C0D3
       </a>
@@ -389,7 +397,7 @@ exports[`Signup Page Should submit signup form values and display error componen
           >
             <a
               class="nav-item nav-link active"
-              href="/#"
+              href="/"
             >
               Home 
               <span
@@ -407,12 +415,16 @@ exports[`Signup Page Should submit signup form values and display error componen
             <a
               class="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               class="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>

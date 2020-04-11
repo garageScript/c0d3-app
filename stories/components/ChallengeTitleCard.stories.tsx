@@ -9,3 +9,36 @@ export default {
 export const Basic: React.FC = () => (
   <ChallengeTitleCard title="Less Than or Equal to 5." challengeNum={1} />
 )
+
+export const Complete: React.FC = () => (
+  <ChallengeTitleCard
+    currentState="complete"
+    title="Less Than or Equal to 5."
+    challengeNum={1}
+  />
+)
+
+export const Pending: React.FC = () => (
+  <ChallengeTitleCard
+    currentState="pending"
+    title="Less Than or Equal to 5."
+    challengeNum={1}
+  />
+)
+
+export const Active: React.FC = () => (
+  <ChallengeTitleCard
+    active={true}
+    title="Less Than or Equal to 5."
+    challengeNum={1}
+  />
+)
+
+export const ActivePending: React.FC = () => (
+  <ChallengeTitleCard
+    active={true}
+    currentState="pending"
+    title="Less Than or Equal to 5."
+    challengeNum={1}
+  />
+)

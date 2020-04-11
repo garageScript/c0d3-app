@@ -1,8 +1,9 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
-import '../scss/lessonCard.scss'
 import { GET_SUBMISSIONS } from '../graphql/queries'
+import Link from 'next/link'
+import '../scss/lessonCard.scss'
 
 type Props = {
   lessonId: number
@@ -104,7 +105,9 @@ const LessonCard: React.FC<Props> = props => {
           </div>
           <div className="col-9">
             <h4 className="lesson-card__title font-weight-bold mt-3">
-              {props.title}
+              <Link href={`/curriculum/${props.lessonId}`}>
+                <a>{props.title}</a>
+              </Link>
             </h4>
             <div>
               <div className="d-inline-block mr-4">
