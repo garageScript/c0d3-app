@@ -15,6 +15,8 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
   <a
     className="mx-3 "
     href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Setup Instructions
   </a>
@@ -23,7 +25,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
   />
   <a
     className="mx-3 "
-    href="#"
+    href="/"
   >
     Github Basics
   </a>
@@ -31,8 +33,10 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="mx-3 "
+    className="mx-3"
     href="https://stackoverflow.com/"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Stack Overflow
   </a>
@@ -40,8 +44,10 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="mx-3 "
+    className="mx-3"
     href="https://chat.c0d3.com/"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     Help & Support
   </a>
@@ -151,7 +157,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
   >
     <a
       className="navbar-brand text-primary font-weight-bold"
-      href="/#"
+      href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -234,7 +240,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
   >
     <a
       className="navbar-brand text-primary font-weight-bold"
-      href="/#"
+      href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -251,7 +257,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
         >
           <a
             className="nav-item nav-link active"
-            href="/#"
+            href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -273,12 +279,16 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
           <a
             className="nav-item nav-link"
             href="https://c0d3.com/book"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Resources
           </a>
           <a
             className="nav-item nav-link"
             href="https://chat.c0d3.com"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Help
           </a>
@@ -900,7 +910,7 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -917,7 +927,7 @@ Array [
           >
             <a
               className="nav-item nav-link active"
-              href="/#"
+              href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -939,12 +949,16 @@ Array [
             <a
               className="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               className="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>
@@ -1078,7 +1092,11 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
-          HTML, CSS, JavaScript
+          <a
+            href="/curriculum/4"
+          >
+            HTML, CSS, JavaScript
+          </a>
         </h4>
         <div>
           <div
@@ -1165,7 +1183,11 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
-          HTML, CSS, JavaScript
+          <a
+            href="/curriculum/4"
+          >
+            HTML, CSS, JavaScript
+          </a>
         </h4>
         <div>
           <div
@@ -1230,7 +1252,11 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
-          HTML, CSS, JavaScript
+          <a
+            href="/curriculum/4"
+          >
+            HTML, CSS, JavaScript
+          </a>
         </h4>
         <div>
           <div
@@ -1362,6 +1388,8 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     <a
       className="btn btn-light progress-card__button mt-2 text-primary"
       href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Setup Development Environment
     </a>
@@ -1616,7 +1644,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
   >
     <a
       className="navbar-brand text-primary font-weight-bold"
-      href="/#"
+      href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -1633,7 +1661,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
         >
           <a
             className="nav-item nav-link active"
-            href="/#"
+            href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -1655,12 +1683,16 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
           <a
             className="nav-item nav-link"
             href="https://c0d3.com/book"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Resources
           </a>
           <a
             className="nav-item nav-link"
             href="https://chat.c0d3.com"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Help
           </a>
@@ -1699,7 +1731,7 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -1716,7 +1748,7 @@ Array [
           >
             <a
               className="nav-item nav-link active"
-              href="/#"
+              href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -1738,12 +1770,16 @@ Array [
             <a
               className="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               className="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>
@@ -1858,7 +1894,7 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -1875,7 +1911,7 @@ Array [
           >
             <a
               className="nav-item nav-link active"
-              href="/#"
+              href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -1897,12 +1933,16 @@ Array [
             <a
               className="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               className="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>
@@ -2317,7 +2357,7 @@ Array [
     >
       <a
         className="navbar-brand text-primary font-weight-bold"
-        href="/#"
+        href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -2334,7 +2374,7 @@ Array [
           >
             <a
               className="nav-item nav-link active"
-              href="/#"
+              href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -2356,12 +2396,16 @@ Array [
             <a
               className="nav-item nav-link"
               href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Resources
             </a>
             <a
               className="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>

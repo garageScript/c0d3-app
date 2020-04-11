@@ -20,21 +20,20 @@ type ChallengeMaterialProps = {
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
   const state = props.currentState
   let cardStyles = 'shadow-sm border-0'
-  if (state && state === 'complete') cardStyles = 'challenge-title-card--done'
-  else if (state && state === 'current')
-    cardStyles = 'challenge-title-card--current'
+  if (state === 'complete') cardStyles = 'challenge-title-card--done'
+  if (state === 'current') cardStyles = 'challenge-title-card--current'
   return (
     <div className={`card mb-2 ${cardStyles}`}>
       <div className="card-body d-flex justify-content-between">
         <div>{`${props.challengeNum}. ${props.title}`}</div>
-        {state && state === 'complete' && (
+        {state === 'complete' && (
           <img
             width="25px"
             height="25px"
             src="/curriculumAssets/icons/checkmark.svg"
           />
         )}
-        {state && state === 'pending' && (
+        {state === 'pending' && (
           <img
             width="25px"
             height="25px"

@@ -51,7 +51,11 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -142,7 +146,11 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -230,7 +238,11 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -295,7 +307,11 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -345,7 +361,11 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -411,7 +431,11 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/4"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -461,7 +485,11 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -511,7 +539,11 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
         >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
-          />
+          >
+            <a
+              href="/curriculum/undefined"
+            />
+          </h4>
           <div>
             <div
               class="d-inline-block mr-4"
