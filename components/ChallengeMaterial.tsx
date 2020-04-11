@@ -19,10 +19,15 @@ type ChallengeMaterialProps = {
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
   const { currentState: state, active } = props
-  let cardStyles = []
-  if (state === 'complete') cardStyles.push('challenge-title-card--done')
-  else cardStyles.push('shadow-sm', 'border-0')
-  if (active) cardStyles.push('challenge-title-card--active')
+  const cardStyles = []
+  if (state === 'complete') {
+    cardStyles.push('challenge-title-card--done')
+  } else {
+    cardStyles.push('shadow-sm', 'border-0')
+  }
+  if (active) {
+    cardStyles.push('challenge-title-card--active')
+  }
   return (
     <div className={`card mb-2 ${cardStyles.join(' ')}`}>
       <div className="card-body d-flex justify-content-between">
