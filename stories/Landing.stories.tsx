@@ -9,7 +9,7 @@ export default {
 
 export const Landing: React.FC = () => (
   <>
-    <LandingNav loggedIn={false} />
+    <LandingNav />
     <LandingPage />
     <Footer />
   </>
