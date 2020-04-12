@@ -1,8 +1,11 @@
+// import libraries
 import * as React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
-import withApollo from '../helpers/withApollo'
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost'
 import { AppProps } from 'next/app'
+import withApollo from '../helpers/withApollo'
+
+// import scss
 import '../scss/index.scss'
 
 interface IProps extends AppProps {

@@ -1,24 +1,21 @@
-//import libraries
-import React, { useState } from 'react'
+// import libraries
+import React from 'react'
+
+// import library components
 import { Formik, Form, Field } from 'formik'
-import Link from 'next/link'
 
-//import components
-import Card from '../components/Card'
-import Layout from '../components/Layout'
-import Input from '../components/Input'
+// import components
+import Card from '../../components/Card'
+import Input from '../../components/Input'
 
-//import helpers
-import { signupValidation } from '../helpers/formValidation'
-import { signupUser } from '../helpers/signupUser'
+// import signup components
+import ErrorMessage from './ErrorMessage'
 
-//import types
-import {
-  SignupFormProps,
-  Values,
-  SignupErrors,
-  ErrorDisplayProps
-} from '../@types/signup'
+// import helpers
+import { signupValidation } from '../../helpers/formValidation'
+
+// import types
+import { SignupFormProps, Values } from './types'
 
 const initialValues: Values = {
   email: '',
@@ -27,33 +24,6 @@ const initialValues: Values = {
   firstName: '',
   lastName: ''
 }
-
-const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
-  return (
-    <div className="bg-light m-auto px-5 border-0'">
-      {signupErrors.confirmEmail ? (
-        <h5 className="text-danger">
-          An account has already been registered with this email
-        </h5>
-      ) : (
-        ''
-      )}
-      {signupErrors.userName ? (
-        <h5 className="text-danger">Username is already taken</h5>
-      ) : (
-        ''
-      )}
-    </div>
-  )
-}
-
-const SignupSuccess: React.FC = () => (
-  <Card success title="Account created successfully!">
-    <Link href="/curriculum">
-      <a className="btn btn-primary btn-lg mb-3"> Continue to Curriculum</a>
-    </Link>
-  </Card>
-)
 
 const SignupForm: React.FC<SignupFormProps> = ({
   signupErrors,
@@ -127,26 +97,4 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const Signup: React.FC = () => {
-  const [signupSuccess, setSignupSuccess] = useState(false)
-  const [signupErrors, setSignupErrors] = useState({} as SignupErrors)
-  const handleSubmit = async (values: Values) => {
-    const data = await signupUser(values)
-    if (data.success) {
-      setSignupSuccess(true)
-    } else {
-      setSignupErrors(Object.assign({}, data.errorMessage))
-    }
-  }
-  return (
-    <Layout>
-      {signupSuccess ? (
-        <SignupSuccess />
-      ) : (
-        <SignupForm handleSubmit={handleSubmit} signupErrors={signupErrors} />
-      )}
-    </Layout>
-  )
-}
-
-export default Signup
+export default SignupForm

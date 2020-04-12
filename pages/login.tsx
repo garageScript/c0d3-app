@@ -1,12 +1,19 @@
+// import libraries
 import React, { useState } from 'react'
 import Router from 'next/router'
+
+// import library components
+import Link from 'next/link'
 import { Formik, Form, Field } from 'formik'
+
+// import components
 import Input from '../components/Input'
-import { loginValidation } from '../helpers/formValidation'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
-import Link from 'next/link'
 import Alert from '../components/Alert'
+
+// import helpers
+import { loginValidation } from '../helpers/formValidation'
 import { loginUser } from '../helpers/loginUser'
 
 const initialValues = {

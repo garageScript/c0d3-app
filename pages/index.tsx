@@ -1,9 +1,14 @@
+// import libraries
 import * as React from 'react'
+import useSWR from 'swr'
+
+// import pages
 import Curriculum from './curriculum'
+
+// import components
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
-import useSWR from 'swr'
 
 const SERVER_URL = process.env.SERVER_URL
 
@@ -21,7 +26,7 @@ const IndexPage: any = () => {
   }
   return (
     <>
-      <AppNav loggedIn={false} />
+      <AppNav />
       <LandingPage />
       <Footer footerType="py-5 bg-white text-muted" />
     </>
