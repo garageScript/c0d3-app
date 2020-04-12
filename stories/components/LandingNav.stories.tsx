@@ -6,4 +6,4 @@ export default {
   title: 'Components/landingNav'
 }
 
-export const _LandingNav: React.FC = () => <LandingNav loggedIn={false} />
+export const _LandingNav: React.FC = () => <LandingNav />

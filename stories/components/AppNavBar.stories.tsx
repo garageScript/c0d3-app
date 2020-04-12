@@ -6,13 +6,10 @@ export default {
   title: 'Components/AppNavBar'
 }
 
-export const LoggedOut: React.FC = () => <AppNavBar loggedIn={false} />
+export const LoggedOut: React.FC = () => {
+  return <AppNavBar />
+}
 
-export const LoggedIn: React.FC = () => (
-  <AppNavBar
-    firstName="Herman"
-    lastName="Wong"
-    username="hwong0305"
-    loggedIn={true}
-  />
-)
+export const LoggedIn: React.FC = () => {
+  return <AppNavBar />
+}
