@@ -15,7 +15,7 @@ describe('Curriculum Page', () => {
     const { container } = render(<Curriculum />)
     expect(container).toMatchSnapshot()
   })
-  test('Should render ellpsis when no data is present', async () => {
+  test('Should render no lessons at this time when no data is present', async () => {
     useQuery.mockReturnValue({
       loading: false
     })

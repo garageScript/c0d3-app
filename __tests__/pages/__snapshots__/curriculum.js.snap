@@ -482,18 +482,248 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
 </div>
 `;
 
-exports[`Curriculum Page Should render ellpsis when no data is present 1`] = `
-<div>
-  <h1>
-    ...
-  </h1>
-</div>
-`;
-
 exports[`Curriculum Page Should render loading when loading 1`] = `
 <div>
   <h1>
     Loading
   </h1>
+</div>
+`;
+
+exports[`Curriculum Page Should render no lessons at this time when no data is present 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/"
+            >
+              Home 
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-4"
+    >
+      <div
+        class="col-8"
+      >
+        <h1>
+          No lessons at this time...
+        </h1>
+      </div>
+      <div
+        class="col-4"
+      >
+        <div
+          class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+        >
+          <div
+            class="card-body"
+          >
+            <div
+              class="progress-card__progress-bar d-flex justify-content-center align-items-center rounded-circle"
+            >
+              <span
+                class="font-weight-bold"
+              >
+                0
+                %
+              </span>
+            </div>
+            <h4
+              class="progress-card__title mt-3"
+            >
+              You're off to a great start!
+            </h4>
+            <div
+              class="mt-3"
+            >
+              <p>
+                Start by setting up your development environment and then follow the lessons in the course.
+              </p>
+            </div>
+            <a
+              class="btn btn-light progress-card__button mt-2 text-primary"
+              href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Setup Development Environment
+            </a>
+          </div>
+        </div>
+        <div
+          class="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+        >
+          <div
+            class="card-body"
+          >
+            <h1
+              class="announcement-card__title"
+            >
+              General Announcements
+            </h1>
+            <div
+              class="mt-3"
+            >
+              <p
+                class="font-weight-bold"
+              >
+                Updates and Guidelines
+              </p>
+              <p
+                class="mt-4"
+              >
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                class="mt-4"
+              >
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                class="mt-4"
+              >
+                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                class="mt-4"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="additional-resources__container mt-4 mb-0"
+        >
+          <h1
+            class="additional-resources__title text-muted"
+          >
+            ADDITIONAL RESOURCES
+          </h1>
+          <hr
+            class="my-2"
+          />
+          <a
+            class="mx-3 "
+            href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Setup Instructions
+          </a>
+          <hr
+            class="my-2"
+          />
+          <a
+            class="mx-3 "
+            href="/"
+          >
+            Github Basics
+          </a>
+          <hr
+            class="my-2"
+          />
+          <a
+            class="mx-3"
+            href="https://stackoverflow.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Stack Overflow
+          </a>
+          <hr
+            class="my-2"
+          />
+          <a
+            class="mx-3"
+            href="https://chat.c0d3.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Help & Support
+          </a>
+          <hr
+            class="my-2"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;

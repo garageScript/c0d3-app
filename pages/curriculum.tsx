@@ -9,24 +9,14 @@ import { Lesson } from '../@types/lesson'
 import { GET_LESSONS } from '../graphql/queries'
 
 const Curriculum: React.FC = () => {
-  const announcementOne =
-    'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.'
-
-  const announcementTwo =
-    'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.'
-
-  const announcementThree =
-    'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.'
-
-  const announcementFour =
-    'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
-
   const { loading, data } = useQuery(GET_LESSONS)
+  let lessonsToRender: React.ReactElement[]
   if (loading) {
     return <h1>Loading</h1>
   }
-
-  if (data) {
+  if (!data) {
+    lessonsToRender = [<h1 key={0}>No lessons at this time...</h1>]
+  } else {
     const { curriculumStatus }: { curriculumStatus: Lesson[] } = data
     const sortedLessons: Lesson[] = curriculumStatus.sort(
       (a, b) => a.order - b.order
@@ -34,54 +24,51 @@ const Curriculum: React.FC = () => {
     const lessonInProgressIdx = sortedLessons.findIndex(
       lesson => !lesson.currentUser.userLesson.isPassed
     )
-    const lessonsToRender: React.ReactElement[] = sortedLessons.map(
-      (lesson, idx) => {
-        let lessonState = ''
-        if (
-          lesson.currentUser.userLesson.isEnrolled ||
-          idx === lessonInProgressIdx
-        ) {
-          lessonState = 'inProgress'
-        }
-        if (lesson.currentUser.userLesson.isPassed) {
-          lessonState = 'completed'
-        }
-        return (
-          <LessonCard
-            key={lesson.id}
-            lessonId={lesson.id}
-            coverImg={`js-${idx}-cover.svg`}
-            title={lesson.title}
-            challengeCount={lesson.challenges.length}
-            description={lesson.description}
-            currentState={lessonState}
-            reviewUrl={`https://c0d3.com/teacher/${lesson.id}`}
-            challengesUrl={`https://c0d3.com/student/${lesson.id}`}
-            docUrl={lesson.docUrl}
-          />
-        )
+    lessonsToRender = sortedLessons.map((lesson, idx) => {
+      let lessonState = ''
+      if (
+        lesson.currentUser.userLesson.isEnrolled ||
+        idx === lessonInProgressIdx
+      ) {
+        lessonState = 'inProgress'
       }
-    )
-    return (
-      <Layout>
-        <div className="row mt-4">
-          <div className="col-8">{lessonsToRender}</div>
-          <div className="col-4">
-            <ProgressCard progressCount={0} />
-            <AnnouncementCard
-              announcementOne={announcementOne}
-              announcementTwo={announcementTwo}
-              announcementThree={announcementThree}
-              announcementFour={announcementFour}
-            />
-            <AdditionalResources />
-          </div>
-        </div>
-      </Layout>
-    )
+      if (lesson.currentUser.userLesson.isPassed) {
+        lessonState = 'completed'
+      }
+      return (
+        <LessonCard
+          key={lesson.id}
+          lessonId={lesson.id}
+          coverImg={`js-${idx}-cover.svg`}
+          title={lesson.title}
+          challengeCount={lesson.challenges.length}
+          description={lesson.description}
+          currentState={lessonState}
+          reviewUrl={`https://c0d3.com/teacher/${lesson.id}`}
+          challengesUrl={`https://c0d3.com/student/${lesson.id}`}
+          docUrl={lesson.docUrl}
+        />
+      )
+    })
   }
-
-  return <h1>...</h1>
+  const announcements = [
+    'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
+    'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
+    'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
+    'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
+  ]
+  return (
+    <Layout>
+      <div className="row mt-4">
+        <div className="col-8">{lessonsToRender}</div>
+        <div className="col-4">
+          <ProgressCard progressCount={0} />
+          <AnnouncementCard announcements={announcements} />
+          <AdditionalResources />
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export default Curriculum
