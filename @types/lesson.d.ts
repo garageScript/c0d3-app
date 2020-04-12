@@ -17,3 +17,7 @@ export type Lesson = {
   currentUser: User
   docUrl: string
 }
+
+type LessonData = {
+  curriculumStatus: Lesson[]
+}
