@@ -7,23 +7,21 @@ import Link from 'next/link'
 import { Formik, Form, Field } from 'formik'
 
 // import components
-import Input from '../components/Input'
-import Layout from '../components/Layout'
-import Card from '../components/Card'
-import Alert from '../components/Alert'
+import Input from '../../components/Input'
+import Layout from '../../components/Layout'
+import Card from '../../components/Card'
+import Alert from '../../components/Alert'
 
 // import helpers
-import { loginValidation } from '../helpers/formValidation'
-import { loginUser } from '../helpers/loginUser'
+import { loginValidation } from '../../helpers/formValidation'
+import { loginUser } from '../../helpers/loginUser'
+
+// import types
+import { Values } from './types'
 
 const initialValues = {
   username: '',
   password: ''
-}
-
-type Values = {
-  username: string
-  password: string
 }
 
 const Login: React.FC = () => {
