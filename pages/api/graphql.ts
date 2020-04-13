@@ -12,6 +12,7 @@ const resolvers = {
     lessons() {
       return Lesson.findAll({
         include: [
+          'challenges',
           {
             model: User,
             through: {

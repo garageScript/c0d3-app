@@ -75,11 +75,13 @@ Cohort.init(CohortTypes, {
   sequelize
 })
 
-Lesson.hasMany(Challenge)
+Lesson.hasMany(Challenge, {
+  as: 'challenges',
+  foreignKey: 'lessonId'
+})
 Lesson.belongsToMany(User, {
-  through: {
-    model: UserLesson
-  }
+  foreignKey: 'lessonId',
+  through: { model: UserLesson }
 })
 
 Star.belongsTo(User, { as: 'student' })
@@ -94,8 +96,18 @@ Submission.belongsTo(Lesson)
 Lesson.hasMany(Submission)
 Challenge.hasMany(Submission)
 
-User.belongsToMany(User, { as: 'student', through: AdoptedStudent })
-User.belongsToMany(Lesson, { through: { model: UserLesson } })
+User.belongsToMany(User, {
+  as: 'student',
+  through: AdoptedStudent
+})
+User.belongsToMany(Lesson, {
+  foreignKey: 'userId',
+  through: { model: UserLesson }
+})
+
+/*
+ * CHAT relationships
+ */
 
 WaitList.belongsTo(Cohort)
 
