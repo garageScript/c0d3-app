@@ -66,14 +66,14 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     <div className="card shadow-sm border-0">
       <div className="card-body challenge-question">
         <h1 data-testid="challenge-question-title" className="card-title">
-          {currentChallenge!.title}
+          {currentChallenge.title}
         </h1>
         <div>
           <p
             data-testid="challenge-question-description"
             className="card-question bg-light p-3 mt-3"
           >
-            {currentChallenge!.description}
+            {currentChallenge.description}
           </p>
         </div>
       </div>
