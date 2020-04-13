@@ -525,13 +525,15 @@ exports[`Storyshots Components/Card With Text 1`] = `
 
 exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
 <div
-  className="row"
+  className="row challenge-display"
 >
   <div
     className="col-4"
   >
     <div
-      className="card mb-2 shadow-sm border-0"
+      className="card mb-2 shadow-sm border-0 challenge-title-card"
+      data-testid="challenge-title"
+      onClick={[Function]}
     >
       <div
         className="card-body d-flex justify-content-between"
@@ -542,7 +544,9 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
-      className="card mb-2 shadow-sm border-0"
+      className="card mb-2 shadow-sm border-0 challenge-title-card"
+      data-testid="challenge-title"
+      onClick={[Function]}
     >
       <div
         className="card-body d-flex justify-content-between"
@@ -560,18 +564,20 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       className="card shadow-sm border-0"
     >
       <div
-        className="card-body"
+        className="card-body challenge-question"
       >
         <h1
-          className="challenge-question-card__title"
+          className="card-title"
+          data-testid="challenge-question-title"
         >
-          Less Than or Equal to 5
+          Greater than 5
         </h1>
         <div>
           <p
-            className="challenge-question-card__question bg-light p-3 mt-3"
+            className="card-question bg-light p-3 mt-3"
+            data-testid="challenge-question-description"
           >
-            Write a function that takes in an array, and returns an array of same length where all elements &lt;= 5 is changed to 0.
+            Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
           </p>
         </div>
       </div>
@@ -591,18 +597,20 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
   className="card shadow-sm border-0"
 >
   <div
-    className="card-body"
+    className="card-body challenge-question"
   >
     <h1
-      className="challenge-question-card__title"
+      className="card-title"
+      data-testid="challenge-question-title"
     >
-      Less Than or Equal to 5
+      Greater than 5
     </h1>
     <div>
       <p
-        className="challenge-question-card__question bg-light p-3 mt-3"
+        className="card-question bg-light p-3 mt-3"
+        data-testid="challenge-question-description"
       >
-        Write a function that takes in an array, and returns an array of same length where all elements &lt;= 5 is changed to 0.
+        Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
       </p>
     </div>
   </div>
@@ -611,13 +619,15 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0 challenge-title-card--active"
+  className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
     </div>
   </div>
 </div>
@@ -625,32 +635,31 @@ exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0 challenge-title-card--active"
+  className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
     </div>
-    <img
-      height="25px"
-      src="/curriculumAssets/icons/pending.svg"
-      width="25px"
-    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0"
+  className="card mb-2 shadow-sm border-0 challenge-title-card"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
     </div>
   </div>
 </div>
@@ -659,12 +668,14 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 <div
   className="card mb-2 challenge-title-card--done"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
     </div>
     <img
       height="25px"
@@ -677,13 +688,15 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0"
+  className="card mb-2 shadow-sm border-0 challenge-title-card"
+  data-testid="challenge-title"
+  onClick={[Function]}
 >
   <div
     className="card-body d-flex justify-content-between"
   >
     <div>
-      1. Less Than or Equal to 5.
+      0. Greater than 5
     </div>
     <img
       height="25px"
