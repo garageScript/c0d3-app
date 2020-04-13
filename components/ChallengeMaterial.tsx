@@ -105,8 +105,6 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
           challengeNum={challenge.order}
           title={challenge.title}
           setCurrentChallenge={setCurrentChallenge}
-          active={true}
-          currentState="complete"
         />
       )
     }
