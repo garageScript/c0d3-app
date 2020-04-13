@@ -14,7 +14,7 @@ type ChallengeTitleCardProps = {
 }
 
 type ChallengeQuestionCardProps = {
-  currentChallenge: Challenge | undefined
+  currentChallenge: Challenge
 }
 
 type ChallengeMaterialProps = {
@@ -90,10 +90,12 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
   )
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
-  >(sortedChallenges[0].id)
-  const currentChallenge = sortedChallenges.find(
-    (challenge: Challenge) => challenge.id === currentChallengeID
-  )
+  >()
+  const currentChallenge =
+    sortedChallenges.find(
+      (challenge: Challenge) => challenge.id === currentChallengeID
+    ) || sortedChallenges[0]
+  console.log(sortedChallenges)
   const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
     challenge => {
       return (
@@ -103,6 +105,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
           challengeNum={challenge.order}
           title={challenge.title}
           setCurrentChallenge={setCurrentChallenge}
+          active={true}
+          currentState="complete"
         />
       )
     }
