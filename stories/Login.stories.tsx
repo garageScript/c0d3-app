@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Login from '../pages/login'
+import Login from '../containers/Login'
 
 export default {
   component: Login,

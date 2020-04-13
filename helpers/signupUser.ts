@@ -1,4 +1,4 @@
-import { Values } from '../pages/signup/types'
+import { Values } from '../containers/Signup/types'
 
 const SERVER_URL = process.env.SERVER_URL
 
