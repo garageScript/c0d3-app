@@ -531,7 +531,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-      className="card mb-2 shadow-sm border-0 challenge-title-card"
+      className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -645,6 +645,11 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
   </div>
 </div>
 `;
