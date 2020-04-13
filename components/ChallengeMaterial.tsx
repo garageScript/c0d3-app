@@ -88,9 +88,12 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
   const sortedChallenges: Challenge[] = props.challenges.sort(
     (a, b) => a.order - b.order
   )
+  //TODO: once user has completed a challenge find the first incomplete challenge that
+  //hasn't been completed to set as default challengeID
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
   >()
+  //assign currentChallenge to first challenge if no match found
   const currentChallenge =
     sortedChallenges.find(
       (challenge: Challenge) => challenge.id === currentChallengeID
