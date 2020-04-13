@@ -17,11 +17,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       class="col-4"
     >
       <div
-        class="card shadow-sm border-0 mb-2 challenge-title"
+        class="card mb-2 challenge-title-card shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
-          class="card-body"
+          class="card-body d-flex justify-content-between"
         >
           <div>
             0. Greater than 5
@@ -29,11 +29,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
         </div>
       </div>
       <div
-        class="card shadow-sm border-0 mb-2 challenge-title"
+        class="card mb-2 challenge-title-card shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
-          class="card-body"
+          class="card-body d-flex justify-content-between"
         >
           <div>
             1. Sum of 2 Numbers
@@ -80,11 +80,11 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
       class="col-4"
     >
       <div
-        class="card shadow-sm border-0 mb-2 challenge-title"
+        class="card mb-2 challenge-title-card shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
-          class="card-body"
+          class="card-body d-flex justify-content-between"
         >
           <div>
             0. Greater than 5
@@ -92,11 +92,11 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
         </div>
       </div>
       <div
-        class="card shadow-sm border-0 mb-2 challenge-title"
+        class="card mb-2 challenge-title-card shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
-          class="card-body"
+          class="card-body d-flex justify-content-between"
         >
           <div>
             1. Sum of 2 Numbers
