@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait, getByText } from '@testing-library/react'
+import { render, fireEvent, wait } from '@testing-library/react'
 import * as loginHelper from '../../helpers/loginUser'
 import Login from '../../pages/login'
 import Router from 'next/router'
