@@ -98,7 +98,6 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
     sortedChallenges.find(
       (challenge: Challenge) => challenge.id === currentChallengeID
     ) || sortedChallenges[0]
-  console.log(sortedChallenges)
   const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
     challenge => {
       return (
