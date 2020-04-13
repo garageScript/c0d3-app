@@ -1,14 +1,26 @@
-import { ApolloServer, gql } from 'apollo-server-micro'
+import { ApolloServer } from 'apollo-server-micro'
+import typeDefs from '../../graphql/typeDefs'
+import db from '../../helpers/dbload'
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
+const { Lesson, User } = db
+
 const resolvers = {
   Query: {
     hello() {
       return 'Hello'
+    },
+    lessons() {
+      return Lesson.findAll({
+        include: [
+          {
+            model: User,
+            through: {
+              attributes: ['isPassed', 'isTeaching', 'isEnrolled']
+            }
+          }
+        ],
+        order: [['order', 'ASC']]
+      })
     }
   }
 }
