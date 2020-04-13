@@ -76,11 +76,11 @@ Cohort.init(CohortTypes, {
 })
 
 Lesson.hasMany(Challenge, {
-  as: 'challenges',
+  as: 'challenges', // Defaults to Challenges
   foreignKey: 'lessonId'
 })
 Lesson.belongsToMany(User, {
-  foreignKey: 'lessonId',
+  foreignKey: 'lessonId', // Defaults to LessonId
   through: { model: UserLesson }
 })
 
@@ -101,13 +101,9 @@ User.belongsToMany(User, {
   through: AdoptedStudent
 })
 User.belongsToMany(Lesson, {
-  foreignKey: 'userId',
+  foreignKey: 'userId', // Defaults to UserId
   through: { model: UserLesson }
 })
-
-/*
- * CHAT relationships
- */
 
 WaitList.belongsTo(Cohort)
 
