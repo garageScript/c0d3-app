@@ -99,7 +99,7 @@ User.belongsToMany(Lesson, { through: { model: UserLesson } })
 
 WaitList.belongsTo(Cohort)
 
-sequelize.sync({ alter: true })
+sequelize.sync({ alter: false }) // We do not want this affect to production at the moment.
 
 export default {
   Announcement,
