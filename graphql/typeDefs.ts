@@ -5,6 +5,7 @@ export default gql`
     hello: String
     lessons: [Lesson]
   }
+
   type Submission {
     id: String
     status: String
