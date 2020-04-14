@@ -22,6 +22,7 @@ const Challenges: React.FC = () => {
   const currentLesson = sortedLessons.find(
     lesson => router.query.lesson === lesson.id.toString()
   )
+  console.log(currentLesson)
   return (
     <div>
       <Layout>
@@ -29,7 +30,9 @@ const Challenges: React.FC = () => {
           {currentLesson && (
             <div className="challenges-container">
               <LessonTitleCard
-                lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
+                lessonCoverUrl={`js-${sortedLessons.indexOf(
+                  currentLesson
+                )}-cover.svg`}
                 lessonUrl={currentLesson.docUrl}
                 lessonTitle={currentLesson.title}
               />
