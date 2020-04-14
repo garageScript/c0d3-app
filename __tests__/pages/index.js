@@ -2,12 +2,12 @@ jest.mock('swr')
 jest.mock('../../pages/curriculum')
 jest.mock('../../components/LandingPage')
 import React from 'react'
-import { render } from '@testing-library/react'
-import ReactDOM from 'react-dom'
-import Curriculum from '../../pages/curriculum'
-import IndexPage, {fetcher} from '../../pages/index'
-import LandingPage from '../../components/LandingPage'
 import useSWR from 'swr'
+import Curriculum from '../../pages/curriculum'
+import IndexPage from '../../pages/index'
+import LandingPage from '../../components/LandingPage'
+import { render } from '@testing-library/react'
+import { fetcher } from '../../pages/_app'
 
 describe('Index Page', () => {
   test('fetcher should return a promise', async () => {
@@ -18,7 +18,7 @@ describe('Index Page', () => {
   test('Should render curriculum if user is identified', async () => {
     useSWR.mockReturnValue({
       data: {
-        userInfo: {name:'tester'}
+        userInfo: { name:'tester' }
       }
     })
     Curriculum.mockReturnValue( <h1>Hello Curriculum</h1> )

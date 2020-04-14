@@ -7,18 +7,17 @@ import useSWR from 'swr'
 import '../scss/index.scss'
 
 export const AuthUserContext = React.createContext<any>(null)
-export const RouterContext = React.createContext<any>({ route: '/' })
 
 const SERVER_URL = process.env.SERVER_URL
 
-const fetcher = (url: string): Promise<any> =>
+export const fetcher = (url: string): Promise<any> =>
   fetch(url, { credentials: 'include' }).then(r => r.json())
 
 interface IProps extends AppProps {
   apollo: ApolloClient<NormalizedCacheObject>
 }
 
-function MyApp({ Component, router, pageProps, apollo }: IProps) {
+function MyApp({ Component, pageProps, apollo }: IProps) {
   const { data, error } = useSWR(`${SERVER_URL}/session`, fetcher)
 
   // while loading, don't show anything to user
@@ -28,11 +27,9 @@ function MyApp({ Component, router, pageProps, apollo }: IProps) {
 
   return (
     <ApolloProvider client={apollo}>
-      <RouterContext.Provider value={router}>
-        <AuthUserContext.Provider value={data && data.userInfo}>
-          <Component {...pageProps} />
-        </AuthUserContext.Provider>
-      </RouterContext.Provider>
+      <AuthUserContext.Provider value={data && data.userInfo}>
+        <Component {...pageProps} />
+      </AuthUserContext.Provider>
     </ApolloProvider>
   )
 }
