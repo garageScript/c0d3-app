@@ -2,8 +2,6 @@ import * as React from 'react'
 import { action } from '@storybook/addon-actions'
 import { ChallengeTitleCard } from '../../components/ChallengeMaterial'
 
-import '../../scss/index.scss'
-
 export default {
   component: ChallengeTitleCard,
   title: 'Components/ChallengeTitleCard'
