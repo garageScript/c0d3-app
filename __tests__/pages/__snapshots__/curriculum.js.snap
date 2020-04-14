@@ -10,7 +10,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
+        href="/home"
       >
         C0D3
       </a>
@@ -24,7 +24,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/"
             >
               Home 
@@ -251,7 +251,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
+        href="/home"
       >
         C0D3
       </a>
@@ -265,7 +265,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/"
             >
               Home 

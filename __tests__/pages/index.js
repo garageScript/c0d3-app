@@ -1,13 +1,12 @@
-jest.mock('swr')
 jest.mock('../../pages/curriculum')
-jest.mock('../../components/LandingPage')
+jest.mock('../../pages/home')
 import React from 'react'
-import useSWR from 'swr'
 import Curriculum from '../../pages/curriculum'
 import IndexPage from '../../pages/index'
-import LandingPage from '../../components/LandingPage'
+import Home from '../../pages/home'
 import { render } from '@testing-library/react'
 import { fetcher } from '../../pages/_app'
+import { AuthUserContext } from '../../pages/_app'
 
 describe('Index Page', () => {
   test('fetcher should return a promise', async () => {
@@ -16,34 +15,27 @@ describe('Index Page', () => {
     expect(data).toEqual(5)
   })
   test('Should render curriculum if user is identified', async () => {
-    useSWR.mockReturnValue({
-      data: {
-        userInfo: { name:'tester' }
-      }
-    })
     Curriculum.mockReturnValue( <h1>Hello Curriculum</h1> )
 
-    const { getByText } = render(<IndexPage />)
+    const user = { user: { username: 'test' } }
+    const tree = (
+      <AuthUserContext.Provider value={user}>
+        <IndexPage /> /
+      </AuthUserContext.Provider>
+    )
+
+    const { getByText } = render(tree)
     getByText('Hello Curriculum')
   })
-  test('Should render landing page if user is not identified', async () => {
-    useSWR.mockReturnValue({
-      error: undefined,
-      data: {
-        success: false,
-        errorMessage: "unauthorized"
-      }
-    })
-    LandingPage.mockReturnValue(<h1>Hello Landing</h1>)
+  test('Should render home page if user is not identified', async () => {
+    Home.mockReturnValue(<h1>Hello home</h1>)
+    const tree = (
+      <AuthUserContext.Provider value={false}>
+        <IndexPage /> /
+      </AuthUserContext.Provider>
+    )
     
-    const { getByText } = render(<IndexPage />)
-    getByText('Hello Landing')
+    const { getByText } = render(tree)
+    getByText('Hello home')
   })
-  test('Should not render while page is loading', async () => {
-    useSWR.mockReturnValue({})
-    
-    const { container } = render(<IndexPage />)
-    expect(container).toMatchSnapshot()
-  })
-  
 })

@@ -10,7 +10,7 @@ exports[`Signup Page Should submit signup form values and display error componen
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
+        href="/home"
       >
         C0D3
       </a>
@@ -24,7 +24,7 @@ exports[`Signup Page Should submit signup form values and display error componen
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/"
             >
               Home 
@@ -198,7 +198,7 @@ exports[`Signup Page Should submit signup form values and display error componen
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
+        href="/home"
       >
         C0D3
       </a>
@@ -212,7 +212,7 @@ exports[`Signup Page Should submit signup form values and display error componen
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/"
             >
               Home 
@@ -382,7 +382,7 @@ exports[`Signup Page Should submit signup form values and display error componen
     >
       <a
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
+        href="/home"
       >
         C0D3
       </a>
@@ -396,7 +396,7 @@ exports[`Signup Page Should submit signup form values and display error componen
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/"
             >
               Home 
