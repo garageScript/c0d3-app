@@ -20,11 +20,11 @@ const props = {
 export const Basic: React.FC = () => <ChallengeTitleCard {...props} />
 
 export const Complete: React.FC = () => (
-  <ChallengeTitleCard currentState="complete" {...props} />
+  <ChallengeTitleCard submissionStatus="complete" {...props} />
 )
 
 export const Pending: React.FC = () => (
-  <ChallengeTitleCard currentState="pending" {...props} />
+  <ChallengeTitleCard submissionStatus="pending" {...props} />
 )
 
 export const Active: React.FC = () => (
@@ -32,5 +32,5 @@ export const Active: React.FC = () => (
 )
 
 export const ActivePending: React.FC = () => (
-  <ChallengeTitleCard active={true} currentState="pending" {...props} />
+  <ChallengeTitleCard active={true} submissionStatus="pending" {...props} />
 )

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import { Challenge } from '../@types/challenge'
+import { Challenge, UserSubmission } from '../@types/challenge'
 
-type CurrentChallengeID = string | null
+type CurrentChallengeID = string
 
 type ChallengeTitleCardProps = {
   key: string
   id: string
   title: string
   challengeNum: number
-  currentState?: string
+  submissionStatus: string
   active?: boolean
   setCurrentChallenge: React.Dispatch<CurrentChallengeID>
 }
@@ -18,16 +18,17 @@ type ChallengeQuestionCardProps = {
 }
 
 type ChallengeMaterialProps = {
+  userSubmissionData: UserSubmission[]
   challenges?: Challenge[]
 }
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
-  const { currentState: state, active } = props
+  const { submissionStatus, active } = props
   const cardStyles: string[] = []
   if (active) {
     cardStyles.push('challenge-title-card--active')
   }
-  if (state === 'complete') {
+  if (submissionStatus === 'passed') {
     cardStyles.push('challenge-title-card--done')
   } else {
     cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
@@ -41,14 +42,14 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
     >
       <div className="card-body d-flex justify-content-between">
         <div>{`${props.challengeNum}. ${props.title}`}</div>
-        {state === 'complete' && (
+        {submissionStatus === 'passed' && (
           <img
             width="25px"
             height="25px"
             src="/curriculumAssets/icons/checkmark.svg"
           />
         )}
-        {state === 'pending' && (
+        {submissionStatus === 'underReview' && (
           <img
             width="25px"
             height="25px"
@@ -101,6 +102,14 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
     ) || sortedChallenges[0]
   const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
     challenge => {
+      const submissionStatus =
+        props.userSubmissionData.length > 0
+          ? props.userSubmissionData.find(
+              (submission: UserSubmission) =>
+                challenge.id === submission.challengeId
+            )!.status
+          : ''
+
       return (
         <ChallengeTitleCard
           key={challenge.id}
@@ -109,6 +118,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
           title={challenge.title}
           setCurrentChallenge={setCurrentChallenge}
           active={challenge.id === currentChallenge.id}
+          submissionStatus={submissionStatus}
         />
       )
     }
