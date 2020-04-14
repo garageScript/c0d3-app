@@ -32,5 +32,5 @@ export const Active: React.FC = () => (
 )
 
 export const ActivePending: React.FC = () => (
-  <ChallengeTitleCard active={true} {...props} />
+  <ChallengeTitleCard active={true} currentState="pending" {...props} />
 )

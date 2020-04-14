@@ -32,6 +32,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
   } else {
     cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
   }
+
   return (
     <div
       data-testid="challenge-title"
@@ -90,10 +91,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
   )
   //TODO: once user has completed a challenge find the first incomplete challenge that
   //hasn't been completed to set as default challengeID
+  //assign currentChallenge to first challenge if no match found
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
   >()
-  //assign currentChallenge to first challenge if no match found
   const currentChallenge =
     sortedChallenges.find(
       (challenge: Challenge) => challenge.id === currentChallengeID
@@ -107,6 +108,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
           challengeNum={challenge.order}
           title={challenge.title}
           setCurrentChallenge={setCurrentChallenge}
+          active={challenge.id === currentChallenge.id}
         />
       )
     }
