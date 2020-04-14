@@ -2,7 +2,6 @@ import { gql } from 'apollo-boost'
 
 export default gql`
   type Query {
-    hello: String
     lessons: [Lesson]
   }
 
@@ -23,12 +22,6 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String
-  }
-
-  type AdoptedStudent {
-    userId: String
-    studentId: String
-    lessonId: String
   }
 
   type User {
@@ -71,47 +64,5 @@ export default gql`
     lessonId: String
     title: String
     order: Int
-  }
-
-  type Star {
-    lessonId: String
-    studentId: String
-    mentorId: String
-    comment: String
-  }
-
-  type Announcement {
-    id: String
-    description: String
-  }
-
-  type UserData {
-    name: String
-    createdAt: String
-    stars: [Star]
-    lessons: [Lesson]
-  }
-
-  type Cohort {
-    chatroomId: String
-    id: String
-    createdAt: String
-  }
-
-  type WaitListStudents {
-    id: String
-    email: String
-    createdAt: String
-    cohortId: String
-  }
-
-  type Domain {
-    domain: String
-    subDomain: String
-    port: String
-    ip: String
-    id: String
-    gitLink: String
-    fullDomain: String
   }
 `
