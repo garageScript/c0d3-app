@@ -27,7 +27,7 @@ const Challenges: React.FC = () => {
       <Layout>
         <div className="row mt-4">
           {currentLesson && (
-            <div className="challangesContainer">
+            <div className="challenges-container">
               <LessonTitleCard
                 lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
                 lessonUrl={currentLesson.docUrl}

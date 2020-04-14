@@ -17,7 +17,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       class="col-4"
     >
       <div
+<<<<<<< HEAD
         class="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+        class="card mb-2 shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -29,7 +33,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
         </div>
       </div>
       <div
+<<<<<<< HEAD
         class="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+        class="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -80,7 +88,11 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
       class="col-4"
     >
       <div
+<<<<<<< HEAD
         class="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+        class="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -92,7 +104,11 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
         </div>
       </div>
       <div
+<<<<<<< HEAD
         class="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+        class="card mb-2 shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div

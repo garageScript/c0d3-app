@@ -531,7 +531,11 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
+<<<<<<< HEAD
       className="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+      className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -544,7 +548,11 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
+<<<<<<< HEAD
       className="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+      className="card mb-2 shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -619,7 +627,11 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 <div
+<<<<<<< HEAD
   className="card mb-2 challenge-title-card--active shadow-sm border-0"
+=======
+  className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -635,7 +647,11 @@ exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 <div
+<<<<<<< HEAD
   className="card mb-2 challenge-title-card--active shadow-sm border-0"
+=======
+  className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -651,7 +667,11 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
+<<<<<<< HEAD
   className="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+  className="card mb-2 shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -688,7 +708,11 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
 <div
+<<<<<<< HEAD
   className="card mb-2 challenge-title-card shadow-sm border-0"
+=======
+  className="card mb-2 shadow-sm border-0 challenge-title-card"
+>>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >

@@ -14,7 +14,7 @@ type ChallengeTitleCardProps = {
 }
 
 type ChallengeQuestionCardProps = {
-  currentChallenge: Challenge | undefined
+  currentChallenge: Challenge
 }
 
 type ChallengeMaterialProps = {
@@ -23,15 +23,16 @@ type ChallengeMaterialProps = {
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
   const { currentState: state, active } = props
-  const cardStyles = ['challenge-title-card']
+  const cardStyles: string[] = []
+  if (active) {
+    cardStyles.push('challenge-title-card--active')
+  }
   if (state === 'complete') {
     cardStyles[0] += '--done'
   } else {
-    cardStyles.push('shadow-sm', 'border-0')
+    cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
   }
-  if (active) {
-    cardStyles[0] += '--active'
-  }
+
   return (
     <div
       data-testid="challenge-title"
@@ -66,14 +67,14 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     <div className="card shadow-sm border-0">
       <div className="card-body challenge-question">
         <h1 data-testid="challenge-question-title" className="card-title">
-          {currentChallenge!.title}
+          {currentChallenge.title}
         </h1>
         <div>
           <p
             data-testid="challenge-question-description"
             className="card-question bg-light p-3 mt-3"
           >
-            {currentChallenge!.description}
+            {currentChallenge.description}
           </p>
         </div>
       </div>
@@ -88,12 +89,16 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
   const sortedChallenges: Challenge[] = props.challenges.sort(
     (a, b) => a.order - b.order
   )
+  //TODO: once user has completed a challenge find the first incomplete challenge that
+  //hasn't been completed to set as default challengeID
+  //assign currentChallenge to first challenge if no match found
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
-  >(sortedChallenges[0].id)
-  const currentChallenge = sortedChallenges.find(
-    (challenge: Challenge) => challenge.id === currentChallengeID
-  )
+  >()
+  const currentChallenge =
+    sortedChallenges.find(
+      (challenge: Challenge) => challenge.id === currentChallengeID
+    ) || sortedChallenges[0]
   const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
     challenge => {
       return (
@@ -103,6 +108,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
           challengeNum={challenge.order}
           title={challenge.title}
           setCurrentChallenge={setCurrentChallenge}
+          active={challenge.id === currentChallenge.id}
         />
       )
     }
