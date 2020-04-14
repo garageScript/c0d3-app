@@ -16,7 +16,7 @@ type AuthButtonProps = {
   username: string
 }
 
-const AuthLinks: React.FC<LinkProps> = ({ active }) => (
+export const AuthLinks: React.FC<LinkProps> = ({ active }) => (
   <div className="navbar-nav collapse navbar-collapse">
     <Link href="/curriculum">
       <a
@@ -27,16 +27,10 @@ const AuthLinks: React.FC<LinkProps> = ({ active }) => (
         Curriculum <span className="sr-only">(current)</span>
       </a>
     </Link>
-    <a
-      href="#"
-      className={`nav-item nav-link${active === '#' ? ' active' : ''}`}
-    >
+    <a href="#" className={`nav-item nav-link`}>
       Repo
     </a>
-    <a
-      href="#"
-      className={`nav-item nav-link${active === '#' ? ' active' : ''}`}
-    >
+    <a href="#" className={`nav-item nav-link`}>
       Journey
     </a>
     <a
@@ -50,10 +44,10 @@ const AuthLinks: React.FC<LinkProps> = ({ active }) => (
   </div>
 )
 
-const UnAuthLinks: React.FC<LinkProps> = ({ active }) => (
+export const UnAuthLinks: React.FC<LinkProps> = ({ active }) => (
   <div className="navbar-nav collapse navbar-collapse">
     <Link href="/">
-      <a className={`nav-item nav-link${active === '/home' ? ' active' : ''}`}>
+      <a className={`nav-item nav-link${active === '/' ? ' active' : ''}`}>
         Home <span className="sr-only">(current)</span>
       </a>
     </Link>
@@ -85,7 +79,10 @@ const UnAuthLinks: React.FC<LinkProps> = ({ active }) => (
   </div>
 )
 
-const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
+export const AuthButtons: React.FC<AuthButtonProps> = ({
+  initial,
+  username
+}) => (
   <div>
     <Button
       btnType="border btn-secondary overflow-hidden p-2 text-truncate"
@@ -96,7 +93,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
   </div>
 )
 
-const UnAuthButton = () => (
+export const UnAuthButtons = () => (
   <div>
     <Link href="/login">
       <a className="btn btn-secondary border mr-3">Login</a>
@@ -131,9 +128,9 @@ const AppNav: React.FC = () => {
                 </div>
               </div>
               {user ? (
-                <AuthButton username={user.username} />
+                <AuthButtons username={user.username} />
               ) : (
-                <UnAuthButton />
+                <UnAuthButtons />
               )}
             </div>
           </nav>

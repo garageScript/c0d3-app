@@ -5,17 +5,11 @@ import Curriculum from '../../pages/curriculum'
 import IndexPage from '../../pages/index'
 import Home from '../../pages/home'
 import { render } from '@testing-library/react'
-import { fetcher } from '../../pages/_app'
 import { AuthUserContext } from '../../pages/_app'
 
 describe('Index Page', () => {
-  test('fetcher should return a promise', async () => {
-    window.fetch = () => Promise.resolve({json: () => 5})
-    const data = await fetcher()
-    expect(data).toEqual(5)
-  })
   test('Should render curriculum if user is identified', async () => {
-    Curriculum.mockReturnValue( <h1>Hello Curriculum</h1> )
+    Curriculum.mockReturnValue(<h1>Hello Curriculum</h1>)
 
     const user = { user: { username: 'test' } }
     const tree = (

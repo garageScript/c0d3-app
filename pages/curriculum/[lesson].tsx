@@ -22,7 +22,6 @@ const Challenges: React.FC = () => {
   const currentLesson = sortedLessons.find(
     lesson => router.query.lesson === lesson.id.toString()
   )
-  console.log(currentLesson)
   return (
     <div>
       <Layout>

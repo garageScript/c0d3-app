@@ -1,7 +1,7 @@
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { AuthUserContext } from '../../pages/_app'
-import AppNav from '../../components/AppNav'
+import AppNav, { AuthLinks, UnAuthLinks } from '../../components/AppNav'
 
 describe('AppNav component', () => {
   test('Should render appropriately when user is logged in', () => {
@@ -26,5 +26,40 @@ describe('AppNav component', () => {
 
     const { container } = render(tree)
     expect(container).toMatchSnapshot()
+  })
+})
+
+describe('AuthLinks component', () => {
+  test('Should render no active link when passed nothing', () => {
+    const { container } = render(<AuthLinks />)
+    expect(container.querySelectorAll('.active')).toHaveLength(0)
+  })
+
+  test('Should render active curriculumn link correctly', () => {
+    const { container } = render(<AuthLinks active="/curriculum" />)
+    const $active = container.querySelectorAll('.active')
+    expect($active).toHaveLength(1)
+    expect($active[0].attributes['href'].value).toEqual('/curriculum')
+  })
+})
+
+describe('UnAuthLinks component', () => {
+  test('Should render no active link when passed nothing', () => {
+    const { container } = render(<UnAuthLinks />)
+    expect(container.querySelectorAll('.active')).toHaveLength(0)
+  })
+
+  test('Should render active home link correctly', () => {
+    const { container } = render(<UnAuthLinks active="/" />)
+    const $active = container.querySelectorAll('.active')
+    expect($active).toHaveLength(1)
+    expect($active[0].attributes['href'].value).toEqual('/')
+  })
+
+  test('Should render active learning link correctly', () => {
+    const { container } = render(<UnAuthLinks active="/#learning" />)
+    const $active = container.querySelectorAll('.active')
+    expect($active).toHaveLength(1)
+    expect($active[0].attributes['href'].value).toEqual('/#learning')
   })
 })
