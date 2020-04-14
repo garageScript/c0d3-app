@@ -14,23 +14,28 @@ const props = {
   id: '105',
   challengeNum: 0,
   title: 'Greater than 5',
-  setCurrentChallenge: action('clicked')
+  setCurrentChallenge: action('clicked'),
+  submissionStatus: ''
 }
 
 export const Basic: React.FC = () => <ChallengeTitleCard {...props} />
 
 export const Complete: React.FC = () => (
-  <ChallengeTitleCard submissionStatus="complete" {...props} />
+  <ChallengeTitleCard {...props} submissionStatus="passed" />
 )
 
 export const Pending: React.FC = () => (
-  <ChallengeTitleCard submissionStatus="pending" {...props} />
+  <ChallengeTitleCard {...props} submissionStatus="underReview" />
 )
 
 export const Active: React.FC = () => (
-  <ChallengeTitleCard active={true} {...props} />
+  <ChallengeTitleCard {...props} active={true} />
 )
 
 export const ActivePending: React.FC = () => (
-  <ChallengeTitleCard active={true} submissionStatus="pending" {...props} />
+  <ChallengeTitleCard {...props} active={true} submissionStatus="underReview" />
+)
+
+export const ActiveComplete: React.FC = () => (
+  <ChallengeTitleCard {...props} active={true} submissionStatus="passed" />
 )

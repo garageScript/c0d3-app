@@ -18,23 +18,25 @@ type LessonId = {
 type SubmissionVars = {
   in: LessonId
 }
+type UserSubmissionData = {
+  userSubmissions: UserSubmission[]
+}
 
 const Challenges: React.FC = () => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { loading, data } = useQuery(GET_LESSONS)
   const { loading: submissionDataLoading, data: userSubmissionData } = useQuery<
-    UserSubmission[],
+    UserSubmissionData,
     SubmissionVars
   >(GET_USER_SUBMISSIONS, {
     variables: {
       in: {
         lessonId: currentlessonId,
-        userId: '1059' //insert userId from context provider here
+        userId: '1' //insert userId from context provider here
       }
     }
   })
-  console.log(userSubmissionData)
 
   if (loading || submissionDataLoading) {
     return <h1>Loading</h1>
@@ -43,6 +45,7 @@ const Challenges: React.FC = () => {
     return <h1>...</h1>
   }
   const { lessons }: { lessons: Lesson[] } = data
+  const { userSubmissions } = userSubmissionData
   const sortedLessons: Lesson[] = lessons.sort((a, b) => a.order - b.order)
   const currentLesson = sortedLessons.find(
     lesson => currentlessonId === lesson.id.toString()
@@ -66,7 +69,7 @@ const Challenges: React.FC = () => {
               />
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
-                userSubmissionData={userSubmissionData}
+                userSubmissions={userSubmissions}
               />
             </div>
           )}

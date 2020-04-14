@@ -633,6 +633,27 @@ exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ChallengeTitleCard Active Complete 1`] = `
+<div
+  className="card mb-2 challenge-title-card--active challenge-title-card--done"
+  data-testid="challenge-title"
+  onClick={[Function]}
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      0. Greater than 5
+    </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/checkmark.svg"
+      width="25px"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 <div
   className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"

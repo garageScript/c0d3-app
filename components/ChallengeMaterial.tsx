@@ -18,7 +18,7 @@ type ChallengeQuestionCardProps = {
 }
 
 type ChallengeMaterialProps = {
-  userSubmissionData: UserSubmission[]
+  userSubmissions: UserSubmission[]
   challenges?: Challenge[]
 }
 
@@ -103,13 +103,12 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
   const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
     challenge => {
       const submissionStatus =
-        props.userSubmissionData.length > 0
-          ? props.userSubmissionData.find(
+        props.userSubmissions.length > 0
+          ? props.userSubmissions.find(
               (submission: UserSubmission) =>
                 challenge.id === submission.challengeId
             )!.status
           : ''
-
       return (
         <ChallengeTitleCard
           key={challenge.id}

@@ -28,7 +28,8 @@ describe('Curriculum challenge page', () => {
         order: 1,
         __typename: 'Challenge'
       }
-    ]
+    ],
+    userSubmissionData: []
   }
   test('Should render first challenge by default', async () => {
     const { container } = render(<ChallengeMaterial {...props} />)
