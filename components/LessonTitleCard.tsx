@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import '../scss/lessonTitleCard.scss'
 
 type Props = {
@@ -19,7 +20,9 @@ const LessonTitleCard: React.FC<Props> = props => {
           />
           <div>
             <p className="m-0">
-              <a href="/curriculum">Go Back</a>
+              <Link href="/curriculum">
+                <a>Go Back</a>
+              </Link>
             </p>
             <h1 className="lessonTitleCard__lesson-title">
               {props.lessonTitle}

@@ -1,10 +1,11 @@
 import * as React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import '../scss/navbar.scss'
 import Button from './Button'
 
-import { AuthUserContext, RouterContext } from '../pages/_app'
+import { AuthUserContext } from '../pages/_app'
 
 type LinkProps = {
   active?: string
@@ -17,13 +18,25 @@ type AuthButtonProps = {
 
 const AuthLinks: React.FC<LinkProps> = ({ active }) => (
   <div className="navbar-nav collapse navbar-collapse">
-    <a href="/curriculum" className={`nav-item nav-link${(active === '/curriculum') ? ' active': ''}`}>
-      Curriculum <span className="sr-only">(current)</span>
-    </a>
-    <a href="#" className={`nav-item nav-link${(active === '#') ? ' active': ''}`}>
+    <Link href="/curriculum">
+      <a
+        className={`nav-item nav-link${
+          active === '/curriculum' ? ' active' : ''
+        }`}
+      >
+        Curriculum <span className="sr-only">(current)</span>
+      </a>
+    </Link>
+    <a
+      href="#"
+      className={`nav-item nav-link${active === '#' ? ' active' : ''}`}
+    >
       Repo
     </a>
-    <a href="#" className={`nav-item nav-link${(active === '#') ? ' active': ''}`}>
+    <a
+      href="#"
+      className={`nav-item nav-link${active === '#' ? ' active' : ''}`}
+    >
       Journey
     </a>
     <a
@@ -40,12 +53,18 @@ const AuthLinks: React.FC<LinkProps> = ({ active }) => (
 const UnAuthLinks: React.FC<LinkProps> = ({ active }) => (
   <div className="navbar-nav collapse navbar-collapse">
     <Link href="/">
-      <a className={`nav-item nav-link${(active === '/') ? ' active': ''}`}>
+      <a className={`nav-item nav-link${active === '/home' ? ' active' : ''}`}>
         Home <span className="sr-only">(current)</span>
       </a>
     </Link>
     <Link href="/#learning">
-      <a className={`nav-item nav-link${(active === '/#learning') ? ' active': ''}`}>Learning Process</a>
+      <a
+        className={`nav-item nav-link${
+          active === '/#learning' ? ' active' : ''
+        }`}
+      >
+        Learning Process
+      </a>
     </Link>
     <a
       className="nav-item nav-link"
@@ -89,38 +108,38 @@ const UnAuthButton = () => (
 )
 
 const AppNav: React.FC = () => {
+  const router = useRouter()
+
   return (
-    <RouterContext.Consumer>
-      {router => {
+    <AuthUserContext.Consumer>
+      {user => {
         return (
-          <AuthUserContext.Consumer>
-            {user => {
-              return (
-                <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
-                  <div className="container">
-                    <Link href="/">
-                      <a className="navbar-brand text-primary font-weight-bold">
-                        C0D3
-                      </a>
-                    </Link>
-                    <div id="navbarNav">
-                      <div className="navbar-nav collapse navbar-collapse">
-                        {user ? <AuthLinks active={router.route} /> : <UnAuthLinks active={router.route} />}
-                      </div>
-                    </div>
-                    {user ? (
-                      <AuthButton username={user.username} />
-                    ) : (
-                      <UnAuthButton />
-                    )}
-                  </div>
-                </nav>
-              )
-            }}
-          </AuthUserContext.Consumer>
+          <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
+            <div className="container">
+              <Link href="/home">
+                <a className="navbar-brand text-primary font-weight-bold">
+                  C0D3
+                </a>
+              </Link>
+              <div id="navbarNav">
+                <div className="navbar-nav collapse navbar-collapse">
+                  {user ? (
+                    <AuthLinks active={router && router.route} />
+                  ) : (
+                    <UnAuthLinks active={router && router.route} />
+                  )}
+                </div>
+              </div>
+              {user ? (
+                <AuthButton username={user.username} />
+              ) : (
+                <UnAuthButton />
+              )}
+            </div>
+          </nav>
         )
       }}
-    </RouterContext.Consumer>
+    </AuthUserContext.Consumer>
   )
 }
 

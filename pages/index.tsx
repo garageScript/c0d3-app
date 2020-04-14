@@ -1,15 +1,20 @@
 import * as React from 'react'
-import AppNav from '../components/AppNav'
-import LandingPage from '../components/LandingPage'
-import Footer from '../components/Footer'
+import Curriculum from './curriculum'
+import Home from './home'
+
+import { AuthUserContext } from './_app'
 
 const IndexPage: React.FC = () => {
   return (
-    <>
-      <AppNav />
-      <LandingPage />
-      <Footer footerType="py-5 bg-white text-muted" />
-    </>
+    <AuthUserContext.Consumer>
+      {user => {
+        if (user) {
+          return <Curriculum />
+        } else {
+          return <Home />
+        }
+      }}
+    </AuthUserContext.Consumer>
   )
 }
 
