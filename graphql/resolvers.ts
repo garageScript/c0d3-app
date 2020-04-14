@@ -17,6 +17,10 @@ export default {
         ],
         order: [['order', 'ASC']]
       })
+    },
+    user: (_parent: any, _arg: any, ctx: any) => {
+      console.log('ctx', ctx)
+      return 'Hello'
     }
   }
 }
