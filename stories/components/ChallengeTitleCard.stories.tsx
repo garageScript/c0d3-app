@@ -25,7 +25,7 @@ export const Complete: React.FC = () => (
 )
 
 export const Pending: React.FC = () => (
-  <ChallengeTitleCard {...props} submissionStatus="underReview" />
+  <ChallengeTitleCard {...props} submissionStatus="open" />
 )
 
 export const Active: React.FC = () => (
