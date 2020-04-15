@@ -29,7 +29,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
     cardStyles.push('challenge-title-card--active')
   }
   if (state === 'complete') {
-    cardStyles[0] += '--done'
+    cardStyles.push('challenge-title-card--done')
   } else {
     cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
   }
