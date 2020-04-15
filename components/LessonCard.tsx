@@ -99,9 +99,9 @@ const LessonCard: React.FC<Props> = props => {
 
         <div className="w-100 pl-4">
           {props.currentState === 'completed' && (
-            <span className="badge badge-pill badge-success float-right mt-2 mr-2 lesson-card__container_completed">
-              <CheckCircle style={{ height: '15px', marginTop: '-2px' }} />
-              <span className="mr-1">COMPLETED</span>
+            <span className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center">
+              <CheckCircle style={{ height: '15px' }} />
+              <span className="mx-1">COMPLETED</span>
             </span>
           )}
           <div>
