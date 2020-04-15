@@ -533,11 +533,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-<<<<<<< HEAD
-      className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
       className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -550,11 +546,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
-<<<<<<< HEAD
-      className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
       className="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -584,10 +576,12 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
         </h1>
         <div>
           <p
-            className="card-question bg-light p-3 mt-3"
+            className="bg-light p-3 mt-3"
             data-testid="challenge-question-description"
           >
-            Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+            <span>
+              Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+            </span>
           </p>
         </div>
       </div>
@@ -617,10 +611,12 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
     </h1>
     <div>
       <p
-        className="card-question bg-light p-3 mt-3"
+        className="bg-light p-3 mt-3"
         data-testid="challenge-question-description"
       >
-        Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+        <span>
+          Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+        </span>
       </p>
     </div>
   </div>
@@ -629,11 +625,7 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card--active shadow-sm border-0"
-=======
   className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -649,11 +641,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card--active shadow-sm border-0"
-=======
   className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -663,17 +651,18 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
   className="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -689,7 +678,7 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 <div
-  className="card mb-2 challenge-title-card--done"
+  className="card mb-2 undefined--done"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -710,11 +699,7 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
   className="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >

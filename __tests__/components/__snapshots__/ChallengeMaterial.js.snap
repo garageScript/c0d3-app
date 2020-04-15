@@ -17,11 +17,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       class="col-4"
     >
       <div
-<<<<<<< HEAD
-        class="card mb-2 challenge-title-card shadow-sm border-0"
-=======
         class="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -33,11 +29,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
         </div>
       </div>
       <div
-<<<<<<< HEAD
-        class="card mb-2 challenge-title-card shadow-sm border-0"
-=======
         class="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -66,10 +58,12 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           </h1>
           <div>
             <p
-              class="card-question bg-light p-3 mt-3"
+              class="bg-light p-3 mt-3"
               data-testid="challenge-question-description"
             >
-              Write a function that takes in 2 numbers and returns their sum.
+              <span>
+                Write a function that takes in 2 numbers and returns their sum.
+              </span>
             </p>
           </div>
         </div>
@@ -88,11 +82,7 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
       class="col-4"
     >
       <div
-<<<<<<< HEAD
-        class="card mb-2 challenge-title-card shadow-sm border-0"
-=======
         class="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -104,11 +94,7 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
         </div>
       </div>
       <div
-<<<<<<< HEAD
-        class="card mb-2 challenge-title-card shadow-sm border-0"
-=======
         class="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
         data-testid="challenge-title"
       >
         <div
@@ -137,10 +123,12 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
           </h1>
           <div>
             <p
-              class="card-question bg-light p-3 mt-3"
+              class="bg-light p-3 mt-3"
               data-testid="challenge-question-description"
             >
-              Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+              <span>
+                Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+              </span>
             </p>
           </div>
         </div>

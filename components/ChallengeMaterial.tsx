@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Markdown from 'markdown-to-jsx'
 import { Challenge } from '../@types/challenge'
 
 type CurrentChallengeID = string | null
@@ -72,9 +73,9 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         <div>
           <p
             data-testid="challenge-question-description"
-            className="card-question bg-light p-3 mt-3"
+            className="bg-light p-3 mt-3"
           >
-            {currentChallenge.description}
+            <Markdown>{currentChallenge.description}</Markdown>
           </p>
         </div>
       </div>
