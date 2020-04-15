@@ -27,7 +27,7 @@ exports[`Signup Page Should submit signup form values and display error componen
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
+              Home
               <span
                 class="sr-only"
               >
@@ -215,7 +215,7 @@ exports[`Signup Page Should submit signup form values and display error componen
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
+              Home
               <span
                 class="sr-only"
               >
@@ -399,7 +399,7 @@ exports[`Signup Page Should submit signup form values and display error componen
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
+              Home
               <span
                 class="sr-only"
               >

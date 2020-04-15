@@ -1,4 +1,5 @@
 import React from 'react'
+import NavLink from './NavLink'
 import '../scss/additionalResources.scss'
 
 const AdditionalResources: React.FC = () => {
@@ -8,36 +9,28 @@ const AdditionalResources: React.FC = () => {
         ADDITIONAL RESOURCES
       </h1>
       <hr className="my-2" />
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        className="mx-3 "
-        href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
-      >
-        Setup Instructions
-      </a>
-      <hr className="my-2" />
-      <a className="mx-3 " href="/">
-        Github Basics
-      </a>
-      <hr className="my-2" />
-      <a
+      <NavLink
+        text="Setup Instructions"
+        path="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
         className="mx-3"
-        href="https://stackoverflow.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Stack Overflow
-      </a>
+        blank
+      />
       <hr className="my-2" />
-      <a
+      <NavLink text="Github Basics" path="#" className="mx-3" />
+      <hr className="my-2" />
+      <NavLink
+        text="Stack Overflow"
+        path="https://stackoverflow.com/"
         className="mx-3"
-        href="https://chat.c0d3.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Help & Support
-      </a>
+        blank
+      />
+      <hr className="my-2" />
+      <NavLink
+        text="Help &amp; Support"
+        path="https://chat.c0d3.com/"
+        className="mx-3"
+        blank
+      />
       <hr className="my-2" />
     </div>
   )
