@@ -1,4 +1,5 @@
 import React from 'react'
+import NavLink from './NavLink'
 
 type Props = {
   text: string
@@ -14,9 +15,12 @@ const Alert: React.FC<Props> = props => {
       {props.icon && <img className="mr-3" src={`${props.icon}`} />}
       {`${props.text} `}
       {props.instructionsUrl && (
-        <a className="text-white" href={`${props.instructionsUrl}`}>
-          View Instructions
-        </a>
+        <NavLink
+          text="View Instructions"
+          path={props.instructionsUrl}
+          className="text-white"
+          blank
+        />
       )}
     </div>
   )
