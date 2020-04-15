@@ -5,6 +5,7 @@ import {
   UserSubmission,
   UserSubmissionsObject
 } from '../@types/challenge'
+import Markdown from 'markdown-to-jsx'
 
 type CurrentChallengeID = string | null
 
@@ -82,13 +83,11 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         <h1 data-testid="challenge-question-title" className="card-title">
           {currentChallenge.title}
         </h1>
-        <div>
-          <p
-            data-testid="challenge-question-description"
-            className="card-question bg-light p-3 mt-3"
-          >
-            {currentChallenge.description}
-          </p>
+        <div
+          data-testid="challenge-question-description"
+          className="bg-light p-3 mt-3"
+        >
+          <Markdown>{currentChallenge.description}</Markdown>
         </div>
       </div>
     </div>
