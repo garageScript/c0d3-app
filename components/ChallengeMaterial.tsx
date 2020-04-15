@@ -101,6 +101,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }
+  //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject = userSubmissions.reduce(
     (acc: UserSubmissionsObject, submission: UserSubmission) => {
       acc[submission.challengeId] = submission
@@ -108,6 +109,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     },
     {}
   )
+  //create a new Challenges array with user submission data integrated
   const challengesWithSubmissionData = challenges.reduce(
     (acc: ChallengeSubmissionData[], challenge: Challenge) => {
       const submissionData = userSubmissionsObject[challenge.id] || {}
@@ -121,10 +123,12 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     },
     []
   )
+  //sort challenges by order
   const sortedChallenges: ChallengeSubmissionData[] = challengesWithSubmissionData.sort(
     (a, b) => a.order - b.order
   )
 
+  //find first challenge that is not passed
   const firstChallenge = sortedChallenges.find(
     (challenge: ChallengeSubmissionData) => challenge.status !== 'passed'
   ) as ChallengeSubmissionData

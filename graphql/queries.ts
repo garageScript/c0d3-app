@@ -35,9 +35,22 @@ export const GET_LESSONS = gql`
   }
 `
 
-export const GET_USER_SUBMISSIONS = gql`
-  query userSubmissions($in: LessonUserId) {
-    userSubmissions(input: $in) {
+export const GET_LESSON = gql`
+  query lessonInfo($lessonInfo: LessonId, $lessonUserInfo: LessonUserId) {
+    lessonInfo(input: $lessonInfo) {
+      id
+      title
+      description
+      order
+      docUrl
+      challenges {
+        id
+        description
+        title
+        order
+      }
+    }
+    userSubmissions(input: $lessonUserInfo) {
       id
       status
       mrUrl

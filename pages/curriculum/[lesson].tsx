@@ -5,51 +5,32 @@ import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
-import { Lesson } from '../../@types/lesson'
-import { UserSubmission } from '../../@types/challenge'
-import { GET_LESSONS, GET_USER_SUBMISSIONS } from '../../graphql/queries'
 
-type LessonId = {
-  lessonId: string
-  userId: string
-}
-
-type SubmissionVars = {
-  in: LessonId
-}
-type UserSubmissionData = {
-  userSubmissions: UserSubmission[]
-}
+import { GET_LESSON } from '../../graphql/queries'
 
 const Challenges: React.FC = () => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  const { loading, data } = useQuery(GET_LESSONS)
-  const { loading: submissionDataLoading, data: userSubmissionData } = useQuery<
-    UserSubmissionData,
-    SubmissionVars
-  >(GET_USER_SUBMISSIONS, {
+  const { loading, data } = useQuery(GET_LESSON, {
     variables: {
-      in: {
+      lessonInfo: {
+        id: currentlessonId
+      },
+      lessonUserInfo: {
         lessonId: currentlessonId,
         userId: '667' //insert userId from context provider here
       }
     }
   })
 
-  if (loading || submissionDataLoading) {
+  if (loading) {
     return <h1>Loading</h1>
   }
-  if (!data || !userSubmissionData) {
+  if (!data) {
     return <h1>...</h1>
   }
-  const { lessons }: { lessons: Lesson[] } = data
-  const { userSubmissions } = userSubmissionData
-  const sortedLessons: Lesson[] = lessons.sort((a, b) => a.order - b.order)
-  const currentLesson = sortedLessons.find(
-    lesson => currentlessonId === lesson.id.toString()
-  )
-
+  const currentLesson = data.lessonInfo
+  const userSubmissions = data.userSubmissions
   return (
     <div>
       <Layout>
