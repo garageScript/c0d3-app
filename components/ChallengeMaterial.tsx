@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Markdown from 'markdown-to-jsx'
 import { Challenge } from '../@types/challenge'
 
 type CurrentChallengeID = string | null
@@ -28,7 +29,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
     cardStyles.push('challenge-title-card--active')
   }
   if (state === 'complete') {
-    cardStyles[0] += '--done'
+    cardStyles.push('challenge-title-card--done')
   } else {
     cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
   }
@@ -69,13 +70,11 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         <h1 data-testid="challenge-question-title" className="card-title">
           {currentChallenge.title}
         </h1>
-        <div>
-          <p
-            data-testid="challenge-question-description"
-            className="card-question bg-light p-3 mt-3"
-          >
-            {currentChallenge.description}
-          </p>
+        <div
+          data-testid="challenge-question-description"
+          className="bg-light p-3 mt-3"
+        >
+          <Markdown>{currentChallenge.description}</Markdown>
         </div>
       </div>
     </div>
