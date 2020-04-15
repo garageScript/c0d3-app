@@ -574,13 +574,13 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
         >
           Greater than 5
         </h1>
-        <div>
-          <p
-            className="card-question bg-light p-3 mt-3"
-            data-testid="challenge-question-description"
-          >
+        <div
+          className="bg-light p-3 mt-3"
+          data-testid="challenge-question-description"
+        >
+          <span>
             Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
-          </p>
+          </span>
         </div>
       </div>
     </div>
@@ -607,13 +607,13 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
     >
       Greater than 5
     </h1>
-    <div>
-      <p
-        className="card-question bg-light p-3 mt-3"
-        data-testid="challenge-question-description"
-      >
+    <div
+      className="bg-light p-3 mt-3"
+      data-testid="challenge-question-description"
+    >
+      <span>
         Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
-      </p>
+      </span>
     </div>
   </div>
 </div>
