@@ -105,7 +105,7 @@ export const UnAuthButtons = () => (
 )
 
 const AppNav: React.FC = () => {
-  const router = useRouter()
+  const router = useRouter() || {}
 
   return (
     <AuthUserContext.Consumer>
