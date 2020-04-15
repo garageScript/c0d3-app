@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
+import useSession from '../../helpers/useSession'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
@@ -11,6 +12,11 @@ import { GET_LESSON } from '../../graphql/queries'
 const Challenges: React.FC = () => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
+  const { data: sessionData, error } = useSession()
+  const userId =
+    sessionData && sessionData.userInfo
+      ? sessionData.userInfo.id.toString()
+      : ''
   const { loading, data } = useQuery(GET_LESSON, {
     variables: {
       lessonInfo: {
@@ -18,15 +24,14 @@ const Challenges: React.FC = () => {
       },
       lessonUserInfo: {
         lessonId: currentlessonId,
-        userId: '667' //insert userId from context provider here
+        userId
       }
     }
   })
-
-  if (loading) {
+  if (loading || (!sessionData && !error)) {
     return <h1>Loading</h1>
   }
-  if (!data) {
+  if (!data || !sessionData) {
     return <h1>...</h1>
   }
   const currentLesson = data.lessonInfo
