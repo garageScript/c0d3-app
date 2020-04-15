@@ -87,9 +87,10 @@ const LessonCard: React.FC<Props> = props => {
   const containerClass =
     props.currentState === 'inProgress'
       ? 'lesson-card__container_inprogress border-primary'
-      : ''
+      : 'border-0'
+
   return (
-    <div className={`card shadow-sm mt-3 border-0 ${containerClass}`}>
+    <div className={`card shadow-sm mt-3 ${containerClass}`}>
       <div className="d-flex p-2">
         <img
           src={`/curriculumAssets/lessonCoversSvg/${props.coverImg}`}
@@ -112,7 +113,7 @@ const LessonCard: React.FC<Props> = props => {
             <div>
               <div className="d-inline-block mr-4">
                 <img
-                  className="mr-1"
+                  className="mr-2"
                   src="/curriculumAssets/icons/icon-challenge.svg"
                   alt="icon-challenge"
                 />
@@ -131,8 +132,9 @@ const LessonCard: React.FC<Props> = props => {
           />
         </div>
       </div>
+
       {props.currentState === 'inProgress' && (
-        <div className="card-footer bg-primary">
+        <div className="p-2 bg-primary">
           <a
             className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
             href={props.docUrl}
