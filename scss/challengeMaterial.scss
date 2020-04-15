@@ -2,15 +2,11 @@
   width: 100%
 }
 
-div[class*="challenge-title-card"]{
+.challenge-title-card {
   :hover {
     cursor: hand;
     cursor: pointer;
   }
-}
-
-
-.challenge-title-card {
   &--done {
       color: #6d7278;
       background-color: rgba(255, 255, 255, 0.5);

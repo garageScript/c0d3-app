@@ -11,7 +11,7 @@ export type ChallengeSubmissionData = {
   order: number
   description: string
   status: string
-  submissionData?: UserSubmission
+  submission?: UserSubmission
 }
 
 export type UserSubmission = {

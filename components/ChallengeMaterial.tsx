@@ -6,7 +6,7 @@ import {
   UserSubmissionsObject
 } from '../@types/challenge'
 
-type CurrentChallengeID = string
+type CurrentChallengeID = string | null
 
 type ChallengeTitleCardProps = {
   key: string
@@ -35,14 +35,14 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
   challengeNum,
   setCurrentChallenge
 }) => {
-  const cardStyles: string[] = []
+  const cardStyles: string[] = ['challenge-title-card']
   if (active) {
     cardStyles.push('challenge-title-card--active')
   }
   if (submissionStatus === 'passed') {
     cardStyles.push('challenge-title-card--done')
   } else {
-    cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
+    cardStyles.push('shadow-sm', 'border-0')
   }
 
   return (
@@ -60,7 +60,8 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
             src="/curriculumAssets/icons/checkmark.svg"
           />
         )}
-        {submissionStatus === 'needMoreWork' && (
+        {(submissionStatus === 'needMoreWork' ||
+          submissionStatus === 'open') && (
           <img
             width="25px"
             height="25px"
@@ -109,37 +110,30 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     },
     {}
   )
-  //create a new Challenges array with user submission data integrated
-  const challengesWithSubmissionData = challenges.reduce(
-    (acc: ChallengeSubmissionData[], challenge: Challenge) => {
-      const submissionData = userSubmissionsObject[challenge.id] || {}
-      acc.push(
-        Object.assign(challenge, {
-          status: submissionData.status || 'unsubmitted',
-          submissionData
-        })
-      )
-      return acc
-    },
-    []
-  )
-  //sort challenges by order
-  const sortedChallenges: ChallengeSubmissionData[] = challengesWithSubmissionData.sort(
-    (a, b) => a.order - b.order
-  )
-
-  //find first challenge that is not passed
-  const firstChallenge = sortedChallenges.find(
-    (challenge: ChallengeSubmissionData) => challenge.status !== 'passed'
-  ) as ChallengeSubmissionData
+  //create a new Challenges array with user submission data integrated and sorted
+  const challengesWithSubmissionData: ChallengeSubmissionData[] = challenges
+    .sort((a, b) => a.order - b.order)
+    .map((challenge: Challenge) => {
+      const submission = userSubmissionsObject[challenge.id] || {}
+      return {
+        ...challenge,
+        status: submission.status || 'unsubmitted',
+        submission
+      }
+    })
 
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
-  >(firstChallenge.id)
-  const currentChallenge = sortedChallenges.find(
-    (challenge: ChallengeSubmissionData) => challenge.id === currentChallengeID
+  >(null)
+  //find first challenge that is not passed on initial render after clicks will render clicked challenge
+  const currentChallenge = challengesWithSubmissionData.find(
+    (challenge: ChallengeSubmissionData) => {
+      if (currentChallengeID) return challenge.id === currentChallengeID
+      return challenge.status !== 'passed'
+    }
   ) as ChallengeSubmissionData
-  const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
+
+  const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
       return (
         <ChallengeTitleCard

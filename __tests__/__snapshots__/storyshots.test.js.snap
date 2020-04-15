@@ -531,7 +531,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-      className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+      className="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -544,7 +544,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
-      className="card mb-2 shadow-sm border-0 challenge-title-card"
+      className="card mb-2 challenge-title-card shadow-sm border-0"
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -619,7 +619,7 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 <div
-  className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+  className="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -635,7 +635,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active Complete 1`] = `
 <div
-  className="card mb-2 challenge-title-card--active challenge-title-card--done"
+  className="card mb-2 challenge-title-card challenge-title-card--active challenge-title-card--done"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -656,7 +656,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 <div
-  className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
+  className="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -666,13 +666,18 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0 challenge-title-card"
+  className="card mb-2 challenge-title-card shadow-sm border-0"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -688,7 +693,7 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 <div
-  className="card mb-2 challenge-title-card--done"
+  className="card mb-2 challenge-title-card challenge-title-card--done"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -709,7 +714,7 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
 <div
-  className="card mb-2 shadow-sm border-0 challenge-title-card"
+  className="card mb-2 challenge-title-card shadow-sm border-0"
   data-testid="challenge-title"
   onClick={[Function]}
 >
