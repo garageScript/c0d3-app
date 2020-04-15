@@ -674,7 +674,7 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 <div
-  className="card mb-2 undefined--done"
+  className="card mb-2 challenge-title-card--done"
   data-testid="challenge-title"
   onClick={[Function]}
 >
