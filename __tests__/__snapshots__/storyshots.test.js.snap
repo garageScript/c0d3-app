@@ -174,7 +174,9 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
         >
           <a
             className="nav-item nav-link active"
-            href="#"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Curriculum 
             <span
@@ -1387,6 +1389,8 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         >
           <a
             href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Go Back
           </a>
