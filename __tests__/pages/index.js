@@ -1,25 +1,17 @@
-jest.mock('swr')
+jest.mock('../../helpers/useSession')
 jest.mock('../../pages/curriculum')
 jest.mock('../../components/LandingPage')
 import React from 'react'
 import { render } from '@testing-library/react'
-import ReactDOM from 'react-dom'
 import Curriculum from '../../pages/curriculum'
 import IndexPage, {fetcher} from '../../pages/index'
 import LandingPage from '../../components/LandingPage'
-import useSWR from 'swr'
+import useSession from '../../helpers/useSession'
 
 describe('Index Page', () => {
-  test('fetcher should return a promise', async () => {
-    window.fetch = () => Promise.resolve({json: () => 5})
-    const data = await fetcher()
-    expect(data).toEqual(5)
-  })
   test('Should render curriculum if user is identified', async () => {
-    useSWR.mockReturnValue({
-      data: {
-        userInfo: {name:'tester'}
-      }
+    useSession.mockReturnValue({
+      data: { userInfo: { name:'tester', username: 'tester' } }
     })
     Curriculum.mockReturnValue( <h1>Hello Curriculum</h1> )
 
@@ -27,12 +19,9 @@ describe('Index Page', () => {
     getByText('Hello Curriculum')
   })
   test('Should render landing page if user is not identified', async () => {
-    useSWR.mockReturnValue({
+    useSession.mockReturnValue({
       error: undefined,
-      data: {
-        success: false,
-        errorMessage: "unauthorized"
-      }
+      data: { success: false, errorMessage: 'unauthorized' }
     })
     LandingPage.mockReturnValue(<h1>Hello Landing</h1>)
     
@@ -40,10 +29,9 @@ describe('Index Page', () => {
     getByText('Hello Landing')
   })
   test('Should not render while page is loading', async () => {
-    useSWR.mockReturnValue({})
+    useSession.mockReturnValue({})
     
     const { container } = render(<IndexPage />)
     expect(container).toMatchSnapshot()
   })
-  
 })
