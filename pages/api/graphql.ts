@@ -6,7 +6,7 @@ const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 export const config = {
   api: {
-    bodyParser: false
+    bodyParser: false // This is required for GraphQL to work properly
   }
 }
 
