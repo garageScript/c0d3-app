@@ -1,4 +1,5 @@
 import * as React from 'react'
+import NavLink from './NavLink'
 
 const LandingPage: React.FC = () => {
   return (
@@ -28,12 +29,12 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3 mb-5">
-            <a
-              href="https://c0d3.com/book"
+            <NavLink
+              text="Get Started"
+              path="https://c0d3.com/book"
               className="btn btn-primary py-3 px-5"
-            >
-              Get Started
-            </a>
+              blank
+            />
           </div>
         </div>
         <div className="row mt-5">
@@ -134,12 +135,12 @@ const LandingPage: React.FC = () => {
                 The exercises and challenges are designed to be difficult to
                 force you to ask questions. Support is available in our chat
                 channel or in-person at one of our{' '}
-                <a
-                  href="https://www.meetup.com/San-Jose-C0D3/"
+                <NavLink
+                  text="meetup groups"
+                  path="https://www.meetup.com/San-Jose-C0D3/"
                   className="text-warning"
-                >
-                  meetup groups
-                </a>
+                  blank
+                />
                 . Students who have passed the lessons may be available at the
                 meetup or in the chatroom to help you with your questions.
               </p>
@@ -192,12 +193,12 @@ const LandingPage: React.FC = () => {
         >
           Start your journey to being a full stack software engineer
         </p>
-        <a
-          href="https://c0d3.com/book"
+        <NavLink
+          text="Get Started"
+          path="https://c0d3.com/book"
           className="btn btn-primary py-3 px-5 mt-4"
-        >
-          Get Started
-        </a>
+          blank
+        />
       </div>
     </div>
   )

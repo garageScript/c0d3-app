@@ -53,6 +53,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>
@@ -148,6 +149,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>
@@ -240,6 +242,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>
@@ -309,6 +312,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>
@@ -363,6 +367,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>
@@ -392,11 +397,14 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="card-footer bg-primary"
     >
       <a
-        class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-        rel="noopener noreferrer"
-        target="_blank"
+        class="lesson-card__button btn btn-light mr-2 my-1 text-primary active"
       >
         Start Lesson
+        <span
+          class="sr-only"
+        >
+          (current)
+        </span>
       </a>
       <a
         class="lesson-card__button btn bg-primary my-1 text-white border border-white"
@@ -433,6 +441,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/4"
             />
           </h4>
@@ -487,6 +496,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>
@@ -541,6 +551,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
             class="lesson-card__title font-weight-bold mt-3"
           >
             <a
+              class=""
               href="/curriculum/undefined"
             />
           </h4>

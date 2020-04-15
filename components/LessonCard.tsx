@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import { GET_SUBMISSIONS } from '../graphql/queries'
-import Link from 'next/link'
+import NavLink from './NavLink'
 import '../scss/lessonCard.scss'
 
 type Props = {
@@ -105,12 +105,12 @@ const LessonCard: React.FC<Props> = props => {
           </div>
           <div className="col-9">
             <h4 className="lesson-card__title font-weight-bold mt-3">
-              <Link
+              <NavLink
                 as={`/curriculum/${props.lessonId}`}
-                href="/curriculum/[lesson]"
-              >
-                <a>{props.title}</a>
-              </Link>
+                path="/curriculum/[lesson]"
+                text={props.title}
+                internal
+              />
             </h4>
             <div>
               <div className="d-inline-block mr-4">
@@ -136,20 +136,17 @@ const LessonCard: React.FC<Props> = props => {
       </div>
       {props.currentState === 'inProgress' && (
         <div className="card-footer bg-primary">
-          <a
+          <NavLink
+            path={props.docUrl}
+            text="Start Lesson"
             className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-            href={props.docUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Start Lesson
-          </a>
-          <a
+            internal
+          />
+          <NavLink
+            path={props.challengesUrl}
+            text="View Challenges"
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            href={props.challengesUrl}
-          >
-            View Challenges
-          </a>
+          />
         </div>
       )}
     </div>
