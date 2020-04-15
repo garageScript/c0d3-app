@@ -6,7 +6,7 @@ const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 export const config = {
   api: {
-    bodyParser: false // This is required for GraphQL to work properly
+    bodyParser: false // This is required for GraphQL to work properly  https://blog.logrocket.com/building-a-graphql-server-in-next-js/
   }
 }
 
