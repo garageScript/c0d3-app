@@ -5,6 +5,8 @@ import { GET_SUBMISSIONS } from '../graphql/queries'
 import Link from 'next/link'
 import '../scss/lessonCard.scss'
 
+import LoadingSpinner from './LoadingSpinner'
+
 type Props = {
   lessonId: number
   coverImg: string
@@ -44,7 +46,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   })
 
   if (loading) {
-    return <span> ... </span>
+    return <LoadingSpinner />
   }
 
   if (!data) {

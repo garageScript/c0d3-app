@@ -5,6 +5,7 @@ import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
+import LoadingSpinner from '../../components/LoadingSpinner'
 import { Lesson } from '../../@types/lesson'
 import { GET_LESSONS } from '../../graphql/queries'
 
@@ -12,7 +13,7 @@ const Challenges: React.FC = () => {
   const router = useRouter()
   const { loading, data } = useQuery(GET_LESSONS)
   if (loading) {
-    return <h1>Loading</h1>
+    return <LoadingSpinner />
   }
   if (!data) {
     return <h1>...</h1>

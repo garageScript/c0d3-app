@@ -533,11 +533,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
     className="col-4"
   >
     <div
-<<<<<<< HEAD
-      className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
       className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -550,11 +546,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
       </div>
     </div>
     <div
-<<<<<<< HEAD
-      className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
       className="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
       data-testid="challenge-title"
       onClick={[Function]}
     >
@@ -629,11 +621,7 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card--active shadow-sm border-0"
-=======
   className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -649,11 +637,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card--active shadow-sm border-0"
-=======
   className="card mb-2 challenge-title-card--active shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -663,17 +647,18 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
   className="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -689,7 +674,7 @@ exports[`Storyshots Components/ChallengeTitleCard Basic 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 <div
-  className="card mb-2 challenge-title-card--done"
+  className="card mb-2 undefined--done"
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -710,11 +695,7 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
 
 exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
 <div
-<<<<<<< HEAD
-  className="card mb-2 challenge-title-card shadow-sm border-0"
-=======
   className="card mb-2 shadow-sm border-0 challenge-title-card"
->>>>>>> 324f5979cf0be0521a89fca89389b3705d89385d
   data-testid="challenge-title"
   onClick={[Function]}
 >
@@ -1420,6 +1401,126 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link active"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Home 
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="mt-4 card border-0 shadow-sm"
+    >
+      <div
+        className="card-body d-flex flex-column align-items-center"
+      >
+        <h1>
+          Loading
+        </h1>
+        <div
+          className="spinner-border text-primary"
+          role="status"
+        >
+          <span
+            className="sr-only"
+          >
+            Loading...
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
