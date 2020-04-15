@@ -2,33 +2,13 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import { GET_SUBMISSIONS } from '../graphql/queries'
+import {
+  Props,
+  ReviewButtonProps,
+  ReviewCountProps
+} from '../@types/lessonCard'
 import Link from 'next/link'
 import '../scss/lessonCard.scss'
-
-type Props = {
-  lessonId: number
-  coverImg: string
-  title: string
-  challengeCount: number
-  description: string
-  currentState?: string
-  reviewUrl: string
-  challengesUrl: string
-  docUrl: string
-  shouldNotGetCount?: boolean
-}
-
-type ReviewButtonProps = {
-  isCompleted: boolean
-  reviewUrl: string
-  lessonId: number
-  shouldNotGetCount?: boolean
-}
-
-type ReviewCountProps = {
-  shouldNotGetCount?: boolean
-  lessonId: number
-}
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   if (props.shouldNotGetCount) {
