@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import '../scss/navbar.scss'
 import Button from './Button'
 
-import { AuthUserContext } from '../pages/_app'
+import { AuthUserContext } from '../pages/index'
 
 type LinkProps = {
   active?: string
@@ -121,9 +121,9 @@ const AppNav: React.FC = () => {
               <div id="navbarNav">
                 <div className="navbar-nav collapse navbar-collapse">
                   {user ? (
-                    <AuthLinks active={router && router.route} />
+                    <AuthLinks active={router.route} />
                   ) : (
-                    <UnAuthLinks active={router && router.route} />
+                    <UnAuthLinks active={router.route} />
                   )}
                 </div>
               </div>

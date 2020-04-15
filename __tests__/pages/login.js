@@ -1,8 +1,14 @@
+jest.mock('next/router')
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
 import * as loginHelper from '../../helpers/loginUser'
 import Login from '../../pages/login'
 import Router from 'next/router'
+import { useRouter } from 'next/router'
+
+useRouter.mockReturnValue({
+  route: null
+})
 
 describe('Login Page', () => {
   test('Should redirect to curriculum', async () => {

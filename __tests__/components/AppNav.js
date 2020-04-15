@@ -1,7 +1,13 @@
+jest.mock('next/router')
 import React from 'react'
 import { render } from '@testing-library/react'
-import { AuthUserContext } from '../../pages/_app'
+import { AuthUserContext } from '../../pages/index'
 import AppNav, { AuthLinks, UnAuthLinks } from '../../components/AppNav'
+import { useRouter } from 'next/router'
+
+useRouter.mockReturnValue({
+  route: null
+})
 
 describe('AppNav component', () => {
   test('Should render appropriately when user is logged in', () => {

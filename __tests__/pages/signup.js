@@ -1,7 +1,13 @@
+jest.mock('next/router')
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
 import Signup from '../../pages/signup'
 import * as signupHelper from '../../helpers/signupUser'
+import { useRouter } from 'next/router'
+
+useRouter.mockReturnValue({
+  route: null
+})
 
 describe('Signup Page', () => {
   const fillOutSignupForm = async getByTestId => {

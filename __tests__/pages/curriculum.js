@@ -1,3 +1,4 @@
+jest.mock('next/router')
 jest.mock('@apollo/react-hooks')
 jest.mock('../../components/LessonCard')
 import React from 'react'
@@ -5,6 +6,11 @@ import { useQuery } from '@apollo/react-hooks'
 import Curriculum from '../../pages/curriculum'
 import { render } from '@testing-library/react'
 import LessonCard from '../../components/LessonCard'
+import { useRouter } from 'next/router'
+
+useRouter.mockReturnValue({
+  route: null
+})
 
 describe('Curriculum Page', () => {
   test('Should render loading when loading', async () => {
