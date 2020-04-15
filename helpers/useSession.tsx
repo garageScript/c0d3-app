@@ -1,4 +1,5 @@
 import useSWR from 'swr'
+import { User } from './models/User'
 
 const SERVER_URL = process.env.SERVER_URL
 
@@ -7,14 +8,7 @@ export const fetcher = (url: string) =>
 
 type SessionData = {
   data: {
-    userInfo: {
-      id: number
-      name: string
-      username: string
-      createdAt: string
-      isAdmin: boolean
-      emailVerificationToken: string
-    }
+    userInfo: User
     errorMessage?: string
     success: boolean
   }
