@@ -70,13 +70,11 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         <h1 data-testid="challenge-question-title" className="card-title">
           {currentChallenge.title}
         </h1>
-        <div>
-          <p
-            data-testid="challenge-question-description"
-            className="bg-light p-3 mt-3"
-          >
-            <Markdown>{currentChallenge.description}</Markdown>
-          </p>
+        <div
+          data-testid="challenge-question-description"
+          className="bg-light p-3 mt-3"
+        >
+          <Markdown>{currentChallenge.description}</Markdown>
         </div>
       </div>
     </div>
