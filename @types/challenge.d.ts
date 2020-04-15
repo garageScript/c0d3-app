@@ -5,6 +5,15 @@ export type Challenge = {
   description: string
 }
 
+export type ChallengeSubmissionData = {
+  title: string
+  id: string
+  order: number
+  description: string
+  status: string
+  submissionData?: UserSubmission
+}
+
 export type UserSubmission = {
   id: string
   status: string
@@ -16,4 +25,8 @@ export type UserSubmission = {
   reviewerId: string
   createdAt: string
   updatedAt: string
+}
+
+export type UserSubmissionsObject = {
+  [submissionId: string]: UserSubmission
 }

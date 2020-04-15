@@ -8,7 +8,6 @@ import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { Lesson } from '../../@types/lesson'
 import { UserSubmission } from '../../@types/challenge'
 import { GET_LESSONS, GET_USER_SUBMISSIONS } from '../../graphql/queries'
-// import useQueries from '../../helpers/useQueries'
 
 type LessonId = {
   lessonId: string
@@ -33,7 +32,7 @@ const Challenges: React.FC = () => {
     variables: {
       in: {
         lessonId: currentlessonId,
-        userId: '1' //insert userId from context provider here
+        userId: '667' //insert userId from context provider here
       }
     }
   })

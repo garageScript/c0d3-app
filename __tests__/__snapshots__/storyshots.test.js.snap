@@ -666,11 +666,6 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
-    <img
-      height="25px"
-      src="/curriculumAssets/icons/pending.svg"
-      width="25px"
-    />
   </div>
 </div>
 `;
@@ -724,11 +719,6 @@ exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
-    <img
-      height="25px"
-      src="/curriculumAssets/icons/pending.svg"
-      width="25px"
-    />
   </div>
 </div>
 `;

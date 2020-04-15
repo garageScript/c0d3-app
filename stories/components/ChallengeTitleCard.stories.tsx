@@ -15,7 +15,7 @@ const props = {
   challengeNum: 0,
   title: 'Greater than 5',
   setCurrentChallenge: action('clicked'),
-  submissionStatus: ''
+  submissionStatus: 'unsubmitted'
 }
 
 export const Basic: React.FC = () => <ChallengeTitleCard {...props} />
