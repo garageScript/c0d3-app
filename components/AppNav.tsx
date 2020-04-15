@@ -18,9 +18,11 @@ type Props = {
 
 const AuthLink = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <a href="#" className="nav-item nav-link active">
-      Curriculum <span className="sr-only">(current)</span>
-    </a>
+    <Link href="/curriculum">
+      <a className="nav-item nav-link active">
+        Curriculum <span className="sr-only">(current)</span>
+      </a>
+    </Link>
     <a href="#" className="nav-item nav-link">
       Repo
     </a>

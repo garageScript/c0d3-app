@@ -105,7 +105,10 @@ const LessonCard: React.FC<Props> = props => {
           </div>
           <div className="col-9">
             <h4 className="lesson-card__title font-weight-bold mt-3">
-              <Link href={`/curriculum/${props.lessonId}`}>
+              <Link
+                as={`/curriculum/${props.lessonId}`}
+                href="/curriculum/[lesson]"
+              >
                 <a>{props.title}</a>
               </Link>
             </h4>
