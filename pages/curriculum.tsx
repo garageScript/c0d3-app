@@ -5,6 +5,7 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
+import LoadingSpinner from '../components/LoadingSpinner'
 import { Lesson } from '../@types/lesson'
 import { GET_LESSONS } from '../graphql/queries'
 
@@ -17,7 +18,7 @@ const Curriculum: React.FC = () => {
   ]
   const { loading, data } = useQuery(GET_LESSONS)
   if (loading) {
-    return <h1>Loading</h1>
+    return <LoadingSpinner />
   }
 
   if (data) {
