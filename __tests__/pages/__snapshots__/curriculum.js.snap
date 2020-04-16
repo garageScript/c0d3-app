@@ -9,7 +9,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -35,7 +35,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
               </span>
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -61,13 +61,13 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -197,7 +197,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             class="my-2"
           />
           <a
-            class="mx-3"
+            class="mx-3 "
             href="#"
           >
             Github Basics
@@ -250,7 +250,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -276,7 +276,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
               </span>
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -302,13 +302,13 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -438,7 +438,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             class="my-2"
           />
           <a
-            class="mx-3"
+            class="mx-3 "
             href="#"
           >
             Github Basics
@@ -499,7 +499,7 @@ exports[`Curriculum Page Should render loading when loading 1`] = `
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -517,7 +517,7 @@ exports[`Curriculum Page Should render loading when loading 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
+              Home
               <span
                 class="sr-only"
               >
@@ -525,7 +525,7 @@ exports[`Curriculum Page Should render loading when loading 1`] = `
               </span>
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -551,13 +551,13 @@ exports[`Curriculum Page Should render loading when loading 1`] = `
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
