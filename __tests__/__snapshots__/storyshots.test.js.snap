@@ -726,11 +726,6 @@ exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
     <div>
       0. Greater than 5
     </div>
-    <img
-      height="25px"
-      src="/curriculumAssets/icons/pending.svg"
-      width="25px"
-    />
   </div>
 </div>
 `;
@@ -1440,6 +1435,24 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     </a>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/StatusIcon Basic 1`] = `null`;
+
+exports[`Storyshots Components/StatusIcon Passed 1`] = `
+<img
+  height="25px"
+  src="/curriculumAssets/icons/checkmark.svg"
+  width="25px"
+/>
+`;
+
+exports[`Storyshots Components/StatusIcon Pending 1`] = `
+<img
+  height="25px"
+  src="/curriculumAssets/icons/pending.svg"
+  width="25px"
+/>
 `;
 
 exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `

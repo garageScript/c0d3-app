@@ -5,6 +5,7 @@ import {
   UserSubmission,
   UserSubmissionsObject
 } from '../@types/challenge'
+import StatusIcon from './StatusIcon'
 import Markdown from 'markdown-to-jsx'
 
 type CurrentChallengeID = string | null
@@ -54,21 +55,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
     >
       <div className="card-body d-flex justify-content-between">
         <div>{`${challengeNum}. ${title}`}</div>
-        {submissionStatus === 'passed' && (
-          <img
-            width="25px"
-            height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
-          />
-        )}
-        {(submissionStatus === 'needMoreWork' ||
-          submissionStatus === 'open') && (
-          <img
-            width="25px"
-            height="25px"
-            src="/curriculumAssets/icons/pending.svg"
-          />
-        )}
+        <StatusIcon status={submissionStatus} />
       </div>
     </div>
   )
