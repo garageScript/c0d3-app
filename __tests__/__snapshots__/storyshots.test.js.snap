@@ -1484,32 +1484,6 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/StatusIcon Basic 1`] = `null`;
-
-exports[`Storyshots Components/StatusIcon Passed 1`] = `
-<img
-  height="25px"
-  src="/curriculumAssets/icons/checkmark.svg"
-  width="25px"
-/>
-`;
-
-exports[`Storyshots Components/StatusIcon Pending 1`] = `
-<img
-  height="25px"
-  src="/curriculumAssets/icons/pending.svg"
-  width="25px"
-/>
-`;
-
-exports[`Storyshots Components/StatusIcon Rejected 1`] = `
-<img
-  height="25px"
-  src="/curriculumAssets/icons/rejected.svg"
-  width="25px"
-/>
-`;
-
 exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
 <div
   className="card-group"

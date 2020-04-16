@@ -5,7 +5,6 @@ import {
   UserSubmission,
   UserSubmissionsObject
 } from '../@types/challenge'
-import StatusIcon from './StatusIcon'
 import Markdown from 'markdown-to-jsx'
 
 type CurrentChallengeID = string | null
@@ -27,6 +26,32 @@ type ChallengeQuestionCardProps = {
 type ChallengeMaterialProps = {
   userSubmissions: UserSubmission[]
   challenges: Challenge[]
+}
+
+type StatusIconProps = {
+  status: string
+}
+
+const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
+  if (status === 'unsubmitted') {
+    return <></>
+  }
+  let statusIconUrl
+  switch (status) {
+    case 'passed':
+      statusIconUrl = '/curriculumAssets/icons/checkmark.svg'
+      break
+    case 'needMoreWork':
+      statusIconUrl = '/curriculumAssets/icons/rejected.svg'
+      break
+    case 'open':
+      statusIconUrl = '/curriculumAssets/icons/pending.svg'
+  }
+  return (
+    <>
+      <img width="25px" height="25px" src={statusIconUrl} />
+    </>
+  )
 }
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
