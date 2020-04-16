@@ -1,8 +1,6 @@
-//@ts-nocheck
 import React from 'react'
 import Link from 'next/link'
 import { useQuery } from '@apollo/react-hooks'
-import LoadingSpinner from './LoadingSpinner'
 import { CheckCircle } from 'react-feather'
 import { GET_SUBMISSIONS } from '../graphql/queries'
 import {
