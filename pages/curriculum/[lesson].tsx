@@ -35,7 +35,6 @@ const Challenges: React.FC = () => {
     return <h1>...</h1>
   }
   const currentLesson = data.lessonInfo
-  console.log(currentLesson.challenges, userId)
   const userSubmissions = data.userSubmissions
   return (
     <div>
