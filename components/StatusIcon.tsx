@@ -5,7 +5,7 @@ type Props = {
 }
 
 const StatusIcon: React.FC<Props> = ({ status }) => {
-  if (status === 'open' || status === 'unsubmitted') {
+  if (status === 'unsubmitted') {
     return <></>
   }
   let statusIconUrl
@@ -14,8 +14,10 @@ const StatusIcon: React.FC<Props> = ({ status }) => {
       statusIconUrl = '/curriculumAssets/icons/checkmark.svg'
       break
     case 'needMoreWork':
-      statusIconUrl = '/curriculumAssets/icons/pending.svg'
+      statusIconUrl = '/curriculumAssets/icons/rejected.svg'
       break
+    case 'open':
+      statusIconUrl = '/curriculumAssets/icons/pending.svg'
   }
   return (
     <>

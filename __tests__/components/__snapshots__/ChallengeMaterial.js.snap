@@ -152,6 +152,11 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           <div>
             0. Greater than 5
           </div>
+          <img
+            height="25px"
+            src="/curriculumAssets/icons/pending.svg"
+            width="25px"
+          />
         </div>
       </div>
       <div
@@ -166,7 +171,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/pending.svg"
+            src="/curriculumAssets/icons/rejected.svg"
             width="25px"
           />
         </div>
