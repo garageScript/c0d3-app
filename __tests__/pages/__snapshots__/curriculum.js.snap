@@ -578,7 +578,7 @@ exports[`Curriculum Page Should render loading when loading 1`] = `
           Loading
         </h1>
         <div
-          class="spinner-border text-primary"
+          class="spinner-border text-primary mt-1"
           role="status"
         >
           <span

@@ -1478,7 +1478,7 @@ Array [
           Loading
         </h1>
         <div
-          className="spinner-border text-primary"
+          className="spinner-border text-primary mt-1"
           role="status"
         >
           <span
