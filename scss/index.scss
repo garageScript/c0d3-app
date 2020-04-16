@@ -18,6 +18,10 @@ $green: #00cf92 !default;
 @import "../public/PTMono-Regular.ttf";
 
 // Global CSS
+body{
+  font-optical-sizing: none;
+}
+
 .outline-danger{
   border: 1px solid rgba(220,53,69, 1);
   &:focus{
