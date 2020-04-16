@@ -9,7 +9,7 @@ exports[`Signup Page Should submit signup form values and display error componen
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -35,7 +35,7 @@ exports[`Signup Page Should submit signup form values and display error componen
               </span>
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -61,13 +61,13 @@ exports[`Signup Page Should submit signup form values and display error componen
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -168,7 +168,7 @@ exports[`Signup Page Should submit signup form values and display error componen
             Already have an account?
              
             <a
-              class="text-primary"
+              class="text-primary "
               href="/login"
             >
               Login
@@ -197,7 +197,7 @@ exports[`Signup Page Should submit signup form values and display error componen
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -223,7 +223,7 @@ exports[`Signup Page Should submit signup form values and display error componen
               </span>
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -249,13 +249,13 @@ exports[`Signup Page Should submit signup form values and display error componen
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -352,7 +352,7 @@ exports[`Signup Page Should submit signup form values and display error componen
             Already have an account?
              
             <a
-              class="text-primary"
+              class="text-primary "
               href="/login"
             >
               Login
@@ -381,7 +381,7 @@ exports[`Signup Page Should submit signup form values and display error componen
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -407,7 +407,7 @@ exports[`Signup Page Should submit signup form values and display error componen
               </span>
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -433,13 +433,13 @@ exports[`Signup Page Should submit signup form values and display error componen
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -536,7 +536,7 @@ exports[`Signup Page Should submit signup form values and display error componen
             Already have an account?
              
             <a
-              class="text-primary"
+              class="text-primary "
               href="/login"
             >
               Login
