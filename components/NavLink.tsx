@@ -22,15 +22,10 @@ const NavLink: React.FC<NavLinkProps> = ({
 }) => {
   const active = path === activePath
   className = className ? className : ''
-  // if (internal && blank) {
-  // should throw error
-  // not sure how to test for this yet
-  // throw new Error('you cannot have a link that is both internal AND blank')
-  // }
   if (internal) {
     return (
       <Link href={path} as={as}>
-        <a className={`${className}${active ? ' active' : ''}`}>
+        <a className={`${className} ${active ? 'active' : ''}`}>
           {text}
           {active && <span className="sr-only">(current)</span>}
         </a>
@@ -50,7 +45,7 @@ const NavLink: React.FC<NavLinkProps> = ({
     )
   }
   return (
-    <a href={path} className={className}>
+    <a href={path} className={`${className} ${active ? 'active' : ''}`}>
       {text}
     </a>
   )
