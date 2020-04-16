@@ -19,7 +19,10 @@ $green: #00cf92 !default;
 
 // Global CSS
 body{
-  font-optical-sizing: none;
+  /* This fix the font difference between browsers
+   * https://github.com/garageScript/c0d3-app/pull/134
+   */
+  font-optical-sizing: none; 
 }
 
 .outline-danger{
