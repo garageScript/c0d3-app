@@ -1,17 +1,17 @@
 import db from './dbload'
 
-const { Lesson, User } = db
-export const findLessons = async (id: string) => {
+const { Lesson, User, Challenge } = db
+export const findLessons = async () => {
   return Lesson.findAll({
     include: [
-      'challenges',
+      {
+        model: Challenge,
+        as: 'challenges'
+      },
       {
         model: User,
         through: {
-          attributes: ['isPassed', 'isEnrolled', 'isTeaching'],
-          where: {
-            id
-          }
+          attributes: ['isPassed', 'isEnrolled', 'isTeaching']
         }
       }
     ],

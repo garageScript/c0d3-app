@@ -7,8 +7,8 @@ const { User } = db
 
 export default {
   Query: {
-    lessons: async (_parent: void, _arg: void, ctx: any) => {
-      return findLessons(ctx.req.session.userId)
+    lessons: async () => {
+      return findLessons()
     },
     user: async (_parent: void, _arg: void, ctx: any) => {
       const { req } = ctx
