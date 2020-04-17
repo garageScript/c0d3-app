@@ -9,11 +9,11 @@ export default {
 export const Basic: React.FC = () => <NavLink path="/" text="Basic NavLink" />
 
 export const BlankLink: React.FC = () => (
-  <NavLink path="http://c0d3.com" text="Blank NavLink" blank />
+  <NavLink path="http://c0d3.com" text="Blank NavLink" external blank />
 )
 
-export const InternalLink: React.FC = () => (
-  <NavLink path="/" text="Internal Link" internal />
+export const ExternalLink: React.FC = () => (
+  <NavLink path="/" text="External Link" external />
 )
 
 export const StyledLink: React.FC = () => (

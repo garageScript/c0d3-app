@@ -26,6 +26,8 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
   <a
     className="mx-3 "
     href="#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Github Basics
   </a>
@@ -190,12 +192,16 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
           <a
             className="nav-item nav-link "
             href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Repo
           </a>
           <a
             className="nav-item nav-link "
             href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Journey
           </a>
@@ -1318,14 +1324,14 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     <a
       className="lesson-card__button btn btn-light mr-2 my-1 text-primary "
       href="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
     >
       Start Lesson
     </a>
     <a
       className="lesson-card__button btn bg-primary my-1 text-white border border-white "
       href="https://c0d3.com/student/24"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       View Challenges
     </a>
@@ -1382,6 +1388,8 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       <a
         className="btn border-right rounded-0 px-4 py-3 "
         href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         CHALLENGES
       </a>
@@ -1515,12 +1523,21 @@ Array [
   <a
     className="btn btn-primary active"
     href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Active Link
+    <span
+      className="sr-only"
+    >
+      (current)
+    </span>
   </a>,
   <a
     className="btn btn-primary "
     href="/other"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Non-Active Link
   </a>,
@@ -1531,6 +1548,8 @@ exports[`Storyshots Components/NavLink Basic 1`] = `
 <a
   className=" "
   href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   Basic NavLink
 </a>
@@ -1547,14 +1566,12 @@ exports[`Storyshots Components/NavLink Blank Link 1`] = `
 </a>
 `;
 
-exports[`Storyshots Components/NavLink Internal Link 1`] = `
+exports[`Storyshots Components/NavLink External Link 1`] = `
 <a
   className=" "
   href="/"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
 >
-  Internal Link
+  External Link
 </a>
 `;
 
@@ -1562,6 +1579,8 @@ exports[`Storyshots Components/NavLink Styled Link 1`] = `
 <a
   className="btn btn-primary "
   href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   Styled Link
 </a>

@@ -53,7 +53,6 @@ const SignupSuccess: React.FC = () => (
       text="Continue to Curriculum"
       path="/curriculum"
       className="btn btn-primary btn-lg mb-3"
-      internal
     />
   </Card>
 )
@@ -122,7 +121,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
       </Formik>
       <p className="text-black-50">
         Already have an account?{' '}
-        <NavLink text="Login" path="/login" className="text-primary" internal />
+        <NavLink text="Login" path="/login" className="text-primary" />
       </p>
     </Card>
   )

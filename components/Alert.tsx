@@ -19,6 +19,7 @@ const Alert: React.FC<Props> = props => {
           text="View Instructions"
           path={props.instructionsUrl}
           className="text-white"
+          external
           blank
         />
       )}

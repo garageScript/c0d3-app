@@ -23,7 +23,6 @@ const AuthLink = () => (
       path="/curriculum"
       activePath="/curriculum"
       className="nav-item nav-link"
-      internal
     />
     <NavLink text="Repo" path="#" className="nav-item nav-link" />
     <NavLink text="Journey" path="#" className="nav-item nav-link" />
@@ -31,6 +30,7 @@ const AuthLink = () => (
       text="Help"
       path="https://chat.c0d3.com"
       className="nav-item nav-link"
+      external
       blank
     />
   </div>
@@ -53,13 +53,11 @@ const UnAuthButton = () => (
       text="Login"
       path="/login"
       className="btn btn-secondary border mr-3"
-      internal
     />
     <NavLink
       text="Signup"
       path="/signup"
       className="btn btn-secondary border mr-3"
-      internal
     />
   </div>
 )
@@ -71,24 +69,24 @@ const UnAuthLink = () => (
       path="/"
       activePath="/"
       className="nav-item nav-link"
-      internal
     />
     <NavLink
       text="Learning Process"
       path="/#learning"
       className="nav-item nav-link"
-      internal
     />
     <NavLink
       text="Resources"
       path="https://c0d3.com/book"
       className="nav-item nav-link"
+      external
       blank
     />
     <NavLink
       text="Help"
       path="https://chat.c0d3.com"
       className="nav-item nav-link"
+      external
       blank
     />
   </div>
@@ -108,7 +106,6 @@ const AppNav: React.FC<Props> = ({
           text="C0D3"
           path="/"
           className="navbar-brand text-primary font-weight-bold"
-          internal
         />
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
