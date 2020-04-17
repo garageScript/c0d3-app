@@ -5,7 +5,7 @@ import { render } from '@testing-library/react'
 import Curriculum from '../../pages/curriculum'
 import IndexPage from '../../pages/index'
 import LandingPage from '../../components/LandingPage'
-import { SessionContext } from '../../pages/_app'
+import SessionContext from '../../helpers/contexts/session'
 
 describe('Index Page', () => {
   test('Should render curriculum if user is identified', async () => {

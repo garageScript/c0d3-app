@@ -1,7 +1,7 @@
 import React from 'react'
 import AppNav from './AppNav'
 import Footer from './Footer'
-import { SessionContext } from '../pages/_app'
+import SessionContext from '../helpers/contexts/session'
 
 type Props = {
   children: React.ReactElement

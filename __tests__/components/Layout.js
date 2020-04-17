@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Layout from '../../components/Layout'
-import { SessionContext } from '../../pages/_app'
+import SessionContext from '../../helpers/contexts/session'
 
 describe('Layout Component', () => {
   test('Should render correctly when no user in session', () => {

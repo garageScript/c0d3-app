@@ -3,7 +3,7 @@ import Curriculum from './curriculum'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
-import { SessionContext } from './_app'
+import SessionContext from '../helpers/contexts/session'
 
 const IndexPage: any = () => {
   const { data, error } = React.useContext(SessionContext)
