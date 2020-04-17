@@ -20,7 +20,7 @@ const LessonTitleCard: React.FC<Props> = props => {
           />
           <div>
             <p className="m-0">
-              <NavLink text="Go Back" path="/curriculum" internal />
+              <NavLink text="Go Back" path="/curriculum" />
             </p>
             <h1 className="lessonTitleCard__lesson-title">
               {props.lessonTitle}
@@ -32,6 +32,7 @@ const LessonTitleCard: React.FC<Props> = props => {
             text="LESSON"
             path={props.lessonUrl}
             className="btn border-right rounded-0 px-4 py-3"
+            external
             blank
           />
           <NavLink

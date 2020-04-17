@@ -33,6 +33,7 @@ const LandingPage: React.FC = () => {
               text="Get Started"
               path="https://c0d3.com/book"
               className="btn btn-primary py-3 px-5"
+              external
               blank
             />
           </div>
@@ -139,6 +140,7 @@ const LandingPage: React.FC = () => {
                   text="meetup groups"
                   path="https://www.meetup.com/San-Jose-C0D3/"
                   className="text-warning"
+                  external
                   blank
                 />
                 . Students who have passed the lessons may be available at the
@@ -197,6 +199,7 @@ const LandingPage: React.FC = () => {
           text="Get Started"
           path="https://c0d3.com/book"
           className="btn btn-primary py-3 px-5 mt-4"
+          external
           blank
         />
       </div>

@@ -5,8 +5,8 @@ type NavLinkProps = {
   text: string
   path: string
   activePath?: string
+  external?: true
   as?: string
-  internal?: true
   blank?: true
   className?: string
 }
@@ -16,38 +16,38 @@ const NavLink: React.FC<NavLinkProps> = ({
   path,
   activePath,
   as,
-  internal,
+  external,
   blank,
   className
 }) => {
   const active = path === activePath
   className = className ? className : ''
-  if (internal) {
-    return (
-      <Link href={path} as={as}>
-        <a className={`${className} ${active ? 'active' : ''}`}>
+  if (external) {
+    if (blank) {
+      return (
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href={path}
+          className={className}
+        >
           {text}
-          {active && <span className="sr-only">(current)</span>}
         </a>
-      </Link>
-    )
-  }
-  if (blank) {
+      )
+    }
     return (
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href={path}
-        className={className}
-      >
+      <a href={path} className={`${className} ${active ? 'active' : ''}`}>
         {text}
       </a>
     )
   }
   return (
-    <a href={path} className={`${className} ${active ? 'active' : ''}`}>
-      {text}
-    </a>
+    <Link href={path} as={as}>
+      <a className={`${className} ${active ? 'active' : ''}`}>
+        {text}
+        {active && <span className="sr-only">(current)</span>}
+      </a>
+    </Link>
   )
 }
 

@@ -13,6 +13,7 @@ const AdditionalResources: React.FC = () => {
         text="Setup Instructions"
         path="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
         className="mx-3"
+        external
         blank
       />
       <hr className="my-2" />
@@ -22,6 +23,7 @@ const AdditionalResources: React.FC = () => {
         text="Stack Overflow"
         path="https://stackoverflow.com/"
         className="mx-3"
+        external
         blank
       />
       <hr className="my-2" />
@@ -29,6 +31,7 @@ const AdditionalResources: React.FC = () => {
         text="Help &amp; Support"
         path="https://chat.c0d3.com/"
         className="mx-3"
+        external
         blank
       />
       <hr className="my-2" />
