@@ -7,7 +7,7 @@ export class Lesson extends Model {
   public githubUrl?: string
   public videoUrl?: string
   public order!: number
-  public titel!: string
+  public title!: string
   public chatUrl?: string
 
   public readonly createdAt!: Date
