@@ -8,15 +8,13 @@ import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_LESSON } from '../../graphql/queries'
 import LoadingSpinner from '../../components/LoadingSpinner'
+import _ from 'lodash'
 
 const Challenges: React.FC = () => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { data: sessionData, error } = React.useContext(SessionContext)
-  const userId =
-    sessionData && sessionData.userInfo
-      ? sessionData.userInfo.id.toString()
-      : ''
+  const userId = _.get(sessionData, 'userInfo.id', '').toString()
   const { loading, data } = useQuery(GET_LESSON, {
     variables: {
       lessonInfo: {
@@ -32,11 +30,10 @@ const Challenges: React.FC = () => {
   if (loading) {
     return <LoadingSpinner />
   }
-  if (!data || !sessionData) {
+  if (!data || (!sessionData && !sessionData!.userInfo) || error) {
     return <h1>...</h1>
   }
-  const currentLesson = data.lessonInfo
-  const userSubmissions = data.userSubmissions
+  const { lessonInfo: currentLesson, userSubmissions } = data
   return (
     <div>
       <Layout>
