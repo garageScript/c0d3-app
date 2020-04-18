@@ -3,22 +3,20 @@ import Curriculum from './curriculum'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
-import useSWR from 'swr'
-
-const SERVER_URL = process.env.SERVER_URL
-
-export const fetcher = (url: string) =>
-  fetch(url, { credentials: 'include' }).then(r => r.json())
+import SessionContext from '../helpers/contexts/session'
 
 const IndexPage: any = () => {
-  const { data, error } = useSWR(`${SERVER_URL}/session`, fetcher)
-  if (data && data.userInfo) {
-    return <Curriculum />
-  }
+  const { data, error } = React.useContext(SessionContext)
+
   // while loading, don't show anything to user
   if (!data && !error) {
     return null
   }
+
+  if (data && data.userInfo) {
+    return <Curriculum />
+  }
+
   return (
     <>
       <AppNav loggedIn={false} />

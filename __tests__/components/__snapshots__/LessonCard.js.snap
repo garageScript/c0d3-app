@@ -3,16 +3,19 @@
 exports[`Lesson Card Complete State Should render lessonCard with loading... 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
         <span
-          class="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -21,7 +24,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            style="height: 15px; margin-top: -2px;"
+            style="height: 15px;"
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -34,21 +37,12 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             />
           </svg>
           <span
-            class="mr-1"
+            class="mx-1"
           >
             COMPLETED
           </span>
         </span>
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -62,7 +56,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -76,19 +70,16 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             class="lesson-card__description mt-2"
           />
         </div>
-        <span
-          class="position-absolute lesson-card__container_review"
+        <a
+          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
-          <a
-            class="btn btn-sm bg-primary text-white"
-          >
-            Review
-            <span>
-               ... 
-            </span>
-            Submissions
-          </a>
-        </span>
+          Review
+          <div
+            class="spinner-border spinner-border-sm mx-1"
+            role="status"
+          />
+          Submissions
+        </a>
       </div>
     </div>
   </div>
@@ -98,16 +89,19 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
 exports[`Lesson Card Complete State Should render lessonCard with null if no data 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
         <span
-          class="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -116,7 +110,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            style="height: 15px; margin-top: -2px;"
+            style="height: 15px;"
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -129,21 +123,12 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             />
           </svg>
           <span
-            class="mr-1"
+            class="mx-1"
           >
             COMPLETED
           </span>
         </span>
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -157,7 +142,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -171,16 +156,12 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             class="lesson-card__description mt-2"
           />
         </div>
-        <span
-          class="position-absolute lesson-card__container_review"
+        <a
+          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
-          <a
-            class="btn btn-sm bg-primary text-white"
-          >
-            Review
-            Submissions
-          </a>
-        </span>
+          Review
+          Submissions
+        </a>
       </div>
     </div>
   </div>
@@ -190,16 +171,19 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
 exports[`Lesson Card Complete State Should render lessonCard with submission count 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
         <span
-          class="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -208,7 +192,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            style="height: 15px; margin-top: -2px;"
+            style="height: 15px;"
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -221,21 +205,12 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             />
           </svg>
           <span
-            class="mr-1"
+            class="mx-1"
           >
             COMPLETED
           </span>
         </span>
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -249,7 +224,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -263,21 +238,17 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             class="lesson-card__description mt-2"
           />
         </div>
-        <span
-          class="position-absolute lesson-card__container_review"
+        <a
+          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
-          <a
-            class="btn btn-sm bg-primary text-white"
-          >
-            Review
-            <span>
-               
-              2
-               
-            </span>
-            Submissions
-          </a>
-        </span>
+          Review
+          <span>
+             
+            2
+             
+          </span>
+          Submissions
+        </a>
       </div>
     </div>
   </div>
@@ -287,24 +258,18 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
 exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -318,7 +283,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -341,24 +306,18 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
 exports[`Lesson Card Should render lessonCard with inProgress currentState prop 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 lesson-card__container_inprogress border-primary"
+    class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -372,7 +331,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -389,7 +348,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       </div>
     </div>
     <div
-      class="card-footer bg-primary"
+      class="p-2 bg-primary"
     >
       <a
         class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
@@ -411,24 +370,18 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
 exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -442,7 +395,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -465,24 +418,18 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
 exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -496,7 +443,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span
@@ -519,24 +466,18 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
 exports[`Lesson Card Should render loading card when loading 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0 "
+    class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="card-body p-2"
+      class="d-flex p-2"
     >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/undefined"
+      />
       <div
-        class="row no-gutters"
+        class="w-100 pl-4"
       >
-        <div
-          class="mw-100 col-2 mr-4"
-        >
-          <img
-            src="/curriculumAssets/lessonCoversSvg/undefined"
-          />
-        </div>
-        <div
-          class="col-9"
-        >
+        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -550,7 +491,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
             >
               <img
                 alt="icon-challenge"
-                class="mr-1"
+                class="mr-2"
                 src="/curriculumAssets/icons/icon-challenge.svg"
               />
               <span

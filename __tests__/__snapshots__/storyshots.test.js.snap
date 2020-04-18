@@ -174,7 +174,9 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
         >
           <a
             className="nav-item nav-link active"
-            href="#"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Curriculum 
             <span
@@ -572,13 +574,13 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
         >
           Greater than 5
         </h1>
-        <div>
-          <p
-            className="card-question bg-light p-3 mt-3"
-            data-testid="challenge-question-description"
-          >
+        <div
+          className="bg-light p-3 mt-3"
+          data-testid="challenge-question-description"
+        >
+          <span>
             Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
-          </p>
+          </span>
         </div>
       </div>
     </div>
@@ -605,13 +607,13 @@ exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
     >
       Greater than 5
     </h1>
-    <div>
-      <p
-        className="card-question bg-light p-3 mt-3"
-        data-testid="challenge-question-description"
-      >
+    <div
+      className="bg-light p-3 mt-3"
+      data-testid="challenge-question-description"
+    >
+      <span>
         Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
-      </p>
+      </span>
     </div>
   </div>
 </div>
@@ -1128,25 +1130,19 @@ exports[`Storyshots Components/Layout Without Layout 1`] = `
 
 exports[`Storyshots Components/LessonCard Basic 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0 "
+  className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="card-body p-2"
+    className="d-flex p-2"
   >
+    <img
+      alt="js-4-cover.svg"
+      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+    />
     <div
-      className="row no-gutters"
+      className="w-100 pl-4"
     >
-      <div
-        className="mw-100 col-2 mr-4"
-      >
-        <img
-          alt="js-4-cover.svg"
-          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
-        />
-      </div>
-      <div
-        className="col-9"
-      >
+      <div>
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -1164,7 +1160,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           >
             <img
               alt="icon-challenge"
-              className="mr-1"
+              className="mr-2"
               src="/curriculumAssets/icons/icon-challenge.svg"
             />
             <span
@@ -1188,16 +1184,20 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
 
 exports[`Storyshots Components/LessonCard With Completed 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0 "
+  className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="card-body p-2"
+    className="d-flex p-2"
   >
+    <img
+      alt="js-4-cover.svg"
+      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+    />
     <div
-      className="row no-gutters"
+      className="w-100 pl-4"
     >
       <span
-        className="badge badge-pill badge-success position-absolute lesson-card__container_completed"
+        className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
       >
         <svg
           fill="none"
@@ -1209,7 +1209,6 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           style={
             Object {
               "height": "15px",
-              "marginTop": "-2px",
             }
           }
           viewBox="0 0 24 24"
@@ -1224,22 +1223,12 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           />
         </svg>
         <span
-          className="mr-1"
+          className="mx-1"
         >
           COMPLETED
         </span>
       </span>
-      <div
-        className="mw-100 col-2 mr-4"
-      >
-        <img
-          alt="js-4-cover.svg"
-          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
-        />
-      </div>
-      <div
-        className="col-9"
-      >
+      <div>
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -1257,7 +1246,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           >
             <img
               alt="icon-challenge"
-              className="mr-1"
+              className="mr-2"
               src="/curriculumAssets/icons/icon-challenge.svg"
             />
             <span
@@ -1274,17 +1263,13 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
       </div>
-      <span
-        className="position-absolute lesson-card__container_review"
+      <a
+        className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+        href="https://c0d3.com/teacher/5"
       >
-        <a
-          className="btn btn-sm bg-primary text-white"
-          href="https://c0d3.com/teacher/5"
-        >
-          Review
-          Submissions
-        </a>
-      </span>
+        Review
+        Submissions
+      </a>
     </div>
   </div>
 </div>
@@ -1292,25 +1277,19 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0 lesson-card__container_inprogress border-primary"
+  className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
 >
   <div
-    className="card-body p-2"
+    className="d-flex p-2"
   >
+    <img
+      alt="js-4-cover.svg"
+      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+    />
     <div
-      className="row no-gutters"
+      className="w-100 pl-4"
     >
-      <div
-        className="mw-100 col-2 mr-4"
-      >
-        <img
-          alt="js-4-cover.svg"
-          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
-        />
-      </div>
-      <div
-        className="col-9"
-      >
+      <div>
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -1328,7 +1307,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           >
             <img
               alt="icon-challenge"
-              className="mr-1"
+              className="mr-2"
               src="/curriculumAssets/icons/icon-challenge.svg"
             />
             <span
@@ -1348,7 +1327,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     </div>
   </div>
   <div
-    className="card-footer bg-primary"
+    className="p-2 bg-primary"
   >
     <a
       className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
@@ -1389,6 +1368,8 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         >
           <a
             href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Go Back
           </a>
@@ -1418,6 +1399,126 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link active"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Home 
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="mt-4 card border-0 shadow-sm"
+    >
+      <div
+        className="card-body d-flex flex-column align-items-center"
+      >
+        <h1>
+          Loading
+        </h1>
+        <div
+          className="spinner-border text-primary mt-1"
+          role="status"
+        >
+          <span
+            className="sr-only"
+          >
+            Loading...
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
