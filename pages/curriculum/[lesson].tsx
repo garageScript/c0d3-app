@@ -1,20 +1,19 @@
 import * as React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
-import _ from 'lodash'
-import useSession from '../../helpers/useSession'
+import SessionContext from '../../helpers/contexts/session'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
-import LoadingSpinner from '../../components/LoadingSpinner'
-
 import { GET_LESSON } from '../../graphql/queries'
+import LoadingSpinner from '../../components/LoadingSpinner'
+import _ from 'lodash'
 
 const Challenges: React.FC = () => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  const { data: sessionData, error } = useSession()
+  const { data: sessionData, error } = React.useContext(SessionContext)
   const userId = _.get(sessionData, 'userInfo.id', '').toString()
   const { loading, data } = useQuery(GET_LESSON, {
     variables: {
@@ -27,13 +26,14 @@ const Challenges: React.FC = () => {
       }
     }
   })
-  if (loading || (!sessionData && !error)) {
+
+  if (loading) {
     return <LoadingSpinner />
   }
-  if (!data || !sessionData) {
+  if (!data || (!sessionData && !sessionData!.userInfo) || error) {
     return <h1>...</h1>
   }
-  const { currentLesson, userSubmissions } = data.lessonInfo
+  const { lessonInfo: currentLesson, userSubmissions } = data
   return (
     <div>
       <Layout>
