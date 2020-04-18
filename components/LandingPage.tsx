@@ -30,12 +30,12 @@ const LandingPage: React.FC = () => {
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3 mb-5">
             <NavLink
-              text="Get Started"
               path="https://c0d3.com/book"
               className="btn btn-primary py-3 px-5"
               external
-              blank
-            />
+            >
+              Get Started
+            </NavLink>
           </div>
         </div>
         <div className="row mt-5">
@@ -137,12 +137,12 @@ const LandingPage: React.FC = () => {
                 force you to ask questions. Support is available in our chat
                 channel or in-person at one of our{' '}
                 <NavLink
-                  text="meetup groups"
                   path="https://www.meetup.com/San-Jose-C0D3/"
                   className="text-warning"
                   external
-                  blank
-                />
+                >
+                  meetup groups
+                </NavLink>
                 . Students who have passed the lessons may be available at the
                 meetup or in the chatroom to help you with your questions.
               </p>
@@ -196,12 +196,12 @@ const LandingPage: React.FC = () => {
           Start your journey to being a full stack software engineer
         </p>
         <NavLink
-          text="Get Started"
           path="https://c0d3.com/book"
           className="btn btn-primary py-3 px-5 mt-4"
           external
-          blank
-        />
+        >
+          Get Started
+        </NavLink>
       </div>
     </div>
   )

@@ -73,7 +73,7 @@ const Login: React.FC = () => {
             </div>
           </Form>
         </Formik>
-        <NavLink text="Forgot your password?" path="/forgotPassword" />
+        <NavLink path="/forgotPassword">Forgot your password?</NavLink>
       </Card>
     </Layout>
   )

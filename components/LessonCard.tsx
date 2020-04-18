@@ -91,8 +91,9 @@ const LessonCard: React.FC<Props> = props => {
               <NavLink
                 as={`/curriculum/${props.lessonId}`}
                 path="/curriculum/[lesson]"
-                text={props.title}
-              />
+              >
+                {props.title}
+              </NavLink>
             </h4>
             <div>
               <div className="d-inline-block mr-4">
@@ -121,15 +122,17 @@ const LessonCard: React.FC<Props> = props => {
         <div className="p-2 bg-primary">
           <NavLink
             path={props.docUrl}
-            text="Start Lesson"
             className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
             external
-          />
+          >
+            Start Lesson
+          </NavLink>
           <NavLink
             path={props.challengesUrl}
-            text="View Challenges"
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-          />
+          >
+            View Challenges
+          </NavLink>
         </div>
       )}
     </div>

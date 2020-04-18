@@ -49,11 +49,9 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
 
 const SignupSuccess: React.FC = () => (
   <Card success title="Account created successfully!">
-    <NavLink
-      text="Continue to Curriculum"
-      path="/curriculum"
-      className="btn btn-primary btn-lg mb-3"
-    />
+    <NavLink path="/curriculum" className="btn btn-primary btn-lg mb-3">
+      Continue to Curriculum
+    </NavLink>
   </Card>
 )
 
@@ -121,7 +119,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
       </Formik>
       <p className="text-black-50">
         Already have an account?{' '}
-        <NavLink text="Login" path="/login" className="text-primary" />
+        <NavLink path="/login" className="text-primary">
+          Login
+        </NavLink>
       </p>
     </Card>
   )

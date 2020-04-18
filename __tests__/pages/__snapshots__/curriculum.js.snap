@@ -27,12 +27,12 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link "
@@ -268,12 +268,12 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link "
@@ -517,12 +517,12 @@ exports[`Curriculum Page Should render loading when loading 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link "

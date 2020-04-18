@@ -182,12 +182,12 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Curriculum
             <span
               className="sr-only"
             >
               (current)
             </span>
+            Curriculum
           </a>
           <a
             className="nav-item nav-link "
@@ -273,12 +273,12 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Home
             <span
               className="sr-only"
             >
               (current)
             </span>
+            Home
           </a>
           <a
             className="nav-item nav-link "
@@ -980,12 +980,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link "
@@ -1136,7 +1136,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
-            className=" "
+            className=""
             href="/curriculum/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1223,7 +1223,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
-            className=" "
+            className=""
             href="/curriculum/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1285,7 +1285,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
-            className=" "
+            className=""
             href="/curriculum/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1322,8 +1322,10 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     className="p-2 bg-primary"
   >
     <a
-      className="lesson-card__button btn btn-light mr-2 my-1 text-primary "
+      className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
       href="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
+      rel="noopener noreferrer"
+      target="_blank"
     >
       Start Lesson
     </a>
@@ -1359,7 +1361,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
-            className=" "
+            className=""
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1429,12 +1431,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link "
@@ -1526,12 +1528,12 @@ Array [
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
-    Active Link
     <span
       className="sr-only"
     >
       (current)
     </span>
+    Active Link
   </a>,
   <a
     className="btn btn-primary "
@@ -1546,7 +1548,7 @@ Array [
 
 exports[`Storyshots Components/NavLink Basic 1`] = `
 <a
-  className=" "
+  className=""
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
@@ -1557,7 +1559,6 @@ exports[`Storyshots Components/NavLink Basic 1`] = `
 
 exports[`Storyshots Components/NavLink Blank Link 1`] = `
 <a
-  className=""
   href="http://c0d3.com"
   rel="noopener noreferrer"
   target="_blank"
@@ -1568,8 +1569,9 @@ exports[`Storyshots Components/NavLink Blank Link 1`] = `
 
 exports[`Storyshots Components/NavLink External Link 1`] = `
 <a
-  className=" "
   href="/"
+  rel="noopener noreferrer"
+  target="_blank"
 >
   External Link
 </a>
@@ -1895,12 +1897,12 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Home
             <span
               className="sr-only"
             >
               (current)
             </span>
+            Home
           </a>
           <a
             className="nav-item nav-link "
@@ -1982,12 +1984,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link "
@@ -2094,7 +2096,7 @@ Array [
             </div>
           </form>
           <a
-            className=" "
+            className=""
             href="/forgotPassword"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -2146,12 +2148,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link "
@@ -2615,12 +2617,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link "

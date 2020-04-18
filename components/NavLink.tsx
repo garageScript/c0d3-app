@@ -2,28 +2,25 @@ import React from 'react'
 import Link from 'next/link'
 
 type NavLinkProps = {
-  text: string
   path: string
   activePath?: string
   external?: true
   as?: string
-  blank?: true
   className?: string
 }
 
 const NavLink: React.FC<NavLinkProps> = ({
-  text,
+  children,
   path,
   activePath,
   as,
   external,
-  blank,
   className
 }) => {
   const active = path === activePath
-  className = className ? className : ''
+  const hasClass = typeof className !== 'undefined'
   if (external) {
-    if (blank) {
+    if (hasClass) {
       return (
         <a
           rel="noopener noreferrer"
@@ -31,21 +28,31 @@ const NavLink: React.FC<NavLinkProps> = ({
           href={path}
           className={className}
         >
-          {text}
+          {children}
         </a>
       )
     }
     return (
-      <a href={path} className={`${className} ${active ? 'active' : ''}`}>
-        {text}
+      <a rel="noopener noreferrer" target="_blank" href={path}>
+        {children}
       </a>
+    )
+  }
+  if (hasClass) {
+    return (
+      <Link href={path} as={as}>
+        <a className={`${className} ${active ? 'active' : ''}`}>
+          {active && <span className="sr-only">(current)</span>}
+          {children}
+        </a>
+      </Link>
     )
   }
   return (
     <Link href={path} as={as}>
-      <a className={`${className} ${active ? 'active' : ''}`}>
-        {text}
+      <a className={`${active ? 'active' : ''}`}>
         {active && <span className="sr-only">(current)</span>}
+        {children}
       </a>
     </Link>
   )

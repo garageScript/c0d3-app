@@ -9,7 +9,7 @@ exports[`Layout Component Should render correct with no session context 1`] = `
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -27,15 +27,15 @@ exports[`Layout Component Should render correct with no session context 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -61,13 +61,13 @@ exports[`Layout Component Should render correct with no session context 1`] = `
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -97,7 +97,7 @@ exports[`Layout Component Should render correctly when no user in session 1`] = 
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -115,15 +115,15 @@ exports[`Layout Component Should render correctly when no user in session 1`] = 
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="/#learning"
             >
               Learning Process
@@ -149,13 +149,13 @@ exports[`Layout Component Should render correctly when no user in session 1`] = 
       </div>
       <div>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/login"
         >
           Login
         </a>
         <a
-          class="btn btn-secondary border mr-3"
+          class="btn btn-secondary border mr-3 "
           href="/signup"
         >
           Signup
@@ -185,7 +185,7 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
       class="container"
     >
       <a
-        class="navbar-brand text-primary font-weight-bold"
+        class="navbar-brand text-primary font-weight-bold "
         href="/"
       >
         C0D3
@@ -203,21 +203,21 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
               class="nav-item nav-link active"
               href="/curriculum"
             >
-              Curriculum 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Curriculum
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="#"
             >
               Repo
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link "
               href="#"
             >
               Journey
@@ -225,6 +225,8 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
             <a
               class="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>

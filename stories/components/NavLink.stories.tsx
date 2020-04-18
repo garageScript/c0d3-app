@@ -6,33 +6,33 @@ export default {
   title: 'Components/NavLink'
 }
 
-export const Basic: React.FC = () => <NavLink path="/" text="Basic NavLink" />
+export const Basic: React.FC = () => <NavLink path="/">Basic NavLink</NavLink>
 
 export const BlankLink: React.FC = () => (
-  <NavLink path="http://c0d3.com" text="Blank NavLink" external blank />
+  <NavLink path="http://c0d3.com" external>
+    Blank NavLink
+  </NavLink>
 )
 
 export const ExternalLink: React.FC = () => (
-  <NavLink path="/" text="External Link" external />
+  <NavLink path="/" external>
+    External Link
+  </NavLink>
 )
 
 export const StyledLink: React.FC = () => (
-  <NavLink path="/" text="Styled Link" className="btn btn-primary" />
+  <NavLink path="/" className="btn btn-primary">
+    Styled Link
+  </NavLink>
 )
 
 export const ActiveLink: React.FC = () => (
   <>
-    <NavLink
-      path="/"
-      activePath="/"
-      text="Active Link"
-      className="btn btn-primary"
-    />
-    <NavLink
-      path="/other"
-      activePath="/"
-      text="Non-Active Link"
-      className="btn btn-primary"
-    />
+    <NavLink path="/" activePath="/" className="btn btn-primary">
+      Active Link
+    </NavLink>
+    <NavLink path="/other" activePath="/" className="btn btn-primary">
+      Non-Active Link
+    </NavLink>
   </>
 )

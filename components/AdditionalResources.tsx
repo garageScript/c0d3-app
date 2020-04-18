@@ -10,30 +10,24 @@ const AdditionalResources: React.FC = () => {
       </h1>
       <hr className="my-2" />
       <NavLink
-        text="Setup Instructions"
         path="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
         className="mx-3"
         external
-        blank
-      />
+      >
+        Setup Instructions
+      </NavLink>
       <hr className="my-2" />
-      <NavLink text="Github Basics" path="#" className="mx-3" />
+      <NavLink path="#" className="mx-3">
+        Github Basics
+      </NavLink>
       <hr className="my-2" />
-      <NavLink
-        text="Stack Overflow"
-        path="https://stackoverflow.com/"
-        className="mx-3"
-        external
-        blank
-      />
+      <NavLink path="https://stackoverflow.com/" className="mx-3" external>
+        Stack Overflow
+      </NavLink>
       <hr className="my-2" />
-      <NavLink
-        text="Help &amp; Support"
-        path="https://chat.c0d3.com/"
-        className="mx-3"
-        external
-        blank
-      />
+      <NavLink path="https://chat.c0d3.com/" className="mx-3" external>
+        Help &amp; Support
+      </NavLink>
       <hr className="my-2" />
     </div>
   )

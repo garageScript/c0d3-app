@@ -15,13 +15,9 @@ const Alert: React.FC<Props> = props => {
       {props.icon && <img className="mr-3" src={`${props.icon}`} />}
       {`${props.text} `}
       {props.instructionsUrl && (
-        <NavLink
-          text="View Instructions"
-          path={props.instructionsUrl}
-          className="text-white"
-          external
-          blank
-        />
+        <NavLink path={props.instructionsUrl} className="text-white" external>
+          View Instructions
+        </NavLink>
       )}
     </div>
   )
