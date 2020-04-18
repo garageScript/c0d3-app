@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import NavLink from './NavLink'
 import '../scss/lessonTitleCard.scss'
 
 type Props = {
@@ -20,9 +20,7 @@ const LessonTitleCard: React.FC<Props> = props => {
           />
           <div>
             <p className="m-0">
-              <Link href="/curriculum">
-                <a>Go Back</a>
-              </Link>
+              <NavLink path="/curriculum">Go Back</NavLink>
             </p>
             <h1 className="lessonTitleCard__lesson-title">
               {props.lessonTitle}
@@ -30,15 +28,16 @@ const LessonTitleCard: React.FC<Props> = props => {
           </div>
         </div>
         <div className="card-footer bg-white p-0">
-          <a
+          <NavLink
+            path={props.lessonUrl}
             className="btn border-right rounded-0 px-4 py-3"
-            href={`${props.lessonUrl}`}
+            external
           >
             LESSON
-          </a>
-          <a className="btn border-right rounded-0 px-4 py-3" href="#">
+          </NavLink>
+          <NavLink path="#" className="btn border-right rounded-0 px-4 py-3">
             CHALLENGES
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>

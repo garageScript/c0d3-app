@@ -13,7 +13,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="mx-3 "
+    className="mx-3"
     href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
     rel="noopener noreferrer"
     target="_blank"
@@ -24,8 +24,10 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="mx-3 "
-    href="/"
+    className="mx-3"
+    href="#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     Github Basics
   </a>
@@ -97,6 +99,8 @@ exports[`Storyshots Components/Alert With Instructions 1`] = `
   <a
     className="text-white"
     href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+    rel="noopener noreferrer"
+    target="_blank"
   >
     View Instructions
   </a>
@@ -178,28 +182,34 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Curriculum 
             <span
               className="sr-only"
             >
               (current)
             </span>
+            Curriculum
           </a>
           <a
             className="nav-item nav-link"
             href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Repo
           </a>
           <a
             className="nav-item nav-link"
             href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Journey
           </a>
           <a
             className="nav-item nav-link"
             href="https://chat.c0d3.com"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Help
           </a>
@@ -263,12 +273,12 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Home 
             <span
               className="sr-only"
             >
               (current)
             </span>
+            Home
           </a>
           <a
             className="nav-item nav-link"
@@ -1033,12 +1043,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home 
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link"
@@ -1189,6 +1199,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
+            className=""
             href="/curriculum/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1275,6 +1286,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
+            className=""
             href="/curriculum/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1336,6 +1348,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
+            className=""
             href="/curriculum/4"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1382,6 +1395,8 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     <a
       className="lesson-card__button btn bg-primary my-1 text-white border border-white"
       href="https://c0d3.com/student/24"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       View Challenges
     </a>
@@ -1409,6 +1424,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
+            className=""
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1429,12 +1445,16 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       <a
         className="btn border-right rounded-0 px-4 py-3"
         href="#"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         LESSON
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
         href="#"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         CHALLENGES
       </a>
@@ -1474,12 +1494,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home 
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link"
@@ -1561,6 +1581,76 @@ Array [
     All Rights Reserved
   </footer>,
 ]
+`;
+
+exports[`Storyshots Components/NavLink Active Link 1`] = `
+Array [
+  <a
+    className="btn btn-primary active"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <span
+      className="sr-only"
+    >
+      (current)
+    </span>
+    Active Link
+  </a>,
+  <a
+    className="btn btn-primary"
+    href="/other"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Non-Active Link
+  </a>,
+]
+`;
+
+exports[`Storyshots Components/NavLink Basic 1`] = `
+<a
+  className=""
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  Basic NavLink
+</a>
+`;
+
+exports[`Storyshots Components/NavLink Blank Link 1`] = `
+<a
+  className=""
+  href="http://c0d3.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Blank NavLink
+</a>
+`;
+
+exports[`Storyshots Components/NavLink External Link 1`] = `
+<a
+  className=""
+  href="/"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  External Link
+</a>
+`;
+
+exports[`Storyshots Components/NavLink Styled Link 1`] = `
+<a
+  className="btn btn-primary"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  Styled Link
+</a>
 `;
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
@@ -1872,12 +1962,12 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Home 
             <span
               className="sr-only"
             >
               (current)
             </span>
+            Home
           </a>
           <a
             className="nav-item nav-link"
@@ -1959,12 +2049,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home 
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link"
@@ -2071,6 +2161,7 @@ Array [
             </div>
           </form>
           <a
+            className=""
             href="/forgotPassword"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -2122,12 +2213,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home 
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link"
@@ -2240,6 +2331,8 @@ Array [
           <a
             className="btn btn-primary py-3 px-5"
             href="https://c0d3.com/book"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Get Started
           </a>
@@ -2444,6 +2537,8 @@ Array [
               <a
                 className="text-warning"
                 href="https://www.meetup.com/San-Jose-C0D3/"
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 meetup groups
               </a>
@@ -2539,6 +2634,8 @@ Array [
       <a
         className="btn btn-primary py-3 px-5 mt-4"
         href="https://c0d3.com/book"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Get Started
       </a>
@@ -2585,12 +2682,12 @@ Array [
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Home 
               <span
                 className="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               className="nav-item nav-link"
@@ -2738,6 +2835,8 @@ Array [
             <a
               className="text-primary"
               href="/login"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Login
             </a>

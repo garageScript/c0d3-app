@@ -27,12 +27,12 @@ exports[`Signup Page Should submit signup form values and display error componen
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"
@@ -215,12 +215,12 @@ exports[`Signup Page Should submit signup form values and display error componen
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"
@@ -399,12 +399,12 @@ exports[`Signup Page Should submit signup form values and display error componen
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"

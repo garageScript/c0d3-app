@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import { GET_SUBMISSIONS } from '../graphql/queries'
@@ -8,6 +7,7 @@ import {
   ReviewButtonProps,
   ReviewCountProps
 } from '../@types/lessonCard'
+import NavLink from './NavLink'
 import '../scss/lessonCard.scss'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
@@ -88,12 +88,12 @@ const LessonCard: React.FC<Props> = props => {
           )}
           <div>
             <h4 className="lesson-card__title font-weight-bold mt-3">
-              <Link
+              <NavLink
                 as={`/curriculum/${props.lessonId}`}
-                href="/curriculum/[lesson]"
+                path="/curriculum/[lesson]"
               >
-                <a>{props.title}</a>
-              </Link>
+                {props.title}
+              </NavLink>
             </h4>
             <div>
               <div className="d-inline-block mr-4">
@@ -120,20 +120,19 @@ const LessonCard: React.FC<Props> = props => {
 
       {props.currentState === 'inProgress' && (
         <div className="p-2 bg-primary">
-          <a
+          <NavLink
+            path={props.docUrl}
             className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-            href={props.docUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            external
           >
             Start Lesson
-          </a>
-          <a
+          </NavLink>
+          <NavLink
+            path={props.challengesUrl}
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            href={props.challengesUrl}
           >
             View Challenges
-          </a>
+          </NavLink>
         </div>
       )}
     </div>

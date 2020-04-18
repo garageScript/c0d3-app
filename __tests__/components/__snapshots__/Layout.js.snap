@@ -27,12 +27,12 @@ exports[`Layout Component Should render correct with no session context 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"
@@ -115,12 +115,12 @@ exports[`Layout Component Should render correctly when no user in session 1`] = 
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"
@@ -203,12 +203,12 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
               class="nav-item nav-link active"
               href="/curriculum"
             >
-              Curriculum 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Curriculum
             </a>
             <a
               class="nav-item nav-link"
@@ -225,6 +225,8 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
             <a
               class="nav-item nav-link"
               href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Help
             </a>

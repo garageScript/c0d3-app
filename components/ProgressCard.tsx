@@ -1,4 +1,5 @@
 import React from 'react'
+import NavLink from './NavLink'
 
 import '../scss/progressCard.scss'
 
@@ -22,14 +23,13 @@ const ProgressCard: React.FC<Props> = ({ progressCount }) => {
             lessons in the course.
           </p>
         </div>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
+        <NavLink
+          path="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
           className="btn btn-light progress-card__button mt-2 text-primary"
-          href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+          external
         >
           Setup Development Environment
-        </a>
+        </NavLink>
       </div>
     </div>
   )
