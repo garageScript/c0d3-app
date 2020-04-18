@@ -74,9 +74,10 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
           Review
-          <span>
-             ... 
-          </span>
+          <div
+            class="spinner-border spinner-border-sm mx-1"
+            role="status"
+          />
           Submissions
         </a>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import { GET_SUBMISSIONS } from '../graphql/queries'
@@ -7,7 +8,6 @@ import {
   ReviewButtonProps,
   ReviewCountProps
 } from '../@types/lessonCard'
-import Link from 'next/link'
 import '../scss/lessonCard.scss'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
@@ -24,7 +24,9 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   })
 
   if (loading) {
-    return <span> ... </span>
+    return (
+      <div className="spinner-border spinner-border-sm mx-1" role="status" />
+    )
   }
 
   if (!data) {
