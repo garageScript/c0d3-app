@@ -15,42 +15,27 @@ const NavLink: React.FC<NavLinkProps> = ({
   activePath,
   as,
   external,
-  className
+  className = ''
 }) => {
   const active = path === activePath
-  const hasClass = typeof className !== 'undefined'
+  if (active) {
+    className += ' active'
+  }
   if (external) {
-    if (hasClass) {
-      return (
-        <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href={path}
-          className={className}
-        >
-          {children}
-        </a>
-      )
-    }
     return (
-      <a rel="noopener noreferrer" target="_blank" href={path}>
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href={path}
+        className={className}
+      >
         {children}
       </a>
     )
   }
-  if (hasClass) {
-    return (
-      <Link href={path} as={as}>
-        <a className={`${className} ${active ? 'active' : ''}`}>
-          {active && <span className="sr-only">(current)</span>}
-          {children}
-        </a>
-      </Link>
-    )
-  }
   return (
     <Link href={path} as={as}>
-      <a className={`${active ? 'active' : ''}`}>
+      <a className={className}>
         {active && <span className="sr-only">(current)</span>}
         {children}
       </a>

@@ -356,7 +356,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="p-2 bg-primary"
     >
       <a
-        class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+        class="lesson-card__button btn btn-light mr-2 my-1 text-primary active"
         rel="noopener noreferrer"
         target="_blank"
       >

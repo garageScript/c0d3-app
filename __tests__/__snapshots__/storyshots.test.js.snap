@@ -24,7 +24,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="mx-3 "
+    className="mx-3"
     href="#"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -160,7 +160,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
     className="container"
   >
     <a
-      className="navbar-brand text-primary font-weight-bold "
+      className="navbar-brand text-primary font-weight-bold"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -190,7 +190,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
             Curriculum
           </a>
           <a
-            className="nav-item nav-link "
+            className="nav-item nav-link"
             href="#"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -198,7 +198,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
             Repo
           </a>
           <a
-            className="nav-item nav-link "
+            className="nav-item nav-link"
             href="#"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -251,7 +251,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
     className="container"
   >
     <a
-      className="navbar-brand text-primary font-weight-bold "
+      className="navbar-brand text-primary font-weight-bold"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -281,7 +281,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
             Home
           </a>
           <a
-            className="nav-item nav-link "
+            className="nav-item nav-link"
             href="/#learning"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -309,7 +309,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
     </div>
     <div>
       <a
-        className="btn btn-secondary border mr-3 "
+        className="btn btn-secondary border mr-3"
         href="/login"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -317,7 +317,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
         Login
       </a>
       <a
-        className="btn btn-secondary border mr-3 "
+        className="btn btn-secondary border mr-3"
         href="/signup"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -958,7 +958,7 @@ Array [
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold "
+        className="navbar-brand text-primary font-weight-bold"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -988,7 +988,7 @@ Array [
               Home
             </a>
             <a
-              className="nav-item nav-link "
+              className="nav-item nav-link"
               href="/#learning"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -1016,7 +1016,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1024,7 +1024,7 @@ Array [
           Login
         </a>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1330,7 +1330,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       Start Lesson
     </a>
     <a
-      className="lesson-card__button btn bg-primary my-1 text-white border border-white "
+      className="lesson-card__button btn bg-primary my-1 text-white border border-white"
       href="https://c0d3.com/student/24"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1388,7 +1388,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3 "
+        className="btn border-right rounded-0 px-4 py-3"
         href="#"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -1409,7 +1409,7 @@ Array [
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold "
+        className="navbar-brand text-primary font-weight-bold"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -1439,7 +1439,7 @@ Array [
               Home
             </a>
             <a
-              className="nav-item nav-link "
+              className="nav-item nav-link"
               href="/#learning"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -1467,7 +1467,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1475,7 +1475,7 @@ Array [
           Login
         </a>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -1536,7 +1536,7 @@ Array [
     Active Link
   </a>,
   <a
-    className="btn btn-primary "
+    className="btn btn-primary"
     href="/other"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -1559,6 +1559,7 @@ exports[`Storyshots Components/NavLink Basic 1`] = `
 
 exports[`Storyshots Components/NavLink Blank Link 1`] = `
 <a
+  className=""
   href="http://c0d3.com"
   rel="noopener noreferrer"
   target="_blank"
@@ -1569,6 +1570,7 @@ exports[`Storyshots Components/NavLink Blank Link 1`] = `
 
 exports[`Storyshots Components/NavLink External Link 1`] = `
 <a
+  className=""
   href="/"
   rel="noopener noreferrer"
   target="_blank"
@@ -1579,7 +1581,7 @@ exports[`Storyshots Components/NavLink External Link 1`] = `
 
 exports[`Storyshots Components/NavLink Styled Link 1`] = `
 <a
-  className="btn btn-primary "
+  className="btn btn-primary"
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
@@ -1875,7 +1877,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
     className="container"
   >
     <a
-      className="navbar-brand text-primary font-weight-bold "
+      className="navbar-brand text-primary font-weight-bold"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -1905,7 +1907,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
             Home
           </a>
           <a
-            className="nav-item nav-link "
+            className="nav-item nav-link"
             href="/#learning"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1933,7 +1935,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
     </div>
     <div>
       <a
-        className="btn btn-secondary border mr-3 "
+        className="btn btn-secondary border mr-3"
         href="/login"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -1941,7 +1943,7 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
         Login
       </a>
       <a
-        className="btn btn-secondary border mr-3 "
+        className="btn btn-secondary border mr-3"
         href="/signup"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -1962,7 +1964,7 @@ Array [
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold "
+        className="navbar-brand text-primary font-weight-bold"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -1992,7 +1994,7 @@ Array [
               Home
             </a>
             <a
-              className="nav-item nav-link "
+              className="nav-item nav-link"
               href="/#learning"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -2020,7 +2022,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2028,7 +2030,7 @@ Array [
           Login
         </a>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2126,7 +2128,7 @@ Array [
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold "
+        className="navbar-brand text-primary font-weight-bold"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -2156,7 +2158,7 @@ Array [
               Home
             </a>
             <a
-              className="nav-item nav-link "
+              className="nav-item nav-link"
               href="/#learning"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -2184,7 +2186,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2192,7 +2194,7 @@ Array [
           Login
         </a>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2595,7 +2597,7 @@ Array [
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold "
+        className="navbar-brand text-primary font-weight-bold"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -2625,7 +2627,7 @@ Array [
               Home
             </a>
             <a
-              className="nav-item nav-link "
+              className="nav-item nav-link"
               href="/#learning"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -2653,7 +2655,7 @@ Array [
       </div>
       <div>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2661,7 +2663,7 @@ Array [
           Login
         </a>
         <a
-          className="btn btn-secondary border mr-3 "
+          className="btn btn-secondary border mr-3"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -2768,7 +2770,7 @@ Array [
             Already have an account?
              
             <a
-              className="text-primary "
+              className="text-primary"
               href="/login"
               onClick={[Function]}
               onMouseEnter={[Function]}
