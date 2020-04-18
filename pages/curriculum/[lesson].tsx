@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
+import _ from 'lodash'
 import useSession from '../../helpers/useSession'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
@@ -13,10 +14,10 @@ const Challenges: React.FC = () => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { data: sessionData, error } = useSession()
-  const userId =
-    sessionData && sessionData.userInfo
-      ? sessionData.userInfo.id.toString()
-      : ''
+  const userId = _.get(sessionData, 'userInfo.id', '').toString()
+  if (!userId) {
+    return <h1>Loading</h1>
+  }
   const { loading, data } = useQuery(GET_LESSON, {
     variables: {
       lessonInfo: {
@@ -34,8 +35,7 @@ const Challenges: React.FC = () => {
   if (!data || !sessionData) {
     return <h1>...</h1>
   }
-  const currentLesson = data.lessonInfo
-  const userSubmissions = data.userSubmissions
+  const { currentLesson, userSubmissions } = data.lessonInfo
   return (
     <div>
       <Layout>
