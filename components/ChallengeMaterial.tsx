@@ -34,7 +34,7 @@ type StatusIconProps = {
 
 const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
   if (status === 'unsubmitted') {
-    return <></>
+    return null
   }
   let statusIconUrl
   switch (status) {
@@ -47,11 +47,7 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
     case 'open':
       statusIconUrl = '/curriculumAssets/icons/pending.svg'
   }
-  return (
-    <>
-      <img width="25px" height="25px" src={statusIconUrl} />
-    </>
-  )
+  return <img width="25px" height="25px" src={statusIconUrl} />
 }
 
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
