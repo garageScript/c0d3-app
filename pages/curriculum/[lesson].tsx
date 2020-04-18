@@ -30,7 +30,7 @@ const Challenges: React.FC = () => {
   if (loading) {
     return <LoadingSpinner />
   }
-  if (!data || (!sessionData && !sessionData!.userInfo) || error) {
+  if (!data || !userId || error) {
     return <h1>...</h1>
   }
   const { lessonInfo: currentLesson, userSubmissions } = data
