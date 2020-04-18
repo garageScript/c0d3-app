@@ -670,7 +670,28 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/pending.svg"
+      src="/curriculumAssets/icons/rejected.svg"
+      width="25px"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Active Rejected 1`] = `
+<div
+  className="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+  data-testid="challenge-title"
+  onClick={[Function]}
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      0. Greater than 5
+    </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/rejected.svg"
       width="25px"
     />
   </div>
@@ -729,6 +750,27 @@ exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
     <img
       height="25px"
       src="/curriculumAssets/icons/pending.svg"
+      width="25px"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengeTitleCard Rejected 1`] = `
+<div
+  className="card mb-2 challenge-title-card shadow-sm border-0"
+  data-testid="challenge-title"
+  onClick={[Function]}
+>
+  <div
+    className="card-body d-flex justify-content-between"
+  >
+    <div>
+      0. Greater than 5
+    </div>
+    <img
+      height="25px"
+      src="/curriculumAssets/icons/rejected.svg"
       width="25px"
     />
   </div>

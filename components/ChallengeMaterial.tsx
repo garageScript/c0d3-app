@@ -28,6 +28,32 @@ type ChallengeMaterialProps = {
   challenges: Challenge[]
 }
 
+type StatusIconProps = {
+  status: string
+}
+
+const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
+  if (status === 'unsubmitted') {
+    return <></>
+  }
+  let statusIconUrl
+  switch (status) {
+    case 'passed':
+      statusIconUrl = '/curriculumAssets/icons/checkmark.svg'
+      break
+    case 'needMoreWork':
+      statusIconUrl = '/curriculumAssets/icons/rejected.svg'
+      break
+    case 'open':
+      statusIconUrl = '/curriculumAssets/icons/pending.svg'
+  }
+  return (
+    <>
+      <img width="25px" height="25px" src={statusIconUrl} />
+    </>
+  )
+}
+
 export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
   submissionStatus,
   active,
@@ -54,21 +80,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
     >
       <div className="card-body d-flex justify-content-between">
         <div>{`${challengeNum}. ${title}`}</div>
-        {submissionStatus === 'passed' && (
-          <img
-            width="25px"
-            height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
-          />
-        )}
-        {(submissionStatus === 'needMoreWork' ||
-          submissionStatus === 'open') && (
-          <img
-            width="25px"
-            height="25px"
-            src="/curriculumAssets/icons/pending.svg"
-          />
-        )}
+        <StatusIcon status={submissionStatus} />
       </div>
     </div>
   )

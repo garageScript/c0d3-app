@@ -2363,7 +2363,10 @@
   integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c9258de6cae99c5ecccc0a7bc083784f8f5c6d26
 "@types/markdown-to-jsx@^6.11.0":
   version "6.11.0"
   resolved "https://registry.yarnpkg.com/@types/markdown-to-jsx/-/markdown-to-jsx-6.11.0.tgz#a19e458a9415763859f2c92c4c5b07a80bea8c14"
@@ -2371,7 +2374,10 @@
   dependencies:
     "@types/react" "*"
 
+<<<<<<< HEAD
 >>>>>>> 7c7c6f906cee16afaa32aa18dfa55a4f8d9f7e50
+=======
+>>>>>>> c9258de6cae99c5ecccc0a7bc083784f8f5c6d26
 "@types/mime@*":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
@@ -3172,10 +3178,14 @@ apollo-link@^1.0.0, apollo-link@^1.0.6, apollo-link@^1.2.13:
     zen-observable-ts "^0.8.20"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 apollo-link@^1.2.3:
 =======
 apollo-link@^1.2.14:
 >>>>>>> 7c7c6f906cee16afaa32aa18dfa55a4f8d9f7e50
+=======
+apollo-link@^1.2.14:
+>>>>>>> c9258de6cae99c5ecccc0a7bc083784f8f5c6d26
   version "1.2.14"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.14.tgz#3feda4b47f9ebba7f4160bef8b977ba725b684d9"
   integrity sha512-p67CMEFP7kOG1JZ0ZkYZwRDa369w5PIjtMjvrQd/HnIV8FRsHRqLqK+oAZQnFa1DDdZtOtHTi+aMIW6EatC2jg==
@@ -7082,18 +7092,24 @@ graphql-tag@^2.4.2, graphql-tag@^2.9.2:
 
 graphql-tools@^4.0.0:
 <<<<<<< HEAD
+<<<<<<< HEAD
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-4.0.7.tgz#743309b96cb657ff45b607ee0a07193cd987e43c"
   integrity sha512-rApl8sT8t/W1uQRcwzxMYyUBiCl/XicluApiDkNze5TX/GR0BSTQMjM2UcRGdTmkbsb1Eqq6afkyyeG/zMxZYQ==
   dependencies:
     apollo-link "^1.2.3"
 =======
+=======
+>>>>>>> c9258de6cae99c5ecccc0a7bc083784f8f5c6d26
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-4.0.8.tgz#e7fb9f0d43408fb0878ba66b522ce871bafe9d30"
   integrity sha512-MW+ioleBrwhRjalKjYaLQbr+920pHBgy9vM/n47sswtns8+96sRn5M/G+J1eu7IMeKWiN/9p6tmwCHU7552VJg==
   dependencies:
     apollo-link "^1.2.14"
+<<<<<<< HEAD
 >>>>>>> 7c7c6f906cee16afaa32aa18dfa55a4f8d9f7e50
+=======
+>>>>>>> c9258de6cae99c5ecccc0a7bc083784f8f5c6d26
     apollo-utilities "^1.0.1"
     deprecated-decorator "^0.1.6"
     iterall "^1.1.3"
