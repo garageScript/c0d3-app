@@ -65,6 +65,39 @@ describe('Curriculum challenge page', () => {
       }
     ]
   }
+  const propsWithSubmissionsPassed = {
+    challenges,
+    userSubmissions: [
+      {
+        id: '3500',
+        status: 'passed',
+        mrUrl: 'github.com/testmrurl',
+        diff: 'test diff1',
+        viewCount: 0,
+        comment: null,
+        challengeId: '105',
+        reviewer: null,
+        createdAt: '1586907809223',
+        updatedAt: '1586907825090'
+      },
+      {
+        id: '3501',
+        status: 'passed',
+        mrUrl: 'github.com/testmrurl2',
+        diff: 'test diff2',
+        viewCount: 0,
+        comment: 'test comment',
+        challengeId: '107',
+        reviewer: {
+          id: '1',
+          username: 'dan'
+        },
+        createdAt: '1586907809223',
+        updatedAt: '1586907825090'
+      }
+    ]
+  }
+
   test('Should render first challenge by default when user has no submissions', async () => {
     const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
@@ -72,6 +105,13 @@ describe('Curriculum challenge page', () => {
   test('Should render first challenge that is not passed when user has submissions', async () => {
     const { container } = render(
       <ChallengeMaterial {...propsWithSubmissions} />
+    )
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Should render challenge material page differently when user has passed all their challenges', async () => {
+    const { container } = render(
+      <ChallengeMaterial {...propsWithSubmissionsPassed} />
     )
     expect(container).toMatchSnapshot()
   })
