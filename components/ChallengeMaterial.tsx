@@ -139,7 +139,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       return challenge.status !== 'passed'
     }
   ) as ChallengeSubmissionData
-
+  if (!currentChallenge) {
+    return <h1>TODO: render complete</h1>
+  }
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
       return (

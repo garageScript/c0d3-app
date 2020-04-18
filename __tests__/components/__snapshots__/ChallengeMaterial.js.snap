@@ -8,6 +8,14 @@ exports[`Curriculum challenge page Should render appropriately when no challenge
 </div>
 `;
 
+exports[`Curriculum challenge page Should render challenge material page differently when user has passed all their challenges 1`] = `
+<div>
+  <h1>
+    TODO: render complete
+  </h1>
+</div>
+`;
+
 exports[`Curriculum challenge page Should render clicked challenge within challenge question 1`] = `
 <div>
   <div
