@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import {
+  Challenge,
+  ChallengeSubmissionData,
+  UserSubmission,
+  UserSubmissionsObject
+} from '../@types/challenge'
 import Markdown from 'markdown-to-jsx'
-import { Challenge } from '../@types/challenge'
 
 type CurrentChallengeID = string | null
 
@@ -9,7 +14,7 @@ type ChallengeTitleCardProps = {
   id: string
   title: string
   challengeNum: number
-  currentState?: string
+  submissionStatus: string
   active?: boolean
   setCurrentChallenge: React.Dispatch<CurrentChallengeID>
 }
@@ -19,43 +24,59 @@ type ChallengeQuestionCardProps = {
 }
 
 type ChallengeMaterialProps = {
-  challenges?: Challenge[]
+  userSubmissions: UserSubmission[]
+  challenges: Challenge[]
 }
 
-export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = props => {
-  const { currentState: state, active } = props
-  const cardStyles: string[] = []
+type StatusIconProps = {
+  status: string
+}
+
+const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
+  if (status === 'unsubmitted') {
+    return null
+  }
+  let statusIconUrl
+  switch (status) {
+    case 'passed':
+      statusIconUrl = '/curriculumAssets/icons/checkmark.svg'
+      break
+    case 'needMoreWork':
+      statusIconUrl = '/curriculumAssets/icons/rejected.svg'
+      break
+    case 'open':
+      statusIconUrl = '/curriculumAssets/icons/pending.svg'
+  }
+  return <img width="25px" height="25px" src={statusIconUrl} />
+}
+
+export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
+  submissionStatus,
+  active,
+  title,
+  id,
+  challengeNum,
+  setCurrentChallenge
+}) => {
+  const cardStyles: string[] = ['challenge-title-card']
   if (active) {
     cardStyles.push('challenge-title-card--active')
   }
-  if (state === 'complete') {
+  if (submissionStatus === 'passed') {
     cardStyles.push('challenge-title-card--done')
   } else {
-    cardStyles.push('shadow-sm', 'border-0', 'challenge-title-card')
+    cardStyles.push('shadow-sm', 'border-0')
   }
 
   return (
     <div
       data-testid="challenge-title"
       className={`card mb-2 ${cardStyles.join(' ')}`}
-      onClick={() => props.setCurrentChallenge(props.id)}
+      onClick={() => setCurrentChallenge(id)}
     >
       <div className="card-body d-flex justify-content-between">
-        <div>{`${props.challengeNum}. ${props.title}`}</div>
-        {state === 'complete' && (
-          <img
-            width="25px"
-            height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
-          />
-        )}
-        {state === 'pending' && (
-          <img
-            width="25px"
-            height="25px"
-            src="/curriculumAssets/icons/pending.svg"
-          />
-        )}
+        <div>{`${challengeNum}. ${title}`}</div>
+        <StatusIcon status={submissionStatus} />
       </div>
     </div>
   )
@@ -81,24 +102,45 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   )
 }
 
-const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
-  if (!props.challenges) {
+const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
+  userSubmissions,
+  challenges
+}) => {
+  if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }
-  const sortedChallenges: Challenge[] = props.challenges.sort(
-    (a, b) => a.order - b.order
+  //create an object to evaluate the student's status with a challenge
+  const userSubmissionsObject = userSubmissions.reduce(
+    (acc: UserSubmissionsObject, submission: UserSubmission) => {
+      acc[submission.challengeId] = submission
+      return acc
+    },
+    {}
   )
-  //TODO: once user has completed a challenge find the first incomplete challenge that
-  //hasn't been completed to set as default challengeID
-  //assign currentChallenge to first challenge if no match found
+  //create a new Challenges array with user submission data integrated and sorted
+  const challengesWithSubmissionData: ChallengeSubmissionData[] = challenges
+    .sort((a, b) => a.order - b.order)
+    .map((challenge: Challenge) => {
+      const submission = userSubmissionsObject[challenge.id] || {}
+      return {
+        ...challenge,
+        status: submission.status || 'unsubmitted',
+        submission
+      }
+    })
+
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
-  >()
-  const currentChallenge =
-    sortedChallenges.find(
-      (challenge: Challenge) => challenge.id === currentChallengeID
-    ) || sortedChallenges[0]
-  const challengeTitleCards: React.ReactElement[] = sortedChallenges.map(
+  >(null)
+  //find first challenge that is not passed on initial render after clicks will render clicked challenge
+  const currentChallenge = challengesWithSubmissionData.find(
+    (challenge: ChallengeSubmissionData) => {
+      if (currentChallengeID) return challenge.id === currentChallengeID
+      return challenge.status !== 'passed'
+    }
+  ) as ChallengeSubmissionData
+
+  const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
       return (
         <ChallengeTitleCard
@@ -108,6 +150,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = props => {
           title={challenge.title}
           setCurrentChallenge={setCurrentChallenge}
           active={challenge.id === currentChallenge.id}
+          submissionStatus={challenge.status}
         />
       )
     }
