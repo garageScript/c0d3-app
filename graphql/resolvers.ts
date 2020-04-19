@@ -1,14 +1,17 @@
 import db from '../helpers/dbload'
 import bcrypt from 'bcrypt'
 import { Request } from 'express'
-import { findLessons } from '../helpers/lesson'
+import { findLessons } from '../helpers/db/lesson'
 
-const { User } = db
+const { Lesson, User, Challenge } = db
 
 export default {
   Query: {
-    lessons: async () => {
-      return findLessons()
+    // TODO: Update ctx value
+    lessons: async (_parent: void, _arg: void, ctx: any) => {
+      const userId = ctx.req.session ? ctx.req.session.userId : null
+      const lessons = await findLessons(userId)
+      return lessons
     },
     user: async (_parent: void, _arg: void, ctx: any) => {
       const { req } = ctx
@@ -20,13 +23,24 @@ export default {
       const user = await User.findOne({
         where: {
           id: req.session.userId
-        }
+        },
+        include: [
+          {
+            model: Lesson,
+            include: [
+              {
+                model: Challenge,
+                as: 'challenges'
+              }
+            ]
+          }
+        ]
       })
 
       if (!user) {
         return null
       }
-      return user.username
+      return user
     }
   },
 

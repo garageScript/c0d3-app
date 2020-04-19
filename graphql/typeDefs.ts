@@ -3,7 +3,7 @@ import { gql } from 'apollo-boost'
 export default gql`
   type Query {
     lessons: [Lesson]
-    user: String
+    user: User
   }
 
   type Mutation {
