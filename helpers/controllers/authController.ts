@@ -26,7 +26,7 @@ export const login = async (
     }
   }
 
-  const validLogin = await bcrypt.compare(user.password, password)
+  const validLogin = await bcrypt.compare(password, user.password)
   if (!validLogin) {
     return {
       success: false,
