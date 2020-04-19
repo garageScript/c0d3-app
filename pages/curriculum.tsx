@@ -65,6 +65,9 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader({
-  query: GET_LESSONS
-}, Curriculum)
+export default withQueryLoader(
+  {
+    query: GET_LESSONS
+  },
+  Curriculum
+)

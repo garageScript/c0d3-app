@@ -12,14 +12,11 @@ export type WithQueryProps = {
   queryData: any
 }
 
-const withQueryLoader = ({
-  query,
-  getParams = () => ({})
-}: QueryProps, Component: React.FC<any>) => (props: any) => {
+const withQueryLoader = (
+  { query, getParams = () => ({}) }: QueryProps,
+  Component: React.FC<any>
+) => (props: any) => {
   const { loading, data } = useQuery(query, getParams(props))
-
-  console.log('inside HOC')
-  console.log(loading, data)
 
   if (loading) {
     return <LoadingSpinner />
