@@ -42,8 +42,7 @@ handler
 export const config = {
   api: {
     bodyParser: false // This is required for GraphQL to work properly  https://blog.logrocket.com/building-a-graphql-server-in-next-js/
-  },
-  cors: false
+  }
 }
 
 export default handler

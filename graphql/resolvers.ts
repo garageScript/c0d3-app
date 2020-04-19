@@ -12,7 +12,7 @@ export default {
           {
             model: User,
             through: {
-              attributes: ['isPassed', 'isTeaching']
+              attributes: ['isPassed', 'isTeaching', 'isEnrolled']
             }
           }
         ],
