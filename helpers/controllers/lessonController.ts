@@ -13,14 +13,8 @@ export const findLessons = async (id: string | null) => {
         },
         {
           model: User,
-          where: {
-            id
-          },
-          include: [
-            {
-              model: Lesson
-            }
-          ]
+          where: { id },
+          include: [{ model: Lesson }]
         }
       ],
       order: [
