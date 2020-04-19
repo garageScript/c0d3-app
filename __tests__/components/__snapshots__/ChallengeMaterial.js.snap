@@ -8,6 +8,14 @@ exports[`Curriculum challenge page Should render appropriately when no challenge
 </div>
 `;
 
+exports[`Curriculum challenge page Should render challenge material page differently when user has passed all their challenges 1`] = `
+<div>
+  <h1>
+    TODO: render complete
+  </h1>
+</div>
+`;
+
 exports[`Curriculum challenge page Should render clicked challenge within challenge question 1`] = `
 <div>
   <div
@@ -17,7 +25,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       class="col-4"
     >
       <div
-        class="card mb-2 shadow-sm border-0 challenge-title-card"
+        class="card mb-2 challenge-title-card shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
@@ -29,7 +37,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
         </div>
       </div>
       <div
-        class="card mb-2 shadow-sm border-0 challenge-title-card"
+        class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
@@ -56,13 +64,13 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           >
             Sum of 2 Numbers
           </h1>
-          <div>
-            <p
-              class="card-question bg-light p-3 mt-3"
-              data-testid="challenge-question-description"
-            >
+          <div
+            class="bg-light p-3 mt-3"
+            data-testid="challenge-question-description"
+          >
+            <span>
               Write a function that takes in 2 numbers and returns their sum.
-            </p>
+            </span>
           </div>
         </div>
       </div>
@@ -71,7 +79,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
 </div>
 `;
 
-exports[`Curriculum challenge page Should render first challenge by default 1`] = `
+exports[`Curriculum challenge page Should render first challenge by default when user has no submissions 1`] = `
 <div>
   <div
     class="row challenge-display"
@@ -80,7 +88,7 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
       class="col-4"
     >
       <div
-        class="card mb-2 shadow-sm border-0 challenge-title-card"
+        class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
@@ -92,7 +100,7 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
         </div>
       </div>
       <div
-        class="card mb-2 shadow-sm border-0 challenge-title-card"
+        class="card mb-2 challenge-title-card shadow-sm border-0"
         data-testid="challenge-title"
       >
         <div
@@ -119,13 +127,86 @@ exports[`Curriculum challenge page Should render first challenge by default 1`] 
           >
             Greater than 5
           </h1>
-          <div>
-            <p
-              class="card-question bg-light p-3 mt-3"
-              data-testid="challenge-question-description"
-            >
+          <div
+            class="bg-light p-3 mt-3"
+            data-testid="challenge-question-description"
+          >
+            <span>
               Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
-            </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Curriculum challenge page Should render first challenge that is not passed when user has submissions 1`] = `
+<div>
+  <div
+    class="row challenge-display"
+  >
+    <div
+      class="col-4"
+    >
+      <div
+        class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body d-flex justify-content-between"
+        >
+          <div>
+            0. Greater than 5
+          </div>
+          <img
+            height="25px"
+            src="/curriculumAssets/icons/pending.svg"
+            width="25px"
+          />
+        </div>
+      </div>
+      <div
+        class="card mb-2 challenge-title-card shadow-sm border-0"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body d-flex justify-content-between"
+        >
+          <div>
+            1. Sum of 2 Numbers
+          </div>
+          <img
+            height="25px"
+            src="/curriculumAssets/icons/rejected.svg"
+            width="25px"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-8"
+    >
+      <div
+        class="card shadow-sm border-0"
+      >
+        <div
+          class="card-body challenge-question"
+        >
+          <h1
+            class="card-title"
+            data-testid="challenge-question-title"
+          >
+            Greater than 5
+          </h1>
+          <div
+            class="bg-light p-3 mt-3"
+            data-testid="challenge-question-description"
+          >
+            <span>
+              Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+            </span>
           </div>
         </div>
       </div>

@@ -27,12 +27,12 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"
@@ -186,7 +186,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             class="my-2"
           />
           <a
-            class="mx-3 "
+            class="mx-3"
             href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
             rel="noopener noreferrer"
             target="_blank"
@@ -197,8 +197,8 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             class="my-2"
           />
           <a
-            class="mx-3 "
-            href="/"
+            class="mx-3"
+            href="#"
           >
             Github Basics
           </a>
@@ -268,12 +268,12 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
               class="nav-item nav-link active"
               href="/"
             >
-              Home 
               <span
                 class="sr-only"
               >
                 (current)
               </span>
+              Home
             </a>
             <a
               class="nav-item nav-link"
@@ -427,7 +427,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             class="my-2"
           />
           <a
-            class="mx-3 "
+            class="mx-3"
             href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
             rel="noopener noreferrer"
             target="_blank"
@@ -438,8 +438,8 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             class="my-2"
           />
           <a
-            class="mx-3 "
-            href="/"
+            class="mx-3"
+            href="#"
           >
             Github Basics
           </a>
@@ -492,8 +492,110 @@ exports[`Curriculum Page Should render ellpsis when no data is present 1`] = `
 
 exports[`Curriculum Page Should render loading when loading 1`] = `
 <div>
-  <h1>
-    Loading
-  </h1>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="mt-4 card border-0 shadow-sm"
+    >
+      <div
+        class="card-body d-flex flex-column align-items-center"
+      >
+        <h1>
+          Loading
+        </h1>
+        <div
+          class="spinner-border text-primary mt-1"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          >
+            Loading...
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;

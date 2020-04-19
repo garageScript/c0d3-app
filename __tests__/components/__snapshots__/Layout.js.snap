@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component Should render correct with no session context 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  />
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Layout Component Should render correctly when no user in session 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  />
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Layout Component Should render correctly when user session found 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="#"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="#"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          class="btn border btn-secondary overflow-hidden p-2 text-truncate"
+        >
+          tester
+        </button>
+        <button
+          class="btn border btn-secondary ml-2"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  />
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;

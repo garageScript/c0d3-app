@@ -1,8 +1,8 @@
 import * as React from 'react'
-import Link from 'next/link'
+import NavLink from './NavLink'
+import Button from './Button'
 
 import '../scss/navbar.scss'
-import Button from './Button'
 
 type AuthButtonProps = {
   initial: string
@@ -18,18 +18,26 @@ type Props = {
 
 const AuthLink = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <a href="#" className="nav-item nav-link active">
-      Curriculum <span className="sr-only">(current)</span>
-    </a>
-    <a href="#" className="nav-item nav-link">
+    <NavLink
+      path="/curriculum"
+      activePath="/curriculum"
+      className="nav-item nav-link"
+    >
+      Curriculum
+    </NavLink>
+    <NavLink path="#" className="nav-item nav-link">
       Repo
-    </a>
-    <a href="#" className="nav-item nav-link">
+    </NavLink>
+    <NavLink path="#" className="nav-item nav-link">
       Journey
-    </a>
-    <a href="https://chat.c0d3.com" className="nav-item nav-link">
+    </NavLink>
+    <NavLink
+      path="https://chat.c0d3.com"
+      className="nav-item nav-link"
+      external
+    >
       Help
-    </a>
+    </NavLink>
   </div>
 )
 
@@ -46,41 +54,37 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
 
 const UnAuthButton = () => (
   <div>
-    <Link href="/login">
-      <a className="btn btn-secondary border mr-3">Login</a>
-    </Link>
-    <Link href="/signup">
-      <a className="btn btn-secondary border mr-3">Signup</a>
-    </Link>
+    <NavLink path="/login" className="btn btn-secondary border mr-3">
+      Login
+    </NavLink>
+    <NavLink path="/signup" className="btn btn-secondary border mr-3">
+      Signup
+    </NavLink>
   </div>
 )
 
 const UnAuthLink = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <Link href="/">
-      <a className="nav-item nav-link active">
-        Home <span className="sr-only">(current)</span>
-      </a>
-    </Link>
-    <Link href="/#learning">
-      <a className="nav-item nav-link">Learning Process</a>
-    </Link>
-    <a
+    <NavLink path="/" activePath="/" className="nav-item nav-link">
+      Home
+    </NavLink>
+    <NavLink path="/#learning" className="nav-item nav-link">
+      Learning Process
+    </NavLink>
+    <NavLink
+      path="https://c0d3.com/book"
       className="nav-item nav-link"
-      href="https://c0d3.com/book"
-      target="_blank"
-      rel="noopener noreferrer"
+      external
     >
       Resources
-    </a>
-    <a
+    </NavLink>
+    <NavLink
+      path="https://chat.c0d3.com"
       className="nav-item nav-link"
-      href="https://chat.c0d3.com"
-      target="_blank"
-      rel="noopener noreferrer"
+      external
     >
       Help
-    </a>
+    </NavLink>
   </div>
 )
 
@@ -94,9 +98,12 @@ const AppNav: React.FC<Props> = ({
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
-        <Link href="/">
-          <a className="navbar-brand text-primary font-weight-bold">C0D3</a>
-        </Link>
+        <NavLink
+          path="/"
+          className="navbar-brand text-primary font-weight-bold"
+        >
+          C0D3
+        </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
             {loggedIn ? <AuthLink /> : <UnAuthLink />}

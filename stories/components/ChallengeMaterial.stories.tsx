@@ -24,7 +24,9 @@ const challenges = [
 ]
 
 export const Basic: React.FC = () => (
-  <ChallengeMaterial challenges={challenges} />
+  <ChallengeMaterial challenges={challenges} userSubmissions={[]} />
 )
 
-export const NoChallenges: React.FC = () => <ChallengeMaterial />
+export const NoChallenges: React.FC = () => (
+  <ChallengeMaterial challenges={[]} userSubmissions={[]} />
+)

@@ -2,33 +2,13 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import { GET_SUBMISSIONS } from '../graphql/queries'
-import Link from 'next/link'
+import {
+  Props,
+  ReviewButtonProps,
+  ReviewCountProps
+} from '../@types/lessonCard'
+import NavLink from './NavLink'
 import '../scss/lessonCard.scss'
-
-type Props = {
-  lessonId: number
-  coverImg: string
-  title: string
-  challengeCount: number
-  description: string
-  currentState?: string
-  reviewUrl: string
-  challengesUrl: string
-  docUrl: string
-  shouldNotGetCount?: boolean
-}
-
-type ReviewButtonProps = {
-  isCompleted: boolean
-  reviewUrl: string
-  lessonId: number
-  shouldNotGetCount?: boolean
-}
-
-type ReviewCountProps = {
-  shouldNotGetCount?: boolean
-  lessonId: number
-}
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   if (props.shouldNotGetCount) {
@@ -44,7 +24,9 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   })
 
   if (loading) {
-    return <span> ... </span>
+    return (
+      <div className="spinner-border spinner-border-sm mx-1" role="status" />
+    )
   }
 
   if (!data) {
@@ -69,16 +51,17 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
     return null
   }
   return (
-    <span className="position-absolute lesson-card__container_review">
-      <a href={props.reviewUrl} className="btn btn-sm bg-primary text-white">
-        Review
-        <ReviewCount
-          shouldNotGetCount={props.shouldNotGetCount}
-          lessonId={props.lessonId}
-        />
-        Submissions
-      </a>
-    </span>
+    <a
+      href={props.reviewUrl}
+      className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+    >
+      Review
+      <ReviewCount
+        shouldNotGetCount={props.shouldNotGetCount}
+        lessonId={props.lessonId}
+      />
+      Submissions
+    </a>
   )
 }
 
@@ -86,33 +69,36 @@ const LessonCard: React.FC<Props> = props => {
   const containerClass =
     props.currentState === 'inProgress'
       ? 'lesson-card__container_inprogress border-primary'
-      : ''
+      : 'border-0'
+
   return (
-    <div className={`card shadow-sm mt-3 border-0 ${containerClass}`}>
-      <div className="card-body p-2">
-        <div className="row no-gutters">
+    <div className={`card shadow-sm mt-3 ${containerClass}`}>
+      <div className="d-flex p-2">
+        <img
+          src={`/curriculumAssets/lessonCoversSvg/${props.coverImg}`}
+          alt={props.coverImg}
+        />
+
+        <div className="w-100 pl-4">
           {props.currentState === 'completed' && (
-            <span className="badge badge-pill badge-success position-absolute lesson-card__container_completed">
-              <CheckCircle style={{ height: '15px', marginTop: '-2px' }} />
-              <span className="mr-1">COMPLETED</span>
+            <span className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center">
+              <CheckCircle style={{ height: '15px' }} />
+              <span className="mx-1">COMPLETED</span>
             </span>
           )}
-          <div className="mw-100 col-2 mr-4">
-            <img
-              src={`/curriculumAssets/lessonCoversSvg/${props.coverImg}`}
-              alt={props.coverImg}
-            />
-          </div>
-          <div className="col-9">
+          <div>
             <h4 className="lesson-card__title font-weight-bold mt-3">
-              <Link href={`/curriculum/${props.lessonId}`}>
-                <a>{props.title}</a>
-              </Link>
+              <NavLink
+                as={`/curriculum/${props.lessonId}`}
+                path="/curriculum/[lesson]"
+              >
+                {props.title}
+              </NavLink>
             </h4>
             <div>
               <div className="d-inline-block mr-4">
                 <img
-                  className="mr-1"
+                  className="mr-2"
                   src="/curriculumAssets/icons/icon-challenge.svg"
                   alt="icon-challenge"
                 />
@@ -131,22 +117,22 @@ const LessonCard: React.FC<Props> = props => {
           />
         </div>
       </div>
+
       {props.currentState === 'inProgress' && (
-        <div className="card-footer bg-primary">
-          <a
+        <div className="p-2 bg-primary">
+          <NavLink
+            path={props.docUrl}
             className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-            href={props.docUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            external
           >
             Start Lesson
-          </a>
-          <a
+          </NavLink>
+          <NavLink
+            path={props.challengesUrl}
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            href={props.challengesUrl}
           >
             View Challenges
-          </a>
+          </NavLink>
         </div>
       )}
     </div>

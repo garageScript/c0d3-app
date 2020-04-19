@@ -5,7 +5,7 @@ import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
 import Layout from '../components/Layout'
 import Card from '../components/Card'
-import Link from 'next/link'
+import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
 import { loginUser } from '../helpers/loginUser'
 
@@ -73,9 +73,7 @@ const Login: React.FC = () => {
             </div>
           </Form>
         </Formik>
-        <Link href="/forgotPassword">
-          <a>Forgot your password?</a>
-        </Link>
+        <NavLink path="/forgotPassword">Forgot your password?</NavLink>
       </Card>
     </Layout>
   )

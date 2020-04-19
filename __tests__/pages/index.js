@@ -1,49 +1,40 @@
-jest.mock('swr')
 jest.mock('../../pages/curriculum')
 jest.mock('../../components/LandingPage')
 import React from 'react'
 import { render } from '@testing-library/react'
-import ReactDOM from 'react-dom'
 import Curriculum from '../../pages/curriculum'
-import IndexPage, {fetcher} from '../../pages/index'
+import IndexPage from '../../pages/index'
 import LandingPage from '../../components/LandingPage'
-import useSWR from 'swr'
+import SessionContext from '../../helpers/contexts/session'
 
 describe('Index Page', () => {
-  test('fetcher should return a promise', async () => {
-    window.fetch = () => Promise.resolve({json: () => 5})
-    const data = await fetcher()
-    expect(data).toEqual(5)
-  })
   test('Should render curriculum if user is identified', async () => {
-    useSWR.mockReturnValue({
-      data: {
-        userInfo: {name:'tester'}
-      }
-    })
+    const session = { data: { userInfo: { name:'tester', username: 'tester' } } }
+    const tree = (
+      <SessionContext.Provider value={session}>
+        <IndexPage />
+      </SessionContext.Provider>
+    )
     Curriculum.mockReturnValue( <h1>Hello Curriculum</h1> )
 
-    const { getByText } = render(<IndexPage />)
+    const { getByText } = render(tree)
     getByText('Hello Curriculum')
   })
   test('Should render landing page if user is not identified', async () => {
-    useSWR.mockReturnValue({
-      error: undefined,
-      data: {
-        success: false,
-        errorMessage: "unauthorized"
-      }
-    })
+    const session = { data: { success: false, errorMessage: 'unauthorized' } }
+    const tree = (
+      <SessionContext.Provider value={session}>
+        <IndexPage />
+      </SessionContext.Provider>
+    )
     LandingPage.mockReturnValue(<h1>Hello Landing</h1>)
     
-    const { getByText } = render(<IndexPage />)
+    const { getByText } = render(tree)
     getByText('Hello Landing')
   })
   test('Should not render while page is loading', async () => {
-    useSWR.mockReturnValue({})
-    
+    // SessionContext default value is { data: null, error: null }
     const { container } = render(<IndexPage />)
     expect(container).toMatchSnapshot()
   })
-  
 })

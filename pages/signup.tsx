@@ -1,12 +1,12 @@
 //import libraries
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
-import Link from 'next/link'
 
 //import components
 import Card from '../components/Card'
 import Layout from '../components/Layout'
 import Input from '../components/Input'
+import NavLink from '../components/NavLink'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'
@@ -49,9 +49,9 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
 
 const SignupSuccess: React.FC = () => (
   <Card success title="Account created successfully!">
-    <Link href="/curriculum">
-      <a className="btn btn-primary btn-lg mb-3"> Continue to Curriculum</a>
-    </Link>
+    <NavLink path="/curriculum" className="btn btn-primary btn-lg mb-3">
+      Continue to Curriculum
+    </NavLink>
   </Card>
 )
 
@@ -119,9 +119,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
       </Formik>
       <p className="text-black-50">
         Already have an account?{' '}
-        <a href="/login" className="text-primary">
+        <NavLink path="/login" className="text-primary">
           Login
-        </a>
+        </NavLink>
       </p>
     </Card>
   )

@@ -18,6 +18,13 @@ $green: #00cf92 !default;
 @import "../public/PTMono-Regular.ttf";
 
 // Global CSS
+body{
+  /* This fix the font difference between browsers
+   * https://github.com/garageScript/c0d3-app/pull/134
+   */
+  font-optical-sizing: none; 
+}
+
 .outline-danger{
   border: 1px solid rgba(220,53,69, 1);
   &:focus{
