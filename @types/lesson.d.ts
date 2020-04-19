@@ -1,6 +1,6 @@
 export type LessonStatus = {
   isEnrolled: string | null
-  isPassed?: string
+  isPassed?: string | null
   isTeaching: string | null
 }
 
@@ -16,4 +16,5 @@ export type Lesson = {
   challenges: Challenge[]
   currentUser: User
   docUrl: string
+  chatUrl: string
 }

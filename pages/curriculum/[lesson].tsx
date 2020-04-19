@@ -7,6 +7,7 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_LESSON } from '../../graphql/queries'
+import { Lesson } from '../../@types/lesson'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import _ from 'lodash'
 
@@ -33,7 +34,10 @@ const Challenges: React.FC = () => {
   if (!data || !userId || error) {
     return <h1>...</h1>
   }
-  const { lessonInfo: currentLesson, userSubmissions } = data
+  const { lessonInfo: currentLesson, userSubmissions, curriculumStatus } = data
+  const currentLessonStatus = curriculumStatus.find(
+    (lesson: Lesson) => lesson.id.toString() === currentlessonId
+  ).currentUser.userLesson
   return (
     <div>
       <Layout>
@@ -53,6 +57,9 @@ const Challenges: React.FC = () => {
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}
+                lessonStatus={currentLessonStatus}
+                chatUrl={currentLesson.chatUrl}
+                lessonId={currentlessonId}
               />
             </div>
           )}

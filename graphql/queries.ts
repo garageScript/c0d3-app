@@ -43,6 +43,7 @@ export const GET_LESSON = gql`
       description
       order
       docUrl
+      chatUrl
       challenges {
         id
         description
@@ -64,6 +65,16 @@ export const GET_LESSON = gql`
       }
       createdAt
       updatedAt
+    }
+    curriculumStatus {
+      id
+      currentUser {
+        userLesson {
+          isEnrolled
+          isTeaching
+          isPassed
+        }
+      }
     }
   }
 `
