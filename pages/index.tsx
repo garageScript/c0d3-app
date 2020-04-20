@@ -6,14 +6,14 @@ import Footer from '../components/Footer'
 import SessionContext from '../helpers/contexts/session'
 
 const IndexPage: any = () => {
-  const { data, error } = React.useContext(SessionContext)
+  const { data } = React.useContext(SessionContext)
 
   // while loading, don't show anything to user
-  if (!data && !error) {
+  if (!data.errorMessage && !data.userInfo) {
     return null
   }
 
-  if (data && data.userInfo) {
+  if (data.userInfo) {
     return <Curriculum />
   }
 
