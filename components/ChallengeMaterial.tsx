@@ -8,6 +8,8 @@ import {
 import { LessonStatus } from '../@types/lesson'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
+import SessionContext from '../helpers/contexts/session'
+import ReactDiffViewer from 'react-diff-viewer'
 
 type CurrentChallengeID = string | null
 
@@ -22,7 +24,7 @@ type ChallengeTitleCardProps = {
 }
 
 type ChallengeQuestionCardProps = {
-  currentChallenge: Challenge
+  currentChallenge: ChallengeSubmissionData
 }
 
 type ChallengeMaterialProps = {
@@ -96,20 +98,40 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
+  const { data } = React.useContext(SessionContext)
+
   return (
-    <div className="card shadow-sm border-0">
-      <div className="card-body challenge-question">
-        <h1 data-testid="challenge-question-title" className="card-title">
-          {currentChallenge.title}
-        </h1>
-        <div
-          data-testid="challenge-question-description"
-          className="bg-light p-3 mt-3"
-        >
-          <Markdown>{currentChallenge.description}</Markdown>
+    <>
+      <div className="card shadow-sm border-0">
+        <div className="card-body challenge-question">
+          <h1 data-testid="challenge-question-title" className="card-title">
+            {currentChallenge.title}
+          </h1>
+          <div
+            data-testid="challenge-question-description"
+            className="bg-light p-3 mt-3"
+          >
+            <Markdown>{currentChallenge.description}</Markdown>
+          </div>
         </div>
       </div>
-    </div>
+
+      {currentChallenge.submission?.diff &&
+        <div className="card shadow-sm border-0 mt-3">
+          <div className="card-header bg-white">
+            {data.userInfo?.username}
+          </div>
+          <div className="card-body">
+            <div className="rounded-lg overflow-hidden">
+              <ReactDiffViewer
+                oldValue={``}
+                newValue={`${currentChallenge.submission?.diff}`}
+                splitView={false}
+              />
+            </div>
+          </div>
+        </div>}
+    </>
   )
 }
 
@@ -200,12 +222,16 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     status: 'passed'
   }
   //find first challenge that is not passed on initial render after clicks will render clicked challenge
-  const currentChallenge: ChallengeSubmissionData =
-    challengesWithSubmissionData.find((challenge: ChallengeSubmissionData) => {
+  let currentChallenge = challengesWithSubmissionData.find(
+    (challenge: ChallengeSubmissionData) => {
       if (currentChallengeID) return challenge.id === currentChallengeID
       return challenge.status !== 'passed'
-    }) || finalChallenge
-
+    }
+  ) as ChallengeSubmissionData
+  if (!currentChallenge) {
+    // return <h1>TODO: render complete</h1>
+    currentChallenge = challengesWithSubmissionData[0]
+  }
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
       return (
