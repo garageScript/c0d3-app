@@ -2,7 +2,7 @@ jest.mock('swr')
 import useSession, { fetcher } from '../helpers/useSession'
 import useSWR from 'swr'
 
-describe('Index Page', () => {
+describe('useSession helper', () => {
   test('fetcher should return a promise', async () => {
     window.fetch = () => Promise.resolve({json: () => 5})
     const data = await fetcher()

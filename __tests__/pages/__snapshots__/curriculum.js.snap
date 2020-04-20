@@ -485,7 +485,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
 exports[`Curriculum Page Should render ellpsis when no data is present 1`] = `
 <div>
   <h1>
-    ...
+    No Data...
   </h1>
 </div>
 `;
