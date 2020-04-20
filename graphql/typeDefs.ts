@@ -3,11 +3,20 @@ import { gql } from 'apollo-boost'
 export default gql`
   type Query {
     lessons: [Lesson]
+    user: String
   }
 
   type Mutation {
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
+    signup(
+      firstName: String!
+      lastName: String!
+      email: String!
+      username: String!
+      password: String!
+    ): AuthResponse
+    deleteUser(userId: String!): AuthResponse
   }
 
   type AuthResponse {

@@ -1,12 +1,27 @@
 import db from '../dbload'
 import bcrypt from 'bcrypt'
+import { nanoid } from 'nanoid'
 import { Request } from 'express'
+import { signupValidation } from '../formValidation'
 
 const { User } = db
 
+type Login = {
+  username: string
+  password: string
+}
+
+type SignUp = {
+  firstName: string
+  lastName: string
+  username: string
+  password: string
+  email: string
+}
+
 export const login = async (
   _parent: void,
-  arg: { username: string; password: string },
+  arg: Login,
   ctx: { req: Request }
 ) => {
   const {
@@ -65,4 +80,100 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
       success: true
     }
   })
+}
+
+export const signup = async (_parent: void, arg: SignUp) => {
+  const { firstName, lastName, username, password, email } = arg
+
+  const validEntry = await signupValidation.isValid({
+    firstName,
+    lastName,
+    username,
+    password,
+    email
+  })
+
+  if (!validEntry) {
+    return {
+      success: false,
+      error: 'Invalid registration information'
+    }
+  }
+
+  // Check for existing user or email
+  const existingUser = await User.findOne({
+    where: {
+      username
+    }
+  })
+
+  if (existingUser) {
+    return {
+      success: false,
+      error: 'User already exists'
+    }
+  }
+
+  const existingEmail = await User.findOne({
+    where: {
+      email
+    }
+  })
+
+  if (existingEmail) {
+    return {
+      success: false,
+      error: 'Email already exists'
+    }
+  }
+
+  const randomToken = nanoid()
+  const name = `${firstName} ${lastName}`
+  const hash = await bcrypt.hash(password, 10)
+
+  const userRecord = User.create({
+    name,
+    username,
+    password: hash,
+    email,
+    emailVerificationToken: randomToken
+  })
+
+  return {
+    success: true,
+    username: userRecord.username
+  }
+}
+
+export const deleteUser = async (
+  _parent: void,
+  arg: {
+    userId: string
+  }
+) => {
+  // This function should only be run for testing
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      success: false,
+      error: 'Cannot run in production'
+    }
+  }
+  const { userId } = arg
+
+  try {
+    await User.destroy({
+      where: {
+        id: userId
+      }
+    })
+
+    return {
+      success: true
+    }
+  } catch (e) {
+    return {
+      success: false,
+      error: 'User does not exist'
+    }
+  }
 }
