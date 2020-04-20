@@ -53,7 +53,7 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
     }
   }
 
-  session.destroy(err => {
+  return session.destroy(err => {
     if (err) {
       return {
         success: false,
