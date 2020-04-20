@@ -12,7 +12,7 @@ const SequelizeStore = connectSequelize(session.Store)
 
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7
 
-const handler = nextConnect() // For session middleware
+const handler: any = nextConnect() // For session middleware. TODO: Need to define types for Session
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
