@@ -354,25 +354,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
     </div>
     <div
       class="p-2 bg-primary"
-    >
-      <a
-        class="lesson-card__button btn btn-light mr-2 my-1 text-primary active"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        Start Lesson
-      </a>
-      <a
-        class="lesson-card__button btn bg-primary my-1 text-white border border-white active"
-      >
-        <span
-          class="sr-only"
-        >
-          (current)
-        </span>
-        View Challenges
-      </a>
-    </div>
+    />
   </div>
 </div>
 `;
