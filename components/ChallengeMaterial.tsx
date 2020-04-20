@@ -116,11 +116,9 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         </div>
       </div>
 
-      {currentChallenge.submission?.diff &&
+      {currentChallenge.submission?.diff && (
         <div className="card shadow-sm border-0 mt-3">
-          <div className="card-header bg-white">
-            {data.userInfo?.username}
-          </div>
+          <div className="card-header bg-white">{data.userInfo?.username}</div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
               <ReactDiffViewer
@@ -130,7 +128,8 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
               />
             </div>
           </div>
-        </div>}
+        </div>
+      )}
     </>
   )
 }
@@ -222,16 +221,11 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     status: 'passed'
   }
   //find first challenge that is not passed on initial render after clicks will render clicked challenge
-  let currentChallenge = challengesWithSubmissionData.find(
-    (challenge: ChallengeSubmissionData) => {
+  const currentChallenge =
+    challengesWithSubmissionData.find((challenge: ChallengeSubmissionData) => {
       if (currentChallengeID) return challenge.id === currentChallengeID
       return challenge.status !== 'passed'
-    }
-  ) as ChallengeSubmissionData
-  if (!currentChallenge) {
-    // return <h1>TODO: render complete</h1>
-    currentChallenge = challengesWithSubmissionData[0]
-  }
+    }) || finalChallenge
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
       return (
