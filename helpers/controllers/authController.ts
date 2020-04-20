@@ -59,10 +59,10 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
         success: false,
         error: err.message
       }
+    }
 
-      return {
-        success: true
-      }
+    return {
+      success: true
     }
   })
 }
