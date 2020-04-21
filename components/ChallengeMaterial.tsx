@@ -200,11 +200,11 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     status: 'passed'
   }
   //find first challenge that is not passed on initial render after clicks will render clicked challenge
-  const currentChallenge =
+  const currentChallenge: ChallengeSubmissionData =
     challengesWithSubmissionData.find((challenge: ChallengeSubmissionData) => {
       if (currentChallengeID) return challenge.id === currentChallengeID
       return challenge.status !== 'passed'
-    }) || (finalChallenge as ChallengeSubmissionData)
+    }) || finalChallenge
 
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
