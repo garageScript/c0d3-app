@@ -98,6 +98,8 @@ exports[`Curriculum challenge page Should render challenge material page differe
             <a
               class="font-weight-bold mx-1"
               href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               answering questions
             </a>
@@ -105,8 +107,10 @@ exports[`Curriculum challenge page Should render challenge material page differe
             <a
               class="font-weight-bold mx-1"
               href="https:/c0d3.com/teacher/5"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              review challenge submissions.
+              reviewing challenge submissions
             </a>
           </p>
         </div>
@@ -114,7 +118,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           class="card-footer d-flex bg-primary"
         >
           <p
-            class="text-white mr-3 mt-2"
+            class="text-white mr-3 my-2"
           >
             You can show your appreciation to the user that helped you the most by giving them a star
           </p>

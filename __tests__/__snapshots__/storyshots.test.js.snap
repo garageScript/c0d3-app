@@ -815,6 +815,8 @@ exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] 
       <a
         className="font-weight-bold mx-1"
         href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         answering questions
       </a>
@@ -822,8 +824,10 @@ exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] 
       <a
         className="font-weight-bold mx-1"
         href="https://c0d3.com/teacher/5"
+        rel="noopener noreferrer"
+        target="_blank"
       >
-        review challenge submissions.
+        reviewing challenge submissions
       </a>
     </p>
   </div>
@@ -831,7 +835,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] 
     className="card-footer d-flex bg-primary"
   >
     <p
-      className="text-white mr-3 mt-2"
+      className="text-white mr-3 my-2"
     >
       You can show your appreciation to the user that helped you the most by giving them a star
     </p>

@@ -36,7 +36,11 @@ export const GET_LESSONS = gql`
 `
 
 export const GET_LESSON = gql`
-  query lessonInfo($lessonInfo: LessonId, $lessonUserInfo: LessonUserId) {
+  query lessonInfo(
+    $lessonInfo: LessonId
+    $lessonUserInfo: LessonUserId
+    $lessonStatus: LessonId
+  ) {
     lessonInfo(input: $lessonInfo) {
       id
       title
@@ -66,15 +70,10 @@ export const GET_LESSON = gql`
       createdAt
       updatedAt
     }
-    curriculumStatus {
-      id
-      currentUser {
-        userLesson {
-          isEnrolled
-          isTeaching
-          isPassed
-        }
-      }
+    lessonStatus(input: $lessonStatus) {
+      isPassed
+      isTeaching
+      isEnrolled
     }
   }
 `

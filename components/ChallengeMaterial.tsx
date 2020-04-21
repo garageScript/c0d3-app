@@ -6,6 +6,7 @@ import {
   UserSubmissionsObject
 } from '../@types/challenge'
 import { LessonStatus } from '../@types/lesson'
+import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 
 type CurrentChallengeID = string | null
@@ -113,7 +114,6 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 }
 
 export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = props => {
-  //TODO Change links to NavLinks when PR is merged in
   return (
     <div className="card text-center shadow-sm">
       <div className="card-body">
@@ -127,17 +127,25 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = p
         </p>
         <p className="review-message">
           You can help your peers by
-          <a className="font-weight-bold mx-1" href={props.chatUrl}>
+          <NavLink
+            path={props.chatUrl}
+            className="font-weight-bold mx-1"
+            external
+          >
             answering questions
-          </a>
+          </NavLink>
           they have in the lesson and
-          <a className="font-weight-bold mx-1" href={props.reviewUrl}>
-            review challenge submissions.
-          </a>
+          <NavLink
+            path={props.reviewUrl}
+            className="font-weight-bold mx-1"
+            external
+          >
+            reviewing challenge submissions
+          </NavLink>
         </p>
       </div>
       <div className="card-footer d-flex bg-primary">
-        <p className="text-white mr-3 mt-2">
+        <p className="text-white mr-3 my-2">
           You can show your appreciation to the user that helped you the most by
           giving them a star
         </p>

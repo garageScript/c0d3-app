@@ -9,20 +9,14 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_LESSON } from '../../graphql/queries'
-import { Lesson } from '../../@types/lesson'
 import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
-  const router = useRouter()
-  const currentlessonId = router.query.lesson as string
   const {
     lessonInfo: currentLesson,
     userSubmissions,
-    curriculumStatus
+    lessonStatus: currentLessonStatus
   } = queryData
-  const currentLessonStatus = curriculumStatus.find(
-    (lesson: Lesson) => lesson.id.toString() === currentlessonId
-  ).currentUser.userLesson
   return (
     <div>
       <Layout>
@@ -44,7 +38,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
-                lessonId={currentlessonId}
+                lessonId={currentLesson.id}
               />
             </div>
           )}
@@ -70,6 +64,10 @@ export default withQueryLoader(
           lessonUserInfo: {
             lessonId: currentlessonId,
             userId: userId
+          },
+          lessonStatus: {
+            id: currentlessonId,
+            userId
           }
         }
       }
