@@ -82,12 +82,11 @@ describe('Curriculum challenge page', () => {
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
     lessonId: 5
   }
-
-const lessonStatusPassed = {
-  isEnrolled: '213423534',
-  isPassed: '123456789',
-  isTeaching: null
-}
+  const lessonStatusPassed = {
+    isEnrolled: '213423534',
+    isPassed: '123456789',
+    isTeaching: null
+  }
   const propsWithSubmissionsPassed = {
     challenges,
     lessonStatus: lessonStatusPassed,
