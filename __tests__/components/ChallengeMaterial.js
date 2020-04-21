@@ -4,11 +4,10 @@ import ChallengeMaterial from '../../components/ChallengeMaterial'
 
 
 describe('Curriculum challenge page', () => {
-const lessonStatusNoPass = {
-  isEnrolled: '213423534',
-  isPassed: null,
-  isTeaching: null
-}
+  const lessonStatusNoPass = {
+    isEnrolled: '213423534',
+    isTeaching: null
+  }
   test('Should render appropriately when no challenges are passed to component', async () => {
     const { container } = render(
       <ChallengeMaterial 
