@@ -5,6 +5,8 @@ import {
   UserSubmission,
   UserSubmissionsObject
 } from '../@types/challenge'
+import { LessonStatus } from '../@types/lesson'
+import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 
 type CurrentChallengeID = string | null
@@ -24,12 +26,21 @@ type ChallengeQuestionCardProps = {
 }
 
 type ChallengeMaterialProps = {
-  userSubmissions: UserSubmission[]
   challenges: Challenge[]
+  userSubmissions: UserSubmission[]
+  lessonStatus: LessonStatus
+  chatUrl: string
+  lessonId: string
 }
 
 type StatusIconProps = {
   status: string
+}
+
+type ChallengesCompletedCardProps = {
+  imageSrc: string
+  reviewUrl: string
+  chatUrl: string
 }
 
 const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
@@ -102,9 +113,56 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   )
 }
 
+export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = props => {
+  return (
+    <div className="card text-center shadow-sm">
+      <div className="card-body">
+        <img
+          src={`/curriculumAssets/icons/${props.imageSrc}`}
+          className="mt-3"
+        ></img>
+        <h4 className="card-title mt-2">Congratulations!</h4>
+        <p className="success-message">
+          You have successfully completed all challenges
+        </p>
+        <p className="review-message">
+          You can help your peers by
+          <NavLink
+            path={props.chatUrl}
+            className="font-weight-bold mx-1"
+            external
+          >
+            answering questions
+          </NavLink>
+          they have in the lesson and
+          <NavLink
+            path={props.reviewUrl}
+            className="font-weight-bold mx-1"
+            external
+          >
+            reviewing challenge submissions
+          </NavLink>
+        </p>
+      </div>
+      <div className="card-footer d-flex bg-primary">
+        <p className="text-white mr-3 my-2">
+          You can show your appreciation to the user that helped you the most by
+          giving them a star
+        </p>
+        <button className="btn btn-light text-primary font-weight-bold ml-auto">
+          Give Star
+        </button>
+      </div>
+    </div>
+  )
+}
+
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
+  challenges,
   userSubmissions,
-  challenges
+  lessonStatus,
+  chatUrl,
+  lessonId
 }) => {
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
@@ -132,16 +190,22 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
   >(null)
+
+  const finalChallenge = {
+    title: 'Challenges Completed!',
+    id: 'finalChallenge',
+    order: challenges.length + 1,
+    description:
+      'Congratulations, you have completed all Challenges for this Lesson',
+    status: 'passed'
+  }
   //find first challenge that is not passed on initial render after clicks will render clicked challenge
-  const currentChallenge = challengesWithSubmissionData.find(
-    (challenge: ChallengeSubmissionData) => {
+  const currentChallenge: ChallengeSubmissionData =
+    challengesWithSubmissionData.find((challenge: ChallengeSubmissionData) => {
       if (currentChallengeID) return challenge.id === currentChallengeID
       return challenge.status !== 'passed'
-    }
-  ) as ChallengeSubmissionData
-  if (!currentChallenge) {
-    return <h1>TODO: render complete</h1>
-  }
+    }) || finalChallenge
+
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
       return (
@@ -159,9 +223,31 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   )
   return (
     <div className="row challenge-display">
-      <div className="col-4">{challengeTitleCards}</div>
+      <div className="col-4">
+        {challengeTitleCards}
+        {lessonStatus.isPassed && (
+          <ChallengeTitleCard
+            key={finalChallenge.id}
+            id={finalChallenge.id}
+            challengeNum={finalChallenge.order}
+            title={finalChallenge.title}
+            setCurrentChallenge={setCurrentChallenge}
+            active={finalChallenge.id === currentChallenge.id}
+            submissionStatus={finalChallenge.status}
+          />
+        )}
+      </div>
       <div className="col-8">
-        <ChallengeQuestionCard currentChallenge={currentChallenge} />
+        {currentChallenge.id !== 'finalChallenge' && (
+          <ChallengeQuestionCard currentChallenge={currentChallenge} />
+        )}
+        {lessonStatus.isPassed && currentChallenge.id === 'finalChallenge' && (
+          <ChallengesCompletedCard
+            imageSrc="icon-challenge-complete.jpg"
+            chatUrl={chatUrl}
+            reviewUrl={`https:/c0d3.com/teacher/${lessonId}`}
+          />
+        )}
       </div>
     </div>
   )

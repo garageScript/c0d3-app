@@ -12,7 +12,11 @@ import { GET_LESSON } from '../../graphql/queries'
 import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
-  const { lessonInfo: currentLesson, userSubmissions } = queryData
+  const {
+    lessonInfo: currentLesson,
+    userSubmissions,
+    lessonStatus: currentLessonStatus
+  } = queryData
   return (
     <div>
       <Layout>
@@ -32,6 +36,9 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}
+                lessonStatus={currentLessonStatus}
+                chatUrl={currentLesson.chatUrl}
+                lessonId={currentLesson.id}
               />
             </div>
           )}
@@ -57,6 +64,10 @@ export default withQueryLoader(
           lessonUserInfo: {
             lessonId: currentlessonId,
             userId: userId
+          },
+          lessonStatus: {
+            id: currentlessonId,
+            userId
           }
         }
       }

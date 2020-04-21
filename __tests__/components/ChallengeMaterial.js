@@ -2,10 +2,21 @@ import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 
+
 describe('Curriculum challenge page', () => {
+  const lessonStatusNoPass = {
+    isEnrolled: '213423534',
+    isTeaching: null
+  }
   test('Should render appropriately when no challenges are passed to component', async () => {
     const { container } = render(
-      <ChallengeMaterial challenges={[]} userSubmissions={[]} />
+      <ChallengeMaterial 
+        challenges={[]} 
+        userSubmissions={[]} 
+        lessonStatus={lessonStatusNoPass}
+        chatUrl='https://chat.c0d3.com/c0d3/channels/js0-foundations'
+        lessonId="5"
+      />
     )
     await wait(() => {
       expect(container).toMatchSnapshot()
@@ -31,10 +42,14 @@ describe('Curriculum challenge page', () => {
   ]
   const props = {
     challenges,
-    userSubmissions: []
+    lessonStatus: lessonStatusNoPass,
+    userSubmissions: [],
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
+    lessonId: 5
   }
   const propsWithSubmissions = {
     challenges,
+    lessonStatus: lessonStatusNoPass,
     userSubmissions: [
       {
         id: '3500',
@@ -63,10 +78,18 @@ describe('Curriculum challenge page', () => {
         createdAt: '1586907809223',
         updatedAt: '1586907825090'
       }
-    ]
+    ],
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
+    lessonId: 5
+  }
+  const lessonStatusPassed = {
+    isEnrolled: '213423534',
+    isPassed: '123456789',
+    isTeaching: null
   }
   const propsWithSubmissionsPassed = {
     challenges,
+    lessonStatus: lessonStatusPassed,
     userSubmissions: [
       {
         id: '3500',
@@ -95,7 +118,9 @@ describe('Curriculum challenge page', () => {
         createdAt: '1586907809223',
         updatedAt: '1586907825090'
       }
-    ]
+    ],
+    chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
+    lessonId: 5
   }
 
   test('Should render first challenge by default when user has no submissions', async () => {

@@ -23,10 +23,27 @@ const challenges = [
   }
 ]
 
+const lessonStatus = {
+  isEnrolled: '213423534',
+  isTeaching: null
+}
+
 export const Basic: React.FC = () => (
-  <ChallengeMaterial challenges={challenges} userSubmissions={[]} />
+  <ChallengeMaterial
+    challenges={challenges}
+    userSubmissions={[]}
+    lessonStatus={lessonStatus}
+    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+    lessonId="5"
+  />
 )
 
 export const NoChallenges: React.FC = () => (
-  <ChallengeMaterial challenges={[]} userSubmissions={[]} />
+  <ChallengeMaterial
+    challenges={[]}
+    userSubmissions={[]}
+    lessonStatus={lessonStatus}
+    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+    lessonId="5"
+  />
 )
