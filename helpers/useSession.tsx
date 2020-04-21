@@ -8,16 +8,15 @@ export const fetcher = (url: string) =>
 
 export type SessionData = {
   data: {
-    userInfo: User
+    userInfo?: User
     errorMessage?: string
     success: boolean
-  } | null
-  error: boolean | null
+  }
+  error?: boolean
 }
 
 const useSession = (): SessionData => {
   const { data, error } = useSWR(`${SERVER_URL}/session`, fetcher)
-
   return { data, error }
 }
 
