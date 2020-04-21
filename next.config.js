@@ -5,6 +5,7 @@ module.exports = withSass({
     DB_USER: process.env.DB_USER || 'herman',
     DB_PW: process.env.DB_PW || 'letmein2',
     DB_HOST: process.env.DB_HOST || 'devwong.com',
+    SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
     SERVER_URL: process.env.SERVER_URL || 'https://backend.c0d3.com'
   }
 })

@@ -5,6 +5,17 @@ export default gql`
     lessons: [Lesson]
   }
 
+  type Mutation {
+    login(username: String!, password: String!): AuthResponse
+    logout: AuthResponse
+  }
+
+  type AuthResponse {
+    success: Boolean
+    username: String
+    error: String
+  }
+
   type Submission {
     id: String
     status: String

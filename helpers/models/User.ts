@@ -2,6 +2,7 @@ import { Model, DataTypes } from 'sequelize'
 
 export class User extends Model {
   public id!: number
+  public name!: string
   public username!: string
   public password!: string
   public email!: string
@@ -17,6 +18,7 @@ export class User extends Model {
 }
 
 export const UserTypes = {
+  name: DataTypes.STRING,
   username: DataTypes.STRING,
   password: DataTypes.STRING,
   email: DataTypes.STRING,
