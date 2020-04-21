@@ -39,9 +39,11 @@ handler
   .get('/api/graphql', graphQLHandler)
   .post('/api/graphql', graphQLHandler)
 
+// Config needs to be exported because we are changing default values in Next.JS API https://nextjs.org/docs/api-routes/api-middlewares
+// This is required for GraphQL to work properly  https://blog.logrocket.com/building-a-graphql-server-in-next-js/
 export const config = {
   api: {
-    bodyParser: false // This is required for GraphQL to work properly  https://blog.logrocket.com/building-a-graphql-server-in-next-js/
+    bodyParser: false
   }
 }
 
