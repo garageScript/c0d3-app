@@ -25,7 +25,6 @@ const challenges = [
 
 const lessonStatus = {
   isEnrolled: '213423534',
-  isPassed: null,
   isTeaching: null
 }
 

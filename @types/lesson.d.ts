@@ -1,6 +1,6 @@
 export type LessonStatus = {
   isEnrolled: string | null
-  isPassed?: string | null
+  isPassed?: string
   isTeaching: string | null
 }
 
