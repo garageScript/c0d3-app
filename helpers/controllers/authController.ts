@@ -57,28 +57,30 @@ export const login = async (
 }
 
 export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
-  const {
-    req: { session }
-  } = ctx
+  return new Promise(async (resolve, reject) => {
+    const {
+      req: { session }
+    } = ctx
 
-  if (!session) {
-    return {
-      success: false,
-      error: 'Session Error'
-    }
-  }
-
-  return session.destroy(err => {
-    if (err) {
-      return {
+    if (!session) {
+      return reject({
         success: false,
-        error: err.message
-      }
+        error: 'Session Error'
+      })
     }
 
-    return {
-      success: true
-    }
+    session.destroy(err => {
+      if (err) {
+        reject({
+          success: false,
+          error: err.message
+        })
+      }
+
+      resolve({
+        success: true
+      })
+    })
   })
 }
 

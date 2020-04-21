@@ -36,13 +36,18 @@ export const GET_LESSONS = gql`
 `
 
 export const GET_LESSON = gql`
-  query lessonInfo($lessonInfo: LessonId, $lessonUserInfo: LessonUserId) {
+  query lessonInfo(
+    $lessonInfo: LessonId
+    $lessonUserInfo: LessonUserId
+    $lessonStatus: LessonId
+  ) {
     lessonInfo(input: $lessonInfo) {
       id
       title
       description
       order
       docUrl
+      chatUrl
       challenges {
         id
         description
@@ -64,6 +69,11 @@ export const GET_LESSON = gql`
       }
       createdAt
       updatedAt
+    }
+    lessonStatus(input: $lessonStatus) {
+      isPassed
+      isTeaching
+      isEnrolled
     }
   }
 `

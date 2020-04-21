@@ -16,4 +16,5 @@ export type Lesson = {
   challenges: Challenge[]
   currentUser: User
   docUrl: string
+  chatUrl: string
 }

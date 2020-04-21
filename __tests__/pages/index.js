@@ -9,7 +9,7 @@ import SessionContext from '../../helpers/contexts/session'
 
 describe('Index Page', () => {
   test('Should render curriculum if user is identified', async () => {
-    const session = { data: { userInfo: { name:'tester', username: 'tester' } } }
+    const session = { data: { success: true, userInfo: { name:'tester', username: 'tester' } } }
     const tree = (
       <SessionContext.Provider value={session}>
         <IndexPage />
@@ -33,7 +33,7 @@ describe('Index Page', () => {
     getByText('Hello Landing')
   })
   test('Should not render while page is loading', async () => {
-    // SessionContext default value is { data: null, error: null }
+    // SessionContext default value is { data: { success: false } }
     const { container } = render(<IndexPage />)
     expect(container).toMatchSnapshot()
   })

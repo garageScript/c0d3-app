@@ -1,39 +1,22 @@
 import * as React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
-import SessionContext from '../../helpers/contexts/session'
+import useSession from '../../helpers/useSession'
+import withQueryLoader, {
+  WithQueryProps
+} from '../../containers/withQueryLoader'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_LESSON } from '../../graphql/queries'
-import LoadingSpinner from '../../components/LoadingSpinner'
 import _ from 'lodash'
 
-const Challenges: React.FC = () => {
-  const router = useRouter()
-  const currentlessonId = router.query.lesson as string
-  const { data: sessionData, error } = React.useContext(SessionContext)
-  const userId = _.get(sessionData, 'userInfo.id', '').toString()
-  const { loading, data } = useQuery(GET_LESSON, {
-    variables: {
-      lessonInfo: {
-        id: currentlessonId
-      },
-      lessonUserInfo: {
-        lessonId: currentlessonId,
-        userId
-      }
-    }
-  })
-
-  if (loading) {
-    return <LoadingSpinner />
-  }
-  if (!data || !userId || error) {
-    return <h1>...</h1>
-  }
-  const { lessonInfo: currentLesson, userSubmissions } = data
+const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
+  const {
+    lessonInfo: currentLesson,
+    userSubmissions,
+    lessonStatus: currentLessonStatus
+  } = queryData
   return (
     <div>
       <Layout>
@@ -53,6 +36,9 @@ const Challenges: React.FC = () => {
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}
+                lessonStatus={currentLessonStatus}
+                chatUrl={currentLesson.chatUrl}
+                lessonId={currentLesson.id}
               />
             </div>
           )}
@@ -62,4 +48,30 @@ const Challenges: React.FC = () => {
   )
 }
 
-export default Challenges
+export default withQueryLoader(
+  {
+    query: GET_LESSON,
+    getParams: () => {
+      const router = useRouter()
+      const currentlessonId = router.query.lesson as string
+      const { data } = useSession()
+      const userId = _.get(data, 'userInfo.id', '').toString()
+      return {
+        variables: {
+          lessonInfo: {
+            id: currentlessonId
+          },
+          lessonUserInfo: {
+            lessonId: currentlessonId,
+            userId: userId
+          },
+          lessonStatus: {
+            id: currentlessonId,
+            userId
+          }
+        }
+      }
+    }
+  },
+  Challenges
+)
