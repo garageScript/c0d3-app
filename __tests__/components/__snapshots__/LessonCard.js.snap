@@ -3,7 +3,7 @@
 exports[`Lesson Card Complete State Should render lessonCard with loading... 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"
@@ -90,7 +90,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
 exports[`Lesson Card Complete State Should render lessonCard with null if no data 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"
@@ -173,7 +173,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
 exports[`Lesson Card Complete State Should render lessonCard with submission count 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"
@@ -261,7 +261,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
 exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"
@@ -310,7 +310,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
 exports[`Lesson Card Should render lessonCard with inProgress currentState prop 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
+    class="card shadow-sm mt-3 d-block lesson-card__container_inprogress border-primary"
   >
     <div
       class="d-flex p-2"
@@ -362,7 +362,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
 exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"
@@ -411,7 +411,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
 exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"
@@ -460,7 +460,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
 exports[`Lesson Card Should render loading card when loading 1`] = `
 <div>
   <div
-    class="card shadow-sm mt-3 border-0"
+    class="card shadow-sm mt-3 d-block border-0"
   >
     <div
       class="d-flex p-2"

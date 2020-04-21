@@ -1243,7 +1243,7 @@ exports[`Storyshots Components/Layout Without Layout 1`] = `
 
 exports[`Storyshots Components/LessonCard Basic 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0"
+  className="card shadow-sm mt-3 d-block border-0"
 >
   <div
     className="d-flex p-2"
@@ -1298,7 +1298,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
 
 exports[`Storyshots Components/LessonCard With Completed 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0"
+  className="card shadow-sm mt-3 d-block border-0"
 >
   <div
     className="d-flex p-2"
@@ -1392,7 +1392,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
-  className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
+  className="card shadow-sm mt-3 d-block lesson-card__container_inprogress border-primary"
 >
   <div
     className="d-flex p-2"
