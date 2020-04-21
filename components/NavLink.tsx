@@ -17,6 +17,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   external,
   className = ''
 }) => {
+  if (!path) return null
   const active = path === activePath
   if (active) {
     className += ' active'

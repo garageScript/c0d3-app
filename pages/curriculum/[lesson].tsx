@@ -1,40 +1,25 @@
 import * as React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
-import SessionContext from '../../helpers/contexts/session'
+import useSession from '../../helpers/useSession'
+import withQueryLoader, {
+  WithQueryProps
+} from '../../containers/withQueryLoader'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_LESSON } from '../../graphql/queries'
 import { Lesson } from '../../@types/lesson'
-import LoadingSpinner from '../../components/LoadingSpinner'
 import _ from 'lodash'
 
-const Challenges: React.FC = () => {
+const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  const { data: sessionData, error } = React.useContext(SessionContext)
-  const userId = _.get(sessionData, 'userInfo.id', '').toString()
-  const { loading, data } = useQuery(GET_LESSON, {
-    variables: {
-      lessonInfo: {
-        id: currentlessonId
-      },
-      lessonUserInfo: {
-        lessonId: currentlessonId,
-        userId
-      }
-    }
-  })
-
-  if (loading) {
-    return <LoadingSpinner />
-  }
-  if (!data || !userId || error) {
-    return <h1>...</h1>
-  }
-  const { lessonInfo: currentLesson, userSubmissions, curriculumStatus } = data
+  const {
+    lessonInfo: currentLesson,
+    userSubmissions,
+    curriculumStatus
+  } = queryData
   const currentLessonStatus = curriculumStatus.find(
     (lesson: Lesson) => lesson.id.toString() === currentlessonId
   ).currentUser.userLesson
@@ -69,4 +54,26 @@ const Challenges: React.FC = () => {
   )
 }
 
-export default Challenges
+export default withQueryLoader(
+  {
+    query: GET_LESSON,
+    getParams: () => {
+      const router = useRouter()
+      const currentlessonId = router.query.lesson as string
+      const { data } = useSession()
+      const userId = _.get(data, 'userInfo.id', '').toString()
+      return {
+        variables: {
+          lessonInfo: {
+            id: currentlessonId
+          },
+          lessonUserInfo: {
+            lessonId: currentlessonId,
+            userId: userId
+          }
+        }
+      }
+    }
+  },
+  Challenges
+)
