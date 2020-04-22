@@ -51,18 +51,15 @@ Lesson.hasMany(Challenge, {
   foreignKey: 'lessonId'
 })
 Lesson.belongsToMany(User, {
+  as: 'lesson',
   foreignKey: 'lessonId', // Defaults to LessonId
   through: { model: UserLesson }
 })
 
-Submission.belongsTo(User)
+Submission.belongsTo(User, { as: 'user' })
 Submission.belongsTo(User, { as: 'reviewer' })
-Submission.belongsTo(Challenge)
-Submission.belongsTo(Lesson)
-
-// Not so necessary
-Lesson.hasMany(Submission)
-Challenge.hasMany(Submission)
+Submission.belongsTo(Challenge, { as: 'challenge' })
+Submission.belongsTo(Lesson, { as: 'lesson' })
 
 User.belongsToMany(Lesson, {
   foreignKey: 'userId', // Defaults to UserId
