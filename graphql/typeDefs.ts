@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost'
 export default gql`
   type Query {
     lessons: [Lesson]
+    session: Session
   }
 
   type Mutation {
@@ -49,6 +50,12 @@ export default gql`
     email: String
     name: String
     isAdmin: Boolean
+  }
+
+  type Session {
+    user: User
+    submissions: [Submission]
+    lessonStatus: [UserLesson]
   }
 
   type UserLesson {

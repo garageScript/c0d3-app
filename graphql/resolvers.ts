@@ -1,23 +1,24 @@
 import { login, logout, signup } from '../helpers/controllers/authController'
 import db from '../helpers/dbload'
 
-const { Lesson, User } = db
+const { Lesson } = db
 
 export default {
   Query: {
     lessons() {
       return Lesson.findAll({
-        include: [
-          'challenges',
-          {
-            model: User,
-            through: {
-              attributes: ['isPassed', 'isTeaching', 'isEnrolled']
-            }
-          }
-        ],
+        include: ['challenges'],
         order: [['order', 'ASC']]
       })
+    },
+    async session(_parent: any, _args: any, context: any) {
+      const { user, submissions, lessonStatus } = context.req.session
+
+      if (!user) {
+        return null
+      }
+
+      return { user, submissions, lessonStatus }
     }
   },
 
