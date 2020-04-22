@@ -38,6 +38,45 @@ export const Basic: React.FC = () => (
   />
 )
 
+export const WithDiff: React.FC = () => (
+  <ChallengeMaterial
+    challenges={challenges}
+    userSubmissions={[
+      {
+        status: '',
+        id: '1',
+        mrUrl: '',
+        diff: `const solution = (num) => {
+  return (num > 5)
+}`,
+        viewCount: 0,
+        comment: '',
+        challengeId: '105',
+        reviewerId: '',
+        createdAt: '',
+        updatedAt: ''
+      },
+      {
+        status: '',
+        id: '1',
+        mrUrl: '',
+        diff: `const solution = (num1, num2) => {
+  return (num1 + num2)
+}`,
+        viewCount: 0,
+        comment: '',
+        challengeId: '107',
+        reviewerId: '',
+        createdAt: '',
+        updatedAt: ''
+      }
+    ]}
+    lessonStatus={lessonStatus}
+    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+    lessonId="5"
+  />
+)
+
 export const NoChallenges: React.FC = () => (
   <ChallengeMaterial
     challenges={[]}
