@@ -1,4 +1,6 @@
 /*
+ * Used to set the testing environment to node rather than browser
+ * Source: https://jestjs.io/docs/en/configuration#testenvironment-string
  * @jest-environment node
 */
 
