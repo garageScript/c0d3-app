@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
 import { Request } from 'express'
 import { signupValidation } from '../formValidation'
+import { chatSignUp } from '../mattermost'
 
 const { User } = db
 
@@ -140,6 +141,23 @@ export const signup = async (_parent: void, arg: SignUp) => {
     email,
     emailVerificationToken: randomToken
   })
+
+  // Chat Signup
+  try {
+    await chatSignUp(username, password, email)
+  } catch (err) {
+    // Don't need to wait until return. This can run asynchronously
+    User.destroy({
+      where: {
+        username
+      }
+    })
+
+    return {
+      success: false,
+      error: 'Mattermost signup error'
+    }
+  }
 
   return {
     success: true,
