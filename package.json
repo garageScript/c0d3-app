@@ -37,6 +37,7 @@
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "react": "^16.12.0",
+    "react-diff-viewer": "^3.0.2",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.3",
     "sequelize": "^5.21.6",

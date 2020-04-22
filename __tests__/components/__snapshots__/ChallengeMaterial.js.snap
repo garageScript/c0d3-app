@@ -328,6 +328,65 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           </div>
         </div>
       </div>
+      <div
+        class="card shadow-sm border-0 mt-3"
+      >
+        <div
+          class="card-header bg-white"
+        >
+          tester
+        </div>
+        <div
+          class="card-body"
+        >
+          <div
+            class="rounded-lg overflow-hidden"
+          >
+            <table
+              class="css-1n5o7vh-diff-container"
+            >
+              <tbody>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      1
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      test diff1
+                    </pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
