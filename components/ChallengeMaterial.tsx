@@ -10,6 +10,7 @@ import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import SessionContext from '../helpers/contexts/session'
 import ReactDiffViewer from 'react-diff-viewer'
+import _ from 'lodash'
 
 type CurrentChallengeID = string | null
 
@@ -99,6 +100,8 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
   const { data } = React.useContext(SessionContext)
+  const username = _.get(data, 'userInfo.username', '')
+  const diff = _.get(currentChallenge, 'submission.diff', false)
 
   return (
     <>
@@ -116,16 +119,12 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         </div>
       </div>
 
-      {currentChallenge.submission?.diff && (
+      {diff && (
         <div className="card shadow-sm border-0 mt-3">
-          <div className="card-header bg-white">{data.userInfo?.username}</div>
+          <div className="card-header bg-white">{username}</div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <ReactDiffViewer
-                oldValue={``}
-                newValue={`${currentChallenge.submission?.diff}`}
-                splitView={false}
-              />
+              <ReactDiffViewer oldValue="" newValue={diff} splitView={false} />
             </div>
           </div>
         </div>
