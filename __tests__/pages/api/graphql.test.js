@@ -23,9 +23,9 @@ db.sequelize = {}
 
 const returnHandler = () => {
   return {
-  use: returnHandler,
-  get: returnHandler,
-  post: returnHandler,
+    use: returnHandler,
+    get: returnHandler,
+    post: returnHandler,
   }
 }
 
@@ -53,6 +53,7 @@ describe('Graphql Api', () => {
       }
     }
   })
+
   test('Should have correct config object', async () => {
     const { config } = require('../../../pages/api/graphql.ts')
     expect(config).toEqual({
@@ -61,6 +62,7 @@ describe('Graphql Api', () => {
       }
     })
   })
+
   test('Should call context', () => {
     const contextInput = { req: {} }
     require('../../../pages/api/graphql.ts')
