@@ -11,7 +11,8 @@ const currentChallenge = {
     'Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.',
   id: '105',
   order: 0,
-  title: 'Greater than 5'
+  title: 'Greater than 5',
+  status: 'unsubmitted'
 }
 
 export const Basic: React.FC = () => (

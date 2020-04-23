@@ -72,7 +72,7 @@ const LessonCard: React.FC<Props> = props => {
       : 'border-0'
 
   return (
-    <div className={`card shadow-sm mt-3 ${containerClass}`}>
+    <div className={`card shadow-sm mt-3 d-block ${containerClass}`}>
       <div className="d-flex p-2">
         <img
           src={`/curriculumAssets/lessonCoversSvg/${props.coverImg}`}

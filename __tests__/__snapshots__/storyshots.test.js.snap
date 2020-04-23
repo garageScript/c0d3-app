@@ -604,6 +604,206 @@ exports[`Storyshots Components/ChallengeMaterial No Challenges 1`] = `
 </h1>
 `;
 
+exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
+<div
+  className="row challenge-display"
+>
+  <div
+    className="col-4"
+  >
+    <div
+      className="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          0. Greater than 5
+        </div>
+      </div>
+    </div>
+    <div
+      className="card mb-2 challenge-title-card shadow-sm border-0"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          1. Sum of 2 Numbers
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="col-8"
+  >
+    <div
+      className="card shadow-sm border-0"
+    >
+      <div
+        className="card-body challenge-question"
+      >
+        <h1
+          className="card-title"
+          data-testid="challenge-question-title"
+        >
+          Greater than 5
+        </h1>
+        <div
+          className="bg-light p-3 mt-3"
+          data-testid="challenge-question-description"
+        >
+          <span>
+            Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card shadow-sm border-0 mt-3"
+    >
+      <div
+        className="card-header bg-white"
+      >
+        
+      </div>
+      <div
+        className="card-body"
+      >
+        <div
+          className="rounded-lg overflow-hidden"
+        >
+          <table
+            className="css-1n5o7vh-diff-container"
+          >
+            <tbody>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    1
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
+                >
+                  <pre>
+                    +
+                  </pre>
+                </td>
+                <td
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    const solution = (num) =&gt; {
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    2
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
+                >
+                  <pre>
+                    +
+                  </pre>
+                </td>
+                <td
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                      return (num &gt; 5)
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    3
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
+                >
+                  <pre>
+                    +
+                  </pre>
+                </td>
+                <td
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    }
+                  </pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
 <div
   className="card shadow-sm border-0"
@@ -1243,7 +1443,7 @@ exports[`Storyshots Components/Layout Without Layout 1`] = `
 
 exports[`Storyshots Components/LessonCard Basic 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0"
+  className="card shadow-sm mt-3 d-block border-0"
 >
   <div
     className="d-flex p-2"
@@ -1298,7 +1498,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
 
 exports[`Storyshots Components/LessonCard With Completed 1`] = `
 <div
-  className="card shadow-sm mt-3 border-0"
+  className="card shadow-sm mt-3 d-block border-0"
 >
   <div
     className="d-flex p-2"
@@ -1392,7 +1592,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
-  className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
+  className="card shadow-sm mt-3 d-block lesson-card__container_inprogress border-primary"
 >
   <div
     className="d-flex p-2"
