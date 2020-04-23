@@ -158,8 +158,7 @@ export const signup = async (_parent: void, arg: SignUp) => {
       }
     }
   } catch (err) {
-    // Don't need to wait until return. This can run asynchronously
-    // This will creare poor user experience if chat signup fails but their data is still maintained in the db
+    // This will create poor user experience if chat signup fails but their data is still maintained in the db
     await User.destroy({
       where: {
         username
