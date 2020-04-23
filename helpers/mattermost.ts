@@ -12,7 +12,7 @@ export const chatSignUp = async (
   email: string
 ) => {
   try {
-    await fetch(`${chatServiceUrl}/users`, {
+    const response = await fetch(`${chatServiceUrl}/users`, {
       method: 'POST',
       headers,
       body: JSON.stringify({
@@ -21,7 +21,30 @@ export const chatSignUp = async (
         password
       })
     })
-  } catch (err) {
-    console.error(err)
+
+    if (response.status === 201) {
+      return { success: true }
+    }
+    if (response.status === 401) {
+      return {
+        success: false,
+        error: 'Invalid or missing parameter in mattermost request'
+      }
+    }
+    if (response.status === 403) {
+      return {
+        success: false,
+        error: 'Invalid permission'
+      }
+    }
+    return {
+      success: false,
+      error: 'Unknown error (Default Case)'
+    }
+  } catch (e) {
+    return {
+      success: false,
+      error: 'Internal Server Error'
+    }
   }
 }

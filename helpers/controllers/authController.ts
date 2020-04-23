@@ -144,10 +144,23 @@ export const signup = async (_parent: void, arg: SignUp) => {
 
   // Chat Signup
   try {
-    await chatSignUp(username, password, email)
+    const { success, error } = await chatSignUp(username, password, email)
+    if (!success) {
+      User.destroy({
+        where: {
+          username
+        }
+      })
+
+      return {
+        success: false,
+        error
+      }
+    }
   } catch (err) {
     // Don't need to wait until return. This can run asynchronously
-    User.destroy({
+    // This will creare poor user experience if chat signup fails but their data is still maintained in the db
+    await User.destroy({
       where: {
         username
       }
@@ -162,38 +175,5 @@ export const signup = async (_parent: void, arg: SignUp) => {
   return {
     success: true,
     username: userRecord.username
-  }
-}
-
-export const deleteUser = async (
-  _parent: void,
-  arg: {
-    userId: string
-  }
-) => {
-  // This function should only be run for testing
-  if (process.env.NODE_ENV === 'production') {
-    return {
-      success: false,
-      error: 'Cannot run in production'
-    }
-  }
-  const { userId } = arg
-
-  try {
-    await User.destroy({
-      where: {
-        id: userId
-      }
-    })
-
-    return {
-      success: true
-    }
-  } catch (e) {
-    return {
-      success: false,
-      error: 'User does not exist'
-    }
   }
 }

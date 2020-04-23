@@ -4714,7 +4714,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -5118,6 +5118,16 @@ create-ecdh@^4.0.0:
   dependencies:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
+
+create-emotion@^10.0.14, create-emotion@^10.0.27:
+  version "10.0.27"
+  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-10.0.27.tgz#cb4fa2db750f6ca6f9a001a33fbf1f6c46789503"
+  integrity sha512-fIK73w82HPPn/RsAij7+Zt8eCE8SptcJ3WoRMfxMtjteYxud8GDTKKld7MYwAX2TVhrw29uR1N/bVGxeStHILg==
+  dependencies:
+    "@emotion/cache" "^10.0.27"
+    "@emotion/serialize" "^0.11.15"
+    "@emotion/sheet" "0.9.4"
+    "@emotion/utils" "0.11.3"
 
 create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.2.0"
@@ -5680,6 +5690,11 @@ diff-sequences@^25.2.6:
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-25.2.6.tgz#5f467c00edd35352b7bca46d7927d60e687a76dd"
   integrity sha512-Hq8o7+6GaZeoFjtpgvRBUknSXNeJiCx7V9Fr94ZMljNiCr9n9L8H8aJqgWOQiDDGdyn29fRNcDdRVJ5fdyihfg==
 
+diff@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
+  integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -5932,6 +5947,14 @@ emotion-theming@^10.0.19:
     "@babel/runtime" "^7.5.5"
     "@emotion/weak-memoize" "0.2.5"
     hoist-non-react-statics "^3.3.0"
+
+emotion@^10.0.14:
+  version "10.0.27"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-10.0.27.tgz#f9ca5df98630980a23c819a56262560562e5d75e"
+  integrity sha512-2xdDzdWWzue8R8lu4G76uWX5WhyQuzATon9LmNeCy/2BHVC6dsEpfhN1a0qhELgtDVdjyEA6J8Y/VlI5ZnaH0g==
+  dependencies:
+    babel-plugin-emotion "^10.0.27"
+    create-emotion "^10.0.27"
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -9260,6 +9283,11 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
+memoize-one@^5.0.4:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
+  integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
+
 memoizerific@^1.11.3:
   version "1.11.3"
   resolved "https://registry.yarnpkg.com/memoizerific/-/memoizerific-1.11.3.tgz#7c87a4646444c32d75438570905f2dbd1b1a805a"
@@ -11432,6 +11460,18 @@ react-dev-utils@^9.0.0:
     sockjs-client "1.4.0"
     strip-ansi "5.2.0"
     text-table "0.2.0"
+
+react-diff-viewer@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-diff-viewer/-/react-diff-viewer-3.0.2.tgz#bbe52c2331344da4c22c094396322a05656ba22f"
+  integrity sha512-pNTgxisla+WfbH5fOovY3es5xNKDAmc8pZR0gh6NNw4mXv7DJCCgS+lv/mqWz6FaHJnI6bDSIT330KHJGulubg==
+  dependencies:
+    classnames "^2.2.6"
+    create-emotion "^10.0.14"
+    diff "^4.0.1"
+    emotion "^10.0.14"
+    memoize-one "^5.0.4"
+    prop-types "^15.6.2"
 
 react-docgen@^5.0.0:
   version "5.3.0"

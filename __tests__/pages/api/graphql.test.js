@@ -2,7 +2,7 @@
  * Used to set the testing environment to node rather than browser
  * Source: https://jestjs.io/docs/en/configuration#testenvironment-string
  * @jest-environment node
-*/
+ */
 
 jest.mock('apollo-server-micro')
 jest.mock('next-connect')
@@ -14,7 +14,7 @@ import nextConnect from 'next-connect'
 import connectSequelize from 'connect-session-sequelize'
 import session from 'express-session'
 import sequelize from 'sequelize'
-const asm = require( 'apollo-server-micro')
+const asm = require('apollo-server-micro')
 
 sequelize.mockImplementation(function() {
   return { sync: () => {} }
@@ -27,7 +27,7 @@ const returnHandler = () => {
   return {
     use: returnHandler,
     get: returnHandler,
-    post: returnHandler,
+    post: returnHandler
   }
 }
 
@@ -42,11 +42,11 @@ describe('Graphql Api', () => {
       return {
         use: returnHandler,
         get: returnHandler,
-        post: returnHandler,
+        post: returnHandler
       }
     })
     connectSequelize.mockImplementation(() => {
-      return function () {}
+      return function() {}
     })
     asm.ApolloServer = function(data) {
       apolloServerInput = data
@@ -68,7 +68,6 @@ describe('Graphql Api', () => {
   test('Should call context', () => {
     const contextInput = { req: {} }
     require('../../../pages/api/graphql.ts')
-    expect( apolloServerInput.context(contextInput)).toEqual(contextInput)
+    expect(apolloServerInput.context(contextInput)).toEqual(contextInput)
   })
 })
-

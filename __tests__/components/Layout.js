@@ -11,19 +11,21 @@ describe('Layout Component', () => {
         <Layout />
       </SessionContext.Provider>
     )
-    
+
     const { container } = render(tree)
     expect(container).toMatchSnapshot()
   })
 
   test('Should render correctly when user session found', () => {
-    const session = { data: { userInfo: { name:'tester', username: 'tester' } } }
+    const session = {
+      data: { userInfo: { name: 'tester', username: 'tester' } }
+    }
     const tree = (
       <SessionContext.Provider value={session}>
         <Layout />
       </SessionContext.Provider>
     )
-    
+
     const { container } = render(tree)
     expect(container).toMatchSnapshot()
   })
