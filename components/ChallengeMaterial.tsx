@@ -108,7 +108,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 
   if (diff) files = gitDiffParser.parse(diff)
 
-  const renderFile = ({ hunks, newPath }: File, i: number) => {
+  const renderFile = ({ hunks, newPath }: File) => {
     const oldValue: String[] = []
     const newValue: String[] = []
 
@@ -136,7 +136,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 
     return (
       <ReactDiffViewer
-        key={i}
+        key={_.uniqueId()}
         oldValue={oldValue.join('\n')}
         newValue={newValue.join('\n')}
         renderContent={syntaxHighlight}
