@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "eslint . --ext .ts --ext .tsx",
     "autofix": "eslint . --ext .ts --ext .tsx --fix && svgo public/*.svg",
-    "storybook": "start-storybook -p 6006 -c .storybook -s ./public",
+    "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -s ./public",
     "test": "jest --coverage",
     "type-check": "tsc"
