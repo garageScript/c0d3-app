@@ -121,6 +121,7 @@ describe('auth controller', () => {
 
   test('Signup - should not create user if chat signup response with 401 or 403', async () => {
     db.User.findOne = jest.fn().mockReturnValue(null)
+    db.User.create = jest.fn()
 
     chatSignUp.mockResolvedValueOnce({
       success: false,
@@ -143,6 +144,8 @@ describe('auth controller', () => {
       success: false,
       error: 'Mattermost signup error'
     })
+
+    expect(db.User.create).not.toBeCalled()
   })
 
   test('Signup - should resolve with success true if signup successful ', async () => {
