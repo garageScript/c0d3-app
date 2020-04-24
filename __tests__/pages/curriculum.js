@@ -32,26 +32,30 @@ describe('Curriculum Page', () => {
             title: 'lesson 4',
             description: '4th lesson',
             order: 4,
-            challenges: [{
-              id: 4
-            }],
+            challenges: [
+              {
+                id: 4
+              }
+            ],
             currentUser: {
               userLesson: {}
             },
-            docUrl: 'lesson4.com',
+            docUrl: 'lesson4.com'
           },
           {
             id: 1,
             title: 'lesson 1',
             description: '1st lesson',
             order: 1,
-            challenges: [{
-              id: 1
-            }],
+            challenges: [
+              {
+                id: 1
+              }
+            ],
             currentUser: {
               userLesson: {}
             },
-            docUrl: 'lesson1.com',
+            docUrl: 'lesson1.com'
           }
         ]
       }
@@ -70,30 +74,34 @@ describe('Curriculum Page', () => {
             title: 'lesson 4',
             description: '4th lesson',
             order: 4,
-            challenges: [{
-              id: 4
-            }],
+            challenges: [
+              {
+                id: 4
+              }
+            ],
             currentUser: {
               userLesson: {
                 isPassed: '234234'
               }
             },
-            docUrl: 'lesson4.com',
+            docUrl: 'lesson4.com'
           },
           {
             id: 1,
             title: 'lesson 1',
             description: '1st lesson',
             order: 1,
-            challenges: [{
-              id: 1
-            }],
+            challenges: [
+              {
+                id: 1
+              }
+            ],
             currentUser: {
               userLesson: {
                 isPassed: '9878990'
               }
             },
-            docUrl: 'lesson1.com',
+            docUrl: 'lesson1.com'
           }
         ]
       }

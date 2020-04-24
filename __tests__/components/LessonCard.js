@@ -1,6 +1,6 @@
 jest.mock('@apollo/react-hooks')
 import * as React from 'react'
-import LessonCard  from '../../components/LessonCard'
+import LessonCard from '../../components/LessonCard'
 import { useQuery } from '@apollo/react-hooks'
 import { render } from '@testing-library/react'
 
@@ -10,7 +10,7 @@ describe('Lesson Card Complete State', () => {
       data: null
     })
 
-    const { container } = render(<LessonCard currentState='completed'/>)
+    const { container } = render(<LessonCard currentState="completed" />)
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with loading...', async () => {
@@ -18,7 +18,7 @@ describe('Lesson Card Complete State', () => {
       loading: true
     })
 
-    const { container } = render(<LessonCard currentState='completed'/>)
+    const { container } = render(<LessonCard currentState="completed" />)
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with submission count', async () => {
@@ -26,7 +26,7 @@ describe('Lesson Card Complete State', () => {
       data: {
         submissions: [
           {
-            status: 'open',
+            status: 'open'
           },
           {
             status: 'open'
@@ -38,7 +38,7 @@ describe('Lesson Card Complete State', () => {
       }
     })
 
-    const { container } = render(<LessonCard currentState='completed' />)
+    const { container } = render(<LessonCard currentState="completed" />)
     expect(container).toMatchSnapshot()
   })
 })
@@ -65,7 +65,7 @@ describe('Lesson Card', () => {
       data: {
         submissions: [
           {
-            status: 'underReview',
+            status: 'underReview'
           },
           {
             status: 'underReview'
@@ -78,11 +78,11 @@ describe('Lesson Card', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with inProgress currentState prop', async () => {
-    const { container } = render(<LessonCard currentState='inProgress'/>)
+    const { container } = render(<LessonCard currentState="inProgress" />)
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with lessonId prop', async () => {
-    const { container } = render(<LessonCard lessonId={4}/>)
+    const { container } = render(<LessonCard lessonId={4} />)
     expect(container).toMatchSnapshot()
   })
 })

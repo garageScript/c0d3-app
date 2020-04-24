@@ -3,9 +3,8 @@ import { render, fireEvent, wait } from '@testing-library/react'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import SessionContext from '../../helpers/contexts/session'
 
-
 describe('Curriculum challenge page', () => {
-  const session = { data: { userInfo: { name:'tester', username: 'tester' } } }
+  const session = { data: { userInfo: { name: 'tester', username: 'tester' } } }
   const lessonStatusNoPass = {
     isEnrolled: '213423534',
     isTeaching: null
@@ -17,7 +16,7 @@ describe('Curriculum challenge page', () => {
           challenges={[]}
           userSubmissions={[]}
           lessonStatus={lessonStatusNoPass}
-          chatUrl='https://chat.c0d3.com/c0d3/channels/js0-foundations'
+          chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
           lessonId="5"
         />
       </SessionContext.Provider>

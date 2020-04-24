@@ -9,13 +9,15 @@ import SessionContext from '../../helpers/contexts/session'
 
 describe('Index Page', () => {
   test('Should render curriculum if user is identified', async () => {
-    const session = { data: { success: true, userInfo: { name:'tester', username: 'tester' } } }
+    const session = {
+      data: { success: true, userInfo: { name: 'tester', username: 'tester' } }
+    }
     const tree = (
       <SessionContext.Provider value={session}>
         <IndexPage />
       </SessionContext.Provider>
     )
-    Curriculum.mockReturnValue( <h1>Hello Curriculum</h1> )
+    Curriculum.mockReturnValue(<h1>Hello Curriculum</h1>)
 
     const { getByText } = render(tree)
     getByText('Hello Curriculum')
@@ -28,7 +30,7 @@ describe('Index Page', () => {
       </SessionContext.Provider>
     )
     LandingPage.mockReturnValue(<h1>Hello Landing</h1>)
-    
+
     const { getByText } = render(tree)
     getByText('Hello Landing')
   })

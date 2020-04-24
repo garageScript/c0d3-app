@@ -8,10 +8,10 @@ jest.mock('@apollo/react-hooks')
 describe('withQueryLoader HOC container', () => {
   test('Should return LoadingSpinner when loading', () => {
     useQuery.mockReturnValue({ loading: true, data: null })
-    
-    expect(
-      withQueryLoader({ query: null }, <h1>Component</h1>)()
-    ).toEqual(<LoadingSpinner />)
+
+    expect(withQueryLoader({ query: null }, <h1>Component</h1>)()).toEqual(
+      <LoadingSpinner />
+    )
   })
 
   test('Should return Component when not loading and data is present', () => {
@@ -19,10 +19,10 @@ describe('withQueryLoader HOC container', () => {
     const Component = () => {
       return <h1>Component</h1>
     }
-    
+
     expect(
       withQueryLoader({ query: null }, Component)({ title: 'test' })
-    ).toEqual(<Component queryData={{a : 1}} title="test" />)
+    ).toEqual(<Component queryData={{ a: 1 }} title="test" />)
   })
 
   test('Should return No data when done loading and no data is present', () => {
@@ -30,9 +30,9 @@ describe('withQueryLoader HOC container', () => {
     const Component = () => {
       return <h1>Component</h1>
     }
-    
-    expect(
-      withQueryLoader({ query: null }, Component)()
-    ).toEqual(<h1>No Data...</h1>)
+
+    expect(withQueryLoader({ query: null }, Component)()).toEqual(
+      <h1>No Data...</h1>
+    )
   })
 })

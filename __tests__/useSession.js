@@ -4,7 +4,7 @@ import useSWR from 'swr'
 
 describe('useSession helper', () => {
   test('fetcher should return a promise', async () => {
-    window.fetch = () => Promise.resolve({json: () => 5})
+    window.fetch = () => Promise.resolve({ json: () => 5 })
     const data = await fetcher()
     expect(data).toEqual(5)
   })
@@ -14,7 +14,7 @@ describe('useSession helper', () => {
       error: false
     }
     useSWR.mockReturnValue(returnValue)
-    
+
     expect(useSession()).toEqual(returnValue)
   })
 })
