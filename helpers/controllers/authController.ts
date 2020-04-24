@@ -1,12 +1,28 @@
 import db from '../dbload'
 import bcrypt from 'bcrypt'
+import { nanoid } from 'nanoid'
 import { Request } from 'express'
+import { signupValidation } from '../formValidation'
+import { chatSignUp } from '../mattermost'
 
 const { User } = db
 
+type Login = {
+  username: string
+  password: string
+}
+
+type SignUp = {
+  firstName: string
+  lastName: string
+  username: string
+  password: string
+  email: string
+}
+
 export const login = async (
   _parent: void,
-  arg: { username: string; password: string },
+  arg: Login,
   ctx: { req: Request }
 ) => {
   const {
@@ -67,4 +83,96 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
       })
     })
   })
+}
+
+export const signup = async (_parent: void, arg: SignUp) => {
+  const { firstName, lastName, username, password, email } = arg
+
+  const validEntry = await signupValidation.isValid({
+    firstName,
+    lastName,
+    username,
+    password,
+    email
+  })
+
+  if (!validEntry) {
+    return {
+      success: false,
+      error: 'Invalid registration information'
+    }
+  }
+
+  // Check for existing user or email
+  const existingUser = await User.findOne({
+    where: {
+      username
+    }
+  })
+
+  if (existingUser) {
+    return {
+      success: false,
+      error: 'User already exists'
+    }
+  }
+
+  const existingEmail = await User.findOne({
+    where: {
+      email
+    }
+  })
+
+  if (existingEmail) {
+    return {
+      success: false,
+      error: 'Email already exists'
+    }
+  }
+
+  const randomToken = nanoid()
+  const name = `${firstName} ${lastName}`
+  const hash = await bcrypt.hash(password, 10)
+
+  const userRecord = User.create({
+    name,
+    username,
+    password: hash,
+    email,
+    emailVerificationToken: randomToken
+  })
+
+  // Chat Signup
+  try {
+    const { success, error } = await chatSignUp(username, password, email)
+    if (!success) {
+      User.destroy({
+        where: {
+          username
+        }
+      })
+
+      return {
+        success: false,
+        error
+      }
+    }
+  } catch (err) {
+    // This will create poor user experience if chat signup fails but their data is still maintained in the db
+    await User.destroy({
+      where: {
+        username
+      }
+    })
+
+    return {
+      success: false,
+      error: 'Mattermost signup error'
+    }
+  }
+
+  return {
+    success: true,
+    username: userRecord.username
+  }
 }

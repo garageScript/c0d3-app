@@ -1,18 +1,26 @@
 jest.mock('bcrypt')
 jest.mock('../dbload')
+jest.mock('../mattermost')
 import bcrypt from 'bcrypt'
 import db from '../dbload'
-import { login, logout } from './authController'
+import { login, logout, signup } from './authController'
+import { chatSignUp } from '../mattermost'
 
 describe('auth controller', () => {
   let userArgs
   beforeEach(() => {
     jest.clearAllMocks()
-    userArgs = { username: 'testuser', password: 'c0d3reallyhard' }
+    userArgs = {
+      username: 'testuser',
+      password: 'c0d3reallyhard',
+      firstName: 'testuser1',
+      lastName: 'testuser1',
+      email: 'testuser@c0d3.com'
+    }
   })
 
   test('Login - should throw error when session is null', async () => {
-    expect(
+    return expect(
       login({}, userArgs, { req: { session: null } })
     ).rejects.toThrowError('')
   })
@@ -79,6 +87,76 @@ describe('auth controller', () => {
     const result = await logout({}, {}, { req: { session } })
     expect(result).toEqual({
       success: true
+    })
+  })
+
+  test('Signup - should resolve with success false if userinfo is incomplete', async () => {
+    const result = await signup({}, {}, { req: { session: {} } })
+    expect(result).toEqual({
+      success: false,
+      error: 'Invalid registration information'
+    })
+  })
+
+  test('Signup - should resolve with success false if user already exists', async () => {
+    db.User.findOne = jest.fn().mockReturnValue({ username: 'c0d3user' })
+    const result = await signup({}, userArgs, { req: { session: {} } })
+    expect(result).toEqual({
+      success: false,
+      error: 'User already exists'
+    })
+  })
+
+  test('Signup - should resolve with success false if email already exists', async () => {
+    db.User.findOne = jest
+      .fn()
+      .mockReturnValueOnce(null)
+      .mockReturnValue({ username: 'c0d3user' }) // Second call for User.findOne checks for email
+    const result = await signup({}, userArgs, { req: { session: {} } })
+    expect(result).toEqual({
+      success: false,
+      error: 'Email already exists'
+    })
+  })
+
+  test('Signup - should not create user if chat signup response with 401 or 403', async () => {
+    db.User.findOne = jest.fn().mockReturnValue(null)
+    db.User.destroy = jest.fn()
+
+    chatSignUp.mockResolvedValueOnce({
+      success: false,
+      error: 'Mattermost signup error'
+    })
+    chatSignUp.mockRejectedValueOnce({
+      success: false,
+      error: 'Mattermost signup error'
+    })
+
+    const resolvedResult = await signup({}, userArgs, { req: { session: {} } })
+    expect(resolvedResult).toEqual({
+      success: false,
+      error: 'Mattermost signup error'
+    })
+
+    const rejectedResult = await signup({}, userArgs, { req: { session: {} } })
+    expect(rejectedResult).toEqual({
+      success: false,
+      error: 'Mattermost signup error'
+    })
+
+    expect(db.User.destroy).toBeCalledTimes(2)
+  })
+
+  test('Signup - should resolve with success true if signup successful ', async () => {
+    db.User.findOne = jest.fn().mockReturnValue(null)
+    db.User.create = jest.fn().mockReturnValue({ username: 'user' })
+    chatSignUp.mockResolvedValueOnce({
+      success: true
+    })
+    const result = await signup({}, userArgs, { req: { session: {} } })
+    expect(result).toEqual({
+      success: true,
+      username: 'user'
     })
   })
 })

@@ -1,4 +1,4 @@
-import { login, logout } from '../helpers/controllers/authController'
+import { login, logout, signup } from '../helpers/controllers/authController'
 import db from '../helpers/dbload'
 
 const { Lesson, User } = db
@@ -23,6 +23,7 @@ export default {
 
   Mutation: {
     login,
-    logout
+    logout,
+    signup
   }
 }

@@ -8,6 +8,13 @@ export default gql`
   type Mutation {
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
+    signup(
+      firstName: String!
+      lastName: String!
+      email: String!
+      username: String!
+      password: String
+    ): AuthResponse
   }
 
   type AuthResponse {
