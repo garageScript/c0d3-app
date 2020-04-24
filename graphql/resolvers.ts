@@ -1,7 +1,8 @@
 import { login, logout, signup } from '../helpers/controllers/authController'
 import db from '../helpers/dbload'
+import _ from 'lodash'
 
-const { Lesson } = db
+const { User, Submission, UserLesson, Lesson } = db
 
 export default {
   Query: {
@@ -12,13 +13,26 @@ export default {
       })
     },
     async session(_parent: any, _args: any, context: any) {
-      const { user, submissions, lessonStatus } = context.req.session
+      const userId = _.get(context, 'req.session.userId', false)
+
+      if (!userId) {
+        return null
+      }
+
+      const user = await User.findOne({
+        where: { id: userId },
+        include: [ Submission, UserLesson ]
+      })
 
       if (!user) {
         return null
       }
 
-      return { user, submissions, lessonStatus }
+      return { 
+        user,
+        submissions: user.Submissions,
+        lessonStatus: user.UserLessons
+      }
     }
   },
 

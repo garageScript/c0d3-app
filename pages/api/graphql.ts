@@ -5,7 +5,6 @@ import db from '../../helpers/dbload'
 import typeDefs from '../../graphql/typeDefs'
 import resolvers from '../../graphql/resolvers'
 import connectSequelize from 'connect-session-sequelize'
-import _ from 'lodash'
 
 // Sequelize Store for express-sessions
 const { sequelize } = db
@@ -17,25 +16,7 @@ const handler: any = nextConnect() // For session middleware. TODO: Need to defi
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  context: async ({ req }) => {
-    const userId = _.get(req, 'session.userId', false)
-
-    if (!userId) {
-      return { req }
-    }
-
-    const [user, submissions, lessonStatus] = await Promise.all([
-      db.User.findOne({ where: { id: userId } }),
-      db.Submission.findAll({ where: { userId } }),
-      db.UserLesson.findAll({ where: { userId } })
-    ])
-
-    req.session.user = user
-    req.session.submissions = submissions
-    req.session.lessonStatus = lessonStatus
-
-    return { req }
-  } // This lets GraphQL have access to sessions
+  context: ({ req }) => ({ req }) // This lets GraphQL have access to sessions
 })
 
 const graphQLHandler = apolloServer.createHandler({ path: '/api/graphql' })
