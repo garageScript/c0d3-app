@@ -134,24 +134,10 @@ export const signup = async (_parent: void, arg: SignUp) => {
   const name = `${firstName} ${lastName}`
   const hash = await bcrypt.hash(password, 10)
 
-  const userRecord = User.create({
-    name,
-    username,
-    password: hash,
-    email,
-    emailVerificationToken: randomToken
-  })
-
   // Chat Signup
   try {
     const { success, error } = await chatSignUp(username, password, email)
     if (!success) {
-      User.destroy({
-        where: {
-          username
-        }
-      })
-
       return {
         success: false,
         error
@@ -159,17 +145,19 @@ export const signup = async (_parent: void, arg: SignUp) => {
     }
   } catch (err) {
     // This will create poor user experience if chat signup fails but their data is still maintained in the db
-    await User.destroy({
-      where: {
-        username
-      }
-    })
-
     return {
       success: false,
       error: 'Mattermost signup error'
     }
   }
+
+  const userRecord = User.create({
+    name,
+    username,
+    password: hash,
+    email,
+    emailVerificationToken: randomToken
+  })
 
   return {
     success: true,
