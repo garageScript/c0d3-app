@@ -22,7 +22,7 @@ Repo for c0d3.com powered by NextJS. A website to train people to be full stack 
 
 ## How to Use Storybook
 
-1. Run `npm run storybook`.
+1. Run `STORY_PORT=6006 npm run storybook`.
 2. Navigate to [http://localhost:6006](http://localhost:6006) in your browser.
 
 ## Contributing
