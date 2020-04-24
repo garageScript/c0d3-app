@@ -9,7 +9,9 @@ import { LessonStatus } from '../@types/lesson'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import SessionContext from '../helpers/contexts/session'
+import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
+import Prism from 'prismjs'
 import _ from 'lodash'
 
 type CurrentChallengeID = string | null
@@ -102,6 +104,47 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   const { data } = React.useContext(SessionContext)
   const username = _.get(data, 'userInfo.username', '')
   const diff = _.get(currentChallenge, 'submission.diff', false)
+  let files = null
+
+  if (diff) files = gitDiffParser.parse(diff)
+
+  const renderFile = ({ hunks, newPath }: File, i: number) => {
+    const oldValue: String[] = []
+    const newValue: String[] = []
+
+    hunks.forEach(hunk => {
+      hunk.changes.forEach(change => {
+        if (change.isDelete) oldValue.push(change.content)
+        else if (change.isInsert) newValue.push(change.content)
+        else {
+          oldValue.push(change.content)
+          newValue.push(change.content)
+        }
+      })
+    })
+
+    const syntaxHighlight = (str: string): any => {
+      if (!str) return
+
+      const language = Prism.highlight(
+        str,
+        Prism.languages.javascript,
+        'javascript'
+      )
+      return <span dangerouslySetInnerHTML={{ __html: language }} />
+    }
+
+    return (
+      <ReactDiffViewer
+        key={i}
+        oldValue={oldValue.join('\n')}
+        newValue={newValue.join('\n')}
+        renderContent={syntaxHighlight}
+        splitView={false}
+        leftTitle={`${newPath}`}
+      />
+    )
+  }
 
   return (
     <>
@@ -124,7 +167,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
           <div className="card-header bg-white">{username}</div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <ReactDiffViewer oldValue="" newValue={diff} splitView={false} />
+              {files && files.map(renderFile)}
             </div>
           </div>
         </div>
