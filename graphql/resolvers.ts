@@ -3,7 +3,7 @@ import db from '../helpers/dbload'
 import { login, logout, signup } from '../helpers/controllers/authController'
 import _ from 'lodash'
 
-const { User, Submission, UserLesson, Lesson } = db
+const { User, Submission, Lesson, UserLesson } = db
 
 export default {
   Query: {
@@ -20,8 +20,8 @@ export default {
         return null
       }
 
+      // FYI: The reason we are querying with parallelized promises:
       // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
-
       const [user, submissions, lessonStatus] = await Promise.all([
         User.findOne({ where: { id: userId } }),
         Submission.findAll({ where: { userId } }),
