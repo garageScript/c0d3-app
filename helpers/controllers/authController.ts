@@ -2,6 +2,7 @@ import db from '../dbload'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
 import { Request } from 'express'
+import { UserInputError } from 'apollo-server-micro'
 import { signupValidation } from '../formValidation'
 import { chatSignUp } from '../mattermost'
 
@@ -86,81 +87,61 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
 }
 
 export const signup = async (_parent: void, arg: SignUp) => {
-  const { firstName, lastName, username, password, email } = arg
-
-  const validEntry = await signupValidation.isValid({
-    firstName,
-    lastName,
-    username,
-    password,
-    email
-  })
-
-  if (!validEntry) {
-    return {
-      success: false,
-      error: 'Invalid registration information'
-    }
-  }
-
-  // Check for existing user or email
-  const existingUser = await User.findOne({
-    where: {
-      username
-    }
-  })
-
-  if (existingUser) {
-    return {
-      success: false,
-      error: 'User already exists'
-    }
-  }
-
-  const existingEmail = await User.findOne({
-    where: {
-      email
-    }
-  })
-
-  if (existingEmail) {
-    return {
-      success: false,
-      error: 'Email already exists'
-    }
-  }
-
-  const randomToken = nanoid()
-  const name = `${firstName} ${lastName}`
-  const hash = await bcrypt.hash(password, 10)
-
-  // Chat Signup
   try {
-    const { success, error } = await chatSignUp(username, password, email)
-    if (!success) {
-      return {
-        success: false,
-        error
+    const { firstName, lastName, username, password, email } = arg
+
+    const validEntry = await signupValidation.isValid({
+      firstName,
+      lastName,
+      username,
+      password,
+      email
+    })
+
+    if (!validEntry) {
+      throw new UserInputError('Register form is not completely filled out')
+    }
+
+    // Check for existing user or email
+    const existingUser = await User.findOne({
+      where: {
+        username
       }
+    })
+
+    if (existingUser) {
+      throw new UserInputError('User already exists')
+    }
+
+    const existingEmail = await User.findOne({
+      where: {
+        email
+      }
+    })
+
+    if (existingEmail) {
+      throw new UserInputError('Email already exists')
+    }
+
+    const randomToken = nanoid()
+    const name = `${firstName} ${lastName}`
+    const hash = await bcrypt.hash(password, 10)
+
+    // Chat Signup
+    await chatSignUp(username, password, email)
+
+    const userRecord = User.create({
+      name,
+      username,
+      password: hash,
+      email,
+      emailVerificationToken: randomToken
+    })
+
+    return {
+      username: userRecord.username
     }
   } catch (err) {
-    // This will create poor user experience if chat signup fails but their data is still maintained in the db
-    return {
-      success: false,
-      error: 'Mattermost signup error'
-    }
-  }
-
-  const userRecord = User.create({
-    name,
-    username,
-    password: hash,
-    email,
-    emailVerificationToken: randomToken
-  })
-
-  return {
-    success: true,
-    username: userRecord.username
+    throw new Error(err)
   }
 }

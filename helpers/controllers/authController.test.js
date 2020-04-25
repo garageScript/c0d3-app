@@ -6,6 +6,8 @@ import db from '../dbload'
 import { login, logout, signup } from './authController'
 import { chatSignUp } from '../mattermost'
 
+import { ApolloError } from 'apollo-server-micro'
+
 describe('auth controller', () => {
   let userArgs
   beforeEach(() => {
@@ -90,60 +92,53 @@ describe('auth controller', () => {
     })
   })
 
-  test('Signup - should resolve with success false if userinfo is incomplete', async () => {
-    const result = await signup({}, {}, { req: { session: {} } })
-    expect(result).toEqual({
-      success: false,
-      error: 'Invalid registration information'
-    })
+  test('Signup - should reject if user information is incomplete', async () => {
+    return expect(
+      signup({}, {}, { req: { session: {} } })
+    ).rejects.toThrowError('Register form is not completely filled out')
   })
 
-  test('Signup - should resolve with success false if user already exists', async () => {
+  test('Signup - should reject if user already exists', async () => {
     db.User.findOne = jest.fn().mockReturnValue({ username: 'c0d3user' })
-    const result = await signup({}, userArgs, { req: { session: {} } })
-    expect(result).toEqual({
-      success: false,
-      error: 'User already exists'
-    })
+    return expect(
+      signup({}, userArgs, { req: { session: {} } })
+    ).rejects.toThrowError('User already exists')
   })
 
-  test('Signup - should resolve with success false if email already exists', async () => {
+  test('Signup - should reject on second findOne. The first request checks for username, second request checks for email', async () => {
     db.User.findOne = jest
       .fn()
       .mockReturnValueOnce(null)
       .mockReturnValue({ username: 'c0d3user' }) // Second call for User.findOne checks for email
-    const result = await signup({}, userArgs, { req: { session: {} } })
-    expect(result).toEqual({
-      success: false,
-      error: 'Email already exists'
-    })
+    return expect(
+      signup({}, userArgs, { req: { session: {} } })
+    ).rejects.toThrowError('Email already exists')
   })
 
-  test('Signup - should not create user if chat signup response with 401 or 403', async () => {
+  test('Signup - should not create user if chat signup responds with 401 or 403', async () => {
     db.User.findOne = jest.fn().mockReturnValue(null)
     db.User.create = jest.fn()
 
-    chatSignUp.mockResolvedValueOnce({
-      success: false,
-      error: 'Mattermost signup error'
-    })
+    chatSignUp.mockRejectedValue(
+      'Invalid or missing parameter in mattermost request'
+    )
 
-    chatSignUp.mockRejectedValueOnce({
-      success: false,
-      error: 'Mattermost signup error'
-    })
+    await expect(
+      signup({}, userArgs, { req: { session: {} } })
+    ).rejects.toThrowError('Invalid or missing parameter in mattermost request')
 
-    const resolvedResult = await signup({}, userArgs, { req: { session: {} } })
-    expect(resolvedResult).toEqual({
-      success: false,
-      error: 'Mattermost signup error'
-    })
+    expect(db.User.create).not.toBeCalled()
+  })
 
-    const rejectedResult = await signup({}, userArgs, { req: { session: {} } })
-    expect(rejectedResult).toEqual({
-      success: false,
-      error: 'Mattermost signup error'
-    })
+  test('Signup - should not create user if chat signup throws an error', async () => {
+    db.User.findOne = jest.fn().mockReturnValue(null)
+    db.User.create = jest.fn()
+
+    chatSignUp.mockRejectedValueOnce('Mattermost Error')
+
+    await expect(
+      signup({}, userArgs, { req: { session: {} } })
+    ).rejects.toThrow('Mattermost Error')
 
     expect(db.User.create).not.toBeCalled()
   })
@@ -156,7 +151,6 @@ describe('auth controller', () => {
     })
     const result = await signup({}, userArgs, { req: { session: {} } })
     expect(result).toEqual({
-      success: true,
       username: 'user'
     })
   })

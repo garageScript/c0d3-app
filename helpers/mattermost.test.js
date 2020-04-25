@@ -1,9 +1,10 @@
 jest.mock('node-fetch')
-import fetch, { Response } from 'node-fetch'
+import fetch from 'node-fetch'
 import { chatSignUp } from './mattermost'
 
 describe('Chat Signup', () => {
   let userArgs
+
   beforeEach(() => {
     jest.clearAllMocks()
     userArgs = {
@@ -12,55 +13,39 @@ describe('Chat Signup', () => {
       email: 'testuser@c0d3.com'
     }
   })
+
   test('ChatSignUp - should resolve if response is 201', async () => {
     fetch.mockResolvedValue({ status: 201 })
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
     ).resolves.toEqual({ success: true })
   })
-  test('ChatSignUp - should reject if response is 401', async () => {
+
+  test('ChatSignUp - should reject with invalid parameter if response is 401', async () => {
     fetch.mockResolvedValue({ status: 401 })
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
-    ).resolves.toEqual({
-      success: false,
-      error: 'Invalid or missing parameter in mattermost request'
-    })
+    ).rejects.toThrowError('Invalid or missing parameter in mattermost request')
   })
-  test('ChatSignUp - should reject if response is 403', async () => {
+
+  test('ChatSignUp - should reject with invalid permission if response is 403', async () => {
     fetch.mockResolvedValue({ status: 403 })
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
-    ).resolves.toEqual({
-      success: false,
-      error: 'Invalid permission'
-    })
+    ).rejects.toThrowError('Invalid permission')
   })
+
   test('ChatSignUp - should reject if response status is invalid', async () => {
-    fetch.mockResolvedValue({ status: 418 }) // MatterMost only returns 201, 401 and 403
+    fetch.mockResolvedValue({ status: 418 }) // MatterMost only returns 201, 401 and 403 LOL teapot
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
-    ).resolves.toEqual({
-      success: false,
-      error: 'Unknown error (Default Case)'
-    })
+    ).rejects.toThrowError('Unexpected Response')
   })
+
   test('ChatSignUp - should reject if internal server error', async () => {
-    fetch.mockResolvedValue({ status: 418 }) // MatterMost only returns 201, 401 and 403
+    fetch.mockRejectedValue('')
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
-    ).resolves.toEqual({
-      success: false,
-      error: 'Unknown error (Default Case)'
-    })
-  })
-  test('ChatSignUp - should reject if internal server error', async () => {
-    fetch.mockRejectedValue({})
-    return expect(
-      chatSignUp(userArgs.username, userArgs.password, userArgs.email)
-    ).resolves.toEqual({
-      success: false,
-      error: 'Internal Server Error'
-    })
+    ).rejects.toThrowError('Internal Server Error')
   })
 })
