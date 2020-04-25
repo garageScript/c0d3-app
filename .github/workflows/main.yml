@@ -14,13 +14,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Dependencies
-        run: npm install
+        run: yarn
 
       - name: Check Lint and Tests
         run: |
-          npm run autofix
-          npm run test
-          npm run type-check
+          yarn autofix
+          yarn test
+          yarn type-check
 
       - name: Code Quality ( Codecov )
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
