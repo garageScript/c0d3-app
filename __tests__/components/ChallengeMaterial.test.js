@@ -58,7 +58,8 @@ describe('Curriculum challenge page', () => {
         id: '3500',
         status: 'open',
         mrUrl: 'github.com/testmrurl',
-        diff: 'test diff1',
+        diff:
+          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
         viewCount: 0,
         comment: null,
         challengeId: '105',
@@ -70,7 +71,8 @@ describe('Curriculum challenge page', () => {
         id: '3501',
         status: 'needMoreWork',
         mrUrl: 'github.com/testmrurl2',
-        diff: 'test diff2',
+        diff:
+          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
         viewCount: 0,
         comment: 'test comment',
         challengeId: '107',
@@ -98,7 +100,8 @@ describe('Curriculum challenge page', () => {
         id: '3500',
         status: 'passed',
         mrUrl: 'github.com/testmrurl',
-        diff: 'test diff1',
+        diff:
+          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
         viewCount: 0,
         comment: null,
         challengeId: '105',
@@ -110,7 +113,8 @@ describe('Curriculum challenge page', () => {
         id: '3501',
         status: 'passed',
         mrUrl: 'github.com/testmrurl2',
-        diff: 'test diff2',
+        diff:
+          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
         viewCount: 0,
         comment: 'test comment',
         challengeId: '107',
