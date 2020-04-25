@@ -27,23 +27,19 @@ describe('auth controller', () => {
     ).rejects.toThrowError('')
   })
 
-  test('Login - should return success false if user cannot be found', async () => {
+  test('Login - should throw error if user cannot be found', async () => {
     db.User.findOne = jest.fn().mockReturnValue(null)
-    const result = await login({}, userArgs, { req: { session: {} } })
-    expect(result).toEqual({
-      success: false,
-      error: 'user does not exist'
-    })
+    return expect(
+      login({}, userArgs, { req: { session: {} } })
+    ).rejects.toThrowError('User does not exist')
   })
 
   test('Login - should return success false if password is invalid', async () => {
     db.User.findOne = jest.fn().mockReturnValue({})
     bcrypt.compare = jest.fn().mockReturnValue(false)
-    const result = await login({}, userArgs, { req: { session: {} } })
-    expect(result).toEqual({
-      success: false,
-      error: 'Password is invalid'
-    })
+    expect(login({}, userArgs, { req: { session: {} } })).rejects.toThrowError(
+      'Password is invalid'
+    )
   })
 
   test('Login - should return success true if successful login', async () => {
