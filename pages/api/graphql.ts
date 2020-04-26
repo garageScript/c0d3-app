@@ -31,7 +31,6 @@ handler
       resave: false,
       saveUninitialized: false,
       cookie: {
-        domain: process.env.DB_HOST,
         maxAge: ONE_WEEK
       }
     })

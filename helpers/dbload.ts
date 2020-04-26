@@ -66,6 +66,14 @@ User.belongsToMany(Lesson, {
   through: { model: UserLesson }
 })
 
+User.hasMany(Submission, {
+  foreignKey: 'userId'
+})
+
+User.hasMany(UserLesson, {
+  foreignKey: 'userId'
+})
+
 sequelize.sync({ alter: false }) // We do not want this affect to production at the moment.
 
 export default {
