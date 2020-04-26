@@ -1,0 +1,36 @@
+{
+  "name": "c0d3",
+  "version": "1.4.2",
+  "description": "Command Line Interface (CLI) for c0d3.com",
+  "license": "MIT",
+  "homepage": "https://c0d3.com",
+  "repository": "git+https://git.c0d3.com/song/c0d3/tree/master/gsSubmit",
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "c0d3",
+    "education"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "c0d3": "bin/c0d3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "c0d3.com",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "child_process": "^1.0.2",
+    "graphql-request": "^1.6.0",
+    "minimist": "^1.2.0",
+    "prompt": "^1.0.0",
+    "simple-git": "^1.96.0"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0"
+  },
+  "main": "cli.js"
+}
