@@ -34,7 +34,7 @@ describe('auth controller', () => {
     ).rejects.toThrowError('User does not exist')
   })
 
-  test('Login - should return success false if password is invalid', async () => {
+  test('Login - should throw error if password is invalid', async () => {
     db.User.findOne = jest.fn().mockReturnValue({})
     bcrypt.compare = jest.fn().mockReturnValue(false)
     expect(login({}, userArgs, { req: { session: {} } })).rejects.toThrowError(
