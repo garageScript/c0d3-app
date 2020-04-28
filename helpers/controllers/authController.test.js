@@ -35,9 +35,9 @@ describe('auth controller', () => {
   test('Login - should throw error if password is invalid', async () => {
     db.User.findOne = jest.fn().mockReturnValue({})
     bcrypt.compare = jest.fn().mockReturnValue(false)
-    expect(login({}, userArgs, { req: { session: {} } })).rejects.toThrowError(
-      'Password is invalid'
-    )
+    return expect(
+      login({}, userArgs, { req: { session: {} } })
+    ).rejects.toThrowError('Password is invalid')
   })
 
   test('Login - should return success true if successful login', async () => {
