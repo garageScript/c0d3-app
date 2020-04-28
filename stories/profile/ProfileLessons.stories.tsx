@@ -20,5 +20,5 @@ const lessons = [
 ]
 
 export const _ProfileLessons: React.FC = () => (
-  <ProfileLessons lessons={lessons}></ProfileLessons>
+  <ProfileLessons lessons={lessons}/>
 )
