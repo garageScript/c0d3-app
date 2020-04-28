@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import '../scss/profileLessons.scss'
 
 type LessonImageProps = {
@@ -30,9 +31,13 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
 }
 
 const ProfileLessons: React.FC<ProfileLessonsProps> = ({ lessons }) => {
-  const displayLessons = lessons.map((lesson, i) => {
+  const displayLessons = lessons.map(lesson => {
     return (
-      <LessonImage key={i} order={lesson.order} progress={lesson.progress} />
+      <LessonImage
+        key={_.uniqueId()}
+        order={lesson.order}
+        progress={lesson.progress}
+      />
     )
   })
 
