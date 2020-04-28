@@ -1,16 +1,16 @@
 import React from 'react'
 import '../scss/profileLessons.scss'
 
-type Lesson = {
+type LessonImageProps = {
   order: number
   progress?: number
 }
 
-type LessonsProp = {
-  lessons: Lesson[]
+type ProfileLessonsProps = {
+  lessons: LessonImageProps[]
 }
 
-const LessonImage: React.FC<Lesson> = ({ progress = 0, order }) => {
+const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   const lessonProgress = progress + '%'
   const color = lessonProgress === '100%' ? 'success' : 'primary'
   const opacity = lessonProgress === '0%' ? 0.5 : 1
@@ -29,7 +29,7 @@ const LessonImage: React.FC<Lesson> = ({ progress = 0, order }) => {
   )
 }
 
-const ProfileLessons: React.FC<LessonsProp> = ({ lessons }) => {
+const ProfileLessons: React.FC<ProfileLessonsProps> = ({ lessons }) => {
   const displayLessons = lessons.map((lesson, i) => {
     return (
       <LessonImage key={i} order={lesson.order} progress={lesson.progress} />
