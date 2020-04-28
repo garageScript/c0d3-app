@@ -2208,34 +2208,20 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     className="card-body"
   >
     <h3
-      style={
-        Object {
-          "padding": "8px",
-        }
-      }
+      className="profileLessons_title"
     >
       Lessons
     </h3>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 1,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
       <p
-        className="badge badge-pill badge-primary"
-        style={
-          Object {
-            "border": "solid white 2px",
-            "position": "absolute",
-            "right": "15px",
-            "top": "15px",
-          }
-        }
+        className="lessonImage_progressBadge badge badge-pill badge-primary"
       >
         23%
       </p>
@@ -2244,39 +2230,28 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 0.5,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
+      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 1,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
       <p
-        className="badge badge-pill badge-primary"
-        style={
-          Object {
-            "border": "solid white 2px",
-            "position": "absolute",
-            "right": "15px",
-            "top": "15px",
-          }
-        }
+        className="lessonImage_progressBadge badge badge-pill badge-primary"
       >
         60%
       </p>
@@ -2285,25 +2260,15 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 1,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
       <p
-        className="badge badge-pill badge-success"
-        style={
-          Object {
-            "border": "solid white 2px",
-            "position": "absolute",
-            "right": "15px",
-            "top": "15px",
-          }
-        }
+        className="lessonImage_progressBadge badge badge-pill badge-success"
       >
         100%
       </p>
@@ -2312,53 +2277,41 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 0.5,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
+      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 0.5,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
+      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 1,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
       <p
-        className="badge badge-pill badge-primary"
-        style={
-          Object {
-            "border": "solid white 2px",
-            "position": "absolute",
-            "right": "15px",
-            "top": "15px",
-          }
-        }
+        className="lessonImage_progressBadge badge badge-pill badge-primary"
       >
         80%
       </p>
@@ -2367,39 +2320,28 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 0.5,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
+      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 1,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
       <p
-        className="badge badge-pill badge-success"
-        style={
-          Object {
-            "border": "solid white 2px",
-            "position": "absolute",
-            "right": "15px",
-            "top": "15px",
-          }
-        }
+        className="lessonImage_progressBadge badge badge-pill badge-success"
       >
         100%
       </p>
@@ -2408,15 +2350,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
+      className="lessonImage_container"
       style={
         Object {
-          "display": "inline-block",
           "opacity": 0.5,
-          "padding": "8px",
-          "position": "relative",
         }
       }
     >
+      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
       />

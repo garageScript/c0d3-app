@@ -1,0 +1,16 @@
+.lessonImage_container{
+  position: relative;
+  padding: 8px;
+  display: inline-block;
+}
+
+.lessonImage_progressBadge{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: solid white 2px; 
+}
+
+.profileLessons_title{
+  padding: 8px;
+}
