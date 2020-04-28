@@ -26,35 +26,33 @@ export const login = async (
   arg: Login,
   ctx: { req: Request }
 ) => {
-  const {
-    req: { session }
-  } = ctx
-  const { username, password } = arg
+  try {
+    const {
+      req: { session }
+    } = ctx
+    const { username, password } = arg
 
-  if (!session) {
-    throw new Error('Session Error')
-  }
-
-  const user = await User.findOne({ where: { username } })
-  if (!user) {
-    return {
-      success: false,
-      error: 'user does not exist'
+    if (!session) {
+      throw new Error('Session Error')
     }
-  }
 
-  const validLogin = await bcrypt.compare(password, user.password)
-  if (!validLogin) {
-    return {
-      success: false,
-      error: 'Password is invalid'
+    const user = await User.findOne({ where: { username } })
+    if (!user) {
+      throw new UserInputError('User does not exist')
     }
-  }
 
-  session.userId = user.id
-  return {
-    success: true,
-    username: user.username
+    const validLogin = await bcrypt.compare(password, user.password)
+    if (!validLogin) {
+      throw new UserInputError('Password is invalid')
+    }
+
+    session.userId = user.id
+    return {
+      success: true,
+      username: user.username
+    }
+  } catch (err) {
+    throw new Error(err)
   }
 }
 
