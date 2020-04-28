@@ -41,11 +41,16 @@ const LessonImage: React.FC<lesson> = ({ progress, order }) => {
   }
 
   return (
-    <div style={{ position: 'relative', padding: '8px', opacity: opacity, display: 'inline-block' }}>
+    <div
+      style={{
+        position: 'relative',
+        padding: '8px',
+        opacity: opacity,
+        display: 'inline-block'
+      }}
+    >
       {badge}
-      <img
-        src={`/curriculumAssets/lessonCoversSvg/js-${order}-cover.svg`}
-      />
+      <img src={`/curriculumAssets/lessonCoversSvg/js-${order}-cover.svg`} />
     </div>
   )
 }
@@ -65,10 +70,11 @@ const ProfileLessons: React.FC<LessonsProp> = ({ lessons }) => {
   })
 
   return (
-    <div className='card shadow-sm'>
-     <div className='card-body'> 
-      {displayLessons}
-     </div>
+    <div className="card shadow-sm">
+      <div className="card-body">
+        <h3 style={{ padding: '8px' }}>Lessons</h3>
+        {displayLessons}
+      </div>
     </div>
   )
 }

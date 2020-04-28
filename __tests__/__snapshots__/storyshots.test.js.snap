@@ -2200,6 +2200,231 @@ exports[`Storyshots Components/NavLink Styled Link 1`] = `
 </a>
 `;
 
+exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="card-body"
+  >
+    <h3
+      style={
+        Object {
+          "padding": "8px",
+        }
+      }
+    >
+      Lessons
+    </h3>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 1,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <p
+        className="badge badge-pill badge-primary"
+        style={
+          Object {
+            "border": "solid white 2px",
+            "position": "absolute",
+            "right": "15px",
+            "top": "15px",
+          }
+        }
+      >
+        23%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 0.5,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 1,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <p
+        className="badge badge-pill badge-primary"
+        style={
+          Object {
+            "border": "solid white 2px",
+            "position": "absolute",
+            "right": "15px",
+            "top": "15px",
+          }
+        }
+      >
+        60%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 1,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <p
+        className="badge badge-pill badge-success"
+        style={
+          Object {
+            "border": "solid white 2px",
+            "position": "absolute",
+            "right": "15px",
+            "top": "15px",
+          }
+        }
+      >
+        100%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 0.5,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 0.5,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 1,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <p
+        className="badge badge-pill badge-primary"
+        style={
+          Object {
+            "border": "solid white 2px",
+            "position": "absolute",
+            "right": "15px",
+            "top": "15px",
+          }
+        }
+      >
+        80%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 0.5,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 1,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <p
+        className="badge badge-pill badge-success"
+        style={
+          Object {
+            "border": "solid white 2px",
+            "position": "absolute",
+            "right": "15px",
+            "top": "15px",
+          }
+        }
+      >
+        100%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "opacity": 0.5,
+          "padding": "8px",
+          "position": "relative",
+        }
+      }
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
   className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
