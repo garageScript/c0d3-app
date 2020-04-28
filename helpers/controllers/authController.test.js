@@ -6,8 +6,6 @@ import db from '../dbload'
 import { login, logout, signup } from './authController'
 import { chatSignUp } from '../mattermost'
 
-import { ApolloError } from 'apollo-server-micro'
-
 describe('auth controller', () => {
   let userArgs
   beforeEach(() => {
