@@ -2208,12 +2208,12 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     className="card-body"
   >
     <h3
-      className="profileLessons_title"
+      className="profilelessons_title"
     >
       Lessons
     </h3>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 1,
@@ -2221,7 +2221,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       }
     >
       <p
-        className="lessonImage_progressBadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill badge-primary"
       >
         23%
       </p>
@@ -2230,7 +2230,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 0.5,
@@ -2243,7 +2243,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 1,
@@ -2251,7 +2251,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       }
     >
       <p
-        className="lessonImage_progressBadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill badge-primary"
       >
         60%
       </p>
@@ -2260,7 +2260,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 1,
@@ -2268,7 +2268,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       }
     >
       <p
-        className="lessonImage_progressBadge badge badge-pill badge-success"
+        className="lessonimage_progressbadge badge badge-pill badge-success"
       >
         100%
       </p>
@@ -2277,7 +2277,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 0.5,
@@ -2290,7 +2290,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 0.5,
@@ -2303,7 +2303,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 1,
@@ -2311,7 +2311,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       }
     >
       <p
-        className="lessonImage_progressBadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill badge-primary"
       >
         80%
       </p>
@@ -2320,7 +2320,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 0.5,
@@ -2333,7 +2333,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 1,
@@ -2341,7 +2341,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       }
     >
       <p
-        className="lessonImage_progressBadge badge badge-pill badge-success"
+        className="lessonimage_progressbadge badge badge-pill badge-success"
       >
         100%
       </p>
@@ -2350,7 +2350,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonImage_container"
+      className="lessonimage_container"
       style={
         Object {
           "opacity": 0.5,

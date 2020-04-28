@@ -16,10 +16,10 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   const opacity = lessonProgress === '0%' ? 0.5 : 1
 
   return (
-    <div className="lessonImage_container" style={{ opacity: opacity }}>
+    <div className="lessonimage_container" style={{ opacity: opacity }}>
       {progress && (
         <p
-          className={`lessonImage_progressBadge badge badge-pill badge-${color}`}
+          className={`lessonimage_progressbadge badge badge-pill badge-${color}`}
         >
           {lessonProgress}
         </p>
@@ -39,7 +39,7 @@ const ProfileLessons: React.FC<ProfileLessonsProps> = ({ lessons }) => {
   return (
     <div className="card shadow-sm">
       <div className="card-body">
-        <h3 className="profileLessons_title">Lessons</h3>
+        <h3 className="profilelessons_title">Lessons</h3>
         {displayLessons}
       </div>
     </div>
