@@ -2214,11 +2214,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     </h3>
     <div
       className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
     >
       <p
         className="lessonimage_progressbadge badge badge-pill badge-primary"
@@ -2230,12 +2225,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
+      className="lessonimage_opacity_container"
     >
       <img
         src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
@@ -2243,11 +2233,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     </div>
     <div
       className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
     >
       <p
         className="lessonimage_progressbadge badge badge-pill badge-primary"
@@ -2260,11 +2245,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     </div>
     <div
       className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
     >
       <p
         className="lessonimage_progressbadge badge badge-pill badge-success"
@@ -2276,24 +2256,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
+      className="lessonimage_opacity_container"
     >
       <img
         src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
       />
     </div>
     <div
-      className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
+      className="lessonimage_opacity_container"
     >
       <img
         src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
@@ -2301,11 +2271,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     </div>
     <div
       className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
     >
       <p
         className="lessonimage_progressbadge badge badge-pill badge-primary"
@@ -2317,12 +2282,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
+      className="lessonimage_opacity_container"
     >
       <img
         src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
@@ -2330,11 +2290,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
     </div>
     <div
       className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 1,
-        }
-      }
     >
       <p
         className="lessonimage_progressbadge badge badge-pill badge-success"
@@ -2346,12 +2301,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       />
     </div>
     <div
-      className="lessonimage_container"
-      style={
-        Object {
-          "opacity": 0.5,
-        }
-      }
+      className="lessonimage_opacity_container"
     >
       <img
         src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"

@@ -2,6 +2,14 @@
   position: relative;
   padding: 8px;
   display: inline-block;
+  opacity: 1;
+}
+
+.lessonimage_opacity_container{
+  position: relative;
+  padding: 8px;
+  display: inline-block;
+  opacity: 0.5;
 }
 
 .lessonimage_progressbadge{

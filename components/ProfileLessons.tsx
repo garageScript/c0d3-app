@@ -14,7 +14,10 @@ type ProfileLessonsProps = {
 const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   const lessonProgress = progress + '%'
   const color = lessonProgress === '100%' ? 'success' : 'primary'
-  const opacity = lessonProgress === '0%' ? 0.5 : 1
+  const lessonImageClass =
+    lessonProgress === '0%'
+      ? 'lessonimage_opacity_container'
+      : 'lessonimage_container'
   const progressContainer = (
     <p className={`lessonimage_progressbadge badge badge-pill badge-${color}`}>
       {lessonProgress}
@@ -23,7 +26,7 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   const badge = lessonProgress !== '0%' ? progressContainer : <></>
 
   return (
-    <div className="lessonimage_container" style={{ opacity: opacity }}>
+    <div className={lessonImageClass}>
       {badge}
       <img src={`/curriculumAssets/lessonCoversSvg/js-${order}-cover.svg`} />
     </div>
@@ -32,9 +35,10 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
 
 const ProfileLessons: React.FC<ProfileLessonsProps> = ({ lessons }) => {
   const displayLessons = lessons.map(lesson => {
+    const keyId = _.uniqueId()
     return (
       <LessonImage
-        key={_.uniqueId()}
+        key={keyId}
         order={lesson.order}
         progress={lesson.progress}
       />
