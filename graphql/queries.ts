@@ -85,3 +85,52 @@ export const GET_SUBMISSIONS = gql`
     }
   }
 `
+
+export const GET_APP = gql`
+  query {
+    lessons {
+      id
+      title
+      description
+      docUrl
+      githubUrl
+      videoUrl
+      order
+      challenges {
+        id
+        title
+        description
+        order
+      }
+      chatUrl
+    }
+    session {
+      user {
+        id
+        username
+      }
+      submissions {
+        id
+        status
+        mrUrl
+        diff
+        viewCount
+        comment
+        order
+        challengeId
+        reviewer {
+          id
+          username
+        }
+        createdAt
+        updatedAt
+      }
+      lessonStatus {
+        lessonId
+        isPassed
+        isTeaching
+        isEnrolled
+      }
+    }
+  }
+`

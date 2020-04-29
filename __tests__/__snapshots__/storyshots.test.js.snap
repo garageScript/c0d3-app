@@ -2275,6 +2275,117 @@ exports[`Storyshots Components/NavLink Styled Link 1`] = `
 </a>
 `;
 
+exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="card-body"
+  >
+    <h3
+      className="profilelessons_title"
+    >
+      Lessons
+    </h3>
+    <div
+      className="lessonimage_container"
+    >
+      <p
+        className="lessonimage_progressbadge badge badge-pill badge-primary"
+      >
+        23%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_opacity_container"
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_container"
+    >
+      <p
+        className="lessonimage_progressbadge badge badge-pill badge-primary"
+      >
+        60%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_container"
+    >
+      <p
+        className="lessonimage_progressbadge badge badge-pill badge-success"
+      >
+        100%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_opacity_container"
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_opacity_container"
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_container"
+    >
+      <p
+        className="lessonimage_progressbadge badge badge-pill badge-primary"
+      >
+        80%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_opacity_container"
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_container"
+    >
+      <p
+        className="lessonimage_progressbadge badge badge-pill badge-success"
+      >
+        100%
+      </p>
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+      />
+    </div>
+    <div
+      className="lessonimage_opacity_container"
+    >
+      <img
+        src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
   className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
