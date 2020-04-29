@@ -48,7 +48,7 @@ export const WithDiff: React.FC = () => (
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
         viewCount: 0,
-        comment: '',
+        comment: '```test comment```',
         challengeId: '105',
         reviewerId: '',
         createdAt: '',
@@ -60,9 +60,35 @@ export const WithDiff: React.FC = () => (
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
         viewCount: 0,
-        comment: '',
+        comment: '```test comment```',
         challengeId: '107',
         reviewerId: '',
+        createdAt: '',
+        updatedAt: ''
+      }
+    ]}
+    lessonStatus={lessonStatus}
+    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+    lessonId="5"
+  />
+)
+
+export const WithComments: React.FC = () => (
+  <ChallengeMaterial
+    challenges={challenges}
+    userSubmissions={[
+      {
+        status: 'passed',
+        id: '1',
+        mrUrl: '',
+        diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+        viewCount: 0,
+        comment: '```Great Job```',
+        challengeId: '105',
+        reviewer: {
+          username: 'dan'
+        },
+        reviewerId: '1',
         createdAt: '',
         updatedAt: ''
       }

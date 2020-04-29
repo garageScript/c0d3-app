@@ -822,6 +822,15 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
             </table>
           </div>
         </div>
+        <div
+          class="card-footer bg-white"
+        >
+          <div
+            class="text-center p-2 my-2 border border-warning text-warning"
+          >
+            Your MR is currently waiting to be reviewed
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -42,10 +42,45 @@ type StatusIconProps = {
   status: string
 }
 
+type ReviewStatusProps = {
+  status: string
+  reviewerUserName: string | null
+}
+
 type ChallengesCompletedCardProps = {
   imageSrc: string
   reviewUrl: string
   chatUrl: string
+}
+
+export const ReviewStatus: React.FC<ReviewStatusProps> = ({
+  status,
+  reviewerUserName
+}) => {
+  //TODO change reviewerUserName to NavLink to Profile Page when page is completed
+  let reviewStatusComment
+  let statusClassName
+  switch (status) {
+    case 'passed':
+      reviewStatusComment = `Your solution was reviewed and accepted by ${reviewerUserName}`
+      statusClassName = 'border border-success text-success'
+      break
+    case 'needMoreWork':
+      reviewStatusComment = `Your solution was reviewed and rejected by ${reviewerUserName}`
+      statusClassName = 'border border-danger text-danger'
+      break
+    case 'open':
+      reviewStatusComment = 'Your MR is currently waiting to be reviewed'
+      statusClassName = 'border border-warning text-warning'
+      break
+    default:
+      return null
+  }
+  return (
+    <div className={`text-center p-2 my-2 ${statusClassName}`}>
+      {reviewStatusComment}
+    </div>
+  )
 }
 
 const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
@@ -104,6 +139,12 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   const { data } = React.useContext(SessionContext)
   const username = _.get(data, 'userInfo.username', '')
   const diff = _.get(currentChallenge, 'submission.diff', false)
+  const comment = _.get(currentChallenge, 'submission.comment', '')
+  const reviewerUserName = _.get(
+    currentChallenge,
+    'submission.reviewer.username',
+    null
+  )
   let files = null
 
   if (diff) files = gitDiffParser.parse(diff)
@@ -169,6 +210,13 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
             <div className="rounded-lg overflow-hidden">
               {files && files.map(renderFile)}
             </div>
+          </div>
+          <div className="card-footer bg-white">
+            {comment && <Markdown>{comment}</Markdown>}
+            <ReviewStatus
+              status={currentChallenge.status}
+              reviewerUserName={reviewerUserName}
+            />
           </div>
         </div>
       )}
