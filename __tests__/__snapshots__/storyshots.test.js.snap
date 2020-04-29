@@ -2237,7 +2237,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         }
       }
     >
-      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
       />
@@ -2284,7 +2283,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         }
       }
     >
-      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
       />
@@ -2297,7 +2295,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         }
       }
     >
-      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
       />
@@ -2327,7 +2324,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         }
       }
     >
-      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
       />
@@ -2357,7 +2353,6 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         }
       }
     >
-      0
       <img
         src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
       />

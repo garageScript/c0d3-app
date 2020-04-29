@@ -15,16 +15,16 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   const lessonProgress = progress + '%'
   const color = lessonProgress === '100%' ? 'success' : 'primary'
   const opacity = lessonProgress === '0%' ? 0.5 : 1
+  const progressContainer = (
+    <p className={`lessonimage_progressbadge badge badge-pill badge-${color}`}>
+      {lessonProgress}
+    </p>
+  )
+  const badge = lessonProgress !== '0%' ? progressContainer : <></>
 
   return (
     <div className="lessonimage_container" style={{ opacity: opacity }}>
-      {progress && (
-        <p
-          className={`lessonimage_progressbadge badge badge-pill badge-${color}`}
-        >
-          {lessonProgress}
-        </p>
-      )}
+      {badge}
       <img src={`/curriculumAssets/lessonCoversSvg/js-${order}-cover.svg`} />
     </div>
   )
