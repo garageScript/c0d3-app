@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from './NavLink'
-import '../scss/lessonTitleCard.scss'
+import styles from '../scss/lessonTitleCard.module.scss'
 
 type Props = {
   lessonCoverUrl: string
@@ -14,7 +14,7 @@ const LessonTitleCard: React.FC<Props> = props => {
       <div className="card-body p-0">
         <div className="d-flex mb-3 px-3">
           <img
-            className="lessonTitleCard__lesson-cover mr-3"
+            className={`${styles['lessonTitleCard__lesson-cover']} mr-3`}
             src={`/curriculumAssets/lessonCoversSvg/${props.lessonCoverUrl}`}
             alt="lesson-cover"
           />
@@ -22,7 +22,7 @@ const LessonTitleCard: React.FC<Props> = props => {
             <p className="m-0">
               <NavLink path="/curriculum">Go Back</NavLink>
             </p>
-            <h1 className="lessonTitleCard__lesson-title">
+            <h1 className={styles['lessonTitleCard__lesson-title']}>
               {props.lessonTitle}
             </h1>
           </div>

@@ -8,7 +8,7 @@ import {
   ReviewCountProps
 } from '../@types/lessonCard'
 import NavLink from './NavLink'
-import '../scss/lessonCard.scss'
+import styles from '../scss/lessonCard.module.scss'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   if (props.shouldNotGetCount) {
@@ -68,7 +68,7 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
 const LessonCard: React.FC<Props> = props => {
   const containerClass =
     props.currentState === 'inProgress'
-      ? 'lesson-card__container_inprogress border-primary'
+      ? `${styles['lesson-card__container_inprogress']} border-primary`
       : 'border-0'
 
   return (
@@ -87,7 +87,9 @@ const LessonCard: React.FC<Props> = props => {
             </span>
           )}
           <div>
-            <h4 className="lesson-card__title font-weight-bold mt-3">
+            <h4
+              className={`${styles['lesson-card__title']} font-weight-bold mt-3`}
+            >
               <NavLink
                 as={`/curriculum/${props.lessonId}`}
                 path="/curriculum/[lesson]"
@@ -102,12 +104,14 @@ const LessonCard: React.FC<Props> = props => {
                   src="/curriculumAssets/icons/icon-challenge.svg"
                   alt="icon-challenge"
                 />
-                <span className="lesson-card__icon-text">
+                <span className={styles['lesson-card__icon-text']}>
                   {props.challengeCount} CHALLENGES
                 </span>
               </div>
             </div>
-            <p className="lesson-card__description mt-2">{props.description}</p>
+            <p className={`${styles['lesson-card__description']} mt-2`}>
+              {props.description}
+            </p>
           </div>
           <ReviewButton
             isCompleted={props.currentState === 'completed'}
@@ -122,14 +126,14 @@ const LessonCard: React.FC<Props> = props => {
         <div className="p-2 bg-primary">
           <NavLink
             path={props.docUrl}
-            className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+            className={`${styles['lesson-card__button']} btn btn-light mr-2 my-1 text-primary`}
             external
           >
             Start Lesson
           </NavLink>
           <NavLink
             path={props.challengesUrl}
-            className="lesson-card__button btn bg-primary my-1 text-white border border-white"
+            className={`${styles['lesson-card__button']} btn bg-primary my-1 text-white border border-white`}
             external
           >
             View Challenges

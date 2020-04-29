@@ -2,7 +2,7 @@ import * as React from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
 
-import '../scss/navbar.scss'
+import styles from '../scss/navbar.module.scss'
 
 type AuthButtonProps = {
   initial: string
@@ -21,19 +21,19 @@ const AuthLink = () => (
     <NavLink
       path="/curriculum"
       activePath="/curriculum"
-      className="nav-item nav-link"
+      className={`${styles['nav-item']} nav-link`}
     >
       Curriculum
     </NavLink>
-    <NavLink path="#" className="nav-item nav-link">
+    <NavLink path="#" className={`${styles['nav-item']} nav-link`}>
       Repo
     </NavLink>
-    <NavLink path="#" className="nav-item nav-link">
+    <NavLink path="#" className={`${styles['nav-item']} nav-link`}>
       Journey
     </NavLink>
     <NavLink
       path="https://chat.c0d3.com"
-      className="nav-item nav-link"
+      className={`${styles['nav-item']} nav-link`}
       external
     >
       Help
@@ -65,22 +65,26 @@ const UnAuthButton = () => (
 
 const UnAuthLink = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <NavLink path="/" activePath="/" className="nav-item nav-link">
+    <NavLink
+      path="/"
+      activePath="/"
+      className={`${styles['nav-item']} nav-link`}
+    >
       Home
     </NavLink>
-    <NavLink path="/#learning" className="nav-item nav-link">
+    <NavLink path="/#learning" className={`${styles['nav-item']} nav-link`}>
       Learning Process
     </NavLink>
     <NavLink
       path="https://c0d3.com/book"
-      className="nav-item nav-link"
+      className={`${styles['nav-item']} nav-link`}
       external
     >
       Resources
     </NavLink>
     <NavLink
       path="https://chat.c0d3.com"
-      className="nav-item nav-link"
+      className={`${styles['nav-item']} nav-link`}
       external
     >
       Help
@@ -100,7 +104,7 @@ const AppNav: React.FC<Props> = ({
       <div className="container">
         <NavLink
           path="/"
-          className="navbar-brand text-primary font-weight-bold"
+          className={`${styles['navbar-brand']} text-primary font-weight-bold`}
         >
           C0D3
         </NavLink>

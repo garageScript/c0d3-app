@@ -1,5 +1,4 @@
-const withSass = require('@zeit/next-sass')
-module.exports = withSass({
+module.exports = {
   env: {
     CHAT_URL: process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4',
     DB_NAME: process.env.DB_NAME || 'c0d3dev',
@@ -11,4 +10,4 @@ module.exports = withSass({
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
     SERVER_URL: process.env.SERVER_URL || 'https://backend.c0d3.com'
   }
-})
+}
