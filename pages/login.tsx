@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Router from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
@@ -26,8 +25,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: Values) => {
     const data = await loginUser(values.username, values.password)
     if (data) {
-      Router.push('/curriculum')
-      return
+      return (window.location.pathname = '/curriculum')
     }
     setIsAlertVisible(true)
   }

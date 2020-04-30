@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Router from 'next/router'
 import NavLink from './NavLink'
 import Button from './Button'
 import logoutUser from '../helpers/logoutUser'
@@ -55,7 +54,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
       btnType="border btn-secondary ml-2"
       onClick={async () => {
         const res = await logoutUser()
-        if (res) Router.push('/')
+        if (res) window.location.pathname = '/'
       }}
     />
   </div>
