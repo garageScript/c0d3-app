@@ -1,10 +1,10 @@
 import { nanoid } from 'nanoid'
 import winston from 'winston'
-import logger, { winstonLogger, printFunc } from './logger'
+import logger, { printFunc } from './logger'
 jest.mock('nanoid')
 jest.mock('winston')
 
-describe('Logger Helper Function', () => {
+describe('Logger Middleware', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     winston.createLogger = jest.fn()
@@ -14,20 +14,6 @@ describe('Logger Helper Function', () => {
     winston.format.colorize = jest.fn()
     winston.format.printf = jest.fn()
     winston.transports.Console = jest.fn()
-  })
-
-  test('Logger is being initialized correctly when logger file is called', () => {
-    winstonLogger('test1')
-    expect(winston.createLogger).toBeCalled()
-    expect(winston.format.combine).toBeCalled()
-    expect(winston.format.colorize).toBeCalled()
-    expect(winston.format.printf).toBeCalledWith(printFunc)
-    expect(winston.format.timestamp).toBeCalledWith({
-      format: 'YYYY-MM-DD HH:mm:ss'
-    })
-    expect(winston.format.label).toBeCalledWith({
-      label: 'test1'
-    })
   })
 
   test('Print Function is working as expected', () => {
@@ -43,6 +29,21 @@ describe('Logger Helper Function', () => {
     )
   })
 
+  test('createLogger is called with correct parameters', () => {
+    const loggerFileName = `${__filename.split('.test.js')[0]}.ts` // Changes ext from .test.js to .ts
+    logger({}, { setHeader: (id, value) => {} }, () => {})
+    expect(winston.createLogger).toBeCalled()
+    expect(winston.format.combine).toBeCalled()
+    expect(winston.format.colorize).toBeCalled()
+    expect(winston.format.printf).toBeCalledWith(printFunc)
+    expect(winston.format.timestamp).toBeCalledWith({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    })
+    expect(winston.format.label).toBeCalledWith({
+      label: loggerFileName
+    })
+  })
+
   test('nanoid() is called in middleware', () => {
     logger({}, { setHeader: (id, value) => {} }, () => {})
     expect(nanoid).toBeCalled()
@@ -54,11 +55,54 @@ describe('Logger Helper Function', () => {
     expect(nextFunction).toBeCalled()
   })
 
-  test('Logged is called with filename in middleware', () => {
-    const loggerFileName = `${__filename.split('.test.js')[0]}.ts` // Changes ext from .test.js to .ts
-    logger({}, { setHeader: (id, value) => {} }, () => {})
-    expect(winston.format.label).toBeCalledWith({
-      label: loggerFileName
+  test('testing info() is called through req', () => {
+    const info = jest.fn()
+    nanoid.mockImplementation(() => 32)
+    winston.createLogger.mockImplementation(() => ({ info }))
+    const req = {}
+    const res = { setHeader: (id, val) => {} }
+    logger(req, res, () => {
+      req.info({ message: 'hello' })
     })
+    expect(info).toBeCalledWith(
+      JSON.stringify({
+        requestId: 32,
+        message: 'hello'
+      })
+    )
+  })
+
+  test('testing warn() is called through req', () => {
+    const warn = jest.fn()
+    nanoid.mockImplementation(() => 48)
+    winston.createLogger.mockImplementation(() => ({ warn }))
+    const req = {}
+    const res = { setHeader: (id, val) => {} }
+    logger(req, res, () => {
+      req.warn({ message: 'warning' })
+    })
+    expect(warn).toBeCalledWith(
+      JSON.stringify({
+        requestId: 48,
+        message: 'warning'
+      })
+    )
+  })
+
+  test('testing error() is called through req', () => {
+    const error = jest.fn()
+    nanoid.mockImplementation(() => 55)
+    winston.createLogger.mockImplementation(() => ({ error }))
+    const req = {}
+    const res = { setHeader: (id, val) => {} }
+    logger(req, res, () => {
+      req.error({ message: 'error' })
+    })
+    expect(error).toBeCalledWith(
+      JSON.stringify({
+        requestId: 55,
+        message: 'error'
+      })
+    )
   })
 })

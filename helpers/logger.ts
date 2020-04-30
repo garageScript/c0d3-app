@@ -1,6 +1,8 @@
 import { nanoid } from 'nanoid'
 import winston from 'winston'
 import { TransformableInfo } from 'logform' // Types for Winston
+import { LoggedRequest } from '../@types/helpers'
+import { NextApiResponse } from 'next'
 
 export const printFunc = (info: TransformableInfo) => {
   return `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
@@ -20,10 +22,19 @@ export const winstonLogger = (file: string) => {
   })
 }
 
-export default (req: any, res: any, next: any) => {
+export default (req: LoggedRequest, res: NextApiResponse, next: () => void) => {
   const uid = nanoid()
-  req.logger = winstonLogger(__filename)
-  req.id = uid
+  const logger = winstonLogger(__filename)
+  req.info = (obj: any) => {
+    logger.info(JSON.stringify({ requestId: uid, ...obj }))
+  }
+  req.warn = (obj: any) => {
+    logger.warn(JSON.stringify({ requestId: uid, ...obj }))
+  }
+  req.error = (obj: any) => {
+    logger.error(JSON.stringify({ requestId: uid, ...obj }))
+  }
+  req.requestId = uid
   res.setHeader('c0d3-debug-id', uid)
   next()
 }
