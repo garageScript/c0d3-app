@@ -25,13 +25,13 @@ export const winstonLogger = (file: string) => {
 export default (req: LoggedRequest, res: NextApiResponse, next: () => void) => {
   const uid = nanoid()
   const logger = winstonLogger(__filename)
-  req.info = (obj: any) => {
+  req.info = (obj: { [key: string]: any }) => {
     logger.info(JSON.stringify({ requestId: uid, ...obj }))
   }
-  req.warn = (obj: any) => {
+  req.warn = (obj: { [key: string]: any }) => {
     logger.warn(JSON.stringify({ requestId: uid, ...obj }))
   }
-  req.error = (obj: any) => {
+  req.error = (obj: { [key: string]: any }) => {
     logger.error(JSON.stringify({ requestId: uid, ...obj }))
   }
   req.requestId = uid
