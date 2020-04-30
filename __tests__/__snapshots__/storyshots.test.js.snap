@@ -609,6 +609,74 @@ exports[`Storyshots Components/ChallengeMaterial No Challenges 1`] = `
 </h1>
 `;
 
+exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
+<div
+  className="row challenge-display"
+>
+  <div
+    className="col-4"
+  >
+    <div
+      className="card mb-2 challenge-title-card challenge-title-card--done"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          0. Greater than 5
+        </div>
+        <img
+          height="25px"
+          src="/curriculumAssets/icons/checkmark.svg"
+          width="25px"
+        />
+      </div>
+    </div>
+    <div
+      className="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          1. Sum of 2 Numbers
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="col-8"
+  >
+    <div
+      className="card shadow-sm border-0"
+    >
+      <div
+        className="card-body challenge-question"
+      >
+        <h1
+          className="card-title"
+          data-testid="challenge-question-title"
+        >
+          Sum of 2 Numbers
+        </h1>
+        <div
+          className="bg-light p-3 mt-3"
+          data-testid="challenge-question-description"
+        >
+          <span>
+            Write a function that takes in 2 numbers and returns their sum.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
 <div
   className="row challenge-display"
@@ -1089,6 +1157,13 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             </tbody>
           </table>
         </div>
+      </div>
+      <div
+        className="card-footer bg-white"
+      >
+        <code>
+          test comment
+        </code>
       </div>
     </div>
   </div>
@@ -1806,7 +1881,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       >
         <svg
           fill="none"
-          height="24"
+          height={24}
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -1817,7 +1892,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             }
           }
           viewBox="0 0 24 24"
-          width="24"
+          width={24}
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -2354,6 +2429,30 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       Setup Development Environment
     </a>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewStatus Need More Work Status 1`] = `
+<div
+  className="text-center p-2 my-2 border border-danger text-danger"
+>
+  Your solution was reviewed and rejected by dan
+</div>
+`;
+
+exports[`Storyshots Components/ReviewStatus Open Status 1`] = `
+<div
+  className="text-center p-2 my-2 border border-warning text-warning"
+>
+  Your MR is currently waiting to be reviewed
+</div>
+`;
+
+exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
+<div
+  className="text-center p-2 my-2 border border-success text-success"
+>
+  Your solution was reviewed and accepted by dan
 </div>
 `;
 
