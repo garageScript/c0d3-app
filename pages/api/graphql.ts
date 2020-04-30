@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server-micro'
 import session from 'express-session'
 import nextConnect from 'next-connect'
+import loggingMiddleware from '../../helpers/logger'
 import db from '../../helpers/dbload'
 import typeDefs from '../../graphql/typeDefs'
 import resolvers from '../../graphql/resolvers'
@@ -22,6 +23,7 @@ const apolloServer = new ApolloServer({
 const graphQLHandler = apolloServer.createHandler({ path: '/api/graphql' })
 
 handler
+  .use(loggingMiddleware)
   .use(
     session({
       secret: process.env.SESSION_SECRET || '',
