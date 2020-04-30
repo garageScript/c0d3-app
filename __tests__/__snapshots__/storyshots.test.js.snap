@@ -219,6 +219,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
     <div>
       <button
         className="btn border btn-secondary overflow-hidden p-2 text-truncate"
+        onClick={[Function]}
         style={
           Object {
             "fontSize": "13px",
@@ -235,6 +236,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
       </button>
       <button
         className="btn border btn-secondary ml-2"
+        onClick={[Function]}
       >
         Logout
       </button>
@@ -332,6 +334,7 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
 exports[`Storyshots Components/Button Border With Text 1`] = `
 <button
   className="btn border btn-secondary overflow-hidden text-truncate"
+  onClick={[Function]}
 >
   Click Me
 </button>
@@ -340,6 +343,7 @@ exports[`Storyshots Components/Button Border With Text 1`] = `
 exports[`Storyshots Components/Button Color Badge Button 1`] = `
 <button
   className="btn border btn-secondary overflow-hidden text-truncate"
+  onClick={[Function]}
   style={
     Object {
       "fontSize": "13px",
@@ -359,6 +363,7 @@ exports[`Storyshots Components/Button Color Badge Button 1`] = `
 exports[`Storyshots Components/Button Color With Text 1`] = `
 <button
   className="btn btn-primary"
+  onClick={[Function]}
 >
   Click Me
 </button>
@@ -2506,6 +2511,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
       >
         <button
           className="btn btn-primary"
+          onClick={[Function]}
         >
           Review
         </button>
@@ -2563,6 +2569,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
       >
         <button
           className="btn btn-primary"
+          onClick={[Function]}
         >
           Review
         </button>
@@ -2620,6 +2627,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
       >
         <button
           className="btn btn-primary"
+          onClick={[Function]}
         >
           Review
         </button>
@@ -2681,6 +2689,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
     >
       <button
         className="btn btn-primary"
+        onClick={[Function]}
       >
         Review
       </button>
