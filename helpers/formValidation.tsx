@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 
 const TEXT_MIN = 2
-const TEXT_MAX = 20
+const TEXT_MAX = 64
 const PASSWORD_MIN = 6
 const REGEX_ALPHANUMERICS_AND_SPACE = /^[a-zA-Z0-9_\s]*$/
 
