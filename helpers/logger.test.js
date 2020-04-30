@@ -4,7 +4,7 @@ import logger, { winstonLogger, printFunc } from './logger'
 jest.mock('nanoid')
 jest.mock('winston')
 
-describe('Logger Helper Function', () => {
+describe('Logger Middleware', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     winston.createLogger = jest.fn()
@@ -14,20 +14,6 @@ describe('Logger Helper Function', () => {
     winston.format.colorize = jest.fn()
     winston.format.printf = jest.fn()
     winston.transports.Console = jest.fn()
-  })
-
-  test('Logger is being initialized correctly when logger file is called', () => {
-    winstonLogger('test1')
-    expect(winston.createLogger).toBeCalled()
-    expect(winston.format.combine).toBeCalled()
-    expect(winston.format.colorize).toBeCalled()
-    expect(winston.format.printf).toBeCalledWith(printFunc)
-    expect(winston.format.timestamp).toBeCalledWith({
-      format: 'YYYY-MM-DD HH:mm:ss'
-    })
-    expect(winston.format.label).toBeCalledWith({
-      label: 'test1'
-    })
   })
 
   test('Print Function is working as expected', () => {
@@ -43,6 +29,21 @@ describe('Logger Helper Function', () => {
     )
   })
 
+  test('createLogger is called with correct parameters', () => {
+    const loggerFileName = `${__filename.split('.test.js')[0]}.ts` // Changes ext from .test.js to .ts
+    logger({}, { setHeader: (id, value) => {} }, () => {})
+    expect(winston.createLogger).toBeCalled()
+    expect(winston.format.combine).toBeCalled()
+    expect(winston.format.colorize).toBeCalled()
+    expect(winston.format.printf).toBeCalledWith(printFunc)
+    expect(winston.format.timestamp).toBeCalledWith({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    })
+    expect(winston.format.label).toBeCalledWith({
+      label: loggerFileName
+    })
+  })
+
   test('nanoid() is called in middleware', () => {
     logger({}, { setHeader: (id, value) => {} }, () => {})
     expect(nanoid).toBeCalled()
@@ -52,13 +53,5 @@ describe('Logger Helper Function', () => {
     const nextFunction = jest.fn()
     logger({}, { setHeader: (id, value) => {} }, nextFunction)
     expect(nextFunction).toBeCalled()
-  })
-
-  test('Logged is called with filename in middleware', () => {
-    const loggerFileName = `${__filename.split('.test.js')[0]}.ts` // Changes ext from .test.js to .ts
-    logger({}, { setHeader: (id, value) => {} }, () => {})
-    expect(winston.format.label).toBeCalledWith({
-      label: loggerFileName
-    })
   })
 })
