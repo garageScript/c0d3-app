@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import { User } from './models/User'
 
-const SERVER_URL = process.env.SERVER_URL
+//const SERVER_URL = process.env.SERVER_URL
 
 export const fetcher = (url: string) =>
   fetch(url, { credentials: 'include' }).then(r => r.json())
@@ -16,7 +16,7 @@ export type SessionData = {
 }
 
 const useSession = (): SessionData => {
-  const { data, error } = useSWR(`${SERVER_URL}/session`, fetcher)
+  const { data, error } = useSWR(`/api/graphql`, fetcher)
   return { data, error }
 }
 
