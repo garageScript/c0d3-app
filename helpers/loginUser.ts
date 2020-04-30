@@ -1,7 +1,7 @@
-//const SERVER_URL = process.env.SERVER_URL
+const SERVER_URL = process.env.SERVER_URL
 
 export const loginUser = async (username: string, password: string) => {
-  const res = await fetch(`/api/graphql`, {
+  const res = await fetch(`${SERVER_URL}`, {
     method: 'POST',
     credentials: 'include',
     headers: {

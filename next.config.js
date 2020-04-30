@@ -9,6 +9,6 @@ module.exports = withSass({
     MATTERMOST_ACCESS_TOKEN:
       process.env.MATTERMOST_ACCESS_TOKEN || 'c1eh9rc1cinpbf9mk1wucjyqzw',
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
-    SERVER_URL: process.env.SERVER_URL || 'https://backend.c0d3.com'
+    SERVER_URL: process.env.SERVER_URL || '/api/graphql'
   }
 })

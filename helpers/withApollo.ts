@@ -3,10 +3,10 @@ import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-boost'
 
-//const SERVER_URL = process.env.SERVER_URL
+const SERVER_URL = process.env.SERVER_URL
 
 const link = createHttpLink({
-  uri: `/api/graphql`,
+  uri: `${SERVER_URL}`,
   credentials: 'include'
 })
 
