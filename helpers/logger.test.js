@@ -7,9 +7,6 @@ jest.mock('winston')
 describe('Logger Helper Function', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-  })
-
-  test('Logger is being initialized correctly when logger file is called', () => {
     winston.createLogger = jest.fn()
     winston.format.combine = jest.fn()
     winston.format.timestamp = jest.fn()
@@ -17,6 +14,9 @@ describe('Logger Helper Function', () => {
     winston.format.colorize = jest.fn()
     winston.format.printf = jest.fn()
     winston.transports.Console = jest.fn()
+  })
+
+  test('Logger is being initialized correctly when logger file is called', () => {
     winstonLogger('test1')
     expect(winston.createLogger).toBeCalled()
     expect(winston.format.combine).toBeCalled()
@@ -43,10 +43,22 @@ describe('Logger Helper Function', () => {
     )
   })
 
-  test('nanoid() and next() is called in middleware', () => {
+  test('nanoid() is called in middleware', () => {
+    logger({}, { setHeader: (id, value) => {} }, () => {})
+    expect(nanoid).toBeCalled()
+  })
+
+  test('next() is called in middleware', () => {
     const nextFunction = jest.fn()
     logger({}, { setHeader: (id, value) => {} }, nextFunction)
-    expect(nanoid).toBeCalled()
     expect(nextFunction).toBeCalled()
+  })
+
+  test('Logged is called with filename in middleware', () => {
+    const loggerFileName = `${__filename.split('.test.js')[0]}.ts` // Changes ext from .test.js to .ts
+    logger({}, { setHeader: (id, value) => {} }, () => {})
+    expect(winston.format.label).toBeCalledWith({
+      label: loggerFileName
+    })
   })
 })

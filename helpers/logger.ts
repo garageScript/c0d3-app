@@ -22,7 +22,7 @@ export const winstonLogger = (file: string) => {
 
 export default (req: any, res: any, next: any) => {
   const uid = nanoid()
-  req.logger = winstonLogger
+  req.logger = winstonLogger(__filename)
   req.id = uid
   res.setHeader('c0d3-debug-id', uid)
   next()
