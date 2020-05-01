@@ -1,6 +1,7 @@
+import util from 'util'
 import { nanoid } from 'nanoid'
 import winston from 'winston'
-import logger, { printFunc } from './logger'
+import logger, { processArgs, printFunc } from './logger'
 jest.mock('nanoid')
 jest.mock('winston')
 
@@ -29,8 +30,24 @@ describe('Logger Middleware', () => {
     )
   })
 
+  test('ProcessArgs function is processing string correctly', () => {
+    expect(processArgs('string')).toEqual('string')
+  })
+
+  test('ProcessArgs function is processing error correctly', () => {
+    const sampleErr = new Error('random err')
+    expect(processArgs(sampleErr)).toEqual(sampleErr.toString())
+  })
+
+  test('ProcessArgs function is processing array correctly', () => {
+    const sampleErr = new Error('random err')
+    expect(processArgs([sampleErr, 'hello'])).toEqual(
+      util.format('%j', [sampleErr.toString(), 'hello'])
+    )
+  })
+
   test('createLogger is called with correct parameters', () => {
-    const loggerFileName = `${__filename.split('.test.js')[0]}.ts` // Changes ext from .test.js to .ts
+    nanoid.mockImplementation(() => '12345')
     logger({}, { setHeader: (id, value) => {} }, () => {})
     expect(winston.createLogger).toBeCalled()
     expect(winston.format.combine).toBeCalled()
@@ -40,7 +57,7 @@ describe('Logger Middleware', () => {
       format: 'YYYY-MM-DD HH:mm:ss'
     })
     expect(winston.format.label).toBeCalledWith({
-      label: loggerFileName
+      label: '12345'
     })
   })
 
@@ -62,14 +79,9 @@ describe('Logger Middleware', () => {
     const req = {}
     const res = { setHeader: (id, val) => {} }
     logger(req, res, () => {
-      req.info({ message: 'hello' })
+      req.info(['sample info message'])
     })
-    expect(info).toBeCalledWith(
-      JSON.stringify({
-        requestId: 32,
-        message: 'hello'
-      })
-    )
+    expect(info).toBeCalledWith(util.format('%j', ['sample info message']))
   })
 
   test('testing warn() is called through req', () => {
@@ -79,14 +91,9 @@ describe('Logger Middleware', () => {
     const req = {}
     const res = { setHeader: (id, val) => {} }
     logger(req, res, () => {
-      req.warn({ message: 'warning' })
+      req.warn(['sample warning'])
     })
-    expect(warn).toBeCalledWith(
-      JSON.stringify({
-        requestId: 48,
-        message: 'warning'
-      })
-    )
+    expect(warn).toBeCalledWith(util.format('%j', ['sample warning']))
   })
 
   test('testing error() is called through req', () => {
@@ -96,13 +103,8 @@ describe('Logger Middleware', () => {
     const req = {}
     const res = { setHeader: (id, val) => {} }
     logger(req, res, () => {
-      req.error({ message: 'error' })
+      req.error(['sample error'])
     })
-    expect(error).toBeCalledWith(
-      JSON.stringify({
-        requestId: 55,
-        message: 'error'
-      })
-    )
+    expect(error).toBeCalledWith(util.format('%j', ['sample error']))
   })
 })
