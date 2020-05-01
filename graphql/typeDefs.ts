@@ -4,6 +4,8 @@ export default gql`
   type Query {
     lessons: [Lesson]
     session: Session
+    isTokenValid(cliToken: String!): Boolean!
+    cliToken(username: String!, password: String!): String
   }
 
   type Mutation {
@@ -16,6 +18,12 @@ export default gql`
       username: String!
       password: String
     ): AuthResponse
+    createSubmission(
+      lessonId: String!
+      cliToken: String!
+      diff: String!
+      challengeId: String!
+    ): User
   }
 
   type AuthResponse {

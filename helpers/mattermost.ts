@@ -37,3 +37,32 @@ export const chatSignUp = async (
     throw new Error(err || 'Internal Server Error')
   }
 }
+
+const getChannelInfo = async (roomName: string) => {
+  const devOrProd = process.env.NODE_ENV === 'production' ? 'c0d3' : 'c0d3-dev'
+  const response = await fetch(
+    `${chatServiceUrl}/teams/name/${devOrProd}/channels/name/${roomName}`,
+    { headers }
+  )
+  return response.json()
+}
+
+const sendMessage = async (channelId: string, message: string) =>
+  fetch(`${chatServiceUrl}/posts`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({
+      channel_id: channelId,
+      message
+    })
+  }).catch(error => {
+    throw new Error(error)
+  })
+
+export const publicChannelMessage = async (
+  channelName: string,
+  message: string
+) => {
+  const channelId = await getChannelInfo(channelName)
+  sendMessage(channelId.id, message)
+}

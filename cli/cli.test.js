@@ -2,7 +2,7 @@
 import cli from './cli'
 
 describe('c0d3.com cli', () => {
-  test('displays error message for invalid commands', () => {
+  test.skip('displays error message for invalid commands', () => {
     let errorMessage = ''
     const log = msg => (errorMessage += msg)
     console.error = jest.fn(log)

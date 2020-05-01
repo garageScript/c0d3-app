@@ -1,36 +1,37 @@
 const path = require('path')
+const chalk = require('chalk')
 const homeDir = require('os').homedir()
 const fs = require('fs')
 const prompt = require('prompt')
-const axios = require('axios')
+const { request } = require('graphql-request')
+const { IS_TOKEN_VALID, GET_CLI_TOKEN } = require('../util/graphql')
 
-module.exports = {
-  getCredentials,
-  validate,
-  save
-}
+const DIR = '.c0d3'
 
-const credentialsPath = path.join(homeDir, '.c0d3', 'credentials.json')
+const credentialsPath = path.join(homeDir, DIR, 'credentials.json')
 
-async function getCredentials (url, dir = credentialsPath) {
+const verifyToken = async url => {
   try {
-    const creds = require(dir)
-    const uId = await axios.get(`${url.origin}/verifySubmissionToken?token=${creds.cliToken}`)
-    if (!uId || !uId.data || !uId.data.userId) throw new Error('Token Invalid')
-    return creds
-  } catch (e) {
-    return askForUsernamePassword()
+    const { cliToken } = require(credentialsPath)
+    const { isTokenValid } = await request(url, IS_TOKEN_VALID, {
+      cliToken
+    })
+    return { isTokenValid, cliToken } || false
+  } catch {
+    return false
   }
 }
 
-function askForUsernamePassword () {
+const askCredentials = () => {
   return new Promise((resolve, reject) => {
     const schema = [
       {
+        description: chalk.rgb(84, 64, 216).bold('username'),
         name: 'username',
         required: true
       },
       {
+        description: chalk.rgb(84, 64, 216).bold('password'),
         name: 'password',
         hidden: true,
         replace: '*'
@@ -40,48 +41,56 @@ function askForUsernamePassword () {
     prompt.message = ''
     prompt.start()
     prompt.get(schema, (err, result) => {
-      if (err) return reject('Unable to obtain username/password')
+      if (err) {
+        return reject(chalk.red('\n  Unable to obtain username/password'))
+      }
       resolve(result)
     })
   })
 }
 
-async function validate (credentials, url) {
+const getToken = async (credentials, url) => {
   try {
-    const cliToken = await axios.post(url, {
-      username: credentials.username,
-      password: credentials.password
+    const { username, password } = credentials
+    const { cliToken } = await request(url, GET_CLI_TOKEN, {
+      username,
+      password
     })
-    if (!cliToken || !cliToken.data || !cliToken.data.cliToken) {
-      return ''
-    }
-    return cliToken.data.cliToken
-  } catch (e) {
-    return ''
+    return cliToken
+  } catch (error) {
+    console.log(chalk.red('Invalid credentials, please try again!'))
+    return askCredentials()
   }
 }
 
-async function save (credentials, cliToken) {
+const saveToken = async cliToken => {
   try {
     createHiddenDir()
     await createCredentialsFile(credentialsPath, cliToken)
-  } catch (e) {
+  } catch {
     console.error('Unable to create hidden directory and save credentials')
   }
 }
 
-function createHiddenDir () {
-  const hiddenDir = path.join(homeDir, '.c0d3')
+const createHiddenDir = () => {
+  const hiddenDir = path.join(homeDir, DIR)
   if (!fs.existsSync(hiddenDir)) {
     fs.mkdirSync(hiddenDir)
   }
 }
 
-function createCredentialsFile (dir = credentialsPath, cliToken) {
+const createCredentialsFile = (credentialsPath, cliToken) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(dir, JSON.stringify({ cliToken }), err => {
+    fs.writeFile(credentialsPath, JSON.stringify({ cliToken }), err => {
       if (err) return reject('Unable to save credentials')
       resolve()
     })
   })
+}
+
+module.exports = {
+  verifyToken,
+  askCredentials,
+  getToken,
+  saveToken
 }

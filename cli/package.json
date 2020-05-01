@@ -21,16 +21,14 @@
   },
   "author": "c0d3.com",
   "dependencies": {
-    "axios": "^0.18.0",
-    "chalk": "^2.4.2",
-    "child_process": "^1.0.2",
+    "chalk": "^4.0.0",
     "graphql-request": "^1.6.0",
     "minimist": "^1.2.0",
     "prompt": "^1.0.0",
-    "simple-git": "^1.96.0"
+    "simple-git": "^2.2.0"
   },
   "devDependencies": {
-    "jest": "^24.1.0"
+    "jest": "^25.5.3"
   },
   "main": "cli.js"
 }
