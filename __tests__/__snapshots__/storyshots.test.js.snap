@@ -742,7 +742,8 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
       <div
         className="card-header bg-white"
       >
-        
+        Submitted 
+        a few seconds ago
       </div>
       <div
         className="card-body"

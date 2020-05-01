@@ -52,7 +52,7 @@ export const WithDiff: React.FC = () => (
         challengeId: '105',
         reviewerId: '',
         createdAt: '',
-        updatedAt: ''
+        updatedAt: Date.now().toString()
       },
       {
         status: '',
@@ -64,7 +64,7 @@ export const WithDiff: React.FC = () => (
         challengeId: '107',
         reviewerId: '',
         createdAt: '',
-        updatedAt: ''
+        updatedAt: Date.now().toString()
       }
     ]}
     lessonStatus={lessonStatus}
@@ -90,7 +90,7 @@ export const WithComments: React.FC = () => (
         },
         reviewerId: '1',
         createdAt: '',
-        updatedAt: ''
+        updatedAt: Date.now().toString()
       }
     ]}
     lessonStatus={lessonStatus}
