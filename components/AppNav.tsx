@@ -1,6 +1,7 @@
 import * as React from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
+import logoutUser from '../helpers/logoutUser'
 
 import '../scss/navbar.scss'
 
@@ -48,7 +49,14 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
       initial={initial}
       text={username}
     />
-    <Button text="Logout" btnType="border btn-secondary ml-2" />
+    <Button
+      text="Logout"
+      btnType="border btn-secondary ml-2"
+      onClick={async () => {
+        const res = await logoutUser()
+        if (res) window.location.pathname = '/'
+      }}
+    />
   </div>
 )
 
