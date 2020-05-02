@@ -334,7 +334,8 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
         <div
           class="card-header bg-white"
         >
-          tester
+          Submitted 
+          16 days ago
         </div>
         <div
           class="card-body"
