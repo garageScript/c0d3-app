@@ -59,10 +59,7 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = props => {
           <h6 className="challenges_stats">
             {`${lesson.correctAnswers} of ${lesson.challenges.length}  Challenges completed`}
           </h6>
-          <ChallengeStatus
-            className="lesson_challenges_container"
-            challengesData={lesson.challenges}
-          />
+          <ChallengeStatus challengesData={lesson.challenges} />
         </div>
       </div>
     )
