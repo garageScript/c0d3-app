@@ -1951,6 +1951,604 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/LessonChallenges Challenge Status Card 1`] = `
+<div
+  className="challenges_container"
+>
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+  <span
+    className="challenge_status default_challenge_status"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="card-body lessons_challenges_card_body"
+  >
+    <h3
+      className="main_title"
+    >
+      Challenges
+    </h3>
+    <div
+      className="display_lessons"
+    >
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Foundation of Javascript
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            10 of 10  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Variables & Functions
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 12  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Arrays
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 11  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Objects
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            10 of 10  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+            <span
+              className="challenge_status passed_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Front End Engineering
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 7  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+            <span
+              className="challenge_status unapproved_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            End to End
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 9  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            React, GraphQL, SocketIO
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 8  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Javscript Algorithms
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 11  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+            <span
+              className="challenge_status pending_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            Trees
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 12  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="lesson_challenges"
+      >
+        <img
+          src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+        />
+        <div
+          className="lesson_title_container"
+        >
+          <h6
+            className="lesson_titles"
+          >
+            General Algorithms
+          </h6>
+          <h6
+            className="challenges_stats"
+          >
+            0 of 5  Challenges completed
+          </h6>
+          <div
+            className="challenges_container"
+          >
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
 <div
   className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"

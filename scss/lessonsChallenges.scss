@@ -1,8 +1,67 @@
-.lessonimage_container{
-  position: relative;
+.default_challenge_status{
+  background-color: grey;
+}
+
+.passed_challenge_status{
+  background-color: #00cf92;
+}
+
+.unapproved_challenge_status{
+  background-color: red;
+}
+
+.pending_challenge_status{
+ background-color: orange;
+}
+
+.lesson_challenges{
+  display: flex;
+  margin-top: 15px
+}
+
+.lessons_challenges_title{
+  padding: 8px;
+}
+
+.lessons_challenges_card_body{
+  margin-left: 30px;
+}
+
+.display_lessons{
+  margin-top: 40px;
+}
+.lesson_title_container{
   display: block;
 }
 
-.titles_container{
-  display: block;
+.challenge_status{
+  height: 7px;
+  width: 40px;
+  padding: 10px;
+  margin-left: 2px;
+  display: inline-block;
+}
+
+.challenges_container{
+  margin-left: 50px;
+}
+
+.challenges_stats{
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.lesson_challenges_container{
+  margin-left: 15px;
+}
+
+.lesson_titles{
+  margin-left: 50px;
+  margin-top: 10px;
+  color: grey;
+
+}
+
+.main_title{
+  padding: 8px;
 }
