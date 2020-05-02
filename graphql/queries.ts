@@ -118,6 +118,7 @@ export const GET_APP = gql`
         comment
         order
         challengeId
+        lessonId
         reviewer {
           id
           username
