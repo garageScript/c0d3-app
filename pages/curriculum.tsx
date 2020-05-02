@@ -23,6 +23,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   const lessonInProgressIdx = sortedLessons.findIndex(
     lesson => !lesson.currentUser.userLesson.isPassed
   )
+  const progressPercentage = (lessonInProgressIdx * 100) / sortedLessons.length
   const lessonsToRender: React.ReactElement[] = sortedLessons.map(
     (lesson, idx) => {
       let lessonState = ''
@@ -56,7 +57,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
       <div className="row mt-4">
         <div className="col-8">{lessonsToRender}</div>
         <div className="col-4">
-          <ProgressCard progressCount={0} />
+          <ProgressCard progressCount={progressPercentage} />
           <AnnouncementCard announcements={announcements} />
           <AdditionalResources />
         </div>
