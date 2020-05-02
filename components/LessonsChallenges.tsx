@@ -24,9 +24,7 @@ type Challenge = {
 }
 
 export const ChallengeStatus: React.FC<ChallengeStatusProps> = props => {
-  console.log('PROPS:', props)
   const displayChallengeStatus = props.challengesData.map(eachChallenge => {
-    console.log('EACH CHALLENGE', eachChallenge)
     let challengeStatus = 'default_challenge_status'
     if (eachChallenge.challengeStatus === 'passed') {
       challengeStatus = 'passed_challenge_status'
