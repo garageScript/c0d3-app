@@ -12,14 +12,12 @@ type LessonChallengeProps = {
 type LessonChallenge = {
   order: number
   title: string
-  totalChallenges: number
-  correctAnswers: number
   challenges: Challenge[]
 }
 
 type Challenge = {
   challengeNumber: number
-  challengeStatus: string
+  challengeStatus?: string
 }
 
 export const ChallengeStatus: React.FC<ChallengeStatusProps> = props => {
@@ -29,7 +27,7 @@ export const ChallengeStatus: React.FC<ChallengeStatusProps> = props => {
       if (eachChallenge.challengeStatus === 'passed') {
         challengeStatus = 'passed_challenge_status'
       }
-      if (eachChallenge.challengeStatus === 'wrong answer') {
+      if (eachChallenge.challengeStatus === 'wrong') {
         challengeStatus = 'unapproved_challenge_status'
       }
       if (eachChallenge.challengeStatus === 'pending') {
@@ -47,7 +45,11 @@ export const ChallengeStatus: React.FC<ChallengeStatusProps> = props => {
 }
 
 const LessonsChallenges: React.FC<LessonChallengeProps> = props => {
+  let filterPassedChallenges = []
   const displayLessons = props.lessons.map((lesson, lessonId) => {
+    filterPassedChallenges = lesson.challenges.filter(
+      e => e.challengeStatus === 'passed'
+    )
     return (
       <div key={lessonId} className="lesson_challenges">
         <img
@@ -56,7 +58,7 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = props => {
         <div className="lesson_title_container">
           <h6 className="lesson_titles">{lesson.title}</h6>
           <h6 className="challenges_stats">
-            {`${lesson.correctAnswers} of ${lesson.challenges.length}  Challenges completed`}
+            {`${filterPassedChallenges.length} of ${lesson.challenges.length}  Challenges completed`}
           </h6>
           <ChallengeStatus challengesData={lesson.challenges} />
         </div>

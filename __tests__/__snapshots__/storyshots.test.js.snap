@@ -2382,11 +2382,20 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           <h6
             className="challenges_stats"
           >
-            0 of 9  Challenges completed
+            0 of 12  Challenges completed
           </h6>
           <div
             className="challenges_container"
           >
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
+            <span
+              className="challenge_status default_challenge_status"
+            />
             <span
               className="challenge_status default_challenge_status"
             />
