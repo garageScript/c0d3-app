@@ -1,5 +1,4 @@
 import React from 'react'
-import _ from 'lodash'
 import '../scss/lessonsChallenges.scss'
 
 type ChallengeStatusProps = {
@@ -24,31 +23,33 @@ type Challenge = {
 }
 
 export const ChallengeStatus: React.FC<ChallengeStatusProps> = props => {
-  const displayChallengeStatus = props.challengesData.map(eachChallenge => {
-    let challengeStatus = 'default_challenge_status'
-    if (eachChallenge.challengeStatus === 'passed') {
-      challengeStatus = 'passed_challenge_status'
+  const displayChallengeStatus = props.challengesData.map(
+    (eachChallenge, challengeId) => {
+      let challengeStatus = 'default_challenge_status'
+      if (eachChallenge.challengeStatus === 'passed') {
+        challengeStatus = 'passed_challenge_status'
+      }
+      if (eachChallenge.challengeStatus === 'wrong answer') {
+        challengeStatus = 'unapproved_challenge_status'
+      }
+      if (eachChallenge.challengeStatus === 'pending') {
+        challengeStatus = 'pending_challenge_status'
+      }
+      return (
+        <span
+          key={challengeId}
+          className={`challenge_status ${challengeStatus}`}
+        ></span>
+      )
     }
-    if (eachChallenge.challengeStatus === 'wrong answer') {
-      challengeStatus = 'unapproved_challenge_status'
-    }
-    if (eachChallenge.challengeStatus === 'pending') {
-      challengeStatus = 'pending_challenge_status'
-    }
-    return (
-      <span
-        key={_.uniqueId()}
-        className={`challenge_status ${challengeStatus}`}
-      ></span>
-    )
-  })
+  )
   return <div className="challenges_container">{displayChallengeStatus}</div>
 }
 
 const LessonsChallenges: React.FC<LessonChallengeProps> = props => {
-  const displayLessons = props.lessons.map(lesson => {
+  const displayLessons = props.lessons.map((lesson, lessonId) => {
     return (
-      <div key={_.uniqueId()} className="lesson_challenges">
+      <div key={lessonId} className="lesson_challenges">
         <img
           src={`/curriculumAssets/lessonCoversSvg/js-${lesson.order}-cover.svg`}
         />
