@@ -2078,7 +2078,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
   className="card shadow-sm profile-submissions"
 >
   <div
-    className="card-body lessons_challenges_card_body"
+    className="card-body"
   >
     <h3>
       Challenges

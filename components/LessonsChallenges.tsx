@@ -49,7 +49,7 @@ export const ChallengeStatus: React.FC<ChallengeStatusProps> = ({
 const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
   const displayLessons = lessons.map((lesson, lessonId) => {
     const filterPassedChallenges = lesson.challenges.filter(
-      e => e.challengeStatus === 'passed'
+      eachChallenge => eachChallenge.challengeStatus === 'passed'
     )
     return (
       <div key={lessonId} className="lesson_challenges">
@@ -68,7 +68,7 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
   })
   return (
     <div className="card shadow-sm profile-submissions">
-      <div className="card-body lessons_challenges_card_body">
+      <div className="card-body">
         <h3>Challenges</h3>
         <div className="display_lessons">{displayLessons}</div>
       </div>
