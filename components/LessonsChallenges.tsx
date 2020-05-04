@@ -20,34 +20,35 @@ type Challenge = {
   challengeStatus?: string
 }
 
-export const ChallengeStatus: React.FC<ChallengeStatusProps> = props => {
-  const displayChallengeStatus = props.challengesData.map(
+export const ChallengeStatus: React.FC<ChallengeStatusProps> = ({
+  challengesData
+}) => {
+  const displayChallengeStatus = challengesData.map(
     (eachChallenge, challengeId) => {
-      let challengeStatus = 'default_challenge_status'
+      let challengeStatus = 'bg-gray'
       if (eachChallenge.challengeStatus === 'passed') {
-        challengeStatus = 'passed_challenge_status'
+        challengeStatus = 'bg-success'
       }
       if (eachChallenge.challengeStatus === 'wrong') {
-        challengeStatus = 'unapproved_challenge_status'
+        challengeStatus = 'bg-danger'
       }
       if (eachChallenge.challengeStatus === 'pending') {
-        challengeStatus = 'pending_challenge_status'
+        challengeStatus = 'bg-warning'
       }
       return (
         <span
           key={challengeId}
           className={`challenge_status ${challengeStatus}`}
-        ></span>
+        />
       )
     }
   )
   return <div className="challenges_container">{displayChallengeStatus}</div>
 }
 
-const LessonsChallenges: React.FC<LessonChallengeProps> = props => {
-  let filterPassedChallenges = []
-  const displayLessons = props.lessons.map((lesson, lessonId) => {
-    filterPassedChallenges = lesson.challenges.filter(
+const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
+  const displayLessons = lessons.map((lesson, lessonId) => {
+    const filterPassedChallenges = lesson.challenges.filter(
       e => e.challengeStatus === 'passed'
     )
     return (
@@ -66,9 +67,9 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = props => {
     )
   })
   return (
-    <div className="card shadow-sm">
+    <div className="card shadow-sm profile-submissions">
       <div className="card-body lessons_challenges_card_body">
-        <h3 className="main_title">Challenges</h3>
+        <h3 className="profile_section_title">Challenges</h3>
         <div className="display_lessons">{displayLessons}</div>
       </div>
     </div>

@@ -1,64 +1,47 @@
-.default_challenge_status{
-  background-color: grey;
-}
+.profile-submissions{
 
-.passed_challenge_status{
-  background-color: #00cf92;
-}
+  .lesson_challenges{
+    display: flex;
+    margin-top: 15px
+  }
 
-.unapproved_challenge_status{
-  background-color: red;
-}
+  .lessons_challenges_card_body{
+    margin-left: 30px;
+  }
 
-.pending_challenge_status{
- background-color: orange;
-}
+  .display_lessons{
+    margin-top: 40px;
+  }
+  .lesson_title_container{
+    display: block;
+  }
 
-.lesson_challenges{
-  display: flex;
-  margin-top: 15px
-}
+  .challenge_status{
+    height: 7px;
+    width: 40px;
+    padding: 10px;
+    margin-left: 2px;
+    display: inline-block;
+  }
 
-.lessons_challenges_title{
-  padding: 8px;
-}
+  .challenges_container{
+    margin-left: 50px;
+  }
 
-.lessons_challenges_card_body{
-  margin-left: 30px;
-}
-
-.display_lessons{
-  margin-top: 40px;
-}
-.lesson_title_container{
-  display: block;
-}
-
-.challenge_status{
-  height: 7px;
-  width: 40px;
-  padding: 10px;
-  margin-left: 2px;
-  display: inline-block;
-}
-
-.challenges_container{
-  margin-left: 50px;
-}
-
-.challenges_stats{
-  margin-left: 50px;
-  margin-top: 15px;
-}
+  .challenges_stats{
+    margin-left: 50px;
+    margin-top: 15px;
+  }
 
 
-.lesson_titles{
-  margin-left: 50px;
-  margin-top: 10px;
-  color: grey;
+  .lesson_titles{
+    margin-left: 50px;
+    margin-top: 10px;
+    color: grey;
 
-}
+  }
 
-.main_title{
-  padding: 8px;
+  .profile_section_title{
+    padding: 8px;
+  }
 }
