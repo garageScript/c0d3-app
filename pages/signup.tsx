@@ -1,6 +1,7 @@
 //import libraries
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
+import { useMutation } from '@apollo/react-hooks';
 
 //import components
 import Card from '../components/Card'
@@ -10,7 +11,7 @@ import NavLink from '../components/NavLink'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'
-import { signupUser } from '../helpers/signupUser'
+import { SIGNUP_USER } from '../graphql/queries'
 
 //import types
 import {
@@ -130,12 +131,17 @@ const SignupForm: React.FC<SignupFormProps> = ({
 const Signup: React.FC = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [signupErrors, setSignupErrors] = useState({} as SignupErrors)
+  const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
-    const data = await signupUser(values)
-    if (data.success) {
-      setSignupSuccess(true)
-    } else {
-      setSignupErrors(Object.assign({}, data.errorMessage))
+    try {
+      const { data } = await signupUser({variables: values})
+      console.log('DATA', data)
+      if (data.signup.success) {
+        setSignupSuccess(true)
+      } 
+    } catch(error) {
+      console.log('ERROR', error)
+      setSignupErrors(Object.assign({}, error))
     }
   }
   return (

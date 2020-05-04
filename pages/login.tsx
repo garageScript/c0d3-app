@@ -7,7 +7,8 @@ import Layout from '../components/Layout'
 import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
-import { loginUser } from '../helpers/loginUser'
+import { useMutation } from '@apollo/react-hooks';
+import { LOGIN_USER } from '../graphql/queries'
 
 const initialValues = {
   username: '',
@@ -21,15 +22,18 @@ type Values = {
 
 const Login: React.FC = () => {
   const [isAlertVisible, setIsAlertVisible] = useState(false)
-
+  const [loginUser] = useMutation(LOGIN_USER)
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
   const handleSubmit = async (values: Values) => {
-    const data = await loginUser(values.username, values.password)
-    if (data) {
-      Router.push('/curriculum')
-      return
+    try {
+      const { data } = await loginUser({variables: values})
+      if (data.login.success) {
+        Router.push('/curriculum')
+        return
+      }
+    } catch (error) {
+      setIsAlertVisible(true)
     }
-    setIsAlertVisible(true)
   }
   return (
     <Layout>
