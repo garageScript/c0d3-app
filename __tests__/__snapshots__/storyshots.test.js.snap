@@ -2033,9 +2033,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 `;
 
 exports[`Storyshots Components/LessonChallenges Challenge Status Card 1`] = `
-<div
-  className="challenges_container"
->
+<div>
   <span
     className="challenge_status bg-gray"
   />
@@ -2082,9 +2080,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
   <div
     className="card-body lessons_challenges_card_body"
   >
-    <h3
-      className="profile_section_title"
-    >
+    <h3>
       Challenges
     </h3>
     <div
@@ -2109,9 +2105,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             10 of 10  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-success"
             />
@@ -2164,9 +2158,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 12  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-gray"
             />
@@ -2225,9 +2217,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 11  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-warning"
             />
@@ -2283,9 +2273,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             10 of 10  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-success"
             />
@@ -2338,9 +2326,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 7  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-danger"
             />
@@ -2384,9 +2370,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 12  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-gray"
             />
@@ -2445,9 +2429,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 8  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-gray"
             />
@@ -2494,9 +2476,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 11  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-warning"
             />
@@ -2552,9 +2532,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 12  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-gray"
             />
@@ -2613,9 +2591,7 @@ exports[`Storyshots Components/LessonChallenges Lessons Challenges Card 1`] = `
           >
             0 of 5  Challenges completed
           </h6>
-          <div
-            className="challenges_container"
-          >
+          <div>
             <span
               className="challenge_status bg-gray"
             />

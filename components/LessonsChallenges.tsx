@@ -43,7 +43,7 @@ export const ChallengeStatus: React.FC<ChallengeStatusProps> = ({
       )
     }
   )
-  return <div className="challenges_container">{displayChallengeStatus}</div>
+  return <div>{displayChallengeStatus}</div>
 }
 
 const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
@@ -69,7 +69,7 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
   return (
     <div className="card shadow-sm profile-submissions">
       <div className="card-body lessons_challenges_card_body">
-        <h3 className="profile_section_title">Challenges</h3>
+        <h3>Challenges</h3>
         <div className="display_lessons">{displayLessons}</div>
       </div>
     </div>
