@@ -24,7 +24,7 @@ export const ChallengeStatus: React.FC<ChallengeStatusProps> = ({
   challengesData
 }) => {
   const displayChallengeStatus = challengesData.map(
-    (eachChallenge, challengeId) => {
+    (eachChallenge: Challenge, challengeId: number) => {
       let challengeStatus = 'bg-gray'
       if (eachChallenge.challengeStatus === 'passed') {
         challengeStatus = 'bg-success'
