@@ -18,23 +18,21 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   ]
 
   const { lessons, session }: { lessons: Lesson[]; session: any } = queryData
-  const sortedLessonsById: Lesson[] = lessons.sort((a, b) => a.id - b.id)
-  const sortedLessonStatus = session.lessonStatus.sort(
-    (a: any, b: any) => a.id - b.id
-  )
-  const sortedLessonsMap = sortedLessonsById
-    .map((lesson, idx) => {
-      return {
-        ...lesson,
-        lessonStatus: {
-          ...sortedLessonStatus[idx]
-        }
-      }
-    })
-    .sort((a, b) => a.order - b.order)
+  const lessonStatusMap: any = session.lessonStatus.reduce((map: any, lessonStatus: any) => {
+    map[lessonStatus.lessonId] = lessonStatus
+    return map
+  }, {})
+
+  const sortedLessons: Lesson[] = lessons.map((lesson) => {
+    lesson.lessonStatus = lessonStatusMap[lesson.id]
+    return lesson
+  }).sort((a, b) => a.order - b.order)
+
   const lessonInProgressIdx =
-    sortedLessonsMap.findIndex(lesson => !lesson.lessonStatus.isPassed) || 0
-  const lessonsToRender: React.ReactElement[] = sortedLessonsMap.map(
+    sortedLessons.findIndex(lesson => !lesson.lessonStatus.isPassed) || 0
+
+  const progressPercentage = (lessonInProgressIdx * 100) / sortedLessons.length
+  const lessonsToRender: React.ReactElement[] = sortedLessons.map(
     (lesson, idx) => {
       let lessonState = ''
       if (lesson.lessonStatus.isEnrolled || idx === lessonInProgressIdx) {
@@ -64,7 +62,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
       <div className="row mt-4">
         <div className="col-8">{lessonsToRender}</div>
         <div className="col-4">
-          <ProgressCard progressCount={0} />
+          <ProgressCard progressCount={progressPercentage} />
           <AnnouncementCard announcements={announcements} />
           <AdditionalResources />
         </div>

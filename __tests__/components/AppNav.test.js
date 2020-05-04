@@ -4,7 +4,14 @@ import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
 import AppNav from '../../components/AppNav'
 import logoutUser from '../../helpers/logoutUser'
-import Router from 'next/router'
+
+// Mock global.window
+global.window = Object.create(window)
+
+// define property to be modifed beforeEach test
+Object.defineProperty(global.window, 'location', {
+  value: { pathname: '/curriculum' } // make sure pathname isnt '/' by default
+})
 
 describe('AppNav Component', () => {
   beforeEach(() => {
@@ -36,6 +43,6 @@ describe('AppNav Component', () => {
 
     logoutUser.mockReturnValue(Promise.resolve(true))
     fireEvent.click(getByText('Logout'), leftClick)
-    await wait(() => expect(Router.push).toHaveBeenCalledWith('/'))
+    await wait(() => expect(global.window.location.pathname).toEqual('/'))
   })
 })

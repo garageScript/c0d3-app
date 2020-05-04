@@ -1,25 +1,21 @@
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
-import SessionContext from '../../helpers/contexts/session'
 
 describe('Curriculum challenge page', () => {
-  const session = { data: { userInfo: { name: 'tester', username: 'tester' } } }
   const lessonStatusNoPass = {
     isEnrolled: '213423534',
     isTeaching: null
   }
   test('Should render appropriately when no challenges are passed to component', async () => {
     const { container } = render(
-      <SessionContext.Provider value={session}>
-        <ChallengeMaterial
-          challenges={[]}
-          userSubmissions={[]}
-          lessonStatus={lessonStatusNoPass}
-          chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-          lessonId="5"
-        />
-      </SessionContext.Provider>
+      <ChallengeMaterial
+        challenges={[]}
+        userSubmissions={[]}
+        lessonStatus={lessonStatusNoPass}
+        chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+        lessonId="5"
+      />
     )
     await wait(() => {
       expect(container).toMatchSnapshot()
@@ -131,36 +127,26 @@ describe('Curriculum challenge page', () => {
   }
 
   test('Should render first challenge by default when user has no submissions', async () => {
-    const { container } = render(
-      <SessionContext.Provider value={session}>
-        <ChallengeMaterial {...props} />
-      </SessionContext.Provider>
-    )
+    const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
   })
   test('Should render first challenge that is not passed when user has submissions', async () => {
     const { container } = render(
-      <SessionContext.Provider value={session}>
-        <ChallengeMaterial {...propsWithSubmissions} />
-      </SessionContext.Provider>
+      <ChallengeMaterial {...propsWithSubmissions} />
     )
     expect(container).toMatchSnapshot()
   })
 
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
     const { container } = render(
-      <SessionContext.Provider value={session}>
-        <ChallengeMaterial {...propsWithSubmissionsPassed} />
-      </SessionContext.Provider>
+      <ChallengeMaterial {...propsWithSubmissionsPassed} />
     )
     expect(container).toMatchSnapshot()
   })
 
   test('Should render clicked challenge within challenge question', async () => {
     const { getAllByTestId, container } = render(
-      <SessionContext.Provider value={session}>
-        <ChallengeMaterial {...props} />
-      </SessionContext.Provider>
+      <ChallengeMaterial {...props} />
     )
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
     await wait(() => {
