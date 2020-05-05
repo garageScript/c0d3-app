@@ -1,5 +1,5 @@
 import React from 'react'
-import '../scss/lessonsChallenges.scss'
+import '../scss/profileSubmissions.scss'
 
 type ChallengeStatusProps = {
   challengesData: Challenge[]
