@@ -2,19 +2,14 @@ import * as React from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
 import logoutUser from '../helpers/logoutUser'
+import { GET_APP } from '../graphql/queries'
+import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 
 import '../scss/navbar.scss'
 
 type AuthButtonProps = {
   initial: string
   username: string
-}
-
-type Props = {
-  loggedIn?: boolean
-  username?: string
-  firstName?: string
-  lastName?: string
 }
 
 const AuthLink = () => (
@@ -96,13 +91,9 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<Props> = ({
-  loggedIn = false,
-  username = '',
-  firstName,
-  lastName
+const AppNav: React.FC<WithQueryProps> = ({
+  queryData
 }) => {
-  const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -114,11 +105,11 @@ const AppNav: React.FC<Props> = ({
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {loggedIn ? <AuthLink /> : <UnAuthLink />}
+            {false ? <AuthLink /> : <UnAuthLink />}
           </div>
         </div>
-        {loggedIn ? (
-          <AuthButton initial={initial} username={username} />
+        {false ? (
+          <AuthButton initial='TS' username='TypeScript' />
         ) : (
           <UnAuthButton />
         )}
@@ -127,4 +118,9 @@ const AppNav: React.FC<Props> = ({
   )
 }
 
-export default AppNav
+export default withQueryLoader(
+  {
+    query: GET_APP
+  },
+  AppNav
+)

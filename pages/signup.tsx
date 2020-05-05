@@ -135,13 +135,11 @@ const Signup: React.FC = () => {
   const handleSubmit = async (values: Values) => {
     try {
       const { data } = await signupUser({variables: values})
-      console.log('DATA', data)
       if (data.signup.success) {
         setSignupSuccess(true)
       } 
     } catch(error) {
-      console.log('ERROR', error)
-      console.log(Object.assign({}, error))
+      //TODO https://github.com/garageScript/c0d3-app/issues/197
       setSignupErrors(Object.assign({}, error))
     }
   }

@@ -15,7 +15,7 @@ const IndexPage: React.FC<WithQueryProps> = ({queryData}) => {
 
   return (
     <>
-      <AppNav loggedIn={false} />
+      <AppNav />
       <LandingPage />
       <Footer footerType="py-5 bg-white text-muted" />
     </>
