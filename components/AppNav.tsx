@@ -1,7 +1,8 @@
 import * as React from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
-import logoutUser from '../helpers/logoutUser'
+import { useMutation } from '@apollo/react-hooks'
+import { LOGOUT_USER } from '../graphql/queries'
 
 import '../scss/navbar.scss'
 
@@ -42,23 +43,26 @@ const AuthLink = () => (
   </div>
 )
 
-const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
-  <div>
-    <Button
-      btnType="border btn-secondary overflow-hidden p-2 text-truncate"
-      initial={initial}
-      text={username}
-    />
-    <Button
-      text="Logout"
-      btnType="border btn-secondary ml-2"
-      onClick={async () => {
-        const res = await logoutUser()
-        if (res) window.location.pathname = '/'
-      }}
-    />
-  </div>
-)
+const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
+  const [logoutUser] = useMutation(LOGOUT_USER)
+  return (
+    <div>
+      <Button
+        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
+        initial={initial}
+        text={username}
+      />
+      <Button
+        text="Logout"
+        btnType="border btn-secondary ml-2"
+        onClick={async () => {
+          const { data } = await logoutUser()
+          if (data.logout.success) window.location.pathname = '/'
+        }}
+      />
+    </div>
+  )
+}
 
 const UnAuthButton = () => (
   <div>

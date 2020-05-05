@@ -14,10 +14,6 @@ interface IProps extends AppProps {
 function MyApp({ Component, pageProps, apollo }: IProps) {
   const session = useSession()
 
-  if (!session.data && !session.error) {
-    return null
-  }
-
   return (
     <ApolloProvider client={apollo}>
       <SessionContext.Provider value={session}>

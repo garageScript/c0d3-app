@@ -1,23 +1,46 @@
 import { gql } from 'apollo-boost'
 
+export const LOGOUT_USER = gql`
+  mutation {
+    logout {
+      success
+      username
+      error
+    }
+  }
+`
+
 export const LOGIN_USER = gql`
   mutation login($username: String!, $password: String!) {
     login(username: $username, password: $password) {
       success
       username
       error
+    }
   }
-}`
+`
 
 export const SIGNUP_USER = gql`
-  mutation signup($firstName: String!, $lastName: String!, $email: String!, $username: String!, $password: String) {
-    signup(firstName: $firstName, lastName: $lastName, email: $email, username: $username, password: $password) {
+  mutation signup(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $username: String!
+    $password: String
+  ) {
+    signup(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      username: $username
+      password: $password
+    ) {
       success
       username
       error
+    }
   }
-}`
-
+`
 
 export const GET_LESSONS = gql`
   query Lessons {

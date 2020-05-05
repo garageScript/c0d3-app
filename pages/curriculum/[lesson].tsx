@@ -16,8 +16,12 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const lessonStatus = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  const currentLesson = lessons.find((lesson: any) => lesson.id === currentlessonId) 
-  const currentLessonStatus = lessonStatus.find((lessonStatus: any) => lessonStatus.lessonId === currentlessonId) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId} 
+  const currentLesson = lessons.find(
+    (lesson: any) => lesson.id === currentlessonId
+  )
+  const currentLessonStatus = lessonStatus.find(
+    (lessonStatus: any) => lessonStatus.lessonId === currentlessonId
+  ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
   return (
     <div>
       <Layout>

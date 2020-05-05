@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks'
 import { LOGIN_USER } from '../graphql/queries'
 
 const initialValues = {
@@ -25,7 +25,7 @@ const Login: React.FC = () => {
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
   const handleSubmit = async (values: Values) => {
     try {
-      const { data } = await loginUser({variables: values})
+      const { data } = await loginUser({ variables: values })
       if (data) {
         return (window.location.pathname = '/curriculum')
       }

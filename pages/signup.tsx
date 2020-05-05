@@ -1,7 +1,7 @@
 //import libraries
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks'
 
 //import components
 import Card from '../components/Card'
@@ -134,14 +134,12 @@ const Signup: React.FC = () => {
   const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
     try {
-      const { data } = await signupUser({variables: values})
-      console.log('DATA', data)
+      const { data } = await signupUser({ variables: values })
       if (data.signup.success) {
         setSignupSuccess(true)
-      } 
-    } catch(error) {
-      console.log('ERROR', error)
-      console.log(Object.assign({}, error))
+      }
+    } catch (error) {
+      //TODO https://github.com/garageScript/c0d3-app/issues/197
       setSignupErrors(Object.assign({}, error))
     }
   }

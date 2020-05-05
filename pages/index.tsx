@@ -6,10 +6,10 @@ import Footer from '../components/Footer'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
 
-const IndexPage: React.FC<WithQueryProps> = ({queryData}) => {
+const IndexPage: React.FC<WithQueryProps> = ({ queryData }) => {
   const { session }: { session: any } = queryData
 
-  if(session) {
+  if (session) {
     return <Curriculum />
   }
 
@@ -22,6 +22,9 @@ const IndexPage: React.FC<WithQueryProps> = ({queryData}) => {
   )
 }
 
-export default withQueryLoader({
-  query: GET_APP
-},IndexPage)
+export default withQueryLoader(
+  {
+    query: GET_APP
+  },
+  IndexPage
+)

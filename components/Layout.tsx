@@ -2,18 +2,20 @@ import React from 'react'
 import AppNav from './AppNav'
 import Footer from './Footer'
 import SessionContext from '../helpers/contexts/session'
+import _ from 'lodash'
 
 type Props = {
   children: React.ReactElement
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const { data } = React.useContext(SessionContext)
+  const { session } = React.useContext(SessionContext)
+  const user = _.get(session, 'user', null)
 
-  if (data && data.userInfo) {
+  if (user && user.username) {
     return (
       <>
-        <AppNav username={data.userInfo.username} loggedIn />
+        <AppNav username={user.username} loggedIn />
         <div className="container">{children}</div>
         <Footer />
       </>
