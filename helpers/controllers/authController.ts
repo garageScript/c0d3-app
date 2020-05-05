@@ -108,9 +108,7 @@ export const signup = async (_parent: void, arg: SignUp) => {
     })
 
     if (existingUser) {
-      throw new UserInputError('User already exists', {
-        invalidArg: 'username'
-      })
+      throw new UserInputError('User already exists')
     }
 
     const existingEmail = await User.findOne({
@@ -120,9 +118,7 @@ export const signup = async (_parent: void, arg: SignUp) => {
     })
 
     if (existingEmail) {
-      throw new UserInputError('Email already exists', {
-        invalidArg: 'email'
-      })
+      throw new UserInputError('Email already exists')
     }
 
     const randomToken = nanoid()
