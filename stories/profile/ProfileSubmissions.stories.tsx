@@ -1,11 +1,9 @@
 import * as React from 'react'
-import LessonsChallenges, {
-  ChallengeStatus
-} from '../../components/LessonsChallenges'
+import ProfileSubmissions from '../../components/ProfileSubmissions'
 
 export default {
-  component: LessonsChallenges,
-  title: 'Components/LessonChallenges'
+  component: ProfileSubmissions,
+  title: 'Components/ProfileSubmissions'
 }
 
 const completedChallenges = [
@@ -132,10 +130,6 @@ const lessons = [
   }
 ]
 
-export const LessonsChallengesCard: React.FC = () => (
-  <LessonsChallenges lessons={lessons} />
-)
-
-export const ChallengeStatusCard: React.FC = () => (
-  <ChallengeStatus challengesData={defaultChallenges} />
+export const ProfileSubmissionsCard: React.FC = () => (
+  <ProfileSubmissions lessons={lessons} />
 )

@@ -20,10 +20,10 @@ type Challenge = {
   challengeStatus?: string
 }
 
-export const ChallengeStatus: React.FC<ChallengeStatusProps> = ({
+export const SubmissionStatus: React.FC<ChallengeStatusProps> = ({
   challengesData
 }) => {
-  const displayChallengeStatus = challengesData.map(
+  const submissionsStatus = challengesData.map(
     (eachChallenge: Challenge, challengeId: number) => {
       let challengeStatus = 'bg-gray'
       if (eachChallenge.challengeStatus === 'passed') {
@@ -43,11 +43,11 @@ export const ChallengeStatus: React.FC<ChallengeStatusProps> = ({
       )
     }
   )
-  return <div>{displayChallengeStatus}</div>
+  return <div>{submissionsStatus}</div>
 }
 
-const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
-  const displayLessons = lessons.map((lesson, lessonId) => {
+const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
+  const displaySubmissions = lessons.map((lesson, lessonId) => {
     const filterPassedChallenges = lesson.challenges.filter(
       eachChallenge => eachChallenge.challengeStatus === 'passed'
     )
@@ -57,11 +57,11 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
           src={`/curriculumAssets/lessonCoversSvg/js-${lesson.order}-cover.svg`}
         />
         <div className="lesson_title_container">
-          <h6 className="lesson_titles">{lesson.title}</h6>
+          <h6 className="lesson_title">{lesson.title}</h6>
           <h6 className="challenges_stats">
             {`${filterPassedChallenges.length} of ${lesson.challenges.length}  Challenges completed`}
           </h6>
-          <ChallengeStatus challengesData={lesson.challenges} />
+          <SubmissionStatus challengesData={lesson.challenges} />
         </div>
       </div>
     )
@@ -70,10 +70,10 @@ const LessonsChallenges: React.FC<LessonChallengeProps> = ({ lessons }) => {
     <div className="card shadow-sm profile-submissions">
       <div className="card-body">
         <h3>Challenges</h3>
-        <div className="display_lessons">{displayLessons}</div>
+        <div className="display_lessons">{displaySubmissions}</div>
       </div>
     </div>
   )
 }
 
-export default LessonsChallenges
+export default ProfileSubmissions
