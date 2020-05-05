@@ -18,21 +18,22 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   ]
 
   const { lessons, session }: { lessons: Lesson[]; session: any } = queryData
-  const lessonStatusMap: any = session.lessonStatus.reduce((map: any, lessonStatus: any) => {
+  const lessonStatus: any = _.get(session, 'lessonStatus', [])
+  const lessonStatusMap: any = lessonStatus.reduce((map: any, lessonStatus: any) => {
     map[lessonStatus.lessonId] = lessonStatus
     return map
   }, {})
 
-  const sortedLessons: Lesson[] = lessons.map((lesson) => {
-    lesson.lessonStatus = lessonStatusMap[lesson.id]
+  const lessonsWithStatus: Lesson[] = lessons.map((lesson) => {
+    lesson.lessonStatus = lessonStatusMap[lesson.id] || { isEnrolled: null, isTeaching: null, lessonId: lesson.id} 
     return lesson
-  }).sort((a, b) => a.order - b.order)
+  })
 
   const lessonInProgressIdx =
-    sortedLessons.findIndex(lesson => !lesson.lessonStatus.isPassed) || 0
+    lessonsWithStatus.findIndex(lesson => !lesson.lessonStatus.isPassed) || 0
 
-  const progressPercentage = (lessonInProgressIdx * 100) / sortedLessons.length
-  const lessonsToRender: React.ReactElement[] = sortedLessons.map(
+  const progressPercentage = (lessonInProgressIdx * 100) / lessonsWithStatus.length
+  const lessonsToRender: React.ReactElement[] = lessonsWithStatus.map(
     (lesson, idx) => {
       let lessonState = ''
       if (lesson.lessonStatus.isEnrolled || idx === lessonInProgressIdx) {

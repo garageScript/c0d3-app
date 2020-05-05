@@ -141,6 +141,7 @@ const Signup: React.FC = () => {
       } 
     } catch(error) {
       console.log('ERROR', error)
+      console.log(Object.assign({}, error))
       setSignupErrors(Object.assign({}, error))
     }
   }

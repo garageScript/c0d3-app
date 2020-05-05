@@ -3,17 +3,13 @@ import Curriculum from './curriculum'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
-import SessionContext from '../helpers/contexts/session'
+import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
+import { GET_APP } from '../graphql/queries'
 
-const IndexPage: any = () => {
-  const { data } = React.useContext(SessionContext)
+const IndexPage: React.FC<WithQueryProps> = ({queryData}) => {
+  const { session }: { session: any } = queryData
 
-  // while loading, don't show anything to user
-  if (!data.errorMessage && !data.userInfo) {
-    return null
-  }
-
-  if (data.userInfo) {
+  if(session) {
     return <Curriculum />
   }
 
@@ -26,4 +22,6 @@ const IndexPage: any = () => {
   )
 }
 
-export default IndexPage
+export default withQueryLoader({
+  query: GET_APP
+},IndexPage)

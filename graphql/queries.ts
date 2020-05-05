@@ -1,6 +1,5 @@
 import { gql } from 'apollo-boost'
 
-//TODO add input type to mutations
 export const LOGIN_USER = gql`
   mutation login($username: String!, $password: String!) {
     login(username: $username, password: $password) {

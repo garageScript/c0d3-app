@@ -12,11 +12,12 @@ import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const { lessons, session }: { lessons: any; session: any } = queryData
-  const { submissions: userSubmissions, lessonStatus } = session
+  const userSubmissions = _.get(session, 'submissions', [])
+  const lessonStatus = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const currentLesson = lessons.find((lesson: any) => lesson.id === currentlessonId) 
-  const currentLessonStatus = lessonStatus.find((lessonStatus: any) => lessonStatus.lessonId === currentlessonId)
+  const currentLessonStatus = lessonStatus.find((lessonStatus: any) => lessonStatus.lessonId === currentlessonId) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId} 
   return (
     <div>
       <Layout>

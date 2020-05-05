@@ -108,7 +108,9 @@ export const signup = async (_parent: void, arg: SignUp) => {
     })
 
     if (existingUser) {
-      throw new UserInputError('User already exists')
+      throw new UserInputError('User already exists', {
+        invalidArg: 'username'
+      })
     }
 
     const existingEmail = await User.findOne({
@@ -118,7 +120,9 @@ export const signup = async (_parent: void, arg: SignUp) => {
     })
 
     if (existingEmail) {
-      throw new UserInputError('Email already exists')
+      throw new UserInputError('Email already exists', {
+        invalidArg: 'email'
+      })
     }
 
     const randomToken = nanoid()
@@ -128,7 +132,7 @@ export const signup = async (_parent: void, arg: SignUp) => {
     // Chat Signup
     await chatSignUp(username, password, email)
 
-    const userRecord = User.create({
+    const userRecord = await User.create({
       name,
       username,
       password: hash,
@@ -137,6 +141,7 @@ export const signup = async (_parent: void, arg: SignUp) => {
     })
 
     return {
+      success: true,
       username: userRecord.username
     }
   } catch (err) {
