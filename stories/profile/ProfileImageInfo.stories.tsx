@@ -9,7 +9,7 @@ export default {
 const user = {
   firstName: 'Rahul',
   lastName: 'Kalra',
-  userName: 'noob101'
+  username: 'noob101'
 }
 
 export const _ProfileImageInfo: React.FC = () => (

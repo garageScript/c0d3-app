@@ -9,7 +9,7 @@ export default {
 const rahulK = {
   firstName: 'Rahul',
   lastName: 'Kalra',
-  userName: 'noob101'
+  username: 'noob101'
 }
 
 export const PendingSubmission: React.FC = () => (
