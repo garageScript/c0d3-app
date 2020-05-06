@@ -16,6 +16,6 @@ export type ErrorDisplayProps = {
 }
 
 export type SignupErrors = {
-  userName?: string[]
-  confirmEmail?: string[]
+  userName?: boolean
+  confirmEmail?: boolean
 }

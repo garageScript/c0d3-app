@@ -26,7 +26,7 @@ export const SIGNUP_USER = gql`
     $lastName: String!
     $email: String!
     $username: String!
-    $password: String
+    $password: String!
   ) {
     signup(
       firstName: $firstName
