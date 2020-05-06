@@ -8,19 +8,26 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_APP } from '../../graphql/queries'
+import { Lesson, LessonStatus } from '../../@types/lesson'
+import { Session } from '../../@types/session'
+import { UserSubmission } from '../../@types/challenge'
 import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
-  const { lessons, session }: { lessons: any; session: any } = queryData
-  const userSubmissions = _.get(session, 'submissions', [])
-  const lessonStatus = _.get(session, 'lessonStatus', [])
+  const {
+    lessons,
+    session
+  }: { lessons: Lesson[]; session: Session } = queryData
+  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  const currentLesson = lessons.find(
-    (lesson: any) => lesson.id === currentlessonId
-  )
-  const currentLessonStatus = lessonStatus.find(
-    (lessonStatus: any) => lessonStatus.lessonId === currentlessonId
+  const currentLesson: Lesson =
+    lessons.find(
+      (lesson: Lesson) => lesson.id.toString() === currentlessonId
+    ) || lessons[0]
+  const currentLessonStatus: LessonStatus = lessonStatus.find(
+    lessonStatus => lessonStatus.lessonId === currentlessonId
   ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
   return (
     <div>
@@ -43,7 +50,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
-                lessonId={currentLesson.id}
+                lessonId={currentLesson.id.toString()}
               />
             </div>
           )}

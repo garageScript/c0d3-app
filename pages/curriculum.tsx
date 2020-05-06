@@ -4,7 +4,8 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
-import { Lesson } from '../@types/lesson'
+import { Lesson, LessonStatus } from '../@types/lesson'
+import { Session } from '../@types/session'
 import { GET_APP } from '../graphql/queries'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import _ from 'lodash'
@@ -17,10 +18,17 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
   ]
 
-  const { lessons, session }: { lessons: Lesson[]; session: any } = queryData
-  const lessonStatus: any = _.get(session, 'lessonStatus', [])
-  const lessonStatusMap: any = lessonStatus.reduce(
-    (map: any, lessonStatus: any) => {
+  type LessonStatusMap = {
+    [id: string]: LessonStatus
+  }
+
+  const {
+    lessons,
+    session
+  }: { lessons: Lesson[]; session: Session } = queryData
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
+  const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
+    (map: LessonStatusMap, lessonStatus: LessonStatus) => {
       map[lessonStatus.lessonId] = lessonStatus
       return map
     },

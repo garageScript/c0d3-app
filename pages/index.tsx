@@ -5,9 +5,10 @@ import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
+import { Session } from '../@types/session'
 
 const IndexPage: React.FC<WithQueryProps> = ({ queryData }) => {
-  const { session }: { session: any } = queryData
+  const { session }: { session: Session } = queryData
 
   if (session) {
     return <Curriculum />
