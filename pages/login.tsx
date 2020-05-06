@@ -32,8 +32,10 @@ const Login: React.FC = () => {
     }
     if (error) {
       const message = _.get(error, 'message', '')
-      if(message) {
-        message.indexOf('Password') !== -1  ? setAlertText('Incorrect password: please try again') : setAlertText('Incorrect username: please try again')
+      if (message) {
+        message.indexOf('Password') !== -1
+          ? setAlertText('Incorrect password: please try again')
+          : setAlertText('Incorrect username: please try again')
       }
       setIsAlertVisible(true)
     }
@@ -52,12 +54,7 @@ const Login: React.FC = () => {
         >
           <Form data-testid="form">
             <div className="form-group">
-              {isAlertVisible && (
-                <Alert
-                  error
-                  text={alertText}
-                />
-              )}
+              {isAlertVisible && <Alert error text={alertText} />}
               <Field
                 name="username"
                 placeholder="Username"

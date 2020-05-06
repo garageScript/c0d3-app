@@ -139,14 +139,16 @@ const Signup: React.FC = () => {
   const handleSubmit = async (values: Values) => {
     try {
       const { data } = await signupUser({ variables: values })
-      if(data.signup.success) {
+      if (data.signup.success) {
         setSignupSuccess(true)
       }
-    } catch(error) {
-      const newSignupErrors = {...signupErrors}
+    } catch (error) {
+      const newSignupErrors = { ...signupErrors }
       const message = _.get(error, 'message', '')
-      if(message) {
-        message.indexOf('Email') !== -1  ?  newSignupErrors.confirmEmail = true : newSignupErrors.userName = true 
+      if (message) {
+        message.indexOf('Email') !== -1
+          ? (newSignupErrors.confirmEmail = true)
+          : (newSignupErrors.userName = true)
       }
       setSignupErrors(Object.assign({}, newSignupErrors))
     }
