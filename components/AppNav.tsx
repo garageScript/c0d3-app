@@ -51,7 +51,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
     if (success) {
       window.location.pathname = '/'
     }
-  })
+  }, [data])
   return (
     <div>
       <Button
