@@ -11,4 +11,15 @@ const user = {
   lastName: 'Kalra'
 }
 
-export const _UserInfoImage: React.FC = () => <UserInfoImage user={user} />
+export const _UserInfoImage: React.FC = () => {
+  return (
+    <div
+      style={{
+        width: '50px',
+        height: '50px'
+      }}
+    >
+      <UserInfoImage user={user} />
+    </div>
+  )
+}
