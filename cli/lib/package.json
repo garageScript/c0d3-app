@@ -1,0 +1,39 @@
+{
+    "name": "c0d3",
+    "version": "2.0.0",
+    "description": "Command Line Interface (CLI) for c0d3.com",
+    "license": "MIT",
+    "homepage": "https://c0d3.com",
+    "repository": "https://github.com/garageScript/c0d3-app/cli",
+    "engines": {
+        "node": ">=8"
+    },
+    "keywords": [
+        "c0d3",
+        "education"
+    ],
+    "preferGlobal": true,
+    "bin": {
+        "c0d3": "./lib/index.js"
+    },
+    "scripts": {
+        "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+        "create": "yarn build && yarn test",
+        "build": "tsc -p .",
+        "test": "jest"
+    },
+    "author": "c0d3.com",
+    "dependencies": {
+        "@types/node": "^13.13.5",
+        "chalk": "^4.0.0",
+        "commander": "^5.1.0",
+        "graphql-request": "^1.6.0",
+        "ora": "^4.0.4",
+        "simple-git": "^2.4.0"
+    },
+    "devDependencies": {
+        "jest": "^26.0.1",
+        "typescript": "^3.8.3"
+    },
+    "main": "./lib/index.js"
+}
