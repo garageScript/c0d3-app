@@ -1,10 +1,10 @@
 {
   "name": "c0d3",
-  "version": "1.4.2",
+  "version": "2.0.0",
   "description": "Command Line Interface (CLI) for c0d3.com",
   "license": "MIT",
   "homepage": "https://c0d3.com",
-  "repository": "git+https://git.c0d3.com/song/c0d3/tree/master/gsSubmit",
+  "repository": "https://github.com/garageScript/c0d3-app/cli",
   "engines": {
     "node": ">=8"
   },
@@ -30,5 +30,5 @@
   "devDependencies": {
     "jest": "^25.5.3"
   },
-  "main": "cli.js"
+  "main": "index.js"
 }
