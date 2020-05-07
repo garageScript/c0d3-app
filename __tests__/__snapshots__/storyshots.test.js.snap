@@ -2281,6 +2281,32 @@ exports[`Storyshots Components/NavLink Styled Link 1`] = `
 </a>
 `;
 
+exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
+<div
+  className="card shadow-sm"
+>
+  <div
+    className="ml-auto mr-auto mt-4 profile_image_container"
+  >
+    <div
+      className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+    >
+      RK
+    </div>
+  </div>
+  <h2
+    className="text-center mt-4"
+  >
+    Rahul Kalra
+  </h2>
+  <h4
+    className="text-center text-muted mb-4"
+  >
+    @noob101
+  </h4>
+</div>
+`;
+
 exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
 <div
   className="card shadow-sm"
@@ -3200,13 +3226,17 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         className="row no-gutters"
       >
         <div
-          className="col-0"
+          className="col-0 mr-3"
         >
-          <h6
-            className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+          <div
+            className="submissioncard_user_info_image_container"
           >
-            NB
-          </h6>
+            <div
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+            >
+              RK
+            </div>
+          </div>
         </div>
         <div
           className="col-8"
@@ -3258,13 +3288,17 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         className="row no-gutters"
       >
         <div
-          className="col-0"
+          className="col-0 mr-3"
         >
-          <h6
-            className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+          <div
+            className="submissioncard_user_info_image_container"
           >
-            HG
-          </h6>
+            <div
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+            >
+              RK
+            </div>
+          </div>
         </div>
         <div
           className="col-8"
@@ -3316,13 +3350,17 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         className="row no-gutters"
       >
         <div
-          className="col-0"
+          className="col-0 mr-3"
         >
-          <h6
-            className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+          <div
+            className="submissioncard_user_info_image_container"
           >
-            AZ
-          </h6>
+            <div
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+            >
+              RK
+            </div>
+          </div>
         </div>
         <div
           className="col-8"
@@ -3378,13 +3416,17 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
       className="row no-gutters"
     >
       <div
-        className="col-0"
+        className="col-0 mr-3"
       >
-        <h6
-          className="text-uppercase bg-primary rounded-circle text-light p-3 mr-3"
+        <div
+          className="submissioncard_user_info_image_container"
         >
-          NB
-        </h6>
+          <div
+            className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+          >
+            RK
+          </div>
+        </div>
       </div>
       <div
         className="col-8"
@@ -3424,6 +3466,23 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
         Review
       </button>
     </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
+<div
+  style={
+    Object {
+      "height": "50px",
+      "width": "50px",
+    }
+  }
+>
+  <div
+    className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+  >
+    RK
   </div>
 </div>
 `;
