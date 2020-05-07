@@ -1,9 +1,12 @@
 import util from 'util'
 import { nanoid } from 'nanoid'
 import winston from 'winston'
+import Sentry from 'winston-transport-sentry-node'
 import { TransformableInfo } from 'logform' // Types for Winston
 import { LoggedRequest } from '../@types/helpers'
 import { NextApiResponse } from 'next'
+
+const SENTRY_DSN = process.env.SENTRY_DSN
 
 export const processArgs = (inputArr: any) => {
   if (Array.isArray(inputArr)) {
@@ -34,7 +37,14 @@ export const winstonLogger = (sessionId: string) => {
       winston.format.colorize(),
       winston.format.printf(printFunc)
     ),
-    transports: [new winston.transports.Console()]
+    transports: [
+      new winston.transports.Console(),
+      new Sentry({
+        sentry: {
+          dsn: SENTRY_DSN
+        }
+      })
+    ]
   })
 }
 
