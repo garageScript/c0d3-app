@@ -7,18 +7,16 @@ type ProfileImageInfoProps = {
   user: User
 }
 
-const ProfileImageInfo: React.FC<ProfileImageInfoProps> = props => {
+const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
   return (
     <div className="card shadow-sm">
       <div className="ml-auto mr-auto mt-4 profile_image_container">
-        <UserInfoImage user={props.user} />
+        <UserInfoImage user={user} />
       </div>
       <h2 className="text-center mt-4">
-        {`${props.user.firstName} ${props.user.lastName}`}
+        {`${user.firstName} ${user.lastName}`}
       </h2>
-      <h4 className="text-center text-muted mb-4">
-        {'@' + props.user.username}
-      </h4>
+      <h4 className="text-center text-muted mb-4">{'@' + user.username}</h4>
     </div>
   )
 }
