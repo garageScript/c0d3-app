@@ -1,10 +1,10 @@
 import db from '../dbload'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
-import { Request } from 'express'
-import { UserInputError } from 'apollo-server-micro'
+import { UserInputError, AuthenticationError } from 'apollo-server-micro'
 import { signupValidation } from '../formValidation'
 import { chatSignUp } from '../mattermost'
+import { LoggedRequest } from '../../@types/helpers'
 
 const { User } = db
 
@@ -24,12 +24,11 @@ type SignUp = {
 export const login = async (
   _parent: void,
   arg: Login,
-  ctx: { req: Request }
+  ctx: { req: LoggedRequest }
 ) => {
+  const { req } = ctx
   try {
-    const {
-      req: { session }
-    } = ctx
+    const { session } = req
     const { username, password } = arg
 
     if (!session) {
@@ -43,7 +42,7 @@ export const login = async (
 
     const validLogin = await bcrypt.compare(password, user.password)
     if (!validLogin) {
-      throw new UserInputError('Password is invalid')
+      throw new AuthenticationError('Password is invalid')
     }
 
     session.userId = user.id
@@ -52,16 +51,21 @@ export const login = async (
       username: user.username
     }
   } catch (err) {
+    if (!err.extensions) {
+      req.error(err)
+    }
     throw new Error(err)
   }
 }
 
-export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
+export const logout = async (
+  _parent: void,
+  _: void,
+  ctx: { req: LoggedRequest }
+) => {
+  const { req } = ctx
+  const { session } = req
   return new Promise(async (resolve, reject) => {
-    const {
-      req: { session }
-    } = ctx
-
     if (!session) {
       return reject({
         success: false,
@@ -71,6 +75,7 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
 
     session.destroy(err => {
       if (err) {
+        req.error(err)
         reject({
           success: false,
           error: err.message
@@ -84,7 +89,12 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
   })
 }
 
-export const signup = async (_parent: void, arg: SignUp) => {
+export const signup = async (
+  _parent: void,
+  arg: SignUp,
+  ctx: { req: LoggedRequest }
+) => {
+  const { req } = ctx
   try {
     const { firstName, lastName, username, password, email } = arg
 
@@ -140,6 +150,9 @@ export const signup = async (_parent: void, arg: SignUp) => {
       username: userRecord.username
     }
   } catch (err) {
+    if (!err.extensions) {
+      req.error(err)
+    }
     throw new Error(err)
   }
 }

@@ -8,6 +8,9 @@ module.exports = withSass({
     DB_HOST: process.env.DB_HOST || 'devwong.com',
     MATTERMOST_ACCESS_TOKEN:
       process.env.MATTERMOST_ACCESS_TOKEN || 'c1eh9rc1cinpbf9mk1wucjyqzw',
+    SENTRY_DSN:
+      process.env.SENTRY_DSN ||
+      'https://e95626afb0454145b569bc69116f838c@o385150.ingest.sentry.io/5221680',
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
     SERVER_URL: process.env.SERVER_URL || 'https://backend.c0d3.com'
   }
