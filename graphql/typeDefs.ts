@@ -20,10 +20,10 @@ export default gql`
     ): AuthResponse
     createSubmission(
       lessonId: String!
+      challengeId: String!
       cliToken: String!
       diff: String!
-      challengeId: String!
-    ): User
+    ): Submission
   }
 
   type AuthResponse {

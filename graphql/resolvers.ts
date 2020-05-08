@@ -80,7 +80,10 @@ export default {
     login,
     logout,
     signup,
-    createSubmission: async (_parent: void, args: ArgsCreateSubmission) => {
+    createSubmission: async (
+      _parent: void,
+      args: ArgsCreateSubmission
+    ): Promise<any> => {
       const { challengeId, cliToken, diff, lessonId } = args
       try {
         const { username, id: userId } = await User.findOne({
@@ -97,7 +100,7 @@ export default {
         const lessonName = lesson.chatUrl.split('/').pop()
         const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://c0d3.com/teacher/${lesson.id}>) to review the code.`
         publicChannelMessage(lessonName, message)
-        return true
+        return submission
       } catch (error) {
         return error
       }

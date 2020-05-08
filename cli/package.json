@@ -14,7 +14,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "c0d3": "./lib/index.js"
+    "c0d3": "./dist/src/cli.js"
   },
   "scripts": {
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
@@ -29,11 +29,13 @@
     "commander": "^5.1.0",
     "graphql-request": "^1.6.0",
     "ora": "^4.0.4",
-    "simple-git": "^2.4.0"
+    "simple-git": "^2.4.0",
+    "update-notifier": "^4.1.0"
   },
   "devDependencies": {
+    "@types/update-notifier": "^4.1.0",
     "jest": "^26.0.1",
     "typescript": "^3.8.3"
   },
-  "main": "./lib/index.js"
+  "main": "./dist/src/cli.js"
 }
