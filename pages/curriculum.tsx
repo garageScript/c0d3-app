@@ -5,7 +5,6 @@ import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
 import { Lesson, LessonStatus } from '../@types/lesson'
-import { Session } from '../@types/session'
 import { GET_APP } from '../graphql/queries'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import _ from 'lodash'
@@ -25,7 +24,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   const {
     lessons,
     session
-  }: { lessons: Lesson[]; session: Session } = queryData
+  } = queryData
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
     (map: LessonStatusMap, lessonStatus: LessonStatus) => {
@@ -35,7 +34,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     {}
   )
 
-  const lessonsWithStatus: Lesson[] = lessons.map(lesson => {
+  const lessonsWithStatus: Lesson[] = lessons.map((lesson: Lesson) => {
     lesson.lessonStatus = lessonStatusMap[lesson.id] || {
       isEnrolled: null,
       isTeaching: null,

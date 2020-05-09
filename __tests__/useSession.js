@@ -9,10 +9,7 @@ describe('useSession helper', () => {
     expect(data).toEqual(5)
   })
   test('useSession returns value from SWR fetch', () => {
-    const returnValue = {
-      data: { user: 'test', username: 'tester' },
-      error: false
-    }
+    const returnValue = {session:null}
     useSWR.mockReturnValue(returnValue)
 
     expect(useSession()).toEqual(returnValue)

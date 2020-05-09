@@ -9,7 +9,6 @@ import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import { GET_APP } from '../../graphql/queries'
 import { Lesson, LessonStatus } from '../../@types/lesson'
-import { Session } from '../../@types/session'
 import { UserSubmission } from '../../@types/challenge'
 import _ from 'lodash'
 
@@ -17,7 +16,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const {
     lessons,
     session
-  }: { lessons: Lesson[]; session: Session } = queryData
+  } = queryData
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()

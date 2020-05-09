@@ -10,7 +10,9 @@ import SessionContext from '../../helpers/contexts/session'
 describe('Index Page', () => {
   test('Should render curriculum if user is identified', async () => {
     const session = {
-      data: { success: true, userInfo: { name: 'tester', username: 'tester' } }
+      user: {
+        username: 'testing'
+      } 
     }
     const tree = (
       <SessionContext.Provider value={session}>
@@ -23,7 +25,7 @@ describe('Index Page', () => {
     getByText('Hello Curriculum')
   })
   test('Should render landing page if user is not identified', async () => {
-    const session = { data: { success: false, errorMessage: 'unauthorized' } }
+    const session = {session: null} 
     const tree = (
       <SessionContext.Provider value={session}>
         <IndexPage />

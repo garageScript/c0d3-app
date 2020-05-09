@@ -1,5 +1,4 @@
 import useSWR from 'swr'
-import { User } from './models/User'
 import _ from 'lodash'
 
 const SERVER_URL = process.env.SERVER_URL
@@ -23,6 +22,12 @@ export const fetcher = (url: string) =>
           `
     })
   }).then(r => r.json())
+
+type User = {
+  user: {
+    username: string
+  }
+}
 
 export type SessionData = {
   session: User | null

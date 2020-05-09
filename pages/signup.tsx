@@ -18,7 +18,6 @@ import { SIGNUP_USER } from '../graphql/queries'
 import {
   SignupFormProps,
   Values,
-  SignupErrors,
   ErrorDisplayProps
 } from '../@types/signup'
 
@@ -31,21 +30,20 @@ const initialValues: Values = {
 }
 
 const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
-  return (
-    <div className="bg-light m-auto px-5 border-0'">
-      {signupErrors.confirmEmail ? (
+  const errorMessages = signupErrors.map((message, idx) => {
+    const formattedMessage = message.split(':')[1]
+    return (
+      <div key={idx} className="bg-light m-auto px-5 border-0">
         <h5 className="text-danger">
-          An account has already been registered with this email
+          {formattedMessage}
         </h5>
-      ) : (
-        ''
-      )}
-      {signupErrors.userName ? (
-        <h5 className="text-danger">Username is already taken</h5>
-      ) : (
-        ''
-      )}
-    </div>
+      </div>
+    )
+  })
+  return (
+    <>
+      {errorMessages}
+    </>
   )
 }
 
@@ -129,12 +127,11 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const Signup: React.FC = () => {
+
+
+const SignUpPage: React.FC = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
-  const [signupErrors, setSignupErrors] = useState({
-    confirmEmail: false,
-    userName: false
-  } as SignupErrors)
+  const [signupErrors, setSignupErrors] = useState([])
   const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
     try {
@@ -143,19 +140,21 @@ const Signup: React.FC = () => {
         setSignupSuccess(true)
       }
     } catch (error) {
-      const newSignupErrors = { ...signupErrors }
-      const message = _.get(error, 'message', '')
-      if (message) {
-        message.indexOf('Email') !== -1
-          ? (newSignupErrors.confirmEmail = true)
-          : (newSignupErrors.userName = true)
-      }
-      setSignupErrors(Object.assign({}, newSignupErrors))
+      const newSignupErrors = [...signupErrors]
+      const graphQLErrors = _.get(error, 'graphQLErrors', [])
+      const errorMessages = graphQLErrors.reduce((messages: any, error: any) => {
+        return [...messages, error.message]
+      }, newSignupErrors)
+      setSignupErrors(Object.assign([], errorMessages))
     }
   }
+  return <Signup handleSubmit={handleSubmit} isSuccess={signupSuccess} signupErrors={signupErrors} />
+}
+
+export const Signup: React.FC<SignupFormProps> = ({handleSubmit, isSuccess, signupErrors}) => {
   return (
     <Layout>
-      {signupSuccess ? (
+      {isSuccess ? (
         <SignupSuccess />
       ) : (
         <SignupForm handleSubmit={handleSubmit} signupErrors={signupErrors} />
@@ -164,4 +163,4 @@ const Signup: React.FC = () => {
   )
 }
 
-export default Signup
+export default SignUpPage
