@@ -8,11 +8,11 @@ export type Values = {
 
 export type SignupFormProps = {
   handleSubmit: (values: Values) => void
+  isLoading?: boolean
   signupErrors?: string[]
   isSuccess?: boolean
 }
 
 export type ErrorDisplayProps = {
-  signupErrors: string[]
+  signupErrors?: string[]
 }
-

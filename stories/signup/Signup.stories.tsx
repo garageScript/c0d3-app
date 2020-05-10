@@ -6,8 +6,22 @@ export default {
   title: 'Pages/signup'
 }
 
-export const _Signup: React.FC = () => <Signup handleSubmit={() => {}} />
+const noop = () => {
+  console.log('hi')
+}
+const errorMessages = ['UserInput Error: User does not exist']
+export const _Signup: React.FC = () => (
+  <Signup handleSubmit={noop} signupErrors={[]} />
+)
 
-export const _SignupSucess: React.FC = () => <Signup handleSubmit={() => {}} isSuccess={true} />
+export const _SignupSuccess: React.FC = () => (
+  <Signup handleSubmit={noop} isSuccess={true} />
+)
 
-export const _SignupErrors: React.FC = () => <Signup handleSubmit={() => {}} signupErrors={['Hi']} />
+export const _SignupErrors: React.FC = () => (
+  <Signup handleSubmit={noop} signupErrors={errorMessages} />
+)
+
+export const _SignupLoading: React.FC = () => (
+  <Signup handleSubmit={noop} isLoading={true} />
+)

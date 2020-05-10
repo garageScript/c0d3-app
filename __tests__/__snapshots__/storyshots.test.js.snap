@@ -3710,11 +3710,213 @@ Array [
           <p
             className="card-text"
           />
-          <div
-            className="bg-light m-auto px-5 border-0'"
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
           >
-            
-            
+            <div
+              className="form-group "
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="email"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Email address"
+                type="email"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Username"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="firstName"
+                name="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="First name"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="lastName"
+                name="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Last name"
+                value=""
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          <p
+            className="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              className="text-primary"
+              href="/login"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/signup Signup Errors 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link active"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            className="card-text"
+          />
+          <div
+            className="bg-light m-auto px-5 border-0"
+            data-testid="error-message"
+          >
+            <h5
+              className="text-danger"
+            >
+               User does not exist
+            </h5>
           </div>
           <form
             action="#"
@@ -3795,6 +3997,359 @@ Array [
               Login
             </a>
           </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/signup Signup Loading 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link active"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            className="card-text"
+          />
+          <div
+            className="bg-light m-auto px-5 border-0"
+          >
+            <h5
+              className="text-warning"
+              data-testid="signup-loading"
+            >
+              Submitting...
+            </h5>
+          </div>
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group "
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="email"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Email address"
+                type="email"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Username"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="firstName"
+                name="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="First name"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="lastName"
+                name="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Last name"
+                value=""
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          <p
+            className="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              className="text-primary"
+              href="/login"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/signup Signup Success 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link active"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <span
+                className="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/#learning"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Learning Process
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <svg
+            className="mb-4"
+            height="100px"
+            viewBox="0 0 426.667 426.667"
+            width="100px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="active-path"
+              d="M293.333 135.04L190.08 240.213l-52.907-53.12-28.373 28.374 83.413 83.2 133.974-129.92z"
+              fill="#00CF92"
+            />
+            <path
+              className="active-path"
+              d="M213.333 0C95.513 0 0 95.513 0 213.333s95.513 213.333 213.333 213.333 213.333-95.513 213.333-213.333S331.154 0 213.333 0zm0 388.053c-96.495 0-174.72-78.225-174.72-174.72s78.225-174.72 174.72-174.72c96.446.117 174.602 78.273 174.72 174.72 0 96.496-78.224 174.72-174.72 174.72z"
+              fill="#00CF92"
+            />
+          </svg>
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Account created successfully!
+          </h1>
+          <p
+            className="card-text"
+          />
+          <a
+            className="btn btn-primary btn-lg mb-3"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Continue to Curriculum
+          </a>
         </div>
       </div>
     </div>

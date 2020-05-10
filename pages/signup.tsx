@@ -15,11 +15,7 @@ import { signupValidation } from '../helpers/formValidation'
 import { SIGNUP_USER } from '../graphql/queries'
 
 //import types
-import {
-  SignupFormProps,
-  Values,
-  ErrorDisplayProps
-} from '../@types/signup'
+import { SignupFormProps, Values, ErrorDisplayProps } from '../@types/signup'
 
 const initialValues: Values = {
   email: '',
@@ -30,25 +26,28 @@ const initialValues: Values = {
 }
 
 const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
+  if (!signupErrors || !signupErrors.length) return <></>
   const errorMessages = signupErrors.map((message, idx) => {
     const formattedMessage = message.split(':')[1]
     return (
-      <div key={idx} className="bg-light m-auto px-5 border-0">
-        <h5 className="text-danger">
-          {formattedMessage}
-        </h5>
+      <div
+        key={idx}
+        data-testid="error-message"
+        className="bg-light m-auto px-5 border-0"
+      >
+        <h5 className="text-danger">{formattedMessage}</h5>
       </div>
     )
   })
-  return (
-    <>
-      {errorMessages}
-    </>
-  )
+  return <>{errorMessages}</>
 }
 
 const SignupSuccess: React.FC = () => (
-  <Card success title="Account created successfully!">
+  <Card
+    success
+    data-testid="signup-success"
+    title="Account created successfully!"
+  >
     <NavLink path="/curriculum" className="btn btn-primary btn-lg mb-3">
       Continue to Curriculum
     </NavLink>
@@ -57,11 +56,19 @@ const SignupSuccess: React.FC = () => (
 
 const SignupForm: React.FC<SignupFormProps> = ({
   signupErrors,
+  isLoading,
   handleSubmit
 }) => {
   return (
     <Card title="Create Account">
       <ErrorMessage signupErrors={signupErrors} />
+      {isLoading && (
+        <div className="bg-light m-auto px-5 border-0">
+          <h5 data-testid="signup-loading" className="text-warning">
+            Submitting...
+          </h5>
+        </div>
+      )}
       <Formik
         validateOnBlur
         initialValues={initialValues}
@@ -127,37 +134,60 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-
-
 const SignUpPage: React.FC = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
-  const [signupErrors, setSignupErrors] = useState([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [signupErrors, setSignupErrors] = useState<string[]>([])
   const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
+    setIsSubmitting(true)
     try {
       const { data } = await signupUser({ variables: values })
       if (data.signup.success) {
-        setSignupSuccess(true)
+        return setSignupSuccess(true)
       }
+      const err = new Error(
+        'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+      )
+      throw err
     } catch (error) {
-      const newSignupErrors = [...signupErrors]
-      const graphQLErrors = _.get(error, 'graphQLErrors', [])
-      const errorMessages = graphQLErrors.reduce((messages: any, error: any) => {
-        return [...messages, error.message]
-      }, newSignupErrors)
-      setSignupErrors(Object.assign([], errorMessages))
+      const graphQLErrors = _.get(error, 'graphQLErrors', [error.message])
+      const errorMessages = graphQLErrors.reduce(
+        (messages: any, error: any) => {
+          return [...messages, error.message]
+        },
+        []
+      )
+      setSignupErrors([...errorMessages])
     }
+    setIsSubmitting(false)
   }
-  return <Signup handleSubmit={handleSubmit} isSuccess={signupSuccess} signupErrors={signupErrors} />
+  return (
+    <Signup
+      handleSubmit={handleSubmit}
+      isLoading={isSubmitting}
+      isSuccess={signupSuccess}
+      signupErrors={signupErrors}
+    />
+  )
 }
 
-export const Signup: React.FC<SignupFormProps> = ({handleSubmit, isSuccess, signupErrors}) => {
+export const Signup: React.FC<SignupFormProps> = ({
+  handleSubmit,
+  isSuccess,
+  signupErrors,
+  isLoading
+}) => {
   return (
     <Layout>
       {isSuccess ? (
         <SignupSuccess />
       ) : (
-        <SignupForm handleSubmit={handleSubmit} signupErrors={signupErrors} />
+        <SignupForm
+          handleSubmit={handleSubmit}
+          signupErrors={signupErrors}
+          isLoading={isLoading}
+        />
       )}
     </Layout>
   )
