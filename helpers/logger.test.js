@@ -1,7 +1,7 @@
 import util from 'util'
 import { nanoid } from 'nanoid'
 import winston from 'winston'
-import logger, { processArgs, printFunc } from '../../helpers/logger'
+import logger, { processArgs, printFunc } from './logger'
 jest.mock('nanoid')
 jest.mock('winston')
 

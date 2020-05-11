@@ -1,4 +1,4 @@
-import { loginUser } from '../helpers/loginUser'
+import { loginUser } from './loginUser'
 
 describe('loginUser function', () => {
   test('should call fetch with the correct data', async () => {

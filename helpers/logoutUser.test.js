@@ -13,7 +13,7 @@ describe('logoutUser helper function', () => {
       SERVER_URL: FAKE_SERVER
     }
 
-    logoutUser = jest.requireActual('../helpers/logoutUser').default
+    logoutUser = jest.requireActual('./logoutUser').default
   })
 
   afterEach(() => (process.env = OLD_ENV))

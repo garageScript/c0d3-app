@@ -1,9 +1,9 @@
-jest.mock('../../helpers/logoutUser')
+jest.mock('../helpers/logoutUser')
 jest.mock('next/router')
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
-import AppNav from '../../components/AppNav'
-import logoutUser from '../../helpers/logoutUser'
+import AppNav from './AppNav'
+import logoutUser from '../helpers/logoutUser'
 
 // Mock global.window
 global.window = Object.create(window)

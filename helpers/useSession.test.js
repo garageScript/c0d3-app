@@ -1,5 +1,5 @@
 jest.mock('swr')
-import useSession, { fetcher } from '../helpers/useSession'
+import useSession, { fetcher } from './useSession'
 import useSWR from 'swr'
 
 describe('useSession helper', () => {
