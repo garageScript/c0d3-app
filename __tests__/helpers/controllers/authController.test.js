@@ -1,10 +1,14 @@
 jest.mock('bcrypt')
-jest.mock('../dbload')
-jest.mock('../mattermost')
+jest.mock('../../../helpers/dbload')
+jest.mock('../../../helpers/mattermost')
 import bcrypt from 'bcrypt'
-import db from '../dbload'
-import { login, logout, signup } from './authController'
-import { chatSignUp } from '../mattermost'
+import db from '../../../helpers/dbload'
+import {
+  login,
+  logout,
+  signup
+} from '../../../helpers/controllers/authController'
+import { chatSignUp } from '../../../helpers/mattermost'
 
 describe('auth controller', () => {
   let userArgs

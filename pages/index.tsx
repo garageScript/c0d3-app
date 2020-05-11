@@ -1,11 +1,12 @@
 import * as React from 'react'
-import Curriculum from './curriculum'
+import { useRouter } from 'next/router'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
 import SessionContext from '../helpers/contexts/session'
 
 const IndexPage: any = () => {
+  const router = useRouter()
   const { data } = React.useContext(SessionContext)
 
   // while loading, don't show anything to user
@@ -13,8 +14,10 @@ const IndexPage: any = () => {
     return null
   }
 
+  // Route to curriculum is user is found
   if (data.userInfo) {
-    return <Curriculum />
+    router.push('/curriculum')
+    return null
   }
 
   return (

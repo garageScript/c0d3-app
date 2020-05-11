@@ -1,6 +1,6 @@
 jest.mock('node-fetch')
 import fetch from 'node-fetch'
-import { chatSignUp } from './mattermost'
+import { chatSignUp } from '../../helpers/mattermost'
 
 describe('Chat Signup', () => {
   let userArgs
