@@ -23,6 +23,7 @@
     "bcrypt": "^4.0.1",
     "bootstrap": "^4.4.1",
     "connect-session-sequelize": "^6.1.1",
+    "dayjs": "^1.8.26",
     "express-session": "^1.17.0",
     "formik": "^2.1.4",
     "gitdiff-parser": "^0.2.2",
@@ -45,6 +46,8 @@
     "react-feather": "^2.0.3",
     "sequelize": "^5.21.6",
     "swr": "^0.1.18",
+    "winston": "^3.2.1",
+    "winston-transport-sentry-node": "^0.2.0",
     "yup": "^0.28.1"
   },
   "devDependencies": {
@@ -67,6 +70,7 @@
     "@types/react": "^16.9.21",
     "@types/react-dom": "^16.9.4",
     "@types/styled-jsx": "^2.2.8",
+    "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
     "@typescript-eslint/parser": "^2.20.0",
     "babel-jest": "^25.1.0",

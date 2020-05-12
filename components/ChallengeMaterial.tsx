@@ -8,11 +8,14 @@ import {
 import { LessonStatus } from '../@types/lesson'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
-import SessionContext from '../helpers/contexts/session'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
 import Prism from 'prismjs'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import _ from 'lodash'
+
+dayjs.extend(relativeTime)
 
 type CurrentChallengeID = string | null
 
@@ -42,10 +45,45 @@ type StatusIconProps = {
   status: string
 }
 
+type ReviewStatusProps = {
+  status: string
+  reviewerUserName: string | null
+}
+
 type ChallengesCompletedCardProps = {
   imageSrc: string
   reviewUrl: string
   chatUrl: string
+}
+
+export const ReviewStatus: React.FC<ReviewStatusProps> = ({
+  status,
+  reviewerUserName
+}) => {
+  //TODO change reviewerUserName to NavLink to Profile Page when page is completed
+  let reviewStatusComment
+  let statusClassName
+  switch (status) {
+    case 'passed':
+      reviewStatusComment = `Your solution was reviewed and accepted by ${reviewerUserName}`
+      statusClassName = 'border border-success text-success'
+      break
+    case 'needMoreWork':
+      reviewStatusComment = `Your solution was reviewed and rejected by ${reviewerUserName}`
+      statusClassName = 'border border-danger text-danger'
+      break
+    case 'open':
+      reviewStatusComment = 'Your MR is currently waiting to be reviewed'
+      statusClassName = 'border border-warning text-warning'
+      break
+    default:
+      return null
+  }
+  return (
+    <div className={`text-center p-2 my-2 ${statusClassName}`}>
+      {reviewStatusComment}
+    </div>
+  )
 }
 
 const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
@@ -101,9 +139,14 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
-  const { data } = React.useContext(SessionContext)
-  const username = _.get(data, 'userInfo.username', '')
   const diff = _.get(currentChallenge, 'submission.diff', false)
+  const comment = _.get(currentChallenge, 'submission.comment', '')
+  const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
+  const reviewerUserName = _.get(
+    currentChallenge,
+    'submission.reviewer.username',
+    null
+  )
   let files = null
 
   if (diff) files = gitDiffParser.parse(diff)
@@ -164,11 +207,20 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 
       {diff && (
         <div className="card shadow-sm border-0 mt-3">
-          <div className="card-header bg-white">{username}</div>
+          <div className="card-header bg-white">
+            Submitted {dayjs(parseInt(updatedAt)).fromNow()}
+          </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
               {files && files.map(renderFile)}
             </div>
+          </div>
+          <div className="card-footer bg-white">
+            {comment && <Markdown>{comment}</Markdown>}
+            <ReviewStatus
+              status={currentChallenge.status}
+              reviewerUserName={reviewerUserName}
+            />
           </div>
         </div>
       )}
