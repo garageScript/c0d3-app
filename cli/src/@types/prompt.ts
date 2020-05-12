@@ -22,6 +22,8 @@ interface Choices {
 
 type ChoicesFn = (array: ArrayValue) => Choices
 
+type List = (array: ArrayValue) => string
+
 type ArrayValue = [Lesson | Challenge]
 
 type AskForChallenges = (

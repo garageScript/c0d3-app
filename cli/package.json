@@ -25,6 +25,7 @@
   "author": "c0d3.com",
   "dependencies": {
     "@types/node": "^13.13.5",
+    "boxen": "^4.2.0",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "enquirer": "^2.3.5",

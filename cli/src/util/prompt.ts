@@ -1,4 +1,5 @@
-import { bold } from 'chalk'
+import boxen from 'boxen'
+import { bold, cyan } from 'chalk'
 import { prompt } from 'enquirer'
 import * as message from '../messages'
 
@@ -20,19 +21,30 @@ const choices: ChoicesFn = array => {
   return array
     .sort((a, b) => a.order - b.order)
     .reduce((acc, cv) => {
-      console.log(`Enter ${bold.cyan(cv.order)} to select: ${cv.title}.`)
       acc[cv.order] = cv
       return acc
     }, {} as { [key: number]: any })
 }
 
+const list: List = array => {
+  return array.reduce((acc, cv) => {
+    return (acc += `Enter ${cyan(cv.order)} to select: ${cyan(cv.title)}\n`)
+  }, '')
+}
 export const askForChallenges: AskForChallenges = async lessons => {
   const lessonsByOrder = choices(lessons)
+  console.log(
+    boxen(list(lessons).trimEnd(), {
+      padding: 1,
+      borderColor: 'magenta',
+      borderStyle: boxen.BorderStyle.Round
+    })
+  )
   const { lessonOrder }: { lessonOrder: string } = await prompt([
     {
       type: 'input',
       name: 'lessonOrder',
-      message: bold.cyan('What lesson do you want to submit?'),
+      message: cyan('What lesson do you want to submit?'),
       validate: lessonOrder =>
         !lessonsByOrder[lessonOrder] ? message.PROMPT_ORDER : true
     }
@@ -42,21 +54,26 @@ export const askForChallenges: AskForChallenges = async lessons => {
   console.log(`\n${bold.cyan(`► ${lessonsByOrder[lessonOrder].title}`)}`)
 
   const challengeByOrder = choices(lessonsByOrder[lessonOrder].challenges)
+  console.log(
+    boxen(list(lessonsByOrder[lessonOrder].challenges).trimEnd(), {
+      padding: 1,
+      borderColor: 'magenta',
+      borderStyle: boxen.BorderStyle.Round
+    })
+  )
   const { challengeOrder }: { challengeOrder: string } = await prompt([
     {
       type: 'input',
       name: 'challengeOrder',
-      message: bold.cyan('What challenge do you want to submit?'),
+      message: cyan('What challenge do you want to submit?'),
       validate: challengeOrder =>
         !challengeByOrder[challengeOrder] ? message.PROMPT_ORDER : true
     }
   ])
 
   console.clear()
-  console.log(`\n${bold.magenta(`▷ ${lessonsByOrder[lessonOrder].title}`)}`)
-  console.log(
-    `${bold.magenta(`  ► ${challengeByOrder[challengeOrder].title}`)}`
-  )
+  console.log(`\n${bold.cyan(`▷ ${lessonsByOrder[lessonOrder].title}`)}`)
+  console.log(`${bold.cyan(`  ► ${challengeByOrder[challengeOrder].title}`)}`)
 
   return {
     lessonId: lessonsByOrder[lessonOrder].id,

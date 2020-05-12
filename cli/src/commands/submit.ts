@@ -1,5 +1,6 @@
 import ora from 'ora'
 import request from 'graphql-request'
+import boxen from 'boxen'
 
 import * as message from '../messages'
 import { askForChallenges, askCredentials } from '../util/prompt'
@@ -37,7 +38,13 @@ const submit = async ({
     })
     spinner.stop()
     const { lessonId, challengeId } = await askForChallenges(lessons)
-    console.log(message.DIFF_MSG + diff)
+    console.log(
+      boxen(message.DIFF_MSG + diff, {
+        padding: 1,
+        borderColor: 'magenta',
+        borderStyle: boxen.BorderStyle.Round
+      })
+    )
     const variables = {
       lessonId,
       challengeId,
