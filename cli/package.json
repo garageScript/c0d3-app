@@ -27,6 +27,7 @@
     "@types/node": "^13.13.5",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
+    "enquirer": "^2.3.5",
     "graphql-request": "^1.6.0",
     "ora": "^4.0.4",
     "simple-git": "^2.4.0",
