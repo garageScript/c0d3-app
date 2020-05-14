@@ -191,7 +191,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
           </a>
           <a
             className="nav-item nav-link"
-            href="#"
+            href="https://github.com/garageScript/c0d3-app"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -199,7 +199,7 @@ exports[`Storyshots Components/AppNavBar Logged In 1`] = `
           </a>
           <a
             className="nav-item nav-link"
-            href="#"
+            href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
