@@ -1,9 +1,19 @@
 import fetch from 'node-fetch'
+import {
+  ChannelInfo,
+  GetChannelInfo,
+  SendMessage,
+  PublicChannelMessage
+} from '../@types/mattermost'
 const accessToken = process.env.MATTERMOST_ACCESS_TOKEN
 const chatServiceUrl = process.env.CHAT_URL
 
 const headers = {
   Authorization: `Bearer ${accessToken}`
+}
+
+export const handleError = (error: any) => {
+  throw new Error(error)
 }
 
 export const chatSignUp = async (
@@ -38,31 +48,32 @@ export const chatSignUp = async (
   }
 }
 
-const getChannelInfo = async (roomName: string) => {
+export const getChannelInfo: GetChannelInfo = async roomName => {
   const devOrProd = process.env.NODE_ENV === 'production' ? 'c0d3' : 'c0d3-dev'
-  const response = await fetch(
-    `${chatServiceUrl}/teams/name/${devOrProd}/channels/name/${roomName}`,
-    { headers }
-  )
-  return response.json()
+  const chatServiceUrl = process.env.CHAT_URL
+  const url = `${chatServiceUrl}/teams/name/${devOrProd}/channels/name/${roomName}`
+
+  const response: ChannelInfo = await fetch(url, { headers }).catch(handleError)
+  if (response.status !== 200) throw new Error(response.statusText)
+
+  return await response.json()
 }
 
-const sendMessage = async (channelId: string, message: string) =>
-  fetch(`${chatServiceUrl}/posts`, {
+export const sendMessage: SendMessage = async (channelId, message) => {
+  return fetch(`${chatServiceUrl}/posts`, {
     method: 'POST',
     headers,
     body: JSON.stringify({
       channel_id: channelId,
       message
     })
-  }).catch(error => {
-    throw new Error(error)
-  })
+  }).catch(handleError)
+}
 
-export const publicChannelMessage = async (
-  channelName: string,
-  message: string
+export const publicChannelMessage: PublicChannelMessage = async (
+  channelName,
+  message
 ) => {
-  const channelId = await getChannelInfo(channelName)
-  sendMessage(channelId.id, message)
+  const { id } = await getChannelInfo(channelName).catch(handleError)
+  sendMessage(id, message)
 }

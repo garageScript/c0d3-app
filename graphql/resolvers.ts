@@ -66,12 +66,11 @@ export default {
         const isPasswordValid = await bcrypt.compare(password, user.password)
         if (!isPasswordValid) throw 'Invalid password'
 
-        let cliToken = user.cliToken
-        if (!cliToken) await user.update({ cliToken: nanoid() })
+        if (!user.cliToken) await user.update({ cliToken: nanoid() })
 
-        return cliToken
+        return user.cliToken
       } catch (error) {
-        throw Error(error)
+        throw new Error(error)
       }
     }
   },
@@ -84,8 +83,9 @@ export default {
       _parent: void,
       args: ArgsCreateSubmission
     ): Promise<any> => {
-      const { challengeId, cliToken, diff, lessonId } = args
       try {
+        if (!args) throw new Error('Invalid args')
+        const { challengeId, cliToken, diff, lessonId } = args
         const { username, id: userId } = await User.findOne({
           where: { cliToken }
         })
@@ -102,7 +102,7 @@ export default {
         publicChannelMessage(lessonName, message)
         return submission
       } catch (error) {
-        return error
+        throw new Error(error)
       }
     }
   }

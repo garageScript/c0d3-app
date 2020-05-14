@@ -1,6 +1,5 @@
 import path from 'path'
 import { homedir } from 'os'
-import boxen from 'boxen'
 
 const HOME = homedir()
 
