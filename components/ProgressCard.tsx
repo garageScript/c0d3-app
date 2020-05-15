@@ -57,16 +57,15 @@ const ProgressCard: React.FC<Props> = ({ progressCount }) => {
           You&#39;re off to a great start!
         </h4>
         <div className="mt-3">
-          <p>
-            Login to
-            <a
-              className="progress-newuser__chatlink text-white"
-              href="https://chat.c0d3.com/login"
-            >
-              chat.c0d3.com
-            </a>
-            to ask your questions.
-          </p>
+          Login to
+          <NavLink
+            className="progress-newuser__chatlink text-white"
+            path="https://chat.c0d3.com/login"
+            external
+          >
+            chat.c0d3.com
+          </NavLink>
+          to ask your questions.
           <p>
             Start by setting up your development environment and then follow the
             lessons in the course.
