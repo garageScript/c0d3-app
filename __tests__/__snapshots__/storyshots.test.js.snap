@@ -3020,6 +3020,16 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     <div
       className="mt-3"
     >
+      Login to
+      <a
+        className="progress-newuser__chatlink text-white"
+        href="https://chat.c0d3.com/login"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        chat.c0d3.com
+      </a>
+      to ask your questions.
       <p>
         Start by setting up your development environment and then follow the lessons in the course.
       </p>
@@ -3096,6 +3106,16 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
     <div
       className="mt-3"
     >
+      Login to
+      <a
+        className="progress-newuser__chatlink text-white"
+        href="https://chat.c0d3.com/login"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        chat.c0d3.com
+      </a>
+      to ask your questions.
       <p>
         Start by setting up your development environment and then follow the lessons in the course.
       </p>
@@ -3172,6 +3192,16 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
     <div
       className="mt-3"
     >
+      Login to
+      <a
+        className="progress-newuser__chatlink text-white"
+        href="https://chat.c0d3.com/login"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        chat.c0d3.com
+      </a>
+      to ask your questions.
       <p>
         Start by setting up your development environment and then follow the lessons in the course.
       </p>
