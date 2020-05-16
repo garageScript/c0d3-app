@@ -1,6 +1,8 @@
 import boxen from 'boxen'
 import { bold, cyan } from 'chalk'
 import { prompt } from 'enquirer'
+
+import { Credential, ChoicesFn, List, AskForChallenges } from '../@types/prompt'
 import * as message from '../messages'
 
 const QUESTIONS = [
@@ -37,6 +39,8 @@ export const askForChallenges: AskForChallenges = async lessons => {
     boxen(list(lessons).trimEnd(), {
       padding: 1,
       borderColor: 'magenta',
+      // @ts-ignore error TS2748:
+      // Cannot access ambient const enums when the '--isolatedModules' flag is provided.
       borderStyle: boxen.BorderStyle.Round
     })
   )
@@ -58,6 +62,8 @@ export const askForChallenges: AskForChallenges = async lessons => {
     boxen(list(lessonsByOrder[lessonOrder].challenges).trimEnd(), {
       padding: 1,
       borderColor: 'magenta',
+      // @ts-ignore error TS2748:
+      // Cannot access ambient const enums when the '--isolatedModules' flag is provided.
       borderStyle: boxen.BorderStyle.Round
     })
   )

@@ -3,6 +3,7 @@ import request from 'graphql-request'
 import boxen from 'boxen'
 
 import * as message from '../messages'
+import { Lesson } from '../@types/prompt'
 import { askForChallenges, askCredentials } from '../util/prompt'
 import { DEBUG_TOKEN } from '../constants'
 import { GET_LESSONS, POST_SUBMISSION } from '../graphql'
@@ -42,6 +43,8 @@ const submit = async ({
       boxen(message.DIFF_MSG + diff, {
         padding: 1,
         borderColor: 'magenta',
+        // @ts-ignore error TS2748:
+        // Cannot access ambient const enums when the '--isolatedModules' flag is provided.
         borderStyle: boxen.BorderStyle.Round
       })
     )

@@ -1,5 +1,13 @@
 import fs from 'fs'
 import { request } from 'graphql-request'
+
+import {
+  Token,
+  VerifyToken,
+  GetToken,
+  SaveToken,
+  CreateCredentialsFile
+} from '../@types/credentials'
 import { IS_TOKEN_VALID, GET_CLI_TOKEN } from '../graphql'
 import { CREDENTIALS_PATH, HIDDEN_DIR } from '../constants'
 import * as message from '../messages'
