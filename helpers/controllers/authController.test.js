@@ -145,7 +145,8 @@ describe('auth controller', () => {
     })
     const result = await signup({}, userArgs, { req: { session: {} } })
     expect(result).toEqual({
-      username: 'user'
+      username: 'user',
+      success: true
     })
   })
 })

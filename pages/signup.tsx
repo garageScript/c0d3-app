@@ -147,11 +147,11 @@ const SignUpPage: React.FC = () => {
         return setSignupSuccess(true)
       }
       const err = new Error(
-        'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+        'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
       )
       throw err
     } catch (error) {
-      const graphQLErrors = _.get(error, 'graphQLErrors', [error.message])
+      const graphQLErrors = _.get(error, 'graphQLErrors', [error])
       const errorMessages = graphQLErrors.reduce(
         (messages: any, error: any) => {
           return [...messages, error.message]

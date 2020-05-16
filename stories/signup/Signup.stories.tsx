@@ -6,12 +6,10 @@ export default {
   title: 'Pages/signup'
 }
 
-const noop = () => {
-  console.log('hi')
-}
+const noop = () => {}
 const errorMessages = ['UserInput Error: User does not exist']
 export const _Signup: React.FC = () => (
-  <Signup handleSubmit={noop} signupErrors={[]} />
+  <Signup handleSubmit={noop} />
 )
 
 export const _SignupSuccess: React.FC = () => (

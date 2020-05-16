@@ -54,18 +54,6 @@ describe('Signup Page', () => {
     expect(mockFn).not.toBeCalled()
   })
 
-  test('Should call handleSubmit function when form is filled out', async () => {
-    const { getByTestId } = render(<SignUpPage />)
-    const submitButton = getByTestId('submit')
-    fillOutSignupForm(getByTestId)
-
-    await wait(() => {
-      act(() => {
-        fireEvent.click(submitButton)
-      })
-    })
-  })
-
   test('Should submit signup form values and render success component', () => {
     mockFn.mockImplementation(() => {
       return {
@@ -80,11 +68,14 @@ describe('Signup Page', () => {
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
 
-    act(() => {
-      fireEvent.click(submitButton)
-    }, () => {
-      getByTestId('signup-success')
-    })
+    act(
+      () => {
+        fireEvent.click(submitButton)
+      },
+      () => {
+        getByTestId('signup-success')
+      }
+    )
   })
 
   test('Should submit signup form values but render error if there is an error', () => {
@@ -99,32 +90,39 @@ describe('Signup Page', () => {
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
 
-    act(() => {
-      fireEvent.click(submitButton)
-    },() => {
-      getByText('Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com')
-    })
+    act(
+      () => {
+        fireEvent.click(submitButton)
+      },
+      () => {
+        getByText(
+          'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+        )
+      }
+    )
   })
 
   test('Should submit signup form values and display error component upon failure of email', () => {
     mockFn.mockImplementation(() => {
       const error = new Error()
       error.graphQLErrors = [
-            {
-              message: 'UserInputError: User does not exist!'  
-            }
-          ]
+        {
+          message: 'UserInputError: User does not exist!'
+        }
+      ]
       return Promise.reject(error)
     })
     const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
 
-    act(() => {
-      fireEvent.click(submitButton)
-    },() => {
-      getByText('User does not exist!')
-    })
+    act(
+      () => {
+        fireEvent.click(submitButton)
+      },
+      () => {
+        getByText('User does not exist!')
+      }
+    )
   })
-
 })

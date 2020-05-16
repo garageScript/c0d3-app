@@ -8,6 +8,7 @@ import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
 import { LOGIN_USER } from '../graphql/queries'
 import { useMutation } from '@apollo/react-hooks'
+import { Values, LoginFormProps, ErrorDisplayProps } from '../@types/login'
 import _ from 'lodash'
 
 const initialValues = {
@@ -15,34 +16,17 @@ const initialValues = {
   password: ''
 }
 
-type Values = {
-  username: string
-  password: string
+
+const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
+  if (!loginErrors || !loginErrors.length) return <></>
+    const errorMessages = loginErrors.map((message, idx) => {
+    const formattedMessage = message.split(':')[1]
+      return <Alert key={idx} text={formattedMessage} error />
+    })
+  return <>{errorMessages}</>
 }
 
-const Login: React.FC = () => {
-  const [isAlertVisible, setIsAlertVisible] = useState(false)
-  const [alertText, setAlertText] = useState('')
-  const [loginUser, { data, error }] = useMutation(LOGIN_USER)
-  // TODO: Error Handling for login / signup. Blocked by backend implementation.
-  useEffect(() => {
-    const { success } = _.get(data, 'login', false)
-    if (success) {
-      window.location.pathname = '/curriculum'
-    }
-    if (error) {
-      const message = _.get(error, 'message', '')
-      if (message) {
-        message.indexOf('Password') !== -1
-          ? setAlertText('Incorrect password: please try again')
-          : setAlertText('Incorrect username: please try again')
-      }
-      setIsAlertVisible(true)
-    }
-  })
-  const handleSubmit = async (values: Values) => {
-    await loginUser({ variables: values })
-  }
+export const Login: React.FC<LoginFormProps> = ({handleSubmit, loginErrors}) => {
   return (
     <Layout>
       <Card title="Login">
@@ -54,7 +38,7 @@ const Login: React.FC = () => {
         >
           <Form data-testid="form">
             <div className="form-group">
-              {isAlertVisible && <Alert error text={alertText} />}
+              <ErrorMessages loginErrors={loginErrors} />
               <Field
                 name="username"
                 placeholder="Username"
@@ -86,4 +70,36 @@ const Login: React.FC = () => {
   )
 }
 
-export default Login
+const LoginPage: React.FC = () => {
+  const [loginErrors, setLoginErrors] = useState<string[]>([])
+  const [loginUser, { data, error }] = useMutation(LOGIN_USER)
+  // TODO: Error Handling for login / signup. Blocked by backend implementation.
+  useEffect(() => {
+    const { success } = _.get(data, 'login', false)
+    if (success) {
+      window.location.pathname = '/curriculum'
+    }
+    if (error) {
+      const graphQLErrors: any = _.get(error, 'graphQLErrors', [])
+      const errorMessages = graphQLErrors.reduce(
+        (messages: any, error: any) => {
+          return [...messages, error.message]
+        },
+        []
+      )
+      setLoginErrors([...errorMessages])
+    }
+  }, [data, error])
+  const handleSubmit = async (values: Values) => {
+    try{
+      await loginUser({ variables: values })
+    } catch {} //Error handled above
+  }
+  return <Login 
+    handleSubmit={handleSubmit} 
+    loginErrors={loginErrors}
+  />
+
+}
+
+export default LoginPage

@@ -1,27 +1,10 @@
 import useSWR from 'swr'
+import { request } from 'graphql-request'
 import _ from 'lodash'
 
 const SERVER_URL = process.env.SERVER_URL
 
-export const fetcher = (url: string) =>
-  fetch(url, {
-    method: 'POST',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      query: `
-            query {
-              session {
-                user {
-                    username
-                }
-              }
-            }
-          `
-    })
-  }).then(r => r.json())
+export const fetcher = (query: any) => request(SERVER_URL || '/api/graphql', query)
 
 type User = {
   user: {
@@ -34,8 +17,17 @@ export type SessionData = {
 }
 
 const useSession = (): SessionData => {
-  const { data } = useSWR(`${SERVER_URL}`, fetcher)
-  const session = _.get(data, 'data.session', {})
+  const { data } = useSWR(`
+      {
+        session {
+          user {
+            username
+          }
+        }
+      }
+    
+    `, fetcher)
+  const session = _.get(data, 'session', null)
   return { session }
 }
 

@@ -2,7 +2,6 @@ import React from 'react'
 import AppNav from './AppNav'
 import Footer from './Footer'
 import SessionContext from '../helpers/contexts/session'
-import _ from 'lodash'
 
 type Props = {
   children: React.ReactElement

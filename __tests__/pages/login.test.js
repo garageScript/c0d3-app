@@ -1,7 +1,11 @@
+jest.mock('@apollo/react-hooks')
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
-import * as loginHelper from '../../helpers/loginUser'
-import Login from '../../pages/login'
+import { render, fireEvent, wait, act } from '@testing-library/react'
+import LoginPage from '../../pages/login'
+import { useMutation } from '@apollo/react-hooks'
+
+const mockFn = jest.fn()
+useMutation.mockReturnValue([mockFn, {data: {}, error: {}}])
 
 // Mock global.window
 global.window = Object.create(window)
@@ -12,69 +16,72 @@ Object.defineProperty(global.window, 'location', {
 })
 
 describe('Login Page', () => {
+  const fillOutLoginForm = async getByTestId => {
+    const usernameField = getByTestId('username')
+    const passwordField = getByTestId('password')
+    await wait(
+      fireEvent.change(usernameField, {
+        target: {
+          value: 'user name'
+        }
+      }),
+      fireEvent.change(passwordField, {
+        target: {
+          value: 'password123'
+        }
+      })
+    )
+  }
   beforeEach(() => {
     global.window.location.pathname = '/login' // reset path
   })
 
-  test('Should redirect to curriculum', async () => {
-    loginHelper.loginUser = jest
-      .fn()
-      .mockReturnValue(Promise.resolve({ username: 'hello' }))
-
-    const { getByTestId } = render(<Login />)
-    const usernameField = getByTestId('username')
-    const passwordField = getByTestId('password')
+    test('should not submit when empty form', async () => {
+    const { getByTestId } = render(<LoginPage />)
     const submitButton = getByTestId('submit')
-
-    await wait(
-      () =>
-        fireEvent.change(usernameField, {
-          target: {
-            value: 'username123'
-          }
-        }),
-      fireEvent.change(passwordField, {
-        target: {
-          value: 'password123'
-        }
-      })
-    )
-
     await wait(() => {
-      fireEvent.click(submitButton)
+      act(() => {
+        fireEvent.click(submitButton)
+      })
     })
-    expect(global.window.location.pathname).toEqual('/curriculum')
-    expect(loginHelper.loginUser).toHaveBeenCalledWith(
-      'username123',
-      'password123'
-    )
+    expect(mockFn).not.toBeCalled()
   })
 
-  test('Should set alert visible on invalid credentials', async () => {
-    loginHelper.loginUser = jest.fn().mockReturnValue(null)
-
-    const { getByTestId, getByText } = render(<Login />)
-    const usernameField = getByTestId('username')
-    const passwordField = getByTestId('password')
+  test('Should redirect to curriculum', async () => {
+    useMutation.mockReturnValue([mockFn, {data: {login: { success: true}}}])
+    const { getByTestId } = render(<LoginPage />)
     const submitButton = getByTestId('submit')
+    fillOutLoginForm(getByTestId)
 
     await wait(() => {
-      fireEvent.change(usernameField, {
-        target: {
-          value: 'username123'
-        }
-      })
-      fireEvent.change(passwordField, {
-        target: {
-          value: 'password123'
-        }
-      })
+        fireEvent.click(submitButton)
     })
+    expect(global.window.location.pathname).toEqual('/curriculum')
+  })
 
-    await wait(() => {
-      fireEvent.click(submitButton)
-    })
-    expect(global.window.location.pathname).toEqual('/login')
-    getByText('Incorrect username or password: please try again')
+    test('Should set alert visible on invalid credentials', async () => {
+      useMutation.mockReturnValue([mockFn, {
+        error: {
+          graphQLErrors: [
+            {
+              message: 'UserInputError: User does not exist!'
+            }
+          ]
+        }
+      }
+      ])
+
+    const { getByTestId } = render(<LoginPage />)
+    const submitButton = getByTestId('submit')
+    fillOutLoginForm(getByTestId)
+
+    act(
+      () => {
+        fireEvent.click(submitButton)
+      },
+      () => {
+        getByText('User does not exist!')
+      }
+    )
   })
 })
