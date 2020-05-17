@@ -4,7 +4,8 @@ import _ from 'lodash'
 
 const SERVER_URL = process.env.SERVER_URL
 
-export const fetcher = (query: any) => request(SERVER_URL || '/api/graphql', query)
+export const fetcher = (query: any) =>
+  request(SERVER_URL || '/api/graphql', query)
 
 type User = {
   user: {
@@ -17,7 +18,8 @@ export type SessionData = {
 }
 
 const useSession = (): SessionData => {
-  const { data } = useSWR(`
+  const { data } = useSWR(
+    `
       {
         session {
           user {
@@ -26,7 +28,9 @@ const useSession = (): SessionData => {
         }
       }
     
-    `, fetcher)
+    `,
+    fetcher
+  )
   const session = _.get(data, 'session', null)
   return { session }
 }

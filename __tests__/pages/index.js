@@ -20,9 +20,9 @@ describe('Index Page', () => {
   test('Should render curriculum if session is identified', async () => {
     const session = {
       session: {
-      user: {
-        username: 'testing'
-      }
+        user: {
+          username: 'testing'
+        }
       }
     }
     const tree = (
@@ -45,6 +45,7 @@ describe('Index Page', () => {
 
     const { getByText } = render(tree)
     getByText('LandingPage')
+    getByText('Footer')
   })
   test('Should not render while page is loading', async () => {
     // SessionContext default value is { data: { success: false } }

@@ -16,17 +16,19 @@ const initialValues = {
   password: ''
 }
 
-
 const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
   if (!loginErrors || !loginErrors.length) return <></>
-    const errorMessages = loginErrors.map((message, idx) => {
+  const errorMessages = loginErrors.map((message, idx) => {
     const formattedMessage = message.split(':')[1]
-      return <Alert key={idx} text={formattedMessage} error />
-    })
+    return <Alert key={idx} text={formattedMessage} error />
+  })
   return <>{errorMessages}</>
 }
 
-export const Login: React.FC<LoginFormProps> = ({handleSubmit, loginErrors}) => {
+export const Login: React.FC<LoginFormProps> = ({
+  handleSubmit,
+  loginErrors
+}) => {
   return (
     <Layout>
       <Card title="Login">
@@ -91,15 +93,11 @@ const LoginPage: React.FC = () => {
     }
   }, [data, error])
   const handleSubmit = async (values: Values) => {
-    try{
+    try {
       await loginUser({ variables: values })
     } catch {} //Error handled above
   }
-  return <Login 
-    handleSubmit={handleSubmit} 
-    loginErrors={loginErrors}
-  />
-
+  return <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
 }
 
 export default LoginPage

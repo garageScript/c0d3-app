@@ -44,6 +44,7 @@ describe('Signup Page', () => {
   }
 
   test('should not submit when empty form', async () => {
+    useMutation.mockReturnValue([mockFn])
     const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     await wait(() => {
@@ -64,6 +65,7 @@ describe('Signup Page', () => {
         }
       }
     })
+    useMutation.mockReturnValue([mockFn])
     const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
@@ -86,6 +88,7 @@ describe('Signup Page', () => {
         }
       }
     })
+    useMutation.mockReturnValue([mockFn])
     const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
@@ -112,6 +115,7 @@ describe('Signup Page', () => {
       ]
       return Promise.reject(error)
     })
+    useMutation.mockReturnValue([mockFn])
     const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)

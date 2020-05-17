@@ -9,7 +9,7 @@ const IndexPage: React.FC = () => {
   const { session } = React.useContext(SessionContext)
 
   if (session) {
-    return  <Curriculum />
+    return <Curriculum />
   }
 
   return (

@@ -5,7 +5,7 @@ import LoginPage from '../../pages/login'
 import { useMutation } from '@apollo/react-hooks'
 
 const mockFn = jest.fn()
-useMutation.mockReturnValue([mockFn, {data: {}, error: {}}])
+useMutation.mockReturnValue([mockFn, { data: {}, error: {} }])
 
 // Mock global.window
 global.window = Object.create(window)
@@ -36,7 +36,7 @@ describe('Login Page', () => {
     global.window.location.pathname = '/login' // reset path
   })
 
-    test('should not submit when empty form', async () => {
+  test('should not submit when empty form', async () => {
     const { getByTestId } = render(<LoginPage />)
     const submitButton = getByTestId('submit')
     await wait(() => {
@@ -48,19 +48,24 @@ describe('Login Page', () => {
   })
 
   test('Should redirect to curriculum', async () => {
-    useMutation.mockReturnValue([mockFn, {data: {login: { success: true}}}])
+    useMutation.mockReturnValue([
+      mockFn,
+      { data: { login: { success: true } } }
+    ])
     const { getByTestId } = render(<LoginPage />)
     const submitButton = getByTestId('submit')
     fillOutLoginForm(getByTestId)
 
     await wait(() => {
-        fireEvent.click(submitButton)
+      fireEvent.click(submitButton)
     })
     expect(global.window.location.pathname).toEqual('/curriculum')
   })
 
-    test('Should set alert visible on invalid credentials', async () => {
-      useMutation.mockReturnValue([mockFn, {
+  test('Should set alert visible on invalid credentials', async () => {
+    useMutation.mockReturnValue([
+      mockFn,
+      {
         error: {
           graphQLErrors: [
             {
@@ -69,7 +74,7 @@ describe('Login Page', () => {
           ]
         }
       }
-      ])
+    ])
 
     const { getByTestId } = render(<LoginPage />)
     const submitButton = getByTestId('submit')

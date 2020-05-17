@@ -8,9 +8,7 @@ export default {
 
 const noop = () => {}
 const errorMessages = ['UserInput Error: User does not exist']
-export const _Signup: React.FC = () => (
-  <Signup handleSubmit={noop} />
-)
+export const _Signup: React.FC = () => <Signup handleSubmit={noop} />
 
 export const _SignupSuccess: React.FC = () => (
   <Signup handleSubmit={noop} isSuccess={true} />

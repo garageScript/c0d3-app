@@ -21,10 +21,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     [id: string]: LessonStatus
   }
 
-  const {
-    lessons,
-    session
-  } = queryData
+  const { lessons, session } = queryData
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
     (map: LessonStatusMap, lessonStatus: LessonStatus) => {
