@@ -1,4 +1,5 @@
-import fs from 'fs'
+import fs, { promises as fsPromises } from 'fs'
+import * as credentials from './credentials'
 import { request } from 'graphql-request'
 
 import {
@@ -14,23 +15,27 @@ import * as message from '../messages'
 
 export const verifyToken: VerifyToken = async url => {
   try {
-    const { cliToken }: Token = require(CREDENTIALS_PATH)
+    if (!fs.existsSync(HIDDEN_DIR)) {
+      await credentials.saveToken('initToken')
+    }
+    let { cliToken }: Token = await require(CREDENTIALS_PATH)
     const { isTokenValid }: Token = await request(url, IS_TOKEN_VALID, {
       cliToken
     })
+    if (!isTokenValid) cliToken = ''
     return { isTokenValid, cliToken }
-  } catch {
-    return { isTokenValid: false, cliToken: '' }
+  } catch (error) {
+    throw new Error(error)
   }
 }
 
 export const getToken: GetToken = async (credentials, url) => {
-  const { cliToken }: Token = await request(
+  const { cliToken } = await request<Token>(
     url,
     GET_CLI_TOKEN,
     credentials
   ).catch(() => {
-    throw message.WRONG_CREDENTIALS
+    throw new Error(message.WRONG_CREDENTIALS)
   })
 
   return cliToken
@@ -38,24 +43,25 @@ export const getToken: GetToken = async (credentials, url) => {
 
 export const saveToken: SaveToken = async cliToken => {
   try {
-    createHiddenDir()
-    await createCredentialsFile(cliToken)
+    credentials.createHiddenDir()
+    await credentials.createCredentialsFile(cliToken)
   } catch {
-    throw message.SAVE_TOKEN_ERROR
+    throw new Error(message.SAVE_TOKEN_ERROR)
   }
 }
 
 export const createHiddenDir = () => {
   if (!fs.existsSync(HIDDEN_DIR)) {
     fs.mkdirSync(HIDDEN_DIR)
+    return true
   }
+  return false
 }
 
-export const createCredentialsFile: CreateCredentialsFile = cliToken => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(CREDENTIALS_PATH, JSON.stringify({ cliToken }), err => {
-      if (err) reject()
-      resolve()
+export const createCredentialsFile: CreateCredentialsFile = async cliToken => {
+  await fsPromises
+    .writeFile(CREDENTIALS_PATH, JSON.stringify({ cliToken }))
+    .catch(err => {
+      throw new Error(err)
     })
-  })
 }

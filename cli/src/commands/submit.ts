@@ -31,21 +31,19 @@ const submit = async ({
 
     const diff = await getDiffAgainstMaster()
     spinner.start('Loading...')
-    const { lessons }: { lessons: [Lesson] } = await request(
+    const { lessons } = await request<{ lessons: [Lesson] }>(
       url,
       GET_LESSONS
     ).catch(() => {
-      throw message.FAIL_TO_GET_LESSONS
+      throw new Error(message.FAIL_TO_GET_LESSONS)
     })
+
     spinner.stop()
     const { lessonId, challengeId } = await askForChallenges(lessons)
     console.log(
       boxen(message.DIFF_MSG + diff, {
         padding: 1,
-        borderColor: 'magenta',
-        // @ts-ignore error TS2748:
-        // Cannot access ambient const enums when the '--isolatedModules' flag is provided.
-        borderStyle: boxen.BorderStyle.Round
+        borderColor: 'magenta'
       })
     )
     const variables = {
@@ -57,13 +55,11 @@ const submit = async ({
 
     spinner.start('Sending...')
     await request(url, POST_SUBMISSION, variables).catch(() => {
-      throw message.SUBMISSION_ERROR
+      throw new Error(message.SUBMISSION_ERROR)
     })
-
     spinner.succeed(message.SUBMISSION_SUCCEED).stop()
   } catch (error) {
-    spinner.fail(error)
-    process.exit()
+    spinner.fail(error.message)
   }
 }
 

@@ -5,11 +5,11 @@ const git: SimpleGit = gitP()
 
 export const getDiffAgainstMaster = async () => {
   const { current } = await git.branch()
-  if (current === 'master') throw message.WRONG_BRANCH
+  if (current === 'master') throw new Error(message.WRONG_BRANCH)
   console.log(`${message.CURRENT_BRANCH} ${current}\n`)
 
   const diff = await git.diff([`--color`, `master..${current}`])
-  if (!Boolean(diff)) throw message.NO_DIFFERENCE
+  if (!Boolean(diff)) throw new Error(message.NO_DIFFERENCE)
 
   return diff
 }

@@ -13,4 +13,5 @@ export const HIDDEN_DIR = path.join(HOME, DIR)
 
 export const URL = 'https://c0d3.com/api/graphql'
 
+// Token from test account asynchronymouse
 export const DEBUG_TOKEN = '1txkbwq0v1kHhzyGZaf53'

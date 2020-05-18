@@ -19,7 +19,7 @@ const QUESTIONS = [
   }
 ]
 
-const choices: ChoicesFn = array => {
+export const choices: ChoicesFn = array => {
   return array
     .sort((a, b) => a.order - b.order)
     .reduce((acc, cv) => {
@@ -28,20 +28,18 @@ const choices: ChoicesFn = array => {
     }, {} as { [key: number]: any })
 }
 
-const list: List = array => {
+export const list: List = array => {
   return array.reduce((acc, cv) => {
     return (acc += `Enter ${cyan(cv.order)} to select: ${cyan(cv.title)}\n`)
   }, '')
 }
+
 export const askForChallenges: AskForChallenges = async lessons => {
   const lessonsByOrder = choices(lessons)
   console.log(
     boxen(list(lessons).trimEnd(), {
       padding: 1,
-      borderColor: 'magenta',
-      // @ts-ignore error TS2748:
-      // Cannot access ambient const enums when the '--isolatedModules' flag is provided.
-      borderStyle: boxen.BorderStyle.Round
+      borderColor: 'magenta'
     })
   )
   const { lessonOrder }: { lessonOrder: string } = await prompt([
@@ -61,10 +59,7 @@ export const askForChallenges: AskForChallenges = async lessons => {
   console.log(
     boxen(list(lessonsByOrder[lessonOrder].challenges).trimEnd(), {
       padding: 1,
-      borderColor: 'magenta',
-      // @ts-ignore error TS2748:
-      // Cannot access ambient const enums when the '--isolatedModules' flag is provided.
-      borderStyle: boxen.BorderStyle.Round
+      borderColor: 'magenta'
     })
   )
   const { challengeOrder }: { challengeOrder: string } = await prompt([
@@ -77,7 +72,7 @@ export const askForChallenges: AskForChallenges = async lessons => {
     }
   ])
 
-  console.clear()
+  // console.clear()
   console.log(`\n${bold.cyan(`▷ ${lessonsByOrder[lessonOrder].title}`)}`)
   console.log(`${bold.cyan(`  ► ${challengeByOrder[challengeOrder].title}`)}`)
 
@@ -90,7 +85,7 @@ export const askForChallenges: AskForChallenges = async lessons => {
 export const askCredentials = async (): Promise<Credential> => {
   const credential: Credential = await prompt(QUESTIONS)
   if (!credential.username || !credential.password) {
-    throw message.WRONG_INPUT
+    throw new Error(message.WRONG_INPUT)
   }
 
   return credential

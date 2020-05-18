@@ -9,7 +9,7 @@
     "autofix": "eslint . --ext .js --ext .ts --ext .tsx --fix && svgo public/*.svg",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -s ./public",
-    "test": "jest --coverage",
+    "test": "jest --coverage --silent",
     "type-check": "tsc"
   },
   "dependencies": {
@@ -100,7 +100,10 @@
         "lines": 100,
         "statements": 100
       }
-    }
+    },
+    "modulePathIgnorePatterns": [
+      "./cli/dist"
+    ]
   },
   "husky": {
     "hooks": {
