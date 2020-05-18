@@ -48,7 +48,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   const lessonsToRender: React.ReactElement[] = lessonsWithStatus.map(
     (lesson, idx) => {
       let lessonState = ''
-      if (lesson.lessonStatus.isEnrolled || idx === lessonInProgressIdx) {
+      if (idx === lessonInProgressIdx) {
         lessonState = 'inProgress'
       }
       if (lesson.lessonStatus.isPassed) {

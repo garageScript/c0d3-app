@@ -237,7 +237,7 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
         <button
           class="btn border btn-secondary overflow-hidden p-2 text-truncate"
         >
-          tester
+          test
         </button>
         <button
           class="btn border btn-secondary ml-2"
