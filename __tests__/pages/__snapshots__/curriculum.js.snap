@@ -115,7 +115,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
                 fill="transparent"
                 r="17"
                 stroke="#fff"
-                stroke-dasharray="-100 200"
+                stroke-dasharray="-15 115"
                 stroke-dashoffset="20"
                 stroke-width="4.5"
               />
@@ -129,7 +129,7 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
                   x="15"
                   y="23"
                 >
-                  -100
+                  -15
                   <tspan
                     font-size="8px"
                   >
@@ -146,6 +146,16 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             <div
               class="mt-3"
             >
+              Login to
+              <a
+                class="progress-newuser__chatlink text-white"
+                href="https://chat.c0d3.com/login"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                chat.c0d3.com
+              </a>
+              to ask your questions.
               <p>
                 Start by setting up your development environment and then follow the lessons in the course.
               </p>
@@ -415,6 +425,16 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             <div
               class="mt-3"
             >
+              Login to
+              <a
+                class="progress-newuser__chatlink text-white"
+                href="https://chat.c0d3.com/login"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                chat.c0d3.com
+              </a>
+              to ask your questions.
               <p>
                 Start by setting up your development environment and then follow the lessons in the course.
               </p>
@@ -684,6 +704,16 @@ exports[`Curriculum Page Should render render first lesson when lessonStatus is 
             <div
               class="mt-3"
             >
+              Login to
+              <a
+                class="progress-newuser__chatlink text-white"
+                href="https://chat.c0d3.com/login"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                chat.c0d3.com
+              </a>
+              to ask your questions.
               <p>
                 Start by setting up your development environment and then follow the lessons in the course.
               </p>

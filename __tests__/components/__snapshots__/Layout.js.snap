@@ -212,13 +212,13 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
             </a>
             <a
               class="nav-item nav-link"
-              href="#"
+              href="https://github.com/garageScript/c0d3-app"
             >
               Repo
             </a>
             <a
               class="nav-item nav-link"
-              href="#"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
             >
               Journey
             </a>

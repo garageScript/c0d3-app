@@ -1,0 +1,33 @@
+.profile-submissions{
+
+  .lesson_challenges{
+    display: flex;
+    margin-top: 15px
+  }
+
+ .display_lessons{
+    margin-top: 40px;
+  }
+  .lesson_title_container{
+    margin-left: 50px;
+  }
+
+  .challenge_status{
+    height: 12px;
+    width: 40px;
+    margin-right: 2px;
+    display: inline-block;
+  }
+
+  .challenges_stats{
+    margin-top: 15px;
+  }
+
+
+  .lesson_title{
+    margin-top: 10px;
+    color: grey;
+
+  }
+
+}

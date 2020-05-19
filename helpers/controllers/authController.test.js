@@ -66,7 +66,8 @@ describe('auth controller', () => {
         inputCb({ message: 'OWNED BY TEST' })
       }
     }
-    logout({}, {}, { req: { session } }).catch(e => {
+
+    logout({}, {}, { req: { error: jest.fn(), session } }).catch(e => {
       expect(e).toEqual({
         success: false,
         error: 'OWNED BY TEST'
@@ -118,7 +119,7 @@ describe('auth controller', () => {
     )
 
     await expect(
-      signup({}, userArgs, { req: { session: {} } })
+      signup({}, userArgs, { req: { error: jest.fn(), session: {} } })
     ).rejects.toThrowError('Invalid or missing parameter in mattermost request')
 
     expect(db.User.create).not.toBeCalled()
@@ -131,7 +132,7 @@ describe('auth controller', () => {
     chatSignUp.mockRejectedValueOnce('Mattermost Error')
 
     await expect(
-      signup({}, userArgs, { req: { session: {} } })
+      signup({}, userArgs, { req: { error: jest.fn(), session: {} } })
     ).rejects.toThrow('Mattermost Error')
 
     expect(db.User.create).not.toBeCalled()
