@@ -400,7 +400,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
                 fill="transparent"
                 r="17"
                 stroke="#fff"
-                stroke-dasharray="-14.285714285714286 114.28571428571429"
+                stroke-dasharray="-15 115"
                 stroke-dashoffset="20"
                 stroke-width="4.5"
               />
@@ -414,7 +414,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
                   x="15"
                   y="23"
                 >
-                  -14.285714285714286
+                  -15
                   <tspan
                     font-size="8px"
                   >

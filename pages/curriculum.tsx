@@ -24,7 +24,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     lesson => !lesson.currentUser.userLesson.isPassed
   )
   // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
-  const progressPercentage = (lessonInProgressIdx * 100) / 7
+  const progressPercentage = Math.floor((lessonInProgressIdx * 100) / 7)
   const lessonsToRender: React.ReactElement[] = sortedLessons.map(
     (lesson, idx) => {
       let lessonState = ''
