@@ -30,45 +30,43 @@ export const Login: React.FC<LoginFormProps> = ({
   loginErrors
 }) => {
   return (
-    <Layout>
-      <Card title="Login">
-        <Formik
-          validateOnBlur
-          initialValues={initialValues}
-          validationSchema={loginValidation}
-          onSubmit={handleSubmit}
-        >
-          <Form data-testid="form">
-            <div className="form-group">
-              <ErrorMessages loginErrors={loginErrors} />
-              <Field
-                name="username"
-                placeholder="Username"
-                data-testid="username"
-                as={Input}
-              />
+    <Card title="Login">
+      <Formik
+        validateOnBlur
+        initialValues={initialValues}
+        validationSchema={loginValidation}
+        onSubmit={handleSubmit}
+      >
+        <Form data-testid="form">
+          <div className="form-group">
+            <ErrorMessages loginErrors={loginErrors} />
+            <Field
+              name="username"
+              placeholder="Username"
+              data-testid="username"
+              as={Input}
+            />
 
-              <Field
-                name="password"
-                placeholder="Password"
-                data-testid="password"
-                type="password"
-                as={Input}
-              />
+            <Field
+              name="password"
+              placeholder="Password"
+              data-testid="password"
+              type="password"
+              as={Input}
+            />
 
-              <button
-                className="btn btn-primary btn-lg btn-block mb-3"
-                type="submit"
-                data-testid="submit"
-              >
-                Login to Your Account
-              </button>
-            </div>
-          </Form>
-        </Formik>
-        <NavLink path="/forgotPassword">Forgot your password?</NavLink>
-      </Card>
-    </Layout>
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              type="submit"
+              data-testid="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
+        </Form>
+      </Formik>
+      <NavLink path="/forgotPassword">Forgot your password?</NavLink>
+    </Card>
   )
 }
 
@@ -97,7 +95,11 @@ const LoginPage: React.FC = () => {
       await loginUser({ variables: values })
     } catch {} //Error handled above
   }
-  return <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
+  return (
+    <Layout>
+      <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
+    </Layout>
+  )
 }
 
 export default LoginPage

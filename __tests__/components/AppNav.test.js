@@ -45,7 +45,9 @@ describe('AppNav Component', () => {
       mockFn,
       { data: { logout: { success: true } } }
     ])
-    const { getByText } = render(<AppNav loggedIn />)
+    const { getByText } = render(
+      <AppNav firstName="test" lastName="backend" loggedIn />
+    )
     const leftClick = { button: 0 }
     fireEvent.click(getByText('Logout'), leftClick)
     await wait(() => expect(global.window.location.pathname).toEqual('/'))

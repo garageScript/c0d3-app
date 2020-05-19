@@ -84,9 +84,20 @@ export const logout = async (_parent: void, _: void, ctx: { req: Request }) => {
   })
 }
 
-export const signup = async (_parent: void, arg: SignUp) => {
+export const signup = async (
+  _parent: void,
+  arg: SignUp,
+  ctx: { req: Request }
+) => {
   try {
     const { firstName, lastName, username, password, email } = arg
+    const {
+      req: { session }
+    } = ctx
+
+    if (!session) {
+      throw new Error('Session Error')
+    }
 
     const validEntry = await signupValidation.isValid({
       firstName,
@@ -136,6 +147,7 @@ export const signup = async (_parent: void, arg: SignUp) => {
       emailVerificationToken: randomToken
     })
 
+    session.userId = userRecord.dataValues.id
     return {
       success: true,
       username: userRecord.username

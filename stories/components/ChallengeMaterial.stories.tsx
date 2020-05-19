@@ -24,6 +24,7 @@ const challenges = [
 ]
 
 const lessonStatus = {
+  lessonId: '5',
   isEnrolled: '213423534',
   isTeaching: null
 }

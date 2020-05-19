@@ -42,15 +42,16 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   return <>{errorMessages}</>
 }
 
+//Changed NavLink to button since it didn't update the state, NavBar didn't update loggedIn state
 const SignupSuccess: React.FC = () => (
   <Card
     success
     data-testid="signup-success"
     title="Account created successfully!"
   >
-    <NavLink path="/curriculum" className="btn btn-primary btn-lg mb-3">
+    <a className="btn btn-primary btn-lg mb-3" href="/curriculum" role="button">
       Continue to Curriculum
-    </NavLink>
+    </a>
   </Card>
 )
 
@@ -163,12 +164,14 @@ const SignUpPage: React.FC = () => {
     setIsSubmitting(false)
   }
   return (
-    <Signup
-      handleSubmit={handleSubmit}
-      isLoading={isSubmitting}
-      isSuccess={signupSuccess}
-      signupErrors={signupErrors}
-    />
+    <Layout>
+      <Signup
+        handleSubmit={handleSubmit}
+        isLoading={isSubmitting}
+        isSuccess={signupSuccess}
+        signupErrors={signupErrors}
+      />
+    </Layout>
   )
 }
 
@@ -179,7 +182,7 @@ export const Signup: React.FC<SignupFormProps> = ({
   isLoading
 }) => {
   return (
-    <Layout>
+    <>
       {isSuccess ? (
         <SignupSuccess />
       ) : (
@@ -189,7 +192,7 @@ export const Signup: React.FC<SignupFormProps> = ({
           isLoading={isLoading}
         />
       )}
-    </Layout>
+    </>
   )
 }
 

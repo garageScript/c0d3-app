@@ -3,7 +3,7 @@ import { Login } from '../pages/login'
 
 export default {
   component: Login,
-  title: 'Pages/Login'
+  title: 'Components/Login'
 }
 const noop = () => {}
 
