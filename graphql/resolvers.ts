@@ -13,6 +13,9 @@ export default {
         order: [['order', 'ASC']]
       })
     },
+    submissions() {
+      return Submission.findAll()
+    },
     async session(_parent: void, _args: void, context: { req: Request }) {
       const userId = _.get(context, 'req.session.userId', false)
 
