@@ -2,8 +2,7 @@ import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
 
 describe('GraphQL resolvers', () => {
-  const { Lesson } = db
-  const { Submission } = db
+  const { Lesson, Submission } = db
   test('lessons should return an empty array', async () => {
     Lesson.findAll = jest.fn().mockReturnValue([])
     expect(resolvers.Query.lessons()).toEqual([])

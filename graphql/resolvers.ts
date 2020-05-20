@@ -14,7 +14,11 @@ export default {
       })
     },
     submissions() {
-      return Submission.findAll()
+      return Submission.findAll({
+        where: {
+          status: 'open'
+        }
+      })
     },
     async session(_parent: void, _args: void, context: { req: Request }) {
       const userId = _.get(context, 'req.session.userId', false)
