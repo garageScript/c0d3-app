@@ -105,7 +105,7 @@ describe('Signup Page', () => {
     )
   })
 
-  test('Should submit signup form values and display error component upon failure of email', () => {
+  test('Should submit signup form values and display error component when user does not exist', () => {
     mockFn.mockImplementation(() => {
       const error = new Error()
       error.graphQLErrors = [

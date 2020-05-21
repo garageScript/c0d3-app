@@ -68,9 +68,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
       <Button
         text="Logout"
         btnType="border btn-secondary ml-2"
-        onClick={async () => {
-          await logoutUser()
-        }}
+        onClick={logoutUser}
       />
     </div>
   )
