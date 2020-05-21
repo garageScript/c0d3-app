@@ -5,15 +5,10 @@ import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
 import SessionContext from '../helpers/contexts/session'
 
-const IndexPage: any = () => {
-  const { data } = React.useContext(SessionContext)
+const IndexPage: React.FC = () => {
+  const { session } = React.useContext(SessionContext)
 
-  // while loading, don't show anything to user
-  if (!data.errorMessage && !data.userInfo) {
-    return null
-  }
-
-  if (data.userInfo) {
+  if (session) {
     return <Curriculum />
   }
 

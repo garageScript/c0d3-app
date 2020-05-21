@@ -1,7 +1,9 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
-import logoutUser from '../helpers/logoutUser'
+import { useMutation } from '@apollo/react-hooks'
+import { LOGOUT_USER } from '../graphql/queries'
+import _ from 'lodash'
 
 import '../scss/navbar.scss'
 
@@ -48,23 +50,29 @@ const AuthLink = () => (
   </div>
 )
 
-const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
-  <div>
-    <Button
-      btnType="border btn-secondary overflow-hidden p-2 text-truncate"
-      initial={initial}
-      text={username}
-    />
-    <Button
-      text="Logout"
-      btnType="border btn-secondary ml-2"
-      onClick={async () => {
-        const res = await logoutUser()
-        if (res) window.location.pathname = '/'
-      }}
-    />
-  </div>
-)
+const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
+  const [logoutUser, { data }] = useMutation(LOGOUT_USER)
+  useEffect(() => {
+    const { success } = _.get(data, 'logout', false)
+    if (success) {
+      window.location.pathname = '/'
+    }
+  }, [data])
+  return (
+    <div>
+      <Button
+        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
+        initial={initial}
+        text={username}
+      />
+      <Button
+        text="Logout"
+        btnType="border btn-secondary ml-2"
+        onClick={logoutUser}
+      />
+    </div>
+  )
+}
 
 const UnAuthButton = () => (
   <div>

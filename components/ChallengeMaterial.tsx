@@ -283,7 +283,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     return <h1>No Challenges for this lesson</h1>
   }
   //create an object to evaluate the student's status with a challenge
-  const userSubmissionsObject = userSubmissions.reduce(
+  const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
     (acc: UserSubmissionsObject, submission: UserSubmission) => {
       acc[submission.challengeId] = submission
       return acc

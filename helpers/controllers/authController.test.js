@@ -140,13 +140,21 @@ describe('auth controller', () => {
 
   test('Signup - should resolve with success true if signup successful ', async () => {
     db.User.findOne = jest.fn().mockReturnValue(null)
-    db.User.create = jest.fn().mockReturnValue({ username: 'user' })
+    db.User.create = jest
+      .fn()
+      .mockReturnValue({ username: 'user', dataValues: { id: '1234' } })
     chatSignUp.mockResolvedValueOnce({
       success: true
     })
     const result = await signup({}, userArgs, { req: { session: {} } })
     expect(result).toEqual({
-      username: 'user'
+      username: 'user',
+      success: true
     })
+  })
+  test('Signup - should throw error when session is null', async () => {
+    return expect(
+      signup({}, userArgs, { req: { session: null } })
+    ).rejects.toThrowError('')
   })
 })

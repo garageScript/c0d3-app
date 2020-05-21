@@ -3,6 +3,11 @@ export type Values = {
   password: string
 }
 
-export type Props = {
-  submitLogin: (values: Values) => void
+export type LoginFormProps = {
+  handleSubmit: (values: Values) => void
+  loginErrors?: string[]
+}
+
+export type ErrorDisplayProps = {
+  loginErrors?: string[]
 }
