@@ -8,12 +8,12 @@ type Props = {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const { data } = React.useContext(SessionContext)
+  const { session } = React.useContext(SessionContext)
 
-  if (data && data.userInfo) {
+  if (session && session.user) {
     return (
       <>
-        <AppNav username={data.userInfo.username} loggedIn />
+        <AppNav username={session.user.username} loggedIn />
         <div className="container">{children}</div>
         <Footer />
       </>

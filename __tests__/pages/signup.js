@@ -1,7 +1,11 @@
+jest.mock('@apollo/react-hooks')
+import { useMutation } from '@apollo/react-hooks'
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
-import Signup from '../../pages/signup'
-import * as signupHelper from '../../helpers/signupUser'
+import SignUpPage, { Signup } from '../../pages/signup'
+
+const mockFn = jest.fn()
+useMutation.mockReturnValue([mockFn])
 
 describe('Signup Page', () => {
   const fillOutSignupForm = async getByTestId => {
@@ -39,107 +43,90 @@ describe('Signup Page', () => {
     )
   }
 
-  test('Should render without crashing', () => {
-    const { getByTestId } = render(<Signup />)
-    getByTestId('email')
-    getByTestId('username')
-    getByTestId('password')
-    getByTestId('firstName')
-    getByTestId('lastName')
-  })
-
-  test('Should not submit values if form is empty', async () => {
-    signupHelper.signupUser = jest.fn()
-    const { getByTestId } = render(<Signup />)
+  test('should not submit when empty form', async () => {
+    useMutation.mockReturnValue([mockFn])
+    const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     await wait(() => {
       act(() => {
         fireEvent.click(submitButton)
-      }),
-        expect(signupHelper.signupUser).not.toBeCalled()
-    })
-  })
-
-  test('Should submit signup form values and render success component', async () => {
-    signupHelper.signupUser = jest
-      .fn()
-      .mockReturnValue(Promise.resolve({ success: true }))
-    const { getByTestId } = render(<Signup />)
-    const submitButton = getByTestId('submit')
-    fillOutSignupForm(getByTestId)
-
-    await wait(() => {
-      act(() => {
-        fireEvent.click(submitButton)
-      }),
-        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1)
-    })
-  })
-
-  test('Should submit signup form values and display error component upon failure of email', async () => {
-    signupHelper.signupUser = jest.fn().mockReturnValue(
-      Promise.resolve({
-        success: false,
-        errorMessage: {
-          confirmEmail: ['This email has been taken']
-        }
       })
-    )
-    const { container, getByTestId } = render(<Signup />)
-    const submitButton = getByTestId('submit')
-    fillOutSignupForm(getByTestId)
-
-    await wait(() => {
-      act(() => {
-        fireEvent.click(submitButton)
-      }),
-        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(container).toMatchSnapshot()
     })
+    expect(mockFn).not.toBeCalled()
   })
 
-  test('Should submit signup form values and display error component upon failure of username', async () => {
-    signupHelper.signupUser = jest.fn().mockReturnValue(
-      Promise.resolve({
-        success: false,
-        errorMessage: {
-          userName: ['Username not available']
+  test('Should submit signup form values and render success component', () => {
+    mockFn.mockImplementation(() => {
+      return {
+        data: {
+          signup: {
+            success: true
+          }
         }
-      })
-    )
-    const { container, getByTestId } = render(<Signup />)
+      }
+    })
+    useMutation.mockReturnValue([mockFn])
+    const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
 
-    await wait(() => {
-      act(() => {
+    act(
+      () => {
         fireEvent.click(submitButton)
-      }),
-        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(container).toMatchSnapshot()
-    })
+      },
+      () => {
+        getByTestId('signup-success')
+      }
+    )
   })
 
-  test('Should submit signup form values and display error component upon failure of both username and email', async () => {
-    signupHelper.signupUser = jest.fn().mockReturnValue(
-      Promise.resolve({
-        success: false,
-        errorMessage: {
-          confirmEmail: ['This email has been taken'],
-          userName: ['Username not available']
+  test('Should submit signup form values but render error if there is an error', () => {
+    mockFn.mockImplementation(() => {
+      return {
+        data: {
+          signup: {}
         }
-      })
-    )
-    const { container, getByTestId } = render(<Signup />)
+      }
+    })
+    useMutation.mockReturnValue([mockFn])
+    const { getByTestId } = render(<SignUpPage />)
     const submitButton = getByTestId('submit')
     fillOutSignupForm(getByTestId)
 
-    await wait(() => {
-      act(() => {
+    act(
+      () => {
         fireEvent.click(submitButton)
-      }),
-        expect(signupHelper.signupUser).toHaveBeenCalledTimes(1),
-        expect(container).toMatchSnapshot()
+      },
+      () => {
+        getByText(
+          'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+        )
+      }
+    )
+  })
+
+  test('Should submit signup form values and display error component when user does not exist', () => {
+    mockFn.mockImplementation(() => {
+      const error = new Error()
+      error.graphQLErrors = [
+        {
+          message: 'UserInputError: User does not exist!'
+        }
+      ]
+      return Promise.reject(error)
     })
+    useMutation.mockReturnValue([mockFn])
+    const { getByTestId } = render(<SignUpPage />)
+    const submitButton = getByTestId('submit')
+    fillOutSignupForm(getByTestId)
+
+    act(
+      () => {
+        fireEvent.click(submitButton)
+      },
+      () => {
+        getByText('User does not exist!')
+      }
+    )
   })
 })

@@ -7,3 +7,7 @@ export default {
 }
 
 export const _Footer: React.FC = () => <Footer />
+
+export const _FooterWithClass: React.FC = () => (
+  <Footer footerType="py-5 bg-white text-muted" />
+)

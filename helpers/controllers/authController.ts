@@ -96,7 +96,12 @@ export const signup = async (
 ) => {
   const { req } = ctx
   try {
+    const { session } = req
     const { firstName, lastName, username, password, email } = arg
+
+    if (!session) {
+      throw new Error('Session Error')
+    }
 
     const validEntry = await signupValidation.isValid({
       firstName,
@@ -138,7 +143,7 @@ export const signup = async (
     // Chat Signup
     await chatSignUp(username, password, email)
 
-    const userRecord = User.create({
+    const userRecord = await User.create({
       name,
       username,
       password: hash,
@@ -146,7 +151,9 @@ export const signup = async (
       emailVerificationToken: randomToken
     })
 
+    session.userId = userRecord.dataValues.id
     return {
+      success: true,
       username: userRecord.username
     }
   } catch (err) {
