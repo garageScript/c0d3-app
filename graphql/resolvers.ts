@@ -37,7 +37,10 @@ export default {
       // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
       const [user, submissions, lessonStatus] = await Promise.all([
         User.findOne({ where: { id: userId } }),
-        Submission.findAll({ where: { userId } }),
+        Submission.findAll({
+          where: { userId },
+          include: [{ model: User, as: 'reviewer' }]
+        }),
         UserLesson.findAll({ where: { userId } })
       ])
 
