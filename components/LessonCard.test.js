@@ -1,6 +1,6 @@
 jest.mock('@apollo/react-hooks')
 import * as React from 'react'
-import LessonCard from '../../components/LessonCard'
+import LessonCard from './LessonCard'
 import { useQuery } from '@apollo/react-hooks'
 import { render } from '@testing-library/react'
 
