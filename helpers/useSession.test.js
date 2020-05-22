@@ -1,6 +1,6 @@
 jest.mock('swr')
 jest.mock('graphql-request')
-import useSession, { fetcher } from '../helpers/useSession'
+import useSession, { fetcher } from './useSession'
 import useSWR from 'swr'
 import { request } from 'graphql-request'
 
