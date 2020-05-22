@@ -5,6 +5,10 @@ import _ from 'lodash'
 
 const { User, Submission, Lesson, UserLesson } = db
 
+type Submission = {
+  lessonId: string
+}
+
 export default {
   Query: {
     lessons() {
@@ -13,10 +17,12 @@ export default {
         order: [['order', 'ASC']]
       })
     },
-    submissions() {
+    submissions(_parent: void, arg: Submission, _context: {req: Request}) {
+      const { lessonId } = arg
       return Submission.findAll({
         where: {
-          status: 'open'
+          status: 'open',
+          lessonId
         }
       })
     },

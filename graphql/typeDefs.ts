@@ -4,7 +4,7 @@ export default gql`
   type Query {
     lessons: [Lesson]
     session: Session
-    submissions: [Submission]
+    submissions(lessonId: String!): [Submission]
   }
 
   type Mutation {
