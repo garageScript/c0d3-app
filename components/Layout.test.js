@@ -1,8 +1,8 @@
 jest.mock('@apollo/react-hooks')
 import React from 'react'
 import { render } from '@testing-library/react'
-import Layout from '../../components/Layout'
-import SessionContext from '../../helpers/contexts/session'
+import Layout from './Layout'
+import SessionContext from '../helpers/contexts/session'
 import { useMutation } from '@apollo/react-hooks'
 
 describe('Layout Component', () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import NavLink from '../../components/NavLink'
+import NavLink from './NavLink'
 
 describe('NavLink Component', () => {
   test('Should render with active class when active', () => {

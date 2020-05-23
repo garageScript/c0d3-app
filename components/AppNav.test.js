@@ -2,7 +2,7 @@ jest.mock('@apollo/react-hooks')
 jest.mock('next/router')
 import React from 'react'
 import { render, fireEvent, wait } from '@testing-library/react'
-import AppNav from '../../components/AppNav'
+import AppNav from './AppNav'
 import { useMutation } from '@apollo/react-hooks'
 
 // Mock global.window
