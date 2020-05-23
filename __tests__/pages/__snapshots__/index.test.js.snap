@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index Page Should not render while page is loading 1`] = `<div />`;
-
-exports[`Index Page Should render landing page if user is not identified 1`] = `
+exports[`Index Page Should render landing page if user is not logged in 1`] = `
 <div>
   <nav
     class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
