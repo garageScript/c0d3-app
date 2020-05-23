@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useRouter } from 'next/router'
-import useSession from '../../helpers/useSession'
 import withQueryLoader, {
   WithQueryProps
 } from '../../containers/withQueryLoader'
@@ -8,15 +7,24 @@ import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import Alert from '../../components/Alert'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
-import { GET_LESSON } from '../../graphql/queries'
+import { GET_APP } from '../../graphql/queries'
+import { Lesson, LessonStatus } from '../../@types/lesson'
+import { UserSubmission } from '../../@types/challenge'
 import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
-  const {
-    lessonInfo: currentLesson,
-    userSubmissions,
-    lessonStatus: currentLessonStatus
-  } = queryData
+  const { lessons, session } = queryData
+  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
+  const router = useRouter()
+  const currentlessonId = router.query.lesson as string
+  const currentLesson: Lesson =
+    lessons.find(
+      (lesson: Lesson) => lesson.id.toString() === currentlessonId
+    ) || lessons[0]
+  const currentLessonStatus: LessonStatus = lessonStatus.find(
+    lessonStatus => lessonStatus.lessonId === currentlessonId
+  ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
   return (
     <div>
       <Layout>
@@ -38,7 +46,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
-                lessonId={currentLesson.id}
+                lessonId={currentLesson.id.toString()}
               />
             </div>
           )}
@@ -50,28 +58,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
 
 export default withQueryLoader(
   {
-    query: GET_LESSON,
-    getParams: () => {
-      const router = useRouter()
-      const currentlessonId = router.query.lesson as string
-      const { data } = useSession()
-      const userId = _.get(data, 'userInfo.id', '').toString()
-      return {
-        variables: {
-          lessonInfo: {
-            id: currentlessonId
-          },
-          lessonUserInfo: {
-            lessonId: currentlessonId,
-            userId: userId
-          },
-          lessonStatus: {
-            id: currentlessonId,
-            userId
-          }
-        }
-      }
-    }
+    query: GET_APP
   },
   Challenges
 )

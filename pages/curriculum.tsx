@@ -4,9 +4,10 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
-import { Lesson } from '../@types/lesson'
-import { GET_LESSONS } from '../graphql/queries'
+import { Lesson, LessonStatus } from '../@types/lesson'
+import { GET_APP } from '../graphql/queries'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
+import _ from 'lodash'
 
 export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   const announcements = [
@@ -16,24 +17,41 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
   ]
 
-  const { curriculumStatus }: { curriculumStatus: Lesson[] } = queryData
-  const sortedLessons: Lesson[] = curriculumStatus.sort(
-    (a, b) => a.order - b.order
+  type LessonStatusMap = {
+    [id: string]: LessonStatus
+  }
+
+  const { lessons, session } = queryData
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
+  const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
+    (map: LessonStatusMap, lessonStatus: LessonStatus) => {
+      map[lessonStatus.lessonId] = lessonStatus
+      return map
+    },
+    {}
   )
-  const lessonInProgressIdx = sortedLessons.findIndex(
-    lesson => !lesson.currentUser.userLesson.isPassed
-  )
-  const progressPercentage = (lessonInProgressIdx * 100) / sortedLessons.length
-  const lessonsToRender: React.ReactElement[] = sortedLessons.map(
+
+  const lessonsWithStatus: Lesson[] = lessons.map((lesson: Lesson) => {
+    lesson.lessonStatus = lessonStatusMap[lesson.id] || {
+      isEnrolled: null,
+      isTeaching: null,
+      lessonId: lesson.id
+    }
+    return lesson
+  })
+
+  const lessonInProgressIdx =
+    lessonsWithStatus.findIndex(lesson => !lesson.lessonStatus.isPassed) || 0
+
+  // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
+  const progressPercentage = Math.floor((lessonInProgressIdx * 100) / 7)
+  const lessonsToRender: React.ReactElement[] = lessonsWithStatus.map(
     (lesson, idx) => {
       let lessonState = ''
-      if (
-        lesson.currentUser.userLesson.isEnrolled ||
-        idx === lessonInProgressIdx
-      ) {
+      if (idx === lessonInProgressIdx) {
         lessonState = 'inProgress'
       }
-      if (lesson.currentUser.userLesson.isPassed) {
+      if (lesson.lessonStatus.isPassed) {
         lessonState = 'completed'
       }
       return (
@@ -68,7 +86,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
 
 export default withQueryLoader(
   {
-    query: GET_LESSONS
+    query: GET_APP
   },
   Curriculum
 )

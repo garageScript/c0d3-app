@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
-    "autofix": "eslint . --ext .js --ext .ts --ext .tsx --fix && svgo public/*.svg",
+    "autofix": "eslint . --ext .js --ext .ts --ext .tsx --fix && svgo public/*.svg && svgo assets/**/*.svg",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -s ./public",
     "test": "jest --coverage --silent",
@@ -28,6 +28,7 @@
     "formik": "^2.1.4",
     "gitdiff-parser": "^0.2.2",
     "graphql": "^14.6.0",
+    "graphql-request": "^1.8.2",
     "identity-obj-proxy": "^3.0.0",
     "isomorphic-unfetch": "3.0.0",
     "lodash": "^4.17.15",
@@ -101,6 +102,7 @@
         "statements": 100
       }
     },
+    "coveragePathIgnorePatterns": ["stories"],
     "modulePathIgnorePatterns": [
       "./cli/dist"
     ]

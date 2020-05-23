@@ -1,11 +1,13 @@
+jest.mock('@apollo/react-hooks')
 import React from 'react'
 import { render } from '@testing-library/react'
-import Layout from '../../components/Layout'
-import SessionContext from '../../helpers/contexts/session'
+import Layout from './Layout'
+import SessionContext from '../helpers/contexts/session'
+import { useMutation } from '@apollo/react-hooks'
 
 describe('Layout Component', () => {
   test('Should render correctly when no user in session', () => {
-    const session = { data: null }
+    const session = { session: null }
     const tree = (
       <SessionContext.Provider value={session}>
         <Layout />
@@ -17,8 +19,13 @@ describe('Layout Component', () => {
   })
 
   test('Should render correctly when user session found', () => {
+    useMutation.mockReturnValue([jest.fn(), { data: {} }])
     const session = {
-      data: { userInfo: { name: 'tester', username: 'tester' } }
+      session: {
+        user: {
+          username: 'test'
+        }
+      }
     }
     const tree = (
       <SessionContext.Provider value={session}>

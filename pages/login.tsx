@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
@@ -6,75 +6,100 @@ import Layout from '../components/Layout'
 import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
-import { loginUser } from '../helpers/loginUser'
+import { LOGIN_USER } from '../graphql/queries'
+import { useMutation } from '@apollo/react-hooks'
+import { Values, LoginFormProps, ErrorDisplayProps } from '../@types/login'
+import _ from 'lodash'
 
 const initialValues = {
   username: '',
   password: ''
 }
 
-type Values = {
-  username: string
-  password: string
+const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
+  if (!loginErrors || !loginErrors.length) return <></>
+  const errorMessages = loginErrors.map((message, idx) => {
+    const formattedMessage = message.split(':')[1]
+    return <Alert key={idx} text={formattedMessage} error />
+  })
+  return <>{errorMessages}</>
 }
 
-const Login: React.FC = () => {
-  const [isAlertVisible, setIsAlertVisible] = useState(false)
+export const Login: React.FC<LoginFormProps> = ({
+  handleSubmit,
+  loginErrors
+}) => {
+  return (
+    <Card title="Login">
+      <Formik
+        validateOnBlur
+        initialValues={initialValues}
+        validationSchema={loginValidation}
+        onSubmit={handleSubmit}
+      >
+        <Form data-testid="form">
+          <div className="form-group">
+            <ErrorMessages loginErrors={loginErrors} />
+            <Field
+              name="username"
+              placeholder="Username"
+              data-testid="username"
+              as={Input}
+            />
 
+            <Field
+              name="password"
+              placeholder="Password"
+              data-testid="password"
+              type="password"
+              as={Input}
+            />
+
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              type="submit"
+              data-testid="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
+        </Form>
+      </Formik>
+      <NavLink path="/forgotPassword">Forgot your password?</NavLink>
+    </Card>
+  )
+}
+
+const LoginPage: React.FC = () => {
+  const [loginErrors, setLoginErrors] = useState<string[]>([])
+  const [loginUser, { data, error }] = useMutation(LOGIN_USER)
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
-  const handleSubmit = async (values: Values) => {
-    const data = await loginUser(values.username, values.password)
-    if (data) {
-      return (window.location.pathname = '/curriculum')
+  useEffect(() => {
+    const { success } = _.get(data, 'login', false)
+    if (success) {
+      window.location.pathname = '/curriculum'
     }
-    setIsAlertVisible(true)
+    if (error) {
+      const graphQLErrors: any = _.get(error, 'graphQLErrors', [])
+      const errorMessages = graphQLErrors.reduce(
+        (messages: any, error: any) => {
+          return [...messages, error.message]
+        },
+        []
+      )
+      setLoginErrors([...errorMessages])
+    }
+  }, [data, error])
+  const handleSubmit = async (values: Values) => {
+    try {
+      await loginUser({ variables: values })
+    } catch {} //Error handled above
   }
   return (
     <Layout>
-      <Card title="Login">
-        <Formik
-          validateOnBlur
-          initialValues={initialValues}
-          validationSchema={loginValidation}
-          onSubmit={handleSubmit}
-        >
-          <Form data-testid="form">
-            <div className="form-group">
-              {isAlertVisible && (
-                <Alert
-                  error
-                  text="Incorrect username or password: please try again"
-                />
-              )}
-              <Field
-                name="username"
-                placeholder="Username"
-                data-testid="username"
-                as={Input}
-              />
-
-              <Field
-                name="password"
-                placeholder="Password"
-                data-testid="password"
-                type="password"
-                as={Input}
-              />
-
-              <button
-                className="btn btn-primary btn-lg btn-block mb-3"
-                type="submit"
-                data-testid="submit"
-              >
-                Login to Your Account
-              </button>
-            </div>
-          </Form>
-        </Formik>
-        <NavLink path="/forgotPassword">Forgot your password?</NavLink>
-      </Card>
+      <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
     </Layout>
   )
 }
 
-export default Login
+export default LoginPage

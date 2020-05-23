@@ -1,7 +1,9 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
-import logoutUser from '../helpers/logoutUser'
+import { useMutation } from '@apollo/react-hooks'
+import { LOGOUT_USER } from '../graphql/queries'
+import _ from 'lodash'
 
 import '../scss/navbar.scss'
 
@@ -26,10 +28,16 @@ const AuthLink = () => (
     >
       Curriculum
     </NavLink>
-    <NavLink path="#" className="nav-item nav-link">
+    <NavLink
+      path="https://github.com/garageScript/c0d3-app"
+      className="nav-item nav-link"
+    >
       Repo
     </NavLink>
-    <NavLink path="#" className="nav-item nav-link">
+    <NavLink
+      path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+      className="nav-item nav-link"
+    >
       Journey
     </NavLink>
     <NavLink
@@ -42,23 +50,29 @@ const AuthLink = () => (
   </div>
 )
 
-const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => (
-  <div>
-    <Button
-      btnType="border btn-secondary overflow-hidden p-2 text-truncate"
-      initial={initial}
-      text={username}
-    />
-    <Button
-      text="Logout"
-      btnType="border btn-secondary ml-2"
-      onClick={async () => {
-        const res = await logoutUser()
-        if (res) window.location.pathname = '/'
-      }}
-    />
-  </div>
-)
+const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
+  const [logoutUser, { data }] = useMutation(LOGOUT_USER)
+  useEffect(() => {
+    const { success } = _.get(data, 'logout', false)
+    if (success) {
+      window.location.pathname = '/'
+    }
+  }, [data])
+  return (
+    <div>
+      <Button
+        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
+        initial={initial}
+        text={username}
+      />
+      <Button
+        text="Logout"
+        btnType="border btn-secondary ml-2"
+        onClick={logoutUser}
+      />
+    </div>
+  )
+}
 
 const UnAuthButton = () => (
   <div>

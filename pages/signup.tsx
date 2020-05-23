@@ -1,6 +1,8 @@
 //import libraries
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik'
+import { useMutation } from '@apollo/react-hooks'
+import _ from 'lodash'
 
 //import components
 import Card from '../components/Card'
@@ -10,15 +12,10 @@ import NavLink from '../components/NavLink'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'
-import { signupUser } from '../helpers/signupUser'
+import { SIGNUP_USER } from '../graphql/queries'
 
 //import types
-import {
-  SignupFormProps,
-  Values,
-  SignupErrors,
-  ErrorDisplayProps
-} from '../@types/signup'
+import { SignupFormProps, Values, ErrorDisplayProps } from '../@types/signup'
 
 const initialValues: Values = {
   email: '',
@@ -29,39 +26,50 @@ const initialValues: Values = {
 }
 
 const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
-  return (
-    <div className="bg-light m-auto px-5 border-0'">
-      {signupErrors.confirmEmail ? (
-        <h5 className="text-danger">
-          An account has already been registered with this email
-        </h5>
-      ) : (
-        ''
-      )}
-      {signupErrors.userName ? (
-        <h5 className="text-danger">Username is already taken</h5>
-      ) : (
-        ''
-      )}
-    </div>
-  )
+  if (!signupErrors || !signupErrors.length) return <></>
+  const errorMessages = signupErrors.map((message, idx) => {
+    const formattedMessage = message.split(':')[1]
+    return (
+      <div
+        key={idx}
+        data-testid="error-message"
+        className="bg-light m-auto px-5 border-0"
+      >
+        <h5 className="text-danger">{formattedMessage}</h5>
+      </div>
+    )
+  })
+  return <>{errorMessages}</>
 }
 
+//Changed NavLink to button since it didn't update the state, NavBar didn't update loggedIn state
 const SignupSuccess: React.FC = () => (
-  <Card success title="Account created successfully!">
-    <NavLink path="/curriculum" className="btn btn-primary btn-lg mb-3">
+  <Card
+    success
+    data-testid="signup-success"
+    title="Account created successfully!"
+  >
+    <a className="btn btn-primary btn-lg mb-3" href="/curriculum" role="button">
       Continue to Curriculum
-    </NavLink>
+    </a>
   </Card>
 )
 
 const SignupForm: React.FC<SignupFormProps> = ({
   signupErrors,
+  isLoading,
   handleSubmit
 }) => {
   return (
     <Card title="Create Account">
       <ErrorMessage signupErrors={signupErrors} />
+      {isLoading && (
+        <div className="bg-light m-auto px-5 border-0">
+          <h5 data-testid="signup-loading" className="text-warning">
+            Submitting...
+          </h5>
+        </div>
+      )}
       <Formik
         validateOnBlur
         initialValues={initialValues}
@@ -127,26 +135,65 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const Signup: React.FC = () => {
+const SignUpPage: React.FC = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
-  const [signupErrors, setSignupErrors] = useState({} as SignupErrors)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [signupErrors, setSignupErrors] = useState<string[]>([])
+  const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
-    const data = await signupUser(values)
-    if (data.success) {
-      setSignupSuccess(true)
-    } else {
-      setSignupErrors(Object.assign({}, data.errorMessage))
+    setIsSubmitting(true)
+    try {
+      const { data } = await signupUser({ variables: values })
+      if (data.signup.success) {
+        return setSignupSuccess(true)
+      }
+      const err = new Error(
+        'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+      )
+      throw err
+    } catch (error) {
+      const graphQLErrors = _.get(error, 'graphQLErrors', [error])
+      const errorMessages = graphQLErrors.reduce(
+        (messages: any, error: any) => {
+          return [...messages, error.message]
+        },
+        []
+      )
+      setSignupErrors([...errorMessages])
     }
+    setIsSubmitting(false)
   }
   return (
     <Layout>
-      {signupSuccess ? (
-        <SignupSuccess />
-      ) : (
-        <SignupForm handleSubmit={handleSubmit} signupErrors={signupErrors} />
-      )}
+      <Signup
+        handleSubmit={handleSubmit}
+        isLoading={isSubmitting}
+        isSuccess={signupSuccess}
+        signupErrors={signupErrors}
+      />
     </Layout>
   )
 }
 
-export default Signup
+export const Signup: React.FC<SignupFormProps> = ({
+  handleSubmit,
+  isSuccess,
+  signupErrors,
+  isLoading
+}) => {
+  return (
+    <>
+      {isSuccess ? (
+        <SignupSuccess />
+      ) : (
+        <SignupForm
+          handleSubmit={handleSubmit}
+          signupErrors={signupErrors}
+          isLoading={isLoading}
+        />
+      )}
+    </>
+  )
+}
+
+export default SignUpPage

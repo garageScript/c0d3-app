@@ -63,6 +63,10 @@ describe('GraphQL resolvers', () => {
 
     expect(Query.cliToken(null, args)).rejects.toThrowError('Invalid password')
   })
+  test('should return submissions with a given lessonId', async () => {
+    Submission.findAll = jest.fn().mockReturnValue([])
+    expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
+  })
 })
 
 describe('Session resolver', () => {

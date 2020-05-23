@@ -6,7 +6,7 @@ import { InMemoryCache } from 'apollo-boost'
 const SERVER_URL = process.env.SERVER_URL
 
 const link = createHttpLink({
-  uri: `${SERVER_URL}/graphql`,
+  uri: SERVER_URL,
   credentials: 'include'
 })
 

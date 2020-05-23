@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import Button, { noop } from '../../components/Button'
+import Button, { noop } from './Button'
 
 describe('Button Component', () => {
   test('noop func', () => {

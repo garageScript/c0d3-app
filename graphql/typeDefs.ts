@@ -6,6 +6,7 @@ export default gql`
     session: Session
     isTokenValid(cliToken: String!): Boolean!
     cliToken(username: String!, password: String!): String
+    submissions(lessonId: String!): [Submission]
   }
 
   type Mutation {

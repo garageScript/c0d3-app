@@ -1,7 +1,7 @@
 import React from 'react'
 import dayjs from 'dayjs'
 import { render, fireEvent, wait } from '@testing-library/react'
-import ChallengeMaterial from '../../components/ChallengeMaterial'
+import ChallengeMaterial from './ChallengeMaterial'
 
 describe('Curriculum challenge page', () => {
   const lessonStatusNoPass = {

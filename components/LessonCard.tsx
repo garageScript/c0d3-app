@@ -16,11 +16,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
 
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
-    variables: {
-      in: {
-        id: `${props.lessonId}`
-      }
-    }
+    variables: { lessonId: `${props.lessonId}` }
   })
 
   if (loading) {
