@@ -18,8 +18,7 @@
   },
   "scripts": {
     "dev": "ts-node src/cli.ts",
-    "create": "yarn build && yarn test",
-    "build": "tsc -p .",
+    "build": "tsc -p . && chmod +x ./dist/src/cli.js",
     "test": "jest --coverage --silent"
   },
   "author": "c0d3.com",
