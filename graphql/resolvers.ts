@@ -17,7 +17,7 @@ export default {
         order: [['order', 'ASC']]
       })
     },
-    submissions(_parent: void, arg: Submission, _context: {req: Request}) {
+    submissions(_parent: void, arg: Submission, _context: { req: Request }) {
       const { lessonId } = arg
       return Submission.findAll({
         where: {

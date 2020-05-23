@@ -7,9 +7,9 @@ describe('GraphQL resolvers', () => {
     Lesson.findAll = jest.fn().mockReturnValue([])
     expect(resolvers.Query.lessons()).toEqual([])
   })
-  test('submissions should return an empty array', async () => {
+  test('should return submissions with a given lessonId', async () => {
     Submission.findAll = jest.fn().mockReturnValue([])
-    expect(resolvers.Query.submissions()).toEqual([])
+    expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
   })
 })
 
