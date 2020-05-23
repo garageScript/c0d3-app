@@ -5,12 +5,25 @@ import _ from 'lodash'
 
 const { User, Submission, Lesson, UserLesson } = db
 
+type Submission = {
+  lessonId: string
+}
+
 export default {
   Query: {
     lessons() {
       return Lesson.findAll({
         include: ['challenges'],
         order: [['order', 'ASC']]
+      })
+    },
+    submissions(_parent: void, arg: Submission, _context: { req: Request }) {
+      const { lessonId } = arg
+      return Submission.findAll({
+        where: {
+          status: 'open',
+          lessonId
+        }
       })
     },
     async session(_parent: void, _args: void, context: { req: Request }) {

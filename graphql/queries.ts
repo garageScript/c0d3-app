@@ -43,8 +43,8 @@ export const SIGNUP_USER = gql`
 `
 
 export const GET_SUBMISSIONS = gql`
-  query submissions($in: LessonId) {
-    submissions(input: $in) {
+  query submissions($lessonId: String!) {
+    submissions(lessonId: $lessonId) {
       status
     }
   }
