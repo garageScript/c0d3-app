@@ -16,7 +16,7 @@ const IndexPage: React.FC = () => {
     return null
   }
 
-  if (session)
+  if (!session)
     return (
       <>
         <AppNav loggedIn={false} />
