@@ -39,6 +39,7 @@ export const chatSignUp = async (
 }
 
 export const changeChatPassword = async (email: string, password: string) => {
+  // Using email in case they change their mattermost username
   const response = await fetch(`${chatServiceUrl}/users/email/${email}`, {
     headers
   })
@@ -50,13 +51,17 @@ export const changeChatPassword = async (email: string, password: string) => {
 
   const { id } = rJson
 
-  await fetch(`${chatServiceUrl}/users/${id}/password`, {
+  const setPwResponse = await fetch(`${chatServiceUrl}/users/${id}/password`, {
     method: 'PUT',
     headers,
     body: JSON.stringify({
       new_password: password
     })
   })
+
+  if (setPwResponse.status !== 200) {
+    throw new Error('Changing Chat Password Failed')
+  }
 
   return true
 }
