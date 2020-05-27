@@ -16,17 +16,13 @@ const IndexPage: React.FC = () => {
     return null
   }
 
-  if (!session)
-    return (
-      <>
-        <AppNav loggedIn={false} />
-        <LandingPage />
-        <Footer footerType="py-5 bg-white text-muted" />
-      </>
-    )
-
-  // React Testing Library needs to return null when there's no session otherwise it throws an error.
-  return null
+  return (
+    <>
+      <AppNav loggedIn={false} />
+      <LandingPage />
+      <Footer footerType="py-5 bg-white text-muted" />
+    </>
+  )
 }
 
 export default IndexPage
