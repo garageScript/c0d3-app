@@ -5,7 +5,7 @@ export const encode = (payload: any) => {
 }
 
 export const decode = (payload: any) => {
-  const buff = new Buffer(payload, 'base64')
+  const buff = Buffer.from(payload, 'base64')
   const decodedString = buff.toString('ascii')
   return JSON.parse(decodedString)
 }
