@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid'
 import { UserInputError, AuthenticationError } from 'apollo-server-micro'
 import { signupValidation } from '../formValidation'
 import { chatSignUp } from '../mattermost'
-import { LoggedRequest } from '../../@types/helpers'
+import { Context } from '../../@types/helpers'
 
 const { User } = db
 
@@ -21,11 +21,7 @@ type SignUp = {
   email: string
 }
 
-export const login = async (
-  _parent: void,
-  arg: Login,
-  ctx: { req: LoggedRequest }
-) => {
+export const login = async (_parent: void, arg: Login, ctx: Context) => {
   const { req } = ctx
   try {
     const { session } = req
@@ -58,11 +54,7 @@ export const login = async (
   }
 }
 
-export const logout = async (
-  _parent: void,
-  _: void,
-  ctx: { req: LoggedRequest }
-) => {
+export const logout = async (_parent: void, _: void, ctx: Context) => {
   const { req } = ctx
   const { session } = req
   return new Promise(async (resolve, reject) => {
@@ -89,11 +81,7 @@ export const logout = async (
   })
 }
 
-export const signup = async (
-  _parent: void,
-  arg: SignUp,
-  ctx: { req: LoggedRequest }
-) => {
+export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
   const { req } = ctx
   try {
     const { session } = req
