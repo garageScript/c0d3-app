@@ -76,7 +76,22 @@ describe('Change Password Function', () => {
     })
 
     await changeChatPassword('email@c0d3.com', 'fakepassword')
-    expect(fetch).toBeCalledTimes(2)
+    expect(fetch.mock.calls[0][0]).toEqual(
+      'https://mattermost.devwong.com/api/v4/users/email/email@c0d3.com'
+    )
+    expect(fetch.mock.calls[0][1]).toEqual({
+      headers: { Authorization: 'Bearer 123' }
+    })
+    expect(fetch.mock.calls[1][0]).toEqual(
+      'https://mattermost.devwong.com/api/v4/users/32/password'
+    )
+    expect(fetch.mock.calls[1][1]).toEqual({
+      method: 'PUT',
+      headers: { Authorization: 'Bearer 123' },
+      body: JSON.stringify({
+        new_password: 'fakepassword'
+      })
+    })
   })
 
   test('ChatChangePassword - should reject for unsuccessful password change', async () => {
