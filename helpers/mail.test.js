@@ -46,6 +46,14 @@ describe('Mailgun works as expected', () => {
     expect(mailgun.messages().send).toBeCalledWith(signupParams)
   })
 
+  test('It throws correct error when signup email fails to send', () => {
+    const mailgun = mg()
+    mailgun.messages().send.mockRejectedValueOnce('Fake Error')
+    return expect(
+      sendSignupEmail('hello@c0d3.com', 'faketoken123')
+    ).rejects.toThrowError('Mailgun did not successfully send signup email')
+  })
+
   test('It calls mailgun client to send reset password email', () => {
     const mailgun = mg()
     sendResetEmail('hello@c0d3.com', 'faketoken123')
@@ -58,5 +66,15 @@ describe('Mailgun works as expected', () => {
 
     expect(mailgun.messages).toBeCalled()
     expect(mailgun.messages().send).toBeCalledWith(resetParams)
+  })
+
+  test('It throws correct error when reset password email fails to send', () => {
+    const mailgun = mg()
+    mailgun.messages().send.mockRejectedValueOnce('Fake Error')
+    return expect(
+      sendResetEmail('hello@c0d3.com', 'faketoken123')
+    ).rejects.toThrowError(
+      'Mailgun did not successfully send reset password email'
+    )
   })
 })
