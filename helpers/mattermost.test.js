@@ -27,7 +27,7 @@ describe('Chat Signup', () => {
   })
 
   test('ChatSignUp - should reject with invalid parameter if response is 401', async () => {
-    fetch.mockResolvedValue({ status: 401 })
+    fetch.mockResolvedValue({ status: 400 })
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
     ).rejects.toThrowError('Invalid or missing parameter in mattermost request')

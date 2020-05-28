@@ -7,7 +7,7 @@ module.exports = withSass({
     DB_PW: process.env.DB_PW || 'letmein2',
     DB_HOST: process.env.DB_HOST || 'devwong.com',
     MATTERMOST_ACCESS_TOKEN:
-      process.env.MATTERMOST_ACCESS_TOKEN || 'c1eh9rc1cinpbf9mk1wucjyqzw',
+      process.env.MATTERMOST_ACCESS_TOKEN || 'nzk11f9s6jfpbpim8xpbdb9nea',
     SENTRY_DSN:
       process.env.SENTRY_DSN ||
       'https://e95626afb0454145b569bc69116f838c@o385150.ingest.sentry.io/5221680',

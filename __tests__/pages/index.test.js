@@ -7,7 +7,7 @@ import IndexPage from '../../pages/index'
 import SessionContext from '../../helpers/contexts/session'
 
 describe('Index Page', () => {
-  test('Should render curriculum if session is identified', async () => {
+  test('Should redirect to curriculum if session is identified', async () => {
     useRouter.mockImplementation(() => ({
       push: jest.fn()
     }))
@@ -28,7 +28,7 @@ describe('Index Page', () => {
     expect(Router.push).toBeCalled
   })
 
-  test('Should render landing page if user is not identified', async () => {
+  test('Should render landing page if user is not logged in', async () => {
     const session = {
       session: {
         username: null
@@ -40,12 +40,6 @@ describe('Index Page', () => {
       </SessionContext.Provider>
     )
 
-    const { container } = render(tree)
-    expect(container).toMatchSnapshot()
-  })
-
-  test('Should not render while page is loading', async () => {
-    const tree = <IndexPage />
     const { container } = render(tree)
     expect(container).toMatchSnapshot()
   })
