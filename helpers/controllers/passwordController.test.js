@@ -1,5 +1,5 @@
 jest.mock('bcrypt')
-jest.mock('mailgun-js') // For a small test
+jest.mock('mailgun-js')
 jest.mock('nanoid')
 jest.mock('../dbload')
 jest.mock('../mail')
