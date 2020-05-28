@@ -6,25 +6,21 @@ import { UserInputError, AuthenticationError } from 'apollo-server-micro'
 import { changeChatPassword } from '../mattermost'
 import { Context } from '../../@types/helpers'
 import { sendResetEmail } from '../mail'
+import { decode, encode } from '../encoding'
 
 const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
 export const reqPwReset = async (
-  _: void,
+  _parent: void,
   arg: { userOrEmail: string },
   ctx: Context
 ) => {
   const { req } = ctx
-  const { session } = req
   try {
-    if (!session) {
-      throw new Error('Session is not valid')
-    }
-
-    const { userOrEmail } = arg
+    const userOrEmail = _.get(arg, 'userOrEmail', null)
     if (!userOrEmail) {
-      throw new UserInputError('Please provider username or email')
+      throw new UserInputError('Please provide username or email')
     }
 
     let user: any
@@ -39,15 +35,15 @@ export const reqPwReset = async (
     }
 
     if (!user) {
-      throw new UserInputError('The User does not exist')
+      throw new UserInputError('User does not exist')
     }
 
-    const encodedToken = JSON.stringify({
+    const encodedToken = encode({
       userId: user.id,
       userToken: nanoid()
     })
 
-    user.forgotToken = Buffer.from(encodedToken).toString('base64')
+    user.forgotToken = encodedToken
     user.expiration = new Date(Date.now() + THREE_DAYS)
     await user.save()
     sendResetEmail(user.email, user.forgotToken)
@@ -70,21 +66,15 @@ export const changePw = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  const { session } = req
   try {
-    if (!session) {
-      throw new Error('no session')
-    }
-
     const { password, token } = args
-    const buff = new Buffer(token, 'base64')
-    const { userId } = JSON.parse(buff.toString('ascii'))
+    const { userId } = decode(token)
     const user = await User.findByPk(userId)
     if (!user) {
       throw new AuthenticationError('User does not exist')
     }
     if (token !== user.forgotToken || Date.now() > user.expiration) {
-      throw new AuthenticationError('Invalid Forgot Token')
+      throw new AuthenticationError('Invalid Token')
     }
     const hash = await bcrypt.hash(password, 10)
     user.expiration = null
@@ -92,8 +82,10 @@ export const changePw = async (
     user.password = hash
     await user.save()
 
-    if (!changeChatPassword(user.email, password)) {
-      throw new Error('Mattermost password was not set')
+    try {
+      await changeChatPassword(user.email, password)
+    } catch {
+      throw new Error('Mattermost did not set password')
     }
 
     return {
