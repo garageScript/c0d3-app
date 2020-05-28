@@ -1,9 +1,9 @@
 jest.mock('bcrypt')
+jest.mock('mailgun-js') // For a small test
 jest.mock('nanoid')
 jest.mock('../dbload')
 jest.mock('../mail')
 jest.mock('../mattermost')
-import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
 import db from '../dbload'
 import { changePw, reqPwReset } from './passwordController'
