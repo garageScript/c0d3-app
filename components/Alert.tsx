@@ -5,19 +5,45 @@ type Props = {
   text: string
   instructionsUrl?: string
   icon?: string
-  error?: boolean
+  type: string
+  prompt?: string
+  setAlertDisplay?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Alert: React.FC<Props> = props => {
-  const alertClasses = props.error ? 'alert-danger' : 'bg-primary text-white'
+const Alert: React.FC<Props> = ({
+  text,
+  instructionsUrl,
+  icon,
+  type,
+  prompt,
+  setAlertDisplay
+}) => {
+  const alertClasses =
+    type === 'urgent' ? 'alert-danger' : 'bg-primary text-white'
   return (
-    <div className={`alert col-12 mt-4 ${alertClasses}`} role="alert">
-      {props.icon && <img className="mr-3" src={`${props.icon}`} />}
-      {`${props.text} `}
-      {props.instructionsUrl && (
-        <NavLink path={props.instructionsUrl} className="text-white" external>
-          View Instructions
-        </NavLink>
+    <div
+      className={`alert d-flex justify-content-between mt-3 ${alertClasses}`}
+      role="alert"
+    >
+      <div>
+        {icon && <img className="mr-3 alert-icon" src={icon} />}
+        {text + ' '}
+        {instructionsUrl && (
+          <NavLink path={instructionsUrl} className="text-white" external>
+            View Instructions
+          </NavLink>
+        )}
+      </div>
+      {setAlertDisplay && (
+        <img
+          className={`alert-dismiss alert-dismiss--${type}`}
+          data-testid={`dismiss-${type}`}
+          src={`/curriculumAssets/icons/dismiss-${type}.svg`}
+          onClick={() => {
+            localStorage.setItem(prompt as string, JSON.stringify(false))
+            setAlertDisplay(false)
+          }}
+        />
       )}
     </div>
   )

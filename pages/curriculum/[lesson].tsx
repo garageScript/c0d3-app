@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import withQueryLoader, {
   WithQueryProps
@@ -14,6 +14,7 @@ import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const { lessons, session } = queryData
+  console.log(session)
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
@@ -25,6 +26,18 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const currentLessonStatus: LessonStatus = lessonStatus.find(
     lessonStatus => lessonStatus.lessonId === currentlessonId
   ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
+
+  const [displaySetupAlert, setSetupAlertDisplay] = useState(true)
+  const [displayCLIAlert, setCLIAlertDisplay] = useState(true)
+
+  useEffect(() => {
+    if (localStorage.getItem('cli')) {
+      setSetupAlertDisplay(false)
+    }
+    if (localStorage.getItem('setup')) {
+      setCLIAlertDisplay(false)
+    }
+  }, [])
   return (
     <div>
       <Layout>
@@ -36,11 +49,25 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 lessonUrl={currentLesson.docUrl}
                 lessonTitle={currentLesson.title}
               />
-              <Alert
-                icon="/curriculumAssets/icons/icon-tip.svg"
-                text="Set up your computer to submit challenges."
-                instructionsUrl="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
-              />
+              {displaySetupAlert && (
+                <Alert
+                  icon="/curriculumAssets/icons/icon-tip.svg"
+                  text="Set up your computer to submit challenges."
+                  instructionsUrl="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+                  type="info"
+                  prompt="setup"
+                  setAlertDisplay={setSetupAlertDisplay}
+                />
+              )}
+              {displayCLIAlert && (
+                <Alert
+                  icon="/curriculumAssets/icons/exclamation.svg"
+                  text="Please upgrade your CLI client by running npm update c0d3"
+                  type="urgent"
+                  prompt="cli"
+                  setAlertDisplay={setCLIAlertDisplay}
+                />
+              )}
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}

@@ -57,6 +57,7 @@ export default gql`
     user: User
     submissions: [Submission]
     lessonStatus: [UserLesson]
+    alerts: [Alert]
   }
 
   type UserLesson {
@@ -90,5 +91,10 @@ export default gql`
     lessonId: String
     title: String
     order: Int
+  }
+  type Alert {
+    id: String
+    text: String
+    type: String
   }
 `

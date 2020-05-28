@@ -3,7 +3,7 @@ jest.mock('../../components/LessonCard')
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import Curriculum from '../../pages/curriculum'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import LessonCard from '../../components/LessonCard'
 
 describe('Curriculum Page', () => {

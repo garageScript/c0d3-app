@@ -40,6 +40,28 @@ p {
   line-height: 1.6;
 }
 
+.alert {
+  margin-bottom: 0;
+}
+
+.alert-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.alert-dismiss {
+  &:hover {
+    cursor: hand;
+    cursor: pointer;
+  } 
+  &--urgent {
+    stroke: black;
+  }
+  &--info {
+    stroke: #fff;
+  }
+}
+
 // Local SCSS Imports
 @import './challengeMaterial.scss';
 @import './prism.scss';

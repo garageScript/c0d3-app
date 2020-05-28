@@ -96,6 +96,11 @@ export const GET_APP = gql`
         isTeaching
         isEnrolled
       }
+      alerts {
+        id
+        text
+        type
+      }
     }
   }
 `
