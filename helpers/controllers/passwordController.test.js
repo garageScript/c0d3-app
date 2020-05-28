@@ -98,6 +98,17 @@ describe('Change Password', () => {
     ).rejects.toThrowError('User does not exist')
   })
 
+  test('It throws an error if password does not match validation', async () => {
+    const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
+    return expect(
+      changePw(
+        () => {},
+        { password: 'abc', token: sampleToken },
+        { req: { error: jest.fn() } }
+      )
+    ).rejects.toThrowError('Password does not meet criteria')
+  })
+
   test('It returns success when user id is found', async () => {
     changeChatPassword.mockResolvedValue(true)
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })

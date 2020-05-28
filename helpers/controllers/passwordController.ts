@@ -7,6 +7,7 @@ import { changeChatPassword } from '../mattermost'
 import { Context } from '../../@types/helpers'
 import { sendResetEmail } from '../mail'
 import { decode, encode } from '../encoding'
+import { passwordValidation } from '../formValidation'
 
 const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
@@ -69,6 +70,13 @@ export const changePw = async (
   try {
     const { password, token } = args
     const { userId } = decode(token)
+
+    const validPw = await passwordValidation.isValid({ password })
+
+    if (!validPw) {
+      throw new UserInputError('Password does not meet criteria')
+    }
+
     const user = await User.findByPk(userId)
     if (!user) {
       throw new AuthenticationError('User does not exist')
