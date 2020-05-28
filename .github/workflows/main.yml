@@ -16,12 +16,6 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Setup CLI
-        working-directory: cli
-        run: |
-          yarn
-          yarn build
-
       - name: Check Lint and Tests
         run: |
           yarn autofix
@@ -30,5 +24,3 @@ jobs:
 
       - name: Code Quality ( Codecov )
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
-
-

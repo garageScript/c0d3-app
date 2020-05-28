@@ -49,9 +49,8 @@ export const chatSignUp = async (
 }
 
 export const getChannelInfo: GetChannelInfo = async roomName => {
-  const devOrProd = process.env.NODE_ENV === 'production' ? 'c0d3' : 'c0d3-dev'
   const chatServiceUrl = process.env.CHAT_URL
-  const url = `${chatServiceUrl}/teams/name/${devOrProd}/channels/name/${roomName}`
+  const url = `${chatServiceUrl}/teams/name/c0d3/channels/name/${roomName}`
 
   const response: ChannelInfo = await fetch(url, { headers }).catch(handleError)
   if (response.status !== 200) throw new Error(response.statusText)
