@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 import {
   chatSignUp,
   getChannelInfo,
-  handleError,
+  getUserByEmail,
   publicChannelMessage
 } from './mattermost'
 
@@ -107,10 +107,18 @@ describe('Public Channel Message', () => {
       JSON.stringify({ channel_id: 'fakeId', message: 'fakeMessage' })
     )
   })
+
+  test('Should throw error', () => {
+    fetch.mockRejectedValue('errorMessage')
+    expect(
+      publicChannelMessage('fakeChannelName', 'fakeMessage')
+    ).rejects.toThrowError('errorMessage')
+  })
 })
 
-describe('handleError', () => {
-  test('Should throw an error', async () => {
-    expect(() => handleError('error')).toThrowError()
+describe('getUserByEmail', () => {
+  test('Should throw error', () => {
+    fetch.mockRejectedValue('errorMessage')
+    expect(getUserByEmail('fakeEmail')).rejects.toThrowError('errorMessage')
   })
 })

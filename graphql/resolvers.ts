@@ -1,11 +1,15 @@
 import _ from 'lodash'
-import bcrypt from 'bcrypt'
-import { nanoid } from 'nanoid'
 import { Request } from 'express'
 
-import { publicChannelMessage } from '../helpers/mattermost'
-import { login, logout, signup } from '../helpers/controllers/authController'
+import { getUserByEmail, publicChannelMessage } from '../helpers/mattermost'
+import {
+  login,
+  logout,
+  signup,
+  isTokenValid
+} from '../helpers/controllers/authController'
 import db from '../helpers/dbload'
+import { decode } from '../helpers/encoding'
 
 const { User, Submission, Lesson, UserLesson, Challenge } = db
 
@@ -25,7 +29,10 @@ export default {
     lessons() {
       return Lesson.findAll({
         include: ['challenges'],
-        order: [['order', 'ASC']]
+        order: [
+          ['order', 'ASC'],
+          ['challenges', 'order', 'ASC']
+        ]
       })
     },
     submissions(_parent: void, arg: Submission, _context: { req: Request }) {
@@ -37,6 +44,7 @@ export default {
         }
       })
     },
+    isTokenValid,
     async session(_parent: void, _args: void, context: { req: Request }) {
       const userId = _.get(context, 'req.session.userId', false)
 
@@ -64,30 +72,6 @@ export default {
         submissions,
         lessonStatus
       }
-    },
-    async isTokenValid(_parent: void, args: { cliToken: string }) {
-      const { cliToken } = args
-      const user = await User.findOne({ where: { cliToken } })
-      return Boolean(user)
-    },
-    async cliToken(
-      _parent: void,
-      args: { username: string; password: string }
-    ) {
-      try {
-        const { username, password } = args
-        const user = await User.findOne({ where: { username } })
-        if (!user) throw 'Invalid username'
-
-        const isPasswordValid = await bcrypt.compare(password, user.password)
-        if (!isPasswordValid) throw 'Invalid password'
-
-        if (!user.cliToken) await user.update({ cliToken: nanoid() })
-
-        return user.cliToken
-      } catch (error) {
-        throw new Error(error)
-      }
     }
   },
 
@@ -102,9 +86,8 @@ export default {
       try {
         if (!args) throw new Error('Invalid args')
         const { challengeId, cliToken, diff, lessonId } = args
-        const { username, id: userId } = await User.findOne({
-          where: { cliToken }
-        })
+        const { id } = decode(cliToken)
+        const { email, id: userId } = await User.findByPk(id)
         const [submission] = await Submission.findOrCreate({
           where: { lessonId, challengeId, userId }
         })
@@ -114,6 +97,7 @@ export default {
           Lesson.findByPk(lessonId)
         ])
         const lessonName = lesson.chatUrl.split('/').pop()
+        const username = await getUserByEmail(email)
         const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://c0d3.com/teacher/${lesson.id}>) to review the code.`
         publicChannelMessage(lessonName, message)
         return submission

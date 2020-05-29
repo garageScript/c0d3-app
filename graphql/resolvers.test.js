@@ -27,42 +27,6 @@ describe('GraphQL resolvers', () => {
     expect(Query.lessons()).toEqual([])
   })
 
-  test('isTokenValid should return true', async () => {
-    User.findOne = jest.fn().mockReturnValue({ cliToken: 'fakeCliToken' })
-    expect(await Query.isTokenValid(null, args)).toBe(true)
-  })
-
-  test('isTokenValid should return false', async () => {
-    User.findOne = jest.fn().mockReturnValue(null)
-    expect(await Query.isTokenValid(null, args)).toBe(false)
-  })
-
-  test('cliToken should return a token', async () => {
-    User.findOne = jest.fn().mockReturnValue(user)
-    bcrypt.compare = jest.fn().mockReturnValue(true)
-
-    expect(await Query.cliToken(null, user)).toBe(user.cliToken)
-  })
-
-  test('cliToken should create a token', async () => {
-    delete user.cliToken
-    User.findOne = jest.fn().mockReturnValue(user)
-    bcrypt.compare = jest.fn().mockReturnValue(true)
-
-    expect(await Query.cliToken(null, user)).toBe('newCliToken')
-  })
-
-  test('cliToken should throw username error', async () => {
-    User.findOne = jest.fn().mockReturnValue(null)
-    expect(Query.cliToken(null, args)).rejects.toThrowError('Invalid username')
-  })
-
-  test('cliToken should throw error', async () => {
-    User.findOne = jest.fn().mockReturnValue(args)
-    bcrypt.compare = jest.fn().mockReturnValue(null)
-
-    expect(Query.cliToken(null, args)).rejects.toThrowError('Invalid password')
-  })
   test('should return submissions with a given lessonId', async () => {
     Submission.findAll = jest.fn().mockReturnValue([])
     expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
@@ -113,16 +77,17 @@ describe('Session resolver', () => {
 describe('GraphQL mutation', () => {
   const args = {
     challengeId: 'fakeChallengeId',
-    cliToken: 'fakeCliToken',
+    cliToken:
+      'eyJpZCI6MTIxMCwiY2xpVG9rZW4iOiIxdHhrYndxMHYxa0hoenlHWmFmNTMifQ==',
     diff: 'fakeDiff',
     lessonId: 'fakeLessonId'
   }
 
   test('createSubmission should return submission', async () => {
     const submission = { ...args, update: jest.fn() }
-    User.findOne = jest
+    User.findByPk = jest
       .fn()
-      .mockReturnValue({ username: 'username', id: 'userId' })
+      .mockResolvedValue({ username: 'username', id: 'userId' })
     Submission.findOrCreate = jest.fn().mockResolvedValue([submission])
     Promise.all = jest.fn().mockResolvedValue([
       { title: 'title' },

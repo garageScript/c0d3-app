@@ -12,10 +12,6 @@ const headers = {
   Authorization: `Bearer ${accessToken}`
 }
 
-export const handleError = (error: any) => {
-  throw new Error(error)
-}
-
 export const chatSignUp = async (
   username: string,
   password: string,
@@ -49,13 +45,17 @@ export const chatSignUp = async (
 }
 
 export const getChannelInfo: GetChannelInfo = async roomName => {
-  const chatServiceUrl = process.env.CHAT_URL
-  const url = `${chatServiceUrl}/teams/name/c0d3/channels/name/${roomName}`
+  try {
+    const chatServiceUrl = process.env.CHAT_URL
+    const url = `${chatServiceUrl}/teams/name/c0d3/channels/name/${roomName}`
 
-  const response: ChannelInfo = await fetch(url, { headers }).catch(handleError)
-  if (response.status !== 200) throw new Error(response.statusText)
+    const response: ChannelInfo = await fetch(url, { headers })
+    if (response.status !== 200) throw new Error(response.statusText)
 
-  return await response.json()
+    return await response.json()
+  } catch (error) {
+    throw new Error(error)
+  }
 }
 
 export const sendMessage: SendMessage = async (channelId, message) => {
@@ -66,13 +66,29 @@ export const sendMessage: SendMessage = async (channelId, message) => {
       channel_id: channelId,
       message
     })
-  }).catch(handleError)
+  })
 }
 
 export const publicChannelMessage: PublicChannelMessage = async (
   channelName,
   message
 ) => {
-  const { id } = await getChannelInfo(channelName).catch(handleError)
-  sendMessage(id, message)
+  try {
+    const { id } = await getChannelInfo(channelName)
+    sendMessage(id, message)
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const getUserByEmail = async (email: string): Promise<string> => {
+  try {
+    const user = await fetch(`${chatServiceUrl}/users/email/${email}`, {
+      headers
+    })
+    const { username } = await user.json()
+    return username
+  } catch (error) {
+    throw new Error(error)
+  }
 }

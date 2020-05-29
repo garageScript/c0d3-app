@@ -5,7 +5,6 @@ export default gql`
     lessons: [Lesson]
     session: Session
     isTokenValid(cliToken: String!): Boolean!
-    cliToken(username: String!, password: String!): String
     submissions(lessonId: String!): [Submission]
   }
 
@@ -31,6 +30,7 @@ export default gql`
     success: Boolean
     username: String
     error: String
+    cliToken: String
   }
 
   type Submission {
@@ -59,6 +59,7 @@ export default gql`
     email: String
     name: String
     isAdmin: Boolean
+    cliToken: String
   }
 
   type Session {

@@ -5,6 +5,7 @@ import { UserInputError, AuthenticationError } from 'apollo-server-micro'
 import { signupValidation } from '../formValidation'
 import { chatSignUp } from '../mattermost'
 import { LoggedRequest } from '../../@types/helpers'
+import { encode, decode } from '../encoding'
 
 const { User } = db
 
@@ -45,10 +46,15 @@ export const login = async (
       throw new AuthenticationError('Password is invalid')
     }
 
+    if (!user.cliToken) await user.update({ cliToken: nanoid() })
+
+    const cliToken = { id: user.id, cliToken: user.cliToken }
+
     session.userId = user.id
     return {
       success: true,
-      username: user.username
+      username: user.username,
+      cliToken: encode(cliToken)
     }
   } catch (err) {
     if (!err.extensions) {
@@ -160,6 +166,20 @@ export const signup = async (
     if (!err.extensions) {
       req.error(err)
     }
+    throw new Error(err)
+  }
+}
+
+export const isTokenValid = async (
+  _parent: void,
+  arg: { cliToken: string }
+) => {
+  try {
+    const { id, cliToken } = decode(arg.cliToken)
+    const user = await User.findByPk(id)
+
+    return user.cliToken === cliToken
+  } catch (err) {
     throw new Error(err)
   }
 }

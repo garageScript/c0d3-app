@@ -15,6 +15,7 @@ export const LOGIN_USER = gql`
     login(username: $username, password: $password) {
       success
       username
+      cliToken
       error
     }
   }
