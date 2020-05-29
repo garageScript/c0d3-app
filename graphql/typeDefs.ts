@@ -5,6 +5,7 @@ export default gql`
     lessons: [Lesson]
     session: Session
     submissions(lessonId: String!): [Submission]
+    alerts: [Alert]
   }
 
   type Mutation {
@@ -17,12 +18,22 @@ export default gql`
       username: String!
       password: String
     ): AuthResponse
+    addAlert(
+      text: String!
+      type: String!
+      url: String
+      urlCaption: String
+    ): AlertResponse
   }
 
   type AuthResponse {
     success: Boolean
     username: String
     error: String
+  }
+
+  type AlertResponse {
+    success: Boolean
   }
 
   type Submission {
@@ -57,7 +68,6 @@ export default gql`
     user: User
     submissions: [Submission]
     lessonStatus: [UserLesson]
-    alerts: [Alert]
   }
 
   type UserLesson {
@@ -96,5 +106,7 @@ export default gql`
     id: String
     text: String
     type: String
+    url: String
+    urlCaption: String
   }
 `

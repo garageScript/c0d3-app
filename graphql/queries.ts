@@ -96,11 +96,20 @@ export const GET_APP = gql`
         isTeaching
         isEnrolled
       }
-      alerts {
-        id
-        text
-        type
-      }
+    }
+    alerts {
+      id
+      text
+      type
+      url
+    }
+  }
+`
+
+export const ADD_ALERT = gql`
+  mutation addAlert($text: String!, $type: String!) {
+    addAlert(text: $text, type: $type) {
+      success
     }
   }
 `
