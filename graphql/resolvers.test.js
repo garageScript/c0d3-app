@@ -1,10 +1,8 @@
 jest.mock('node-fetch')
-import fetch from 'node-fetch'
 import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
-import bcrypt from 'bcrypt'
 
-const { Query, Mutation } = resolvers
+const { Query } = resolvers
 const { Lesson, User, Submission, UserLesson } = db
 
 describe('GraphQL resolvers', () => {
@@ -71,43 +69,5 @@ describe('Session resolver', () => {
     expect(returnValue.user).toEqual(result.user)
     expect(returnValue.submissions).toEqual(result.submissions)
     expect(returnValue.lessonStatus).toEqual(result.lessonStatus)
-  })
-})
-
-describe('GraphQL mutation', () => {
-  const args = {
-    challengeId: 'fakeChallengeId',
-    cliToken:
-      'eyJpZCI6MTIxMCwiY2xpVG9rZW4iOiIxdHhrYndxMHYxa0hoenlHWmFmNTMifQ==',
-    diff: 'fakeDiff',
-    lessonId: 'fakeLessonId'
-  }
-
-  test('createSubmission should return submission', async () => {
-    const submission = { ...args, update: jest.fn() }
-    User.findByPk = jest
-      .fn()
-      .mockResolvedValue({ username: 'username', id: 'userId' })
-    Submission.findOrCreate = jest.fn().mockResolvedValue([submission])
-    Promise.all = jest.fn().mockResolvedValue([
-      { title: 'title' },
-      {
-        chatUrl: 'https://fake/url/channels/js1-variablesfunction',
-        id: 'fakeId'
-      }
-    ])
-    Lesson.findByPk = jest.fn()
-    fetch.mockResolvedValue({
-      status: 200,
-      json: () => Promise.resolve({ id: 'fakeId' })
-    })
-
-    expect(Mutation.createSubmission(null, args)).resolves.toEqual(submission)
-  })
-
-  test('createSubmission should throw error Invalid args', async () => {
-    await expect(Mutation.createSubmission(null, null)).rejects.toThrow(
-      'Invalid args'
-    )
   })
 })

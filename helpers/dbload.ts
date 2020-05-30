@@ -11,6 +11,7 @@ const sequelize = new Sequelize(
   process.env.DB_PW || 'this',
   {
     host: process.env.DB_HOST || 'city',
+    logging: false,
     dialect: 'postgres',
     pool: {
       max: 5,

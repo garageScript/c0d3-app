@@ -92,7 +92,6 @@ export const changePw = async (
     await user.save()
 
     req.session.userId = user.id
-
     return {
       success: true
     }
