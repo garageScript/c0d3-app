@@ -8,6 +8,7 @@ import { Context } from '../../@types/helpers'
 import { sendResetEmail } from '../mail'
 import { decode, encode } from '../encoding'
 import { passwordValidation } from '../formValidation'
+import findUser from '../findUser'
 
 const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
@@ -24,16 +25,7 @@ export const reqPwReset = async (
       throw new UserInputError('Please provide username or email')
     }
 
-    let user: any
-    if (userOrEmail.indexOf('@') !== -1) {
-      user = await User.findOne({
-        where: { email: userOrEmail }
-      })
-    } else {
-      user = await User.findOne({
-        where: { username: userOrEmail }
-      })
-    }
+    const user = await findUser(userOrEmail)
 
     if (!user) {
       throw new UserInputError('User does not exist')
@@ -89,16 +81,15 @@ export const changePw = async (
       throw new AuthenticationError('Invalid Token')
     }
     const hash = await bcrypt.hash(password, 10)
-    user.expiration = null
-    user.forgotToken = null
-    user.password = hash
-    await user.save()
-
     try {
       await changeChatPassword(user.email, password)
     } catch {
       throw new Error('Mattermost did not set password')
     }
+    user.expiration = null
+    user.forgotToken = null
+    user.password = hash
+    await user.save()
 
     req.session.userId = user.id
 
