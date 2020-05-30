@@ -4,6 +4,7 @@ export default gql`
   type Query {
     lessons: [Lesson]
     session: Session
+    isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
   }
 
@@ -17,12 +18,19 @@ export default gql`
       username: String!
       password: String
     ): AuthResponse
+    createSubmission(
+      lessonId: String!
+      challengeId: String!
+      cliToken: String!
+      diff: String!
+    ): Submission
   }
 
   type AuthResponse {
     success: Boolean
     username: String
     error: String
+    cliToken: String
   }
 
   type Submission {
@@ -51,6 +59,7 @@ export default gql`
     email: String
     name: String
     isAdmin: Boolean
+    cliToken: String
   }
 
   type Session {
