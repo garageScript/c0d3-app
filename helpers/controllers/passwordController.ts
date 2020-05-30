@@ -68,6 +68,10 @@ export const changePw = async (
 ) => {
   const { req } = ctx
   try {
+    if (!req.session) {
+      throw new Error('Session does not exist')
+    }
+
     const { password, token } = args
     const { userId } = decode(token)
 
@@ -95,6 +99,8 @@ export const changePw = async (
     } catch {
       throw new Error('Mattermost did not set password')
     }
+
+    req.session.userId = user.id
 
     return {
       success: true

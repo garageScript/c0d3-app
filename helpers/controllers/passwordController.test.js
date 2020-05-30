@@ -83,10 +83,10 @@ describe('Change Password', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
-  const ctx = { req: { error: jest.fn() } }
+  const ctx = { req: { error: jest.fn(), session: {} } }
   const { User } = db
 
-  test('It throws an error if user is not found from token', async () => {
+  test('It throws an error when session does not exist', async () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     User.findByPk.mockResolvedValue(null)
     return expect(
@@ -95,17 +95,21 @@ describe('Change Password', () => {
         { password: 'newpassword', token: sampleToken },
         { req: { error: jest.fn() } }
       )
+    ).rejects.toThrowError('Session does not exist')
+  })
+
+  test('It throws an error if user is not found from token', async () => {
+    const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
+    User.findByPk.mockResolvedValue(null)
+    return expect(
+      changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('User does not exist')
   })
 
   test('It throws an error if password does not match validation', async () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     return expect(
-      changePw(
-        () => {},
-        { password: 'abc', token: sampleToken },
-        { req: { error: jest.fn() } }
-      )
+      changePw(() => {}, { password: 'abc', token: sampleToken }, ctx)
     ).rejects.toThrowError('Password does not meet criteria')
   })
 
@@ -119,11 +123,7 @@ describe('Change Password', () => {
       save: jest.fn()
     })
     return expect(
-      changePw(
-        () => {},
-        { password: 'newpassword', token: sampleToken },
-        { req: { error: jest.fn() } }
-      )
+      changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).resolves.toEqual({ success: true })
   })
 
@@ -136,11 +136,7 @@ describe('Change Password', () => {
       forgotToken: sampleToken2
     })
     return expect(
-      changePw(
-        () => {},
-        { password: 'newpassword', token: sampleToken },
-        { req: { error: jest.fn() } }
-      )
+      changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('Invalid Token')
   })
 
@@ -152,11 +148,7 @@ describe('Change Password', () => {
       forgotToken: sampleToken
     })
     return expect(
-      changePw(
-        () => {},
-        { password: 'newpassword', token: sampleToken },
-        { req: { error: jest.fn() } }
-      )
+      changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('Invalid Token')
   })
 

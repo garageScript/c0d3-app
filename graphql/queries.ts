@@ -20,20 +20,35 @@ export const LOGIN_USER = gql`
   }
 `
 
+export const RESET_PASSWORD = gql`
+  mutation reqPwReset($userOrEmail: String!) {
+    reqPwReset(userOrEmail: $userOrEmail) {
+      success
+      token
+    }
+  }
+`
+
+export const UPDATE_PASSWORD = gql`
+  mutation changePw($token: String!, $password: String!) {
+    changePw(token: $token, password: $password) {
+      success
+    }
+  }
+`
+
 export const SIGNUP_USER = gql`
   mutation signup(
     $firstName: String!
     $lastName: String!
     $email: String!
     $username: String!
-    $password: String!
   ) {
     signup(
       firstName: $firstName
       lastName: $lastName
       email: $email
       username: $username
-      password: $password
     ) {
       success
       username
