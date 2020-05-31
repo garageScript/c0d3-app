@@ -1,7 +1,7 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
 jest.mock('node-fetch')
-
+jest.mock('mailgun-js')
 import db from '../dbload'
 import fetch from 'node-fetch'
 import resolvers from '../../graphql/resolvers'
