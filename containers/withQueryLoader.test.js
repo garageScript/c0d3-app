@@ -25,7 +25,7 @@ describe('withQueryLoader HOC container', () => {
   })
 
   test('Should return No data when done loading and no data is present', () => {
-    useQuery.mockReturnValue({ loading: false })
+    useQuery.mockReturnValue({ loading: false, data: null })
     const Component = () => {
       return <h1>Component</h1>
     }
