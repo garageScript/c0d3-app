@@ -7,3 +7,7 @@ export interface LoggedRequest extends Request {
   error: (obj: any) => void
   requestId: string
 }
+
+export interface Context {
+  req: LoggedRequest
+}

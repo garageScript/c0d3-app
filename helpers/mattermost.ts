@@ -5,8 +5,10 @@ import {
   SendMessage,
   PublicChannelMessage
 } from '../@types/mattermost'
-const accessToken = process.env.MATTERMOST_ACCESS_TOKEN
-const chatServiceUrl = process.env.CHAT_URL
+
+const accessToken = process.env.MATTERMOST_ACCESS_TOKEN ?? '123' // For Testing
+const chatServiceUrl =
+  process.env.CHAT_URL ?? 'https://mattermost.devwong.com/api/v4' // For Testing
 
 const headers = {
   Authorization: `Bearer ${accessToken}`
@@ -42,6 +44,34 @@ export const chatSignUp = async (
   } catch (err) {
     throw new Error(err || 'Internal Server Error')
   }
+}
+
+export const changeChatPassword = async (email: string, password: string) => {
+  // Using email in case they change their mattermost username
+  const response = await fetch(`${chatServiceUrl}/users/email/${email}`, {
+    headers
+  })
+  if (response.status !== 200) {
+    throw new Error('Invalid Email')
+  }
+
+  const rJson = await response.json()
+
+  const { id } = rJson
+
+  const setPwResponse = await fetch(`${chatServiceUrl}/users/${id}/password`, {
+    method: 'PUT',
+    headers,
+    body: JSON.stringify({
+      new_password: password
+    })
+  })
+
+  if (setPwResponse.status !== 200) {
+    throw new Error('Changing Chat Password Failed')
+  }
+
+  return true
 }
 
 export const getChannelInfo: GetChannelInfo = async roomName => {

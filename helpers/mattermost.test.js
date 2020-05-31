@@ -2,6 +2,7 @@ jest.mock('node-fetch')
 import fetch from 'node-fetch'
 import {
   chatSignUp,
+  changeChatPassword,
   getChannelInfo,
   getUserByEmail,
   publicChannelMessage
@@ -26,7 +27,7 @@ describe('Chat Signup', () => {
     ).resolves.toEqual({ success: true })
   })
 
-  test('ChatSignUp - should reject with invalid parameter if response is 401', async () => {
+  test('ChatSignUp - should reject with invalid parameter if response is 400', async () => {
     fetch.mockResolvedValue({ status: 400 })
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
@@ -41,7 +42,7 @@ describe('Chat Signup', () => {
   })
 
   test('ChatSignUp - should reject if response status is invalid', async () => {
-    fetch.mockResolvedValue({ status: 418 }) // MatterMost only returns 201, 401 and 403 LOL teapot
+    fetch.mockResolvedValue({ status: 418 }) // MatterMost only returns 201, 400 and 403 LOL teapot
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
     ).rejects.toThrowError('Unexpected Response')
@@ -52,6 +53,68 @@ describe('Chat Signup', () => {
     return expect(
       chatSignUp(userArgs.username, userArgs.password, userArgs.email)
     ).rejects.toThrowError('Internal Server Error')
+  })
+})
+
+describe('Change Password Function', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  test('ChatChangePassword - should reject if email is not found in Mattermost', async () => {
+    // The first fetch gets the ID from mattermost
+    fetch.mockResolvedValueOnce({ status: 400 })
+    return expect(
+      changeChatPassword('email@c0d3.com', 'fakepassword')
+    ).rejects.toThrowError('Invalid Email')
+  })
+
+  test('ChatChangePassword - should call fetch twice for successful password change', async () => {
+    fetch.mockResolvedValueOnce({
+      status: 200,
+      json: () => ({
+        id: 32
+      })
+    })
+
+    fetch.mockResolvedValueOnce({
+      status: 200
+    })
+
+    await changeChatPassword('email@c0d3.com', 'fakepassword')
+    expect(fetch.mock.calls[0][0]).toEqual(
+      'https://mattermost.devwong.com/api/v4/users/email/email@c0d3.com'
+    )
+    expect(fetch.mock.calls[0][1]).toEqual({
+      headers: { Authorization: 'Bearer 123' }
+    })
+    expect(fetch.mock.calls[1][0]).toEqual(
+      'https://mattermost.devwong.com/api/v4/users/32/password'
+    )
+    expect(fetch.mock.calls[1][1]).toEqual({
+      method: 'PUT',
+      headers: { Authorization: 'Bearer 123' },
+      body: JSON.stringify({
+        new_password: 'fakepassword'
+      })
+    })
+  })
+
+  test('ChatChangePassword - should reject for unsuccessful password change', async () => {
+    fetch.mockResolvedValueOnce({
+      status: 200,
+      json: () => ({
+        id: 32
+      })
+    })
+
+    fetch.mockResolvedValueOnce({
+      status: 400
+    })
+
+    return expect(
+      changeChatPassword('email@c0d3.com', 'fakepassword')
+    ).rejects.toThrowError()
   })
 })
 

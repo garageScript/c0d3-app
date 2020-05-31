@@ -8,9 +8,16 @@ export default gql`
     submissions(lessonId: String!): [Submission]
   }
 
+  type TokenResponse {
+    success: Boolean
+    token: String
+  }
+
   type Mutation {
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
+    reqPwReset(userOrEmail: String!): TokenResponse
+    changePw(token: String!, password: String!): AuthResponse
     signup(
       firstName: String!
       lastName: String!
