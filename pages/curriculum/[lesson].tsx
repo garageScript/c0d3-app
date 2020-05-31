@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import withQueryLoader, {
   WithQueryProps
@@ -12,11 +12,7 @@ import { Lesson, LessonStatus } from '../../@types/lesson'
 import { UserSubmission } from '../../@types/challenge'
 import _ from 'lodash'
 
-const Challenges: React.FC<WithQueryProps> = ({
-  queryData,
-  setDismissedAlerts,
-  dismissedAlerts
-}) => {
+const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
@@ -40,13 +36,7 @@ const Challenges: React.FC<WithQueryProps> = ({
                 lessonUrl={currentLesson.docUrl}
                 lessonTitle={currentLesson.title}
               />
-              {alerts && (
-                <AlertsDisplay
-                  alerts={alerts}
-                  dismissedAlerts={dismissedAlerts}
-                  setDismissedAlerts={setDismissedAlerts}
-                />
-              )}
+              {alerts && <AlertsDisplay alerts={alerts} />}
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}

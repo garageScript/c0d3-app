@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
 import withApollo from '../helpers/withApollo'
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost'
@@ -13,7 +13,6 @@ interface IProps extends AppProps {
 
 function MyApp({ Component, pageProps, apollo }: IProps) {
   const session = useSession()
-
   return (
     <ApolloProvider client={apollo}>
       <SessionContext.Provider value={session}>
