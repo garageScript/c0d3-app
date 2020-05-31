@@ -65,17 +65,6 @@ exports[`Storyshots Components/Alert Info 1`] = `
   role="alert"
 >
   <div>
-    Set up your computer to submit challenges. 
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/Alert Info With Icon 1`] = `
-<div
-  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
-  role="alert"
->
-  <div>
     <img
       className="mr-3 alert-icon"
       src="/curriculumAssets/icons/icon-tip.svg"
@@ -85,12 +74,16 @@ exports[`Storyshots Components/Alert Info With Icon 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Alert Info With Instructions 1`] = `
+exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
 <div
   className="alert d-flex justify-content-between mt-3 bg-primary text-white"
   role="alert"
 >
   <div>
+    <img
+      className="mr-3 alert-icon"
+      src="/curriculumAssets/icons/icon-tip.svg"
+    />
     Set up your computer to submit challenges. 
     <a
       className="text-white"
@@ -101,6 +94,12 @@ exports[`Storyshots Components/Alert Info With Instructions 1`] = `
       View Instructions
     </a>
   </div>
+  <img
+    className="alert-dismiss alert-dismiss--info"
+    data-testid="dismiss-info"
+    onClick={[Function]}
+    src="/curriculumAssets/icons/dismiss-info.svg"
+  />
 </div>
 `;
 
@@ -110,12 +109,16 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
   role="alert"
 >
   <div>
-    Invalid username 
+    <img
+      className="mr-3 alert-icon"
+      src="/curriculumAssets/icons/exclamation.svg"
+    />
+    Invalid password 
   </div>
 </div>
 `;
 
-exports[`Storyshots Components/Alert Urgent With Icon 1`] = `
+exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
 <div
   className="alert d-flex justify-content-between mt-3 alert-danger"
   role="alert"
@@ -123,10 +126,24 @@ exports[`Storyshots Components/Alert Urgent With Icon 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/icon-tip.svg"
+      src="/curriculumAssets/icons/exclamation.svg"
     />
-    Please upgrade your CLI client by running npm update c0d3 
+    Please upgrade your CLI client by running npm update c0d3. 
+    <a
+      className="text-danger"
+      href="https://www.npmjs.com/package/c0d3"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      View NPM Package
+    </a>
   </div>
+  <img
+    className="alert-dismiss alert-dismiss--urgent"
+    data-testid="dismiss-urgent"
+    onClick={[Function]}
+    src="/curriculumAssets/icons/dismiss-urgent.svg"
+  />
 </div>
 `;
 
@@ -2632,6 +2649,10 @@ exports[`Storyshots Components/Login Login Error 1`] = `
             role="alert"
           >
             <div>
+              <img
+                className="mr-3 alert-icon"
+                src="/curriculumAssets/icons/exclamation.svg"
+              />
                Please try again! 
             </div>
           </div>

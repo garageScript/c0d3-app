@@ -7,9 +7,14 @@ import AdditionalResources from '../components/AdditionalResources'
 import { Lesson, LessonStatus } from '../@types/lesson'
 import { GET_APP } from '../graphql/queries'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
+import AlertsDisplay from '../components/AlertsDisplay'
 import _ from 'lodash'
 
-export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
+export const Curriculum: React.FC<WithQueryProps> = ({
+  queryData,
+  dismissedAlerts,
+  setDismissedAlerts
+}) => {
   const announcements = [
     'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
     'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
@@ -21,7 +26,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     [id: string]: LessonStatus
   }
 
-  const { lessons, session } = queryData
+  const { lessons, session, alerts } = queryData
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
     (map: LessonStatusMap, lessonStatus: LessonStatus) => {
@@ -72,7 +77,13 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   )
   return (
     <Layout>
-      <div className="row mt-4">
+      <div className="row">
+        <AlertsDisplay
+          alerts={alerts}
+          dismissedAlerts={dismissedAlerts}
+          setDismissedAlerts={setDismissedAlerts}
+          page="curriculum"
+        />
         <div className="col-8">{lessonsToRender}</div>
         <div className="col-4">
           <ProgressCard progressCount={progressPercentage} />

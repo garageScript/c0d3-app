@@ -102,6 +102,7 @@ export const GET_APP = gql`
       text
       type
       url
+      urlCaption
     }
   }
 `

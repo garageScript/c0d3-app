@@ -2,7 +2,7 @@ import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
 
 describe('GraphQL resolvers', () => {
-  const { Lesson, Submission } = db
+  const { Lesson, Submission, Alert } = db
   test('lessons should return an empty array', async () => {
     Lesson.findAll = jest.fn().mockReturnValue([])
     expect(resolvers.Query.lessons()).toEqual([])
@@ -10,6 +10,40 @@ describe('GraphQL resolvers', () => {
   test('should return submissions with a given lessonId', async () => {
     Submission.findAll = jest.fn().mockReturnValue([])
     expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
+  })
+
+  test('should return empty array if no alerts', async () => {
+    Alert.findAll = jest.fn().mockReturnValue([])
+    expect(resolvers.Query.alerts()).toEqual([])
+  })
+
+  test('should return list of announcements', async () => {
+    Alert.findAll = jest.fn().mockReturnValue([
+      {
+        id: 0,
+        text: 'Set up your computer to submit challenges.',
+        url:
+          'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
+        urlCaption: 'View Instructions'
+      },
+      {
+        id: 1,
+        text: 'Please upgrade your CLI client by running npm update c0d3'
+      }
+    ])
+    expect(resolvers.Query.alerts()).toEqual([
+      {
+        id: 0,
+        text: 'Set up your computer to submit challenges.',
+        url:
+          'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
+        urlCaption: 'View Instructions'
+      },
+      {
+        id: 1,
+        text: 'Please upgrade your CLI client by running npm update c0d3'
+      }
+    ])
   })
 })
 

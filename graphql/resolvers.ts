@@ -1,7 +1,7 @@
 import { Request } from 'express'
 import db from '../helpers/dbload'
 import { login, logout, signup } from '../helpers/controllers/authController'
-import { addAlert } from '../helpers/controllers/alertController'
+import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import _ from 'lodash'
 
 const { User, Submission, Lesson, UserLesson, Alert } = db
@@ -64,6 +64,7 @@ export default {
     login,
     logout,
     signup,
-    addAlert
+    addAlert,
+    removeAlert
   }
 }

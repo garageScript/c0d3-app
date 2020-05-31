@@ -24,6 +24,7 @@ export default gql`
       url: String
       urlCaption: String
     ): AlertResponse
+    removeAlert(id: String!): AlertResponse
   }
 
   type AuthResponse {

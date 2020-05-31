@@ -79,8 +79,54 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
     class="container"
   >
     <div
-      class="row mt-4"
+      class="row"
     >
+      <div
+        class="alerts-container col-12"
+      >
+        <div
+          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/curriculumAssets/icons/icon-tip.svg"
+            />
+            Set up your computer to submit challenges. 
+            <a
+              class="text-white"
+              href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Instructions
+            </a>
+          </div>
+          <img
+            class="alert-dismiss alert-dismiss--info"
+            data-testid="dismiss-info"
+            src="/curriculumAssets/icons/dismiss-info.svg"
+          />
+        </div>
+        <div
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/curriculumAssets/icons/exclamation.svg"
+            />
+            Please upgrade your CLI client by running npm update c0d3. 
+          </div>
+          <img
+            class="alert-dismiss alert-dismiss--urgent"
+            data-testid="dismiss-urgent"
+            src="/curriculumAssets/icons/dismiss-urgent.svg"
+          />
+        </div>
+      </div>
       <div
         class="col-8"
       >
@@ -358,8 +404,54 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
     class="container"
   >
     <div
-      class="row mt-4"
+      class="row"
     >
+      <div
+        class="alerts-container col-12"
+      >
+        <div
+          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/curriculumAssets/icons/icon-tip.svg"
+            />
+            Set up your computer to submit challenges. 
+            <a
+              class="text-white"
+              href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Instructions
+            </a>
+          </div>
+          <img
+            class="alert-dismiss alert-dismiss--info"
+            data-testid="dismiss-info"
+            src="/curriculumAssets/icons/dismiss-info.svg"
+          />
+        </div>
+        <div
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/curriculumAssets/icons/exclamation.svg"
+            />
+            Please upgrade your CLI client by running npm update c0d3. 
+          </div>
+          <img
+            class="alert-dismiss alert-dismiss--urgent"
+            data-testid="dismiss-urgent"
+            src="/curriculumAssets/icons/dismiss-urgent.svg"
+          />
+        </div>
+      </div>
       <div
         class="col-8"
       >
@@ -558,7 +650,7 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
 </div>
 `;
 
-exports[`Curriculum Page Should render render first lesson when lessonStatus is empty 1`] = `
+exports[`Curriculum Page Should render first lesson when lessonStatus is empty 1`] = `
 <div>
   <nav
     class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
@@ -637,8 +729,54 @@ exports[`Curriculum Page Should render render first lesson when lessonStatus is 
     class="container"
   >
     <div
-      class="row mt-4"
+      class="row"
     >
+      <div
+        class="alerts-container col-12"
+      >
+        <div
+          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/curriculumAssets/icons/icon-tip.svg"
+            />
+            Set up your computer to submit challenges. 
+            <a
+              class="text-white"
+              href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Instructions
+            </a>
+          </div>
+          <img
+            class="alert-dismiss alert-dismiss--info"
+            data-testid="dismiss-info"
+            src="/curriculumAssets/icons/dismiss-info.svg"
+          />
+        </div>
+        <div
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/curriculumAssets/icons/exclamation.svg"
+            />
+            Please upgrade your CLI client by running npm update c0d3. 
+          </div>
+          <img
+            class="alert-dismiss alert-dismiss--urgent"
+            data-testid="dismiss-urgent"
+            src="/curriculumAssets/icons/dismiss-urgent.svg"
+          />
+        </div>
+      </div>
       <div
         class="col-8"
       >

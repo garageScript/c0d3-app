@@ -7,6 +7,21 @@ import { render, fireEvent } from '@testing-library/react'
 import LessonCard from '../../components/LessonCard'
 
 describe('Curriculum Page', () => {
+  const alerts = [
+    {
+      id: '0',
+      text: 'Set up your computer to submit challenges.',
+      type: 'info',
+      url:
+        'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
+      urlCaption: 'View Instructions'
+    },
+    {
+      id: '1',
+      text: 'Please upgrade your CLI client by running npm update c0d3.',
+      type: 'urgent'
+    }
+  ]
   test('Should render data with lesson state completed', async () => {
     useQuery.mockReturnValue({
       data: {
@@ -27,7 +42,8 @@ describe('Curriculum Page', () => {
               isEnrolled: '123456'
             }
           ]
-        }
+        },
+        alerts
       }
     })
     LessonCard.mockReturnValue(<h1>LessonCard</h1>)
@@ -54,7 +70,8 @@ describe('Curriculum Page', () => {
               isEnrolled: '123456'
             }
           ]
-        }
+        },
+        alerts
       }
     })
     LessonCard.mockReturnValue(<h1>LessonCard</h1>)
@@ -62,7 +79,7 @@ describe('Curriculum Page', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Should render render first lesson when lessonStatus is empty', async () => {
+  test('Should render first lesson when lessonStatus is empty', async () => {
     useQuery.mockReturnValue({
       data: {
         lessons: [
@@ -75,7 +92,8 @@ describe('Curriculum Page', () => {
           user: {
             username: 'test'
           }
-        }
+        },
+        alerts
       }
     })
     LessonCard.mockReturnValue(<h1>LessonCard</h1>)

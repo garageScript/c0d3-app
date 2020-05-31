@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Alert from '../../components/Alert'
 
-const noop = prompt => {}
+const noop = () => {}
 
 export default {
   component: Alert,
@@ -9,53 +9,47 @@ export default {
 }
 
 export const Info: React.FC = () => (
-  <Alert text="Set up your computer to submit challenges." type="info" />
+  <Alert
+    alert={{
+      id: '0',
+      text: 'Set up your computer to submit challenges.',
+      type: 'info'
+    }}
+  />
 )
 
 export const Urgent: React.FC = () => (
-  <Alert text="Invalid password" type="urgent" />
-)
-
-export const infoWithIcon: React.FC = () => (
   <Alert
-    icon="/curriculumAssets/icons/icon-tip.svg"
-    text="Set up your computer to submit challenges."
-    type="info"
+    alert={{
+      text: 'Invalid password',
+      type: 'urgent'
+    }}
   />
 )
 
-export const urgentWithIcon: React.FC = () => (
+export const infoWithLinkAndDismiss: React.FC = () => (
   <Alert
-    icon="/curriculumAssets/icons/exclamation.svg"
-    text="Please upgrade your CLI client by running npm update c0d3"
-    type="urgent"
-  />
-)
-
-export const infoWithIconAndDismiss: React.FC = () => (
-  <Alert
-    icon="/curriculumAssets/icons/icon-tip.svg"
-    text="Set up your computer to submit challenges."
-    type="info"
-    setAlertDisplay={noop}
-    prompt="setup"
+    alert={{
+      id: '0',
+      text: 'Set up your computer to submit challenges.',
+      type: 'info',
+      url:
+        'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
+      urlCaption: 'View Instructions'
+    }}
+    setDismissedAlerts={noop}
   />
 )
 
 export const urgentWithIconAndDismiss: React.FC = () => (
   <Alert
-    icon="/curriculumAssets/icons/exclamation.svg"
-    text="Please upgrade your CLI client by running npm update c0d3"
-    type="urgent"
-    setAlertDisplay={noop}
-    prompt="cli"
-  />
-)
-
-export const infoWithInstructions: React.FC = () => (
-  <Alert
-    text="Set up your computer to submit challenges."
-    instructionsUrl="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
-    type="info"
+    alert={{
+      id: '0',
+      text: 'Please upgrade your CLI client by running npm update c0d3.',
+      type: 'urgent',
+      url: 'https://www.npmjs.com/package/c0d3',
+      urlCaption: 'View NPM Package'
+    }}
+    setDismissedAlerts={noop}
   />
 )
