@@ -2562,7 +2562,7 @@ exports[`Storyshots Components/Login Login 1`] = `
       </form>
       <a
         className=""
-        href="/forgotPassword"
+        href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -2636,7 +2636,7 @@ exports[`Storyshots Components/Login Login Error 1`] = `
       </form>
       <a
         className=""
-        href="/forgotPassword"
+        href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -3726,16 +3726,6 @@ exports[`Storyshots Components/Signup Signup 1`] = `
           />
           <input
             className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="firstName"
             name="firstName"
             onBlur={[Function]}
@@ -3834,16 +3824,6 @@ exports[`Storyshots Components/Signup Signup Errors 1`] = `
             onBlur={[Function]}
             onChange={[Function]}
             placeholder="Username"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
             value=""
           />
           <input
@@ -3950,16 +3930,6 @@ exports[`Storyshots Components/Signup Signup Loading 1`] = `
           />
           <input
             className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="firstName"
             name="firstName"
             onBlur={[Function]}
@@ -4040,13 +4010,9 @@ exports[`Storyshots Components/Signup Signup Success 1`] = `
       <p
         className="card-text"
       />
-      <a
-        className="btn btn-primary btn-lg mb-3"
-        href="/curriculum"
-        role="button"
-      >
-        Continue to Curriculum
-      </a>
+      <p>
+        You will receive a link to confirm your email address and to set your password.
+      </p>
     </div>
   </div>
 </div>

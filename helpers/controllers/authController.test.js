@@ -1,6 +1,8 @@
 jest.mock('bcrypt')
+jest.mock('mailgun-js')
 jest.mock('../dbload')
 jest.mock('../mattermost')
+jest.mock('../mail')
 import bcrypt from 'bcrypt'
 import db from '../dbload'
 import { login, logout, signup, isTokenValid } from './authController'
@@ -155,13 +157,18 @@ describe('auth controller', () => {
 
   test('Signup - should resolve with success true if signup successful ', async () => {
     db.User.findOne = jest.fn().mockReturnValue(null)
-    db.User.create = jest
-      .fn()
-      .mockReturnValue({ username: 'user', dataValues: { id: '1234' } })
+    db.User.create = jest.fn().mockReturnValue({
+      username: 'user',
+      dataValues: { id: '1234' },
+      save: jest.fn()
+    })
     chatSignUp.mockResolvedValueOnce({
       success: true
     })
-    const result = await signup({}, userArgs, { req: { session: {} } })
+    const result = await signup({}, userArgs, {
+      req: { error: jest.fn(), session: {} }
+    })
+    expect(db.User.create().save).toBeCalled()
     expect(result).toEqual({
       username: 'user',
       success: true

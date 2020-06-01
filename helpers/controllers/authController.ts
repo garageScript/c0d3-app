@@ -6,8 +6,10 @@ import { signupValidation } from '../formValidation'
 import { chatSignUp } from '../mattermost'
 import { Context } from '../../@types/helpers'
 import { encode, decode } from '../encoding'
+import { sendSignupEmail } from '../mail'
 
 const { User } = db
+const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
 type Login = {
   username: string
@@ -91,7 +93,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
   const { req } = ctx
   try {
     const { session } = req
-    const { firstName, lastName, username, password, email } = arg
+    const { firstName, lastName, username, email } = arg
 
     if (!session) {
       throw new Error('Session Error')
@@ -101,7 +103,6 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
       firstName,
       lastName,
       username,
-      password,
       email
     })
 
@@ -130,22 +131,28 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
       throw new UserInputError('Email already exists')
     }
 
-    const randomToken = nanoid()
     const name = `${firstName} ${lastName}`
-    const hash = await bcrypt.hash(password, 10)
-
+    const password = nanoid() // Placeholder for Mattermost
     // Chat Signup
     await chatSignUp(username, password, email)
 
     const userRecord = await User.create({
       name,
       username,
-      password: hash,
-      email,
-      emailVerificationToken: randomToken
+      email
     })
 
-    session.userId = userRecord.dataValues.id
+    const encodedToken = encode({
+      userId: userRecord.id,
+      userToken: nanoid()
+    })
+
+    userRecord.forgotToken = encodedToken
+    userRecord.expiration = new Date(Date.now() + THREE_DAYS)
+    await userRecord.save()
+
+    sendSignupEmail(email, encodedToken)
+
     return {
       success: true,
       username: userRecord.username

@@ -184,4 +184,11 @@ describe('getUserByEmail', () => {
     fetch.mockRejectedValue('errorMessage')
     expect(getUserByEmail('fakeEmail')).rejects.toThrowError('errorMessage')
   })
+
+  test('Should return username', async () => {
+    fetch.mockResolvedValue({
+      json: () => Promise.resolve({ username: 'fakeuser' })
+    })
+    return expect(getUserByEmail('fakeemail')).resolves.toEqual('fakeuser')
+  })
 })
