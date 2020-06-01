@@ -230,10 +230,16 @@ exports[`<ResetPassword /> It should render alert banner when there is an error 
             class="card-text"
           />
           <div
-            class="alert col-12 mt-4 alert-danger"
+            class="alert d-flex justify-content-between mt-3 alert-danger"
             role="alert"
           >
-            Link has expired. Request a new password reset 
+            <div>
+              <img
+                class="mr-3 alert-icon"
+                src="/curriculumAssets/icons/exclamation.svg"
+              />
+              Link has expired. Request a new password reset 
+            </div>
           </div>
           <p
             class="mb-4"

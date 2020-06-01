@@ -42,8 +42,10 @@ export const ResetPassword: React.FC = () => {
     <Card title="Enter new password">
       {error && (
         <Alert
-          text="Link has expired. Request a new password reset"
-          error={true}
+          alert={{
+            text: 'Link has expired. Request a new password reset',
+            type: 'urgent'
+          }}
         />
       )}
       <p className="mb-4">Your password should contain minimum 6 characters.</p>
