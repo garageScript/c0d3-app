@@ -5,7 +5,7 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
 import Lesson from '../../pages/curriculum/[lesson]'
-import { render, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
 describe('Lesson Page', () => {
   useQuery.mockReturnValue({

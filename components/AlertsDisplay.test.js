@@ -26,5 +26,7 @@ describe('Alerts Display Component', () => {
     expect(displayedAlerts.length).toEqual(2)
     const firstDismiss = getAllByRole('dismiss')[0]
     fireEvent.click(firstDismiss)
+    displayedAlerts = getAllByRole('alert')
+    expect(displayedAlerts.length).toEqual(1)
   })
 })
