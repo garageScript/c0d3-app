@@ -12,6 +12,7 @@ const sequelize = new Sequelize(
   process.env.DB_PW || 'this',
   {
     host: process.env.DB_HOST || 'city',
+    logging: false,
     dialect: 'postgres',
     pool: {
       max: 5,
@@ -80,7 +81,7 @@ User.hasMany(UserLesson, {
   foreignKey: 'userId'
 })
 
-sequelize.sync({ alter: !!process.env.ALTER_DB }) // We do not want this affect to production at the moment.
+sequelize.sync({ alter: !!process.env.ALTER_DB })
 
 export default {
   Lesson,

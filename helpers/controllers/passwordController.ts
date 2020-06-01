@@ -37,7 +37,7 @@ export const reqPwReset = async (
     })
 
     user.forgotToken = encodedToken
-    user.expiration = new Date(Date.now() + THREE_DAYS)
+    user.tokenExpiration = new Date(Date.now() + THREE_DAYS)
     await user.save()
     sendResetEmail(user.email, user.forgotToken)
 
@@ -77,7 +77,7 @@ export const changePw = async (
     if (!user) {
       throw new AuthenticationError('User does not exist')
     }
-    if (token !== user.forgotToken || Date.now() > user.expiration) {
+    if (token !== user.forgotToken || Date.now() > user.tokenExpiration) {
       throw new AuthenticationError('Invalid Token')
     }
     const hash = await bcrypt.hash(password, 10)
@@ -86,13 +86,12 @@ export const changePw = async (
     } catch {
       throw new Error('Mattermost did not set password')
     }
-    user.expiration = null
+    user.tokenExpiration = null
     user.forgotToken = null
     user.password = hash
     await user.save()
 
     req.session.userId = user.id
-
     return {
       success: true
     }

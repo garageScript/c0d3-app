@@ -6,9 +6,9 @@ import {
   PublicChannelMessage
 } from '../@types/mattermost'
 
-const accessToken = process.env.MATTERMOST_ACCESS_TOKEN ?? '123' // For Testing
+const accessToken = process.env.MATTERMOST_ACCESS_TOKEN || '123' // For Testing
 const chatServiceUrl =
-  process.env.CHAT_URL ?? 'https://mattermost.devwong.com/api/v4' // For Testing
+  process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4' // For Testing
 
 const headers = {
   Authorization: `Bearer ${accessToken}`

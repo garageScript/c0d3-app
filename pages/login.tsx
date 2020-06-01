@@ -69,7 +69,7 @@ export const Login: React.FC<LoginFormProps> = ({
           </div>
         </Form>
       </Formik>
-      <NavLink path="/forgotPassword">Forgot your password?</NavLink>
+      <NavLink path="/forgotpassword">Forgot your password?</NavLink>
     </Card>
   )
 }

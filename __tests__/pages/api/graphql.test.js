@@ -9,6 +9,7 @@ jest.mock('next-connect')
 jest.mock('connect-session-sequelize')
 jest.mock('express-session')
 jest.mock('sequelize')
+jest.mock('mailgun-js')
 jest.mock('../../../helpers/dbload')
 import nextConnect from 'next-connect'
 import connectSequelize from 'connect-session-sequelize'

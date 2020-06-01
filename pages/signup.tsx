@@ -20,7 +20,6 @@ import { SignupFormProps, Values, ErrorDisplayProps } from '../@types/signup'
 const initialValues: Values = {
   email: '',
   username: '',
-  password: '',
   firstName: '',
   lastName: ''
 }
@@ -42,16 +41,16 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   return <>{errorMessages}</>
 }
 
-//Changed NavLink to button since it didn't update the state, NavBar didn't update loggedIn state
 const SignupSuccess: React.FC = () => (
   <Card
     success
     data-testid="signup-success"
     title="Account created successfully!"
   >
-    <a className="btn btn-primary btn-lg mb-3" href="/curriculum" role="button">
-      Continue to Curriculum
-    </a>
+    <p>
+      You will receive a link to confirm your email address and to set your
+      password.
+    </p>
   </Card>
 )
 
@@ -90,14 +89,6 @@ const SignupForm: React.FC<SignupFormProps> = ({
               name="username"
               placeholder="Username"
               data-testid="username"
-              as={Input}
-            />
-
-            <Field
-              name="password"
-              placeholder="Password"
-              type="password"
-              data-testid="password"
               as={Input}
             />
 
