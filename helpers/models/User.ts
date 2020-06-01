@@ -12,7 +12,7 @@ export class User extends Model {
   public forgotToken?: string
   public cliToken?: string
   public emailVerificationToken?: string
-  public expiration?: Date
+  public tokenExpiration?: Date
 
   public readonly createdAt!: Date
   public readonly updatedAt!: Date
@@ -32,5 +32,5 @@ export const UserTypes = {
   forgotToken: DataTypes.STRING,
   cliToken: DataTypes.STRING,
   emailVerificationToken: DataTypes.STRING,
-  expiration: DataTypes.DATE
+  tokenExpiration: DataTypes.DATE
 }
