@@ -72,6 +72,7 @@ export const GET_APP = gql`
       user {
         id
         username
+        name
       }
       submissions {
         id
