@@ -4,9 +4,10 @@ import db from '../dbload'
 import { addAlert, removeAlert } from './alertController'
 
 describe('Alert controller tests', () => {
-  const ctx = { req: { info: jest.fn(), session: {} } }
+  const ctx = {
+    req: { info: jest.fn(), warn: jest.fn(), error: jest.fn(), session: {} }
+  }
   test('Add alert', async () => {
-    db.User.create = jest.fn()
     expect(
       addAlert(
         {},
@@ -22,7 +23,6 @@ describe('Alert controller tests', () => {
     ).resolves.toEqual({ success: true })
   })
   test('Add alert with url and caption', async () => {
-    db.User.create = jest.fn()
     expect(
       addAlert(
         {},
@@ -38,7 +38,6 @@ describe('Alert controller tests', () => {
     ).resolves.toEqual({ success: true })
   })
   test('Add alert - throw error if missing parameters', async () => {
-    db.User.create = jest.fn()
     expect(
       addAlert({}, { url: 'https://google.com' }, ctx)
     ).rejects.toThrowError('Missing alert parameters')

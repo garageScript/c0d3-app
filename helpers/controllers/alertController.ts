@@ -26,7 +26,7 @@ export const addAlert = async (
       success: true
     }
   } catch (err) {
-    req.info('Invalid data for alert creation')
+    req.error(['Invalid data for alert creation', arg])
     throw new Error(err)
   }
 }
@@ -44,7 +44,7 @@ export const removeAlert = async (
       success: true
     }
   } catch (err) {
-    req.info('Error deleting alert')
+    req.warn(['Error deleting alert', arg])
     throw new Error(err)
   }
 }

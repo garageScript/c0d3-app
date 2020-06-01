@@ -37,7 +37,7 @@ export const infoWithLinkAndDismiss: React.FC = () => (
         'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
       urlCaption: 'View Instructions'
     }}
-    setDismissedAlerts={noop}
+    onDismiss={noop}
   />
 )
 
@@ -50,6 +50,6 @@ export const urgentWithIconAndDismiss: React.FC = () => (
       url: 'https://www.npmjs.com/package/c0d3',
       urlCaption: 'View NPM Package'
     }}
-    setDismissedAlerts={noop}
+    onDismiss={noop}
   />
 )

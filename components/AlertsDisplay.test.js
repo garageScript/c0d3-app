@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 import AlertsDisplay from './AlertsDisplay'
 
 describe('Alerts Display Component', () => {
@@ -18,6 +18,20 @@ describe('Alerts Display Component', () => {
       urlCaption: 'View Instructions'
     }
   ]
+
+  test('Should dismiss alerts based on local storage', () => {
+    jest
+      .spyOn(window.localStorage.__proto__, 'getItem')
+      .mockReturnValueOnce(JSON.stringify({ 1: true }))
+    const { getAllByRole } = render(
+      <AlertsDisplay alerts={alerts} page="curriculum" />
+    )
+    act(() => {
+      const displayedAlerts = getAllByRole('alert')
+      expect(displayedAlerts.length).toEqual(1)
+    })
+  })
+
   test('Should dismiss alert for curriculum page', () => {
     const { getAllByRole } = render(
       <AlertsDisplay alerts={alerts} page="curriculum" />
@@ -25,7 +39,9 @@ describe('Alerts Display Component', () => {
     let displayedAlerts = getAllByRole('alert')
     expect(displayedAlerts.length).toEqual(2)
     const firstDismiss = getAllByRole('dismiss')[0]
-    fireEvent.click(firstDismiss)
+    act(() => {
+      fireEvent.click(firstDismiss)
+    })
     displayedAlerts = getAllByRole('alert')
     expect(displayedAlerts.length).toEqual(1)
   })

@@ -1,6 +1,7 @@
 import React from 'react'
 import NavLink from './NavLink'
-import { AlertData, DismissedAlerts } from '../@types/alerts'
+import { AlertData } from '../@types/alerts'
+import '../scss/alerts.scss'
 
 type Props = {
   alert: AlertData
@@ -9,14 +10,15 @@ type Props = {
   icon?: string
   type?: string
   prompt?: string
-  setDismissedAlerts?: React.Dispatch<React.SetStateAction<DismissedAlerts>>
+  onDismiss?: (id: string) => void
 }
 
-const Alert: React.FC<Props> = ({ alert, setDismissedAlerts }) => {
-  const alertIconMap: { [type: string]: string } = {
-    info: '/curriculumAssets/icons/icon-tip.svg',
-    urgent: '/curriculumAssets/icons/exclamation.svg'
-  }
+const alertIconMap: { [type: string]: string } = {
+  info: '/curriculumAssets/icons/icon-tip.svg',
+  urgent: '/curriculumAssets/icons/exclamation.svg'
+}
+
+const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
   const { text, type, url, urlCaption, id } = alert
   const icon = alertIconMap[type]
   const textColor = type === 'urgent' ? 'text-danger' : 'text-white'
@@ -36,16 +38,13 @@ const Alert: React.FC<Props> = ({ alert, setDismissedAlerts }) => {
           </NavLink>
         )}
       </div>
-      {id && setDismissedAlerts && (
+      {id && onDismiss && (
         <button
           role="dismiss"
           className="alert-dismiss"
           data-testid={`dismiss-${type}`}
           onClick={() => {
-            setDismissedAlerts(dismissedAlerts => ({
-              ...dismissedAlerts,
-              [id]: true
-            }))
+            onDismiss(id)
           }}
         >
           <img src={`/curriculumAssets/icons/dismiss-${type}.svg`} />
