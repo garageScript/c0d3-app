@@ -5,6 +5,7 @@ import {
   signup,
   isTokenValid
 } from '../helpers/controllers/authController'
+import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import db from '../helpers/dbload'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
 import {
@@ -13,7 +14,7 @@ import {
 } from '../helpers/controllers/submissionController'
 import { Context } from '../@types/helpers'
 
-const { User, Submission, Lesson, UserLesson } = db
+const { User, Submission, Lesson, UserLesson, Alert } = db
 
 type Submission = {
   lessonId: string
@@ -59,6 +60,9 @@ export default {
         submissions,
         lessonStatus
       }
+    },
+    alerts() {
+      return Alert.findAll()
     }
   },
 
@@ -67,7 +71,9 @@ export default {
     createSubmission,
     login,
     logout,
-    reqPwReset,
-    signup
+    signup,
+    addAlert,
+    removeAlert,
+    reqPwReset
   }
 }

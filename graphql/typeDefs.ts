@@ -6,6 +6,7 @@ export default gql`
     session: Session
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
+    alerts: [Alert]
   }
 
   type TokenResponse {
@@ -25,6 +26,13 @@ export default gql`
       username: String!
       password: String
     ): AuthResponse
+    addAlert(
+      text: String!
+      type: String!
+      url: String
+      urlCaption: String
+    ): AlertResponse
+    removeAlert(id: String!): AlertResponse
     createSubmission(
       lessonId: String!
       challengeId: String!
@@ -38,6 +46,10 @@ export default gql`
     username: String
     error: String
     cliToken: String
+  }
+
+  type AlertResponse {
+    success: Boolean
   }
 
   type Submission {
@@ -106,5 +118,12 @@ export default gql`
     lessonId: String
     title: String
     order: Int
+  }
+  type Alert {
+    id: String
+    text: String
+    type: String
+    url: String
+    urlCaption: String
   }
 `

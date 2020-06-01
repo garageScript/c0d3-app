@@ -59,51 +59,99 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Alert Basic 1`] = `
+exports[`Storyshots Components/Alert Info 1`] = `
 <div
-  className="alert col-12 mt-4 bg-primary text-white"
+  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
   role="alert"
 >
-  Set up your computer to submit challenges. 
+  <div>
+    <img
+      className="mr-3 alert-icon"
+      src="/curriculumAssets/icons/icon-tip.svg"
+    />
+    Set up your computer to submit challenges. 
+  </div>
 </div>
 `;
 
-exports[`Storyshots Components/Alert With Classes 1`] = `
+exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
 <div
-  className="alert col-12 mt-4 alert-danger"
+  className="alert d-flex justify-content-between mt-3 bg-primary text-white"
   role="alert"
 >
-  Set up your computer to submit challenges. 
-</div>
-`;
-
-exports[`Storyshots Components/Alert With Icon 1`] = `
-<div
-  className="alert col-12 mt-4 bg-primary text-white"
-  role="alert"
->
-  <img
-    className="mr-3"
-    src="/curriculumAssets/icons/icon-tip.svg"
-  />
-  Set up your computer to submit challenges. 
-</div>
-`;
-
-exports[`Storyshots Components/Alert With Instructions 1`] = `
-<div
-  className="alert col-12 mt-4 bg-primary text-white"
-  role="alert"
->
-  Set up your computer to submit challenges. 
-  <a
-    className="text-white"
-    href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
-    rel="noopener noreferrer"
-    target="_blank"
+  <div>
+    <img
+      className="mr-3 alert-icon"
+      src="/curriculumAssets/icons/icon-tip.svg"
+    />
+    Set up your computer to submit challenges. 
+    <a
+      className="text-white"
+      href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      View Instructions
+    </a>
+  </div>
+  <button
+    className="alert-dismiss"
+    data-testid="dismiss-info"
+    onClick={[Function]}
+    role="dismiss"
   >
-    View Instructions
-  </a>
+    <img
+      src="/curriculumAssets/icons/dismiss-info.svg"
+    />
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Alert Urgent 1`] = `
+<div
+  className="alert d-flex justify-content-between mt-3 alert-danger"
+  role="alert"
+>
+  <div>
+    <img
+      className="mr-3 alert-icon"
+      src="/curriculumAssets/icons/exclamation.svg"
+    />
+    Invalid password 
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
+<div
+  className="alert d-flex justify-content-between mt-3 alert-danger"
+  role="alert"
+>
+  <div>
+    <img
+      className="mr-3 alert-icon"
+      src="/curriculumAssets/icons/exclamation.svg"
+    />
+    Please upgrade your CLI client by running npm update c0d3. 
+    <a
+      className="text-danger"
+      href="https://www.npmjs.com/package/c0d3"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      View NPM Package
+    </a>
+  </div>
+  <button
+    className="alert-dismiss"
+    data-testid="dismiss-urgent"
+    onClick={[Function]}
+    role="dismiss"
+  >
+    <img
+      src="/curriculumAssets/icons/dismiss-urgent.svg"
+    />
+  </button>
 </div>
 `;
 
@@ -449,7 +497,7 @@ exports[`Storyshots Components/Card With Text 1`] = `
 
 exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
 <div
-  className="row challenge-display"
+  className="row challenge-display mt-3"
 >
   <div
     className="col-4"
@@ -518,7 +566,7 @@ exports[`Storyshots Components/ChallengeMaterial No Challenges 1`] = `
 
 exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
 <div
-  className="row challenge-display"
+  className="row challenge-display mt-3"
 >
   <div
     className="col-4"
@@ -586,7 +634,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
 
 exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
 <div
-  className="row challenge-display"
+  className="row challenge-display mt-3"
 >
   <div
     className="col-4"
@@ -2532,32 +2580,36 @@ exports[`Storyshots Components/Login Login 1`] = `
         <div
           className="form-group"
         >
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="username"
-            name="username"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Username"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
-          <button
-            className="btn btn-primary btn-lg btn-block mb-3"
-            data-testid="submit"
-            type="submit"
+          <div
+            className="mt-3"
           >
-            Login to Your Account
-          </button>
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              value=""
+            />
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
         </div>
       </form>
       <a
@@ -2601,37 +2653,47 @@ exports[`Storyshots Components/Login Login Error 1`] = `
           className="form-group"
         >
           <div
-            className="alert col-12 mt-4 alert-danger"
+            className="alert d-flex justify-content-between mt-3 alert-danger"
             role="alert"
           >
-             Please try again! 
+            <div>
+              <img
+                className="mr-3 alert-icon"
+                src="/curriculumAssets/icons/exclamation.svg"
+              />
+               Please try again! 
+            </div>
           </div>
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="username"
-            name="username"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Username"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="password"
-            name="password"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
-          <button
-            className="btn btn-primary btn-lg btn-block mb-3"
-            data-testid="submit"
-            type="submit"
+          <div
+            className="mt-3"
           >
-            Login to Your Account
-          </button>
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              value=""
+            />
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
         </div>
       </form>
       <a

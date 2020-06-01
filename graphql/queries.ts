@@ -113,5 +113,20 @@ export const GET_APP = gql`
         isEnrolled
       }
     }
+    alerts {
+      id
+      text
+      type
+      url
+      urlCaption
+    }
+  }
+`
+
+export const ADD_ALERT = gql`
+  mutation addAlert($text: String!, $type: String!) {
+    addAlert(text: $text, type: $type) {
+      success
+    }
   }
 `

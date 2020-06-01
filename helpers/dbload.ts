@@ -4,6 +4,7 @@ import { User, UserTypes } from './models/User'
 import { UserLessonTypes, UserLesson } from './models/UserLesson'
 import { SubmissionTypes, Submission } from './models/Submission'
 import { ChallengeTypes, Challenge } from './models/Challenge'
+import { AlertTypes, Alert } from './models/Alert'
 
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'you',
@@ -21,6 +22,11 @@ const sequelize = new Sequelize(
     }
   }
 )
+
+Alert.init(AlertTypes, {
+  tableName: 'alerts',
+  sequelize
+})
 
 Lesson.init(LessonTypes, {
   tableName: 'lessons',
@@ -83,5 +89,6 @@ export default {
   Submission,
   User,
   UserLesson,
+  Alert,
   sequelize
 }

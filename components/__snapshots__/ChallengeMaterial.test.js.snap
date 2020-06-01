@@ -11,7 +11,7 @@ exports[`Curriculum challenge page Should render appropriately when no challenge
 exports[`Curriculum challenge page Should render challenge material page differently when user has passed all their challenges 1`] = `
 <div>
   <div
-    class="row challenge-display"
+    class="row challenge-display mt-3"
   >
     <div
       class="col-4"
@@ -137,7 +137,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
 exports[`Curriculum challenge page Should render clicked challenge within challenge question 1`] = `
 <div>
   <div
-    class="row challenge-display"
+    class="row challenge-display mt-3"
   >
     <div
       class="col-4"
@@ -200,7 +200,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
 exports[`Curriculum challenge page Should render first challenge by default when user has no submissions 1`] = `
 <div>
   <div
-    class="row challenge-display"
+    class="row challenge-display mt-3"
   >
     <div
       class="col-4"
@@ -263,7 +263,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
 exports[`Curriculum challenge page Should render first challenge that is not passed when user has submissions 1`] = `
 <div>
   <div
-    class="row challenge-display"
+    class="row challenge-display mt-3"
   >
     <div
       class="col-4"

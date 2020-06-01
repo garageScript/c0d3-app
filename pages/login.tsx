@@ -20,7 +20,9 @@ const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
   if (!loginErrors || !loginErrors.length) return <></>
   const errorMessages = loginErrors.map((message, idx) => {
     const formattedMessage = message.split(':')[1]
-    return <Alert key={idx} text={formattedMessage} error />
+    return (
+      <Alert key={idx} alert={{ text: formattedMessage, type: 'urgent' }} />
+    )
   })
   return <>{errorMessages}</>
 }
@@ -40,28 +42,30 @@ export const Login: React.FC<LoginFormProps> = ({
         <Form data-testid="form">
           <div className="form-group">
             <ErrorMessages loginErrors={loginErrors} />
-            <Field
-              name="username"
-              placeholder="Username"
-              data-testid="username"
-              as={Input}
-            />
+            <div className="mt-3">
+              <Field
+                name="username"
+                placeholder="Username"
+                data-testid="username"
+                as={Input}
+              />
 
-            <Field
-              name="password"
-              placeholder="Password"
-              data-testid="password"
-              type="password"
-              as={Input}
-            />
+              <Field
+                name="password"
+                placeholder="Password"
+                data-testid="password"
+                type="password"
+                as={Input}
+              />
 
-            <button
-              className="btn btn-primary btn-lg btn-block mb-3"
-              type="submit"
-              data-testid="submit"
-            >
-              Login to Your Account
-            </button>
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                type="submit"
+                data-testid="submit"
+              >
+                Login to Your Account
+              </button>
+            </div>
           </div>
         </Form>
       </Formik>
