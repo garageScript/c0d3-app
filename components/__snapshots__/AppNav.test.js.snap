@@ -37,12 +37,16 @@ exports[`AppNav Component Should match snapshot when loggedIn 1`] = `
             <a
               class="nav-item nav-link"
               href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Repo
             </a>
             <a
               class="nav-item nav-link"
               href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               Journey
             </a>
