@@ -1,10 +1,25 @@
-import { Request } from 'express'
-import db from '../helpers/dbload'
-import { login, logout, signup } from '../helpers/controllers/authController'
-import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import _ from 'lodash'
+import { Request } from 'express'
 
-const { User, Submission, Lesson, UserLesson, Alert } = db
+import { getUserByEmail, publicChannelMessage } from '../helpers/mattermost'
+import {
+  login,
+  logout,
+  signup,
+  isTokenValid
+} from '../helpers/controllers/authController'
+import { addAlert, removeAlert } from '../helpers/controllers/alertController'
+import db from '../helpers/dbload'
+import { decode } from '../helpers/encoding'
+
+const { User, Submission, Lesson, UserLesson, Challenge, Alert } = db
+
+type ArgsCreateSubmission = {
+  lessonId: string
+  cliToken: string
+  diff: string
+  challengeId: string
+}
 
 type Submission = {
   lessonId: string
@@ -15,7 +30,10 @@ export default {
     lessons() {
       return Lesson.findAll({
         include: ['challenges'],
-        order: [['order', 'ASC']]
+        order: [
+          ['order', 'ASC'],
+          ['challenges', 'order', 'ASC']
+        ]
       })
     },
     submissions(_parent: void, arg: Submission, _context: { req: Request }) {
@@ -27,6 +45,7 @@ export default {
         }
       })
     },
+    isTokenValid,
     async session(_parent: void, _args: void, context: { req: Request }) {
       const userId = _.get(context, 'req.session.userId', false)
 
@@ -65,6 +84,32 @@ export default {
     logout,
     signup,
     addAlert,
-    removeAlert
+    removeAlert,
+    createSubmission: async (
+      _parent: void,
+      args: ArgsCreateSubmission
+    ): Promise<any> => {
+      try {
+        if (!args) throw new Error('Invalid args')
+        const { challengeId, cliToken, diff, lessonId } = args
+        const { id } = decode(cliToken)
+        const { email, id: userId } = await User.findByPk(id)
+        const [submission] = await Submission.findOrCreate({
+          where: { lessonId, challengeId, userId }
+        })
+        await submission.update({ diff, status: 'open', viewCount: 0 })
+        const [challenge, lesson] = await Promise.all([
+          Challenge.findByPk(challengeId),
+          Lesson.findByPk(lessonId)
+        ])
+        const lessonName = lesson.chatUrl.split('/').pop()
+        const username = await getUserByEmail(email)
+        const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://c0d3.com/teacher/${lesson.id}>) to review the code.`
+        publicChannelMessage(lessonName, message)
+        return submission
+      } catch (error) {
+        throw new Error(error)
+      }
+    }
   }
 }

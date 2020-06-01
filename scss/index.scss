@@ -50,16 +50,11 @@ p {
 }
 
 .alert-dismiss {
-  &:hover {
-    cursor: hand;
-    cursor: pointer;
-  } 
-  &--urgent {
-    stroke: black;
-  }
-  &--info {
-    stroke: #fff;
-  }
+  background: none;
+	border: none;
+	font: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .text-danger {

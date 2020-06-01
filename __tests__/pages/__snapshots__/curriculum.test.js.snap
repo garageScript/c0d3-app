@@ -103,11 +103,15 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
               View Instructions
             </a>
           </div>
-          <img
-            class="alert-dismiss alert-dismiss--info"
+          <button
+            class="alert-dismiss"
             data-testid="dismiss-info"
-            src="/curriculumAssets/icons/dismiss-info.svg"
-          />
+            role="dismiss"
+          >
+            <img
+              src="/curriculumAssets/icons/dismiss-info.svg"
+            />
+          </button>
         </div>
         <div
           class="alert d-flex justify-content-between mt-3 alert-danger"
@@ -120,11 +124,15 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             />
             Please upgrade your CLI client by running npm update c0d3. 
           </div>
-          <img
-            class="alert-dismiss alert-dismiss--urgent"
+          <button
+            class="alert-dismiss"
             data-testid="dismiss-urgent"
-            src="/curriculumAssets/icons/dismiss-urgent.svg"
-          />
+            role="dismiss"
+          >
+            <img
+              src="/curriculumAssets/icons/dismiss-urgent.svg"
+            />
+          </button>
         </div>
       </div>
       <div
@@ -428,11 +436,15 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
               View Instructions
             </a>
           </div>
-          <img
-            class="alert-dismiss alert-dismiss--info"
+          <button
+            class="alert-dismiss"
             data-testid="dismiss-info"
-            src="/curriculumAssets/icons/dismiss-info.svg"
-          />
+            role="dismiss"
+          >
+            <img
+              src="/curriculumAssets/icons/dismiss-info.svg"
+            />
+          </button>
         </div>
         <div
           class="alert d-flex justify-content-between mt-3 alert-danger"
@@ -445,11 +457,15 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             />
             Please upgrade your CLI client by running npm update c0d3. 
           </div>
-          <img
-            class="alert-dismiss alert-dismiss--urgent"
+          <button
+            class="alert-dismiss"
             data-testid="dismiss-urgent"
-            src="/curriculumAssets/icons/dismiss-urgent.svg"
-          />
+            role="dismiss"
+          >
+            <img
+              src="/curriculumAssets/icons/dismiss-urgent.svg"
+            />
+          </button>
         </div>
       </div>
       <div
@@ -753,11 +769,15 @@ exports[`Curriculum Page Should render first lesson when lessonStatus is empty 1
               View Instructions
             </a>
           </div>
-          <img
-            class="alert-dismiss alert-dismiss--info"
+          <button
+            class="alert-dismiss"
             data-testid="dismiss-info"
-            src="/curriculumAssets/icons/dismiss-info.svg"
-          />
+            role="dismiss"
+          >
+            <img
+              src="/curriculumAssets/icons/dismiss-info.svg"
+            />
+          </button>
         </div>
         <div
           class="alert d-flex justify-content-between mt-3 alert-danger"
@@ -770,11 +790,15 @@ exports[`Curriculum Page Should render first lesson when lessonStatus is empty 1
             />
             Please upgrade your CLI client by running npm update c0d3. 
           </div>
-          <img
-            class="alert-dismiss alert-dismiss--urgent"
+          <button
+            class="alert-dismiss"
             data-testid="dismiss-urgent"
-            src="/curriculumAssets/icons/dismiss-urgent.svg"
-          />
+            role="dismiss"
+          >
+            <img
+              src="/curriculumAssets/icons/dismiss-urgent.svg"
+            />
+          </button>
         </div>
       </div>
       <div

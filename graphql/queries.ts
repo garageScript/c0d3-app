@@ -15,7 +15,25 @@ export const LOGIN_USER = gql`
     login(username: $username, password: $password) {
       success
       username
+      cliToken
       error
+    }
+  }
+`
+
+export const RESET_PASSWORD = gql`
+  mutation reqPwReset($userOrEmail: String!) {
+    reqPwReset(userOrEmail: $userOrEmail) {
+      success
+      token
+    }
+  }
+`
+
+export const UPDATE_PASSWORD = gql`
+  mutation changePw($token: String!, $password: String!) {
+    changePw(token: $token, password: $password) {
+      success
     }
   }
 `

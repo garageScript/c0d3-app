@@ -45,10 +45,7 @@ describe('Alert controller tests', () => {
   })
 
   test('Remove alert', async () => {
-    db.User.destroy = jest.fn()
-    expect(removeAlert({}, { id: 5 }, ctx)).rejects.toThrowError(
-      'User does not exist'
-    )
+    expect(removeAlert({}, { id: 5 }, ctx)).resolves.toEqual({ success: true })
   })
   test('Remove alert - throw error if no id provided', async () => {
     db.Alert.destroy = jest.fn().mockRejectedValueOnce('No alert id provided')

@@ -37,17 +37,19 @@ const Alert: React.FC<Props> = ({ alert, setDismissedAlerts }) => {
         )}
       </div>
       {id && setDismissedAlerts && (
-        <img
-          className={`alert-dismiss alert-dismiss--${type}`}
+        <button
+          role="dismiss"
+          className="alert-dismiss"
           data-testid={`dismiss-${type}`}
-          src={`/curriculumAssets/icons/dismiss-${type}.svg`}
           onClick={() => {
             setDismissedAlerts(dismissedAlerts => ({
               ...dismissedAlerts,
               [id]: true
             }))
           }}
-        />
+        >
+          <img src={`/curriculumAssets/icons/dismiss-${type}.svg`} />
+        </button>
       )}
     </div>
   )

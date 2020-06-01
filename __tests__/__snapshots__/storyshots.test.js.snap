@@ -94,12 +94,16 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
       View Instructions
     </a>
   </div>
-  <img
-    className="alert-dismiss alert-dismiss--info"
+  <button
+    className="alert-dismiss"
     data-testid="dismiss-info"
     onClick={[Function]}
-    src="/curriculumAssets/icons/dismiss-info.svg"
-  />
+    role="dismiss"
+  >
+    <img
+      src="/curriculumAssets/icons/dismiss-info.svg"
+    />
+  </button>
 </div>
 `;
 
@@ -138,12 +142,16 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
       View NPM Package
     </a>
   </div>
-  <img
-    className="alert-dismiss alert-dismiss--urgent"
+  <button
+    className="alert-dismiss"
     data-testid="dismiss-urgent"
     onClick={[Function]}
-    src="/curriculumAssets/icons/dismiss-urgent.svg"
-  />
+    role="dismiss"
+  >
+    <img
+      src="/curriculumAssets/icons/dismiss-urgent.svg"
+    />
+  </button>
 </div>
 `;
 
