@@ -31,12 +31,14 @@ const AuthLink = () => (
     <NavLink
       path="https://github.com/garageScript/c0d3-app"
       className="nav-item nav-link"
+      external
     >
       Repo
     </NavLink>
     <NavLink
       path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
       className="nav-item nav-link"
+      external
     >
       Journey
     </NavLink>
