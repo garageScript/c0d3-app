@@ -60,6 +60,7 @@
     "@babel/preset-typescript": "^7.8.3",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-storyshots": "^5.3.13",
+    "@storybook/addon-storysource": "^5.3.19",
     "@storybook/addon-viewport": "^5.3.13",
     "@storybook/react": "^5.3.13",
     "@testing-library/react": "^9.4.0",
@@ -106,7 +107,8 @@
       }
     },
     "coveragePathIgnorePatterns": [
-      "stories", "testUtil"
+      "stories",
+      "testUtil"
     ]
   },
   "husky": {
