@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps, apollo }: IProps) {
         <Head>
           <title>C0D3.com</title>
           <link rel="shortcut icon" href="/favicon.ico" />
+          <script type="text/javascript" src="/posthog.js" />
         </Head>
         <Component {...pageProps} />
       </SessionContext.Provider>
