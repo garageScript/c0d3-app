@@ -75,7 +75,7 @@ User.hasMany(UserLesson, {
   foreignKey: 'userId'
 })
 
-sequelize.sync({ alter: false }) // We do not want this affect to production at the moment.
+sequelize.sync({ alter: !!process.env.ALTER_DB }) // We do not want this affect to production at the moment.
 
 export default {
   Lesson,
