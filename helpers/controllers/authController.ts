@@ -148,7 +148,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
     })
 
     userRecord.forgotToken = encodedToken
-    userRecord.expiration = new Date(Date.now() + THREE_DAYS)
+    userRecord.tokenExpiration = new Date(Date.now() + THREE_DAYS)
     await userRecord.save()
 
     sendSignupEmail(email, encodedToken)

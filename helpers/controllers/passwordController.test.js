@@ -118,7 +118,7 @@ describe('Change Password', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     User.findByPk.mockResolvedValue({
       id: 3,
-      expiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
+      tokenExpiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
       forgotToken: sampleToken,
       save: jest.fn()
     })
@@ -132,7 +132,7 @@ describe('Change Password', () => {
     const sampleToken2 = encode({ userId: 3, userToken: 'abc211' })
     User.findByPk.mockResolvedValue({
       id: 3,
-      expiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
+      tokenExpiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
       forgotToken: sampleToken2
     })
     return expect(
@@ -144,7 +144,7 @@ describe('Change Password', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     User.findByPk.mockResolvedValue({
       id: 3,
-      expiration: new Date(Date.now() - 1000 * 60 * 60 * 24),
+      tokenExpiration: new Date(Date.now() - 1000 * 60 * 60 * 24),
       forgotToken: sampleToken
     })
     return expect(
@@ -157,7 +157,7 @@ describe('Change Password', () => {
     changeChatPassword.mockRejectedValue(false)
     User.findByPk.mockResolvedValue({
       id: 3,
-      expiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
+      tokenExpiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
       forgotToken: sampleToken,
       save: jest.fn()
     })
