@@ -301,7 +301,6 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         submission
       }
     })
-
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
   >(null)
