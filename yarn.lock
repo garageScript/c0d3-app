@@ -10255,6 +10255,11 @@ postgres-interval@^1.1.0:
   dependencies:
     xtend "^4.0.0"
 
+posthog-js@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.0.6.tgz#413332ac94a4a25289752d916a0b51c9921bdf79"
+  integrity sha512-012XwB6XMbGI7zfDMpC7qyy2MlOWG96P/ofz3ud1ENGh+Qpxh4ucn0IXL6hvokVU8DI57edmSSz7GGRDvnai4A==
+
 prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
