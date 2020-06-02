@@ -17,11 +17,9 @@ const withQueryLoader = (
   Component: React.FC<any>
 ) => (props: any) => {
   const { loading, data } = useQuery(query, getParams(props))
-
   if (loading) {
     return <LoadingSpinner />
   }
-
   if (data) {
     return <Component queryData={data} {...props} />
   }

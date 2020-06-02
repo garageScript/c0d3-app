@@ -4,6 +4,7 @@ import { User, UserTypes } from './models/User'
 import { UserLessonTypes, UserLesson } from './models/UserLesson'
 import { SubmissionTypes, Submission } from './models/Submission'
 import { ChallengeTypes, Challenge } from './models/Challenge'
+import { AlertTypes, Alert } from './models/Alert'
 
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'you',
@@ -11,6 +12,7 @@ const sequelize = new Sequelize(
   process.env.DB_PW || 'this',
   {
     host: process.env.DB_HOST || 'city',
+    logging: false,
     dialect: 'postgres',
     pool: {
       max: 5,
@@ -20,6 +22,11 @@ const sequelize = new Sequelize(
     }
   }
 )
+
+Alert.init(AlertTypes, {
+  tableName: 'alerts',
+  sequelize
+})
 
 Lesson.init(LessonTypes, {
   tableName: 'lessons',
@@ -74,7 +81,7 @@ User.hasMany(UserLesson, {
   foreignKey: 'userId'
 })
 
-sequelize.sync({ alter: false }) // We do not want this affect to production at the moment.
+sequelize.sync({ alter: !!process.env.ALTER_DB })
 
 export default {
   Lesson,
@@ -82,5 +89,6 @@ export default {
   Submission,
   User,
   UserLesson,
+  Alert,
   sequelize
 }

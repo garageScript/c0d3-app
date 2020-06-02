@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lesson Page Should render lesson page for students 1`] = `
+<div>
+  <div>
+    <nav
+      class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    >
+      <div
+        class="container"
+      >
+        <a
+          class="navbar-brand text-primary font-weight-bold"
+          href="/"
+        >
+          C0D3
+        </a>
+        <div
+          id="navbarNav"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <div
+              class="navbar-nav collapse navbar-collapse"
+            >
+              <a
+                class="nav-item nav-link active"
+                href="/"
+              >
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                Home
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="/#learning"
+              >
+                Learning Process
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="https://c0d3.com/book"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Resources
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="https://chat.c0d3.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Help
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a
+            class="btn btn-secondary border mr-3"
+            href="/login"
+          >
+            Login
+          </a>
+          <a
+            class="btn btn-secondary border mr-3"
+            href="/signup"
+          >
+            Signup
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container"
+    >
+      <div
+        class="row mt-4"
+      >
+        <div
+          class="challenges-container"
+        >
+          <div
+            class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+          >
+            <div
+              class="card-body p-0"
+            >
+              <div
+                class="d-flex mb-3 px-3"
+              >
+                <img
+                  alt="lesson-cover"
+                  class="lessonTitleCard__lesson-cover mr-3"
+                  src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                />
+                <div>
+                  <p
+                    class="m-0"
+                  >
+                    <a
+                      class=""
+                      href="/curriculum"
+                    >
+                      Go Back
+                    </a>
+                  </p>
+                  <h1
+                    class="lessonTitleCard__lesson-title"
+                  >
+                    Foundations of JavaScript
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="card-footer bg-white p-0"
+              >
+                <a
+                  class="btn border-right rounded-0 px-4 py-3"
+                  href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  LESSON
+                </a>
+                <a
+                  class="btn border-right rounded-0 px-4 py-3"
+                  href="#"
+                >
+                  CHALLENGES
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="alerts-container "
+          >
+            <div
+              class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+              role="alert"
+            >
+              <div>
+                <img
+                  class="mr-3 alert-icon"
+                  src="/curriculumAssets/icons/icon-tip.svg"
+                />
+                Set up your computer to submit challenges. 
+                <a
+                  class="text-white"
+                  href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  View Instructions
+                </a>
+              </div>
+              <button
+                class="alert-dismiss"
+                data-testid="dismiss-info"
+                role="dismiss"
+              >
+                <img
+                  src="/curriculumAssets/icons/dismiss-info.svg"
+                />
+              </button>
+            </div>
+            <div
+              class="alert d-flex justify-content-between mt-3 alert-danger"
+              role="alert"
+            >
+              <div>
+                <img
+                  class="mr-3 alert-icon"
+                  src="/curriculumAssets/icons/exclamation.svg"
+                />
+                Please upgrade your CLI client by running npm update c0d3. 
+              </div>
+              <button
+                class="alert-dismiss"
+                data-testid="dismiss-urgent"
+                role="dismiss"
+              >
+                <img
+                  src="/curriculumAssets/icons/dismiss-urgent.svg"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            class="row challenge-display mt-3"
+          >
+            <div
+              class="col-4"
+            >
+              <div
+                class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    1. Sum of 2 Numbers
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    2. Sum of 3 Numbers
+                  </div>
+                  <img
+                    height="25px"
+                    src="/curriculumAssets/icons/pending.svg"
+                    width="25px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-8"
+            >
+              <div
+                class="card shadow-sm border-0"
+              >
+                <div
+                  class="card-body challenge-question"
+                >
+                  <h1
+                    class="card-title"
+                    data-testid="challenge-question-title"
+                  >
+                    Sum of 2 Numbers
+                  </h1>
+                  <div
+                    class="bg-light p-3 mt-3"
+                    data-testid="challenge-question-description"
+                  >
+                    <div>
+                      <p>
+                        Write a function that takes in 2 numbers and returns their sum.
+                      </p>
+                      <p>
+                        Here's how another developer might use your function:
+                      </p>
+                      <pre>
+                        <code>
+                          solution(5,9) // Should return 14
+solution(4,1) // Should return 5
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer
+      class="mt-5 font-weight-light text-center pb-5 text-muted"
+    >
+      © Copyright 2020 GarageScript
+      <br />
+      All Rights Reserved
+    </footer>
+  </div>
+</div>
+`;

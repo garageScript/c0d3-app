@@ -7,7 +7,12 @@ import AdditionalResources from '../components/AdditionalResources'
 import { Lesson, LessonStatus } from '../@types/lesson'
 import { GET_APP } from '../graphql/queries'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
+import AlertsDisplay from '../components/AlertsDisplay'
 import _ from 'lodash'
+
+type LessonStatusMap = {
+  [id: string]: LessonStatus
+}
 
 export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   const announcements = [
@@ -17,11 +22,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
   ]
 
-  type LessonStatusMap = {
-    [id: string]: LessonStatus
-  }
-
-  const { lessons, session } = queryData
+  const { lessons, session, alerts } = queryData
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
     (map: LessonStatusMap, lessonStatus: LessonStatus) => {
@@ -72,7 +73,8 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   )
   return (
     <Layout>
-      <div className="row mt-4">
+      <div className="row">
+        <AlertsDisplay alerts={alerts} page="curriculum" />
         <div className="col-8">{lessonsToRender}</div>
         <div className="col-4">
           <ProgressCard progressCount={progressPercentage} />

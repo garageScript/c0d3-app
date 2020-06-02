@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
 import ProfileImageInfo from '../components/ProfileImageInfo'
+//import ProfileLessons from '../components/ProfileLessons'
 //import { User } from '../@types/user'
 import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 //import _ from 'lodash'
@@ -15,9 +16,19 @@ const UserProfile: React.FC<WithQueryProps> = ( { queryData } ) => {
     }
     console.log("userInfo:", userInfo)
 
+    const lessonInfo = queryData.lessons.map((lesson) => {
+        const lessonProgress = queryData.submissions.filter( (r) => r.status === 'approved' && r.lessonId === lesson.id ).length / lesson.challenges.length
+        const progress = Math.floor(lessonProgress*100)
+        const order = lesson.order
+        return {
+            progress, order 
+        }
+    })
+
     return (
    <Layout>
        <ProfileImageInfo user={userInfo}/>
+       <ProfileLessons lessons={lessonInfo}/>
    </Layout>
     )
 }

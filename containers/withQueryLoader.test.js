@@ -8,7 +8,6 @@ jest.mock('@apollo/react-hooks')
 describe('withQueryLoader HOC container', () => {
   test('Should return LoadingSpinner when loading', () => {
     useQuery.mockReturnValue({ loading: true, data: null })
-
     expect(withQueryLoader({ query: null }, <h1>Component</h1>)()).toEqual(
       <LoadingSpinner />
     )
