@@ -12,7 +12,7 @@ type ArgsCreateSubmission = {
   challengeId: string
 }
 
-type Submission = {
+type ArgsGetSubmissions = {
   lessonId: string
 }
 
@@ -43,12 +43,50 @@ export const createSubmission = async (
   }
 }
 
-export const submissions = (_parent: void, arg: Submission, _ctx: Context) => {
+export const submissions = async (
+  _parent: void,
+  arg: ArgsGetSubmissions,
+  _ctx: Context
+) => {
   const { lessonId } = arg
-  return Submission.findAll({
+  const subs = await Submission.findAll({
     where: {
       status: 'open',
       lessonId
     }
   })
+  const userIds = subs.reduce((acc: any, sub: any) => {
+    acc.add(sub.userId)
+    return acc
+  }, new Set())
+  const users = await Promise.all(
+    Array.from(userIds).map((uniqueUser: any) =>
+      User.findOne({ where: { id: uniqueUser } })
+    )
+  )
+  const usersMap = users.reduce((acc: any, user: any) => {
+    acc[user.id] = user
+    return acc
+  }, {})
+  const subsWithUsers = subs.map((submission: any) => {
+    const {
+      id,
+      diff,
+      comment,
+      challengeId,
+      reviewerId,
+      createdAt,
+      userId
+    } = submission
+    return {
+      id,
+      diff,
+      comment,
+      challengeId,
+      reviewerId,
+      createdAt,
+      user: usersMap[userId]
+    }
+  })
+  return subsWithUsers
 }

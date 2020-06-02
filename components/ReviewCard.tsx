@@ -25,7 +25,8 @@ type ReviewCardProps = {
 }
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const diff = _.get(submissionData, 'diff', false)
+  //temp fix while CLI tool is getting fixed
+  const diff = _.get(submissionData, 'diff', '').replace(/(.?\[\d*m)/g, '')
   const comment = _.get(submissionData, 'comment', '')
   let files: File[] = []
 
@@ -67,13 +68,14 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       />
     )
   }
-
+  console.log(comment)
   return (
     <>
       {diff && (
         <div className="card shadow-sm border-0 mt-3">
           <div className="card-header bg-white">
-            Submission ID: {submissionData.id}
+            <strong>{submissionData.user.username}</strong> submitted Submission
+            ID: {submissionData.id}
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">

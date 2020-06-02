@@ -14,6 +14,7 @@ import _ from 'lodash'
 
 const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
+  console.log(session)
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
@@ -35,6 +36,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 lessonUrl={currentLesson.docUrl}
                 lessonTitle={currentLesson.title}
                 lessonId={currentlessonId}
+                isPassed={currentLessonStatus.isTeaching}
               />
               {alerts && <AlertsDisplay alerts={alerts} />}
               <ChallengeMaterial

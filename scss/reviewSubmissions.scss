@@ -1,0 +1,22 @@
+.submissions-container {
+  width: 100%
+}
+
+.challenge-title-card {
+  :hover {
+    cursor: hand;
+    cursor: pointer;
+  }
+  &--done {
+      color: #6d7278;
+      background-color: rgba(255, 255, 255, 0.5);
+  }
+  &--active {
+      border-left: 3px solid map-get($theme-colors, "primary") !important;
+  }
+}
+.challenge-question {
+  .card-title {
+    font-size: 1.5rem;
+  }
+}

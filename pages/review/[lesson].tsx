@@ -6,10 +6,10 @@ import withQueryLoader, {
 } from '../../containers/withQueryLoader'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'
+import LoadingSpinner from '../../components/LoadingSpinner'
 import { GET_APP, GET_SUBMISSIONS } from '../../graphql/queries'
 import { Lesson } from '../../@types/lesson'
 import _ from 'lodash'
-import LoadingSpinner from '../../components/LoadingSpinner'
 
 type SubmissionData = {
   id: string
@@ -33,11 +33,11 @@ type SubmissionDisplayProps = {
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
-  <>
+  <div className="submissions-container">
     {submissions.map((submission: SubmissionData) => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}
-  </>
+  </div>
 )
 
 const Review: React.FC<WithQueryProps> = ({ queryData }) => {
@@ -61,7 +61,7 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
       <Layout>
         <div className="row mt-4">
           {currentLesson && (
-            <div className="review-container">
+            <div className="review-container container">
               <SubmissionDisplay submissions={lessonSubmissions} />
             </div>
           )}
