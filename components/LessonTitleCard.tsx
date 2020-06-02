@@ -7,7 +7,7 @@ type Props = {
   lessonUrl: string
   lessonTitle: string
   lessonId?: string
-  isPassed: string | null
+  isPassed: boolean
 }
 
 const LessonTitleCard: React.FC<Props> = props => {

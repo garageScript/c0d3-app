@@ -6,6 +6,7 @@ import withQueryLoader, {
 } from '../../containers/withQueryLoader'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'
+import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { GET_APP, GET_SUBMISSIONS } from '../../graphql/queries'
 import { Lesson } from '../../@types/lesson'
@@ -61,10 +62,15 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
     <div>
       <Layout>
         <div className="row mt-4">
+          <LessonTitleCard
+            lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
+            lessonUrl={currentLesson.docUrl}
+            lessonTitle={currentLesson.title}
+            lessonId={currentlessonId}
+            isPassed={true}
+          />
           {currentLesson && (
-            <div className="review-container container">
-              <SubmissionDisplay submissions={lessonSubmissions} />
-            </div>
+            <SubmissionDisplay submissions={lessonSubmissions} />
           )}
         </div>
       </Layout>
