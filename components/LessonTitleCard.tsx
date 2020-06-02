@@ -36,7 +36,10 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             LESSON
           </NavLink>
-          <NavLink path="#" className="btn border-right rounded-0 px-4 py-3">
+          <NavLink
+            path={`/curriculum/${props.lessonId}`}
+            className="btn border-right rounded-0 px-4 py-3"
+          >
             CHALLENGES
           </NavLink>
           <NavLink

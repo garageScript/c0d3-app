@@ -34,6 +34,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
                 lessonUrl={currentLesson.docUrl}
                 lessonTitle={currentLesson.title}
+                lessonId={currentlessonId}
               />
               {alerts && <AlertsDisplay alerts={alerts} />}
               <ChallengeMaterial

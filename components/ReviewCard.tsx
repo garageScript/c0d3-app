@@ -10,7 +10,10 @@ type SubmissionData = {
   challengeId: string
   comment: string
   diff: string
-  userId: string
+  user: {
+    id: String
+    username: String
+  }
   reviewerId: string
   status: string
   updatedAt: string
@@ -24,7 +27,8 @@ type ReviewCardProps = {
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const diff = _.get(submissionData, 'diff', false)
   const comment = _.get(submissionData, 'comment', '')
-  let files = null
+  let files: File[] = []
+
   if (diff) files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
@@ -52,8 +56,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       )
       return <span dangerouslySetInnerHTML={{ __html: language }} />
     }
-    console.log(oldValue)
-    console.log(newValue)
     return (
       <ReactDiffViewer
         key={_.uniqueId()}
@@ -75,7 +77,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {files && files.map(renderFile)}
+              {!files.length ? submissionData.diff : files.map(renderFile)}
             </div>
           </div>
           <div className="card-footer bg-white">

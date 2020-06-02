@@ -66,7 +66,10 @@ export const GET_SUBMISSIONS = gql`
       diff
       comment
       challengeId
-      userId
+      user {
+        id
+        username
+      }
       reviewerId
       createdAt
       updatedAt

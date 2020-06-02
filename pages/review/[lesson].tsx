@@ -16,7 +16,10 @@ type SubmissionData = {
   challengeId: string
   comment: string
   diff: string
-  userId: string
+  user: {
+    id: string
+    username: string
+  }
   reviewerId: string
   status: string
   updatedAt: string
