@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import ContributorCard from '../components/ContributorCard'
 
 export const Contributors = () => {
+  // Add an object with your information in the contributors array below to generate a ContributorCard
   const contributors = [
     {
       firstName: 'Alexis',
