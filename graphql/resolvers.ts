@@ -1,9 +1,20 @@
-import { Request } from 'express'
-import db from '../helpers/dbload'
-import { login, logout, signup } from '../helpers/controllers/authController'
 import _ from 'lodash'
+import {
+  login,
+  logout,
+  signup,
+  isTokenValid
+} from '../helpers/controllers/authController'
+import { addAlert, removeAlert } from '../helpers/controllers/alertController'
+import db from '../helpers/dbload'
+import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
+import {
+  createSubmission,
+  submissions
+} from '../helpers/controllers/submissionController'
+import { Context } from '../@types/helpers'
 
-const { User, Submission, Lesson, UserLesson } = db
+const { User, Submission, Lesson, UserLesson, Alert } = db
 
 type Submission = {
   lessonId: string
@@ -14,19 +25,15 @@ export default {
     lessons() {
       return Lesson.findAll({
         include: ['challenges'],
-        order: [['order', 'ASC']]
+        order: [
+          ['order', 'ASC'],
+          ['challenges', 'order', 'ASC']
+        ]
       })
     },
-    submissions(_parent: void, arg: Submission, _context: { req: Request }) {
-      const { lessonId } = arg
-      return Submission.findAll({
-        where: {
-          status: 'open',
-          lessonId
-        }
-      })
-    },
-    async session(_parent: void, _args: void, context: { req: Request }) {
+    submissions,
+    isTokenValid,
+    async session(_parent: void, _args: void, context: Context) {
       const userId = _.get(context, 'req.session.userId', false)
 
       if (!userId) {
@@ -53,12 +60,20 @@ export default {
         submissions,
         lessonStatus
       }
+    },
+    alerts() {
+      return Alert.findAll()
     }
   },
 
   Mutation: {
+    changePw,
+    createSubmission,
     login,
     logout,
-    signup
+    signup,
+    addAlert,
+    removeAlert,
+    reqPwReset
   }
 }

@@ -1,9 +1,11 @@
 jest.mock('bcrypt')
+jest.mock('mailgun-js')
 jest.mock('../dbload')
 jest.mock('../mattermost')
+jest.mock('../mail')
 import bcrypt from 'bcrypt'
 import db from '../dbload'
-import { login, logout, signup } from './authController'
+import { login, logout, signup, isTokenValid } from './authController'
 import { chatSignUp } from '../mattermost'
 
 describe('auth controller', () => {
@@ -15,7 +17,9 @@ describe('auth controller', () => {
       password: 'c0d3reallyhard',
       firstName: 'testuser1',
       lastName: 'testuser1',
-      email: 'testuser@c0d3.com'
+      email: 'testuser@c0d3.com',
+      cliToken:
+        'eyJpZCI6MTIxMCwiY2xpVG9rZW4iOiIxdHhrYndxMHYxa0hoenlHWmFmNTMifQ=='
     }
   })
 
@@ -41,13 +45,26 @@ describe('auth controller', () => {
   })
 
   test('Login - should return success true if successful login', async () => {
-    db.User.findOne = jest.fn().mockReturnValue({ username: 'testuser' })
+    db.User.findOne = jest
+      .fn()
+      .mockReturnValue({ username: 'testuser', cliToken: 'fakeCliToken' })
     bcrypt.compare = jest.fn().mockReturnValue(true)
     const result = await login({}, userArgs, { req: { session: {} } })
     expect(result).toEqual({
       success: true,
-      username: 'testuser'
+      username: 'testuser',
+      cliToken: 'eyJjbGlUb2tlbiI6ImZha2VDbGlUb2tlbiJ9'
     })
+  })
+
+  test('Login - should return user with a new CLI token', async () => {
+    db.User.findOne = jest.fn().mockResolvedValue({
+      username: 'fakeUser',
+      update: obj => jest.fn().mockReturnThis(obj)
+    })
+    bcrypt.compare = jest.fn().mockReturnValue(true)
+    const result = await login({}, userArgs, { req: { session: {} } })
+    expect(result.cliToken).toBeTruthy()
   })
 
   test('Logout - should reject with error', async () => {
@@ -140,21 +157,37 @@ describe('auth controller', () => {
 
   test('Signup - should resolve with success true if signup successful ', async () => {
     db.User.findOne = jest.fn().mockReturnValue(null)
-    db.User.create = jest
-      .fn()
-      .mockReturnValue({ username: 'user', dataValues: { id: '1234' } })
+    db.User.create = jest.fn().mockReturnValue({
+      username: 'user',
+      dataValues: { id: '1234' },
+      save: jest.fn()
+    })
     chatSignUp.mockResolvedValueOnce({
       success: true
     })
-    const result = await signup({}, userArgs, { req: { session: {} } })
+    const result = await signup({}, userArgs, {
+      req: { error: jest.fn(), session: {} }
+    })
+    expect(db.User.create().save).toBeCalled()
     expect(result).toEqual({
       username: 'user',
       success: true
     })
   })
+
   test('Signup - should throw error when session is null', async () => {
     return expect(
       signup({}, userArgs, { req: { session: null } })
     ).rejects.toThrowError('')
+  })
+
+  test('isTokenValid - should return true', async () => {
+    db.User.findByPk.mockResolvedValue({ cliToken: '1txkbwq0v1kHhzyGZaf53' })
+    expect(isTokenValid(null, userArgs)).resolves.toBe(true)
+  })
+
+  test('isTokenValid - should throw error', async () => {
+    db.User.findByPk.mockRejectedValue()
+    expect(isTokenValid(null, userArgs)).rejects.toThrowError()
   })
 })

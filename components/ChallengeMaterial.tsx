@@ -336,7 +336,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     }
   )
   return (
-    <div className="row challenge-display">
+    <div className="row challenge-display mt-3">
       <div className="col-4">
         {challengeTitleCards}
         {lessonStatus.isPassed && (

@@ -40,6 +40,10 @@ p {
   line-height: 1.6;
 }
 
+.text-danger {
+  color: #721c24 !important
+}
+
 // Local SCSS Imports
 @import './challengeMaterial.scss';
 @import './prism.scss';

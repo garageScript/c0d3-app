@@ -11,7 +11,6 @@ describe('Signup Page', () => {
   const fillOutSignupForm = async getByTestId => {
     const emailField = getByTestId('email')
     const usernameField = getByTestId('username')
-    const passwordField = getByTestId('password')
     const firstNameField = getByTestId('firstName')
     const lastNameField = getByTestId('lastName')
     await wait(
@@ -23,11 +22,6 @@ describe('Signup Page', () => {
       fireEvent.change(usernameField, {
         target: {
           value: 'user name'
-        }
-      }),
-      fireEvent.change(passwordField, {
-        target: {
-          value: 'password123'
         }
       }),
       fireEvent.change(firstNameField, {

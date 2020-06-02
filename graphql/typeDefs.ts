@@ -4,12 +4,21 @@ export default gql`
   type Query {
     lessons: [Lesson]
     session: Session
+    isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
+    alerts: [Alert]
+  }
+
+  type TokenResponse {
+    success: Boolean
+    token: String
   }
 
   type Mutation {
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
+    reqPwReset(userOrEmail: String!): TokenResponse
+    changePw(token: String!, password: String!): AuthResponse
     signup(
       firstName: String!
       lastName: String!
@@ -17,12 +26,30 @@ export default gql`
       username: String!
       password: String
     ): AuthResponse
+    addAlert(
+      text: String!
+      type: String!
+      url: String
+      urlCaption: String
+    ): AlertResponse
+    removeAlert(id: String!): AlertResponse
+    createSubmission(
+      lessonId: String!
+      challengeId: String!
+      cliToken: String!
+      diff: String!
+    ): Submission
   }
 
   type AuthResponse {
     success: Boolean
     username: String
     error: String
+    cliToken: String
+  }
+
+  type AlertResponse {
+    success: Boolean
   }
 
   type Submission {
@@ -51,6 +78,7 @@ export default gql`
     email: String
     name: String
     isAdmin: Boolean
+    cliToken: String
   }
 
   type Session {
@@ -90,5 +118,12 @@ export default gql`
     lessonId: String
     title: String
     order: Int
+  }
+  type Alert {
+    id: String
+    text: String
+    type: String
+    url: String
+    urlCaption: String
   }
 `

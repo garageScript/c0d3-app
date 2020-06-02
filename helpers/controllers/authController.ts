@@ -4,9 +4,12 @@ import { nanoid } from 'nanoid'
 import { UserInputError, AuthenticationError } from 'apollo-server-micro'
 import { signupValidation } from '../formValidation'
 import { chatSignUp } from '../mattermost'
-import { LoggedRequest } from '../../@types/helpers'
+import { Context } from '../../@types/helpers'
+import { encode, decode } from '../encoding'
+import { sendSignupEmail } from '../mail'
 
 const { User } = db
+const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
 type Login = {
   username: string
@@ -21,11 +24,7 @@ type SignUp = {
   email: string
 }
 
-export const login = async (
-  _parent: void,
-  arg: Login,
-  ctx: { req: LoggedRequest }
-) => {
+export const login = async (_parent: void, arg: Login, ctx: Context) => {
   const { req } = ctx
   try {
     const { session } = req
@@ -45,10 +44,15 @@ export const login = async (
       throw new AuthenticationError('Password is invalid')
     }
 
+    if (!user.cliToken) await user.update({ cliToken: nanoid() })
+
+    const cliToken = { id: user.id, cliToken: user.cliToken }
+
     session.userId = user.id
     return {
       success: true,
-      username: user.username
+      username: user.username,
+      cliToken: encode(cliToken)
     }
   } catch (err) {
     if (!err.extensions) {
@@ -58,11 +62,7 @@ export const login = async (
   }
 }
 
-export const logout = async (
-  _parent: void,
-  _: void,
-  ctx: { req: LoggedRequest }
-) => {
+export const logout = async (_parent: void, _: void, ctx: Context) => {
   const { req } = ctx
   const { session } = req
   return new Promise(async (resolve, reject) => {
@@ -89,15 +89,11 @@ export const logout = async (
   })
 }
 
-export const signup = async (
-  _parent: void,
-  arg: SignUp,
-  ctx: { req: LoggedRequest }
-) => {
+export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
   const { req } = ctx
   try {
     const { session } = req
-    const { firstName, lastName, username, password, email } = arg
+    const { firstName, lastName, username, email } = arg
 
     if (!session) {
       throw new Error('Session Error')
@@ -107,7 +103,6 @@ export const signup = async (
       firstName,
       lastName,
       username,
-      password,
       email
     })
 
@@ -136,22 +131,28 @@ export const signup = async (
       throw new UserInputError('Email already exists')
     }
 
-    const randomToken = nanoid()
     const name = `${firstName} ${lastName}`
-    const hash = await bcrypt.hash(password, 10)
-
+    const password = nanoid() // Placeholder for Mattermost
     // Chat Signup
     await chatSignUp(username, password, email)
 
     const userRecord = await User.create({
       name,
       username,
-      password: hash,
-      email,
-      emailVerificationToken: randomToken
+      email
     })
 
-    session.userId = userRecord.dataValues.id
+    const encodedToken = encode({
+      userId: userRecord.id,
+      userToken: nanoid()
+    })
+
+    userRecord.forgotToken = encodedToken
+    userRecord.tokenExpiration = new Date(Date.now() + THREE_DAYS)
+    await userRecord.save()
+
+    sendSignupEmail(email, encodedToken)
+
     return {
       success: true,
       username: userRecord.username
@@ -160,6 +161,20 @@ export const signup = async (
     if (!err.extensions) {
       req.error(err)
     }
+    throw new Error(err)
+  }
+}
+
+export const isTokenValid = async (
+  _parent: void,
+  arg: { cliToken: string }
+) => {
+  try {
+    const { id, cliToken } = decode(arg.cliToken)
+    const user = await User.findByPk(id)
+
+    return user.cliToken === cliToken
+  } catch (err) {
     throw new Error(err)
   }
 }
