@@ -56,6 +56,12 @@ exports[`Layout Component Should render correct with no session context 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
@@ -143,6 +149,12 @@ exports[`Layout Component Should render correctly when no user in session 1`] = 
               target="_blank"
             >
               Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
             </a>
           </div>
         </div>

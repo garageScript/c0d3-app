@@ -56,6 +56,12 @@ exports[`Contributor Page Should render contributor page 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>

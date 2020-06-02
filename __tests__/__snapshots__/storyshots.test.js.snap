@@ -213,6 +213,14 @@ exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
           >
             Help
           </a>
+          <a
+            className="nav-item nav-link"
+            href="/contributors"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Contributors
+          </a>
         </div>
       </div>
     </div>
@@ -2135,6 +2143,14 @@ Array [
             >
               Help
             </a>
+            <a
+              className="nav-item nav-link"
+              href="/contributors"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
@@ -2585,6 +2601,14 @@ Array [
               target="_blank"
             >
               Help
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/contributors"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Contributors
             </a>
           </div>
         </div>
@@ -4526,6 +4550,14 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
             target="_blank"
           >
             Help
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/contributors"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Contributors
           </a>
         </div>
       </div>
