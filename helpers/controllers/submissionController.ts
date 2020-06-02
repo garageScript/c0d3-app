@@ -55,7 +55,10 @@ export const submissions = async (
       lessonId
     }
   })
-  const userIds = subs.reduce((acc: any, sub: any) => {
+  if (subs.length === 0) {
+    return subs
+  }
+  const userIds = subs.reduce((acc: Set<number>, sub: any) => {
     acc.add(sub.userId)
     return acc
   }, new Set())
@@ -68,7 +71,7 @@ export const submissions = async (
     acc[user.id] = user
     return acc
   }, {})
-  const subsWithUsers = subs.map((submission: any) => {
+  return subs.map((submission: any) => {
     const {
       id,
       diff,
@@ -80,6 +83,7 @@ export const submissions = async (
     } = submission
     return {
       id,
+      userId,
       diff,
       comment,
       challengeId,
@@ -88,5 +92,4 @@ export const submissions = async (
       user: usersMap[userId]
     }
   })
-  return subsWithUsers
 }

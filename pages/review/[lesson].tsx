@@ -51,7 +51,8 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
     return <LoadingSpinner />
   }
   const lessonSubmissions: SubmissionData[] = data.submissions.filter(
-    (submission: SubmissionData) => submission.status !== 'passed'
+    (submission: SubmissionData) =>
+      submission.status !== 'passed' && submission.status !== 'needMoreWork'
   )
   const currentLesson: Lesson = lessons.find(
     (lesson: Lesson) => lesson.id.toString() === currentlessonId

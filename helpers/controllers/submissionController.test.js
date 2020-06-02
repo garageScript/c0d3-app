@@ -45,9 +45,4 @@ describe('Submissions', () => {
       'Invalid args'
     )
   })
-
-  test('submissions should return submissions with a given lessonId', async () => {
-    Submission.findAll = jest.fn().mockReturnValue([])
-    expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
-  })
 })

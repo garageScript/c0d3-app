@@ -68,18 +68,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       />
     )
   }
-  console.log(comment)
   return (
     <>
       {diff && (
-        <div className="card shadow-sm border-0 mt-3">
+        <div className="card shadow-sm border-0 mt-3 p-3">
           <div className="card-header bg-white">
             <strong>{submissionData.user.username}</strong> submitted Submission
             ID: {submissionData.id}
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {!files.length ? submissionData.diff : files.map(renderFile)}
+              {files.map(renderFile)}
             </div>
           </div>
           <div className="card-footer bg-white">

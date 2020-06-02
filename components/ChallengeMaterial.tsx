@@ -139,7 +139,11 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
-  const diff = _.get(currentChallenge, 'submission.diff', false)
+  //temp fix while CLI tool is getting fixed
+  const diff = _.get(currentChallenge, 'submission.diff', '').replace(
+    /(.?\[\d*m)/g,
+    ''
+  )
   const comment = _.get(currentChallenge, 'submission.comment', '')
   const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
   const reviewerUserName = _.get(

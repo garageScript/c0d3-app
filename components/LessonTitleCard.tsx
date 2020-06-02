@@ -43,7 +43,7 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             CHALLENGES
           </NavLink>
-          {props.isPassed && props.isPassed.length > 0 && (
+          {props.isPassed && (
             <NavLink
               path={`/review/${props.lessonId}`}
               className="btn border-right rounded-0 px-4 py-3"
