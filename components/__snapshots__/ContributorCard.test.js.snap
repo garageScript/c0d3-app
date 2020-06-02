@@ -6,7 +6,7 @@ exports[`ContributorCard Should render ContributorCard with user data 1`] = `
     class="card shadow-sm mb-3"
   >
     <div
-      class="ml-auto mr-auto mt-4 contributorCard_avatarContainer"
+      class="ml-auto mr-auto mt-4 contributorCard__avatarContainer"
     >
       <div
         class="text-uppercase bg-primary rounded-circle text-light user_info_image"

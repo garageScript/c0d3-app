@@ -1383,7 +1383,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
   className="card shadow-sm mb-3"
 >
   <div
-    className="ml-auto mr-auto mt-4 contributorCard_avatarContainer"
+    className="ml-auto mr-auto mt-4 contributorCard__avatarContainer"
   >
     <div
       className="text-uppercase bg-primary rounded-circle text-light user_info_image"
