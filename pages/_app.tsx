@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps, apollo }: IProps) {
   const session = useSession()
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-      posthog.init('Ofv0LFRVyklwR7a_fjKKbgemFuKsT9nOhG277svLZKM', {
+      posthog.init(process.env.POSTHOG_API_KEY, {
         api_host: 'https://app.posthog.com'
       })
     }
