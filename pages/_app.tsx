@@ -17,7 +17,6 @@ interface IProps extends AppProps {
 
 function MyApp({ Component, pageProps, apollo }: IProps) {
   const session = useSession()
-  console.log(process.env.NODE_ENV)
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
       posthog.init('Ofv0LFRVyklwR7a_fjKKbgemFuKsT9nOhG277svLZKM', {
