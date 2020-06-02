@@ -45,12 +45,6 @@ MyError.getInitialProps = async ({ res, err, asPath }: MyErrorContext) => {
   //    componentDidMount, etc) that was caught by Next.js's React Error
   //    Boundary. Read more about what types of exceptions are caught by Error
   //    Boundaries: https://reactjs.org/docs/error-boundaries.html
-
-  if (res?.statusCode === 404) {
-    // Opinionated: do not record an exception in Sentry for 404
-    Sentry.captureMessage('stupid 404 blah')
-    return { statusCode: 404 }
-  }
   if (err) {
     Sentry.captureException(err)
     return errorInitialProps
