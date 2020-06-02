@@ -242,6 +242,12 @@ exports[`Layout Component Should render correctly when user session found 1`] = 
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
