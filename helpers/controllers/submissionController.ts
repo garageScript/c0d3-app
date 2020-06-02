@@ -23,12 +23,14 @@ export const createSubmission = async (
   try {
     if (!args) throw new Error('Invalid args')
     const { challengeId, cliToken, diff, lessonId } = args
+    //to revert once CLI is fixed
+    const fixedDiff = diff.replace(/(.?\[\d*m)/g, '')
     const { id } = decode(cliToken)
     const { email, id: userId } = await User.findByPk(id)
     const [submission] = await Submission.findOrCreate({
       where: { lessonId, challengeId, userId }
     })
-    await submission.update({ diff, status: 'open', viewCount: 0 })
+    await submission.update({ diff: fixedDiff, status: 'open', viewCount: 0 })
     const [challenge, lesson] = await Promise.all([
       Challenge.findByPk(challengeId),
       Lesson.findByPk(lessonId)
