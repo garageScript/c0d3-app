@@ -56,6 +56,12 @@ exports[`<ResetPassword /> It should render Password has been set card 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
@@ -189,6 +195,12 @@ exports[`<ResetPassword /> It should render alert banner when there is an error 
               target="_blank"
             >
               Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
             </a>
           </div>
         </div>
@@ -347,6 +359,12 @@ exports[`<ResetPassword /> It should render password form 1`] = `
               target="_blank"
             >
               Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
             </a>
           </div>
         </div>
