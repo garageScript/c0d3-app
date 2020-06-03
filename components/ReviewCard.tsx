@@ -11,8 +11,7 @@ type ReviewCardProps = {
 }
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  //temp fix while CLI tool is getting fixed
-  const diff = _.get(submissionData, 'diff', '').replace(/(.?\[\d*m)/g, '')
+  const diff = _.get(submissionData, 'diff', '')
   const comment = _.get(submissionData, 'comment', '')
   let files: File[] = []
 

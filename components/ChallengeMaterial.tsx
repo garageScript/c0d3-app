@@ -139,12 +139,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
-  //temp fix while CLI tool is getting fixed
-  //regex removes the colors from the submission diff data
-  const diff = _.get(currentChallenge, 'submission.diff', '').replace(
-    /(.?\[\d*m)/g,
-    ''
-  )
+  const diff = _.get(currentChallenge, 'submission.diff', '')
   const comment = _.get(currentChallenge, 'submission.comment', '')
   const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
   const reviewerUserName = _.get(

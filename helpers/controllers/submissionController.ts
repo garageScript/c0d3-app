@@ -25,16 +25,15 @@ export const createSubmission = async (
     const { challengeId, cliToken, diff, lessonId } = args
     //to revert once CLI is fixed
     //regex removes the colors from the submission diff data
-    const fixedDiff = diff.replace(/(.?\[\d*m)/g, '')
     const { id } = decode(cliToken)
     const { email, id: userId } = await User.findByPk(id)
     const [submission] = await Submission.findOrCreate({
       where: { lessonId, challengeId, userId }
     })
-    await submission.update({ diff: fixedDiff, status: 'open', viewCount: 0 })
-    const [challenge, lesson] = await Promise.all([
-      Challenge.findByPk(challengeId),
-      Lesson.findByPk(lessonId)
+    await submission.update({ diff, status: 'open', viewCount: 0 })
+    const [lesson, challenge] = await Promise.all([
+      Lesson.findByPk(lessonId),
+      Challenge.findByPk(challengeId)
     ])
     const lessonName = lesson.chatUrl.split('/').pop()
     const username = await getUserByEmail(email)
@@ -46,23 +45,17 @@ export const createSubmission = async (
   }
 }
 
-export const submissions = async (
+export const submissions = (
   _parent: void,
   arg: ArgsGetSubmissions,
-  ctx: Context
+  _ctx: Context
 ) => {
   const { lessonId } = arg
-  const { req } = ctx
-  try {
-    return await Submission.findAll({
-      where: {
-        status: 'open',
-        lessonId
-      }
-    })
-  } catch (err) {
-    req.error(err)
-    console.log(err)
-    throw new Error(err)
-  }
+  return Submission.findAll({
+    where: {
+      status: 'open',
+      lessonId
+    },
+    include: ['user']
+  })
 }
