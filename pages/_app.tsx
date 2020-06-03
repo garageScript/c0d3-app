@@ -11,11 +11,19 @@ import useSession from '../helpers/useSession'
 import SessionContext from '../helpers/contexts/session'
 import '../scss/index.scss'
 
+import * as Sentry from '@sentry/browser'
+const SENTRY_DSN = process.env.SENTRY_DSN
+
+Sentry.init({
+  dsn: SENTRY_DSN
+})
+
 interface IProps extends AppProps {
+  err: any
   apollo: ApolloClient<NormalizedCacheObject>
 }
 
-function MyApp({ Component, pageProps, apollo }: IProps) {
+function MyApp({ Component, pageProps, err, apollo }: IProps) {
   const session = useSession()
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
@@ -31,7 +39,7 @@ function MyApp({ Component, pageProps, apollo }: IProps) {
           <title>C0D3.com</title>
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
-        <Component {...pageProps} />
+        <Component {...pageProps} err={err} />
       </SessionContext.Provider>
     </ApolloProvider>
   )
