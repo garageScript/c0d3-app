@@ -74,7 +74,7 @@ export default {
     async acceptSubmission(_parent: void, args: ArgsUpdateSubmission) {
       try {
         if (!args) throw new Error('Invalid args')
-        return await updateSubmission({ ...args, status: 'passed' })
+        return updateSubmission({ ...args, status: 'passed' })
       } catch (error) {
         throw new Error(error)
       }
@@ -82,7 +82,7 @@ export default {
     async rejectSubmission(_parent: void, args: ArgsUpdateSubmission) {
       try {
         if (!args) throw new Error('Invalid args')
-        return await updateSubmission({ ...args, status: 'needMoreWork' })
+        return updateSubmission({ ...args, status: 'needMoreWork' })
       } catch (error) {
         throw new Error(error)
       }

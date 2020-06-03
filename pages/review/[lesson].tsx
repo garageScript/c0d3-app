@@ -11,22 +11,23 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import { GET_APP, GET_SUBMISSIONS } from '../../graphql/queries'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
+import { User } from '../../@types/session'
 import _ from 'lodash'
 
 type SubmissionDisplayProps = {
-  session: any
+  user: User
   submissions: SubmissionData[]
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
-  session,
+  user,
   submissions
 }) => (
   <div className="submissions-container">
     {submissions.map((submission: SubmissionData) => (
       <ReviewCard
         key={submission.id}
-        session={session}
+        reviewerId={Number(user.id)}
         submissionData={submission}
       />
     ))}
@@ -63,7 +64,7 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
           />
           {currentLesson && (
             <SubmissionDisplay
-              session={session.user}
+              user={session.user}
               submissions={lessonSubmissions}
             />
           )}

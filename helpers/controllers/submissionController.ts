@@ -57,7 +57,7 @@ export const updateSubmission = async (
   try {
     if (!args) throw new Error('Invalid args')
     const { id, comment, status, reviewer } = args
-    let submission = await Submission.findByPk(id)
+    const submission = await Submission.findByPk(id)
 
     submission.set('reviewerId', reviewer)
     submission.set('status', status)
