@@ -5,12 +5,16 @@ jest.mock('mailgun-js')
 import db from '../dbload'
 import fetch from 'node-fetch'
 import resolvers from '../../graphql/resolvers'
-import { updateSubmission } from './submissionController'
 
 const { Mutation } = resolvers
 const { Lesson, Submission, User, Challenge } = db
 
 describe('Submissions', () => {
+  jest.unmock('../updateSubmission')
+
+  const controller = require.requireActual('../updateSubmission')
+  controller.updateSubmission = jest.fn()
+
   const args = {
     challengeId: 'fakeChallengeId',
     cliToken:
@@ -44,28 +48,33 @@ describe('Submissions', () => {
     )
   })
 
-  test('updateSubmission should return submission', async () => {
-    const setStub = jest.fn()
-    const saveStub = jest.fn()
-    const submission = {
-      id: 1,
-      comment: 'fake comment',
-      status: 'fake status',
-      reviewer: 2,
-      set: setStub,
-      save: saveStub
-    }
-    Submission.findByPk = jest.fn().mockReturnValue(submission)
-    const result = await updateSubmission(submission)
-
-    expect(setStub).toHaveBeenCalledWith('reviewerId', 2)
-    expect(setStub).toHaveBeenCalledWith('status', 'fake status')
-    expect(setStub).toHaveBeenCalledWith('comment', 'fake comment')
-    expect(saveStub).toHaveBeenCalled()
-    expect(result).toEqual(submission)
+  test('acceptSubmission should call updateSubmission', async () => {
+    const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
+    await resolvers.Mutation.acceptSubmission(null, submission)
+    expect(controller.updateSubmission).toHaveBeenCalledWith({
+      ...submission,
+      status: 'passed'
+    })
   })
 
-  test('updateSubmission should throw error Invalid args', async () => {
-    await expect(updateSubmission()).rejects.toThrow('Invalid args')
+  test('acceptSubmission should throw error with no args', async () => {
+    await await expect(resolvers.Mutation.acceptSubmission()).rejects.toThrow(
+      'Invalid args'
+    )
+  })
+
+  test('rejectSubmission should call updateSubmission', async () => {
+    const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
+    await resolvers.Mutation.rejectSubmission(null, submission)
+    expect(controller.updateSubmission).toHaveBeenCalledWith({
+      ...submission,
+      status: 'needMoreWork'
+    })
+  })
+
+  test('rejectSubmission should throw error with no args', async () => {
+    await await expect(resolvers.Mutation.rejectSubmission()).rejects.toThrow(
+      'Invalid args'
+    )
   })
 })
