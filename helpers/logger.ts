@@ -44,6 +44,14 @@ export const winstonLogger = (sessionId: string) => {
           dsn: SENTRY_DSN
         }
       })
+    ],
+    exceptionHandlers: [
+      new winston.transports.Console(),
+      new Sentry({
+        sentry: {
+          dsn: SENTRY_DSN
+        }
+      })
     ]
   })
 }

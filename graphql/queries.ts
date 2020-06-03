@@ -61,7 +61,17 @@ export const SIGNUP_USER = gql`
 export const GET_SUBMISSIONS = gql`
   query submissions($lessonId: String!) {
     submissions(lessonId: $lessonId) {
+      id
       status
+      diff
+      comment
+      challengeId
+      user {
+        id
+        username
+      }
+      createdAt
+      updatedAt
     }
   }
 `

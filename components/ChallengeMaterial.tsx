@@ -139,7 +139,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
-  const diff = _.get(currentChallenge, 'submission.diff', false)
+  const diff = _.get(currentChallenge, 'submission.diff', '')
   const comment = _.get(currentChallenge, 'submission.comment', '')
   const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
   const reviewerUserName = _.get(
@@ -301,7 +301,6 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         submission
       }
     })
-
   const [currentChallengeID, setCurrentChallenge] = useState<
     CurrentChallengeID
   >(null)

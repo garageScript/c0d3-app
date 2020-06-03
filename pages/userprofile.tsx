@@ -8,32 +8,31 @@ import withQueryLoader from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
 
 type SessionUser = {
-    username: string
-    name: string
+  username: string
+  name: string
 }
 
 type AppQuery = {
-    queryData: AppInfo
+  queryData: AppInfo
 }
 
 type AppInfo = {
-    session: Session,
-    lessons: Lesson[]
+  session: Session
+  lessons: Lesson[]
 }
 
 type Session = {
-    user: SessionUser
-    submissions: Submission[] 
+  user: SessionUser
+  submissions: Submission[]
 }
 
 type Submission = {
-   diff: string
-   status: string
-   lessonId: number 
+  diff: string
+  status: string
+  lessonId: number
 }
 
 const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
-  console.log('QueryData:', queryData)
   const userInfo = {
     username: queryData.session.user.username,
     firstName: queryData.session.user.name.split(' ')[0],
@@ -56,9 +55,9 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
   return (
     <Layout>
       <>
-      <ProfileImageInfo user={userInfo} />
-      <ProfileLessons lessons={lessonInfo} />
-      <ProfileSubmissions lessons={queryData.lessons} />
+        <ProfileImageInfo user={userInfo} />
+        <ProfileLessons lessons={lessonInfo} />
+        <ProfileSubmissions lessons={queryData.lessons} />
       </>
     </Layout>
   )
