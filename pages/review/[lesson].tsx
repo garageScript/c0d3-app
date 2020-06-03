@@ -11,31 +11,24 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import { GET_APP, GET_SUBMISSIONS } from '../../graphql/queries'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
-import { User } from '../../@types/session'
 import _ from 'lodash'
 
 type SubmissionDisplayProps = {
-  user: User
   submissions: SubmissionData[]
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
-  user,
   submissions
 }) => (
   <div className="submissions-container">
     {submissions.map((submission: SubmissionData) => (
-      <ReviewCard
-        key={submission.id}
-        reviewerId={Number(user.id)}
-        submissionData={submission}
-      />
+      <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>
 )
 
 const Review: React.FC<WithQueryProps> = ({ queryData }) => {
-  const { lessons, session } = queryData
+  const { lessons } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
@@ -63,10 +56,7 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
             isPassed={true}
           />
           {currentLesson && (
-            <SubmissionDisplay
-              user={session.user}
-              submissions={lessonSubmissions}
-            />
+            <SubmissionDisplay submissions={lessonSubmissions} />
           )}
         </div>
       </Layout>

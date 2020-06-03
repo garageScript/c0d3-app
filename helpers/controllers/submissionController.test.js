@@ -50,9 +50,11 @@ describe('Submissions', () => {
 
   test('acceptSubmission should call updateSubmission', async () => {
     const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
-    await resolvers.Mutation.acceptSubmission(null, submission)
+    const ctx = { req: { session: { userId: 2 } } }
+    await resolvers.Mutation.acceptSubmission(null, submission, ctx)
     expect(controller.updateSubmission).toHaveBeenCalledWith({
       ...submission,
+      reviewerId: 2,
       status: 'passed'
     })
   })
@@ -63,11 +65,20 @@ describe('Submissions', () => {
     )
   })
 
+  test('acceptSubmission should throw error with no user', async () => {
+    const submission = { id: 1, comment: 'fake comment' }
+    await await expect(
+      resolvers.Mutation.acceptSubmission(null, submission)
+    ).rejects.toThrow('Invalid user')
+  })
+
   test('rejectSubmission should call updateSubmission', async () => {
-    const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
-    await resolvers.Mutation.rejectSubmission(null, submission)
+    const submission = { id: 1, comment: 'fake comment' }
+    const ctx = { req: { session: { userId: 2 } } }
+    await resolvers.Mutation.rejectSubmission(null, submission, ctx)
     expect(controller.updateSubmission).toHaveBeenCalledWith({
       ...submission,
+      reviewerId: 2,
       status: 'needMoreWork'
     })
   })
@@ -76,5 +87,12 @@ describe('Submissions', () => {
     await await expect(resolvers.Mutation.rejectSubmission()).rejects.toThrow(
       'Invalid args'
     )
+  })
+
+  test('rejectSubmission should throw error with no user', async () => {
+    const submission = { id: 1, comment: 'fake comment' }
+    await await expect(
+      resolvers.Mutation.rejectSubmission(null, submission)
+    ).rejects.toThrow('Invalid user')
   })
 })

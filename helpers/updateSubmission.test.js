@@ -12,7 +12,7 @@ describe('updateSubmission', () => {
       id: 1,
       comment: 'fake comment',
       status: 'fake status',
-      reviewer: 2,
+      reviewerId: 2,
       set: setStub,
       save: saveStub
     }

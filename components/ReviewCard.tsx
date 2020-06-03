@@ -9,14 +9,10 @@ import _ from 'lodash'
 import { SubmissionData } from '../@types/submission'
 
 type ReviewCardProps = {
-  reviewerId: number
   submissionData: SubmissionData
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({
-  reviewerId,
-  submissionData
-}) => {
+export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const diff = _.get(submissionData, 'diff', '')
   const comment = _.get(submissionData, 'comment', '')
   const [commentValue, setCommentValue] = useState('')
@@ -29,7 +25,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
   const reviewSubmission = (review: any) => async () => {
     await review({
       variables: {
-        reviewer: reviewerId,
         submissionId: submissionData.id,
         comment: commentValue
       }
