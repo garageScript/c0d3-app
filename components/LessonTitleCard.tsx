@@ -6,7 +6,7 @@ type Props = {
   lessonCoverUrl: string
   lessonUrl: string
   lessonTitle: string
-  lessonId?: string
+  lessonId: string
   isPassed: boolean
 }
 
