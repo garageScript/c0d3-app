@@ -2,8 +2,14 @@ import db from '../dbload'
 import { Context } from '../../@types/helpers'
 import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
+import { Submission as SubmissionModel } from '../models/Submission'
 
 const { User, Submission, Challenge, Lesson } = db
+
+type ArgsUpdateSubmission = {
+  id: number
+  comment: string
+}
 
 type ArgsCreateSubmission = {
   lessonId: string
@@ -45,7 +51,47 @@ export const createSubmission = async (
   }
 }
 
-export const submissions = (
+const updateSubmission = async (args: ArgsUpdateSubmission & { status: string }) => {
+  try {
+    if (!args) throw new Error('Invalid args')
+    const { id, comment, status } = args
+    let submission: SubmissionModel = await Submission.findByPk(id)
+
+    submission.set('status', status)
+    submission.set('comment', comment)
+    submission = await submission.save()
+    
+    return submission
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const acceptSubmission = async (
+  _parent: void,
+  args: ArgsUpdateSubmission
+) => {
+  try {
+    if (!args) throw new Error('Invalid args')
+    return await updateSubmission({ ...args, status: 'passed' })
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const rejectSubmission = async (
+  _parent: void,
+  args: ArgsUpdateSubmission
+) => {
+  try {
+    if (!args) throw new Error('Invalid args')
+    return await updateSubmission({ ...args, status: 'needMoreWork' })
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const submissions = async (
   _parent: void,
   arg: ArgsGetSubmissions,
   _ctx: Context
