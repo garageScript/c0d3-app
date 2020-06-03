@@ -7,7 +7,7 @@ import fetch from 'node-fetch'
 import resolvers from '../../graphql/resolvers'
 
 const { Mutation } = resolvers
-const { Lesson, Submission, User } = db
+const { Lesson, Submission, User, Challenge } = db
 
 describe('Submissions', () => {
   const args = {
@@ -24,30 +24,22 @@ describe('Submissions', () => {
       .fn()
       .mockResolvedValue({ username: 'username', id: 'userId' })
     Submission.findOrCreate = jest.fn().mockResolvedValue([submission])
-    Promise.all = jest.fn().mockResolvedValue([
-      { title: 'title' },
-      {
-        chatUrl: 'https://fake/url/channels/js1-variablesfunction',
-        id: 'fakeId'
-      }
-    ])
-    Lesson.findByPk = jest.fn()
+    Challenge.findByPk = jest.fn().mockReturnValue({ title: 'title' })
+    Lesson.findByPk = jest.fn().mockReturnValue({
+      chatUrl: 'https://fake/url/channels/js1-variablesfunction',
+      id: 'fakeId'
+    })
     fetch.mockResolvedValue({
       status: 200,
       json: () => Promise.resolve({ id: 'fakeId' })
     })
-
-    expect(Mutation.createSubmission(null, args)).resolves.toEqual(submission)
+    const result = await Mutation.createSubmission(null, args)
+    expect(result).toEqual(submission)
   })
 
   test('createSubmission should throw error Invalid args', async () => {
     await expect(Mutation.createSubmission(null, null)).rejects.toThrow(
       'Invalid args'
     )
-  })
-
-  test('submissions should return submissions with a given lessonId', async () => {
-    Submission.findAll = jest.fn().mockReturnValue([])
-    expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
   })
 })

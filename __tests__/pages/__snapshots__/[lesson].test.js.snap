@@ -130,7 +130,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                 </a>
                 <a
                   class="btn border-right rounded-0 px-4 py-3"
-                  href="#"
+                  href="/curriculum/5"
                 >
                   CHALLENGES
                 </a>
@@ -263,6 +263,7 @@ solution(4,1) // Should return 5
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>

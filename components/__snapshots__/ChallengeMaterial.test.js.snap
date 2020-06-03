@@ -192,6 +192,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </div>
@@ -255,6 +256,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </div>

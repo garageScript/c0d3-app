@@ -11,5 +11,15 @@ export const Basic: React.FC = () => (
     lessonCoverUrl="js-0-cover.svg"
     lessonUrl="#"
     lessonTitle="Foundations"
+    isPassed={false}
+  />
+)
+
+export const PassedLesson: React.FC = () => (
+  <LessonTitleCard
+    lessonCoverUrl="js-0-cover.svg"
+    lessonUrl="#"
+    lessonTitle="Foundations"
+    isPassed={true}
   />
 )
