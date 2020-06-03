@@ -50,7 +50,7 @@ export const createSubmission = async (
 export const acceptSubmission = async (
   _parent: void,
   args: ArgsUpdateSubmission,
-  ctx: any
+  ctx: Context
 ) => {
   try {
     const reviewerId = _.get(ctx, 'req.session.userId', false)
@@ -65,7 +65,7 @@ export const acceptSubmission = async (
 export const rejectSubmission = async (
   _parent: void,
   args: ArgsUpdateSubmission,
-  ctx: any
+  ctx: Context
 ) => {
   try {
     const reviewerId = _.get(ctx, 'req.session.userId', false)
