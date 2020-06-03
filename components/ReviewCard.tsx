@@ -26,6 +26,16 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
 
   if (diff) files = gitDiffParser.parse(diff)
 
+  const reviewSubmission = (review: any) => async () => {
+    await review({
+      variables: {
+        reviewer: reviewerId,
+        submissionId: submissionData.id,
+        comment: commentValue
+      }
+    })
+  }
+
   const renderFile = ({ hunks, newPath }: File) => {
     const oldValue: String[] = []
     const newValue: String[] = []
@@ -85,32 +95,14 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
             ></textarea>
             <button
               className="btn bg-success m-1 text-white"
-              onClick={async () => {
-                await accept({
-                  variables: {
-                    reviewer: reviewerId,
-                    submissionId: submissionData.id,
-                    comment: commentValue
-                  }
-                })
-                window.location.reload()
-              }}
+              onClick={reviewSubmission(accept)}
             >
               Accept
             </button>
 
             <button
               className="btn bg-danger m-1 text-white"
-              onClick={async () => {
-                await reject({
-                  variables: {
-                    reviewer: reviewerId,
-                    submissionId: submissionData.id,
-                    comment: commentValue
-                  }
-                })
-                window.location.reload()
-              }}
+              onClick={reviewSubmission(reject)}
             >
               Reject
             </button>
