@@ -9,10 +9,10 @@ import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import db from '../helpers/dbload'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
 import {
+  updateSubmission,
   createSubmission,
-  acceptSubmission,
-  rejectSubmission,
-  submissions
+  submissions,
+  ArgsUpdateSubmission
 } from '../helpers/controllers/submissionController'
 import { Context } from '../@types/helpers'
 
@@ -71,8 +71,22 @@ export default {
   Mutation: {
     changePw,
     createSubmission,
-    acceptSubmission,
-    rejectSubmission,
+    async acceptSubmission(_parent: void, args: ArgsUpdateSubmission) {
+      try {
+        if (!args) throw new Error('Invalid args')
+        return await updateSubmission({ ...args, status: 'passed' })
+      } catch (error) {
+        throw new Error(error)
+      }
+    },
+    async rejectSubmission(_parent: void, args: ArgsUpdateSubmission) {
+      try {
+        if (!args) throw new Error('Invalid args')
+        return await updateSubmission({ ...args, status: 'needMoreWork' })
+      } catch (error) {
+        throw new Error(error)
+      }
+    },
     login,
     logout,
     signup,

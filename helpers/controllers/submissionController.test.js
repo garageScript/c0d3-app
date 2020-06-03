@@ -5,6 +5,7 @@ jest.mock('mailgun-js')
 import db from '../dbload'
 import fetch from 'node-fetch'
 import resolvers from '../../graphql/resolvers'
+import { updateSubmission } from './submissionController'
 
 const { Mutation } = resolvers
 const { Lesson, Submission, User, Challenge } = db
@@ -41,5 +42,30 @@ describe('Submissions', () => {
     await expect(Mutation.createSubmission(null, null)).rejects.toThrow(
       'Invalid args'
     )
+  })
+
+  test('updateSubmission should return submission', async () => {
+    const setStub = jest.fn()
+    const saveStub = jest.fn()
+    const submission = {
+      id: 1,
+      comment: 'fake comment',
+      status: 'fake status',
+      reviewer: 2,
+      set: setStub,
+      save: saveStub
+    }
+    Submission.findByPk = jest.fn().mockReturnValue(submission)
+    const result = await updateSubmission(submission)
+
+    expect(setStub).toHaveBeenCalledWith('reviewerId', 2)
+    expect(setStub).toHaveBeenCalledWith('status', 'fake status')
+    expect(setStub).toHaveBeenCalledWith('comment', 'fake comment')
+    expect(saveStub).toHaveBeenCalled()
+    expect(result).toEqual(submission)
+  })
+
+  test('updateSubmission should throw error Invalid args', async () => {
+    await expect(updateSubmission()).rejects.toThrow('Invalid args')
   })
 })

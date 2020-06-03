@@ -9,11 +9,18 @@ import _ from 'lodash'
 import { SubmissionData } from '../@types/submission'
 
 type ReviewCardProps = {
+  session: any
   submissionData: SubmissionData
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const diff = _.get(submissionData, 'diff', '')
+export const ReviewCard: React.FC<ReviewCardProps> = ({
+  session,
+  submissionData
+}) => {
+  const diff = _.get(submissionData, 'diff', '').replace(
+    /(\\u\d*b)?(.?\[\d*m)/g,
+    ''
+  )
   const comment = _.get(submissionData, 'comment', '')
   const commentTextField = useRef(null)
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -58,6 +65,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       />
     )
   }
+  console.log(session)
   return (
     <>
       {diff && (
@@ -73,13 +81,23 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
           <div className="card-footer bg-white">
             {comment && <Markdown>{comment}</Markdown>}
-            <textarea ref={commentTextField} placeholder="Type something..." style={{ width: '100%', padding: '1rem' }}></textarea>
+            <textarea
+              ref={commentTextField}
+              placeholder="Type something..."
+              style={{ width: '100%', padding: '1rem' }}
+            ></textarea>
             <button
               className="btn bg-success m-1 text-white"
               onClick={async () => {
                 const textField = commentTextField.current as any
-                await accept({ variables: { submissionId: submissionData.id, comment: textField.value } })
-                window.location.reload()                
+                await accept({
+                  variables: {
+                    reviewer: Number(session.id),
+                    submissionId: submissionData.id,
+                    comment: textField.value
+                  }
+                })
+                window.location.reload()
               }}
             >
               Accept
@@ -89,7 +107,13 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               className="btn bg-danger m-1 text-white"
               onClick={async () => {
                 const textField = commentTextField.current as any
-                await reject({ variables: { submissionId: submissionData.id, comment: textField.value } })
+                await reject({
+                  variables: {
+                    reviewer: Number(session.id),
+                    submissionId: submissionData.id,
+                    comment: textField.value
+                  }
+                })
                 window.location.reload()
               }}
             >

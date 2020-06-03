@@ -14,21 +14,27 @@ import { SubmissionData } from '../../@types/submission'
 import _ from 'lodash'
 
 type SubmissionDisplayProps = {
+  session: any
   submissions: SubmissionData[]
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
+  session,
   submissions
 }) => (
   <div className="submissions-container">
     {submissions.map((submission: SubmissionData) => (
-      <ReviewCard key={submission.id} submissionData={submission} />
+      <ReviewCard
+        key={submission.id}
+        session={session}
+        submissionData={submission}
+      />
     ))}
   </div>
 )
 
 const Review: React.FC<WithQueryProps> = ({ queryData }) => {
-  const { lessons } = queryData
+  const { lessons, session } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
@@ -56,7 +62,10 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
             isPassed={true}
           />
           {currentLesson && (
-            <SubmissionDisplay submissions={lessonSubmissions} />
+            <SubmissionDisplay
+              session={session.user}
+              submissions={lessonSubmissions}
+            />
           )}
         </div>
       </Layout>

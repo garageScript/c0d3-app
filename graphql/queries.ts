@@ -77,20 +77,36 @@ export const GET_SUBMISSIONS = gql`
 `
 
 export const ACCEPT_SUBMISSION = gql`
-  mutation acceptSubmission($submissionId: String!, $comment: String!) {
-    acceptSubmission(id: $submissionId, comment: $comment) {
-      id,
-      comment,
+  mutation acceptSubmission(
+    $submissionId: String!
+    $comment: String!
+    $reviewer: Int!
+  ) {
+    acceptSubmission(
+      id: $submissionId
+      comment: $comment
+      reviewer: $reviewer
+    ) {
+      id
+      comment
       status
     }
   }
 `
 
 export const REJECT_SUBMISSION = gql`
-  mutation rejectSubmission($submissionId: String!, $comment: String!) {
-    rejectSubmission(id: $submissionId, comment: $comment) {
-      id,
-      comment,
+  mutation rejectSubmission(
+    $submissionId: String!
+    $comment: String!
+    $reviewer: Int!
+  ) {
+    rejectSubmission(
+      id: $submissionId
+      comment: $comment
+      reviewer: $reviewer
+    ) {
+      id
+      comment
       status
     }
   }

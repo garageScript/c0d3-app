@@ -2,13 +2,13 @@ import db from '../dbload'
 import { Context } from '../../@types/helpers'
 import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
-import { Submission as SubmissionModel } from '../models/Submission'
 
 const { User, Submission, Challenge, Lesson } = db
 
-type ArgsUpdateSubmission = {
+export type ArgsUpdateSubmission = {
   id: number
   comment: string
+  reviewer: number
 }
 
 type ArgsCreateSubmission = {
@@ -51,41 +51,20 @@ export const createSubmission = async (
   }
 }
 
-const updateSubmission = async (args: ArgsUpdateSubmission & { status: string }) => {
+export const updateSubmission = async (
+  args: ArgsUpdateSubmission & { status: string }
+) => {
   try {
     if (!args) throw new Error('Invalid args')
-    const { id, comment, status } = args
-    let submission: SubmissionModel = await Submission.findByPk(id)
+    const { id, comment, status, reviewer } = args
+    let submission = await Submission.findByPk(id)
 
+    submission.set('reviewerId', reviewer)
     submission.set('status', status)
     submission.set('comment', comment)
-    submission = await submission.save()
-    
+    await submission.save()
+
     return submission
-  } catch (error) {
-    throw new Error(error)
-  }
-}
-
-export const acceptSubmission = async (
-  _parent: void,
-  args: ArgsUpdateSubmission
-) => {
-  try {
-    if (!args) throw new Error('Invalid args')
-    return await updateSubmission({ ...args, status: 'passed' })
-  } catch (error) {
-    throw new Error(error)
-  }
-}
-
-export const rejectSubmission = async (
-  _parent: void,
-  args: ArgsUpdateSubmission
-) => {
-  try {
-    if (!args) throw new Error('Invalid args')
-    return await updateSubmission({ ...args, status: 'needMoreWork' })
   } catch (error) {
     throw new Error(error)
   }
