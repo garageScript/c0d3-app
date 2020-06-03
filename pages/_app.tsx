@@ -26,8 +26,8 @@ interface IProps extends AppProps {
 function MyApp({ Component, pageProps, err, apollo }: IProps) {
   const session = useSession()
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      posthog.init('Ofv0LFRVyklwR7a_fjKKbgemFuKsT9nOhG277svLZKM', {
+    if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
+      posthog.init(process.env.POSTHOG_API_KEY, {
         api_host: 'https://app.posthog.com'
       })
     }
