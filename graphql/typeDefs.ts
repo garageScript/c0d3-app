@@ -39,6 +39,8 @@ export default gql`
       cliToken: String!
       diff: String!
     ): Submission
+    acceptSubmission(id: String!, comment: String!): Submission
+    rejectSubmission(id: String!, comment: String!): Submission
   }
 
   type AuthResponse {

@@ -10,6 +10,11 @@ const { Mutation } = resolvers
 const { Lesson, Submission, User, Challenge } = db
 
 describe('Submissions', () => {
+  jest.unmock('../updateSubmission')
+
+  const controller = require.requireActual('../updateSubmission')
+  controller.updateSubmission = jest.fn()
+
   const args = {
     challengeId: 'fakeChallengeId',
     cliToken:
@@ -41,5 +46,53 @@ describe('Submissions', () => {
     await expect(Mutation.createSubmission(null, null)).rejects.toThrow(
       'Invalid args'
     )
+  })
+
+  test('acceptSubmission should call updateSubmission', async () => {
+    const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
+    const ctx = { req: { session: { userId: 2 } } }
+    await resolvers.Mutation.acceptSubmission(null, submission, ctx)
+    expect(controller.updateSubmission).toHaveBeenCalledWith({
+      ...submission,
+      reviewerId: 2,
+      status: 'passed'
+    })
+  })
+
+  test('acceptSubmission should throw error with no args', async () => {
+    await await expect(resolvers.Mutation.acceptSubmission()).rejects.toThrow(
+      'Invalid args'
+    )
+  })
+
+  test('acceptSubmission should throw error with no user', async () => {
+    const submission = { id: 1, comment: 'fake comment' }
+    await await expect(
+      resolvers.Mutation.acceptSubmission(null, submission)
+    ).rejects.toThrow('Invalid user')
+  })
+
+  test('rejectSubmission should call updateSubmission', async () => {
+    const submission = { id: 1, comment: 'fake comment' }
+    const ctx = { req: { session: { userId: 2 } } }
+    await resolvers.Mutation.rejectSubmission(null, submission, ctx)
+    expect(controller.updateSubmission).toHaveBeenCalledWith({
+      ...submission,
+      reviewerId: 2,
+      status: 'needMoreWork'
+    })
+  })
+
+  test('rejectSubmission should throw error with no args', async () => {
+    await await expect(resolvers.Mutation.rejectSubmission()).rejects.toThrow(
+      'Invalid args'
+    )
+  })
+
+  test('rejectSubmission should throw error with no user', async () => {
+    const submission = { id: 1, comment: 'fake comment' }
+    await await expect(
+      resolvers.Mutation.rejectSubmission(null, submission)
+    ).rejects.toThrow('Invalid user')
   })
 })

@@ -2,6 +2,8 @@ import db from '../dbload'
 import { Context } from '../../@types/helpers'
 import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
+import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
+import _ from 'lodash'
 
 const { User, Submission, Challenge, Lesson } = db
 
@@ -45,7 +47,37 @@ export const createSubmission = async (
   }
 }
 
-export const submissions = (
+export const acceptSubmission = async (
+  _parent: void,
+  args: ArgsUpdateSubmission,
+  ctx: Context
+) => {
+  try {
+    const reviewerId = _.get(ctx, 'req.session.userId', false)
+    if (!args) throw new Error('Invalid args')
+    if (!reviewerId) throw new Error('Invalid user')
+    return updateSubmission({ ...args, reviewerId, status: 'passed' })
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const rejectSubmission = async (
+  _parent: void,
+  args: ArgsUpdateSubmission,
+  ctx: Context
+) => {
+  try {
+    const reviewerId = _.get(ctx, 'req.session.userId', false)
+    if (!args) throw new Error('Invalid args')
+    if (!reviewerId) throw new Error('Invalid user')
+    return updateSubmission({ ...args, reviewerId, status: 'needMoreWork' })
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+export const submissions = async (
   _parent: void,
   arg: ArgsGetSubmissions,
   _ctx: Context
