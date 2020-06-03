@@ -107,7 +107,7 @@
       }
     },
     "coveragePathIgnorePatterns": [
-      "stories",
+      "stories"
     ]
   },
   "husky": {
