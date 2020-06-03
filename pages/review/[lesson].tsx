@@ -10,22 +10,8 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { GET_APP, GET_SUBMISSIONS } from '../../graphql/queries'
 import { Lesson } from '../../@types/lesson'
+import { SubmissionData } from '../../@types/submission'
 import _ from 'lodash'
-
-type SubmissionData = {
-  id: string
-  challengeId: string
-  comment: string
-  diff: string
-  user: {
-    id: string
-    username: string
-  }
-  reviewerId: string
-  status: string
-  updatedAt: string
-  createdAt: string
-}
 
 type SubmissionDisplayProps = {
   submissions: SubmissionData[]

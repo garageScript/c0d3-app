@@ -70,7 +70,6 @@ export const GET_SUBMISSIONS = gql`
         id
         username
       }
-      reviewerId
       createdAt
       updatedAt
     }
@@ -110,7 +109,10 @@ export const GET_APP = gql`
         order
         challengeId
         lessonId
-        reviewerId
+        reviewer {
+          id
+          username
+        }
         createdAt
         updatedAt
       }

@@ -24,6 +24,7 @@ export const createSubmission = async (
     if (!args) throw new Error('Invalid args')
     const { challengeId, cliToken, diff, lessonId } = args
     //to revert once CLI is fixed
+    //regex removes the colors from the submission diff data
     const fixedDiff = diff.replace(/(.?\[\d*m)/g, '')
     const { id } = decode(cliToken)
     const { email, id: userId } = await User.findByPk(id)
@@ -48,50 +49,20 @@ export const createSubmission = async (
 export const submissions = async (
   _parent: void,
   arg: ArgsGetSubmissions,
-  _ctx: Context
+  ctx: Context
 ) => {
   const { lessonId } = arg
-  const subs = await Submission.findAll({
-    where: {
-      status: 'open',
-      lessonId
-    }
-  })
-  if (subs.length === 0) {
-    return subs
+  const { req } = ctx
+  try {
+    return await Submission.findAll({
+      where: {
+        status: 'open',
+        lessonId
+      }
+    })
+  } catch (err) {
+    req.error(err)
+    console.log(err)
+    throw new Error(err)
   }
-  const userIds = subs.reduce((acc: Set<number>, sub: any) => {
-    acc.add(sub.userId)
-    return acc
-  }, new Set())
-  const users = await Promise.all(
-    Array.from(userIds).map((uniqueUser: any) =>
-      User.findOne({ where: { id: uniqueUser } })
-    )
-  )
-  const usersMap = users.reduce((acc: any, user: any) => {
-    acc[user.id] = user
-    return acc
-  }, {})
-  return subs.map((submission: any) => {
-    const {
-      id,
-      diff,
-      comment,
-      challengeId,
-      reviewerId,
-      createdAt,
-      userId
-    } = submission
-    return {
-      id,
-      userId,
-      diff,
-      comment,
-      challengeId,
-      reviewerId,
-      createdAt,
-      user: usersMap[userId]
-    }
-  })
 }

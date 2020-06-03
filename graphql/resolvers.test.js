@@ -41,8 +41,7 @@ describe('GraphQL resolvers', () => {
         'diff --git a/js1/12.js b/js1/12.js↵index e7dc26e..d0cdf56 100644↵--- a/js1/12.js↵+++ b/js1/12.js↵@@ -9,8 +9,17 @@↵  * @returns null↵  */↵ ↵-const solution = (a, fun) => {↵+const solution = (a, fun,i =0) => {↵+↵+  if(i < 2){↵+    setTimeout(()=> {↵+      b = fun()↵+      return solution(b,fun, i +1)↵+    }, a)↵+    ↵ }↵+   ↵+  }↵ ↵ module.exports = {↵   solution↵',
       comment: '',
       createdAt: '1586386486986',
-      challengeId: '200',
-      reviewerId: '5'
+      challengeId: '200'
     }
     const user = { id: 1, username: 'Michael' }
     Submission.findAll = jest.fn().mockReturnValue([submissionResults])

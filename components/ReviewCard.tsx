@@ -4,21 +4,7 @@ import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
 import Prism from 'prismjs'
 import _ from 'lodash'
-
-type SubmissionData = {
-  id: string
-  challengeId: string
-  comment: string
-  diff: string
-  user: {
-    id: String
-    username: String
-  }
-  reviewerId: string
-  status: string
-  updatedAt: string
-  createdAt: string
-}
+import { SubmissionData } from '../@types/submission'
 
 type ReviewCardProps = {
   submissionData: SubmissionData
