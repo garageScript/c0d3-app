@@ -2427,7 +2427,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
-        href="/curriculum/undefined"
+        href="/curriculum/5"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -2486,7 +2486,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
-        href="/curriculum/undefined"
+        href="/curriculum/5"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -2494,7 +2494,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
-        href="/review/undefined"
+        href="/review/5"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
