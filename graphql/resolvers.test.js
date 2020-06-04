@@ -4,7 +4,7 @@ import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
 
 const { Query } = resolvers
-const { Lesson, User, Submission, UserLesson } = db
+const { User, Submission, UserLesson } = db
 
 describe('GraphQL resolvers', () => {
   const { Lesson, Submission } = db
