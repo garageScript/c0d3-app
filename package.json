@@ -108,7 +108,7 @@
       }
     },
     "coveragePathIgnorePatterns": [
-      "stories"
+      "stories",
       "testUtil"
     ]
   },

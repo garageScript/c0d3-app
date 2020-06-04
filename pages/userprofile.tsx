@@ -6,6 +6,7 @@ import ProfileLessons from '../components/ProfileLessons'
 import ProfileSubmissions from '../components/ProfileSubmissions'
 import withQueryLoader from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
+import { query } from 'winston'
 
 type SessionUser = {
   username: string
@@ -33,6 +34,7 @@ type Submission = {
 }
 
 const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
+    console.log('queryData:', queryData)
   const userInfo = {
     username: queryData.session.user.username,
     firstName: queryData.session.user.name.split(' ')[0],
