@@ -155,8 +155,8 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     const oldValue: String[] = []
     const newValue: String[] = []
 
-    hunks.forEach((hunk) => {
-      hunk.changes.forEach((change) => {
+    hunks.forEach(hunk => {
+      hunk.changes.forEach(change => {
         if (change.isDelete) oldValue.push(change.content)
         else if (change.isInsert) newValue.push(change.content)
         else {
@@ -228,9 +228,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   )
 }
 
-export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = (
-  props
-) => {
+export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = props => {
   return (
     <div className="card text-center shadow-sm">
       <div className="card-body">
@@ -322,7 +320,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       return challenge.status !== 'passed'
     }) || finalChallenge
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
-    (challenge) => {
+    challenge => {
       return (
         <ChallengeTitleCard
           key={challenge.id}
