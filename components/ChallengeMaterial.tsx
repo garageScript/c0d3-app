@@ -358,7 +358,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
           <ChallengesCompletedCard
             imageSrc="icon-challenge-complete.jpg"
             chatUrl={chatUrl}
-            reviewUrl={`https://c0d3.com/teacher/${lessonId}`}
+            reviewUrl={`https://c0d3.com/review/${lessonId}`}
           />
         )}
       </div>
