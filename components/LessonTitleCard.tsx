@@ -6,6 +6,8 @@ type Props = {
   lessonCoverUrl: string
   lessonUrl: string
   lessonTitle: string
+  lessonId: string
+  isPassed: boolean
 }
 
 const LessonTitleCard: React.FC<Props> = props => {
@@ -35,9 +37,20 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             LESSON
           </NavLink>
-          <NavLink path="#" className="btn border-right rounded-0 px-4 py-3">
+          <NavLink
+            path={`/curriculum/${props.lessonId}`}
+            className="btn border-right rounded-0 px-4 py-3"
+          >
             CHALLENGES
           </NavLink>
+          {props.isPassed && (
+            <NavLink
+              path={`/review/${props.lessonId}`}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              REVIEW
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

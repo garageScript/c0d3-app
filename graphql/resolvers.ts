@@ -10,6 +10,8 @@ import db from '../helpers/dbload'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
 import {
   createSubmission,
+  acceptSubmission,
+  rejectSubmission,
   submissions
 } from '../helpers/controllers/submissionController'
 import { Context } from '../@types/helpers'
@@ -69,6 +71,8 @@ export default {
   Mutation: {
     changePw,
     createSubmission,
+    acceptSubmission,
+    rejectSubmission,
     login,
     logout,
     signup,

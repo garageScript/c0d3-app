@@ -61,6 +61,36 @@ export const SIGNUP_USER = gql`
 export const GET_SUBMISSIONS = gql`
   query submissions($lessonId: String!) {
     submissions(lessonId: $lessonId) {
+      id
+      status
+      diff
+      comment
+      challengeId
+      user {
+        id
+        username
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`
+
+export const ACCEPT_SUBMISSION = gql`
+  mutation acceptSubmission($submissionId: String!, $comment: String!) {
+    acceptSubmission(id: $submissionId, comment: $comment) {
+      id
+      comment
+      status
+    }
+  }
+`
+
+export const REJECT_SUBMISSION = gql`
+  mutation rejectSubmission($submissionId: String!, $comment: String!) {
+    rejectSubmission(id: $submissionId, comment: $comment) {
+      id
+      comment
       status
     }
   }

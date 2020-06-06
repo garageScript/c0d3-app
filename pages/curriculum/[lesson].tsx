@@ -24,6 +24,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   const currentLessonStatus: LessonStatus = lessonStatus.find(
     lessonStatus => lessonStatus.lessonId === currentlessonId
   ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
+  const isPassed = !!currentLessonStatus.isTeaching
   return (
     <div>
       <Layout>
@@ -34,6 +35,8 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
                 lessonUrl={currentLesson.docUrl}
                 lessonTitle={currentLesson.title}
+                lessonId={currentlessonId}
+                isPassed={isPassed}
               />
               {alerts && <AlertsDisplay alerts={alerts} />}
               <ChallengeMaterial

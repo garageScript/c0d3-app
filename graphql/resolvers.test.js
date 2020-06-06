@@ -4,7 +4,7 @@ import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
 
 const { Query } = resolvers
-const { Lesson, User, Submission, UserLesson } = db
+const { User, Submission, UserLesson } = db
 
 describe('GraphQL resolvers', () => {
   const { Lesson, Submission } = db
@@ -26,10 +26,29 @@ describe('GraphQL resolvers', () => {
     Lesson.findAll = jest.fn().mockReturnValue([])
     expect(Query.lessons()).toEqual([])
   })
-
-  test('should return submissions with a given lessonId', async () => {
+  test('should return no submissions if there are none open', async () => {
     Submission.findAll = jest.fn().mockReturnValue([])
-    expect(resolvers.Query.submissions(null, { lessonId: '2' })).toEqual([])
+    const result = await resolvers.Query.submissions(null, { lessonId: '2' })
+    expect(result).toEqual([])
+  })
+  test('should return submissions with a given lessonId', async () => {
+    const user = { id: 1, username: 'Michael' }
+    const submissionResults = {
+      id: 5,
+      user,
+      diff:
+        'diff --git a/js1/12.js b/js1/12.js↵index e7dc26e..d0cdf56 100644↵--- a/js1/12.js↵+++ b/js1/12.js↵@@ -9,8 +9,17 @@↵  * @returns null↵  */↵ ↵-const solution = (a, fun) => {↵+const solution = (a, fun,i =0) => {↵+↵+  if(i < 2){↵+    setTimeout(()=> {↵+      b = fun()↵+      return solution(b,fun, i +1)↵+    }, a)↵+    ↵ }↵+   ↵+  }↵ ↵ module.exports = {↵   solution↵',
+      comment: '',
+      createdAt: '1586386486986',
+      challengeId: '200'
+    }
+    Submission.findAll = jest.fn().mockResolvedValue([submissionResults])
+    const result = await resolvers.Query.submissions(
+      null,
+      { lessonId: '2' },
+      { req: { error: jest.fn() } }
+    )
+    expect(result).toEqual([submissionResults])
   })
 })
 

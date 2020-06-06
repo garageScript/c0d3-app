@@ -11,15 +11,23 @@ import useSession from '../helpers/useSession'
 import SessionContext from '../helpers/contexts/session'
 import '../scss/index.scss'
 
+import * as Sentry from '@sentry/browser'
+const SENTRY_DSN = process.env.SENTRY_DSN
+
+Sentry.init({
+  dsn: SENTRY_DSN
+})
+
 interface IProps extends AppProps {
+  err: any
   apollo: ApolloClient<NormalizedCacheObject>
 }
 
-function MyApp({ Component, pageProps, apollo }: IProps) {
+function MyApp({ Component, pageProps, err, apollo }: IProps) {
   const session = useSession()
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      posthog.init('Ofv0LFRVyklwR7a_fjKKbgemFuKsT9nOhG277svLZKM', {
+    if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
+      posthog.init(process.env.POSTHOG_API_KEY, {
         api_host: 'https://app.posthog.com'
       })
     }
@@ -31,7 +39,7 @@ function MyApp({ Component, pageProps, apollo }: IProps) {
           <title>C0D3.com</title>
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
-        <Component {...pageProps} />
+        <Component {...pageProps} err={err} />
       </SessionContext.Provider>
     </ApolloProvider>
   )
