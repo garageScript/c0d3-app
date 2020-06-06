@@ -58,6 +58,12 @@ exports[`AppNav Component Should match snapshot when loggedIn 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
@@ -131,6 +137,12 @@ exports[`AppNav Component Should match snapshot with default params 1`] = `
               target="_blank"
             >
               Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
             </a>
           </div>
         </div>

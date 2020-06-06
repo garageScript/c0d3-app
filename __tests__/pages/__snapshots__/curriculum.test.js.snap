@@ -56,6 +56,12 @@ exports[`Curriculum Page Should render data with lesson state completed 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
@@ -389,6 +395,12 @@ exports[`Curriculum Page Should render data with lesson state inProgress 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>
@@ -721,6 +733,12 @@ exports[`Curriculum Page Should render first lesson when lessonStatus is empty 1
               target="_blank"
             >
               Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
             </a>
           </div>
         </div>

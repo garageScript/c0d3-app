@@ -57,6 +57,12 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
               >
                 Help
               </a>
+              <a
+                class="nav-item nav-link"
+                href="/contributors"
+              >
+                Contributors
+              </a>
             </div>
           </div>
         </div>
