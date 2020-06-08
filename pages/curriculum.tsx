@@ -64,7 +64,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
           challengeCount={lesson.challenges.length}
           description={lesson.description}
           currentState={lessonState}
-          reviewUrl={`https://wwww.c0d3.com/review/${lesson.id}`}
+          reviewUrl={`https://www.c0d3.com/review/${lesson.id}`}
           challengesUrl={`https://www.c0d3.com/student/${lesson.id}`}
           docUrl={lesson.docUrl}
         />
