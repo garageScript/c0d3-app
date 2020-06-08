@@ -42,7 +42,7 @@ export const ResetPassword: React.FC = () => {
   return (
     <Card title="Reset your password">
       <p className="mb-5">
-        Type in your email or username below and we`&lsquo`ll send you an email
+        Type in your email or username below and we&rsquo;ll send you an email
         with instructions on how to reset your password
       </p>
       <Formik
