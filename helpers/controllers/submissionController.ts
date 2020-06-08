@@ -39,7 +39,7 @@ export const createSubmission = async (
     ])
     const lessonName = lesson.chatUrl.split('/').pop()
     const username = await getUserByEmail(email)
-    const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://c0d3.com/teacher/${lesson.id}>) to review the code.`
+    const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${lesson.id}>) to review the code.`
     publicChannelMessage(lessonName, message)
     return submission
   } catch (error) {
