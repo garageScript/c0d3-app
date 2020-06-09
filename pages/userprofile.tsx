@@ -7,6 +7,7 @@ import ProfileSubmissions from '../components/ProfileSubmissions'
 import withQueryLoader from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
 import { query } from 'winston'
+import { submissions } from '../helpers/controllers/submissionController'
 
 type SessionUser = {
   username: string
@@ -44,7 +45,7 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
   const lessonInfo = queryData.lessons.map(lesson => {
     const lessonProgress =
       queryData.session.submissions.filter(
-        r => r.status === 'approved' && r.lessonId === lesson.id
+        r => r.status === 'passed' && r.lessonId === lesson.id
       ).length / lesson.challenges.length
     const progress = Math.floor(lessonProgress * 100)
     const order = lesson.order
@@ -54,12 +55,38 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
     }
   })
 
+ const lessons = queryData.lessons.map((lesson)=>{
+     const order = lesson.order
+     const title = lesson.title
+     const challenges = lesson.challenges
+     console.log('challenges:', challenges)
+     const challengesStatus = challenges.map((eachLesson, eachChallenge)=>{
+           return {
+            challengeNumber: eachChallenge,
+            challengeStatus: eachLesson.status
+           }
+     })
+     console.log('challengesStatus:', challengesStatus)
+     console.log('challenges:',order, title, challenges)
+     return {
+         order,
+         title,
+         challenges: challengesStatus
+     }
+ })
+
   return (
     <Layout>
       <>
-        <ProfileImageInfo user={userInfo} />
-        <ProfileLessons lessons={lessonInfo} />
-        <ProfileSubmissions lessons={queryData.lessons} />
+        <div className='row'>
+         <div className='col-4'>
+            <ProfileImageInfo user={userInfo} />
+         </div>
+         <div className='col-8'>
+           <ProfileLessons lessons={lessonInfo} />
+           <ProfileSubmissions lessons={lessons} />
+        </div>
+        </div>
       </>
     </Layout>
   )
