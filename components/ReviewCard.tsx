@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-import React from 'react'
-=======
 import React, { useState } from 'react'
->>>>>>> ecf0f8857399c8e60d676e74696426c8cd30598a
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
 import Prism from 'prismjs'
-<<<<<<< HEAD
-=======
 import { ACCEPT_SUBMISSION, REJECT_SUBMISSION } from '../graphql/queries'
 import { useMutation } from '@apollo/react-hooks'
->>>>>>> ecf0f8857399c8e60d676e74696426c8cd30598a
 import _ from 'lodash'
 import { SubmissionData } from '../@types/submission'
 
@@ -22,18 +15,13 @@ type ReviewCardProps = {
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const diff = _.get(submissionData, 'diff', '')
   const comment = _.get(submissionData, 'comment', '')
-<<<<<<< HEAD
-=======
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
->>>>>>> ecf0f8857399c8e60d676e74696426c8cd30598a
   let files: File[] = []
 
   if (diff) files = gitDiffParser.parse(diff)
 
-<<<<<<< HEAD
-=======
   const reviewSubmission = (review: any) => async () => {
     await review({
       variables: {
@@ -43,7 +31,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     })
   }
 
->>>>>>> ecf0f8857399c8e60d676e74696426c8cd30598a
   const renderFile = ({ hunks, newPath }: File) => {
     const oldValue: String[] = []
     const newValue: String[] = []
@@ -95,8 +82,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
           <div className="card-footer bg-white">
             {comment && <Markdown>{comment}</Markdown>}
-<<<<<<< HEAD
-=======
             <textarea
               value={commentValue}
               onChange={e => setCommentValue(e.target.value)}
@@ -116,7 +101,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             >
               Reject
             </button>
->>>>>>> ecf0f8857399c8e60d676e74696426c8cd30598a
           </div>
         </div>
       )}

@@ -20,11 +20,7 @@ type SubmissionDisplayProps = {
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
-<<<<<<< HEAD
-  <div className="submissions-container">
-=======
   <div className="submissions-container container p-0">
->>>>>>> ecf0f8857399c8e60d676e74696426c8cd30598a
     {submissions.map((submission: SubmissionData) => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}

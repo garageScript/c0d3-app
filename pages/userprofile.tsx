@@ -6,8 +6,6 @@ import ProfileLessons from '../components/ProfileLessons'
 import ProfileSubmissions from '../components/ProfileSubmissions'
 import withQueryLoader from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
-import { query } from 'winston'
-import { submissions } from '../helpers/controllers/submissionController'
 
 type SessionUser = {
   username: string
@@ -32,10 +30,10 @@ type Submission = {
   diff: string
   status: string
   lessonId: number
+  challengeId: number
 }
 
 const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
-    console.log('queryData:', queryData)
   const userInfo = {
     username: queryData.session.user.username,
     firstName: queryData.session.user.name.split(' ')[0],
@@ -55,37 +53,37 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
     }
   })
 
- const lessons = queryData.lessons.map((lesson)=>{
-     const order = lesson.order
-     const title = lesson.title
-     const challenges = lesson.challenges
-     console.log('challenges:', challenges)
-     const challengesStatus = challenges.map((eachLesson, eachChallenge)=>{
-           return {
-            challengeNumber: eachChallenge,
-            challengeStatus: eachLesson.status
-           }
-     })
-     console.log('challengesStatus:', challengesStatus)
-     console.log('challenges:',order, title, challenges)
-     return {
-         order,
-         title,
-         challenges: challengesStatus
-     }
- })
+  const lessons = queryData.lessons.map(lesson => {
+    console.log('lesson:', lesson)
+    const order = lesson.order
+    const title = lesson.title
+    const lessonChallenges = queryData.session.submissions.filter(
+      r => r.lessonId === lesson.id
+    )
+    const status = lessonChallenges.map((eachChallenge, challengeOrder) => {
+      return {
+        challengeNumber: challengeOrder,
+        challengeStatus: eachChallenge.status
+      }
+    })
+    return {
+      order,
+      title,
+      challenges: status
+    }
+  })
 
   return (
     <Layout>
       <>
-        <div className='row'>
-         <div className='col-4'>
+        <div className="row">
+          <div className="col-4">
             <ProfileImageInfo user={userInfo} />
-         </div>
-         <div className='col-8'>
-           <ProfileLessons lessons={lessonInfo} />
-           <ProfileSubmissions lessons={lessons} />
-        </div>
+          </div>
+          <div className="col-8">
+            <ProfileLessons lessons={lessonInfo} />
+            <ProfileSubmissions lessons={lessons} />
+          </div>
         </div>
       </>
     </Layout>
