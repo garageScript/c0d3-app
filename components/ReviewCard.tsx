@@ -32,17 +32,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   }
 
   const renderFile = ({ hunks, newPath }: File) => {
-    const oldValue: String[] = []
     const newValue: String[] = []
 
     hunks.forEach(hunk => {
       hunk.changes.forEach(change => {
-        if (change.isDelete) oldValue.push(change.content)
-        else if (change.isInsert) newValue.push(change.content)
-        else {
-          oldValue.push(change.content)
-          newValue.push(change.content)
-        }
+        if (!change.isDelete) newValue.push(change.content)
       })
     })
 
@@ -59,7 +53,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     return (
       <ReactDiffViewer
         key={_.uniqueId()}
-        oldValue={oldValue.join('\n')}
         newValue={newValue.join('\n')}
         renderContent={syntaxHighlight}
         splitView={false}
