@@ -56,6 +56,12 @@ exports[`Index Page Should render landing page if user is not logged in 1`] = `
             >
               Help
             </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
           </div>
         </div>
       </div>

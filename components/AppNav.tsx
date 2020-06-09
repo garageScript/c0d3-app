@@ -49,6 +49,9 @@ const AuthLink = () => (
     >
       Help
     </NavLink>
+    <NavLink path="/contributors" className="nav-item nav-link">
+      Contributors
+    </NavLink>
   </div>
 )
 
@@ -108,6 +111,9 @@ const UnAuthLink = () => (
       external
     >
       Help
+    </NavLink>
+    <NavLink path="/contributors" className="nav-item nav-link">
+      Contributors
     </NavLink>
   </div>
 )
