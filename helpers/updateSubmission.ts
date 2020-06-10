@@ -1,6 +1,7 @@
 import db from './dbload'
+import { getUserByEmail, publicChannelMessage } from './mattermost'
 
-const { Submission, Challenge, UserLesson } = db
+const { Submission, Challenge, User, UserLesson, Lesson } = db
 
 export type ArgsUpdateSubmission = {
   id: number
@@ -36,12 +37,36 @@ export const updateSubmission = async (
     )
 
     if (challengeCount === passedSubmissions) {
-      const lesson = await UserLesson.findOne({
+      const userLesson = await UserLesson.findOne({
         where: { lessonId: submission.lessonId }
       })
-      lesson.set('isPassed', true)
-      lesson.set('isTeaching', true)
-      await lesson.save()
+
+      if (!userLesson.isPassed) {
+        const { email } = await User.findByPk(submission.userId)
+        const { order, title, chatUrl } = await Lesson.findByPk(
+          userLesson.lessonId
+        )
+        const chatUsername = await getUserByEmail(email)
+        const nextLesson = await Lesson.findOne({
+          where: { order: order + 1 }
+        })
+
+        const lessonChannel = chatUrl.split('/').pop()
+        const nextLessonChannel = nextLesson.chatUrl.split('/').pop()
+
+        await publicChannelMessage(
+          lessonChannel,
+          `Congratulations to @${chatUsername} for passing and completing ${title}! @${chatUsername} is now a guardian angel for the students in this channel.`
+        )
+        await publicChannelMessage(
+          nextLessonChannel,
+          `We have a new student joining us! @${chatUsername} just completed ${title}.`
+        )
+      }
+
+      userLesson.set('isPassed', true)
+      userLesson.set('isTeaching', true)
+      await userLesson.save()
     }
 
     return submission
