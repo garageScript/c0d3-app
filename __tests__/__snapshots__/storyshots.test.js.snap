@@ -4683,3 +4683,131 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
   </div>
 </nav>
 `;
+
+exports[`Storyshots Theme/Text Basic 1`] = `
+<div
+  style={
+    Object {
+      "color": "#292929",
+      "fontSize": "1rem",
+    }
+  }
+>
+  Basic Text
+</div>
+`;
+
+exports[`Storyshots Theme/Text Bold Text 1`] = `
+<div
+  style={
+    Object {
+      "color": "#292929",
+      "fontSize": "1rem",
+    }
+  }
+>
+  <strong>
+    Bold Text
+  </strong>
+</div>
+`;
+
+exports[`Storyshots Theme/Text Colored Text 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "color": "#fff",
+        "fontSize": "1rem",
+      }
+    }
+  >
+    Colored Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#8e8e8e",
+        "fontSize": "1rem",
+      }
+    }
+  >
+    Colored Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#5d656e",
+        "fontSize": "1rem",
+      }
+    }
+  >
+    Colored Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#292929",
+        "fontSize": "1rem",
+      }
+    }
+  >
+    Colored Text
+  </div>,
+]
+`;
+
+exports[`Storyshots Theme/Text Sized Text 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "color": "#292929",
+        "fontSize": "0.75rem",
+      }
+    }
+  >
+    XSmall Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#292929",
+        "fontSize": "0.85rem",
+      }
+    }
+  >
+    Small Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#292929",
+        "fontSize": "1rem",
+      }
+    }
+  >
+    Medium Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#292929",
+        "fontSize": "1.25rem",
+      }
+    }
+  >
+    Large Text
+  </div>,
+  <div
+    style={
+      Object {
+        "color": "#292929",
+        "fontSize": "1.5rem",
+      }
+    }
+  >
+    XLarge Text
+  </div>,
+]
+`;
