@@ -41,10 +41,22 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
   }
 
   const lessonInfo = queryData.lessons.map(lesson => {
-    const lessonProgress =
+    /*const lessonProgress =
       queryData.session.submissions.filter(
         r => r.status === 'passed' && r.lessonId === lesson.id
-      ).length / lesson.challenges.length
+      ).length / lesson.challenges.length */
+    const challengesInLesson = lesson.challenges
+    console.log('Challenges in lesson:', challengesInLesson)
+    const submissionsInLesson = queryData.session.submissions.filter(
+      eachSubmission =>
+        eachSubmission.status === 'passed' &&
+        eachSubmission.lessonId === lesson.id
+    )
+    console.log('Submission in lesson:', submissionsInLesson)
+    const updateSubmissions = submissionsInLesson.filter(eachSubmission => {
+      return eachSubmission.challengeId
+    })
+    const lessonProgress = updateSubmissions.length / challengesInLesson.length
     const progress = Math.floor(lessonProgress * 100)
     const order = lesson.order
     return {
@@ -57,6 +69,7 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
     console.log('lesson:', lesson)
     const order = lesson.order
     const title = lesson.title
+
     const lessonChallenges = queryData.session.submissions.filter(
       r => r.lessonId === lesson.id
     )
