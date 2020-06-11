@@ -126,7 +126,6 @@ const LessonCard: React.FC<Props> = props => {
           <NavLink
             path={props.challengesUrl}
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            external
           >
             View Challenges
           </NavLink>
