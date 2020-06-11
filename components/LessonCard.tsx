@@ -11,10 +11,6 @@ import NavLink from './NavLink'
 import '../scss/lessonCard.scss'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
-  if (props.shouldNotGetCount) {
-    return null
-  }
-
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: `${props.lessonId}` }
   })
@@ -26,7 +22,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
 
   if (!data) {
-    return null
+    return <span> </span>
   }
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
@@ -52,10 +48,7 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
       className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
     >
       Review
-      <ReviewCount
-        shouldNotGetCount={props.shouldNotGetCount}
-        lessonId={props.lessonId}
-      />
+      <ReviewCount lessonId={props.lessonId} />
       Submissions
     </a>
   )
@@ -108,7 +101,6 @@ const LessonCard: React.FC<Props> = props => {
           <ReviewButton
             isCompleted={props.currentState === 'completed'}
             reviewUrl={props.reviewUrl}
-            shouldNotGetCount={props.shouldNotGetCount}
             lessonId={props.lessonId}
           />
         </div>

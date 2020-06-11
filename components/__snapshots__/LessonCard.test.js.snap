@@ -162,6 +162,9 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
           Review
+          <span>
+             
+          </span>
           Submissions
         </a>
       </div>
