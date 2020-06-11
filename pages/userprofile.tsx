@@ -41,18 +41,12 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
   }
 
   const lessonInfo = queryData.lessons.map(lesson => {
-    /*const lessonProgress =
-      queryData.session.submissions.filter(
-        r => r.status === 'passed' && r.lessonId === lesson.id
-      ).length / lesson.challenges.length */
     const challengesInLesson = lesson.challenges
-    console.log('Challenges in lesson:', challengesInLesson)
     const submissionsInLesson = queryData.session.submissions.filter(
       eachSubmission =>
         eachSubmission.status === 'passed' &&
         eachSubmission.lessonId === lesson.id
     )
-    console.log('Submission in lesson:', submissionsInLesson)
     const updateSubmissions = submissionsInLesson.filter(eachSubmission => {
       return eachSubmission.challengeId
     })
@@ -66,19 +60,32 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
   })
 
   const lessons = queryData.lessons.map(lesson => {
-    console.log('lesson:', lesson)
     const order = lesson.order
     const title = lesson.title
-
-    const lessonChallenges = queryData.session.submissions.filter(
-      r => r.lessonId === lesson.id
-    )
-    const status = lessonChallenges.map((eachChallenge, challengeOrder) => {
+    const challengesInLesson = lesson.challenges
+    console.log('Lesson challenges:', challengesInLesson)
+    const challengesStatus = challengesInLesson.map(eachChallenge => {
+      return queryData.session.submissions.find(submission => {
+        return eachChallenge.id === submission.challengeId
+      })
+    })
+    /*const submissionsInLesson = queryData.session.submissions.filter(
+        eachSubmission =>
+          eachSubmission.lessonId === lesson.id
+    )*/
+    const status = challengesStatus.map((eachSubmission, challengeOrder) => {
+      if (!eachSubmission) {
+        return {
+          challengeNumber: challengeOrder,
+          challengeStatus: 'open'
+        }
+      }
       return {
         challengeNumber: challengeOrder,
-        challengeStatus: eachChallenge.status
+        challengeStatus: eachSubmission.status
       }
     })
+
     return {
       order,
       title,
