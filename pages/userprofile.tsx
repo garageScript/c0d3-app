@@ -33,58 +33,48 @@ type Submission = {
   challengeId: number
 }
 
-const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
+const UserProfile: React.FC<AppQuery> = ({
+  queryData: { lessons, session }
+}) => {
   const userInfo = {
-    username: queryData.session.user.username,
-    firstName: queryData.session.user.name.split(' ')[0],
-    lastName: queryData.session.user.name.split(' ')[1]
+    username: session.user.username,
+    firstName: session.user.name.split(' ')[0],
+    lastName: session.user.name.split(' ')[1]
   }
 
-  const lessonInfo = queryData.lessons.map(lesson => {
-    const challengesInLesson = lesson.challenges
-    const submissionsInLesson = queryData.session.submissions.filter(
-      eachSubmission =>
-        eachSubmission.status === 'passed' &&
-        eachSubmission.lessonId === lesson.id
+  const lessonInfo = lessons.map((lesson: any) => {
+    const { challenges, order } = lesson
+    const { submissions } = session
+    const passedLessonSubmissions = submissions.filter(
+      ({ status, lessonId }) => status === 'passed' && lessonId === lesson.id
     )
-    const updateSubmissions = submissionsInLesson.filter(eachSubmission => {
-      return eachSubmission.challengeId
-    })
-    const lessonProgress = updateSubmissions.length / challengesInLesson.length
+    const updateSubmissions = passedLessonSubmissions.filter(
+      ({ challengeId }) => challengeId
+    )
+    const lessonProgress = updateSubmissions.length / challenges.length
     const progress = Math.floor(lessonProgress * 100)
-    const order = lesson.order
-    return {
-      progress,
-      order
-    }
+
+    return { progress, order }
   })
 
-  const lessons = queryData.lessons.map(lesson => {
-    const order = lesson.order
-    const title = lesson.title
-    const challengesInLesson = lesson.challenges
-    const challengesStatus = challengesInLesson.map(eachChallenge => {
-      return queryData.session.submissions.find(submission => {
-        return eachChallenge.id === submission.challengeId
-      })
-    })
-    const status = challengesStatus.map((eachSubmission, challengeOrder) => {
-      if (!eachSubmission) {
-        return {
-          challengeNumber: challengeOrder,
-          challengeStatus: 'open'
-        }
-      }
+  const profileLessons = lessons.map(({ order, title, challenges }) => {
+    const { submissions } = session
+
+    const challengesStatus = challenges.map((c, order) => {
+      const challengeSubmission = submissions.find(s => c.id === s.challengeId)
+
       return {
-        challengeNumber: challengeOrder,
-        challengeStatus: eachSubmission.status
+        challengeNumber: order,
+        challengeStatus: challengeSubmission
+          ? challengeSubmission.status
+          : 'open'
       }
     })
 
     return {
       order,
       title,
-      challenges: status
+      challenges: challengesStatus
     }
   })
 
@@ -97,7 +87,7 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
           </div>
           <div className="col-8">
             <ProfileLessons lessons={lessonInfo} />
-            <ProfileSubmissions lessons={lessons} />
+            <ProfileSubmissions lessons={profileLessons} />
           </div>
         </div>
       </>
