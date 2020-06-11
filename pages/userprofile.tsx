@@ -63,16 +63,11 @@ const UserProfile: React.FC<AppQuery> = ({ queryData }) => {
     const order = lesson.order
     const title = lesson.title
     const challengesInLesson = lesson.challenges
-    console.log('Lesson challenges:', challengesInLesson)
     const challengesStatus = challengesInLesson.map(eachChallenge => {
       return queryData.session.submissions.find(submission => {
         return eachChallenge.id === submission.challengeId
       })
     })
-    /*const submissionsInLesson = queryData.session.submissions.filter(
-        eachSubmission =>
-          eachSubmission.lessonId === lesson.id
-    )*/
     const status = challengesStatus.map((eachSubmission, challengeOrder) => {
       if (!eachSubmission) {
         return {
