@@ -22,7 +22,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
 
   if (!data) {
-    return <span> </span>
+    return <span>0</span>
   }
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
@@ -35,7 +35,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
     0
   )
 
-  return <span> {pendingSubmissionsCount} </span>
+  return <span>{pendingSubmissionsCount}</span>
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
@@ -47,9 +47,7 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
       href={props.reviewUrl}
       className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
     >
-      Review
-      <ReviewCount lessonId={props.lessonId} />
-      Submissions
+      Review <ReviewCount lessonId={props.lessonId} /> Submissions
     </a>
   )
 }

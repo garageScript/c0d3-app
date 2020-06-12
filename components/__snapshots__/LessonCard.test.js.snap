@@ -74,12 +74,12 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         <a
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
-          Review
+          Review 
           <div
             class="spinner-border spinner-border-sm mx-1"
             role="status"
           />
-          Submissions
+           Submissions
         </a>
       </div>
     </div>
@@ -161,11 +161,11 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         <a
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
-          Review
+          Review 
           <span>
-             
+            0
           </span>
-          Submissions
+           Submissions
         </a>
       </div>
     </div>
@@ -247,13 +247,11 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         <a
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         >
-          Review
+          Review 
           <span>
-             
             2
-             
           </span>
-          Submissions
+           Submissions
         </a>
       </div>
     </div>

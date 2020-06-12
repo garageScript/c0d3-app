@@ -2310,9 +2310,231 @@ exports[`Storyshots Components/Layout Without Layout 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/LessonCard Dummy 1`] = `
-<div>
-  Dummy Lesson Card
+exports[`Storyshots Components/LessonCard Basic 1`] = `
+<div
+  className="card shadow-sm mt-3 d-block border-0"
+>
+  <div
+    className="d-flex p-2"
+  >
+    <img
+      alt="js-4-cover.svg"
+      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+    />
+    <div
+      className="w-100 pl-4"
+    >
+      <div>
+        <h4
+          className="lesson-card__title font-weight-bold mt-3"
+        >
+          <a
+            className=""
+            href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            HTML, CSS, JavaScript
+          </a>
+        </h4>
+        <div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-challenge"
+              className="mr-2"
+              src="/curriculumAssets/icons/icon-challenge.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              7
+               CHALLENGES
+            </span>
+          </div>
+        </div>
+        <p
+          className="lesson-card__description mt-2"
+        >
+          Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LessonCard With Completed 1`] = `
+<div
+  className="card shadow-sm mt-3 d-block border-0"
+>
+  <div
+    className="d-flex p-2"
+  >
+    <img
+      alt="js-4-cover.svg"
+      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+    />
+    <div
+      className="w-100 pl-4"
+    >
+      <span
+        className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+      >
+        <svg
+          fill="none"
+          height={24}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "height": "15px",
+            }
+          }
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+          />
+          <polyline
+            points="22 4 12 14.01 9 11.01"
+          />
+        </svg>
+        <span
+          className="mx-1"
+        >
+          COMPLETED
+        </span>
+      </span>
+      <div>
+        <h4
+          className="lesson-card__title font-weight-bold mt-3"
+        >
+          <a
+            className=""
+            href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            HTML, CSS, JavaScript
+          </a>
+        </h4>
+        <div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-challenge"
+              className="mr-2"
+              src="/curriculumAssets/icons/icon-challenge.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              7
+               CHALLENGES
+            </span>
+          </div>
+        </div>
+        <p
+          className="lesson-card__description mt-2"
+        >
+          Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+        </p>
+      </div>
+      <a
+        className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+        href="https://c0d3.com/teacher/5"
+      >
+        Review 
+        <div
+          className="spinner-border spinner-border-sm mx-1"
+          role="status"
+        />
+         Submissions
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LessonCard With In Progress 1`] = `
+<div
+  className="card shadow-sm mt-3 d-block lesson-card__container_inprogress border-primary"
+>
+  <div
+    className="d-flex p-2"
+  >
+    <img
+      alt="js-4-cover.svg"
+      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+    />
+    <div
+      className="w-100 pl-4"
+    >
+      <div>
+        <h4
+          className="lesson-card__title font-weight-bold mt-3"
+        >
+          <a
+            className=""
+            href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            HTML, CSS, JavaScript
+          </a>
+        </h4>
+        <div>
+          <div
+            className="d-inline-block mr-4"
+          >
+            <img
+              alt="icon-challenge"
+              className="mr-2"
+              src="/curriculumAssets/icons/icon-challenge.svg"
+            />
+            <span
+              className="lesson-card__icon-text"
+            >
+              7
+               CHALLENGES
+            </span>
+          </div>
+        </div>
+        <p
+          className="lesson-card__description mt-2"
+        >
+          Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="p-2 bg-primary"
+  >
+    <a
+      className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+      href="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Start Lesson
+    </a>
+    <a
+      className="lesson-card__button btn bg-primary my-1 text-white border border-white"
+      href="https://c0d3.com/student/24"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      View Challenges
+    </a>
+  </div>
 </div>
 `;
 
