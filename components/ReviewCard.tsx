@@ -14,6 +14,7 @@ import { SubmissionData } from '../@types/submission'
 
 import _ from 'lodash'
 
+import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 
 dayjs.extend(relativeTime)
@@ -104,19 +105,23 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               placeholder="Type something..."
               style={{ width: '100%', padding: '1rem' }}
             ></textarea>
-            <button
-              className="btn bg-success m-1 text-white"
+            <Button
+              m="1"
+              type="success"
+              color="white"
               onClick={reviewSubmission(accept)}
             >
               Accept
-            </button>
+            </Button>
 
-            <button
-              className="btn bg-danger m-1 text-white"
+            <Button
+              m="1"
+              type="danger"
+              color="white"
               onClick={reviewSubmission(reject)}
             >
               Reject
-            </button>
+            </Button>
           </div>
         </div>
       )}

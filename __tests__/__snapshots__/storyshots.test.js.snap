@@ -4684,6 +4684,137 @@ exports[`Storyshots Components/landingNav Landing Nav 1`] = `
 </nav>
 `;
 
+exports[`Storyshots Theme/Button Basic 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Basic Button
+</button>
+`;
+
+exports[`Storyshots Theme/Button Colored Button 1`] = `
+Array [
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Colored Button
+  </button>,
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#8e8e8e",
+      }
+    }
+  >
+    Colored Button
+  </button>,
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#5d656e",
+      }
+    }
+  >
+    Colored Button
+  </button>,
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Colored Button
+  </button>,
+]
+`;
+
+exports[`Storyshots Theme/Button Colored Type Button 1`] = `
+Array [
+  <button
+    className="btn bg-success"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    White Success Button
+  </button>,
+  <button
+    className="btn bg-danger"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#8e8e8e",
+      }
+    }
+  >
+    LightGrey Danger Button
+  </button>,
+]
+`;
+
+exports[`Storyshots Theme/Button Margined Button 1`] = `
+<button
+  className="btn m-1"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Margined Button
+</button>
+`;
+
+exports[`Storyshots Theme/Button Typed Button 1`] = `
+Array [
+  <button
+    className="btn bg-success"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Success Button
+  </button>,
+  <button
+    className="btn bg-danger"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Danger Button
+  </button>,
+]
+`;
+
 exports[`Storyshots Theme/Text Basic 1`] = `
 <div
   style={
