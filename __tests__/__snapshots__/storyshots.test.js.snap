@@ -2451,8 +2451,12 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         href="https://c0d3.com/teacher/5"
       >
-        Review
-        Submissions
+        Review 
+        <div
+          className="spinner-border spinner-border-sm mx-1"
+          role="status"
+        />
+         Submissions
       </a>
     </div>
   </div>

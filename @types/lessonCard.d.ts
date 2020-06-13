@@ -8,17 +8,14 @@ export type Props = {
   reviewUrl: string
   challengesUrl: string
   docUrl: string
-  shouldNotGetCount?: boolean
 }
 
 export type ReviewButtonProps = {
   isCompleted: boolean
   reviewUrl: string
   lessonId: number
-  shouldNotGetCount?: boolean
 }
 
 export type ReviewCountProps = {
-  shouldNotGetCount?: boolean
   lessonId: number
 }
