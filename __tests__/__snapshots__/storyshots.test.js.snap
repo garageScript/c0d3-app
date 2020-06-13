@@ -2529,8 +2529,8 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     <a
       className="lesson-card__button btn bg-primary my-1 text-white border border-white"
       href="https://c0d3.com/student/24"
-      rel="noopener noreferrer"
-      target="_blank"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       View Challenges
     </a>
