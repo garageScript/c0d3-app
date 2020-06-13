@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { ColorTypes, colors } from './colors'
+import noop from '../../helpers/noop'
 
 type ButtonProps = {
   type?: 'success' | 'danger'
@@ -13,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
   m,
   type,
   color = 'black',
-  onClick = () => {},
+  onClick = noop,
   children
 }) => {
   const classes = ['btn']
