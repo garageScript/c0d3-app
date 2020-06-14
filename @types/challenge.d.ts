@@ -26,6 +26,7 @@ export type UserSubmission = {
   viewCount: number
   comment?: string
   challengeId: string
+  lessonId?: string
   reviewer?: Reviewer
   reviewerId: string
   createdAt: string
