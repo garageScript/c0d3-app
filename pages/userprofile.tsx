@@ -1,52 +1,34 @@
 import * as React from 'react'
+import _ from 'lodash'
 import Layout from '../components/Layout'
 import ProfileImageInfo from '../components/ProfileImageInfo'
 import { Lesson } from '../@types/lesson'
+import { UserSubmission, Challenge } from '../@types/challenge'
 import ProfileLessons from '../components/ProfileLessons'
 import ProfileSubmissions from '../components/ProfileSubmissions'
-import withQueryLoader from '../containers/withQueryLoader'
+import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import { GET_APP } from '../graphql/queries'
 
-type SessionUser = {
-  username: string
-  name: string
-}
-
-type AppQuery = {
-  queryData: AppInfo
-}
-
-type AppInfo = {
-  session: Session
-  lessons: Lesson[]
-}
-
-type Session = {
-  user: SessionUser
-  submissions: Submission[]
-}
-
-type Submission = {
-  diff: string
-  status: string
-  lessonId: number
-  challengeId: number
-}
-
-const UserProfile: React.FC<AppQuery> = ({
-  queryData: { lessons, session }
-}) => {
+const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
+  const { lessons, session } = queryData
+  const fullname = _.get(session, 'user.name', '')
+  const username = _.get(session, 'user.username', '')
   const userInfo = {
-    username: session.user.username,
-    firstName: session.user.name.split(' ')[0],
-    lastName: session.user.name.split(' ')[1]
+    username,
+    firstName: fullname.split(' ')[0],
+    lastName: fullname.split(' ')[1]
   }
 
-  const lessonInfo = lessons.map((lesson: any) => {
+  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const lessonInfo = lessons.map((lesson: Lesson) => {
     const { challenges, order } = lesson
-    const { submissions } = session
-    const passedLessonSubmissions = submissions.filter(
-      ({ status, lessonId }) => status === 'passed' && lessonId === lesson.id
+    const passedLessonSubmissions = userSubmissions.filter(
+      ({ status, lessonId }) => {
+        return (
+          status === 'passed' &&
+          parseInt(lessonId || '') === parseInt(lesson.id + '')
+        )
+      }
     )
     const updateSubmissions = passedLessonSubmissions.filter(
       ({ challengeId }) => challengeId
@@ -57,11 +39,11 @@ const UserProfile: React.FC<AppQuery> = ({
     return { progress, order }
   })
 
-  const profileLessons = lessons.map(({ order, title, challenges }) => {
-    const { submissions } = session
-
-    const challengesStatus = challenges.map((c, order) => {
-      const challengeSubmission = submissions.find(s => c.id === s.challengeId)
+  const profileLessons = lessons.map(({ order, title, challenges }: Lesson) => {
+    const challengesStatus = challenges.map((c: Challenge) => {
+      const challengeSubmission = userSubmissions.find(
+        (s: UserSubmission) => c.id === s.challengeId
+      )
 
       return {
         challengeNumber: order,
