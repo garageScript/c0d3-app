@@ -1,13 +1,15 @@
 import * as React from 'react'
 import _ from 'lodash'
-import Layout from '../components/Layout'
-import ProfileImageInfo from '../components/ProfileImageInfo'
-import { Lesson } from '../@types/lesson'
-import { UserSubmission, Challenge } from '../@types/challenge'
-import ProfileLessons from '../components/ProfileLessons'
-import ProfileSubmissions from '../components/ProfileSubmissions'
-import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
-import { GET_APP } from '../graphql/queries'
+import Layout from '../../components/Layout'
+import ProfileImageInfo from '../../components/ProfileImageInfo'
+import { Lesson } from '../../@types/lesson'
+import { UserSubmission, Challenge } from '../../@types/challenge'
+import ProfileLessons from '../../components/ProfileLessons'
+import ProfileSubmissions from '../../components/ProfileSubmissions'
+import withQueryLoader, {
+  WithQueryProps
+} from '../../containers/withQueryLoader'
+import { GET_APP } from '../../graphql/queries'
 
 const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
   const { lessons, session } = queryData
