@@ -25,7 +25,7 @@ const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
   const lessonInfo = lessons.map((lesson: Lesson) => {
     const { challenges, order } = lesson
     const passedLessonSubmissions = userSubmissions.filter(
-         // TODO: Fix lesson.id and lessonId types
+      // TODO: Fix lesson.id and lessonId types
       ({ status, lessonId }) => {
         return (
           status === 'passed' &&
@@ -65,15 +65,15 @@ const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
 
   return (
     <Layout>
-        <div className="row">
-          <div className="col-4">
-            <ProfileImageInfo user={userInfo} />
-          </div>
-          <div className="col-8">
-            <ProfileLessons lessons={lessonInfo} />
-            <ProfileSubmissions lessons={profileLessons} />
-          </div>
+      <div className="row">
+        <div className="col-4">
+          <ProfileImageInfo user={userInfo} />
         </div>
+        <div className="col-8">
+          <ProfileLessons lessons={lessonInfo} />
+          <ProfileSubmissions lessons={profileLessons} />
+        </div>
+      </div>
     </Layout>
   )
 }
