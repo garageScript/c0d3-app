@@ -1,116 +1,175 @@
-jest.mock('next/router')
-jest.mock('@apollo/react-hooks')
-jest.mock('../../components/LessonCard')
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
-import { useRouter } from 'next/router'
+import { render, wait } from '@testing-library/react'
+import { MockedProvider } from '@apollo/react-testing'
+import { GET_APP } from '../../graphql/queries'
+import { withTestRouter } from '../../testUtil/withNextRouter'
 import Lesson from '../../pages/curriculum/[lesson]'
-import { render } from '@testing-library/react'
+import dummyLessonData from '../../__dummy__/lessonData'
+import dummySessionData from '../../__dummy__/sessionData'
+import dummyAlertData from '../../__dummy__/alertData'
 
 describe('Lesson Page', () => {
-  useQuery.mockReturnValue({
-    data: {
-      lessons: [
+  test('Should render correctly with valid lesson route', async () => {
+    const session = {
+      ...dummySessionData,
+      submissions: [
         {
-          id: '5',
-          title: 'Foundations of JavaScript',
-          description: 'A super simple introduction to help you get started!',
-          docUrl:
-            'https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672',
-          githubUrl: '',
-          videoUrl:
-            'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
+          id: '1',
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
           order: 0,
-          challenges: [
-            {
-              id: '107',
-              title: 'Sum of 2 Numbers',
-              description:
-                "Write a function that takes in 2 numbers and returns their sum.\n\nHere's how another developer might use your function:\n\n```\nsolution(5,9) // Should return 14\nsolution(4,1) // Should return 5\n```",
-              order: 1,
-              __typename: 'Challenge'
-            },
-            {
-              id: '108',
-              title: 'Sum of 3 Numbers',
-              description:
-                "Write a function that takes in 3 numbers and returns their sum.\n\nHere's how another developer might use your function:\n\n```\nsolution(5,9,2) // Should return 16\nsolution(4,1,9) // Should return 14\n```",
-              order: 2,
-              __typename: 'Challenge'
-            }
-          ]
-        }
-      ],
-      session: {
-        user: {
-          username: 'test'
-        },
-        lessonStatus: [
-          {
-            lessonId: '4',
-            isPassed: '1235435',
-            isEnrolled: '123456'
-          }
-        ],
-        submissions: [
-          {
-            id: '6050',
-            status: 'open',
-            mrUrl: null,
-            diff:
-              '\u001b[1mdiff --git a/index.js b/index.js\u001b[m\n\u001b[1mindex 5e1c309..0929f9d 100644\u001b[m\n\u001b[1m--- a/index.js\u001b[m\n\u001b[1m+++ b/index.js\u001b[m\n\u001b[36m@@ -1 +1 @@\u001b[m\n\u001b[31m-Hello World\u001b[m\n\\ No newline at end of file\u001b[m\n\u001b[32m+\u001b[m\u001b[32mHello to the new c0d3 CLI\u001b[m\n',
-            viewCount: 0,
-            comment: null,
-            order: null,
-            challengeId: '108',
-            lessonId: '5',
-            reviewer: null,
-            createdAt: '1589315948051',
-            updatedAt: '1589315948098',
-            __typename: 'Submission'
+          challengeId: '146',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
           },
-          {
-            id: '6048',
-            status: 'open',
-            mrUrl: null,
-            diff:
-              '\u001b[1mdiff --git a/index.js b/index.js\u001b[m\n\u001b[1mindex 5e1c309..0929f9d 100644\u001b[m\n\u001b[1m--- a/index.js\u001b[m\n\u001b[1m+++ b/index.js\u001b[m\n\u001b[36m@@ -1 +1 @@\u001b[m\n\u001b[31m-Hello World\u001b[m\n\\ No newline at end of file\u001b[m\n\u001b[32m+\u001b[m\u001b[32mHello to the new c0d3 CLI\u001b[m\n',
-            viewCount: 0,
-            comment: null,
-            order: null,
-            challengeId: '143',
-            lessonId: '2',
-            reviewer: null,
-            createdAt: '1589247516191',
-            updatedAt: '1589316605068',
-            __typename: 'Submission'
-          }
-        ]
-      },
-      alerts: [
-        {
-          id: '0',
-          text: 'Set up your computer to submit challenges.',
-          type: 'info',
-          url:
-            'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
-          urlCaption: 'View Instructions'
+          createdAt: '123',
+          updatedAt: '123'
         },
         {
           id: '1',
-          text: 'Please upgrade your CLI client by running npm update c0d3.',
-          type: 'urgent'
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '145',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: '5',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false
+        },
+        {
+          lessonId: '2',
+          isPassed: false,
+          isTeaching: false,
+          isEnrolled: true
         }
       ]
     }
-  })
-  test('Should render lesson page for students', async () => {
-    useRouter.mockReturnValue({
-      query: {
-        lesson: '5'
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
       }
-    })
-    const { container } = render(<Lesson />)
-    expect(container).toMatchSnapshot()
+    ]
+
+    const tree = withTestRouter(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Lesson />
+      </MockedProvider>,
+      {
+        query: { lesson: '2' }
+      }
+    )
+
+    const { container } = render(tree)
+
+    await wait(() => expect(container).toMatchSnapshot())
+  })
+
+  test('Should render correctly with invalid lesson route', async () => {
+    const session = {
+      ...dummySessionData,
+      submissions: [
+        {
+          id: '1',
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '146',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        },
+        {
+          id: '1',
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '145',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: '5',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false
+        },
+        {
+          lessonId: '2',
+          isPassed: false,
+          isTeaching: false,
+          isEnrolled: true
+        }
+      ]
+    }
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    const tree = withTestRouter(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Lesson />
+      </MockedProvider>,
+      {
+        query: { lesson: '100' }
+      }
+    )
+
+    const { container } = render(tree)
+
+    await wait(() => expect(container).toMatchSnapshot())
   })
 })

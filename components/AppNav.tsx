@@ -3,6 +3,8 @@ import NavLink from './NavLink'
 import Button from './Button'
 import { useMutation } from '@apollo/react-hooks'
 import { LOGOUT_USER } from '../graphql/queries'
+import { GET_APP } from '../graphql/queries'
+import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -10,13 +12,6 @@ import '../scss/navbar.scss'
 type AuthButtonProps = {
   initial: string
   username: string
-}
-
-type Props = {
-  loggedIn?: boolean
-  username?: string
-  firstName?: string
-  lastName?: string
 }
 
 const AuthLink = () => (
@@ -120,13 +115,10 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<Props> = ({
-  loggedIn = false,
-  username = '',
-  firstName,
-  lastName
-}) => {
-  const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
+const AppNav: React.FC<WithQueryProps> = ({ queryData }) => {
+  const { session } = queryData
+  const username = _.get(session, 'user.username', '')
+  const initial = ''
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -138,10 +130,10 @@ const AppNav: React.FC<Props> = ({
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {loggedIn ? <AuthLink /> : <UnAuthLink />}
+            {session ? <AuthLink /> : <UnAuthLink />}
           </div>
         </div>
-        {loggedIn ? (
+        {session ? (
           <AuthButton initial={initial} username={username} />
         ) : (
           <UnAuthButton />
@@ -151,4 +143,9 @@ const AppNav: React.FC<Props> = ({
   )
 }
 
-export default AppNav
+export default withQueryLoader(
+  {
+    query: GET_APP
+  },
+  AppNav
+)
