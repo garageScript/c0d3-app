@@ -65,11 +65,13 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   }, [data])
   return (
     <div>
-      <Button
-        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
-        initial={initial}
-        text={username}
-      />
+      <NavLink
+        path="/profile/[username]"
+        as={`/profile/${username}`}
+        className="btn btn-secondary border overflow-hidden p-2 text-truncate"
+      >
+        {`${initial} ${username}`}
+      </NavLink>
       <Button
         text="Logout"
         btnType="border btn-secondary ml-2"
