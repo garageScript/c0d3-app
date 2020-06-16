@@ -29,7 +29,7 @@ export const SubmissionStatus: React.FC<ChallengeStatusProps> = ({
       if (eachChallenge.challengeStatus === 'passed') {
         challengeStatus = 'bg-success'
       }
-      if (eachChallenge.challengeStatus === 'wrong') {
+      if (eachChallenge.challengeStatus === 'needMoreWork') {
         challengeStatus = 'bg-danger'
       }
       if (eachChallenge.challengeStatus === 'pending') {
