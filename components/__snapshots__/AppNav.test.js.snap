@@ -68,9 +68,12 @@ exports[`AppNav Component Should match snapshot when loggedIn 1`] = `
         </div>
       </div>
       <div>
-        <button
-          class="btn border btn-secondary overflow-hidden p-2 text-truncate"
-        />
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/"
+        >
+           
+        </a>
         <button
           class="btn border btn-secondary ml-2"
         >
