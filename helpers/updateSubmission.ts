@@ -14,58 +14,84 @@ export const updateSubmission = async (
   try {
     if (!args) throw new Error('Invalid args')
     const { id, comment, status, reviewerId } = args
+    // query submission that is being updated
     const submission = await Submission.findByPk(id)
-    const challengeCount = await Challenge.count({
+    // count challenges inside lesson that submission belongs to
+    const lessonChallengeCount = await Challenge.count({
       where: { lessonId: submission.lessonId }
     })
 
+    // update and save submission data
     submission.set('reviewerId', reviewerId)
     submission.set('status', status)
     submission.set('comment', comment)
     await submission.save()
 
-    const submissions = await Submission.findAll({
+    // query other user submissions that belong to same lesson
+    const lessonSubmissions = await Submission.findAll({
       where: {
         lessonId: submission.lessonId,
         userId: submission.userId
       }
     })
 
-    const passedSubmissions = submissions.reduce(
+    // count how many submissions user passed in total
+    const passedLessonSubmissions = lessonSubmissions.reduce(
       (sum: number, s: any) => sum + (s.status === 'passed' ? 1 : 0),
       0
     )
 
-    if (challengeCount === passedSubmissions) {
-      const userLesson = await UserLesson.findOne({
-        where: { lessonId: submission.lessonId }
+    // if user has passed same amount of submissions that belong in lesson
+    if (lessonChallengeCount === passedLessonSubmissions) {
+      // query userlesson that belongs to lesson and user
+      const [userLesson] = await UserLesson.findOrCreate({
+        where: {
+          lessonId: submission.lessonId,
+          userId: submission.userId
+        }
       })
 
+      // if user has not passed this lesson
       if (!userLesson.isPassed) {
-        const { email } = await User.findByPk(submission.userId)
-        const { order, title, chatUrl } = await Lesson.findByPk(
-          userLesson.lessonId
-        )
-        const chatUsername = await getUserByEmail(email)
-        const nextLesson = await Lesson.findOne({
-          where: { order: order + 1 }
-        })
+        const [{ email }, currentLesson] = await Promise.all([
+          User.findByPk(submission.userId), // query user data
+          Lesson.findByPk(userLesson.lessonId) // query lesson data
+        ])
 
-        const lessonChannel = chatUrl.split('/').pop()
-        const nextLessonChannel = nextLesson.chatUrl.split('/').pop()
+        const [chatUsername, nextLesson] = await Promise.all([
+          getUserByEmail(email), // get user chat username from email
+          Lesson.findOne({
+            // query next lesson
+            where: { order: currentLesson.order + 1 }
+          })
+        ])
 
-        await publicChannelMessage(
-          lessonChannel,
-          `Congratulations to @${chatUsername} for passing and completing ${title}! @${chatUsername} is now a guardian angel for the students in this channel.`
-        )
-        await publicChannelMessage(
-          nextLessonChannel,
-          `We have a new student joining us! @${chatUsername} just completed ${title}.`
-        )
+        // if current lesson has a chatUrl
+        if (currentLesson.chatUrl) {
+          const { chatUrl, title } = currentLesson
+          const channelName = chatUrl.split('/').pop()
+          // message public channel in mattermost
+          await publicChannelMessage(
+            channelName,
+            `Congratulations to @${chatUsername} for passing and completing ${title}! @${chatUsername} is now a guardian angel for the students in this channel.`
+          )
+        }
+
+        // if next lesson exists and has a chatUrl
+        if (nextLesson && nextLesson.chatUrl) {
+          const { chatUrl } = nextLesson
+          const lessonName = chatUrl.split('/').pop()
+          // message public channel in mattermost
+          await publicChannelMessage(
+            lessonName,
+            `We have a new student joining us! @${chatUsername} just completed ${currentLesson.title}.`
+          )
+        }
       }
 
-      userLesson.set('isPassed', true)
-      userLesson.set('isTeaching', true)
+      // update and save user lesson data
+      userLesson.set('isPassed', Date.now().toString())
+      userLesson.set('isTeaching', Date.now().toString())
       await userLesson.save()
     }
 
