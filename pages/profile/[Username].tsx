@@ -25,8 +25,8 @@ const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
   const lessonInfo = lessons.map((lesson: Lesson) => {
     const { challenges, order } = lesson
     const passedLessonSubmissions = userSubmissions.filter(
-      // TODO: Fix lesson.id and lessonId types
       ({ status, lessonId }) => {
+        // TODO: Fix lesson.id and lessonId types
         return (
           status === 'passed' &&
           parseInt(lessonId || '') === parseInt(lesson.id + '')
