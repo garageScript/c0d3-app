@@ -41,59 +41,61 @@ export const updateSubmission = async (
       0
     )
 
-    // if user has passed same amount of submissions that belong in lesson
-    if (lessonChallengeCount === passedLessonSubmissions) {
-      // query userlesson that belongs to lesson and user
-      const [userLesson] = await UserLesson.findOrCreate({
-        where: {
-          lessonId: submission.lessonId,
-          userId: submission.userId
-        }
-      })
+    // user has not passed all challenges in lesson
+    // immediately return and do not proceed
+    if (lessonChallengeCount !== passedLessonSubmissions) return submission
 
-      // if user has not passed this lesson
-      if (!userLesson.isPassed) {
-        const [{ email }, currentLesson] = await Promise.all([
-          User.findByPk(submission.userId), // query user data
-          Lesson.findByPk(userLesson.lessonId) // query lesson data
-        ])
-
-        const [chatUsername, nextLesson] = await Promise.all([
-          getUserByEmail(email), // get user chat username from email
-          Lesson.findOne({
-            // query next lesson
-            where: { order: currentLesson.order + 1 }
-          })
-        ])
-
-        // if current lesson has a chatUrl
-        if (currentLesson.chatUrl) {
-          const { chatUrl, title } = currentLesson
-          const channelName = chatUrl.split('/').pop()
-          // message public channel in mattermost
-          await publicChannelMessage(
-            channelName,
-            `Congratulations to @${chatUsername} for passing and completing ${title}! @${chatUsername} is now a guardian angel for the students in this channel.`
-          )
-        }
-
-        // if next lesson exists and has a chatUrl
-        if (nextLesson && nextLesson.chatUrl) {
-          const { chatUrl } = nextLesson
-          const lessonName = chatUrl.split('/').pop()
-          // message public channel in mattermost
-          await publicChannelMessage(
-            lessonName,
-            `We have a new student joining us! @${chatUsername} just completed ${currentLesson.title}.`
-          )
-        }
+    // query userlesson that belongs to lesson and user
+    const [userLesson] = await UserLesson.findOrCreate({
+      where: {
+        lessonId: submission.lessonId,
+        userId: submission.userId
       }
+    })
 
-      // update and save user lesson data
-      userLesson.set('isPassed', Date.now().toString())
-      userLesson.set('isTeaching', Date.now().toString())
-      await userLesson.save()
+    // user is resubmitting to a lesson that he has already passed
+    // immediately return and do not proceed
+    if (userLesson.isPassed) return submission
+
+    const [{ email }, currentLesson] = await Promise.all([
+      User.findByPk(submission.userId), // query user data
+      Lesson.findByPk(userLesson.lessonId) // query lesson data
+    ])
+
+    const [chatUsername, nextLesson] = await Promise.all([
+      getUserByEmail(email), // get user chat username from email
+      Lesson.findOne({
+        // query next lesson
+        where: { order: currentLesson.order + 1 }
+      })
+    ])
+
+    // if current lesson has a chatUrl
+    if (currentLesson.chatUrl) {
+      const { chatUrl, title } = currentLesson
+      const channelName = chatUrl.split('/').pop()
+      // message public channel in mattermost
+      await publicChannelMessage(
+        channelName,
+        `Congratulations to @${chatUsername} for passing and completing ${title}! @${chatUsername} is now a guardian angel for the students in this channel.`
+      )
     }
+
+    // if next lesson exists and has a chatUrl
+    if (nextLesson && nextLesson.chatUrl) {
+      const { chatUrl } = nextLesson
+      const lessonName = chatUrl.split('/').pop()
+      // message public channel in mattermost
+      await publicChannelMessage(
+        lessonName,
+        `We have a new student joining us! @${chatUsername} just completed ${currentLesson.title}.`
+      )
+    }
+
+    // update and save user lesson data
+    userLesson.set('isPassed', Date.now().toString())
+    userLesson.set('isTeaching', Date.now().toString())
+    await userLesson.save()
 
     return submission
   } catch (error) {

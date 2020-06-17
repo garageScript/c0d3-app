@@ -47,7 +47,7 @@ describe('updateSubmission', () => {
     expect(result).toEqual(submission)
   })
 
-  test('should update user lesson', async () => {
+  test('should not update user lesson if passed already', async () => {
     const submission = {
       id: 1,
       comment: 'fake comment',
@@ -87,13 +87,12 @@ describe('updateSubmission', () => {
 
     const result = await updateSubmission(submission)
 
-    expect(setStub).toHaveBeenCalledWith('isPassed', expect.any(String))
-    expect(setStub).toHaveBeenCalledWith('isTeaching', expect.any(String))
-    expect(saveStub).toHaveBeenCalled()
+    expect(setStub).not.toHaveBeenCalled()
+    expect(saveStub).not.toHaveBeenCalled()
     expect(result).toEqual(submission)
   })
 
-  test('should notify mattermost', async () => {
+  test('should update user lesson and notify mattermost', async () => {
     const submission = {
       id: 1,
       comment: 'fake comment',
@@ -110,11 +109,14 @@ describe('updateSubmission', () => {
       { status: 'passed' } // update userlesson
     ]
 
+    const setStub = jest.fn()
+    const saveStub = jest.fn()
+
     const userLesson = {
       lessonId: 1,
       isPassed: false, // notify mattermost
-      set: () => {},
-      save: () => {}
+      set: setStub,
+      save: saveStub
     }
 
     // mock submission
@@ -142,6 +144,9 @@ describe('updateSubmission', () => {
 
     const result = await updateSubmission(submission)
 
+    expect(setStub).toHaveBeenCalledWith('isPassed', expect.any(String))
+    expect(setStub).toHaveBeenCalledWith('isTeaching', expect.any(String))
+    expect(saveStub).toHaveBeenCalled()
     expect(publicChannelMessage).toHaveBeenCalledTimes(2)
     expect(publicChannelMessage).toHaveBeenCalledWith(
       'js0-fake',
