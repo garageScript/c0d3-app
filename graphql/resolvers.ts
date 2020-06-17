@@ -65,6 +65,36 @@ export default {
     },
     alerts() {
       return Alert.findAll()
+    },
+    userInfo() {
+      async session(_parent: void, _args: void, context: Context) {
+        const userId = _.get(context, 'req.session.userId', false)
+  
+        if (!userId) {
+          return null
+        }
+  
+        // FYI: The reason we are querying with parallelized promises:
+        // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
+        const [user, submissions, lessonStatus] = await Promise.all([
+          User.findOne({ where: { id: userId } }),
+          Submission.findAll({
+            where: { userId },
+            include: [{ model: User, as: 'reviewer' }]
+          }),
+          UserLesson.findAll({ where: { userId } })
+        ])
+  
+        if (!user) {
+          return null
+        }
+  
+        return {
+          user,
+          submissions,
+          lessonStatus
+        }
+      }
     }
   },
 

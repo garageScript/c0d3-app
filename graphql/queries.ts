@@ -95,6 +95,65 @@ export const REJECT_SUBMISSION = gql`
     }
   }
 `
+export const USER_INFO =  gql`
+ query {
+  userInfo(username: String!){
+    lessons {
+      id
+      title
+      description
+      docUrl
+      githubUrl
+      videoUrl
+      order
+      challenges {
+        id
+        title
+        description
+        order
+      }
+      chatUrl
+    }
+    session {
+      user {
+        id
+        username
+        name
+      }
+      submissions {
+        id
+        status
+        mrUrl
+        diff
+        viewCount
+        comment
+        order
+        challengeId
+        lessonId
+        reviewer {
+          id
+          username
+        }
+        createdAt
+        updatedAt
+      }
+      lessonStatus {
+        lessonId
+        isPassed
+        isTeaching
+        isEnrolled
+      }
+    }
+    alerts {
+      id
+      text
+      type
+      url
+      urlCaption
+    }
+  }
+ }
+`
 
 export const GET_APP = gql`
   query {
