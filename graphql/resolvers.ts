@@ -65,6 +65,12 @@ export default {
     },
     alerts() {
       return Alert.findAll()
+    },
+    userInfo(_parent: void, args: any) {
+      const username = _.get(args, 'username')
+      return {
+        user: { username }
+      }
     }
   },
 

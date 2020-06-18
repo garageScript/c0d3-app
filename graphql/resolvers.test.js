@@ -1,7 +1,7 @@
-jest.mock('node-fetch')
-jest.mock('mailgun-js')
 import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
+jest.mock('node-fetch')
+jest.mock('mailgun-js')
 
 const { Query } = resolvers
 const { User, Submission, UserLesson } = db
@@ -127,5 +127,13 @@ describe('Alerts resolvers', () => {
         text: 'Please upgrade your CLI client by running npm update c0d3'
       }
     ])
+  })
+})
+
+describe('userInfo resolver', () => {
+  test('should return empty array if no alerts', async () => {
+    expect(resolvers.Query.userInfo({}, { username: 'testhello' })).toEqual({
+      user: { username: 'testhello' }
+    })
   })
 })
