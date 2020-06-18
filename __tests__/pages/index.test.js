@@ -1,71 +1,74 @@
-jest.mock('next/router')
 import React from 'react'
 import { render, wait } from '@testing-library/react'
-import { useRouter } from 'next/router'
 import { MockedProvider } from '@apollo/react-testing'
 import { GET_APP } from '../../graphql/queries'
 import IndexPage from '../../pages/index'
 
-describe('Index Page', () => {
-  test('Should redirect to curriculum if session is identified', async () => {
-    const routerPush = jest.fn()
-    useRouter.mockReturnValue({ push: routerPush })
+// mocked imports
+jest.mock('next/router')
+import { useRouter } from 'next/router'
 
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            lessons: [],
-            session: {
-              user: {
-                id: 1,
-                username: 'fakeusername',
-                name: 'fake user'
-              },
-              submissions: [],
-              lessonStatus: []
-            },
-            alerts: []
-          }
-        }
-      }
-    ]
+// dummy data
+import dummySessionData from '../../__dummy__/sessionData'
 
-    const tree = (
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <IndexPage />
-      </MockedProvider>
-    )
-
-    render(tree)
-    await wait(() => expect(routerPush).toBeCalledWith('/curriculum')) // wait for component state to change
+describe('<IndexPage />', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
   })
 
-  test('Should render landing page if user is not logged in', async () => {
-    const routerPush = jest.fn()
-    useRouter.mockReturnValue({ push: routerPush })
-
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            lessons: [],
-            session: null,
-            alerts: []
-          }
+  const mocksWithSession = (session) => [
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          session,
+          lessons: [],
+          alerts: []
         }
       }
-    ]
+    }
+  ]
 
-    const tree = (
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <IndexPage />
-      </MockedProvider>
-    )
+  describe('with session data', () => {
+    // mock data with session
+    const mocks = mocksWithSession(dummySessionData)
 
-    render(tree)
-    await wait(() => expect(routerPush).not.toHaveBeenCalled()) // wait for component state to change
+    test('should redirect to /curriculum and return null', async () => {
+      const routerPush = jest.fn()
+      useRouter.mockReturnValue({ push: routerPush })
+
+      const tree = (
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <IndexPage />
+        </MockedProvider>
+      )
+
+      const { container } = render(tree)
+      await wait() // wait for loading state to pass
+
+      expect(routerPush).toBeCalledWith('/curriculum')
+      expect(container.firstChild).toBeNull()
+    })
+  })
+
+  describe('without session data', () => {
+    // mock data without session
+    const mocks = mocksWithSession(null)
+
+    test('should not redirect', async () => {
+      const routerPush = jest.fn()
+      useRouter.mockReturnValue({ push: routerPush })
+
+      const tree = (
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <IndexPage />
+        </MockedProvider>
+      )
+
+      render(tree)
+      await wait() // wait for loading state to pass
+
+      expect(routerPush).not.toHaveBeenCalled()
+    })
   })
 })
