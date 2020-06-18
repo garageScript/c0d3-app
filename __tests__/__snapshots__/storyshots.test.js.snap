@@ -200,98 +200,52 @@ exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/AppNavBar Logged Out 1`] = `
-<nav
-  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+exports[`Storyshots Components/AppNav Logged In 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
 >
   <div
-    className="container"
+    className="card-body d-flex flex-column align-items-center"
   >
-    <a
-      className="navbar-brand text-primary font-weight-bold"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      C0D3
-    </a>
+    <h1>
+      Loading
+    </h1>
     <div
-      id="navbarNav"
+      className="spinner-border text-primary mt-1"
+      role="status"
     >
-      <div
-        className="navbar-nav collapse navbar-collapse"
+      <span
+        className="sr-only"
       >
-        <div
-          className="navbar-nav collapse navbar-collapse"
-        >
-          <a
-            className="nav-item nav-link active"
-            href="/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <span
-              className="sr-only"
-            >
-              (current)
-            </span>
-            Home
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/#learning"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learning Process
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://c0d3.com/book"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Resources
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://chat.c0d3.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Help
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/contributors"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Contributors
-          </a>
-        </div>
-      </div>
-    </div>
-    <div>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/login"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Login
-      </a>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/signup"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Signup
-      </a>
+        Loading...
+      </span>
     </div>
   </div>
-</nav>
+</div>
+`;
+
+exports[`Storyshots Components/AppNav Logged Out 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Components/Button Border With Text 1`] = `
@@ -1757,476 +1711,29 @@ exports[`Storyshots Components/InputGroup Size Small 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Landing Landing 1`] = `
-<div
-  className="bg-white"
->
-  <div
-    className="container text-center pb-5"
-  >
-    <div
-      className="row justify-center pt-5"
-    >
-      <div
-        className="col-md-6 offset-md-3"
-      >
-        <img
-          alt="Hero Image"
-          className="img-fluid"
-          src="header-01.svg"
-        />
-      </div>
-    </div>
-    <div
-      className="row justify-center mt-5"
-    >
-      <div
-        className="col-md-8 offset-md-2"
-      >
-        <h1
-          style={
-            Object {
-              "fontSize": "3.8rem",
-              "fontWeight": 900,
-            }
-          }
-        >
-          Become a Software Engineer the Hard Way
-        </h1>
-      </div>
-    </div>
-    <div
-      className="row justify-center mt-4"
-    >
-      <div
-        className="col-md-10 offset-md-1"
-      >
-        <p
-          className="font-weight-light h4"
-          style={
-            Object {
-              "lineHeight": 1.5,
-            }
-          }
-        >
-          Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
-        </p>
-      </div>
-    </div>
-    <div
-      className="row mt-5"
-    >
-      <div
-        className="col-md-6 offset-md-3 mb-5"
-      >
-        <a
-          className="btn btn-primary py-3 px-5"
-          href="https://c0d3.com/book"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Get Started
-        </a>
-      </div>
-    </div>
-    <div
-      className="row mt-5"
-    >
-      <div
-        className="col-md-6 offset-md-3"
-      >
-        <h1
-          className="display-4 font-weight-bold"
-          id="learning"
-        >
-          Learning Process
-        </h1>
-      </div>
-    </div>
-    <div
-      className="row mt-5"
-    >
-      <div
-        className="col-md-10 offset-md-1"
-      >
-        <p
-          className="font-weight-light h4"
-          style={
-            Object {
-              "lineHeight": 1.5,
-            }
-          }
-        >
-          Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
-        </p>
-      </div>
-    </div>
-    <div
-      className="row mt-5 align-items-start mb-5"
-    >
-      <div
-        className="col-md-4"
-      >
-        <img
-          alt=""
-          src="choose-01.svg"
-          style={
-            Object {
-              "height": "170px",
-            }
-          }
-        />
-        <h4
-          className="mt-3 font-weight-bold"
-        >
-          Modern Curriculum
-        </h4>
-        <p
-          className="mt-4 font-weight-light"
-        >
-          First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
-        </p>
-      </div>
-      <div
-        className="col-md-4"
-      >
-        <img
-          alt=""
-          src="choose-02.svg"
-          style={
-            Object {
-              "height": "170px",
-            }
-          }
-        />
-        <h4
-          className="mt-3 font-weight-bold"
-        >
-          Support
-        </h4>
-        <p
-          className="mt-4 font-weight-light"
-        >
-          One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
-        </p>
-      </div>
-      <div
-        className="col-md-4"
-      >
-        <img
-          alt=""
-          src="choose-03.svg"
-          style={
-            Object {
-              "height": "170px",
-            }
-          }
-        />
-        <h4
-          className="mt-3 font-weight-bold"
-        >
-          Work Experience
-        </h4>
-        <p
-          className="mt-4 font-weight-light"
-        >
-          Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    className="container-fluid py-5"
-    style={
-      Object {
-        "background": "rgb(84,64,216)",
-        "color": "white",
-      }
-    }
-  >
-    <div
-      className="container mt-5"
-    >
-      <h1
-        className="mt-5 display-4 font-weight-bold text-center"
-        id="journey"
-      >
-        Your Learning Journey
-      </h1>
-      <p
-        className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
-        style={
-          Object {
-            "lineHeight": 1.5,
-          }
-        }
-      >
-        Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
-      </p>
-      <div
-        className="row mt-5 pb-5"
-      >
-        <div
-          className="col-md-5 order-md-2 text-center"
-        >
-          <img
-            alt=""
-            className="mb-3 img-fluid"
-            src="journey-01.svg"
-          />
-        </div>
-        <div
-          className="col-md-5 offset-md-1 order-md-1"
-        >
-          <h2
-            className="font-weight-bold"
-          >
-            Creating an account
-          </h2>
-          <p
-            className="mt-3 font-weight-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
-          >
-            After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
-          </p>
-        </div>
-      </div>
-      <div
-        className="row mt-5 pb-5"
-      >
-        <div
-          className="col-md-5 offset-md-1 text-center"
-        >
-          <img
-            alt=""
-            className="mb-3 img-fluid"
-            src="journey-02.svg"
-          />
-        </div>
-        <div
-          className="col-md-5"
-        >
-          <h2
-            className="font-weight-bold"
-          >
-            Curriculum
-          </h2>
-          <p
-            className="mt-3 font-weight-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
-          >
-            Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
-             
-            <a
-              className="text-warning"
-              href="https://www.meetup.com/San-Jose-C0D3/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              meetup groups
-            </a>
-            . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
-          </p>
-        </div>
-      </div>
-      <div
-        className="row mt-5 pb-5"
-      >
-        <div
-          className="col-md-5 order-md-2 text-center"
-        >
-          <img
-            alt=""
-            className="mb-3 img-fluid"
-            src="journey-03.svg"
-          />
-        </div>
-        <div
-          className="col-md-5 order-md-1 offset-md-1"
-        >
-          <h2
-            className="font-weight-bold"
-          >
-            Pay It Forward
-          </h2>
-          <p
-            className="mt-3 font-weight-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
-          >
-            When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
-          </p>
-        </div>
-      </div>
-      <div
-        className="row mt-5 pb-5"
-      >
-        <div
-          className="col-md-5 offset-md-1 text-center"
-        >
-          <img
-            alt=""
-            className="mb-3 img-fluid"
-            src="journey-04.svg"
-          />
-        </div>
-        <div
-          className="col-md-5"
-        >
-          <h2
-            className="font-weight-bold"
-          >
-            Work Experience
-          </h2>
-          <p
-            className="mt-3 font-weight-light"
-            style={
-              Object {
-                "lineHeight": 1.5,
-              }
-            }
-          >
-            After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="container mt-5 py-5 text-center"
-  >
-    <h1
-      className="display-4 font-weight-bold"
-    >
-      Get Started Now
-    </h1>
-    <p
-      className="mt-3 font-weight-light"
-      style={
-        Object {
-          "fontSize": "1.5rem",
-          "lineHeight": 1.5,
-        }
-      }
-    >
-      Start your journey to being a full stack software engineer
-    </p>
-    <a
-      className="btn btn-primary py-3 px-5 mt-4"
-      href="https://c0d3.com/book"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Get Started
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/Layout With Layout 1`] = `
+exports[`Storyshots Components/Layout Logged In 1`] = `
 Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  <div
+    className="mt-4 card border-0 shadow-sm"
   >
     <div
-      className="container"
+      className="card-body d-flex flex-column align-items-center"
     >
-      <a
-        className="navbar-brand text-primary font-weight-bold"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
+      <h1>
+        Loading
+      </h1>
       <div
-        id="navbarNav"
+        className="spinner-border text-primary mt-1"
+        role="status"
       >
-        <div
-          className="navbar-nav collapse navbar-collapse"
+        <span
+          className="sr-only"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link active"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <span
-                className="sr-only"
-              >
-                (current)
-              </span>
-              Home
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/#learning"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learning Process
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://c0d3.com/book"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Resources
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://chat.c0d3.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
-            </a>
-          </div>
-        </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Signup
-        </a>
+          Loading...
+        </span>
       </div>
     </div>
-  </nav>,
+  </div>,
   <div
     className="container"
   >
@@ -2274,7 +1781,77 @@ Array [
 ]
 `;
 
-exports[`Storyshots Components/Layout Without Layout 1`] = `
+exports[`Storyshots Components/Layout Logged Out 1`] = `
+Array [
+  <div
+    className="mt-4 card border-0 shadow-sm"
+  >
+    <div
+      className="card-body d-flex flex-column align-items-center"
+    >
+      <h1>
+        Loading
+      </h1>
+      <div
+        className="spinner-border text-primary mt-1"
+        role="status"
+      >
+        <span
+          className="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+      style={
+        Object {
+          "height": "100vh",
+        }
+      }
+    >
+      <div
+        className="card col-6"
+      >
+        <div
+          className="card-body"
+        >
+          <h5
+            className="card-title"
+          >
+            Card title
+          </h5>
+          <p
+            className="card-text"
+          >
+            Some quick example text to build on the card title and content.
+          </p>
+          <a
+            className="btn btn-primary"
+            href="#"
+          >
+            Go somewhere
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Components/Layout No Layout 1`] = `
 <div
   className="row"
   style={
@@ -2665,284 +2242,24 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
 `;
 
 exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
-  >
-    <div
-      className="container"
-    >
-      <a
-        className="navbar-brand text-primary font-weight-bold"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
-      >
-        <div
-          className="navbar-nav collapse navbar-collapse"
-        >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link active"
-              href="/"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              <span
-                className="sr-only"
-              >
-                (current)
-              </span>
-              Home
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/#learning"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learning Process
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://c0d3.com/book"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Resources
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://chat.c0d3.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
-            </a>
-          </div>
-        </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Signup
-        </a>
-      </div>
-    </div>
-  </nav>,
-  <div
-    className="container"
-  >
-    <div
-      className="mt-4 card border-0 shadow-sm"
-    >
-      <div
-        className="card-body d-flex flex-column align-items-center"
-      >
-        <h1>
-          Loading
-        </h1>
-        <div
-          className="spinner-border text-primary mt-1"
-          role="status"
-        >
-          <span
-            className="sr-only"
-          >
-            Loading...
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
-  </footer>,
-]
-`;
-
-exports[`Storyshots Components/Login Login 1`] = `
 <div
-  className="row mt-5"
+  className="mt-4 card border-0 shadow-sm"
 >
   <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+    className="card-body d-flex flex-column align-items-center"
   >
+    <h1>
+      Loading
+    </h1>
     <div
-      className="card-body text-center pt-5 pb-5"
+      className="spinner-border text-primary mt-1"
+      role="status"
     >
-      <h1
-        className="card-title h2 font-weight-bold mb-5"
+      <span
+        className="sr-only"
       >
-        Login
-      </h1>
-      <p
-        className="card-text"
-      />
-      <form
-        action="#"
-        data-testid="form"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <div
-          className="form-group"
-        >
-          <div
-            className="mt-3"
-          >
-            <input
-              className="form-control form-control-lg font-weight-light mb-3 "
-              data-testid="username"
-              name="username"
-              onBlur={[Function]}
-              onChange={[Function]}
-              placeholder="Username"
-              value=""
-            />
-            <input
-              className="form-control form-control-lg font-weight-light mb-3 "
-              data-testid="password"
-              name="password"
-              onBlur={[Function]}
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-              value=""
-            />
-            <button
-              className="btn btn-primary btn-lg btn-block mb-3"
-              data-testid="submit"
-              type="submit"
-            >
-              Login to Your Account
-            </button>
-          </div>
-        </div>
-      </form>
-      <a
-        className=""
-        href="/forgotpassword"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Forgot your password?
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/Login Login Error 1`] = `
-<div
-  className="row mt-5"
->
-  <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-  >
-    <div
-      className="card-body text-center pt-5 pb-5"
-    >
-      <h1
-        className="card-title h2 font-weight-bold mb-5"
-      >
-        Login
-      </h1>
-      <p
-        className="card-text"
-      />
-      <form
-        action="#"
-        data-testid="form"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <div
-          className="form-group"
-        >
-          <div
-            className="alert d-flex justify-content-between mt-3 alert-danger"
-            role="alert"
-          >
-            <div>
-              <img
-                className="mr-3 alert-icon"
-                src="/curriculumAssets/icons/exclamation.svg"
-              />
-               Please try again! 
-            </div>
-          </div>
-          <div
-            className="mt-3"
-          >
-            <input
-              className="form-control form-control-lg font-weight-light mb-3 "
-              data-testid="username"
-              name="username"
-              onBlur={[Function]}
-              onChange={[Function]}
-              placeholder="Username"
-              value=""
-            />
-            <input
-              className="form-control form-control-lg font-weight-light mb-3 "
-              data-testid="password"
-              name="password"
-              onBlur={[Function]}
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-              value=""
-            />
-            <button
-              className="btn btn-primary btn-lg btn-block mb-3"
-              data-testid="submit"
-              type="submit"
-            >
-              Login to Your Account
-            </button>
-          </div>
-        </div>
-      </form>
-      <a
-        className=""
-        href="/forgotpassword"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        Forgot your password?
-      </a>
+        Loading...
+      </span>
     </div>
   </div>
 </div>
@@ -3979,346 +3296,6 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Signup Signup 1`] = `
-<div
-  className="row mt-5"
->
-  <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-  >
-    <div
-      className="card-body text-center pt-5 pb-5"
-    >
-      <h1
-        className="card-title h2 font-weight-bold mb-5"
-      >
-        Create Account
-      </h1>
-      <p
-        className="card-text"
-      />
-      <form
-        action="#"
-        data-testid="form"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <div
-          className="form-group "
-        >
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="email"
-            name="email"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Email address"
-            type="email"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="username"
-            name="username"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Username"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="firstName"
-            name="firstName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="First name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="lastName"
-            name="lastName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Last name"
-            value=""
-          />
-          <button
-            className="btn btn-primary btn-lg btn-block mb-3"
-            data-testid="submit"
-            type="submit"
-          >
-            Create Account
-          </button>
-        </div>
-      </form>
-      <p
-        className="text-black-50"
-      >
-        Already have an account?
-         
-        <a
-          className="text-primary"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/Signup Signup Errors 1`] = `
-<div
-  className="row mt-5"
->
-  <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-  >
-    <div
-      className="card-body text-center pt-5 pb-5"
-    >
-      <h1
-        className="card-title h2 font-weight-bold mb-5"
-      >
-        Create Account
-      </h1>
-      <p
-        className="card-text"
-      />
-      <div
-        className="bg-light m-auto px-5 border-0"
-        data-testid="error-message"
-      >
-        <h5
-          className="text-danger"
-        >
-           User does not exist
-        </h5>
-      </div>
-      <form
-        action="#"
-        data-testid="form"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <div
-          className="form-group "
-        >
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="email"
-            name="email"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Email address"
-            type="email"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="username"
-            name="username"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Username"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="firstName"
-            name="firstName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="First name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="lastName"
-            name="lastName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Last name"
-            value=""
-          />
-          <button
-            className="btn btn-primary btn-lg btn-block mb-3"
-            data-testid="submit"
-            type="submit"
-          >
-            Create Account
-          </button>
-        </div>
-      </form>
-      <p
-        className="text-black-50"
-      >
-        Already have an account?
-         
-        <a
-          className="text-primary"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/Signup Signup Loading 1`] = `
-<div
-  className="row mt-5"
->
-  <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-  >
-    <div
-      className="card-body text-center pt-5 pb-5"
-    >
-      <h1
-        className="card-title h2 font-weight-bold mb-5"
-      >
-        Create Account
-      </h1>
-      <p
-        className="card-text"
-      />
-      <div
-        className="bg-light m-auto px-5 border-0"
-      >
-        <h5
-          className="text-warning"
-          data-testid="signup-loading"
-        >
-          Submitting...
-        </h5>
-      </div>
-      <form
-        action="#"
-        data-testid="form"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <div
-          className="form-group "
-        >
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="email"
-            name="email"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Email address"
-            type="email"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="username"
-            name="username"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Username"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="firstName"
-            name="firstName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="First name"
-            value=""
-          />
-          <input
-            className="form-control form-control-lg font-weight-light mb-3 "
-            data-testid="lastName"
-            name="lastName"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Last name"
-            value=""
-          />
-          <button
-            className="btn btn-primary btn-lg btn-block mb-3"
-            data-testid="submit"
-            type="submit"
-          >
-            Create Account
-          </button>
-        </div>
-      </form>
-      <p
-        className="text-black-50"
-      >
-        Already have an account?
-         
-        <a
-          className="text-primary"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/Signup Signup Success 1`] = `
-<div
-  className="row mt-5"
->
-  <div
-    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-  >
-    <div
-      className="card-body text-center pt-5 pb-5"
-    >
-      <svg
-        className="mb-4"
-        height="100px"
-        viewBox="0 0 426.667 426.667"
-        width="100px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          className="active-path"
-          d="M293.333 135.04L190.08 240.213l-52.907-53.12-28.373 28.374 83.413 83.2 133.974-129.92z"
-          fill="#00CF92"
-        />
-        <path
-          className="active-path"
-          d="M213.333 0C95.513 0 0 95.513 0 213.333s95.513 213.333 213.333 213.333 213.333-95.513 213.333-213.333S331.154 0 213.333 0zm0 388.053c-96.495 0-174.72-78.225-174.72-174.72s78.225-174.72 174.72-174.72c96.446.117 174.602 78.273 174.72 174.72 0 96.496-78.224 174.72-174.72 174.72z"
-          fill="#00CF92"
-        />
-      </svg>
-      <h1
-        className="card-title h2 font-weight-bold mb-5"
-      >
-        Account created successfully!
-      </h1>
-      <p
-        className="card-text"
-      />
-      <p>
-        You will receive a link to confirm your email address and to set your password.
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
 <div
   className="card-group"
@@ -4594,98 +3571,1624 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/landingNav Landing Nav 1`] = `
-<nav
-  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
->
+exports[`Storyshots Pages/Contributors Contributors 1`] = `
+Array [
+  <div
+    className="mt-4 card border-0 shadow-sm"
+  >
+    <div
+      className="card-body d-flex flex-column align-items-center"
+    >
+      <h1>
+        Loading
+      </h1>
+      <div
+        className="spinner-border text-primary mt-1"
+        role="status"
+      >
+        <span
+          className="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </div>,
   <div
     className="container"
   >
-    <a
-      className="navbar-brand text-primary font-weight-bold"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      C0D3
-    </a>
     <div
-      id="navbarNav"
+      className="row mt-4"
     >
       <div
-        className="navbar-nav collapse navbar-collapse"
+        className="col-4"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="card shadow-sm mb-3"
         >
-          <a
-            className="nav-item nav-link active"
-            href="/"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+          <div
+            className="ml-auto mr-auto mt-4 contributorCard__avatarContainer"
           >
-            <span
-              className="sr-only"
+            <div
+              className="text-uppercase bg-primary rounded-circle text-light user_info_image"
             >
-              (current)
-            </span>
-            Home
-          </a>
+              AO
+            </div>
+          </div>
+          <h2
+            className="text-center mt-4"
+          >
+            Alexis Ortiz Ojeda
+          </h2>
+          <h4
+            className="text-center text-muted mb-4"
+          >
+            @aortizoj
+          </h4>
+          <div
+            className="card-footer"
+          >
+            <p>
+              <svg
+                className="mr-2"
+                fill="none"
+                height={24}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect
+                  height="12"
+                  width="4"
+                  x="2"
+                  y="9"
+                />
+                <circle
+                  cx="4"
+                  cy="4"
+                  r="2"
+                />
+              </svg>
+              <a
+                href="https://www.linkedin.com/in/alexis-ortiz-ojeda/"
+              >
+                LinkedIn
+              </a>
+            </p>
+            <p>
+              <svg
+                className="mr-2"
+                fill="none"
+                height={24}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+              <a
+                href="https://github.com/garageScript/c0d3-app/pulls?q=is%3Apr+author%3Aaortizoj15"
+              >
+                Github Contributions
+              </a>
+            </p>
+            <p>
+              <svg
+                className="mr-2"
+                fill="none"
+                height={24}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                />
+                <polyline
+                  points="13 2 13 9 20 9"
+                />
+              </svg>
+              <a
+                href="https://drive.google.com/file/d/1HoMg9QHGH2qicG8bZ8hRWv7FT7GXjFB5/view"
+              >
+                Resume
+              </a>
+            </p>
+            <p>
+              <svg
+                className="mr-2"
+                fill="none"
+                height={24}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="16 18 22 12 16 6"
+                />
+                <polyline
+                  points="8 6 2 12 8 18"
+                />
+              </svg>
+              <a
+                href="https://github.com/garageScript/c0d3-app/pull/67"
+              >
+                Code Sample
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/Curriculum Basic 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
+Array [
+  <div
+    className="mt-4 card border-0 shadow-sm"
+  >
+    <div
+      className="card-body d-flex flex-column align-items-center"
+    >
+      <h1>
+        Loading
+      </h1>
+      <div
+        className="spinner-border text-primary mt-1"
+        role="status"
+      >
+        <span
+          className="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Reset your password
+          </h1>
+          <p
+            className="card-text"
+          />
+          <p
+            className="mb-5"
+          >
+            Type in your email or username below and we’ll send you an email with instructions on how to reset your password
+          </p>
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="userOrEmail"
+                name="userOrEmail"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Username or Email"
+                type="text"
+                value=""
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Send Reset Email
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/Landing Landing 1`] = `
+<div
+  className="bg-white"
+>
+  <div
+    className="container text-center pb-5"
+  >
+    <div
+      className="row justify-center pt-5"
+    >
+      <div
+        className="col-md-6 offset-md-3"
+      >
+        <img
+          alt="Hero Image"
+          className="img-fluid"
+          src="header-01.svg"
+        />
+      </div>
+    </div>
+    <div
+      className="row justify-center mt-5"
+    >
+      <div
+        className="col-md-8 offset-md-2"
+      >
+        <h1
+          style={
+            Object {
+              "fontSize": "3.8rem",
+              "fontWeight": 900,
+            }
+          }
+        >
+          Become a Software Engineer the Hard Way
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row justify-center mt-4"
+    >
+      <div
+        className="col-md-10 offset-md-1"
+      >
+        <p
+          className="font-weight-light h4"
+          style={
+            Object {
+              "lineHeight": 1.5,
+            }
+          }
+        >
+          Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
+        </p>
+      </div>
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col-md-6 offset-md-3 mb-5"
+      >
+        <a
+          className="btn btn-primary py-3 px-5"
+          href="https://c0d3.com/book"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col-md-6 offset-md-3"
+      >
+        <h1
+          className="display-4 font-weight-bold"
+          id="learning"
+        >
+          Learning Process
+        </h1>
+      </div>
+    </div>
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="col-md-10 offset-md-1"
+      >
+        <p
+          className="font-weight-light h4"
+          style={
+            Object {
+              "lineHeight": 1.5,
+            }
+          }
+        >
+          Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
+        </p>
+      </div>
+    </div>
+    <div
+      className="row mt-5 align-items-start mb-5"
+    >
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt=""
+          src="choose-01.svg"
+          style={
+            Object {
+              "height": "170px",
+            }
+          }
+        />
+        <h4
+          className="mt-3 font-weight-bold"
+        >
+          Modern Curriculum
+        </h4>
+        <p
+          className="mt-4 font-weight-light"
+        >
+          First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
+        </p>
+      </div>
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt=""
+          src="choose-02.svg"
+          style={
+            Object {
+              "height": "170px",
+            }
+          }
+        />
+        <h4
+          className="mt-3 font-weight-bold"
+        >
+          Support
+        </h4>
+        <p
+          className="mt-4 font-weight-light"
+        >
+          One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
+        </p>
+      </div>
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt=""
+          src="choose-03.svg"
+          style={
+            Object {
+              "height": "170px",
+            }
+          }
+        />
+        <h4
+          className="mt-3 font-weight-bold"
+        >
+          Work Experience
+        </h4>
+        <p
+          className="mt-4 font-weight-light"
+        >
+          Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container-fluid py-5"
+    style={
+      Object {
+        "background": "rgb(84,64,216)",
+        "color": "white",
+      }
+    }
+  >
+    <div
+      className="container mt-5"
+    >
+      <h1
+        className="mt-5 display-4 font-weight-bold text-center"
+        id="journey"
+      >
+        Your Learning Journey
+      </h1>
+      <p
+        className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+        style={
+          Object {
+            "lineHeight": 1.5,
+          }
+        }
+      >
+        Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
+      </p>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 order-md-2 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-01.svg"
+          />
+        </div>
+        <div
+          className="col-md-5 offset-md-1 order-md-1"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Creating an account
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 offset-md-1 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-02.svg"
+          />
+        </div>
+        <div
+          className="col-md-5"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Curriculum
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
+             
+            <a
+              className="text-warning"
+              href="https://www.meetup.com/San-Jose-C0D3/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              meetup groups
+            </a>
+            . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 order-md-2 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-03.svg"
+          />
+        </div>
+        <div
+          className="col-md-5 order-md-1 offset-md-1"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Pay It Forward
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
+          </p>
+        </div>
+      </div>
+      <div
+        className="row mt-5 pb-5"
+      >
+        <div
+          className="col-md-5 offset-md-1 text-center"
+        >
+          <img
+            alt=""
+            className="mb-3 img-fluid"
+            src="journey-04.svg"
+          />
+        </div>
+        <div
+          className="col-md-5"
+        >
+          <h2
+            className="font-weight-bold"
+          >
+            Work Experience
+          </h2>
+          <p
+            className="mt-3 font-weight-light"
+            style={
+              Object {
+                "lineHeight": 1.5,
+              }
+            }
+          >
+            After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container mt-5 py-5 text-center"
+  >
+    <h1
+      className="display-4 font-weight-bold"
+    >
+      Get Started Now
+    </h1>
+    <p
+      className="mt-3 font-weight-light"
+      style={
+        Object {
+          "fontSize": "1.5rem",
+          "lineHeight": 1.5,
+        }
+      }
+    >
+      Start your journey to being a full stack software engineer
+    </p>
+    <a
+      className="btn btn-primary py-3 px-5 mt-4"
+      href="https://c0d3.com/book"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Get Started
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Lesson Basic 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Lesson Completed Challenges 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Lesson With Alerts 1`] = `
+<div
+  className="mt-4 card border-0 shadow-sm"
+>
+  <div
+    className="card-body d-flex flex-column align-items-center"
+  >
+    <h1>
+      Loading
+    </h1>
+    <div
+      className="spinner-border text-primary mt-1"
+      role="status"
+    >
+      <span
+        className="sr-only"
+      >
+        Loading...
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Login Login 1`] = `
+Array [
+  <div
+    className="mt-4 card border-0 shadow-sm"
+  >
+    <div
+      className="card-body d-flex flex-column align-items-center"
+    >
+      <h1>
+        Loading
+      </h1>
+      <div
+        className="spinner-border text-primary mt-1"
+        role="status"
+      >
+        <span
+          className="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Login
+          </h1>
+          <p
+            className="card-text"
+          />
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              <div
+                className="mt-3"
+              >
+                <input
+                  className="form-control form-control-lg font-weight-light mb-3 "
+                  data-testid="username"
+                  name="username"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Username"
+                  value=""
+                />
+                <input
+                  className="form-control form-control-lg font-weight-light mb-3 "
+                  data-testid="password"
+                  name="password"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+                <button
+                  className="btn btn-primary btn-lg btn-block mb-3"
+                  data-testid="submit"
+                  type="submit"
+                >
+                  Login to Your Account
+                </button>
+              </div>
+            </div>
+          </form>
           <a
-            className="nav-item nav-link"
-            href="/#learning"
+            className=""
+            href="/forgotpassword"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Learning Process
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://c0d3.com/book"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Resources
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://chat.c0d3.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Help
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/contributors"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Contributors
+            Forgot your password?
           </a>
         </div>
       </div>
     </div>
-    <div>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/login"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/Login Login Basic 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
       >
         Login
-      </a>
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group"
+        >
+          <div
+            className="mt-3"
+          >
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              value=""
+            />
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
+        </div>
+      </form>
       <a
-        className="btn btn-secondary border mr-3"
-        href="/signup"
+        className=""
+        href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        Signup
+        Forgot your password?
       </a>
     </div>
   </div>
-</nav>
+</div>
+`;
+
+exports[`Storyshots Pages/Login Login Error 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Login
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group"
+        >
+          <div
+            className="alert d-flex justify-content-between mt-3 alert-danger"
+            role="alert"
+          >
+            <div>
+              <img
+                className="mr-3 alert-icon"
+                src="/curriculumAssets/icons/exclamation.svg"
+              />
+               Please try again! 
+            </div>
+          </div>
+          <div
+            className="mt-3"
+          >
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              value=""
+            />
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
+        </div>
+      </form>
+      <a
+        className=""
+        href="/forgotpassword"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Forgot your password?
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/ResetPassword Reset Password 1`] = `
+Array [
+  <div
+    className="mt-4 card border-0 shadow-sm"
+  >
+    <div
+      className="card-body d-flex flex-column align-items-center"
+    >
+      <h1>
+        Loading
+      </h1>
+      <div
+        className="spinner-border text-primary mt-1"
+        role="status"
+      >
+        <span
+          className="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Enter new password
+          </h1>
+          <p
+            className="card-text"
+          />
+          <p
+            className="mb-4"
+          >
+            Your password should contain minimum 6 characters.
+          </p>
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Enter new password"
+                type="password"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="confirmPassword"
+                name="confirmPassword"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Re-enter new password"
+                type="password"
+                value=""
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Reset Password
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/Signup Signup 1`] = `
+Array [
+  <div
+    className="mt-4 card border-0 shadow-sm"
+  >
+    <div
+      className="card-body d-flex flex-column align-items-center"
+    >
+      <h1>
+        Loading
+      </h1>
+      <div
+        className="spinner-border text-primary mt-1"
+        role="status"
+      >
+        <span
+          className="sr-only"
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="row mt-5"
+    >
+      <div
+        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          className="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            className="card-title h2 font-weight-bold mb-5"
+          >
+            Create Account
+          </h1>
+          <p
+            className="card-text"
+          />
+          <form
+            action="#"
+            data-testid="form"
+            onReset={[Function]}
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group "
+            >
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="email"
+                name="email"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Email address"
+                type="email"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Username"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="firstName"
+                name="firstName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="First name"
+                value=""
+              />
+              <input
+                className="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="lastName"
+                name="lastName"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Last name"
+                value=""
+              />
+              <button
+                className="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          <p
+            className="text-black-50"
+          >
+            Already have an account?
+             
+            <a
+              className="text-primary"
+              href="/login"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Pages/Signup Signup Basic 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Create Account
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group "
+        >
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email address"
+            type="email"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="firstName"
+            name="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="First name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="lastName"
+            name="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Last name"
+            value=""
+          />
+          <button
+            className="btn btn-primary btn-lg btn-block mb-3"
+            data-testid="submit"
+            type="submit"
+          >
+            Create Account
+          </button>
+        </div>
+      </form>
+      <p
+        className="text-black-50"
+      >
+        Already have an account?
+         
+        <a
+          className="text-primary"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Signup Signup Errors 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Create Account
+      </h1>
+      <p
+        className="card-text"
+      />
+      <div
+        className="bg-light m-auto px-5 border-0"
+        data-testid="error-message"
+      >
+        <h5
+          className="text-danger"
+        >
+           User does not exist
+        </h5>
+      </div>
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group "
+        >
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email address"
+            type="email"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="firstName"
+            name="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="First name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="lastName"
+            name="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Last name"
+            value=""
+          />
+          <button
+            className="btn btn-primary btn-lg btn-block mb-3"
+            data-testid="submit"
+            type="submit"
+          >
+            Create Account
+          </button>
+        </div>
+      </form>
+      <p
+        className="text-black-50"
+      >
+        Already have an account?
+         
+        <a
+          className="text-primary"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Signup Signup Loading 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Create Account
+      </h1>
+      <p
+        className="card-text"
+      />
+      <div
+        className="bg-light m-auto px-5 border-0"
+      >
+        <h5
+          className="text-warning"
+          data-testid="signup-loading"
+        >
+          Submitting...
+        </h5>
+      </div>
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group "
+        >
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email address"
+            type="email"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="firstName"
+            name="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="First name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="lastName"
+            name="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Last name"
+            value=""
+          />
+          <button
+            className="btn btn-primary btn-lg btn-block mb-3"
+            data-testid="submit"
+            type="submit"
+          >
+            Create Account
+          </button>
+        </div>
+      </form>
+      <p
+        className="text-black-50"
+      >
+        Already have an account?
+         
+        <a
+          className="text-primary"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/Signup Signup Success 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <svg
+        className="mb-4"
+        height="100px"
+        viewBox="0 0 426.667 426.667"
+        width="100px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          className="active-path"
+          d="M293.333 135.04L190.08 240.213l-52.907-53.12-28.373 28.374 83.413 83.2 133.974-129.92z"
+          fill="#00CF92"
+        />
+        <path
+          className="active-path"
+          d="M213.333 0C95.513 0 0 95.513 0 213.333s95.513 213.333 213.333 213.333 213.333-95.513 213.333-213.333S331.154 0 213.333 0zm0 388.053c-96.495 0-174.72-78.225-174.72-174.72s78.225-174.72 174.72-174.72c96.446.117 174.602 78.273 174.72 174.72 0 96.496-78.224 174.72-174.72 174.72z"
+          fill="#00CF92"
+        />
+      </svg>
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Account created successfully!
+      </h1>
+      <p
+        className="card-text"
+      />
+      <p>
+        You will receive a link to confirm your email address and to set your password.
+      </p>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Theme/Button Basic 1`] = `

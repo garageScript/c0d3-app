@@ -13,8 +13,10 @@ const initialValues = {
 
 export const ResetPassword: React.FC = () => {
   const [reqPwReset, { data, error }] = useMutation(RESET_PASSWORD)
-  const handleSubmit = ({ userOrEmail }: { userOrEmail: string }) => {
-    reqPwReset({ variables: { userOrEmail } })
+  const handleSubmit = async ({ userOrEmail }: { userOrEmail: string }) => {
+    try {
+      await reqPwReset({ variables: { userOrEmail } })
+    } catch {} // catch error that's thrown by default from mutation
   }
   if (data) {
     return (

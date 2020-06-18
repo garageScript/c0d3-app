@@ -97,7 +97,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (values: Values) => {
     try {
       await loginUser({ variables: values })
-    } catch {} //Error handled above
+    } catch {} // catch error that's thrown by default from mutation
   }
   return (
     <Layout>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { addParameters } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { MockedProvider } from '@apollo/react-testing'
+import { GET_APP } from '../../graphql/queries'
 import Layout from '../../components/Layout'
 
 const customViewports = {
@@ -31,40 +33,79 @@ export default {
   title: 'Components/Layout'
 }
 
-export const WithLayout: React.FC = () => {
-  return (
-    <Layout>
-      <div className="row" style={{ height: '100vh' }}>
-        <div className="card col-6">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              Some quick example text to build on the card title and content.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>
+const FakeChild = () => (
+  <div className="row" style={{ height: '100vh' }}>
+    <div className="card col-6">
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <p className="card-text">
+          Some quick example text to build on the card title and content.
+        </p>
+        <a href="#" className="btn btn-primary">
+          Go somewhere
+        </a>
       </div>
-    </Layout>
+    </div>
+  </div>
+)
+
+export const LoggedIn: React.FC = () => {
+  const mocks = [
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          lessons: [],
+          session: {
+            user: {
+              id: 1,
+              username: 'fake user'
+            },
+            submissions: [],
+            lessonStatus: []
+          },
+          alerts: []
+        }
+      }
+    }
+  ]
+
+  return (
+    <MockedProvider mocks={mocks} addTypename={false}>
+      <Layout>
+        <FakeChild />
+      </Layout>
+    </MockedProvider>
   )
 }
 
-export const WithoutLayout: React.FC = () => {
+export const LoggedOut: React.FC = () => {
+  const mocks = [
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          lessons: [],
+          session: {
+            user: null,
+            submissions: [],
+            lessonStatus: []
+          },
+          alerts: []
+        }
+      }
+    }
+  ]
+
   return (
-    <div className="row" style={{ height: '100vh' }}>
-      <div className="card col-6">
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and content.
-          </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
-        </div>
-      </div>
-    </div>
+    <MockedProvider mocks={mocks} addTypename={false}>
+      <Layout>
+        <FakeChild />
+      </Layout>
+    </MockedProvider>
   )
+}
+
+export const NoLayout: React.FC = () => {
+  return <FakeChild />
 }
