@@ -1,12 +1,14 @@
 import * as React from 'react'
 import UserInfoImage from '../../components/UserInfoImage'
+import { UserInfo } from '../../@types/user'
 
 export default {
   component: UserInfoImage,
   title: 'Components/UserInfoImage'
 }
 
-const user = {
+const user: UserInfo = {
+  username: '',
   firstName: 'Rahul',
   lastName: 'Kalra'
 }

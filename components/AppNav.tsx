@@ -3,6 +3,9 @@ import NavLink from './NavLink'
 import Button from './Button'
 import { useMutation } from '@apollo/react-hooks'
 import { LOGOUT_USER } from '../graphql/queries'
+import { GET_APP } from '../graphql/queries'
+import { AppData } from '../@types/app'
+import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -10,13 +13,6 @@ import '../scss/navbar.scss'
 type AuthButtonProps = {
   initial: string
   username: string
-}
-
-type Props = {
-  loggedIn?: boolean
-  username?: string
-  firstName?: string
-  lastName?: string
 }
 
 const AuthLink = () => (
@@ -65,11 +61,13 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   }, [data])
   return (
     <div>
-      <Button
-        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
-        initial={initial}
-        text={username}
-      />
+      <NavLink
+        path="/profile/[username]"
+        as={`/profile/${username}`}
+        className="btn btn-secondary border overflow-hidden p-2 text-truncate"
+      >
+        {`${initial} ${username}`}
+      </NavLink>
       <Button
         text="Logout"
         btnType="border btn-secondary ml-2"
@@ -118,13 +116,19 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<Props> = ({
-  loggedIn = false,
-  username = '',
-  firstName,
-  lastName
-}) => {
-  const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
+const AppNav: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
+  const { session } = queryData
+
+  const renderButtons = () => {
+    if (!session) return <UnAuthButton />
+    const {
+      user: { username }
+    } = session
+    const initial = ''
+
+    return <AuthButton username={username} initial={initial} />
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -136,17 +140,18 @@ const AppNav: React.FC<Props> = ({
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {loggedIn ? <AuthLink /> : <UnAuthLink />}
+            {session ? <AuthLink /> : <UnAuthLink />}
           </div>
         </div>
-        {loggedIn ? (
-          <AuthButton initial={initial} username={username} />
-        ) : (
-          <UnAuthButton />
-        )}
+        {renderButtons()}
       </div>
     </nav>
   )
 }
 
-export default AppNav
+export default withQueryLoader<AppData>(
+  {
+    query: GET_APP
+  },
+  AppNav
+)

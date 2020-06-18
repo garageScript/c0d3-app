@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Lesson Page Should render lesson page for students 1`] = `
+exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
 <div>
   <div>
     <nav
@@ -26,28 +26,30 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
             >
               <a
                 class="nav-item nav-link active"
-                href="/"
+                href="/curriculum"
               >
                 <span
                   class="sr-only"
                 >
                   (current)
                 </span>
-                Home
+                Curriculum
               </a>
               <a
                 class="nav-item nav-link"
-                href="/#learning"
-              >
-                Learning Process
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="https://c0d3.com/book"
+                href="https://github.com/garageScript/c0d3-app"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Resources
+                Repo
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Journey
               </a>
               <a
                 class="nav-item nav-link"
@@ -68,17 +70,117 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
         </div>
         <div>
           <a
-            class="btn btn-secondary border mr-3"
-            href="/login"
+            class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+            href="/profile/fakeusername"
           >
-            Login
+             fakeusername
           </a>
+          <button
+            class="btn border btn-secondary ml-2"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container"
+    >
+      <div
+        class="row mt-4"
+      />
+    </div>
+    <footer
+      class="mt-5 font-weight-light text-center pb-5 text-muted"
+    >
+      © Copyright 2020 GarageScript
+      <br />
+      All Rights Reserved
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
+<div>
+  <div>
+    <nav
+      class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    >
+      <div
+        class="container"
+      >
+        <a
+          class="navbar-brand text-primary font-weight-bold"
+          href="/"
+        >
+          C0D3
+        </a>
+        <div
+          id="navbarNav"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <div
+              class="navbar-nav collapse navbar-collapse"
+            >
+              <a
+                class="nav-item nav-link active"
+                href="/curriculum"
+              >
+                <span
+                  class="sr-only"
+                >
+                  (current)
+                </span>
+                Curriculum
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="https://github.com/garageScript/c0d3-app"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Repo
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Journey
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="https://chat.c0d3.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Help
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="/contributors"
+              >
+                Contributors
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
           <a
-            class="btn btn-secondary border mr-3"
-            href="/signup"
+            class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+            href="/profile/fakeusername"
           >
-            Signup
+             fakeusername
           </a>
+          <button
+            class="btn border btn-secondary ml-2"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </nav>
@@ -103,7 +205,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                 <img
                   alt="lesson-cover"
                   class="lessonTitleCard__lesson-cover mr-3"
-                  src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                  src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
                 />
                 <div>
                   <p
@@ -119,7 +221,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                   <h1
                     class="lessonTitleCard__lesson-title"
                   >
-                    Foundations of JavaScript
+                    Variables & Functions
                   </h1>
                 </div>
               </div>
@@ -128,7 +230,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
               >
                 <a
                   class="btn border-right rounded-0 px-4 py-3"
-                  href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+                  href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -136,7 +238,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                 </a>
                 <a
                   class="btn border-right rounded-0 px-4 py-3"
-                  href="/curriculum/5"
+                  href="/curriculum/2"
                 >
                   CHALLENGES
                 </a>
@@ -185,6 +287,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                   src="/curriculumAssets/icons/exclamation.svg"
                 />
                 Please upgrade your CLI client by running npm update c0d3. 
+                
               </div>
               <button
                 class="alert-dismiss"
@@ -204,6 +307,40 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
               class="col-4"
             >
               <div
+                class="card mb-2 challenge-title-card challenge-title-card--done"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    1. Incremental Closure
+                  </div>
+                  <img
+                    height="25px"
+                    src="/curriculumAssets/icons/checkmark.svg"
+                    width="25px"
+                  />
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card challenge-title-card--done"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    2. Closure x times
+                  </div>
+                  <img
+                    height="25px"
+                    src="/curriculumAssets/icons/checkmark.svg"
+                    width="25px"
+                  />
+                </div>
+              </div>
+              <div
                 class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
                 data-testid="challenge-title"
               >
@@ -211,7 +348,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                   class="card-body d-flex justify-content-between"
                 >
                   <div>
-                    1. Sum of 2 Numbers
+                    3. Repeated String
                   </div>
                 </div>
               </div>
@@ -223,13 +360,104 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                   class="card-body d-flex justify-content-between"
                 >
                   <div>
-                    2. Sum of 3 Numbers
+                    4. Calling input function
                   </div>
-                  <img
-                    height="25px"
-                    src="/curriculumAssets/icons/pending.svg"
-                    width="25px"
-                  />
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    5. Call function X Times
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    6. isPrime
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    7. Letter Find
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    8. Letter Count
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    9. Letter Map
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    10. Letter Loop
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    11. Delayed Closure
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    12. Delay 1 and 2
+                  </div>
                 </div>
               </div>
             </div>
@@ -246,7 +474,7 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                     class="card-title"
                     data-testid="challenge-question-title"
                   >
-                    Sum of 2 Numbers
+                    Repeated String
                   </h1>
                   <div
                     class="bg-light p-3 mt-3"
@@ -254,17 +482,30 @@ exports[`Lesson Page Should render lesson page for students 1`] = `
                   >
                     <div>
                       <p>
-                        Write a function that takes in 2 numbers and returns their sum.
-                      </p>
-                      <p>
-                        Here's how another developer might use your function:
+                        Write a function called solution that takes in 2 parameters, a number and string and returns the string repeated input parameter number of times
                       </p>
                       <pre>
                         <code>
-                          solution(5,9) // Should return 14
-solution(4,1) // Should return 5
+                          result = solution(3, "abc") // "abcabcabc"
+result = solution(0, "hello") // ""
                         </code>
                       </pre>
+                      <p>
+                        Reminder for students with prior experience: you are not allowed to use 
+                        <code>
+                          for
+                        </code>
+                         and 
+                        <code>
+                          while
+                        </code>
+                         loops. 
+                        <a
+                          href="https://www.notion.so/garagescript/Recursion-973993e8ed144d8a87cb5695fd1ea8b1"
+                        >
+                          Reason
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>

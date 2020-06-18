@@ -25,13 +25,15 @@ const ConfirmSuccess: React.FC = () => (
 export const ResetPassword: React.FC = () => {
   const router = useRouter()
   const [changePw, { data, error }] = useMutation(UPDATE_PASSWORD)
-  const handleSubmit = ({ password }: typeof initialValues) => {
-    changePw({
-      variables: {
-        token: router.query.token,
-        password
-      }
-    })
+  const handleSubmit = async ({ password }: typeof initialValues) => {
+    try {
+      await changePw({
+        variables: {
+          token: router.query.token,
+          password
+        }
+      })
+    } catch {} // catch error thrown by default from apollo mutations
   }
 
   if (data && data.changePw.success) {

@@ -15,6 +15,7 @@ export type ChallengeSubmissionData = {
 }
 
 export type Reviewer = {
+  id: string
   username: string
 }
 

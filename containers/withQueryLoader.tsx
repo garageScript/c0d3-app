@@ -8,13 +8,13 @@ type QueryProps = {
   getParams?: Function
 }
 
-export type WithQueryProps = {
-  queryData: any
+export type QueryDataProps<T> = {
+  queryData: T
 }
 
-const withQueryLoader = (
+const withQueryLoader = <T extends {}>(
   { query, getParams = () => ({}) }: QueryProps,
-  Component: React.FC<any>
+  Component: React.FC<QueryDataProps<T>>
 ) => (props: any) => {
   const { loading, data } = useQuery(query, getParams(props))
   if (loading) {

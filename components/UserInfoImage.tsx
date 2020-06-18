@@ -1,12 +1,9 @@
 import React from 'react'
+import { UserInfo } from '../@types/user'
 import '../scss/userInfoImage.scss'
 
 type UserProps = {
   user: UserInfo
-}
-type UserInfo = {
-  firstName: string
-  lastName: string
 }
 
 const UserInfoImage: React.FC<UserProps> = ({ user }) => {

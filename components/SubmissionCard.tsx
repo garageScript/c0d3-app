@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 import UserInfoImage from './UserInfoImage'
-import { User } from '../@types/user'
+import { UserInfo } from '../@types/user'
 import '../scss/submissionCard.scss'
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   time: string
   challengeTitle: string
   reviewUrl: string
-  user: User
+  user: UserInfo
 }
 
 const SubmissionCard: React.FC<Props> = ({

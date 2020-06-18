@@ -1,9 +1,9 @@
 import * as React from 'react'
-import LandingPage from '../components/LandingPage'
+import LandingPage from '../../components/LandingPage'
 
 export default {
   component: LandingPage,
-  title: 'Components/Landing'
+  title: 'Pages/Landing'
 }
 
 export const Landing: React.FC = () => <LandingPage />
