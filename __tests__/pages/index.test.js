@@ -52,11 +52,7 @@ describe('Index Page', () => {
         result: {
           data: {
             lessons: [],
-            session: {
-              user: null,
-              submissions: [],
-              lessonStatus: []
-            },
+            session: null,
             alerts: []
           }
         }

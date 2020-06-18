@@ -87,6 +87,7 @@ export const WithComments: React.FC = () => (
         comment: '```Great Job```',
         challengeId: '105',
         reviewer: {
+          id: '1',
           username: 'dan'
         },
         reviewerId: '1',
