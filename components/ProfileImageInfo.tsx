@@ -1,10 +1,10 @@
 import React from 'react'
 import UserInfoImage from './UserInfoImage'
-import { User } from '../@types/user'
+import { UserInfo } from '../@types/user'
 import '../scss/profileImageInfo.scss'
 
 type ProfileImageInfoProps = {
-  user: User
+  user: UserInfo
 }
 
 const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {

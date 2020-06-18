@@ -1,21 +1,29 @@
 import * as React from 'react'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
-import ProfileImageInfo from '../../components/ProfileImageInfo'
 import { Lesson } from '../../@types/lesson'
+import { AppData } from '../../@types/app'
 import { UserSubmission, Challenge } from '../../@types/challenge'
+import { GET_APP } from '../../graphql/queries'
 import ProfileLessons from '../../components/ProfileLessons'
+import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
 import withQueryLoader, {
-  WithQueryProps
+  QueryDataProps
 } from '../../containers/withQueryLoader'
-import { GET_APP } from '../../graphql/queries'
 
-const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
+export type UserInfo = {
+  username: string
+  firstName: string
+  lastName: string
+}
+
+const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const fullname = _.get(session, 'user.name', '')
   const username = _.get(session, 'user.username', '')
-  const userInfo = {
+
+  const userInfo: UserInfo = {
     username,
     firstName: fullname.split(' ')[0],
     lastName: fullname.split(' ')[1]
@@ -78,7 +86,7 @@ const UserProfile: React.FC<WithQueryProps> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader(
+export default withQueryLoader<AppData>(
   {
     query: GET_APP
   },

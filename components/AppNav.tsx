@@ -4,7 +4,8 @@ import Button from './Button'
 import { useMutation } from '@apollo/react-hooks'
 import { LOGOUT_USER } from '../graphql/queries'
 import { GET_APP } from '../graphql/queries'
-import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
+import { AppData } from '../@types/app'
+import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -115,10 +116,19 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<WithQueryProps> = ({ queryData }) => {
+const AppNav: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { session } = queryData
-  const username = _.get(session, 'user.username', '')
-  const initial = ''
+
+  const renderButtons = () => {
+    if (!session) return <UnAuthButton />
+    const {
+      user: { username }
+    } = session
+    const initial = ''
+
+    return <AuthButton username={username} initial={initial} />
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -133,17 +143,13 @@ const AppNav: React.FC<WithQueryProps> = ({ queryData }) => {
             {session ? <AuthLink /> : <UnAuthLink />}
           </div>
         </div>
-        {session ? (
-          <AuthButton initial={initial} username={username} />
-        ) : (
-          <UnAuthButton />
-        )}
+        {renderButtons()}
       </div>
     </nav>
   )
 }
 
-export default withQueryLoader(
+export default withQueryLoader<AppData>(
   {
     query: GET_APP
   },

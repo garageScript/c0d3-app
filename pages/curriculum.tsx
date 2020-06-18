@@ -5,8 +5,9 @@ import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
 import { Lesson, LessonStatus } from '../@types/lesson'
+import { AppData } from '../@types/app'
 import { GET_APP } from '../graphql/queries'
-import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
+import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
 import AlertsDisplay from '../components/AlertsDisplay'
 import _ from 'lodash'
 
@@ -14,7 +15,9 @@ type LessonStatusMap = {
   [id: string]: LessonStatus
 }
 
-export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
+export const Curriculum: React.FC<QueryDataProps<AppData>> = ({
+  queryData
+}) => {
   const announcements = [
     'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
     'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
@@ -86,7 +89,7 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader(
+export default withQueryLoader<AppData>(
   {
     query: GET_APP
   },
