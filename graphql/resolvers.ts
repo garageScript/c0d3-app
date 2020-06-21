@@ -66,10 +66,36 @@ export default {
     alerts() {
       return Alert.findAll()
     },
-    userInfo(_parent: void, args: any) {
+    async userInfo(_parent: void, args: any) {
       const username = _.get(args, 'username')
+      if (!username) {
+        return null
+      }
+      const user = await User.findOne({
+        where: {
+          username
+        }
+      })
+      if (!user) {
+        return null
+      }
+      const [lessonStatus, submissions] = await Promise.all([
+        UserLesson.findAll({
+          where: {
+            userId: user.id
+          }
+        }),
+        Submission.findAll({
+          where: {
+            userId: user.id
+          }
+        })
+      ])
+      console.log('Lesson Status:', lessonStatus)
       return {
-        user: { username }
+        user,
+        lessonStatus,
+        submissions
       }
     }
   },
