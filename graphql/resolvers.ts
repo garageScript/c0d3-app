@@ -91,7 +91,6 @@ export default {
           }
         })
       ])
-      console.log('Lesson Status:', lessonStatus)
       return {
         user,
         lessonStatus,
