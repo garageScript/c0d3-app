@@ -2,7 +2,7 @@ import React from 'react'
 import { addParameters } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
 import Layout from '../../components/Layout'
 
 const customViewports = {
@@ -59,7 +59,8 @@ export const LoggedIn: React.FC = () => {
           session: {
             user: {
               id: 1,
-              username: 'fake user'
+              username: 'fakeusername',
+              name: 'fake user'
             },
             submissions: [],
             lessonStatus: []
@@ -86,11 +87,7 @@ export const LoggedOut: React.FC = () => {
       result: {
         data: {
           lessons: [],
-          session: {
-            user: null,
-            submissions: [],
-            lessonStatus: []
-          },
+          session: null,
           alerts: []
         }
       }
