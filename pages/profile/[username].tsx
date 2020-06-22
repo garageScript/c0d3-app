@@ -73,7 +73,7 @@ const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
 
   return (
     <Layout>
-      <div className="row">
+      <div className="row mt-4">
         <div className="col-4">
           <ProfileImageInfo user={userInfo} />
         </div>
