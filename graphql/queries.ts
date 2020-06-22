@@ -96,6 +96,42 @@ export const REJECT_SUBMISSION = gql`
   }
 `
 
+export const USER_INFO = gql `
+ query {
+   userInfo(username: String!) {
+    user {
+      id
+      username
+      name
+    }
+    submissions {
+      id
+      status
+      mrUrl
+      diff
+      viewCount
+      comment
+      order
+      challengeId
+      lessonId
+      reviewer {
+        id
+        username
+      }
+      createdAt
+      updatedAt
+    }
+    lessonStatus {
+      lessonId
+      isPassed
+      isTeaching
+      isEnrolled
+    }
+   }
+   }
+ }
+`
+
 export const GET_APP = gql`
   query {
     lessons {
