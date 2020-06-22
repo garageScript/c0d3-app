@@ -5,6 +5,7 @@ import {
   signup,
   isTokenValid
 } from '../helpers/controllers/authController'
+import { userInfo } from '../helpers/controllers/userInfoController'
 import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import db from '../helpers/dbload'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
@@ -65,7 +66,8 @@ export default {
     },
     alerts() {
       return Alert.findAll()
-    }
+    },
+    userInfo
   },
 
   Mutation: {

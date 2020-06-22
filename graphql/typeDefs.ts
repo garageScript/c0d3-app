@@ -4,6 +4,7 @@ export default gql`
   type Query {
     lessons: [Lesson]
     session: Session
+    userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
     alerts: [Alert]
