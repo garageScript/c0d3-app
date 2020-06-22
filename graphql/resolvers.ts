@@ -5,6 +5,7 @@ import {
   signup,
   isTokenValid
 } from '../helpers/controllers/authController'
+import { userInfo } from '../helpers/controllers/userInfoController'
 import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import db from '../helpers/dbload'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
@@ -66,37 +67,7 @@ export default {
     alerts() {
       return Alert.findAll()
     },
-    async userInfo(_parent: void, args: any) {
-      const username = _.get(args, 'username')
-      if (!username) {
-        return null
-      }
-      const user = await User.findOne({
-        where: {
-          username
-        }
-      })
-      if (!user) {
-        return null
-      }
-      const [lessonStatus, submissions] = await Promise.all([
-        UserLesson.findAll({
-          where: {
-            userId: user.id
-          }
-        }),
-        Submission.findAll({
-          where: {
-            userId: user.id
-          }
-        })
-      ])
-      return {
-        user,
-        lessonStatus,
-        submissions
-      }
-    }
+    userInfo
   },
 
   Mutation: {
