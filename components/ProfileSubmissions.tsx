@@ -67,7 +67,7 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     )
   })
   return (
-    <div className="card shadow-sm profile-submissions">
+    <div className="card shadow-sm profile-submissions mt-3">
       <div className="card-body">
         <h3>Challenges</h3>
         <div className="display_lessons">{displaySubmissions}</div>
