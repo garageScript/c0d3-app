@@ -1,11 +1,10 @@
 jest.mock('../dbload')
-jest.mock('node-fetch')
 import db from '../dbload'
 import fetch from 'node-fetch'
 import resolvers from '../../graphql/resolvers'
 
 const { User, UserLesson, Submission } = db
-describe('userInfo resolver', () => {
+describe('userInfo controller tests', () => {
   test('should return null if no username is passed in', async () => {
     expect(resolvers.Query.userInfo({}, {})).rejects.toEqual('Invalid username')
   })
