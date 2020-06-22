@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost'
 
 const LOGOUT_USER = gql`
-  mutation {
+  mutation logout {
     logout {
       success
       username
