@@ -2514,7 +2514,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
 
 exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] = `
 <div
-  className="card shadow-sm profile-submissions"
+  className="card shadow-sm profile-submissions mt-3"
 >
   <div
     className="card-body"

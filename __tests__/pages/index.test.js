@@ -16,7 +16,7 @@ describe('<IndexPage />', () => {
     jest.clearAllMocks()
   })
 
-  const mocksWithSession = (session) => [
+  const mocksWithSession = session => [
     {
       request: { query: GET_APP },
       result: {

@@ -81,7 +81,7 @@ User.hasMany(UserLesson, {
   foreignKey: 'userId'
 })
 
-sequelize.sync({ alter: true })
+sequelize.sync({ alter: !!process.env.ALTER_DB })
 
 export default {
   Lesson,
