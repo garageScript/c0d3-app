@@ -5,10 +5,10 @@ import resolvers from '../../graphql/resolvers'
 
 const { User, UserLesson, Submission } = db
 describe('userInfo controller tests', () => {
-  test('should return null if no username is passed in', async () => {
+  test('should return error of invalid username if no username is passed in', async () => {
     expect(resolvers.Query.userInfo({}, {})).rejects.toEqual('Invalid username')
   })
-  test('should return null if User.findOne returns null', async () => {
+  test('should return error if User.findOne returns invalid user object', async () => {
     User.findOne = jest.fn()
     expect(
       resolvers.Query.userInfo({}, { username: 'testing2020' })
