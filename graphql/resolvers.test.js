@@ -1,7 +1,6 @@
 import resolvers from '../graphql/resolvers'
 import db from '../helpers/dbload'
-jest.mock('node-fetch')
-jest.mock('mailgun-js')
+jest.mock('../helpers/dbload')
 
 const { Query } = resolvers
 const { User, Submission, UserLesson } = db
