@@ -118,7 +118,8 @@
     },
     "coveragePathIgnorePatterns": [
       "stories",
-      "testUtil"
+      "testUtil",
+      "graphql/index.tsx"
     ]
   },
   "husky": {
