@@ -96,9 +96,9 @@ export const REJECT_SUBMISSION = gql`
   }
 `
 
-export const USER_INFO = gql `
- query {
-   userInfo(username: String!) {
+export const USER_INFO = gql`
+query USER_INFO( $username: String ) {
+  userinfo(username: $username) {
     user {
       id
       username
@@ -127,10 +127,8 @@ export const USER_INFO = gql `
       isTeaching
       isEnrolled
     }
-   }
-   }
- }
-`
+  }
+  }`
 
 export const GET_APP = gql`
   query {

@@ -1,11 +1,12 @@
 import * as React from 'react'
+import { useQuery } from '@apollo/react-hooks'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
 import { Lesson } from '../../@types/lesson'
 import { AppData } from '../../@types/app'
 import { UserSubmission, Challenge } from '../../@types/challenge'
-import { GET_APP } from '../../graphql/queries'
+import { GET_APP, USER_INFO } from '../../graphql/queries'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
@@ -75,6 +76,14 @@ const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
       challenges: challengesStatus
     }
   })
+
+  const { loading, error, data } = useQuery(USER_INFO, {
+    variables: { username },
+  });
+
+  if (loading) return <h1>Loading</h1>;
+  if (error) return <h1>Error</h1>;
+  console.log(data)
 
   return (
     <Layout>
