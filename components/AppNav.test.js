@@ -1,7 +1,8 @@
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP, LOGOUT_USER } from '../graphql/queries'
+import GET_APP from '../graphql/queries/getApp'
+import LOGOUT_USER from '../graphql/queries/logoutUser'
 import dummySessionData from '../__dummy__/sessionData'
 import AppNav from './AppNav'
 

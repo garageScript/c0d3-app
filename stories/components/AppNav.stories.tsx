@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
 import AppNav from '../../components/AppNav'
 
 export default {
@@ -18,7 +18,8 @@ export const LoggedIn: React.FC = () => {
           session: {
             user: {
               id: 1,
-              username: 'fake user'
+              username: 'fakeusername',
+              name: 'fake user'
             },
             submissions: [],
             lessonStatus: []
@@ -43,11 +44,7 @@ export const LoggedOut: React.FC = () => {
       result: {
         data: {
           lessons: [],
-          session: {
-            user: null,
-            submissions: [],
-            lessonStatus: []
-          },
+          session: null,
           alerts: []
         }
       }

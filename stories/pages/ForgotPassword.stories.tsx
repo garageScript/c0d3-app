@@ -1,7 +1,7 @@
 import * as React from 'react'
 import ForgotPassword from '../../pages/forgotpassword'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
 import dummySessionData from '../../__dummy__/sessionData'
 
 export default {

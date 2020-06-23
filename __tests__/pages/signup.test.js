@@ -1,7 +1,8 @@
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP, SIGNUP_USER } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
+import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 
 describe('Signup Page', () => {

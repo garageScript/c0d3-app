@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/react-hooks'
-import { RESET_PASSWORD } from '../graphql/queries'
+import RESET_PASSWORD from '../graphql/queries/resetPassword'
 import { resetPasswordValidation } from '../helpers/formValidation'
 import Input from '../components/Input'
 import Layout from '../components/Layout'

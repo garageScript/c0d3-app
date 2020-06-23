@@ -9,11 +9,14 @@ type Props = {
 
 const AlertsDisplay: React.FC<Props> = ({ alerts, page }) => {
   const [dismissedAlerts, onDismiss] = useState<DismissedAlerts>({})
+  const [loading, setLoading] = useState<boolean>(true)
+
   useEffect(() => {
     const localDismissedAlerts = localStorage.getItem('dismissedAlerts')
     if (localDismissedAlerts) {
       onDismiss(JSON.parse(localDismissedAlerts))
     }
+    setLoading(false)
   }, [])
 
   const dismissAlert = (id: string) => {
@@ -26,6 +29,8 @@ const AlertsDisplay: React.FC<Props> = ({ alerts, page }) => {
       return newDismissedAlerts
     })
   }
+
+  if (loading) return null
 
   const widthClass = page === 'curriculum' ? 'col-12' : ''
   return (
