@@ -9,7 +9,8 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 import { useMutation } from '@apollo/react-hooks'
-import { ACCEPT_SUBMISSION, REJECT_SUBMISSION } from '../graphql/queries'
+import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
+import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { SubmissionData } from '../@types/submission'
 
 import _ from 'lodash'

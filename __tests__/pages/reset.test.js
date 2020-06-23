@@ -1,7 +1,8 @@
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP, UPDATE_PASSWORD } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
+import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import { withTestRouter } from '../../testUtil/withNextRouter'
 import ResetPassword from '../../pages/confirm/[token]'
 

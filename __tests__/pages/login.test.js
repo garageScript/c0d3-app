@@ -2,7 +2,8 @@ import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
 import { GraphQLError } from 'graphql'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP, LOGIN_USER } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
+import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
 
 // Mock global.window

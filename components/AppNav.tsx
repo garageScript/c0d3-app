@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
-import { useMutation } from '@apollo/react-hooks'
-import { LOGOUT_USER } from '../graphql/queries'
-import { GET_APP } from '../graphql/queries'
+import { useLogoutMutation } from '../graphql'
+import GET_APP from '../graphql/queries/getApp'
 import { AppData } from '../@types/app'
 import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
 import _ from 'lodash'
@@ -52,10 +51,9 @@ const AuthLink = () => (
 )
 
 const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
-  const [logoutUser, { data }] = useMutation(LOGOUT_USER)
+  const [logoutUser, { data }] = useLogoutMutation()
   useEffect(() => {
-    const { success } = _.get(data, 'logout', false)
-    if (success) {
+    if (data?.logout?.success) {
       window.location.pathname = '/'
     }
   }, [data])

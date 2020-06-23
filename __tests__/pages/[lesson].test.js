@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, wait } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
-import { GET_APP } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
 import { withTestRouter } from '../../testUtil/withNextRouter'
 import Lesson from '../../pages/curriculum/[lesson]'
 import dummyLessonData from '../../__dummy__/lessonData'
