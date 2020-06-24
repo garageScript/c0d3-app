@@ -5315,6 +5315,20 @@ exports[`Storyshots Theme/Button Basic 1`] = `
 </button>
 `;
 
+exports[`Storyshots Theme/Button Border Button 1`] = `
+<button
+  className="btn border"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Border Button
+</button>
+`;
+
 exports[`Storyshots Theme/Button Colored Button 1`] = `
 Array [
   <button
@@ -5364,33 +5378,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots Theme/Button Colored Type Button 1`] = `
-Array [
-  <button
-    className="btn bg-success"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#fff",
-      }
-    }
-  >
-    White Success Button
-  </button>,
-  <button
-    className="btn bg-danger"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#8e8e8e",
-      }
-    }
-  >
-    LightGrey Danger Button
-  </button>,
-]
-`;
-
 exports[`Storyshots Theme/Button Margined Button 1`] = `
 <button
   className="btn m-1"
@@ -5407,6 +5394,17 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 
 exports[`Storyshots Theme/Button Typed Button 1`] = `
 Array [
+  <button
+    className="btn bg-primary"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Primary Button
+  </button>,
   <button
     className="btn bg-success"
     onClick={[Function]}
