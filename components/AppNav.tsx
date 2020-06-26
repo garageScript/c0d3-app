@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import NavLink from './NavLink'
-import Button from './Button'
-import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import LoadingSpinner from './LoadingSpinner'
+import { Button } from './theme/Button'
+import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -56,7 +56,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
     }
   }, [data])
   return (
-    <div>
+    <div className="d-flex">
       <NavLink
         path="/profile/[username]"
         as={`/profile/${username}`}
@@ -64,11 +64,10 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
       >
         {`${initial} ${username}`}
       </NavLink>
-      <Button
-        text="Logout"
-        btnType="border btn-secondary ml-2"
-        onClick={logoutUser}
-      />
+
+      <Button border ml="2" onClick={logoutUser}>
+        Logout
+      </Button>
     </div>
   )
 }
