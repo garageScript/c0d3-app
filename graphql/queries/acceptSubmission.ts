@@ -9,4 +9,5 @@ const ACCEPT_SUBMISSION = gql`
     }
   }
 `
+
 export default ACCEPT_SUBMISSION
