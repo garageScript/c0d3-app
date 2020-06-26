@@ -7,4 +7,5 @@ const ADD_ALERT = gql`
     }
   }
 `
+
 export default ADD_ALERT

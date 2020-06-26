@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react'
 import NavLink from './NavLink'
 import Button from './Button'
-import { useLogoutMutation } from '../graphql'
-import GET_APP from '../graphql/queries/getApp'
-import { AppData } from '../@types/app'
-import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
+import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
+import LoadingSpinner from './LoadingSpinner'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -114,18 +112,18 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
-  const { session } = queryData
-
+const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   const renderButtons = () => {
     if (!session) return <UnAuthButton />
-    const {
-      user: { username }
-    } = session
+
     const initial = ''
+    // TODO: replace with typing
+    const username = _.get(session, 'user.username', '')
 
     return <AuthButton username={username} initial={initial} />
   }
+
+  if (loading) return <LoadingSpinner />
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
@@ -147,9 +145,4 @@ const AppNav: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader<AppData>(
-  {
-    query: GET_APP
-  },
-  AppNav
-)
+export default withGetApp()(AppNav)
