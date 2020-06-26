@@ -264,44 +264,6 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Button Border With Text 1`] = `
-<button
-  className="btn border btn-secondary overflow-hidden text-truncate"
-  onClick={[Function]}
->
-  Click Me
-</button>
-`;
-
-exports[`Storyshots Components/Button Color Badge Button 1`] = `
-<button
-  className="btn border btn-secondary overflow-hidden text-truncate"
-  onClick={[Function]}
-  style={
-    Object {
-      "fontSize": "13px",
-      "maxWidth": "125px",
-    }
-  }
->
-  <small
-    className="text-uppercase bg-primary rounded-circle mr-2 text-light p-1"
-  >
-    SZ
-  </small>
-  Song
-</button>
-`;
-
-exports[`Storyshots Components/Button Color With Text 1`] = `
-<button
-  className="btn btn-primary"
-  onClick={[Function]}
->
-  Click Me
-</button>
-`;
-
 exports[`Storyshots Components/Card Basic 1`] = `
 <div
   className="row mt-5"
@@ -3394,8 +3356,13 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn btn-primary"
+          className="btn bg-primary"
           onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
         >
           Review
         </button>
@@ -3456,8 +3423,13 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn btn-primary"
+          className="btn bg-primary"
           onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
         >
           Review
         </button>
@@ -3518,8 +3490,13 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn btn-primary"
+          className="btn bg-primary"
           onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
         >
           Review
         </button>
@@ -3584,8 +3561,13 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
       href="#"
     >
       <button
-        className="btn btn-primary"
+        className="btn bg-primary"
         onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
       >
         Review
       </button>
@@ -5333,6 +5315,20 @@ exports[`Storyshots Theme/Button Basic 1`] = `
 </button>
 `;
 
+exports[`Storyshots Theme/Button Border Button 1`] = `
+<button
+  className="btn border"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Border Button
+</button>
+`;
+
 exports[`Storyshots Theme/Button Colored Button 1`] = `
 Array [
   <button
@@ -5382,33 +5378,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots Theme/Button Colored Type Button 1`] = `
-Array [
-  <button
-    className="btn bg-success"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#fff",
-      }
-    }
-  >
-    White Success Button
-  </button>,
-  <button
-    className="btn bg-danger"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#8e8e8e",
-      }
-    }
-  >
-    LightGrey Danger Button
-  </button>,
-]
-`;
-
 exports[`Storyshots Theme/Button Margined Button 1`] = `
 <button
   className="btn m-1"
@@ -5425,6 +5394,17 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 
 exports[`Storyshots Theme/Button Typed Button 1`] = `
 Array [
+  <button
+    className="btn bg-primary"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Primary Button
+  </button>,
   <button
     className="btn bg-success"
     onClick={[Function]}
