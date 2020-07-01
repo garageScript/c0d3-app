@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
-import { Lesson } from '../../@types/lesson'
-import { UserSubmission, Challenge } from '../../@types/challenge'
-import USER_INFO from '../../graphql/queries/userInfo'
+import { UserSubmission } from '../../@types/challenge'
+import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
@@ -19,21 +17,29 @@ export type UserInfo = {
 const UserProfile: React.FC = () => {
   const router = useRouter()
   const username = router.query.username as string
-  const { loading, error, data } = useQuery(USER_INFO, {
+  const { loading, error, data } = useUserInfoQuery({
     variables: { username }
   })
   if (loading) return <h1>Loading</h1>
   if (error) return <h1>Error</h1>
-  const { lessons } = data
-  const fullname = data.userInfo.user.name
+  const { lessons } = data || {}
+  const lessonsList = lessons || []
+  console.log('data:', data)
+  const fullname = _.get(data, 'userInfo.user.name', '')
   const userInfo: UserInfo = {
     username,
-    firstName: fullname.split(' ')[0],
-    lastName: fullname.split(' ')[1]
+    firstName: fullname.split(' ')[0] || 'A',
+    lastName: fullname.split(' ')[1] || ' '
   }
-  const userSubmissions: UserSubmission[] = data.userInfo.submissions
-  const lessonInfo = lessons.map((lesson: Lesson) => {
-    const { challenges, order } = lesson
+  const userSubmissions: UserSubmission[] = _.get(
+    data,
+    'userInfo.submissions',
+    []
+  )
+  const profileLessons = (lessons || []).map(lessonInfo => {
+    const lesson = lessonInfo || {}
+    const { challenges } = lesson
+    const challengeList = challenges || []
     const passedLessonSubmissions = userSubmissions.filter(
       ({ status, lessonId }) => {
         // TODO: Fix lesson.id and lessonId types
@@ -46,19 +52,22 @@ const UserProfile: React.FC = () => {
     const updateSubmissions = passedLessonSubmissions.filter(
       ({ challengeId }) => challengeId
     )
-    const lessonProgress = updateSubmissions.length / challenges.length
+    const lessonProgress = updateSubmissions.length / challengeList.length
     const progress = Math.floor(lessonProgress * 100)
-    return { progress, order }
+    return { progress, order: lesson.order || 0 }
   })
 
-  const profileLessons = lessons.map(({ order, title, challenges }: Lesson) => {
-    const challengesStatus = challenges.map((c: Challenge) => {
+  const profileSubmissions = lessonsList.map(lessonInfo => {
+    const lesson = lessonInfo || {}
+    const challengeList = lesson.challenges || []
+    const challengesStatus = challengeList.map(challengeInfo => {
+      const challenge = challengeInfo || {}
       const challengeSubmission = userSubmissions.find(
-        (s: UserSubmission) => c.id === s.challengeId
+        submission => challenge.id === submission.challengeId
       )
 
       return {
-        challengeNumber: order,
+        challengeNumber: challenge.order || 0,
         challengeStatus: challengeSubmission
           ? challengeSubmission.status
           : 'open'
@@ -66,8 +75,8 @@ const UserProfile: React.FC = () => {
     })
 
     return {
-      order,
-      title,
+      order: lesson.order || 0,
+      title: lesson.title || '',
       challenges: challengesStatus
     }
   })
@@ -79,8 +88,8 @@ const UserProfile: React.FC = () => {
           <ProfileImageInfo user={userInfo} />
         </div>
         <div className="col-8">
-          <ProfileLessons lessons={lessonInfo} />
-          <ProfileSubmissions lessons={profileLessons} />
+          <ProfileLessons lessons={profileLessons} />
+          <ProfileSubmissions lessons={profileSubmissions} />
         </div>
       </div>
     </Layout>

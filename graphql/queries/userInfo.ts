@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost'
 
 const USER_INFO = gql`
-  query USER_INFO($username: String!) {
+  query userInfo($username: String!) {
     lessons {
       id
       title
