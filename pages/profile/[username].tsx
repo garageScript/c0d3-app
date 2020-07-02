@@ -7,6 +7,7 @@ import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
+import LoadingSpinner from '../../components/LoadingSpinner'
 
 export type UserInfo = {
   username: string
@@ -20,11 +21,15 @@ const UserProfile: React.FC = () => {
   const { loading, error, data } = useUserInfoQuery({
     variables: { username }
   })
-  if (loading) return <h1>Loading</h1>
-  if (error) return <h1>Error</h1>
+  if (loading) {
+    return <LoadingSpinner />
+  }
+  if (error) {
+    return <h1>Error</h1>
+  }
   const { lessons } = data || {}
   const lessonsList = lessons || []
-  console.log('data:', data)
+
   const fullname = _.get(data, 'userInfo.user.name', '')
   const userInfo: UserInfo = {
     username,
