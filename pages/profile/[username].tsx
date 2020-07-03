@@ -32,6 +32,7 @@ const UserProfile: React.FC = () => {
 
   const fullname = _.get(data, 'userInfo.user.name', '')
   const userInfo: UserInfo = {
+    // 'A' stands for Anonymous, in case user did not put in full name
     username,
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' '
@@ -54,10 +55,10 @@ const UserProfile: React.FC = () => {
         )
       }
     )
-    const updateSubmissions = passedLessonSubmissions.filter(
+    const completedSubmissions = passedLessonSubmissions.filter(
       ({ challengeId }) => challengeId
     )
-    const lessonProgress = updateSubmissions.length / challengeList.length
+    const lessonProgress = completedSubmissions.length / challengeList.length
     const progress = Math.floor(lessonProgress * 100)
     return { progress, order: lesson.order || 0 }
   })
