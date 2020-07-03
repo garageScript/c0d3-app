@@ -1,16 +1,13 @@
 import * as React from 'react'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
-import { Lesson } from '../../@types/lesson'
-import { AppData } from '../../@types/app'
-import { UserSubmission, Challenge } from '../../@types/challenge'
-import GET_APP from '../../graphql/queries/getApp'
+import { useRouter } from 'next/router'
+import { UserSubmission } from '../../@types/challenge'
+import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
-import withQueryLoader, {
-  QueryDataProps
-} from '../../containers/withQueryLoader'
+import LoadingSpinner from '../../components/LoadingSpinner'
 
 export type UserInfo = {
   username: string
@@ -18,20 +15,37 @@ export type UserInfo = {
   lastName: string
 }
 
-const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
-  const { lessons, session } = queryData
-  const fullname = _.get(session, 'user.name', '')
-  const username = _.get(session, 'user.username', '')
-
-  const userInfo: UserInfo = {
-    username,
-    firstName: fullname.split(' ')[0],
-    lastName: fullname.split(' ')[1]
+const UserProfile: React.FC = () => {
+  const router = useRouter()
+  const username = router.query.username as string
+  const { loading, error, data } = useUserInfoQuery({
+    variables: { username }
+  })
+  if (loading) {
+    return <LoadingSpinner />
   }
+  if (error) {
+    return <h1>Error</h1>
+  }
+  const { lessons } = data || {}
+  const lessonsList = lessons || []
 
-  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
-  const lessonInfo = lessons.map((lesson: Lesson) => {
-    const { challenges, order } = lesson
+  const fullname = _.get(data, 'userInfo.user.name', '')
+  const userInfo: UserInfo = {
+    // 'A' stands for Anonymous, in case user did not put in full name
+    username,
+    firstName: fullname.split(' ')[0] || 'A',
+    lastName: fullname.split(' ')[1] || ' '
+  }
+  const userSubmissions: UserSubmission[] = _.get(
+    data,
+    'userInfo.submissions',
+    []
+  )
+  const profileLessons = (lessons || []).map(lessonInfo => {
+    const lesson = lessonInfo || {}
+    const { challenges } = lesson
+    const challengeList = challenges || []
     const passedLessonSubmissions = userSubmissions.filter(
       ({ status, lessonId }) => {
         // TODO: Fix lesson.id and lessonId types
@@ -41,23 +55,25 @@ const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
         )
       }
     )
-    const updateSubmissions = passedLessonSubmissions.filter(
+    const completedSubmissions = passedLessonSubmissions.filter(
       ({ challengeId }) => challengeId
     )
-    const lessonProgress = updateSubmissions.length / challenges.length
+    const lessonProgress = completedSubmissions.length / challengeList.length
     const progress = Math.floor(lessonProgress * 100)
-
-    return { progress, order }
+    return { progress, order: lesson.order || 0 }
   })
 
-  const profileLessons = lessons.map(({ order, title, challenges }: Lesson) => {
-    const challengesStatus = challenges.map((c: Challenge) => {
+  const profileSubmissions = lessonsList.map(lessonInfo => {
+    const lesson = lessonInfo || {}
+    const challengeList = lesson.challenges || []
+    const challengesStatus = challengeList.map(challengeInfo => {
+      const challenge = challengeInfo || {}
       const challengeSubmission = userSubmissions.find(
-        (s: UserSubmission) => c.id === s.challengeId
+        submission => challenge.id === submission.challengeId
       )
 
       return {
-        challengeNumber: order,
+        challengeNumber: challenge.order || 0,
         challengeStatus: challengeSubmission
           ? challengeSubmission.status
           : 'open'
@@ -65,8 +81,8 @@ const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     })
 
     return {
-      order,
-      title,
+      order: lesson.order || 0,
+      title: lesson.title || '',
       challenges: challengesStatus
     }
   })
@@ -78,17 +94,12 @@ const UserProfile: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
           <ProfileImageInfo user={userInfo} />
         </div>
         <div className="col-8">
-          <ProfileLessons lessons={lessonInfo} />
-          <ProfileSubmissions lessons={profileLessons} />
+          <ProfileLessons lessons={profileLessons} />
+          <ProfileSubmissions lessons={profileSubmissions} />
         </div>
       </div>
     </Layout>
   )
 }
 
-export default withQueryLoader<AppData>(
-  {
-    query: GET_APP
-  },
-  UserProfile
-)
+export default UserProfile
