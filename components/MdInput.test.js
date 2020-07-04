@@ -21,15 +21,11 @@ describe('write inside textarea', () => {
 describe('click Write Button', () => {
   test('switches to write mode when user clicks Write button', () => {
     const { container } = render(<MdInput />)
-    fireEvent.change(screen.getByRole('textbox'), {
-      target: { value: 'Javascript' }
-    })
     fireEvent.click(screen.getByText('Write'))
     const textbox = queryByTestId(container, 'textbox')
     const markdown = queryByTestId(container, 'markdown')
     expect(markdown).toBeNull()
     expect(textbox).toBeTruthy()
-    expect(screen.getByRole('textbox').value).toContain('Javascript')
     expect(container).toMatchSnapshot()
   })
 })
