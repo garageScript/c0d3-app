@@ -42,9 +42,7 @@ exports[`click Write Button switches to write mode when user clicks Write button
       data-testid="textbox"
       placeholder="Type something..."
       style="padding: 1rem; width: 100%; margin-top: .6rem;"
-    >
-      Javascript
-    </textarea>
+    />
   </div>
 </div>
 `;
