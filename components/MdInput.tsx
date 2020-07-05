@@ -50,15 +50,8 @@ export const MdInput: React.FC<MdInputProps> = ({
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <Button onClick={() => preview && setPreview(false)} data-testid="write">
-        Write
-      </Button>
-      <Button
-        onClick={() => !preview && setPreview(true)}
-        data-testid="preview"
-      >
-        Preview
-      </Button>
+      <Button onClick={() => setPreview(false)}>Write</Button>
+      <Button onClick={() => setPreview(true)}>Preview</Button>
       {displayOption}
     </div>
   )

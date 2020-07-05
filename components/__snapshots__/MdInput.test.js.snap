@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`click Preview Button switches to Preview mode when user clicks Preview button 1`] = `
+exports[`MdInput Component Should render text onto textbox when user types 1`] = `
+<div>
+  <div>
+    <button
+      class="btn"
+      style="color: rgb(41, 41, 41);"
+    >
+      Write
+    </button>
+    <button
+      class="btn"
+      style="color: rgb(41, 41, 41);"
+    >
+      Preview
+    </button>
+    <textarea
+      data-testid="textbox"
+      placeholder="Type something..."
+      style="padding: 1rem; width: 100%; margin-top: .6rem;"
+    >
+      Javascript
+    </textarea>
+  </div>
+</div>
+`;
+
+exports[`MdInput Component Should switch to Preview mode when user clicks Preview button 1`] = `
 <div>
   <div>
     <button
@@ -23,7 +49,7 @@ exports[`click Preview Button switches to Preview mode when user clicks Preview 
 </div>
 `;
 
-exports[`click Write Button switches to write mode when user clicks Write button 1`] = `
+exports[`MdInput Component Should switch to Write mode when user clicks Write button 1`] = `
 <div>
   <div>
     <button
@@ -43,32 +69,6 @@ exports[`click Write Button switches to write mode when user clicks Write button
       placeholder="Type something..."
       style="padding: 1rem; width: 100%; margin-top: .6rem;"
     />
-  </div>
-</div>
-`;
-
-exports[`write inside textarea renders text when user types 1`] = `
-<div>
-  <div>
-    <button
-      class="btn"
-      style="color: rgb(41, 41, 41);"
-    >
-      Write
-    </button>
-    <button
-      class="btn"
-      style="color: rgb(41, 41, 41);"
-    >
-      Preview
-    </button>
-    <textarea
-      data-testid="textbox"
-      placeholder="Type something..."
-      style="padding: 1rem; width: 100%; margin-top: .6rem;"
-    >
-      Javascript
-    </textarea>
   </div>
 </div>
 `;
