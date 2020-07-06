@@ -146,9 +146,14 @@ export type Query = {
   __typename?: 'Query'
   lessons?: Maybe<Array<Maybe<Lesson>>>
   session?: Maybe<Session>
+  userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
   alerts?: Maybe<Array<Maybe<Alert>>>
+}
+
+export type QueryUserInfoArgs = {
+  username: Scalars['String']
 }
 
 export type QueryIsTokenValidArgs = {
@@ -424,6 +429,82 @@ export type ChangePwMutationVariables = Exact<{
 export type ChangePwMutation = { __typename?: 'Mutation' } & {
   changePw?: Maybe<
     { __typename?: 'AuthResponse' } & Pick<AuthResponse, 'success'>
+  >
+}
+
+export type UserInfoQueryVariables = Exact<{
+  username: Scalars['String']
+}>
+
+export type UserInfoQuery = { __typename?: 'Query' } & {
+  lessons?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Lesson' } & Pick<
+          Lesson,
+          | 'id'
+          | 'title'
+          | 'description'
+          | 'docUrl'
+          | 'githubUrl'
+          | 'videoUrl'
+          | 'order'
+          | 'chatUrl'
+        > & {
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'title' | 'description' | 'order'
+                  >
+                >
+              >
+            >
+          }
+      >
+    >
+  >
+  userInfo?: Maybe<
+    { __typename?: 'Session' } & {
+      user?: Maybe<
+        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+      >
+      submissions?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'Submission' } & Pick<
+              Submission,
+              | 'id'
+              | 'status'
+              | 'mrUrl'
+              | 'diff'
+              | 'viewCount'
+              | 'comment'
+              | 'order'
+              | 'challengeId'
+              | 'lessonId'
+              | 'createdAt'
+              | 'updatedAt'
+            > & {
+                reviewer?: Maybe<
+                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+                >
+              }
+          >
+        >
+      >
+      lessonStatus?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'UserLesson' } & Pick<
+              UserLesson,
+              'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
+            >
+          >
+        >
+      >
+    }
   >
 }
 
@@ -743,6 +824,12 @@ export type QueryResolvers<
     ContextType
   >
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
+  userInfo?: Resolver<
+    Maybe<ResolversTypes['Session']>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryUserInfoArgs, 'username'>
+  >
   isTokenValid?: Resolver<
     ResolversTypes['Boolean'],
     ParentType,
@@ -1960,4 +2047,149 @@ export type ChangePwMutationResult = ApolloReactCommon.MutationResult<
 export type ChangePwMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ChangePwMutation,
   ChangePwMutationVariables
+>
+export const UserInfoDocument = gql`
+  query userInfo($username: String!) {
+    lessons {
+      id
+      title
+      description
+      docUrl
+      githubUrl
+      videoUrl
+      order
+      challenges {
+        id
+        title
+        description
+        order
+      }
+      chatUrl
+    }
+    userInfo(username: $username) {
+      user {
+        id
+        username
+        name
+      }
+      submissions {
+        id
+        status
+        mrUrl
+        diff
+        viewCount
+        comment
+        order
+        challengeId
+        lessonId
+        reviewer {
+          id
+          username
+        }
+        createdAt
+        updatedAt
+      }
+      lessonStatus {
+        lessonId
+        isPassed
+        isTeaching
+        isEnrolled
+      }
+    }
+  }
+`
+export type UserInfoComponentProps = Omit<
+  ApolloReactComponents.QueryComponentOptions<
+    UserInfoQuery,
+    UserInfoQueryVariables
+  >,
+  'query'
+> &
+  ({ variables: UserInfoQueryVariables; skip?: boolean } | { skip: boolean })
+
+export const UserInfoComponent = (props: UserInfoComponentProps) => (
+  <ApolloReactComponents.Query<UserInfoQuery, UserInfoQueryVariables>
+    query={UserInfoDocument}
+    {...props}
+  />
+)
+
+export type UserInfoProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    UserInfoQuery,
+    UserInfoQueryVariables
+  >
+} &
+  TChildProps
+export function withUserInfo<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UserInfoQuery,
+    UserInfoQueryVariables,
+    UserInfoProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    UserInfoQuery,
+    UserInfoQueryVariables,
+    UserInfoProps<TChildProps, TDataName>
+  >(UserInfoDocument, {
+    alias: 'userInfo',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUserInfoQuery__
+ *
+ * To run a query within a React component, call `useUserInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useUserInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useUserInfoQuery({
+ *   variables: {
+ *      username: // value for 'username'
+ *   },
+ * });
+ */
+export function useUserInfoQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    UserInfoQuery,
+    UserInfoQueryVariables
+  >
+) {
+  return ApolloReactHooks.useQuery<UserInfoQuery, UserInfoQueryVariables>(
+    UserInfoDocument,
+    baseOptions
+  )
+}
+export function useUserInfoLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    UserInfoQuery,
+    UserInfoQueryVariables
+  >
+) {
+  return ApolloReactHooks.useLazyQuery<UserInfoQuery, UserInfoQueryVariables>(
+    UserInfoDocument,
+    baseOptions
+  )
+}
+export type UserInfoQueryHookResult = ReturnType<typeof useUserInfoQuery>
+export type UserInfoLazyQueryHookResult = ReturnType<
+  typeof useUserInfoLazyQuery
+>
+export type UserInfoQueryResult = ApolloReactCommon.QueryResult<
+  UserInfoQuery,
+  UserInfoQueryVariables
 >
