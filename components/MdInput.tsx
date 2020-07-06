@@ -60,7 +60,7 @@ export const MdInput: React.FC<MdInputProps> = ({
     />
   )
 
-  // makes previewBtn or writeBtn background grey, depending on mode chosen (write or preview)
+  // makes previewBtn or writeBtn background grey, depending on mode chosen
   const writeBtnStyle = preview ? btnStyle : selectedBtnStyle
   const previewBtnStyle = preview ? selectedBtnStyle : btnStyle
 
