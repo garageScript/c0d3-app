@@ -43,7 +43,7 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
 
 const SignupSuccess: React.FC = () => (
   <Card
-    success
+    type="success"
     data-testid="signup-success"
     title="Account created successfully!"
   >
