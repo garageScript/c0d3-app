@@ -16,6 +16,18 @@ const MdStyle = {
   marginTop: 0
 }
 
+// style only for Buttons
+const btnStyle = {
+  display: 'inline-block'
+}
+
+// styling to turn button background grey
+const selectedBtnStyle = {
+  ...btnStyle,
+  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+  borderRadius: '0.25rem'
+}
+
 type MdInputProps = {
   onChange?: Function
   bgColor?: 'white' | 'none'
@@ -48,10 +60,18 @@ export const MdInput: React.FC<MdInputProps> = ({
     />
   )
 
+  // makes previewBtn or writeBtn opaque depending on mode chosen (write or preview)
+  const writeBtnStyle = preview ? btnStyle : selectedBtnStyle
+  const previewBtnStyle = preview ? selectedBtnStyle : btnStyle
+
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <Button onClick={() => setPreview(false)}>Write</Button>
-      <Button onClick={() => setPreview(true)}>Preview</Button>
+      <div style={writeBtnStyle}>
+        <Button onClick={() => setPreview(false)}>Write</Button>
+      </div>
+      <div style={previewBtnStyle}>
+        <Button onClick={() => setPreview(true)}>Preview</Button>
+      </div>
       {displayOption}
     </div>
   )
