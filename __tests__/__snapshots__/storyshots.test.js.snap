@@ -2267,6 +2267,222 @@ exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/MdInput Basic 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "none",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.2)",
+        "borderRadius": "0.25rem",
+        "display": "inline-block",
+      }
+    }
+  >
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
+    >
+      Write
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
+    >
+      Preview
+    </button>
+  </div>
+  <textarea
+    data-testid="textbox"
+    onChange={[Function]}
+    placeholder="Type something..."
+    style={
+      Object {
+        "marginTop": ".6rem",
+        "padding": "1rem",
+        "width": "100%",
+      }
+    }
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/MdInput White 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.2)",
+        "borderRadius": "0.25rem",
+        "display": "inline-block",
+      }
+    }
+  >
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
+    >
+      Write
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
+    >
+      Preview
+    </button>
+  </div>
+  <textarea
+    data-testid="textbox"
+    onChange={[Function]}
+    placeholder="Type something..."
+    style={
+      Object {
+        "marginTop": ".6rem",
+        "padding": "1rem",
+        "width": "100%",
+      }
+    }
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "white",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.2)",
+          "borderRadius": "0.25rem",
+          "display": "inline-block",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Preview
+      </button>
+    </div>
+    <textarea
+      data-testid="textbox"
+      onChange={[Function]}
+      placeholder="Type something..."
+      style={
+        Object {
+          "marginTop": ".6rem",
+          "padding": "1rem",
+          "width": "100%",
+        }
+      }
+      value=""
+    />
+  </div>
+  <button
+    className="btn bg-success m-1"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Accept
+  </button>
+  <button
+    className="btn bg-danger m-1"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Reject
+  </button>
+</div>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
