@@ -15,7 +15,7 @@ const initialValues = {
 }
 
 const ConfirmSuccess: React.FC = () => (
-  <Card success title="Password has been set!">
+  <Card type="success" title="Password has been set!">
     <a className="btn btn-primary btn-lg mb-3" role="button" href="/curriculum">
       Continue to dashboard
     </a>

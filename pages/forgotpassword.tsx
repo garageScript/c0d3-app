@@ -20,7 +20,7 @@ export const ResetPassword: React.FC = () => {
   }
   if (data) {
     return (
-      <Card title="Password reset instructions sent" success={true}>
+      <Card title="Password reset instructions sent" type="success">
         <p>
           You will receive an email containing a link to reset your password.
         </p>

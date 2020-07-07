@@ -367,6 +367,46 @@ exports[`Storyshots Components/Card With Classes 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Card With Fail 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <svg
+        className="mb-4"
+        height="100px"
+        viewBox="0 0 180 180"
+        width="100px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M89 9a81 81 0 1 0 2 0zm1 38v58m0 25v1"
+          fill="none"
+          stroke="#721c24"
+          strokeLinecap="round"
+          strokeWidth="16"
+        />
+      </svg>
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      >
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Card With Success 1`] = `
 <div
   className="row mt-5"
