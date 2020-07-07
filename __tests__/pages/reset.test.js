@@ -136,9 +136,8 @@ describe('ResetPassword Page', () => {
     })
 
     await wait(() => {
-      expect(
-        getByText('Link has expired. Request a new password reset')
-      ).toBeTruthy()
+      expect(getByText('Link has expired.')).toBeTruthy()
+      expect(getByText('Request a new password reset')).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
   })
