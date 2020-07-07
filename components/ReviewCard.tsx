@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
@@ -24,29 +24,12 @@ type ReviewCardProps = {
   submissionData: SubmissionData
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const {
-    id,
-    diff,
-    comment,
-    updatedAt,
-    user: { username }
-  } = submissionData
-  const [commentValue, setCommentValue] = useState('')
-  const [accept] = useMutation(ACCEPT_SUBMISSION)
-  const [reject] = useMutation(REJECT_SUBMISSION)
-  let files: File[] = []
+type DiffViewProps = {
+  diff?: string
+}
 
-  if (diff) files = gitDiffParser.parse(diff)
-
-  const reviewSubmission = (review: any) => async () => {
-    await review({
-      variables: {
-        submissionId: id,
-        comment: commentValue
-      }
-    })
-  }
+const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
+  const files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: String[] = []
@@ -79,6 +62,32 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     )
   }
 
+  return <>{files.map(renderFile)}</>
+}
+
+const MemoDiffView = memo(DiffView)
+
+export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
+  const {
+    id,
+    diff,
+    comment,
+    updatedAt,
+    user: { username }
+  } = submissionData
+  const [commentValue, setCommentValue] = useState('')
+  const [accept] = useMutation(ACCEPT_SUBMISSION)
+  const [reject] = useMutation(REJECT_SUBMISSION)
+
+  const reviewSubmission = (review: any) => async () => {
+    await review({
+      variables: {
+        submissionId: id,
+        comment: commentValue
+      }
+    })
+  }
+
   return (
     <>
       {diff && (
@@ -94,7 +103,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {files.map(renderFile)}
+              <MemoDiffView diff={diff} />
             </div>
           </div>
 
