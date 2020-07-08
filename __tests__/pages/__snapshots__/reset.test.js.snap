@@ -93,63 +93,35 @@ exports[`ResetPassword Page Should render alert on error 1`] = `
         <div
           class="card-body text-center pt-5 pb-5"
         >
+          <svg
+            class="mb-4"
+            height="100px"
+            viewBox="0 0 180 180"
+            width="100px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M89 9a81 81 0 1 0 2 0zm1 38v58m0 25v1"
+              fill="none"
+              stroke="#721c24"
+              stroke-linecap="round"
+              stroke-width="16"
+            />
+          </svg>
           <h1
             class="card-title h2 font-weight-bold mb-5"
           >
-            Enter new password
+            Link has expired.
           </h1>
           <p
             class="card-text"
           />
-          <div
-            class="alert d-flex justify-content-between mt-3 alert-danger"
-            role="alert"
+          <a
+            class="btn btn-primary"
+            href="/forgotpassword"
           >
-            <div>
-              <img
-                class="mr-3 alert-icon"
-                src="/curriculumAssets/icons/exclamation.svg"
-              />
-              Link has expired. Request a new password reset 
-            </div>
-          </div>
-          <p
-            class="mb-4"
-          >
-            Your password should contain minimum 6 characters.
-          </p>
-          <form
-            action="#"
-            data-testid="form"
-          >
-            <div
-              class="form-group"
-            >
-              <input
-                class="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="password"
-                name="password"
-                placeholder="Enter new password"
-                type="password"
-                value="fake reset password"
-              />
-              <input
-                class="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="confirmPassword"
-                name="confirmPassword"
-                placeholder="Re-enter new password"
-                type="password"
-                value="fake reset password"
-              />
-              <button
-                class="btn btn-primary btn-lg btn-block mb-3"
-                data-testid="submit"
-                type="submit"
-              >
-                Reset Password
-              </button>
-            </div>
-          </form>
+            Request a new password reset
+          </a>
         </div>
       </div>
     </div>

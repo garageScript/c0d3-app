@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/react-hooks'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
-import Alert from '../../components/Alert'
+import NavLink from '../../components/NavLink'
 import Input from '../../components/Input'
 import { confirmPasswordValidation } from '../../helpers/formValidation'
 import Layout from '../../components/Layout'
@@ -19,6 +19,14 @@ const ConfirmSuccess: React.FC = () => (
     <a className="btn btn-primary btn-lg mb-3" role="button" href="/curriculum">
       Continue to dashboard
     </a>
+  </Card>
+)
+
+const ExpiredToken: React.FC = () => (
+  <Card type="fail" title="Link has expired.">
+    <NavLink path="/forgotpassword" className="btn btn-primary">
+      Request a new password reset
+    </NavLink>
   </Card>
 )
 
@@ -40,16 +48,10 @@ export const ResetPassword: React.FC = () => {
     return <ConfirmSuccess />
   }
 
+  if (error) return <ExpiredToken />
+
   return (
     <Card title="Enter new password">
-      {error && (
-        <Alert
-          alert={{
-            text: 'Link has expired. Request a new password reset',
-            type: 'urgent'
-          }}
-        />
-      )}
       <p className="mb-4">Your password should contain minimum 6 characters.</p>
       <Formik
         validateOnBlur
