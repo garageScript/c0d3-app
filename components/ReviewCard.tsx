@@ -17,6 +17,7 @@ import _ from 'lodash'
 
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
+import { MdInput } from './MdInput'
 
 dayjs.extend(relativeTime)
 
@@ -109,12 +110,10 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-footer bg-white">
             {comment && <Markdown>{comment}</Markdown>}
-            <textarea
-              value={commentValue}
-              onChange={e => setCommentValue(e.target.value)}
-              placeholder="Type something..."
-              style={{ width: '100%', padding: '1rem' }}
-            ></textarea>
+            <MdInput
+              onChange={(comment: string) => setCommentValue(comment)}
+              bgColor={'white'}
+            />
             <Button
               m="1"
               type="success"

@@ -26,7 +26,7 @@ exports[`MdInput Component Should render text onto textbox when user types 1`] =
     <textarea
       data-testid="textbox"
       placeholder="Type something..."
-      style="padding: 1rem; width: 100%; margin-top: .6rem;"
+      style="padding: 1rem; width: 100%;"
     >
       Javascript
     </textarea>
@@ -59,7 +59,7 @@ exports[`MdInput Component Should switch to Preview mode when user clicks Previe
     </div>
     <span
       data-testid="markdown"
-      style="padding: 1rem; width: 100%; margin-top: 0px; display: block;"
+      style="padding: 1rem; width: 100%; display: block; margin-top: 0px;"
     />
   </div>
 </div>
@@ -91,7 +91,7 @@ exports[`MdInput Component Should switch to Write mode when user clicks Write bu
     <textarea
       data-testid="textbox"
       placeholder="Type something..."
-      style="padding: 1rem; width: 100%; margin-top: .6rem;"
+      style="padding: 1rem; width: 100%;"
     />
   </div>
 </div>

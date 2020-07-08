@@ -2361,7 +2361,6 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
     placeholder="Type something..."
     style={
       Object {
-        "marginTop": ".6rem",
         "padding": "1rem",
         "width": "100%",
       }
@@ -2425,7 +2424,6 @@ exports[`Storyshots Components/MdInput White 1`] = `
     placeholder="Type something..."
     style={
       Object {
-        "marginTop": ".6rem",
         "padding": "1rem",
         "width": "100%",
       }
@@ -2490,7 +2488,6 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
       placeholder="Type something..."
       style={
         Object {
-          "marginTop": ".6rem",
           "padding": "1rem",
           "width": "100%",
         }

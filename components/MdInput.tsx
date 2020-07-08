@@ -6,8 +6,7 @@ import noop from '../helpers/noop'
 // style for both Markdown and textarea
 const style = {
   padding: '1rem',
-  width: '100%',
-  marginTop: '.6rem'
+  width: '100%'
 }
 
 // style only for Markdowwn
