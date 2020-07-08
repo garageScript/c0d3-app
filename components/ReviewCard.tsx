@@ -111,7 +111,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           <div className="card-footer bg-white">
             {comment && <Markdown>{comment}</Markdown>}
             <MdInput
-              onChange={(comment: string) => setCommentValue(comment)}
+              onChange={(value: string) => setCommentValue(value)}
               bgColor={'white'}
             />
             <Button
