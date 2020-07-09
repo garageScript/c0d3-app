@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Curriculum Page Should render Error on error 1`] = `
+<div>
+  <h1>
+    Error
+  </h1>
+</div>
+`;
+
+exports[`Curriculum Page Should render Loading Spinner when loading 1`] = `
+<div>
+  <div
+    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 100vh;"
+  >
+    <h1
+      class="text-white font-weight-bold display-3"
+      style="font-family: 'PT Mono', sans-serif;"
+    >
+      C0D3
+    </h1>
+    <div
+      class="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        class="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Curriculum Page Should render No Data when no session 1`] = `
+<div>
+  <h1>
+    Bad Data
+  </h1>
+</div>
+`;
+
 exports[`Curriculum Page Should render with basic dummy data 1`] = `
 <div>
   <nav

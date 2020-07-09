@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Alert from './Alert'
-import { AlertData, DismissedAlerts } from '../@types/alerts'
+import { DismissedAlerts } from '../@types/alerts'
+import { GetAppQuery } from '../graphql/'
+import _ from 'lodash'
 
 type Props = {
-  alerts: AlertData[]
+  alerts?: GetAppQuery['alerts']
   page?: string
 }
 
@@ -35,10 +37,14 @@ const AlertsDisplay: React.FC<Props> = ({ alerts, page }) => {
   const widthClass = page === 'curriculum' ? 'col-12' : ''
   return (
     <div className={`alerts-container ${widthClass}`}>
-      {alerts
-        .filter(alert => !dismissedAlerts[alert.id as string])
-        .map(alert => (
-          <Alert key={alert.id} alert={alert} onDismiss={dismissAlert} />
+      {_.defaultTo(alerts, [])
+        .filter(alert => !dismissedAlerts[_.defaultTo(alert?.id, '-1')])
+        .map((alert, i) => (
+          <Alert
+            key={_.defaultTo(alert?.id, i)}
+            alert={alert}
+            onDismiss={dismissAlert}
+          />
         ))}
     </div>
   )

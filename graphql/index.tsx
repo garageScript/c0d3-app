@@ -144,7 +144,7 @@ export type MutationRejectSubmissionArgs = {
 
 export type Query = {
   __typename?: 'Query'
-  lessons?: Maybe<Array<Maybe<Lesson>>>
+  lessons: Array<Lesson>
   session?: Maybe<Session>
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
@@ -168,7 +168,7 @@ export type Session = {
   __typename?: 'Session'
   user?: Maybe<User>
   submissions?: Maybe<Array<Maybe<Submission>>>
-  lessonStatus?: Maybe<Array<Maybe<UserLesson>>>
+  lessonStatus: Array<UserLesson>
 }
 
 export type Submission = {
@@ -248,33 +248,29 @@ export type AddAlertMutation = { __typename?: 'Mutation' } & {
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetAppQuery = { __typename?: 'Query' } & {
-  lessons?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'title'
-          | 'description'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'order'
-          | 'chatUrl'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'title' | 'description' | 'order'
-                  >
-                >
+  lessons: Array<
+    { __typename?: 'Lesson' } & Pick<
+      Lesson,
+      | 'id'
+      | 'title'
+      | 'description'
+      | 'docUrl'
+      | 'githubUrl'
+      | 'videoUrl'
+      | 'order'
+      | 'chatUrl'
+    > & {
+        challenges?: Maybe<
+          Array<
+            Maybe<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'title' | 'description' | 'order'
               >
             >
-          }
-      >
-    >
+          >
+        >
+      }
   >
   session?: Maybe<
     { __typename?: 'Session' } & {
@@ -305,14 +301,10 @@ export type GetAppQuery = { __typename?: 'Query' } & {
           >
         >
       >
-      lessonStatus?: Maybe<
-        Array<
-          Maybe<
-            { __typename?: 'UserLesson' } & Pick<
-              UserLesson,
-              'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
-            >
-          >
+      lessonStatus: Array<
+        { __typename?: 'UserLesson' } & Pick<
+          UserLesson,
+          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
         >
       >
     }
@@ -437,33 +429,29 @@ export type UserInfoQueryVariables = Exact<{
 }>
 
 export type UserInfoQuery = { __typename?: 'Query' } & {
-  lessons?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'title'
-          | 'description'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'order'
-          | 'chatUrl'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'title' | 'description' | 'order'
-                  >
-                >
+  lessons: Array<
+    { __typename?: 'Lesson' } & Pick<
+      Lesson,
+      | 'id'
+      | 'title'
+      | 'description'
+      | 'docUrl'
+      | 'githubUrl'
+      | 'videoUrl'
+      | 'order'
+      | 'chatUrl'
+    > & {
+        challenges?: Maybe<
+          Array<
+            Maybe<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'title' | 'description' | 'order'
               >
             >
-          }
-      >
-    >
+          >
+        >
+      }
   >
   userInfo?: Maybe<
     { __typename?: 'Session' } & {
@@ -494,14 +482,10 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
           >
         >
       >
-      lessonStatus?: Maybe<
-        Array<
-          Maybe<
-            { __typename?: 'UserLesson' } & Pick<
-              UserLesson,
-              'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
-            >
-          >
+      lessonStatus: Array<
+        { __typename?: 'UserLesson' } & Pick<
+          UserLesson,
+          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
         >
       >
     }
@@ -818,11 +802,7 @@ export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = {
-  lessons?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
-    ParentType,
-    ContextType
-  >
+  lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
   userInfo?: Resolver<
     Maybe<ResolversTypes['Session']>,
@@ -860,7 +840,7 @@ export type SessionResolvers<
     ContextType
   >
   lessonStatus?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['UserLesson']>>>,
+    Array<ResolversTypes['UserLesson']>,
     ParentType,
     ContextType
   >

@@ -2,7 +2,7 @@ import { gql } from 'apollo-boost'
 
 export default gql`
   type Query {
-    lessons: [Lesson]
+    lessons: [Lesson!]!
     session: Session
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
@@ -87,7 +87,7 @@ export default gql`
   type Session {
     user: User
     submissions: [Submission]
-    lessonStatus: [UserLesson]
+    lessonStatus: [UserLesson!]!
   }
 
   type UserLesson {
