@@ -5,11 +5,11 @@ import { userInfo } from './userInfoController'
 const { User, UserLesson, Submission } = db
 describe('userInfo controller tests', () => {
   test('should return error of invalid username if no username is passed in', async () => {
-    expect(userInfo({}, {})).rejects.toEqual('Invalid username')
+    await expect(userInfo({}, {})).rejects.toThrow('Invalid username')
   })
   test('should return error if User.findOne returns invalid user object', async () => {
     User.findOne = jest.fn()
-    expect(userInfo({}, { username: 'testing2020' })).rejects.toEqual(
+    await expect(userInfo({}, { username: 'testing2020' })).rejects.toThrow(
       'Invalid user object'
     )
   })
