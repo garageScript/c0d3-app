@@ -3,26 +3,18 @@
 exports[`MdInput Component Should render text onto textbox when user types 1`] = `
 <div>
   <div>
-    <div
-      style="display: inline-block; background-color: rgba(0, 0, 0, 0.2); border-radius: 0.25rem;"
+    <button
+      class="btn"
+      style="color: rgb(41, 41, 41);"
     >
-      <button
-        class="btn"
-        style="color: rgb(41, 41, 41);"
-      >
-        Write
-      </button>
-    </div>
-    <div
-      style="display: inline-block;"
+      Write
+    </button>
+    <button
+      class="btn"
+      style="color: rgb(142, 142, 142);"
     >
-      <button
-        class="btn"
-        style="color: rgb(41, 41, 41);"
-      >
-        Preview
-      </button>
-    </div>
+      Preview
+    </button>
     <textarea
       data-testid="textbox"
       placeholder="Type something..."
@@ -37,29 +29,21 @@ exports[`MdInput Component Should render text onto textbox when user types 1`] =
 exports[`MdInput Component Should switch to Preview mode when user clicks Preview button 1`] = `
 <div>
   <div>
-    <div
-      style="display: inline-block;"
+    <button
+      class="btn"
+      style="color: rgb(142, 142, 142);"
     >
-      <button
-        class="btn"
-        style="color: rgb(41, 41, 41);"
-      >
-        Write
-      </button>
-    </div>
-    <div
-      style="display: inline-block; background-color: rgba(0, 0, 0, 0.2); border-radius: 0.25rem;"
+      Write
+    </button>
+    <button
+      class="btn"
+      style="color: rgb(41, 41, 41);"
     >
-      <button
-        class="btn"
-        style="color: rgb(41, 41, 41);"
-      >
-        Preview
-      </button>
-    </div>
+      Preview
+    </button>
     <span
       data-testid="markdown"
-      style="padding: 1rem; width: 100%; display: block; margin-top: 0px;"
+      style="padding: 1rem; width: 100%; display: block;"
     />
   </div>
 </div>
@@ -68,26 +52,18 @@ exports[`MdInput Component Should switch to Preview mode when user clicks Previe
 exports[`MdInput Component Should switch to Write mode when user clicks Write button 1`] = `
 <div>
   <div>
-    <div
-      style="display: inline-block; background-color: rgba(0, 0, 0, 0.2); border-radius: 0.25rem;"
+    <button
+      class="btn"
+      style="color: rgb(41, 41, 41);"
     >
-      <button
-        class="btn"
-        style="color: rgb(41, 41, 41);"
-      >
-        Write
-      </button>
-    </div>
-    <div
-      style="display: inline-block;"
+      Write
+    </button>
+    <button
+      class="btn"
+      style="color: rgb(142, 142, 142);"
     >
-      <button
-        class="btn"
-        style="color: rgb(41, 41, 41);"
-      >
-        Preview
-      </button>
-    </div>
+      Preview
+    </button>
     <textarea
       data-testid="textbox"
       placeholder="Type something..."

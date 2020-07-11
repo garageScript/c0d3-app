@@ -2315,46 +2315,28 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
     }
   }
 >
-  <div
+  <button
+    className="btn"
+    onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "rgba(0, 0, 0, 0.2)",
-        "borderRadius": "0.25rem",
-        "display": "inline-block",
+        "color": "#292929",
       }
     }
   >
-    <button
-      className="btn"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Write
-    </button>
-  </div>
-  <div
+    Write
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
     style={
       Object {
-        "display": "inline-block",
+        "color": "#8e8e8e",
       }
     }
   >
-    <button
-      className="btn"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Preview
-    </button>
-  </div>
+    Preview
+  </button>
   <textarea
     data-testid="textbox"
     onChange={[Function]}
@@ -2378,46 +2360,28 @@ exports[`Storyshots Components/MdInput White 1`] = `
     }
   }
 >
-  <div
+  <button
+    className="btn"
+    onClick={[Function]}
     style={
       Object {
-        "backgroundColor": "rgba(0, 0, 0, 0.2)",
-        "borderRadius": "0.25rem",
-        "display": "inline-block",
+        "color": "#292929",
       }
     }
   >
-    <button
-      className="btn"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Write
-    </button>
-  </div>
-  <div
+    Write
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
     style={
       Object {
-        "display": "inline-block",
+        "color": "#8e8e8e",
       }
     }
   >
-    <button
-      className="btn"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Preview
-    </button>
-  </div>
+    Preview
+  </button>
   <textarea
     data-testid="textbox"
     onChange={[Function]}
@@ -2442,46 +2406,28 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
       }
     }
   >
-    <div
+    <button
+      className="btn"
+      onClick={[Function]}
       style={
         Object {
-          "backgroundColor": "rgba(0, 0, 0, 0.2)",
-          "borderRadius": "0.25rem",
-          "display": "inline-block",
+          "color": "#292929",
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
-      >
-        Write
-      </button>
-    </div>
-    <div
+      Write
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
       style={
         Object {
-          "display": "inline-block",
+          "color": "#8e8e8e",
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
-      >
-        Preview
-      </button>
-    </div>
+      Preview
+    </button>
     <textarea
       data-testid="textbox"
       onChange={[Function]}

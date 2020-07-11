@@ -3,28 +3,16 @@ import Markdown from 'markdown-to-jsx'
 import { Button } from './theme/Button'
 import noop from '../helpers/noop'
 
-// style for both Markdown and textarea
-const style = {
+// style for textarea
+const textBoxStyle = {
   padding: '1rem',
   width: '100%'
 }
 
-// style only for Markdowwn
+// style for Markdown
 const MdStyle = {
-  display: 'block',
-  marginTop: 0
-}
-
-// style only for Buttons
-const btnStyle = {
-  display: 'inline-block'
-}
-
-// styling to turn button background grey
-const selectedBtnStyle = {
-  ...btnStyle,
-  backgroundColor: 'rgba(0, 0, 0, 0.2)',
-  borderRadius: '0.25rem'
+  ...textBoxStyle,
+  display: 'block'
 }
 
 type MdInputProps = {
@@ -46,7 +34,7 @@ export const MdInput: React.FC<MdInputProps> = ({
   }
 
   const displayOption = preview ? (
-    <Markdown data-testid="markdown" style={{ ...style, ...MdStyle }}>
+    <Markdown data-testid="markdown" style={MdStyle}>
       {commentValue}
     </Markdown>
   ) : (
@@ -54,23 +42,22 @@ export const MdInput: React.FC<MdInputProps> = ({
       value={commentValue}
       onChange={handleChange}
       placeholder="Type something..."
-      style={style}
+      style={textBoxStyle}
       data-testid="textbox"
     />
   )
 
-  // makes previewBtn or writeBtn background grey, depending on mode chosen
-  const writeBtnStyle = preview ? btnStyle : selectedBtnStyle
-  const previewBtnStyle = preview ? selectedBtnStyle : btnStyle
+  const previewBtnColor = preview ? 'black' : 'lightgrey'
+  const writeBtnColor = preview ? 'lightgrey' : 'black'
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <div style={writeBtnStyle}>
-        <Button onClick={() => setPreview(false)}>Write</Button>
-      </div>
-      <div style={previewBtnStyle}>
-        <Button onClick={() => setPreview(true)}>Preview</Button>
-      </div>
+      <Button color={writeBtnColor} onClick={() => setPreview(false)}>
+        Write
+      </Button>
+      <Button color={previewBtnColor} onClick={() => setPreview(true)}>
+        Preview
+      </Button>
       {displayOption}
     </div>
   )
