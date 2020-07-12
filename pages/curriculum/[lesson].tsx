@@ -39,7 +39,8 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 lessonId={currentlessonId}
                 isPassed={isPassed}
               />
-              {alerts && <AlertsDisplay alerts={alerts} />}
+              {/* Casting alerts as any until type is migrated */}
+              {alerts && <AlertsDisplay alerts={alerts as any} />}
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}

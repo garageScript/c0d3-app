@@ -31,7 +31,7 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   }
 
   const lessonInProgressIdx = _.cond([
-    [_.isEqualWith.bind(null, -1), _.constant(0)],
+    [_.isEqual.bind(null, -1), _.constant(0)],
     [_.constant(true), (output: number) => output]
   ])(
     lessons.findIndex(lesson => {

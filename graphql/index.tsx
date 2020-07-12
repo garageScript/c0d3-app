@@ -29,7 +29,7 @@ export type Scalars = {
 
 export type Alert = {
   __typename?: 'Alert'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['String']
   text?: Maybe<Scalars['String']>
   type?: Maybe<Scalars['String']>
   url?: Maybe<Scalars['String']>
@@ -149,7 +149,7 @@ export type Query = {
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
-  alerts?: Maybe<Array<Maybe<Alert>>>
+  alerts: Array<Alert>
 }
 
 export type QueryUserInfoArgs = {
@@ -309,14 +309,10 @@ export type GetAppQuery = { __typename?: 'Query' } & {
       >
     }
   >
-  alerts?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Alert' } & Pick<
-          Alert,
-          'id' | 'text' | 'type' | 'url' | 'urlCaption'
-        >
-      >
+  alerts: Array<
+    { __typename?: 'Alert' } & Pick<
+      Alert,
+      'id' | 'text' | 'type' | 'url' | 'urlCaption'
     >
   >
 }
@@ -650,7 +646,7 @@ export type AlertResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -822,11 +818,7 @@ export type QueryResolvers<
     ContextType,
     RequireFields<QuerySubmissionsArgs, 'lessonId'>
   >
-  alerts?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Alert']>>>,
-    ParentType,
-    ContextType
-  >
+  alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
 }
 
 export type SessionResolvers<
