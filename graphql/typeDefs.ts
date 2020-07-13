@@ -80,7 +80,7 @@ export default gql`
     userLesson: UserLesson
     email: String
     name: String
-    isAdmin: Boolean
+    isAdmin: String
     cliToken: String
   }
 
