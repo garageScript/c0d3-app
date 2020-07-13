@@ -11,20 +11,12 @@ export default async (
 ) => {
   const { session } = req
 
-  if (!session) {
+  if (session) {
+    const { userId } = session
+    req.user = userId ? await User.findOne({ where: { id: userId } }) : null
+  } else {
     req.user = null
-    return next()
   }
 
-  const { userId } = session
-
-  if (!userId) {
-    req.user = null
-    return next()
-  }
-
-  const [user] = await User.findOne({ where: { id: userId } })
-
-  req.user = user
   next()
 }
