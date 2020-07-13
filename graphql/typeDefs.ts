@@ -2,12 +2,12 @@ import { gql } from 'apollo-boost'
 
 export default gql`
   type Query {
-    lessons: [Lesson]
+    lessons: [Lesson!]!
     session: Session
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
-    alerts: [Alert]
+    alerts: [Alert!]!
   }
 
   type TokenResponse {
@@ -87,7 +87,7 @@ export default gql`
   type Session {
     user: User
     submissions: [Submission]
-    lessonStatus: [UserLesson]
+    lessonStatus: [UserLesson!]!
   }
 
   type UserLesson {
@@ -123,7 +123,7 @@ export default gql`
     order: Int
   }
   type Alert {
-    id: String
+    id: String!
     text: String
     type: String
     url: String
