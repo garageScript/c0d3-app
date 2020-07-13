@@ -9,7 +9,14 @@ export default async (
   _: NextApiResponse,
   next: () => void
 ) => {
-  const userId = req.session
+  const { session } = req
+
+  if (!session) {
+    req.user = null
+    return next()
+  }
+
+  const { userId } = session
 
   if (!userId) {
     req.user = null
