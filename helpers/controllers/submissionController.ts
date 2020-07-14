@@ -65,7 +65,7 @@ export const acceptSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.session.userId', false)
+    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
     if (!reviewerId) throw new Error('Invalid user')
     return updateSubmission({ ...args, reviewerId, status: 'passed' })
@@ -80,7 +80,7 @@ export const rejectSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.session.userId', false)
+    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
     if (!reviewerId) throw new Error('Invalid user')
     return updateSubmission({ ...args, reviewerId, status: 'needMoreWork' })
@@ -89,11 +89,7 @@ export const rejectSubmission = async (
   }
 }
 
-export const submissions = async (
-  _parent: void,
-  arg: ArgsGetSubmissions,
-  _ctx: Context
-) => {
+export const submissions = async (_parent: void, arg: ArgsGetSubmissions) => {
   const { lessonId } = arg
   return Submission.findAll({
     where: {
