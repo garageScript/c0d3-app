@@ -9,15 +9,12 @@ export default async (
   _: NextApiResponse,
   next: () => void
 ) => {
+  req.user = null
   const { session } = req
-
-  if (session) {
+  if (session && session.userId) {
     const { userId } = session
-    let user = userId ? await User.findOne({ where: { id: userId } }) : null
-    if (user) user = user.dataValues
-    req.user = user
-  } else {
-    req.user = null
+    const user = await User.findOne({ where: { id: userId } })
+    req.user = user.dataValues
   }
   next()
 }
