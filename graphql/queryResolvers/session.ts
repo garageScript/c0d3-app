@@ -9,7 +9,7 @@ type Submission = {
 
 export const session = async (_parent: void, _args: void, context: Context) => {
   const { req } = context
-  if (!req.user || (req.user && !req.user.id)) return null
+  if (!req.user || !req.user.id) return null
   const userId = req.user.id
 
   // FYI: The reason we are querying with parallelized promises:
