@@ -7,7 +7,7 @@ export interface LoggedRequest extends Request {
   error: (obj: any) => void
   requestId: string
   user: {
-    id: string
+    id: number
     username: string
     userLesson: UserLesson
     email: string
