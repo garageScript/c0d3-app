@@ -1,7 +1,7 @@
 import { alerts } from './alerts'
 import db from '../../helpers/dbload'
 
-describe('Alerts resolvers', () => {
+describe('Alerts resolver', () => {
   const { Alert } = db
   test('should return empty array if no alerts', async () => {
     Alert.findAll = jest.fn().mockReturnValue([])

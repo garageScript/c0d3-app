@@ -1,7 +1,7 @@
 import { lessons } from './lessons'
 import db from '../../helpers/dbload'
 
-describe('GraphQL resolvers', () => {
+describe('Lessons resolver', () => {
   const { Lesson } = db
 
   test('lessons should return an empty array', async () => {
