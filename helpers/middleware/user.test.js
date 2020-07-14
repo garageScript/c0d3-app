@@ -26,25 +26,25 @@ const next = () => {}
  userMiddleware is finished running.
 */
 describe('User Middleware', () => {
-  test('Returns null when session property of req is not there', async () => {
+  test('Should return null when session property of req is not there', async () => {
     const req = {}
     await userMiddleware(req, res, next)
     expect(req.user).toBeNull
   })
 
-  test('Returns null when userId property of req.session is not there', async () => {
+  test('Should return null when userId property of req.session is not there', async () => {
     const req = { session: '' }
     await userMiddleware(req, res, next)
     expect(req.user).toBeNull
   })
 
-  test('Returns correct info from Database if session.userId exists and its value is truthy', async () => {
+  test('Should return correct info from database if session.userId exists and its value is truthy', async () => {
     const req = { session: { userId: 'noob' } }
     await userMiddleware(req, res, next)
     expect(req.user).toEqual(mockUserInfo.dataValues)
   })
 
-  test('Returns null if session.userId exists but is a falsy value', async () => {
+  test('Should returns null if session.userId exists but is a falsy value', async () => {
     const req = { session: { userId: '' } }
     await userMiddleware(req, res, next)
     expect(req.user).toBeNull
