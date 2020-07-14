@@ -7,13 +7,13 @@ export interface LoggedRequest extends Request {
   error: (obj: any) => void
   requestId: string
   user: {
-    id: Number
-    username: String
+    id: number
+    username: string
     userLesson: UserLesson
-    email: String
-    name: String
-    isAdmin: String
-    cliToken: String
+    email: string
+    name: string
+    isAdmin: string
+    cliToken: string
   } | null
 }
 
