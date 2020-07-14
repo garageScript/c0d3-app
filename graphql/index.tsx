@@ -204,7 +204,7 @@ export type User = {
   userLesson?: Maybe<UserLesson>
   email?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
-  isAdmin?: Maybe<Scalars['Boolean']>
+  isAdmin?: Maybe<Scalars['String']>
   cliToken?: Maybe<Scalars['String']>
 }
 
@@ -630,9 +630,9 @@ export type ResolversTypes = {
   Challenge: ResolverTypeWrapper<Challenge>
   User: ResolverTypeWrapper<User>
   UserLesson: ResolverTypeWrapper<UserLesson>
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   Session: ResolverTypeWrapper<Session>
   Submission: ResolverTypeWrapper<Submission>
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   Alert: ResolverTypeWrapper<Alert>
   Mutation: ResolverTypeWrapper<{}>
   AuthResponse: ResolverTypeWrapper<AuthResponse>
@@ -651,9 +651,9 @@ export type ResolversParentTypes = {
   Challenge: Challenge
   User: User
   UserLesson: UserLesson
-  Boolean: Scalars['Boolean']
   Session: Session
   Submission: Submission
+  Boolean: Scalars['Boolean']
   Alert: Alert
   Mutation: {}
   AuthResponse: AuthResponse
@@ -929,7 +929,7 @@ export type UserResolvers<
   >
   email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  isAdmin?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
+  isAdmin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType>
 }
