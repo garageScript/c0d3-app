@@ -1,5 +1,3 @@
-jest.mock('node-fetch')
-jest.mock('mailgun-js')
 import { lessons } from './lessons'
 import db from '../../helpers/dbload'
 
