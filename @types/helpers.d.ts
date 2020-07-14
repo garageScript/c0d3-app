@@ -6,6 +6,15 @@ export interface LoggedRequest extends Request {
   warn: (obj: any) => void
   error: (obj: any) => void
   requestId: string
+  user: {
+    id: number
+    username: string
+    userLesson: UserLesson
+    email: string
+    name: string
+    isAdmin: string
+    cliToken: string
+  } | null
 }
 
 export interface Context {

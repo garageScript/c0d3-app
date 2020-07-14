@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 import winston from 'winston'
 import Sentry from 'winston-transport-sentry-node'
 import { TransformableInfo } from 'logform' // Types for Winston
-import { LoggedRequest } from '../@types/helpers'
+import { LoggedRequest } from '../../@types/helpers'
 import { NextApiResponse } from 'next'
 
 const SENTRY_DSN = process.env.SENTRY_DSN
