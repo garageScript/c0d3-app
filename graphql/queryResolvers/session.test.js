@@ -4,16 +4,8 @@ import db from '../../helpers/dbload'
 const { Submission, UserLesson } = db
 
 describe('Session resolver', () => {
-  let req
-
-  beforeEach(() => {
-    jest.clearAllMocks()
-
-    req = { user: { id: 2 } }
-  })
-
   test('should return null if req.user does not exist', async () => {
-    req.user = null
+    const req = {}
     expect(await session({}, {}, { req })).toEqual(null)
   })
 
@@ -23,7 +15,7 @@ describe('Session resolver', () => {
       submissions: [{ id: '1' }],
       lessonStatus: [{ id: '1' }]
     }
-    req.user = result.user
+    const req = { user: result.user }
     Submission.findAll = jest.fn().mockReturnValue(result.submissions)
     UserLesson.findAll = jest.fn().mockReturnValue(result.lessonStatus)
 
