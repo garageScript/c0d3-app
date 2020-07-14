@@ -44,7 +44,7 @@ describe('User Middleware', () => {
     expect(req.user).toEqual(mockUserInfo.dataValues)
   })
 
-  test('Returns correct info from Database if session.userId exists but is a falsy value', async () => {
+  test('Returns null if session.userId exists but is a falsy value', async () => {
     const req = { session: { userId: '' } }
     await userMiddleware(req, res, next)
     expect(req.user).toBeNull

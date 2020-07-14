@@ -14,7 +14,6 @@ export default async (
   if (session) {
     const { userId } = session
     let user = userId ? await User.findOne({ where: { id: userId } }) : null
-    console.log(user)
     if (user) user = user.dataValues
     req.user = user
   } else {
