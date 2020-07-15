@@ -1,6 +1,5 @@
 import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
-
 import _ from 'lodash'
 const { Alert } = db
 

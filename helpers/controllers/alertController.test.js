@@ -43,7 +43,7 @@ describe('Alert controller tests', () => {
       )
     ).resolves.toEqual({ success: true })
   })
-  test('Should add alert - throw error if missing parameters', async () => {
+  test('Should throw error if missing parameters', async () => {
     expect(
       addAlert({}, { url: 'https://google.com' }, ctx)
     ).rejects.toThrowError('Missing alert parameters')
@@ -52,7 +52,7 @@ describe('Alert controller tests', () => {
   test('Should remove alert', async () => {
     expect(removeAlert({}, { id: 5 }, ctx)).resolves.toEqual({ success: true })
   })
-  test('Should remove alert - throw error if no id provided', async () => {
+  test('Should throw error if no id provided when removing alert', async () => {
     db.Alert.destroy = jest.fn().mockRejectedValueOnce('No alert id provided')
     expect(removeAlert({}, {}, ctx)).rejects.toThrowError(
       'No alert id provided'
