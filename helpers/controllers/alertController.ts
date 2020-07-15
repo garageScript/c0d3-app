@@ -1,6 +1,8 @@
 import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
 import _ from 'lodash'
+import { isAdmin } from '../isAdmin'
+
 const { Alert } = db
 
 type AlertData = {
@@ -16,9 +18,8 @@ export const addAlert = async (
   ctx: { req: LoggedRequest }
 ) => {
   const { req } = ctx
-  const isAdmin = _.get(req, 'user.isAdmin', false)
   try {
-    if (isAdmin === 'false') {
+    if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
     const { text, type, url, urlCaption } = arg
@@ -41,9 +42,8 @@ export const removeAlert = async (
   ctx: { req: LoggedRequest }
 ) => {
   const { req } = ctx
-  const isAdmin = _.get(req, 'user.isAdmin', false)
   try {
-    if (isAdmin === 'false') {
+    if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
     const { id } = arg
