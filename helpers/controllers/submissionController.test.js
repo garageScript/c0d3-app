@@ -3,14 +3,13 @@ jest.mock('../mattermost')
 jest.mock('node-fetch')
 jest.mock('mailgun-js')
 import db from '../dbload'
-import fetch from 'node-fetch'
 import resolvers from '../../graphql/resolvers'
 import { publicChannelMessage, getUserByEmail } from '../mattermost'
-
+import { submissions } from './submissionController'
 const { Mutation } = resolvers
 const { Lesson, Submission, User, Challenge } = db
 
-describe('Submissions', () => {
+describe('Submissions Mutations', () => {
   jest.unmock('../updateSubmission')
 
   const controller = require.requireActual('../updateSubmission')
@@ -141,7 +140,7 @@ describe('Submissions', () => {
 
   test('acceptSubmission should call updateSubmission', async () => {
     const submission = { id: 1, comment: 'fake comment', reviewer: 2 }
-    const ctx = { req: { session: { userId: 2 } } }
+    const ctx = { req: { user: { id: 2 } } }
     await resolvers.Mutation.acceptSubmission(null, submission, ctx)
     expect(controller.updateSubmission).toHaveBeenCalledWith({
       ...submission,
@@ -151,21 +150,21 @@ describe('Submissions', () => {
   })
 
   test('acceptSubmission should throw error with no args', async () => {
-    await await expect(resolvers.Mutation.acceptSubmission()).rejects.toThrow(
+    await expect(resolvers.Mutation.acceptSubmission()).rejects.toThrow(
       'Invalid args'
     )
   })
 
   test('acceptSubmission should throw error with no user', async () => {
     const submission = { id: 1, comment: 'fake comment' }
-    await await expect(
+    await expect(
       resolvers.Mutation.acceptSubmission(null, submission)
     ).rejects.toThrow('Invalid user')
   })
 
   test('rejectSubmission should call updateSubmission', async () => {
     const submission = { id: 1, comment: 'fake comment' }
-    const ctx = { req: { session: { userId: 2 } } }
+    const ctx = { req: { user: { id: 2 } } }
     await resolvers.Mutation.rejectSubmission(null, submission, ctx)
     expect(controller.updateSubmission).toHaveBeenCalledWith({
       ...submission,
@@ -175,15 +174,42 @@ describe('Submissions', () => {
   })
 
   test('rejectSubmission should throw error with no args', async () => {
-    await await expect(resolvers.Mutation.rejectSubmission()).rejects.toThrow(
+    await expect(resolvers.Mutation.rejectSubmission()).rejects.toThrow(
       'Invalid args'
     )
   })
 
   test('rejectSubmission should throw error with no user', async () => {
     const submission = { id: 1, comment: 'fake comment' }
-    await await expect(
+    await expect(
       resolvers.Mutation.rejectSubmission(null, submission)
     ).rejects.toThrow('Invalid user')
+  })
+})
+
+describe('Submissions Queries', () => {
+  test('should return no submissions if there are none open', async () => {
+    Submission.findAll = jest.fn().mockReturnValue([])
+    const result = await submissions(null, { lessonId: '2' })
+    expect(result).toEqual([])
+  })
+  test('should return submissions with a given lessonId', async () => {
+    const user = { id: 1, username: 'Michael' }
+    const submissionResults = {
+      id: 5,
+      user,
+      diff:
+        'diff --git a/js1/12.js b/js1/12.js↵index e7dc26e..d0cdf56 100644↵--- a/js1/12.js↵+++ b/js1/12.js↵@@ -9,8 +9,17 @@↵  * @returns null↵  */↵ ↵-const solution = (a, fun) => {↵+const solution = (a, fun,i =0) => {↵+↵+  if(i < 2){↵+    setTimeout(()=> {↵+      b = fun()↵+      return solution(b,fun, i +1)↵+    }, a)↵+    ↵ }↵+   ↵+  }↵ ↵ module.exports = {↵   solution↵',
+      comment: '',
+      createdAt: '1586386486986',
+      challengeId: '200'
+    }
+    Submission.findAll = jest.fn().mockResolvedValue([submissionResults])
+    const result = await submissions(
+      null,
+      { lessonId: '2' },
+      { req: { error: jest.fn() } }
+    )
+    expect(result).toEqual([submissionResults])
   })
 })
