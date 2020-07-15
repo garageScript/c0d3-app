@@ -21,6 +21,7 @@ export const Info: React.FC = () => (
 export const Urgent: React.FC = () => (
   <Alert
     alert={{
+      id: '-1',
       text: 'Invalid password',
       type: 'urgent'
     }}

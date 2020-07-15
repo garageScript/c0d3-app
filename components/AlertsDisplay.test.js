@@ -24,6 +24,12 @@ describe('Alerts Display Component', () => {
     jest.resetAllMocks()
   })
 
+  test('Should render properly when no props are passed in', () => {
+    const { container } = render(<AlertsDisplay />)
+
+    expect(container).toMatchSnapshot()
+  })
+
   test('Should dismiss alerts based on local storage', () => {
     jest
       .spyOn(window.Storage.prototype, 'getItem')

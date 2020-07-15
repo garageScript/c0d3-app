@@ -21,7 +21,10 @@ const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
   const errorMessages = loginErrors.map((message, idx) => {
     const formattedMessage = message.split(':')[1]
     return (
-      <Alert key={idx} alert={{ text: formattedMessage, type: 'urgent' }} />
+      <Alert
+        key={idx}
+        alert={{ id: '-1', text: formattedMessage, type: 'urgent' }}
+      />
     )
   })
   return <>{errorMessages}</>
