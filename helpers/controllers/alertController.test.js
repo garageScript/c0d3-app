@@ -5,9 +5,15 @@ import { addAlert, removeAlert } from './alertController'
 
 describe('Alert controller tests', () => {
   const ctx = {
-    req: { info: jest.fn(), warn: jest.fn(), error: jest.fn(), session: {} }
+    req: {
+      info: jest.fn(),
+      warn: jest.fn(),
+      error: jest.fn(),
+      session: {},
+      user: { isAdmin: 'true' }
+    }
   }
-  test('Add alert', async () => {
+  test('Should add alert', async () => {
     expect(
       addAlert(
         {},
@@ -22,7 +28,7 @@ describe('Alert controller tests', () => {
       )
     ).resolves.toEqual({ success: true })
   })
-  test('Add alert with url and caption', async () => {
+  test('Should add alert with url and caption', async () => {
     expect(
       addAlert(
         {},
@@ -37,19 +43,31 @@ describe('Alert controller tests', () => {
       )
     ).resolves.toEqual({ success: true })
   })
-  test('Add alert - throw error if missing parameters', async () => {
+  test('Should throw error if missing parameters', async () => {
     expect(
       addAlert({}, { url: 'https://google.com' }, ctx)
     ).rejects.toThrowError('Missing alert parameters')
   })
 
-  test('Remove alert', async () => {
+  test('Should remove alert', async () => {
     expect(removeAlert({}, { id: 5 }, ctx)).resolves.toEqual({ success: true })
   })
-  test('Remove alert - throw error if no id provided', async () => {
+  test('Should throw error if no id provided when removing alert', async () => {
     db.Alert.destroy = jest.fn().mockRejectedValueOnce('No alert id provided')
     expect(removeAlert({}, {}, ctx)).rejects.toThrowError(
       'No alert id provided'
     )
+  })
+  test('Should throw Error when user is not an admin when adding Alert', async () => {
+    ctx.req.user.isAdmin = 'false'
+    expect(
+      addAlert({}, { url: 'https://google.com' }, ctx)
+    ).rejects.toThrowError('User is not an admin')
+  })
+  test('Should throw Error when user is not an admin when removing Alert', async () => {
+    ctx.req.user.isAdmin = 'false'
+    expect(
+      removeAlert({}, { url: 'https://google.com' }, ctx)
+    ).rejects.toThrowError('User is not an admin')
   })
 })
