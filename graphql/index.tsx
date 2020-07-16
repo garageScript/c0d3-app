@@ -335,6 +335,9 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'createdAt'
           | 'updatedAt'
         > & {
+            challenge?: Maybe<
+              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+            >
             user?: Maybe<
               { __typename?: 'User' } & Pick<User, 'id' | 'username'>
             >
@@ -1308,6 +1311,9 @@ export const SubmissionsDocument = gql`
       status
       diff
       comment
+      challenge {
+        title
+      }
       challengeId
       user {
         id
