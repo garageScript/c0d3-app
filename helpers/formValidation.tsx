@@ -7,6 +7,8 @@ const REGEX_ALPHANUMERICS_AND_SPACE = /^[a-zA-Z0-9_\s]*$/
 
 const signupValidation = Yup.object({
   email: Yup.string()
+    .strict(true)
+    .lowercase('Alpha characters must be lowercase')
     .email('Invalid email address')
     .required('Required'),
   username: Yup.string()
