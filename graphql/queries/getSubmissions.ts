@@ -7,6 +7,9 @@ const GET_SUBMISSIONS = gql`
       status
       diff
       comment
+      challenge {
+        title
+      }
       challengeId
       user {
         id

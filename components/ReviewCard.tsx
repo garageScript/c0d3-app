@@ -74,7 +74,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     diff,
     comment,
     updatedAt,
-    user: { username }
+    user: { username },
+    challenge: { title }
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -94,9 +95,9 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       {diff && (
         <div className="card shadow-sm border-0 mt-3">
           <div className="card-header bg-white">
-            <Text color="darkgrey" bold>
-              {username}
-            </Text>
+            <h4>
+              {username} - <span className="text-primary">{title}</span>
+            </h4>
             <Text color="lightgrey" size="sm">
               {dayjs(parseInt(updatedAt)).fromNow()}
             </Text>

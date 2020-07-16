@@ -96,6 +96,6 @@ export const submissions = async (_parent: void, arg: ArgsGetSubmissions) => {
       status: 'open',
       lessonId
     },
-    include: ['user']
+    include: ['challenge', 'user']
   })
 }
