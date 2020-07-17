@@ -107,7 +107,7 @@ export type MutationChangePwArgs = {
 }
 
 export type MutationChangeAdminRightsArgs = {
-  username: Scalars['String']
+  id: Scalars['Int']
   status: Scalars['String']
 }
 
@@ -154,7 +154,6 @@ export type MutationCreateLessonArgs = {
   videoUrl?: Maybe<Scalars['String']>
   title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
-  id: Scalars['Int']
   order: Scalars['Int']
 }
 
@@ -171,7 +170,6 @@ export type MutationUpdateLessonArgs = {
 
 export type MutationCreateChallengeArgs = {
   lessonId: Scalars['Int']
-  id: Scalars['Int']
   order: Scalars['Int']
   description?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
@@ -798,7 +796,7 @@ export type MutationResolvers<
     Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
-    RequireFields<MutationChangeAdminRightsArgs, 'username' | 'status'>
+    RequireFields<MutationChangeAdminRightsArgs, 'id' | 'status'>
   >
   signup?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
@@ -846,10 +844,7 @@ export type MutationResolvers<
     Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
-    RequireFields<
-      MutationCreateLessonArgs,
-      'description' | 'title' | 'id' | 'order'
-    >
+    RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
   >
   updateLesson?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -861,7 +856,7 @@ export type MutationResolvers<
     Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
-    RequireFields<MutationCreateChallengeArgs, 'lessonId' | 'id' | 'order'>
+    RequireFields<MutationCreateChallengeArgs, 'lessonId' | 'order'>
   >
   updateChallenge?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,

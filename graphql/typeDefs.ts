@@ -21,7 +21,7 @@ export default gql`
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse
     changePw(token: String!, password: String!): AuthResponse
-    changeAdminRights(username: String!, status: String!): SuccessResponse
+    changeAdminRights(id: Int!, status: String!): SuccessResponse
     signup(
       firstName: String!
       lastName: String!
@@ -51,7 +51,6 @@ export default gql`
       videoUrl: String
       title: String!
       chatUrl: String
-      id: Int!
       order: Int!
     ): SuccessResponse
     updateLesson(
@@ -66,7 +65,6 @@ export default gql`
     ): SuccessResponse
     createChallenge(
       lessonId: Int!
-      id: Int!
       order: Int!
       description: String
       title: String
