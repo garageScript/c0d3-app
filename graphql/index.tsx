@@ -343,6 +343,7 @@ export type GetAppQuery = (
 );
 
 export type SubmissionsQueryVariables = Exact<{
+
   lessonId: Scalars['String'];
 }>;
 
@@ -358,6 +359,36 @@ export type SubmissionsQuery = (
     )> }
   )>>> }
 );
+=======
+  lessonId: Scalars['String']
+}>
+
+export type SubmissionsQuery = { __typename?: 'Query' } & {
+  submissions?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Submission' } & Pick<
+          Submission,
+          | 'id'
+          | 'status'
+          | 'diff'
+          | 'comment'
+          | 'challengeId'
+          | 'createdAt'
+          | 'updatedAt'
+        > & {
+            challenge?: Maybe<
+              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+            >
+            user?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            >
+          }
+      >
+    >
+  >
+}
+
 
 export type LoginMutationVariables = Exact<{
   username: Scalars['String'];
@@ -966,7 +997,23 @@ export const SubmissionsDocument = gql`
     challengeId
     user {
       id
+
       username
+=======
+      status
+      diff
+      comment
+      challenge {
+        title
+      }
+      challengeId
+      user {
+        id
+        username
+      }
+      createdAt
+      updatedAt
+
     }
     createdAt
     updatedAt

@@ -27,7 +27,7 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
-    expect(container).toMatchSnapshot()
+    await wait(() => expect(container).toMatchSnapshot())
   })
 
   test('Should render Error on error', async () => {
@@ -44,8 +44,7 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
-    await wait()
-    expect(container).toMatchSnapshot()
+    await wait(() => expect(container).toMatchSnapshot())
   })
 
   test('Should render No Data when no session', async () => {
@@ -68,8 +67,7 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
-    await wait()
-    expect(container).toMatchSnapshot()
+    await wait(() => expect(container).toMatchSnapshot())
   })
 
   test('Should render with basic dummy data', async () => {
