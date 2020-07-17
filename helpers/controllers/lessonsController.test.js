@@ -25,6 +25,7 @@ describe('Lessons controller tests', () => {
   }
 
   Lesson.build = jest.fn().mockReturnValue({ save: () => {} })
+
   test('Should create new lesson', async () => {
     expect(createLesson(null, mockLessonData, ctx)).resolves.toEqual({
       success: true

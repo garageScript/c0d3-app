@@ -13,6 +13,7 @@ describe('Admin controller tests', () => {
       user: { isAdmin: 'true' }
     }
   }
+
   test('Should change admin rights', async () => {
     User.update = jest.fn().mockReturnValue(true)
     expect(changeAdminRights(null, mockUser, ctx)).resolves.toEqual({

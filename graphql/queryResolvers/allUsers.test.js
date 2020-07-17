@@ -11,6 +11,7 @@ const mockUsers = [
     id: 6
   }
 ]
+
 const ctx = {
   req: {
     user: { isAdmin: 'true' }
