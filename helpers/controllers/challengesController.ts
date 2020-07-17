@@ -24,15 +24,7 @@ export const createChallenge = async (
       throw new Error('User is not an admin')
     }
 
-    const { description, title, id, order, lessonId } = arg
-
-    const newChallenge = Challenge.build({
-      id,
-      description,
-      title,
-      order,
-      lessonId
-    })
+    const newChallenge = Challenge.build(arg)
 
     await newChallenge.save()
 
@@ -55,22 +47,9 @@ export const updateChallenge = async (
       throw new Error('User is not an admin')
     }
 
-    const { description, title, id, lessonId, order } = arg
+    const { id } = arg
 
-    await Challenge.update(
-      {
-        description,
-        lessonId,
-        order,
-        title,
-        id
-      },
-      {
-        where: {
-          id: id
-        }
-      }
-    )
+    await Challenge.update(arg, { where: { id } })
 
     return {
       success: true

@@ -26,28 +26,7 @@ export const createLesson = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
-    const {
-      description,
-      docUrl,
-      githubUrl,
-      videoUrl,
-      title,
-      chatUrl,
-      id,
-      order
-    } = arg
-
-    const newLesson = Lesson.build({
-      id,
-      description,
-      docUrl,
-      githubUrl,
-      videoUrl,
-      title,
-      order,
-      chatUrl
-    })
+    const newLesson = Lesson.build(arg)
 
     await newLesson.save()
 
@@ -70,33 +49,9 @@ export const updateLesson = async (
       throw new Error('User is not an admin')
     }
 
-    const {
-      description,
-      docUrl,
-      githubUrl,
-      videoUrl,
-      title,
-      chatUrl,
-      id,
-      order
-    } = arg
+    const { id } = arg
 
-    await Lesson.update(
-      {
-        description,
-        docUrl,
-        githubUrl,
-        videoUrl,
-        title,
-        chatUrl,
-        order
-      },
-      {
-        where: {
-          id: id
-        }
-      }
-    )
+    await Lesson.update(arg, { where: { id } })
 
     return {
       success: true
