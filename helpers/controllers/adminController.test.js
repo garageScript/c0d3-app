@@ -21,12 +21,6 @@ describe('Admin controller tests', () => {
     })
   })
 
-  test('Should throw error if missing username', async () => {
-    expect(
-      changeAdminRights(null, { ...mockUser, username: '' }, ctx)
-    ).rejects.toThrowError('Missing username')
-  })
-
   test('Should throw error when user is not an admin', async () => {
     ctx.req.user.isAdmin = 'false'
     expect(changeAdminRights(null, mockUser, ctx)).rejects.toThrowError(
