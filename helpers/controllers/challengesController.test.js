@@ -21,6 +21,7 @@ describe('Challenges controller tests', () => {
   }
 
   Challenge.build = jest.fn().mockReturnValue({ save: () => {} })
+
   test('Should create new challenge', async () => {
     expect(createChallenge(null, mockChallengeData, ctx)).resolves.toEqual({
       success: true
