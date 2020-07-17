@@ -20,7 +20,6 @@ export const changeAdminRights = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
     const { username, status } = arg
 
     if (!username) {
