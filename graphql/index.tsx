@@ -36,11 +36,6 @@ export type Alert = {
   urlCaption?: Maybe<Scalars['String']>
 }
 
-export type AlertResponse = {
-  __typename?: 'AlertResponse'
-  success?: Maybe<Scalars['Boolean']>
-}
-
 export type AuthResponse = {
   __typename?: 'AuthResponse'
   success?: Maybe<Scalars['Boolean']>
@@ -84,12 +79,17 @@ export type Mutation = {
   logout?: Maybe<AuthResponse>
   reqPwReset?: Maybe<TokenResponse>
   changePw?: Maybe<AuthResponse>
+  changeAdminRights?: Maybe<SuccessResponse>
   signup?: Maybe<AuthResponse>
-  addAlert?: Maybe<AlertResponse>
-  removeAlert?: Maybe<AlertResponse>
+  addAlert?: Maybe<SuccessResponse>
+  removeAlert?: Maybe<SuccessResponse>
   createSubmission?: Maybe<Submission>
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
+  createLesson?: Maybe<SuccessResponse>
+  updateLesson?: Maybe<SuccessResponse>
+  createChallenge?: Maybe<SuccessResponse>
+  updateChallenge?: Maybe<SuccessResponse>
 }
 
 export type MutationLoginArgs = {
@@ -104,6 +104,11 @@ export type MutationReqPwResetArgs = {
 export type MutationChangePwArgs = {
   token: Scalars['String']
   password: Scalars['String']
+}
+
+export type MutationChangeAdminRightsArgs = {
+  id: Scalars['Int']
+  status: Scalars['String']
 }
 
 export type MutationSignupArgs = {
@@ -142,10 +147,47 @@ export type MutationRejectSubmissionArgs = {
   comment: Scalars['String']
 }
 
+export type MutationCreateLessonArgs = {
+  description: Scalars['String']
+  docUrl?: Maybe<Scalars['String']>
+  githubUrl?: Maybe<Scalars['String']>
+  videoUrl?: Maybe<Scalars['String']>
+  title: Scalars['String']
+  chatUrl?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+}
+
+export type MutationUpdateLessonArgs = {
+  id: Scalars['Int']
+  description?: Maybe<Scalars['String']>
+  docUrl?: Maybe<Scalars['String']>
+  githubUrl?: Maybe<Scalars['String']>
+  videoUrl?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  chatUrl?: Maybe<Scalars['String']>
+  order?: Maybe<Scalars['Int']>
+}
+
+export type MutationCreateChallengeArgs = {
+  lessonId: Scalars['Int']
+  order: Scalars['Int']
+  description?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+}
+
+export type MutationUpdateChallengeArgs = {
+  lessonId: Scalars['Int']
+  id: Scalars['Int']
+  order: Scalars['Int']
+  description?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+}
+
 export type Query = {
   __typename?: 'Query'
   lessons: Array<Lesson>
   session?: Maybe<Session>
+  allUsers?: Maybe<Array<Maybe<User>>>
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
@@ -189,6 +231,11 @@ export type Submission = {
   reviewerId?: Maybe<Scalars['String']>
   createdAt?: Maybe<Scalars['String']>
   updatedAt?: Maybe<Scalars['String']>
+}
+
+export type SuccessResponse = {
+  __typename?: 'SuccessResponse'
+  success?: Maybe<Scalars['Boolean']>
 }
 
 export type TokenResponse = {
@@ -241,7 +288,7 @@ export type AddAlertMutationVariables = Exact<{
 
 export type AddAlertMutation = { __typename?: 'Mutation' } & {
   addAlert?: Maybe<
-    { __typename?: 'AlertResponse' } & Pick<AlertResponse, 'success'>
+    { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
   >
 }
 
@@ -620,7 +667,7 @@ export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>
   AuthResponse: ResolverTypeWrapper<AuthResponse>
   TokenResponse: ResolverTypeWrapper<TokenResponse>
-  AlertResponse: ResolverTypeWrapper<AlertResponse>
+  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   CacheControlScope: CacheControlScope
   Upload: ResolverTypeWrapper<Scalars['Upload']>
 }
@@ -641,7 +688,7 @@ export type ResolversParentTypes = {
   Mutation: {}
   AuthResponse: AuthResponse
   TokenResponse: TokenResponse
-  AlertResponse: AlertResponse
+  SuccessResponse: SuccessResponse
   Upload: Scalars['Upload']
 }
 
@@ -658,14 +705,6 @@ export type AlertResolvers<
     ParentType,
     ContextType
   >
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
-
-export type AlertResponseResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['AlertResponse'] = ResolversParentTypes['AlertResponse']
-> = {
-  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType>
 }
 
@@ -753,6 +792,12 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationChangePwArgs, 'token' | 'password'>
   >
+  changeAdminRights?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationChangeAdminRightsArgs, 'id' | 'status'>
+  >
   signup?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
     ParentType,
@@ -763,13 +808,13 @@ export type MutationResolvers<
     >
   >
   addAlert?: Resolver<
-    Maybe<ResolversTypes['AlertResponse']>,
+    Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
     RequireFields<MutationAddAlertArgs, 'text' | 'type'>
   >
   removeAlert?: Resolver<
-    Maybe<ResolversTypes['AlertResponse']>,
+    Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
     RequireFields<MutationRemoveAlertArgs, 'id'>
@@ -795,6 +840,30 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>
   >
+  createLesson?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
+  >
+  updateLesson?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationUpdateLessonArgs, 'id'>
+  >
+  createChallenge?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationCreateChallengeArgs, 'lessonId' | 'order'>
+  >
+  updateChallenge?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id' | 'order'>
+  >
 }
 
 export type QueryResolvers<
@@ -803,6 +872,11 @@ export type QueryResolvers<
 > = {
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
+  allUsers?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['User']>>>,
+    ParentType,
+    ContextType
+  >
   userInfo?: Resolver<
     Maybe<ResolversTypes['Session']>,
     ParentType,
@@ -877,6 +951,14 @@ export type SubmissionResolvers<
   __isTypeOf?: IsTypeOfResolverFn<ParentType>
 }
 
+export type SuccessResponseResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
+> = {
+  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+}
+
 export type TokenResponseResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
@@ -938,7 +1020,6 @@ export type UserLessonResolvers<
 
 export type Resolvers<ContextType = any> = {
   Alert?: AlertResolvers<ContextType>
-  AlertResponse?: AlertResponseResolvers<ContextType>
   AuthResponse?: AuthResponseResolvers<ContextType>
   Challenge?: ChallengeResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
@@ -946,6 +1027,7 @@ export type Resolvers<ContextType = any> = {
   Query?: QueryResolvers<ContextType>
   Session?: SessionResolvers<ContextType>
   Submission?: SubmissionResolvers<ContextType>
+  SuccessResponse?: SuccessResponseResolvers<ContextType>
   TokenResponse?: TokenResponseResolvers<ContextType>
   Upload?: GraphQLScalarType
   User?: UserResolvers<ContextType>
