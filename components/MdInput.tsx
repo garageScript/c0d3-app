@@ -17,15 +17,19 @@ const MdStyle = {
 
 type MdInputProps = {
   onChange?: Function
+  placeHolder?: string
+  value?: string
   bgColor?: 'white' | 'none'
 }
 
 export const MdInput: React.FC<MdInputProps> = ({
   bgColor = 'none',
-  onChange = noop
+  onChange = noop,
+  placeHolder = 'Type something...',
+  value = ''
 }) => {
   const [preview, setPreview] = useState<boolean>(false)
-  const [commentValue, setCommentValue] = useState<string>('')
+  const [commentValue, setCommentValue] = useState<string>(value)
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = event.target
@@ -41,7 +45,7 @@ export const MdInput: React.FC<MdInputProps> = ({
     <textarea
       value={commentValue}
       onChange={handleChange}
-      placeholder="Type something..."
+      placeholder={placeHolder}
       style={textBoxStyle}
       data-testid="textbox"
     />

@@ -65,6 +65,42 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               >
                 Contributors
               </a>
+              <div
+                class="dropdown"
+              >
+                <div
+                  aria-expanded="false"
+                  class="btn btn-secondary dropdown-toggle"
+                  data-testid="adminButton"
+                  style="margin: 0px 0px 0px 0px;"
+                >
+                  Admin
+                </div>
+                <div
+                  class="dropdown-menu"
+                  data-testid="menu"
+                  style="margin: 0px 0px 0px 0px;"
+                >
+                  <a
+                    class="dropdown-item"
+                    href="/admin/lessons"
+                  >
+                    Lesson
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="/admin/lessons"
+                  >
+                    Users
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="/admin/lessons"
+                  >
+                    Alerts
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -169,6 +205,42 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               >
                 Contributors
               </a>
+              <div
+                class="dropdown"
+              >
+                <div
+                  aria-expanded="false"
+                  class="btn btn-secondary dropdown-toggle"
+                  data-testid="adminButton"
+                  style="margin: 0px 0px 0px 0px;"
+                >
+                  Admin
+                </div>
+                <div
+                  class="dropdown-menu"
+                  data-testid="menu"
+                  style="margin: 0px 0px 0px 0px;"
+                >
+                  <a
+                    class="dropdown-item"
+                    href="/admin/lessons"
+                  >
+                    Lesson
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="/admin/lessons"
+                  >
+                    Users
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="/admin/lessons"
+                  >
+                    Alerts
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

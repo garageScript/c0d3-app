@@ -187,6 +187,7 @@ export type Query = {
   __typename?: 'Query'
   lessons: Array<Lesson>
   session?: Maybe<Session>
+  adminRights?: Maybe<Scalars['Boolean']>
   allUsers?: Maybe<Array<Maybe<User>>>
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
@@ -292,6 +293,13 @@ export type AddAlertMutation = { __typename?: 'Mutation' } & {
   >
 }
 
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>
+
+export type Unnamed_1_Query = { __typename?: 'Query' } & Pick<
+  Query,
+  'adminRights'
+>
+
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetAppQuery = { __typename?: 'Query' } & {
@@ -322,7 +330,10 @@ export type GetAppQuery = { __typename?: 'Query' } & {
   session?: Maybe<
     { __typename?: 'Session' } & {
       user?: Maybe<
-        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+        { __typename?: 'User' } & Pick<
+          User,
+          'id' | 'username' | 'name' | 'isAdmin'
+        >
       >
       submissions?: Maybe<
         Array<
@@ -872,6 +883,11 @@ export type QueryResolvers<
 > = {
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
+  adminRights?: Resolver<
+    Maybe<ResolversTypes['Boolean']>,
+    ParentType,
+    ContextType
+  >
   allUsers?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['User']>>>,
     ParentType,
@@ -1264,6 +1280,7 @@ export const GetAppDocument = gql`
         id
         username
         name
+        isAdmin
       }
       submissions {
         id

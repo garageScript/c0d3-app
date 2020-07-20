@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import NavLink from './NavLink'
 import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
+import { AdminDropDownMenu } from './AdminDropDownMenu'
 import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
 
@@ -12,41 +13,49 @@ type AuthButtonProps = {
   username: string
 }
 
-const AuthLink = () => (
-  <div className="navbar-nav collapse navbar-collapse">
-    <NavLink
-      path="/curriculum"
-      activePath="/curriculum"
-      className="nav-item nav-link"
-    >
-      Curriculum
-    </NavLink>
-    <NavLink
-      path="https://github.com/garageScript/c0d3-app"
-      className="nav-item nav-link"
-      external
-    >
-      Repo
-    </NavLink>
-    <NavLink
-      path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-      className="nav-item nav-link"
-      external
-    >
-      Journey
-    </NavLink>
-    <NavLink
-      path="https://chat.c0d3.com"
-      className="nav-item nav-link"
-      external
-    >
-      Help
-    </NavLink>
-    <NavLink path="/contributors" className="nav-item nav-link">
-      Contributors
-    </NavLink>
-  </div>
-)
+type AuthLinkProps = {
+  session: any
+}
+
+const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
+  const isAdmin = _.get(session, 'user.isAdmin', '')
+  return (
+    <div className="navbar-nav collapse navbar-collapse">
+      <NavLink
+        path="/curriculum"
+        activePath="/curriculum"
+        className="nav-item nav-link"
+      >
+        Curriculum
+      </NavLink>
+      <NavLink
+        path="https://github.com/garageScript/c0d3-app"
+        className="nav-item nav-link"
+        external
+      >
+        Repo
+      </NavLink>
+      <NavLink
+        path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+        className="nav-item nav-link"
+        external
+      >
+        Journey
+      </NavLink>
+      <NavLink
+        path="https://chat.c0d3.com"
+        className="nav-item nav-link"
+        external
+      >
+        Help
+      </NavLink>
+      <NavLink path="/contributors" className="nav-item nav-link">
+        Contributors
+      </NavLink>
+      {isAdmin === 'true' && <AdminDropDownMenu />}
+    </div>
+  )
+}
 
 const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   const [logoutUser, { data }] = useLogoutMutation()
@@ -123,7 +132,6 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   }
 
   if (loading) return <LoadingSpinner />
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -135,7 +143,7 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {session ? <AuthLink /> : <UnAuthLink />}
+            {session ? <AuthLink session={session} /> : <UnAuthLink />}
           </div>
         </div>
         {renderButtons()}
