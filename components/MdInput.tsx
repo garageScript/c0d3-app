@@ -12,7 +12,8 @@ const textBoxStyle = {
 // style for Markdown
 const MdStyle = {
   ...textBoxStyle,
-  display: 'block'
+  display: 'block',
+  width: 'inherit'
 }
 
 type MdInputProps = {
@@ -38,7 +39,7 @@ export const MdInput: React.FC<MdInputProps> = ({
   }
 
   const displayOption = preview ? (
-    <Markdown data-testid="markdown" style={{ ...MdStyle, width: 'inherit' }}>
+    <Markdown data-testid="markdown" style={MdStyle}>
       {commentValue}
     </Markdown>
   ) : (
