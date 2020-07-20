@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import _ from 'lodash'
+import React, { useState } from 'react'
 import { Button } from './theme/Button'
 import { MdInput } from './MdInput'
 
-const capitalizeFirst = (str: string) =>
-  str.replace(/./, char => char.toUpperCase())
+const capitalizeFirst = (str: string) => {
+  return str.replace(/./, char => char.toUpperCase())
+}
 
 type InputCardProps = {
   values: any
   buttons: any
   capitalizeTitle?: boolean
+  bgColor?: 'white' | 'none'
   title?: string
 }
 
@@ -43,14 +44,11 @@ const InputCard: React.FC<InputCardProps> = ({
   values,
   buttons,
   capitalizeTitle = true,
-  title
+  title,
+  bgColor = 'white'
 }) => {
   const [options, saveOptions] = useState(values)
   const titles = Object.keys(values)
-
-  useEffect(() => {
-    saveOptions(values)
-  }, [values])
 
   const handleChange = (value: string, title: string) => {
     const newOptions = { ...options }
@@ -60,12 +58,13 @@ const InputCard: React.FC<InputCardProps> = ({
 
   const inputs = titles.map((title, i) => {
     if (title === 'id') return []
-    //if it is a descriptoin title, i wwant to use mdcomponent
+    //if it is a desciptoin title, i wwant to use mdcomponent
     return (
       <div
         key={i}
-        className="input-group d-flex flex-column"
+        className="d-flex flex-column"
         style={{
+          border: '3px solid rgb(84, 64, 216, .3)',
           padding: '10px',
           backgroundColor: 'rgb(84, 64, 216, .04)',
           textAlign: 'left',
@@ -92,14 +91,24 @@ const InputCard: React.FC<InputCardProps> = ({
             aria-describedby="basic-addon1"
           />
         )}
-        <div className="input-group-append"></div>
       </div>
     )
   })
 
   return (
-    <div style={{ textAlign: 'center', padding: 10, backgroundColor: 'white' }}>
-      {title && <h2 style={{ textDecoration: 'underline' }}>{title}</h2>}
+    <div
+      style={{
+        textAlign: 'center',
+        padding: 10,
+        backgroundColor: bgColor,
+        border: '2px solid rgb(0,0,0,.3)'
+      }}
+    >
+      {title && (
+        <h2 style={{ textDecoration: 'underline', marginBottom: 20 }}>
+          {title}
+        </h2>
+      )}
       {inputs}
       <Buttons buttons={buttons} options={options} />
     </div>

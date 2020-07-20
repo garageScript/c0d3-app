@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import { AdminLessonsInfo } from '../../components/AdminLessonsInfo'
+import { AdminLessonInfo } from '../../components/AdminLessonInfo'
 import { AdminLessonsSideBar } from '../../components/AdminLessonsSideBar'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import checkAdminRights from '../../graphql/queries/checkAdminRights'
@@ -23,7 +23,7 @@ const AdminLessons: React.FC = () => {
             lessons={lessons || data.lessons}
             setSelectedLesson={setSelectedLesson}
           />
-          <AdminLessonsInfo
+          <AdminLessonInfo
             setLessons={setLessons}
             lessons={lessons || data.lessons}
             selectedLesson={selectedLesson}
@@ -41,7 +41,7 @@ const Lessons: React.FC = () => {
     <React.Fragment>
       {loading && <LoadingSpinner />}
       {error && <h1>Error</h1>}
-      {data && data.adminRights && <AdminLessons />}]
+      {data && data.adminRights && <AdminLessons />}
     </React.Fragment>
   )
 }

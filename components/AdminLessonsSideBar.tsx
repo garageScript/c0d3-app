@@ -1,9 +1,10 @@
 import React from 'react'
+import { Lesson } from '../@types/adminLesson'
 
 type SideBarLessonProps = {
-  lessons: any
-  setLessons: any
-  setSelectedLesson: any
+  lessons: Lesson[]
+  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setSelectedLesson: React.Dispatch<React.SetStateAction<number>>
 }
 
 const lessonsListCallbackFn = (
@@ -47,9 +48,9 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
   lessons,
   setSelectedLesson
 }) => {
-  let lessonsArr: any = [<h1 key={0}>Create new Lesson</h1>]
-  if (lessons) {
-    lessonsArr = makeLessonsList(lessons, setSelectedLesson)
-  }
-  return <div className="col-4">{lessonsArr}</div>
+  const lessonsList = lessons
+    ? makeLessonsList(lessons, setSelectedLesson)
+    : [<h1 key={0}>Create new Lesson</h1>]
+
+  return <div className="col-4">{lessonsList}</div>
 }

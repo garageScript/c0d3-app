@@ -10,15 +10,15 @@ const adminStyle = {
 
 const AdminDropDownMenu: React.FC = () => {
   const [showOptions, setShowOptions] = useState('dropdown-menu')
-  const showIt = () => setShowOptions('dropdown-menu show')
-  const stopIt = () => setShowOptions('dropdown-menu')
+  const showMenu = () => setShowOptions('dropdown-menu show')
+  const hideMenu = () => setShowOptions('dropdown-menu')
   return (
     <div className="dropdown">
       <div
         style={adminStyle}
         data-testid="adminButton"
-        onClick={showIt}
-        onMouseOut={stopIt}
+        onClick={showMenu}
+        onMouseOut={hideMenu}
         className="btn btn-secondary dropdown-toggle"
         aria-expanded="false"
       >
@@ -28,16 +28,16 @@ const AdminDropDownMenu: React.FC = () => {
         data-testid="menu"
         style={adminStyle}
         className={showOptions}
-        onMouseOver={showIt}
-        onMouseOut={stopIt}
+        onMouseOver={showMenu}
+        onMouseOut={hideMenu}
       >
         <NavLink path="/admin/lessons" className="dropdown-item">
           Lesson
         </NavLink>
-        <NavLink path="/admin/lessons" className="dropdown-item">
+        <NavLink path="/admin/users" className="dropdown-item">
           Users
         </NavLink>
-        <NavLink path="/admin/lessons" className="dropdown-item">
+        <NavLink path="/admin/alerts" className="dropdown-item">
           Alerts
         </NavLink>
       </div>
