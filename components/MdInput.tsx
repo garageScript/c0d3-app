@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Markdown from 'markdown-to-jsx'
 import { Button } from './theme/Button'
 import noop from '../helpers/noop'
@@ -30,6 +30,10 @@ export const MdInput: React.FC<MdInputProps> = ({
 }) => {
   const [preview, setPreview] = useState<boolean>(false)
   const [commentValue, setCommentValue] = useState<string>(value)
+
+  useEffect(() => {
+    setCommentValue(value)
+  }, [value])
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = event.target
