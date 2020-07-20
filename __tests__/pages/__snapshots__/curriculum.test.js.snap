@@ -96,13 +96,13 @@ exports[`Curriculum Page Should render Loading Spinner when loading 1`] = `
                 </a>
                 <a
                   class="dropdown-item"
-                  href="/admin/lessons"
+                  href="/admin/users"
                 >
                   Users
                 </a>
                 <a
                   class="dropdown-item"
-                  href="/admin/lessons"
+                  href="/admin/alerts"
                 >
                   Alerts
                 </a>
@@ -947,13 +947,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 </a>
                 <a
                   class="dropdown-item"
-                  href="/admin/lessons"
+                  href="/admin/users"
                 >
                   Users
                 </a>
                 <a
                   class="dropdown-item"
-                  href="/admin/lessons"
+                  href="/admin/alerts"
                 >
                   Alerts
                 </a>
@@ -1790,13 +1790,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </a>
                 <a
                   class="dropdown-item"
-                  href="/admin/lessons"
+                  href="/admin/users"
                 >
                   Users
                 </a>
                 <a
                   class="dropdown-item"
-                  href="/admin/lessons"
+                  href="/admin/alerts"
                 >
                   Alerts
                 </a>

@@ -89,13 +89,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
                   </a>
                   <a
                     class="dropdown-item"
-                    href="/admin/lessons"
+                    href="/admin/users"
                   >
                     Users
                   </a>
                   <a
                     class="dropdown-item"
-                    href="/admin/lessons"
+                    href="/admin/alerts"
                   >
                     Alerts
                   </a>
@@ -229,13 +229,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   </a>
                   <a
                     class="dropdown-item"
-                    href="/admin/lessons"
+                    href="/admin/users"
                   >
                     Users
                   </a>
                   <a
                     class="dropdown-item"
-                    href="/admin/lessons"
+                    href="/admin/alerts"
                   >
                     Alerts
                   </a>
