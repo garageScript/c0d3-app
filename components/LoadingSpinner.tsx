@@ -1,18 +1,21 @@
 import React from 'react'
-import Layout from './Layout'
 
 const LoadingSpinner = () => {
   return (
-    <Layout>
-      <div className="mt-4 card border-0 shadow-sm">
-        <div className="card-body d-flex flex-column align-items-center">
-          <h1>Loading</h1>
-          <div className="spinner-border text-primary mt-1" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
-        </div>
+    <div
+      style={{ minHeight: '100vh' }}
+      className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1
+        className="text-white font-weight-bold display-3"
+        style={{ fontFamily: "'PT Mono', sans-serif" }}
+      >
+        C0D3
+      </h1>
+      <div className="spinner-border text-white" role="status">
+        <h1 className="sr-only">Loading...</h1>
       </div>
-    </Layout>
+    </div>
   )
 }
 

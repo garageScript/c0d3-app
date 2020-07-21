@@ -1,126 +1,158 @@
-jest.mock('@apollo/react-hooks')
-import { useMutation } from '@apollo/react-hooks'
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
-import SignUpPage, { Signup } from '../../pages/signup'
-
-const mockFn = jest.fn()
-useMutation.mockReturnValue([mockFn])
+import { MockedProvider } from '@apollo/react-testing'
+import GET_APP from '../../graphql/queries/getApp'
+import SIGNUP_USER from '../../graphql/queries/signupUser'
+import SignupPage from '../../pages/signup'
 
 describe('Signup Page', () => {
-  const fillOutSignupForm = async getByTestId => {
+  const fakeEmail = 'fake@email.com'
+  const fakeUsername = 'fakeusername'
+  const fakeFirstName = 'fakefirstname'
+  const fakeLastName = 'fakelastname'
+
+  const fillOutSignupForm = getByTestId => {
     const emailField = getByTestId('email')
     const usernameField = getByTestId('username')
     const firstNameField = getByTestId('firstName')
     const lastNameField = getByTestId('lastName')
-    await wait(
-      fireEvent.change(emailField, {
-        target: {
-          value: 'email@domain.com'
-        }
-      }),
-      fireEvent.change(usernameField, {
-        target: {
-          value: 'user name'
-        }
-      }),
-      fireEvent.change(firstNameField, {
-        target: {
-          value: 'user'
-        }
-      }),
-      fireEvent.change(lastNameField, {
-        target: {
-          value: 'name'
-        }
-      })
-    )
+
+    fireEvent.change(emailField, {
+      target: {
+        value: fakeEmail
+      }
+    })
+
+    fireEvent.change(usernameField, {
+      target: {
+        value: fakeUsername
+      }
+    })
+
+    fireEvent.change(firstNameField, {
+      target: {
+        value: fakeFirstName
+      }
+    })
+
+    fireEvent.change(lastNameField, {
+      target: {
+        value: fakeLastName
+      }
+    })
   }
 
-  test('should not submit when empty form', async () => {
-    useMutation.mockReturnValue([mockFn])
-    const { getByTestId } = render(<SignUpPage />)
-    const submitButton = getByTestId('submit')
-    await wait(() => {
-      act(() => {
-        fireEvent.click(submitButton)
-      })
-    })
-    expect(mockFn).not.toBeCalled()
-  })
-
-  test('Should submit signup form values and render success component', () => {
-    mockFn.mockImplementation(() => {
-      return {
-        data: {
-          signup: {
-            success: true
+  test('Should render success component on success', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: SIGNUP_USER,
+          variables: {
+            firstName: fakeFirstName,
+            lastName: fakeLastName,
+            email: fakeEmail,
+            username: fakeUsername
+          }
+        },
+        result: {
+          data: {
+            signup: {
+              success: true,
+              username: fakeUsername,
+              error: null
+            }
           }
         }
       }
-    })
-    useMutation.mockReturnValue([mockFn])
-    const { getByTestId } = render(<SignUpPage />)
-    const submitButton = getByTestId('submit')
-    fillOutSignupForm(getByTestId)
+    ]
 
-    act(
-      () => {
-        fireEvent.click(submitButton)
-      },
-      () => {
-        getByTestId('signup-success')
-      }
+    const { container, getByTestId, getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <SignupPage />
+      </MockedProvider>
     )
+
+    const submitButton = getByTestId('submit')
+
+    await act(async () => {
+      await wait(() => {
+        fillOutSignupForm(getByTestId)
+        fireEvent.click(submitButton)
+      })
+    })
+
+    await wait(() => {
+      expect(getByText('Account created successfully!')).toBeTruthy()
+      expect(container).toMatchSnapshot()
+    })
   })
 
-  test('Should submit signup form values but render error if there is an error', () => {
-    mockFn.mockImplementation(() => {
-      return {
-        data: {
-          signup: {}
+  test('Should render errors on fail', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: SIGNUP_USER,
+          variables: {
+            firstName: fakeFirstName,
+            lastName: fakeLastName,
+            email: fakeEmail,
+            username: fakeUsername
+          }
+        },
+        result: {
+          data: {
+            signup: {
+              success: false,
+              username: null,
+              error: null
+            }
+          }
         }
       }
-    })
-    useMutation.mockReturnValue([mockFn])
-    const { getByTestId } = render(<SignUpPage />)
-    const submitButton = getByTestId('submit')
-    fillOutSignupForm(getByTestId)
+    ]
 
-    act(
-      () => {
+    const { container, getByTestId, getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <SignupPage />
+      </MockedProvider>
+    )
+
+    const submitButton = getByTestId('submit')
+
+    await act(async () => {
+      await wait(() => {
+        fillOutSignupForm(getByTestId)
         fireEvent.click(submitButton)
-      },
-      () => {
+      })
+    })
+
+    await wait(() => {
+      expect(
         getByText(
           'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
         )
-      }
-    )
-  })
-
-  test('Should submit signup form values and display error component when user does not exist', () => {
-    mockFn.mockImplementation(() => {
-      const error = new Error()
-      error.graphQLErrors = [
-        {
-          message: 'UserInputError: User does not exist!'
-        }
-      ]
-      return Promise.reject(error)
+      ).toBeTruthy()
+      expect(container).toMatchSnapshot()
     })
-    useMutation.mockReturnValue([mockFn])
-    const { getByTestId } = render(<SignUpPage />)
-    const submitButton = getByTestId('submit')
-    fillOutSignupForm(getByTestId)
-
-    act(
-      () => {
-        fireEvent.click(submitButton)
-      },
-      () => {
-        getByText('User does not exist!')
-      }
-    )
   })
 })

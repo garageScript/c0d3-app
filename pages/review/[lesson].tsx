@@ -1,16 +1,18 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
-import withQueryLoader, {
-  WithQueryProps
-} from '../../containers/withQueryLoader'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import { GET_APP, GET_SUBMISSIONS } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
+import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
+import { AppData } from '../../@types/app'
+import withQueryLoader, {
+  QueryDataProps
+} from '../../containers/withQueryLoader'
 import _ from 'lodash'
 
 type SubmissionDisplayProps = {
@@ -27,7 +29,7 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   </div>
 )
 
-const Review: React.FC<WithQueryProps> = ({ queryData }) => {
+const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
@@ -41,9 +43,10 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
     (submission: SubmissionData) =>
       submission.status !== 'passed' && submission.status !== 'needMoreWork'
   )
-  const currentLesson: Lesson = lessons.find(
-    (lesson: Lesson) => lesson.id.toString() === currentlessonId
-  )
+  const currentLesson: Lesson =
+    lessons.find(
+      (lesson: Lesson) => lesson.id.toString() === currentlessonId
+    ) || ({} as Lesson)
   return (
     <div>
       <Layout>
@@ -64,7 +67,7 @@ const Review: React.FC<WithQueryProps> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader(
+export default withQueryLoader<AppData>(
   {
     query: GET_APP
   },

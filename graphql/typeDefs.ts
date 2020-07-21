@@ -2,11 +2,13 @@ import { gql } from 'apollo-boost'
 
 export default gql`
   type Query {
-    lessons: [Lesson]
+    lessons: [Lesson!]!
     session: Session
+    allUsers: [User]
+    userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
-    alerts: [Alert]
+    alerts: [Alert!]!
   }
 
   type TokenResponse {
@@ -19,6 +21,7 @@ export default gql`
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse
     changePw(token: String!, password: String!): AuthResponse
+    changeAdminRights(id: Int!, status: String!): SuccessResponse
     signup(
       firstName: String!
       lastName: String!
@@ -31,8 +34,8 @@ export default gql`
       type: String!
       url: String
       urlCaption: String
-    ): AlertResponse
-    removeAlert(id: String!): AlertResponse
+    ): SuccessResponse
+    removeAlert(id: String!): SuccessResponse
     createSubmission(
       lessonId: String!
       challengeId: String!
@@ -41,6 +44,38 @@ export default gql`
     ): Submission
     acceptSubmission(id: String!, comment: String!): Submission
     rejectSubmission(id: String!, comment: String!): Submission
+    createLesson(
+      description: String!
+      docUrl: String
+      githubUrl: String
+      videoUrl: String
+      title: String!
+      chatUrl: String
+      order: Int!
+    ): SuccessResponse
+    updateLesson(
+      id: Int!
+      description: String
+      docUrl: String
+      githubUrl: String
+      videoUrl: String
+      title: String
+      chatUrl: String
+      order: Int
+    ): SuccessResponse
+    createChallenge(
+      lessonId: Int!
+      order: Int!
+      description: String
+      title: String
+    ): SuccessResponse
+    updateChallenge(
+      lessonId: Int!
+      id: Int!
+      order: Int!
+      description: String
+      title: String
+    ): SuccessResponse
   }
 
   type AuthResponse {
@@ -50,7 +85,7 @@ export default gql`
     cliToken: String
   }
 
-  type AlertResponse {
+  type SuccessResponse {
     success: Boolean
   }
 
@@ -79,14 +114,14 @@ export default gql`
     userLesson: UserLesson
     email: String
     name: String
-    isAdmin: Boolean
+    isAdmin: String
     cliToken: String
   }
 
   type Session {
     user: User
     submissions: [Submission]
-    lessonStatus: [UserLesson]
+    lessonStatus: [UserLesson!]!
   }
 
   type UserLesson {
@@ -122,7 +157,7 @@ export default gql`
     order: Int
   }
   type Alert {
-    id: String
+    id: String!
     text: String
     type: String
     url: String

@@ -1,5 +1,7 @@
 import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
+import _ from 'lodash'
+import { isAdmin } from '../isAdmin'
 
 const { Alert } = db
 
@@ -17,6 +19,9 @@ export const addAlert = async (
 ) => {
   const { req } = ctx
   try {
+    if (!isAdmin(req)) {
+      throw new Error('User is not an admin')
+    }
     const { text, type, url, urlCaption } = arg
     if (!text || !type) {
       throw new Error('Missing alert parameters')
@@ -38,6 +43,9 @@ export const removeAlert = async (
 ) => {
   const { req } = ctx
   try {
+    if (!isAdmin(req)) {
+      throw new Error('User is not an admin')
+    }
     const { id } = arg
     await Alert.destroy({ where: { id } })
     return {

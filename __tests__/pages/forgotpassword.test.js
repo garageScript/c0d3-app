@@ -1,50 +1,113 @@
-jest.mock('@apollo/react-hooks')
 import React from 'react'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { GraphQLError } from 'graphql'
+import { render, fireEvent, wait, act } from '@testing-library/react'
+import { MockedProvider } from '@apollo/react-testing'
+import GET_APP from '../../graphql/queries/getApp'
+import RESET_PASSWORD from '../../graphql/queries/resetPassword'
+import dummySessionData from '../../__dummy__/sessionData'
 import ForgotPassword from '../../pages/forgotpassword'
-import { useMutation } from '@apollo/react-hooks'
 
-const mockFn = jest.fn()
+describe('ForgotPassword Page', () => {
+  test('Should render password reset instructions on success', async () => {
+    const validUser = 'fakevaliduser'
 
-describe('<ForgotPassword />', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: RESET_PASSWORD,
+          variables: { userOrEmail: validUser }
+        },
+        result: {
+          data: {
+            reqPwReset: {
+              success: true,
+              token: 'faketoken'
+            }
+          }
+        }
+      }
+    ]
 
-  test('It should render reset password form', async () => {
-    useMutation.mockReturnValue([mockFn, { data: null }])
-    const { container } = render(<ForgotPassword />)
-    await wait(() => expect(container).toMatchSnapshot())
-  })
-  test('It should render password reset instructions sent', () => {
-    useMutation.mockReturnValue([
-      mockFn,
-      { data: { success: true, token: 'faketoken' } }
-    ])
-    const { container } = render(<ForgotPassword />)
-    expect(container).toMatchSnapshot()
-  })
-  test('It should render reset password form and call reqPwReset ', async () => {
-    useMutation.mockReturnValue([mockFn, { data: null }])
-    const { getByTestId } = render(<ForgotPassword />)
+    const { container, getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ForgotPassword />
+      </MockedProvider>
+    )
+
     const submitButton = getByTestId('submit')
     const userOrEmail = getByTestId('userOrEmail')
 
-    await wait(() => {
+    // wait for formik validations that are async
+    await act(async () => {
       fireEvent.change(userOrEmail, {
         target: {
-          value: 'somefakeuser'
+          value: validUser
         }
       })
-      fireEvent.click(submitButton)
+
+      await wait(() => fireEvent.click(submitButton))
     })
-    expect(mockFn).toBeCalledWith({
-      variables: { userOrEmail: 'somefakeuser' }
-    })
+
+    // wait for mutation updates after submitButton is clicked
+    await wait(() => expect(container).toMatchSnapshot())
   })
-  test('It should render invalid user/email form', () => {
-    useMutation.mockReturnValue([mockFn, { data: null, error: 'fake Error' }])
-    const { container } = render(<ForgotPassword />)
-    expect(container).toMatchSnapshot()
+
+  test('Should render invalid user/email form on error', async () => {
+    const invalidUser = 'fakeinvaliduser'
+
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: RESET_PASSWORD,
+          variables: { userOrEmail: invalidUser }
+        },
+        result: {
+          errors: [new GraphQLError('invalid user')]
+        }
+      }
+    ]
+
+    const { container, getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ForgotPassword />
+      </MockedProvider>
+    )
+
+    const submitButton = getByTestId('submit')
+    const userOrEmail = getByTestId('userOrEmail')
+
+    // wait for formik validations that are async
+    await act(async () => {
+      fireEvent.change(userOrEmail, {
+        target: {
+          value: invalidUser
+        }
+      })
+
+      await wait(() => fireEvent.click(submitButton))
+    })
+
+    // wait for mutation updates after submitButton is clicked
+    await wait(() => expect(container).toMatchSnapshot())
   })
 })

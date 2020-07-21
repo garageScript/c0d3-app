@@ -1,24 +1,25 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import withQueryLoader, {
-  WithQueryProps
-} from '../../containers/withQueryLoader'
 import Layout from '../../components/Layout'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
-import { GET_APP } from '../../graphql/queries'
+import GET_APP from '../../graphql/queries/getApp'
 import { Lesson, LessonStatus } from '../../@types/lesson'
 import { UserSubmission } from '../../@types/challenge'
+import { AppData } from '../../@types/app'
+import withQueryLoader, {
+  QueryDataProps
+} from '../../containers/withQueryLoader'
 import _ from 'lodash'
 
-const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
+const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  const currentLesson: Lesson = lessons.find(
+  const currentLesson: Lesson | undefined = lessons.find(
     (lesson: Lesson) => lesson.id.toString() === currentlessonId
   )
   const currentLessonStatus: LessonStatus = lessonStatus.find(
@@ -38,7 +39,8 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
                 lessonId={currentlessonId}
                 isPassed={isPassed}
               />
-              {alerts && <AlertsDisplay alerts={alerts} />}
+              {/* Casting alerts as any until type is migrated */}
+              {alerts && <AlertsDisplay alerts={alerts as any} />}
               <ChallengeMaterial
                 challenges={currentLesson.challenges}
                 userSubmissions={userSubmissions}
@@ -54,7 +56,7 @@ const Challenges: React.FC<WithQueryProps> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader(
+export default withQueryLoader<AppData>(
   {
     query: GET_APP
   },

@@ -32,15 +32,27 @@ export const createSubmission = async (
     const [submission] = await Submission.findOrCreate({
       where: { lessonId, challengeId, userId }
     })
+
     await submission.update({ diff, status: 'open', viewCount: 0 })
-    const [lesson, challenge] = await Promise.all([
+
+    const [currentLesson, challenge] = await Promise.all([
       Lesson.findByPk(lessonId),
       Challenge.findByPk(challengeId)
     ])
-    const lessonName = lesson.chatUrl.split('/').pop()
-    const username = await getUserByEmail(email)
-    const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${lesson.id}>) to review the code.`
-    publicChannelMessage(lessonName, message)
+
+    // query nextLesson based off order property of currentLesson
+    const nextLesson = await Lesson.findOne({
+      where: { order: currentLesson.order + 1 }
+    })
+
+    // if no Lesson was found nextLesson is null
+    if (nextLesson) {
+      const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()
+      const username = await getUserByEmail(email)
+      const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${currentLesson.id}>) to review the code.`
+      publicChannelMessage(nextLessonChannelName, message)
+    }
+
     return submission
   } catch (error) {
     throw new Error(error)
@@ -53,7 +65,7 @@ export const acceptSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.session.userId', false)
+    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
     if (!reviewerId) throw new Error('Invalid user')
     return updateSubmission({ ...args, reviewerId, status: 'passed' })
@@ -68,7 +80,7 @@ export const rejectSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.session.userId', false)
+    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
     if (!reviewerId) throw new Error('Invalid user')
     return updateSubmission({ ...args, reviewerId, status: 'needMoreWork' })
@@ -77,17 +89,13 @@ export const rejectSubmission = async (
   }
 }
 
-export const submissions = async (
-  _parent: void,
-  arg: ArgsGetSubmissions,
-  _ctx: Context
-) => {
+export const submissions = async (_parent: void, arg: ArgsGetSubmissions) => {
   const { lessonId } = arg
   return Submission.findAll({
     where: {
       status: 'open',
       lessonId
     },
-    include: ['user']
+    include: ['challenge', 'user']
   })
 }

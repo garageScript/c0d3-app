@@ -1,10 +1,11 @@
 import React from 'react'
 import NavLink from './NavLink'
-import { AlertData } from '../@types/alerts'
+import { Alert as AlertType } from '../graphql/'
+import _ from 'lodash'
 import '../scss/alerts.scss'
 
 type Props = {
-  alert: AlertData
+  alert: AlertType
   text?: string
   instructionsUrl?: string
   icon?: string
@@ -20,7 +21,7 @@ const alertIconMap: { [type: string]: string } = {
 
 const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
   const { text, type, url, urlCaption, id } = alert
-  const icon = alertIconMap[type]
+  const icon = alertIconMap[_.defaultTo(type, '-1')]
   const textColor = type === 'urgent' ? 'text-danger' : 'text-white'
   const alertClasses =
     type === 'urgent' ? 'alert-danger' : `bg-primary ${textColor}`

@@ -4,17 +4,18 @@ import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
-import { Lesson, LessonStatus } from '../@types/lesson'
-import { GET_APP } from '../graphql/queries'
-import withQueryLoader, { WithQueryProps } from '../containers/withQueryLoader'
 import AlertsDisplay from '../components/AlertsDisplay'
+import LoadingSpinner from '../components/LoadingSpinner'
+import { withGetApp, GetAppProps } from '../graphql/'
 import _ from 'lodash'
 
-type LessonStatusMap = {
-  [id: string]: LessonStatus
-}
+export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
+  let { loading, error, alerts, lessons, session } = data
 
-export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
+  if (loading) return <LoadingSpinner />
+  if (error) return <h1>Error</h1>
+  if (!session || !lessons || !alerts) return <h1>Bad Data</h1>
+
   const announcements = [
     'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
     'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
@@ -22,55 +23,56 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
   ]
 
-  const { lessons, session, alerts } = queryData
-  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
-  const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
-    (map: LessonStatusMap, lessonStatus: LessonStatus) => {
-      map[lessonStatus.lessonId] = lessonStatus
-      return map
-    },
-    {}
+  const { lessonStatus } = session
+  const lessonStatusMap: { [id: string]: typeof lessonStatus[0] } = {}
+  for (const status of lessonStatus) {
+    const lessonId = _.get(status, 'lessonId', '-1') as string
+    lessonStatusMap[lessonId] = status
+  }
+
+  const lessonInProgressIdx = _.cond([
+    [_.isEqual.bind(null, -1), _.constant(0)],
+    [_.constant(true), (output: number) => output]
+  ])(
+    lessons.findIndex(lesson => {
+      const lessonId = _.get(lesson, 'id', '-1') as string
+      return !lessonStatusMap[lessonId]?.isPassed
+    })
   )
-
-  const lessonsWithStatus: Lesson[] = lessons.map((lesson: Lesson) => {
-    lesson.lessonStatus = lessonStatusMap[lesson.id] || {
-      isEnrolled: null,
-      isTeaching: null,
-      lessonId: lesson.id
-    }
-    return lesson
-  })
-
-  const lessonInProgressIdx =
-    lessonsWithStatus.findIndex(lesson => !lesson.lessonStatus.isPassed) || 0
 
   // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
-  const progressPercentage = Math.floor((lessonInProgressIdx * 100) / 7)
-  const lessonsToRender: React.ReactElement[] = lessonsWithStatus.map(
-    (lesson, idx) => {
-      let lessonState = ''
-      if (idx === lessonInProgressIdx) {
-        lessonState = 'inProgress'
-      }
-      if (lesson.lessonStatus.isPassed) {
-        lessonState = 'completed'
-      }
-      return (
-        <LessonCard
-          key={lesson.id}
-          lessonId={lesson.id}
-          coverImg={`js-${idx}-cover.svg`}
-          title={lesson.title}
-          challengeCount={lesson.challenges.length}
-          description={lesson.description}
-          currentState={lessonState}
-          reviewUrl={`https://www.c0d3.com/review/${lesson.id}`}
-          challengesUrl={`https://www.c0d3.com/curriculum/${lesson.id}`}
-          docUrl={lesson.docUrl}
-        />
-      )
-    }
+  const TOTAL_LESSONS = 7
+  const progressPercentage = Math.floor(
+    (lessonInProgressIdx * 100) / TOTAL_LESSONS
   )
+  const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
+    const id = _.get(lesson, 'id', idx) as number
+    const status = lessonStatusMap[id]
+    let lessonState = ''
+    if (idx === lessonInProgressIdx) {
+      lessonState = 'inProgress'
+    }
+    if (status?.isPassed) {
+      lessonState = 'completed'
+    }
+    const title = _.get(lesson, 'title', '') as string
+    const challengeCount = _.get(lesson, 'challenges.length', 0) as number
+    const description = _.get(lesson, 'description', '') as string
+    return (
+      <LessonCard
+        key={id}
+        lessonId={id}
+        coverImg={`js-${idx}-cover.svg`}
+        title={title}
+        challengeCount={challengeCount}
+        description={description}
+        currentState={lessonState}
+        reviewUrl={`/review/${id}`}
+        challengesUrl={`/curriculum/${id}`}
+        docUrl={lesson?.docUrl || ''}
+      />
+    )
+  })
   return (
     <Layout>
       <div className="row">
@@ -86,9 +88,4 @@ export const Curriculum: React.FC<WithQueryProps> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader(
-  {
-    query: GET_APP
-  },
-  Curriculum
-)
+export default withGetApp()(Curriculum)

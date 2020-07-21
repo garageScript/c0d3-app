@@ -1,103 +1,142 @@
-jest.mock('@apollo/react-hooks')
-jest.mock('../../components/LessonCard')
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import Curriculum from '../../pages/curriculum'
-import { render, fireEvent } from '@testing-library/react'
-import LessonCard from '../../components/LessonCard'
+import { render, wait } from '@testing-library/react'
+import { MockedProvider } from '@apollo/react-testing'
+import GET_APP from '../../graphql/queries/getApp'
+import dummyLessonData from '../../__dummy__/lessonData'
+import dummySessionData from '../../__dummy__/sessionData'
 
 describe('Curriculum Page', () => {
-  const alerts = [
-    {
-      id: '0',
-      text: 'Set up your computer to submit challenges.',
-      type: 'info',
-      url:
-        'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
-      urlCaption: 'View Instructions'
-    },
-    {
-      id: '1',
-      text: 'Please upgrade your CLI client by running npm update c0d3.',
-      type: 'urgent'
+  test('Should render Loading Spinner when loading', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: dummySessionData,
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+
+    await wait(() => expect(container).toMatchSnapshot())
+  })
+
+  test('Should render Error on error', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        error: new Error('error')
+      }
+    ]
+
+    const { container, debug } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+
+    await wait(() => expect(container).toMatchSnapshot())
+  })
+
+  test('Should render No Data when no session', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: null,
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+
+    await wait(() => expect(container).toMatchSnapshot())
+  })
+
+  test('Should render with basic dummy data', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: dummySessionData,
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+
+    await wait(() => expect(container).toMatchSnapshot())
+  })
+
+  test('Should render with lessonStatus data', async () => {
+    const session = {
+      ...dummySessionData,
+      lessonStatus: [
+        {
+          lessonId: '5',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false
+        },
+        {
+          lessonId: '2',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false
+        },
+        {
+          lessonId: '1',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false
+        }
+      ]
     }
-  ]
-  test('Should render data with lesson state completed', async () => {
-    useQuery.mockReturnValue({
-      data: {
-        lessons: [
-          {
-            challenges: [{ id: '4' }],
-            id: '4'
-          }
-        ],
-        session: {
-          user: {
-            username: 'test'
-          },
-          lessonStatus: [
-            {
-              lessonId: '4',
-              isPassed: '1235435',
-              isEnrolled: '123456'
-            }
-          ]
-        },
-        alerts
-      }
-    })
-    LessonCard.mockReturnValue(<h1>LessonCard</h1>)
-    const { container } = render(<Curriculum />)
-    expect(container).toMatchSnapshot()
-  })
 
-  test('Should render data with lesson state inProgress', async () => {
-    useQuery.mockReturnValue({
-      data: {
-        lessons: [
-          {
-            challenges: [{ id: '4' }],
-            id: '4'
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
           }
-        ],
-        session: {
-          user: {
-            username: 'test'
-          },
-          lessonStatus: [
-            {
-              lessonId: '4',
-              isEnrolled: '123456'
-            }
-          ]
-        },
-        alerts
+        }
       }
-    })
-    LessonCard.mockReturnValue(<h1>LessonCard</h1>)
-    const { container } = render(<Curriculum />)
-    expect(container).toMatchSnapshot()
-  })
+    ]
 
-  test('Should render first lesson when lessonStatus is empty', async () => {
-    useQuery.mockReturnValue({
-      data: {
-        lessons: [
-          {
-            challenges: [{ id: '4' }],
-            id: '4'
-          }
-        ],
-        session: {
-          user: {
-            username: 'test'
-          }
-        },
-        alerts
-      }
-    })
-    LessonCard.mockReturnValue(<h1>LessonCard</h1>)
-    const { container } = render(<Curriculum />)
-    expect(container).toMatchSnapshot()
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+
+    await wait(() => expect(container).toMatchSnapshot())
   })
 })

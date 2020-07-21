@@ -1,28 +1,28 @@
 import * as React from 'react'
-import _ from 'lodash'
-import { useRouter } from 'next/router'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
-import SessionContext from '../helpers/contexts/session'
+import LoadingSpinner from '../components/LoadingSpinner'
+import { withGetApp, GetAppProps } from '../graphql'
+import { useRouter } from 'next/router'
+import _ from 'lodash'
 
-const IndexPage: React.FC = () => {
+const IndexPage: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   const router = useRouter()
-  const { session } = React.useContext(SessionContext)
-  const username = _.get(session, 'user.username')
 
-  if (username) {
+  if (loading) return <LoadingSpinner />
+  if (session) {
     router.push('/curriculum')
     return null
   }
 
   return (
     <>
-      <AppNav loggedIn={false} />
+      <AppNav />
       <LandingPage />
       <Footer footerType="py-5 bg-white text-muted" />
     </>
   )
 }
 
-export default IndexPage
+export default withGetApp()(IndexPage)

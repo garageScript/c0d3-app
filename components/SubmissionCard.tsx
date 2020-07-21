@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from './Button'
+import { Button } from './theme/Button'
 import UserInfoImage from './UserInfoImage'
-import { User } from '../@types/user'
+import { UserInfo } from '../@types/user'
 import '../scss/submissionCard.scss'
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   time: string
   challengeTitle: string
   reviewUrl: string
-  user: User
+  user: UserInfo
 }
 
 const SubmissionCard: React.FC<Props> = ({
@@ -39,7 +39,9 @@ const SubmissionCard: React.FC<Props> = ({
       <div className="card-body">
         <p className="card-text text-primary">{challengeTitle}</p>
         <a className="d-inline-block" href={reviewUrl}>
-          <Button text="Review" btnType="btn-primary" />
+          <Button color="white" type="primary">
+            Review
+          </Button>
         </a>
       </div>
     </div>

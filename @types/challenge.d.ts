@@ -15,6 +15,7 @@ export type ChallengeSubmissionData = {
 }
 
 export type Reviewer = {
+  id: string
   username: string
 }
 
@@ -26,6 +27,7 @@ export type UserSubmission = {
   viewCount: number
   comment?: string
   challengeId: string
+  lessonId?: string
   reviewer?: Reviewer
   reviewerId: string
   createdAt: string

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
-import { GET_SUBMISSIONS } from '../graphql/queries'
+import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
 import {
   Props,
   ReviewButtonProps,
@@ -11,10 +11,6 @@ import NavLink from './NavLink'
 import '../scss/lessonCard.scss'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
-  if (props.shouldNotGetCount) {
-    return null
-  }
-
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: `${props.lessonId}` }
   })
@@ -26,7 +22,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
 
   if (!data) {
-    return null
+    return <span>0</span>
   }
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
@@ -39,7 +35,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
     0
   )
 
-  return <span> {pendingSubmissionsCount} </span>
+  return <span>{pendingSubmissionsCount}</span>
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
@@ -51,12 +47,7 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
       href={props.reviewUrl}
       className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
     >
-      Review
-      <ReviewCount
-        shouldNotGetCount={props.shouldNotGetCount}
-        lessonId={props.lessonId}
-      />
-      Submissions
+      Review <ReviewCount lessonId={props.lessonId} /> Submissions
     </a>
   )
 }
@@ -108,7 +99,6 @@ const LessonCard: React.FC<Props> = props => {
           <ReviewButton
             isCompleted={props.currentState === 'completed'}
             reviewUrl={props.reviewUrl}
-            shouldNotGetCount={props.shouldNotGetCount}
             lessonId={props.lessonId}
           />
         </div>
@@ -126,7 +116,6 @@ const LessonCard: React.FC<Props> = props => {
           <NavLink
             path={props.challengesUrl}
             className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-            external
           >
             View Challenges
           </NavLink>

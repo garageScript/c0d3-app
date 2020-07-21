@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import NavLink from './NavLink'
-import Button from './Button'
-import { useMutation } from '@apollo/react-hooks'
-import { LOGOUT_USER } from '../graphql/queries'
+import LoadingSpinner from './LoadingSpinner'
+import { Button } from './theme/Button'
+import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -10,13 +10,6 @@ import '../scss/navbar.scss'
 type AuthButtonProps = {
   initial: string
   username: string
-}
-
-type Props = {
-  loggedIn?: boolean
-  username?: string
-  firstName?: string
-  lastName?: string
 }
 
 const AuthLink = () => (
@@ -56,25 +49,25 @@ const AuthLink = () => (
 )
 
 const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
-  const [logoutUser, { data }] = useMutation(LOGOUT_USER)
+  const [logoutUser, { data }] = useLogoutMutation()
   useEffect(() => {
-    const { success } = _.get(data, 'logout', false)
-    if (success) {
+    if (data?.logout?.success) {
       window.location.pathname = '/'
     }
   }, [data])
   return (
-    <div>
-      <Button
-        btnType="border btn-secondary overflow-hidden p-2 text-truncate"
-        initial={initial}
-        text={username}
-      />
-      <Button
-        text="Logout"
-        btnType="border btn-secondary ml-2"
-        onClick={logoutUser}
-      />
+    <div className="d-flex">
+      <NavLink
+        path="/profile/[username]"
+        as={`/profile/${username}`}
+        className="btn btn-secondary border overflow-hidden p-2 text-truncate"
+      >
+        {`${initial} ${username}`}
+      </NavLink>
+
+      <Button border ml="2" onClick={logoutUser}>
+        Logout
+      </Button>
     </div>
   )
 }
@@ -118,13 +111,19 @@ const UnAuthLink = () => (
   </div>
 )
 
-const AppNav: React.FC<Props> = ({
-  loggedIn = false,
-  username = '',
-  firstName,
-  lastName
-}) => {
-  const initial = firstName && lastName ? firstName[0] + lastName[0] : ''
+const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
+  const renderButtons = () => {
+    if (!session) return <UnAuthButton />
+
+    const initial = ''
+    // TODO: replace with typing
+    const username = _.get(session, 'user.username', '')
+
+    return <AuthButton username={username} initial={initial} />
+  }
+
+  if (loading) return <LoadingSpinner />
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -136,17 +135,13 @@ const AppNav: React.FC<Props> = ({
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {loggedIn ? <AuthLink /> : <UnAuthLink />}
+            {session ? <AuthLink /> : <UnAuthLink />}
           </div>
         </div>
-        {loggedIn ? (
-          <AuthButton initial={initial} username={username} />
-        ) : (
-          <UnAuthButton />
-        )}
+        {renderButtons()}
       </div>
     </nav>
   )
 }
 
-export default AppNav
+export default withGetApp()(AppNav)

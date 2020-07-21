@@ -20,18 +20,18 @@ const completedChallenges = [
 ]
 
 const defaultChallenges = [
-  { challengeNumber: 1, challengeStatus: 'default' },
-  { challengeNumber: 2, challengeStatus: 'default' },
-  { challengeNumber: 3, challengeStatus: 'default' },
-  { challengeNumber: 4, challengeStatus: 'default' },
+  { challengeNumber: 1, challengeStatus: 'open' },
+  { challengeNumber: 2, challengeStatus: 'open' },
+  { challengeNumber: 3, challengeStatus: 'open' },
+  { challengeNumber: 4, challengeStatus: 'open' },
   { challengeNumber: 5 },
-  { challengeNumber: 6, challengeStatus: 'default' },
-  { challengeNumber: 7, challengeStatus: 'default' },
-  { challengeNumber: 8, challengeStatus: 'default' },
+  { challengeNumber: 6, challengeStatus: 'open' },
+  { challengeNumber: 7, challengeStatus: 'open' },
+  { challengeNumber: 8, challengeStatus: 'open' },
   { challengeNumber: 9 },
   { challengeNumber: 10 },
-  { challengeNumber: 11, challengeStatus: 'default' },
-  { challengeNumber: 12, challengeStatus: 'default' }
+  { challengeNumber: 11, challengeStatus: 'open' },
+  { challengeNumber: 12, challengeStatus: 'open' }
 ]
 
 const pendingChallenges = [
@@ -49,32 +49,32 @@ const pendingChallenges = [
 ]
 
 const rejectedChallenges = [
-  { challengeNumber: 1, challengeStatus: 'wrong' },
-  { challengeNumber: 2, challengeStatus: 'wrong' },
-  { challengeNumber: 3, challengeStatus: 'wrong' },
-  { challengeNumber: 4, challengeStatus: 'wrong' },
-  { challengeNumber: 5, challengeStatus: 'wrong' },
-  { challengeNumber: 6, challengeStatus: 'wrong' },
-  { challengeNumber: 7, challengeStatus: 'wrong' }
+  { challengeNumber: 1, challengeStatus: 'needMoreWork' },
+  { challengeNumber: 2, challengeStatus: 'needMoreWork' },
+  { challengeNumber: 3, challengeStatus: 'needMoreWork' },
+  { challengeNumber: 4, challengeStatus: 'needMoreWork' },
+  { challengeNumber: 5, challengeStatus: 'needMoreWork' },
+  { challengeNumber: 6, challengeStatus: 'needMoreWork' },
+  { challengeNumber: 7, challengeStatus: 'needMoreWork' }
 ]
 
 const challengesLesson6 = [
-  { challengeNumber: 1, challengeStatus: 'default' },
-  { challengeNumber: 2, challengeStatus: 'default' },
-  { challengeNumber: 3, challengeStatus: 'default' },
-  { challengeNumber: 4, challengeStatus: 'default' },
-  { challengeNumber: 5, challengeStatus: 'default' },
-  { challengeNumber: 6, challengeStatus: 'default' },
-  { challengeNumber: 7, challengeStatus: 'default' },
-  { challengeNumber: 8, challengeStatus: 'default' }
+  { challengeNumber: 1, challengeStatus: 'open' },
+  { challengeNumber: 2, challengeStatus: 'open' },
+  { challengeNumber: 3, challengeStatus: 'open' },
+  { challengeNumber: 4, challengeStatus: 'open' },
+  { challengeNumber: 5, challengeStatus: 'open' },
+  { challengeNumber: 6, challengeStatus: 'open' },
+  { challengeNumber: 7, challengeStatus: 'open' },
+  { challengeNumber: 8, challengeStatus: 'open' }
 ]
 
 const challengesLesson9 = [
-  { challengeNumber: 1, challengeStatus: 'default' },
-  { challengeNumber: 2, challengeStatus: 'default' },
-  { challengeNumber: 3, challengeStatus: 'default' },
-  { challengeNumber: 4, challengeStatus: 'default' },
-  { challengeNumber: 5, challengeStatus: 'default' }
+  { challengeNumber: 1, challengeStatus: 'open' },
+  { challengeNumber: 2, challengeStatus: 'open' },
+  { challengeNumber: 3, challengeStatus: 'open' },
+  { challengeNumber: 4, challengeStatus: 'open' },
+  { challengeNumber: 5, challengeStatus: 'open' }
 ]
 
 const lessons = [

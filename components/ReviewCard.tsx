@@ -1,48 +1,43 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
+
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
 import Prism from 'prismjs'
-import { ACCEPT_SUBMISSION, REJECT_SUBMISSION } from '../graphql/queries'
+
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
 import { useMutation } from '@apollo/react-hooks'
-import _ from 'lodash'
+import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
+import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { SubmissionData } from '../@types/submission'
+
+import _ from 'lodash'
+
+import { Button } from './theme/Button'
+import { Text } from './theme/Text'
+import { MdInput } from './MdInput'
+
+dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
   submissionData: SubmissionData
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const diff = _.get(submissionData, 'diff', '')
-  const comment = _.get(submissionData, 'comment', '')
-  const [commentValue, setCommentValue] = useState('')
-  const [accept] = useMutation(ACCEPT_SUBMISSION)
-  const [reject] = useMutation(REJECT_SUBMISSION)
-  let files: File[] = []
+type DiffViewProps = {
+  diff?: string
+}
 
-  if (diff) files = gitDiffParser.parse(diff)
-
-  const reviewSubmission = (review: any) => async () => {
-    await review({
-      variables: {
-        submissionId: submissionData.id,
-        comment: commentValue
-      }
-    })
-  }
+const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
+  const files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
-    const oldValue: String[] = []
     const newValue: String[] = []
 
     hunks.forEach(hunk => {
       hunk.changes.forEach(change => {
-        if (change.isDelete) oldValue.push(change.content)
-        else if (change.isInsert) newValue.push(change.content)
-        else {
-          oldValue.push(change.content)
-          newValue.push(change.content)
-        }
+        if (!change.isDelete) newValue.push(change.content)
       })
     })
 
@@ -56,10 +51,10 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       )
       return <span dangerouslySetInnerHTML={{ __html: language }} />
     }
+
     return (
       <ReactDiffViewer
         key={_.uniqueId()}
-        oldValue={oldValue.join('\n')}
         newValue={newValue.join('\n')}
         renderContent={syntaxHighlight}
         splitView={false}
@@ -67,40 +62,73 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       />
     )
   }
+
+  return <>{files.map(renderFile)}</>
+}
+
+const MemoDiffView = memo(DiffView)
+
+export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
+  const {
+    id,
+    diff,
+    comment,
+    updatedAt,
+    user: { username },
+    challenge: { title }
+  } = submissionData
+  const [commentValue, setCommentValue] = useState('')
+  const [accept] = useMutation(ACCEPT_SUBMISSION)
+  const [reject] = useMutation(REJECT_SUBMISSION)
+
+  const reviewSubmission = (review: any) => async () => {
+    await review({
+      variables: {
+        submissionId: id,
+        comment: commentValue
+      }
+    })
+  }
+
   return (
     <>
       {diff && (
-        <div className="card shadow-sm border-0 mt-3 p-3">
+        <div className="card shadow-sm border-0 mt-3">
           <div className="card-header bg-white">
-            <strong>{submissionData.user.username}</strong> submitted Submission
-            ID: {submissionData.id}
+            <h4>
+              {username} - <span className="text-primary">{title}</span>
+            </h4>
+            <Text color="lightgrey" size="sm">
+              {dayjs(parseInt(updatedAt)).fromNow()}
+            </Text>
           </div>
+
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {files.map(renderFile)}
+              <MemoDiffView diff={diff} />
             </div>
           </div>
+
           <div className="card-footer bg-white">
             {comment && <Markdown>{comment}</Markdown>}
-            <textarea
-              value={commentValue}
-              onChange={e => setCommentValue(e.target.value)}
-              placeholder="Type something..."
-              style={{ width: '100%', padding: '1rem' }}
-            ></textarea>
-            <button
-              className="btn bg-success m-1 text-white"
+            <MdInput onChange={setCommentValue} bgColor={'white'} />
+            <Button
+              m="1"
+              type="success"
+              color="white"
               onClick={reviewSubmission(accept)}
             >
               Accept
-            </button>
+            </Button>
 
-            <button
-              className="btn bg-danger m-1 text-white"
+            <Button
+              m="1"
+              type="danger"
+              color="white"
               onClick={reviewSubmission(reject)}
             >
               Reject
-            </button>
+            </Button>
           </div>
         </div>
       )}

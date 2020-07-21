@@ -1,11 +1,10 @@
-jest.mock('@apollo/react-hooks')
 import React from 'react'
 import { render, fireEvent, wait, act } from '@testing-library/react'
+import { GraphQLError } from 'graphql'
+import { MockedProvider } from '@apollo/react-testing'
+import GET_APP from '../../graphql/queries/getApp'
+import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
-import { useMutation } from '@apollo/react-hooks'
-
-const mockFn = jest.fn()
-useMutation.mockReturnValue([mockFn, { data: {}, error: {} }])
 
 // Mock global.window
 global.window = Object.create(window)
@@ -16,77 +15,127 @@ Object.defineProperty(global.window, 'location', {
 })
 
 describe('Login Page', () => {
-  const fillOutLoginForm = async getByTestId => {
+  const fakeUsername = 'fake username'
+  const fakePassword = 'fake password'
+
+  const fillOutLoginForm = getByTestId => {
     const usernameField = getByTestId('username')
     const passwordField = getByTestId('password')
-    await wait(
-      fireEvent.change(usernameField, {
-        target: {
-          value: 'user name'
-        }
-      }),
-      fireEvent.change(passwordField, {
-        target: {
-          value: 'password123'
-        }
-      })
-    )
+
+    fireEvent.change(usernameField, {
+      target: {
+        value: fakeUsername
+      }
+    })
+
+    fireEvent.change(passwordField, {
+      target: {
+        value: fakePassword
+      }
+    })
   }
+
   beforeEach(() => {
     global.window.location.pathname = '/login' // reset path
   })
 
-  test('should not submit when empty form', async () => {
-    const { getByTestId } = render(<LoginPage />)
+  test('Should redirect to /curriculum on success', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: LOGIN_USER,
+          variables: {
+            username: fakeUsername,
+            password: fakePassword
+          }
+        },
+        result: {
+          data: {
+            login: {
+              success: true,
+              username: fakeUsername,
+              cliToken: 'fake token',
+              error: null
+            }
+          }
+        }
+      }
+    ]
+
+    const { getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <LoginPage />
+      </MockedProvider>
+    )
+
     const submitButton = getByTestId('submit')
-    await wait(() => {
-      act(() => {
+
+    await act(async () => {
+      await wait(() => {
+        fillOutLoginForm(getByTestId)
         fireEvent.click(submitButton)
       })
     })
-    expect(mockFn).not.toBeCalled()
-  })
 
-  test('Should redirect to curriculum', async () => {
-    useMutation.mockReturnValue([
-      mockFn,
-      { data: { login: { success: true } } }
-    ])
-    const { getByTestId } = render(<LoginPage />)
-    const submitButton = getByTestId('submit')
-    fillOutLoginForm(getByTestId)
-
-    await wait(() => {
-      fireEvent.click(submitButton)
-    })
-    expect(global.window.location.pathname).toEqual('/curriculum')
+    await wait(() =>
+      expect(global.window.location.pathname).toEqual('/curriculum')
+    )
   })
 
   test('Should set alert visible on invalid credentials', async () => {
-    useMutation.mockReturnValue([
-      mockFn,
+    const mocks = [
       {
-        error: {
-          graphQLErrors: [
-            {
-              message: 'UserInputError: User does not exist!'
-            }
-          ]
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: LOGIN_USER,
+          variables: {
+            username: fakeUsername,
+            password: fakePassword
+          }
+        },
+        result: {
+          errors: [new GraphQLError('UserInputError: User does not exist!')]
         }
       }
-    ])
+    ]
 
-    const { getByTestId } = render(<LoginPage />)
-    const submitButton = getByTestId('submit')
-    fillOutLoginForm(getByTestId)
-
-    act(
-      () => {
-        fireEvent.click(submitButton)
-      },
-      () => {
-        getByText('User does not exist!')
-      }
+    const { container, getByTestId } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <LoginPage />
+      </MockedProvider>
     )
+
+    const submitButton = getByTestId('submit')
+
+    await act(async () => {
+      await wait(() => {
+        fillOutLoginForm(getByTestId)
+        fireEvent.click(submitButton)
+      })
+    })
+
+    await wait(() => {
+      expect(global.window.location.pathname).toEqual('/login')
+      expect(container).toMatchSnapshot()
+    })
   })
 })

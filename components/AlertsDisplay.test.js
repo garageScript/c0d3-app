@@ -19,20 +19,33 @@ describe('Alerts Display Component', () => {
     }
   ]
 
+  beforeEach(() => {
+    jest.clearAllMocks()
+    jest.resetAllMocks()
+  })
+
+  test('Should render properly when no props are passed in', () => {
+    const { container } = render(<AlertsDisplay />)
+
+    expect(container).toMatchSnapshot()
+  })
+
   test('Should dismiss alerts based on local storage', () => {
     jest
-      .spyOn(window.localStorage.__proto__, 'getItem')
+      .spyOn(window.Storage.prototype, 'getItem')
       .mockReturnValueOnce(JSON.stringify({ 1: true }))
+
     const { getAllByRole } = render(
       <AlertsDisplay alerts={alerts} page="curriculum" />
     )
-    act(() => {
-      const displayedAlerts = getAllByRole('alert')
-      expect(displayedAlerts.length).toEqual(1)
-    })
+
+    const displayedAlerts = getAllByRole('alert')
+    expect(displayedAlerts.length).toEqual(1)
   })
 
   test('Should dismiss alert for curriculum page', () => {
+    jest.spyOn(window.Storage.prototype, 'getItem').mockReturnValueOnce(null)
+
     const { getAllByRole } = render(
       <AlertsDisplay alerts={alerts} page="curriculum" />
     )

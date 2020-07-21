@@ -1,12 +1,15 @@
-import _ from 'lodash'
 import {
   login,
   logout,
   signup,
   isTokenValid
 } from '../helpers/controllers/authController'
+import {
+  createChallenge,
+  updateChallenge
+} from '../helpers/controllers/challengesController'
+import { userInfo } from '../helpers/controllers/userInfoController'
 import { addAlert, removeAlert } from '../helpers/controllers/alertController'
-import db from '../helpers/dbload'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
 import {
   createSubmission,
@@ -14,70 +17,42 @@ import {
   rejectSubmission,
   submissions
 } from '../helpers/controllers/submissionController'
-import { Context } from '../@types/helpers'
-
-const { User, Submission, Lesson, UserLesson, Alert } = db
-
-type Submission = {
-  lessonId: string
-}
+import { alerts } from './queryResolvers/alerts'
+import { lessons } from './queryResolvers/lessons'
+import { session } from './queryResolvers/session'
+import { allUsers } from './queryResolvers/allUsers'
+import { changeAdminRights } from '../helpers/controllers/adminController'
+import {
+  createLesson,
+  updateLesson
+} from '../helpers/controllers/lessonsController'
 
 export default {
   Query: {
-    lessons() {
-      return Lesson.findAll({
-        include: ['challenges'],
-        order: [
-          ['order', 'ASC'],
-          ['challenges', 'order', 'ASC']
-        ]
-      })
-    },
     submissions,
+    allUsers,
     isTokenValid,
-    async session(_parent: void, _args: void, context: Context) {
-      const userId = _.get(context, 'req.session.userId', false)
-
-      if (!userId) {
-        return null
-      }
-
-      // FYI: The reason we are querying with parallelized promises:
-      // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
-      const [user, submissions, lessonStatus] = await Promise.all([
-        User.findOne({ where: { id: userId } }),
-        Submission.findAll({
-          where: { userId },
-          include: [{ model: User, as: 'reviewer' }]
-        }),
-        UserLesson.findAll({ where: { userId } })
-      ])
-
-      if (!user) {
-        return null
-      }
-
-      return {
-        user,
-        submissions,
-        lessonStatus
-      }
-    },
-    alerts() {
-      return Alert.findAll()
-    }
+    userInfo,
+    lessons,
+    session,
+    alerts
   },
 
   Mutation: {
     changePw,
+    changeAdminRights,
     createSubmission,
     acceptSubmission,
     rejectSubmission,
+    createLesson,
+    updateLesson,
     login,
     logout,
     signup,
     addAlert,
     removeAlert,
-    reqPwReset
+    reqPwReset,
+    createChallenge,
+    updateChallenge
   }
 }

@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
-import { LOGIN_USER } from '../graphql/queries'
+import LOGIN_USER from '../graphql/queries/loginUser'
 import { useMutation } from '@apollo/react-hooks'
 import { Values, LoginFormProps, ErrorDisplayProps } from '../@types/login'
 import _ from 'lodash'
@@ -21,7 +21,10 @@ const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
   const errorMessages = loginErrors.map((message, idx) => {
     const formattedMessage = message.split(':')[1]
     return (
-      <Alert key={idx} alert={{ text: formattedMessage, type: 'urgent' }} />
+      <Alert
+        key={idx}
+        alert={{ id: '-1', text: formattedMessage, type: 'urgent' }}
+      />
     )
   })
   return <>{errorMessages}</>
@@ -97,7 +100,7 @@ const LoginPage: React.FC = () => {
   const handleSubmit = async (values: Values) => {
     try {
       await loginUser({ variables: values })
-    } catch {} //Error handled above
+    } catch {} // catch error that's thrown by default from mutation
   }
   return (
     <Layout>

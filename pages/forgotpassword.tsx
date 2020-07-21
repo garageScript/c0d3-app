@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/react-hooks'
-import { RESET_PASSWORD } from '../graphql/queries'
+import RESET_PASSWORD from '../graphql/queries/resetPassword'
 import { resetPasswordValidation } from '../helpers/formValidation'
 import Input from '../components/Input'
 import Layout from '../components/Layout'
@@ -13,12 +13,14 @@ const initialValues = {
 
 export const ResetPassword: React.FC = () => {
   const [reqPwReset, { data, error }] = useMutation(RESET_PASSWORD)
-  const handleSubmit = ({ userOrEmail }: { userOrEmail: string }) => {
-    reqPwReset({ variables: { userOrEmail } })
+  const handleSubmit = async ({ userOrEmail }: { userOrEmail: string }) => {
+    try {
+      await reqPwReset({ variables: { userOrEmail } })
+    } catch {} // catch error that's thrown by default from mutation
   }
   if (data) {
     return (
-      <Card title="Password reset instructions sent" success={true}>
+      <Card title="Password reset instructions sent" type="success">
         <p>
           You will receive an email containing a link to reset your password.
         </p>
@@ -42,7 +44,7 @@ export const ResetPassword: React.FC = () => {
   return (
     <Card title="Reset your password">
       <p className="mb-5">
-        Type in your email or username below and we`&lsquo`ll send you an email
+        Type in your email or username below and we&rsquo;ll send you an email
         with instructions on how to reset your password
       </p>
       <Formik

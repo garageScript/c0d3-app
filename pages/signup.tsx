@@ -12,7 +12,7 @@ import NavLink from '../components/NavLink'
 
 //import helpers
 import { signupValidation } from '../helpers/formValidation'
-import { SIGNUP_USER } from '../graphql/queries'
+import SIGNUP_USER from '../graphql/queries/signupUser'
 
 //import types
 import { SignupFormProps, Values, ErrorDisplayProps } from '../@types/signup'
@@ -43,7 +43,7 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
 
 const SignupSuccess: React.FC = () => (
   <Card
-    success
+    type="success"
     data-testid="signup-success"
     title="Account created successfully!"
   >
