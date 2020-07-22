@@ -8,7 +8,7 @@ const adminStyle = {
   margin: '0 0 0 0'
 }
 
-const AdminDropDownMenu: React.FC = () => {
+export const AdminDropDownMenu: React.FC = () => {
   const [showOptions, setShowOptions] = useState('dropdown-menu')
   const showMenu = () => setShowOptions('dropdown-menu show')
   const hideMenu = () => setShowOptions('dropdown-menu')
@@ -44,5 +44,3 @@ const AdminDropDownMenu: React.FC = () => {
     </div>
   )
 }
-
-export { AdminDropDownMenu }

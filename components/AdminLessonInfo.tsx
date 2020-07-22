@@ -11,18 +11,18 @@ import { Lesson } from '../@types/adminLesson'
 
 type LessonInfoProps = {
   lessons: Lesson[]
-  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   selectedLesson: number
 }
 
 type LessonBaseProps = {
-  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   lesson: Lesson
 }
 
 type NewLessonProps = {
   lesson: Lesson
-  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
 }
 
 // Creates card for a lessons's information to update
@@ -69,16 +69,16 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
   delete lessonInputs['__typename']
   delete lessonInputs.challenges
   return (
-    <React.Fragment>
+    <>
       <StyledTitle>Lesson Info</StyledTitle>
       <div style={{ textAlign: 'center' }} className="card">
         <InputCard
           values={lessonInputs}
-          buttons={{ 'Update Lesson': alter }}
+          buttons={[{ title: 'Update Lesson', onClick: alter }]}
           title={lesson.title}
         />
       </div>
-    </React.Fragment>
+    </>
   )
 }
 
@@ -100,7 +100,6 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
     !loading && data && setLessons(data.createLesson)
-    console.log(data)
   }, [data])
 
   // alter gets called when someone clicks button to create a lesson
@@ -138,7 +137,10 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className=" col-8">
       <StyledTitle>Create New Lesson</StyledTitle>
-      <InputCard values={attributes} buttons={{ 'Create Lesson': alter }} />
+      <InputCard
+        values={attributes}
+        buttons={[{ title: 'Create Lesson', onClick: { alter } }]}
+      />
     </div>
   )
 }
@@ -182,7 +184,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
           lessonId={parseInt(lesson.id)}
         />
       ) : (
-        <React.Fragment>
+        <>
           <LessonBase setLessons={setLessons} lesson={lesson} />
           <hr />
           <StyledTitle>Lesson Challenges</StyledTitle>
@@ -191,7 +193,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
             lessonId={parseInt(lesson.id)}
             setLessons={setLessons}
           />
-        </React.Fragment>
+        </>
       )}
     </div>
   )

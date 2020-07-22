@@ -1,49 +1,49 @@
 import React, { useState } from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { AdminLessonInfo } from '../../components/AdminLessonInfo'
 import { AdminLessonsSideBar } from '../../components/AdminLessonsSideBar'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import checkAdminRights from '../../graphql/queries/checkAdminRights'
 import Layout from '../../components/Layout'
-import getLessons from '../../graphql/queries/getLessons'
+import { withGetApp, GetAppProps } from '../../graphql'
+import { Lesson } from '../../@types/adminLesson'
+type AdminLessonsProps = {
+  lessons: any
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
+}
 
-const AdminLessons: React.FC = () => {
-  const { loading, error, data } = useQuery(getLessons)
-  const [lessons, setLessons] = useState(null)
+const AdminLessons: React.FC<AdminLessonsProps> = ({ lessons, setLessons }) => {
   const [selectedLesson, setSelectedLesson] = useState(0)
 
+  return (
+    <div className="row mt-4">
+      <AdminLessonsSideBar
+        setLessons={setLessons}
+        lessons={lessons}
+        setSelectedLesson={setSelectedLesson}
+      />
+      <AdminLessonInfo
+        setLessons={setLessons}
+        lessons={lessons}
+        selectedLesson={selectedLesson}
+      />
+    </div>
+  )
+}
+
+const Lessons: React.FC<GetAppProps> = ({ data }) => {
+  const { loading, error, lessons, session } = data
+  const [lessonsList, setLessons] = useState<null | Lesson[]>(null)
   return (
     <Layout>
       {loading && <LoadingSpinner />}
       {error && <h1>Error</h1>}
-      {data && (
-        <div className="row mt-4">
-          <AdminLessonsSideBar
-            setLessons={setLessons}
-            lessons={lessons || data.lessons}
-            setSelectedLesson={setSelectedLesson}
-          />
-          <AdminLessonInfo
-            setLessons={setLessons}
-            lessons={lessons || data.lessons}
-            selectedLesson={selectedLesson}
-          />
-        </div>
+      {session && session.user && session.user.isAdmin === 'true' && (
+        <AdminLessons
+          lessons={lessonsList || lessons}
+          setLessons={setLessons}
+        />
       )}
     </Layout>
   )
 }
 
-const Lessons: React.FC = () => {
-  const { loading, error, data } = useQuery(checkAdminRights)
-
-  return (
-    <React.Fragment>
-      {loading && <LoadingSpinner />}
-      {error && <h1>Error</h1>}
-      {data && data.adminRights && <AdminLessons />}
-    </React.Fragment>
-  )
-}
-
-export default Lessons
+export default withGetApp()(Lessons)

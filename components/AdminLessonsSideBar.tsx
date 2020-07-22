@@ -1,49 +1,47 @@
 import React from 'react'
 import { Lesson } from '../@types/adminLesson'
+// import Lesson from '../pages/curriculum/[lesson]'
 
 type SideBarLessonProps = {
   lessons: Lesson[]
-  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   setSelectedLesson: React.Dispatch<React.SetStateAction<number>>
 }
 
-const lessonsListCallbackFn = (
-  obj: { title: string },
-  i: number,
-  setSelectedLesson: any
-) => {
-  return (
-    <div key={i} data-testid="challenge-title" className="card mb-2">
-      <div className="btn d-flex justify-content-center">
-        <div
-          style={{ wordBreak: 'break-word' }}
-          onClick={() => setSelectedLesson(i)}
-        >
-          <h4 style={{ margin: 'auto', wordBreak: 'break-word' }}>
-            {obj.title}
-          </h4>
-        </div>
-      </div>
-    </div>
-  )
+type LessonProps = {
+  obj: { title: string }
+  i: number
+  setSelectedLesson: React.Dispatch<React.SetStateAction<number>>
 }
 
-const makeLessonsList = (lessons: any, setSelectedLesson: any) => {
-  const lessonList = lessons.map((obj: { title: string }, i: number) => {
-    return lessonsListCallbackFn(obj, i, setSelectedLesson)
-  })
+const LessonTitle: React.FC<LessonProps> = ({ obj, setSelectedLesson, i }) => (
+  <div key={i} data-testid="challenge-title" className="card mb-2">
+    <div className="btn d-flex justify-content-center">
+      <div
+        style={{ wordBreak: 'break-word' }}
+        onClick={() => setSelectedLesson(i)}
+      >
+        <h4 style={{ margin: 'auto', wordBreak: 'break-word' }}>{obj.title}</h4>
+      </div>
+    </div>
+  </div>
+)
 
-  lessonList.push(
-    lessonsListCallbackFn(
-      { title: 'Create New Lesson' },
-      lessonList.length,
-      setSelectedLesson
-    )
-  )
+const makeLessonsList = (lessons: any, setSelectedLesson: any) => {
+  const lessonCpy = [...lessons]
+  lessonCpy.push({ title: 'Create New Lesson' })
+  const lessonList = lessonCpy.map((obj: { title: string }, i: number) => (
+    <LessonTitle
+      key={i}
+      i={i}
+      obj={obj}
+      setSelectedLesson={setSelectedLesson}
+    />
+  ))
+
   return lessonList
 }
 
-//test contains order, so do lessons.lessons[order] to get correct lesson info for lessinINfo
 export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
   lessons,
   setSelectedLesson

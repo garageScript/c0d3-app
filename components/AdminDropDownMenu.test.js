@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { AdminDropDownMenu } from './AdminDropDownMenu'
 
-describe('MdInput Component', () => {
+describe('Admin dropdown menu component', () => {
   test('Should add `show` class when Admin div is clicked on', () => {
     const { container, queryByTestId } = render(<AdminDropDownMenu />)
     const adminButton = queryByTestId('adminButton')

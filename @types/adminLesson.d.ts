@@ -1,5 +1,5 @@
 export type Lesson = {
-  id: any
+  id: string
   title: string
   description: string
   order: number

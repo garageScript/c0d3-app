@@ -8,39 +8,41 @@ const capitalizeFirst = (str: string) => {
 
 type InputCardProps = {
   values: any
-  buttons: any
+  buttons?: any
   capitalizeTitle?: boolean
   bgColor?: 'white' | 'none'
   title?: string
 }
 
+type Btn = {
+  title: string
+  onClick: (options: any) => void
+}
+
+type Option = {
+  title: string
+  placeholder?: string
+  value?: string | number
+}
+
 type ButtonsProps = {
-  buttons: any
-  options: any
+  buttons: Btn[]
+  options: Option[]
 }
 
 const Buttons: React.FC<ButtonsProps> = ({ buttons, options }) => {
-  const btnsList = Object.keys(buttons)
+  const btns = buttons.map((btn: Btn, i: number) => (
+    <div style={{ display: 'inline-block', margin: 10 }} key={i}>
+      <Button onClick={() => btn.onClick(options)} type="success">
+        {btn.title}
+      </Button>
+    </div>
+  ))
 
-  const btns = btnsList.map((title: string, i: number) => {
-    return (
-      <div style={{ display: 'inline-block', margin: 10 }} key={i}>
-        <Button
-          onClick={() => {
-            buttons[title] && buttons[title](options)
-          }}
-          type="success"
-        >
-          {title}
-        </Button>
-      </div>
-    )
-  })
-
-  return <React.Fragment>{btns}</React.Fragment>
+  return <>{btns}</>
 }
 
-const InputCard: React.FC<InputCardProps> = ({
+export const InputCard: React.FC<InputCardProps> = ({
   values,
   buttons,
   capitalizeTitle = true,
@@ -58,7 +60,7 @@ const InputCard: React.FC<InputCardProps> = ({
 
   const inputs = titles.map((title, i) => {
     if (title === 'id') return []
-    //if it is a desciptoin title, i wwant to use mdcomponent
+    options[title] += ''
     return (
       <div
         key={i}
@@ -110,9 +112,7 @@ const InputCard: React.FC<InputCardProps> = ({
         </h2>
       )}
       {inputs}
-      <Buttons buttons={buttons} options={options} />
+      {buttons && <Buttons buttons={buttons} options={options} />}
     </div>
   )
 }
-
-export { InputCard }

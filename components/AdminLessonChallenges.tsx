@@ -5,7 +5,7 @@ import { InputCard } from './InputCard'
 import _ from 'lodash'
 import createNewChallenge from '../graphql/queries/createChallenge'
 import { StyledTitle } from './StyledTitle'
-
+import { Lesson } from '../@types/adminLesson'
 // order is a string when someone is making a new challenge.
 // The attributes passed in are all strings to be passed into InputCard component
 type Challenge = {
@@ -17,11 +17,11 @@ type Challenge = {
 
 type NewChallengeProps = {
   challenge: Challenge
-  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   lessonId: number
 }
 type LessonChallengesProps = {
-  setLessons: React.Dispatch<React.SetStateAction<null>>
+  setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   challenges: Challenge[]
   lessonId?: number
 }
@@ -61,7 +61,10 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
     <div style={{ textAlign: 'center', marginBottom: 20, marginTop: 10 }}>
       <StyledTitle>Create New Challenge</StyledTitle>
       <div className="card">
-        <InputCard values={challenge} buttons={{ 'Create Challenge': alter }} />
+        <InputCard
+          values={challenge}
+          buttons={[{ 'Create Challenge': alter }]}
+        />
       </div>
     </div>
   )
@@ -78,7 +81,7 @@ const renderChallenges = (challenges: any, alter: any) => {
         <InputCard
           title={e.title}
           values={challenge}
-          buttons={{ 'Update Challenge': alter }}
+          buttons={[{ 'Update Challenge': alter }]}
         />
       </div>
     )
@@ -107,7 +110,7 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
         variables: {
           id: parseInt(id),
           lessonId,
-          order,
+          order: parseInt(order),
           description,
           title
         }
@@ -118,5 +121,5 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
   }
   const allChallenges = challenges ? renderChallenges(challenges, alter) : []
 
-  return <React.Fragment>{allChallenges}</React.Fragment>
+  return <>{allChallenges}</>
 }
