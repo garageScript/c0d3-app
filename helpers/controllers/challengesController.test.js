@@ -3,7 +3,7 @@ jest.mock('../mattermost')
 import db from '../dbload'
 import { createChallenge, updateChallenge } from './challengesController'
 
-const { Challenge } = db
+const { Challenge, Lesson } = db
 
 const mockChallengeData = {
   lessonId: 5,
@@ -12,6 +12,8 @@ const mockChallengeData = {
   description: 'lolz',
   title: 'potato'
 }
+
+Lesson.findAll = jest.fn().mockReturnValue({ success: true })
 
 describe('Challenges controller tests', () => {
   const ctx = {

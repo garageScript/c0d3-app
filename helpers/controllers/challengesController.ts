@@ -3,7 +3,7 @@ import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
 
-const { Challenge } = db
+const { Challenge, Lesson } = db
 
 type challengeData = {
   lessonId: number
@@ -28,9 +28,13 @@ export const createChallenge = async (
 
     await newChallenge.save()
 
-    return {
-      success: true
-    }
+    return Lesson.findAll({
+      include: ['challenges'],
+      order: [
+        ['order', 'ASC'],
+        ['challenges', 'order', 'ASC']
+      ]
+    })
   } catch (err) {
     throw new Error(err)
   }
@@ -46,14 +50,17 @@ export const updateChallenge = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
     const { id } = arg
 
     await Challenge.update(arg, { where: { id } })
 
-    return {
-      success: true
-    }
+    return Lesson.findAll({
+      include: ['challenges'],
+      order: [
+        ['order', 'ASC'],
+        ['challenges', 'order', 'ASC']
+      ]
+    })
   } catch (err) {
     throw new Error(err)
   }
