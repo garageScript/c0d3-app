@@ -4,6 +4,7 @@ export default gql`
   type Query {
     lessons: [Lesson!]!
     session: Session
+    adminRights: Boolean
     allUsers: [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
@@ -52,7 +53,7 @@ export default gql`
       title: String!
       chatUrl: String
       order: Int!
-    ): SuccessResponse
+    ): [Lesson]
     updateLesson(
       id: Int!
       description: String
@@ -62,20 +63,20 @@ export default gql`
       title: String
       chatUrl: String
       order: Int
-    ): SuccessResponse
+    ): [Lesson]
     createChallenge(
       lessonId: Int!
       order: Int!
       description: String
       title: String
-    ): SuccessResponse
+    ): [Lesson]
     updateChallenge(
       lessonId: Int!
       id: Int!
-      order: Int!
+      order: Int
       description: String
       title: String
-    ): SuccessResponse
+    ): [Lesson]
   }
 
   type AuthResponse {

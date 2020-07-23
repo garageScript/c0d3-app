@@ -1613,6 +1613,187 @@ exports[`Storyshots Components/Input Text Input 1`] = `
 </form>
 `;
 
+exports[`Storyshots Components/InputCard Basic 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "2px solid rgb(0,0,0,.3)",
+      "padding": 10,
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5super0"
+    >
+      Super
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputsuper"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="saiyan"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/InputCard With Button 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "2px solid rgb(0,0,0,.3)",
+      "padding": 10,
+      "textAlign": "center",
+    }
+  }
+>
+  <h2
+    style={
+      Object {
+        "marginBottom": 20,
+        "textDecoration": "underline",
+      }
+    }
+  >
+    clownfish
+  </h2>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5super0"
+    >
+      Super
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputsuper"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="saiyan"
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+        "margin": 10,
+      }
+    }
+  >
+    <button
+      className="btn bg-success"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
+    >
+      Create New Challenge
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/InputCard With Title 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "2px solid rgb(0,0,0,.3)",
+      "padding": 10,
+      "textAlign": "center",
+    }
+  }
+>
+  <h2
+    style={
+      Object {
+        "marginBottom": 20,
+        "textDecoration": "underline",
+      }
+    }
+  >
+    clownfish
+  </h2>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5super0"
+    >
+      Super
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputsuper"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="saiyan"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/InputGroup Disabled 1`] = `
 <div
   className="input-group  col-6"

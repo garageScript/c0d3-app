@@ -86,10 +86,10 @@ export type Mutation = {
   createSubmission?: Maybe<Submission>
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
-  createLesson?: Maybe<SuccessResponse>
-  updateLesson?: Maybe<SuccessResponse>
-  createChallenge?: Maybe<SuccessResponse>
-  updateChallenge?: Maybe<SuccessResponse>
+  createLesson?: Maybe<Array<Maybe<Lesson>>>
+  updateLesson?: Maybe<Array<Maybe<Lesson>>>
+  createChallenge?: Maybe<Array<Maybe<Lesson>>>
+  updateChallenge?: Maybe<Array<Maybe<Lesson>>>
 }
 
 export type MutationLoginArgs = {
@@ -178,7 +178,7 @@ export type MutationCreateChallengeArgs = {
 export type MutationUpdateChallengeArgs = {
   lessonId: Scalars['Int']
   id: Scalars['Int']
-  order: Scalars['Int']
+  order?: Maybe<Scalars['Int']>
   description?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
 }
@@ -187,6 +187,7 @@ export type Query = {
   __typename?: 'Query'
   lessons: Array<Lesson>
   session?: Maybe<Session>
+  adminRights?: Maybe<Scalars['Boolean']>
   allUsers?: Maybe<Array<Maybe<User>>>
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
@@ -292,6 +293,85 @@ export type AddAlertMutation = { __typename?: 'Mutation' } & {
   >
 }
 
+export type CreateChallengeMutationVariables = Exact<{
+  lessonId: Scalars['Int']
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
+}>
+
+export type CreateChallengeMutation = { __typename?: 'Mutation' } & {
+  createChallenge?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Lesson' } & Pick<
+          Lesson,
+          | 'id'
+          | 'docUrl'
+          | 'githubUrl'
+          | 'videoUrl'
+          | 'chatUrl'
+          | 'order'
+          | 'description'
+          | 'title'
+        > & {
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
+              >
+            >
+          }
+      >
+    >
+  >
+}
+
+export type CreateLessonMutationVariables = Exact<{
+  docUrl?: Maybe<Scalars['String']>
+  githubUrl?: Maybe<Scalars['String']>
+  videoUrl?: Maybe<Scalars['String']>
+  chatUrl?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
+}>
+
+export type CreateLessonMutation = { __typename?: 'Mutation' } & {
+  createLesson?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Lesson' } & Pick<
+          Lesson,
+          | 'id'
+          | 'docUrl'
+          | 'githubUrl'
+          | 'videoUrl'
+          | 'chatUrl'
+          | 'order'
+          | 'description'
+          | 'title'
+        > & {
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
+              >
+            >
+          }
+      >
+    >
+  >
+}
+
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetAppQuery = { __typename?: 'Query' } & {
@@ -322,7 +402,10 @@ export type GetAppQuery = { __typename?: 'Query' } & {
   session?: Maybe<
     { __typename?: 'Session' } & {
       user?: Maybe<
-        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+        { __typename?: 'User' } & Pick<
+          User,
+          'id' | 'username' | 'name' | 'isAdmin'
+        >
       >
       submissions?: Maybe<
         Array<
@@ -455,6 +538,87 @@ export type SignupMutation = { __typename?: 'Mutation' } & {
     { __typename?: 'AuthResponse' } & Pick<
       AuthResponse,
       'success' | 'username' | 'error'
+    >
+  >
+}
+
+export type UpdateChallengeMutationVariables = Exact<{
+  lessonId: Scalars['Int']
+  order?: Maybe<Scalars['Int']>
+  description?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  id: Scalars['Int']
+}>
+
+export type UpdateChallengeMutation = { __typename?: 'Mutation' } & {
+  updateChallenge?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Lesson' } & Pick<
+          Lesson,
+          | 'id'
+          | 'docUrl'
+          | 'githubUrl'
+          | 'videoUrl'
+          | 'chatUrl'
+          | 'order'
+          | 'description'
+          | 'title'
+        > & {
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
+              >
+            >
+          }
+      >
+    >
+  >
+}
+
+export type UpdateLessonMutationVariables = Exact<{
+  id: Scalars['Int']
+  docUrl?: Maybe<Scalars['String']>
+  githubUrl?: Maybe<Scalars['String']>
+  videoUrl?: Maybe<Scalars['String']>
+  chatUrl?: Maybe<Scalars['String']>
+  order?: Maybe<Scalars['Int']>
+  description?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+}>
+
+export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
+  updateLesson?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Lesson' } & Pick<
+          Lesson,
+          | 'id'
+          | 'docUrl'
+          | 'githubUrl'
+          | 'videoUrl'
+          | 'chatUrl'
+          | 'order'
+          | 'description'
+          | 'title'
+        > & {
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
+              >
+            >
+          }
+      >
     >
   >
 }
@@ -841,28 +1005,28 @@ export type MutationResolvers<
     RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>
   >
   createLesson?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
     RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
   >
   updateLesson?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
     RequireFields<MutationUpdateLessonArgs, 'id'>
   >
   createChallenge?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
     RequireFields<MutationCreateChallengeArgs, 'lessonId' | 'order'>
   >
   updateChallenge?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id' | 'order'>
+    RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id'>
   >
 }
 
@@ -872,6 +1036,11 @@ export type QueryResolvers<
 > = {
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
+  adminRights?: Resolver<
+    Maybe<ResolversTypes['Boolean']>,
+    ParentType,
+    ContextType
+  >
   allUsers?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['User']>>>,
     ParentType,
@@ -1241,6 +1410,271 @@ export type AddAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
   AddAlertMutation,
   AddAlertMutationVariables
 >
+export const CreateChallengeDocument = gql`
+  mutation createChallenge(
+    $lessonId: Int!
+    $order: Int!
+    $description: String!
+    $title: String!
+  ) {
+    createChallenge(
+      lessonId: $lessonId
+      order: $order
+      description: $description
+      title: $title
+    ) {
+      id
+      docUrl
+      githubUrl
+      videoUrl
+      chatUrl
+      order
+      description
+      title
+      challenges {
+        id
+        description
+        lessonId
+        title
+        order
+      }
+    }
+  }
+`
+export type CreateChallengeMutationFn = ApolloReactCommon.MutationFunction<
+  CreateChallengeMutation,
+  CreateChallengeMutationVariables
+>
+export type CreateChallengeComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables
+  >,
+  'mutation'
+>
+
+export const CreateChallengeComponent = (
+  props: CreateChallengeComponentProps
+) => (
+  <ApolloReactComponents.Mutation<
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables
+  >
+    mutation={CreateChallengeDocument}
+    {...props}
+  />
+)
+
+export type CreateChallengeProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables
+  >
+} &
+  TChildProps
+export function withCreateChallenge<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables,
+    CreateChallengeProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables,
+    CreateChallengeProps<TChildProps, TDataName>
+  >(CreateChallengeDocument, {
+    alias: 'createChallenge',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useCreateChallengeMutation__
+ *
+ * To run a mutation, you first call `useCreateChallengeMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateChallengeMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createChallengeMutation, { data, loading, error }] = useCreateChallengeMutation({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *      order: // value for 'order'
+ *      description: // value for 'description'
+ *      title: // value for 'title'
+ *   },
+ * });
+ */
+export function useCreateChallengeMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    CreateChallengeMutation,
+    CreateChallengeMutationVariables
+  >(CreateChallengeDocument, baseOptions)
+}
+export type CreateChallengeMutationHookResult = ReturnType<
+  typeof useCreateChallengeMutation
+>
+export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<
+  CreateChallengeMutation
+>
+export type CreateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  CreateChallengeMutation,
+  CreateChallengeMutationVariables
+>
+export const CreateLessonDocument = gql`
+  mutation createLesson(
+    $docUrl: String
+    $githubUrl: String
+    $videoUrl: String
+    $chatUrl: String
+    $order: Int!
+    $description: String!
+    $title: String!
+  ) {
+    createLesson(
+      docUrl: $docUrl
+      githubUrl: $githubUrl
+      videoUrl: $videoUrl
+      chatUrl: $chatUrl
+      order: $order
+      description: $description
+      title: $title
+    ) {
+      id
+      docUrl
+      githubUrl
+      videoUrl
+      chatUrl
+      order
+      description
+      title
+      challenges {
+        id
+        description
+        lessonId
+        title
+        order
+      }
+    }
+  }
+`
+export type CreateLessonMutationFn = ApolloReactCommon.MutationFunction<
+  CreateLessonMutation,
+  CreateLessonMutationVariables
+>
+export type CreateLessonComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    CreateLessonMutation,
+    CreateLessonMutationVariables
+  >,
+  'mutation'
+>
+
+export const CreateLessonComponent = (props: CreateLessonComponentProps) => (
+  <ApolloReactComponents.Mutation<
+    CreateLessonMutation,
+    CreateLessonMutationVariables
+  >
+    mutation={CreateLessonDocument}
+    {...props}
+  />
+)
+
+export type CreateLessonProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    CreateLessonMutation,
+    CreateLessonMutationVariables
+  >
+} &
+  TChildProps
+export function withCreateLesson<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    CreateLessonMutation,
+    CreateLessonMutationVariables,
+    CreateLessonProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    CreateLessonMutation,
+    CreateLessonMutationVariables,
+    CreateLessonProps<TChildProps, TDataName>
+  >(CreateLessonDocument, {
+    alias: 'createLesson',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useCreateLessonMutation__
+ *
+ * To run a mutation, you first call `useCreateLessonMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateLessonMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createLessonMutation, { data, loading, error }] = useCreateLessonMutation({
+ *   variables: {
+ *      docUrl: // value for 'docUrl'
+ *      githubUrl: // value for 'githubUrl'
+ *      videoUrl: // value for 'videoUrl'
+ *      chatUrl: // value for 'chatUrl'
+ *      order: // value for 'order'
+ *      description: // value for 'description'
+ *      title: // value for 'title'
+ *   },
+ * });
+ */
+export function useCreateLessonMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    CreateLessonMutation,
+    CreateLessonMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    CreateLessonMutation,
+    CreateLessonMutationVariables
+  >(CreateLessonDocument, baseOptions)
+}
+export type CreateLessonMutationHookResult = ReturnType<
+  typeof useCreateLessonMutation
+>
+export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<
+  CreateLessonMutation
+>
+export type CreateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  CreateLessonMutation,
+  CreateLessonMutationVariables
+>
 export const GetAppDocument = gql`
   query getApp {
     lessons {
@@ -1264,6 +1698,7 @@ export const GetAppDocument = gql`
         id
         username
         name
+        isAdmin
       }
       submissions {
         id
@@ -2011,6 +2446,277 @@ export type SignupMutationResult = ApolloReactCommon.MutationResult<
 export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
+>
+export const UpdateChallengeDocument = gql`
+  mutation updateChallenge(
+    $lessonId: Int!
+    $order: Int
+    $description: String
+    $title: String
+    $id: Int!
+  ) {
+    updateChallenge(
+      id: $id
+      lessonId: $lessonId
+      order: $order
+      description: $description
+      title: $title
+    ) {
+      id
+      docUrl
+      githubUrl
+      videoUrl
+      chatUrl
+      order
+      description
+      title
+      challenges {
+        id
+        description
+        lessonId
+        title
+        order
+      }
+    }
+  }
+`
+export type UpdateChallengeMutationFn = ApolloReactCommon.MutationFunction<
+  UpdateChallengeMutation,
+  UpdateChallengeMutationVariables
+>
+export type UpdateChallengeComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables
+  >,
+  'mutation'
+>
+
+export const UpdateChallengeComponent = (
+  props: UpdateChallengeComponentProps
+) => (
+  <ApolloReactComponents.Mutation<
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables
+  >
+    mutation={UpdateChallengeDocument}
+    {...props}
+  />
+)
+
+export type UpdateChallengeProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables
+  >
+} &
+  TChildProps
+export function withUpdateChallenge<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables,
+    UpdateChallengeProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables,
+    UpdateChallengeProps<TChildProps, TDataName>
+  >(UpdateChallengeDocument, {
+    alias: 'updateChallenge',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUpdateChallengeMutation__
+ *
+ * To run a mutation, you first call `useUpdateChallengeMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateChallengeMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateChallengeMutation, { data, loading, error }] = useUpdateChallengeMutation({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *      order: // value for 'order'
+ *      description: // value for 'description'
+ *      title: // value for 'title'
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useUpdateChallengeMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    UpdateChallengeMutation,
+    UpdateChallengeMutationVariables
+  >(UpdateChallengeDocument, baseOptions)
+}
+export type UpdateChallengeMutationHookResult = ReturnType<
+  typeof useUpdateChallengeMutation
+>
+export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<
+  UpdateChallengeMutation
+>
+export type UpdateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  UpdateChallengeMutation,
+  UpdateChallengeMutationVariables
+>
+export const UpdateLessonDocument = gql`
+  mutation updateLesson(
+    $id: Int!
+    $docUrl: String
+    $githubUrl: String
+    $videoUrl: String
+    $chatUrl: String
+    $order: Int
+    $description: String
+    $title: String
+  ) {
+    updateLesson(
+      docUrl: $docUrl
+      githubUrl: $githubUrl
+      videoUrl: $videoUrl
+      chatUrl: $chatUrl
+      id: $id
+      order: $order
+      description: $description
+      title: $title
+    ) {
+      id
+      docUrl
+      githubUrl
+      videoUrl
+      chatUrl
+      order
+      description
+      title
+      challenges {
+        id
+        description
+        lessonId
+        title
+        order
+      }
+    }
+  }
+`
+export type UpdateLessonMutationFn = ApolloReactCommon.MutationFunction<
+  UpdateLessonMutation,
+  UpdateLessonMutationVariables
+>
+export type UpdateLessonComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables
+  >,
+  'mutation'
+>
+
+export const UpdateLessonComponent = (props: UpdateLessonComponentProps) => (
+  <ApolloReactComponents.Mutation<
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables
+  >
+    mutation={UpdateLessonDocument}
+    {...props}
+  />
+)
+
+export type UpdateLessonProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables
+  >
+} &
+  TChildProps
+export function withUpdateLesson<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables,
+    UpdateLessonProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables,
+    UpdateLessonProps<TChildProps, TDataName>
+  >(UpdateLessonDocument, {
+    alias: 'updateLesson',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useUpdateLessonMutation__
+ *
+ * To run a mutation, you first call `useUpdateLessonMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdateLessonMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateLessonMutation, { data, loading, error }] = useUpdateLessonMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      docUrl: // value for 'docUrl'
+ *      githubUrl: // value for 'githubUrl'
+ *      videoUrl: // value for 'videoUrl'
+ *      chatUrl: // value for 'chatUrl'
+ *      order: // value for 'order'
+ *      description: // value for 'description'
+ *      title: // value for 'title'
+ *   },
+ * });
+ */
+export function useUpdateLessonMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    UpdateLessonMutation,
+    UpdateLessonMutationVariables
+  >(UpdateLessonDocument, baseOptions)
+}
+export type UpdateLessonMutationHookResult = ReturnType<
+  typeof useUpdateLessonMutation
+>
+export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<
+  UpdateLessonMutation
+>
+export type UpdateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  UpdateLessonMutation,
+  UpdateLessonMutationVariables
 >
 export const ChangePwDocument = gql`
   mutation changePw($token: String!, $password: String!) {
