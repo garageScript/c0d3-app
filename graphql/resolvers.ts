@@ -17,7 +17,6 @@ import {
   rejectSubmission,
   submissions
 } from '../helpers/controllers/submissionController'
-import { adminRights } from './queryResolvers/adminRights'
 import { alerts } from './queryResolvers/alerts'
 import { lessons } from './queryResolvers/lessons'
 import { session } from './queryResolvers/session'
@@ -36,8 +35,7 @@ export default {
     userInfo,
     lessons,
     session,
-    alerts,
-    adminRights
+    alerts
   },
 
   Mutation: {

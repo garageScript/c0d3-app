@@ -5,13 +5,10 @@ import { MdInput } from './MdInput'
 const capitalizeFirst = (str: string) => {
   return str.replace(/./, char => char.toUpperCase())
 }
-
-type InputCardProps = {
-  values: any
-  buttons?: any
-  capitalizeTitle?: boolean
-  bgColor?: 'white' | 'none'
-  title?: string
+type Option = {
+  title: string
+  placeHolder?: string
+  value: string | number
 }
 
 type Btn = {
@@ -19,10 +16,12 @@ type Btn = {
   onClick: (options: any) => void
 }
 
-type Option = {
-  title: string
-  placeholder?: string
-  value?: string | number
+type InputCardProps = {
+  values: Option[]
+  buttons?: Btn[]
+  capitalizeTitle?: boolean
+  bgColor?: 'white' | 'none'
+  title?: string
 }
 
 type ButtonsProps = {
@@ -50,17 +49,16 @@ export const InputCard: React.FC<InputCardProps> = ({
   bgColor = 'white'
 }) => {
   const [options, saveOptions] = useState(values)
-  const titles = Object.keys(values)
 
-  const handleChange = (value: string, title: string) => {
-    const newOptions = { ...options }
-    newOptions[title] = value
+  const handleChange = (value: string, i: number) => {
+    const newOptions = [...options]
+    newOptions[i].value = value
     saveOptions(newOptions)
   }
 
-  const inputs = titles.map((title, i) => {
-    if (title === 'id') return []
-    options[title] += ''
+  const inputs = options.map((obj: Option, i: number) => {
+    const { title, value, placeHolder } = obj
+    if (obj.title === 'id') return []
     return (
       <div
         key={i}
@@ -70,25 +68,25 @@ export const InputCard: React.FC<InputCardProps> = ({
           padding: '10px',
           backgroundColor: 'rgb(84, 64, 216, .04)',
           textAlign: 'left',
-          marginBottom: i === titles.length - 1 ? 0 : 10
+          marginBottom: i === options.length - 1 ? 0 : 10
         }}
       >
         <h5>{(capitalizeTitle && capitalizeFirst(title)) || title}</h5>
         {title === 'description' && (
           <MdInput
             bgColor="white"
-            value={options[title] || ''}
-            onChange={(value: string) => handleChange(value, title)}
+            value={value + ''}
+            onChange={(value: string) => handleChange(value, i)}
           />
         )}
         {title !== 'description' && (
           <input
             style={{ border: '1px solid rgb(84, 64, 216, .3)' }}
             type="text"
-            value={options[title]}
-            onChange={e => handleChange(e.target.value, title)}
+            value={value + ''}
+            onChange={e => handleChange(e.target.value, i)}
             className="form-control"
-            placeholder=""
+            placeholder={placeHolder}
             aria-label=""
             aria-describedby="basic-addon1"
           />

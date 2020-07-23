@@ -1,6 +1,5 @@
 import React from 'react'
 import { Lesson } from '../@types/adminLesson'
-// import Lesson from '../pages/curriculum/[lesson]'
 
 type SideBarLessonProps = {
   lessons: Lesson[]
