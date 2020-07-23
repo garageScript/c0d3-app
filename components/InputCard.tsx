@@ -8,12 +8,12 @@ const capitalizeFirst = (str: string) => {
 type Option = {
   title: string
   placeHolder?: string
-  value: string | number
+  value?: string | number
 }
 
 type Btn = {
   title: string
-  onClick: (options: any) => void
+  onClick?: Function
 }
 
 type InputCardProps = {
@@ -32,7 +32,10 @@ type ButtonsProps = {
 const Buttons: React.FC<ButtonsProps> = ({ buttons, options }) => {
   const btns = buttons.map((btn: Btn, i: number) => (
     <div style={{ display: 'inline-block', margin: 10 }} key={i}>
-      <Button onClick={() => btn.onClick(options)} type="success">
+      <Button
+        onClick={() => btn.onClick && btn.onClick(options)}
+        type="success"
+      >
         {btn.title}
       </Button>
     </div>
@@ -68,25 +71,28 @@ export const InputCard: React.FC<InputCardProps> = ({
           padding: '10px',
           backgroundColor: 'rgb(84, 64, 216, .04)',
           textAlign: 'left',
-          marginBottom: i === options.length - 1 ? 0 : 10
+          marginBottom: 10
         }}
       >
-        <h5>{(capitalizeTitle && capitalizeFirst(title)) || title}</h5>
+        <h5 data-testid={`h5${title}${i}`}>
+          {(capitalizeTitle && capitalizeFirst(title)) || title}
+        </h5>
         {title === 'description' && (
           <MdInput
             bgColor="white"
-            value={value + ''}
+            value={(value && value + '') || ''}
             onChange={(value: string) => handleChange(value, i)}
           />
         )}
         {title !== 'description' && (
           <input
+            data-testid={`input${title}`}
             style={{ border: '1px solid rgb(84, 64, 216, .3)' }}
             type="text"
-            value={value + ''}
+            value={(value && value + '') || ''}
             onChange={e => handleChange(e.target.value, i)}
             className="form-control"
-            placeholder={placeHolder}
+            placeholder={placeHolder || ''}
             aria-label=""
             aria-describedby="basic-addon1"
           />

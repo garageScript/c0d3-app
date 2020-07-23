@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MdInput Component Should add \`show\` class when Admin div is clicked on 1`] = `
+exports[`Admin dropdown menu component Should add \`show\` class when Admin div is clicked on 1`] = `
 <div>
   <div
     class="dropdown"
@@ -41,7 +41,7 @@ exports[`MdInput Component Should add \`show\` class when Admin div is clicked o
 </div>
 `;
 
-exports[`MdInput Component Should remove \`show\` class onMouseOut of menu 1`] = `
+exports[`Admin dropdown menu component Should remove \`show\` class onMouseOut of menu 1`] = `
 <div>
   <div
     class="dropdown"

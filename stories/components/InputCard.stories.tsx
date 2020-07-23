@@ -6,15 +6,14 @@ export default {
   title: 'Components/InputCard'
 }
 
-const mockBtn = {
-  'Create New Challenge': () => {}
-}
+const mockBtn = [
+  {
+    title: 'Create New Challenge',
+    onClick: () => {}
+  }
+]
 
-const mockValues = {
-  super: 'saiyan',
-  adorable: 'hamster',
-  illegal_doormats: 'rabbit fist'
-}
+const mockValues = [{ title: 'super', value: 'saiyan' }]
 
 export const Basic: React.FC = () => <InputCard values={mockValues} />
 
