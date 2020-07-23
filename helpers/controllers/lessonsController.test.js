@@ -24,6 +24,7 @@ describe('Lessons controller tests', () => {
     }
   }
 
+  Lesson.findAll = jest.fn().mockReturnValue({ success: true })
   Lesson.build = jest.fn().mockReturnValue({ save: () => {} })
 
   test('Should create new lesson', async () => {
@@ -36,6 +37,13 @@ describe('Lessons controller tests', () => {
     expect(updateLesson(null, mockLessonData, ctx)).resolves.toEqual({
       success: true
     })
+  })
+
+  test('Should throw Error when title is empty when creating lesson', async () => {
+    mockLessonData.title = ''
+    expect(createLesson(null, mockLessonData, ctx)).rejects.toThrowError(
+      'Title must not be empty'
+    )
   })
 
   test('Should throw Error when user is not an admin when updating lesson', async () => {

@@ -26,13 +26,24 @@ export const createLesson = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
+
+    const { title } = arg
+
+    if (!title) {
+      throw new Error('Title must not be empty')
+    }
+
     const newLesson = Lesson.build(arg)
 
     await newLesson.save()
 
-    return {
-      success: true
-    }
+    return Lesson.findAll({
+      include: ['challenges'],
+      order: [
+        ['order', 'ASC'],
+        ['challenges', 'order', 'ASC']
+      ]
+    })
   } catch (err) {
     throw new Error(err)
   }
@@ -53,9 +64,13 @@ export const updateLesson = async (
 
     await Lesson.update(arg, { where: { id } })
 
-    return {
-      success: true
-    }
+    return Lesson.findAll({
+      include: ['challenges'],
+      order: [
+        ['order', 'ASC'],
+        ['challenges', 'order', 'ASC']
+      ]
+    })
   } catch (err) {
     throw new Error(err)
   }
