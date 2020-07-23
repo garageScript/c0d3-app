@@ -4,6 +4,7 @@ export default gql`
   type Query {
     lessons: [Lesson!]!
     session: Session
+    adminRights: Boolean
     allUsers: [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
@@ -21,7 +22,7 @@ export default gql`
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse
     changePw(token: String!, password: String!): AuthResponse
-    changeAdminRights(username: String!, status: String!): SuccessResponse
+    changeAdminRights(id: Int!, status: String!): SuccessResponse
     signup(
       firstName: String!
       lastName: String!
@@ -51,9 +52,8 @@ export default gql`
       videoUrl: String
       title: String!
       chatUrl: String
-      id: Int!
       order: Int!
-    ): SuccessResponse
+    ): [Lesson]
     updateLesson(
       id: Int!
       description: String
@@ -63,21 +63,20 @@ export default gql`
       title: String
       chatUrl: String
       order: Int
-    ): SuccessResponse
+    ): [Lesson]
     createChallenge(
       lessonId: Int!
-      id: Int!
       order: Int!
       description: String
       title: String
-    ): SuccessResponse
+    ): [Lesson]
     updateChallenge(
       lessonId: Int!
       id: Int!
-      order: Int!
+      order: Int
       description: String
       title: String
-    ): SuccessResponse
+    ): [Lesson]
   }
 
   type AuthResponse {

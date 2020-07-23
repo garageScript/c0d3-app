@@ -6,7 +6,7 @@ import { isAdmin } from '../isAdmin'
 const { User } = db
 
 type adminData = {
-  username: string
+  id: number
   status: string
 }
 
@@ -21,20 +21,9 @@ export const changeAdminRights = async (
       throw new Error('User is not an admin')
     }
 
-    const { username, status } = arg
+    const { id, status } = arg
 
-    if (!username) {
-      throw new Error('Missing username')
-    }
-
-    await User.update(
-      { isAdmin: status },
-      {
-        where: {
-          username: username
-        }
-      }
-    )
+    await User.update({ isAdmin: status }, { where: { id } })
 
     return {
       success: true
