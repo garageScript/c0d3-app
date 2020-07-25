@@ -2,7 +2,7 @@ jest.mock('../dbload')
 jest.mock('../mattermost')
 import db from '../dbload'
 import { createLesson, updateLesson } from './lessonsController'
-
+import lessonData from '../../__dummy__/lessonData'
 const { Lesson } = db
 
 const mockLessonData = {
@@ -17,6 +17,9 @@ const mockLessonData = {
   chatUrl: ''
 }
 
+Lesson.findAll = jest.fn().mockReturnValue(lessonData)
+Lesson.update = jest.fn().mockReturnValue(() => {})
+Lesson.build = jest.fn().mockReturnValue({ save: () => {} })
 describe('Lessons controller tests', () => {
   const ctx = {
     req: {
@@ -24,18 +27,12 @@ describe('Lessons controller tests', () => {
     }
   }
 
-  Lesson.build = jest.fn().mockReturnValue({ save: () => {} })
-
   test('Should create new lesson', async () => {
-    expect(createLesson(null, mockLessonData, ctx)).resolves.toEqual({
-      success: true
-    })
+    expect(createLesson(null, mockLessonData, ctx)).resolves.toEqual(lessonData)
   })
 
   test('Should update lesson', async () => {
-    expect(updateLesson(null, mockLessonData, ctx)).resolves.toEqual({
-      success: true
-    })
+    expect(updateLesson(null, mockLessonData, ctx)).resolves.toEqual(lessonData)
   })
 
   test('Should throw Error when user is not an admin when updating lesson', async () => {

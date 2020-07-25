@@ -52,7 +52,7 @@ export default gql`
       title: String!
       chatUrl: String
       order: Int!
-    ): SuccessResponse
+    ): [Lesson]
     updateLesson(
       id: Int!
       description: String
@@ -62,7 +62,7 @@ export default gql`
       title: String
       chatUrl: String
       order: Int
-    ): SuccessResponse
+    ): [Lesson]
     createChallenge(
       lessonId: Int!
       order: Int!
