@@ -36,7 +36,7 @@
     "graphql-request": "^1.8.2",
     "identity-obj-proxy": "^3.0.0",
     "isomorphic-unfetch": "3.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mailgun-js": "^0.22.0",
     "markdown-to-jsx": "^6.11.4",
     "nanoid": "^3.1.3",

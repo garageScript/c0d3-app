@@ -21,12 +21,12 @@ const ctx = {
 describe('allUsers resolver', () => {
   const { User } = db
 
-  test('should return list of users', async () => {
+  test('Should return list of users', async () => {
     User.findAll = jest.fn().mockReturnValue(mockUsers)
     expect(allUsers(null, null, ctx)).toEqual(mockUsers)
   })
 
-  test('Should throw Error when user is not an admin when querying allUsers', () => {
+  test('Should return null when user is not an admin when querying allUsers', () => {
     ctx.req.user.isAdmin = 'false'
     expect(allUsers(null, null, ctx)).toBeNull
   })
