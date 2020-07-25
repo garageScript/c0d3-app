@@ -86,8 +86,8 @@ export type Mutation = {
   createSubmission?: Maybe<Submission>
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
-  createLesson?: Maybe<SuccessResponse>
-  updateLesson?: Maybe<SuccessResponse>
+  createLesson?: Maybe<Array<Maybe<Lesson>>>
+  updateLesson?: Maybe<Array<Maybe<Lesson>>>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
 }
@@ -918,13 +918,13 @@ export type MutationResolvers<
     RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>
   >
   createLesson?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
     RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
   >
   updateLesson?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
     RequireFields<MutationUpdateLessonArgs, 'id'>
