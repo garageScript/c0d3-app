@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin dropdown menu component Should add \`show\` class when Admin div is clicked on 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <div
+      aria-expanded="false"
+      class="btn btn-secondary dropdown-toggle"
+      data-testid="adminButton"
+      style="margin: 0px 0px 0px 0px;"
+    >
+      Admin
+    </div>
+    <div
+      class="dropdown-menu show"
+      data-testid="menu"
+      style="margin: 0px 0px 0px 0px;"
+    >
+      <a
+        class="dropdown-item"
+        href="/admin/lessons"
+      >
+        Lesson
+      </a>
+      <a
+        class="dropdown-item"
+        href="/admin/users"
+      >
+        Users
+      </a>
+      <a
+        class="dropdown-item"
+        href="/admin/alerts"
+      >
+        Alerts
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Admin dropdown menu component Should remove \`show\` class onMouseOut of menu 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <div
+      aria-expanded="false"
+      class="btn btn-secondary dropdown-toggle"
+      data-testid="adminButton"
+      style="margin: 0px 0px 0px 0px;"
+    >
+      Admin
+    </div>
+    <div
+      class="dropdown-menu"
+      data-testid="menu"
+      style="margin: 0px 0px 0px 0px;"
+    >
+      <a
+        class="dropdown-item"
+        href="/admin/lessons"
+      >
+        Lesson
+      </a>
+      <a
+        class="dropdown-item"
+        href="/admin/users"
+      >
+        Users
+      </a>
+      <a
+        class="dropdown-item"
+        href="/admin/alerts"
+      >
+        Alerts
+      </a>
+    </div>
+  </div>
+</div>
+`;
