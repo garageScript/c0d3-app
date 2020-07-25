@@ -1637,15 +1637,15 @@ exports[`Storyshots Components/InputCard Basic 1`] = `
     }
   >
     <h5
-      data-testid="h5super0"
+      data-testid="h5Nickname0"
     >
-      Super
+      Nickname
     </h5>
     <input
       aria-describedby="basic-addon1"
       aria-label=""
       className="form-control"
-      data-testid="inputsuper"
+      data-testid="inputNickname"
       onChange={[Function]}
       placeholder=""
       style={
@@ -1654,7 +1654,252 @@ exports[`Storyshots Components/InputCard Basic 1`] = `
         }
       }
       type="text"
-      value="saiyan"
+      value="ChickenFarmer00"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Description1"
+    >
+      Description
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputDescription"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="Amazing farm of chicken"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Title2"
+    >
+      Title
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputTitle"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="oheuhehe"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Level3"
+    >
+      Level
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputLevel"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="noob"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/InputCard No Color Background 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "none",
+      "border": "2px solid rgb(0,0,0,.3)",
+      "padding": 10,
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Nickname0"
+    >
+      Nickname
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputNickname"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="ChickenFarmer00"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Description1"
+    >
+      Description
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputDescription"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="Amazing farm of chicken"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Title2"
+    >
+      Title
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputTitle"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="oheuhehe"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Level3"
+    >
+      Level
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputLevel"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="noob"
     />
   </div>
 </div>
@@ -1694,15 +1939,15 @@ exports[`Storyshots Components/InputCard With Button 1`] = `
     }
   >
     <h5
-      data-testid="h5super0"
+      data-testid="h5Nickname0"
     >
-      Super
+      Nickname
     </h5>
     <input
       aria-describedby="basic-addon1"
       aria-label=""
       className="form-control"
-      data-testid="inputsuper"
+      data-testid="inputNickname"
       onChange={[Function]}
       placeholder=""
       style={
@@ -1711,7 +1956,106 @@ exports[`Storyshots Components/InputCard With Button 1`] = `
         }
       }
       type="text"
-      value="saiyan"
+      value="ChickenFarmer00"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Description1"
+    >
+      Description
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputDescription"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="Amazing farm of chicken"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Title2"
+    >
+      Title
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputTitle"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="oheuhehe"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Level3"
+    >
+      Level
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputLevel"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="noob"
     />
   </div>
   <div
@@ -1771,15 +2115,15 @@ exports[`Storyshots Components/InputCard With Title 1`] = `
     }
   >
     <h5
-      data-testid="h5super0"
+      data-testid="h5Nickname0"
     >
-      Super
+      Nickname
     </h5>
     <input
       aria-describedby="basic-addon1"
       aria-label=""
       className="form-control"
-      data-testid="inputsuper"
+      data-testid="inputNickname"
       onChange={[Function]}
       placeholder=""
       style={
@@ -1788,7 +2132,106 @@ exports[`Storyshots Components/InputCard With Title 1`] = `
         }
       }
       type="text"
-      value="saiyan"
+      value="ChickenFarmer00"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Description1"
+    >
+      Description
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputDescription"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="Amazing farm of chicken"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Title2"
+    >
+      Title
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputTitle"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="oheuhehe"
+    />
+  </div>
+  <div
+    className="d-flex flex-column"
+    style={
+      Object {
+        "backgroundColor": "rgb(84, 64, 216, .04)",
+        "border": "3px solid rgb(84, 64, 216, .3)",
+        "marginBottom": 10,
+        "padding": "10px",
+        "textAlign": "left",
+      }
+    }
+  >
+    <h5
+      data-testid="h5Level3"
+    >
+      Level
+    </h5>
+    <input
+      aria-describedby="basic-addon1"
+      aria-label=""
+      className="form-control"
+      data-testid="inputLevel"
+      onChange={[Function]}
+      placeholder=""
+      style={
+        Object {
+          "border": "1px solid rgb(84, 64, 216, .3)",
+        }
+      }
+      type="text"
+      value="noob"
     />
   </div>
 </div>
