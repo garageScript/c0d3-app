@@ -7,7 +7,7 @@ exports[`InputCard Component Call function when button is clicked 1`] = `
   >
     <div
       class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
     >
       <h5
         data-testid="h5description0"
@@ -57,7 +57,7 @@ exports[`InputCard Component Input value should be nothing when value prop is no
   >
     <div
       class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
     >
       <h5
         data-testid="h5super0"
@@ -95,7 +95,7 @@ exports[`InputCard Component Should output empty title when title is empty 1`] =
   >
     <div
       class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
     >
       <h5
         data-testid="h50"
@@ -150,7 +150,7 @@ exports[`InputCard Component Should render text onto textbox when user types 1`]
   >
     <div
       class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
     >
       <h5
         data-testid="h5super0"
@@ -188,7 +188,7 @@ exports[`InputCard Component Should render textbox when title is description 1`]
   >
     <div
       class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
     >
       <h5
         data-testid="h5description0"

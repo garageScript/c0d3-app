@@ -71,7 +71,7 @@ export const InputCard: React.FC<InputCardProps> = ({
           padding: '10px',
           backgroundColor: 'rgb(84, 64, 216, .04)',
           textAlign: 'left',
-          marginBottom: 10
+          marginBottom: i === options.length - 1 ? 0 : 10
         }}
       >
         <h5 data-testid={`h5${title}${i}`}>

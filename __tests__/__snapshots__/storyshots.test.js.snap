@@ -1729,7 +1729,7 @@ exports[`Storyshots Components/InputCard Basic 1`] = `
       Object {
         "backgroundColor": "rgb(84, 64, 216, .04)",
         "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
+        "marginBottom": 0,
         "padding": "10px",
         "textAlign": "left",
       }
@@ -1875,7 +1875,7 @@ exports[`Storyshots Components/InputCard No Color Background 1`] = `
       Object {
         "backgroundColor": "rgb(84, 64, 216, .04)",
         "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
+        "marginBottom": 0,
         "padding": "10px",
         "textAlign": "left",
       }
@@ -2031,7 +2031,7 @@ exports[`Storyshots Components/InputCard With Button 1`] = `
       Object {
         "backgroundColor": "rgb(84, 64, 216, .04)",
         "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
+        "marginBottom": 0,
         "padding": "10px",
         "textAlign": "left",
       }
@@ -2207,7 +2207,7 @@ exports[`Storyshots Components/InputCard With Title 1`] = `
       Object {
         "backgroundColor": "rgb(84, 64, 216, .04)",
         "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
+        "marginBottom": 0,
         "padding": "10px",
         "textAlign": "left",
       }
