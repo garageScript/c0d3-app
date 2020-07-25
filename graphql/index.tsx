@@ -360,7 +360,10 @@ export type GetAppQuery = { __typename?: 'Query' } & {
   session?: Maybe<
     { __typename?: 'Session' } & {
       user?: Maybe<
-        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+        { __typename?: 'User' } & Pick<
+          User,
+          'id' | 'username' | 'name' | 'isAdmin'
+        >
       >
       submissions?: Maybe<
         Array<
@@ -1473,6 +1476,7 @@ export const GetAppDocument = gql`
         id
         username
         name
+        isAdmin
       }
       submissions {
         id

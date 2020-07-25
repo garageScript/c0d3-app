@@ -23,6 +23,7 @@ const GET_APP = gql`
         id
         username
         name
+        isAdmin
       }
       submissions {
         id
