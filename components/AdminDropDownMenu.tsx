@@ -32,7 +32,7 @@ export const AdminDropDownMenu: React.FC = () => {
         onMouseOut={hideMenu}
       >
         <NavLink path="/admin/lessons" className="dropdown-item">
-          Lesson
+          Lessons
         </NavLink>
         <NavLink path="/admin/users" className="dropdown-item">
           Users

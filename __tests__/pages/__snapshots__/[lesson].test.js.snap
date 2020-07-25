@@ -85,7 +85,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
                     class="dropdown-item"
                     href="/admin/lessons"
                   >
-                    Lesson
+                    Lessons
                   </a>
                   <a
                     class="dropdown-item"
@@ -225,7 +225,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                     class="dropdown-item"
                     href="/admin/lessons"
                   >
-                    Lesson
+                    Lessons
                   </a>
                   <a
                     class="dropdown-item"
