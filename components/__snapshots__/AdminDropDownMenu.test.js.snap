@@ -22,7 +22,7 @@ exports[`Admin dropdown menu component Should add \`show\` class when Admin div 
         class="dropdown-item"
         href="/admin/lessons"
       >
-        Lesson
+        Lessons
       </a>
       <a
         class="dropdown-item"
@@ -63,7 +63,7 @@ exports[`Admin dropdown menu component Should remove \`show\` class onMouseOut o
         class="dropdown-item"
         href="/admin/lessons"
       >
-        Lesson
+        Lessons
       </a>
       <a
         class="dropdown-item"

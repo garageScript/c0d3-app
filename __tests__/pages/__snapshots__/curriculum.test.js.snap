@@ -92,7 +92,7 @@ exports[`Curriculum Page Should render Loading Spinner when loading 1`] = `
                   class="dropdown-item"
                   href="/admin/lessons"
                 >
-                  Lesson
+                  Lessons
                 </a>
                 <a
                   class="dropdown-item"
@@ -943,7 +943,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="dropdown-item"
                   href="/admin/lessons"
                 >
-                  Lesson
+                  Lessons
                 </a>
                 <a
                   class="dropdown-item"
@@ -1786,7 +1786,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="dropdown-item"
                   href="/admin/lessons"
                 >
-                  Lesson
+                  Lessons
                 </a>
                 <a
                   class="dropdown-item"
