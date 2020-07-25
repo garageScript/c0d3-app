@@ -11,6 +11,10 @@ export const Basic: React.FC = () => <MdInput />
 
 export const White: React.FC = () => <MdInput bgColor={'white'} />
 
+export const _WithPresetValue: React.FC = () => {
+  return <MdInput bgColor={'white'} value="HinGa DIngA dUrgEN" />
+}
+
 export const _WithSubmissionButtons: React.FC = () => {
   return (
     <div>

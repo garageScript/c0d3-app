@@ -43,7 +43,7 @@ exports[`MdInput Component Should switch to Preview mode when user clicks Previe
     </button>
     <span
       data-testid="markdown"
-      style="padding: 1rem; width: 100%; display: block;"
+      style="padding: 1rem; width: inherit; display: block;"
     />
   </div>
 </div>
