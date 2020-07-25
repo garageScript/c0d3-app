@@ -20,7 +20,6 @@ export const createChallenge = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  console.log(req.user)
   try {
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
