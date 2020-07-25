@@ -66,16 +66,16 @@ export default gql`
     createChallenge(
       lessonId: Int!
       order: Int!
-      description: String
-      title: String
-    ): SuccessResponse
+      description: String!
+      title: String!
+    ): [Lesson]
     updateChallenge(
       lessonId: Int!
       id: Int!
-      order: Int!
+      order: Int
       description: String
       title: String
-    ): SuccessResponse
+    ): [Lesson]
   }
 
   type AuthResponse {
