@@ -1574,6 +1574,29 @@ Array [
       <button
         aria-expanded={false}
         aria-haspopup={true}
+        className="dropdown-toggle btn btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Danger
+      </button>
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
         className="dropdown-toggle btn btn-info"
         disabled={false}
         onClick={[Function]}
@@ -1603,29 +1626,6 @@ Array [
         type="button"
       >
         Warning
-      </button>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
-    <div
-      className="dropdown"
-      onKeyDown={[Function]}
-    >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-danger"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        Danger
       </button>
     </div>
   </div>,
@@ -1678,7 +1678,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        className="dropdown-toggle btn btn-none"
+        className="dropdown-toggle btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -1701,7 +1701,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        className="dropdown-toggle btn btn-none"
+        className="dropdown-toggle btn btn-success"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -1724,7 +1724,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        className="dropdown-toggle btn btn-none"
+        className="dropdown-toggle btn btn-danger"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -1747,7 +1747,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        className="dropdown-toggle btn btn-none"
+        className="dropdown-toggle btn btn-info"
         disabled={false}
         onClick={[Function]}
         type="button"

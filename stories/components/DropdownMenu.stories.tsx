@@ -23,6 +23,15 @@ const separatedMenu = [
   { title: 'Alerts', path: '/admin/alerts' }
 ]
 
+const variants: any[] = [
+  'Primary',
+  'Success',
+  'Danger',
+  'Info',
+  'Warning',
+  'None'
+]
+
 export const Basic: React.FC = () => (
   <DropdownMenu title="Admin" items={dropdownMenuItems} />
 )
@@ -32,7 +41,6 @@ export const _WithSeparators: React.FC = () => (
 )
 
 export const Colors = () => {
-  const variants = ['Primary', 'Success', 'Info', 'Warning', 'Danger', 'None']
   return variants.map((variant: any, i: number) => (
     <div key={i} style={{ display: 'inline-block' }}>
       <DropdownMenu
@@ -49,6 +57,7 @@ export const Directions = () => {
     (direction: any, i: number) => (
       <div key={i} style={{ display: 'inline-block' }}>
         <DropdownMenu
+          variant={variants[i].toLowerCase()}
           drop={direction.toLowerCase()}
           title={direction}
           items={dropdownMenuItems}
