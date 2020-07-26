@@ -65,6 +65,18 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               >
                 Contributors
               </a>
+              <div
+                class="dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  class="dropdown-toggle btn btn-none"
+                  type="button"
+                >
+                  Admin
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -169,6 +181,18 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               >
                 Contributors
               </a>
+              <div
+                class="dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  class="dropdown-toggle btn btn-none"
+                  type="button"
+                >
+                  Admin
+                </button>
+              </div>
             </div>
           </div>
         </div>
