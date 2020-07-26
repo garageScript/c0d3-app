@@ -75,38 +75,14 @@ exports[`Curriculum Page Should render Loading Spinner when loading 1`] = `
             <div
               class="dropdown"
             >
-              <div
+              <button
                 aria-expanded="false"
-                class="btn btn-secondary dropdown-toggle"
-                data-testid="adminButton"
-                style="margin: 0px 0px 0px 0px;"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
               >
                 Admin
-              </div>
-              <div
-                class="dropdown-menu"
-                data-testid="menu"
-                style="margin: 0px 0px 0px 0px;"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -926,38 +902,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             <div
               class="dropdown"
             >
-              <div
+              <button
                 aria-expanded="false"
-                class="btn btn-secondary dropdown-toggle"
-                data-testid="adminButton"
-                style="margin: 0px 0px 0px 0px;"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
               >
                 Admin
-              </div>
-              <div
-                class="dropdown-menu"
-                data-testid="menu"
-                style="margin: 0px 0px 0px 0px;"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -1769,38 +1721,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             <div
               class="dropdown"
             >
-              <div
+              <button
                 aria-expanded="false"
-                class="btn btn-secondary dropdown-toggle"
-                data-testid="adminButton"
-                style="margin: 0px 0px 0px 0px;"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
               >
                 Admin
-              </div>
-              <div
-                class="dropdown-menu"
-                data-testid="menu"
-                style="margin: 0px 0px 0px 0px;"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-                <a
-                  class="dropdown-item"
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+              </button>
             </div>
           </div>
         </div>
