@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-none"
+      type="button"
+    >
+      Admin
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MdInput Component Should render divider when an item is null 1`] = `
+<div>
+  <div
+    class="dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-none"
+      type="button"
+    >
+      Admin
+    </button>
+  </div>
+</div>
+`;
