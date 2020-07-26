@@ -8,7 +8,7 @@ import noop from '../helpers/noop'
 //a null item indicates a dropdown divider
 type Item = {
   title: string
-  path: string
+  path?: string
   as?: 'a' | 'button'
   onClick?: Function
 } | null
@@ -34,7 +34,7 @@ const menuItems = (items: Item[]) => {
       <Dropdown.Divider key={i} />
     ) : (
       <Dropdown.Item
-        as="button"
+        as={item.as || 'a'}
         key={i}
         href={item.path}
         onClick={(item.onClick && item.onClick()) || noop()}
