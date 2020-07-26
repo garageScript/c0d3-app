@@ -44,7 +44,7 @@ const Buttons: React.FC<ButtonsProps> = ({ buttons, options }) => {
   return <>{btns}</>
 }
 
-export const InputCard: React.FC<InputCardProps> = ({
+export const FormCard: React.FC<InputCardProps> = ({
   values,
   buttons,
   capitalizeTitle = true,

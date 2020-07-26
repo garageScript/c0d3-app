@@ -1797,106 +1797,7 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 </footer>
 `;
 
-exports[`Storyshots Components/Input Email Input 1`] = `
-<form
-  action="#"
-  onReset={[Function]}
-  onSubmit={[Function]}
->
-  <input
-    className="form-control form-control-lg font-weight-light mb-3 "
-    name="email"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Email address"
-    type="email"
-    value="email@domain.com"
-  />
-  <input
-    className="form-control form-control-lg font-weight-light mb-3 "
-    name="emailError"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Email address"
-    type="email"
-    value="inv@lid^email@domain.con"
-  />
-  <button
-    className="btn btn-primary"
-    type="submit"
-  >
-    Submit
-  </button>
-</form>
-`;
-
-exports[`Storyshots Components/Input Password Input 1`] = `
-<form
-  action="#"
-  onReset={[Function]}
-  onSubmit={[Function]}
->
-  <input
-    className="form-control form-control-lg font-weight-light mb-3 "
-    name="password"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Password"
-    type="password"
-    value="password"
-  />
-  <input
-    className="form-control form-control-lg font-weight-light mb-3 "
-    name="passwordError"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Email address"
-    type="password"
-    value="123"
-  />
-  <button
-    className="btn btn-primary"
-    type="submit"
-  >
-    Submit
-  </button>
-</form>
-`;
-
-exports[`Storyshots Components/Input Text Input 1`] = `
-<form
-  action="#"
-  onReset={[Function]}
-  onSubmit={[Function]}
->
-  <input
-    className="form-control form-control-lg font-weight-light mb-3 "
-    name="text"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Your text"
-    type="text"
-    value="Some text"
-  />
-  <input
-    className="form-control form-control-lg font-weight-light mb-3 "
-    name="textError"
-    onBlur={[Function]}
-    onChange={[Function]}
-    placeholder="Your text"
-    type="text"
-    value="Wrong value"
-  />
-  <button
-    className="btn btn-primary"
-    type="submit"
-  >
-    Submit
-  </button>
-</form>
-`;
-
-exports[`Storyshots Components/InputCard Basic 1`] = `
+exports[`Storyshots Components/FormCard Basic 1`] = `
 <div
   style={
     Object {
@@ -2042,7 +1943,7 @@ exports[`Storyshots Components/InputCard Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/InputCard No Color Background 1`] = `
+exports[`Storyshots Components/FormCard No Color Background 1`] = `
 <div
   style={
     Object {
@@ -2188,7 +2089,7 @@ exports[`Storyshots Components/InputCard No Color Background 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/InputCard With Button 1`] = `
+exports[`Storyshots Components/FormCard With Button 1`] = `
 <div
   style={
     Object {
@@ -2364,7 +2265,7 @@ exports[`Storyshots Components/InputCard With Button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/InputCard With Title 1`] = `
+exports[`Storyshots Components/FormCard With Title 1`] = `
 <div
   style={
     Object {
@@ -2518,6 +2419,105 @@ exports[`Storyshots Components/InputCard With Title 1`] = `
     />
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/Input Email Input 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="email"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Email address"
+    type="email"
+    value="email@domain.com"
+  />
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="emailError"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Email address"
+    type="email"
+    value="inv@lid^email@domain.con"
+  />
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Components/Input Password Input 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="password"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Password"
+    type="password"
+    value="password"
+  />
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="passwordError"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Email address"
+    type="password"
+    value="123"
+  />
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`Storyshots Components/Input Text Input 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="text"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your text"
+    type="text"
+    value="Some text"
+  />
+  <input
+    className="form-control form-control-lg font-weight-light mb-3 "
+    name="textError"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="Your text"
+    type="text"
+    value="Wrong value"
+  />
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
 `;
 
 exports[`Storyshots Components/InputGroup Disabled 1`] = `

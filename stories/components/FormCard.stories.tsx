@@ -1,9 +1,9 @@
 import React from 'react'
-import { InputCard } from '../../components/InputCard'
+import { FormCard } from '../../components/FormCard'
 
 export default {
-  component: InputCard,
-  title: 'Components/InputCard'
+  component: FormCard,
+  title: 'Components/FormCard'
 }
 
 const mockBtn = [
@@ -20,16 +20,16 @@ const mockValues = [
   { title: 'Level', value: 'noob' }
 ]
 
-export const Basic: React.FC = () => <InputCard values={mockValues} />
+export const Basic: React.FC = () => <FormCard values={mockValues} />
 
 export const _NoColorBackground: React.FC = () => (
-  <InputCard values={mockValues} bgColor="none" />
+  <FormCard values={mockValues} bgColor="none" />
 )
 
 export const _WithTitle: React.FC = () => (
-  <InputCard values={mockValues} title="clownfish" />
+  <FormCard values={mockValues} title="clownfish" />
 )
 
 export const _WithButton: React.FC = () => (
-  <InputCard values={mockValues} buttons={mockBtn} title="clownfish" />
+  <FormCard values={mockValues} buttons={mockBtn} title="clownfish" />
 )
