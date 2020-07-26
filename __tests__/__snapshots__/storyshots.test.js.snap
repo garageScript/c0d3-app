@@ -1494,6 +1494,289 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/DropdownMenu Basic 1`] = `
+<div
+  className="dropdown"
+  onKeyDown={[Function]}
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-none"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Admin
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/DropdownMenu Colors 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Primary
+      </button>
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-success"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Success
+      </button>
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-info"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Info
+      </button>
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-warning"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Warning
+      </button>
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Danger
+      </button>
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-none"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        None
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/DropdownMenu Directions 1`] = `
+<div
+  style={
+    Object {
+      "padding": 130,
+      "paddingLeft": 170,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropleft"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-none"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Left
+      </button>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropdown"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-none"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Down
+      </button>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropup"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-none"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Up
+      </button>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="dropright"
+      onKeyDown={[Function]}
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-none"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Right
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
+<div
+  className="dropdown"
+  onKeyDown={[Function]}
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-none"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Admin
+  </button>
+</div>
+`;
+
 exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
   className="mt-5 font-weight-light text-center pb-5 text-muted"

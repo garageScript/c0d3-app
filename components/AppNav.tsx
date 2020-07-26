@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import NavLink from './NavLink'
 import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
-import { AdminDropDownMenu } from './AdminDropDownMenu'
+import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
 
@@ -16,6 +16,12 @@ type AuthButtonProps = {
 type AuthLinkProps = {
   session: any
 }
+
+const dropdownMenuItems = [
+  { title: 'Lessons', path: '/admin/lessons' },
+  { title: 'Users', path: '/admin/users' },
+  { title: 'Alerts', path: '/admin/alerts' }
+]
 
 const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
   const isAdmin = _.get(session, 'user.isAdmin', '')
@@ -52,7 +58,9 @@ const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
       <NavLink path="/contributors" className="nav-item nav-link">
         Contributors
       </NavLink>
-      {isAdmin === 'true' && <AdminDropDownMenu />}
+      {isAdmin === 'true' && (
+        <DropdownMenu title="Admin" items={dropdownMenuItems} />
+      )}
     </div>
   )
 }
