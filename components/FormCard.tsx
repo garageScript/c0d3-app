@@ -17,7 +17,7 @@ type Btn = {
   onClick?: Function
 }
 
-type InputCardProps = {
+type FormCardProps = {
   values: Option[]
   buttons?: Btn[]
   capitalizeTitle?: boolean
@@ -114,7 +114,7 @@ export const OptionsList: React.FC<OptionsListProps> = ({
   return <>{inputs}</>
 }
 
-export const FormCard: React.FC<InputCardProps> = ({
+export const FormCard: React.FC<FormCardProps> = ({
   values,
   buttons,
   capitalizeTitle = true,
