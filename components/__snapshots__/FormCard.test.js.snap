@@ -3,6 +3,7 @@
 exports[`FormCard Component Call function when button is clicked 1`] = `
 <div>
   <div
+    class="rounded"
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div
@@ -53,6 +54,7 @@ exports[`FormCard Component Call function when button is clicked 1`] = `
 exports[`FormCard Component Input value should be nothing when value prop is not there 1`] = `
 <div>
   <div
+    class="rounded"
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div
@@ -65,9 +67,6 @@ exports[`FormCard Component Input value should be nothing when value prop is not
         Super
       </h5>
       <input
-        aria-describedby="basic-addon1"
-        aria-label=""
-        class="form-control"
         data-testid="inputsuper"
         placeholder=""
         type="text"
@@ -91,6 +90,7 @@ exports[`FormCard Component Input value should be nothing when value prop is not
 exports[`FormCard Component Should output empty title when title is empty 1`] = `
 <div>
   <div
+    class="rounded"
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div
@@ -101,9 +101,6 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
         data-testid="h50"
       />
       <input
-        aria-describedby="basic-addon1"
-        aria-label=""
-        class="form-control"
         data-testid="input"
         placeholder=""
         type="text"
@@ -127,6 +124,7 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
 exports[`FormCard Component Should render nothing if id is a title 1`] = `
 <div>
   <div
+    class="rounded"
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div
@@ -146,6 +144,7 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
 exports[`FormCard Component Should render text onto textbox when user types 1`] = `
 <div>
   <div
+    class="rounded"
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div
@@ -158,9 +157,6 @@ exports[`FormCard Component Should render text onto textbox when user types 1`] 
         Super
       </h5>
       <input
-        aria-describedby="basic-addon1"
-        aria-label=""
-        class="form-control"
         data-testid="inputsuper"
         placeholder=""
         type="text"
@@ -184,6 +180,7 @@ exports[`FormCard Component Should render text onto textbox when user types 1`] 
 exports[`FormCard Component Should render textbox when title is description 1`] = `
 <div>
   <div
+    class="rounded"
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div

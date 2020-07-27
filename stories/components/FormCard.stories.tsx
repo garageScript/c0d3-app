@@ -22,10 +22,6 @@ const mockValues = [
 
 export const Basic: React.FC = () => <FormCard values={mockValues} />
 
-export const _NoColorBackground: React.FC = () => (
-  <FormCard values={mockValues} bgColor="none" />
-)
-
 export const _WithTitle: React.FC = () => (
   <FormCard values={mockValues} title="clownfish" />
 )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button } from './theme/Button'
 import { MdInput } from './MdInput'
 
+// capitalizes first letter of a string
 const capitalizeFirst = (str: string) => {
   return str.replace(/./, char => char.toUpperCase())
 }
@@ -20,13 +21,37 @@ type InputCardProps = {
   values: Option[]
   buttons?: Btn[]
   capitalizeTitle?: boolean
-  bgColor?: 'white' | 'none'
   title?: string
 }
 
 type ButtonsProps = {
   buttons: Btn[]
   options: Option[]
+}
+
+type OptionsListProps = {
+  handleChange: (value: string, i: number) => void
+  capitalizeTitle: boolean
+  options: Option[]
+}
+
+const titleStyle: React.CSSProperties | undefined = {
+  textDecoration: 'underline',
+  marginBottom: 20
+}
+
+const formStyle: React.CSSProperties | undefined = {
+  textAlign: 'center',
+  padding: '10px',
+  border: '2px solid rgb(0,0,0,.3)',
+  backgroundColor: 'white'
+}
+
+const optionStyle: React.CSSProperties | undefined = {
+  border: '3px solid rgb(84, 64, 216, .3)',
+  padding: '10px',
+  backgroundColor: 'rgb(84, 64, 216, .04)',
+  textAlign: 'left'
 }
 
 const Buttons: React.FC<ButtonsProps> = ({ buttons, options }) => {
@@ -44,12 +69,56 @@ const Buttons: React.FC<ButtonsProps> = ({ buttons, options }) => {
   return <>{btns}</>
 }
 
+export const OptionsList: React.FC<OptionsListProps> = ({
+  handleChange,
+  capitalizeTitle,
+  options
+}) => {
+  const inputs = options.map((option: Option, i: number) => {
+    const { title, value, placeHolder } = option
+    if (option.title === 'id') return []
+    const inputType =
+      title === 'description' ? (
+        <MdInput
+          bgColor="white"
+          value={(value && value + '') || ''}
+          onChange={(value: string) => handleChange(value, i)}
+        />
+      ) : (
+        <input
+          data-testid={`input${title}`}
+          style={{ border: '1px solid rgb(84, 64, 216, .3)' }}
+          type="text"
+          value={(value && value + '') || ''}
+          onChange={e => handleChange(e.target.value, i)}
+          placeholder={placeHolder || ''}
+        />
+      )
+    return (
+      <div
+        key={i}
+        className="d-flex flex-column"
+        style={{
+          ...optionStyle,
+          marginBottom: i === options.length - 1 ? 0 : 10
+        }}
+      >
+        <h5 data-testid={`h5${title}${i}`}>
+          {(capitalizeTitle && capitalizeFirst(title)) || title}
+        </h5>
+        {inputType}
+      </div>
+    )
+  })
+
+  return <>{inputs}</>
+}
+
 export const FormCard: React.FC<InputCardProps> = ({
   values,
   buttons,
   capitalizeTitle = true,
-  title,
-  bgColor = 'white'
+  title
 }) => {
   const [options, saveOptions] = useState(values)
 
@@ -59,63 +128,14 @@ export const FormCard: React.FC<InputCardProps> = ({
     saveOptions(newOptions)
   }
 
-  const inputs = options.map((obj: Option, i: number) => {
-    const { title, value, placeHolder } = obj
-    if (obj.title === 'id') return []
-    return (
-      <div
-        key={i}
-        className="d-flex flex-column"
-        style={{
-          border: '3px solid rgb(84, 64, 216, .3)',
-          padding: '10px',
-          backgroundColor: 'rgb(84, 64, 216, .04)',
-          textAlign: 'left',
-          marginBottom: i === options.length - 1 ? 0 : 10
-        }}
-      >
-        <h5 data-testid={`h5${title}${i}`}>
-          {(capitalizeTitle && capitalizeFirst(title)) || title}
-        </h5>
-        {title === 'description' && (
-          <MdInput
-            bgColor="white"
-            value={(value && value + '') || ''}
-            onChange={(value: string) => handleChange(value, i)}
-          />
-        )}
-        {title !== 'description' && (
-          <input
-            data-testid={`input${title}`}
-            style={{ border: '1px solid rgb(84, 64, 216, .3)' }}
-            type="text"
-            value={(value && value + '') || ''}
-            onChange={e => handleChange(e.target.value, i)}
-            className="form-control"
-            placeholder={placeHolder || ''}
-            aria-label=""
-            aria-describedby="basic-addon1"
-          />
-        )}
-      </div>
-    )
-  })
-
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        padding: 10,
-        backgroundColor: bgColor,
-        border: '2px solid rgb(0,0,0,.3)'
-      }}
-    >
-      {title && (
-        <h2 style={{ textDecoration: 'underline', marginBottom: 20 }}>
-          {title}
-        </h2>
-      )}
-      {inputs}
+    <div style={formStyle} className="rounded">
+      {title && <h2 style={titleStyle}>{title}</h2>}
+      <OptionsList
+        capitalizeTitle={capitalizeTitle}
+        options={options}
+        handleChange={handleChange}
+      />
       {buttons && <Buttons buttons={buttons} options={options} />}
     </div>
   )

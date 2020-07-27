@@ -1799,11 +1799,12 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 
 exports[`Storyshots Components/FormCard Basic 1`] = `
 <div
+  className="rounded"
   style={
     Object {
       "backgroundColor": "white",
       "border": "2px solid rgb(0,0,0,.3)",
-      "padding": 10,
+      "padding": "10px",
       "textAlign": "center",
     }
   }
@@ -1826,9 +1827,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
       Nickname
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputNickname"
       onChange={[Function]}
       placeholder=""
@@ -1859,9 +1857,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
       Description
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputDescription"
       onChange={[Function]}
       placeholder=""
@@ -1892,9 +1887,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
       Title
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputTitle"
       onChange={[Function]}
       placeholder=""
@@ -1925,155 +1917,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
       Level
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
-      data-testid="inputLevel"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="noob"
-    />
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/FormCard No Color Background 1`] = `
-<div
-  style={
-    Object {
-      "backgroundColor": "none",
-      "border": "2px solid rgb(0,0,0,.3)",
-      "padding": 10,
-      "textAlign": "center",
-    }
-  }
->
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Nickname0"
-    >
-      Nickname
-    </h5>
-    <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
-      data-testid="inputNickname"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="ChickenFarmer00"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Description1"
-    >
-      Description
-    </h5>
-    <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
-      data-testid="inputDescription"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="Amazing farm of chicken"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title2"
-    >
-      Title
-    </h5>
-    <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
-      data-testid="inputTitle"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="oheuhehe"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 0,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Level3"
-    >
-      Level
-    </h5>
-    <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputLevel"
       onChange={[Function]}
       placeholder=""
@@ -2091,11 +1934,12 @@ exports[`Storyshots Components/FormCard No Color Background 1`] = `
 
 exports[`Storyshots Components/FormCard With Button 1`] = `
 <div
+  className="rounded"
   style={
     Object {
       "backgroundColor": "white",
       "border": "2px solid rgb(0,0,0,.3)",
-      "padding": 10,
+      "padding": "10px",
       "textAlign": "center",
     }
   }
@@ -2128,9 +1972,6 @@ exports[`Storyshots Components/FormCard With Button 1`] = `
       Nickname
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputNickname"
       onChange={[Function]}
       placeholder=""
@@ -2161,9 +2002,6 @@ exports[`Storyshots Components/FormCard With Button 1`] = `
       Description
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputDescription"
       onChange={[Function]}
       placeholder=""
@@ -2194,9 +2032,6 @@ exports[`Storyshots Components/FormCard With Button 1`] = `
       Title
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputTitle"
       onChange={[Function]}
       placeholder=""
@@ -2227,9 +2062,6 @@ exports[`Storyshots Components/FormCard With Button 1`] = `
       Level
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputLevel"
       onChange={[Function]}
       placeholder=""
@@ -2267,11 +2099,12 @@ exports[`Storyshots Components/FormCard With Button 1`] = `
 
 exports[`Storyshots Components/FormCard With Title 1`] = `
 <div
+  className="rounded"
   style={
     Object {
       "backgroundColor": "white",
       "border": "2px solid rgb(0,0,0,.3)",
-      "padding": 10,
+      "padding": "10px",
       "textAlign": "center",
     }
   }
@@ -2304,9 +2137,6 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
       Nickname
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputNickname"
       onChange={[Function]}
       placeholder=""
@@ -2337,9 +2167,6 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
       Description
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputDescription"
       onChange={[Function]}
       placeholder=""
@@ -2370,9 +2197,6 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
       Title
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputTitle"
       onChange={[Function]}
       placeholder=""
@@ -2403,9 +2227,6 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
       Level
     </h5>
     <input
-      aria-describedby="basic-addon1"
-      aria-label=""
-      className="form-control"
       data-testid="inputLevel"
       onChange={[Function]}
       placeholder=""
