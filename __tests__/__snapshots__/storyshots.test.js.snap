@@ -2680,6 +2680,51 @@ exports[`Storyshots Components/MdInput White 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/MdInput With Preset Value 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+    }
+  }
+>
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Write
+  </button>
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#8e8e8e",
+      }
+    }
+  >
+    Preview
+  </button>
+  <textarea
+    data-testid="textbox"
+    onChange={[Function]}
+    placeholder="Type something..."
+    style={
+      Object {
+        "padding": "1rem",
+        "width": "100%",
+      }
+    }
+    value="HinGa DIngA dUrgEN"
+  />
+</div>
+`;
+
 exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
 <div>
   <div
