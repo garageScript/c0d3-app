@@ -3,7 +3,6 @@ import { useMutation } from '@apollo/react-hooks'
 import updateChallenge from '../graphql/queries/updateChallenge'
 import { FormCard } from './FormCard'
 import createNewChallenge from '../graphql/queries/createChallenge'
-import { StyledTitle } from './StyledTitle'
 import { Lesson } from '../@types/adminLesson'
 
 type Challenge = {
@@ -25,11 +24,12 @@ type LessonChallengesProps = {
 }
 
 //add error to here. for title, order and description
-export const inputValues = (lesson: any, blank?: string) => {
-  lesson.hasOwnProperty('challenges') && delete lesson['challenges']
-  delete lesson['__typename']
-  const fck = Object.keys(lesson)
-  const res = fck.reduce((acc: any, type: any) => {
+export const inputValues = (options: any, blank?: string) => {
+  //if lessons are passed in, then challenges property must be deleted
+  options.hasOwnProperty('challenges') && delete options['challenges']
+  delete options['__typename']
+  const keys = Object.keys(options)
+  const res = keys.reduce((acc: any, type: any) => {
     const error =
       type === 'title' || type === 'order' || type === 'description'
         ? ['require']
@@ -37,12 +37,20 @@ export const inputValues = (lesson: any, blank?: string) => {
     if (type === 'order') error.push('nums')
     acc.push({
       title: type,
-      value: blank === '' ? '' : lesson[type],
+      value: blank === '' ? '' : options[type],
       type: type === 'description' ? 'MD_INPUT' : 'TEXT_AREA',
       error
     })
     return acc
   }, [])
+  return res
+}
+
+export const outputValues = (options: any) => {
+  const res = options.reduce((acc: any, option: any) => {
+    acc[option.title] = option.value
+    return acc
+  }, {})
   return res
 }
 
@@ -62,7 +70,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
 
   // alter gets called when someone clicks button to create a lesson
   const alter = async (options: any) => {
-    const { title, description, order } = options
+    const { title, description, order } = outputValues(options)
     try {
       await createChallenge({
         variables: {
@@ -79,7 +87,12 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
 
   return (
     <div style={{ textAlign: 'center', marginBottom: 20, marginTop: 10 }}>
-      <StyledTitle>Create New Challenge</StyledTitle>
+      <span
+        className="text-primary"
+        style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
+      >
+        Create New Challenge
+      </span>
       <div className="card">
         <FormCard
           values={inputValues(challenge)}
@@ -117,7 +130,7 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
 
   // alter gets called when someone clicks button to update a challenge
   const alter = async (options: any) => {
-    const { title, description, order, id } = options
+    const { title, description, order, id } = outputValues(options)
     try {
       await alterChallenge({
         variables: {

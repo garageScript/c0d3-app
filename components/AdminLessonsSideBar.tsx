@@ -49,5 +49,5 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
     ? makeLessonsList(lessons, setSelectedLesson)
     : [<h1 key={0}>Create new Lesson</h1>]
 
-  return <div className="col-4">{lessonsList}</div>
+  return <div className="col-4 mt-4">{lessonsList}</div>
 }

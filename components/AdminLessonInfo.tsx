@@ -8,6 +8,7 @@ import { Button } from './theme/Button'
 import {
   NewChallenge,
   inputValues,
+  outputValues,
   AdminLessonChallenges
 } from './AdminLessonChallenges'
 import { Lesson } from '../@types/adminLesson'
@@ -47,7 +48,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       videoUrl,
       order,
       chatUrl
-    } = options
+    } = outputValues(options)
     try {
       await alterLesson({
         variables: {
@@ -106,7 +107,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
       videoUrl,
       order,
       chatUrl
-    } = options
+    } = outputValues(options)
     order = parseInt(order)
     try {
       await createLesson({
