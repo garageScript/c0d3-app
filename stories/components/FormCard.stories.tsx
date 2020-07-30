@@ -6,12 +6,10 @@ export default {
   title: 'Components/FormCard'
 }
 
-const mockBtn = [
-  {
-    title: 'Create New Challenge',
-    onClick: () => {}
-  }
-]
+const mockBtn = {
+  title: 'Create New Challenge',
+  onClick: () => {}
+}
 
 const mockValues = [
   { title: 'Nickname', value: 'ChickenFarmer00' },
@@ -20,12 +18,10 @@ const mockValues = [
   { title: 'Level', value: 'noob' }
 ]
 
-export const Basic: React.FC = () => <FormCard values={mockValues} />
-
-export const _WithTitle: React.FC = () => (
-  <FormCard values={mockValues} title="clownfish" />
+export const Basic: React.FC = () => (
+  <FormCard values={mockValues} onSubmit={mockBtn} />
 )
 
-export const _WithButton: React.FC = () => (
-  <FormCard values={mockValues} buttons={mockBtn} title="clownfish" />
+export const _WithTitle: React.FC = () => (
+  <FormCard values={mockValues} title="clownfish" onSubmit={mockBtn} />
 )

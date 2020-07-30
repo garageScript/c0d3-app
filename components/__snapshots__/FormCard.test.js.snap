@@ -1,56 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormCard Component Call function when button is clicked 1`] = `
-<div>
-  <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
-  >
-    <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
-    >
-      <h5
-        data-testid="h5description0"
-      >
-        Description
-      </h5>
-      <div
-        style="background-color: white;"
-      >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
-        >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
-        >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        />
-      </div>
-    </div>
-    <div
-      style="display: inline-block; margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
-      >
-        Create New Challenge
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`FormCard Component Input value should be nothing when value prop is not there 1`] = `
 <div>
   <div
@@ -74,7 +23,224 @@ exports[`FormCard Component Input value should be nothing when value prop is not
       />
     </div>
     <div
-      style="display: inline-block; margin: 10px;"
+      style="margin: 10px;"
+    >
+      <button
+        class="btn bg-success"
+        style="color: rgb(41, 41, 41);"
+      >
+        Create New Challenge
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormCard Component Should call function with updated array as parameter when button is clicked 1`] = `
+<div>
+  <div
+    class="rounded"
+    style="text-align: center; padding: 10px; background-color: white;"
+  >
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+    >
+      <h5
+        data-testid="h5fireStarter0"
+      >
+        FireStarter
+      </h5>
+      <div
+        style="background-color: white;"
+      >
+        <button
+          class="btn"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </button>
+        <button
+          class="btn"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </button>
+        <textarea
+          data-testid="textbox"
+          placeholder="Type something..."
+          style="padding: 1rem; width: 100%;"
+        >
+          Javascript
+        </textarea>
+      </div>
+    </div>
+    <div
+      style="margin: 10px;"
+    >
+      <button
+        class="btn bg-success"
+        style="color: rgb(41, 41, 41);"
+      >
+        Create New Challenge
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormCard Component Should not call onSubmit callback function if there is a nums error 1`] = `
+<div>
+  <div
+    class="rounded"
+    style="text-align: center; padding: 10px; background-color: white;"
+  >
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+    >
+      <h5
+        data-testid="h5fireStarter0"
+      >
+        FireStarter
+      </h5>
+      <div
+        style="background-color: white;"
+      >
+        <button
+          class="btn"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </button>
+        <button
+          class="btn"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </button>
+        <textarea
+          data-testid="textbox"
+          placeholder="Type something..."
+          style="padding: 1rem; width: 100%;"
+        >
+          Javascript
+        </textarea>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+    >
+      <h5
+        data-testid="h5fiary1"
+      >
+        Fiary
+      </h5>
+      <input
+        data-testid="inputfiary"
+        placeholder=""
+        type="text"
+        value=""
+      />
+      <h6
+        class="text-danger"
+      >
+        Numbers only.
+      </h6>
+    </div>
+    <div
+      style="margin: 10px;"
+    >
+      <button
+        class="btn bg-success"
+        style="color: rgb(41, 41, 41);"
+      >
+        Create New Challenge
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormCard Component Should not call onSubmit callback function if there is a require error 1`] = `
+<div>
+  <div
+    class="rounded"
+    style="text-align: center; padding: 10px; background-color: white;"
+  >
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+    >
+      <h5
+        data-testid="h5fireStarter0"
+      >
+        FireStarter
+      </h5>
+      <div
+        style="background-color: white;"
+      >
+        <button
+          class="btn"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </button>
+        <button
+          class="btn"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </button>
+        <textarea
+          data-testid="textbox"
+          placeholder="Type something..."
+          style="padding: 1rem; width: 100%;"
+        >
+          Javascript
+        </textarea>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 10px;"
+    >
+      <h5
+        data-testid="h5fiary1"
+      >
+        Fiary
+      </h5>
+      <input
+        data-testid="inputfiary"
+        placeholder=""
+        type="text"
+        value=""
+      />
+      <h6
+        class="text-danger"
+      >
+        Numbers only.
+      </h6>
+    </div>
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+    >
+      <h5
+        data-testid="h5fiary2"
+      >
+        Fiary
+      </h5>
+      <input
+        data-testid="inputfiary"
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      style="margin: 10px;"
     >
       <button
         class="btn bg-success"
@@ -108,7 +274,60 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
       />
     </div>
     <div
-      style="display: inline-block; margin: 10px;"
+      style="margin: 10px;"
+    >
+      <button
+        class="btn bg-success"
+        style="color: rgb(41, 41, 41);"
+      >
+        Create New Challenge
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FormCard Component Should render MdInput component when type is MD_INPUT 1`] = `
+<div>
+  <div
+    class="rounded"
+    style="text-align: center; padding: 10px; background-color: white;"
+  >
+    <div
+      class="d-flex flex-column"
+      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+    >
+      <h5
+        data-testid="h5fireStarter0"
+      >
+        FireStarter
+      </h5>
+      <div
+        style="background-color: white;"
+      >
+        <button
+          class="btn"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </button>
+        <button
+          class="btn"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </button>
+        <textarea
+          data-testid="textbox"
+          placeholder="Type something..."
+          style="padding: 1rem; width: 100%;"
+        >
+          Javascript
+        </textarea>
+      </div>
+    </div>
+    <div
+      style="margin: 10px;"
     >
       <button
         class="btn bg-success"
@@ -128,7 +347,7 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
     style="text-align: center; padding: 10px; background-color: white;"
   >
     <div
-      style="display: inline-block; margin: 10px;"
+      style="margin: 10px;"
     >
       <button
         class="btn bg-success"
@@ -164,60 +383,7 @@ exports[`FormCard Component Should render text onto textbox when user types 1`] 
       />
     </div>
     <div
-      style="display: inline-block; margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
-      >
-        Create New Challenge
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`FormCard Component Should render textbox when title is description 1`] = `
-<div>
-  <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
-  >
-    <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
-    >
-      <h5
-        data-testid="h5description0"
-      >
-        Description
-      </h5>
-      <div
-        style="background-color: white;"
-      >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
-        >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
-        >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        >
-          Javascript
-        </textarea>
-      </div>
-    </div>
-    <div
-      style="display: inline-block; margin: 10px;"
+      style="margin: 10px;"
     >
       <button
         class="btn bg-success"

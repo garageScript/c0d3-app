@@ -1929,155 +1929,9 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
       value="noob"
     />
   </div>
-</div>
-`;
-
-exports[`Storyshots Components/FormCard With Button 1`] = `
-<div
-  className="rounded"
-  style={
-    Object {
-      "backgroundColor": "white",
-      "border": "2px solid rgb(0,0,0,.3)",
-      "padding": "10px",
-      "textAlign": "center",
-    }
-  }
->
-  <h2
-    style={
-      Object {
-        "marginBottom": 20,
-        "textDecoration": "underline",
-      }
-    }
-  >
-    clownfish
-  </h2>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Nickname0"
-    >
-      Nickname
-    </h5>
-    <input
-      data-testid="inputNickname"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="ChickenFarmer00"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Description1"
-    >
-      Description
-    </h5>
-    <input
-      data-testid="inputDescription"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="Amazing farm of chicken"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title2"
-    >
-      Title
-    </h5>
-    <input
-      data-testid="inputTitle"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="oheuhehe"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 0,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Level3"
-    >
-      Level
-    </h5>
-    <input
-      data-testid="inputLevel"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="noob"
-    />
-  </div>
   <div
     style={
       Object {
-        "display": "inline-block",
         "margin": 10,
       }
     }
@@ -2238,6 +2092,25 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
       type="text"
       value="noob"
     />
+  </div>
+  <div
+    style={
+      Object {
+        "margin": 10,
+      }
+    }
+  >
+    <button
+      className="btn bg-success"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#292929",
+        }
+      }
+    >
+      Create New Challenge
+    </button>
   </div>
 </div>
 `;
