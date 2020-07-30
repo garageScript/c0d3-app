@@ -24,14 +24,22 @@ type LessonChallengesProps = {
   lessonId?: number
 }
 
+//add error to here. for title, order and description
 export const inputValues = (lesson: any, blank?: string) => {
   lesson.hasOwnProperty('challenges') && delete lesson['challenges']
   delete lesson['__typename']
   const fck = Object.keys(lesson)
   const res = fck.reduce((acc: any, type: any) => {
+    const error =
+      type === 'title' || type === 'order' || type === 'description'
+        ? ['require']
+        : []
+    if (type === 'order') error.push('nums')
     acc.push({
       title: type,
-      value: blank === '' ? '' : lesson[type]
+      value: blank === '' ? '' : lesson[type],
+      type: type === 'description' ? 'MD_INPUT' : 'TEXT_AREA',
+      error
     })
     return acc
   }, [])
@@ -75,7 +83,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
       <div className="card">
         <FormCard
           values={inputValues(challenge)}
-          buttons={[{ title: 'Create Challenge', onClick: alter }]}
+          onSubmit={{ title: 'Create Challenge', onClick: alter }}
         />
       </div>
     </div>
@@ -88,7 +96,7 @@ const renderChallenges = (challenges: any, alter: any) => {
       <FormCard
         title={challenge.title}
         values={inputValues(challenge)}
-        buttons={[{ title: 'Update Challenge', onClick: alter }]}
+        onSubmit={{ title: 'Update Challenge', onClick: alter }}
       />
     </div>
   ))

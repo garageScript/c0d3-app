@@ -79,7 +79,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       <div style={{ textAlign: 'center' }} className="card">
         <FormCard
           values={realInputs}
-          buttons={[{ title: 'Update Lesson', onClick: alter }]}
+          onSubmit={{ title: 'Update Lesson', onClick: alter }}
           title={lesson.title}
         />
       </div>
@@ -138,7 +138,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
       </span>
       <FormCard
         values={attributes}
-        buttons={[{ title: 'Create Lesson', onClick: alter }]}
+        onSubmit={{ title: 'Create Lesson', onClick: alter }}
       />
     </div>
   )
