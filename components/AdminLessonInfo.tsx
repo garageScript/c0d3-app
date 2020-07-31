@@ -9,7 +9,9 @@ import {
   NewChallenge,
   inputValues,
   outputValues,
-  AdminLessonChallenges
+  AdminLessonChallenges,
+  checkForErrors,
+  checkForAllErrors
 } from './AdminLessonChallenges'
 import { Lesson } from '../@types/adminLesson'
 
@@ -32,7 +34,7 @@ type NewLessonProps = {
 // Creates card for a lessons's information to update
 const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
   const [alterLesson, { loading, data }] = useMutation(updateLesson)
-
+  const [lessonInfo, setLessonInfo] = useState(inputValues({ ...lesson }))
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
     !loading && data && setLessons(data.updateLessons)
@@ -40,6 +42,12 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
 
   // alter gets called when someone clicks button to update a lesson
   const alter = async (options: any) => {
+    const newOptions = [...options]
+    const errors = checkForAllErrors(newOptions)
+    if (errors) {
+      setLessonInfo(newOptions)
+      return
+    }
     const {
       title,
       description,
@@ -66,9 +74,14 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       throw new Error(err)
     }
   }
-  const lessonInputs = { ...lesson }
 
-  const realInputs = inputValues(lessonInputs)
+  const handleChange = (value: string, i: number) => {
+    const newLessonInfo = [...lessonInfo]
+    newLessonInfo[i].value = value
+    checkForErrors(newLessonInfo[i])
+    setLessonInfo(newLessonInfo)
+  }
+
   return (
     <>
       <span
@@ -79,8 +92,8 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       </span>
       <div style={{ textAlign: 'center' }} className="card">
         <FormCard
-          onChange={() => {}}
-          values={realInputs}
+          onChange={handleChange}
+          values={lessonInfo}
           onSubmit={{ title: 'Update Lesson', onClick: alter }}
           title={lesson.title}
         />
@@ -92,6 +105,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
 // Renders when someone clicks on `create new button` on the sidebar
 const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
   const [createLesson, { loading, data }] = useMutation(createNewLesson)
+  const [lessonInfo, setLessonInfo] = useState(inputValues({ ...lesson }, ''))
 
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
@@ -100,6 +114,12 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
 
   // alter gets called when someone clicks button to create a lesson
   const alter = async (options: any) => {
+    const newOptions = [...options]
+    const errors = checkForAllErrors(newOptions)
+    if (errors) {
+      setLessonInfo(newOptions)
+      return
+    }
     let {
       title,
       description,
@@ -127,8 +147,12 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
     }
   }
 
-  // makes a copy of `lesson` variable without values to pass into FormCard
-  const attributes = inputValues(lesson, '')
+  const handleChange = (value: string, i: number) => {
+    const newLessonInfo = [...lessonInfo]
+    newLessonInfo[i].value = value
+    checkForErrors(newLessonInfo[i])
+    setLessonInfo(newLessonInfo)
+  }
 
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className=" col-8">
@@ -139,8 +163,8 @@ const NewLesson: React.FC<NewLessonProps> = ({ lesson, setLessons }) => {
         Create New Lesson
       </span>
       <FormCard
-        onChange={() => {}}
-        values={attributes}
+        onChange={handleChange}
+        values={lessonInfo}
         onSubmit={{ title: 'Create Lesson', onClick: alter }}
       />
     </div>
