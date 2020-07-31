@@ -6,13 +6,12 @@ import { FormCard } from './FormCard'
 import _ from 'lodash'
 import { Button } from './theme/Button'
 import {
-  NewChallenge,
   inputValues,
   outputValues,
-  AdminLessonChallenges,
   checkForErrors,
   checkForAllErrors
-} from './AdminLessonChallenges'
+} from '../helpers/admin/lessonHelpers'
+import { NewChallenge, AdminLessonChallenges } from './AdminLessonChallenges'
 import { Lesson } from '../@types/adminLesson'
 
 type LessonInfoProps = {
@@ -44,6 +43,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
   const alter = async (options: any) => {
     const newOptions = [...options]
     const errors = checkForAllErrors(newOptions)
+    console.log(newOptions)
     if (errors) {
       setLessonInfo(newOptions)
       return
@@ -66,7 +66,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
           docUrl,
           githubUrl,
           videoUrl,
-          order,
+          order: parseInt(order),
           chatUrl
         }
       })
