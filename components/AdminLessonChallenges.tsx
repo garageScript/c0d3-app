@@ -95,6 +95,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
       </span>
       <div className="card">
         <FormCard
+          onChange={() => {}}
           values={inputValues(challenge)}
           onSubmit={{ title: 'Create Challenge', onClick: alter }}
         />
@@ -107,6 +108,7 @@ const renderChallenges = (challenges: any, alter: any) => {
   return challenges.map((challenge: Challenge, i: number) => (
     <div className="card" style={{ marginBottom: 20 }} key={i}>
       <FormCard
+        onChange={() => {}}
         title={challenge.title}
         values={inputValues(challenge)}
         onSubmit={{ title: 'Update Challenge', onClick: alter }}
