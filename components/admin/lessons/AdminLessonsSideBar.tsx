@@ -26,7 +26,7 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
       key={arrIndex}
       data-testid="challenge-title"
       role="tab"
-      className={arrIndex === selectedLesson ? 'nav-link active' : 'nav-link'}
+      className={'nav-link' + (arrIndex === selectedLesson ? ' active' : '')}
       data-toggle="pill"
       style={{ wordBreak: 'break-word', cursor: 'pointer' }}
       onClick={() => setSelectedLesson(arrIndex)}
