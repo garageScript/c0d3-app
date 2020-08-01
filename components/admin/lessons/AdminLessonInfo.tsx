@@ -30,15 +30,15 @@ type NewLessonProps = {
 // Creates card for a lessons's information to update
 const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
   const [alterLesson, { loading, data }] = useMutation(updateLesson)
-  const [lessonInfo, setLessonInfo] = useState(inputValues({ ...lesson }))
+  const [lessonInfo, setLessonInfo] = useState(inputValues(lesson))
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
     !loading && data && setLessons(data.updateLessons)
   }, [data])
 
   // alter gets called when someone clicks button to update a lesson
-  const alter = async (options: any) => {
-    const newOptions = [...options]
+  const alter = async () => {
+    const newOptions = [lessonInfo]
     const errors = checkForAllErrors(newOptions)
     if (errors) {
       setLessonInfo(newOptions)
@@ -52,7 +52,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       videoUrl,
       order,
       chatUrl
-    } = outputValues(options)
+    } = outputValues(lessonInfo)
     try {
       await alterLesson({
         variables: {
@@ -158,7 +158,6 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
     checkForErrors(newLessonInfo[i])
     setLessonInfo(newLessonInfo)
   }
-
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className=" col-8">
       <span
