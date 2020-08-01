@@ -31,7 +31,13 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
   setSelectedLesson
 }) => {
   const lessonListData = lessons || []
-  lessonListData.push({ title: 'Create New Lesson' })
+
+  //check if create new lesson has already been pushed to the lessons array
+  const lastIndex = lessonListData.length - 1
+  const { title } = lessonListData[lastIndex]
+  if (title !== 'Create New Lesson') {
+    lessonListData.push({ title: 'Create New Lesson' })
+  }
   const lessonList = lessonListData.map((obj: any, i: number) => (
     <LessonTitle
       key={i}
