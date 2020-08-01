@@ -1,5 +1,5 @@
 import React from 'react'
-import { Lesson } from '../graphql/index'
+import { Lesson } from '../../../graphql/index'
 
 type SideBarLessonProps = {
   lessons: Lesson[] | undefined
@@ -30,8 +30,8 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
   lessons,
   setSelectedLesson
 }) => {
-  let lessonListData = lessons || []
-  lessonListData = lessonListData.concat({ title: 'Create New Lesson' })
+  const lessonListData = lessons || []
+  lessonListData.push({ title: 'Create New Lesson' })
   const lessonList = lessonListData.map((obj: any, i: number) => (
     <LessonTitle
       key={i}
