@@ -1,8 +1,8 @@
 import React from 'react'
-import { Lesson } from '../@types/adminLesson'
+import { Lesson } from '../graphql/index'
 
 type SideBarLessonProps = {
-  lessons: Lesson[]
+  lessons: Lesson[] | undefined
   setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   setSelectedLesson: React.Dispatch<React.SetStateAction<number>>
 }

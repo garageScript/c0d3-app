@@ -3,9 +3,9 @@ import { AdminLessonsSideBar } from '../../components/AdminLessonsSideBar'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import Layout from '../../components/Layout'
 import { withGetApp, GetAppProps } from '../../graphql'
-import { Lesson } from '../../@types/adminLesson'
+import { Lesson } from '../../graphql/index'
 type AdminLessonsProps = {
-  lessons: any
+  lessons: Lesson[] | undefined
   setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
 }
 
