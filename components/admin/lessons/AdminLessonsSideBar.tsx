@@ -9,16 +9,20 @@ type SideBarLessonProps = {
 
 type LessonProps = {
   obj: { title: string }
-  i: number
+  lessonId: number
   setSelectedLesson: React.Dispatch<React.SetStateAction<number>>
 }
 
-const LessonTitle: React.FC<LessonProps> = ({ obj, setSelectedLesson, i }) => (
-  <div key={i} data-testid="challenge-title" className="card mb-2">
+const LessonTitle: React.FC<LessonProps> = ({
+  obj,
+  setSelectedLesson,
+  lessonId
+}) => (
+  <div key={lessonId} data-testid="challenge-title" className="card mb-2">
     <div className="btn d-flex justify-content-center">
       <div
         style={{ wordBreak: 'break-word' }}
-        onClick={() => setSelectedLesson(i)}
+        onClick={() => setSelectedLesson(lessonId)}
       >
         <h4 style={{ margin: 'auto', wordBreak: 'break-word' }}>{obj.title}</h4>
       </div>
@@ -38,10 +42,10 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
   if (title !== 'Create New Lesson') {
     lessonListData.push({ title: 'Create New Lesson' })
   }
-  const lessonList = lessonListData.map((obj: any, i: number) => (
+  const lessonList = lessonListData.map((obj: any, lessonId: number) => (
     <LessonTitle
-      key={i}
-      i={i}
+      key={lessonId}
+      lessonId={lessonId}
       obj={obj}
       setSelectedLesson={setSelectedLesson}
     />
