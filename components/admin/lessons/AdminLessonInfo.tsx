@@ -11,6 +11,8 @@ import {
   checkForAllErrors
 } from '../../../helpers/admin/lessonHelpers'
 import { Lesson } from '../../../graphql/index'
+import { Button } from '../../theme/Button'
+import { NewChallenge, AdminLessonChallenges } from './AdminLessonChallenges'
 
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
@@ -30,15 +32,15 @@ type NewLessonProps = {
 // Creates card for a lessons's information to update
 const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
   const [alterLesson, { loading, data }] = useMutation(updateLesson)
-  const [lessonInfo, setLessonInfo] = useState(inputValues({ ...lesson }))
+  const [lessonInfo, setLessonInfo] = useState(inputValues(lesson))
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
     !loading && data && setLessons(data.updateLessons)
   }, [data])
 
   // alter gets called when someone clicks button to update a lesson
-  const alter = async (options: any) => {
-    const newOptions = [...options]
+  const alter = async () => {
+    const newOptions = [lessonInfo]
     const errors = checkForAllErrors(newOptions)
     if (errors) {
       setLessonInfo(newOptions)
@@ -52,7 +54,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       videoUrl,
       order,
       chatUrl
-    } = outputValues(options)
+    } = outputValues(lessonInfo)
     try {
       await alterLesson({
         variables: {
@@ -158,7 +160,6 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
     checkForErrors(newLessonInfo[i])
     setLessonInfo(newLessonInfo)
   }
-
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className=" col-8">
       <span
@@ -181,6 +182,8 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   lessons,
   selectedLesson
 }) => {
+  const [newChallengeView, setNewChallengeView] = useState(false)
+
   // true when user clicks on `create new lesson` button
   if (lessons && selectedLesson === lessons.length - 1) {
     return <NewLesson setLessons={setLessons} />
@@ -190,7 +193,42 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   const lesson = lessons && lessons[selectedLesson]
   return (
     <div key={_.uniqueId()} style={{ textAlign: 'center' }} className="col-8">
-      <LessonBase setLessons={setLessons} lesson={lesson} />
+      <div style={{ position: 'absolute', right: 0, top: 0 }}>
+        <Button
+          onClick={() => setNewChallengeView(!newChallengeView)}
+          type="success"
+        >
+          {newChallengeView ? 'Back to Lesson Info' : 'Create New Challenge'}
+        </Button>
+      </div>
+      {newChallengeView ? (
+        <NewChallenge
+          setLessons={setLessons}
+          // challenge={challengeAttributes}
+          lessonId={parseInt(lesson ? lesson.id + '' : '')}
+        />
+      ) : (
+        <>
+          <LessonBase setLessons={setLessons} lesson={lesson} />
+          <hr />
+          <span
+            className="text-primary"
+            style={{
+              fontSize: '4rem',
+              textAlign: 'center',
+              fontWeight: 'bold'
+            }}
+          >
+            Lesson Challenges
+          </span>
+
+          <AdminLessonChallenges
+            challenges={lesson && lesson.challenges}
+            lessonId={parseInt(lesson ? lesson.id + '' : '')}
+            setLessons={setLessons}
+          />
+        </>
+      )}
     </div>
   )
 }

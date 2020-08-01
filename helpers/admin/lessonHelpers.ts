@@ -1,5 +1,5 @@
 //add error to here. for title, order and description
-export const inputValues = (options: any, blank?: string) => {
+export const inputValues = (options: any) => {
   //if lessons are passed in, then challenges property must be deleted
   options.hasOwnProperty('lessonId') && delete options.lessonId
   options.hasOwnProperty('challenges') && delete options['challenges']
@@ -7,11 +7,7 @@ export const inputValues = (options: any, blank?: string) => {
   const keys = Object.keys(options)
   const res = keys.reduce((acc: any, type: any) => {
     let value
-
-    //checks if value is 0
-    if (blank === '') {
-      value = ''
-    } else if (options[type] === 0) {
+    if (options[type] === 0) {
       value = '0'
     } else {
       value = `${options[type] || ''}`
@@ -51,19 +47,14 @@ export const checkForErrors = (newChallengeInfo: {
       newChallengeInfo.error = 'Numbers only'
       errorSeen = true
     } else {
-      if (newChallengeInfo.hasOwnProperty('error')) {
-        delete newChallengeInfo.error
-      }
+      newChallengeInfo.hasOwnProperty('error') && delete newChallengeInfo.error
     }
-  }
-  if (title === 'title' || title === 'description') {
+  } else if (title === 'title' || title === 'description') {
     if (!value) {
       newChallengeInfo.error = 'Required'
       errorSeen = true
     } else {
-      if (newChallengeInfo.hasOwnProperty('error')) {
-        delete newChallengeInfo.error
-      }
+      newChallengeInfo.hasOwnProperty('error') && delete newChallengeInfo.error
     }
   }
   return errorSeen
