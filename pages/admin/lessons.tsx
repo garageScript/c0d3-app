@@ -16,10 +16,13 @@ const AdminLessons: React.FC<AdminLessonsProps> = ({ lessons, setLessons }) => {
     <div className="row mt-4">
       <AdminLessonsSideBar
         setLessons={setLessons}
+        selectedLesson={selectedLesson}
         lessons={lessons}
         setSelectedLesson={setSelectedLesson}
       />
-      <h1>{selectedLesson}</h1>
+      <div key={_.uniqueId()} style={{ textAlign: 'center' }} className="col-8">
+        <h1>{selectedLesson}</h1>
+      </div>
     </div>
   )
 }
