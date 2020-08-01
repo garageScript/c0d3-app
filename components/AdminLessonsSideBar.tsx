@@ -26,10 +26,13 @@ const LessonTitle: React.FC<LessonProps> = ({ obj, setSelectedLesson, i }) => (
   </div>
 )
 
-const makeLessonsList = (lessons: any, setSelectedLesson: any) => {
-  const lessonCpy = [...lessons]
-  lessonCpy.push({ title: 'Create New Lesson' })
-  const lessonList = lessonCpy.map((obj: { title: string }, i: number) => (
+export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
+  lessons,
+  setSelectedLesson
+}) => {
+  let lessonListData = lessons || []
+  lessonListData = lessonListData.concat({ title: 'Create New Lesson' })
+  const lessonList = lessonListData.map((obj: any, i: number) => (
     <LessonTitle
       key={i}
       i={i}
@@ -38,16 +41,5 @@ const makeLessonsList = (lessons: any, setSelectedLesson: any) => {
     />
   ))
 
-  return lessonList
-}
-
-export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
-  lessons,
-  setSelectedLesson
-}) => {
-  const lessonsList = lessons
-    ? makeLessonsList(lessons, setSelectedLesson)
-    : [<h1 key={0}>Create new Lesson</h1>]
-
-  return <div className="col-4 mt-4">{lessonsList}</div>
+  return <div className="col-4 mt-4">{lessonList}</div>
 }
