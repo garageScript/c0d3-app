@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { AdminLessonInfo } from '../../components/admin/lessons/AdminLessonInfo'
 import { AdminLessonsSideBar } from '../../components/admin/lessons/AdminLessonsSideBar'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import Layout from '../../components/Layout'
@@ -20,9 +21,11 @@ const AdminLessons: React.FC<AdminLessonsProps> = ({ lessons, setLessons }) => {
         lessons={lessons}
         setSelectedLesson={setSelectedLesson}
       />
-      <div key={_.uniqueId()} style={{ textAlign: 'center' }} className="col-8">
-        <h1>{selectedLesson}</h1>
-      </div>
+      <AdminLessonInfo
+        setLessons={setLessons}
+        lessons={lessons}
+        selectedLesson={selectedLesson}
+      />
     </div>
   )
 }
