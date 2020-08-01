@@ -1,9 +1,9 @@
 //add error to here. for title, order and description
 export const inputValues = (options: any) => {
   //if lessons are passed in, then challenges property must be deleted
-  options.hasOwnProperty('lessonId') && delete options.lessonId
+  options.hasOwnProperty('lessonId') && delete options['lessonId']
   options.hasOwnProperty('challenges') && delete options['challenges']
-  delete options['__typename']
+  options.hasOwnProperty('__typename') && delete options['__typename']
   const keys = Object.keys(options)
   const res = keys.reduce((acc: any, type: any) => {
     let value

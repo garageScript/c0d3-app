@@ -119,8 +119,8 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   }, [data])
 
   // alter gets called when someone clicks button to create a lesson
-  const alter = async (options: any) => {
-    const newOptions = [...options]
+  const alter = async () => {
+    const newOptions = [...lessonInfo]
     const errors = checkForAllErrors(newOptions)
     if (errors) {
       setLessonInfo(newOptions)
@@ -134,7 +134,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       videoUrl,
       order,
       chatUrl
-    } = outputValues(options)
+    } = outputValues(lessonInfo)
     try {
       await createLesson({
         variables: {
@@ -147,6 +147,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
           chatUrl
         }
       })
+      window.location.reload()
     } catch (err) {
       throw new Error(err)
     }
@@ -180,15 +181,15 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   lessons,
   selectedLesson
 }) => {
+  console.log(selectedLesson)
   // true when user clicks on `create new lesson` button
   if (lessons && selectedLesson === lessons.length - 1) {
     return <NewLesson setLessons={setLessons} />
   }
-
   // set currently selected lesson
   const lesson = lessons && lessons[selectedLesson]
   return (
-    <div key={_.uniqueId()} style={{ textAlign: 'center' }} className="col-8">
+    <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
       <LessonBase setLessons={setLessons} lesson={lesson} />
     </div>
   )
