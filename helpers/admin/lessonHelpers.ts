@@ -56,11 +56,8 @@ export const checkForErrors = (option: {
 //checks for error for each element in the `inputvalues` array
 export const checkForAllErrors = (options: any) => {
   let error = false
-  options.some((option: any) => {
-    if (checkForErrors(option)) {
-      error = true
-      return true
-    }
+  options.forEach((option: any) => {
+    if (checkForErrors(option)) error = true
   })
   return error
 }
