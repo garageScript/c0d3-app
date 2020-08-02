@@ -1,18 +1,10 @@
-//add error to here. for title, order and description
-export const inputValues = (options: any) => {
-  //if lessons are passed in, then challenges property must be deleted
-  options.hasOwnProperty('lessonId') && delete options['lessonId']
-  options.hasOwnProperty('challenges') && delete options['challenges']
+// creates usuable array from graphql data to use as a prop when using FormCard component
+export const inputValues = (options: any, deleteProp: string) => {
+  options.hasOwnProperty(deleteProp) && delete options[deleteProp]
   options.hasOwnProperty('__typename') && delete options['__typename']
   const keys = Object.keys(options)
   const res = keys.reduce((acc: any, type: any) => {
-    let value
-
-    if (options[type] === 0) {
-      value = '0'
-    } else {
-      value = `${options[type] || ''}`
-    }
+    const value = options[type] === 0 ? '0' : `${options[type] || ''}`
     acc.push({
       title: type,
       value,
@@ -23,7 +15,7 @@ export const inputValues = (options: any) => {
   return res
 }
 
-//have to check for errors in here
+// turns the array used in FormCard component into an object, to be used when making mutation requests
 export const outputValues = (options: any) => {
   const res = options.reduce((acc: any, option: any) => {
     acc[option.title] = option.value
@@ -32,6 +24,7 @@ export const outputValues = (options: any) => {
   return res
 }
 
+//checks for error for one element in the `inputvalues` array
 export const checkForErrors = (newChallengeInfo: {
   title: string
   value: string
@@ -61,6 +54,7 @@ export const checkForErrors = (newChallengeInfo: {
   return errorSeen
 }
 
+//checks for error for each element in the `inputvalues` array
 export const checkForAllErrors = (options: any) => {
   let error = false
   options.forEach((option: any) => {
