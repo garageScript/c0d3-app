@@ -162,7 +162,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
     setLessonInfo(newLessonInfo)
   }
   return (
-    <div style={{ textAlign: 'center', marginBottom: 20 }} className=" col-8">
+    <div style={{ textAlign: 'center', marginBottom: 20 }} className="col-8">
       <span
         className="text-primary"
         style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
