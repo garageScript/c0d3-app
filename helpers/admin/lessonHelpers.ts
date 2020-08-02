@@ -32,7 +32,7 @@ export const checkForErrors = (newChallengeInfo: {
   hasOwnProperty: (arg0: string) => any
 }) => {
   let errorSeen = false
-  let { title, value } = newChallengeInfo
+  const { title, value } = newChallengeInfo
   if (title === 'order') {
     if (!value) {
       newChallengeInfo.error = 'Required'
