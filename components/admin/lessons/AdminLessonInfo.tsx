@@ -40,7 +40,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
 
   // alter gets called when someone clicks button to update a lesson
   const alter = async () => {
-    const newOptions = [lessonInfo]
+    const newOptions = [...lessonInfo]
     const errors = checkForAllErrors(newOptions)
     if (errors) {
       setLessonInfo(newOptions)
