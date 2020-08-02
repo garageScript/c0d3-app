@@ -1,6 +1,6 @@
 // creates usuable array from graphql data to use as a prop when using FormCard component
-export const inputValues = (options: any, deleteProp: string) => {
-  options.hasOwnProperty(deleteProp) && delete options[deleteProp]
+export const inputValues = (options: any, deleteProp?: string) => {
+  deleteProp && options.hasOwnProperty(deleteProp) && delete options[deleteProp]
   options.hasOwnProperty('__typename') && delete options['__typename']
   const keys = Object.keys(options)
   const res = keys.reduce((acc: any, type: any) => {

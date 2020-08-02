@@ -113,9 +113,7 @@ const newLessonAttributes = {
 // Renders when someone clicks on `create new button` on the sidebar
 const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   const [createLesson, { loading, data }] = useMutation(createNewLesson)
-  const [lessonInfo, setLessonInfo] = useState(
-    inputValues(newLessonAttributes, 'challenges')
-  )
+  const [lessonInfo, setLessonInfo] = useState(inputValues(newLessonAttributes))
 
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
