@@ -3,15 +3,14 @@ export const inputValues = (options: any, deleteProp?: string) => {
   deleteProp && options.hasOwnProperty(deleteProp) && delete options[deleteProp]
   options.hasOwnProperty('__typename') && delete options['__typename']
   const keys = Object.keys(options)
-  const res = keys.reduce((acc: any, type: any) => {
+  const res = keys.map((type: any) => {
     const value = options[type] === 0 ? '0' : `${options[type] || ''}`
-    acc.push({
+    return {
       title: type,
       value,
       type: type === 'description' ? 'MD_INPUT' : 'TEXT_AREA'
-    })
-    return acc
-  }, [])
+    }
+  })
   return res
 }
 
@@ -25,30 +24,30 @@ export const outputValues = (options: any) => {
 }
 
 //checks for error for one element in the `inputvalues` array
-export const checkForErrors = (newChallengeInfo: {
+export const checkForErrors = (option: {
   title: string
   value: string
   error: string
   hasOwnProperty: (arg0: string) => any
 }) => {
   let errorSeen = false
-  const { title, value } = newChallengeInfo
+  const { title, value } = option
   if (title === 'order') {
     if (!value) {
-      newChallengeInfo.error = 'Required'
+      option.error = 'Required'
       errorSeen = true
     } else if (!value.match(/^[0-9]+$/)) {
-      newChallengeInfo.error = 'Numbers only'
+      option.error = 'Numbers only'
       errorSeen = true
     } else {
-      newChallengeInfo.hasOwnProperty('error') && delete newChallengeInfo.error
+      option.hasOwnProperty('error') && delete option.error
     }
   } else if (title === 'title' || title === 'description') {
     if (!value) {
-      newChallengeInfo.error = 'Required'
+      option.error = 'Required'
       errorSeen = true
     } else {
-      newChallengeInfo.hasOwnProperty('error') && delete newChallengeInfo.error
+      option.hasOwnProperty('error') && delete option.error
     }
   }
   return errorSeen
@@ -57,8 +56,11 @@ export const checkForErrors = (newChallengeInfo: {
 //checks for error for each element in the `inputvalues` array
 export const checkForAllErrors = (options: any) => {
   let error = false
-  options.forEach((option: any) => {
-    if (checkForErrors(option)) error = true
+  options.some((option: any) => {
+    if (checkForErrors(option)) {
+      error = true
+      return true
+    }
   })
   return error
 }
