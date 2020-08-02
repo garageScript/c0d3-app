@@ -24,12 +24,7 @@ export const outputValues = (options: any) => {
 }
 
 //checks for error for one element in the `inputvalues` array
-export const checkForErrors = (option: {
-  title: string
-  value: string
-  error: string
-  hasOwnProperty: (arg0: string) => any
-}) => {
+export const checkForErrors = (option: any) => {
   let errorSeen = false
   const { title, value } = option
   if (title === 'order') {
