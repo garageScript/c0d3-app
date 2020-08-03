@@ -11,6 +11,7 @@ import {
   checkForAllErrors,
   makeGraphqlVariable
 } from '../../../helpers/admin/lessonHelpers'
+import { titleStyle } from './AdminLessonInfo'
 
 const challengeAttributes = {
   title: '',
@@ -76,10 +77,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
 
   return (
     <div style={{ textAlign: 'center', marginBottom: 20, marginTop: 10 }}>
-      <span
-        className="text-primary"
-        style={{ fontSize: '4rem', fontWeight: 'bold' }}
-      >
+      <span className="text-primary" style={titleStyle}>
         Create New Challenge
       </span>
       <div className="card">

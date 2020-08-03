@@ -14,7 +14,7 @@ import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 import { Button } from '../../theme/Button'
 
-const titleStyle: React.CSSProperties | undefined = {
+export const titleStyle: React.CSSProperties | undefined = {
   fontSize: '4rem',
   fontWeight: 'bold'
 }
