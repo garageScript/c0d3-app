@@ -4,7 +4,7 @@ import _ from 'lodash'
 import updateChallenge from '../../../graphql/queries/updateChallenge'
 import { FormCard } from '../../FormCard'
 import createNewChallenge from '../../../graphql/queries/createChallenge'
-import { Lesson, Challenge } from '../../../graphql/index'
+import { Lesson, Challenge, Maybe } from '../../../graphql/index'
 import {
   getPropertyArr,
   checkForErrors,
@@ -19,8 +19,8 @@ const challengeAttributes = {
   id: ''
 }
 
-type OneChallengeProps = {
-  challenge: Challenge
+type LessonChallengeProps = {
+  challenge: Maybe<Challenge>
   alter: (options: any) => Promise<void>
 }
 
@@ -30,7 +30,7 @@ type NewChallengeProps = {
 }
 type LessonChallengesProps = {
   setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
-  challenges?: any
+  challenges: Maybe<Challenge>[] | null | undefined
   lessonId?: number
 }
 
@@ -93,7 +93,10 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   )
 }
 
-const LessonChallenge: React.FC<OneChallengeProps> = ({ challenge, alter }) => {
+const LessonChallenge: React.FC<LessonChallengeProps> = ({
+  challenge,
+  alter
+}) => {
   const [challengeProperties, setChallengeProperties] = useState(
     getPropertyArr(challenge, ['lessonId'])
   )
@@ -122,7 +125,7 @@ const LessonChallenge: React.FC<OneChallengeProps> = ({ challenge, alter }) => {
     <div className="card" style={{ marginBottom: 20 }}>
       <FormCard
         onChange={handleChange}
-        title={challenge.title + '' || ''}
+        title={(challenge && challenge.title + '') || ''}
         values={challengeProperties}
         onSubmit={handleSubmit}
       />
@@ -154,7 +157,7 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
   }
   const allChallenges = !challenges
     ? []
-    : challenges.map((challenge: Challenge, key: number) => (
+    : challenges.map((challenge: Maybe<Challenge>, key: number) => (
         <LessonChallenge challenge={challenge} alter={alter} key={key} />
       ))
 
