@@ -57,10 +57,12 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
       setChallengeProperties(newProperties)
       return
     }
+
     try {
       await createChallenge(
         makeGraphqlVariable(challengeProperties, { lessonId })
       )
+
       window.location.reload()
     } catch (err) {
       throw new Error(err)
@@ -152,6 +154,7 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
       throw new Error(err)
     }
   }
+
   const allChallenges = !challenges
     ? []
     : challenges.map((challenge: Maybe<Challenge>, key: number) => (
