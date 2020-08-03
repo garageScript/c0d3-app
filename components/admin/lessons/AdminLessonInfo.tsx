@@ -6,11 +6,13 @@ import { FormCard } from '../../FormCard'
 import _ from 'lodash'
 import {
   getPropertyArr,
-  makeLessonVariable,
+  makeGraphqlVariable,
   checkForErrors,
   checkForAllErrors
 } from '../../../helpers/admin/lessonHelpers'
 import { Lesson } from '../../../graphql/index'
+import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
+import { Button } from '../../theme/Button'
 
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
@@ -47,7 +49,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
       return
     }
     try {
-      await alterLesson(makeLessonVariable(lessonProperties))
+      await alterLesson(makeGraphqlVariable(lessonProperties))
     } catch (err) {
       throw new Error(err)
     }
@@ -111,7 +113,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       return
     }
     try {
-      await createLesson(makeLessonVariable(lessonProperties))
+      await createLesson(makeGraphqlVariable(lessonProperties))
       window.location.reload()
     } catch (err) {
       throw new Error(err)
@@ -147,6 +149,8 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   lessons,
   selectedLesson
 }) => {
+  const [newChallengeView, setNewChallengeView] = useState(false)
+
   // true when user clicks on `create new lesson` button
   if (lessons && selectedLesson === lessons.length - 1) {
     return <NewLesson setLessons={setLessons} />
@@ -155,7 +159,42 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   const lesson = lessons && lessons[selectedLesson]
   return (
     <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
-      <EditLesson setLessons={setLessons} lesson={lesson} />
+      <div style={{ position: 'absolute', right: 0, top: 0 }}>
+        <Button
+          onClick={() => setNewChallengeView(!newChallengeView)}
+          type="success"
+        >
+          {newChallengeView ? 'Back to Lesson Info' : 'Create New Challenge'}
+        </Button>
+      </div>
+      {newChallengeView ? (
+        <NewChallenge
+          setLessons={setLessons}
+          // challenge={challengeAttributes}
+          lessonId={parseInt(lesson ? lesson.id + '' : '')}
+        />
+      ) : (
+        <>
+          <EditLesson setLessons={setLessons} lesson={lesson} />
+          <hr />
+          <span
+            className="text-primary"
+            style={{
+              fontSize: '4rem',
+              textAlign: 'center',
+              fontWeight: 'bold'
+            }}
+          >
+            Lesson Challenges
+          </span>
+
+          <AdminLessonChallenges
+            challenges={lesson && lesson.challenges}
+            lessonId={parseInt(lesson ? lesson.id + '' : '')}
+            setLessons={setLessons}
+          />
+        </>
+      )}
     </div>
   )
 }

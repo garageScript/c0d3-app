@@ -18,7 +18,7 @@ export const getPropertyArr = (options: any, deleteProps?: string[]) => {
 }
 
 // turns the array used in FormCard component into an object, to be used when making mutation requests
-export const makeLessonVariable = (options: any) => {
+export const makeGraphqlVariable = (options: any, addProp?: any) => {
   const res = options.reduce((acc: any, option: any) => {
     acc[option.title] = option.value
     return acc
@@ -28,6 +28,13 @@ export const makeLessonVariable = (options: any) => {
 
   if (res.hasOwnProperty('id')) {
     res.id = parseInt(res.id ? res.id + '' : '')
+  }
+
+  if (addProp) {
+    const keys = Object.keys(addProp)
+    keys.forEach((propertyName: string) => {
+      res[propertyName] = addProp[propertyName]
+    })
   }
 
   return { variables: res }
