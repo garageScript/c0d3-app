@@ -14,6 +14,11 @@ import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 import { Button } from '../../theme/Button'
 
+const titleStyle: React.CSSProperties | undefined = {
+  fontSize: '4rem',
+  fontWeight: 'bold'
+}
+
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
   setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
@@ -64,10 +69,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
 
   return (
     <>
-      <span
-        className="text-primary"
-        style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
-      >
+      <span className="text-primary" style={titleStyle}>
         Lesson Info
       </span>
       <div style={{ textAlign: 'center' }} className="card">
@@ -129,10 +131,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
 
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className="col-8">
-      <span
-        className="text-primary"
-        style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
-      >
+      <span className="text-primary" style={titleStyle}>
         Create New Lesson
       </span>
       <FormCard
@@ -158,43 +157,37 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
 
   // set currently selected lesson
   const lesson = lessons && lessons[selectedLesson]
+
+  const lessonId = parseInt(lesson ? lesson.id + '' : '')
+
+  const newChallengeClick = () => setNewChallengeView(!newChallengeView)
+
+  const viewOption = newChallengeView ? (
+    <NewChallenge setLessons={setLessons} lessonId={lessonId} />
+  ) : (
+    <>
+      <EditLesson setLessons={setLessons} lesson={lesson} />
+      <hr />
+      <span className="text-primary" style={titleStyle}>
+        Lesson Challenges
+      </span>
+
+      <AdminLessonChallenges
+        challenges={lesson && lesson.challenges}
+        lessonId={lessonId}
+        setLessons={setLessons}
+      />
+    </>
+  )
+
   return (
     <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
       <div style={{ position: 'absolute', right: 0, top: 0 }}>
-        <Button
-          onClick={() => setNewChallengeView(!newChallengeView)}
-          type="success"
-        >
+        <Button onClick={newChallengeClick} type="success">
           {newChallengeView ? 'Back to Lesson Info' : 'Create New Challenge'}
         </Button>
       </div>
-      {newChallengeView ? (
-        <NewChallenge
-          setLessons={setLessons}
-          lessonId={parseInt(lesson ? lesson.id + '' : '')}
-        />
-      ) : (
-        <>
-          <EditLesson setLessons={setLessons} lesson={lesson} />
-          <hr />
-          <span
-            className="text-primary"
-            style={{
-              fontSize: '4rem',
-              textAlign: 'center',
-              fontWeight: 'bold'
-            }}
-          >
-            Lesson Challenges
-          </span>
-
-          <AdminLessonChallenges
-            challenges={lesson && lesson.challenges}
-            lessonId={parseInt(lesson ? lesson.id + '' : '')}
-            setLessons={setLessons}
-          />
-        </>
-      )}
+      {viewOption}
     </div>
   )
 }
