@@ -5,7 +5,7 @@ import updateLesson from '../../../graphql/queries/updateLesson'
 import { FormCard } from '../../FormCard'
 import _ from 'lodash'
 import {
-  inputValues,
+  getPropertyArr,
   makeLessonVariable,
   checkForErrors,
   checkForAllErrors
@@ -31,7 +31,7 @@ type NewLessonProps = {
 const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   const [alterLesson, { loading, data }] = useMutation(updateLesson)
   const [lessonProperties, setLessonProperties] = useState(
-    inputValues(lesson, 'challenges')
+    getPropertyArr(lesson, ['challenges'])
   )
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
@@ -94,7 +94,7 @@ const newLessonAttributes = {
 const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   const [createLesson, { loading, data }] = useMutation(createNewLesson)
   const [lessonProperties, setLessonProperties] = useState(
-    inputValues(newLessonAttributes)
+    getPropertyArr(newLessonAttributes)
   )
 
   // when data is fully loaded after sending mutation request, update front-end lessons info
