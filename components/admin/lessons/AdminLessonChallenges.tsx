@@ -37,7 +37,6 @@ type LessonChallengesProps = {
 
 // Renders when someone clicks on `create new button` on the sidebar
 export const NewChallenge: React.FC<NewChallengeProps> = ({
-  // challenge,
   setLessons,
   lessonId
 }) => {
