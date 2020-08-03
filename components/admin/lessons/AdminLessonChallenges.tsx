@@ -78,7 +78,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
     <div style={{ textAlign: 'center', marginBottom: 20, marginTop: 10 }}>
       <span
         className="text-primary"
-        style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
+        style={{ fontSize: '4rem', fontWeight: 'bold' }}
       >
         Create New Challenge
       </span>
