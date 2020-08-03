@@ -155,6 +155,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   if (lessons && selectedLesson === lessons.length - 1) {
     return <NewLesson setLessons={setLessons} />
   }
+
   // set currently selected lesson
   const lesson = lessons && lessons[selectedLesson]
   return (
@@ -170,7 +171,6 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
       {newChallengeView ? (
         <NewChallenge
           setLessons={setLessons}
-          // challenge={challengeAttributes}
           lessonId={parseInt(lesson ? lesson.id + '' : '')}
         />
       ) : (
