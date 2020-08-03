@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import _ from 'lodash'
 import updateChallenge from '../../../graphql/queries/updateChallenge'
 import { FormCard } from '../../FormCard'
 import createNewChallenge from '../../../graphql/queries/createChallenge'
