@@ -6,7 +6,7 @@ import { FormCard } from '../../FormCard'
 import _ from 'lodash'
 import {
   inputValues,
-  outputValues,
+  makeLessonVariable,
   checkForErrors,
   checkForAllErrors
 } from '../../../helpers/admin/lessonHelpers'
@@ -18,7 +18,7 @@ type LessonInfoProps = {
   selectedLesson: number
 }
 
-type LessonBaseProps = {
+type EditLessonProps = {
   setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
   lesson: Lesson | undefined
 }
@@ -28,9 +28,9 @@ type NewLessonProps = {
 }
 
 // Creates card for a lessons's information to update
-const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
+const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   const [alterLesson, { loading, data }] = useMutation(updateLesson)
-  const [lessonInfo, setLessonInfo] = useState(
+  const [lessonProperties, setLessonProperties] = useState(
     inputValues(lesson, 'challenges')
   )
   // when data is fully loaded after sending mutation request, update front-end lessons info
@@ -40,44 +40,24 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
 
   // alter gets called when someone clicks button to update a lesson
   const alter = async () => {
-    const newOptions = [...lessonInfo]
-    const errors = checkForAllErrors(newOptions)
+    const newProperties = [...lessonProperties]
+    const errors = checkForAllErrors(newProperties)
     if (errors) {
-      setLessonInfo(newOptions)
+      setLessonProperties(newProperties)
       return
     }
-    const {
-      title,
-      description,
-      docUrl,
-      githubUrl,
-      videoUrl,
-      order,
-      chatUrl
-    } = outputValues(lessonInfo)
     try {
-      await alterLesson({
-        variables: {
-          id: parseInt(lesson ? lesson.id + '' : ''),
-          title,
-          description,
-          docUrl,
-          githubUrl,
-          videoUrl,
-          order: parseInt(order),
-          chatUrl
-        }
-      })
+      await alterLesson(makeLessonVariable(lessonProperties))
     } catch (err) {
       throw new Error(err)
     }
   }
 
   const handleChange = (value: string, propertyIndex: number) => {
-    const newLessonInfo = [...lessonInfo]
-    newLessonInfo[propertyIndex].value = value
-    checkForErrors(newLessonInfo[propertyIndex])
-    setLessonInfo(newLessonInfo)
+    const newLessonProperties = [...lessonProperties]
+    newLessonProperties[propertyIndex].value = value
+    checkForErrors(newLessonProperties[propertyIndex])
+    setLessonProperties(newLessonProperties)
   }
 
   return (
@@ -91,7 +71,7 @@ const LessonBase: React.FC<LessonBaseProps> = ({ setLessons, lesson }) => {
       <div style={{ textAlign: 'center' }} className="card">
         <FormCard
           onChange={handleChange}
-          values={lessonInfo}
+          values={lessonProperties}
           onSubmit={{ title: 'Update Lesson', onClick: alter }}
           title={lesson && lesson.title + ''}
         />
@@ -113,7 +93,9 @@ const newLessonAttributes = {
 // Renders when someone clicks on `create new button` on the sidebar
 const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   const [createLesson, { loading, data }] = useMutation(createNewLesson)
-  const [lessonInfo, setLessonInfo] = useState(inputValues(newLessonAttributes))
+  const [lessonProperties, setLessonProperties] = useState(
+    inputValues(newLessonAttributes)
+  )
 
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
@@ -122,33 +104,14 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
 
   // alter gets called when someone clicks button to create a lesson
   const alter = async () => {
-    const newOptions = [...lessonInfo]
-    const errors = checkForAllErrors(newOptions)
+    const newProperties = [...lessonProperties]
+    const errors = checkForAllErrors(newProperties)
     if (errors) {
-      setLessonInfo(newOptions)
+      setLessonProperties(newProperties)
       return
     }
-    const {
-      title,
-      description,
-      docUrl,
-      githubUrl,
-      videoUrl,
-      order,
-      chatUrl
-    } = outputValues(lessonInfo)
     try {
-      await createLesson({
-        variables: {
-          title,
-          description,
-          docUrl,
-          githubUrl,
-          videoUrl,
-          order: parseInt(order),
-          chatUrl
-        }
-      })
+      await createLesson(makeLessonVariable(lessonProperties))
       window.location.reload()
     } catch (err) {
       throw new Error(err)
@@ -156,11 +119,12 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   }
 
   const handleChange = (value: string, propertyIndex: number) => {
-    const newLessonInfo = [...lessonInfo]
-    newLessonInfo[propertyIndex].value = value
-    checkForErrors(newLessonInfo[propertyIndex])
-    setLessonInfo(newLessonInfo)
+    const newLessonProperties = [...lessonProperties]
+    newLessonProperties[propertyIndex].value = value
+    checkForErrors(newLessonProperties[propertyIndex])
+    setLessonProperties(newLessonProperties)
   }
+
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className="col-8">
       <span
@@ -171,7 +135,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       </span>
       <FormCard
         onChange={handleChange}
-        values={lessonInfo}
+        values={lessonProperties}
         onSubmit={{ title: 'Create Lesson', onClick: alter }}
       />
     </div>
@@ -191,7 +155,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   const lesson = lessons && lessons[selectedLesson]
   return (
     <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
-      <LessonBase setLessons={setLessons} lesson={lesson} />
+      <EditLesson setLessons={setLessons} lesson={lesson} />
     </div>
   )
 }

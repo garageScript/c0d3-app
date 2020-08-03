@@ -2,7 +2,9 @@
 export const inputValues = (options: any, deleteProp?: string) => {
   deleteProp && options.hasOwnProperty(deleteProp) && delete options[deleteProp]
   options.hasOwnProperty('__typename') && delete options['__typename']
+
   const keys = Object.keys(options)
+
   const res = keys.map((type: any) => {
     const value = options[type] === 0 ? '0' : `${options[type] || ''}`
     return {
@@ -11,41 +13,44 @@ export const inputValues = (options: any, deleteProp?: string) => {
       type: type === 'description' ? 'MD_INPUT' : 'TEXT_AREA'
     }
   })
+
   return res
 }
 
 // turns the array used in FormCard component into an object, to be used when making mutation requests
-export const outputValues = (options: any) => {
+export const makeLessonVariable = (options: any) => {
   const res = options.reduce((acc: any, option: any) => {
     acc[option.title] = option.value
     return acc
   }, {})
-  return res
+
+  res.order = parseInt(res.order)
+
+  if (res.hasOwnProperty('id')) {
+    res.id = parseInt(res.id ? res.id + '' : '')
+  }
+
+  return { variables: res }
 }
 
 //checks for error for one element in the `inputvalues` array
 export const checkForErrors = (option: any) => {
-  let errorSeen = false
   const { title, value } = option
-  if (title === 'order') {
-    if (!value) {
-      option.error = 'Required'
-      errorSeen = true
-    } else if (!value.match(/^[0-9]+$/)) {
-      option.error = 'Numbers only'
-      errorSeen = true
-    } else {
-      option.hasOwnProperty('error') && delete option.error
-    }
-  } else if (title === 'title' || title === 'description') {
-    if (!value) {
-      option.error = 'Required'
-      errorSeen = true
-    } else {
-      option.hasOwnProperty('error') && delete option.error
-    }
+  const required = ['title', 'description', 'order']
+
+  if (required.includes(title) && !value) {
+    option.error = 'Required'
+    return true
   }
-  return errorSeen
+
+  if (title === 'order' && isNaN(parseInt(value))) {
+    option.error = 'Numbers only'
+    return true
+  }
+
+  option.hasOwnProperty('error') && delete option.error
+
+  return false
 }
 
 //checks for error for each element in the `inputvalues` array
