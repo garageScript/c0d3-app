@@ -93,7 +93,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   )
 }
 
-const OneChallenge: React.FC<OneChallengeProps> = ({ challenge, alter }) => {
+const LessonChallenge: React.FC<OneChallengeProps> = ({ challenge, alter }) => {
   const [challengeProperties, setChallengeProperties] = useState(
     getPropertyArr(challenge, ['lessonId'])
   )
@@ -155,7 +155,7 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
   const allChallenges = !challenges
     ? []
     : challenges.map((challenge: Challenge, key: number) => (
-        <OneChallenge challenge={challenge} alter={alter} key={key} />
+        <LessonChallenge challenge={challenge} alter={alter} key={key} />
       ))
 
   return <>{allChallenges}</>
