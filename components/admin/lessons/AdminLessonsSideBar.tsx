@@ -17,7 +17,6 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
 
   //check if create new lesson has already been pushed to the lessons array
   const lastIndex = lessonListData.length - 1
-  console.log(selectedLesson)
   const { title } = lessonListData[lastIndex]
   if (title !== 'Create New Lesson') {
     lessonListData.push({ title: 'Create New Lesson' })
