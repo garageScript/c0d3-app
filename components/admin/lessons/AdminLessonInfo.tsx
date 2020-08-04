@@ -12,7 +12,6 @@ import {
 } from '../../../helpers/admin/lessonHelpers'
 import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
-import { Button } from '../../theme/Button'
 
 export const titleStyle: React.CSSProperties | undefined = {
   fontSize: '4rem',
@@ -148,8 +147,6 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   lessons,
   selectedLesson
 }) => {
-  const [newChallengeView, setNewChallengeView] = useState(false)
-
   // true when user clicks on `create new lesson` button
   if (lessons && selectedLesson === lessons.length - 1) {
     return <NewLesson setLessons={setLessons} />
@@ -160,13 +157,10 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
 
   const lessonId = parseInt(lesson ? lesson.id + '' : '')
 
-  const newChallengeClick = () => setNewChallengeView(!newChallengeView)
-
-  const viewOption = newChallengeView ? (
-    <NewChallenge setLessons={setLessons} lessonId={lessonId} />
-  ) : (
-    <>
+  return (
+    <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
       <EditLesson setLessons={setLessons} lesson={lesson} />
+      <NewChallenge setLessons={setLessons} lessonId={lessonId} />
       <hr />
       <span className="text-primary" style={titleStyle}>
         Lesson Challenges
@@ -177,17 +171,6 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
         lessonId={lessonId}
         setLessons={setLessons}
       />
-    </>
-  )
-
-  return (
-    <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
-      <div style={{ position: 'absolute', right: 0, top: 0 }}>
-        <Button onClick={newChallengeClick} type="success">
-          {newChallengeView ? 'Back to Lesson Info' : 'Create New Challenge'}
-        </Button>
-      </div>
-      {viewOption}
     </div>
   )
 }

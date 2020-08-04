@@ -14,9 +14,8 @@ import { titleStyle } from './AdminLessonInfo'
 
 const challengeAttributes = {
   title: '',
-  order: '',
   description: '',
-  id: ''
+  order: ''
 }
 
 type LessonChallengeProps = {
