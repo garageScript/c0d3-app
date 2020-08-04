@@ -5,6 +5,7 @@ export class UserLesson extends Model {
   public isPassed?: string
   public isTeaching?: string
   public isEnrolled?: string
+  public lessonId!: number
 
   public readonly createdAt!: Date
   public readonly updatedAt!: Date
@@ -13,5 +14,6 @@ export class UserLesson extends Model {
 export const UserLessonTypes = {
   isPassed: DataTypes.STRING,
   isTeaching: DataTypes.STRING,
-  isEnrolled: DataTypes.STRING
+  isEnrolled: DataTypes.STRING,
+  lessonId: DataTypes.INTEGER
 }

@@ -131,8 +131,7 @@ export default gql`
     isPassed: String
     isTeaching: String
     isEnrolled: String
-    starGiven: User
-    starComment: String
+    starsReceived: [Star]
   }
 
   type Lesson {
@@ -162,5 +161,12 @@ export default gql`
     type: String
     url: String
     urlCaption: String
+  }
+  type Star {
+    id: String!
+    studentId: Int
+    mentorId: Int
+    lessonId: Int
+    comment: String
   }
 `

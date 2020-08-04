@@ -46,6 +46,10 @@ const USER_INFO = gql`
         isPassed
         isTeaching
         isEnrolled
+        starsReceived {
+          lessonId
+          comment
+        }
       }
     }
   }

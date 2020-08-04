@@ -2,7 +2,7 @@ jest.mock('../dbload')
 import db from '../dbload'
 import { userInfo } from './userInfoController'
 
-const { User, UserLesson, Submission } = db
+const { User, UserLesson, Submission, Star } = db
 describe('userInfo controller tests', () => {
   test('should return error of invalid username if no username is passed in', async () => {
     await expect(userInfo({}, {})).rejects.toThrow('Invalid username')
@@ -21,11 +21,23 @@ describe('userInfo controller tests', () => {
     })
     UserLesson.findAll = jest
       .fn()
-      .mockReturnValue([{ id: '1', status: 'passed' }])
+      .mockReturnValue([{ id: '1', status: 'passed', lessonId: 1 }])
     Submission.findAll = jest.fn().mockReturnValue([
       {
         id: '1',
         diff: 'testing2020'
+      }
+    ])
+    Star.findAll = jest.fn().mockReturnValue([
+      {
+        dataValues: {
+          id: 12,
+          lessonId: 1,
+          studentId: 2,
+          mentorId: 10,
+          comment: 'Thank you'
+        },
+        lessonId: 1
       }
     ])
     const returnValue = await userInfo({}, { username: 'noob222' })
@@ -38,7 +50,56 @@ describe('userInfo controller tests', () => {
       lessonStatus: [
         {
           id: '1',
-          status: 'passed'
+          status: 'passed',
+          lessonId: 1,
+          starsReceived: [
+            {
+              id: 12,
+              lessonId: 1,
+              studentId: 2,
+              mentorId: 10,
+              comment: 'Thank you'
+            }
+          ]
+        }
+      ],
+      submissions: [
+        {
+          id: '1',
+          diff: 'testing2020'
+        }
+      ]
+    })
+  })
+  test('Should return empty Stars array if no Stars are given', async () => {
+    User.findOne = jest.fn().mockReturnValue({
+      id: '10',
+      username: 'noob222',
+      email: 'testing2020@gmail.com'
+    })
+    UserLesson.findAll = jest
+      .fn()
+      .mockReturnValue([{ id: '1', status: 'passed', lessonId: 1 }])
+    Submission.findAll = jest.fn().mockReturnValue([
+      {
+        id: '1',
+        diff: 'testing2020'
+      }
+    ])
+    Star.findAll = jest.fn().mockReturnValue([])
+    const returnValue = await userInfo({}, { username: 'noob222' })
+    expect(returnValue).toEqual({
+      user: {
+        id: '10',
+        username: 'noob222',
+        email: 'testing2020@gmail.com'
+      },
+      lessonStatus: [
+        {
+          id: '1',
+          status: 'passed',
+          lessonId: 1,
+          starsReceived: []
         }
       ],
       submissions: [
