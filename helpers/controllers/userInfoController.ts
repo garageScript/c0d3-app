@@ -39,9 +39,8 @@ export const userInfo = async (_parent: void, args: Username) => {
     })
   ])
   const starMap = starsReceived.reduce((map: any, star: any) => {
-    map[star.lessonId] = map[star.lessonId]?.concat(star.dataValues) || [
-      star.dataValues
-    ]
+    map[star.lessonId] = map[star.lessonId] || []
+    map[star.lessonId].push(star.dataValues)
     return map
   }, {})
   lessonStatus.forEach((lesson: any) => {
