@@ -160,6 +160,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   return (
     <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
       <EditLesson setLessons={setLessons} lesson={lesson} />
+      <hr />
       <NewChallenge setLessons={setLessons} lessonId={lessonId} />
       <hr />
       <span className="text-primary" style={titleStyle}>
