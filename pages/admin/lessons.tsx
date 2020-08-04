@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { AdminLessonInfo } from '../../components/admin/lessons/AdminLessonInfo'
 import { AdminLessonsSideBar } from '../../components/admin/lessons/AdminLessonsSideBar'
-import LoadingSpinner from '../../components/LoadingSpinner'
-import Layout from '../../components/Layout'
 import { withGetApp, GetAppProps } from '../../graphql'
 import { Lesson } from '../../graphql/index'
 import _ from 'lodash'
+import { AdminLayout } from '../../components/admin/AdminLayout'
 type AdminLessonsProps = {
   lessons: Lesson[] | undefined
   setLessons: React.Dispatch<React.SetStateAction<Lesson[] | null>>
@@ -31,31 +30,12 @@ const AdminLessons: React.FC<AdminLessonsProps> = ({ lessons, setLessons }) => {
 }
 
 const Lessons: React.FC<GetAppProps> = ({ data }) => {
-  const { loading, error, lessons, session } = data
   const [lessonsList, setLessons] = useState<null | Lesson[]>(null)
-
-  if (loading) {
-    return <LoadingSpinner />
-  }
-
-  if (error) {
-    return <h1>Error</h1>
-  }
-
-  const isAdmin = _.get(session, 'user.isAdmin', false)
-
-  if (isAdmin !== 'true') {
-    return (
-      <Layout>
-        <h1>You must be admin to access this page</h1>
-      </Layout>
-    )
-  }
-
+  const { lessons } = data
   return (
-    <Layout>
+    <AdminLayout data={data}>
       <AdminLessons lessons={lessonsList || lessons} setLessons={setLessons} />
-    </Layout>
+    </AdminLayout>
   )
 }
 
