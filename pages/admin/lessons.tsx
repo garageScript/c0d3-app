@@ -3,7 +3,6 @@ import { AdminLessonInfo } from '../../components/admin/lessons/AdminLessonInfo'
 import { AdminLessonsSideBar } from '../../components/admin/lessons/AdminLessonsSideBar'
 import { withGetApp, GetAppProps } from '../../graphql'
 import { Lesson } from '../../graphql/index'
-import _ from 'lodash'
 import { AdminLayout } from '../../components/admin/AdminLayout'
 type AdminLessonsProps = {
   lessons: Lesson[] | undefined

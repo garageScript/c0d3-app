@@ -1,8 +1,6 @@
 import React from 'react'
-// import { useQuery } from '@apollo/react-hooks'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import Layout from '../../components/Layout'
-// import getApp from '../../graphql/queries/getApp'
 import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
 
