@@ -6,6 +6,7 @@ import { GetAppProps } from '../../graphql'
 
 export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
   const { loading, error, session } = data
+
   if (loading) {
     return <LoadingSpinner />
   }
@@ -17,6 +18,8 @@ export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
       </Layout>
     )
   }
+
+  if (!session) window.location.href = '/login'
 
   const isAdmin = _.get(session, 'user.isAdmin', false)
 
