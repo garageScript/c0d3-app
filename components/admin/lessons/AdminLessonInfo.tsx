@@ -6,11 +6,17 @@ import { FormCard } from '../../FormCard'
 import _ from 'lodash'
 import {
   getPropertyArr,
-  makeLessonVariable,
+  makeGraphqlVariable,
   checkForErrors,
   checkForAllErrors
 } from '../../../helpers/admin/lessonHelpers'
 import { Lesson } from '../../../graphql/index'
+import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
+
+export const titleStyle: React.CSSProperties | undefined = {
+  fontSize: '4rem',
+  fontWeight: 'bold'
+}
 
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
@@ -47,7 +53,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
       return
     }
     try {
-      await alterLesson(makeLessonVariable(lessonProperties))
+      await alterLesson(makeGraphqlVariable(lessonProperties))
     } catch (err) {
       throw new Error(err)
     }
@@ -62,10 +68,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
 
   return (
     <>
-      <span
-        className="text-primary"
-        style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
-      >
+      <span className="text-primary" style={titleStyle}>
         Lesson Info
       </span>
       <div style={{ textAlign: 'center' }} className="card">
@@ -111,7 +114,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       return
     }
     try {
-      await createLesson(makeLessonVariable(lessonProperties))
+      await createLesson(makeGraphqlVariable(lessonProperties))
       window.location.reload()
     } catch (err) {
       throw new Error(err)
@@ -127,10 +130,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
 
   return (
     <div style={{ textAlign: 'center', marginBottom: 20 }} className="col-8">
-      <span
-        className="text-primary"
-        style={{ fontSize: '4rem', textAlign: 'center', fontWeight: 'bold' }}
-      >
+      <span className="text-primary" style={titleStyle}>
         Create New Lesson
       </span>
       <FormCard
@@ -151,11 +151,27 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   if (lessons && selectedLesson === lessons.length - 1) {
     return <NewLesson setLessons={setLessons} />
   }
+
   // set currently selected lesson
   const lesson = lessons && lessons[selectedLesson]
+
+  const lessonId = parseInt(lesson ? lesson.id + '' : '')
+
   return (
     <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
       <EditLesson setLessons={setLessons} lesson={lesson} />
+      <hr />
+      <NewChallenge setLessons={setLessons} lessonId={lessonId} />
+      <hr />
+      <span className="text-primary" style={titleStyle}>
+        Lesson Challenges
+      </span>
+
+      <AdminLessonChallenges
+        challenges={lesson && lesson.challenges}
+        lessonId={lessonId}
+        setLessons={setLessons}
+      />
     </div>
   )
 }
