@@ -6,28 +6,28 @@ import changeAdminRights from '../../../graphql/queries/changeAdminRights'
 import { User } from '../../../graphql'
 
 type UsersListProps = {
-  users: User[] | null
-  setUsers: React.Dispatch<React.SetStateAction<User[] | null>>
+  users: User[]
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
 type RowDataProps = {
   user: any
-  users: User[] | null
-  setUsers: React.Dispatch<React.SetStateAction<User[] | null>>
+  users: User[]
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>
   index: number
 }
 
 type AdminOptionProps = {
   isAdmin: boolean
-  users: User[] | null
-  setUsers: React.Dispatch<React.SetStateAction<User[] | null>>
+  users: User[]
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>
   index: number
   id: string | null | undefined
 }
 
 type UsersTableProps = {
-  users: User[] | null
-  setUsers: React.Dispatch<React.SetStateAction<User[] | null>>
+  users: User[]
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
 export const headerValues = ['ID', 'Username', 'Name', 'Email', 'Admin']

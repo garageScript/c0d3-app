@@ -205,7 +205,10 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -237,7 +240,10 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -2695,7 +2701,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
@@ -2773,7 +2782,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
@@ -3240,7 +3252,10 @@ exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -4803,7 +4818,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
@@ -4991,7 +5009,10 @@ exports[`Storyshots Pages/Curriculum Basic 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -5023,7 +5044,10 @@ exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -5055,7 +5079,10 @@ exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -5088,7 +5115,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
@@ -5562,7 +5592,10 @@ exports[`Storyshots Pages/Lesson Basic 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -5594,7 +5627,10 @@ exports[`Storyshots Pages/Lesson Completed Challenges 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -5626,7 +5662,10 @@ exports[`Storyshots Pages/Lesson With Alerts 1`] = `
   className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
   style={
     Object {
+      "bottom": 0,
       "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
     }
   }
 >
@@ -5659,7 +5698,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
@@ -5929,7 +5971,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
@@ -6037,7 +6082,10 @@ Array [
     className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     style={
       Object {
+        "bottom": 0,
         "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
       }
     }
   >
