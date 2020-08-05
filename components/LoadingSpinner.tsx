@@ -3,7 +3,7 @@ import React from 'react'
 const LoadingSpinner = () => {
   return (
     <div
-      style={{ minHeight: '100vh', position: 'fixed', top: 0, bottom: 0 }}
+      style={{ minHeight: '100vh', position: 'fixed', top: 0, left: 0 }}
       className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     >
       <h1
