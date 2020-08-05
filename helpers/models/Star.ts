@@ -10,8 +10,6 @@ export class Star extends Model {
 }
 
 export const StarTypes = {
-  status: DataTypes.STRING,
-  description: DataTypes.TEXT,
-  title: DataTypes.STRING,
-  order: DataTypes.INTEGER
+  lessonId: DataTypes.INTEGER,
+  comment: DataTypes.STRING
 }

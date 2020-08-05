@@ -52,7 +52,7 @@ export default gql`
       title: String!
       chatUrl: String
       order: Int!
-    ): SuccessResponse
+    ): [Lesson]
     updateLesson(
       id: Int!
       description: String
@@ -62,20 +62,20 @@ export default gql`
       title: String
       chatUrl: String
       order: Int
-    ): SuccessResponse
+    ): [Lesson]
     createChallenge(
       lessonId: Int!
       order: Int!
-      description: String
-      title: String
-    ): SuccessResponse
+      description: String!
+      title: String!
+    ): [Lesson]
     updateChallenge(
       lessonId: Int!
       id: Int!
-      order: Int!
+      order: Int
       description: String
       title: String
-    ): SuccessResponse
+    ): [Lesson]
   }
 
   type AuthResponse {
@@ -131,8 +131,7 @@ export default gql`
     isPassed: String
     isTeaching: String
     isEnrolled: String
-    starGiven: User
-    starComment: String
+    starsReceived: [Star]
   }
 
   type Lesson {
@@ -162,5 +161,12 @@ export default gql`
     type: String
     url: String
     urlCaption: String
+  }
+  type Star {
+    id: String!
+    studentId: Int
+    mentorId: Int
+    lessonId: Int
+    comment: String
   }
 `

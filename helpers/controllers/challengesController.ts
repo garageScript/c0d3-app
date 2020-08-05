@@ -2,6 +2,7 @@ import db from '../dbload'
 import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
+import { lessons } from '../../graphql/queryResolvers/lessons'
 
 const { Challenge } = db
 
@@ -28,9 +29,7 @@ export const createChallenge = async (
 
     await newChallenge.save()
 
-    return {
-      success: true
-    }
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }
@@ -46,14 +45,11 @@ export const updateChallenge = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
     const { id } = arg
 
     await Challenge.update(arg, { where: { id } })
 
-    return {
-      success: true
-    }
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }

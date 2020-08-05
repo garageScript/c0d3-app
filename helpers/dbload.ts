@@ -5,6 +5,7 @@ import { UserLessonTypes, UserLesson } from './models/UserLesson'
 import { SubmissionTypes, Submission } from './models/Submission'
 import { ChallengeTypes, Challenge } from './models/Challenge'
 import { AlertTypes, Alert } from './models/Alert'
+import { StarTypes, Star } from './models/Star'
 
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'you',
@@ -53,6 +54,11 @@ Challenge.init(ChallengeTypes, {
   sequelize
 })
 
+Star.init(StarTypes, {
+  tableName: 'stars',
+  sequelize
+})
+
 Lesson.hasMany(Challenge, {
   as: 'challenges', // Defaults to Challenges
   foreignKey: 'lessonId'
@@ -67,6 +73,9 @@ Submission.belongsTo(User, { as: 'user' })
 Submission.belongsTo(User, { as: 'reviewer' })
 Submission.belongsTo(Challenge, { as: 'challenge' })
 Submission.belongsTo(Lesson, { as: 'lesson' })
+
+Star.belongsTo(User, { as: 'student' })
+Star.belongsTo(User, { as: 'mentor' })
 
 User.belongsToMany(Lesson, {
   foreignKey: 'userId', // Defaults to UserId
@@ -90,5 +99,6 @@ export default {
   User,
   UserLesson,
   Alert,
+  Star,
   sequelize
 }

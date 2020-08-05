@@ -2,7 +2,7 @@ import db from '../dbload'
 import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
-
+import { lessons } from '../../graphql/queryResolvers/lessons'
 const { Lesson } = db
 
 type lessonData = {
@@ -30,9 +30,7 @@ export const createLesson = async (
 
     await newLesson.save()
 
-    return {
-      success: true
-    }
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }
@@ -53,9 +51,7 @@ export const updateLesson = async (
 
     await Lesson.update(arg, { where: { id } })
 
-    return {
-      success: true
-    }
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }

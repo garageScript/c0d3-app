@@ -72,6 +72,18 @@ exports[`Curriculum Page Should render Loading Spinner when loading 1`] = `
             >
               Contributors
             </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -887,6 +899,18 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               Contributors
             </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -1694,6 +1718,18 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               Contributors
             </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
           </div>
         </div>
       </div>
