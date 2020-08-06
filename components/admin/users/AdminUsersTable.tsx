@@ -40,7 +40,7 @@ const TableHeaders: React.FC = () => {
 
   return (
     <thead>
-      <tr style={{ textAlign: 'center' }}>{head}</tr>
+      <tr className="text-center">{head}</tr>
     </thead>
   )
 }
@@ -95,7 +95,7 @@ const RowData: React.FC<RowDataProps> = ({ user, users, setUsers, index }) => {
       )
 
     return (
-      <td style={{ verticalAlign: 'middle' }} key={key}>
+      <td className="align-middle" key={key}>
         {displayOption}
       </td>
     )
@@ -110,7 +110,7 @@ const UsersList: React.FC<UsersListProps> = ({ users, setUsers }) => {
 	*/
   const list = users.reduce((acc: any[], user: any, usersIndex: number) => {
     acc.push(
-      <tr key={usersIndex} style={{ textAlign: 'center' }}>
+      <tr key={usersIndex} className="text-center">
         <RowData
           user={user}
           setUsers={setUsers}
