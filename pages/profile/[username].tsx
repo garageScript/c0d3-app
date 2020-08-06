@@ -3,6 +3,7 @@ import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
 import { UserSubmission } from '../../@types/challenge'
+import { LessonStatus } from '../../@types/lesson'
 import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
@@ -13,6 +14,10 @@ export type UserInfo = {
   username: string
   firstName: string
   lastName: string
+}
+
+type LessonStatusMap = {
+  [id: string]: LessonStatus
 }
 
 const UserProfile: React.FC = () => {
@@ -60,7 +65,10 @@ const UserProfile: React.FC = () => {
     )
     const lessonProgress = completedSubmissions.length / challengeList.length
     const progress = Math.floor(lessonProgress * 100)
-    return { progress, order: lesson.order || 0 }
+    return {
+      progress,
+      order: lesson.order || 0
+    }
   })
 
   const profileSubmissions = lessonsList.map(lessonInfo => {
@@ -79,11 +87,25 @@ const UserProfile: React.FC = () => {
           : 'open'
       }
     })
+    const lessonStatus: LessonStatus[] = _.get(
+      data,
+      'userInfo.lessonStatus',
+      []
+    )
+    const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
+      (map: LessonStatusMap, lesson: LessonStatus) => {
+        //https://stackoverflow.com/questions/46043087/type-null-cannot-be-used-as-an-index-type
+        map[String(lesson.lessonId)] = lesson
+        return map
+      },
+      {}
+    )
 
     return {
       order: lesson.order || 0,
       title: lesson.title || '',
-      challenges: challengesStatus
+      challenges: challengesStatus,
+      starsReceived: lessonStatusMap[String(lesson.id)].starsReceived || []
     }
   })
 

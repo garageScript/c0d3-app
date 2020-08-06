@@ -1,5 +1,8 @@
 import React from 'react'
 import '../scss/profileSubmissions.scss'
+import '../scss/profileLessons.scss'
+import { Star as StarType } from '../@types/lesson'
+import { Star } from 'react-feather'
 
 type ChallengeStatusProps = {
   challengesData: Challenge[]
@@ -13,6 +16,7 @@ type LessonChallenge = {
   order: number
   title: string
   challenges: Challenge[]
+  starsReceived: StarType[]
 }
 
 type Challenge = {
@@ -51,11 +55,28 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     const filterPassedChallenges = lesson.challenges.filter(
       eachChallenge => eachChallenge.challengeStatus === 'passed'
     )
+    const starsContainer = (
+      <p className={`lessonimage_progressbadge badge badge-pill badge-primary`}>
+        {lesson.starsReceived && lesson.starsReceived.length}
+        <span className="ml-1">
+          <Star size={15} fill="yellow" />
+        </span>
+      </p>
+    )
+    const starbadge =
+      lesson.starsReceived && lesson.starsReceived.length ? (
+        starsContainer
+      ) : (
+        <></>
+      )
     return (
       <div key={lessonId} className="lesson_challenges">
-        <img
-          src={`/curriculumAssets/lessonCoversSvg/js-${lesson.order}-cover.svg`}
-        />
+        <div className="lessonimage_container">
+          {starbadge}
+          <img
+            src={`/curriculumAssets/lessonCoversSvg/js-${lesson.order}-cover.svg`}
+          />
+        </div>
         <div className="lesson_title_container">
           <h6 className="lesson_title">{lesson.title}</h6>
           <h6 className="challenges_stats">

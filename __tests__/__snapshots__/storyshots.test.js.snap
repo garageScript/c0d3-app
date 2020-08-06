@@ -3694,9 +3694,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -3747,9 +3775,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -3806,9 +3862,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -3862,9 +3946,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -3915,9 +4027,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -3959,9 +4099,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -4018,9 +4186,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -4065,9 +4261,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -4121,9 +4345,37 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <p
+            className="lessonimage_progressbadge badge badge-pill badge-primary"
+          >
+            2
+            <span
+              className="ml-1"
+            >
+              <svg
+                fill="yellow"
+                height={15}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                width={15}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </span>
+          </p>
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
@@ -4180,9 +4432,13 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       <div
         className="lesson_challenges"
       >
-        <img
-          src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
-        />
+        <div
+          className="lessonimage_container"
+        >
+          <img
+            src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+          />
+        </div>
         <div
           className="lesson_title_container"
         >
