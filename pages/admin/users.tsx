@@ -6,24 +6,42 @@ import { AdminLayout } from '../../components/admin/AdminLayout'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
-
-const titleStyle: React.CSSProperties | undefined = {
-  fontSize: '6rem',
-  textAlign: 'center',
-  fontWeight: 'bold'
-}
+import {
+  SearchOptions,
+  FilterOptions
+} from '../../components/admin/users/AdminUsersFilterOptions'
+import { SearchBar } from '../../components/admin/users/AdminUsersSearchBar'
 
 type AllUsersData = {
   allUsers: User[]
 }
 
+const initialSearchOptions = {
+  option: 'username',
+  admin: 'None',
+  searchTerm: ''
+}
+
 const AdminUsers: React.FC<QueryDataProps<AllUsersData>> = ({ queryData }) => {
+  const [searchOption, setSearchOption] = useState(initialSearchOptions)
   const [users, setUsers] = useState<User[]>(queryData.allUsers)
   return (
     <div className="d-flex flex-column col-12">
-      <span className="text-primary" style={titleStyle}>
+      <h1 className="text-primary text-center font-weight-bold display-1">
         Users
-      </span>
+      </h1>
+      <SearchOptions
+        searchOption={searchOption}
+        setSearchOption={setSearchOption}
+      />
+      <SearchBar
+        setSearchOption={setSearchOption}
+        searchOption={searchOption}
+      />
+      <FilterOptions
+        searchOption={searchOption}
+        setSearchOption={setSearchOption}
+      />
       <UsersTable users={users} setUsers={setUsers} />
     </div>
   )

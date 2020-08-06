@@ -35,9 +35,7 @@ export const userProperties = ['id', 'username', 'name', 'email', 'isAdmin']
 
 const TableHeaders: React.FC = () => {
   const head = headerValues.map((property, key) => (
-    <th key={key} style={{ fontSize: '1.5rem' }}>
-      {property}
-    </th>
+    <th key={key}>{property}</th>
   ))
 
   return (
@@ -107,22 +105,23 @@ const RowData: React.FC<RowDataProps> = ({ user, users, setUsers, index }) => {
 }
 
 const UsersList: React.FC<UsersListProps> = ({ users, setUsers }) => {
-  const list =
-    users &&
-    users.reduce((acc: any[], user: any, usersIndex: number) => {
-      acc.push(
-        <tr key={usersIndex} style={{ textAlign: 'center' }}>
-          <RowData
-            user={user}
-            setUsers={setUsers}
-            index={usersIndex}
-            users={users}
-          />
-        </tr>
-      )
+  /* reduce is used instead of map, because final PR for admin users page will
+		add a filter 
+	*/
+  const list = users.reduce((acc: any[], user: any, usersIndex: number) => {
+    acc.push(
+      <tr key={usersIndex} style={{ textAlign: 'center' }}>
+        <RowData
+          user={user}
+          setUsers={setUsers}
+          index={usersIndex}
+          users={users}
+        />
+      </tr>
+    )
 
-      return acc
-    }, [])
+    return acc
+  }, [])
 
   return <tbody>{list}</tbody>
 }
