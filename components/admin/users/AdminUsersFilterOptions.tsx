@@ -74,7 +74,7 @@ export const FilterOptions: React.FC<SearchOptionsProps> = ({
   })
 
   return (
-    <div className="d-flex flex-row" style={{ margin: '10px 0 10px 0' }}>
+    <div className="d-flex flex-row" style={{ margin: '10px 0' }}>
       <h4 className="text-primary font-weight-bold">Filter By:</h4>
       {filters}
     </div>
