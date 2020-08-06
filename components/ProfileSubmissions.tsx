@@ -16,7 +16,7 @@ type LessonChallenge = {
   order: number
   title: string
   challenges: Challenge[]
-  starsReceived: StarType[]
+  starsReceived?: StarType[]
 }
 
 type Challenge = {
