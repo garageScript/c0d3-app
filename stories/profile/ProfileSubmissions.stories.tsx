@@ -77,51 +77,75 @@ const challengesLesson9 = [
   { challengeNumber: 5, challengeStatus: 'open' }
 ]
 
+const starsReceived = [
+  {
+    studentId: 2,
+    mentorId: 5,
+    lessonId: 1,
+    comment: 'Thank you'
+  },
+  {
+    studentId: 7,
+    mentorId: 5,
+    lessonId: 1,
+    comment: 'Thank you so much!'
+  }
+]
+
 const lessons = [
   {
     order: 0,
     title: 'Foundation of Javascript',
-    challenges: completedChallenges
+    challenges: completedChallenges,
+    starsReceived
   },
   {
     order: 1,
     title: 'Variables & Functions',
-    challenges: defaultChallenges
+    challenges: defaultChallenges,
+    starsReceived
   },
   {
     order: 2,
     title: 'Arrays',
-    challenges: pendingChallenges
+    challenges: pendingChallenges,
+    starsReceived
   },
   {
     order: 3,
     title: 'Objects',
-    challenges: completedChallenges
+    challenges: completedChallenges,
+    starsReceived
   },
   {
     order: 4,
     title: 'Front End Engineering',
-    challenges: rejectedChallenges
+    challenges: rejectedChallenges,
+    starsReceived
   },
   {
     order: 5,
     title: 'End to End',
-    challenges: defaultChallenges
+    challenges: defaultChallenges,
+    starsReceived
   },
   {
     order: 6,
     title: 'React, GraphQL, SocketIO',
-    challenges: challengesLesson6
+    challenges: challengesLesson6,
+    starsReceived
   },
   {
     order: 7,
     title: 'Javscript Algorithms',
-    challenges: pendingChallenges
+    challenges: pendingChallenges,
+    starsReceived
   },
   {
     order: 8,
     title: 'Trees',
-    challenges: defaultChallenges
+    challenges: defaultChallenges,
+    starsReceived
   },
   {
     order: 9,
