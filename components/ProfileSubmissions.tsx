@@ -1,6 +1,5 @@
 import React from 'react'
 import '../scss/profileSubmissions.scss'
-import '../scss/profileLessons.scss'
 import { Star as StarType } from '../@types/lesson'
 import { Star } from 'react-feather'
 
@@ -55,24 +54,22 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     const filterPassedChallenges = lesson.challenges.filter(
       eachChallenge => eachChallenge.challengeStatus === 'passed'
     )
-    const starsContainer = (
-      <p className={`lessonimage_progressbadge badge badge-pill badge-primary`}>
-        {lesson.starsReceived && lesson.starsReceived.length}
-        <span className="ml-1">
-          <Star size={15} fill="yellow" />
-        </span>
-      </p>
-    )
-    const starbadge =
-      lesson.starsReceived && lesson.starsReceived.length ? (
-        starsContainer
-      ) : (
-        <></>
+
+    let starBadge = <></>
+    if (lesson.starsReceived && lesson.starsReceived.length) {
+      starBadge = (
+        <p className={`lesson_image_star_badge badge badge-pill badge-primary`}>
+          {lesson.starsReceived && lesson.starsReceived.length}
+          <span className="ml-1">
+            <Star size={15} fill="yellow" />
+          </span>
+        </p>
       )
+    }
     return (
       <div key={lessonId} className="lesson_challenges">
-        <div className="lessonimage_container">
-          {starbadge}
+        <div className="lesson_image_container">
+          {starBadge}
           <img
             src={`/curriculumAssets/lessonCoversSvg/js-${lesson.order}-cover.svg`}
           />

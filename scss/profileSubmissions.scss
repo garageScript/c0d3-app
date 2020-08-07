@@ -30,4 +30,17 @@
 
   }
 
+  .lesson_image_container{
+    position: relative;
+    padding: 8px;
+    display: inline-block;
+    opacity: 1;
+  }
+
+  .lesson_image_star_badge{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: solid white 2px;
+  }
 }
