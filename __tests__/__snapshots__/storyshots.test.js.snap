@@ -3695,10 +3695,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -3776,10 +3776,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -3863,10 +3863,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -3947,10 +3947,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -4028,10 +4028,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -4100,10 +4100,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -4187,10 +4187,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -4262,10 +4262,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -4346,10 +4346,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <p
-            className="lessonimage_progressbadge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill badge-primary"
           >
             2
             <span
@@ -4433,7 +4433,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         className="lesson_challenges"
       >
         <div
-          className="lessonimage_container"
+          className="lesson_image_container"
         >
           <img
             src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
