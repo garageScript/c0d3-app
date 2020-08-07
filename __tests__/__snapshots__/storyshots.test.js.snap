@@ -1783,6 +1783,278 @@ exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/FilterButtons Basic 1`] = `
+<div
+  className="d-flex flex-row"
+>
+  <h4
+    className="text-primary font-weight-bold mr-1"
+  >
+    Filter By:
+  </h4>
+  <div
+    style={
+      Object {
+        "marginTop": "-1.57px",
+      }
+    }
+  >
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#8e8e8e",
+        }
+      }
+    >
+      Admins
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "marginTop": "-1.57px",
+      }
+    }
+  >
+    <button
+      className="btn bg-primary"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Non-Admins
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "marginTop": "-1.57px",
+      }
+    }
+  >
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#8e8e8e",
+        }
+      }
+    >
+      None
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/FilterButtons Colors 1`] = `
+<div>
+  <div
+    className="d-flex flex-row"
+  >
+    <h4
+      className="text-success font-weight-bold mr-1"
+    >
+      Filter By:
+    </h4>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn bg-success"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Admins
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Non-Admins
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        None
+      </button>
+    </div>
+  </div>
+  <div
+    className="d-flex flex-row"
+  >
+    <h4
+      className="text-danger font-weight-bold mr-1"
+    >
+      Filter By:
+    </h4>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn bg-danger"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Admins
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Non-Admins
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        None
+      </button>
+    </div>
+  </div>
+  <div
+    className="d-flex flex-row"
+  >
+    <h4
+      className="text-primary font-weight-bold mr-1"
+    >
+      Filter By:
+    </h4>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn bg-primary"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Admins
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Non-Admins
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "marginTop": "-1.57px",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        None
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
   className="mt-5 font-weight-light text-center pb-5 text-muted"
