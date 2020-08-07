@@ -9,6 +9,7 @@ import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
 import LoadingSpinner from '../../components/LoadingSpinner'
+import { Star } from '../../@types/lesson'
 
 export type UserInfo = {
   username: string
@@ -100,12 +101,16 @@ const UserProfile: React.FC = () => {
       },
       {}
     )
+    let starsReceived = [] as Star[]
+    if (lessonStatusMap[String(lesson.id)]) {
+      starsReceived = lessonStatusMap[String(lesson.id)].starsReceived as Star[]
+    }
 
     return {
       order: lesson.order || 0,
       title: lesson.title || '',
       challenges: challengesStatus,
-      starsReceived: lessonStatusMap[String(lesson.id)].starsReceived || []
+      starsReceived
     }
   })
 
