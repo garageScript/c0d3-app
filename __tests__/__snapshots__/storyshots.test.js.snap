@@ -1860,7 +1860,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
     <h4
       className="text-success font-weight-bold mr-1"
     >
-      Filter By:
+      Success:
     </h4>
     <div
       style={
@@ -1926,7 +1926,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
     <h4
       className="text-danger font-weight-bold mr-1"
     >
-      Filter By:
+      Danger:
     </h4>
     <div
       style={
@@ -1992,7 +1992,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
     <h4
       className="text-primary font-weight-bold mr-1"
     >
-      Filter By:
+      Primary:
     </h4>
     <div
       style={

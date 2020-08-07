@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FilterButtons } from '../../components/FilterButtons'
+import _ from 'lodash'
 
 export default {
   component: FilterButtons,
@@ -37,7 +38,7 @@ const MockColor: React.FC<MockThemeProps> = ({ theme }) => {
       options={mockOptions}
       theme={theme}
     >
-      Filter By:
+      {_.capitalize(theme) + ':'}
     </FilterButtons>
   )
 }
