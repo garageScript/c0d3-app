@@ -90,14 +90,14 @@ const RowData: React.FC<RowDataProps> = ({
   user,
   users,
   setUsers,
-  index,
+  index,s
   searchTerm,
   option
 }) => {
   option = _.lowerCase(option)
 
   const data = userProperties.map((property: string, key: number) => {
-    let value = user[property] + ''
+    let value = user[property]
 
     if (searchTerm && property === option) {
       value = AdminUsersSplitSearch(value, searchTerm)
