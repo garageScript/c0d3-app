@@ -16,11 +16,11 @@ export const split: any = (
   if (str[strIndex] === searchTerm[current.length]) {
     /*
 		single character in searchTerm has been found
-		Ex:
-			searchTerm = 'bonjour'
-			current = 'bon' <--- previous characters
-			str[i] = 'j' <--- current character
-	  */
+    Ex:
+      searchTerm = 'bonjour'
+      current = 'bon' <--- previous characters
+      str[i] = 'j' <--- current character
+    */
     current += str[strIndex]
 
     //searchTerm has been fully found, push to array and reset current
@@ -32,9 +32,9 @@ export const split: any = (
     /*
 		Character in searchTerm was previously found, but current character does not match
 		Ex:
-		  searchTerm = 'bonjour'
-		  current = 'bon' <--- previous characters
-			str[i] = 'z' <--- current character
+      searchTerm = 'bonjour'
+      current = 'bon' <--- previous characters
+      str[i] = 'z' <--- current character
 		*/
     res.push(current)
 
