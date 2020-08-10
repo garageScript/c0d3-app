@@ -103,10 +103,8 @@ const RowData: React.FC<RowDataProps> = ({
       value = AdminUsersSplitSearch(value, searchTerm)
     }
 
-    const displayOption =
-      property !== 'isAdmin' ? (
-        value
-      ) : (
+    if (property !== 'isAdmin') {
+      value = (
         <AdminOption
           isAdmin={user[property] === 'true'}
           setUsers={setUsers}
@@ -115,10 +113,11 @@ const RowData: React.FC<RowDataProps> = ({
           id={users[index].id}
         />
       )
+    }
 
     return (
       <td className="align-middle" key={key}>
-        {displayOption}
+        {value}
       </td>
     )
   })
