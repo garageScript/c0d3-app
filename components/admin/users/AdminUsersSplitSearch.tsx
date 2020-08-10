@@ -51,7 +51,7 @@ const split: any = (
 
 export const AdminUsersSplitSearch: any = (str: string, searchTerm: string) => {
   const splitArr = split(str, searchTerm)
-  const value = splitArr.map((word: any) => {
+  const value = splitArr.map((word: string) => {
     const bgColor = word !== searchTerm ? 'none' : 'rgb(84, 64, 216, .25)'
     return (
       <span style={{ backgroundColor: bgColor }} key={_.uniqueId()}>
