@@ -19,7 +19,7 @@ export const split: any = (
     Ex:
       searchTerm = 'bonjour'
       current = 'bon' <--- previous characters
-      str[i] = 'j' <--- current character
+      str[strIndex] = 'j' <--- current character
     */
     current += str[strIndex]
 
@@ -34,7 +34,7 @@ export const split: any = (
     Ex:
       searchTerm = 'bonjour'
       current = 'bon' <--- previous characters
-      str[i] = 'z' <--- current character
+      str[strIndex] = 'z' <--- current character
     */
     res.push(current)
 
