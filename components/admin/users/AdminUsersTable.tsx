@@ -103,7 +103,7 @@ const RowData: React.FC<RowDataProps> = ({
       value = AdminUsersSplitSearch(value, searchTerm)
     }
 
-    if (property !== 'isAdmin') {
+    if (property === 'isAdmin')
       value = (
         <AdminOption
           isAdmin={user[property] === 'true'}
@@ -113,7 +113,6 @@ const RowData: React.FC<RowDataProps> = ({
           id={users[index].id}
         />
       )
-    }
 
     return (
       <td className="align-middle" key={key}>
@@ -136,7 +135,7 @@ const UsersList: React.FC<UsersListProps> = ({
 
   const list = users.reduce((acc: any[], user: any, usersIndex: number) => {
     if (searchTerm) {
-      const value = user[_.lowerCase(option)]
+      const value = user[option]
       if (!value.includes(searchTerm)) return acc
     }
 
