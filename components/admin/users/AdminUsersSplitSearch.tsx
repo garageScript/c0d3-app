@@ -1,7 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 
-export const split: any = (
+const split: any = (
   str: string,
   searchTerm: string,
   strIndex: number = 0,
