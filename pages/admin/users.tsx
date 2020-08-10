@@ -16,7 +16,7 @@ type AllUsersData = {
   allUsers: User[]
 }
 
-type filter = {
+export type filter = {
   option: string
   admin: string
   searchTerm: string
