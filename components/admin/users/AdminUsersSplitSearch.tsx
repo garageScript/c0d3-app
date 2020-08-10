@@ -15,7 +15,7 @@ export const split: any = (
 
   if (str[strIndex] === searchTerm[current.length]) {
     /*
-		single character in searchTerm has been found
+    single character in searchTerm has been found
     Ex:
       searchTerm = 'bonjour'
       current = 'bon' <--- previous characters
@@ -30,12 +30,12 @@ export const split: any = (
     }
   } else if (current.length) {
     /*
-		Character in searchTerm was previously found, but current character does not match
-		Ex:
+    Character in searchTerm was previously found, but current character does not match
+    Ex:
       searchTerm = 'bonjour'
       current = 'bon' <--- previous characters
       str[i] = 'z' <--- current character
-		*/
+    */
     res.push(current)
 
     //check if current character is first character of searchTerm
