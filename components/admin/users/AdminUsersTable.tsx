@@ -63,17 +63,19 @@ const AdminOption: React.FC<AdminOptionProps> = ({
 }) => {
   const [changeRights] = useMutation(changeAdminRights)
 
+  const newAdminRights = isAdmin ? 'false' : 'true'
+
   const mutationVariable = {
     variables: {
       id: parseInt(id + ''),
-      status: isAdmin ? 'false' : 'true'
+      status: newAdminRights
     }
   }
 
   const changeButton = async () => {
     await changeRights(mutationVariable)
     const newUsers = [...users]
-    newUsers[index].isAdmin = isAdmin ? 'false' : 'true'
+    newUsers[index].isAdmin = newAdminRights
     setUsers(newUsers)
   }
 
