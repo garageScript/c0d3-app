@@ -5,12 +5,7 @@ import { Button } from '../../theme/Button'
 import changeAdminRights from '../../../graphql/queries/changeAdminRights'
 import { User } from '../../../graphql'
 import { AdminUsersSplitSearch } from './AdminUsersSplitSearch'
-
-type filter = {
-  option: string
-  admin: string
-  searchTerm: string
-}
+import { filter } from '../../../pages/admin/users'
 
 type UsersListProps = {
   users: User[]
@@ -22,7 +17,7 @@ type RowDataProps = {
   user: any
   users: User[]
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
-  index: number
+  usersIndex: number
   option: string
   searchTerm: string
 }
@@ -31,7 +26,7 @@ type AdminOptionProps = {
   isAdmin: boolean
   users: User[]
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
-  index: number
+  usersIndex: number
   id: string | null | undefined
 }
 
@@ -44,20 +39,10 @@ type UsersTableProps = {
 export const headerTitles = ['ID', 'Username', 'Name', 'Email', 'Admin']
 export const userProperties = ['id', 'username', 'name', 'email', 'isAdmin']
 
-const TableHeaders: React.FC = () => {
-  const head = headerTitles.map((title, key) => <th key={key}>{title}</th>)
-
-  return (
-    <thead>
-      <tr className="text-center">{head}</tr>
-    </thead>
-  )
-}
-
 const AdminOption: React.FC<AdminOptionProps> = ({
   isAdmin,
   setUsers,
-  index,
+  usersIndex,
   users,
   id
 }) => {
@@ -75,7 +60,7 @@ const AdminOption: React.FC<AdminOptionProps> = ({
   const changeButton = async () => {
     await changeRights(mutationVariable)
     const newUsers = [...users]
-    newUsers[index].isAdmin = newAdminRights
+    newUsers[usersIndex].isAdmin = newAdminRights
     setUsers(newUsers)
   }
 
@@ -90,7 +75,7 @@ const RowData: React.FC<RowDataProps> = ({
   user,
   users,
   setUsers,
-  index,
+  usersIndex,
   searchTerm,
   option
 }) => {
@@ -108,9 +93,9 @@ const RowData: React.FC<RowDataProps> = ({
         <AdminOption
           isAdmin={user[property] === 'true'}
           setUsers={setUsers}
-          index={index}
+          usersIndex={usersIndex}
           users={users}
-          id={users[index].id}
+          id={users[usersIndex].id}
         />
       )
 
@@ -149,7 +134,7 @@ const UsersList: React.FC<UsersListProps> = ({
         <RowData
           user={user}
           setUsers={setUsers}
-          index={usersIndex}
+          usersIndex={usersIndex}
           users={users}
           option={option}
           searchTerm={searchTerm}
@@ -167,9 +152,19 @@ export const UsersTable: React.FC<UsersTableProps> = ({
   users,
   setUsers,
   searchOption
-}) => (
-  <table className="table table-striped">
-    <TableHeaders />
-    <UsersList users={users} setUsers={setUsers} searchOption={searchOption} />
-  </table>
-)
+}) => {
+  const head = headerTitles.map((title, key) => <th key={key}>{title}</th>)
+
+  return (
+    <table className="table table-striped">
+      <thead>
+        <tr className="text-center">{head}</tr>
+      </thead>
+      <UsersList
+        users={users}
+        setUsers={setUsers}
+        searchOption={searchOption}
+      />
+    </table>
+  )
+}

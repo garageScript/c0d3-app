@@ -16,7 +16,13 @@ type AllUsersData = {
   allUsers: User[]
 }
 
-const initialSearchOptions = {
+type filter = {
+  option: string
+  admin: string
+  searchTerm: string
+}
+
+const initialSearchOptions: filter = {
   option: 'Username',
   admin: 'None',
   searchTerm: ''
@@ -29,7 +35,7 @@ const searchHeaders = [...headerTitles]
 searchHeaders.length = 4
 
 const AdminUsers: React.FC<QueryDataProps<AllUsersData>> = ({ queryData }) => {
-  const [searchOption, setSearchOption] = useState(initialSearchOptions)
+  const [searchOption, setSearchOption] = useState<filter>(initialSearchOptions)
   const [users, setUsers] = useState<User[]>(queryData.allUsers)
   /*
 	  The reason debounce is used here is to prevent page rerenders on every keystroke.
