@@ -6,13 +6,15 @@ import changeAdminRights from '../../../graphql/queries/changeAdminRights'
 import { User } from '../../../graphql'
 import { AdminUsersSplitSearch } from './AdminUsersSplitSearch'
 
+type filter = {
+  option: string
+  admin: string
+  searchTerm: string
+}
+
 type UsersListProps = {
   users: User[]
-  searchOption: {
-    option: string
-    admin: string
-    searchTerm: string
-  }
+  searchOption: filter
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
@@ -35,11 +37,7 @@ type AdminOptionProps = {
 
 type UsersTableProps = {
   users: User[]
-  searchOption: {
-    option: string
-    admin: string
-    searchTerm: string
-  }
+  searchOption: filter
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
@@ -90,7 +88,7 @@ const RowData: React.FC<RowDataProps> = ({
   user,
   users,
   setUsers,
-  index,s
+  index,
   searchTerm,
   option
 }) => {
@@ -112,7 +110,7 @@ const RowData: React.FC<RowDataProps> = ({
           setUsers={setUsers}
           index={index}
           users={users}
-          id={users && users[index].id}
+          id={users[index].id}
         />
       )
 
