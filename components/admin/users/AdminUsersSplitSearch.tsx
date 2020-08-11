@@ -4,7 +4,7 @@ import React from 'react'
 	convert string to array with searchTerm removed (split removes it)
 	Ex:
 		Inputs: searchTerm='bon', str = 'bonjourbon'
-    Output: [jour]
+		Output: [jour]
 */
 const split = (str: string, lowerCaseSearchTerm: string) => {
   const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
