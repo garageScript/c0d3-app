@@ -9,14 +9,17 @@ import React from 'react'
 const split = (str: string, lowerCaseSearchTerm: string) => {
   const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
 
-  const res = splitArr.reduce((acc: string[], word: string, i: number) => {
-    acc.push(word)
+  const res = splitArr.reduce(
+    (acc: string[], word: string, splitArrIndex: number) => {
+      acc.push(word)
 
-    // used to prevent over-adding of searchTerm back into array
-    if (i === splitArr.length - 1) return acc
-    acc.push(lowerCaseSearchTerm)
-    return acc
-  }, [])
+      // used to prevent over-adding of searchTerm back into array
+      if (splitArrIndex === splitArr.length - 1) return acc
+      acc.push(lowerCaseSearchTerm)
+      return acc
+    },
+    []
+  )
 
   return res
 }
