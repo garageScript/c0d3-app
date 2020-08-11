@@ -5,7 +5,7 @@ const split = (str: string, lowerCaseSearchTerm: string) => {
   const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
   let tracker = 0
 
-  let value = splitArr.reduce((acc: string[], word: string) => {
+  const res = splitArr.reduce((acc: string[], word: string) => {
     acc.push(word)
     tracker += word.length
 
@@ -17,7 +17,7 @@ const split = (str: string, lowerCaseSearchTerm: string) => {
     return acc
   }, [])
 
-  return value
+  return res
 }
 
 const originalWord: any = (
@@ -57,10 +57,10 @@ export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
   const splitArr = split(str, lowerCaseSearchTerm)
 
   // make sure all capilization is correct
-  const value = originalCapitalization(str, splitArr)
+  const correctedArr = originalCapitalization(str, splitArr)
 
   // highlight search Term
-  const list = value.map((word: string) => {
+  const res = correctedArr.map((word: string) => {
     const bgColor =
       word.toLowerCase() === lowerCaseSearchTerm ? 'rgb(84, 64, 216, .25)' : ''
     return (
@@ -70,5 +70,5 @@ export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
     )
   })
 
-  return list
+  return res
 }
