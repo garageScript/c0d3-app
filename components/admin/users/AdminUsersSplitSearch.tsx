@@ -1,10 +1,10 @@
 import React from 'react'
 
 /*
-	convert string to array with searchTerm removed (split removes it)
+	convert string to array, separated by and including searchTerm
 	Ex:
 		Inputs: searchTerm='bon', str = 'bonjourbon'
-		Output: [jour]
+		Output: [bon, jour, bon]
 */
 const split = (str: string, lowerCaseSearchTerm: string) => {
   const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
