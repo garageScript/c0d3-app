@@ -79,7 +79,7 @@ const RowData: React.FC<RowDataProps> = ({
   searchTerm,
   option
 }) => {
-  option = _.lowerCase(option)
+  option = option.toLowerCase()
 
   const data = userProperties.map((property: string, key: number) => {
     let value = user[property]
@@ -116,36 +116,39 @@ const UsersList: React.FC<UsersListProps> = ({
 }) => {
   const { searchTerm, admin } = searchOption
   let { option } = searchOption
-  option = _.lowerCase(option)
+  option = option.toLowerCase()
 
-  const list = users.reduce((acc: any[], user: any, usersIndex: number) => {
-    if (searchTerm) {
-      const value = user[option]
-      if (!value.includes(searchTerm)) return acc
-    }
+  // usersIndex is needed for the RowData component to function properly
+  const usersListIndex: any = []
 
-    const { isAdmin } = user
+  // remove all users from list that are not going to be rendered
+  const list: User[] = users.filter((user: any, usersIndex: number) => {
+    let bool = true
 
-    if (admin === 'Non-Admins' && isAdmin === 'true') return acc
-    if (admin === 'Admins' && isAdmin === 'false') return acc
+    if (searchTerm) bool = (user[option] || '').includes(searchTerm)
+    if (bool && admin === 'Non-Admins') bool = user.isAdmin === 'false'
+    if (bool && admin === 'Admins') bool = user.isAdmin === 'true'
 
-    acc.push(
-      <tr key={usersIndex} className="text-center">
+    bool && usersListIndex.push(usersIndex)
+    return bool
+  })
+
+  const usersList = list.map((user: User, key: number) => {
+    return (
+      <tr key={key} className="text-center">
         <RowData
           user={user}
           setUsers={setUsers}
-          usersIndex={usersIndex}
+          usersIndex={usersListIndex.shift()}
           users={users}
           option={option}
           searchTerm={searchTerm}
         />
       </tr>
     )
+  })
 
-    return acc
-  }, [])
-
-  return <tbody>{list}</tbody>
+  return <tbody>{usersList}</tbody>
 }
 
 export const UsersTable: React.FC<UsersTableProps> = ({

@@ -1,63 +1,74 @@
 import React from 'react'
 import _ from 'lodash'
 
-const split: any = (
-  str: string,
-  searchTerm: string,
-  strIndex: number = 0,
-  res: string[] = [],
-  current: string = ''
-) => {
-  if (strIndex === str.length) {
-    current && res.push(current)
-    return res
-  }
+const split = (str: string, lowerCaseSearchTerm: string) => {
+  const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
+  let tracker = 0
 
-  if (str[strIndex] === searchTerm[current.length]) {
-    /*
-    single character in searchTerm has been found
-    Ex:
-      searchTerm = 'bonjour'
-      current = 'bon' <--- previous characters
-      str[strIndex] = 'j' <--- current character
-    */
-    current += str[strIndex]
+  let value = splitArr.reduce((acc: string[], word: string) => {
+    acc.push(word)
+    tracker += word.length
 
-    //searchTerm has been fully found, push to array and reset current
-    if (current.length === searchTerm.length) {
-      res.push(current)
-      current = ''
-    }
-  } else if (current.length) {
-    /*
-    Character in searchTerm was previously found, but current character does not match
-    Ex:
-      searchTerm = 'bonjour'
-      current = 'bon' <--- previous characters
-      str[strIndex] = 'z' <--- current character
-    */
-    res.push(current)
+    // used to prevent over-adding of searchTerm back into array
+    if (tracker === str.length) return acc
 
-    //check if current character is first character of searchTerm
-    current = str[strIndex] === searchTerm[0] ? str[strIndex] : ''
+    acc.push(lowerCaseSearchTerm)
+    tracker += lowerCaseSearchTerm.length
+    return acc
+  }, [])
 
-    !current && res.push(str[strIndex])
-  } else {
-    res.push(str[strIndex])
-  }
-
-  return split(str, searchTerm, strIndex + 1, res, current)
+  return value
 }
 
-export const AdminUsersSplitSearch: any = (str: string, searchTerm: string) => {
-  const splitArr = split(str, searchTerm)
-  const value = splitArr.map((word: string) => {
-    const bgColor = word !== searchTerm ? 'none' : 'rgb(84, 64, 216, .25)'
+const originalWord: any = (
+  str: string,
+  strIndex: number[],
+  word: string,
+  res: string = '',
+  wordIndex: number = 0
+) => {
+  if (wordIndex === word.length) return res
+  res += str[strIndex[0]]
+  strIndex[0] += 1
+  return originalWord(str, strIndex, word, res, wordIndex + 1)
+}
+
+const originalCapitalization = (str: string, value: string[]) => {
+  /*
+		strIndex is an array, so that originalWord function can be put
+		outside of the originalCapitalization function
+	*/
+  const strIndex = [0]
+
+  // converts words back into their original capitalization
+  value = value.reduce((acc: string[], word: string) => {
+    acc.push(originalWord(str, strIndex, word))
+    return acc
+  }, [])
+
+  return value
+}
+
+export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
+  // make all lowercase now to ensure both lower and uppercase characters can be searched for
+  const lowerCaseSearchTerm = searchTerm.toLowerCase()
+
+  // convert string to array with searchTerm removed (split removes it)
+  const splitArr = split(str, lowerCaseSearchTerm)
+
+  // make sure all capilization is correct
+  const value = originalCapitalization(str, splitArr)
+
+  // highlight search Term
+  const list = value.map((word: string) => {
+    const bgColor =
+      word.toLowerCase() === lowerCaseSearchTerm ? 'rgb(84, 64, 216, .25)' : ''
     return (
-      <span style={{ backgroundColor: bgColor }} key={_.uniqueId()}>
+      <span key={_.uniqueId()} style={{ backgroundColor: bgColor }}>
         {word}
       </span>
     )
   })
-  return value
+
+  return list
 }
