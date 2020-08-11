@@ -35,9 +35,9 @@ const originalWord: any = (
 
 const originalCapitalization = (str: string, value: string[]) => {
   /*
-		strIndex is an array, so that originalWord function can be put
-		outside of the originalCapitalization function
-	*/
+    strIndex is an array, so that originalWord function can be put
+    outside of the originalCapitalization function
+  */
   const strIndex = [0]
 
   // converts words back into their original capitalization
