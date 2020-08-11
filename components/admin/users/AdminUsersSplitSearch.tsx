@@ -42,7 +42,7 @@ export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
   // make all lowercase now to ensure both lower and uppercase characters can be searched for
   const lowerCaseSearchTerm = searchTerm.toLowerCase()
 
-  // convert string to array with searchTerm removed (split removes it)
+  // convert string to array with searchTerm included
   const splitArr = split(str, lowerCaseSearchTerm)
 
   // make sure all capilization is correct
