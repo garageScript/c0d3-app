@@ -1,6 +1,5 @@
 import React from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import _ from 'lodash'
 import { Button } from '../../theme/Button'
 import changeAdminRights from '../../../graphql/queries/changeAdminRights'
 import { User } from '../../../graphql'

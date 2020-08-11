@@ -1,5 +1,4 @@
 import React from 'react'
-import _ from 'lodash'
 
 const split = (str: string, lowerCaseSearchTerm: string) => {
   const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
