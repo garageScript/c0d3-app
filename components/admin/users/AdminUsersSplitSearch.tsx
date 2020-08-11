@@ -60,11 +60,11 @@ export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
   const correctedArr = originalCapitalization(str, splitArr)
 
   // highlight search Term
-  const res = correctedArr.map((word: string) => {
+  const res = correctedArr.map((word: string, key: number) => {
     const bgColor =
       word.toLowerCase() === lowerCaseSearchTerm ? 'rgb(84, 64, 216, .25)' : ''
     return (
-      <span key={_.uniqueId()} style={{ backgroundColor: bgColor }}>
+      <span key={word + searchTerm + key} style={{ backgroundColor: bgColor }}>
         {word}
       </span>
     )
