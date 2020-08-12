@@ -41,9 +41,6 @@ export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
   // convert string to array with searchTerm included
   const splitArr = split(str, lowerCaseSearchTerm, searchTerm)
 
-  // make sure all capilization is correct
-  // const correctedArr = originalCapitalization(str, splitArr)
-
   // highlight search Term
   const res = splitArr.map((word: string, key: number) => {
     const bgColor =
