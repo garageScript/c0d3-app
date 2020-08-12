@@ -1,12 +1,14 @@
 import React from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import _ from 'lodash'
 import { Button } from '../../theme/Button'
 import changeAdminRights from '../../../graphql/queries/changeAdminRights'
 import { User } from '../../../graphql'
+import { AdminUsersSplitSearch } from './AdminUsersSplitSearch'
+import { filter } from '../../../pages/admin/users'
 
 type UsersListProps = {
   users: User[]
+  searchOption: filter
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
@@ -14,91 +16,91 @@ type RowDataProps = {
   user: any
   users: User[]
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
-  index: number
+  usersIndex: number
+  option: string
+  searchTerm: string
 }
 
 type AdminOptionProps = {
   isAdmin: boolean
   users: User[]
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
-  index: number
+  usersIndex: number
   id: string | null | undefined
 }
 
 type UsersTableProps = {
   users: User[]
+  searchOption: filter
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
 }
 
-export const headerValues = ['ID', 'Username', 'Name', 'Email', 'Admin']
+export const headerTitles = ['ID', 'Username', 'Name', 'Email', 'Admin']
 export const userProperties = ['id', 'username', 'name', 'email', 'isAdmin']
-
-const TableHeaders: React.FC = () => {
-  const head = headerValues.map((property, key) => (
-    <th key={key} style={{ fontSize: '1.5rem' }}>
-      {property}
-    </th>
-  ))
-
-  return (
-    <thead>
-      <tr style={{ textAlign: 'center' }}>{head}</tr>
-    </thead>
-  )
-}
 
 const AdminOption: React.FC<AdminOptionProps> = ({
   isAdmin,
   setUsers,
-  index,
+  usersIndex,
   users,
   id
 }) => {
   const [changeRights] = useMutation(changeAdminRights)
 
+  const newAdminRights = isAdmin ? 'false' : 'true'
+
   const mutationVariable = {
     variables: {
       id: parseInt(id + ''),
-      status: isAdmin ? 'false' : 'true'
+      status: newAdminRights
     }
   }
 
   const changeButton = async () => {
     await changeRights(mutationVariable)
-    const newUsers = users && [...users]
-    if (newUsers) {
-      newUsers[index].isAdmin = isAdmin ? 'false' : 'true'
-    }
+    const newUsers = [...users]
+    newUsers[usersIndex].isAdmin = newAdminRights
     setUsers(newUsers)
   }
 
   return (
     <Button type={isAdmin ? 'danger' : 'success'} onClick={changeButton}>
-      {(isAdmin ? 'Remove' : 'Grant') + ' Admin Rights'}
+      {isAdmin ? 'Remove' : 'Add'}
     </Button>
   )
 }
 
-const RowData: React.FC<RowDataProps> = ({ user, users, setUsers, index }) => {
+const RowData: React.FC<RowDataProps> = ({
+  user,
+  users,
+  setUsers,
+  usersIndex,
+  searchTerm,
+  option
+}) => {
+  option = option.toLowerCase()
+
   const data = userProperties.map((property: string, key: number) => {
     let value = user[property]
 
-    const displayOption =
-      property !== 'isAdmin' ? (
-        value
-      ) : (
+    if (searchTerm && property === option) {
+      value = AdminUsersSplitSearch(value, searchTerm)
+    }
+
+    if (property === 'isAdmin')
+      value = (
         <AdminOption
           isAdmin={user[property] === 'true'}
           setUsers={setUsers}
-          index={index}
+          usersIndex={usersIndex}
           users={users}
-          id={users && users[index].id}
+          id={users[usersIndex].id}
         />
       )
 
     return (
-      <td style={{ verticalAlign: 'middle' }} key={key}>
-        {displayOption}
+      <td className="align-middle" key={key}>
+        {value}
       </td>
     )
   })
@@ -106,30 +108,65 @@ const RowData: React.FC<RowDataProps> = ({ user, users, setUsers, index }) => {
   return <>{data}</>
 }
 
-const UsersList: React.FC<UsersListProps> = ({ users, setUsers }) => {
-  const list =
-    users &&
-    users.reduce((acc: any[], user: any, usersIndex: number) => {
-      acc.push(
-        <tr key={usersIndex} style={{ textAlign: 'center' }}>
-          <RowData
-            user={user}
-            setUsers={setUsers}
-            index={usersIndex}
-            users={users}
-          />
-        </tr>
-      )
+const UsersList: React.FC<UsersListProps> = ({
+  users,
+  setUsers,
+  searchOption
+}) => {
+  const { searchTerm, admin } = searchOption
+  let { option } = searchOption
+  option = option.toLowerCase()
 
-      return acc
-    }, [])
+  // usersIndex is needed for the RowData component to function properly
+  const usersListIndex: any = []
 
-  return <tbody>{list}</tbody>
+  // remove all users from list that are not going to be rendered
+  const list: User[] = users.filter((user: any, usersIndex: number) => {
+    let bool = true
+
+    if (searchTerm) bool = (user[option] || '').includes(searchTerm)
+    if (bool && admin === 'Non-Admins') bool = user.isAdmin === 'false'
+    if (bool && admin === 'Admins') bool = user.isAdmin === 'true'
+
+    bool && usersListIndex.push(usersIndex)
+    return bool
+  })
+
+  const usersList = list.map((user: User, key: number) => {
+    return (
+      <tr key={key} className="text-center">
+        <RowData
+          user={user}
+          setUsers={setUsers}
+          usersIndex={usersListIndex.shift()}
+          users={users}
+          option={option}
+          searchTerm={searchTerm}
+        />
+      </tr>
+    )
+  })
+
+  return <tbody>{usersList}</tbody>
 }
 
-export const UsersTable: React.FC<UsersTableProps> = ({ users, setUsers }) => (
-  <table className="table table-striped">
-    <TableHeaders />
-    <UsersList users={users} setUsers={setUsers} />
-  </table>
-)
+export const UsersTable: React.FC<UsersTableProps> = ({
+  users,
+  setUsers,
+  searchOption
+}) => {
+  const head = headerTitles.map((title, key) => <th key={key}>{title}</th>)
+
+  return (
+    <table className="table table-striped">
+      <thead>
+        <tr className="text-center">{head}</tr>
+      </thead>
+      <UsersList
+        users={users}
+        setUsers={setUsers}
+        searchOption={searchOption}
+      />
+    </table>
+  )
+}
