@@ -6,11 +6,8 @@ import React from 'react'
 		Inputs: searchTerm='bon', str = 'bonJourbon'
 		Output: [bon, Jour, bon]
 */
-const split = (
-  str: string,
-  lowerCaseSearchTerm: string,
-  searchTerm: string
-) => {
+const splitWithSearchTerm = (str: string, searchTerm: string) => {
+  const lowerCaseSearchTerm = searchTerm.toLowerCase()
   const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
   // tracker is used for `str.substr` to extract characters from the original string at the correct places
   let tracker = 0
@@ -39,7 +36,7 @@ export const AdminUsersSplitSearch = (str: string, searchTerm: string) => {
   const lowerCaseSearchTerm = searchTerm.toLowerCase()
 
   // convert string to array with searchTerm included
-  const splitArr = split(str, lowerCaseSearchTerm, searchTerm)
+  const splitArr = splitWithSearchTerm(str, searchTerm)
 
   // highlight search Term
   const res = splitArr.map((word: string, key: number) => {
