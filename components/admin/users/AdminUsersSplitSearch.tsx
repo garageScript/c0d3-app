@@ -21,7 +21,10 @@ const splitWithSearchTerm = (str: string, searchTerm: string) => {
 
       // used to prevent over-adding of searchTerm back into array
       if (splitArrIndex === splitArr.length - 1) return acc
-      acc.push(searchTerm)
+
+      // convert searchTerm to match original capitalization of string
+      const correctSearchCapitalization = str.substr(tracker, searchTerm.length)
+      acc.push(correctSearchCapitalization)
       tracker += searchTerm.length
       return acc
     },
