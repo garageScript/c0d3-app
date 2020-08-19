@@ -125,9 +125,9 @@ const UsersList: React.FC<UsersListProps> = ({
     let bool = true
 
     /* 
-			Need to make searchTerm and value of user[option] lowercase, 
-      to ensure both lower and uppercase characters can be searched for
-		*/
+    Need to make searchTerm and value of user[option] lowercase, 
+    to ensure both lower and uppercase characters can be searched for
+    */
     const lowerCaseSearchTerm = searchTerm.toLowerCase()
     const lowerCaseOptionValue = user[option].toLowerCase()
 
