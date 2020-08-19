@@ -124,7 +124,14 @@ const UsersList: React.FC<UsersListProps> = ({
   const list: User[] = users.filter((user: any, usersIndex: number) => {
     let bool = true
 
-    if (searchTerm) bool = (user[option] || '').includes(searchTerm)
+    /* 
+			Need to make searchTerm and value of user[option] lowercase, 
+      to ensure both lower and uppercase characters can be searched for
+		*/
+    const lowerCaseSearchTerm = searchTerm.toLowerCase()
+    const lowerCaseOptionValue = user[option].toLowerCase()
+
+    if (searchTerm) bool = lowerCaseOptionValue.includes(lowerCaseSearchTerm)
     if (bool && admin === 'Non-Admins') bool = user.isAdmin === 'false'
     if (bool && admin === 'Admins') bool = user.isAdmin === 'true'
 
