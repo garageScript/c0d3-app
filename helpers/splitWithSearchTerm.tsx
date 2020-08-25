@@ -4,30 +4,14 @@
 		Inputs: searchTerm='bon', str = 'bonJourbon'
 		Output: [bon, Jour, bon]
 */
+
 export const splitWithSearchTerm = (str: string, searchTerm: string) => {
-  const lowerCaseSearchTerm = searchTerm.toLowerCase()
-  const splitArr = str.toLowerCase().split(lowerCaseSearchTerm)
-  // tracker is used for `str.substr` to extract characters from the original string at the correct places
-  let tracker = 0
-
-  const res = splitArr.reduce(
-    (acc: string[], word: string, splitArrIndex: number) => {
-      // converts words back into their original capitalization
-      const originalWord = str.substr(tracker, word.length)
-      acc.push(originalWord)
-      tracker += word.length
-
-      // used to prevent over-adding of searchTerm back into array
-      if (splitArrIndex === splitArr.length - 1) return acc
-
-      // convert searchTerm to match original capitalization of string
-      const correctSearchCapitalization = str.substr(tracker, searchTerm.length)
-      acc.push(correctSearchCapitalization)
-      tracker += searchTerm.length
-      return acc
-    },
-    []
-  )
-
-  return res
+  /*
+	Using regex with split will return an array with the separator included.
+	The `i` flag is the case insensitive flag, used to ensure that the returned array
+	will include the searchTerm, regardless of the original capialization of the searchTerm
+  */
+  const regex = new RegExp(`(${searchTerm})`, 'i')
+  return str.split(regex).filter(s => s !== '')
+  // filter to remove the empty strings that appear if searchTerm is at the start or end
 }
