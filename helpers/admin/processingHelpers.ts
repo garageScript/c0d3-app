@@ -24,11 +24,9 @@ export const makeGraphqlVariable = (options: any, addProp?: any) => {
     return acc
   }, {})
 
-  res.order = parseInt(res.order)
+  if (res.hasOwnProperty('order')) res.order = parseInt(res.order)
 
-  if (res.hasOwnProperty('id')) {
-    res.id = parseInt(res.id ? res.id + '' : '')
-  }
+  if (res.hasOwnProperty('id')) res.id = parseInt(res.id ? res.id + '' : '')
 
   if (addProp) {
     const keys = Object.keys(addProp)
@@ -41,16 +39,27 @@ export const makeGraphqlVariable = (options: any, addProp?: any) => {
 }
 
 //checks for error for one element in the `inputvalues` array
-export const checkForErrors = (option: any) => {
+export const checkForErrors = (
+  option: any,
+  required?: string[],
+  numbersOnly?: string[]
+) => {
   const { title, value } = option
-  const required = ['title', 'description', 'order']
 
-  if (required.includes(title) && !value) {
+  if (required && required.includes(title) && !value) {
     option.error = 'Required'
     return true
   }
 
-  if (title === 'order' && isNaN(parseInt(value))) {
+  /**
+   * parseInt(value).toString() !== value needed incase someone begins typing
+   * with a number, but then types a non-number. Ex: '32F'
+   */
+  if (
+    numbersOnly &&
+    numbersOnly.includes(title) &&
+    parseInt(value).toString() !== value
+  ) {
     option.error = 'Numbers only'
     return true
   }
@@ -61,10 +70,14 @@ export const checkForErrors = (option: any) => {
 }
 
 //checks for error for each element in the `inputvalues` array
-export const checkForAllErrors = (options: any) => {
+export const checkForAllErrors = (
+  options: any,
+  required?: string[],
+  numbersOnly?: string[]
+) => {
   let error = false
   options.forEach((option: any) => {
-    if (checkForErrors(option)) error = true
+    if (checkForErrors(option, required, numbersOnly)) error = true
   })
   return error
 }

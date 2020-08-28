@@ -9,7 +9,7 @@ import {
   makeGraphqlVariable,
   checkForErrors,
   checkForAllErrors
-} from '../../../helpers/admin/lessonHelpers'
+} from '../../../helpers/admin/processingHelpers'
 import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 
@@ -17,6 +17,9 @@ export const titleStyle: React.CSSProperties | undefined = {
   fontSize: '4rem',
   fontWeight: 'bold'
 }
+
+// [required, numbersOnly]
+export const errorChecks = [['title', 'description', 'order'], ['order']]
 
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
@@ -47,7 +50,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   // alter gets called when someone clicks button to update a lesson
   const alter = async () => {
     const newProperties = [...lessonProperties]
-    const errors = checkForAllErrors(newProperties)
+    const errors = checkForAllErrors(newProperties, ...errorChecks)
     if (errors) {
       setLessonProperties(newProperties)
       return
@@ -62,7 +65,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   const handleChange = (value: string, propertyIndex: number) => {
     const newLessonProperties = [...lessonProperties]
     newLessonProperties[propertyIndex].value = value
-    checkForErrors(newLessonProperties[propertyIndex])
+    checkForErrors(newLessonProperties[propertyIndex], ...errorChecks)
     setLessonProperties(newLessonProperties)
   }
 
@@ -108,7 +111,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   // alter gets called when someone clicks button to create a lesson
   const alter = async () => {
     const newProperties = [...lessonProperties]
-    const errors = checkForAllErrors(newProperties)
+    const errors = checkForAllErrors(newProperties, ...errorChecks)
     if (errors) {
       setLessonProperties(newProperties)
       return
@@ -124,7 +127,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   const handleChange = (value: string, propertyIndex: number) => {
     const newLessonProperties = [...lessonProperties]
     newLessonProperties[propertyIndex].value = value
-    checkForErrors(newLessonProperties[propertyIndex])
+    checkForErrors(newLessonProperties[propertyIndex], ...errorChecks)
     setLessonProperties(newLessonProperties)
   }
 

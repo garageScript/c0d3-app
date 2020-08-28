@@ -9,8 +9,8 @@ import {
   checkForErrors,
   checkForAllErrors,
   makeGraphqlVariable
-} from '../../../helpers/admin/lessonHelpers'
-import { titleStyle } from './AdminLessonInfo'
+} from '../../../helpers/admin/processingHelpers'
+import { titleStyle, errorChecks } from './AdminLessonInfo'
 
 const challengeAttributes = {
   title: '',
@@ -50,7 +50,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   // alter gets called when someone clicks button to create a lesson
   const alter = async () => {
     const newProperties = [...challengeProperties]
-    const errors = checkForAllErrors(newProperties)
+    const errors = checkForAllErrors(newProperties, ...errorChecks)
     if (errors) {
       setChallengeProperties(newProperties)
       return
@@ -70,7 +70,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   const handleChange = (value: string, propertyIndex: number) => {
     const newChallengeProperties = [...challengeProperties]
     newChallengeProperties[propertyIndex].value = value
-    checkForErrors(newChallengeProperties[propertyIndex])
+    checkForErrors(newChallengeProperties[propertyIndex], ...errorChecks)
     setChallengeProperties(newChallengeProperties)
   }
 
@@ -101,7 +101,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
   const handleChange = (value: string, propertyIndex: number) => {
     const newChallengeProperties = [...challengeProperties]
     newChallengeProperties[propertyIndex].value = value
-    checkForErrors(newChallengeProperties[propertyIndex])
+    checkForErrors(newChallengeProperties[propertyIndex], ...errorChecks)
     setChallengeProperties(newChallengeProperties)
   }
 
@@ -109,7 +109,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
     title: 'Update Challenge',
     onClick: () => {
       const newProperties = [...challengeProperties]
-      const errors = checkForAllErrors(newProperties)
+      const errors = checkForAllErrors(newProperties, ...errorChecks)
       if (errors) {
         setChallengeProperties(newProperties)
         return
