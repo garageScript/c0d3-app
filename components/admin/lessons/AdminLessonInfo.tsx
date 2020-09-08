@@ -68,12 +68,10 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
 
   return (
     <>
-      <div className="mb-2">
-        <span className="text-primary font-weight-bold display-3">
-          Lesson Info
-        </span>
-      </div>
-      <div>
+      <span className="text-primary font-weight-bold display-3">
+        Lesson Info
+      </span>
+      <div className="mt-3">
         <FormCard
           onChange={handleChange}
           values={lessonProperties}
