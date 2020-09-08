@@ -28,6 +28,6 @@ describe('lessonsAPI', () => {
 
     await lessonsAPI(req, res)
     expect(res.status).toBeCalledWith(500)
-    expect(res.json).toBeCalledWith('Error occured :(')
+    expect(res.json).toBeCalledWith('Error occured 😮')
   })
 })

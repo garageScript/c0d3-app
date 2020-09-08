@@ -8,6 +8,6 @@ export default async (_: LoggedRequest, res: NextApiResponse) => {
     res.json(allLessons)
   } catch (err) {
     res.status(500)
-    res.json('Error occured :(')
+    res.json('Error occured 😮')
   }
 }
