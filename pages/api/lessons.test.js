@@ -23,7 +23,7 @@ describe('lessonsAPI', () => {
   test('should respond with 500 status code and display error message when \
 	there is an error', async () => {
     getLessons.lessons = jest.fn().mockImplementation(() => {
-      throw new Error('Error occured :(')
+      throw new Error()
     })
 
     await lessonsAPI(req, res)
