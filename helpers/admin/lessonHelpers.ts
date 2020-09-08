@@ -1,3 +1,5 @@
+import { reach } from 'yup'
+
 // creates usuable array from graphql data to use as a prop when using FormCard component
 export const getPropertyArr = (options: any, deleteProps?: string[]) => {
   options.hasOwnProperty('__typename') && delete options.__typename
@@ -24,7 +26,11 @@ export const makeGraphqlVariable = (options: any, addProp?: any) => {
     return acc
   }, {})
 
-  res.order = parseInt(res.order)
+  if (res.hasOwnProperty('order')) {
+    // undefined marks order as empty. Or else it will be NaN, and
+    // Yup will give out a typeError instead of a Required error
+    res.order = res.order === '' ? undefined : parseInt(res.order)
+  }
 
   if (res.hasOwnProperty('id')) {
     res.id = parseInt(res.id ? res.id + '' : '')
@@ -40,31 +46,59 @@ export const makeGraphqlVariable = (options: any, addProp?: any) => {
   return { variables: res }
 }
 
-//checks for error for one element in the `inputvalues` array
-export const checkForErrors = (option: any) => {
-  const { title, value } = option
-  const required = ['title', 'description', 'order']
+export const errorCheckSingleField = async (
+  properties: any,
+  propertyIndex: number,
+  schema: any
+) => {
+  // use makeGraphqlVariable to convert properties into an
+  // object key-value format for error checking with Yup
+  const data = makeGraphqlVariable(properties).variables
+  let valid = true
 
-  if (required.includes(title) && !value) {
-    option.error = 'Required'
-    return true
+  // title is the name of field being checked
+  const { title } = properties[propertyIndex]
+  try {
+    await reach(schema, title).validate(data[title])
+  } catch (err) {
+    valid = false
+    properties[propertyIndex].error = err.message
   }
 
-  if (title === 'order' && isNaN(parseInt(value))) {
-    option.error = 'Numbers only'
-    return true
+  // remove error message(if present) if field is valid
+  if (valid) {
+    properties[propertyIndex].hasOwnProperty('error') &&
+      delete properties[propertyIndex].error
   }
 
-  option.hasOwnProperty('error') && delete option.error
-
-  return false
+  return valid
 }
 
-//checks for error for each element in the `inputvalues` array
-export const checkForAllErrors = (options: any) => {
-  let error = false
-  options.forEach((option: any) => {
-    if (checkForErrors(option)) error = true
-  })
-  return error
+export const errorCheckAllFields = async (properties: any, schema: any) => {
+  // use makeGraphqlVariable to convert properties into an
+  // object key-value format for error checking with Yup
+  const data = makeGraphqlVariable(properties).variables
+  let allValid = true
+
+  try {
+    await schema.validate(data, { abortEarly: false })
+  } catch (err) {
+    // errors is an array of error messages
+    // inner is an array of objects containing more error information
+    const { errors, inner } = err
+
+    inner.some((innerObj: any, errorIndex: number) => {
+      // get index of property with title equal to value of innerObj.path
+      const titleIndex = properties.findIndex(
+        (property: any) => property.title === innerObj.path
+      )
+
+      //add error message to field
+      properties[titleIndex].error = errors[errorIndex]
+    })
+
+    allValid = false
+  }
+
+  return allValid
 }
