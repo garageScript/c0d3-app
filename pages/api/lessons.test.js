@@ -1,10 +1,7 @@
 import lessonsAPI from './lessons'
 import noop from '../../helpers/noop'
-import * as getLessons from '../../graphql/queryResolvers/lessons'
-
-getLessons.lessons = jest
-  .fn()
-  .mockReturnValue(['man', 'bear', 'pig', 'manbearpig'])
+import { lessons } from '../../graphql/queryResolvers/lessons'
+lessons = jest.fn().mockReturnValue(['man', 'bear', 'pig', 'manbearpig'])
 
 describe('lessonsAPI', () => {
   const res = {
@@ -12,13 +9,15 @@ describe('lessonsAPI', () => {
     status: jest.fn(noop)
   }
 
-  test('should respond with 200 status code', async () => {
-    await lessonsAPI(null, res)
+  const req = null
+
+  test('should respond with 200 status code when there is no error', async () => {
+    await lessonsAPI(req, res)
     expect(res.status).toBeCalledWith(200)
   })
 
-  test('should respond with json data from getLessons.lessons', async () => {
-    await lessonsAPI(null, res)
+  test('should respond with json data from lessons() when there is no error', async () => {
+    await lessonsAPI(req, res)
     expect(res.json).toBeCalledWith(['man', 'bear', 'pig', 'manbearpig'])
   })
 })
