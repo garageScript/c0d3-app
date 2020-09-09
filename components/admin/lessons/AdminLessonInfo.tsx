@@ -9,7 +9,7 @@ import {
   makeGraphqlVariable,
   checkForErrors,
   checkForAllErrors
-} from '../../../helpers/admin/lessonHelpers'
+} from '../../../helpers/admin/adminHelpers'
 import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 

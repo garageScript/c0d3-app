@@ -9,7 +9,7 @@ import {
   checkForErrors,
   checkForAllErrors,
   makeGraphqlVariable
-} from '../../../helpers/admin/lessonHelpers'
+} from '../../../helpers/admin/adminHelpers'
 import { titleStyle } from './AdminLessonInfo'
 
 const challengeAttributes = {
