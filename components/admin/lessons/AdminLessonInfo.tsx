@@ -9,7 +9,7 @@ import {
   makeGraphqlVariable,
   errorCheckAllFields,
   errorCheckSingleField
-} from '../../../helpers/admin/lessonHelpers'
+} from '../../../helpers/admin/adminHelpers'
 import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 import { lessonSchema } from '../../../helpers/formValidation'
