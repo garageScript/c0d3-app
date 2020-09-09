@@ -7,16 +7,12 @@ import _ from 'lodash'
 import {
   getPropertyArr,
   makeGraphqlVariable,
-  checkForErrors,
-  checkForAllErrors
+  errorCheckAllFields,
+  errorCheckSingleField
 } from '../../../helpers/admin/adminHelpers'
 import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
-
-export const titleStyle: React.CSSProperties | undefined = {
-  fontSize: '4rem',
-  fontWeight: 'bold'
-}
+import { lessonSchema } from '../../../helpers/formValidation'
 
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
@@ -47,8 +43,8 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   // alter gets called when someone clicks button to update a lesson
   const alter = async () => {
     const newProperties = [...lessonProperties]
-    const errors = checkForAllErrors(newProperties)
-    if (errors) {
+    const valid = await errorCheckAllFields(newProperties, lessonSchema)
+    if (!valid) {
       setLessonProperties(newProperties)
       return
     }
@@ -59,19 +55,23 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
     }
   }
 
-  const handleChange = (value: string, propertyIndex: number) => {
+  const handleChange = async (value: string, propertyIndex: number) => {
     const newLessonProperties = [...lessonProperties]
     newLessonProperties[propertyIndex].value = value
-    checkForErrors(newLessonProperties[propertyIndex])
+    await errorCheckSingleField(
+      newLessonProperties,
+      propertyIndex,
+      lessonSchema
+    )
     setLessonProperties(newLessonProperties)
   }
 
   return (
     <>
-      <span className="text-primary" style={titleStyle}>
+      <span className="text-primary font-weight-bold display-3">
         Lesson Info
       </span>
-      <div style={{ textAlign: 'center' }} className="card">
+      <div className="mt-3">
         <FormCard
           onChange={handleChange}
           values={lessonProperties}
@@ -108,8 +108,8 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   // alter gets called when someone clicks button to create a lesson
   const alter = async () => {
     const newProperties = [...lessonProperties]
-    const errors = checkForAllErrors(newProperties)
-    if (errors) {
+    const valid = await errorCheckAllFields(newProperties, lessonSchema)
+    if (!valid) {
       setLessonProperties(newProperties)
       return
     }
@@ -121,18 +121,24 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
     }
   }
 
-  const handleChange = (value: string, propertyIndex: number) => {
-    const newLessonProperties = [...lessonProperties]
+  const handleChange = async (value: string, propertyIndex: number) => {
+    let newLessonProperties: any = [...lessonProperties]
     newLessonProperties[propertyIndex].value = value
-    checkForErrors(newLessonProperties[propertyIndex])
+    await errorCheckSingleField(
+      newLessonProperties,
+      propertyIndex,
+      lessonSchema
+    )
     setLessonProperties(newLessonProperties)
   }
 
   return (
-    <div style={{ textAlign: 'center', marginBottom: 20 }} className="col-8">
-      <span className="text-primary" style={titleStyle}>
-        Create New Lesson
-      </span>
+    <div className="col-8 text-center">
+      <div className="mb-2">
+        <span className="text-primary font-weight-bold display-3">
+          Create New Lesson
+        </span>
+      </div>
       <FormCard
         onChange={handleChange}
         values={lessonProperties}
@@ -158,15 +164,14 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   const lessonId = parseInt(lesson ? lesson.id + '' : '')
 
   return (
-    <div style={{ textAlign: 'center' }} className="col-8" key={_.uniqueId()}>
+    <div className="col-8 text-center" key={_.uniqueId()}>
       <EditLesson setLessons={setLessons} lesson={lesson} />
       <hr />
       <NewChallenge setLessons={setLessons} lessonId={lessonId} />
       <hr />
-      <span className="text-primary" style={titleStyle}>
+      <span className="text-primary font-weight-bold display-3">
         Lesson Challenges
       </span>
-
       <AdminLessonChallenges
         challenges={lesson && lesson.challenges}
         lessonId={lessonId}

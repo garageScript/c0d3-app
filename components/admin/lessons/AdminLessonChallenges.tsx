@@ -6,11 +6,11 @@ import createNewChallenge from '../../../graphql/queries/createChallenge'
 import { Lesson, Challenge, Maybe } from '../../../graphql/index'
 import {
   getPropertyArr,
-  checkForErrors,
-  checkForAllErrors,
-  makeGraphqlVariable
+  makeGraphqlVariable,
+  errorCheckAllFields,
+  errorCheckSingleField
 } from '../../../helpers/admin/adminHelpers'
-import { titleStyle } from './AdminLessonInfo'
+import { lessonSchema } from '../../../helpers/formValidation'
 
 const challengeAttributes = {
   title: '',
@@ -50,8 +50,8 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   // alter gets called when someone clicks button to create a lesson
   const alter = async () => {
     const newProperties = [...challengeProperties]
-    const errors = checkForAllErrors(newProperties)
-    if (errors) {
+    const valid = await errorCheckAllFields(newProperties, lessonSchema)
+    if (!valid) {
       setChallengeProperties(newProperties)
       return
     }
@@ -67,25 +67,30 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
     }
   }
 
-  const handleChange = (value: string, propertyIndex: number) => {
+  const handleChange = async (value: string, propertyIndex: number) => {
     const newChallengeProperties = [...challengeProperties]
     newChallengeProperties[propertyIndex].value = value
-    checkForErrors(newChallengeProperties[propertyIndex])
+    await errorCheckSingleField(
+      newChallengeProperties,
+      propertyIndex,
+      lessonSchema
+    )
     setChallengeProperties(newChallengeProperties)
   }
 
   return (
-    <div style={{ textAlign: 'center', marginBottom: 20, marginTop: 10 }}>
-      <span className="text-primary" style={titleStyle}>
-        Create New Challenge
-      </span>
-      <div className="card">
-        <FormCard
-          onChange={handleChange}
-          values={challengeProperties}
-          onSubmit={{ title: 'Create Challenge', onClick: alter }}
-        />
+    <div className="mb-2">
+      <div className="mb-3 text-center">
+        <span className="text-primary font-weight-bold display-3">
+          Create New Challenge
+        </span>
       </div>
+
+      <FormCard
+        onChange={handleChange}
+        values={challengeProperties}
+        onSubmit={{ title: 'Create Challenge', onClick: alter }}
+      />
     </div>
   )
 }
@@ -98,19 +103,23 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
     getPropertyArr(challenge, ['lessonId'])
   )
 
-  const handleChange = (value: string, propertyIndex: number) => {
+  const handleChange = async (value: string, propertyIndex: number) => {
     const newChallengeProperties = [...challengeProperties]
     newChallengeProperties[propertyIndex].value = value
-    checkForErrors(newChallengeProperties[propertyIndex])
+    await errorCheckSingleField(
+      newChallengeProperties,
+      propertyIndex,
+      lessonSchema
+    )
     setChallengeProperties(newChallengeProperties)
   }
 
   const handleSubmit = {
     title: 'Update Challenge',
-    onClick: () => {
+    onClick: async () => {
       const newProperties = [...challengeProperties]
-      const errors = checkForAllErrors(newProperties)
-      if (errors) {
+      const valid = await errorCheckAllFields(newProperties, lessonSchema)
+      if (!valid) {
         setChallengeProperties(newProperties)
         return
       }
@@ -119,7 +128,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
   }
 
   return (
-    <div className="card" style={{ marginBottom: 20 }}>
+    <div className="mt-3">
       <FormCard
         onChange={handleChange}
         title={(challenge && challenge.title + '') || ''}
