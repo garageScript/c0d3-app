@@ -1,11 +1,10 @@
 import lessonsAPI from './lessons'
-import noop from '../../helpers/noop'
 import * as getLessons from '../../graphql/queryResolvers/lessons'
 
 describe('lessonsAPI', () => {
   const res = {
-    json: jest.fn(noop),
-    status: jest.fn(noop)
+    json: jest.fn(),
+    status: jest.fn()
   }
 
   const req = null
