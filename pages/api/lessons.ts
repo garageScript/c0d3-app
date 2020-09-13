@@ -7,7 +7,6 @@ export default async (_: LoggedRequest, res: NextApiResponse) => {
     const allLessons = await lessons()
     res.json(allLessons)
   } catch (err) {
-    res.status(500)
-    res.json('Error occured 😮')
+    res.status(500).json('Error occured 😮')
   }
 }
