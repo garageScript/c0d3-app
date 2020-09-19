@@ -1,5 +1,5 @@
-import lessonsAPI from './lessons'
-import * as getLessons from '../../graphql/queryResolvers/lessons'
+import lessonsAPI from '../../../pages/api/lessons'
+import * as getLessons from '../../../graphql/queryResolvers/lessons'
 
 describe('lessonsAPI', () => {
   const res = {
@@ -7,10 +7,12 @@ describe('lessonsAPI', () => {
     status: jest.fn()
   }
 
+  // needed to mock chaining status and json methods. Ex: res.status(201).json('lol')
+  res.status.mockReturnValue(res)
   const req = null
 
   test('should respond with data from lessons query resolver when there is no \
-	error', async () => {
+  error', async () => {
     getLessons.lessons = jest
       .fn()
       .mockReturnValue(['man', 'bear', 'pig', 'manbearpig'])
