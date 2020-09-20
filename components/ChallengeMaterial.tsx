@@ -14,6 +14,7 @@ import Prism from 'prismjs'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import _ from 'lodash'
+import '../scss/giveStarCard.scss'
 
 dayjs.extend(relativeTime)
 
@@ -54,6 +55,10 @@ type ChallengesCompletedCardProps = {
   imageSrc: string
   reviewUrl: string
   chatUrl: string
+}
+
+type GiveStarCardProps = {
+  closeCard: () => void
 }
 
 export const ReviewStatus: React.FC<ReviewStatusProps> = ({
@@ -229,6 +234,13 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 }
 
 export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = props => {
+  const [showGiveStarComponent, setShowGiveStarComponent] = useState<boolean>(
+    false
+  )
+  const toggleGiveStarComponent = () => {
+    setShowGiveStarComponent(!showGiveStarComponent)
+  }
+
   return (
     <div className="card text-center shadow-sm">
       <div className="card-body">
@@ -264,9 +276,27 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = p
           You can show your appreciation to the user that helped you the most by
           giving them a star
         </p>
-        <button className="btn btn-light text-primary font-weight-bold ml-auto">
+        <button
+          className="btn btn-light text-primary font-weight-bold ml-auto"
+          onClick={toggleGiveStarComponent}
+        >
           Give Star
         </button>
+      </div>
+      {showGiveStarComponent && (
+        <GiveStarCard closeCard={toggleGiveStarComponent} />
+      )}
+    </div>
+  )
+}
+
+const GiveStarCard: React.FC<GiveStarCardProps> = ({ closeCard }) => {
+  return (
+    <div className="popupCard">
+      <div className="popupCard_inner">
+        <h3>Who helped you the most?</h3>
+        <input type="text" placeholder="@usernmae" />
+        <button onClick={closeCard}>Close</button>
       </div>
     </div>
   )
