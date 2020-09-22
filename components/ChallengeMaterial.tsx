@@ -294,9 +294,28 @@ const GiveStarCard: React.FC<GiveStarCardProps> = ({ closeCard }) => {
   return (
     <div className="popupCard">
       <div className="popupCard_inner">
-        <h3>Who helped you the most?</h3>
-        <input type="text" placeholder="@usernmae" />
-        <button onClick={closeCard}>Close</button>
+        <h4>Who helped you the most?</h4>
+        <div className="input_username">
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon1">
+                @
+              </span>
+            </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Username"
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          className="close_give_star_card"
+          onClick={closeCard}
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
   )
