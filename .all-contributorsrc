@@ -1,0 +1,29 @@
+{
+  "projectName": "c0d3-app",
+  "projectOwner": "garageScript",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "songz",
+      "name": "Song Zheng",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/686933?v=4",
+      "profile": "https://www.c0d3.com/",
+      "contributions": [
+        "bug",
+        "doc",
+        "ideas",
+        "infra",
+        "mentoring",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
