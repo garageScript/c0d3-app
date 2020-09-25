@@ -24,6 +24,12 @@ type Btn = {
   onClick: (value: any) => void
 }
 
+type OptionProps = {
+	option: Option
+  capitalizeTitle?: boolean
+  onChange: Function
+}
+
 type FormCardProps = {
   values: Option[]
   onSubmit: Btn
@@ -109,6 +115,32 @@ export const OptionsList: React.FC<OptionsListProps> = ({
   })
 
   return <>{inputs}</>
+}
+
+const Option React.FC: <OptionProps> = ({onChange, capitalizeTitle, option}) => {
+const { title, value, placeHolder, type } = option
+    if (option.title === 'id') return []
+    const inputType =
+      type === MD_INPUT ? (
+        <MdInput
+          bgColor="white"
+          value={`${value || ''}`}
+          onChange={(value: string) => {
+            onChange(value, i)
+          }}
+        />
+      ) : (
+        <input
+          data-testid={`input${i}`}
+          style={{ border: '1px solid rgb(84, 64, 216, .3)' }}
+          type="text"
+          value={`${value || ''}`}
+          onChange={e => {
+            onChange(e.target.value, i)
+          }}
+          placeholder={placeHolder || ''}
+        />
+     
 }
 
 export const FormCard: React.FC<FormCardProps> = ({
