@@ -1,6 +1,6 @@
 # c0d3.com
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -53,6 +53,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/aortizoj15"><img src="https://avatars3.githubusercontent.com/u/36532821?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexis Ortiz Ojeda</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=aortizoj15" title="Code">💻</a></td>
     <td align="center"><a href="https://dewulfdavid.com/"><img src="https://avatars3.githubusercontent.com/u/25457563?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David De Wulf</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=Wolfy64" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/michaelbayday"><img src="https://avatars2.githubusercontent.com/u/35093298?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Dinh</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=michaelbayday" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/rkalra247"><img src="https://avatars1.githubusercontent.com/u/27792256?v=4?s=100" width="100px;" alt=""/><br /><sub><b>rkalra247</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=rkalra247" title="Code">💻</a></td>
   </tr>
 </table>
 
