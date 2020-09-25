@@ -49,11 +49,11 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const id = _.get(lesson, 'id', idx) as number
     const status = lessonStatusMap[id]
-    const passed = _.get(status, 'isPassed', false)
     let lessonState = ''
     if (idx === lessonInProgressIdx) {
       lessonState = 'inProgress'
     }
+    const passed = _.get(status, 'isPassed', false)
     if (passed) {
       lessonState = 'completed'
     }
