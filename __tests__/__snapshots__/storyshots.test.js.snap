@@ -413,6 +413,29 @@ exports[`Storyshots Components/Card With Fail 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Card With Primary 1`] = `
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+  >
+    <div
+      className="card-body text-center pt-5 pb-5"
+    >
+      <h1
+        className="card-title h2 font-weight-bold mb-5 text-primary"
+      >
+        Title of the card
+      </h1>
+      <p
+        className="card-text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Card With Success 1`] = `
 <div
   className="row mt-5"
