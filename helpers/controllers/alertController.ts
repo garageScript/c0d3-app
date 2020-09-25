@@ -2,6 +2,7 @@ import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
+import { alerts } from '../../graphql/queryResolvers/alerts'
 
 const { Alert } = db
 
@@ -27,9 +28,8 @@ export const addAlert = async (
       throw new Error('Missing alert parameters')
     }
     await Alert.create({ text, type, url, urlCaption })
-    return {
-      success: true
-    }
+    const updatedAlerts = await alerts()
+    return updatedAlerts
   } catch (err) {
     req.error(['Invalid data for alert creation', arg])
     throw new Error(err)
