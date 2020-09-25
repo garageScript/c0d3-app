@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 import Alert from '../../components/Alert'
 import { AdminLayout } from '../../components/admin/AdminLayout'
@@ -8,12 +8,13 @@ import { withGetApp, GetAppProps, Alert as AlertType } from '../../graphql'
 import noop from '../../helpers/noop'
 import Card from '../../components/Card'
 
-type CurrentAlertsProps = {
+type AlertRowProps = {
   alerts: AlertType[]
-  setAlerts: React.Dispatch<React.SetStateAction<AlertType[] | null>>
+  alert: AlertType
+  setAlerts: React.Dispatch<React.SetStateAction<AlertType[]>>
 }
 
-const CurrentAlerts: React.FC<CurrentAlertsProps> = ({ alerts, setAlerts }) => {
+const AlertRow: React.FC<AlertRowProps> = ({ alerts, alert, setAlerts }) => {
   const [removeAlert] = useMutation(REMOVE_ALERT)
 
   const removeDatAlert = async (id: string) => {
@@ -26,8 +27,8 @@ const CurrentAlerts: React.FC<CurrentAlertsProps> = ({ alerts, setAlerts }) => {
     }
   }
 
-  const allAlerts = alerts.map((alert: AlertType, key: number) => (
-    <div className="row no-gutters" key={key}>
+  return (
+    <div className="row">
       <div className="d-flex flex-column col-10">
         <Alert alert={alert} onDismiss={noop} />
       </div>
@@ -44,30 +45,40 @@ const CurrentAlerts: React.FC<CurrentAlertsProps> = ({ alerts, setAlerts }) => {
         </Button>
       </div>
     </div>
-  ))
-
-  return (
-    <Card classes="col-12" title="Current Alerts">
-      <p className="lesson-card__description" style={{ marginTop: -20 }}>
-        These alerts are what every students see when they are on their
-        dashboard page.
-      </p>
-      {allAlerts}
-    </Card>
   )
 }
 
 const Alerts: React.FC<GetAppProps> = ({ data }) => {
-  const [alerts, setAlerts] = useState<null | AlertType[]>(null)
+  const [alerts, setAlerts] = useState<AlertType[]>([])
+
+  // useEffect needed to update `alerts` state after data has finished loading alerts
+  useEffect(() => {
+    if (!data.error && !data.loading) {
+      setAlerts(data.alerts as AlertType[])
+    }
+  }, [data])
+
+  const currentAlerts = alerts.map((alert: AlertType, key: number) => (
+    <AlertRow alerts={alerts} alert={alert} key={key} setAlerts={setAlerts} />
+  ))
+
   return (
     <AdminLayout data={data}>
-      <p className="display-1 text-center text-primary font-weight-bold">
-        Alerts
-      </p>
-      <CurrentAlerts
-        alerts={(alerts as AlertType[]) || data.alerts}
-        setAlerts={setAlerts}
+      <Card
+        primary={true}
+        title="Alerts"
+        classes="col-12"
+        text="Add new messages you want c0d3.com students to see or remove old and outdated alerts!"
       />
+      <Card
+        primary={true}
+        title="Current Alerts"
+        classes="col-12"
+        text="These alerts are what every students see when they are on their
+        dashboard page."
+      >
+        {currentAlerts}
+      </Card>
     </AdminLayout>
   )
 }
