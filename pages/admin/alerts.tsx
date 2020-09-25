@@ -6,6 +6,7 @@ import { Button } from '../../components/theme/Button'
 import REMOVE_ALERT from '../../graphql/queries/removeAlert'
 import { withGetApp, GetAppProps, Alert as AlertType } from '../../graphql'
 import noop from '../../helpers/noop'
+import Card from '../../components/Card'
 
 type CurrentAlertsProps = {
   alerts: AlertType[]
@@ -27,10 +28,10 @@ const CurrentAlerts: React.FC<CurrentAlertsProps> = ({ alerts, setAlerts }) => {
 
   const allAlerts = alerts.map((alert: AlertType, key: number) => (
     <div className="row no-gutters" key={key}>
-      <div className="d-flex flex-column col-9">
+      <div className="d-flex flex-column col-10">
         <Alert alert={alert} onDismiss={noop} />
       </div>
-      <div className="d-flex flex-column col-3 mt-3 justify-content-center">
+      <div className="d-flex flex-column col-2 mt-3 justify-content-center">
         <Button
           type="danger"
           onClick={() =>
@@ -46,12 +47,13 @@ const CurrentAlerts: React.FC<CurrentAlertsProps> = ({ alerts, setAlerts }) => {
   ))
 
   return (
-    <div>
-      <p className="display-3 text-center text-primary font-weight-bold">
-        Current Alerts
+    <Card classes="col-12" title="Current Alerts">
+      <p className="lesson-card__description" style={{ marginTop: -20 }}>
+        These alerts are what every students see when they are on their
+        dashboard page.
       </p>
       {allAlerts}
-    </div>
+    </Card>
   )
 }
 
@@ -62,7 +64,6 @@ const Alerts: React.FC<GetAppProps> = ({ data }) => {
       <p className="display-1 text-center text-primary font-weight-bold">
         Alerts
       </p>
-      <hr />
       <CurrentAlerts
         alerts={(alerts as AlertType[]) || data.alerts}
         setAlerts={setAlerts}
