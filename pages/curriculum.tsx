@@ -71,7 +71,7 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
         currentState={lessonState}
         reviewUrl={`/review/${id}`}
         challengesUrl={`/curriculum/${id}`}
-        docUrl={lesson.docUrl || ''}
+        docUrl={_.get(lesson, 'docUrl', '') as string}
       />
     )
   })
