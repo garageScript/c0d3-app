@@ -52,6 +52,7 @@ const Alerts: React.FC<GetAppProps> = ({ data }) => {
   const [alerts, setAlerts] = useState<AlertType[]>([])
 
   // useEffect needed to update `alerts` state after data has finished loading alerts
+  // if this is not done, no alerts will be displayed because alerts will just equal []
   useEffect(() => {
     if (!data.error && !data.loading) {
       setAlerts(data.alerts as AlertType[])
