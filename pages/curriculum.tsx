@@ -36,7 +36,8 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   ])(
     lessons.findIndex(lesson => {
       const lessonId = _.get(lesson, 'id', '-1') as string
-      return !lessonStatusMap[lessonId]?.isPassed
+      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
+      return !passed
     })
   )
 
@@ -48,11 +49,12 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const id = _.get(lesson, 'id', idx) as number
     const status = lessonStatusMap[id]
+    const passed = _.get(status, 'isPassed', false)
     let lessonState = ''
     if (idx === lessonInProgressIdx) {
       lessonState = 'inProgress'
     }
-    if (status?.isPassed) {
+    if (passed) {
       lessonState = 'completed'
     }
     const title = _.get(lesson, 'title', '') as string
@@ -69,7 +71,7 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
         currentState={lessonState}
         reviewUrl={`/review/${id}`}
         challengesUrl={`/curriculum/${id}`}
-        docUrl={lesson?.docUrl || ''}
+        docUrl={lesson.docUrl || ''}
       />
     )
   })
