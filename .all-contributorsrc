@@ -23,6 +23,17 @@
         "mentoring",
         "projectManagement"
       ]
+    },
+    {
+      "login": "hwong0305",
+      "name": "Herman Wong",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7990856?v=4",
+      "profile": "https://www.devwong.com/",
+      "contributions": [
+        "bug",
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
