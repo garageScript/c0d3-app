@@ -1,6 +1,6 @@
 # c0d3.com
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -51,6 +51,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.c0d3.com/"><img src="https://avatars2.githubusercontent.com/u/686933?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Song Zheng</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/issues?q=author%3Asongz" title="Bug reports">🐛</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=songz" title="Documentation">📖</a> <a href="#ideas-songz" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-songz" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#mentoring-songz" title="Mentoring">🧑‍🏫</a> <a href="#projectManagement-songz" title="Project Management">📆</a></td>
     <td align="center"><a href="https://www.devwong.com/"><img src="https://avatars1.githubusercontent.com/u/7990856?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Herman Wong</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/issues?q=author%3Ahwong0305" title="Bug reports">🐛</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=hwong0305" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/pulls?q=is%3Apr+reviewed-by%3Ahwong0305" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/aortizoj15"><img src="https://avatars3.githubusercontent.com/u/36532821?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexis Ortiz Ojeda</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=aortizoj15" title="Code">💻</a></td>
+    <td align="center"><a href="https://dewulfdavid.com/"><img src="https://avatars3.githubusercontent.com/u/25457563?v=4?s=100" width="100px;" alt=""/><br /><sub><b>David De Wulf</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=Wolfy64" title="Code">💻</a></td>
   </tr>
 </table>
 
