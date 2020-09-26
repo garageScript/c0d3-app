@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "anthonykhoa",
+      "name": "anthonykhoa",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/45890848?v=4",
+      "profile": "https://github.com/anthonykhoa",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "c0d3-app",
+  "projectOwner": "garageScript",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
