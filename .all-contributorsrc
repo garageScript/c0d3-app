@@ -106,6 +106,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "stevenlay",
+      "name": "Steven Lay",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20160586?v=4",
+      "profile": "https://github.com/stevenlay",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
