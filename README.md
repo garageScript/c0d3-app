@@ -1,6 +1,6 @@
 # c0d3.com
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -59,6 +59,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://coltonehrman.github.io/react-portfolio/"><img src="https://avatars1.githubusercontent.com/u/12456288?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Colton Ehrman</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=coltonehrman" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/danielthalhuber"><img src="https://avatars1.githubusercontent.com/u/32470229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Thalhuber</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=danielthalhuber" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Cijin"><img src="https://avatars0.githubusercontent.com/u/1990966?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cijin Cherian</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=Cijin" title="Code">💻</a></td>
   </tr>
 </table>
 
