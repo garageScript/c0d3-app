@@ -1,6 +1,6 @@
 # c0d3.com
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -55,6 +55,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/michaelbayday"><img src="https://avatars2.githubusercontent.com/u/35093298?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Dinh</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=michaelbayday" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/rkalra247"><img src="https://avatars1.githubusercontent.com/u/27792256?v=4?s=100" width="100px;" alt=""/><br /><sub><b>rkalra247</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=rkalra247" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/SahilKalra98"><img src="https://avatars1.githubusercontent.com/u/23374591?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SahilKalra98</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=SahilKalra98" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://coltonehrman.github.io/react-portfolio/"><img src="https://avatars1.githubusercontent.com/u/12456288?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Colton Ehrman</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=coltonehrman" title="Code">💻</a></td>
   </tr>
 </table>
 
