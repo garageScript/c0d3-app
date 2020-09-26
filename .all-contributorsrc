@@ -115,6 +115,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ggwadera",
+      "name": "Guilherme Gwadera",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16023489?v=4",
+      "profile": "https://www.linkedin.com/in/guilherme-gwadera/",
+      "contributions": [
+        "doc",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
