@@ -9,6 +9,7 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
+  "skipCi": true,
   "contributors": [
     {
       "login": "songz",
@@ -112,6 +113,15 @@
       "name": "Steven Lay",
       "avatar_url": "https://avatars1.githubusercontent.com/u/20160586?v=4",
       "profile": "https://github.com/stevenlay",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anthonykhoa",
+      "name": "anthonykhoa",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/45890848?v=4",
+      "profile": "https://github.com/anthonykhoa",
       "contributions": [
         "code"
       ]
