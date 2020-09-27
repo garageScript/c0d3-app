@@ -1,10 +1,122 @@
 {
+  "projectName": "c0d3-app",
+  "projectOwner": "garageScript",
+  "repoType": "github",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
   "imageSize": 100,
-  "commit": false,
+  "commit": true,
+  "commitConvention": "angular",
+  "skipCi": true,
   "contributors": [
+    {
+      "login": "songz",
+      "name": "Song Zheng",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/686933?v=4",
+      "profile": "https://www.c0d3.com/",
+      "contributions": [
+        "bug",
+        "doc",
+        "ideas",
+        "infra",
+        "mentoring",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "hwong0305",
+      "name": "Herman Wong",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7990856?v=4",
+      "profile": "https://www.devwong.com/",
+      "contributions": [
+        "bug",
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "aortizoj15",
+      "name": "Alexis Ortiz Ojeda",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/36532821?v=4",
+      "profile": "https://github.com/aortizoj15",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Wolfy64",
+      "name": "David De Wulf",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25457563?v=4",
+      "profile": "https://dewulfdavid.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "michaelbayday",
+      "name": "Michael Dinh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/35093298?v=4",
+      "profile": "https://github.com/michaelbayday",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rkalra247",
+      "name": "rkalra247",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/27792256?v=4",
+      "profile": "https://github.com/rkalra247",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "SahilKalra98",
+      "name": "SahilKalra98",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/23374591?v=4",
+      "profile": "https://github.com/SahilKalra98",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "coltonehrman",
+      "name": "Colton Ehrman",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12456288?v=4",
+      "profile": "https://coltonehrman.github.io/react-portfolio/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "danielthalhuber",
+      "name": "Daniel Thalhuber",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32470229?v=4",
+      "profile": "https://github.com/danielthalhuber",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Cijin",
+      "name": "Cijin Cherian",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1990966?v=4",
+      "profile": "https://github.com/Cijin",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "stevenlay",
+      "name": "Steven Lay",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/20160586?v=4",
+      "profile": "https://github.com/stevenlay",
+      "contributions": [
+        "code"
+      ]
+    },
     {
       "login": "anthonykhoa",
       "name": "anthonykhoa",
@@ -13,12 +125,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ggwadera",
+      "name": "Guilherme Gwadera",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16023489?v=4",
+      "profile": "https://www.linkedin.com/in/guilherme-gwadera/",
+      "contributions": [
+        "doc",
+        "review"
+      ]
     }
   ],
-  "contributorsPerLine": 7,
-  "projectName": "c0d3-app",
-  "projectOwner": "garageScript",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "skipCi": true
+  "contributorsPerLine": 7
 }
