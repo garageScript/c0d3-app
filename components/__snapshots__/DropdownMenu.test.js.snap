@@ -19,28 +19,28 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; margin: 0px;"
       x-placement="bottom-start"
     >
-      <a
+      <button
         class="dropdown-item"
         href="/admin/lessons"
       >
         Lessons
-      </a>
+      </button>
       <div
         class="dropdown-divider"
         role="separator"
       />
-      <a
+      <button
         class="dropdown-item"
         href="/admin/users"
       >
         Users
-      </a>
-      <a
+      </button>
+      <button
         class="dropdown-item"
         href="/admin/alerts"
       >
         Alerts
-      </a>
+      </button>
     </div>
   </div>
 </div>

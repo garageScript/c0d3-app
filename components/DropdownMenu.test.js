@@ -3,10 +3,10 @@ import { render, fireEvent } from '@testing-library/react'
 import { DropdownMenu } from './DropdownMenu'
 
 const dropdownMenuItems = [
-  { title: 'Lessons', path: '/admin/lessons' },
+  { title: 'Lessons', path: '/admin/lessons', as: 'button' },
   null,
-  { title: 'Users', path: '/admin/users' },
-  { title: 'Alerts', path: '/admin/alerts' }
+  { title: 'Users', path: '/admin/users', as: 'button' },
+  { title: 'Alerts', path: '/admin/alerts', as: 'button' }
 ]
 
 let testBtnOnClick = ''
