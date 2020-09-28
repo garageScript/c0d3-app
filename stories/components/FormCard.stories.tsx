@@ -17,7 +17,6 @@ const mockBtn = {
   onClick: () => {}
 }
 
-// onClick={(choice: any) => onChange(choice, index)}
 const mockValues: Option[] = [
   { title: 'nickname', value: 'ChickenFarmer00', error: 'Required' },
   { title: 'description', value: 'Amazing farm of chicken' },
