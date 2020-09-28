@@ -127,7 +127,7 @@ export const FormCard: React.FC<FormCardProps> = ({
           )}
         </div>
         {optionsList}
-        <div className="text-center mb-4">
+        <div className="text-center mb-4 pt-1 pb-1">
           <Button onClick={btnOnClick} type="primary" color="white">
             {onSubmit.title}
           </Button>
