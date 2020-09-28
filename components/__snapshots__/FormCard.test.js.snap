@@ -3,49 +3,54 @@
 exports[`FormCard Component Should call function with updated array as parameter when button is clicked 1`] = `
 <div>
   <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
+    class="row mt-5"
   >
     <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+      class="card shadow-sm col-12"
     >
-      <h5
-        data-testid="h5fireStarter0"
-      >
-        FireStarter
-      </h5>
       <div
-        style="background-color: white;"
+        class="card-body text-center"
+      />
+      <div
+        class="d-flex flex-column ml-3 mr-3 mb-4"
       >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
+        <h5
+          data-testid="h5fireStarter0"
         >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
+          Firestarter
+        </h5>
+        <div
+          style="background-color: white;"
         >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        />
+          <button
+            class="btn"
+            style="color: rgb(41, 41, 41);"
+          >
+            Write
+          </button>
+          <button
+            class="btn"
+            style="color: rgb(142, 142, 142);"
+          >
+            Preview
+          </button>
+          <textarea
+            data-testid="textbox"
+            placeholder="Type something..."
+            style="padding: 1rem; width: 100%;"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      style="margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
+      <div
+        class="text-center mb-4"
       >
-        Create New Challenge
-      </button>
+        <button
+          class="btn bg-primary"
+          style="color: rgb(255, 255, 255);"
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -54,32 +59,38 @@ exports[`FormCard Component Should call function with updated array as parameter
 exports[`FormCard Component Should output empty title when title is empty 1`] = `
 <div>
   <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
+    class="row mt-5"
   >
     <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+      class="card shadow-sm col-12"
     >
-      <h5
-        data-testid="h50"
+      <div
+        class="card-body text-center"
       />
-      <input
-        data-testid="input0"
-        placeholder=""
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      style="margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
+      <div
+        class="d-flex flex-column ml-3 mr-3 mb-4"
       >
-        Create New Challenge
-      </button>
+        <h5
+          data-testid="h50"
+        />
+        <input
+          class="form-control"
+          data-testid="input0"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="text-center mb-4"
+      >
+        <button
+          class="btn bg-primary"
+          style="color: rgb(255, 255, 255);"
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -88,51 +99,56 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
 exports[`FormCard Component Should render MdInput component when type is MD_INPUT 1`] = `
 <div>
   <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
+    class="row mt-5"
   >
     <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+      class="card shadow-sm col-12"
     >
-      <h5
-        data-testid="h5fireStarter0"
-      >
-        FireStarter
-      </h5>
       <div
-        style="background-color: white;"
+        class="card-body text-center"
+      />
+      <div
+        class="d-flex flex-column ml-3 mr-3 mb-4"
       >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
+        <h5
+          data-testid="h5fireStarter0"
         >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
+          Firestarter
+        </h5>
+        <div
+          style="background-color: white;"
         >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        >
-          Javascript
-        </textarea>
+          <button
+            class="btn"
+            style="color: rgb(41, 41, 41);"
+          >
+            Write
+          </button>
+          <button
+            class="btn"
+            style="color: rgb(142, 142, 142);"
+          >
+            Preview
+          </button>
+          <textarea
+            data-testid="textbox"
+            placeholder="Type something..."
+            style="padding: 1rem; width: 100%;"
+          >
+            Javascript
+          </textarea>
+        </div>
       </div>
-    </div>
-    <div
-      style="margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
+      <div
+        class="text-center mb-4"
       >
-        Create New Challenge
-      </button>
+        <button
+          class="btn bg-primary"
+          style="color: rgb(255, 255, 255);"
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -141,18 +157,24 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
 exports[`FormCard Component Should render nothing if id is a title 1`] = `
 <div>
   <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
+    class="row mt-5"
   >
     <div
-      style="margin: 10px;"
+      class="card shadow-sm col-12"
     >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
+      <div
+        class="card-body text-center"
+      />
+      <div
+        class="text-center mb-4"
       >
-        Create New Challenge
-      </button>
+        <button
+          class="btn bg-primary"
+          style="color: rgb(255, 255, 255);"
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -161,34 +183,40 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
 exports[`FormCard Component Should update testing onChange variable when person types 1`] = `
 <div>
   <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
+    class="row mt-5"
   >
     <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+      class="card shadow-sm col-12"
     >
-      <h5
-        data-testid="h5fireStarter0"
-      >
-        FireStarter
-      </h5>
-      <input
-        data-testid="input0"
-        placeholder=""
-        type="text"
-        value=""
+      <div
+        class="card-body text-center"
       />
-    </div>
-    <div
-      style="margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
+      <div
+        class="d-flex flex-column ml-3 mr-3 mb-4"
       >
-        Create New Challenge
-      </button>
+        <h5
+          data-testid="h5fireStarter0"
+        >
+          Firestarter
+        </h5>
+        <input
+          class="form-control"
+          data-testid="input0"
+          placeholder=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="text-center mb-4"
+      >
+        <button
+          class="btn bg-primary"
+          style="color: rgb(255, 255, 255);"
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -197,51 +225,56 @@ exports[`FormCard Component Should update testing onChange variable when person 
 exports[`FormCard Component Should update testing onChange variable when person types MdInput 1`] = `
 <div>
   <div
-    class="rounded"
-    style="text-align: center; padding: 10px; background-color: white;"
+    class="row mt-5"
   >
     <div
-      class="d-flex flex-column"
-      style="padding: 10px; text-align: left; margin-bottom: 0px;"
+      class="card shadow-sm col-12"
     >
-      <h5
-        data-testid="h5fireStarter0"
-      >
-        FireStarter
-      </h5>
       <div
-        style="background-color: white;"
+        class="card-body text-center"
+      />
+      <div
+        class="d-flex flex-column ml-3 mr-3 mb-4"
       >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
+        <h5
+          data-testid="h5fireStarter0"
         >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
+          Firestarter
+        </h5>
+        <div
+          style="background-color: white;"
         >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        >
-          Javascript
-        </textarea>
+          <button
+            class="btn"
+            style="color: rgb(41, 41, 41);"
+          >
+            Write
+          </button>
+          <button
+            class="btn"
+            style="color: rgb(142, 142, 142);"
+          >
+            Preview
+          </button>
+          <textarea
+            data-testid="textbox"
+            placeholder="Type something..."
+            style="padding: 1rem; width: 100%;"
+          >
+            Javascript
+          </textarea>
+        </div>
       </div>
-    </div>
-    <div
-      style="margin: 10px;"
-    >
-      <button
-        class="btn bg-success"
-        style="color: rgb(41, 41, 41);"
+      <div
+        class="text-center mb-4"
       >
-        Create New Challenge
-      </button>
+        <button
+          class="btn bg-primary"
+          style="color: rgb(255, 255, 255);"
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
 </div>

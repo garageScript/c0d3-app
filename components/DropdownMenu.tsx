@@ -1,12 +1,9 @@
 import React from 'react'
-import _ from 'lodash'
-import '../scss/navbar.scss'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
-import noop from '../helpers/noop'
 
 //a null item indicates a dropdown divider
-type Item = {
+export type Item = {
   title: string
   path?: string
   as?: 'a' | 'button'
@@ -28,31 +25,31 @@ type DropDownMenuProps = {
     | 'none'
 }
 
-const menuItems = (items: Item[]) => {
-  return items.map((item: Item, i: number) =>
-    !item ? (
-      <Dropdown.Divider key={i} />
-    ) : (
-      <Dropdown.Item
-        as={item.as || 'a'}
-        key={i}
-        href={item.path}
-        onClick={(item.onClick && item.onClick()) || noop()}
-      >
-        {item.title}
-      </Dropdown.Item>
-    )
-  )
-}
-
 export const DropdownMenu: React.FC<DropDownMenuProps> = ({
   drop = 'down',
   variant = 'none',
   title,
   size,
   items
-}) => (
-  <DropdownButton title={title} variant={variant} size={size} drop={drop}>
-    {menuItems(items)}
-  </DropdownButton>
-)
+}) => {
+  const menuItems = items.map((item: Item, itemsIndex: number) =>
+    !item ? (
+      <Dropdown.Divider key={itemsIndex} />
+    ) : (
+      <Dropdown.Item
+        as={item.as || 'a'}
+        key={itemsIndex}
+        href={item.path}
+        onClick={() => item.onClick && item.onClick(item.title)}
+      >
+        {item.title}
+      </Dropdown.Item>
+    )
+  )
+
+  return (
+    <DropdownButton title={title} variant={variant} size={size} drop={drop}>
+      {menuItems}
+    </DropdownButton>
+  )
+}
