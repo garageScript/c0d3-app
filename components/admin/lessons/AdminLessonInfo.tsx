@@ -68,9 +68,11 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
 
   return (
     <>
-      <span className="text-primary font-weight-bold display-3">
-        Lesson Info
-      </span>
+      <div className="text-center">
+        <span className="text-primary font-weight-bold display-3">
+          Lesson Info
+        </span>
+      </div>
       <div className="mt-3">
         <FormCard
           onChange={handleChange}
@@ -164,14 +166,16 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   const lessonId = parseInt(lesson ? lesson.id + '' : '')
 
   return (
-    <div className="col-8 text-center" key={_.uniqueId()}>
+    <div className="col-8" key={_.uniqueId()}>
       <EditLesson setLessons={setLessons} lesson={lesson} />
       <hr />
       <NewChallenge setLessons={setLessons} lessonId={lessonId} />
       <hr />
-      <span className="text-primary font-weight-bold display-3">
-        Lesson Challenges
-      </span>
+      <div className="text-center">
+        <p className="text-primary font-weight-bold display-3">
+          Lesson Challenges
+        </p>
+      </div>
       <AdminLessonChallenges
         challenges={lesson && lesson.challenges}
         lessonId={lessonId}
