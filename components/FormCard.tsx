@@ -123,7 +123,7 @@ export const FormCard: React.FC<FormCardProps> = ({
       <div className={`card shadow-sm col-12`}>
         <div className="card-body text-center">
           {title && (
-            <h2 className="card-title h2 font-weight-bold mb-3">{title}</h2>
+            <h2 className="card-title font-weight-bold mb-3">{title}</h2>
           )}
         </div>
         {optionsList}

@@ -2293,7 +2293,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
         className="card-body text-center"
       >
         <h2
-          className="card-title h2 font-weight-bold mb-3"
+          className="card-title font-weight-bold mb-3"
         >
           clownfish
         </h2>
@@ -2439,7 +2439,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
         className="card-body text-center"
       >
         <h2
-          className="card-title h2 font-weight-bold mb-3"
+          className="card-title font-weight-bold mb-3"
         >
           clownfish
         </h2>
@@ -2585,7 +2585,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
         className="card-body text-center"
       >
         <h2
-          className="card-title h2 font-weight-bold mb-3"
+          className="card-title font-weight-bold mb-3"
         >
           clownfish
         </h2>
