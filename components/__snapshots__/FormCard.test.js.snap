@@ -3,7 +3,7 @@
 exports[`FormCard Component Should call function with updated array as parameter when button is clicked 1`] = `
 <div>
   <div
-    class="row mt-5"
+    class="row"
   >
     <div
       class="card shadow-sm col-12"
@@ -59,7 +59,7 @@ exports[`FormCard Component Should call function with updated array as parameter
 exports[`FormCard Component Should output empty title when title is empty 1`] = `
 <div>
   <div
-    class="row mt-5"
+    class="row"
   >
     <div
       class="card shadow-sm col-12"
@@ -99,7 +99,7 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
 exports[`FormCard Component Should render MdInput component when type is MD_INPUT 1`] = `
 <div>
   <div
-    class="row mt-5"
+    class="row"
   >
     <div
       class="card shadow-sm col-12"
@@ -157,7 +157,7 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
 exports[`FormCard Component Should render nothing if id is a title 1`] = `
 <div>
   <div
-    class="row mt-5"
+    class="row"
   >
     <div
       class="card shadow-sm col-12"
@@ -183,7 +183,7 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
 exports[`FormCard Component Should update testing onChange variable when person types 1`] = `
 <div>
   <div
-    class="row mt-5"
+    class="row"
   >
     <div
       class="card shadow-sm col-12"
@@ -225,7 +225,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
 exports[`FormCard Component Should update testing onChange variable when person types MdInput 1`] = `
 <div>
   <div
-    class="row mt-5"
+    class="row"
   >
     <div
       class="card shadow-sm col-12"

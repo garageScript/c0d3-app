@@ -2103,7 +2103,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
   className="col-5 m-auto"
 >
   <div
-    className="row mt-5"
+    className="row"
   >
     <div
       className="card shadow-sm col-12"
@@ -2284,7 +2284,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
   className="col-5 m-auto"
 >
   <div
-    className="row mt-5 border"
+    className="row border"
   >
     <div
       className="card shadow-sm col-12"
@@ -2430,7 +2430,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
   className="col-5 m-auto"
 >
   <div
-    className="row mt-5"
+    className="row"
   >
     <div
       className="card shadow-sm col-12"
@@ -2576,7 +2576,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
   className="col-5 m-auto"
 >
   <div
-    className="row mt-5"
+    className="row"
   >
     <div
       className="card shadow-sm col-12"
