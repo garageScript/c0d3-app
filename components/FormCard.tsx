@@ -119,7 +119,7 @@ export const FormCard: React.FC<FormCardProps> = ({
   ))
 
   return (
-    <div className={`row mt-5${border ? ' border' : ''}`}>
+    <div className={`row${border ? ' border' : ''}`}>
       <div className={`card shadow-sm col-12`}>
         <div className="card-body text-center">
           {title && (
