@@ -7,12 +7,12 @@ import _ from 'lodash'
 import {
   getPropertyArr,
   makeGraphqlVariable,
-  errorCheckAllFields,
-  errorCheckSingleField
+  errorCheckAllFields
 } from '../../../helpers/admin/adminHelpers'
 import { Lesson } from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 import { lessonSchema } from '../../../helpers/formValidation'
+import { formChange } from '../../../helpers/formChange'
 
 type LessonInfoProps = {
   lessons: Lesson[] | undefined
@@ -56,14 +56,13 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   }
 
   const handleChange = async (value: string, propertyIndex: number) => {
-    const newLessonProperties = [...lessonProperties]
-    newLessonProperties[propertyIndex].value = value
-    await errorCheckSingleField(
-      newLessonProperties,
+    await formChange(
+      value,
       propertyIndex,
+      lessonProperties,
+      setLessonProperties,
       lessonSchema
     )
-    setLessonProperties(newLessonProperties)
   }
 
   return (
@@ -124,14 +123,13 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   }
 
   const handleChange = async (value: string, propertyIndex: number) => {
-    let newLessonProperties: any = [...lessonProperties]
-    newLessonProperties[propertyIndex].value = value
-    await errorCheckSingleField(
-      newLessonProperties,
+    await formChange(
+      value,
       propertyIndex,
+      lessonProperties,
+      setLessonProperties,
       lessonSchema
     )
-    setLessonProperties(newLessonProperties)
   }
 
   return (

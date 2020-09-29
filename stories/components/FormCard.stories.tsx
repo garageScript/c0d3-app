@@ -6,6 +6,7 @@ import {
   DROP_DOWN
 } from '../../components/FormCard'
 import { Item } from '../../components/DropdownMenu'
+import { formChange } from '../../helpers/formChange'
 
 export default {
   component: FormCard,
@@ -49,28 +50,7 @@ const MockBasic: React.FC = () => {
   ]
   const [options, setOptions] = useState(mockedDropdown)
   const onChange = (value: string, index: number) => {
-    const newOptions: any = [...options]
-
-    if (!(options[index].value instanceof Array)) {
-      newOptions[index].value = value
-      return setOptions(newOptions)
-    }
-    // if code is run here, it means field is a dropdown menu
-    let save
-
-    // remove dropdown item from array
-    const newDropdownItems: any = newOptions[index].value.filter((e: any) => {
-      if (e.title === value) {
-        save = e
-        return false
-      }
-      return true
-    })
-
-    // put as first item in array to make it appear first
-    newDropdownItems.unshift(save)
-    newOptions[index].value = newDropdownItems
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return <FormCard onChange={onChange} values={options} onSubmit={mockBtn} />
@@ -79,9 +59,7 @@ const MockBasic: React.FC = () => {
 const MockWithTitle: React.FC = () => {
   const [options, setOptions] = useState(mockValues)
   const onChange = (value: string, index: number) => {
-    const newOptions = [...options]
-    newOptions[index].value = value
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return (
@@ -97,10 +75,7 @@ const MockWithTitle: React.FC = () => {
 const MockWithValidation: React.FC = () => {
   const [options, setOptions] = useState(mockValues)
   const onChange = (value: string, index: number) => {
-    const newOptions = [...options]
-    newOptions[index].value = value
-    newOptions[index].error = value ? '' : 'Field cannot be empty'
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return (
@@ -116,9 +91,7 @@ const MockWithValidation: React.FC = () => {
 const MockWithBorder: React.FC = () => {
   const [options, setOptions] = useState(mockValues)
   const onChange = (value: string, index: number) => {
-    const newOptions = [...options]
-    newOptions[index].value = value
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return (

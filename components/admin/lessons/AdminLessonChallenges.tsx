@@ -7,10 +7,10 @@ import { Lesson, Challenge, Maybe } from '../../../graphql/index'
 import {
   getPropertyArr,
   makeGraphqlVariable,
-  errorCheckAllFields,
-  errorCheckSingleField
+  errorCheckAllFields
 } from '../../../helpers/admin/adminHelpers'
 import { lessonSchema } from '../../../helpers/formValidation'
+import { formChange } from '../../../helpers/formChange'
 
 const challengeAttributes = {
   title: '',
@@ -68,14 +68,13 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   }
 
   const handleChange = async (value: string, propertyIndex: number) => {
-    const newChallengeProperties = [...challengeProperties]
-    newChallengeProperties[propertyIndex].value = value
-    await errorCheckSingleField(
-      newChallengeProperties,
+    await formChange(
+      value,
       propertyIndex,
+      challengeProperties,
+      setChallengeProperties,
       lessonSchema
     )
-    setChallengeProperties(newChallengeProperties)
   }
 
   return (
@@ -104,14 +103,13 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
   )
 
   const handleChange = async (value: string, propertyIndex: number) => {
-    const newChallengeProperties = [...challengeProperties]
-    newChallengeProperties[propertyIndex].value = value
-    await errorCheckSingleField(
-      newChallengeProperties,
+    await formChange(
+      value,
       propertyIndex,
+      challengeProperties,
+      setChallengeProperties,
       lessonSchema
     )
-    setChallengeProperties(newChallengeProperties)
   }
 
   const handleSubmit = {
