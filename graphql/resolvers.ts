@@ -21,6 +21,7 @@ import { alerts } from './queryResolvers/alerts'
 import { lessons } from './queryResolvers/lessons'
 import { session } from './queryResolvers/session'
 import { allUsers } from './queryResolvers/allUsers'
+import { getLessonMentors } from './queryResolvers/getLessonMentors'
 import { changeAdminRights } from '../helpers/controllers/adminController'
 import {
   createLesson,
@@ -30,6 +31,7 @@ import {
 export default {
   Query: {
     submissions,
+    getLessonMentors,
     allUsers,
     isTokenValid,
     userInfo,

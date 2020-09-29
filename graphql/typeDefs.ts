@@ -5,6 +5,7 @@ export default gql`
     lessons: [Lesson!]!
     session: Session
     allUsers: [User]
+    getLessonMentors(lessonId: String!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
@@ -155,6 +156,7 @@ export default gql`
     title: String
     order: Int
   }
+
   type Alert {
     id: String!
     text: String
@@ -162,6 +164,7 @@ export default gql`
     url: String
     urlCaption: String
   }
+
   type Star {
     id: String!
     studentId: Int
