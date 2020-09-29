@@ -12,33 +12,37 @@ exports[`FormCard Component Should call function with updated array as parameter
         class="card-body text-center"
       />
       <div
-        class="d-flex flex-column ml-3 mr-3 mb-4"
+        class="text-left"
       >
-        <h5
-          data-testid="h5fireStarter0"
-        >
-          Firestarter
-        </h5>
         <div
-          style="background-color: white;"
+          class="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            class="btn"
-            style="color: rgb(41, 41, 41);"
+          <h5
+            data-testid="h5fireStarter0"
           >
-            Write
-          </button>
-          <button
-            class="btn"
-            style="color: rgb(142, 142, 142);"
+            Firestarter
+          </h5>
+          <div
+            style="background-color: white;"
           >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
-            placeholder="Type something..."
-            style="padding: 1rem; width: 100%;"
-          />
+            <button
+              class="btn"
+              style="color: rgb(41, 41, 41);"
+            >
+              Write
+            </button>
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              placeholder="Type something..."
+              style="padding: 1rem; width: 100%;"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -68,18 +72,22 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
         class="card-body text-center"
       />
       <div
-        class="d-flex flex-column ml-3 mr-3 mb-4"
+        class="text-left"
       >
-        <h5
-          data-testid="h50"
-        />
-        <input
-          class="form-control"
-          data-testid="input0"
-          placeholder=""
-          type="text"
-          value=""
-        />
+        <div
+          class="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h50"
+          />
+          <input
+            class="form-control"
+            data-testid="input0"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <div
         class="text-center mb-4"
@@ -108,35 +116,39 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
         class="card-body text-center"
       />
       <div
-        class="d-flex flex-column ml-3 mr-3 mb-4"
+        class="text-left"
       >
-        <h5
-          data-testid="h5fireStarter0"
-        >
-          Firestarter
-        </h5>
         <div
-          style="background-color: white;"
+          class="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            class="btn"
-            style="color: rgb(41, 41, 41);"
+          <h5
+            data-testid="h5fireStarter0"
           >
-            Write
-          </button>
-          <button
-            class="btn"
-            style="color: rgb(142, 142, 142);"
+            Firestarter
+          </h5>
+          <div
+            style="background-color: white;"
           >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
-            placeholder="Type something..."
-            style="padding: 1rem; width: 100%;"
-          >
-            Javascript
-          </textarea>
+            <button
+              class="btn"
+              style="color: rgb(41, 41, 41);"
+            >
+              Write
+            </button>
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              placeholder="Type something..."
+              style="padding: 1rem; width: 100%;"
+            >
+              Javascript
+            </textarea>
+          </div>
         </div>
       </div>
       <div
@@ -166,6 +178,9 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
         class="card-body text-center"
       />
       <div
+        class="text-left"
+      />
+      <div
         class="text-center mb-4"
       >
         <button
@@ -192,20 +207,24 @@ exports[`FormCard Component Should update testing onChange variable when person 
         class="card-body text-center"
       />
       <div
-        class="d-flex flex-column ml-3 mr-3 mb-4"
+        class="text-left"
       >
-        <h5
-          data-testid="h5fireStarter0"
+        <div
+          class="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          Firestarter
-        </h5>
-        <input
-          class="form-control"
-          data-testid="input0"
-          placeholder=""
-          type="text"
-          value=""
-        />
+          <h5
+            data-testid="h5fireStarter0"
+          >
+            Firestarter
+          </h5>
+          <input
+            class="form-control"
+            data-testid="input0"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </div>
       </div>
       <div
         class="text-center mb-4"
@@ -234,35 +253,39 @@ exports[`FormCard Component Should update testing onChange variable when person 
         class="card-body text-center"
       />
       <div
-        class="d-flex flex-column ml-3 mr-3 mb-4"
+        class="text-left"
       >
-        <h5
-          data-testid="h5fireStarter0"
-        >
-          Firestarter
-        </h5>
         <div
-          style="background-color: white;"
+          class="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            class="btn"
-            style="color: rgb(41, 41, 41);"
+          <h5
+            data-testid="h5fireStarter0"
           >
-            Write
-          </button>
-          <button
-            class="btn"
-            style="color: rgb(142, 142, 142);"
+            Firestarter
+          </h5>
+          <div
+            style="background-color: white;"
           >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
-            placeholder="Type something..."
-            style="padding: 1rem; width: 100%;"
-          >
-            Javascript
-          </textarea>
+            <button
+              class="btn"
+              style="color: rgb(41, 41, 41);"
+            >
+              Write
+            </button>
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              placeholder="Type something..."
+              style="padding: 1rem; width: 100%;"
+            >
+              Javascript
+            </textarea>
+          </div>
         </div>
       </div>
       <div
