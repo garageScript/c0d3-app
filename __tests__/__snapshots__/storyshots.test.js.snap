@@ -2236,7 +2236,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-primary"
+              className="dropdown-toggle btn btn-none"
               disabled={false}
               onClick={[Function]}
               type="button"

@@ -58,13 +58,7 @@ const displayInputType = (
         />
       )
     case DROP_DOWN:
-      return (
-        <DropdownMenu
-          title={value[0].title}
-          items={value as Item[]}
-          variant="primary"
-        />
-      )
+      return <DropdownMenu title={value[0].title} items={value as Item[]} />
     default:
       return (
         <input
