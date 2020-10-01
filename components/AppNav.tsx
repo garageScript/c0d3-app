@@ -68,7 +68,8 @@ const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
 const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   const [logoutUser, { data }] = useLogoutMutation()
   useEffect(() => {
-    if (data?.logout?.success) {
+    const success = _.get(data, 'logout.success', false)
+    if (success) {
       window.location.pathname = '/'
     }
   }, [data])

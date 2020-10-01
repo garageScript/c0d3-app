@@ -35,7 +35,7 @@ export default gql`
       type: String!
       url: String
       urlCaption: String
-    ): SuccessResponse
+    ): [Alert]
     removeAlert(id: String!): SuccessResponse
     createSubmission(
       lessonId: String!

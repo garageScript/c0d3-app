@@ -8,6 +8,10 @@ export default {
 
 export const Basic: React.FC = () => <Card title="Title of the card" />
 
+export const WithPrimary: React.FC = () => (
+  <Card primary={true} title="Title of the card" />
+)
+
 export const WithText: React.FC = () => (
   <Card
     title="Title of the card"
