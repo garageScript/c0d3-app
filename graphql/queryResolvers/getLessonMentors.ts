@@ -12,7 +12,7 @@ export const getLessonMentors = async (
 ) => {
   const { lessonId } = args
   try {
-    let results = await UserLesson.findAll({
+    const results = await UserLesson.findAll({
       where: { lessonId },
       include: [{ model: User }]
     })
@@ -21,7 +21,6 @@ export const getLessonMentors = async (
       return result.User
     })
   } catch (err) {
-    console.error('Unable to fetch data: ', err)
-    return []
+    throw new Error(`An Error was thrown: ${err}`)
   }
 }

@@ -2752,6 +2752,8 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/GiveStarCard Primary 1`] = `null`;
+
 exports[`Storyshots Components/Input Email Input 1`] = `
 <form
   action="#"

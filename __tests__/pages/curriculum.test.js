@@ -38,7 +38,7 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, debug } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>

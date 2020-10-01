@@ -1,17 +1,18 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+
+import { Button } from './theme/Button'
 
 type Props = {
   show: boolean
 }
 
-const GiveStarCard: React.FC<Props> = props => {
+export const GiveStarCard: React.FC<Props> = ({ show }) => {
   return (
     <Modal
-      {...props}
+      {...show}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -39,5 +40,3 @@ const GiveStarCard: React.FC<Props> = props => {
     </Modal>
   )
 }
-
-export default GiveStarCard

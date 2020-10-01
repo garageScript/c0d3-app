@@ -5,6 +5,7 @@ import {
   EmailInput,
   PasswordInput
 } from '../stories/components/Input.stories'
+//import { GiveStarCard } from '../stories/components/GiveStarCard.stories'
 
 describe('Input stories', () => {
   test('Should display Error message on TextInput', async () => {

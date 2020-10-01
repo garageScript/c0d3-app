@@ -1,5 +1,5 @@
 import React from 'react'
-import GiveStarCard from '../../components/GiveStarCard'
+import { GiveStarCard } from '../../components/GiveStarCard'
 
 export default {
   component: GiveStarCard,
