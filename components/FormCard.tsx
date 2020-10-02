@@ -58,13 +58,7 @@ const displayInputType = (
         />
       )
     case DROP_DOWN:
-      return (
-        <DropdownMenu
-          title={value[0].title}
-          items={value as Item[]}
-          variant="primary"
-        />
-      )
+      return <DropdownMenu title={value[0].title} items={value as Item[]} />
     default:
       return (
         <input
@@ -126,7 +120,7 @@ export const FormCard: React.FC<FormCardProps> = ({
             <h2 className="card-title font-weight-bold mb-3">{title}</h2>
           )}
         </div>
-        {optionsList}
+        <div className="text-left">{optionsList}</div>
         <div className="text-center mb-4">
           <Button onClick={btnOnClick} type="primary" color="white">
             {onSubmit.title}

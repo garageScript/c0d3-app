@@ -3,6 +3,10 @@ jest.mock('../mattermost')
 import db from '../dbload'
 import { addAlert, removeAlert } from './alertController'
 
+const { Alert } = db
+const mockAlerts = ['excuse me sir', 'did u just', 'turn into a potato?']
+Alert.findAll = jest.fn().mockReturnValue(mockAlerts)
+
 describe('Alert controller tests', () => {
   const ctx = {
     req: {
@@ -26,7 +30,7 @@ describe('Alert controller tests', () => {
         },
         ctx
       )
-    ).resolves.toEqual({ success: true })
+    ).resolves.toEqual(mockAlerts)
   })
   test('Should add alert with url and caption', async () => {
     expect(
@@ -41,7 +45,7 @@ describe('Alert controller tests', () => {
         },
         ctx
       )
-    ).resolves.toEqual({ success: true })
+    ).resolves.toEqual(mockAlerts)
   })
   test('Should throw error if missing parameters', async () => {
     expect(

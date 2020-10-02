@@ -2112,152 +2112,156 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
         className="card-body text-center"
       />
       <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
+        className="text-left"
       >
-        <h5
-          data-testid="h5nickname0"
-        >
-          Nickname
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input0"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="ChickenFarmer00"
-        />
-        <h6
-          className="text-danger mb-0"
-        >
-          Required
-        </h6>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5description1"
-        >
-          Description
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input1"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="Amazing farm of chicken"
-        />
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5title2"
-        >
-          Title
-        </h5>
         <div
-          style={
-            Object {
-              "backgroundColor": "white",
-            }
-          }
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#292929",
-              }
-            }
+          <h5
+            data-testid="h5nickname0"
           >
-            Write
-          </button>
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#8e8e8e",
-              }
-            }
-          >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
             onChange={[Function]}
-            placeholder="Type something..."
-            style={
-              Object {
-                "padding": "1rem",
-                "width": "100%",
-              }
-            }
-            value="oheuhehe"
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
           />
         </div>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5level3"
-        >
-          Level
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input3"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="noob"
-        />
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5Swiggity Swag4"
-        >
-          Swiggity swag
-        </h5>
         <div
-          className="dropdown"
-          onKeyDown={[Function]}
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            aria-expanded={false}
-            aria-haspopup={true}
-            className="dropdown-toggle btn btn-primary"
-            disabled={false}
-            onClick={[Function]}
-            type="button"
+          <h5
+            data-testid="h5title2"
           >
-            Lolzz
-          </button>
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5suupa5"
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          Suupa
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input5"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="choob"
-        />
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5Swiggity Swag4"
+          >
+            Swiggity swag
+          </h5>
+          <div
+            className="dropdown"
+            onKeyDown={[Function]}
+          >
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-none"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Lolzz
+            </button>
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5suupa5"
+          >
+            Suupa
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input5"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="choob"
+          />
+        </div>
       </div>
       <div
         className="text-center mb-4"
@@ -2299,111 +2303,115 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
         </h2>
       </div>
       <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
+        className="text-left"
       >
-        <h5
-          data-testid="h5nickname0"
-        >
-          Nickname
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input0"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="ChickenFarmer00"
-        />
-        <h6
-          className="text-danger mb-0"
-        >
-          Required
-        </h6>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5description1"
-        >
-          Description
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input1"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="Amazing farm of chicken"
-        />
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5title2"
-        >
-          Title
-        </h5>
         <div
-          style={
-            Object {
-              "backgroundColor": "white",
-            }
-          }
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#292929",
-              }
-            }
+          <h5
+            data-testid="h5nickname0"
           >
-            Write
-          </button>
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#8e8e8e",
-              }
-            }
-          >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
             onChange={[Function]}
-            placeholder="Type something..."
-            style={
-              Object {
-                "padding": "1rem",
-                "width": "100%",
-              }
-            }
-            value="oheuhehe"
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
           />
         </div>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5level3"
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          Level
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input3"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="noob"
-        />
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
       </div>
       <div
         className="text-center mb-4"
@@ -2445,111 +2453,115 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
         </h2>
       </div>
       <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
+        className="text-left"
       >
-        <h5
-          data-testid="h5nickname0"
-        >
-          Nickname
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input0"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="ChickenFarmer00"
-        />
-        <h6
-          className="text-danger mb-0"
-        >
-          Required
-        </h6>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5description1"
-        >
-          Description
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input1"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="Amazing farm of chicken"
-        />
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5title2"
-        >
-          Title
-        </h5>
         <div
-          style={
-            Object {
-              "backgroundColor": "white",
-            }
-          }
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#292929",
-              }
-            }
+          <h5
+            data-testid="h5nickname0"
           >
-            Write
-          </button>
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#8e8e8e",
-              }
-            }
-          >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
             onChange={[Function]}
-            placeholder="Type something..."
-            style={
-              Object {
-                "padding": "1rem",
-                "width": "100%",
-              }
-            }
-            value="oheuhehe"
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
           />
         </div>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5level3"
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          Level
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input3"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="noob"
-        />
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
       </div>
       <div
         className="text-center mb-4"
@@ -2591,111 +2603,115 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
         </h2>
       </div>
       <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
+        className="text-left"
       >
-        <h5
-          data-testid="h5nickname0"
-        >
-          Nickname
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input0"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="ChickenFarmer00"
-        />
-        <h6
-          className="text-danger mb-0"
-        >
-          Required
-        </h6>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5description1"
-        >
-          Description
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input1"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="Amazing farm of chicken"
-        />
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5title2"
-        >
-          Title
-        </h5>
         <div
-          style={
-            Object {
-              "backgroundColor": "white",
-            }
-          }
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#292929",
-              }
-            }
+          <h5
+            data-testid="h5nickname0"
           >
-            Write
-          </button>
-          <button
-            className="btn"
-            onClick={[Function]}
-            style={
-              Object {
-                "color": "#8e8e8e",
-              }
-            }
-          >
-            Preview
-          </button>
-          <textarea
-            data-testid="textbox"
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
             onChange={[Function]}
-            placeholder="Type something..."
-            style={
-              Object {
-                "padding": "1rem",
-                "width": "100%",
-              }
-            }
-            value="oheuhehe"
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
           />
         </div>
-      </div>
-      <div
-        className="d-flex flex-column ml-3 mr-3 mb-4"
-      >
-        <h5
-          data-testid="h5level3"
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
         >
-          Level
-        </h5>
-        <input
-          className="form-control"
-          data-testid="input3"
-          onChange={[Function]}
-          placeholder=""
-          type="text"
-          value="noob"
-        />
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
       </div>
       <div
         className="text-center mb-4"
