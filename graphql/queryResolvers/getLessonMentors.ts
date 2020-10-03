@@ -17,6 +17,8 @@ export const getLessonMentors = async (
       include: [{ model: User }]
     })
 
+    if (!results.length) return null
+
     return results.map((result: any) => {
       return result.User
     })
