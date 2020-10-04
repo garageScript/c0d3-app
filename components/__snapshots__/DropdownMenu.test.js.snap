@@ -13,6 +13,35 @@ exports[`MdInput Component Should change value of testBtnOnClick upon click 1`] 
     >
       Admin
     </button>
+    <div
+      aria-labelledby=""
+      class="dropdown-menu"
+      style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; margin: 0px;"
+      x-placement="bottom-start"
+    >
+      <button
+        class="dropdown-item"
+        href="/admin/lessons"
+      >
+        Lessons
+      </button>
+      <div
+        class="dropdown-divider"
+        role="separator"
+      />
+      <button
+        class="dropdown-item"
+        href="/admin/users"
+      >
+        Users
+      </button>
+      <button
+        class="dropdown-item"
+        href="/admin/alerts"
+      >
+        Alerts
+      </button>
+    </div>
   </div>
 </div>
 `;

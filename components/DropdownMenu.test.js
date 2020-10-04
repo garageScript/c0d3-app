@@ -1,12 +1,12 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import { DropdownMenu } from './DropdownMenu'
 
 const dropdownMenuItems = [
-  { title: 'Lessons', path: '/admin/lessons' },
+  { title: 'Lessons', path: '/admin/lessons', as: 'button' },
   null,
-  { title: 'Users', path: '/admin/users' },
-  { title: 'Alerts', path: '/admin/alerts' }
+  { title: 'Users', path: '/admin/users', as: 'button' },
+  { title: 'Alerts', path: '/admin/alerts', as: 'button' }
 ]
 
 let testBtnOnClick = ''
@@ -23,13 +23,15 @@ describe('MdInput Component', () => {
   })
 
   test('Should change value of testBtnOnClick upon click', () => {
-    dropdownMenuItems[0].onClick = () => (testBtnOnClick = 'lolztestsucceeded')
+    dropdownMenuItems[0].onClick = val => (testBtnOnClick = val)
     const { container, queryByText } = render(
       <DropdownMenu title="Admin" items={dropdownMenuItems} />
     )
-    const btn = queryByText('Lessons')
-
-    expect(testBtnOnClick).toEqual('lolztestsucceeded')
+    const btn = queryByText('Admin')
+    fireEvent.click(btn, { button: 1 })
+    const lessons = queryByText('Lessons')
+    fireEvent.click(lessons, { button: 1 })
+    expect(testBtnOnClick).toEqual('Lessons')
     expect(container).toMatchSnapshot()
   })
 })

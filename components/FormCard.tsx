@@ -1,11 +1,10 @@
 import React from 'react'
 import { Button } from './theme/Button'
 import { MdInput } from './MdInput'
+import { DropdownMenu, Item } from './DropdownMenu'
+import _ from 'lodash'
 
-// capitalizes first letter of a string
-const capitalizeFirst = (str: string) => {
-  return str.replace(/./, char => char.toUpperCase())
-}
+export const DROP_DOWN = 'DROP_DOWN'
 
 export const TEXT_AREA = 'TEXT_AREA'
 
@@ -13,15 +12,15 @@ export const MD_INPUT = 'MD_INPUT'
 
 export type Option = {
   title: string
-  type?: string | undefined
+  type?: string
   error?: string
   placeHolder?: string
-  value?: string | number
+  value?: string | number | Item[]
 }
 
 type Btn = {
   title?: string
-  onClick: (value: any) => void
+  onClick: Function
 }
 
 type FormCardProps = {
@@ -30,85 +29,67 @@ type FormCardProps = {
   capitalizeTitle?: boolean
   onChange: Function
   title?: string
+  border?: boolean
 }
 
-type OptionsListProps = {
+type OptionInfoProps = {
+  option: Option
+  capitalizeTitle?: boolean
   onChange: Function
-  capitalizeTitle: boolean
-  options: Option[]
+  index: number
 }
 
-const titleStyle: React.CSSProperties | undefined = {
-  textDecoration: 'underline',
-  marginBottom: 20
-}
-
-const formStyle: React.CSSProperties | undefined = {
-  textAlign: 'center',
-  padding: '10px',
-  border: '2px solid rgb(0,0,0,.3)',
-  backgroundColor: 'white'
-}
-
-const optionStyle: React.CSSProperties | undefined = {
-  border: '3px solid rgb(84, 64, 216, .3)',
-  padding: '10px',
-  backgroundColor: 'rgb(84, 64, 216, .04)',
-  textAlign: 'left'
-}
-
-export const OptionsList: React.FC<OptionsListProps> = ({
-  onChange,
-  capitalizeTitle,
-  options
-}) => {
-  const inputs = options.map((option: Option, i: number) => {
-    const { title, value, placeHolder, type } = option
-    if (option.title === 'id') return []
-    const inputType =
-      type === MD_INPUT ? (
+const displayInputType = (
+  index: number,
+  onChange: Function,
+  option: Option
+) => {
+  const { placeHolder, type } = option
+  const value: any = option.value
+  switch (type) {
+    case MD_INPUT:
+      return (
         <MdInput
           bgColor="white"
           value={`${value || ''}`}
           onChange={(value: string) => {
-            onChange(value, i)
+            onChange(value, index)
           }}
         />
-      ) : (
+      )
+    case DROP_DOWN:
+      return <DropdownMenu title={value[0].title} items={value as Item[]} />
+    default:
+      return (
         <input
-          data-testid={`input${i}`}
-          style={{ border: '1px solid rgb(84, 64, 216, .3)' }}
           type="text"
+          className="form-control"
+          data-testid={`input${index}`}
           value={`${value || ''}`}
-          onChange={e => {
-            onChange(e.target.value, i)
-          }}
+          onChange={e => onChange(e.target.value, index)}
           placeholder={placeHolder || ''}
         />
       )
-    return (
-      <div
-        key={i}
-        className="d-flex flex-column"
-        style={{
-          ...optionStyle,
-          marginBottom: i === options.length - 1 ? 0 : 10
-        }}
-      >
-        <h5 data-testid={`h5${title}${i}`}>
-          {(capitalizeTitle && capitalizeFirst(title)) || title}
-        </h5>
-        {inputType}
-        {option.error && (
-          <>
-            <h6 className="text-danger">{option.error}</h6>
-          </>
-        )}
-      </div>
-    )
-  })
+  }
+}
 
-  return <>{inputs}</>
+const OptionInfo: React.FC<OptionInfoProps> = ({
+  option,
+  capitalizeTitle,
+  onChange,
+  index
+}) => {
+  const { title, error } = option
+  if (title === 'id') return <></>
+  return (
+    <div className="d-flex flex-column ml-3 mr-3 mb-4">
+      <h5 data-testid={`h5${title}${index}`}>
+        {`${(capitalizeTitle && _.capitalize(title)) || title}`}
+      </h5>
+      {displayInputType(index, onChange, option)}
+      {error && <h6 className="text-danger mb-0">{error}</h6>}
+    </div>
+  )
 }
 
 export const FormCard: React.FC<FormCardProps> = ({
@@ -116,22 +97,35 @@ export const FormCard: React.FC<FormCardProps> = ({
   onSubmit,
   capitalizeTitle = true,
   title,
-  onChange
+  onChange,
+  border
 }) => {
   const btnOnClick = () => onSubmit.onClick(values)
 
+  const optionsList = values.map((option: Option, index: number) => (
+    <OptionInfo
+      onChange={onChange}
+      capitalizeTitle={capitalizeTitle}
+      option={option}
+      index={index}
+      key={index}
+    />
+  ))
+
   return (
-    <div style={formStyle} className="rounded">
-      {title && <h2 style={titleStyle}>{title}</h2>}
-      <OptionsList
-        capitalizeTitle={capitalizeTitle}
-        options={values}
-        onChange={onChange}
-      />
-      <div style={{ margin: 10 }}>
-        <Button onClick={btnOnClick} type="success">
-          {onSubmit.title}
-        </Button>
+    <div className={`row${border ? ' border' : ''}`}>
+      <div className={`card shadow-sm col-12`}>
+        <div className="card-body text-center">
+          {title && (
+            <h2 className="card-title font-weight-bold mb-3">{title}</h2>
+          )}
+        </div>
+        <div className="text-left">{optionsList}</div>
+        <div className="text-center mb-4">
+          <Button onClick={btnOnClick} type="primary" color="white">
+            {onSubmit.title}
+          </Button>
+        </div>
       </div>
     </div>
   )
