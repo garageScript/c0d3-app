@@ -1,6 +1,4 @@
-import db from '../../helpers/dbload'
-
-const { User, UserLesson } = db
+import { User, UserLesson } from '../../helpers/dbload'
 
 type ArgsGetLessonMentors = {
   lessonId: string
@@ -16,8 +14,6 @@ export const getLessonMentors = async (
       where: { lessonId },
       include: [{ model: User }]
     })
-
-    if (!results.length) return null
 
     return results.map((result: any) => {
       return result.User

@@ -106,3 +106,5 @@ export default {
   Star,
   sequelize
 }
+
+export { User, UserLesson }
