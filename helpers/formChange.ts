@@ -3,8 +3,8 @@ import { errorCheckSingleField } from './admin/adminHelpers'
 export const formChange = async (
   value: string,
   propertyIndex: number,
-  state: any,
-  setState: any,
+  state: any[],
+  setState: React.Dispatch<React.SetStateAction<any[]>>,
   validationSchema?: any
 ) => {
   const newOptions: any = [...state]
@@ -17,12 +17,11 @@ export const formChange = async (
   }
   // if code is run here, it means field is a dropdown menu
   let save
-
   // remove dropdown item from array
   const newDropdownItems: any = newOptions[propertyIndex].value.filter(
-    (e: any) => {
-      if (e.title === value) {
-        save = e
+    (item: any) => {
+      if (item.title === value) {
+        save = item
         return false
       }
       return true

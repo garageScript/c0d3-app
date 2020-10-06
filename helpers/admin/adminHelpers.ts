@@ -1,18 +1,32 @@
 import { reach } from 'yup'
+import { DROP_DOWN, TEXT_AREA, MD_INPUT } from '../../components/FormCard'
 
 // creates usuable array from graphql data to use as a prop when using FormCard component
-export const getPropertyArr = (options: any, deleteProps?: string[]) => {
-  options.hasOwnProperty('__typename') && delete options.__typename
+export const getPropertyArr = (
+  options: any,
+  deleteProps?: string[],
+  dropdownChange?: Function
+) => {
   ;(deleteProps || []).forEach(prop => delete options[prop])
-
   const keys = Object.keys(options)
 
-  const res = keys.map((type: any) => {
-    const value = options[type] === 0 ? '0' : `${options[type] || ''}`
+  const res = keys.map((type: any, index: number) => {
+    const optionValue = options[type]
+    let inputType = type === 'description' ? MD_INPUT : TEXT_AREA
+    let value: any = options[type] === 0 ? '0' : `${options[type] || ''}`
+
+    if (optionValue instanceof Array && dropdownChange) {
+      value = optionValue.map((dropdownItem: any) => {
+        dropdownItem.onClick = () => dropdownChange(dropdownItem.title, index)
+        return dropdownItem
+      })
+      inputType = DROP_DOWN
+    }
+
     return {
       title: type,
       value,
-      type: type === 'description' ? 'MD_INPUT' : 'TEXT_AREA'
+      type: inputType
     }
   })
 
@@ -22,7 +36,13 @@ export const getPropertyArr = (options: any, deleteProps?: string[]) => {
 // turns the array used in FormCard component into an object, to be used when making mutation requests
 export const makeGraphqlVariable = (options: any, addProp?: any) => {
   const res = options.reduce((acc: any, option: any) => {
-    acc[option.title] = option.value
+    const { title, value } = option
+    acc[title] = option.value
+
+    // if field was a dropdown menu
+    if (value instanceof Array) {
+      acc[title] = value[0].title
+    }
     return acc
   }, {})
 
@@ -87,12 +107,11 @@ export const errorCheckAllFields = async (properties: any, schema: any) => {
     // inner is an array of objects containing more error information
     const { errors, inner } = err
 
-    inner.some((innerObj: any, errorIndex: number) => {
+    inner.forEach((innerObj: any, errorIndex: number) => {
       // get index of property with title equal to value of innerObj.path
       const titleIndex = properties.findIndex(
         (property: any) => property.title === innerObj.path
       )
-
       //add error message to field
       properties[titleIndex].error = errors[errorIndex]
     })

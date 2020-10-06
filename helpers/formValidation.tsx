@@ -5,6 +5,17 @@ const TEXT_MAX = 64
 const PASSWORD_MIN = 6
 const REGEX_ALPHANUMERICS_AND_SPACE = /^[a-zA-Z0-9_\s]*$/
 
+const alertValidation = Yup.object({
+  text: Yup.string()
+    .required('Required')
+    .strict(true),
+  type: Yup.string()
+    .required('Required')
+    .strict(true),
+  url: Yup.string(),
+  urlCaption: Yup.string()
+})
+
 const lessonSchema = Yup.object({
   title: Yup.string()
     .required('Required')
@@ -86,6 +97,7 @@ const resetPasswordValidation = Yup.object({
 })
 
 export {
+  alertValidation,
   lessonSchema,
   signupValidation,
   loginValidation,

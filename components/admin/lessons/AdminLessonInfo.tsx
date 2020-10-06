@@ -33,7 +33,7 @@ type NewLessonProps = {
 const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
   const [alterLesson, { loading, data }] = useMutation(updateLesson)
   const [lessonProperties, setLessonProperties] = useState(
-    getPropertyArr(lesson, ['challenges'])
+    getPropertyArr(lesson, ['challenges', '__typename'])
   )
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {

@@ -99,7 +99,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
   alter
 }) => {
   const [challengeProperties, setChallengeProperties] = useState(
-    getPropertyArr(challenge, ['lessonId'])
+    getPropertyArr(challenge, ['lessonId', '__typename'])
   )
 
   const handleChange = async (value: string, propertyIndex: number) => {
