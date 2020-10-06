@@ -16,7 +16,7 @@ export const getLessonMentors = async (
     })
 
     return results.map((result: any) => {
-      return result.User
+      return { username: result.User.username }
     })
   } catch (err) {
     throw new Error(`An Error was thrown: ${err}`)

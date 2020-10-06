@@ -3,12 +3,15 @@ import { getLessonMentors } from './getLessonMentors'
 import { User, UserLesson } from '../../helpers/dbload'
 
 describe('getLessonMentors resolver', () => {
-  test('should return an array of Users', async () => {
+  test('should return an array of usernames', async () => {
     UserLesson.findAll = jest
       .fn()
-      .mockReturnValue([{ User: 'user1' }, { User: 'user2' }])
+      .mockReturnValue([
+        { User: { username: 'user1', email: 'abc@mail' } },
+        { User: { username: 'user2', email: 'xyz@mail' } }
+      ])
     const res = await getLessonMentors(null, { lessonId: '3' })
-    expect(res).toEqual(['user1', 'user2'])
+    expect(res).toEqual([{ username: 'user1' }, { username: 'user2' }])
     expect(UserLesson.findAll).toHaveBeenCalledWith({
       where: { lessonId: '3' },
       include: [{ model: User }]
@@ -24,8 +27,3 @@ describe('getLessonMentors resolver', () => {
     await expect(getLessonMentors(null, { lessonId: '3' })).rejects.toThrow()
   })
 })
-
-/*
- * TODO
- * Does it return the correct users based on id?
- * */
