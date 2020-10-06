@@ -7,6 +7,7 @@ import REMOVE_ALERT from '../../graphql/queries/removeAlert'
 import { withGetApp, GetAppProps, Alert as AlertType } from '../../graphql'
 import noop from '../../helpers/noop'
 import Card from '../../components/Card'
+import { NewAlert } from '../../components/admin/alerts/AdminNewAlert'
 
 type AlertRowProps = {
   alerts: AlertType[]
@@ -54,9 +55,7 @@ const Alerts: React.FC<GetAppProps> = ({ data }) => {
   // useEffect needed to update `alerts` state after data has finished loading alerts
   // if this is not done, no alerts will be displayed because alerts will just equal []
   useEffect(() => {
-    if (!data.error && !data.loading) {
-      setAlerts(data.alerts as AlertType[])
-    }
+    !data.error && !data.loading && setAlerts(data.alerts as AlertType[])
   }, [data])
 
   const currentAlerts = alerts.map((alert: AlertType, key: number) => (
@@ -71,6 +70,14 @@ const Alerts: React.FC<GetAppProps> = ({ data }) => {
         classes="col-12"
         text="Add new messages you want c0d3.com students to see or remove old and outdated alerts!"
       />
+      <Card
+        primary={true}
+        title="Create New Alert"
+        classes="col-12"
+        text="Make a new alert. Look at the preview to see if the alert looks and functions how you want it to!"
+      >
+        <NewAlert setAlerts={setAlerts} />
+      </Card>
       <Card
         primary={true}
         title="Current Alerts"
