@@ -1,4 +1,5 @@
 import { User, UserLesson } from '../../helpers/dbload'
+import { User as UserType } from '../../@types/user'
 
 type ArgsGetLessonMentors = {
   lessonId: string
@@ -7,7 +8,7 @@ type ArgsGetLessonMentors = {
 export const getLessonMentors = async (
   _parent: void,
   args: ArgsGetLessonMentors
-) => {
+): Promise<[UserType]> => {
   const { lessonId } = args
   try {
     const results = await UserLesson.findAll({
