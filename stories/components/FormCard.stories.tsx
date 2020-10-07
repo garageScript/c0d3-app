@@ -1,5 +1,12 @@
 import React, { useState } from 'react'
-import { FormCard, MD_INPUT, Option } from '../../components/FormCard'
+import {
+  FormCard,
+  MD_INPUT,
+  Option,
+  DROP_DOWN
+} from '../../components/FormCard'
+import { Item } from '../../components/DropdownMenu'
+import { formChange } from '../../helpers/formChange'
 
 export default {
   component: FormCard,
@@ -12,19 +19,38 @@ const mockBtn = {
 }
 
 const mockValues: Option[] = [
-  { title: 'Nickname', value: 'ChickenFarmer00', error: 'Required' },
-  { title: 'Description', value: 'Amazing farm of chicken' },
-  { title: 'Title', value: 'oheuhehe', type: MD_INPUT },
-  { title: 'Title', value: 'oheuhehe' },
-  { title: 'Level', value: 'noob' }
+  { title: 'nickname', value: 'ChickenFarmer00', error: 'Required' },
+  { title: 'description', value: 'Amazing farm of chicken' },
+  { title: 'title', value: 'oheuhehe', type: MD_INPUT },
+  { title: 'level', value: 'noob' }
 ]
 
 const MockBasic: React.FC = () => {
-  const [options, setOptions] = useState(mockValues)
+  const onClick = (title: any) => onChange(title, 4)
+  const mockedDropdown = [
+    ...mockValues,
+    {
+      title: 'Swiggity Swag',
+      value: [
+        {
+          title: 'Lolzz',
+          as: 'button',
+
+          onClick: onClick
+        },
+        {
+          title: 'pineApple bananozna',
+          as: 'button',
+          onClick: onClick
+        }
+      ] as Item[],
+      type: DROP_DOWN
+    },
+    { title: 'suupa', value: 'choob' }
+  ]
+  const [options, setOptions] = useState(mockedDropdown)
   const onChange = (value: string, index: number) => {
-    const newOptions = [...options]
-    newOptions[index].value = value
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return <FormCard onChange={onChange} values={options} onSubmit={mockBtn} />
@@ -33,9 +59,7 @@ const MockBasic: React.FC = () => {
 const MockWithTitle: React.FC = () => {
   const [options, setOptions] = useState(mockValues)
   const onChange = (value: string, index: number) => {
-    const newOptions = [...options]
-    newOptions[index].value = value
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return (
@@ -51,10 +75,7 @@ const MockWithTitle: React.FC = () => {
 const MockWithValidation: React.FC = () => {
   const [options, setOptions] = useState(mockValues)
   const onChange = (value: string, index: number) => {
-    const newOptions = [...options]
-    newOptions[index].value = value
-    newOptions[index].error = value ? '' : 'Field cannot be empty'
-    setOptions(newOptions)
+    formChange(value, index, options, setOptions)
   }
 
   return (
@@ -67,14 +88,43 @@ const MockWithValidation: React.FC = () => {
   )
 }
 
-export const Basic: React.FC = () => {
-  return <MockBasic />
+const MockWithBorder: React.FC = () => {
+  const [options, setOptions] = useState(mockValues)
+  const onChange = (value: string, index: number) => {
+    formChange(value, index, options, setOptions)
+  }
+
+  return (
+    <FormCard
+      border={true}
+      onChange={onChange}
+      values={options}
+      title="clownfish"
+      onSubmit={mockBtn}
+    />
+  )
 }
 
-export const _WithTitle: React.FC = () => {
-  return <MockWithTitle />
-}
+export const Basic: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockBasic />
+  </div>
+)
 
-export const _WithValidation: React.FC = () => {
-  return <MockWithValidation />
-}
+export const _WithTitle: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithTitle />
+  </div>
+)
+
+export const _WithBorder: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithBorder />
+  </div>
+)
+
+export const _WithValidation: React.FC = () => (
+  <div className="col-5 m-auto">
+    <MockWithValidation />
+  </div>
+)

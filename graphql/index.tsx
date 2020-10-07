@@ -297,6 +297,8 @@ export type AcceptSubmissionMutation = { __typename?: 'Mutation' } & {
 export type AddAlertMutationVariables = Exact<{
   text: Scalars['String']
   type: Scalars['String']
+  url?: Maybe<Scalars['String']>
+  urlCaption?: Maybe<Scalars['String']>
 }>
 
 export type AddAlertMutation = { __typename?: 'Mutation' } & {
@@ -1396,8 +1398,13 @@ export type AcceptSubmissionMutationOptions = ApolloReactCommon.BaseMutationOpti
   AcceptSubmissionMutationVariables
 >
 export const AddAlertDocument = gql`
-  mutation addAlert($text: String!, $type: String!) {
-    addAlert(text: $text, type: $type) {
+  mutation addAlert(
+    $text: String!
+    $type: String!
+    $url: String
+    $urlCaption: String
+  ) {
+    addAlert(text: $text, type: $type, url: $url, urlCaption: $urlCaption) {
       id
       text
       type
@@ -1473,6 +1480,8 @@ export function withAddAlert<
  *   variables: {
  *      text: // value for 'text'
  *      type: // value for 'type'
+ *      url: // value for 'url'
+ *      urlCaption: // value for 'urlCaption'
  *   },
  * });
  */

@@ -2100,677 +2100,635 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 
 exports[`Storyshots Components/FormCard Basic 1`] = `
 <div
-  className="rounded"
-  style={
-    Object {
-      "backgroundColor": "white",
-      "border": "2px solid rgb(0,0,0,.3)",
-      "padding": "10px",
-      "textAlign": "center",
-    }
-  }
+  className="col-5 m-auto"
 >
   <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
+    className="row"
   >
-    <h5
-      data-testid="h5Nickname0"
-    >
-      Nickname
-    </h5>
-    <input
-      data-testid="input0"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="ChickenFarmer00"
-    />
-    <h6
-      className="text-danger"
-    >
-      Required
-    </h6>
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Description1"
-    >
-      Description
-    </h5>
-    <input
-      data-testid="input1"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="Amazing farm of chicken"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title2"
-    >
-      Title
-    </h5>
     <div
-      style={
-        Object {
-          "backgroundColor": "white",
-        }
-      }
+      className="card shadow-sm col-12"
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
-      >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
-      <textarea
-        data-testid="textbox"
-        onChange={[Function]}
-        placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
-        value="oheuhehe"
+      <div
+        className="card-body text-center"
       />
+      <div
+        className="text-left"
+      >
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5nickname0"
+          >
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5Swiggity Swag4"
+          >
+            Swiggity swag
+          </h5>
+          <div
+            className="dropdown"
+            onKeyDown={[Function]}
+          >
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-none"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Lolzz
+            </button>
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5suupa5"
+          >
+            Suupa
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input5"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="choob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center mb-4"
+      >
+        <button
+          className="btn bg-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components/FormCard With Border 1`] = `
+<div
+  className="col-5 m-auto"
+>
   <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
+    className="row border"
   >
-    <h5
-      data-testid="h5Title3"
+    <div
+      className="card shadow-sm col-12"
     >
-      Title
-    </h5>
-    <input
-      data-testid="input3"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="oheuhehe"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 0,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Level4"
-    >
-      Level
-    </h5>
-    <input
-      data-testid="input4"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="noob"
-    />
-  </div>
-  <div
-    style={
-      Object {
-        "margin": 10,
-      }
-    }
-  >
-    <button
-      className="btn bg-success"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Create New Challenge
-    </button>
+      <div
+        className="card-body text-center"
+      >
+        <h2
+          className="card-title font-weight-bold mb-3"
+        >
+          clownfish
+        </h2>
+      </div>
+      <div
+        className="text-left"
+      >
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5nickname0"
+          >
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center mb-4"
+      >
+        <button
+          className="btn bg-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Create New Challenge
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/FormCard With Title 1`] = `
 <div
-  className="rounded"
-  style={
-    Object {
-      "backgroundColor": "white",
-      "border": "2px solid rgb(0,0,0,.3)",
-      "padding": "10px",
-      "textAlign": "center",
-    }
-  }
+  className="col-5 m-auto"
 >
-  <h2
-    style={
-      Object {
-        "marginBottom": 20,
-        "textDecoration": "underline",
-      }
-    }
-  >
-    clownfish
-  </h2>
   <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
+    className="row"
   >
-    <h5
-      data-testid="h5Nickname0"
-    >
-      Nickname
-    </h5>
-    <input
-      data-testid="input0"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="ChickenFarmer00"
-    />
-    <h6
-      className="text-danger"
-    >
-      Required
-    </h6>
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Description1"
-    >
-      Description
-    </h5>
-    <input
-      data-testid="input1"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="Amazing farm of chicken"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title2"
-    >
-      Title
-    </h5>
     <div
-      style={
-        Object {
-          "backgroundColor": "white",
-        }
-      }
+      className="card shadow-sm col-12"
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="card-body text-center"
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
+        <h2
+          className="card-title font-weight-bold mb-3"
+        >
+          clownfish
+        </h2>
+      </div>
+      <div
+        className="text-left"
       >
-        Preview
-      </button>
-      <textarea
-        data-testid="textbox"
-        onChange={[Function]}
-        placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5nickname0"
+          >
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center mb-4"
+      >
+        <button
+          className="btn bg-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
           }
-        }
-        value="oheuhehe"
-      />
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title3"
-    >
-      Title
-    </h5>
-    <input
-      data-testid="input3"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="oheuhehe"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 0,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Level4"
-    >
-      Level
-    </h5>
-    <input
-      data-testid="input4"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="noob"
-    />
-  </div>
-  <div
-    style={
-      Object {
-        "margin": 10,
-      }
-    }
-  >
-    <button
-      className="btn bg-success"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Create New Challenge
-    </button>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/FormCard With Validation 1`] = `
 <div
-  className="rounded"
-  style={
-    Object {
-      "backgroundColor": "white",
-      "border": "2px solid rgb(0,0,0,.3)",
-      "padding": "10px",
-      "textAlign": "center",
-    }
-  }
+  className="col-5 m-auto"
 >
-  <h2
-    style={
-      Object {
-        "marginBottom": 20,
-        "textDecoration": "underline",
-      }
-    }
-  >
-    clownfish
-  </h2>
   <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
+    className="row"
   >
-    <h5
-      data-testid="h5Nickname0"
-    >
-      Nickname
-    </h5>
-    <input
-      data-testid="input0"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="ChickenFarmer00"
-    />
-    <h6
-      className="text-danger"
-    >
-      Required
-    </h6>
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Description1"
-    >
-      Description
-    </h5>
-    <input
-      data-testid="input1"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="Amazing farm of chicken"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title2"
-    >
-      Title
-    </h5>
     <div
-      style={
-        Object {
-          "backgroundColor": "white",
-        }
-      }
+      className="card shadow-sm col-12"
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="card-body text-center"
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
+        <h2
+          className="card-title font-weight-bold mb-3"
+        >
+          clownfish
+        </h2>
+      </div>
+      <div
+        className="text-left"
       >
-        Preview
-      </button>
-      <textarea
-        data-testid="textbox"
-        onChange={[Function]}
-        placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5nickname0"
+          >
+            Nickname
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input0"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="ChickenFarmer00"
+          />
+          <h6
+            className="text-danger mb-0"
+          >
+            Required
+          </h6>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5description1"
+          >
+            Description
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input1"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="Amazing farm of chicken"
+          />
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5title2"
+          >
+            Title
+          </h5>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value="oheuhehe"
+            />
+          </div>
+        </div>
+        <div
+          className="d-flex flex-column ml-3 mr-3 mb-4"
+        >
+          <h5
+            data-testid="h5level3"
+          >
+            Level
+          </h5>
+          <input
+            className="form-control"
+            data-testid="input3"
+            onChange={[Function]}
+            placeholder=""
+            type="text"
+            value="noob"
+          />
+        </div>
+      </div>
+      <div
+        className="text-center mb-4"
+      >
+        <button
+          className="btn bg-primary"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
           }
-        }
-        value="oheuhehe"
-      />
+        >
+          Create New Challenge
+        </button>
+      </div>
     </div>
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 10,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Title3"
-    >
-      Title
-    </h5>
-    <input
-      data-testid="input3"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="oheuhehe"
-    />
-  </div>
-  <div
-    className="d-flex flex-column"
-    style={
-      Object {
-        "backgroundColor": "rgb(84, 64, 216, .04)",
-        "border": "3px solid rgb(84, 64, 216, .3)",
-        "marginBottom": 0,
-        "padding": "10px",
-        "textAlign": "left",
-      }
-    }
-  >
-    <h5
-      data-testid="h5Level4"
-    >
-      Level
-    </h5>
-    <input
-      data-testid="input4"
-      onChange={[Function]}
-      placeholder=""
-      style={
-        Object {
-          "border": "1px solid rgb(84, 64, 216, .3)",
-        }
-      }
-      type="text"
-      value="noob"
-    />
-  </div>
-  <div
-    style={
-      Object {
-        "margin": 10,
-      }
-    }
-  >
-    <button
-      className="btn bg-success"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
-    >
-      Create New Challenge
-    </button>
   </div>
 </div>
 `;
