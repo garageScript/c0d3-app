@@ -1,5 +1,6 @@
 import { User, UserLesson } from '../../helpers/dbload'
 import { User as UserType } from '../../@types/user'
+import { Mentor } from '../../@types/mentor'
 
 type ArgsGetLessonMentors = {
   lessonId: string
@@ -16,7 +17,7 @@ export const getLessonMentors = async (
       include: [{ model: User }]
     })
 
-    return results.map((result: any) => {
+    return results.map((result: Mentor) => {
       return { username: result.User.username }
     })
   } catch (err) {
