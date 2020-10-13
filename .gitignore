@@ -113,3 +113,6 @@ dist
 # Zeit Now
 .now
 .vercel
+
+#removing package-lock as the master branch has yarn.lock
+package-lock.json

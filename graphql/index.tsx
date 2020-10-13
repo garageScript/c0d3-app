@@ -188,10 +188,15 @@ export type Query = {
   lessons: Array<Lesson>
   session?: Maybe<Session>
   allUsers?: Maybe<Array<Maybe<User>>>
+  getLessonMentors?: Maybe<Array<Maybe<User>>>
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
   alerts: Array<Alert>
+}
+
+export type QueryGetLessonMentorsArgs = {
+  lessonId: Scalars['String']
 }
 
 export type QueryUserInfoArgs = {
@@ -292,6 +297,8 @@ export type AcceptSubmissionMutation = { __typename?: 'Mutation' } & {
 export type AddAlertMutationVariables = Exact<{
   text: Scalars['String']
   type: Scalars['String']
+  url?: Maybe<Scalars['String']>
+  urlCaption?: Maybe<Scalars['String']>
 }>
 
 export type AddAlertMutation = { __typename?: 'Mutation' } & {
@@ -553,6 +560,16 @@ export type RejectSubmissionMutation = { __typename?: 'Mutation' } & {
       Submission,
       'id' | 'comment' | 'status'
     >
+  >
+}
+
+export type RemoveAlertMutationVariables = Exact<{
+  id: Scalars['String']
+}>
+
+export type RemoveAlertMutation = { __typename?: 'Mutation' } & {
+  removeAlert?: Maybe<
+    { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
   >
 }
 
@@ -1094,6 +1111,12 @@ export type QueryResolvers<
     ParentType,
     ContextType
   >
+  getLessonMentors?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['User']>>>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryGetLessonMentorsArgs, 'lessonId'>
+  >
   userInfo?: Resolver<
     Maybe<ResolversTypes['Session']>,
     ParentType,
@@ -1375,8 +1398,13 @@ export type AcceptSubmissionMutationOptions = ApolloReactCommon.BaseMutationOpti
   AcceptSubmissionMutationVariables
 >
 export const AddAlertDocument = gql`
-  mutation addAlert($text: String!, $type: String!) {
-    addAlert(text: $text, type: $type) {
+  mutation addAlert(
+    $text: String!
+    $type: String!
+    $url: String
+    $urlCaption: String
+  ) {
+    addAlert(text: $text, type: $type, url: $url, urlCaption: $urlCaption) {
       id
       text
       type
@@ -1452,6 +1480,8 @@ export function withAddAlert<
  *   variables: {
  *      text: // value for 'text'
  *      type: // value for 'type'
+ *      url: // value for 'url'
+ *      urlCaption: // value for 'urlCaption'
  *   },
  * });
  */
@@ -2496,6 +2526,106 @@ export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<
 export type RejectSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
   RejectSubmissionMutation,
   RejectSubmissionMutationVariables
+>
+export const RemoveAlertDocument = gql`
+  mutation removeAlert($id: String!) {
+    removeAlert(id: $id) {
+      success
+    }
+  }
+`
+export type RemoveAlertMutationFn = ApolloReactCommon.MutationFunction<
+  RemoveAlertMutation,
+  RemoveAlertMutationVariables
+>
+export type RemoveAlertComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables
+  >,
+  'mutation'
+>
+
+export const RemoveAlertComponent = (props: RemoveAlertComponentProps) => (
+  <ApolloReactComponents.Mutation<
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables
+  >
+    mutation={RemoveAlertDocument}
+    {...props}
+  />
+)
+
+export type RemoveAlertProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables
+  >
+} &
+  TChildProps
+export function withRemoveAlert<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables,
+    RemoveAlertProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables,
+    RemoveAlertProps<TChildProps, TDataName>
+  >(RemoveAlertDocument, {
+    alias: 'removeAlert',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useRemoveAlertMutation__
+ *
+ * To run a mutation, you first call `useRemoveAlertMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemoveAlertMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeAlertMutation, { data, loading, error }] = useRemoveAlertMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRemoveAlertMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    RemoveAlertMutation,
+    RemoveAlertMutationVariables
+  >(RemoveAlertDocument, baseOptions)
+}
+export type RemoveAlertMutationHookResult = ReturnType<
+  typeof useRemoveAlertMutation
+>
+export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<
+  RemoveAlertMutation
+>
+export type RemoveAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  RemoveAlertMutation,
+  RemoveAlertMutationVariables
 >
 export const ReqPwResetDocument = gql`
   mutation reqPwReset($userOrEmail: String!) {

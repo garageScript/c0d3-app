@@ -90,6 +90,10 @@ User.hasMany(UserLesson, {
   foreignKey: 'userId'
 })
 
+UserLesson.belongsTo(User, {
+  foreignKey: 'userId'
+})
+
 sequelize.sync({ alter: !!process.env.ALTER_DB })
 
 export default {
@@ -102,3 +106,5 @@ export default {
   Star,
   sequelize
 }
+
+export { User, UserLesson }
