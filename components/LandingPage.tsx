@@ -30,7 +30,7 @@ const LandingPage: React.FC = () => {
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3 mb-5">
             <NavLink
-              path="https://c0d3.com/book"
+              path="https://www.c0d3.com/book"
               className="btn btn-primary py-3 px-5"
               external
             >
