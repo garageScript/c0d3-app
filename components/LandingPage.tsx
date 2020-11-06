@@ -196,7 +196,7 @@ const LandingPage: React.FC = () => {
           Start your journey to being a full stack software engineer
         </p>
         <NavLink
-          path="https://c0d3.com/book"
+          path="https://www.c0d3.com/book"
           className="btn btn-primary py-3 px-5 mt-4"
           external
         >
