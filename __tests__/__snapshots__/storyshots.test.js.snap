@@ -209,6 +209,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -244,6 +245,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -2958,6 +2960,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
@@ -3039,6 +3042,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
@@ -3509,6 +3513,7 @@ exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -5331,6 +5336,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
@@ -5522,6 +5528,7 @@ exports[`Storyshots Pages/Curriculum Basic 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -5557,6 +5564,7 @@ exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -5592,6 +5600,7 @@ exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -5628,6 +5637,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
@@ -6105,6 +6115,7 @@ exports[`Storyshots Pages/Lesson Basic 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -6140,6 +6151,7 @@ exports[`Storyshots Pages/Lesson Completed Challenges 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -6175,6 +6187,7 @@ exports[`Storyshots Pages/Lesson With Alerts 1`] = `
       "minHeight": "100vh",
       "position": "fixed",
       "top": 0,
+      "zIndex": 1,
     }
   }
 >
@@ -6211,6 +6224,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
@@ -6484,6 +6498,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
@@ -6595,6 +6610,7 @@ Array [
         "minHeight": "100vh",
         "position": "fixed",
         "top": 0,
+        "zIndex": 1,
       }
     }
   >
