@@ -5,10 +5,10 @@ import db from '../../helpers/dbload'
 const { Star } = db
 const ctx = { req: { error: jest.fn() } }
 
-describe('Alerts resolver', () => {
+describe('addStar resolver', () => {
   beforeEach(jest.clearAllMocks)
 
-  test('should return success if no errors are thrown, and Star.create is called', async () => {
+  test('should return success object if no errors are thrown, and Star.create is called', async () => {
     const res = await addStar(
       null,
       { lessonId: 5, studentId: 2226, mentorId: 815 },
