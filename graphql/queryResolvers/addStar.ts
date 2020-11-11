@@ -10,8 +10,6 @@ export const addStar = async (
   ctx: { req: LoggedRequest }
 ) => {
   const { req } = ctx
-
-  // Check if any fields are missing
   try {
     const { studentId, mentorId, lessonId } = arg
     if (!studentId) {
@@ -23,17 +21,11 @@ export const addStar = async (
     if (!lessonId) {
       throw new Error('Missing or invalid lessonId')
     }
-  } catch (err) {
-    req.error(err)
-    throw new Error(err)
-  }
 
-  // Attempt to add Star into database
-  try {
     await Star.create(arg)
     return { success: true }
   } catch (err) {
-    req.error(err)
-    throw new Error(`Failed to add Star into database ${err}`)
+    req.error(`Failed to add Star into Database ${err}`)
+    throw new Error(err)
   }
 }

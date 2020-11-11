@@ -18,19 +18,15 @@ describe('Alerts resolver', () => {
     expect(res).toEqual({ success: true })
   })
 
-  test('should throw "Failed to add star into database" if calling Star.create creates an error', async () => {
-    let res = 'potato'
+  test('should jump to catch block and call req.error when calling Star.create creates an error', async () => {
     Star.create = jest.fn().mockImplementation(() => {
       throw new Error()
     })
     try {
       await addStar(null, { lessonId: 5, studentId: 2226, mentorId: 815 }, ctx)
-    } catch (err) {
-      res = JSON.stringify(err)
-    }
+    } catch (err) {}
     expect(Star.create).toHaveBeenCalledTimes(1)
-    const bool = res.includes('Failed to add Star into database')
-    expect(bool).toBeTruthy
+    expect(ctx.req.error).toHaveBeenCalledTimes(1)
   })
 
   test('should throw "Missing or invalid studentId" error if studentId is missing', async () => {
