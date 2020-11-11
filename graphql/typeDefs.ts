@@ -18,6 +18,12 @@ export default gql`
   }
 
   type Mutation {
+    addStar(
+      mentorId: Int!
+      studentId: Int!
+      lessonId: Int!
+      comment: String
+    ): SuccessResponse
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse

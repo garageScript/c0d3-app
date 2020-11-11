@@ -75,6 +75,7 @@ export type Lesson = {
 
 export type Mutation = {
   __typename?: 'Mutation'
+  addStar?: Maybe<SuccessResponse>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   reqPwReset?: Maybe<TokenResponse>
@@ -90,6 +91,13 @@ export type Mutation = {
   updateLesson?: Maybe<Array<Maybe<Lesson>>>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
+}
+
+export type MutationAddStarArgs = {
+  mentorId: Scalars['Int']
+  studentId: Scalars['Int']
+  lessonId: Scalars['Int']
+  comment?: Maybe<Scalars['String']>
 }
 
 export type MutationLoginArgs = {
@@ -895,9 +903,9 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   Alert: ResolverTypeWrapper<Alert>
   Mutation: ResolverTypeWrapper<{}>
+  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   AuthResponse: ResolverTypeWrapper<AuthResponse>
   TokenResponse: ResolverTypeWrapper<TokenResponse>
-  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   CacheControlScope: CacheControlScope
   Upload: ResolverTypeWrapper<Scalars['Upload']>
 }
@@ -917,9 +925,9 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']
   Alert: Alert
   Mutation: {}
+  SuccessResponse: SuccessResponse
   AuthResponse: AuthResponse
   TokenResponse: TokenResponse
-  SuccessResponse: SuccessResponse
   Upload: Scalars['Upload']
 }
 
@@ -1000,6 +1008,12 @@ export type MutationResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = {
+  addStar?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationAddStarArgs, 'mentorId' | 'studentId' | 'lessonId'>
+  >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
     ParentType,
