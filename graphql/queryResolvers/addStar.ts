@@ -25,7 +25,7 @@ export const addStar = async (
     await Star.create(arg)
     return { success: true }
   } catch (err) {
-    req.error(`Failed to add Star into Database ${err}`)
+    req.error(`Failed to add Star into Database: ${err}`)
     throw new Error(err)
   }
 }
