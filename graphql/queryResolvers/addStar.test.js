@@ -24,80 +24,74 @@ describe('addStar resolver', () => {
     })
     try {
       await addStar(null, { lessonId: 5, studentId: 2226, mentorId: 815 }, ctx)
-    } catch (err) {}
+    } catch {}
     expect(Star.create).toHaveBeenCalledTimes(1)
     expect(ctx.req.error).toHaveBeenCalledTimes(1)
   })
 
   test('should throw "Missing or invalid studentId" error if studentId is missing', async () => {
-    let res = 'potato'
+    let res = 'Never gonna give'
     try {
       await addStar(null, { lessonId: 5, mentorId: 815 }, ctx)
     } catch (err) {
-      res = JSON.stringify(err)
+      res = String(err)
     }
     expect(Star.create).toHaveBeenCalledTimes(0)
-    const bool = res.includes('Missing or invalid studentId')
-    expect(bool).toBeTruthy
+    expect(res).toContain('Missing or invalid studentId')
   })
 
   test('should throw "Missing or invalid studentId" error if studentId is invalid', async () => {
-    let res = 'potato'
+    let res = 'you up. Never'
     try {
       await addStar(null, { lessonId: 5, studentId: 0, mentorId: 815 }, ctx)
     } catch (err) {
-      res = JSON.stringify(err)
+      res = String(err)
     }
     expect(Star.create).toHaveBeenCalledTimes(0)
-    const bool = res.includes('Missing or invalid studentId')
-    expect(bool).toBeTruthy
+    expect(res).toContain('Missing or invalid studentId')
   })
 
   test('should throw "Missing or invalid lessonId" error if lessonId is missing', async () => {
-    let res = 'potato'
+    let res = 'gonna let you'
     try {
       await addStar(null, { studentId: 5, mentorId: 815 }, ctx)
     } catch (err) {
-      res = JSON.stringify(err)
+      res = String(err)
     }
     expect(Star.create).toHaveBeenCalledTimes(0)
-    const bool = res.includes('Missing or invalid lessonId')
-    expect(bool).toBeTruthy
+    expect(res).toContain('Missing or invalid lessonId')
   })
 
   test('should throw "Missing or invalid lessonId" error if lessonId is invalid', async () => {
-    let res = 'potato'
+    let res = 'down. Never gonna'
     try {
       await addStar(null, { lessonId: 0, studentId: 5, mentorId: 815 }, ctx)
     } catch (err) {
-      res = JSON.stringify(err)
+      res = String(err)
     }
     expect(Star.create).toHaveBeenCalledTimes(0)
-    const bool = res.includes('Missing or invalid lessonId')
-    expect(bool).toBeTruthy
+    expect(res).toContain('Missing or invalid lessonId')
   })
 
   test('should throw "Missing or invalid mentorId" error if mentorId is missing', async () => {
-    let res = 'potato'
+    let res = 'run around'
     try {
       await addStar(null, { studentId: 5, lessonId: 5 }, ctx)
     } catch (err) {
-      res = JSON.stringify(err)
+      res = String(err)
     }
     expect(Star.create).toHaveBeenCalledTimes(0)
-    const bool = res.includes('Missing or invalid mentorId')
-    expect(bool).toBeTruthy
+    expect(res).toContain('Missing or invalid mentorId')
   })
 
   test('should throw "Missing or invalid mentorId" error if mentorId is invalid', async () => {
-    let res = 'potato'
+    let res = 'and desert you'
     try {
       await addStar(null, { lessonId: 5, studentId: 5, mentorId: 0 }, ctx)
     } catch (err) {
-      res = JSON.stringify(err)
+      res = String(err)
     }
     expect(Star.create).toHaveBeenCalledTimes(0)
-    const bool = res.includes('Missing or invalid mentorId')
-    expect(bool).toBeTruthy
+    expect(res).toContain('Missing or invalid mentorId')
   })
 })
