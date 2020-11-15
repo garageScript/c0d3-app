@@ -75,7 +75,7 @@ export type Lesson = {
 
 export type Mutation = {
   __typename?: 'Mutation'
-  addStar?: Maybe<SuccessResponse>
+  setStar?: Maybe<SuccessResponse>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   reqPwReset?: Maybe<TokenResponse>
@@ -93,7 +93,7 @@ export type Mutation = {
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
 }
 
-export type MutationAddStarArgs = {
+export type MutationSetStarArgs = {
   mentorId: Scalars['Int']
   studentId: Scalars['Int']
   lessonId: Scalars['Int']
@@ -1008,11 +1008,11 @@ export type MutationResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = {
-  addStar?: Resolver<
+  setStar?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
-    RequireFields<MutationAddStarArgs, 'mentorId' | 'studentId' | 'lessonId'>
+    RequireFields<MutationSetStarArgs, 'mentorId' | 'studentId' | 'lessonId'>
   >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,

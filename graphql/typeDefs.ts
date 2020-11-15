@@ -18,7 +18,7 @@ export default gql`
   }
 
   type Mutation {
-    addStar(
+    setStar(
       mentorId: Int!
       studentId: Int!
       lessonId: Int!

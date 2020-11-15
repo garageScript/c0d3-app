@@ -17,7 +17,7 @@ import {
   rejectSubmission,
   submissions
 } from '../helpers/controllers/submissionController'
-import { addStar } from './queryResolvers/addStar'
+import { setStar } from './queryResolvers/setStar'
 import { alerts } from './queryResolvers/alerts'
 import { lessons } from './queryResolvers/lessons'
 import { session } from './queryResolvers/session'
@@ -42,7 +42,7 @@ export default {
   },
 
   Mutation: {
-    addStar,
+    setStar,
     changePw,
     changeAdminRights,
     createSubmission,
