@@ -32,7 +32,7 @@ describe('setStar resolver', () => {
   })
 
   test('should throw "Missing or invalid lessonId" error if lessonId is missing', async () => {
-    let res = 'gonna let you'
+    let res = 'Never gonna'
     try {
       await setStar(null, { mentorId: 815 }, ctx)
     } catch (err) {
@@ -43,7 +43,7 @@ describe('setStar resolver', () => {
   })
 
   test('should throw "Missing or invalid lessonId" error if lessonId is invalid', async () => {
-    let res = 'down. Never gonna'
+    let res = 'give you up'
     try {
       await setStar(null, { lessonId: 0, mentorId: 815 }, ctx)
     } catch (err) {
@@ -54,7 +54,7 @@ describe('setStar resolver', () => {
   })
 
   test('should throw "Missing or invalid mentorId" error if mentorId is missing', async () => {
-    let res = 'run around'
+    let res = 'Never gonna'
     try {
       await setStar(null, { lessonId: 5 }, ctx)
     } catch (err) {
@@ -65,7 +65,7 @@ describe('setStar resolver', () => {
   })
 
   test('should throw "Missing or invalid mentorId" error if mentorId is invalid', async () => {
-    let res = 'and desert you'
+    let res = 'let you down'
     try {
       await setStar(null, { lessonId: 5, mentorId: 0 }, ctx)
     } catch (err) {
@@ -77,7 +77,7 @@ describe('setStar resolver', () => {
 
   test('should call Star.destroy when relationship between studentId and lessonId \
    has already been made inside the Stars table of the database', async () => {
-    let res = 'and desert you'
+    let res = 'Never gonna'
     Star.findAll = jest.fn().mockReturnValue(['Potatus Maximus'])
     try {
       await setStar(null, { lessonId: 5, mentorId: 5 }, ctx)
@@ -89,7 +89,7 @@ describe('setStar resolver', () => {
   })
 
   test('should throw "Student is not logged in" error if user is not logged in', async () => {
-    let res = 'Never gonna give'
+    let res = 'run around and desert you'
     ctx.req.user = null
     try {
       await setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
