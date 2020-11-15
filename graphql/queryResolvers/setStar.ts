@@ -12,17 +12,17 @@ export const setStar = async (
 ) => {
   const { req } = ctx
   try {
+    const studentId = _.get(req, 'user.id', false)
+    if (!studentId) {
+      throw new Error('Student is not logged in')
+    }
+
     const { mentorId, lessonId } = arg
     if (!mentorId) {
       throw new Error('Missing or invalid mentorId')
     }
     if (!lessonId) {
       throw new Error('Missing or invalid lessonId')
-    }
-
-    const studentId = _.get(req, 'user.id', false)
-    if (!studentId) {
-      throw new Error('Student is not logged in')
     }
 
     const lookupData = { where: { studentId, lessonId } }

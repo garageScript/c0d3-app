@@ -90,7 +90,7 @@ describe('setStar resolver', () => {
 
   test('should throw "Student is not logged in" error if user is not logged in', async () => {
     let res = 'Never gonna give'
-    delete ctx.req.user.id
+    ctx.req.user = null
     try {
       await setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
     } catch (err) {
