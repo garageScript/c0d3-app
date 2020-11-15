@@ -95,7 +95,6 @@ export type Mutation = {
 
 export type MutationSetStarArgs = {
   mentorId: Scalars['Int']
-  studentId: Scalars['Int']
   lessonId: Scalars['Int']
   comment?: Maybe<Scalars['String']>
 }
@@ -1012,7 +1011,7 @@ export type MutationResolvers<
     Maybe<ResolversTypes['SuccessResponse']>,
     ParentType,
     ContextType,
-    RequireFields<MutationSetStarArgs, 'mentorId' | 'studentId' | 'lessonId'>
+    RequireFields<MutationSetStarArgs, 'mentorId' | 'lessonId'>
   >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
