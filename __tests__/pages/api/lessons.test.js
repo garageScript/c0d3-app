@@ -3,6 +3,7 @@ import * as getLessons from '../../../graphql/queryResolvers/lessons'
 
 describe('lessonsAPI', () => {
   const res = {
+    setHeader: jest.fn(),
     json: jest.fn(),
     status: jest.fn()
   }
