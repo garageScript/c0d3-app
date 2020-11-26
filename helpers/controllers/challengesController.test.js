@@ -1,7 +1,9 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
+jest.mock('../lessonExists')
 import db from '../dbload'
 import { createChallenge, updateChallenge } from './challengesController'
+import { lessonExists } from '../lessonExists'
 import lessonData from '../../__dummy__/lessonData'
 const { Challenge, Lesson } = db
 
@@ -16,6 +18,9 @@ const mockChallengeData = {
 Lesson.findAll = jest.fn().mockReturnValue(lessonData)
 
 describe('Challenges controller tests', () => {
+  beforeEach(() => {
+    lessonExists.mockReturnValue(true)
+  })
   const ctx = {
     req: {
       user: { isAdmin: 'true' }
@@ -24,29 +29,63 @@ describe('Challenges controller tests', () => {
 
   Challenge.build = jest.fn().mockReturnValue({ save: () => {} })
 
-  test('Should create new challenge', async () => {
+  test('Should create new challenge', () => {
     expect(createChallenge(null, mockChallengeData, ctx)).resolves.toEqual(
       lessonData
     )
   })
 
-  test('Should update challenge', async () => {
+  test('Should update challenge', () => {
     expect(updateChallenge(null, mockChallengeData, ctx)).resolves.toEqual(
       lessonData
     )
   })
 
-  test('Should throw Error when user is not an admin when updating challenge', async () => {
-    ctx.req.user.isAdmin = 'false'
-    expect(updateChallenge(null, mockChallengeData, ctx)).rejects.toThrowError(
-      'User is not an admin'
-    )
+  test('Should throw "lessonId does not exist" error if lessonId does not exist \
+   in database when creating challenge', async () => {
+    lessonExists.mockReturnValue(false)
+    let res
+    try {
+      await createChallenge(null, mockChallengeData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('lessonId does not exist in database')
   })
 
-  test('Should throw Error when user is not an admin when creating challenge', async () => {
+  test('Should throw "lessonId does not exist" error if lessonId does not exist \
+  in database when updating challenge', async () => {
+    lessonExists.mockReturnValue(false)
+    let res
+    try {
+      await updateChallenge(null, mockChallengeData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('lessonId does not exist in database')
+  })
+
+  test('Should throw Error "User is not admin" error if user is not an admin \
+  when updating challenge', async () => {
     ctx.req.user.isAdmin = 'false'
-    expect(createChallenge(null, mockChallengeData, ctx)).rejects.toThrowError(
-      'User is not an admin'
-    )
+    let res
+    try {
+      await updateChallenge(null, mockChallengeData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('User is not an admin')
+  })
+
+  test('Should throw "User is not an admin" error if user is not an admin when \
+  creating challenge', async () => {
+    ctx.req.user.isAdmin = 'false'
+    let res
+    try {
+      await createChallenge(null, mockChallengeData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('User is not an admin')
   })
 })

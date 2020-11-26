@@ -3,6 +3,7 @@ import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
 import { lessons } from '../../graphql/queryResolvers/lessons'
+import { lessonExists } from '../lessonExists'
 const { Lesson } = db
 
 type lessonData = {
@@ -48,6 +49,10 @@ export const updateLesson = async (
     }
 
     const { id } = arg
+
+    if (!(await lessonExists(id))) {
+      throw new Error('lessonId does not exist in database')
+    }
 
     await Lesson.update(arg, { where: { id } })
 

@@ -1,8 +1,11 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
+jest.mock('../lessonExists')
 import db from '../dbload'
 import { createLesson, updateLesson } from './lessonsController'
 import lessonData from '../../__dummy__/lessonData'
+import { lessonExists } from '../lessonExists'
+
 const { Lesson } = db
 
 const mockLessonData = {
@@ -20,7 +23,11 @@ const mockLessonData = {
 Lesson.findAll = jest.fn().mockReturnValue(lessonData)
 Lesson.update = jest.fn().mockReturnValue(() => {})
 Lesson.build = jest.fn().mockReturnValue({ save: () => {} })
+
 describe('Lessons controller tests', () => {
+  beforeEach(() => {
+    lessonExists.mockReturnValue(true)
+  })
   const ctx = {
     req: {
       user: { isAdmin: 'true' }
@@ -35,17 +42,37 @@ describe('Lessons controller tests', () => {
     expect(updateLesson(null, mockLessonData, ctx)).resolves.toEqual(lessonData)
   })
 
+  test('Should throw "lessonId does not exist" error if lessonId does not exist \
+  in database when updating lesson', async () => {
+    lessonExists.mockReturnValue(false)
+    let res
+    try {
+      await updateLesson(null, mockLessonData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('lessonId does not exist in database')
+  })
+
   test('Should throw Error when user is not an admin when updating lesson', async () => {
     ctx.req.user.isAdmin = 'false'
-    expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError(
-      'User is not an admin'
-    )
+    let res = 'lol'
+    try {
+      await updateLesson(null, mockLessonData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('User is not an admin')
   })
 
   test('Should throw Error when user is not an admin when creating lesson', async () => {
     ctx.req.user.isAdmin = 'false'
-    expect(createLesson(null, mockLessonData, ctx)).rejects.toThrowError(
-      'User is not an admin'
-    )
+    let res = 'lol'
+    try {
+      await createLesson(null, mockLessonData, ctx)
+    } catch (err) {
+      res = String(err)
+    }
+    expect(res).toContain('User is not an admin')
   })
 })
