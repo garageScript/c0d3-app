@@ -52,9 +52,9 @@ describe('Lessons controller tests', () => {
   test('Should throw "lessonId does not exist" error if lessonId does not exist \
   in database when updating lesson', async () => {
     lessonExists.mockReturnValue(false)
-    await expect(
-      updateLesson(null, mockChallengeData, ctx)
-    ).rejects.toThrowError('lessonId does not exist in database')
+    await expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError(
+      'lessonId does not exist in database'
+    )
   })
 
   test('Should throw Error when user is not an admin when updating lesson', async () => {
