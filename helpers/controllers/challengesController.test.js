@@ -19,7 +19,7 @@ const mockChallengeData = {
   title: 'potato'
 }
 
-Lesson.findAll = jest.fn().mockReturnValue(lessonData)
+Lesson.findAll.mockReturnValue(lessonData)
 
 describe('Challenges controller tests', () => {
   beforeEach(() => {
@@ -31,7 +31,7 @@ describe('Challenges controller tests', () => {
     }
   }
 
-  Challenge.build = jest.fn().mockReturnValue({ save: () => {} })
+  Challenge.build.mockReturnValue({ save: () => {} })
 
   test('Should create new challenge', async () => {
     await expect(

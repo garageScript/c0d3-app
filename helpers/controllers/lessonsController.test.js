@@ -23,9 +23,9 @@ const mockLessonData = {
   chatUrl: ''
 }
 
-Lesson.findAll = jest.fn().mockReturnValue(lessonData)
-Lesson.update = jest.fn().mockReturnValue(() => {})
-Lesson.build = jest.fn().mockReturnValue({ save: () => {} })
+Lesson.findAll.mockReturnValue(lessonData)
+Lesson.update.mockReturnValue(() => {})
+Lesson.build.mockReturnValue({ save: () => {} })
 
 describe('Lessons controller tests', () => {
   beforeEach(() => {
