@@ -61,7 +61,7 @@ describe('Challenges controller tests', () => {
     ).rejects.toThrowError('lessonId does not exist in database')
   })
 
-  test('Should throw Error "User is not admin" error if user is not an admin \
+  test('Should throw "User is not admin" error if user is not an admin \
   when updating challenge', async () => {
     ctx.req.user.isAdmin = 'false'
     await expect(

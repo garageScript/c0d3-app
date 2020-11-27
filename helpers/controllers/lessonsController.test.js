@@ -57,14 +57,14 @@ describe('Lessons controller tests', () => {
     )
   })
 
-  test('Should throw Error when user is not an admin when updating lesson', async () => {
+  test('Should throw "User is not an admin" error when user is not an admin when updating lesson', async () => {
     ctx.req.user.isAdmin = 'false'
     await expect(createLesson(null, mockLessonData, ctx)).rejects.toThrowError(
       'User is not an admin'
     )
   })
 
-  test('Should throw Error when user is not an admin when creating lesson', async () => {
+  test('Should throw "User is not an admin" error when user is not an admin when creating lesson', async () => {
     ctx.req.user.isAdmin = 'false'
     await expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError(
       'User is not an admin'
