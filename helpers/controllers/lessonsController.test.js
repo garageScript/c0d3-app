@@ -1,11 +1,14 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
 jest.mock('../lessonExists')
+jest.mock('../../graphql/queryResolvers/lessons')
 import db from '../dbload'
 import { createLesson, updateLesson } from './lessonsController'
 import lessonData from '../../__dummy__/lessonData'
 import { lessonExists } from '../lessonExists'
+import { lessons } from '../../graphql/queryResolvers/lessons'
 
+lessons.mockReturnValue(lessonData)
 const { Lesson } = db
 
 const mockLessonData = {
@@ -35,44 +38,36 @@ describe('Lessons controller tests', () => {
   }
 
   test('Should create new lesson', async () => {
-    expect(createLesson(null, mockLessonData, ctx)).resolves.toEqual(lessonData)
+    await expect(createLesson(null, mockLessonData, ctx)).resolves.toEqual(
+      lessonData
+    )
   })
 
   test('Should update lesson', async () => {
-    expect(updateLesson(null, mockLessonData, ctx)).resolves.toEqual(lessonData)
+    await expect(updateLesson(null, mockLessonData, ctx)).resolves.toEqual(
+      lessonData
+    )
   })
 
   test('Should throw "lessonId does not exist" error if lessonId does not exist \
   in database when updating lesson', async () => {
     lessonExists.mockReturnValue(false)
-    let res
-    try {
-      await updateLesson(null, mockLessonData, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(res).toContain('lessonId does not exist in database')
+    await expect(
+      updateLesson(null, mockChallengeData, ctx)
+    ).rejects.toThrowError('lessonId does not exist in database')
   })
 
   test('Should throw Error when user is not an admin when updating lesson', async () => {
     ctx.req.user.isAdmin = 'false'
-    let res = 'lol'
-    try {
-      await updateLesson(null, mockLessonData, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(res).toContain('User is not an admin')
+    await expect(createLesson(null, mockLessonData, ctx)).rejects.toThrowError(
+      'User is not an admin'
+    )
   })
 
   test('Should throw Error when user is not an admin when creating lesson', async () => {
     ctx.req.user.isAdmin = 'false'
-    let res = 'lol'
-    try {
-      await createLesson(null, mockLessonData, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(res).toContain('User is not an admin')
+    await expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError(
+      'User is not an admin'
+    )
   })
 })
