@@ -3,7 +3,7 @@ import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
 import { lessons } from '../../graphql/queryResolvers/lessons'
-
+import { lessonExists } from '../lessonExists'
 const { Challenge } = db
 
 type challengeData = {
@@ -23,6 +23,10 @@ export const createChallenge = async (
   try {
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
+    }
+
+    if (!(await lessonExists(arg.lessonId))) {
+      throw new Error('lessonId does not exist in database')
     }
 
     const newChallenge = Challenge.build(arg)
@@ -45,6 +49,11 @@ export const updateChallenge = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
+
+    if (!(await lessonExists(arg.lessonId))) {
+      throw new Error('lessonId does not exist in database')
+    }
+
     const { id } = arg
 
     await Challenge.update(arg, { where: { id } })
