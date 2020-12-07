@@ -121,6 +121,11 @@
       "stories",
       "testUtil",
       "graphql/index.tsx"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/*.d.ts"
     ]
   },
   "husky": {
