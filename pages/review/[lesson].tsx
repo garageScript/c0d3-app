@@ -48,7 +48,7 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
         (submission: SubmissionData) =>
           submission.status !== 'passed' && submission.status !== 'needMoreWork'
       )
-    : ([] as SubmissionData[])
+    : []
   const currentLesson: Lesson =
     lessons.find(
       (lesson: Lesson) => lesson.id.toString() === currentlessonId
