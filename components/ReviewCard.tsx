@@ -86,7 +86,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     await review({
       variables: {
         submissionId: id,
-        lessonId: lessonId,
+        lessonId,
         comment: commentValue
       }
     })
