@@ -164,6 +164,16 @@ describe('Submissions Mutations', () => {
     ).rejects.toThrow('Invalid user')
   })
 
+  test('acceptSubmission should throw error if user has not passed the lesson', async () => {
+    hasPassedLesson.mockReturnValue(false)
+    const submission = { id: 1, lessonId: 5, comment: 'fake comment' }
+    await expect(
+      resolvers.Mutation.acceptSubmission(null, submission, {
+        req: { user: { id: 1 } }
+      })
+    ).rejects.toThrow('User has not passed this lesson and cannot review.')
+  })
+
   test('rejectSubmission should call updateSubmission', async () => {
     const submission = { id: 1, comment: 'fake comment' }
     const ctx = { req: { user: { id: 2 } } }
@@ -186,6 +196,16 @@ describe('Submissions Mutations', () => {
     await expect(
       resolvers.Mutation.rejectSubmission(null, submission)
     ).rejects.toThrow('Invalid user')
+  })
+
+  test('rejectSubmission should throw error if user has not passed the lesson', async () => {
+    hasPassedLesson.mockReturnValue(false)
+    const submission = { id: 1, lessonId: 5, comment: 'fake comment' }
+    await expect(
+      resolvers.Mutation.rejectSubmission(null, submission, {
+        req: { user: { id: 1 } }
+      })
+    ).rejects.toThrow('User has not passed this lesson and cannot review.')
   })
 })
 

@@ -67,7 +67,7 @@ export const acceptSubmission = async (
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
-    const reviewerId = await getReviewer(ctx)
+    const reviewerId = await getReviewer(ctx, args.lessonId)
     return updateSubmission({ ...args, reviewerId, status: 'passed' })
   } catch (error) {
     throw new Error(error)
@@ -81,8 +81,7 @@ export const rejectSubmission = async (
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
-    const reviewerId = _.get(ctx, 'req.user.id', false)
-    if (!reviewerId) throw new Error('Invalid user')
+    const reviewerId = await getReviewer(ctx, args.lessonId)
     return updateSubmission({ ...args, reviewerId, status: 'needMoreWork' })
   } catch (error) {
     throw new Error(error)
