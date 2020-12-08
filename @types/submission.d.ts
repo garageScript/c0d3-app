@@ -1,6 +1,7 @@
 export type SubmissionData = {
   id: string
   challengeId: string
+  lessonId: string
   comment: string
   diff: string
   challenge: {
