@@ -30,7 +30,7 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
 )
 
 const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
-  const { lessons } = queryData
+  const { lessons, session } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
@@ -39,10 +39,16 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   if (loading) {
     return <LoadingSpinner />
   }
-  const lessonSubmissions: SubmissionData[] = data.submissions.filter(
-    (submission: SubmissionData) =>
-      submission.status !== 'passed' && submission.status !== 'needMoreWork'
-  )
+  if (!session) {
+    router.push('/login')
+    return null
+  }
+  const lessonSubmissions: SubmissionData[] = data
+    ? data.submissions.filter(
+        (submission: SubmissionData) =>
+          submission.status !== 'passed' && submission.status !== 'needMoreWork'
+      )
+    : ([] as SubmissionData[])
   const currentLesson: Lesson =
     lessons.find(
       (lesson: Lesson) => lesson.id.toString() === currentlessonId
