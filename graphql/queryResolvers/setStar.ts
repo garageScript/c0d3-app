@@ -2,6 +2,7 @@ import db from '../../helpers/dbload'
 import { LoggedRequest } from '../../@types/helpers'
 import { Star as StarType } from '../../@types/lesson'
 import _ from 'lodash'
+import { lessonExists } from '../../helpers/lessonExists'
 
 const { Star } = db
 
@@ -17,22 +18,19 @@ export const setStar = async (
       throw new Error('Student is not logged in')
     }
 
-    const { mentorId, lessonId } = arg
-    if (!mentorId) {
-      throw new Error('Missing or invalid mentorId')
-    }
-    if (!lessonId) {
-      throw new Error('Missing or invalid lessonId')
+    const { lessonId } = arg
+    if (!(await lessonExists(lessonId))) {
+      throw new Error('lessonId does not exist in database')
     }
 
     const lookupData = { where: { studentId, lessonId } }
     const starsList = await Star.findAll(lookupData)
-
-    // If there is an element in starsList, then that means the student has already given
-    // a star to someone for this lessonId. Students can only give one star per lesson, so
-    // delete the previous star already in the database before creating a new one
+    /*  If there is an element in starsList, then that means the student has already given
+        a star to someone for this lessonId. Students can only give one star per lesson, so
+        delete the previous star already in the database before creating a new one
+    */
     if (starsList.length) {
-      Star.destroy(lookupData)
+      await Star.destroy(lookupData)
     }
 
     await Star.create({ ...arg, studentId })

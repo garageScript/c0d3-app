@@ -75,7 +75,7 @@ export type Lesson = {
 
 export type Mutation = {
   __typename?: 'Mutation'
-  setStar?: Maybe<SuccessResponse>
+  setStar: SuccessResponse
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   reqPwReset?: Maybe<TokenResponse>
@@ -1008,7 +1008,7 @@ export type MutationResolvers<
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = {
   setStar?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    ResolversTypes['SuccessResponse'],
     ParentType,
     ContextType,
     RequireFields<MutationSetStarArgs, 'mentorId' | 'lessonId'>

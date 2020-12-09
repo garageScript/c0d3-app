@@ -1,5 +1,7 @@
 jest.mock('../../helpers/dbload')
+jest.mock('../../helpers/lessonExists')
 import { setStar } from './setStar'
+import { lessonExists } from '../../helpers/lessonExists'
 import db from '../../helpers/dbload'
 
 const { Star } = db
@@ -9,10 +11,13 @@ const ctx = {
     user: { id: 1337 }
   }
 }
-Star.findAll = jest.fn().mockReturnValue([])
-
 describe('setStar resolver', () => {
-  beforeEach(jest.clearAllMocks)
+  beforeEach(() => {
+    jest.clearAllMocks()
+    lessonExists.mockReturnValue(true)
+    Star.findAll = jest.fn().mockReturnValue([])
+    Star.create = jest.fn().mockReturnValue({ success: true })
+  })
 
   test('should return success object if no errors are thrown, and Star.create is called', async () => {
     const res = await setStar(null, { lessonId: 52226, mentorId: 815 }, ctx)
@@ -24,79 +29,34 @@ describe('setStar resolver', () => {
     Star.create = jest.fn().mockImplementation(() => {
       throw new Error()
     })
-    try {
-      await setStar(null, { lessonId: 52226, mentorId: 815 }, ctx)
-    } catch {}
+    await expect(
+      setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
+    ).rejects.toThrowError()
     expect(Star.create).toHaveBeenCalledTimes(1)
     expect(ctx.req.error).toHaveBeenCalledTimes(1)
   })
 
-  test('should throw "Missing or invalid lessonId" error if lessonId is missing', async () => {
-    let res = 'Never gonna'
-    try {
-      await setStar(null, { mentorId: 815 }, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(Star.create).toHaveBeenCalledTimes(0)
-    expect(res).toContain('Missing or invalid lessonId')
-  })
-
-  test('should throw "Missing or invalid lessonId" error if lessonId is invalid', async () => {
-    let res = 'give you up'
-    try {
-      await setStar(null, { lessonId: 0, mentorId: 815 }, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(Star.create).toHaveBeenCalledTimes(0)
-    expect(res).toContain('Missing or invalid lessonId')
-  })
-
-  test('should throw "Missing or invalid mentorId" error if mentorId is missing', async () => {
-    let res = 'Never gonna'
-    try {
-      await setStar(null, { lessonId: 5 }, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(Star.create).toHaveBeenCalledTimes(0)
-    expect(res).toContain('Missing or invalid mentorId')
-  })
-
-  test('should throw "Missing or invalid mentorId" error if mentorId is invalid', async () => {
-    let res = 'let you down'
-    try {
-      await setStar(null, { lessonId: 5, mentorId: 0 }, ctx)
-    } catch (err) {
-      res = String(err)
-    }
-    expect(Star.create).toHaveBeenCalledTimes(0)
-    expect(res).toContain('Missing or invalid mentorId')
-  })
-
   test('should call Star.destroy when relationship between studentId and lessonId \
    has already been made inside the Stars table of the database', async () => {
-    let res = 'Never gonna'
     Star.findAll = jest.fn().mockReturnValue(['Potatus Maximus'])
-    try {
-      await setStar(null, { lessonId: 5, mentorId: 5 }, ctx)
-    } catch (err) {
-      res = String(err)
-    }
+    await setStar(null, { lessonId: 5, mentorId: 5 }, ctx)
     expect(Star.destroy).toHaveBeenCalledTimes(1)
     expect(Star.create).toHaveBeenCalledTimes(1)
   })
 
-  test('should throw "Student is not logged in" error if user is not logged in', async () => {
-    let res = 'run around and desert you'
-    ctx.req.user = null
-    try {
-      await setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
-    } catch (err) {
-      res = String(err)
-    }
+  test('should throw "lessonId does not exist in database" error if user is not logged in', async () => {
+    lessonExists.mockReturnValue(false)
+    await expect(
+      setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
+    ).rejects.toThrowError('lessonId does not exist in database')
     expect(Star.create).toHaveBeenCalledTimes(0)
-    expect(res).toContain('Student is not logged in')
+  })
+
+  test('should throw "Student is not logged in" error if user is not logged in', async () => {
+    ctx.req.user = null
+    await expect(
+      setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
+    ).rejects.toThrowError('Student is not logged in')
+    expect(Star.create).toHaveBeenCalledTimes(0)
   })
 })
