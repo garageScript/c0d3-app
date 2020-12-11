@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 655px;
+      height: 800px;
+      background: url('./assets/watch.jpg');
+    }
+
+    #innerContainer {
+      position: relative;
+      margin: 208px auto auto 132px;
+      width: 377px;
+      height: 377px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    #content {
+      position: absolute;
+      top: 50%;
+      margin: auto;
+      background-color: #fff;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: top 0.5s linear;
+    }
+
+    #content.full {
+      top: 0;
+    }
+
+    h1 {
+      font-size: 5em;
+      margin-top: 30px;
+    }
+
+    iframe {
+      margin-top: -120px;
+      margin-left: -120px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="innerContainer">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.5435876995566!2d-121.92492164873555!3d37.37697507973475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcbe88aee163b%3A0xd6064b10b2260381!2sPayPal!5e0!3m2!1sen!2sus!4v1534751212643"
+        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div id="content">
+        <h1><span id="hour">00</span>:<span id="minute">00</span></h1>
+        <hr>
+        <h2 id="weekday"> Wednesday </h2>
+        <h2> <span id="month"></span> <span id="date"></span>, <span id="year"></span> </h2>
+      </div>
+    </div>
+  </div>
+  <script>
+    content.onclick = () => {
+      content.className = content.className.includes('full') ? '' : 'full';
+    }
+    const d = new Date();
+    hour.innerText = d.getHours() % 12;
+    const minutes = d.getMinutes() + '';
+    minute.innerText = minutes.length < 2 ? `0${minutes}` : minutes;
+    weekday.innerText = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()];
+    month.innerText = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"][d.getMonth()];
+    date.innerText = d.getDate();
+    year.innerText = d.getFullYear();
+  </script>
+</body>
+
+</html>
