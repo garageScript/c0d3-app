@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <style>
+    #stars i {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    #stars .fas {
+      -webkit-text-stroke-width: 3px;
+      -webkit-text-stroke-color: black;
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="stars">
+  </div>
+  <p>You <span id="tense">are giving</span> <span id="starCount">0</span> Stars!</p>
+  <script>
+    // Helper function. Execute funciton x times
+    const upTo = (target, func, start = 0) => {
+      if (start >= target) return;
+      func(start);
+      return upTo(target, func, start + 1);
+    };
+
+    // Keep track of all the stars
+    const elements = [];
+
+    let selectionLocked = false;
+
+    // When users go into container, we unlock it because it is intent to change number of stars
+    stars.onmouseenter = () => {
+      selectionLocked = false;
+      tense.innerText = 'are giving';
+    }
+
+    // Define a class, so we can create n number of stars
+    function Star(index) {
+      // Helper function to toggle star on and off
+      this.toggle = (removeC, addC) => {
+        this.element.classList.remove(removeC);
+        this.element.classList.add(addC);
+      }
+
+      this.updateCount = () => {
+        const count = index + 1; // Because index started from 0;
+
+        // UpTo user selection, mark stars as selected
+        upTo(count, (i) => {
+          elements[i].toggle('far', 'fas');
+        });
+
+        // For the rest of the selection, mark stars as unselected
+        upTo(elements.length, (i) => {
+          elements[i].toggle('fas', 'far');
+        }, count);
+        starCount.innerText = count;
+      }
+
+      this.element = document.createElement('i');
+      this.element.className = 'far fa-star'; // Starting with only outline
+      this.element.onmouseenter = () => {
+        // If user has selected, we want to prevent stars from changing
+        if (selectionLocked) return;
+        this.updateCount();
+      };
+
+      // When element is clicked, users has committed to the number of stars
+      this.element.onclick = () => {
+        // After clicking on the stars, selection is locked in.
+        selectionLocked = true;
+        tense.innerText = 'have given';
+        this.updateCount();
+      };
+
+      stars.appendChild(this.element);
+    }
+
+    upTo(5, (i) => {
+      elements.push(new Star(i));
+    });
+  </script>
+</body>
+
+</html>
