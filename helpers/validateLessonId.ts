@@ -6,11 +6,10 @@ export const validateLessonId = async (
   errMsg?: string
 ): Promise<true> => {
   try {
-    const lesson = await Lesson.findOne({ where: { id } })
-    if (!lesson) {
-      throw new Error(errMsg || 'lessonId does not exist in database')
+    if (await Lesson.findOne({ where: { id } })) {
+      return true
     }
-    return true
+    throw new Error(errMsg || 'lessonId does not exist in database')
   } catch (err) {
     throw new Error(err)
   }
