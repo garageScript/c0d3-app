@@ -1,10 +1,10 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
-jest.mock('../lessonExists')
+jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
 import db from '../dbload'
 import { createChallenge, updateChallenge } from './challengesController'
-import { lessonExists } from '../lessonExists'
+import { validateLessonId } from '../validateLessonId'
 import lessonData from '../../__dummy__/lessonData'
 import { lessons } from '../../graphql/queryResolvers/lessons'
 
@@ -23,7 +23,7 @@ Lesson.findAll.mockReturnValue(lessonData)
 
 describe('Challenges controller tests', () => {
   beforeEach(() => {
-    lessonExists.mockReturnValue(true)
+    validateLessonId.mockReturnValue(true)
   })
   const ctx = {
     req: {
@@ -45,20 +45,24 @@ describe('Challenges controller tests', () => {
     ).resolves.toEqual(lessonData)
   })
 
-  test('Should throw "lessonId does not exist" error if lessonId does not exist \
+  test('Should throw error if lessonId does not exist \
    in database when creating challenge', async () => {
-    lessonExists.mockReturnValue(false)
+    validateLessonId.mockImplementation(() => {
+      throw new Error()
+    })
     await expect(
       createChallenge(null, mockChallengeData, ctx)
-    ).rejects.toThrowError('lessonId does not exist in database')
+    ).rejects.toThrowError()
   })
 
-  test('Should throw "lessonId does not exist" error if lessonId does not exist \
+  test('Should throw error if lessonId does not exist \
   in database when updating challenge', async () => {
-    lessonExists.mockReturnValue(false)
+    validateLessonId.mockImplementation(() => {
+      throw new Error()
+    })
     await expect(
       updateChallenge(null, mockChallengeData, ctx)
-    ).rejects.toThrowError('lessonId does not exist in database')
+    ).rejects.toThrowError()
   })
 
   test('Should throw "User is not admin" error if user is not an admin \
