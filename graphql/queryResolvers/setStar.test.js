@@ -1,7 +1,7 @@
 jest.mock('../../helpers/dbload')
-jest.mock('../../helpers/lessonExists')
+jest.mock('../../helpers/validateLessonId')
 import { setStar } from './setStar'
-import { lessonExists } from '../../helpers/lessonExists'
+import { validateLessonId } from '../../helpers/validateLessonId'
 import db from '../../helpers/dbload'
 
 const { Star } = db
@@ -14,7 +14,7 @@ const ctx = {
 describe('setStar resolver', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-    lessonExists.mockReturnValue(true)
+    validateLessonId.mockReturnValue(true)
     Star.findAll = jest.fn().mockReturnValue([])
     Star.create = jest.fn().mockReturnValue({ success: true })
   })
@@ -44,11 +44,13 @@ describe('setStar resolver', () => {
     expect(Star.create).toHaveBeenCalledTimes(1)
   })
 
-  test('should throw "lessonId does not exist in database" error if user is not logged in', async () => {
-    lessonExists.mockReturnValue(false)
+  test('should throw error if lessonId does not exist', async () => {
+    validateLessonId.mockImplementation(() => {
+      throw new Error()
+    })
     await expect(
       setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
-    ).rejects.toThrowError('lessonId does not exist in database')
+    ).rejects.toThrowError()
     expect(Star.create).toHaveBeenCalledTimes(0)
   })
 

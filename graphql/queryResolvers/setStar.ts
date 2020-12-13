@@ -2,7 +2,7 @@ import db from '../../helpers/dbload'
 import { LoggedRequest } from '../../@types/helpers'
 import { Star as StarType } from '../../@types/lesson'
 import _ from 'lodash'
-import { lessonExists } from '../../helpers/lessonExists'
+import { validateLessonId } from '../../helpers/validateLessonId'
 
 const { Star } = db
 
@@ -19,9 +19,7 @@ export const setStar = async (
     }
 
     const { lessonId } = arg
-    if (!(await lessonExists(lessonId))) {
-      throw new Error('lessonId does not exist in database')
-    }
+    await validateLessonId(lessonId)
 
     const lookupData = { where: { studentId, lessonId } }
     const starsList = await Star.findAll(lookupData)
