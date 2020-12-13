@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #smallContainer {
+      margin: auto;
+      width: 421px;
+      height: 168px;
+      cursor: none;
+    }
+
+    #circleContainer {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      pointer-events: none;
+      background: url(./assets/fair/big.jpg);
+      clip-path: circle(99px at center);
+      background-repeat: no-repeat;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="smallContainer">
+      <img id="smallImg" src="./assets/fair/small.jpg" alt="">
+    </div>
+  </div>
+  <div id="circleContainer">
+    <img id="circle" src="./assets/fair/scope.png" alt="">
+  </div>
+  <script>
+    const xRatio = 1263 / 421;
+    const yRatio = 503 / 168;
+
+    smallImg.onmousemove = (e) => {
+      circleContainer.style.display = 'block';
+      const containerX = smallContainer.offsetLeft;
+      const containerY = smallContainer.offsetTop;
+      const offsetX = e.offsetX;
+      const offsetY = e.offsetY;
+      circleContainer.style.left = `${containerX + offsetX - 100}px`;
+      circleContainer.style.top = `${containerY + offsetY - 100}px`;
+      circleContainer.style.backgroundPositionX = `${-1 * offsetX * xRatio + 100}px`;
+      circleContainer.style.backgroundPositionY = `${-1 * offsetY * yRatio + 100}px`;
+    }
+    smallImg.onmouseout = (e) => {
+      circleContainer.style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
