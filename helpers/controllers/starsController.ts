@@ -11,7 +11,7 @@ interface StarsGivenType {
   lessonId: number
 }
 
-export const starsGiven = async (
+export const gaveStarForLesson = async (
   _parent: void,
   arg: StarsGivenType,
   ctx: { req: LoggedRequest }
@@ -22,7 +22,7 @@ export const starsGiven = async (
     const { lessonId } = arg
     await validateLessonId(lessonId)
 
-    return await Star.findAll({ where: { studentId, lessonId } })
+    return await Star.findOne({ where: { studentId, lessonId } })
   } catch (err) {
     throw new Error(err)
   }

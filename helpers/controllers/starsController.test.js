@@ -1,6 +1,6 @@
 jest.mock('../../helpers/dbload')
 jest.mock('../../helpers/validateLessonId')
-import { setStar, starsGiven } from './starsController'
+import { setStar, gaveStarForLesson } from './starsController'
 import { validateLessonId } from '../validateLessonId'
 import db from '../dbload'
 
@@ -63,11 +63,11 @@ describe('setStar resolver', () => {
   })
 })
 
-describe('starsGiven resolver', () => {
+describe('gaveStarForLesson resolver', () => {
   test('should return list of stars a student has given for a lesson module', async () => {
     ctx.req.user = { id: 1337 }
     Star.findAll = jest.fn().mockReturnValue(['Potatus Maximus'])
-    const res = await starsGiven(null, { lessonId: 4 }, ctx)
+    const res = await gaveStarForLesson(null, { lessonId: 4 }, ctx)
     expect(res).toEqual(['Potatus Maximus'])
   })
 
@@ -75,13 +75,17 @@ describe('starsGiven resolver', () => {
     validateLessonId.mockImplementation(() => {
       throw new Error()
     })
-    await expect(starsGiven(null, { lessonId: 5 }, ctx)).rejects.toThrowError()
+    await expect(
+      gaveStarForLesson(null, { lessonId: 5 }, ctx)
+    ).rejects.toThrowError()
     expect(Star.create).toHaveBeenCalledTimes(0)
   })
 
   test('should throw error if user is not logged in', async () => {
     ctx.req.user = null
-    await expect(starsGiven(null, { lessonId: 5 }, ctx)).rejects.toThrowError()
+    await expect(
+      gaveStarForLesson(null, { lessonId: 5 }, ctx)
+    ).rejects.toThrowError()
     expect(Star.create).toHaveBeenCalledTimes(0)
   })
 })
