@@ -192,7 +192,7 @@ export type MutationUpdateChallengeArgs = {
 
 export type Query = {
   __typename?: 'Query'
-  giveLessonStar?: Maybe<User>
+  gaveLessonStar?: Maybe<User>
   lessons: Array<Lesson>
   session?: Maybe<Session>
   allUsers?: Maybe<Array<Maybe<User>>>
@@ -203,7 +203,7 @@ export type Query = {
   alerts: Array<Alert>
 }
 
-export type QueryGiveLessonStarArgs = {
+export type QueryGaveLessonStarArgs = {
   lessonId: Scalars['String']
 }
 
@@ -619,7 +619,7 @@ export type StarCardQuery = { __typename?: 'Query' } & {
   getLessonMentors?: Maybe<
     Array<Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name'>>>
   >
-  giveLessonStar?: Maybe<{ __typename?: 'User' } & Pick<User, 'username'>>
+  gaveLessonStar?: Maybe<{ __typename?: 'User' } & Pick<User, 'username'>>
 }
 
 export type UpdateChallengeMutationVariables = Exact<{
@@ -1133,11 +1133,11 @@ export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = {
-  giveLessonStar?: Resolver<
+  gaveLessonStar?: Resolver<
     Maybe<ResolversTypes['User']>,
     ParentType,
     ContextType,
-    RequireFields<QueryGiveLessonStarArgs, 'lessonId'>
+    RequireFields<QueryGaveLessonStarArgs, 'lessonId'>
   >
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
@@ -2879,7 +2879,7 @@ export const StarCardDocument = gql`
       username
       name
     }
-    giveLessonStar(lessonId: $lessonId) {
+    gaveLessonStar(lessonId: $lessonId) {
       username
     }
   }
