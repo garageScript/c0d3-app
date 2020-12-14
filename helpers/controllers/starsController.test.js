@@ -1,8 +1,8 @@
 jest.mock('../../helpers/dbload')
 jest.mock('../../helpers/validateLessonId')
-import { setStar } from './setStar'
-import { validateLessonId } from '../../helpers/validateLessonId'
-import db from '../../helpers/dbload'
+import { setStar, starsGiven } from './starsController'
+import { validateLessonId } from '../validateLessonId'
+import db from '../dbload'
 
 const { Star } = db
 const ctx = {
@@ -54,11 +54,34 @@ describe('setStar resolver', () => {
     expect(Star.create).toHaveBeenCalledTimes(0)
   })
 
-  test('should throw "Student is not logged in" error if user is not logged in', async () => {
+  test('should throw error if user is not logged in', async () => {
     ctx.req.user = null
     await expect(
       setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
-    ).rejects.toThrowError('Student is not logged in')
+    ).rejects.toThrowError()
+    expect(Star.create).toHaveBeenCalledTimes(0)
+  })
+})
+
+describe('starsGiven resolver', () => {
+  test('should return list of stars a student has given for a lesson module', async () => {
+    ctx.req.user = { id: 1337 }
+    Star.findAll = jest.fn().mockReturnValue(['Potatus Maximus'])
+    const res = await starsGiven(null, { lessonId: 4 }, ctx)
+    expect(res).toEqual(['Potatus Maximus'])
+  })
+
+  test('should throw error if lessonId does not exist', async () => {
+    validateLessonId.mockImplementation(() => {
+      throw new Error()
+    })
+    await expect(starsGiven(null, { lessonId: 5 }, ctx)).rejects.toThrowError()
+    expect(Star.create).toHaveBeenCalledTimes(0)
+  })
+
+  test('should throw error if user is not logged in', async () => {
+    ctx.req.user = null
+    await expect(starsGiven(null, { lessonId: 5 }, ctx)).rejects.toThrowError()
     expect(Star.create).toHaveBeenCalledTimes(0)
   })
 })
