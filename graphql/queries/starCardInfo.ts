@@ -6,7 +6,7 @@ const STAR_CARD_INFO = gql`
       username
       name
     }
-    gaveStarForLesson(lessonId: $lessonId) {
+    giveLessonStar(lessonId: $lessonId) {
       username
     }
   }

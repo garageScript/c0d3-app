@@ -11,7 +11,7 @@ interface StarsGivenType {
   lessonId: number
 }
 
-export const gaveStarForLesson = async (
+export const giveLessonStar = async (
   _parent: void,
   arg: StarsGivenType,
   ctx: { req: LoggedRequest }

@@ -17,10 +17,7 @@ import {
   rejectSubmission,
   submissions
 } from '../helpers/controllers/submissionController'
-import {
-  setStar,
-  gaveStarForLesson
-} from '../helpers/controllers/starsController'
+import { setStar, giveLessonStar } from '../helpers/controllers/starsController'
 import { alerts } from './queryResolvers/alerts'
 import { lessons } from './queryResolvers/lessons'
 import { session } from './queryResolvers/session'
@@ -34,7 +31,7 @@ import {
 
 export default {
   Query: {
-    gaveStarForLesson,
+    giveLessonStar,
     submissions,
     getLessonMentors,
     allUsers,
