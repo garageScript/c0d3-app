@@ -22,7 +22,7 @@ describe('validateStudentId helper function', () => {
     expect(res).toContain('ultimate potato')
   })
 
-  test('should return studentId if StudentId exists in database', async () => {
+  test('should return studentId if StudentId exists in database', () => {
     const res = validateStudentId({ user: { id: 4 } })
     expect(res).toEqual(4)
   })
