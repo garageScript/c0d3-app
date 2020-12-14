@@ -64,11 +64,12 @@ describe('setStar resolver', () => {
 })
 
 describe('gaveStarForLesson resolver', () => {
-  test('should return list of stars a student has given for a lesson module', async () => {
+  test('should return the user the student has given for a lesson module', async () => {
     ctx.req.user = { id: 1337 }
-    Star.findAll = jest.fn().mockReturnValue(['Potatus Maximus'])
+    const user = { username: 'Potatus', name: 'omega shenron' }
+    Star.findOne = jest.fn().mockReturnValue(user)
     const res = await gaveStarForLesson(null, { lessonId: 4 }, ctx)
-    expect(res).toEqual(['Potatus Maximus'])
+    expect(res).toEqual(user)
   })
 
   test('should throw error if lessonId does not exist', async () => {
