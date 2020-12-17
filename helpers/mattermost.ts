@@ -141,7 +141,7 @@ export const getChatUserById = _.memoize(
   async (id: string): Promise<UserInfo> => {
     try {
       const response = await fetch(`${chatServiceUrl}/users/${id}`, { headers })
-      return await response.json()
+      return response.json()
     } catch (error) {
       throw new Error(error)
     }
@@ -156,7 +156,7 @@ export const findOrCreateDirectMessageChannel: DirectChannelInfo = _.memoize(
         headers,
         body: JSON.stringify([senderId, receiverId])
       })
-      return await response.json()
+      return response.json()
     } catch (error) {
       throw new Error(error)
     }
