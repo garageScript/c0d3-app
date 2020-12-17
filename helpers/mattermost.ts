@@ -1,9 +1,13 @@
 import fetch from 'node-fetch'
+import _ from 'lodash'
 import {
+  UserInfo,
   ChannelInfo,
   GetChannelInfo,
   SendMessage,
-  PublicChannelMessage
+  PublicChannelMessage,
+  SendDirectMessage,
+  DirectChannelInfo
 } from '../@types/mattermost'
 
 const accessToken = process.env.MATTERMOST_ACCESS_TOKEN || '123' // For Testing
@@ -99,6 +103,17 @@ export const sendMessage: SendMessage = async (channelId, message) => {
   })
 }
 
+export const sendDirectMessage: SendDirectMessage = async (userId, message) => {
+  // the mattermost api endpoint '/users/me' returns the info
+  // about the authenticated user, which in this case is the bot
+  const { id: botId } = await getChatUserById('me')
+  const { id: channelId } = await findOrCreateDirectMessageChannel(
+    botId,
+    userId
+  )
+  return sendMessage(channelId, message)
+}
+
 export const publicChannelMessage: PublicChannelMessage = async (
   channelName,
   message
@@ -111,14 +126,39 @@ export const publicChannelMessage: PublicChannelMessage = async (
   }
 }
 
-export const getUserByEmail = async (email: string): Promise<string> => {
+export const getUserByEmail = async (email: string): Promise<UserInfo> => {
   try {
     const user = await fetch(`${chatServiceUrl}/users/email/${email}`, {
       headers
     })
-    const { username } = await user.json()
-    return username
+    return await user.json()
   } catch (error) {
     throw new Error(error)
   }
 }
+
+export const getChatUserById = _.memoize(
+  async (id: string): Promise<UserInfo> => {
+    try {
+      const response = await fetch(`${chatServiceUrl}/users/${id}`, { headers })
+      return response.json()
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+)
+
+export const findOrCreateDirectMessageChannel: DirectChannelInfo = _.memoize(
+  async (senderId, receiverId) => {
+    try {
+      const response = await fetch(`${chatServiceUrl}/channels/direct`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify([senderId, receiverId])
+      })
+      return response.json()
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
+)
