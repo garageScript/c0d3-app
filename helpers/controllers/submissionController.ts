@@ -18,6 +18,12 @@ type ArgsGetSubmissions = {
   lessonId: string
 }
 
+export enum SubmissionStatus {
+  OPEN = 'open',
+  PASSED = 'passed',
+  REJECTED = 'needMoreWork'
+}
+
 export const createSubmission = async (
   _parent: void,
   args: ArgsCreateSubmission
@@ -33,7 +39,11 @@ export const createSubmission = async (
       where: { lessonId, challengeId, userId }
     })
 
-    await submission.update({ diff, status: 'open', viewCount: 0 })
+    await submission.update({
+      diff,
+      status: SubmissionStatus.OPEN,
+      viewCount: 0
+    })
 
     const [currentLesson, challenge] = await Promise.all([
       Lesson.findByPk(lessonId),
@@ -68,7 +78,11 @@ export const acceptSubmission = async (
     const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
     if (!reviewerId) throw new Error('Invalid user')
-    return updateSubmission({ ...args, reviewerId, status: 'passed' })
+    return updateSubmission({
+      ...args,
+      reviewerId,
+      status: SubmissionStatus.PASSED
+    })
   } catch (error) {
     throw new Error(error)
   }
@@ -83,7 +97,11 @@ export const rejectSubmission = async (
     const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
     if (!reviewerId) throw new Error('Invalid user')
-    return updateSubmission({ ...args, reviewerId, status: 'needMoreWork' })
+    return updateSubmission({
+      ...args,
+      reviewerId,
+      status: SubmissionStatus.REJECTED
+    })
   } catch (error) {
     throw new Error(error)
   }

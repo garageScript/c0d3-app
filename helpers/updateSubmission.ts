@@ -9,7 +9,7 @@ export type ArgsUpdateSubmission = {
 }
 
 export const updateSubmission = async (
-  args: ArgsUpdateSubmission & { reviewerId: number; status: string }
+  args: ArgsUpdateSubmission & { reviewerId: number; status: SubmissionStatus }
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
@@ -37,7 +37,8 @@ export const updateSubmission = async (
 
     // count how many submissions user passed in total
     const passedLessonSubmissions = lessonSubmissions.reduce(
-      (sum: number, s: any) => sum + (s.status === 'passed' ? 1 : 0),
+      (sum: number, s: any) =>
+        sum + (s.status === SubmissionStatus.PASSED ? 1 : 0),
       0
     )
 
