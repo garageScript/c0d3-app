@@ -58,7 +58,7 @@ export const createSubmission = async (
     // if no Lesson was found nextLesson is null
     if (nextLesson) {
       const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()
-      const username = await getUserByEmail(email)
+      const { username } = await getUserByEmail(email)
       const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${currentLesson.id}>) to review the code.`
       publicChannelMessage(nextLessonChannelName, message)
     }
