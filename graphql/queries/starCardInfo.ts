@@ -1,15 +1,12 @@
 import { gql } from 'apollo-boost'
 
-const STAR_CARD_INFO = gql`
-  query starCard($lessonId: String!) {
+const LESSON_MENTORS = gql`
+  query lessonMentors($lessonId: String!) {
     getLessonMentors(lessonId: $lessonId) {
       username
       name
     }
-    gaveLessonStar(lessonId: $lessonId) {
-      username
-    }
   }
 `
 
-export default STAR_CARD_INFO
+export default LESSON_MENTORS

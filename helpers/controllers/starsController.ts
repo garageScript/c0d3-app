@@ -7,27 +7,6 @@ import { validateStudentId } from '../validation/validateStudentId'
 
 const { Star } = db
 
-interface StarsGivenType {
-  lessonId: number
-}
-
-export const gaveLessonStar = async (
-  _parent: void,
-  arg: StarsGivenType,
-  ctx: { req: LoggedRequest }
-) => {
-  const { req } = ctx
-  try {
-    const studentId = validateStudentId(req)
-    const { lessonId } = arg
-    await validateLessonId(lessonId)
-
-    return await Star.findOne({ where: { studentId, lessonId } })
-  } catch (err) {
-    throw new Error(err)
-  }
-}
-
 export const setStar = async (
   _parent: void,
   arg: StarType,

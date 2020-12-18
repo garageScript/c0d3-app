@@ -2,7 +2,6 @@ import { gql } from 'apollo-boost'
 
 export default gql`
   type Query {
-    gaveLessonStar(lessonId: String!): User
     lessons: [Lesson!]!
     session: Session
     allUsers: [User]
@@ -135,6 +134,7 @@ export default gql`
     isTeaching: String
     isEnrolled: String
     starsReceived: [Star]
+    starGiven: Star
   }
 
   type Lesson {

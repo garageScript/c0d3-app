@@ -1,7 +1,8 @@
+jest.mock('../../helpers/dbload')
 import { session } from './session'
 import db from '../../helpers/dbload'
 
-const { Submission, UserLesson } = db
+const { Submission, UserLesson, Star } = db
 
 describe('Session resolver', () => {
   test('should return null if req.user does not exist', async () => {
@@ -13,11 +14,13 @@ describe('Session resolver', () => {
     const result = {
       user: { username: 'test', id: 815 },
       submissions: [{ id: '1' }],
-      lessonStatus: [{ id: '1' }]
+      lessonStatus: [{ id: '1', lessonId: 4 }],
+      starGiven: [{ dataValues: { lessonId: 4, comment: 'lol' } }]
     }
     const req = { user: result.user }
     Submission.findAll = jest.fn().mockReturnValue(result.submissions)
     UserLesson.findAll = jest.fn().mockReturnValue(result.lessonStatus)
+    Star.findAll.mockReturnValue(result.starGiven)
 
     const returnValue = await session({}, {}, { req })
 

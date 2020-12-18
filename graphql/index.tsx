@@ -192,7 +192,6 @@ export type MutationUpdateChallengeArgs = {
 
 export type Query = {
   __typename?: 'Query'
-  gaveLessonStar?: Maybe<User>
   lessons: Array<Lesson>
   session?: Maybe<Session>
   allUsers?: Maybe<Array<Maybe<User>>>
@@ -201,10 +200,6 @@ export type Query = {
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
   alerts: Array<Alert>
-}
-
-export type QueryGaveLessonStarArgs = {
-  lessonId: Scalars['String']
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -290,6 +285,7 @@ export type UserLesson = {
   isTeaching?: Maybe<Scalars['String']>
   isEnrolled?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
+  starGiven?: Maybe<Star>
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
@@ -611,15 +607,14 @@ export type SignupMutation = { __typename?: 'Mutation' } & {
   >
 }
 
-export type StarCardQueryVariables = Exact<{
+export type LessonMentorsQueryVariables = Exact<{
   lessonId: Scalars['String']
 }>
 
-export type StarCardQuery = { __typename?: 'Query' } & {
+export type LessonMentorsQuery = { __typename?: 'Query' } & {
   getLessonMentors?: Maybe<
     Array<Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name'>>>
   >
-  gaveLessonStar?: Maybe<{ __typename?: 'User' } & Pick<User, 'username'>>
 }
 
 export type UpdateChallengeMutationVariables = Exact<{
@@ -906,13 +901,13 @@ export type DirectiveResolverFn<
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Query: ResolverTypeWrapper<{}>
+  Lesson: ResolverTypeWrapper<Lesson>
   String: ResolverTypeWrapper<Scalars['String']>
+  Int: ResolverTypeWrapper<Scalars['Int']>
+  Challenge: ResolverTypeWrapper<Challenge>
   User: ResolverTypeWrapper<User>
   UserLesson: ResolverTypeWrapper<UserLesson>
   Star: ResolverTypeWrapper<Star>
-  Int: ResolverTypeWrapper<Scalars['Int']>
-  Lesson: ResolverTypeWrapper<Lesson>
-  Challenge: ResolverTypeWrapper<Challenge>
   Session: ResolverTypeWrapper<Session>
   Submission: ResolverTypeWrapper<Submission>
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
@@ -928,13 +923,13 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Query: {}
+  Lesson: Lesson
   String: Scalars['String']
+  Int: Scalars['Int']
+  Challenge: Challenge
   User: User
   UserLesson: UserLesson
   Star: Star
-  Int: Scalars['Int']
-  Lesson: Lesson
-  Challenge: Challenge
   Session: Session
   Submission: Submission
   Boolean: Scalars['Boolean']
@@ -1133,12 +1128,6 @@ export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = {
-  gaveLessonStar?: Resolver<
-    Maybe<ResolversTypes['User']>,
-    ParentType,
-    ContextType,
-    RequireFields<QueryGaveLessonStarArgs, 'lessonId'>
-  >
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
   allUsers?: Resolver<
@@ -1301,6 +1290,7 @@ export type UserLessonResolvers<
     ParentType,
     ContextType
   >
+  starGiven?: Resolver<Maybe<ResolversTypes['Star']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType>
 }
 
@@ -2873,111 +2863,113 @@ export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
 >
-export const StarCardDocument = gql`
-  query starCard($lessonId: String!) {
+export const LessonMentorsDocument = gql`
+  query lessonMentors($lessonId: String!) {
     getLessonMentors(lessonId: $lessonId) {
       username
       name
     }
-    gaveLessonStar(lessonId: $lessonId) {
-      username
-    }
   }
 `
-export type StarCardComponentProps = Omit<
+export type LessonMentorsComponentProps = Omit<
   ApolloReactComponents.QueryComponentOptions<
-    StarCardQuery,
-    StarCardQueryVariables
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
   >,
   'query'
 > &
-  ({ variables: StarCardQueryVariables; skip?: boolean } | { skip: boolean })
+  (
+    | { variables: LessonMentorsQueryVariables; skip?: boolean }
+    | { skip: boolean }
+  )
 
-export const StarCardComponent = (props: StarCardComponentProps) => (
-  <ApolloReactComponents.Query<StarCardQuery, StarCardQueryVariables>
-    query={StarCardDocument}
+export const LessonMentorsComponent = (props: LessonMentorsComponentProps) => (
+  <ApolloReactComponents.Query<LessonMentorsQuery, LessonMentorsQueryVariables>
+    query={LessonMentorsDocument}
     {...props}
   />
 )
 
-export type StarCardProps<
+export type LessonMentorsProps<
   TChildProps = {},
   TDataName extends string = 'data'
 > = {
   [key in TDataName]: ApolloReactHoc.DataValue<
-    StarCardQuery,
-    StarCardQueryVariables
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
   >
 } &
   TChildProps
-export function withStarCard<
+export function withLessonMentors<
   TProps,
   TChildProps = {},
   TDataName extends string = 'data'
 >(
   operationOptions?: ApolloReactHoc.OperationOption<
     TProps,
-    StarCardQuery,
-    StarCardQueryVariables,
-    StarCardProps<TChildProps, TDataName>
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables,
+    LessonMentorsProps<TChildProps, TDataName>
   >
 ) {
   return ApolloReactHoc.withQuery<
     TProps,
-    StarCardQuery,
-    StarCardQueryVariables,
-    StarCardProps<TChildProps, TDataName>
-  >(StarCardDocument, {
-    alias: 'starCard',
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables,
+    LessonMentorsProps<TChildProps, TDataName>
+  >(LessonMentorsDocument, {
+    alias: 'lessonMentors',
     ...operationOptions
   })
 }
 
 /**
- * __useStarCardQuery__
+ * __useLessonMentorsQuery__
  *
- * To run a query within a React component, call `useStarCardQuery` and pass it any options that fit your needs.
- * When your component renders, `useStarCardQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useLessonMentorsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLessonMentorsQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useStarCardQuery({
+ * const { data, loading, error } = useLessonMentorsQuery({
  *   variables: {
  *      lessonId: // value for 'lessonId'
  *   },
  * });
  */
-export function useStarCardQuery(
+export function useLessonMentorsQuery(
   baseOptions?: ApolloReactHooks.QueryHookOptions<
-    StarCardQuery,
-    StarCardQueryVariables
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
   >
 ) {
-  return ApolloReactHooks.useQuery<StarCardQuery, StarCardQueryVariables>(
-    StarCardDocument,
-    baseOptions
-  )
+  return ApolloReactHooks.useQuery<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >(LessonMentorsDocument, baseOptions)
 }
-export function useStarCardLazyQuery(
+export function useLessonMentorsLazyQuery(
   baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    StarCardQuery,
-    StarCardQueryVariables
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
   >
 ) {
-  return ApolloReactHooks.useLazyQuery<StarCardQuery, StarCardQueryVariables>(
-    StarCardDocument,
-    baseOptions
-  )
+  return ApolloReactHooks.useLazyQuery<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >(LessonMentorsDocument, baseOptions)
 }
-export type StarCardQueryHookResult = ReturnType<typeof useStarCardQuery>
-export type StarCardLazyQueryHookResult = ReturnType<
-  typeof useStarCardLazyQuery
+export type LessonMentorsQueryHookResult = ReturnType<
+  typeof useLessonMentorsQuery
 >
-export type StarCardQueryResult = ApolloReactCommon.QueryResult<
-  StarCardQuery,
-  StarCardQueryVariables
+export type LessonMentorsLazyQueryHookResult = ReturnType<
+  typeof useLessonMentorsLazyQuery
+>
+export type LessonMentorsQueryResult = ApolloReactCommon.QueryResult<
+  LessonMentorsQuery,
+  LessonMentorsQueryVariables
 >
 export const UpdateChallengeDocument = gql`
   mutation updateChallenge(
