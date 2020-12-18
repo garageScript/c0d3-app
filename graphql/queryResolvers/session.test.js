@@ -20,7 +20,7 @@ describe('Session resolver', () => {
     const req = { user: result.user }
     Submission.findAll = jest.fn().mockReturnValue(result.submissions)
     UserLesson.findAll = jest.fn().mockReturnValue(result.lessonStatus)
-    Star.findAll.mockReturnValue(result.starGiven)
+    Star.findAll = jest.fn().mockReturnValue(result.starGiven)
 
     const returnValue = await session({}, {}, { req })
 
