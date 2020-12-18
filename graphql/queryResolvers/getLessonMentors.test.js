@@ -1,8 +1,13 @@
 jest.mock('../../helpers/dbload')
+jest.mock('../../helpers/validateLessonId')
 import { getLessonMentors } from './getLessonMentors'
 import { User, UserLesson } from '../../helpers/dbload'
-
+import { validateLessonId } from '../../helpers/validateLessonId'
 describe('getLessonMentors resolver', () => {
+  beforeEach(() => {
+    validateLessonId.mockReturnValue(true)
+  })
+
   test('should return an array of usernames', async () => {
     UserLesson.findAll = jest
       .fn()
@@ -16,6 +21,16 @@ describe('getLessonMentors resolver', () => {
       where: { lessonId: '3' },
       include: [{ model: User }]
     })
+  })
+
+  test('Should throw error if lessonId does not exist \
+  in database when updating lesson', async () => {
+    validateLessonId.mockImplementation(() => {
+      throw new Error()
+    })
+    await expect(
+      getLessonMentors(null, { lessonId: '3' })
+    ).rejects.toThrowError()
   })
 
   test('should throw an error', async () => {

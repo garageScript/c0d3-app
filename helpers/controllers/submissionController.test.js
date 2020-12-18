@@ -92,7 +92,7 @@ describe('Submissions Mutations', () => {
       })
 
       // mock mattermost getUserByEmail
-      getUserByEmail.mockReturnValue(username)
+      getUserByEmail.mockReturnValue({ username })
 
       await Mutation.createSubmission(null, args)
       expect(publicChannelMessage).toHaveBeenCalledWith(
@@ -127,7 +127,7 @@ describe('Submissions Mutations', () => {
       Lesson.findOne = jest.fn().mockReturnValue(null)
 
       // mock mattermost getUserByEmail
-      getUserByEmail.mockReturnValue(username)
+      getUserByEmail.mockReturnValue({ username })
 
       await Mutation.createSubmission(null, args)
       expect(publicChannelMessage).not.toHaveBeenCalled()

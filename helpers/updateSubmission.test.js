@@ -1,10 +1,21 @@
 jest.mock('./dbload')
 jest.mock('./mattermost')
 import db from './dbload'
-import { updateSubmission } from './updateSubmission'
-import { publicChannelMessage, getUserByEmail } from './mattermost'
+import { updateSubmission, sendChatNotification } from './updateSubmission'
+import {
+  publicChannelMessage,
+  getUserByEmail,
+  getChatUserById,
+  sendDirectMessage
+} from './mattermost'
+import { SubmissionStatus } from './controllers/submissionController'
 
 const { Challenge, Submission, User, UserLesson, Lesson } = db
+
+const user = {
+  id: 1337,
+  email: 'fake@email.com'
+}
 
 describe('updateSubmission', () => {
   beforeEach(() => {
@@ -31,12 +42,20 @@ describe('updateSubmission', () => {
       { status: 'not passed' } // don't update userlesson
     ]
 
+    const challenge = { title: 'fake title' }
+
     // mock submission
     Submission.findByPk = jest.fn().mockReturnValue(submission)
     // mock number of challenges in lesson
     Challenge.count = jest.fn().mockReturnValue(submissions.length)
+    // mock challenge
+    Challenge.findByPk = jest.fn().mockReturnValue(challenge)
     // mock all submissions in lesson
     Submission.findAll = jest.fn().mockReturnValue(submissions)
+    // mock user
+    User.findByPk = jest.fn().mockReturnValue(user)
+    // mock mattermost user
+    getUserByEmail.mockReturnValue({ id: 'fakeid', username: 'fakeusername' })
 
     const result = await updateSubmission(submission)
 
@@ -84,6 +103,8 @@ describe('updateSubmission', () => {
     User.findByPk = jest.fn().mockReturnValue({ email: 'fake email' })
     // mock userlesson
     UserLesson.findOrCreate = jest.fn().mockReturnValue([userLesson])
+    // mock mattermost user
+    getUserByEmail.mockReturnValue({ id: 'fakeid', username: 'fakeusername' })
 
     const result = await updateSubmission(submission)
 
@@ -136,7 +157,7 @@ describe('updateSubmission', () => {
       title: 'Fake Lesson Title'
     })
     // mock mattermost username
-    getUserByEmail.mockReturnValue('fakeusername')
+    getUserByEmail.mockReturnValue({ username: 'fakeusername' })
     // mock next lesson
     Lesson.findOne = jest
       .fn()
@@ -200,7 +221,7 @@ describe('updateSubmission', () => {
       title: 'Fake Lesson Title'
     })
     // mock mattermost username
-    getUserByEmail.mockReturnValue('fakeusername')
+    getUserByEmail.mockReturnValue({ username: 'fakeusername' })
     // mock next lesson
     Lesson.findOne = jest
       .fn()
@@ -268,5 +289,58 @@ describe('updateSubmission', () => {
 
   test('should throw error Invalid args', async () => {
     await expect(updateSubmission()).rejects.toThrow('Invalid args')
+  })
+})
+
+describe('sendChatNotification', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  test('Should send submission accepted notification', async () => {
+    const submission = { status: SubmissionStatus.PASSED, challengeId: '1' }
+    const reviewer = { username: 'reviewer', email: 'reviewer@fake.com' }
+    const challenge = { title: 'Fake Challenge' }
+    User.findByPk = jest.fn().mockReturnValue(reviewer)
+    Challenge.findByPk = jest.fn().mockReturnValue(challenge)
+    getUserByEmail.mockReturnValue(reviewer)
+    await sendChatNotification({ submission, userChatId: '1', reviewerId: '2' })
+    expect(sendDirectMessage).toHaveBeenCalledWith(
+      '1',
+      `Your submission for the challenge **_${challenge.title}_** has been **ACCEPTED** by @${reviewer.username}.`
+    )
+  })
+
+  test('Should send submission reject notification', async () => {
+    const submission = { status: SubmissionStatus.REJECTED, challengeId: '1' }
+    const reviewer = { username: 'reviewer', email: 'reviewer@fake.com' }
+    const challenge = { title: 'Fake Challenge' }
+    User.findByPk = jest.fn().mockReturnValue(reviewer)
+    Challenge.findByPk = jest.fn().mockReturnValue(challenge)
+    getUserByEmail.mockReturnValue(reviewer)
+    await sendChatNotification({ submission, userChatId: '1', reviewerId: '2' })
+    expect(sendDirectMessage).toHaveBeenCalledWith(
+      '1',
+      `Your submission for the challenge **_${challenge.title}_** has been **REJECTED** by @${reviewer.username}.`
+    )
+  })
+
+  test('Should include comment in the message', async () => {
+    const submission = {
+      status: SubmissionStatus.PASSED,
+      challengeId: '1',
+      comment: 'nice work'
+    }
+    const reviewer = { username: 'reviewer', email: 'reviewer@fake.com' }
+    const challenge = { title: 'Fake Challenge' }
+    User.findByPk = jest.fn().mockReturnValue(reviewer)
+    Challenge.findByPk = jest.fn().mockReturnValue(challenge)
+    getUserByEmail.mockReturnValue(reviewer)
+    await sendChatNotification({ submission, userChatId: '1', reviewerId: '2' })
+    expect(sendDirectMessage).toHaveBeenCalledWith(
+      '1',
+      `Your submission for the challenge **_${challenge.title}_** has been **ACCEPTED** by @${reviewer.username}.` +
+        `\n\nThe reviewer left the following comment:\n\n___\n\n${submission.comment}`
+    )
   })
 })

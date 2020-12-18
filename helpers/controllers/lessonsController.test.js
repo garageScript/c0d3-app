@@ -1,11 +1,11 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
-jest.mock('../lessonExists')
+jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
 import db from '../dbload'
 import { createLesson, updateLesson } from './lessonsController'
 import lessonData from '../../__dummy__/lessonData'
-import { lessonExists } from '../lessonExists'
+import { validateLessonId } from '../validateLessonId'
 import { lessons } from '../../graphql/queryResolvers/lessons'
 
 lessons.mockReturnValue(lessonData)
@@ -29,7 +29,7 @@ Lesson.build.mockReturnValue({ save: () => {} })
 
 describe('Lessons controller tests', () => {
   beforeEach(() => {
-    lessonExists.mockReturnValue(true)
+    validateLessonId.mockReturnValue(true)
   })
   const ctx = {
     req: {
@@ -49,12 +49,12 @@ describe('Lessons controller tests', () => {
     )
   })
 
-  test('Should throw "lessonId does not exist" error if lessonId does not exist \
+  test('Should throw error if lessonId does not exist \
   in database when updating lesson', async () => {
-    lessonExists.mockReturnValue(false)
-    await expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError(
-      'lessonId does not exist in database'
-    )
+    validateLessonId.mockImplementation(() => {
+      throw new Error()
+    })
+    await expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError()
   })
 
   test('Should throw "User is not an admin" error when user is not an admin when updating lesson', async () => {

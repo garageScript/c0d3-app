@@ -3,7 +3,7 @@ import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
 import { lessons } from '../../graphql/queryResolvers/lessons'
-import { lessonExists } from '../lessonExists'
+import { validateLessonId } from '../validateLessonId'
 const { Lesson } = db
 
 type lessonData = {
@@ -31,7 +31,7 @@ export const createLesson = async (
 
     await newLesson.save()
 
-    return lessons()
+    return await lessons()
   } catch (err) {
     throw new Error(err)
   }
@@ -50,13 +50,11 @@ export const updateLesson = async (
 
     const { id } = arg
 
-    if (!(await lessonExists(id))) {
-      throw new Error('lessonId does not exist in database')
-    }
+    await validateLessonId(id)
 
     await Lesson.update(arg, { where: { id } })
 
-    return lessons()
+    return await lessons()
   } catch (err) {
     throw new Error(err)
   }
