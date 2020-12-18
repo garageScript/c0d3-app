@@ -18,14 +18,14 @@ export const setStar = async (
     const { lessonId } = arg
     await validateLessonId(lessonId)
 
-    const starsList = await Star.findAll({ where: { studentId, lessonId } })
-
+    const lookupData = { where: { studentId, lessonId } }
+    const starsList = await Star.findAll(lookupData)
     /*  If there is an element in starsList, then that means the student has already given
         a star to someone for this lessonId. Students can only give one star per lesson, so
         delete the previous star(s) already in the database before creating a new one
     */
     if (starsList.length) {
-      await Star.destroy({ where: { studentId, lessonId } })
+      await Star.destroy(lookupData)
     }
 
     await Star.create({ ...arg, studentId })
