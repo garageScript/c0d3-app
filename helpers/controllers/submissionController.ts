@@ -3,6 +3,7 @@ import { Context } from '../../@types/helpers'
 import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
+import { hasPassedLesson } from '../hasPassedLesson'
 import _ from 'lodash'
 
 const { User, Submission, Challenge, Lesson } = db
@@ -75,9 +76,8 @@ export const acceptSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
-    if (!reviewerId) throw new Error('Invalid user')
+    const reviewerId = await getReviewer(ctx, args.lessonId)
     return updateSubmission({
       ...args,
       reviewerId,
@@ -94,9 +94,8 @@ export const rejectSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
-    if (!reviewerId) throw new Error('Invalid user')
+    const reviewerId = await getReviewer(ctx, args.lessonId)
     return updateSubmission({
       ...args,
       reviewerId,
@@ -107,13 +106,34 @@ export const rejectSubmission = async (
   }
 }
 
-export const submissions = async (_parent: void, arg: ArgsGetSubmissions) => {
-  const { lessonId } = arg
-  return Submission.findAll({
-    where: {
-      status: 'open',
-      lessonId
-    },
-    include: ['challenge', 'user']
-  })
+export const submissions = async (
+  _parent: void,
+  arg: ArgsGetSubmissions,
+  ctx: Context
+) => {
+  try {
+    const { lessonId } = arg
+    await getReviewer(ctx, lessonId)
+    return Submission.findAll({
+      where: {
+        status: 'open',
+        lessonId
+      },
+      include: ['challenge', 'user']
+    })
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+const getReviewer = async (
+  ctx: Context,
+  lessonId?: string
+): Promise<number> => {
+  const reviewerId = _.get(ctx, 'req.user.id', false)
+  if (!reviewerId) throw new Error('Invalid user')
+  if (lessonId && !(await hasPassedLesson(reviewerId, lessonId))) {
+    throw new Error('User has not passed this lesson and cannot review.')
+  }
+  return reviewerId
 }

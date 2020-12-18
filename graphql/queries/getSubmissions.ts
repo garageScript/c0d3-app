@@ -11,6 +11,7 @@ const GET_SUBMISSIONS = gql`
         title
       }
       challengeId
+      lessonId
       user {
         id
         username

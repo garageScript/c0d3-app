@@ -11,6 +11,7 @@ const { Submission, Challenge, User, UserLesson, Lesson } = db
 
 export type ArgsUpdateSubmission = {
   id: number
+  lessonId: string
   comment: string
 }
 

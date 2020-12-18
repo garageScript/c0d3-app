@@ -2,17 +2,19 @@ jest.mock('../dbload')
 jest.mock('../mattermost')
 jest.mock('node-fetch')
 jest.mock('mailgun-js')
+jest.mock('../hasPassedLesson')
 import db from '../dbload'
 import resolvers from '../../graphql/resolvers'
 import { publicChannelMessage, getUserByEmail } from '../mattermost'
 import { submissions } from './submissionController'
+import { hasPassedLesson } from '../hasPassedLesson'
 const { Mutation } = resolvers
 const { Lesson, Submission, User, Challenge } = db
 
 describe('Submissions Mutations', () => {
   jest.unmock('../updateSubmission')
 
-  const controller = require.requireActual('../updateSubmission')
+  const controller = jest.requireActual('../updateSubmission')
   controller.updateSubmission = jest.fn()
 
   const args = {
@@ -162,6 +164,16 @@ describe('Submissions Mutations', () => {
     ).rejects.toThrow('Invalid user')
   })
 
+  test('acceptSubmission should throw error if user has not passed the lesson', async () => {
+    hasPassedLesson.mockReturnValue(false)
+    const submission = { id: 1, lessonId: 5, comment: 'fake comment' }
+    await expect(
+      resolvers.Mutation.acceptSubmission(null, submission, {
+        req: { user: { id: 1 } }
+      })
+    ).rejects.toThrow('User has not passed this lesson and cannot review.')
+  })
+
   test('rejectSubmission should call updateSubmission', async () => {
     const submission = { id: 1, comment: 'fake comment' }
     const ctx = { req: { user: { id: 2 } } }
@@ -185,12 +197,27 @@ describe('Submissions Mutations', () => {
       resolvers.Mutation.rejectSubmission(null, submission)
     ).rejects.toThrow('Invalid user')
   })
+
+  test('rejectSubmission should throw error if user has not passed the lesson', async () => {
+    hasPassedLesson.mockReturnValue(false)
+    const submission = { id: 1, lessonId: 5, comment: 'fake comment' }
+    await expect(
+      resolvers.Mutation.rejectSubmission(null, submission, {
+        req: { user: { id: 1 } }
+      })
+    ).rejects.toThrow('User has not passed this lesson and cannot review.')
+  })
 })
 
 describe('Submissions Queries', () => {
   test('should return no submissions if there are none open', async () => {
     Submission.findAll = jest.fn().mockReturnValue([])
-    const result = await submissions(null, { lessonId: '2' })
+    hasPassedLesson.mockReturnValue(true)
+    const result = await submissions(
+      null,
+      { lessonId: '2' },
+      { req: { user: { id: 2 } } }
+    )
     expect(result).toEqual([])
   })
   test('should return submissions with a given lessonId', async () => {
@@ -205,11 +232,23 @@ describe('Submissions Queries', () => {
       challengeId: '200'
     }
     Submission.findAll = jest.fn().mockResolvedValue([submissionResults])
+    hasPassedLesson.mockReturnValue(true)
     const result = await submissions(
       null,
       { lessonId: '2' },
-      { req: { error: jest.fn() } }
+      { req: { error: jest.fn(), user: { id: 2 } } }
     )
     expect(result).toEqual([submissionResults])
+  })
+  test('should throw error if the user has not passed the lesson', () => {
+    hasPassedLesson.mockReturnValue(false)
+    expect(
+      submissions(null, { lessonId: '2' }, { req: { user: { id: 2 } } })
+    ).rejects.toThrow('User has not passed this lesson and cannot review.')
+  })
+  test('should throw error if no user is authenticated', () => {
+    expect(submissions(null, { lessonId: '2' }, null)).rejects.toThrow(
+      'Invalid user'
+    )
   })
 })

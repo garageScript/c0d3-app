@@ -75,7 +75,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     comment,
     updatedAt,
     user: { username },
-    challenge: { title }
+    challenge: { title },
+    lessonId
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -85,6 +86,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     await review({
       variables: {
         submissionId: id,
+        lessonId,
         comment: commentValue
       }
     })
