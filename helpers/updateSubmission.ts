@@ -87,31 +87,26 @@ export const updateSubmission = async (
     // immediately return and do not proceed
     if (userLesson.isPassed) return submission
 
-    const currentLesson = Lesson.findByPk(userLesson.lessonId)
+    const currentLesson = await Lesson.findByPk(userLesson.lessonId)
 
     // query next lesson
-    const nextLesson = Lesson.findOne({
+    const nextLesson = await Lesson.findOne({
       where: { order: currentLesson.order + 1 }
     })
 
     // if current lesson has a chatUrl
     if (currentLesson.chatUrl) {
-      const { chatUrl, title } = currentLesson
-      const channelName = chatUrl.split('/').pop()
       // message public channel in mattermost
-      await publicChannelMessage(
-        channelName,
-        `Congratulations to @${chatUsername} for passing and completing ${title}! @${chatUsername} is now a guardian angel for the students in this channel.`
+      publicChannelMessage(
+        currentLesson.chatUrl.split('/').pop(),
+        `Congratulations to @${chatUsername} for passing and completing ${currentLesson.title}! @${chatUsername} is now a guardian angel for the students in this channel.`
       )
     }
 
     // if next lesson exists and has a chatUrl
     if (nextLesson && nextLesson.chatUrl) {
-      const { chatUrl } = nextLesson
-      const lessonName = chatUrl.split('/').pop()
-      // message public channel in mattermost
-      await publicChannelMessage(
-        lessonName,
+      publicChannelMessage(
+        nextLesson.chatUrl.split('/').pop(),
         `We have a new student joining us! @${chatUsername} just completed ${currentLesson.title}.`
       )
     }
