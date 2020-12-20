@@ -134,6 +134,7 @@ export default gql`
     isTeaching: String
     isEnrolled: String
     starsReceived: [Star]
+    starGiven: Star
   }
 
   type Lesson {

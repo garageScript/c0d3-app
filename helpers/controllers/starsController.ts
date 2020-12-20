@@ -1,8 +1,9 @@
-import db from '../../helpers/dbload'
+import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
 import { Star as StarType } from '../../@types/lesson'
 import _ from 'lodash'
-import { validateLessonId } from '../../helpers/validateLessonId'
+import { validateLessonId } from '../validateLessonId'
+import { validateStudentId } from '../validation/validateStudentId'
 
 const { Star } = db
 
@@ -13,11 +14,7 @@ export const setStar = async (
 ) => {
   const { req } = ctx
   try {
-    const studentId = _.get(req, 'user.id', false)
-    if (!studentId) {
-      throw new Error('Student is not logged in')
-    }
-
+    const studentId = validateStudentId(req)
     const { lessonId } = arg
     await validateLessonId(lessonId)
 
@@ -25,7 +22,7 @@ export const setStar = async (
     const starsList = await Star.findAll(lookupData)
     /*  If there is an element in starsList, then that means the student has already given
         a star to someone for this lessonId. Students can only give one star per lesson, so
-        delete the previous star already in the database before creating a new one
+        delete the previous star(s) already in the database before creating a new one
     */
     if (starsList.length) {
       await Star.destroy(lookupData)

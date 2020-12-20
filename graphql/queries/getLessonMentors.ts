@@ -1,7 +1,7 @@
 import { gql } from 'apollo-boost'
 
-const GET_LESSON_MENTORS = gql`
-  query getLessonMentors($lessonId: String!) {
+const LESSON_MENTORS = gql`
+  query lessonMentors($lessonId: String!) {
     getLessonMentors(lessonId: $lessonId) {
       username
       name
@@ -9,4 +9,4 @@ const GET_LESSON_MENTORS = gql`
   }
 `
 
-export default GET_LESSON_MENTORS
+export default LESSON_MENTORS
