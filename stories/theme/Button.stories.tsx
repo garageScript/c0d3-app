@@ -35,9 +35,9 @@ export const BorderButton: React.FC = () => (
 )
 
 export const SmallButton: React.FC = () => (
-  <Button size={'sm'}>Large Button</Button>
+  <Button size="sm">Large Button</Button>
 )
 
 export const LargeButton: React.FC = () => (
-  <Button size={'lg'}>Large Button</Button>
+  <Button size="lg">Large Button</Button>
 )
