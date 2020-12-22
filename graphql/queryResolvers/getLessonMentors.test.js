@@ -8,15 +8,23 @@ describe('getLessonMentors resolver', () => {
     validateLessonId.mockReturnValue(true)
   })
 
-  test('should return an array of usernames', async () => {
-    UserLesson.findAll = jest
-      .fn()
-      .mockReturnValue([
-        { User: { username: 'user1', email: 'abc@mail' } },
-        { User: { username: 'user2', email: 'xyz@mail' } }
-      ])
+  test('should return an array of User objects', async () => {
+    UserLesson.findAll = jest.fn().mockReturnValue([
+      { User: { username: 'user1', email: 'abc@mail', name: 'lol', id: 2 } },
+      {
+        User: {
+          username: 'user2',
+          email: 'xyz@mail',
+          name: 'potato',
+          id: 240
+        }
+      }
+    ])
     const res = await getLessonMentors(null, { lessonId: '3' })
-    expect(res).toEqual([{ username: 'user1' }, { username: 'user2' }])
+    expect(res).toEqual([
+      { username: 'user1', name: 'lol', id: 2 },
+      { username: 'user2', name: 'potato', id: 240 }
+    ])
     expect(UserLesson.findAll).toHaveBeenCalledWith({
       where: { lessonId: '3' },
       include: [{ model: User }]

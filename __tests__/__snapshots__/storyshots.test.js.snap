@@ -7155,6 +7155,20 @@ Array [
 ]
 `;
 
+exports[`Storyshots Theme/Button Large Button 1`] = `
+<button
+  className="btn btn-lg"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Large Button
+</button>
+`;
+
 exports[`Storyshots Theme/Button Margined Button 1`] = `
 <button
   className="btn m-1"
@@ -7166,6 +7180,20 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
   }
 >
   Margined Button
+</button>
+`;
+
+exports[`Storyshots Theme/Button Small Button 1`] = `
+<button
+  className="btn btn-sm"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Large Button
 </button>
 `;
 
