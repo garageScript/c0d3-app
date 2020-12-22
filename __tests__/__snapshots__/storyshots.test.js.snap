@@ -7193,7 +7193,7 @@ exports[`Storyshots Theme/Button Small Button 1`] = `
     }
   }
 >
-  Large Button
+  Small Button
 </button>
 `;
 
