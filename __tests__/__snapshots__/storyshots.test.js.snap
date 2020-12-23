@@ -3744,6 +3744,48 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ModalCard Large 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
+exports[`Storyshots Components/ModalCard Medium 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
+exports[`Storyshots Components/ModalCard Small 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
