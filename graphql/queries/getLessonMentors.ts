@@ -5,6 +5,7 @@ const LESSON_MENTORS = gql`
     getLessonMentors(lessonId: $lessonId) {
       username
       name
+      id
     }
   }
 `

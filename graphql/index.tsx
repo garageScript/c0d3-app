@@ -502,6 +502,18 @@ export type GetAppQuery = { __typename?: 'Query' } & {
   >
 }
 
+export type LessonMentorsQueryVariables = Exact<{
+  lessonId: Scalars['String']
+}>
+
+export type LessonMentorsQuery = { __typename?: 'Query' } & {
+  getLessonMentors?: Maybe<
+    Array<
+      Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name' | 'id'>>
+    >
+  >
+}
+
 export type SubmissionsQueryVariables = Exact<{
   lessonId: Scalars['String']
 }>
@@ -517,6 +529,7 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'diff'
           | 'comment'
           | 'challengeId'
+          | 'lessonId'
           | 'createdAt'
           | 'updatedAt'
         > & {
@@ -604,16 +617,6 @@ export type SignupMutation = { __typename?: 'Mutation' } & {
       AuthResponse,
       'success' | 'username' | 'error'
     >
-  >
-}
-
-export type LessonMentorsQueryVariables = Exact<{
-  lessonId: Scalars['String']
-}>
-
-export type LessonMentorsQuery = { __typename?: 'Query' } & {
-  getLessonMentors?: Maybe<
-    Array<Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name'>>>
   >
 }
 
@@ -2137,6 +2140,115 @@ export type GetAppQueryResult = ApolloReactCommon.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
 >
+export const LessonMentorsDocument = gql`
+  query lessonMentors($lessonId: String!) {
+    getLessonMentors(lessonId: $lessonId) {
+      username
+      name
+      id
+    }
+  }
+`
+export type LessonMentorsComponentProps = Omit<
+  ApolloReactComponents.QueryComponentOptions<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >,
+  'query'
+> &
+  (
+    | { variables: LessonMentorsQueryVariables; skip?: boolean }
+    | { skip: boolean }
+  )
+
+export const LessonMentorsComponent = (props: LessonMentorsComponentProps) => (
+  <ApolloReactComponents.Query<LessonMentorsQuery, LessonMentorsQueryVariables>
+    query={LessonMentorsDocument}
+    {...props}
+  />
+)
+
+export type LessonMentorsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >
+} &
+  TChildProps
+export function withLessonMentors<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables,
+    LessonMentorsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables,
+    LessonMentorsProps<TChildProps, TDataName>
+  >(LessonMentorsDocument, {
+    alias: 'lessonMentors',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useLessonMentorsQuery__
+ *
+ * To run a query within a React component, call `useLessonMentorsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLessonMentorsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useLessonMentorsQuery({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *   },
+ * });
+ */
+export function useLessonMentorsQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >
+) {
+  return ApolloReactHooks.useQuery<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >(LessonMentorsDocument, baseOptions)
+}
+export function useLessonMentorsLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >
+) {
+  return ApolloReactHooks.useLazyQuery<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >(LessonMentorsDocument, baseOptions)
+}
+export type LessonMentorsQueryHookResult = ReturnType<
+  typeof useLessonMentorsQuery
+>
+export type LessonMentorsLazyQueryHookResult = ReturnType<
+  typeof useLessonMentorsLazyQuery
+>
+export type LessonMentorsQueryResult = ApolloReactCommon.QueryResult<
+  LessonMentorsQuery,
+  LessonMentorsQueryVariables
+>
 export const SubmissionsDocument = gql`
   query submissions($lessonId: String!) {
     submissions(lessonId: $lessonId) {
@@ -2148,6 +2260,7 @@ export const SubmissionsDocument = gql`
         title
       }
       challengeId
+      lessonId
       user {
         id
         username
@@ -2862,114 +2975,6 @@ export type SignupMutationResult = ApolloReactCommon.MutationResult<
 export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
->
-export const LessonMentorsDocument = gql`
-  query lessonMentors($lessonId: String!) {
-    getLessonMentors(lessonId: $lessonId) {
-      username
-      name
-    }
-  }
-`
-export type LessonMentorsComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >,
-  'query'
-> &
-  (
-    | { variables: LessonMentorsQueryVariables; skip?: boolean }
-    | { skip: boolean }
-  )
-
-export const LessonMentorsComponent = (props: LessonMentorsComponentProps) => (
-  <ApolloReactComponents.Query<LessonMentorsQuery, LessonMentorsQueryVariables>
-    query={LessonMentorsDocument}
-    {...props}
-  />
-)
-
-export type LessonMentorsProps<
-  TChildProps = {},
-  TDataName extends string = 'data'
-> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >
-} &
-  TChildProps
-export function withLessonMentors<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables,
-    LessonMentorsProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables,
-    LessonMentorsProps<TChildProps, TDataName>
-  >(LessonMentorsDocument, {
-    alias: 'lessonMentors',
-    ...operationOptions
-  })
-}
-
-/**
- * __useLessonMentorsQuery__
- *
- * To run a query within a React component, call `useLessonMentorsQuery` and pass it any options that fit your needs.
- * When your component renders, `useLessonMentorsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useLessonMentorsQuery({
- *   variables: {
- *      lessonId: // value for 'lessonId'
- *   },
- * });
- */
-export function useLessonMentorsQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >(LessonMentorsDocument, baseOptions)
-}
-export function useLessonMentorsLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >(LessonMentorsDocument, baseOptions)
-}
-export type LessonMentorsQueryHookResult = ReturnType<
-  typeof useLessonMentorsQuery
->
-export type LessonMentorsLazyQueryHookResult = ReturnType<
-  typeof useLessonMentorsLazyQuery
->
-export type LessonMentorsQueryResult = ApolloReactCommon.QueryResult<
-  LessonMentorsQuery,
-  LessonMentorsQueryVariables
 >
 export const UpdateChallengeDocument = gql`
   mutation updateChallenge(

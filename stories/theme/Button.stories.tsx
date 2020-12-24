@@ -33,3 +33,11 @@ export const TypedButton: React.FC = () => (
 export const BorderButton: React.FC = () => (
   <Button border>Border Button</Button>
 )
+
+export const SmallButton: React.FC = () => (
+  <Button size="sm">Small Button</Button>
+)
+
+export const LargeButton: React.FC = () => (
+  <Button size="lg">Large Button</Button>
+)

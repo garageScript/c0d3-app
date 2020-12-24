@@ -9,6 +9,7 @@ type ButtonProps = {
   color?: ColorTypes
   m?: '1'
   ml?: '2'
+  size?: 'lg' | 'sm'
   onClick?: Function
 }
 
@@ -19,7 +20,8 @@ export const Button: React.FC<ButtonProps> = ({
   border,
   color = 'black',
   onClick = noop,
-  children
+  children,
+  size
 }) => {
   const classes = ['btn']
 
@@ -27,6 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
   if (type) classes.push(`bg-${type}`)
   if (m) classes.push(`m-${m}`)
   if (ml) classes.push(`ml-${ml}`)
+  if (size) classes.push(`btn-${size}`)
 
   return (
     <button

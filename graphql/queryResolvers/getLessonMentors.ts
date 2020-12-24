@@ -17,8 +17,8 @@ export const getLessonMentors = async (
       include: [{ model: User }]
     })
 
-    return results.map(({ User: { username, name } }: { User: User }) => {
-      return { username, name }
+    return results.map(({ User: { username, name, id } }: { User: User }) => {
+      return { username, name, id }
     })
   } catch (err) {
     throw new Error(err)
