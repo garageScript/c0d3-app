@@ -5351,6 +5351,20 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Thanks Basic 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
 exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
 <div
   style={
