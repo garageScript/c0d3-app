@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Thanks Component should call callback function when exit button is clicked 1`] = `
+exports[`Thanks Component should call callback function when done button is clicked 1`] = `
 <div>
   <div
     class="d-flex justify-content-center align-items-center flex-column modal-height-med"
