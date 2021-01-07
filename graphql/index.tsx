@@ -285,7 +285,7 @@ export type UserLesson = {
   isTeaching?: Maybe<Scalars['String']>
   isEnrolled?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
-  starGiven?: Maybe<Star>
+  starGiven?: Maybe<Scalars['String']>
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
@@ -489,7 +489,7 @@ export type GetAppQuery = { __typename?: 'Query' } & {
       lessonStatus: Array<
         { __typename?: 'UserLesson' } & Pick<
           UserLesson,
-          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
+          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
         >
       >
     }
@@ -1293,7 +1293,7 @@ export type UserLessonResolvers<
     ParentType,
     ContextType
   >
-  starGiven?: Resolver<Maybe<ResolversTypes['Star']>, ParentType, ContextType>
+  starGiven?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType>
 }
 
@@ -2041,6 +2041,7 @@ export const GetAppDocument = gql`
         isPassed
         isTeaching
         isEnrolled
+        starGiven
       }
     }
     alerts {
