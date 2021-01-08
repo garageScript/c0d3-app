@@ -60,20 +60,34 @@ export const ReviewStatus: React.FC<ReviewStatusProps> = ({
   status,
   reviewerUserName
 }) => {
-  //TODO change reviewerUserName to NavLink to Profile Page when page is completed
   let reviewStatusComment
   let statusClassName
+  const profileLink = (
+    <NavLink
+      className="text-reset"
+      path="/profile/[username]"
+      as={`/profile/${reviewerUserName}`}
+    >
+      {reviewerUserName}
+    </NavLink>
+  )
   switch (status) {
     case 'passed':
-      reviewStatusComment = `Your solution was reviewed and accepted by ${reviewerUserName}`
+      reviewStatusComment = (
+        <>Your solution was reviewed and accepted by {profileLink}</>
+      )
       statusClassName = 'border border-success text-success'
       break
     case 'needMoreWork':
-      reviewStatusComment = `Your solution was reviewed and rejected by ${reviewerUserName}`
+      reviewStatusComment = (
+        <>Your solution was reviewed and rejected by {profileLink}</>
+      )
       statusClassName = 'border border-danger text-danger'
       break
     case 'open':
-      reviewStatusComment = 'Your MR is currently waiting to be reviewed'
+      reviewStatusComment = (
+        <>Your submission is currently waiting to be reviewed</>
+      )
       statusClassName = 'border border-warning text-warning'
       break
     default:

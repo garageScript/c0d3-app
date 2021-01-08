@@ -5053,7 +5053,15 @@ exports[`Storyshots Components/ReviewStatus Need More Work Status 1`] = `
 <div
   className="text-center p-2 my-2 border border-danger text-danger"
 >
-  Your solution was reviewed and rejected by dan
+  Your solution was reviewed and rejected by 
+  <a
+    className="text-reset"
+    href="/profile/dan"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    dan
+  </a>
 </div>
 `;
 
@@ -5061,7 +5069,7 @@ exports[`Storyshots Components/ReviewStatus Open Status 1`] = `
 <div
   className="text-center p-2 my-2 border border-warning text-warning"
 >
-  Your MR is currently waiting to be reviewed
+  Your submission is currently waiting to be reviewed
 </div>
 `;
 
@@ -5069,7 +5077,15 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
 <div
   className="text-center p-2 my-2 border border-success text-success"
 >
-  Your solution was reviewed and accepted by dan
+  Your solution was reviewed and accepted by 
+  <a
+    className="text-reset"
+    href="/profile/dan"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    dan
+  </a>
 </div>
 `;
 
