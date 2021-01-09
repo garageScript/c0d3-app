@@ -5351,6 +5351,59 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Thanks Basic 1`] = `
+<div
+  className="row mt-5 d-flex justify-content-center"
+>
+  <div
+    className="card shadow-sm"
+  >
+    <div
+      className="text-center pl-4 pr-4"
+    >
+      <div
+        className="d-flex justify-content-center align-items-center flex-column modal-height-med"
+      >
+        <img
+          className="h-25 w-25"
+          src="/curriculumAssets/icons/success.svg"
+        />
+        <h2
+          className="mt-4 mb-4 pt-3 pb-3 font-weight-bold"
+        >
+          Thanks for letting us know!
+        </h2>
+        <button
+          className="btn bg-primary btn-lg"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Thanks Modal 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
 exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
 <div
   style={
