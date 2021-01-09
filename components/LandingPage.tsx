@@ -188,12 +188,12 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
       <div className="container mt-5 py-5 text-center">
-        <h1 className="display-4 font-weight-bold">Get Started Now</h1>
+        <h1 className="display-4 font-weight-bold">Start Your Journey</h1>
         <p
           className="mt-3 font-weight-light"
           style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
         >
-          Start your journey to being a full stack software engineer
+          Become a full stack software engineer - 100% Free
         </p>
         <NavLink
           path="https://www.c0d3.com/book"
