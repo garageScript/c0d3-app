@@ -47,6 +47,7 @@ const GET_APP = gql`
         isPassed
         isTeaching
         isEnrolled
+        starGiven
       }
     }
     alerts {

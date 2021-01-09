@@ -101,19 +101,22 @@ describe('Curriculum Page', () => {
           lessonId: '5',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         },
         {
           lessonId: '2',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         },
         {
           lessonId: '1',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         }
       ]
     }

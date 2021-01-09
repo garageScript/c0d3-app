@@ -53,13 +53,15 @@ describe('Lesson Page', () => {
           lessonId: '5',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         },
         {
           lessonId: '2',
           isPassed: false,
           isTeaching: false,
-          isEnrolled: true
+          isEnrolled: true,
+          starGiven: null
         }
       ]
     }
@@ -135,13 +137,15 @@ describe('Lesson Page', () => {
           lessonId: '5',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         },
         {
           lessonId: '2',
           isPassed: false,
           isTeaching: false,
-          isEnrolled: true
+          isEnrolled: true,
+          starGiven: null
         }
       ]
     }
