@@ -831,7 +831,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           <div
             class="text-center p-2 my-2 border border-warning text-warning"
           >
-            Your MR is currently waiting to be reviewed
+            Your submission is currently waiting to be reviewed
           </div>
         </div>
       </div>

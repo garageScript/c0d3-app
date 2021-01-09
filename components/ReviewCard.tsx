@@ -29,11 +29,17 @@ type DiffViewProps = {
   diff?: string
 }
 
+const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
+
 const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
   const files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: String[] = []
+    let extension = newPath.split('.').pop() || prismLanguages[0]
+    if (!prismLanguages.includes(extension)) {
+      extension = 'javascript'
+    }
 
     hunks.forEach(hunk => {
       hunk.changes.forEach(change => {
@@ -46,8 +52,8 @@ const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 
       const language = Prism.highlight(
         str,
-        Prism.languages.javascript,
-        'javascript'
+        Prism.languages[extension],
+        extension
       )
       return <span dangerouslySetInnerHTML={{ __html: language }} />
     }
