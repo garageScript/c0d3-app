@@ -3,6 +3,7 @@ export type Challenge = {
   id: string
   order: number
   description: string
+  lessonId?: string
 }
 
 export type ChallengeSubmissionData = {

@@ -2,10 +2,13 @@ import { Sequelize } from 'sequelize'
 import { Lesson, LessonTypes } from './models/Lesson'
 import { User, UserTypes } from './models/User'
 import { UserLessonTypes, UserLesson } from './models/UserLesson'
+import { Lesson as LesssonTypescriptTypes } from '../@types/lesson'
+import { Challenge as ChallengeTypescriptTypes } from '../@types/challenge'
 import { SubmissionTypes, Submission } from './models/Submission'
 import { ChallengeTypes, Challenge } from './models/Challenge'
 import { AlertTypes, Alert } from './models/Alert'
 import { StarTypes, Star } from './models/Star'
+import lessonData from '../__dummy__/lessonData'
 
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'you',
@@ -96,6 +99,34 @@ UserLesson.belongsTo(User, {
 
 sequelize.sync({ alter: !!process.env.ALTER_DB })
 
+/* istanbul ignore next */
+if (process.env.NODE_ENV === 'development') {
+  //add data after fresh install
+  Lesson.findAll({
+    limit: 1
+  }).then((lessons: Array<LesssonTypescriptTypes>) => {
+    if (!lessons[0]) {
+      Lesson.bulkCreate(lessonData)
+      console.log('Successfully inserted lesson data')
+    }
+  })
+
+  Challenge.findAll({
+    limit: 1
+  }).then((challenges: Array<ChallengeTypescriptTypes>) => {
+    if (!challenges[0]) {
+      lessonData.map(l => {
+        //need to add lessonID to comply with Challenge schema
+        let validChalleges: Array<ChallengeTypescriptTypes> = []
+        l.challenges.forEach((c: ChallengeTypescriptTypes) =>
+          validChalleges.push({ ...c, lessonId: l.id })
+        )
+        Challenge.bulkCreate(validChalleges)
+      })
+      console.log('Successfully inserted challenge data')
+    }
+  })
+}
 export default {
   Lesson,
   Challenge,
