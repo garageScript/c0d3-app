@@ -6123,7 +6123,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
     <h1
       className="display-4 font-weight-bold"
     >
-      Get Started Now
+      Start Your Journey
     </h1>
     <p
       className="mt-3 font-weight-light"
@@ -6134,7 +6134,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         }
       }
     >
-      Start your journey to being a full stack software engineer
+      Become a full stack software engineer - 100% Free!
     </p>
     <a
       className="btn btn-primary py-3 px-5 mt-4"
