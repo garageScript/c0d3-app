@@ -193,7 +193,7 @@ const LandingPage: React.FC = () => {
           className="mt-3 font-weight-light"
           style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
         >
-          Become a full stack software engineer - 100% Free
+          Become a full stack software engineer - 100% Free!
         </p>
         <NavLink
           path="https://www.c0d3.com/book"
