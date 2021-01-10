@@ -36,6 +36,7 @@ const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: String[] = []
+    if (!hunks.length || !newPath) return
     let extension = newPath.split('.').pop() || prismLanguages[0]
     if (!prismLanguages.includes(extension)) {
       extension = 'javascript'
