@@ -135,6 +135,15 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "pmulard",
+      "name": "Peter Mulard",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/45550174?v=4",
+      "profile": "http://www.linkedin.com/in/petermulard/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
