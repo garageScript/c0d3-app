@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait, act } from '@testing-library/react'
+import { render, fireEvent, waitFor, act, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import SIGNUP_USER from '../../graphql/queries/signupUser'
@@ -84,14 +84,10 @@ describe('Signup Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    await act(async () => {
-      await wait(() => {
-        fillOutSignupForm(getByTestId)
-        fireEvent.click(submitButton)
-      })
-    })
+    fillOutSignupForm(getByTestId)
+    fireEvent.click(submitButton)
 
-    await wait(() => {
+    await waitFor(() => {
       expect(getByText('Account created successfully!')).toBeTruthy()
       expect(container).toMatchSnapshot()
     })
@@ -139,14 +135,10 @@ describe('Signup Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    await act(async () => {
-      await wait(() => {
-        fillOutSignupForm(getByTestId)
-        fireEvent.click(submitButton)
-      })
-    })
+    fillOutSignupForm(getByTestId)
+    fireEvent.click(submitButton)
 
-    await wait(() => {
+    await waitFor(() => {
       expect(
         getByText(
           'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'

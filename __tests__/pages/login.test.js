@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait, act } from '@testing-library/react'
+import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { GraphQLError } from 'graphql'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
@@ -80,14 +80,10 @@ describe('Login Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    await act(async () => {
-      await wait(() => {
-        fillOutLoginForm(getByTestId)
-        fireEvent.click(submitButton)
-      })
-    })
+    fillOutLoginForm(getByTestId)
+    fireEvent.click(submitButton)
 
-    await wait(() =>
+    await waitFor(() =>
       expect(global.window.location.pathname).toEqual('/curriculum')
     )
   })
@@ -126,14 +122,13 @@ describe('Login Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    await act(async () => {
-      await wait(() => {
-        fillOutLoginForm(getByTestId)
-        fireEvent.click(submitButton)
-      })
+    fillOutLoginForm(getByTestId)
+
+    await waitFor(() => {
+      fireEvent.click(submitButton)
     })
 
-    await wait(() => {
+    await waitFor(() => {
       expect(global.window.location.pathname).toEqual('/login')
       expect(container).toMatchSnapshot()
     })

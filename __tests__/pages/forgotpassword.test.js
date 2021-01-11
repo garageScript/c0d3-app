@@ -1,6 +1,6 @@
 import React from 'react'
 import { GraphQLError } from 'graphql'
-import { render, fireEvent, wait, act } from '@testing-library/react'
+import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import RESET_PASSWORD from '../../graphql/queries/resetPassword'
@@ -38,7 +38,7 @@ describe('ForgotPassword Page', () => {
       }
     ]
 
-    const { container, getByTestId } = render(
+    const { container, getByTestId, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ForgotPassword />
       </MockedProvider>
@@ -48,18 +48,20 @@ describe('ForgotPassword Page', () => {
     const userOrEmail = getByTestId('userOrEmail')
 
     // wait for formik validations that are async
-    await act(async () => {
-      fireEvent.change(userOrEmail, {
-        target: {
-          value: validUser
-        }
-      })
-
-      await wait(() => fireEvent.click(submitButton))
+    fireEvent.change(userOrEmail, {
+      target: {
+        value: validUser
+      }
     })
 
+    await waitFor(() => fireEvent.click(submitButton))
+
+    await waitFor(() =>
+      getByRole('heading', { name: /password reset instructions sent/i })
+    )
+
     // wait for mutation updates after submitButton is clicked
-    await wait(() => expect(container).toMatchSnapshot())
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 
   test('Should render invalid user/email form on error', async () => {
@@ -87,7 +89,7 @@ describe('ForgotPassword Page', () => {
       }
     ]
 
-    const { container, getByTestId } = render(
+    const { container, getByTestId, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ForgotPassword />
       </MockedProvider>
@@ -97,17 +99,18 @@ describe('ForgotPassword Page', () => {
     const userOrEmail = getByTestId('userOrEmail')
 
     // wait for formik validations that are async
-    await act(async () => {
-      fireEvent.change(userOrEmail, {
-        target: {
-          value: invalidUser
-        }
-      })
-
-      await wait(() => fireEvent.click(submitButton))
+    fireEvent.change(userOrEmail, {
+      target: {
+        value: invalidUser
+      }
     })
+    await waitFor(() => fireEvent.click(submitButton))
+
+    await waitFor(() =>
+      getByRole('heading', { name: /username or email does not exist/i })
+    )
 
     // wait for mutation updates after submitButton is clicked
-    await wait(() => expect(container).toMatchSnapshot())
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 })

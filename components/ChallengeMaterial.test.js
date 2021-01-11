@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { render, fireEvent, wait } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import ChallengeMaterial from './ChallengeMaterial'
 
 describe('Curriculum challenge page', () => {
@@ -18,7 +18,7 @@ describe('Curriculum challenge page', () => {
         lessonId="5"
       />
     )
-    await wait(() => {
+    await waitFor(() => {
       expect(container).toMatchSnapshot()
     })
   })
@@ -150,8 +150,7 @@ describe('Curriculum challenge page', () => {
       <ChallengeMaterial {...props} />
     )
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
-    await wait(() => {
-      fireEvent.click(challengeTitleCard), expect(container).toMatchSnapshot()
-    })
+    fireEvent.click(challengeTitleCard)
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 })

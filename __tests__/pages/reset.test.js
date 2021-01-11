@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait, act } from '@testing-library/react'
+import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
@@ -73,14 +73,10 @@ describe('ResetPassword Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    await act(async () => {
-      await wait(() => {
-        fillOutResetForm(getByTestId, fakeResetPassword)
-        fireEvent.click(submitButton)
-      })
-    })
+    fillOutResetForm(getByTestId, fakeResetPassword)
+    fireEvent.click(submitButton)
 
-    await wait(() => {
+    await waitFor(() => {
       expect(getByText('Password has been set!')).toBeTruthy()
       expect(getByText('Continue to dashboard')).toBeTruthy()
       expect(container).toMatchSnapshot()
@@ -128,14 +124,10 @@ describe('ResetPassword Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    await act(async () => {
-      await wait(() => {
-        fillOutResetForm(getByTestId, fakeResetPassword)
-        fireEvent.click(submitButton)
-      })
-    })
+    fillOutResetForm(getByTestId, fakeResetPassword)
+    fireEvent.click(submitButton)
 
-    await wait(() => {
+    await waitFor(() => {
       expect(getByText('Link has expired.')).toBeTruthy()
       expect(getByText('Request a new password reset')).toBeTruthy()
       expect(container).toMatchSnapshot()

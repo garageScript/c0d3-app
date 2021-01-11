@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait, act } from '@testing-library/react'
+import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../graphql/queries/getApp'
 import LOGOUT_USER from '../graphql/queries/logoutUser'
@@ -54,10 +54,10 @@ describe('AppNav Component', () => {
     )
 
     await act(async () => {
-      await wait(() => getByText('Logout'))
+      await waitFor(() => getByText('Logout'))
       fireEvent.click(getByText('Logout'))
     })
 
-    await wait(() => expect(global.window.location.pathname).toEqual('/'))
+    await waitFor(() => expect(global.window.location.pathname).toEqual('/'))
   })
 })
