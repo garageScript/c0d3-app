@@ -62,9 +62,7 @@ describe('Curriculum challenge page', () => {
         challengeId: '105',
         reviewer: null,
         createdAt: '1586907809223',
-        updatedAt: dayjs()
-          .subtract(16, 'day')
-          .valueOf()
+        updatedAt: dayjs().subtract(16, 'day').valueOf()
       },
       {
         id: '3501',
@@ -80,9 +78,7 @@ describe('Curriculum challenge page', () => {
           username: 'dan'
         },
         createdAt: '1586907809223',
-        updatedAt: dayjs()
-          .subtract(16, 'day')
-          .valueOf()
+        updatedAt: dayjs().subtract(16, 'day').valueOf()
       }
     ],
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',

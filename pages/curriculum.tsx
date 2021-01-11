@@ -10,7 +10,7 @@ import { withGetApp, GetAppProps } from '../graphql/'
 import _ from 'lodash'
 
 export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
-  let { loading, error, alerts, lessons, session } = data
+  const { loading, error, alerts, lessons, session } = data
 
   if (loading) return <LoadingSpinner />
   if (error) return <h1>Error</h1>

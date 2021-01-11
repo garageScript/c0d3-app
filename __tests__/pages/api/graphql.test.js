@@ -17,7 +17,7 @@ import session from 'express-session'
 import sequelize from 'sequelize'
 const asm = require('apollo-server-micro')
 
-sequelize.mockImplementation(function() {
+sequelize.mockImplementation(function () {
   return { sync: () => {} }
 })
 
@@ -47,9 +47,9 @@ describe('Graphql Api', () => {
       }
     })
     connectSequelize.mockImplementation(() => {
-      return function() {}
+      return function () {}
     })
-    asm.ApolloServer = function(data) {
+    asm.ApolloServer = function (data) {
       apolloServerInput = data
       return {
         createHandler: jest.fn()
