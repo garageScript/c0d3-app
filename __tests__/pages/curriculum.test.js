@@ -28,8 +28,7 @@ describe('Curriculum Page', () => {
     )
 
     await waitFor(() => getByRole('heading', { name: /loading/i }))
-
-    await waitFor(() => expect(container).toMatchSnapshot())
+    expect(container).toMatchSnapshot()
   })
 
   test('Should render Error on error', async () => {
