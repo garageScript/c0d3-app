@@ -43,7 +43,7 @@
     "next": "^9.3.2",
     "next-connect": "^0.6.3",
     "next-with-apollo": "^5.0.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^5.0.0",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
     "posthog-js": "^1.0.6",
