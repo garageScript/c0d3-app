@@ -13,6 +13,7 @@ const sequelize = new Sequelize(
   process.env.DB_PW || 'this',
   {
     host: process.env.DB_HOST || 'city',
+    port: ((process.env.DB_PORT as unknown) as number) || 5432,
     logging: false,
     dialect: 'postgres',
     pool: {
