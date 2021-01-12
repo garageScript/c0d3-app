@@ -76,7 +76,7 @@ const confirmPasswordValidation = Yup.object({
     .max(TEXT_MAX, `Must be ${TEXT_MAX} characters or less`)
     .required('Required'),
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null], 'Password must match')
+    .oneOf([Yup.ref('password'), undefined], 'Password must match')
     .required('Required')
 })
 
