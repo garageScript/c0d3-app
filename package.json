@@ -27,7 +27,7 @@
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.3",
     "connect-session-sequelize": "^6.1.1",
-    "dayjs": "^1.8.26",
+    "dayjs": "^1.10.3",
     "express-session": "^1.17.0",
     "formik": "^2.1.4",
     "gitdiff-parser": "^0.2.2",
