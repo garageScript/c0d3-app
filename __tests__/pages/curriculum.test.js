@@ -21,14 +21,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { findByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('heading', { name: /loading/i }))
-    expect(container).toMatchSnapshot()
+    const element = await findByRole('heading', { name: /loading/i })
+    expect(element).toBeTruthy()
   })
 
   test('Should render Error on error', async () => {
@@ -39,15 +39,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { findByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('heading', { name: 'Error' }))
-
-    await waitFor(() => expect(container).toMatchSnapshot())
+    const element = await findByRole('heading', { name: /error/i })
+    expect(element).toBeTruthy()
   })
 
   test('Should render Bad Data when no session', async () => {
@@ -64,15 +63,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { findByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('heading', { name: 'Bad Data' }))
-
-    await waitFor(() => expect(container).toMatchSnapshot())
+    const element = await findByRole('heading', { name: /bad data/i })
+    expect(element).toBeTruthy()
   })
 
   test('Should render with basic dummy data', async () => {
