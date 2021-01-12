@@ -59,6 +59,8 @@ sudo chown -R 2000:2000 ./volumes/app/mattermost/
 
 11. Generate a personal access token. Close system console, go to team chat (town square) and click on three horizontal bars near your name *Account settings > Security* , then `generate personal access token`. This value will be used as MATTERMOST_ACCESS_TOKEN.
 
+12. Keep in mind that by default mattermost requires very secure passwords: at least 10 characters, at least one uppercase letter, one number and one special symbol. Either use such password when you need to register new users or edit mattermost config at *docker/docker/volumes/app/mattermost/config/config.json* PasswordSettings. 
+
 
 To submit challenges:
 1. Logout `c0d3 logout`.
@@ -71,11 +73,11 @@ To open terminal inside container:
 2. Open bash console inside postgres container `docker exec -it * postgres id* /bin/bash`.
 3. You can connect to postgres `psql -U *username* -d *dbname*`. If you have psql installed you can do it the easier way `psql -U c0d3_admin -h localhost -p 7000 -d c0d3`
 
-If you want to pass further lessons as admin you need to manually edit database (since no one can review your submissions):
+If you want to pass further lessons as admin you need to manually edit database (since no one can review your submissions). Connect to postgres container (see above) and type:
 ```
 INSERT INTO "userLessons"("isPassed", "lessonId", "userId", "createdAt", "updatedAt") VALUES('true', 5, 5,'2020-12-29 18:16:48.56+03','2020-12-29 18:16:48.56+03');
 ```
-The important values here are your userID(5) and lessonID (check lessons table).
+The important values here are your userID(5) and lessonID (check lessons table `TABLE lessons;`).
 
 
 ### Known problems
