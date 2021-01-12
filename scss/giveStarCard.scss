@@ -1,0 +1,50 @@
+.mentor { 
+	height: 86px; 
+	width: 48.2%; 
+	cursor: pointer;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
+	
+	span {
+		font-size: 14px;
+	}
+
+	.sendStar {
+		width: 100%;
+	}
+}
+
+.long {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+.mentorsList {
+	background: rgba(84, 56, 220, 0.03);
+	height: 560px;
+	overflow-y: scroll; /* Add the ability to scroll */
+  -ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+
+	&:-webkit-scrollbar {
+ 		display: none;
+	}
+}
+
+.sendStar {
+	h5 {
+		display: none;
+	}
+	top: 0;
+	left: 0;
+
+	&:hover {
+    display: flex;
+		background: rgba(84, 56, 220, .9);
+		h5 {
+			display: block;
+		}
+	}
+}

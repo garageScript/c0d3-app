@@ -8,7 +8,7 @@ export enum ModalSize {
   LARGE = 'large'
 }
 
-interface ModalCardProps {
+export interface ModalCardProps {
   show: boolean
   close: Function
   size?: ModalSize
