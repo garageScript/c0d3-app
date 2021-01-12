@@ -25,7 +25,7 @@
     "apollo-link-http": "^1.5.16",
     "apollo-server-micro": "^2.12.0",
     "bcrypt": "^5.0.0",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.3",
     "connect-session-sequelize": "^6.1.1",
     "dayjs": "^1.8.26",
     "express-session": "^1.17.0",
