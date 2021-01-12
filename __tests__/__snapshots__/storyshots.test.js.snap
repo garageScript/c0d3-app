@@ -726,7 +726,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               <tr>
                 <td
                   className="css-17uc4if-title-block"
-                  colSpan={5}
+                  colSpan={4}
                 >
                   <pre
                     className="css-o1u8iu-content-text"
