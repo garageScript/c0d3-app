@@ -345,15 +345,6 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- Data for Name: Session; Type: TABLE DATA; Schema: public; Owner: c0d3_admin
---
-
-COPY public."Session" (sid, expires, data, "createdAt", "updatedAt") FROM stdin;
-ZPvV2NibynNkjjIy6E7f9e_YY4XfShM5	2021-01-18 22:33:47.036+03	{"cookie":{"originalMaxAge":604800000,"expires":"2021-01-18T19:31:26.864Z","httpOnly":true,"path":"/"},"userId":5}	2021-01-11 22:31:26.87+03	2021-01-11 22:33:47.036+03
-\.
-
-
---
 -- Data for Name: alerts; Type: TABLE DATA; Schema: public; Owner: c0d3_admin
 --
 
