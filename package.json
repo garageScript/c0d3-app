@@ -40,12 +40,12 @@
     "markdown-to-jsx": "^7.1.1",
     "nanoid": "^3.1.20",
     "next": "^9.3.2",
-    "next-connect": "^0.6.3",
+    "next-connect": "^0.9.1",
     "next-with-apollo": "^5.0.0",
     "node-sass": "^5.0.0",
     "pg": "^8.0.2",
     "pg-hstore": "^2.3.3",
-    "posthog-js": "^1.0.6",
+    "posthog-js": "^1.8.3",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
@@ -55,7 +55,7 @@
     "sequelize": "^5.21.6",
     "swr": "^0.1.18",
     "winston": "^3.3.3",
-    "winston-transport-sentry-node": "^0.2.0",
+    "winston-transport-sentry-node": "^0.7.0",
     "yup": "^0.28.1"
   },
   "devDependencies": {
