@@ -1,9 +1,10 @@
 import React from 'react'
-import { render, fireEvent, waitFor, act, screen } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
+import userEvent from '@testing-library/user-event'
 
 describe('Signup Page', () => {
   const fakeEmail = 'fake@email.com'
@@ -11,35 +12,17 @@ describe('Signup Page', () => {
   const fakeFirstName = 'fakefirstname'
   const fakeLastName = 'fakelastname'
 
-  const fillOutSignupForm = getByTestId => {
+  const fillOutSignupForm = async getByTestId => {
     const emailField = getByTestId('email')
     const usernameField = getByTestId('username')
     const firstNameField = getByTestId('firstName')
     const lastNameField = getByTestId('lastName')
 
-    fireEvent.change(emailField, {
-      target: {
-        value: fakeEmail
-      }
-    })
-
-    fireEvent.change(usernameField, {
-      target: {
-        value: fakeUsername
-      }
-    })
-
-    fireEvent.change(firstNameField, {
-      target: {
-        value: fakeFirstName
-      }
-    })
-
-    fireEvent.change(lastNameField, {
-      target: {
-        value: fakeLastName
-      }
-    })
+    // the type event needs to be delayed so the Formik validations finish
+    await userEvent.type(emailField, fakeEmail, { delay: 1 })
+    await userEvent.type(usernameField, fakeUsername, { delay: 1 })
+    await userEvent.type(firstNameField, fakeFirstName, { delay: 1 })
+    await userEvent.type(lastNameField, fakeLastName, { delay: 1 })
   }
 
   test('Should render success component on success', async () => {
@@ -84,7 +67,7 @@ describe('Signup Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    fillOutSignupForm(getByTestId)
+    await fillOutSignupForm(getByTestId)
     fireEvent.click(submitButton)
 
     await waitFor(() => {
@@ -135,7 +118,7 @@ describe('Signup Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    fillOutSignupForm(getByTestId)
+    await fillOutSignupForm(getByTestId)
     fireEvent.click(submitButton)
 
     await waitFor(() => {

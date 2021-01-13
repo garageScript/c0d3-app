@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, fireEvent, waitFor, act } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { GraphQLError } from 'graphql'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
@@ -18,21 +19,13 @@ describe('Login Page', () => {
   const fakeUsername = 'fake username'
   const fakePassword = 'fake password'
 
-  const fillOutLoginForm = getByTestId => {
+  const fillOutLoginForm = async getByTestId => {
     const usernameField = getByTestId('username')
     const passwordField = getByTestId('password')
 
-    fireEvent.change(usernameField, {
-      target: {
-        value: fakeUsername
-      }
-    })
-
-    fireEvent.change(passwordField, {
-      target: {
-        value: fakePassword
-      }
-    })
+    // the type event needs to be delayed so the Formik validations finish
+    await userEvent.type(usernameField, fakeUsername, { delay: 1 })
+    await userEvent.type(passwordField, fakePassword, { delay: 1 })
   }
 
   beforeEach(() => {
@@ -80,7 +73,7 @@ describe('Login Page', () => {
 
     const submitButton = getByTestId('submit')
 
-    fillOutLoginForm(getByTestId)
+    await fillOutLoginForm(getByTestId)
     fireEvent.click(submitButton)
 
     await waitFor(() =>
@@ -114,19 +107,18 @@ describe('Login Page', () => {
       }
     ]
 
-    const { container, getByTestId } = render(
+    const { container, getByTestId, findByTestId, findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <LoginPage />
       </MockedProvider>
     )
 
-    const submitButton = getByTestId('submit')
+    const submitButton = await findByTestId('submit')
 
-    fillOutLoginForm(getByTestId)
+    await fillOutLoginForm(getByTestId)
+    userEvent.click(submitButton)
 
-    await waitFor(() => {
-      fireEvent.click(submitButton)
-    })
+    await findByText(mocks[1].result.errors[0].message.split(':')[1].trim())
 
     await waitFor(() => {
       expect(global.window.location.pathname).toEqual('/login')
