@@ -29,7 +29,7 @@
     "connect-session-sequelize": "^6.1.1",
     "dayjs": "^1.10.3",
     "express-session": "^1.17.0",
-    "formik": "^2.1.4",
+    "formik": "^2.2.6",
     "gitdiff-parser": "^0.2.2",
     "graphql": "^14.6.0",
     "graphql-request": "^1.8.2",
