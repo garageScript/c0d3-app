@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize'
+import { Options, Sequelize } from 'sequelize'
 import { Lesson, LessonTypes } from './models/Lesson'
 import { User, UserTypes } from './models/User'
 import { UserLessonTypes, UserLesson } from './models/UserLesson'
@@ -7,22 +7,26 @@ import { ChallengeTypes, Challenge } from './models/Challenge'
 import { AlertTypes, Alert } from './models/Alert'
 import { StarTypes, Star } from './models/Star'
 
+const options: Options = {
+  host: process.env.DB_HOST || 'city',
+  logging: false,
+  dialect: 'postgres',
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+}
+
+if (process.env.NODE_ENV != 'production') {
+  options.port = ((process.env.DB_PORT as unknown) as number) || 5432
+}
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'you',
   process.env.DB_USER || 'failed',
   process.env.DB_PW || 'this',
-  {
-    host: process.env.DB_HOST || 'city',
-    port: ((process.env.DB_PORT as unknown) as number) || 5432,
-    logging: false,
-    dialect: 'postgres',
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    }
-  }
+  options
 )
 
 Alert.init(AlertTypes, {
@@ -108,4 +112,4 @@ export default {
   sequelize
 }
 
-export { User, UserLesson }
+export { User, UserLesson, options }
