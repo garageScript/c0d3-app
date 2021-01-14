@@ -36,21 +36,21 @@ describe('GiveStarCard Component', () => {
     mockProps = {
       show: true,
       close: jest.fn(),
-      setGivenStar: jest.fn(),
+      setStarGiven: jest.fn(),
       lessonId: '4',
-      givenStar: 'flimmy flam jam'
+      starGiven: 'flimmy flam jam'
     }
   })
 
-  test('should display `already given star to` display when givenStar prop does not equal empty string', () => {
+  test('should display `already given star to` display when starGiven prop does not equal empty string', () => {
     const { container, getByText } = render(<GiveStarCard {...mockProps} />)
     const alreadyDisplay = getByText('You have already given a star to')
     expect(alreadyDisplay).toBeTruthy()
     expect(container).toMatchSnapshot()
   })
 
-  test('should display SearchMentor component if givenStar prop equals empty string', async () => {
-    mockProps.givenStar = ''
+  test('should display SearchMentor component if starGiven prop equals empty string', async () => {
+    mockProps.starGiven = ''
     const mocks = [mockSetStarMutatation, mockGetLessonMentors]
     const { container, getByRole, getByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -93,14 +93,14 @@ describe('GiveStarCard Component', () => {
     })
     expect(thanks).toBeTruthy()
 
-    // check if setGivenStar function is called
+    // check if setStarGiven function is called
     const exitBtn = getByRole('button')
     fireEvent.click(exitBtn)
-    expect(mockProps.setGivenStar).toBeCalledWith('bob')
+    expect(mockProps.setStarGiven).toBeCalledWith('bob')
   })
 
   test('should display error message when giving a star fails', async () => {
-    mockProps.givenStar = ''
+    mockProps.starGiven = ''
     const setStarError = { ...mockSetStarMutatation }
     delete setStarError.result
     setStarError.error = new Error()
