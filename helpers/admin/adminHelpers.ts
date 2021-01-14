@@ -79,7 +79,7 @@ export const errorCheckSingleField = async (
   // title is the name of field being checked
   const { title } = properties[propertyIndex]
   try {
-    await reach(schema, title).validate(data[title])
+    await reach(schema, title, null, null).validate(data[title])
   } catch (err) {
     valid = false
     properties[propertyIndex].error = err.message
