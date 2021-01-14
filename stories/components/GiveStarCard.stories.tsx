@@ -28,7 +28,7 @@ mocks.push({
 
 const MockBasic: React.FC = () => {
   const [show, setShow] = useState(true)
-  const [givenStar, setGivenStar] = useState<string>('')
+  const [starGiven, setStarGiven] = useState<string>('')
   const close = () => setShow(false)
   /*
     Mock mutations in the storybook require all parameters(even optional)
@@ -38,7 +38,7 @@ const MockBasic: React.FC = () => {
   return (
     <>
       <Button onClick={() => setShow(!show)}>Launch demo modal</Button>
-      <Button onClick={() => setGivenStar('')} type="primary" color="white">
+      <Button onClick={() => setStarGiven('')} type="primary" color="white">
         Reset star
       </Button>
       <h1 className="mt-5">
@@ -48,11 +48,11 @@ const MockBasic: React.FC = () => {
       <h1>Give Star button to work</h1>
       <MockedProvider mocks={mocks} addTypename={false}>
         <GiveStarCard
-          givenStar={givenStar}
+          starGiven={starGiven}
           lessonId={'4'}
           show={show}
           close={close}
-          setGivenStar={setGivenStar}
+          setStarGiven={setStarGiven}
         />
       </MockedProvider>
     </>
@@ -66,10 +66,10 @@ const MockAlreadyGaveStar: React.FC = () => {
     <>
       <Button onClick={() => setShow(!show)}>Launch demo modal</Button>
       <GiveStarCard
-        givenStar="omega shenron"
+        starGiven="omega shenron"
         lessonId={'4'}
         show={show}
-        setGivenStar={noop}
+        setStarGiven={noop}
         close={close}
       />
     </>

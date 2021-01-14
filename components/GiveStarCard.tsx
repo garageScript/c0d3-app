@@ -182,20 +182,20 @@ const StarCard: React.FC<StarCardProps> = ({
 
 type StarCardWrapperProps = {
   lessonId: string
-  setGivenStar: Function
+  setStarGiven: Function
 } & ModalCardProps
 
 const StarCardWrapper: React.FC<StarCardWrapperProps> = ({
   show,
   close,
   lessonId,
-  setGivenStar
+  setStarGiven
 }) => {
   const [done, setDone] = useState<string>('')
 
   const handleClose = () => {
     close()
-    setGivenStar(done)
+    setStarGiven(done)
   }
 
   return (
@@ -213,23 +213,23 @@ const StarCardWrapper: React.FC<StarCardWrapperProps> = ({
 
 type GiveStarCardProps = {
   lessonId: string
-  givenStar: string
-  setGivenStar: Function
+  starGiven: string
+  setStarGiven: Function
 } & ModalCardProps
 
 export const GiveStarCard: React.FC<GiveStarCardProps> = ({
   lessonId,
   show,
   close,
-  givenStar,
-  setGivenStar
+  starGiven,
+  setStarGiven
 }) => {
-  if (givenStar) {
+  if (starGiven) {
     return (
       <ModalCard show={show} close={close}>
         <div className="mb-0 mt-0 p-4 text-center">
           <h4 className="mt-0 mb-0">You have already given a star to</h4>
-          <h4 className="mt-0 mb-0 font-italic long">{givenStar}!</h4>
+          <h4 className="mt-0 mb-0 font-italic long">{starGiven}!</h4>
         </div>
       </ModalCard>
     )
@@ -240,7 +240,7 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
       lessonId={lessonId}
       show={show}
       close={close}
-      setGivenStar={setGivenStar}
+      setStarGiven={setStarGiven}
     />
   )
 }
