@@ -14,19 +14,19 @@ describe('dbload tests', () => {
   beforeEach(() => {
     jest.resetModuleRegistry()
   })
-  it('should use default postgres port if no port is provided in production', () => {
+  it('should use default port if no port is provided in development', () => {
     const customOptions = { ...defaultOptions, port: 5432 }
     const { options } = require('./dbload')
     expect(options).toEqual(customOptions)
   })
-  it('should use provided port if env is production', () => {
+  it('should use provided port in development', () => {
     process.env.DB_PORT = 9999
     const customOptions = { ...defaultOptions, port: '9999' }
     const { options } = require('./dbload')
     expect(options).toEqual(customOptions)
   })
 
-  it('should default port in production', () => {
+  it('should default options in production', () => {
     process.env.NODE_ENV = 'production'
     const { options } = require('./dbload')
     expect(options).toEqual(defaultOptions)

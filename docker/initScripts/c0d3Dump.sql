@@ -345,6 +345,14 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
+-- Data for Name: Session; Type: TABLE DATA; Schema: public; Owner: c0d3_admin
+--
+
+COPY public."Session" (sid, expires, data, "createdAt", "updatedAt") FROM stdin;
+\.
+
+
+--
 -- Data for Name: alerts; Type: TABLE DATA; Schema: public; Owner: c0d3_admin
 --
 
@@ -495,6 +503,15 @@ COPY public.submissions (id, "mrUrl", diff, comment, status, "viewCount", "creat
 
 COPY public."userLessons" ("isPassed", "isTeaching", "isEnrolled", "lessonId", "createdAt", "updatedAt", "userId") FROM stdin;
 true	\N	\N	5	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	2	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	1	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	4	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	24	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	3	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	29	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	28	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	25	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
+true	\N	\N	27	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
 \.
 
 
@@ -503,7 +520,8 @@ true	\N	\N	5	2020-12-29 18:16:48.56+03	2020-12-29 18:16:48.56+03	5
 --
 
 COPY public.users (id, name, username, password, email, "gsId", "isOnline", "isAdmin", "forgotToken", "cliToken", "emailVerificationToken", "tokenExpiration", "createdAt", "updatedAt") FROM stdin;
-5	admin admin	admin	$2b$10$OKsH6r5//AtYlIW/EzUWQeUYdwcKF8JUEeD8RXfLURj8BPw1ilir2	some@mail.com	\N	\N	true	\N	\N	\N	\N	2021-01-11 22:30:39.127+03	2021-01-11 22:31:26.856+03
+5	admin admin	admin	$2b$10$OKsH6r5//AtYlIW/EzUWQeUYdwcKF8JUEeD8RXfLURj8BPw1ilir2	some@mail.com	\N	\N	true	\N	WRyzWxDc_DqR3Avi7xcGD	\N	\N	2021-01-11 22:30:39.127+03	2021-01-14 17:10:29.719+03
+6	newbie newbie	newbie	$2b$10$1N3HMPuhWETfwWZWEJp85ONwWbUbBet7.aeZFvdCBjqx5muZ6Elyq	some@mail.com	\N	\N	false	\N	acRy_p-HK9sTU8H1GfrJV	\N	\N	2021-01-14 17:10:46.174+03	2021-01-14 17:11:50.52+03
 \.
 
 
@@ -546,7 +564,7 @@ SELECT pg_catalog.setval('public.submissions_id_seq', 1, false);
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: c0d3_admin
 --
 
-SELECT pg_catalog.setval('public.users_id_seq', 5, true);
+SELECT pg_catalog.setval('public.users_id_seq', 6, true);
 
 
 --

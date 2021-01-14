@@ -118,4 +118,6 @@ dist
 package-lock.json
 
 #docker volumes
-docker/volumes/
+docker/volumes/postgres
+docker/volumes/app/mattermost/*
+!docker/volumes/app/mattermost/config

@@ -44,24 +44,22 @@ To begin we will need to set up the code base on your own machine. To do this we
    DB_HOST=localhost
    DB_PORT=7000
 ```
-6. Build docker images. Go to docker directory and type `docker-compose build`. It will take some time for docker to pull and install everything. In the end you will have one container with a postgres database and one container for mattermost. 
+7. Build docker images. Go to docker directory and type `docker-compose build`. It will take some time for docker to pull and install everything. In the end you will have one container with a postgres database and one container for mattermost. 
 
-7. Prepare volume directories. Volumes are mappings from containers to your local machine.
+8. Prepare volume directories. Volumes are mappings from containers to your local machine.
 ```
 mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
 sudo chown -R 2000:2000 ./volumes/app/mattermost/
 ```
-8. Now you can start docker `docker-compose up` (add -d flag to start in detached mode). To stop all containers `docker-compose down`.
+9. Now you can start docker `docker-compose up` (add -d flag to start in detached mode). To stop all containers `docker-compose down`.
 
-9. Configure your local mattermost server. When you open [http://localhost:8080](http://localhost:8000), you will be greeted with the mattermost login page. Enter any email (this setup won't have an SMTP server, so no actual mails will be sent). First user automatically becomes the server admin. Create new team and enable use of personal access tokens *System Console > Integrations > Custom Integrations*.
+10. Configure your local mattermost server. When you open [http://localhost:8080](http://localhost:8000), you will be greeted with the mattermost login page. Enter any email (this setup won't have an SMTP server, so no actual mails will be sent). First user automatically becomes the server admin. Create new team and enable use of personal access tokens *System Console > Integrations > Custom Integrations*.
 
-10. Generate a personal access token. Close system console, go to team chat (town square) and click on three horizontal bars near your name *Account settings > Security* , then `generate personal access token`. This value will be used as MATTERMOST_ACCESS_TOKEN.
+11. Generate a personal access token. Close system console, go to team chat (town square) and click on three horizontal bars near your name *Account settings > Security* , then `generate personal access token`. This value will be used as MATTERMOST_ACCESS_TOKEN.
 
-11. Keep in mind that by default mattermost requires very secure passwords: at least 10 characters, at least one uppercase letter, one number and one special symbol. Either use such passwords or edit mattermost config at *docker/docker/volumes/app/mattermost/config/config.json* PasswordSettings and restart the server.
+12. Allow new users to join your team. As mattermost admin go to *Team settings/Allow any user with an account on this server to join this team*. 
 
-12. Allow new users to join your team. As admin go to *Team settings/Allow any user with an account on this server to join this team*. 
-
-13. Start c0d3 app `PORT=4000 yarn dev`. If everything went right you will see the landing page. Login with `admin:password` or register new user.
+13. Start c0d3 app `PORT=4000 yarn dev`. If everything went right you will see the landing page. There are two premade users: `admin:password` (admin, passed all lessons, can review submissions) and `newbie:password` (new user). And you can always register new ones if you want to.  
 
 
 To submit challenges:
@@ -71,18 +69,12 @@ To submit challenges:
 It should be visible on your local setup.
 
 To connect to postgres database inside container:
-1. Check your current active docker containers `docker ps`. Notice docker_postgres container id (first few characters are enough).
-2. Open bash console inside postgres container `docker exec -it *postgres id* /bin/bash`.
-3. Connect to postgres `psql -U c0d3_admin -d c0d3`. 
+1. Open bash console inside postgres container `docker exec -it c0d3_db /bin/bash`.
+2. Connect to postgres `psql -U c0d3_admin -d c0d3`. 
 
 If you have psql installed locally you can type `psql -U c0d3_admin -h localhost -p 7000 -d c0d3` with the same result.
 
-If you want to pass further lessons as an admin you need to manually edit database (since no one can review your submissions). Connect to postgres container and type:
-```
-INSERT INTO "userLessons"("isPassed", "lessonId", "userId", "createdAt", "updatedAt") VALUES('true', 2, 5,'2020-12-29 18:16:48.56+03','2020-12-29 18:16:48.56+03');
-```
-The important values here are your userID(5) and lessonID (check lessons table `TABLE lessons;`).
-
+There are also various useful graphical database management tools like [pgAdmin](https://www.pgadmin.org/) and [dBeaver](https://dbeaver.io/).
 
 ### Known problems
 
@@ -98,5 +90,5 @@ Or `yarn autofix` is failing with `Component definition is missing display name`
 You most likely installed a new module by using npm instead of yarn. While in theory these tools should be interchangeable, in practice it can result in such weird errors. Recloning git repo should help.  
   
 
-### You are now all setup on your machine! Keep up the great work and thank you for your contributions 
+### You are now all set up on your machine! Keep up the great work and thank you for your contributions 
 👍
