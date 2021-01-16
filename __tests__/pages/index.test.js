@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, wait } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import IndexPage from '../../pages/index'
@@ -44,10 +44,10 @@ describe('<IndexPage />', () => {
       )
 
       const { container } = render(tree)
-      await wait() // wait for loading state to pass
-
-      expect(routerPush).toBeCalledWith('/curriculum')
-      expect(container.firstChild).toBeNull()
+      await waitFor(() => {
+        expect(routerPush).toBeCalledWith('/curriculum')
+        expect(container.firstChild).toBeNull()
+      }) // wait for loading state to pass
     })
   })
 
@@ -66,9 +66,7 @@ describe('<IndexPage />', () => {
       )
 
       render(tree)
-      await wait() // wait for loading state to pass
-
-      expect(routerPush).not.toHaveBeenCalled()
+      await waitFor(() => expect(routerPush).not.toHaveBeenCalled()) // wait for loading state to pass
     })
   })
 })

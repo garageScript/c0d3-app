@@ -1418,9 +1418,7 @@ export function useAcceptSubmissionMutation(
 export type AcceptSubmissionMutationHookResult = ReturnType<
   typeof useAcceptSubmissionMutation
 >
-export type AcceptSubmissionMutationResult = ApolloReactCommon.MutationResult<
-  AcceptSubmissionMutation
->
+export type AcceptSubmissionMutationResult = ApolloReactCommon.MutationResult<AcceptSubmissionMutation>
 export type AcceptSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
   AcceptSubmissionMutation,
   AcceptSubmissionMutationVariables
@@ -1525,9 +1523,7 @@ export function useAddAlertMutation(
   >(AddAlertDocument, baseOptions)
 }
 export type AddAlertMutationHookResult = ReturnType<typeof useAddAlertMutation>
-export type AddAlertMutationResult = ApolloReactCommon.MutationResult<
-  AddAlertMutation
->
+export type AddAlertMutationResult = ApolloReactCommon.MutationResult<AddAlertMutation>
 export type AddAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
   AddAlertMutation,
   AddAlertMutationVariables
@@ -1722,9 +1718,7 @@ export function useChangeAdminRightsMutation(
 export type ChangeAdminRightsMutationHookResult = ReturnType<
   typeof useChangeAdminRightsMutation
 >
-export type ChangeAdminRightsMutationResult = ApolloReactCommon.MutationResult<
-  ChangeAdminRightsMutation
->
+export type ChangeAdminRightsMutationResult = ApolloReactCommon.MutationResult<ChangeAdminRightsMutation>
 export type ChangeAdminRightsMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ChangeAdminRightsMutation,
   ChangeAdminRightsMutationVariables
@@ -1851,9 +1845,7 @@ export function useCreateChallengeMutation(
 export type CreateChallengeMutationHookResult = ReturnType<
   typeof useCreateChallengeMutation
 >
-export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<
-  CreateChallengeMutation
->
+export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<CreateChallengeMutation>
 export type CreateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
   CreateChallengeMutation,
   CreateChallengeMutationVariables
@@ -1987,9 +1979,7 @@ export function useCreateLessonMutation(
 export type CreateLessonMutationHookResult = ReturnType<
   typeof useCreateLessonMutation
 >
-export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<
-  CreateLessonMutation
->
+export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<CreateLessonMutation>
 export type CreateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
@@ -2458,9 +2448,7 @@ export function useLoginMutation(
   )
 }
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>
-export type LoginMutationResult = ApolloReactCommon.MutationResult<
-  LoginMutation
->
+export type LoginMutationResult = ApolloReactCommon.MutationResult<LoginMutation>
 export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
@@ -2554,9 +2542,7 @@ export function useLogoutMutation(
   )
 }
 export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>
-export type LogoutMutationResult = ApolloReactCommon.MutationResult<
-  LogoutMutation
->
+export type LogoutMutationResult = ApolloReactCommon.MutationResult<LogoutMutation>
 export type LogoutMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LogoutMutation,
   LogoutMutationVariables
@@ -2659,9 +2645,7 @@ export function useRejectSubmissionMutation(
 export type RejectSubmissionMutationHookResult = ReturnType<
   typeof useRejectSubmissionMutation
 >
-export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<
-  RejectSubmissionMutation
->
+export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<RejectSubmissionMutation>
 export type RejectSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
   RejectSubmissionMutation,
   RejectSubmissionMutationVariables
@@ -2759,9 +2743,7 @@ export function useRemoveAlertMutation(
 export type RemoveAlertMutationHookResult = ReturnType<
   typeof useRemoveAlertMutation
 >
-export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<
-  RemoveAlertMutation
->
+export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<RemoveAlertMutation>
 export type RemoveAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
@@ -2860,9 +2842,7 @@ export function useReqPwResetMutation(
 export type ReqPwResetMutationHookResult = ReturnType<
   typeof useReqPwResetMutation
 >
-export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<
-  ReqPwResetMutation
->
+export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<ReqPwResetMutation>
 export type ReqPwResetMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ReqPwResetMutation,
   ReqPwResetMutationVariables
@@ -2970,9 +2950,7 @@ export function useSignupMutation(
   )
 }
 export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>
-export type SignupMutationResult = ApolloReactCommon.MutationResult<
-  SignupMutation
->
+export type SignupMutationResult = ApolloReactCommon.MutationResult<SignupMutation>
 export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
@@ -3102,9 +3080,7 @@ export function useUpdateChallengeMutation(
 export type UpdateChallengeMutationHookResult = ReturnType<
   typeof useUpdateChallengeMutation
 >
-export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<
-  UpdateChallengeMutation
->
+export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<UpdateChallengeMutation>
 export type UpdateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
   UpdateChallengeMutation,
   UpdateChallengeMutationVariables
@@ -3241,9 +3217,7 @@ export function useUpdateLessonMutation(
 export type UpdateLessonMutationHookResult = ReturnType<
   typeof useUpdateLessonMutation
 >
-export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<
-  UpdateLessonMutation
->
+export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<UpdateLessonMutation>
 export type UpdateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
   UpdateLessonMutation,
   UpdateLessonMutationVariables
@@ -3337,9 +3311,7 @@ export function useChangePwMutation(
   >(ChangePwDocument, baseOptions)
 }
 export type ChangePwMutationHookResult = ReturnType<typeof useChangePwMutation>
-export type ChangePwMutationResult = ApolloReactCommon.MutationResult<
-  ChangePwMutation
->
+export type ChangePwMutationResult = ApolloReactCommon.MutationResult<ChangePwMutation>
 export type ChangePwMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ChangePwMutation,
   ChangePwMutationVariables

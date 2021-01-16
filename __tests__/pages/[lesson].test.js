@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, wait } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import { withTestRouter } from '../../testUtil/withNextRouter'
@@ -88,9 +88,11 @@ describe('Lesson Page', () => {
       }
     )
 
-    const { container } = render(tree)
+    const { container, getByRole } = render(tree)
 
-    await wait(() => expect(container).toMatchSnapshot())
+    await waitFor(() => getByRole('link', { name: /c0d3/i }))
+
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 
   test('Should render correctly with invalid lesson route', async () => {
@@ -172,8 +174,10 @@ describe('Lesson Page', () => {
       }
     )
 
-    const { container } = render(tree)
+    const { container, getByRole } = render(tree)
 
-    await wait(() => expect(container).toMatchSnapshot())
+    await waitFor(() => getByRole('link', { name: /c0d3/i }))
+
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 })
