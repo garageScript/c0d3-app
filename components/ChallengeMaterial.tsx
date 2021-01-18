@@ -315,9 +315,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         submission
       }
     })
-  const [currentChallengeID, setCurrentChallenge] = useState<
-    CurrentChallengeID
-  >(null)
+  const [
+    currentChallengeID,
+    setCurrentChallenge
+  ] = useState<CurrentChallengeID>(null)
 
   const finalChallenge = {
     title: 'Challenges Completed!',
