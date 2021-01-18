@@ -1,15 +1,28 @@
-.mentor { 
+.mentor {
+	background: white;
 	height: 86px; 
-	width: 48.35%; 
+	width: 48.312%; 
 	cursor: pointer;
 	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
 	
 	span {
 		font-size: 14px;
+		z-index: 1;
 	}
 
-	.sendStar {
-		width: 100%;
+	h6 {
+		z-index: 1;
+	}
+	
+	&:hover {
+		.sendStar {
+			z-index: 2;
+  	  display: flex;
+			background: rgba(84, 56, 220, .9);
+			h5 {
+				display: block;
+			}
+		}
 	}
 }
 
@@ -37,14 +50,7 @@
 	h5 {
 		display: none;
 	}
+	width: 100%;
 	top: 0;
 	left: 0;
-
-	&:hover {
-    display: flex;
-		background: rgba(84, 56, 220, .9);
-		h5 {
-			display: block;
-		}
-	}
 }
