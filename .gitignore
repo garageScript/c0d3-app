@@ -116,3 +116,8 @@ dist
 
 #removing package-lock as the master branch has yarn.lock
 package-lock.json
+
+#docker volumes
+docker/volumes/postgres
+docker/volumes/app/mattermost/*
+!docker/volumes/app/mattermost/config

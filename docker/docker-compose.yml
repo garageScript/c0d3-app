@@ -1,0 +1,47 @@
+version: "3"
+services:
+  postgres:
+    container_name: c0d3_db
+    image: postgres:12-alpine
+    ports:
+      - 7000:5432
+    environment:
+      - POSTGRES_USER=c0d3_admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=c0d3
+    volumes:
+      - ./volumes/postgres/var/lib/postgresql/data:/var/lib/postgresql/data
+      - ./initScripts:/docker-entrypoint-initdb.d/
+      - /etc/localtime:/etc/localtime:ro
+
+  mattermost:
+    build:
+      context: app
+      # uncomment following lines for team edition or change UID/GID
+      args:
+        - edition=team
+      #   - PUID=1000
+      #   - PGID=1000
+    restart: unless-stopped
+    container_name: mattermost
+    ports:
+      - 8000:8000
+    volumes:
+      - ./volumes/app/mattermost/config:/mattermost/config:rw
+      - ./volumes/app/mattermost/data:/mattermost/data:rw
+      - ./volumes/app/mattermost/logs:/mattermost/logs:rw
+      - ./volumes/app/mattermost/plugins:/mattermost/plugins:rw
+      - ./volumes/app/mattermost/client-plugins:/mattermost/client/plugins:rw
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      # set same as db credentials and dbname
+      - MM_USERNAME=c0d3_admin
+      - MM_PASSWORD=admin
+      - MM_DBNAME=mattermost
+
+      # use the credentials you've set above, in the format:
+      # MM_SQLSETTINGS_DATASOURCE=postgres://${MM_USERNAME}:${MM_PASSWORD}@db:5432/${MM_DBNAME}?sslmode=disable&connect_timeout=10
+      - MM_SQLSETTINGS_DATASOURCE=postgres://c0d3_admin:admin@postgres:5432/mattermost?sslmode=disable&connect_timeout=10
+
+      # in case your config is not in default location
+      #- MM_CONFIG=/mattermost/config/config.json
