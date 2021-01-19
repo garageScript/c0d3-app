@@ -14,7 +14,7 @@ export default [
   { username: 'bagelOfAngels', name: 'wax on', id: '4' },
   { username: 'l0lCakes', name: 'wax off', id: '4' },
   { username: 'jammedPrinter', name: 'potato potatus', id: '4' },
-  { username: 'importantBagel', name: 'bobo bobobo', id: '4' },
+  { username: 'trololololololololololololo', name: 'bobo bobobo', id: '4' },
   { username: 'hingaD1nGADurgen', name: 'sauce hunter', id: '4' },
   { username: 'convincingLampPost', name: 'incredible hulk', id: '4' },
   { username: '64bitsMin', name: 'long long', id: '4' },
