@@ -5,6 +5,9 @@ import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+import { GraphQLError } from 'graphql'
+import Router from 'next/router'
+Router.router = { push: jest.fn() }
 
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {
@@ -137,6 +140,22 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
+    await wait(() => expect(container).toMatchSnapshot())
+  })
+  test('Should return to login page if unauthorized', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          errors: [new GraphQLError("Cannot read property 'id' of null")]
+        }
+      }
+    ]
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
     await wait(() => expect(container).toMatchSnapshot())
   })
 })

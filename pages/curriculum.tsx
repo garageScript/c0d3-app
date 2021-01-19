@@ -1,5 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
+import Router from 'next/router'
+import Error from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
@@ -11,10 +13,33 @@ import _ from 'lodash'
 
 export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   let { loading, error, alerts, lessons, session } = data
-
   if (loading) return <LoadingSpinner />
-  if (error) return <h1>Error</h1>
-  if (!session || !lessons || !alerts) return <h1>Bad Data</h1>
+  if (
+    error &&
+    _.get(error, 'graphQLErrors[0].message') ===
+      "Cannot read property 'id' of null"
+  ) {
+    Router.push('/login')
+    return <LoadingSpinner />
+  }
+  if (error) {
+    return (
+      <Error
+        title="Internal server error"
+        message={error.message}
+        src="/500.png"
+      ></Error>
+    )
+  }
+  if (!session || !lessons || !alerts) {
+    return (
+      <Error
+        title="Internal server error"
+        message="Bad data"
+        src="/500.png"
+      ></Error>
+    )
+  }
 
   const announcements = [
     'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',

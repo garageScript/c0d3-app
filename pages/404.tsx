@@ -1,6 +1,8 @@
+import Error from '../components/Error'
 import React from 'react'
-import Error from 'next/error'
-
-export default function NotFound() {
-  return <Error statusCode={404} />
+const NotFound = () => {
+  return (
+    <Error title="404 error" src="/404.png" message="Page not found"></Error>
+  )
 }
+export default NotFound

@@ -29,3 +29,15 @@ export type Star = {
   lessonId: number
   comment?: string
 }
+
+export type LessonID =
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '24'
+  | '25'
+  | '27'
+  | '28'
+  | '29'

@@ -2,9 +2,139 @@
 
 exports[`Curriculum Page Should render Error on error 1`] = `
 <div>
-  <h1>
-    Error
-  </h1>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Network error: error
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              Back
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-sm-9"
+        >
+          <img
+            alt=""
+            class="mb-3 img-fluid"
+            src="/500.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;
 
@@ -829,9 +959,139 @@ exports[`Curriculum Page Should render Loading Spinner when loading 1`] = `
 
 exports[`Curriculum Page Should render No Data when no session 1`] = `
 <div>
-  <h1>
-    Bad Data
-  </h1>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Home
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/#learning"
+            >
+              Learning Process
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://c0d3.com/book"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Resources
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Bad data
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              Back
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-sm-9"
+        >
+          <img
+            alt=""
+            class="mb-3 img-fluid"
+            src="/500.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;
 
@@ -2584,5 +2844,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
     <br />
     All Rights Reserved
   </footer>
+</div>
+`;
+
+exports[`Curriculum Page Should return to login page if unauthorized 1`] = `
+<div>
+  <div
+    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
+  >
+    <h1
+      class="text-white font-weight-bold display-3"
+      style="font-family: 'PT Mono', sans-serif;"
+    >
+      C0D3
+    </h1>
+    <div
+      class="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        class="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>
 </div>
 `;
