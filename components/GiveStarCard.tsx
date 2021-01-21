@@ -85,7 +85,7 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
 type GiveStarProps = {
   lessonId: number
   goBack: () => void
-  setDone: React.Dispatch<React.SetStateAction<string>>
+  setDone: React.Dispatch<React.SetStateAction<boolean>>
 } & Mentor
 
 const GiveStar: React.FC<GiveStarProps> = ({
@@ -101,7 +101,7 @@ const GiveStar: React.FC<GiveStarProps> = ({
   const giveStar = async () => {
     try {
       await setStar({ variables: { mentorId, lessonId, comment } })
-      setDone(username)
+      setDone(true)
     } catch {}
   }
 
@@ -146,27 +146,31 @@ const GiveStar: React.FC<GiveStarProps> = ({
 
 type LessonMentorsData = { getLessonMentors: User[] }
 type StarCardProps = {
-  handleClose: Function
   lessonId: number
-  done: string
-  setDone: React.Dispatch<React.SetStateAction<string>>
-} & QueryDataProps<LessonMentorsData>
+  setStarGiven: Function
+} & QueryDataProps<LessonMentorsData> &
+  ModalCardProps
 
 const StarCard: React.FC<StarCardProps> = ({
-  handleClose,
+  close,
+  setStarGiven,
+  show,
   lessonId,
-  done,
-  setDone,
   queryData: { getLessonMentors: mentors }
 }) => {
   const [{ mentorId, username }, setMentor] = useState<Partial<Mentor>>({})
+  const [done, setDone] = useState<boolean>(false)
 
-  if (done) {
-    return <Thanks close={handleClose} />
+  const handleClose = () => {
+    close()
+    done && setStarGiven(username)
   }
 
-  if (mentorId && username) {
-    return (
+  let display = <SearchMentor setMentor={setMentor} mentors={mentors} />
+  if (done) {
+    display = <Thanks close={handleClose} />
+  } else if (mentorId && username) {
+    display = (
       <GiveStar
         lessonId={lessonId}
         mentorId={mentorId}
@@ -177,36 +181,9 @@ const StarCard: React.FC<StarCardProps> = ({
     )
   }
 
-  return <SearchMentor setMentor={setMentor} mentors={mentors} />
-}
-
-type StarCardWrapperProps = {
-  lessonId: string
-  setStarGiven: Function
-} & ModalCardProps
-
-const StarCardWrapper: React.FC<StarCardWrapperProps> = ({
-  show,
-  close,
-  lessonId,
-  setStarGiven
-}) => {
-  const [done, setDone] = useState<string>('')
-
-  const handleClose = () => {
-    close()
-    setStarGiven(done)
-  }
-
   return (
     <ModalCard close={handleClose} show={show}>
-      {withQueryLoader<LessonMentorsData>(
-        {
-          query: GET_LESSON_MENTORS,
-          getParams: () => ({ variables: { lessonId } })
-        },
-        props => <StarCard {...(props as StarCardProps)} />
-      )({ lessonId: parseInt(lessonId), handleClose, done, setDone })}
+      {display}
     </ModalCard>
   )
 }
@@ -235,12 +212,11 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
     )
   }
 
-  return (
-    <StarCardWrapper
-      lessonId={lessonId}
-      show={show}
-      close={close}
-      setStarGiven={setStarGiven}
-    />
-  )
+  return withQueryLoader<LessonMentorsData>(
+    {
+      query: GET_LESSON_MENTORS,
+      getParams: () => ({ variables: { lessonId } })
+    },
+    props => <StarCard {...(props as StarCardProps)} />
+  )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
 }
