@@ -10,7 +10,6 @@ import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
 import { AppData } from '../../@types/app'
-import isLessonID from '../../helpers/isLessonID'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -33,10 +32,6 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  if (!isLessonID(currentlessonId)) {
-    router.push('/404')
-    return <LoadingSpinner />
-  }
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentlessonId }
   })
@@ -46,6 +41,10 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   if (!session) {
     router.push('/login')
     return null
+  }
+  if (!lessons.map((l: Lesson) => l.id.toString()).includes(currentlessonId)) {
+    router.replace('/404')
+    return <LoadingSpinner />
   }
   const lessonSubmissions: SubmissionData[] = data
     ? data.submissions.filter(
