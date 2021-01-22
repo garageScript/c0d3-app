@@ -161,12 +161,11 @@ describe('Curriculum Page', () => {
         }
       }
     ]
-    const { findByText } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
-    const element = findByText(/404 error/i)
-    await waitFor(() => expect(element).toBeTruthy())
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 })
