@@ -2,6 +2,7 @@ import React from 'react'
 import withQueryLoader from '../containers/withQueryLoader'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { useQuery } from '@apollo/react-hooks'
+import Error from '../components/Error'
 
 jest.mock('@apollo/react-hooks')
 
@@ -24,14 +25,18 @@ describe('withQueryLoader HOC container', () => {
     ).toEqual(<Component queryData={{ a: 1 }} title="test" />)
   })
 
-  test('Should return No data when done loading and no data is present', () => {
+  test('Should return Error page when done loading and no data is present', () => {
     useQuery.mockReturnValue({ loading: false, data: null })
     const Component = () => {
       return <h1>Component</h1>
     }
 
     expect(withQueryLoader({ query: null }, Component)()).toEqual(
-      <h1>No Data...</h1>
+      <Error
+        title="Internal server error"
+        message="No data"
+        src="/500.png"
+      ></Error>
     )
   })
 })

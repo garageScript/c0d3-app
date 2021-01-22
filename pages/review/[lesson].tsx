@@ -43,6 +43,10 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     router.push('/login')
     return null
   }
+  if (!lessons.map((l: Lesson) => l.id.toString()).includes(currentlessonId)) {
+    router.replace('/404')
+    return <LoadingSpinner />
+  }
   const lessonSubmissions: SubmissionData[] = data
     ? data.submissions.filter(
         (submission: SubmissionData) =>

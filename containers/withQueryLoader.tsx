@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { DocumentNode } from 'apollo-boost'
 import LoadingSpinner from '../components/LoadingSpinner'
+import Error from '../components/Error'
 
 type QueryProps = {
   query: DocumentNode
@@ -23,8 +24,13 @@ const withQueryLoader = <T extends {}>(
   if (data) {
     return <Component queryData={data} {...props} />
   }
-
-  return <h1>No Data...</h1>
+  return (
+    <Error
+      title="Internal server error"
+      message="No data"
+      src="/500.png"
+    ></Error>
+  )
 }
 
 export default withQueryLoader

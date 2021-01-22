@@ -5,6 +5,9 @@ import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+import { GraphQLError } from 'graphql'
+import Router from 'next/router'
+Router.router = { push: jest.fn() }
 
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {
@@ -39,13 +42,13 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { findByRole } = render(
+    const { findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    const element = await findByRole('heading', { name: /error/i })
+    const element = await findByText(/Internal server error/i)
     expect(element).toBeTruthy()
   })
 
@@ -63,13 +66,13 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { findByRole } = render(
+    const { findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    const element = await findByRole('heading', { name: /bad data/i })
+    const element = await findByText(/Internal server error/i)
     expect(element).toBeTruthy()
   })
 
@@ -148,5 +151,22 @@ describe('Curriculum Page', () => {
     await waitFor(() => getByRole('link', { name: 'C0D3' }))
 
     await waitFor(() => expect(container).toMatchSnapshot())
+  })
+  test('Should return to login page if unauthorized', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          errors: [new GraphQLError("Cannot read property 'id' of null")]
+        }
+      }
+    ]
+    const { findByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+    const element = findByText(/404 error/i)
+    await waitFor(() => expect(element).toBeTruthy())
   })
 })
