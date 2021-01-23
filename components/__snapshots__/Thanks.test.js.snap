@@ -10,7 +10,7 @@ exports[`Thanks Component should call callback function when done button is clic
       src="/curriculumAssets/icons/success.svg"
     />
     <h2
-      class="mt-4 mb-4 pt-3 pb-3 font-weight-bold"
+      class="mt-4 mb-4 pt-3 pb-3 font-weight-bold text-center"
     >
       Thanks for letting us know!
     </h2>
