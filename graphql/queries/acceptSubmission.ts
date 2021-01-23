@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const ACCEPT_SUBMISSION = gql`
   mutation acceptSubmission($submissionId: String!, $comment: String!) {

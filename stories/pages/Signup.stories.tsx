@@ -1,6 +1,6 @@
 import * as React from 'react'
 import SignupPage, { Signup } from '../../pages/signup'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 
 export default {

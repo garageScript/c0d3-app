@@ -1,7 +1,7 @@
 import React from 'react'
 import { addParameters } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import Layout from '../../components/Layout'
 

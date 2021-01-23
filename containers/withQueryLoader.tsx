@@ -1,6 +1,5 @@
+import { useQuery, DocumentNode } from '@apollo/client'
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
-import { DocumentNode } from 'apollo-boost'
 import LoadingSpinner from '../components/LoadingSpinner'
 
 type QueryProps = {

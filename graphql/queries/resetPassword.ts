@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const RESET_PASSWORD = gql`
   mutation reqPwReset($userOrEmail: String!) {

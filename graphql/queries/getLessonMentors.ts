@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const LESSON_MENTORS = gql`
   query lessonMentors($lessonId: String!) {

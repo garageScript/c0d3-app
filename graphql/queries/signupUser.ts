@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const SIGNUP_USER = gql`
   mutation signup(
