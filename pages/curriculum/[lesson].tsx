@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import Error from '../../components/Error'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
@@ -15,10 +16,20 @@ import _ from 'lodash'
 
 const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
-  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
-  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
+  if (!session || !lessons || !alerts) {
+    return (
+      <Error title="Internal server error" message="Bad data" src="/500.png" />
+    )
+  }
+  if (
+    !lessons.find((lesson: Lesson) => lesson.id.toString() === currentlessonId)
+  ) {
+    return <Error title="404 error" message="Page not found" src="/404.png" />
+  }
+  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const currentLesson: Lesson | undefined = lessons.find(
     (lesson: Lesson) => lesson.id.toString() === currentlessonId
   )

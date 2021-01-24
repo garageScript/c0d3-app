@@ -1880,21 +1880,23 @@ Array [
             >
               No data
             </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3"
-              href="/"
+            <button
+              className="btn bg-primary m-1 btn-lg"
               onClick={[Function]}
-              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "color": "#fff",
+                }
+              }
             >
               Back
-            </a>
+            </button>
           </div>
         </div>
         <div
           className="col-sm-9"
         >
           <img
-            alt=""
             className="mb-3 img-fluid"
             src="/500.png"
           />
@@ -1984,21 +1986,23 @@ Array [
             >
               404 error
             </div>
-            <a
-              className="btn btn-primary py-3 px-5 mt-3"
-              href="/"
+            <button
+              className="btn bg-primary m-1 btn-lg"
               onClick={[Function]}
-              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "color": "#fff",
+                }
+              }
             >
               Back
-            </a>
+            </button>
           </div>
         </div>
         <div
           className="col-sm-9"
         >
           <img
-            alt=""
             className="mb-3 img-fluid"
             src="/404.png"
           />

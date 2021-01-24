@@ -10,6 +10,7 @@ import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
 import { AppData } from '../../@types/app'
+import Error from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -40,12 +41,16 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     return <LoadingSpinner />
   }
   if (!session) {
-    router.push('/login')
-    return null
+    //router.push('/login')
+    //return null
+    return (
+      <Error title="Internal server error" message="Bad data" src="/500.png" />
+    )
   }
-  if (!lessons.map((l: Lesson) => l.id.toString()).includes(currentlessonId)) {
-    router.replace('/404')
-    return <LoadingSpinner />
+  if (
+    !lessons.find((lesson: Lesson) => lesson.id.toString() === currentlessonId)
+  ) {
+    return <Error title="404 error" message="Page not found" src="/404.png" />
   }
   const lessonSubmissions: SubmissionData[] = data
     ? data.submissions.filter(

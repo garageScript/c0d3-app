@@ -25,11 +25,7 @@ const withQueryLoader = <T extends {}>(
     return <Component queryData={data} {...props} />
   }
   return (
-    <Error
-      title="Internal server error"
-      message="No data"
-      src="/500.png"
-    ></Error>
+    <Error title="Internal server error" message="No data" src="/500.png" />
   )
 }
 

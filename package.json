@@ -8,10 +8,11 @@
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
     "autofix": "eslint . --ext .js --ext .ts --ext .tsx --fix && svgo public/*.svg && svgo assets/**/*.svg",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
-    "build-storybook": "build-storybook -c .storybook -s ./public",
+    "build-storybook": "build-storybook -s ./public",
     "test": "jest --coverage",
     "type-check": "tsc",
-    "generate": "graphql-codegen --config codegen.yml"
+    "generate": "graphql-codegen --config codegen.yml",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "@apollo/react-components": "^3",
@@ -19,6 +20,7 @@
     "@apollo/react-hooks": "^3",
     "@apollo/react-testing": "^3",
     "@sentry/browser": "^5",
+    "@storybook/storybook-deployer": "^2.8.7",
     "@zeit/next-sass": "^1",
     "apollo-boost": "^0",
     "apollo-client": "^2",
@@ -92,6 +94,7 @@
     "babel-plugin-inline-react-svg": "^1",
     "babel-plugin-prismjs": "^2",
     "babel-preset-react-app": "^10",
+    "chromatic": "^5.6.1",
     "eslint": "^7",
     "eslint-config-prettier": "^7",
     "eslint-plugin-prettier": "^3",

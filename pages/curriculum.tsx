@@ -29,16 +29,12 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
         title="Internal server error"
         message={error.message}
         src="/500.png"
-      ></Error>
+      />
     )
   }
   if (!session || !lessons || !alerts) {
     return (
-      <Error
-        title="Internal server error"
-        message="Bad data"
-        src="/500.png"
-      ></Error>
+      <Error title="Internal server error" message="Bad data" src="/500.png" />
     )
   }
 
