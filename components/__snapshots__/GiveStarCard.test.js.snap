@@ -49,1681 +49,6 @@ exports[`GiveStarCard Component should display \`already given star to\` display
 </body>
 `;
 
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 1`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
-        >
-          <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
-          >
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                never wanna
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                enlightenedBanana
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                give you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                seriousToiletPaper
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                let you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                pencilSaver
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                up down
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                importantBagel
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax on
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bagelOfAngels
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax off
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                l0lCakes
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                potato potatus
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                jammedPrinter
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bobo bobobo
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                trololololololololololololo
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                sauce hunter
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                hingaD1nGADurgen
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                incredible hulk
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                convincingLampPost
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long long
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                64bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                32bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                signed int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                16bitsMin
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 2`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
-        >
-          <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
-          >
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 3`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
-        >
-          <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
-          >
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 4`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="position-absolute left-0"
-        >
-          <img
-            class=".img-fluid btn"
-            data-testid="backButton"
-            src="/curriculumAssets/icons/left-arrow.svg"
-          />
-        </div>
-        <div
-          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
-        >
-          <h3
-            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
-          >
-            You are giving a Star to
-          </h3>
-          <h3
-            class="font-italic long mb-4 pl-5 pr-5"
-          >
-            bob
-            !
-          </h3>
-          <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
-            placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
-          />
-          <div
-            class=""
-          >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 5`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
-        >
-          <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
-          >
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                never wanna
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                enlightenedBanana
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                give you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                seriousToiletPaper
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                let you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                pencilSaver
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                up down
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                importantBagel
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax on
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bagelOfAngels
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax off
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                l0lCakes
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                potato potatus
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                jammedPrinter
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bobo bobobo
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                trololololololololololololo
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                sauce hunter
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                hingaD1nGADurgen
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                incredible hulk
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                convincingLampPost
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long long
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                64bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                32bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                signed int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                16bitsMin
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 6`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
-        >
-          <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
-          >
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                never wanna
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                enlightenedBanana
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                give you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                seriousToiletPaper
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                let you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                pencilSaver
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                up down
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                importantBagel
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax on
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bagelOfAngels
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax off
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                l0lCakes
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                potato potatus
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                jammedPrinter
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bobo bobobo
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                trololololololololololololo
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                sauce hunter
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                hingaD1nGADurgen
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                incredible hulk
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                convincingLampPost
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long long
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                64bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                32bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
-              <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
-              >
-                <h5
-                  class="mt-0 mb-0"
-                >
-                  Send Star
-                </h5>
-              </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                signed int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                16bitsMin
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 7`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="position-absolute left-0"
-        >
-          <img
-            class=".img-fluid btn"
-            data-testid="backButton"
-            src="/curriculumAssets/icons/left-arrow.svg"
-          />
-        </div>
-        <div
-          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
-        >
-          <h3
-            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
-          >
-            You are giving a Star to
-          </h3>
-          <h3
-            class="font-italic long mb-4 pl-5 pr-5"
-          >
-            bob
-            !
-          </h3>
-          <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
-            placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
-          />
-          <div
-            class=""
-          >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 8`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="position-absolute left-0"
-        >
-          <img
-            class=".img-fluid btn"
-            data-testid="backButton"
-            src="/curriculumAssets/icons/left-arrow.svg"
-          />
-        </div>
-        <div
-          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
-        >
-          <h3
-            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
-          >
-            You are giving a Star to
-          </h3>
-          <h3
-            class="font-italic long mb-4 pl-5 pr-5"
-          >
-            bob
-            !
-          </h3>
-          <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
-            placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
-          />
-          <div
-            class=""
-          >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`GiveStarCard Component should display SearchMentor component if starGiven prop equals empty string 9`] = `
-<body
-  class="modal-open"
-  style="padding-right: 0px;"
->
-  <div
-    aria-hidden="true"
-  />
-  <div
-    class="fade modal-backdrop show"
-  />
-  <div
-    aria-modal="true"
-    class="fade modal show"
-    role="dialog"
-    style="display: block;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog medium"
-    >
-      <div
-        class="modal-content"
-      >
-        <img
-          class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
-        />
-        <div
-          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
-        >
-          <img
-            class="h-25 w-25"
-            src="/curriculumAssets/icons/success.svg"
-          />
-          <h2
-            class="mt-4 mb-4 pt-3 pb-3 font-weight-bold"
-          >
-            Thanks for letting us know!
-          </h2>
-          <button
-            class="btn bg-primary btn-lg"
-            style="color: rgb(255, 255, 255);"
-          >
-            Done
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`GiveStarCard Component should display error message when giving a star fails 1`] = `
 <body
   class="modal-open"
@@ -1753,383 +78,387 @@ exports[`GiveStarCard Component should display error message when giving a star 
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
+          class="search"
         >
           <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
             >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  never wanna
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  enlightenedBanana
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                never wanna
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                enlightenedBanana
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  give you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  seriousToiletPaper
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                give you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                seriousToiletPaper
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  let you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  pencilSaver
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                let you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                pencilSaver
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  up down
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  importantBagel
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                up down
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                importantBagel
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax on
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bagelOfAngels
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax on
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bagelOfAngels
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax off
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  l0lCakes
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax off
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                l0lCakes
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  potato potatus
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  jammedPrinter
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                potato potatus
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                jammedPrinter
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bobo bobobo
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  trololololololololololololo
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bobo bobobo
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                trololololololololololololo
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  sauce hunter
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  hingaD1nGADurgen
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                sauce hunter
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                hingaD1nGADurgen
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  incredible hulk
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  convincingLampPost
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                incredible hulk
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                convincingLampPost
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long long
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  64bitsMin
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long long
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                64bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  32bitsMin
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                32bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  signed int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  16bitsMin
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                signed int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                16bitsMin
-              </span>
             </div>
           </div>
         </div>
@@ -2168,383 +497,387 @@ exports[`GiveStarCard Component should display error message when giving a star 
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
-        >
-          <h4
-            class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
-          >
-            Who helped you the most?
-          </h4>
-          <input
-            class="form-control-lg form-control font-weight-light h6"
-            data-testid="giveStarInput"
-          />
-        </div>
-        <div
-          class="pt-4 mentorsList"
+          class="search"
         >
           <div
-            class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2"
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
             >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bob bafet
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bob
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  never wanna
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  enlightenedBanana
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                never wanna
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                enlightenedBanana
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  give you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  seriousToiletPaper
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                give you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                seriousToiletPaper
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  let you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  pencilSaver
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                let you
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                pencilSaver
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  up down
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  importantBagel
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                up down
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                importantBagel
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax on
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bagelOfAngels
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax on
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                bagelOfAngels
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax off
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  l0lCakes
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                wax off
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                l0lCakes
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  potato potatus
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  jammedPrinter
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                potato potatus
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                jammedPrinter
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bobo bobobo
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  trololololololololololololo
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                bobo bobobo
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                trololololololololololololo
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  sauce hunter
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  hingaD1nGADurgen
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                sauce hunter
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                hingaD1nGADurgen
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  incredible hulk
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  convincingLampPost
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                incredible hulk
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                convincingLampPost
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long long
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  64bitsMin
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long long
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                64bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  32bitsMin
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                long int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                32bitsMin
-              </span>
-            </div>
-            <div
-              class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
-            >
               <div
-                class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
               >
-                <h5
-                  class="mt-0 mb-0"
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
                 >
-                  Send Star
-                </h5>
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  signed int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  16bitsMin
+                </span>
               </div>
-              <h6
-                class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
-              >
-                signed int
-              </h6>
-              <span
-                class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
-              >
-                @
-                16bitsMin
-              </span>
             </div>
           </div>
         </div>
@@ -2663,6 +996,1774 @@ exports[`GiveStarCard Component should display error message when giving a star 
           >
             Error sending star, please try again
           </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 1`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="search"
+        >
+          <div
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
+          >
+            <div
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+            >
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  never wanna
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  enlightenedBanana
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  give you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  seriousToiletPaper
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  let you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  pencilSaver
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  up down
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  importantBagel
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax on
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bagelOfAngels
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax off
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  l0lCakes
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  potato potatus
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  jammedPrinter
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bobo bobobo
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  trololololololololololololo
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  sauce hunter
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  hingaD1nGADurgen
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  incredible hulk
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  convincingLampPost
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long long
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  64bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  32bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  signed int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  16bitsMin
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 2`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="search"
+        >
+          <div
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
+          >
+            <div
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+            >
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 3`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="search"
+        >
+          <div
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
+          >
+            <div
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+            >
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 4`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="position-absolute left-0"
+        >
+          <img
+            class=".img-fluid btn"
+            data-testid="backButton"
+            src="/curriculumAssets/icons/left-arrow.svg"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
+        >
+          <h3
+            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
+          >
+            You are giving a Star to
+          </h3>
+          <h3
+            class="font-italic long mb-4 pl-5 pr-5"
+          >
+            bob
+            !
+          </h3>
+          <textarea
+            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            placeholder="Give a comment along with your Star!"
+            style="height: 40%;"
+          />
+          <div
+            class=""
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Give Star!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 5`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="search"
+        >
+          <div
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
+          >
+            <div
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+            >
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  never wanna
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  enlightenedBanana
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  give you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  seriousToiletPaper
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  let you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  pencilSaver
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  up down
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  importantBagel
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax on
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bagelOfAngels
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax off
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  l0lCakes
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  potato potatus
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  jammedPrinter
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bobo bobobo
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  trololololololololololololo
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  sauce hunter
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  hingaD1nGADurgen
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  incredible hulk
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  convincingLampPost
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long long
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  64bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  32bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  signed int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  16bitsMin
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 6`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="search"
+        >
+          <div
+            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
+          >
+            <div
+              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+            >
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  never wanna
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  enlightenedBanana
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  give you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  seriousToiletPaper
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  let you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  pencilSaver
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  up down
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  importantBagel
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax on
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bagelOfAngels
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax off
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  l0lCakes
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  potato potatus
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  jammedPrinter
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bobo bobobo
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  trololololololololololololo
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  sauce hunter
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  hingaD1nGADurgen
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  incredible hulk
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  convincingLampPost
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long long
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  64bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  32bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  signed int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  16bitsMin
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 7`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="position-absolute left-0"
+        >
+          <img
+            class=".img-fluid btn"
+            data-testid="backButton"
+            src="/curriculumAssets/icons/left-arrow.svg"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
+        >
+          <h3
+            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
+          >
+            You are giving a Star to
+          </h3>
+          <h3
+            class="font-italic long mb-4 pl-5 pr-5"
+          >
+            bob
+            !
+          </h3>
+          <textarea
+            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            placeholder="Give a comment along with your Star!"
+            style="height: 40%;"
+          />
+          <div
+            class=""
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Give Star!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 8`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="position-absolute left-0"
+        >
+          <img
+            class=".img-fluid btn"
+            data-testid="backButton"
+            src="/curriculumAssets/icons/left-arrow.svg"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
+        >
+          <h3
+            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
+          >
+            You are giving a Star to
+          </h3>
+          <h3
+            class="font-italic long mb-4 pl-5 pr-5"
+          >
+            bob
+            !
+          </h3>
+          <textarea
+            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            placeholder="Give a comment along with your Star!"
+            style="height: 40%;"
+          />
+          <div
+            class=""
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Give Star!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 9`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="position-absolute left-0"
+        >
+          <img
+            class=".img-fluid btn"
+            data-testid="backButton"
+            src="/curriculumAssets/icons/left-arrow.svg"
+          />
+        </div>
+        <div
+          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
+        >
+          <h3
+            class="mt-3 pt-1 text-break text-center pl-5 pr-5"
+          >
+            You are giving a Star to
+          </h3>
+          <h3
+            class="font-italic long mb-4 pl-5 pr-5"
+          >
+            bob
+            !
+          </h3>
+          <textarea
+            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            placeholder="Give a comment along with your Star!"
+            style="height: 40%;"
+          />
+          <div
+            class=""
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Give Star!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`GiveStarCard Component should successfully search for and give mentor a Star 10`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/curriculumAssets/icons/exit.svg"
+        />
+        <div
+          class="d-flex justify-content-center align-items-center flex-column modal-height-med"
+        >
+          <img
+            class="h-25 w-25"
+            src="/curriculumAssets/icons/success.svg"
+          />
+          <h2
+            class="mt-4 mb-4 pt-3 pb-3 font-weight-bold text-center"
+          >
+            Thanks for letting us know!
+          </h2>
+          <button
+            class="btn bg-primary btn-lg"
+            style="color: rgb(255, 255, 255);"
+          >
+            Done
+          </button>
         </div>
       </div>
     </div>

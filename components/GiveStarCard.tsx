@@ -59,10 +59,10 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
       mentorId={parseInt(id as string)}
       setMentor={setMentor}
     />
-  ))
+    ))
 
   return (
-    <>
+    <div className="search">
       <div className="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4">
         <h4 className="font-weight-bold mt-2 mb-4 pt-2 pb-1">
           Who helped you the most?
@@ -70,15 +70,15 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
         <input
           data-testid="giveStarInput"
           onChange={e => setSearch(e.target.value)}
-          className="form-control-lg form-control font-weight-light h6"
+          className="pb-4 mb-1 form-control-lg form-control font-weight-light"
         />
       </div>
-      <div className="pt-4 mentorsList">
-        <div className="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between mb-2">
+      <div className="pt-4 pb-3 mentorsList">
+        <div className="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between">
           {mentorsList}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -169,17 +169,17 @@ const StarCard: React.FC<StarCardProps> = ({
   let display = <SearchMentor setMentor={setMentor} mentors={mentors} />
   if (done) {
     display = <Thanks close={handleClose} />
-  } else if (mentorId && username) {
-    display = (
-      <GiveStar
-        lessonId={lessonId}
-        mentorId={mentorId}
-        username={username}
-        goBack={() => setMentor({})}
-        setDone={setDone}
-      />
-    )
-  }
+    } else if (mentorId && username) {
+      display = (
+        <GiveStar
+          lessonId={lessonId}
+          mentorId={mentorId}
+          username={username}
+          goBack={() => setMentor({})}
+          setDone={setDone}
+        />
+        )
+    }
 
   return (
     <ModalCard close={handleClose} show={show}>
@@ -218,5 +218,5 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
       getParams: () => ({ variables: { lessonId } })
     },
     props => <StarCard {...(props as StarCardProps)} />
-  )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
+    )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
 }

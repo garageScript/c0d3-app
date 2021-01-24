@@ -28,6 +28,12 @@ const clickOnMentor = getByRole => {
   fireEvent.click(mentor)
   expect(document.body).toMatchSnapshot()
 }
+
+const giveComment = (getByRole) => {
+  const commentBox = getByRole('textbox')
+  fireEvent.change(commentBox, { target: { value: '1' } })
+}
+
 const giveStar = getByRole => fireEvent.click(getByRole('button'))
 
 describe('GiveStarCard Component', () => {
@@ -48,12 +54,12 @@ describe('GiveStarCard Component', () => {
     expect(document.body).toMatchSnapshot()
   })
 
-  test('should display SearchMentor component if starGiven prop equals empty string', async () => {
+  test('should successfully search for and give mentor a Star', async () => {
     mockProps.starGiven = ''
     const mocks = [mockSetStarMutatation, mockGetLessonMentors]
     const { getByRole, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <GiveStarCard {...mockProps} />
+      <GiveStarCard {...mockProps} />
       </MockedProvider>
     )
     await waitFor(() => getByText('Who helped you the most?'))
@@ -75,18 +81,16 @@ describe('GiveStarCard Component', () => {
     expect(document.body).toMatchSnapshot()
 
     clickOnMentor(getByRole)
+    expect(document.body).toMatchSnapshot()
 
-    // give comment
-    const commentBox = getByRole('textbox')
-    fireEvent.change(commentBox, { target: { value: '1' } })
+    // give comment 
+    giveComment(getByRole)
     expect(document.body).toMatchSnapshot()
 
     // `thanks` display shows if there is no error after pressing Give Star button
     giveStar(getByRole)
     await waitFor(() =>
-      getByRole('heading', {
-        name: 'Thanks for letting us know!'
-      })
+      getByRole('heading', { name: 'Thanks for letting us know!' })
     )
     expect(document.body).toMatchSnapshot()
 
@@ -104,18 +108,17 @@ describe('GiveStarCard Component', () => {
     const mocks = [mockGetLessonMentors, setStarError]
     const { getByRole, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <GiveStarCard {...mockProps} />
+      <GiveStarCard {...mockProps} />
       </MockedProvider>
     )
     await waitFor(() => getByText('Who helped you the most?'))
     expect(document.body).toMatchSnapshot()
 
     clickOnMentor(getByRole)
+    giveComment(getByRole)
     giveStar(getByRole)
     await waitFor(() =>
-      getByRole('heading', {
-        name: 'Error sending star, please try again'
-      })
+      getByRole('heading', { name: 'Error sending star, please try again' })
     )
     expect(document.body).toMatchSnapshot()
   })

@@ -1,56 +1,76 @@
-.mentor {
-	background: white;
-	height: 86px; 
-	width: 48.312%; 
-	cursor: pointer;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
-	
-	span {
-		font-size: 14px;
-		z-index: 1;
-	}
+@media only screen and (max-width: 812px) {
+  .mentor {
+    width: 100% !important;
+  }
 
-	h6 {
-		z-index: 1;
-	}
-	
-	&:hover {
-		.sendStar {
-			z-index: 2;
-  	  display: flex;
-			background: rgba(84, 56, 220, .9);
-			h5 {
-				display: block;
-			}
-		}
-	}
+  .search {
+    display: flex !important;
+    flex-direction: column;
+    height: 79vh !important;
+
+    h4 {
+      margin-bottom: 0 !important;
+    }
+
+    input {
+      margin-top: .5rem !important;
+    }
+  }
+}
+
+.mentor {
+  background: white;
+  height: 86px; 
+  width: 48.312%; 
+  cursor: pointer;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
+
+  span {
+    font-size: 14px;
+    z-index: 1;
+  }
+
+  h6 {
+    z-index: 1;
+  }
+
+  &:hover {
+    .sendStar {
+      z-index: 2;
+      display: flex;
+      background: rgba(84, 56, 220, .9);
+      h5 {
+        display: block;
+      }
+    }
+  }
 }
 
 .long {
-	width: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 .mentorsList {
-	background: rgba(84, 56, 220, 0.03);
-	height: 560px;
-	overflow-y: scroll; /* Add the ability to scroll */
+  background: rgba(84, 56, 220, 0.03);
+  height: 65.8vh;
+  overflow-y: scroll; /* Add the ability to scroll */
   -ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
+  scrollbar-width: none;  /* Firefox */
 
-	&:-webkit-scrollbar {
- 		display: none;
-	}
+  &:-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .sendStar {
-	h5 {
-		display: none;
-	}
-	width: 100%;
-	top: 0;
-	left: 0;
+  h5 {
+    display: none;
+  }
+  width: 100%;
+  top: 0;
+  left: 0;
 }
