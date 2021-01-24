@@ -19,7 +19,6 @@
     "@apollo/react-hooks": "^3",
     "@apollo/react-testing": "^3",
     "@sentry/browser": "^5",
-    "@storybook/storybook-deployer": "^2.8.7",
     "@zeit/next-sass": "^1",
     "apollo-boost": "^0",
     "apollo-client": "^2",
