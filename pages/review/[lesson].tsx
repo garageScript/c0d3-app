@@ -41,8 +41,6 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     return <LoadingSpinner />
   }
   if (!session) {
-    //router.push('/login')
-    //return null
     return (
       <Error title="Internal server error" message="Bad data" src="/500.png" />
     )

@@ -8,11 +8,10 @@
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
     "autofix": "eslint . --ext .js --ext .ts --ext .tsx --fix && svgo public/*.svg && svgo assets/**/*.svg",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
-    "build-storybook": "build-storybook -s ./public",
+    "build-storybook": "build-storybook -c .storybook -s ./public",
     "test": "jest --coverage",
     "type-check": "tsc",
-    "generate": "graphql-codegen --config codegen.yml",
-    "deploy-storybook": "storybook-to-ghpages"
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "@apollo/react-components": "^3",

@@ -1,7 +1,7 @@
 import React from 'react'
 import Error from './Error'
 import { MockedProvider } from '@apollo/react-testing'
-import { render, fireEvent, waitFor} from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 jest.mock('next/router')
 import Router from 'next/router'
 
@@ -13,7 +13,7 @@ Object.defineProperty(global.window, 'location', {
   value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
 })
 
-Router.push.mockImplementation((args)=>window.location.pathname=args)
+Router.push.mockImplementation(args => (window.location.pathname = args))
 
 describe('Error component', () => {
   it('button should return to home on press', async () => {

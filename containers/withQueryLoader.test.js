@@ -32,11 +32,7 @@ describe('withQueryLoader HOC container', () => {
     }
 
     expect(withQueryLoader({ query: null }, Component)()).toEqual(
-      <Error
-        title="Internal server error"
-        message="No data"
-        src="/500.png"
-      ></Error>
+      <Error title="Internal server error" message="No data" src="/500.png" />
     )
   })
 })
