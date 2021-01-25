@@ -1856,7 +1856,7 @@ Array [
           className="d-flex col-sm-3 align-items-center justify-content-center"
         >
           <div
-            className="text-center"
+            className="text-center mt-3"
           >
             <div
               style={
@@ -1880,17 +1880,18 @@ Array [
             >
               No data
             </div>
-            <button
-              className="btn bg-primary m-1 btn-lg"
+            <a
+              className="btn btn-primary py-3 px-5 mt-3"
+              href="/"
               onClick={[Function]}
-              style={
-                Object {
-                  "color": "#fff",
-                }
-              }
+              onMouseEnter={[Function]}
             >
-              Back
-            </button>
+              <h3
+                className="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
           </div>
         </div>
         <div
@@ -1962,7 +1963,7 @@ Array [
           className="d-flex col-sm-3 align-items-center justify-content-center"
         >
           <div
-            className="text-center"
+            className="text-center mt-3"
           >
             <div
               style={
@@ -1986,17 +1987,18 @@ Array [
             >
               404 error
             </div>
-            <button
-              className="btn bg-primary m-1 btn-lg"
+            <a
+              className="btn btn-primary py-3 px-5 mt-3"
+              href="/"
               onClick={[Function]}
-              style={
-                Object {
-                  "color": "#fff",
-                }
-              }
+              onMouseEnter={[Function]}
             >
-              Back
-            </button>
+              <h3
+                className="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
           </div>
         </div>
         <div

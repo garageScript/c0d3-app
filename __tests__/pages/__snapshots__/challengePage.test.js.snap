@@ -523,7 +523,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           class="d-flex col-sm-3 align-items-center justify-content-center"
         >
           <div
-            class="text-center"
+            class="text-center mt-3"
           >
             <div
               style="color: rgb(41, 41, 41); font-size: 1.5rem;"
@@ -537,12 +537,16 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             >
               Page not found
             </div>
-            <button
-              class="btn bg-primary m-1 btn-lg"
-              style="color: rgb(255, 255, 255);"
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
             >
-              Back
-            </button>
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
           </div>
         </div>
         <div

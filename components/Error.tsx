@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from './Layout'
-import { Button } from './theme/Button'
-import Router from 'next/router'
+import NavLink from './NavLink'
 import { Text } from './theme/Text'
 type ErrorProps = {
   title: string
@@ -14,20 +13,14 @@ const Error: React.FC<ErrorProps> = ({ title, message, src }) => {
       <div className="container">
         <div className="row">
           <div className="d-flex col-sm-3 align-items-center justify-content-center">
-            <div className="text-center">
+            <div className="text-center mt-3">
               <Text component="div" size="xl" bold={true}>
                 {title}
               </Text>
               <Text size="md">{message}</Text>
-              <Button
-                color="white"
-                size="lg"
-                m="1"
-                type="primary"
-                onClick={() => Router.push('/')}
-              >
-                Back
-              </Button>
+              <NavLink path="/" className="btn btn-primary py-3 px-5 mt-3">
+                <h3 className="font-weight-bold">Back</h3>
+              </NavLink>
             </div>
           </div>
           <div className="col-sm-9">
