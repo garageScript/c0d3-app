@@ -78,10 +78,10 @@ exports[`GiveStarCard Component should display error message when giving a star 
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -497,10 +497,10 @@ exports[`GiveStarCard Component should display error message when giving a star 
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1027,10 +1027,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1446,10 +1446,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1529,10 +1529,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1680,10 +1680,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -2099,10 +2099,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search d-flex flex-column"
+          class="chooseMentor d-flex flex-column"
         >
           <div
-            class="pt-2 pt-4 pl-5 pr-5 pb-4 border-bottom"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
