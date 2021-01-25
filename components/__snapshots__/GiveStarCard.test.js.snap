@@ -78,10 +78,10 @@ exports[`GiveStarCard Component should display error message when giving a star 
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -89,7 +89,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -97,7 +97,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -497,10 +497,10 @@ exports[`GiveStarCard Component should display error message when giving a star 
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -508,7 +508,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -516,7 +516,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -939,20 +939,15 @@ exports[`GiveStarCard Component should display error message when giving a star 
             !
           </h3>
           <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            class="mb-4 border-bottom form-control w-75 d-inline-block commentBox"
             placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
           />
-          <div
-            class=""
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
           >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
+            Give Star!
+          </button>
         </div>
       </div>
     </div>
@@ -1032,10 +1027,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1043,7 +1038,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -1051,7 +1046,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -1451,10 +1446,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1462,7 +1457,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -1470,7 +1465,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -1534,10 +1529,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1545,7 +1540,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -1553,7 +1548,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -1640,20 +1635,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             !
           </h3>
           <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            class="mb-4 border-bottom form-control w-75 d-inline-block commentBox"
             placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
           />
-          <div
-            class=""
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
           >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
+            Give Star!
+          </button>
         </div>
       </div>
     </div>
@@ -1690,10 +1680,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -1701,7 +1691,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -1709,7 +1699,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -2109,10 +2099,10 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
           src="/curriculumAssets/icons/exit.svg"
         />
         <div
-          class="search"
+          class="search d-flex flex-column"
         >
           <div
-            class="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4"
+            class="pt-2 pt-4 pl-5 pr-5 pb-4"
           >
             <h4
               class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
@@ -2120,7 +2110,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
               Who helped you the most?
             </h4>
             <input
-              class="pb-4 mb-1 form-control-lg form-control font-weight-light"
+              class="pb-4 form-control-lg form-control font-weight-light"
               data-testid="giveStarInput"
             />
           </div>
@@ -2128,7 +2118,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             class="pt-4 pb-3 mentorsList"
           >
             <div
-              class="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between"
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
             >
               <div
                 class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
@@ -2551,20 +2541,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             !
           </h3>
           <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            class="mb-4 border-bottom form-control w-75 d-inline-block commentBox"
             placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
           />
-          <div
-            class=""
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
           >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
+            Give Star!
+          </button>
         </div>
       </div>
     </div>
@@ -2624,20 +2609,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             !
           </h3>
           <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            class="mb-4 border-bottom form-control w-75 d-inline-block commentBox"
             placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
           />
-          <div
-            class=""
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
           >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
+            Give Star!
+          </button>
         </div>
       </div>
     </div>
@@ -2697,20 +2677,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             !
           </h3>
           <textarea
-            class="mb-4 border-bottom form-control w-75 d-inline-block"
+            class="mb-4 border-bottom form-control w-75 d-inline-block commentBox"
             placeholder="Give a comment along with your Star!"
-            style="height: 40%;"
           />
-          <div
-            class=""
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
           >
-            <button
-              class="btn bg-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              Give Star!
-            </button>
-          </div>
+            Give Star!
+          </button>
         </div>
       </div>
     </div>

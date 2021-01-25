@@ -62,19 +62,19 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
   ))
 
   return (
-    <div className="search">
-      <div className="d-flex flex-column pt-2 pt-4 pl-5 pr-5 pb-4">
+    <div className="search d-flex flex-column">
+      <div className="pt-2 pt-4 pl-5 pr-5 pb-4">
         <h4 className="font-weight-bold mt-2 mb-4 pt-2 pb-1">
           Who helped you the most?
         </h4>
         <input
           data-testid="giveStarInput"
           onChange={e => setSearch(e.target.value)}
-          className="pb-4 mb-1 form-control-lg form-control font-weight-light"
+          className="pb-4 form-control-lg form-control font-weight-light"
         />
       </div>
       <div className="pt-4 pb-3 mentorsList">
-        <div className="row mr-5 ml-5 mt-1 d-flex flex-wrap justify-content-between">
+        <div className="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between">
           {mentorsList}
         </div>
       </div>
@@ -129,16 +129,13 @@ const GiveStar: React.FC<GiveStarProps> = ({
         </h3>
         <h3 className="font-italic long mb-4 pl-5 pr-5">{username}!</h3>
         <textarea
-          style={{ height: '40%' }}
           placeholder="Give a comment along with your Star!"
-          className="mb-4 border-bottom form-control w-75 d-inline-block"
+          className="mb-4 border-bottom form-control w-75 d-inline-block commentBox"
           onChange={e => setComment(e.target.value)}
         />
-        <div className="">
-          <Button type="primary" color="white" onClick={giveStar}>
-            Give Star!
-          </Button>
-        </div>
+        <Button type="primary" color="white" onClick={giveStar}>
+          Give Star!
+        </Button>
       </div>
     </>
   )

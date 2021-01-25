@@ -83,7 +83,6 @@ describe('GiveStarCard Component', () => {
     clickOnMentor(getByRole)
     expect(document.body).toMatchSnapshot()
 
-    // give comment
     giveComment(getByRole)
     expect(document.body).toMatchSnapshot()
 

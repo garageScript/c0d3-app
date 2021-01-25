@@ -4,8 +4,6 @@
   }
 
   .search {
-    display: flex !important;
-    flex-direction: column;
     height: 79vh !important;
 
     h4 {
@@ -44,6 +42,10 @@
       }
     }
   }
+}
+
+.commentBox {
+  height: 40% !important;
 }
 
 .long {
