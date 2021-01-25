@@ -29,7 +29,7 @@ const clickOnMentor = getByRole => {
   expect(document.body).toMatchSnapshot()
 }
 
-const giveComment = (getByRole) => {
+const giveComment = getByRole => {
   const commentBox = getByRole('textbox')
   fireEvent.change(commentBox, { target: { value: '1' } })
 }
@@ -59,7 +59,7 @@ describe('GiveStarCard Component', () => {
     const mocks = [mockSetStarMutatation, mockGetLessonMentors]
     const { getByRole, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-      <GiveStarCard {...mockProps} />
+        <GiveStarCard {...mockProps} />
       </MockedProvider>
     )
     await waitFor(() => getByText('Who helped you the most?'))
@@ -83,7 +83,7 @@ describe('GiveStarCard Component', () => {
     clickOnMentor(getByRole)
     expect(document.body).toMatchSnapshot()
 
-    // give comment 
+    // give comment
     giveComment(getByRole)
     expect(document.body).toMatchSnapshot()
 
@@ -108,7 +108,7 @@ describe('GiveStarCard Component', () => {
     const mocks = [mockGetLessonMentors, setStarError]
     const { getByRole, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-      <GiveStarCard {...mockProps} />
+        <GiveStarCard {...mockProps} />
       </MockedProvider>
     )
     await waitFor(() => getByText('Who helped you the most?'))

@@ -59,7 +59,7 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
       mentorId={parseInt(id as string)}
       setMentor={setMentor}
     />
-    ))
+  ))
 
   return (
     <div className="search">
@@ -169,17 +169,17 @@ const StarCard: React.FC<StarCardProps> = ({
   let display = <SearchMentor setMentor={setMentor} mentors={mentors} />
   if (done) {
     display = <Thanks close={handleClose} />
-    } else if (mentorId && username) {
-      display = (
-        <GiveStar
-          lessonId={lessonId}
-          mentorId={mentorId}
-          username={username}
-          goBack={() => setMentor({})}
-          setDone={setDone}
-        />
-        )
-    }
+  } else if (mentorId && username) {
+    display = (
+      <GiveStar
+        lessonId={lessonId}
+        mentorId={mentorId}
+        username={username}
+        goBack={() => setMentor({})}
+        setDone={setDone}
+      />
+    )
+  }
 
   return (
     <ModalCard close={handleClose} show={show}>
@@ -218,5 +218,5 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
       getParams: () => ({ variables: { lessonId } })
     },
     props => <StarCard {...(props as StarCardProps)} />
-    )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
+  )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
 }
