@@ -2735,6 +2735,97 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/GiveStarCard Already Gave Star 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
+exports[`Storyshots Components/GiveStarCard Basic 1`] = `
+Array [
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Launch demo modal
+  </button>,
+  <button
+    className="btn bg-primary"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Reset star
+  </button>,
+  <h1
+    className="mt-5"
+  >
+    Type in
+    <span
+      className="font-italic"
+    >
+       1 
+    </span>
+    as a
+  </h1>,
+  <h1>
+    comment for the
+  </h1>,
+  <h1>
+    Give Star button to work
+  </h1>,
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots Components/Input Email Input 1`] = `
 <form
   action="#"
