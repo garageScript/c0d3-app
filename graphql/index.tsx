@@ -604,6 +604,16 @@ export type ReqPwResetMutation = { __typename?: 'Mutation' } & {
   >
 }
 
+export type SetStarMutationVariables = Exact<{
+  mentorId: Scalars['Int']
+  lessonId: Scalars['Int']
+  comment?: Maybe<Scalars['String']>
+}>
+
+export type SetStarMutation = { __typename?: 'Mutation' } & {
+  setStar: { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
+}
+
 export type SignupMutationVariables = Exact<{
   firstName: Scalars['String']
   lastName: Scalars['String']
@@ -2846,6 +2856,101 @@ export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<ReqPwRes
 export type ReqPwResetMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ReqPwResetMutation,
   ReqPwResetMutationVariables
+>
+export const SetStarDocument = gql`
+  mutation setStar($mentorId: Int!, $lessonId: Int!, $comment: String) {
+    setStar(mentorId: $mentorId, lessonId: $lessonId, comment: $comment) {
+      success
+    }
+  }
+`
+export type SetStarMutationFn = ApolloReactCommon.MutationFunction<
+  SetStarMutation,
+  SetStarMutationVariables
+>
+export type SetStarComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    SetStarMutation,
+    SetStarMutationVariables
+  >,
+  'mutation'
+>
+
+export const SetStarComponent = (props: SetStarComponentProps) => (
+  <ApolloReactComponents.Mutation<SetStarMutation, SetStarMutationVariables>
+    mutation={SetStarDocument}
+    {...props}
+  />
+)
+
+export type SetStarProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    SetStarMutation,
+    SetStarMutationVariables
+  >
+} &
+  TChildProps
+export function withSetStar<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    SetStarMutation,
+    SetStarMutationVariables,
+    SetStarProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    SetStarMutation,
+    SetStarMutationVariables,
+    SetStarProps<TChildProps, TDataName>
+  >(SetStarDocument, {
+    alias: 'setStar',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useSetStarMutation__
+ *
+ * To run a mutation, you first call `useSetStarMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useSetStarMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [setStarMutation, { data, loading, error }] = useSetStarMutation({
+ *   variables: {
+ *      mentorId: // value for 'mentorId'
+ *      lessonId: // value for 'lessonId'
+ *      comment: // value for 'comment'
+ *   },
+ * });
+ */
+export function useSetStarMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    SetStarMutation,
+    SetStarMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    SetStarMutation,
+    SetStarMutationVariables
+  >(SetStarDocument, baseOptions)
+}
+export type SetStarMutationHookResult = ReturnType<typeof useSetStarMutation>
+export type SetStarMutationResult = ApolloReactCommon.MutationResult<SetStarMutation>
+export type SetStarMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  SetStarMutation,
+  SetStarMutationVariables
 >
 export const SignupDocument = gql`
   mutation signup(
