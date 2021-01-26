@@ -1,7 +1,5 @@
 import withApollo from 'next-with-apollo'
-import { ApolloClient } from '@apollo/client'
-import { createHttpLink } from '@apollo/client'
-import { InMemoryCache } from '@apollo/client'
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
 
 const SERVER_URL = process.env.SERVER_URL
 

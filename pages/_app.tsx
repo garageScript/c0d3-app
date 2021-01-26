@@ -1,10 +1,13 @@
-import { ApolloProvider } from '@apollo/client'
 import React, { useEffect } from 'react'
 // TODO: type the posthog library
 // @ts-ignore
 import posthog from 'posthog-js'
 import withApollo from '../helpers/withApollo'
-import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
+import {
+  ApolloProvider,
+  ApolloClient,
+  NormalizedCacheObject
+} from '@apollo/client'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import '../scss/index.scss'
