@@ -23,14 +23,15 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
       <Error title="Internal server error" message="Bad data" src="/500.png" />
     )
   }
-  if (!lessons.find((lesson: Lesson) => lesson.id === currentlessonId)) {
+  const currentLesson: Lesson | undefined = lessons.find(
+    (lesson: Lesson) => lesson.id === currentlessonId
+  )
+  if (!currentLesson) {
     return <Error title="404 error" message="Page not found" src="/404.png" />
   }
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
-  const currentLesson: Lesson | undefined = lessons.find(
-    (lesson: Lesson) => lesson.id === currentlessonId
-  )
+
   const currentLessonStatus: LessonStatus = lessonStatus.find(
     lessonStatus => lessonStatus.lessonId === currentlessonId
   ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }

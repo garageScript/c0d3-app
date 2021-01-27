@@ -45,7 +45,10 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
       <Error title="Internal server error" message="Bad data" src="/500.png" />
     )
   }
-  if (!lessons.find((lesson: Lesson) => lesson.id === currentlessonId)) {
+  const currentLesson: Lesson | undefined = lessons.find(
+    (lesson: Lesson) => lesson.id === currentlessonId
+  )
+  if (!currentLesson) {
     return <Error title="404 error" message="Page not found" src="/404.png" />
   }
   const lessonSubmissions: SubmissionData[] = data
@@ -54,9 +57,6 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
           submission.status !== 'passed' && submission.status !== 'needMoreWork'
       )
     : []
-  const currentLesson: Lesson =
-    lessons.find((lesson: Lesson) => lesson.id === currentlessonId) ||
-    ({} as Lesson)
   return (
     <div>
       <Layout>
