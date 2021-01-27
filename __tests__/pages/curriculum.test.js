@@ -5,10 +5,18 @@ import { MockedProvider } from '@apollo/react-testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import { GraphQLError } from 'graphql'
 import Router from 'next/router'
-Router.router = { push: jest.fn() }
+Router.router = {
+  push: jest
+    .fn()
+    .mockImplementation(path => (global.window.location.pathname = path))
+}
 
+// Mock global.window
+global.window = Object.create(window)
+Object.defineProperty(global.window, 'location', {
+  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
+})
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {
     const mocks = [
@@ -52,14 +60,14 @@ describe('Curriculum Page', () => {
     expect(element).toBeTruthy()
   })
 
-  test('Should render Bad Data when no session', async () => {
+  test('Should render Bad Data when no lessons', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
         result: {
           data: {
-            lessons: dummyLessonData,
-            session: null,
+            lessons: null,
+            session: dummySessionData,
             alerts: []
           }
         }
@@ -152,20 +160,26 @@ describe('Curriculum Page', () => {
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
-  test('Should return to login page if unauthorized', async () => {
+  test('Should redirect to login page if unauthorized', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
         result: {
-          errors: [new GraphQLError("Cannot read property 'id' of null")]
+          data: {
+            lessons: dummyLessonData,
+            session: null,
+            alerts: []
+          }
         }
       }
     ]
-    const { container } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
-    await waitFor(() => expect(container).toMatchSnapshot())
+    await waitFor(() =>
+      expect(global.window.location.pathname).toEqual('/login')
+    )
   })
 })

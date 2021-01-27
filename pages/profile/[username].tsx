@@ -1,6 +1,7 @@
 import * as React from 'react'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
+import Error from '../../components/Error'
 import { useRouter } from 'next/router'
 import { UserSubmission } from '../../@types/challenge'
 import { LessonStatus } from '../../@types/lesson'
@@ -31,7 +32,13 @@ const UserProfile: React.FC = () => {
     return <LoadingSpinner />
   }
   if (error) {
-    return <h1>Error</h1>
+    return (
+      <Error
+        title="Internal server error"
+        message={error.message}
+        src="/500.png"
+      />
+    )
   }
   const { lessons } = data || {}
   const lessonsList = lessons || []

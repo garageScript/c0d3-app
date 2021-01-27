@@ -10,6 +10,12 @@ import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 jest.mock('next/router')
 
+// Mock global.window
+global.window = Object.create(window)
+Object.defineProperty(global.window, 'location', {
+  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
+})
+
 const session = {
   ...dummySessionData,
   submissions: [
@@ -135,7 +141,7 @@ describe('Lesson Page', () => {
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
-  test('Should render 500 Error without session', async () => {
+  test('Should redirect to login without session', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -151,9 +157,12 @@ describe('Lesson Page', () => {
     useRouter.mockReturnValueOnce({
       query: {
         lesson: '2'
-      }
+      },
+      push: jest
+        .fn()
+        .mockImplementation(path => (global.window.location.pathname = path))
     })
-    const { findByText } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
       </MockedProvider>,
@@ -161,10 +170,12 @@ describe('Lesson Page', () => {
         query: { lesson: '2' }
       }
     )
-    const element = await findByText(/Internal server error/i)
-    expect(element).toBeTruthy()
+
+    await waitFor(() =>
+      expect(global.window.location.pathname).toEqual('/login')
+    )
   })
-  it("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
+  test("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -194,6 +205,40 @@ describe('Lesson Page', () => {
     const { container, getByRole } = render(tree)
 
     await waitFor(() => getByRole('heading', { name: /Trees/i }))
+
+    await waitFor(() => expect(container).toMatchSnapshot())
+  })
+  test('Should return Internal server Error if alerts or lessons are missing', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: null,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+    useRouter.mockReturnValueOnce({
+      query: {
+        lesson: '25'
+      }
+    })
+    const tree = withTestRouter(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Lesson />
+      </MockedProvider>,
+      {
+        query: { lesson: '25' }
+      }
+    )
+
+    const { container, findByText } = render(tree)
+
+    const element = await findByText(/Internal server error/i)
+    expect(element).toBeTruthy()
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })

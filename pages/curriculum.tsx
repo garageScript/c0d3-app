@@ -15,14 +15,6 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   const { loading, error, alerts, lessons, session } = data
 
   if (loading) return <LoadingSpinner />
-  if (
-    error &&
-    _.get(error, 'graphQLErrors[0].message') ===
-      "Cannot read property 'id' of null"
-  ) {
-    Router.push('/login')
-    return <LoadingSpinner />
-  }
   if (error) {
     return (
       <Error
@@ -32,7 +24,11 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
       />
     )
   }
-  if (!session || !lessons || !alerts) {
+  if (!session) {
+    Router.push('/login')
+    return <LoadingSpinner />
+  }
+  if (!lessons || !alerts) {
     return (
       <Error title="Internal server error" message="Bad data" src="/500.png" />
     )

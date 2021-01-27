@@ -1010,3 +1010,160 @@ result = solution(0, "hello") // ""
   </div>
 </div>
 `;
+
+exports[`Lesson Page Should return Internal server Error if alerts or lessons are missing 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Bad data
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-sm-9"
+        >
+          <img
+            class="mb-3 img-fluid"
+            src="/500.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
