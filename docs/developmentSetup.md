@@ -8,7 +8,6 @@ To begin we will need to set up the code base on your own machine. To do this we
 
 - [Yarn](https://classic.yarnpkg.com/en/)
 - [Node](https://nodejs.org/en/)
-- [Postgresql](https://www.postgresql.org/download/)
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker-compose](https://docs.docker.com/compose/install/)
 
