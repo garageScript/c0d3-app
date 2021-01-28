@@ -1,16 +1,22 @@
 jest.mock('../../helpers/dbload')
 jest.mock('../../helpers/validateLessonId')
+jest.mock('../mattermost')
 import { setStar } from './starsController'
 import { validateLessonId } from '../validateLessonId'
+import { getUserByEmail } from '../mattermost'
 import db from '../dbload'
 
-const { Star } = db
 const ctx = {
   req: {
     error: jest.fn(),
     user: { id: 1337 }
   }
 }
+const { Star, Lesson, User } = db
+Lesson.findByPk = jest.fn().mockReturnValue({ chatUrl: 'jim/flam' })
+User.findByPk = jest.fn().mockReturnValue({ email: 'potatoLove@potatus.com' })
+getUserByEmail.mockReturnValue({ username: 'flam' })
+
 describe('setStar resolver', () => {
   beforeEach(() => {
     jest.clearAllMocks()
