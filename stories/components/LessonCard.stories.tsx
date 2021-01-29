@@ -1,6 +1,6 @@
 import * as React from 'react'
 import LessonCard from '../../components/LessonCard'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 
 export default {

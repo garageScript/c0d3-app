@@ -1,9 +1,9 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
 import withQueryLoader from '../containers/withQueryLoader'
 import LoadingSpinner from '../components/LoadingSpinner'
-import { useQuery } from '@apollo/react-hooks'
 
-jest.mock('@apollo/react-hooks')
+jest.mock('@apollo/client')
 
 describe('withQueryLoader HOC container', () => {
   test('Should return LoadingSpinner when loading', () => {

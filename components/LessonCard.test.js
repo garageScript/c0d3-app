@@ -1,7 +1,7 @@
-jest.mock('@apollo/react-hooks')
+jest.mock('@apollo/client')
+import { useQuery } from '@apollo/client'
 import * as React from 'react'
 import LessonCard from './LessonCard'
-import { useQuery } from '@apollo/react-hooks'
 import { render } from '@testing-library/react'
 
 describe('Lesson Card Complete State', () => {

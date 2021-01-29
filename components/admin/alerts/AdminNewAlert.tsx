@@ -1,5 +1,5 @@
+import { useMutation } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
-import { useMutation } from '@apollo/react-hooks'
 import Alert from '../../../components/Alert'
 import { FormCard } from '../../../components/FormCard'
 import ADD_ALERT from '../../../graphql/queries/addAlert'

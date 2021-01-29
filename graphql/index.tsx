@@ -1,14 +1,14 @@
+import * as ApolloReactHooks from '@apollo/client'
+import { gql } from '@apollo/client'
 import {
   GraphQLResolveInfo,
   GraphQLScalarType,
   GraphQLScalarTypeConfig
 } from 'graphql'
-import gql from 'graphql-tag'
-import * as ApolloReactCommon from '@apollo/react-common'
+import * as ApolloReactCommon from '@apollo/client'
 import * as React from 'react'
-import * as ApolloReactComponents from '@apollo/react-components'
-import * as ApolloReactHoc from '@apollo/react-hoc'
-import * as ApolloReactHooks from '@apollo/react-hooks'
+import * as ApolloReactComponents from '@apollo/client/react/components'
+import * as ApolloReactHoc from '@apollo/client/react/hoc'
 export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] }
 export type RequireFields<T, K extends keyof T> = {

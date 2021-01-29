@@ -1,4 +1,4 @@
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import React, { useState } from 'react'
 import { GiveStarCard } from '../../components/GiveStarCard'
 import { Button } from '../../components/theme/Button'

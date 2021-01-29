@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const USER_INFO = gql`
   query userInfo($username: String!) {
