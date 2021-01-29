@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { render, fireEvent, waitFor, act } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import ChallengeMaterial from './ChallengeMaterial'
 import SET_STAR from '../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
