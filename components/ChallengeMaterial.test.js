@@ -53,35 +53,50 @@ describe('Curriculum challenge page', () => {
     props = {
       challenges,
       lessonStatus: lessonStatusNoPass,
-      userSubmissions: [],
+      userSubmissions: [
+        {
+          id: '3500',
+          status: 'open',
+          mrUrl: 'github.com/testmrurl',
+          diff:
+            'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
+          viewCount: 0,
+          comment: null,
+          challengeId: '105',
+          reviewer: null,
+          createdAt: '1586907809223',
+          updatedAt: dayjs().subtract(16, 'day').valueOf()
+        },
+        {
+          id: '3501',
+          status: 'needMoreWork',
+          mrUrl: 'github.com/testmrurl2',
+          diff:
+            'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
+          viewCount: 0,
+          comment: 'test comment',
+          challengeId: '107',
+          reviewer: {
+            id: '1',
+            username: 'dan'
+          },
+          createdAt: '1586907809223',
+          updatedAt: dayjs().subtract(16, 'day').valueOf()
+        }
+      ],
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
       lessonId: '5'
     }
   })
   test('Should render appropriately when no challenges are passed to component', async () => {
-    const { container } = render(
-      <ChallengeMaterial
-        challenges={[]}
-        userSubmissions={[]}
-        lessonStatus={lessonStatusNoPass}
-        chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-        lessonId="5"
-      />
-    )
-    await waitFor(() => {
-      expect(container).toMatchSnapshot()
-    })
+    props.challenges = []
+    props.userSubmissions = []
+    const { container } = render(<ChallengeMaterial {...props} />)
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render first challenge by default when user has no submissions', async () => {
-    const { container } = render(
-      <ChallengeMaterial
-        challenges={[]}
-        userSubmissions={[]}
-        lessonStatus={lessonStatusNoPass}
-        chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-        lessonId="5"
-      />
-    )
+    props.userSubmissions = []
+    const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
   })
   test('Should render clicked challenge within challenge question', async () => {
@@ -93,46 +108,7 @@ describe('Curriculum challenge page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render first challenge that is not passed when user has submissions', async () => {
-    props.userSubmissions = [
-      {
-        id: '3500',
-        status: 'open',
-        mrUrl: 'github.com/testmrurl',
-        diff:
-          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
-        viewCount: 0,
-        comment: null,
-        challengeId: '105',
-        reviewer: null,
-        createdAt: '1586907809223',
-        updatedAt: dayjs().subtract(16, 'day').valueOf()
-      },
-      {
-        id: '3501',
-        status: 'needMoreWork',
-        mrUrl: 'github.com/testmrurl2',
-        diff:
-          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
-        viewCount: 0,
-        comment: 'test comment',
-        challengeId: '107',
-        reviewer: {
-          id: '1',
-          username: 'dan'
-        },
-        createdAt: '1586907809223',
-        updatedAt: dayjs().subtract(16, 'day').valueOf()
-      }
-    ]
-    const { container } = render(
-      <ChallengeMaterial
-        challenges={[]}
-        userSubmissions={[]}
-        lessonStatus={lessonStatusNoPass}
-        chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-        lessonId="5"
-      />
-    )
+    const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
   })
 
@@ -143,43 +119,16 @@ describe('Curriculum challenge page', () => {
       isTeaching: null,
       starGiven: ''
     }
-    props.userSubmissions = [
-      {
-        id: '3500',
-        status: 'passed',
-        mrUrl: 'github.com/testmrurl',
-        diff:
-          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
-        viewCount: 0,
-        comment: null,
-        challengeId: '105',
-        reviewer: null,
-        createdAt: '1586907809223',
-        updatedAt: '1586907825090'
-      },
-      {
-        id: '3501',
-        status: 'passed',
-        mrUrl: 'github.com/testmrurl2',
-        diff:
-          'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
-        viewCount: 0,
-        comment: 'test comment',
-        challengeId: '107',
-        reviewer: {
-          id: '1',
-          username: 'dan'
-        },
-        createdAt: '1586907809223',
-        updatedAt: '1586907825090'
-      }
-    ]
+    props.userSubmissions.forEach(submission => {
+      submission.status = 'passed'
+    })
     const { container, getByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
       </MockedProvider>
     )
     await waitFor(() => expect(container).toMatchSnapshot())
+
     fireEvent.click(getByRole('button', { name: 'Give Star' }))
     await waitFor(() => queryByText('Who helped you the most?'))
     await waitFor(() => expect(document.body).toMatchSnapshot())
