@@ -1883,7 +1883,69 @@ exports[`Storyshots Components/ChallengeTitleCard Rejected 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] = `
+exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = `
+<div
+  className="card text-center shadow-sm"
+>
+  <div
+    className="card-body"
+  >
+    <img
+      className="mt-3"
+      src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+    />
+    <h4
+      className="card-title mt-2"
+    >
+      Congratulations!
+    </h4>
+    <p
+      className="success-message"
+    >
+      You have successfully completed all challenges
+    </p>
+    <p
+      className="review-message"
+    >
+      You can help your peers by
+      <a
+        className="font-weight-bold mx-1"
+        href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        answering questions
+      </a>
+      they have in the lesson and
+      <a
+        className="font-weight-bold mx-1"
+        href="https://c0d3.com/teacher/5"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        reviewing challenge submissions
+      </a>
+    </p>
+  </div>
+  <div
+    className="card-footer d-flex bg-primary"
+  >
+    <p
+      className="text-white mr-3 my-2"
+    >
+      You can show your appreciation to the user that helped you the most by giving them a star
+    </p>
+    <button
+      className="btn btn-light text-primary font-weight-bold ml-auto"
+      onClick={[Function]}
+    >
+      Give Star
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = `
 <div
   className="card text-center shadow-sm"
 >
