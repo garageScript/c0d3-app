@@ -97,7 +97,7 @@ describe('Curriculum challenge page', () => {
     props.challenges = []
     props.userSubmissions = []
     const { container } = render(<ChallengeMaterial {...props} />)
-    await waitFor(() => expect(container).toMatchSnapshot())
+    expect(container).toMatchSnapshot()
   })
   test('Should render first challenge by default when user has no submissions', async () => {
     props.userSubmissions = []
@@ -110,7 +110,7 @@ describe('Curriculum challenge page', () => {
     )
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
     fireEvent.click(challengeTitleCard)
-    await waitFor(() => expect(container).toMatchSnapshot())
+    expect(container).toMatchSnapshot()
   })
   test('Should render first challenge that is not passed when user has submissions', async () => {
     const { container } = render(<ChallengeMaterial {...props} />)
@@ -127,14 +127,16 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...props} />
       </MockedProvider>
     )
-    await waitFor(() => expect(container).toMatchSnapshot())
+    expect(container).toMatchSnapshot()
 
-    fireEvent.click(getByRole('button', { name: 'Give Star' }))
+    await waitFor(() =>
+      fireEvent.click(getByRole('button', { name: 'Give Star' }))
+    )
     await waitFor(() => queryByText('Who helped you the most?'))
-    await waitFor(() => expect(document.body).toMatchSnapshot())
+    expect(document.body).toMatchSnapshot()
 
     // click exit button of GiveStarCard
     fireEvent.click(getByRole('img'))
-    await waitFor(() => expect(document.body).toMatchSnapshot())
+    expect(document.body).toMatchSnapshot()
   })
 })
