@@ -24,11 +24,13 @@ const mocks = [
     }
   }
 ]
+
 const lessonStatusNoPass = {
   isEnrolled: '213423534',
   isTeaching: null,
   starGiven: ''
 }
+
 const challenges = [
   {
     id: '105',
@@ -47,43 +49,46 @@ const challenges = [
     __typename: 'Challenge'
   }
 ]
+
+const userSubmissions = [
+  {
+    id: '3500',
+    status: 'open',
+    mrUrl: 'github.com/testmrurl',
+    diff:
+      'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
+    viewCount: 0,
+    comment: null,
+    challengeId: '105',
+    reviewer: null,
+    createdAt: '1586907809223',
+    updatedAt: dayjs().subtract(16, 'day').valueOf()
+  },
+  {
+    id: '3501',
+    status: 'needMoreWork',
+    mrUrl: 'github.com/testmrurl2',
+    diff:
+      'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
+    viewCount: 0,
+    comment: 'test comment',
+    challengeId: '107',
+    reviewer: {
+      id: '1',
+      username: 'dan'
+    },
+    createdAt: '1586907809223',
+    updatedAt: dayjs().subtract(16, 'day').valueOf()
+  }
+]
+
 describe('Curriculum challenge page', () => {
   let props
   beforeEach(() => {
     props = {
       challenges,
       lessonStatus: lessonStatusNoPass,
-      userSubmissions: [
-        {
-          id: '3500',
-          status: 'open',
-          mrUrl: 'github.com/testmrurl',
-          diff:
-            'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
-          viewCount: 0,
-          comment: null,
-          challengeId: '105',
-          reviewer: null,
-          createdAt: '1586907809223',
-          updatedAt: dayjs().subtract(16, 'day').valueOf()
-        },
-        {
-          id: '3501',
-          status: 'needMoreWork',
-          mrUrl: 'github.com/testmrurl2',
-          diff:
-            'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
-          viewCount: 0,
-          comment: 'test comment',
-          challengeId: '107',
-          reviewer: {
-            id: '1',
-            username: 'dan'
-          },
-          createdAt: '1586907809223',
-          updatedAt: dayjs().subtract(16, 'day').valueOf()
-        }
-      ],
+      userSubmissions,
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
       lessonId: '5'
     }
@@ -113,15 +118,10 @@ describe('Curriculum challenge page', () => {
   })
 
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
-    props.lessonStatus = {
-      isEnrolled: '213423534',
-      isPassed: '123456789',
-      isTeaching: null,
-      starGiven: ''
-    }
-    props.userSubmissions.forEach(submission => {
-      submission.status = 'passed'
-    })
+    const { lessonStatus, userSubmissions } = props
+    lessonStatus.starGiven = ''
+    lessonStatus.isPassed = 'cmon bruh ive passed already'
+    userSubmissions.forEach(submission => (submission.status = 'passed'))
     const { container, getByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
