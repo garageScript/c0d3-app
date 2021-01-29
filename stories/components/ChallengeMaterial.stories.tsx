@@ -1,11 +1,30 @@
 import * as React from 'react'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
-
+import SET_STAR from '../../graphql/queries/setStar'
+import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
+import lessonMentorsData from '../../__dummy__/getLessonMentorsData'
+import { MockedProvider } from '@apollo/react-testing'
 export default {
   component: ChallengeMaterial,
   title: 'Components/ChallengeMaterial'
 }
-
+const mocks = [
+  {
+    request: {
+      query: SET_STAR,
+      variables: { mentorId: 4, lessonId: 5, comment: '1' }
+    },
+    result: {
+      data: { setStar: { success: true } }
+    }
+  },
+  {
+    request: { query: GET_LESSON_MENTORS, variables: { lessonId: '5' } },
+    result: {
+      data: { getLessonMentors: lessonMentorsData }
+    }
+  }
+]
 const challenges = [
   {
     description:
@@ -93,6 +112,18 @@ export const WithComments: React.FC = () => (
         reviewerId: '1',
         createdAt: '',
         updatedAt: Date.now().toString()
+      },
+      {
+        status: '',
+        id: '1',
+        mrUrl: '',
+        diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+        viewCount: 0,
+        comment: '```test comment```',
+        challengeId: '107',
+        reviewerId: '',
+        createdAt: '',
+        updatedAt: Date.now().toString()
       }
     ]}
     lessonStatus={lessonStatus}
@@ -109,4 +140,45 @@ export const NoChallenges: React.FC = () => (
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
     lessonId="5"
   />
+)
+
+export const FinalChallenge: React.FC = () => (
+  <MockedProvider mocks={mocks} addTypename={false}>
+    <ChallengeMaterial
+      challenges={challenges}
+      userSubmissions={[
+        {
+          status: 'passed',
+          id: '1',
+          mrUrl: '',
+          diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+          viewCount: 0,
+          comment: '```Great Job```',
+          challengeId: '105',
+          reviewer: {
+            id: '1',
+            username: 'dan'
+          },
+          reviewerId: '1',
+          createdAt: '',
+          updatedAt: Date.now().toString()
+        },
+        {
+          status: 'passed',
+          id: '1',
+          mrUrl: '',
+          diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+          viewCount: 0,
+          comment: '```test comment```',
+          challengeId: '107',
+          reviewerId: '',
+          createdAt: '',
+          updatedAt: Date.now().toString()
+        }
+      ]}
+      lessonStatus={{ ...lessonStatus, isPassed: 'aef' }}
+      chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+      lessonId="5"
+    />
+  </MockedProvider>
 )
