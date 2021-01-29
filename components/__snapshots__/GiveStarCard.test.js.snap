@@ -998,7 +998,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
 </body>
 `;
 
-exports[`GiveStarCard Component should display nothing when show prop is empty 1`] = `
+exports[`GiveStarCard Component should display nothing when show prop is false 1`] = `
 <body>
   <div />
 </body>

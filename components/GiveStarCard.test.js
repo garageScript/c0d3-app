@@ -48,7 +48,7 @@ describe('GiveStarCard Component', () => {
     }
   })
 
-  test('should display nothing when show prop is empty', async () => {
+  test('should display nothing when show prop is false', async () => {
     mockProps.show = false
     render(<GiveStarCard {...mockProps} />)
     expect(GiveStarCard(mockProps)).toBeNull()
