@@ -93,17 +93,20 @@ describe('Curriculum challenge page', () => {
       lessonId: '5'
     }
   })
+
   test('Should render appropriately when no challenges are passed to component', async () => {
     props.challenges = []
     props.userSubmissions = []
     const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
   })
+
   test('Should render first challenge by default when user has no submissions', async () => {
     props.userSubmissions = []
     const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
   })
+
   test('Should render clicked challenge within challenge question', async () => {
     const { getAllByTestId, container } = render(
       <ChallengeMaterial {...props} />
@@ -112,6 +115,7 @@ describe('Curriculum challenge page', () => {
     fireEvent.click(challengeTitleCard)
     expect(container).toMatchSnapshot()
   })
+
   test('Should render first challenge that is not passed when user has submissions', async () => {
     const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
@@ -119,7 +123,6 @@ describe('Curriculum challenge page', () => {
 
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
     const { lessonStatus, userSubmissions } = props
-    lessonStatus.starGiven = ''
     lessonStatus.isPassed = 'cmon bruh ive passed already'
     userSubmissions.forEach(submission => (submission.status = 'passed'))
     const { container, getByRole, queryByText } = render(
