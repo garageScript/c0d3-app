@@ -1,14 +1,14 @@
-import React, { memo, useState } from 'react'
+import { useMutation } from '@apollo/client'
 
+import React, { memo, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
+
 import Prism from 'prismjs'
-
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
 
-import { useMutation } from '@apollo/react-hooks'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { SubmissionData } from '../@types/submission'

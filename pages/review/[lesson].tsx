@@ -1,5 +1,5 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'

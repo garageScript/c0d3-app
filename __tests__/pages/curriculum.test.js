@@ -1,7 +1,7 @@
 import React from 'react'
 import Curriculum from '../../pages/curriculum'
 import { render, waitFor } from '@testing-library/react'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
@@ -42,24 +42,6 @@ describe('Curriculum Page', () => {
     expect(element).toBeTruthy()
   })
 
-  test('Should render Error on error', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        error: new Error('error')
-      }
-    ]
-
-    const { findByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
-      </MockedProvider>
-    )
-
-    const element = await findByText(/Internal server error/i)
-    expect(element).toBeTruthy()
-  })
-
   test('Should render Bad Data when no lessons', async () => {
     const mocks = [
       {
@@ -79,7 +61,6 @@ describe('Curriculum Page', () => {
         <Curriculum />
       </MockedProvider>
     )
-
     const element = await findByText(/Internal server error/i)
     expect(element).toBeTruthy()
   })
@@ -181,5 +162,22 @@ describe('Curriculum Page', () => {
     await waitFor(() =>
       expect(global.window.location.pathname).toEqual('/login')
     )
+  })
+  test('Should render Error on error', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        error: new Error('error')
+      }
+    ]
+
+    const { findByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+
+    const element = await findByText(/Internal server error/i)
+    expect(element).toBeTruthy()
   })
 })

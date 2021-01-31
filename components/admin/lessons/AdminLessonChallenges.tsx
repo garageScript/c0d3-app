@@ -1,5 +1,5 @@
+import { useMutation } from '@apollo/client'
 import React, { useEffect, useState } from 'react'
-import { useMutation } from '@apollo/react-hooks'
 import updateChallenge from '../../../graphql/queries/updateChallenge'
 import { FormCard } from '../../FormCard'
 import createNewChallenge from '../../../graphql/queries/createChallenge'

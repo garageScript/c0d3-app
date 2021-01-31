@@ -1,10 +1,10 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
 import withQueryLoader from '../containers/withQueryLoader'
 import { render, waitFor } from '@testing-library/react'
 import LoadingSpinner from '../components/LoadingSpinner'
-import { useQuery } from '@apollo/react-hooks'
 import Router from 'next/router'
-jest.mock('@apollo/react-hooks')
+jest.mock('@apollo/client')
 Router.router = {
   push: jest
     .fn()
@@ -15,6 +15,7 @@ global.window = Object.create(window)
 Object.defineProperty(global.window, 'location', {
   value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
 })
+
 describe('withQueryLoader HOC container', () => {
   test('Should return LoadingSpinner when loading', () => {
     useQuery.mockReturnValue({ loading: true, data: null })

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent, waitFor, act } from '@testing-library/react'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import { withTestRouter } from '../../testUtil/withNextRouter'
