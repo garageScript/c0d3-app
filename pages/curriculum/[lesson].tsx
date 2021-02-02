@@ -1,7 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import Error from '../../components/Error'
 import LessonTitleCard from '../../components/LessonTitleCard'
+import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import GET_APP from '../../graphql/queries/getApp'
@@ -15,13 +17,26 @@ import _ from 'lodash'
 
 const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
-  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
-  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
+  if (!session) {
+    router.push('/login')
+    return <LoadingSpinner />
+  }
+  if (!lessons || !alerts) {
+    return (
+      <Error title="Internal server error" message="Bad data" src="/500.png" />
+    )
+  }
   const currentLesson: Lesson | undefined = lessons.find(
-    (lesson: Lesson) => lesson.id.toString() === currentlessonId
+    (lesson: Lesson) => lesson.id === currentlessonId
   )
+  if (!currentLesson) {
+    return <Error title="404 error" message="Page not found" src="/404.png" />
+  }
+  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
+
   const currentLessonStatus: LessonStatus = lessonStatus.find(
     lessonStatus => lessonStatus.lessonId === currentlessonId
   ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
@@ -46,7 +61,7 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
-                lessonId={currentLesson.id.toString()}
+                lessonId={currentLesson.id}
               />
             </div>
           )}

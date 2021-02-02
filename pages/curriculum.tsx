@@ -1,5 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
+import Router from 'next/router'
+import Error from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
@@ -11,10 +13,25 @@ import _ from 'lodash'
 
 export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   const { loading, error, alerts, lessons, session } = data
-
   if (loading) return <LoadingSpinner />
-  if (error) return <h1>Error</h1>
-  if (!session || !lessons || !alerts) return <h1>Bad Data</h1>
+  if (error) {
+    return (
+      <Error
+        title="Internal server error"
+        message={error.message}
+        src="/500.png"
+      />
+    )
+  }
+  if (!session) {
+    Router.push('/login')
+    return null
+  }
+  if (!lessons || !alerts) {
+    return (
+      <Error title="Internal server error" message="Bad data" src="/500.png" />
+    )
+  }
 
   const announcements = [
     'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',

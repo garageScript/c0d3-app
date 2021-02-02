@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
+exports[`Lesson Page Should correctly render challenges page for students who hadn't passed previous lessons 1`] = `
 <div>
   <div>
     <nav
@@ -103,7 +103,304 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
     >
       <div
         class="row mt-4"
-      />
+      >
+        <div
+          class="challenges-container"
+        >
+          <div
+            class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+          >
+            <div
+              class="card-body p-0"
+            >
+              <div
+                class="d-flex mb-3 px-3"
+              >
+                <img
+                  alt="lesson-cover"
+                  class="lessonTitleCard__lesson-cover mr-3"
+                  src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                />
+                <div>
+                  <p
+                    class="m-0"
+                  >
+                    <a
+                      class=""
+                      href="/curriculum"
+                    >
+                      Go Back
+                    </a>
+                  </p>
+                  <h1
+                    class="lessonTitleCard__lesson-title"
+                  >
+                    Trees
+                  </h1>
+                </div>
+              </div>
+              <div
+                class="card-footer bg-white p-0"
+              >
+                <a
+                  class="btn border-right rounded-0 px-4 py-3"
+                  href="/curriculum/25"
+                >
+                  CHALLENGES
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="alerts-container "
+          >
+            <div
+              class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+              role="alert"
+            >
+              <div>
+                <img
+                  class="mr-3 alert-icon"
+                  src="/curriculumAssets/icons/icon-tip.svg"
+                />
+                Set up your computer to submit challenges. 
+                <a
+                  class="text-white"
+                  href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  View Instructions
+                </a>
+              </div>
+              <button
+                class="alert-dismiss"
+                data-testid="dismiss-info"
+                role="dismiss"
+              >
+                <img
+                  src="/curriculumAssets/icons/dismiss-info.svg"
+                />
+              </button>
+            </div>
+            <div
+              class="alert d-flex justify-content-between mt-3 alert-danger"
+              role="alert"
+            >
+              <div>
+                <img
+                  class="mr-3 alert-icon"
+                  src="/curriculumAssets/icons/exclamation.svg"
+                />
+                Please upgrade your CLI client by running npm update c0d3. 
+                
+              </div>
+              <button
+                class="alert-dismiss"
+                data-testid="dismiss-urgent"
+                role="dismiss"
+              >
+                <img
+                  src="/curriculumAssets/icons/dismiss-urgent.svg"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            class="row challenge-display mt-3"
+          >
+            <div
+              class="col-4"
+            >
+              <div
+                class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    1. Given a binary tree, find the largest value
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    2. Given a binary tree, find the maximum depth
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    3. Given a binary tree, return the maximum distance between any 2 nodes
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    4. Biggest subtree value
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    5. Given a binary tree and a node, find the distance to that node.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    6. Max Fun
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    7. Edit distance
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    8. Maximum Loot
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    9. Longest Increasing Non-Consecutive Sequence
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    10. Minimum Coins for Change
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    11. Maximum Weight to Carry
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card mb-2 challenge-title-card shadow-sm border-0"
+                data-testid="challenge-title"
+              >
+                <div
+                  class="card-body d-flex justify-content-between"
+                >
+                  <div>
+                    12. Subarray Sum Equals K
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-8"
+            >
+              <div
+                class="card shadow-sm border-0"
+              >
+                <div
+                  class="card-body challenge-question"
+                >
+                  <h1
+                    class="card-title"
+                    data-testid="challenge-question-title"
+                  >
+                    Given a binary tree, find the largest value
+                  </h1>
+                  <div
+                    class="bg-light p-3 mt-3"
+                    data-testid="challenge-question-description"
+                  >
+                    <div>
+                      <p>
+                        Example:
+                      </p>
+                      <p>
+                        <img
+                          alt="tree"
+                          src="https://c0d3.com/apis/draw?tree={%22v%22:30,%22children%22:[{%22v%22:50},{%22v%22:40}]}"
+                        />
+                      </p>
+                      <pre>
+                        <code>
+                          const a = {val: 30, right: {val: 40}, left: {val: 50}};
+solution(a); // should return 50
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
@@ -113,6 +410,163 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
       All Rights Reserved
     </footer>
   </div>
+</div>
+`;
+
+exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                404 error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Page not found
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-sm-9"
+        >
+          <img
+            class="mb-3 img-fluid"
+            src="/404.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;
 
@@ -554,5 +1008,162 @@ result = solution(0, "hello") // ""
       All Rights Reserved
     </footer>
   </div>
+</div>
+`;
+
+exports[`Lesson Page Should return Internal server Error if alerts or lessons are missing 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Bad data
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-sm-9"
+        >
+          <img
+            class="mb-3 img-fluid"
+            src="/500.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
 </div>
 `;
