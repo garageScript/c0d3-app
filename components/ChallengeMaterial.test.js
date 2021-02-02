@@ -5,7 +5,7 @@ import ChallengeMaterial from './ChallengeMaterial'
 import SET_STAR from '../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 
 const mocks = [
   {
