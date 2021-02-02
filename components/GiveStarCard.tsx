@@ -198,6 +198,10 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
   starGiven,
   setStarGiven
 }) => {
+  if (!show) {
+    return null
+  }
+
   if (starGiven) {
     return (
       <ModalCard show={show} close={close}>

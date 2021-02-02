@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent, wait, act, waitFor } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import { GiveStarCard } from './GiveStarCard'
 import { MockedProvider } from '@apollo/client/testing'
 import SET_STAR from '../graphql/queries/setStar'
@@ -46,6 +46,13 @@ describe('GiveStarCard Component', () => {
       lessonId: '4',
       starGiven: 'flimmy flam jam'
     }
+  })
+
+  test('should display nothing when show prop is false', async () => {
+    mockProps.show = false
+    render(<GiveStarCard {...mockProps} />)
+    expect(GiveStarCard(mockProps)).toBeNull()
+    expect(document.body).toMatchSnapshot()
   })
 
   test('should display `already given star to` display when starGiven prop does not equal empty string', async () => {

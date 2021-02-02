@@ -998,6 +998,12 @@ exports[`GiveStarCard Component should display error message when giving a star 
 </body>
 `;
 
+exports[`GiveStarCard Component should display nothing when show prop is false 1`] = `
+<body>
+  <div />
+</body>
+`;
+
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 1`] = `
 <body
   class="modal-open"
