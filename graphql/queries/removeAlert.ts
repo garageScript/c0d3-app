@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const REMOVE_ALERT = gql`
   mutation removeAlert($id: String!) {

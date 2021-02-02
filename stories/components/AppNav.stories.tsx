@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import AppNav from '../../components/AppNav'
 

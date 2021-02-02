@@ -1,5 +1,5 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
 import {

@@ -1,7 +1,7 @@
+import { useMutation } from '@apollo/client'
 import React from 'react'
 import { useRouter } from 'next/router'
 import { Formik, Form, Field } from 'formik'
-import { useMutation } from '@apollo/react-hooks'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import NavLink from '../../components/NavLink'
 import Input from '../../components/Input'

@@ -318,8 +318,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     },
     {}
   )
+  //chain sort-map causes errors in tests without a copy
+  const challengesCopy = [...challenges]
   //create a new Challenges array with user submission data integrated and sorted
-  const challengesWithSubmissionData: ChallengeSubmissionData[] = challenges
+  const challengesWithSubmissionData: ChallengeSubmissionData[] = challengesCopy
     .sort((a, b) => a.order - b.order)
     .map((challenge: Challenge) => {
       const submission = userSubmissionsObject[challenge.id] || {}

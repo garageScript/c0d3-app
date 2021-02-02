@@ -1,5 +1,5 @@
+import { useMutation } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
-import { useMutation } from '@apollo/react-hooks'
 import Alert from '../../components/Alert'
 import { AdminLayout } from '../../components/admin/AdminLayout'
 import { Button } from '../../components/theme/Button'

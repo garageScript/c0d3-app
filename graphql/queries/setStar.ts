@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const SET_STAR = gql`
   mutation setStar($mentorId: Int!, $lessonId: Int!, $comment: String) {

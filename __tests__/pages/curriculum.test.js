@@ -1,7 +1,7 @@
 import React from 'react'
 import Curriculum from '../../pages/curriculum'
 import { render, waitFor } from '@testing-library/react'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
