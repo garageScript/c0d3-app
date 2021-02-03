@@ -23,7 +23,7 @@ export const NotFound: React.FC = () => {
   ]
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Error title="Page not found" src="/404.png" message="404 error" />
+      <Error type="404" message="404 error" />
     </MockedProvider>
   )
 }
@@ -43,7 +43,7 @@ export const Internal: React.FC = () => {
   ]
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Error title="Internal server error" message="No data" src="/500.png" />
+      <Error type="500" message="No data" />
     </MockedProvider>
   )
 }
