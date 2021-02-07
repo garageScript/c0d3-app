@@ -54,8 +54,9 @@ describe('user profile test', () => {
         }
       }
     )
-    const { container, findByRole } = render(tree)
+    const { container, findByRole, queryByText } = render(tree)
     await findByRole('heading', { name: /loading/i })
+    await waitForElementToBeRemoved(() => queryByText('Loading...'))
     expect(container).toMatchSnapshot()
   })
   test('Should render profile', async () => {
