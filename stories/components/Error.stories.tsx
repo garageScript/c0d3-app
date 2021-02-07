@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Error from '../../components/Error'
+import Error, { StatusCode } from '../../components/Error'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 
@@ -23,7 +23,7 @@ export const NotFound: React.FC = () => {
   ]
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Error type="404" message="404 error" />
+      <Error code={StatusCode.NOT_FOUND} message="404 error" />
     </MockedProvider>
   )
 }
@@ -43,7 +43,7 @@ export const Internal: React.FC = () => {
   ]
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Error type="500" message="No data" />
+      <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="No data" />
     </MockedProvider>
   )
 }
