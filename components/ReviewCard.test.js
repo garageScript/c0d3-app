@@ -2,7 +2,7 @@ import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import ReviewCard from './ReviewCard'
+import ReviewCard, { DiffView } from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
 
 // correct javascript submission
@@ -127,7 +127,7 @@ describe('ReviewCard Component', () => {
     ]
     const { container } = render(
       <MockedProvider mocks={mocks}>
-        <ReviewCard submissionData={NoDiffSumbisson} addTypeName={false} />
+        <DiffView submissionData={NoDiffSumbisson} addTypeName={false} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
