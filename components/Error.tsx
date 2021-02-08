@@ -10,11 +10,12 @@ type ErrorProps = {
   code: StatusCode
   message?: string
 }
+const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
+  [StatusCode.NOT_FOUND]: 'Page not found',
+  [StatusCode.INTERNAL_SERVER_ERROR]: 'Internal server error'
+}
+
 const Error: React.FC<ErrorProps> = ({ code, message }) => {
-  const errorMessages: ReadonlyMap<StatusCode, string> = new Map([
-    [StatusCode.NOT_FOUND, 'Page not found'],
-    [StatusCode.INTERNAL_SERVER_ERROR, 'Internal server error']
-  ])
   return (
     <Layout>
       <div className="container">
@@ -22,7 +23,7 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
           <div className="d-flex col-sm-3 align-items-center justify-content-center">
             <div className="text-center mt-3">
               <Text component="div" size="xl" bold={true}>
-                {errorMessages.get(code)}
+                {errorTitle[code]}
               </Text>
               <Text size="md">{message}</Text>
               <NavLink path="/" className="btn btn-primary py-3 px-5 mt-3">
