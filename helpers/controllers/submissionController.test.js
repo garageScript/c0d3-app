@@ -240,14 +240,14 @@ describe('Submissions Queries', () => {
     )
     expect(result).toEqual([submissionResults])
   })
-  test('should throw error if the user has not passed the lesson', () => {
+  test('should throw error if the user has not passed the lesson', async () => {
     hasPassedLesson.mockReturnValue(false)
-    expect(
+    await expect(
       submissions(null, { lessonId: '2' }, { req: { user: { id: 2 } } })
     ).rejects.toThrow('User has not passed this lesson and cannot review.')
   })
-  test('should throw error if no user is authenticated', () => {
-    expect(submissions(null, { lessonId: '2' }, null)).rejects.toThrow(
+  test('should throw error if no user is authenticated', async () => {
+    await expect(submissions(null, { lessonId: '2' }, null)).rejects.toThrow(
       'Invalid user'
     )
   })
