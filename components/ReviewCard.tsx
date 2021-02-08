@@ -100,44 +100,48 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   }
 
   return (
-    <div className="card shadow-sm border-0 mt-3">
-      <div className="card-header bg-white">
-        <h4>
-          {username} - <span className="text-primary">{title}</span>
-        </h4>
-        <Text color="lightgrey" size="sm">
-          {dayjs(parseInt(updatedAt)).fromNow()}
-        </Text>
-      </div>
+    <>
+      {diff && (
+        <div className="card shadow-sm border-0 mt-3">
+          <div className="card-header bg-white">
+            <h4>
+              {username} - <span className="text-primary">{title}</span>
+            </h4>
+            <Text color="lightgrey" size="sm">
+              {dayjs(parseInt(updatedAt)).fromNow()}
+            </Text>
+          </div>
 
-      <div className="card-body">
-        <div className="rounded-lg overflow-hidden">
-          <MemoDiffView diff={diff} />
+          <div className="card-body">
+            <div className="rounded-lg overflow-hidden">
+              <MemoDiffView diff={diff} />
+            </div>
+          </div>
+
+          <div className="card-footer bg-white">
+            {comment && <Markdown>{comment}</Markdown>}
+            <MdInput onChange={setCommentValue} bgColor={'white'} />
+            <Button
+              m="1"
+              type="success"
+              color="white"
+              onClick={reviewSubmission(accept)}
+            >
+              Accept
+            </Button>
+
+            <Button
+              m="1"
+              type="danger"
+              color="white"
+              onClick={reviewSubmission(reject)}
+            >
+              Reject
+            </Button>
+          </div>
         </div>
-      </div>
-
-      <div className="card-footer bg-white">
-        {comment && <Markdown>{comment}</Markdown>}
-        <MdInput onChange={setCommentValue} bgColor={'white'} />
-        <Button
-          m="1"
-          type="success"
-          color="white"
-          onClick={reviewSubmission(accept)}
-        >
-          Accept
-        </Button>
-
-        <Button
-          m="1"
-          type="danger"
-          color="white"
-          onClick={reviewSubmission(reject)}
-        >
-          Reject
-        </Button>
-      </div>
-    </div>
+      )}
+    </>
   )
 }
 
