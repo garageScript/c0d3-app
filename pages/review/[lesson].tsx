@@ -10,7 +10,7 @@ import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
 import { AppData } from '../../@types/app'
-import Error from '../../components/Error'
+import Error, { StatusCode } from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -48,7 +48,7 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     (lesson: Lesson) => lesson.id === currentlessonId
   )
   if (!currentLesson) {
-    return <Error title="404 error" message="Page not found" src="/404.png" />
+    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
   const lessonSubmissions: SubmissionData[] = data
     ? data.submissions.filter(

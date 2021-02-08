@@ -529,13 +529,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               style="color: rgb(41, 41, 41); font-size: 1.5rem;"
             >
               <strong>
-                404 error
+                Page not found
               </strong>
             </div>
             <div
               style="color: rgb(41, 41, 41); font-size: 1rem;"
             >
-              Page not found
+              Lesson not found
             </div>
             <a
               class="btn btn-primary py-3 px-5 mt-3"

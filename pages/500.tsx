@@ -1,6 +1,6 @@
 import React from 'react'
-import Error from '../components/Error'
+import Error, { StatusCode } from '../components/Error'
 
-export default function NotFound() {
-  return <Error title="Internal server error" src="/500.png" />
+export default function InternalServerError() {
+  return <Error code={StatusCode.INTERNAL_SERVER_ERROR} />
 }

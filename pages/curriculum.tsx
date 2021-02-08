@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
 import Router from 'next/router'
-import Error from '../components/Error'
+import Error, { StatusCode } from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
@@ -16,11 +16,7 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   if (loading) return <LoadingSpinner />
   if (error) {
     return (
-      <Error
-        title="Internal server error"
-        message={error.message}
-        src="/500.png"
-      />
+      <Error code={StatusCode.INTERNAL_SERVER_ERROR} message={error.message} />
     )
   }
   if (!session) {
@@ -28,9 +24,7 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
     return null
   }
   if (!lessons || !alerts) {
-    return (
-      <Error title="Internal server error" message="Bad data" src="/500.png" />
-    )
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
 
   const announcements = [

@@ -10,7 +10,7 @@ import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { Star } from '../../@types/lesson'
-import Error from '../../components/Error'
+import Error, { StatusCode } from '../../components/Error'
 
 export type UserInfo = {
   username: string
@@ -34,20 +34,10 @@ const UserProfile: React.FC = () => {
   if (error) {
     if (_.get(error, 'graphQLErrors[0].message') === 'Invalid user object') {
       return (
-        <Error
-          title="Page not found"
-          message="This user does not exist"
-          src="/404.png"
-        />
+        <Error code={StatusCode.NOT_FOUND} message="This user does not exist" />
       )
     }
-    return (
-      <Error
-        title="Internal server error"
-        message={error.message}
-        src="/500.png"
-      />
-    )
+    return <Error code={StatusCode.NOT_FOUND} message={error.message} />
   }
   const { lessons } = data || {}
   const lessonsList = lessons || []

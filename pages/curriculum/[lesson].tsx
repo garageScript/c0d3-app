@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
-import Error from '../../components/Error'
+import Error, { StatusCode } from '../../components/Error'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
@@ -24,15 +24,13 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     return <LoadingSpinner />
   }
   if (!lessons || !alerts) {
-    return (
-      <Error title="Internal server error" message="Bad data" src="/500.png" />
-    )
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
   const currentLesson: Lesson | undefined = lessons.find(
     (lesson: Lesson) => lesson.id === currentlessonId
   )
   if (!currentLesson) {
-    return <Error title="404 error" message="Page not found" src="/404.png" />
+    return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
   }
   const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])

@@ -1,12 +1,16 @@
 // From Next.JS example https://github.com/vercel/next.js/blob/canary/examples/with-sentry-simple/pages/_error.js
 import React from 'react'
-import NextErrorComponent from 'next/error'
 import * as Sentry from '@sentry/browser'
 import { NextPageContext } from 'next'
+import ErrorComponent, { StatusCode } from '../components/Error'
 
 interface MyErrorContext extends NextPageContext {
   statusCode: number
   hasGetInitialPropsRun: boolean
+}
+const toStatusCode = (code: number): StatusCode => {
+  if (code === 404) return StatusCode.NOT_FOUND
+  return StatusCode.INTERNAL_SERVER_ERROR
 }
 
 const MyError = ({
@@ -21,14 +25,15 @@ const MyError = ({
     Sentry.captureException(err)
   }
 
-  return <NextErrorComponent statusCode={statusCode} />
+  return <ErrorComponent code={toStatusCode(statusCode)} />
 }
 
 MyError.getInitialProps = async ({ res, err, asPath }: MyErrorContext) => {
-  const errorInitialProps = (await NextErrorComponent.getInitialProps({
-    res,
-    err
-  } as MyErrorContext)) as MyErrorContext
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
+  const errorInitialProps = {
+    statusCode,
+    hasGetInitialPropsRun: false
+  }
 
   // Workaround for https://github.com/vercel/next.js/issues/8592, mark when
   // getInitialProps has run

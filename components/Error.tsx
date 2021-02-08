@@ -2,12 +2,20 @@ import React from 'react'
 import Layout from './Layout'
 import NavLink from './NavLink'
 import { Text } from './theme/Text'
+export enum StatusCode {
+  NOT_FOUND = '404',
+  INTERNAL_SERVER_ERROR = '500'
+}
 type ErrorProps = {
-  title: string
-  src: string
+  code: StatusCode
   message?: string
 }
-const Error: React.FC<ErrorProps> = ({ title, message, src }) => {
+const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
+  [StatusCode.NOT_FOUND]: 'Page not found',
+  [StatusCode.INTERNAL_SERVER_ERROR]: 'Internal server error'
+}
+
+const Error: React.FC<ErrorProps> = ({ code, message }) => {
   return (
     <Layout>
       <div className="container">
@@ -15,7 +23,7 @@ const Error: React.FC<ErrorProps> = ({ title, message, src }) => {
           <div className="d-flex col-sm-3 align-items-center justify-content-center">
             <div className="text-center mt-3">
               <Text component="div" size="xl" bold={true}>
-                {title}
+                {errorTitle[code]}
               </Text>
               <Text size="md">{message}</Text>
               <NavLink path="/" className="btn btn-primary py-3 px-5 mt-3">
@@ -24,7 +32,7 @@ const Error: React.FC<ErrorProps> = ({ title, message, src }) => {
             </div>
           </div>
           <div className="col-sm-9">
-            <img src={src} className="mb-3 img-fluid" />
+            <img src={`/${code}.png`} className="mb-3 img-fluid" />
           </div>
         </div>
       </div>
