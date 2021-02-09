@@ -16,20 +16,19 @@ export default {
   components: Error,
   title: 'Components/Error'
 }
-
-export const NotFound: React.FC = () => {
-  const mocks = [
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          lessons: [],
-          session: null,
-          alerts: []
-        }
+const mocks = [
+  {
+    request: { query: GET_APP },
+    result: {
+      data: {
+        lessons: [],
+        session: null,
+        alerts: []
       }
     }
-  ]
+  }
+]
+export const NotFound: React.FC = () => {
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
       <Error code={StatusCode.NOT_FOUND} message="404 error" />
@@ -38,18 +37,6 @@ export const NotFound: React.FC = () => {
 }
 
 export const Internal: React.FC = () => {
-  const mocks = [
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          lessons: [],
-          session: null,
-          alerts: []
-        }
-      }
-    }
-  ]
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
       <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="No data" />
