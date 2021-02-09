@@ -1,23 +1,15 @@
-// From Next.JS example https://github.com/vercel/next.js/blob/canary/examples/with-sentry-simple/pages/_error.js
+// From Next.JS example https://github.com/vercel/next.js/blob/canary/examples/with-sentry/pages/_error.js
 import React from 'react'
 import * as Sentry from '@sentry/browser'
 import { NextPageContext } from 'next'
 import ErrorComponent, { StatusCode } from '../components/Error'
 
 interface MyErrorContext extends NextPageContext {
-  statusCode: number
+  code: number
   hasGetInitialPropsRun: boolean
 }
-const toStatusCode = (code: number): StatusCode => {
-  if (code === 404) return StatusCode.NOT_FOUND
-  return StatusCode.INTERNAL_SERVER_ERROR
-}
 
-const MyError = ({
-  statusCode,
-  hasGetInitialPropsRun,
-  err
-}: MyErrorContext) => {
+const MyError = ({ code, hasGetInitialPropsRun, err }: MyErrorContext) => {
   if (!hasGetInitialPropsRun && err) {
     // getInitialProps is not called in case of
     // https://github.com/vercel/next.js/issues/8592. As a workaround, we pass
@@ -25,14 +17,24 @@ const MyError = ({
     Sentry.captureException(err)
   }
 
-  return <ErrorComponent code={toStatusCode(statusCode)} />
+  return (
+    <ErrorComponent
+      code={
+        StatusCode[code]
+          ? StatusCode[StatusCode[code] as keyof typeof StatusCode]
+          : StatusCode.INTERNAL_SERVER_ERROR
+      }
+    />
+  )
 }
-
+interface ErrorProps {
+  code: number | undefined
+  hasGetInitialPropsRun?: boolean
+}
 MyError.getInitialProps = async ({ res, err, asPath }: MyErrorContext) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
-  const errorInitialProps = {
-    statusCode,
-    hasGetInitialPropsRun: false
+  const code = res ? res.statusCode : err ? err.statusCode : 404
+  const errorInitialProps: ErrorProps = {
+    code
   }
 
   // Workaround for https://github.com/vercel/next.js/issues/8592, mark when

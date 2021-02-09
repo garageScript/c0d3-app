@@ -2516,11 +2516,15 @@ Array [
           </div>
         </div>
         <div
-          className="col-sm-9"
+          className="mb-3 col-sm-9"
         >
           <img
-            className="mb-3 img-fluid"
+            className="img-fluid"
+            height={1200}
+            layout="responsive"
+            objectFit="contain"
             src="/500.png"
+            width={1200}
           />
         </div>
       </div>
@@ -2623,11 +2627,15 @@ Array [
           </div>
         </div>
         <div
-          className="col-sm-9"
+          className="mb-3 col-sm-9"
         >
           <img
-            className="mb-3 img-fluid"
+            className="img-fluid"
+            height={1200}
+            layout="responsive"
+            objectFit="contain"
             src="/404.png"
+            width={1200}
           />
         </div>
       </div>

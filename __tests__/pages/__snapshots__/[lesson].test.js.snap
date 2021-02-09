@@ -550,12 +550,22 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           </div>
         </div>
         <div
-          class="col-sm-9"
+          class="mb-3 col-sm-9"
         >
-          <img
-            class="mb-3 img-fluid"
-            src="/404.png"
-          />
+          <div
+            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="display: block; box-sizing: border-box; padding-top: 100%;"
+            />
+            <img
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=%2F404.png&w=3840&q=75"
+              srcset="/_next/image?url=%2F404.png&w=640&q=75 640w, /_next/image?url=%2F404.png&w=750&q=75 750w, /_next/image?url=%2F404.png&w=828&q=75 828w, /_next/image?url=%2F404.png&w=1080&q=75 1080w, /_next/image?url=%2F404.png&w=1200&q=75 1200w, /_next/image?url=%2F404.png&w=1920&q=75 1920w, /_next/image?url=%2F404.png&w=2048&q=75 2048w, /_next/image?url=%2F404.png&w=3840&q=75 3840w"
+              style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1148,12 +1158,22 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           </div>
         </div>
         <div
-          class="col-sm-9"
+          class="mb-3 col-sm-9"
         >
-          <img
-            class="mb-3 img-fluid"
-            src="/500.png"
-          />
+          <div
+            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="display: block; box-sizing: border-box; padding-top: 100%;"
+            />
+            <img
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=%2F500.png&w=3840&q=75"
+              srcset="/_next/image?url=%2F500.png&w=640&q=75 640w, /_next/image?url=%2F500.png&w=750&q=75 750w, /_next/image?url=%2F500.png&w=828&q=75 828w, /_next/image?url=%2F500.png&w=1080&q=75 1080w, /_next/image?url=%2F500.png&w=1200&q=75 1200w, /_next/image?url=%2F500.png&w=1920&q=75 1920w, /_next/image?url=%2F500.png&w=2048&q=75 2048w, /_next/image?url=%2F500.png&w=3840&q=75 3840w"
+              style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
         </div>
       </div>
     </div>
