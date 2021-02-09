@@ -3,6 +3,15 @@ import Error, { StatusCode } from '../../components/Error'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 
+import * as nextImage from 'next/image'
+import { ImageProps } from '../../node_modules/next/dist/client/image'
+//storybook doesn't support nextImage yet
+Object.defineProperty(nextImage, 'default', {
+  configurable: true,
+  value: (props: ImageProps) => {
+    return <img {...props} className="img-fluid" />
+  }
+})
 export default {
   components: Error,
   title: 'Components/Error'

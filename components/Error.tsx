@@ -2,9 +2,10 @@ import React from 'react'
 import Layout from './Layout'
 import NavLink from './NavLink'
 import { Text } from './theme/Text'
+import Image from 'next/image'
 export enum StatusCode {
-  NOT_FOUND = '404',
-  INTERNAL_SERVER_ERROR = '500'
+  NOT_FOUND = 404,
+  INTERNAL_SERVER_ERROR = 500
 }
 type ErrorProps = {
   code: StatusCode
@@ -31,8 +32,14 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
               </NavLink>
             </div>
           </div>
-          <div className="col-sm-9">
-            <img src={`/${code}.png`} className="mb-3 img-fluid" />
+          <div className="mb-3 col-sm-9">
+            <Image
+              src={`/${code}.png`}
+              layout="responsive"
+              objectFit="contain"
+              width={1200}
+              height={1200}
+            />
           </div>
         </div>
       </div>
