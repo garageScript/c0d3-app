@@ -32,12 +32,12 @@ const UserProfile: React.FC = () => {
     return <LoadingSpinner />
   }
   if (error) {
-    if (_.get(error, 'graphQLErrors[0].message') === 'Invalid user object') {
-      return (
-        <Error code={StatusCode.NOT_FOUND} message="This user does not exist" />
-      )
-    }
-    return <Error code={StatusCode.NOT_FOUND} message={error.message} />
+    return (
+      <Error
+        code={StatusCode.INTERNAL_SERVER_ERROR}
+        message="Internal server error"
+      />
+    )
   }
   const { lessons } = data || {}
   const lessonsList = lessons || []

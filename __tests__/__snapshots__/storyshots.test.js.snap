@@ -2523,7 +2523,7 @@ Array [
             height={1200}
             layout="responsive"
             objectFit="contain"
-            src="/500.png"
+            src="/500.svg"
             width={1200}
           />
         </div>
@@ -2634,7 +2634,7 @@ Array [
             height={1200}
             layout="responsive"
             objectFit="contain"
-            src="/404.png"
+            src="/404.svg"
             width={1200}
           />
         </div>
