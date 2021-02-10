@@ -1,15 +1,9 @@
 import React from 'react'
-import {
-  render,
-  fireEvent,
-  waitFor,
-  cleanup
-} from '@testing-library/react/pure'
+import { render, fireEvent, waitFor, cleanup } from '@testing-library/react'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import ReviewCard, { DiffView } from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
 import _ from 'lodash'
-
 // correct javascript submission
 const JsDiff =
   'diff --git a/js7/1.js b/js7/1.js\nindex 9c96b34..853bddf 100644\n--- a/js7/1.js\n+++ b/js7/1.js\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
@@ -121,10 +115,8 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
-    cleanup()
   })
   test('Should be able to accept submission', async () => {
-    console.log(submissionData)
     const { container, getByRole } = render(
       <MockedProvider mocks={mocks}>
         <ReviewCard submissionData={submissionData} addTypeName={false} />

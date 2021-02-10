@@ -12,14 +12,15 @@ const mocks = [
   {
     request: {
       query: ACCEPT_SUBMISSION,
-      variables: { submissionId: '1', lessonId: '1', comment: 'good job' }
+      variables: { id: '1', comment: 'good job' }
     },
     result: {
       data: {
-        submissionId: '1',
-        lessonId: '1',
-        comment: 'good job',
-        status: 'passed'
+        acceptSubmission: {
+          id: '1',
+          comment: 'good job',
+          status: 'passed'
+        }
       }
     }
   },
@@ -34,9 +35,11 @@ const mocks = [
     },
     result: {
       data: {
-        id: '1',
-        comment: 'error on line 3',
-        status: 'active'
+        rejectSubmission: {
+          id: '1',
+          comment: 'error on line 3',
+          status: 'active'
+        }
       }
     }
   }
