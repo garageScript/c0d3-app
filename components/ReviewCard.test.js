@@ -4,6 +4,7 @@ import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import ReviewCard, { DiffView } from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
+import _ from 'lodash'
 
 // correct javascript submission
 const JsDiff =
@@ -61,20 +62,6 @@ const mocks = [
   }
 ]
 describe('ReviewCard Component', () => {
-  test('Should be able to accept submission', async () => {
-    const { container, getByRole } = render(
-      <MockedProvider mocks={mocks}>
-        <ReviewCard submissionData={submissionData} addTypeName={false} />
-      </MockedProvider>
-    )
-    fireEvent.change(getByRole('textbox', { name: '' }), {
-      target: { value: 'Good job!' }
-    })
-    await waitFor(() =>
-      fireEvent.click(getByRole('button', { name: 'Accept' }))
-    )
-    expect(container).toMatchSnapshot()
-  })
   test('Should render submissions in other languages', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks}>
@@ -86,8 +73,9 @@ describe('ReviewCard Component', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
   test('Should render no diff input', async () => {
-    const NoDiffSumbisson = submissionData
+    const NoDiffSumbisson = _.cloneDeep(submissionData)
     delete NoDiffSumbisson.diff
 
     const { container } = render(
@@ -97,6 +85,7 @@ describe('ReviewCard Component', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
   test('Should render incorrect diff', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks}>
@@ -127,6 +116,21 @@ describe('ReviewCard Component', () => {
           addTypeName={false}
         />
       </MockedProvider>
+    )
+    expect(container).toMatchSnapshot()
+  })
+  test('Should be able to accept submission', async () => {
+    console.log(submissionData)
+    const { container, getByRole } = render(
+      <MockedProvider mocks={mocks}>
+        <ReviewCard submissionData={submissionData} addTypeName={false} />
+      </MockedProvider>
+    )
+    fireEvent.change(getByRole('textbox', { name: '' }), {
+      target: { value: 'Good job!' }
+    })
+    await waitFor(() =>
+      fireEvent.click(getByRole('button', { name: 'Accept' }))
     )
     expect(container).toMatchSnapshot()
   })
