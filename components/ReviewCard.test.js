@@ -48,17 +48,11 @@ describe('ReviewCard Component', () => {
     const mocks = [
       {
         request: {
-          query: ACCEPT_SUBMISSION
+          query: ACCEPT_SUBMISSION,
+          variables: { id: 1, comment: 'good job' }
         },
         result: {
           data: { id: 1, comment: 'good job', status: 'passed' }
-        },
-
-        request: {
-          query: REJECT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'error on line 3', status: 'active' }
         }
       }
     ]
