@@ -1,7 +1,11 @@
 import React from 'react'
-import { render, fireEvent, waitFor } from '@testing-library/react'
+import {
+  render,
+  fireEvent,
+  waitFor,
+  cleanup
+} from '@testing-library/react/pure'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
-import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import ReviewCard, { DiffView } from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
 import _ from 'lodash'
@@ -77,7 +81,6 @@ describe('ReviewCard Component', () => {
   test('Should render no diff input', async () => {
     const NoDiffSumbisson = _.cloneDeep(submissionData)
     delete NoDiffSumbisson.diff
-
     const { container } = render(
       <MockedProvider mocks={mocks}>
         <DiffView submissionData={NoDiffSumbisson} addTypeName={false} />
@@ -118,6 +121,7 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
+    cleanup()
   })
   test('Should be able to accept submission', async () => {
     console.log(submissionData)
