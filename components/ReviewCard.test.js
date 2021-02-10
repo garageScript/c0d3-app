@@ -51,9 +51,11 @@ const mocks = [
     },
     result: {
       data: {
-        id: '1',
-        comment: 'good job',
-        status: 'passed'
+        acceptSubmission: {
+          id: '1',
+          comment: 'good job',
+          status: 'passed'
+        }
       }
     }
   }
