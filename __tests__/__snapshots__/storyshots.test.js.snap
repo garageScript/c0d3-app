@@ -2429,6 +2429,228 @@ exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Error Internal 1`] = `
+Array [
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            className="text-center mt-3"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1.5rem",
+                }
+              }
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              No data
+            </div>
+            <a
+              className="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <h3
+                className="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          className="mb-3 col-sm-9"
+        >
+          <img
+            className="img-fluid"
+            height={1200}
+            layout="responsive"
+            objectFit="contain"
+            src="/500.svg"
+            width={1200}
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Components/Error Not Found 1`] = `
+Array [
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            className="text-center mt-3"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1.5rem",
+                }
+              }
+            >
+              <strong>
+                Page not found
+              </strong>
+            </div>
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              404 error
+            </div>
+            <a
+              className="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <h3
+                className="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          className="mb-3 col-sm-9"
+        >
+          <img
+            className="img-fluid"
+            height={1200}
+            layout="responsive"
+            objectFit="contain"
+            src="/404.svg"
+            width={1200}
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
 <div
   className="d-flex flex-row"
