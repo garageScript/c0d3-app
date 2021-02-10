@@ -8,18 +8,19 @@ type ArgsGetLessonMentors = {
 export const getLessonMentors = async (
   _parent: void,
   args: ArgsGetLessonMentors
-): Promise<[User]> => {
+): Promise<User[]> => {
   const { lessonId } = args
   try {
     await validateLessonId(parseInt(lessonId))
-    const results = await UserLesson.findAll({
-      where: { lessonId },
-      include: [{ model: User }]
+    const results: [UserLesson & { user: User }] = await UserLesson.findAll({
+      where: {
+        lessonId
+      },
+      include: [
+        { model: User, as: 'user', attributes: ['username', 'name', 'id'] }
+      ]
     })
-
-    return results.map(({ User: { username, name, id } }: { User: User }) => {
-      return { username, name, id }
-    })
+    return results.map(({ user }) => user)
   } catch (err) {
     throw new Error(err)
   }

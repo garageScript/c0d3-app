@@ -10,11 +10,10 @@ describe('getLessonMentors resolver', () => {
 
   test('should return an array of User objects', async () => {
     UserLesson.findAll = jest.fn().mockReturnValue([
-      { User: { username: 'user1', email: 'abc@mail', name: 'lol', id: 2 } },
+      { user: { username: 'user1', name: 'lol', id: 2 } },
       {
-        User: {
+        user: {
           username: 'user2',
-          email: 'xyz@mail',
           name: 'potato',
           id: 240
         }
@@ -27,7 +26,9 @@ describe('getLessonMentors resolver', () => {
     ])
     expect(UserLesson.findAll).toHaveBeenCalledWith({
       where: { lessonId: '3' },
-      include: [{ model: User }]
+      include: [
+        { model: User, as: 'user', attributes: ['username', 'name', 'id'] }
+      ]
     })
   })
 
