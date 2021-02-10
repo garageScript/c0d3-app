@@ -43,19 +43,28 @@ const submissionData = {
   createdAt: '123',
   updatedAt: '123'
 }
+const mocks = [
+  {
+    request: {
+      query: ACCEPT_SUBMISSION,
+      variables: { id: '1', comment: 'good job' }
+    },
+    result: {
+      data: { id: '1', comment: 'good job', status: 'passed' }
+    }
+  },
+  {
+    request: {
+      query: REJECT_SUBMISSION,
+      variables: { id: '1', comment: 'error on line 3' }
+    },
+    result: {
+      data: { id: '1', comment: 'error on line 3', status: 'active' }
+    }
+  }
+]
 describe('ReviewCard Component', () => {
   test('Should be able to accept submission', async () => {
-    const mocks = [
-      {
-        request: {
-          query: ACCEPT_SUBMISSION,
-          variables: { id: 1, comment: 'good job' }
-        },
-        result: {
-          data: { id: 1, comment: 'good job', status: 'passed' }
-        }
-      }
-    ]
     const { container, getByRole } = render(
       <MockedProvider mocks={mocks}>
         <ReviewCard submissionData={submissionData} addTypeName={false} />
@@ -70,24 +79,6 @@ describe('ReviewCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should render submissions in other languages', async () => {
-    const mocks = [
-      {
-        request: {
-          query: ACCEPT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'good job', status: 'passed' }
-        }
-      },
-      {
-        request: {
-          query: REJECT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'error on line 3', status: 'active' }
-        }
-      }
-    ]
     const { container } = render(
       <MockedProvider mocks={mocks}>
         <ReviewCard
@@ -101,24 +92,7 @@ describe('ReviewCard Component', () => {
   test('Should render no diff input', async () => {
     const NoDiffSumbisson = submissionData
     delete NoDiffSumbisson.diff
-    const mocks = [
-      {
-        request: {
-          query: ACCEPT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'good job', status: 'passed' }
-        }
-      },
-      {
-        request: {
-          query: REJECT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'error on line 3', status: 'active' }
-        }
-      }
-    ]
+
     const { container } = render(
       <MockedProvider mocks={mocks}>
         <DiffView submissionData={NoDiffSumbisson} addTypeName={false} />
@@ -127,24 +101,6 @@ describe('ReviewCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should render incorrect diff', async () => {
-    const mocks = [
-      {
-        request: {
-          query: ACCEPT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'good job', status: 'passed' }
-        }
-      },
-      {
-        request: {
-          query: REJECT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'error on line 3', status: 'active' }
-        }
-      }
-    ]
     const { container } = render(
       <MockedProvider mocks={mocks}>
         <ReviewCard
@@ -156,24 +112,6 @@ describe('ReviewCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should render incomplete diff', async () => {
-    const mocks = [
-      {
-        request: {
-          query: ACCEPT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'good job', status: 'passed' }
-        }
-      },
-      {
-        request: {
-          query: REJECT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'error on line 3', status: 'active' }
-        }
-      }
-    ]
     const { container } = render(
       <MockedProvider mocks={mocks}>
         <ReviewCard
@@ -185,24 +123,6 @@ describe('ReviewCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should render single path submission', async () => {
-    const mocks = [
-      {
-        request: {
-          query: ACCEPT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'good job', status: 'passed' }
-        }
-      },
-      {
-        request: {
-          query: REJECT_SUBMISSION
-        },
-        result: {
-          data: { id: 1, comment: 'error on line 3', status: 'active' }
-        }
-      }
-    ]
     const { container } = render(
       <MockedProvider mocks={mocks}>
         <ReviewCard
