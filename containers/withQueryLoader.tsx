@@ -1,7 +1,8 @@
-import { useQuery, DocumentNode } from '@apollo/client'
 import React from 'react'
+import { useQuery } from '@apollo/client'
+import { DocumentNode } from '@apollo/client'
 import LoadingSpinner from '../components/LoadingSpinner'
-
+import router from 'next/router'
 type QueryProps = {
   query: DocumentNode
   getParams?: Function
@@ -22,8 +23,8 @@ const withQueryLoader = <T extends {}>(
   if (data) {
     return <Component queryData={data} {...props} />
   }
-
-  return <h1>No Data...</h1>
+  router.push('/500')
+  return <LoadingSpinner />
 }
 
 export default withQueryLoader

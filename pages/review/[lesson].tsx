@@ -10,6 +10,7 @@ import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
 import { AppData } from '../../@types/app'
+import Error, { StatusCode } from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -41,7 +42,13 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   }
   if (!session) {
     router.push('/login')
-    return null
+    return <LoadingSpinner />
+  }
+  const currentLesson: Lesson | undefined = lessons.find(
+    (lesson: Lesson) => lesson.id === currentlessonId
+  )
+  if (!currentLesson) {
+    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
   const lessonSubmissions: SubmissionData[] = data
     ? data.submissions.filter(
@@ -49,10 +56,6 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
           submission.status !== 'passed' && submission.status !== 'needMoreWork'
       )
     : []
-  const currentLesson: Lesson =
-    lessons.find(
-      (lesson: Lesson) => lesson.id.toString() === currentlessonId
-    ) || ({} as Lesson)
   return (
     <div>
       <Layout>

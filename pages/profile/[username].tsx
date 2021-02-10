@@ -10,6 +10,7 @@ import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { Star } from '../../@types/lesson'
+import Error, { StatusCode } from '../../components/Error'
 
 export type UserInfo = {
   username: string
@@ -31,7 +32,12 @@ const UserProfile: React.FC = () => {
     return <LoadingSpinner />
   }
   if (error) {
-    return <h1>Error</h1>
+    return (
+      <Error
+        code={StatusCode.INTERNAL_SERVER_ERROR}
+        message="Internal server error"
+      />
+    )
   }
   const { lessons } = data || {}
   const lessonsList = lessons || []

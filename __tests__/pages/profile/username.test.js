@@ -166,23 +166,6 @@ describe('user profile test', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Should return error on error', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        error: new Error('error')
-      }
-    ]
-
-    const { findByRole } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
-      </MockedProvider>
-    )
-
-    const element = await findByRole('heading', { name: /error/i })
-    expect(element).toBeTruthy()
-  })
   test('Should render anonymous users', async () => {
     const anonymous = {
       ...dummySessionData,
@@ -394,5 +377,22 @@ describe('user profile test', () => {
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
+  })
+  test('Should return error on error', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        error: new Error('error')
+      }
+    ]
+
+    const { findByRole } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+
+    const element = await findByRole('heading', { name: /Back/i })
+    expect(element).toBeTruthy()
   })
 })
