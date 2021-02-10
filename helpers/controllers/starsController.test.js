@@ -28,7 +28,7 @@ describe('setStar resolver', () => {
   test('should throw error if studentId and mentorId is the same', async () => {
     await expect(
       setStar(null, { lessonId: 52226, mentorId: 1337 }, ctx)
-    ).rejects.toThrowError('Unable to give error to yourself')
+    ).rejects.toThrowError('Unable to give star to yourself')
     expect(Star.create).toHaveBeenCalledTimes(0)
     expect(ctx.req.error).toHaveBeenCalledTimes(1)
   })

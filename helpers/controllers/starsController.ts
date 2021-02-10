@@ -19,7 +19,7 @@ export const setStar = async (
     const { lessonId, mentorId } = arg
 
     if (studentId === mentorId) {
-      throw new Error('Unable to give error to yourself')
+      throw new Error('Unable to give star to yourself')
     }
     await validateLessonId(lessonId)
 
