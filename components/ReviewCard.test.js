@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, fireEvent, waitFor, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import ReviewCard, { DiffView } from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
@@ -62,11 +63,8 @@ const mocks = [
 describe('ReviewCard Component', () => {
   test('Should render submissions in other languages', async () => {
     const { container } = render(
-      <MockedProvider mocks={mocks}>
-        <ReviewCard
-          submissionData={{ ...submissionData, diff: NonJsDiff }}
-          addTypeName={false}
-        />
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard submissionData={{ ...submissionData, diff: NonJsDiff }} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -76,8 +74,8 @@ describe('ReviewCard Component', () => {
     const NoDiffSumbisson = _.cloneDeep(submissionData)
     delete NoDiffSumbisson.diff
     const { container } = render(
-      <MockedProvider mocks={mocks}>
-        <DiffView submissionData={NoDiffSumbisson} addTypeName={false} />
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <DiffView submissionData={NoDiffSumbisson} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -85,10 +83,9 @@ describe('ReviewCard Component', () => {
 
   test('Should render incorrect diff', async () => {
     const { container } = render(
-      <MockedProvider mocks={mocks}>
+      <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
           submissionData={{ ...submissionData, diff: IncorrectDiff }}
-          addTypeName={false}
         />
       </MockedProvider>
     )
@@ -96,10 +93,9 @@ describe('ReviewCard Component', () => {
   })
   test('Should render incomplete diff', async () => {
     const { container } = render(
-      <MockedProvider mocks={mocks}>
+      <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
           submissionData={{ ...submissionData, diff: InCompleteDiff }}
-          addTypeName={false}
         />
       </MockedProvider>
     )
@@ -107,10 +103,9 @@ describe('ReviewCard Component', () => {
   })
   test('Should render single path submission', async () => {
     const { container } = render(
-      <MockedProvider mocks={mocks}>
+      <MockedProvider mocks={mocks} addTypename={false}>
         <ReviewCard
           submissionData={{ ...submissionData, diff: NoNewPathDiff }}
-          addTypeName={false}
         />
       </MockedProvider>
     )
@@ -118,16 +113,12 @@ describe('ReviewCard Component', () => {
   })
   test('Should be able to accept submission', async () => {
     const { container, getByRole } = render(
-      <MockedProvider mocks={mocks}>
-        <ReviewCard submissionData={submissionData} addTypeName={false} />
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard submissionData={submissionData} />
       </MockedProvider>
     )
-    fireEvent.change(getByRole('textbox', { name: '' }), {
-      target: { value: 'Good job!' }
-    })
-    await waitFor(() =>
-      fireEvent.click(getByRole('button', { name: 'Accept' }))
-    )
+    userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
+    userEvent.click(getByRole('button', { name: 'Accept' }))
     expect(container).toMatchSnapshot()
   })
 })
