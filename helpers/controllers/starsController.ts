@@ -17,6 +17,10 @@ export const setStar = async (
   try {
     const studentId = validateStudentId(req)
     const { lessonId, mentorId } = arg
+
+    if (studentId === mentorId) {
+      throw new Error('Unable to give star to yourself')
+    }
     await validateLessonId(lessonId)
 
     const lookupData = { where: { studentId, lessonId } }

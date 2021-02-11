@@ -25,6 +25,14 @@ describe('setStar resolver', () => {
     Star.create = jest.fn().mockReturnValue({ success: true })
   })
 
+  test('should throw error if studentId and mentorId is the same', async () => {
+    await expect(
+      setStar(null, { lessonId: 52226, mentorId: 1337 }, ctx)
+    ).rejects.toThrowError('Unable to give star to yourself')
+    expect(Star.create).toHaveBeenCalledTimes(0)
+    expect(ctx.req.error).toHaveBeenCalledTimes(1)
+  })
+
   test('should return success object if no errors are thrown, and Star.create is called', async () => {
     const res = await setStar(null, { lessonId: 52226, mentorId: 815 }, ctx)
     expect(Star.create).toHaveBeenCalledTimes(1)
