@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps, err, apollo }: IProps) {
         />
         <meta
           property="og:image"
-          content="https://www.c0d3.com/c0d3-meta.svg"
+          content="https://www.c0d3.com/assets/c0d3-meta.svg"
         />
 
         {/* <!-- Twitter --> */}
@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps, err, apollo }: IProps) {
         />
         <meta
           property="twitter:image"
-          content="https://www.c0d3.com/c0d3-meta.svg"
+          content="https://www.c0d3.com/assets/c0d3-meta.svg"
         />
       </Head>
       <Component {...pageProps} err={err} />

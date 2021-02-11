@@ -28,7 +28,7 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   return (
     <div className={lessonImageClass}>
       {badge}
-      <img src={`/curriculumAssets/lessonCoversSvg/js-${order}-cover.svg`} />
+      <img src={`/assets/curriculum/js-${order}-cover.svg`} />
     </div>
   )
 }
