@@ -31,7 +31,7 @@ type DiffViewProps = {
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 
-const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
+export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
   const files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
