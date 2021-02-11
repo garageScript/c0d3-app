@@ -67,7 +67,7 @@ exports[`Storyshots Components/Alert Info 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/icon-tip.svg"
+      src="/assets/curriculum/icons/icon-tip.svg"
     />
     Set up your computer to submit challenges. 
   </div>
@@ -82,7 +82,7 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/icon-tip.svg"
+      src="/assets/curriculum/icons/icon-tip.svg"
     />
     Set up your computer to submit challenges. 
     <a
@@ -101,7 +101,7 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
     role="dismiss"
   >
     <img
-      src="/curriculumAssets/icons/dismiss-info.svg"
+      src="/assets/curriculum/icons/dismiss-info.svg"
     />
   </button>
 </div>
@@ -115,7 +115,7 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/exclamation.svg"
+      src="/assets/curriculum/icons/exclamation.svg"
     />
     Invalid password 
   </div>
@@ -130,7 +130,7 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/exclamation.svg"
+      src="/assets/curriculum/icons/exclamation.svg"
     />
     Please upgrade your CLI client by running npm update c0d3. 
     <a
@@ -149,7 +149,7 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
     role="dismiss"
   >
     <img
-      src="/curriculumAssets/icons/dismiss-urgent.svg"
+      src="/assets/curriculum/icons/dismiss-urgent.svg"
     />
   </button>
 </div>
@@ -393,7 +393,7 @@ exports[`Storyshots Components/Card With Fail 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M89 9a81 81 0 1 0 2 0zm1 38v58m0 25v1"
+          d="M89 9a81 81 0 102 0 NaN NaNzm1 38v58m0 25v1"
           fill="none"
           stroke="#721c24"
           strokeLinecap="round"
@@ -590,7 +590,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
         </div>
         <img
           height="25px"
-          src="/curriculumAssets/icons/checkmark.svg"
+          src="/assets/curriculum/icons/checkmark.svg"
           width="25px"
         />
       </div>
@@ -608,7 +608,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
         </div>
         <img
           height="25px"
-          src="/curriculumAssets/icons/checkmark.svg"
+          src="/assets/curriculum/icons/checkmark.svg"
           width="25px"
         />
       </div>
@@ -626,7 +626,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
         </div>
         <img
           height="25px"
-          src="/curriculumAssets/icons/checkmark.svg"
+          src="/assets/curriculum/icons/checkmark.svg"
           width="25px"
         />
       </div>
@@ -643,7 +643,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
       >
         <img
           className="mt-3"
-          src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+          src="/assets/curriculum/icons/icon-challenge-complete.jpg"
         />
         <h4
           className="card-title mt-2"
@@ -724,7 +724,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         </div>
         <img
           height="25px"
-          src="/curriculumAssets/icons/checkmark.svg"
+          src="/assets/curriculum/icons/checkmark.svg"
           width="25px"
         />
       </div>
@@ -1755,7 +1755,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Complete 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/checkmark.svg"
+      src="/assets/curriculum/icons/checkmark.svg"
       width="25px"
     />
   </div>
@@ -1776,7 +1776,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/rejected.svg"
+      src="/assets/curriculum/icons/rejected.svg"
       width="25px"
     />
   </div>
@@ -1797,7 +1797,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Rejected 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/rejected.svg"
+      src="/assets/curriculum/icons/rejected.svg"
       width="25px"
     />
   </div>
@@ -1834,7 +1834,7 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/checkmark.svg"
+      src="/assets/curriculum/icons/checkmark.svg"
       width="25px"
     />
   </div>
@@ -1855,7 +1855,7 @@ exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/pending.svg"
+      src="/assets/curriculum/icons/pending.svg"
       width="25px"
     />
   </div>
@@ -1876,7 +1876,7 @@ exports[`Storyshots Components/ChallengeTitleCard Rejected 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/rejected.svg"
+      src="/assets/curriculum/icons/rejected.svg"
       width="25px"
     />
   </div>
@@ -1892,7 +1892,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = 
   >
     <img
       className="mt-3"
-      src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+      src="/assets/curriculum/icons/icon-challenge-complete.jpg"
     />
     <h4
       className="card-title mt-2"
@@ -1954,7 +1954,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
   >
     <img
       className="mt-3"
-      src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+      src="/assets/curriculum/icons/icon-challenge-complete.jpg"
     />
     <h4
       className="card-title mt-2"
@@ -2523,7 +2523,7 @@ Array [
             height={1200}
             layout="responsive"
             objectFit="contain"
-            src="/500.svg"
+            src="/assets/errors/500.svg"
             width={1200}
           />
         </div>
@@ -2634,7 +2634,7 @@ Array [
             height={1200}
             layout="responsive"
             objectFit="contain"
-            src="/404.svg"
+            src="/assets/errors/404.svg"
             width={1200}
           />
         </div>
@@ -4093,7 +4093,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      src="/assets/curriculum/js-4-cover.svg"
     />
     <div
       className="w-100 pl-4"
@@ -4118,7 +4118,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             <img
               alt="icon-challenge"
               className="mr-2"
-              src="/curriculumAssets/icons/icon-challenge.svg"
+              src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
               className="lesson-card__icon-text"
@@ -4148,7 +4148,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      src="/assets/curriculum/js-4-cover.svg"
     />
     <div
       className="w-100 pl-4"
@@ -4205,7 +4205,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             <img
               alt="icon-challenge"
               className="mr-2"
-              src="/curriculumAssets/icons/icon-challenge.svg"
+              src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
               className="lesson-card__icon-text"
@@ -4246,7 +4246,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      src="/assets/curriculum/js-4-cover.svg"
     />
     <div
       className="w-100 pl-4"
@@ -4271,7 +4271,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             <img
               alt="icon-challenge"
               className="mr-2"
-              src="/curriculumAssets/icons/icon-challenge.svg"
+              src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
               className="lesson-card__icon-text"
@@ -4325,7 +4325,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       <img
         alt="lesson-cover"
         className="lessonTitleCard__lesson-cover mr-3"
-        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        src="/assets/curriculum/js-0-cover.svg"
       />
       <div>
         <p
@@ -4384,7 +4384,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       <img
         alt="lesson-cover"
         className="lessonTitleCard__lesson-cover mr-3"
-        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        src="/assets/curriculum/js-0-cover.svg"
       />
       <div>
         <p
@@ -4837,14 +4837,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         23%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        src="/assets/curriculum/js-0-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+        src="/assets/curriculum/js-1-cover.svg"
       />
     </div>
     <div
@@ -4856,7 +4856,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         60%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+        src="/assets/curriculum/js-2-cover.svg"
       />
     </div>
     <div
@@ -4868,21 +4868,21 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         100%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+        src="/assets/curriculum/js-3-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+        src="/assets/curriculum/js-4-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+        src="/assets/curriculum/js-5-cover.svg"
       />
     </div>
     <div
@@ -4894,14 +4894,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         80%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+        src="/assets/curriculum/js-6-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+        src="/assets/curriculum/js-7-cover.svg"
       />
     </div>
     <div
@@ -4913,14 +4913,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         100%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+        src="/assets/curriculum/js-8-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+        src="/assets/curriculum/js-9-cover.svg"
       />
     </div>
   </div>
@@ -4971,7 +4971,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+            src="/assets/curriculum/js-0-cover.svg"
           />
         </div>
         <div
@@ -5052,7 +5052,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+            src="/assets/curriculum/js-1-cover.svg"
           />
         </div>
         <div
@@ -5139,7 +5139,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+            src="/assets/curriculum/js-2-cover.svg"
           />
         </div>
         <div
@@ -5223,7 +5223,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+            src="/assets/curriculum/js-3-cover.svg"
           />
         </div>
         <div
@@ -5304,7 +5304,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+            src="/assets/curriculum/js-4-cover.svg"
           />
         </div>
         <div
@@ -5376,7 +5376,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+            src="/assets/curriculum/js-5-cover.svg"
           />
         </div>
         <div
@@ -5463,7 +5463,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+            src="/assets/curriculum/js-6-cover.svg"
           />
         </div>
         <div
@@ -5538,7 +5538,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+            src="/assets/curriculum/js-7-cover.svg"
           />
         </div>
         <div
@@ -5622,7 +5622,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+            src="/assets/curriculum/js-8-cover.svg"
           />
         </div>
         <div
@@ -5685,7 +5685,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+            src="/assets/curriculum/js-9-cover.svg"
           />
         </div>
         <div
@@ -6316,7 +6316,7 @@ exports[`Storyshots Components/Thanks Basic 1`] = `
       >
         <img
           className="h-25 w-25"
-          src="/curriculumAssets/icons/success.svg"
+          src="/assets/curriculum/icons/success.svg"
         />
         <h2
           className="mt-4 mb-4 pt-3 pb-3 font-weight-bold text-center"
@@ -6790,7 +6790,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         <img
           alt="Hero Image"
           className="img-fluid"
-          src="header-01.svg"
+          src="/assets/landing/header-01.svg"
         />
       </div>
     </div>
@@ -6886,7 +6886,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <img
           alt=""
-          src="choose-01.svg"
+          src="/assets/landing/choose-01.svg"
           style={
             Object {
               "height": "170px",
@@ -6909,7 +6909,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <img
           alt=""
-          src="choose-02.svg"
+          src="/assets/landing/choose-02.svg"
           style={
             Object {
               "height": "170px",
@@ -6932,7 +6932,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <img
           alt=""
-          src="choose-03.svg"
+          src="/assets/landing/choose-03.svg"
           style={
             Object {
               "height": "170px",
@@ -6989,7 +6989,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-01.svg"
+            src="/assets/landing/journey-01.svg"
           />
         </div>
         <div
@@ -7021,7 +7021,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-02.svg"
+            src="/assets/landing/journey-02.svg"
           />
         </div>
         <div
@@ -7063,7 +7063,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-03.svg"
+            src="/assets/landing/journey-03.svg"
           />
         </div>
         <div
@@ -7095,7 +7095,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-04.svg"
+            src="/assets/landing/journey-04.svg"
           />
         </div>
         <div
@@ -7483,7 +7483,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
             <div>
               <img
                 className="mr-3 alert-icon"
-                src="/curriculumAssets/icons/exclamation.svg"
+                src="/assets/curriculum/icons/exclamation.svg"
               />
                Please try again! 
             </div>
