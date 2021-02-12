@@ -28,7 +28,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
+            src="/assets/curriculum/icons/checkmark.svg"
             width="25px"
           />
         </div>
@@ -45,7 +45,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
+            src="/assets/curriculum/icons/checkmark.svg"
             width="25px"
           />
         </div>
@@ -62,7 +62,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
+            src="/assets/curriculum/icons/checkmark.svg"
             width="25px"
           />
         </div>
@@ -79,7 +79,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         >
           <img
             class="mt-3"
-            src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+            src="/assets/curriculum/icons/icon-challenge-complete.jpg"
           />
           <h4
             class="card-title mt-2"
@@ -160,7 +160,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
             </div>
             <img
               height="25px"
-              src="/curriculumAssets/icons/checkmark.svg"
+              src="/assets/curriculum/icons/checkmark.svg"
               width="25px"
             />
           </div>
@@ -177,7 +177,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
             </div>
             <img
               height="25px"
-              src="/curriculumAssets/icons/checkmark.svg"
+              src="/assets/curriculum/icons/checkmark.svg"
               width="25px"
             />
           </div>
@@ -194,7 +194,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
             </div>
             <img
               height="25px"
-              src="/curriculumAssets/icons/checkmark.svg"
+              src="/assets/curriculum/icons/checkmark.svg"
               width="25px"
             />
           </div>
@@ -211,7 +211,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           >
             <img
               class="mt-3"
-              src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+              src="/assets/curriculum/icons/icon-challenge-complete.jpg"
             />
             <h4
               class="card-title mt-2"
@@ -282,7 +282,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       >
         <img
           class=".img-fluid btn position-absolute exitBtn"
-          src="/curriculumAssets/icons/exit.svg"
+          src="/assets/curriculum/icons/exit.svg"
         />
         <div
           class="chooseMentor d-flex flex-column"
@@ -699,7 +699,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
             </div>
             <img
               height="25px"
-              src="/curriculumAssets/icons/checkmark.svg"
+              src="/assets/curriculum/icons/checkmark.svg"
               width="25px"
             />
           </div>
@@ -716,7 +716,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
             </div>
             <img
               height="25px"
-              src="/curriculumAssets/icons/checkmark.svg"
+              src="/assets/curriculum/icons/checkmark.svg"
               width="25px"
             />
           </div>
@@ -733,7 +733,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
             </div>
             <img
               height="25px"
-              src="/curriculumAssets/icons/checkmark.svg"
+              src="/assets/curriculum/icons/checkmark.svg"
               width="25px"
             />
           </div>
@@ -750,7 +750,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           >
             <img
               class="mt-3"
-              src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+              src="/assets/curriculum/icons/icon-challenge-complete.jpg"
             />
             <h4
               class="card-title mt-2"
@@ -826,7 +826,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/pending.svg"
+            src="/assets/curriculum/icons/pending.svg"
             width="25px"
           />
         </div>
@@ -843,7 +843,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/rejected.svg"
+            src="/assets/curriculum/icons/rejected.svg"
             width="25px"
           />
         </div>
@@ -1477,7 +1477,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/pending.svg"
+            src="/assets/curriculum/icons/pending.svg"
             width="25px"
           />
         </div>
@@ -1494,7 +1494,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/rejected.svg"
+            src="/assets/curriculum/icons/rejected.svg"
             width="25px"
           />
         </div>

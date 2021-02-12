@@ -148,70 +148,70 @@ exports[`user profile test Should render anonymous users 1`] = `
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                src="/assets/curriculum/js-1-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                src="/assets/curriculum/js-2-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                src="/assets/curriculum/js-3-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                src="/assets/curriculum/js-4-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                src="/assets/curriculum/js-5-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                src="/assets/curriculum/js-6-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                src="/assets/curriculum/js-7-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                src="/assets/curriculum/js-8-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                src="/assets/curriculum/js-9-cover.svg"
               />
             </div>
           </div>
@@ -235,7 +235,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -292,7 +292,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                    src="/assets/curriculum/js-1-cover.svg"
                   />
                 </div>
                 <div
@@ -355,7 +355,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                    src="/assets/curriculum/js-2-cover.svg"
                   />
                 </div>
                 <div
@@ -415,7 +415,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                    src="/assets/curriculum/js-3-cover.svg"
                   />
                 </div>
                 <div
@@ -472,7 +472,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                    src="/assets/curriculum/js-4-cover.svg"
                   />
                 </div>
                 <div
@@ -520,7 +520,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                    src="/assets/curriculum/js-5-cover.svg"
                   />
                 </div>
                 <div
@@ -574,7 +574,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                    src="/assets/curriculum/js-6-cover.svg"
                   />
                 </div>
                 <div
@@ -625,7 +625,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                    src="/assets/curriculum/js-7-cover.svg"
                   />
                 </div>
                 <div
@@ -685,7 +685,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                    src="/assets/curriculum/js-8-cover.svg"
                   />
                 </div>
                 <div
@@ -748,7 +748,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                    src="/assets/curriculum/js-9-cover.svg"
                   />
                 </div>
                 <div
@@ -947,70 +947,70 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                src="/assets/curriculum/js-1-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                src="/assets/curriculum/js-2-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                src="/assets/curriculum/js-3-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                src="/assets/curriculum/js-4-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                src="/assets/curriculum/js-5-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                src="/assets/curriculum/js-6-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                src="/assets/curriculum/js-7-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                src="/assets/curriculum/js-8-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                src="/assets/curriculum/js-9-cover.svg"
               />
             </div>
           </div>
@@ -1034,7 +1034,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -1091,7 +1091,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                    src="/assets/curriculum/js-1-cover.svg"
                   />
                 </div>
                 <div
@@ -1154,7 +1154,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                    src="/assets/curriculum/js-2-cover.svg"
                   />
                 </div>
                 <div
@@ -1214,7 +1214,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                    src="/assets/curriculum/js-3-cover.svg"
                   />
                 </div>
                 <div
@@ -1271,7 +1271,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                    src="/assets/curriculum/js-4-cover.svg"
                   />
                 </div>
                 <div
@@ -1319,7 +1319,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                    src="/assets/curriculum/js-5-cover.svg"
                   />
                 </div>
                 <div
@@ -1373,7 +1373,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                    src="/assets/curriculum/js-6-cover.svg"
                   />
                 </div>
                 <div
@@ -1424,7 +1424,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                    src="/assets/curriculum/js-7-cover.svg"
                   />
                 </div>
                 <div
@@ -1484,7 +1484,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                    src="/assets/curriculum/js-8-cover.svg"
                   />
                 </div>
                 <div
@@ -1547,7 +1547,7 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                    src="/assets/curriculum/js-9-cover.svg"
                   />
                 </div>
                 <div
@@ -1751,7 +1751,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                 NaN%
               </p>
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
@@ -1763,7 +1763,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                 NaN%
               </p>
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
@@ -1775,7 +1775,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                 NaN%
               </p>
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
           </div>
@@ -1799,7 +1799,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -1823,7 +1823,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -1847,7 +1847,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -2028,70 +2028,70 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                src="/assets/curriculum/js-1-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                src="/assets/curriculum/js-2-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                src="/assets/curriculum/js-3-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                src="/assets/curriculum/js-4-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                src="/assets/curriculum/js-5-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                src="/assets/curriculum/js-6-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                src="/assets/curriculum/js-7-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                src="/assets/curriculum/js-8-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                src="/assets/curriculum/js-9-cover.svg"
               />
             </div>
           </div>
@@ -2115,7 +2115,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -2172,7 +2172,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                    src="/assets/curriculum/js-1-cover.svg"
                   />
                 </div>
                 <div
@@ -2235,7 +2235,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                    src="/assets/curriculum/js-2-cover.svg"
                   />
                 </div>
                 <div
@@ -2295,7 +2295,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                    src="/assets/curriculum/js-3-cover.svg"
                   />
                 </div>
                 <div
@@ -2352,7 +2352,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                    src="/assets/curriculum/js-4-cover.svg"
                   />
                 </div>
                 <div
@@ -2400,7 +2400,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                    src="/assets/curriculum/js-5-cover.svg"
                   />
                 </div>
                 <div
@@ -2454,7 +2454,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                    src="/assets/curriculum/js-6-cover.svg"
                   />
                 </div>
                 <div
@@ -2505,7 +2505,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                    src="/assets/curriculum/js-7-cover.svg"
                   />
                 </div>
                 <div
@@ -2565,7 +2565,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                    src="/assets/curriculum/js-8-cover.svg"
                   />
                 </div>
                 <div
@@ -2628,7 +2628,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                    src="/assets/curriculum/js-9-cover.svg"
                   />
                 </div>
                 <div
@@ -2827,77 +2827,77 @@ exports[`user profile test Should render nulles challenges 1`] = `
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                src="/assets/curriculum/js-1-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                src="/assets/curriculum/js-2-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                src="/assets/curriculum/js-3-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                src="/assets/curriculum/js-4-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                src="/assets/curriculum/js-5-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                src="/assets/curriculum/js-6-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                src="/assets/curriculum/js-7-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                src="/assets/curriculum/js-8-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                src="/assets/curriculum/js-9-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
           </div>
@@ -2921,7 +2921,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -2978,7 +2978,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                    src="/assets/curriculum/js-1-cover.svg"
                   />
                 </div>
                 <div
@@ -3041,7 +3041,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                    src="/assets/curriculum/js-2-cover.svg"
                   />
                 </div>
                 <div
@@ -3101,7 +3101,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                    src="/assets/curriculum/js-3-cover.svg"
                   />
                 </div>
                 <div
@@ -3158,7 +3158,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                    src="/assets/curriculum/js-4-cover.svg"
                   />
                 </div>
                 <div
@@ -3206,7 +3206,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                    src="/assets/curriculum/js-5-cover.svg"
                   />
                 </div>
                 <div
@@ -3260,7 +3260,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                    src="/assets/curriculum/js-6-cover.svg"
                   />
                 </div>
                 <div
@@ -3311,7 +3311,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                    src="/assets/curriculum/js-7-cover.svg"
                   />
                 </div>
                 <div
@@ -3371,7 +3371,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                    src="/assets/curriculum/js-8-cover.svg"
                   />
                 </div>
                 <div
@@ -3434,7 +3434,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                    src="/assets/curriculum/js-9-cover.svg"
                   />
                 </div>
                 <div
@@ -3476,7 +3476,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -3667,7 +3667,7 @@ exports[`user profile test Should render profile 1`] = `
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                src="/assets/curriculum/js-0-cover.svg"
               />
             </div>
             <div
@@ -3679,63 +3679,63 @@ exports[`user profile test Should render profile 1`] = `
                 16%
               </p>
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                src="/assets/curriculum/js-1-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                src="/assets/curriculum/js-2-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                src="/assets/curriculum/js-3-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                src="/assets/curriculum/js-4-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                src="/assets/curriculum/js-5-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                src="/assets/curriculum/js-6-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                src="/assets/curriculum/js-7-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                src="/assets/curriculum/js-8-cover.svg"
               />
             </div>
             <div
               class="lessonimage_opacity_container"
             >
               <img
-                src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                src="/assets/curriculum/js-9-cover.svg"
               />
             </div>
           </div>
@@ -3759,7 +3759,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+                    src="/assets/curriculum/js-0-cover.svg"
                   />
                 </div>
                 <div
@@ -3816,7 +3816,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+                    src="/assets/curriculum/js-1-cover.svg"
                   />
                 </div>
                 <div
@@ -3879,7 +3879,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+                    src="/assets/curriculum/js-2-cover.svg"
                   />
                 </div>
                 <div
@@ -3939,7 +3939,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+                    src="/assets/curriculum/js-3-cover.svg"
                   />
                 </div>
                 <div
@@ -3996,7 +3996,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+                    src="/assets/curriculum/js-4-cover.svg"
                   />
                 </div>
                 <div
@@ -4044,7 +4044,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+                    src="/assets/curriculum/js-5-cover.svg"
                   />
                 </div>
                 <div
@@ -4098,7 +4098,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+                    src="/assets/curriculum/js-6-cover.svg"
                   />
                 </div>
                 <div
@@ -4149,7 +4149,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+                    src="/assets/curriculum/js-7-cover.svg"
                   />
                 </div>
                 <div
@@ -4209,7 +4209,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+                    src="/assets/curriculum/js-8-cover.svg"
                   />
                 </div>
                 <div
@@ -4272,7 +4272,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <img
-                    src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+                    src="/assets/curriculum/js-9-cover.svg"
                   />
                 </div>
                 <div

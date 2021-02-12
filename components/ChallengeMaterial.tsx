@@ -79,13 +79,13 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
   let statusIconUrl
   switch (status) {
     case 'passed':
-      statusIconUrl = '/curriculumAssets/icons/checkmark.svg'
+      statusIconUrl = '/assets/curriculum/icons/checkmark.svg'
       break
     case 'needMoreWork':
-      statusIconUrl = '/curriculumAssets/icons/rejected.svg'
+      statusIconUrl = '/assets/curriculum/icons/rejected.svg'
       break
     case 'open':
-      statusIconUrl = '/curriculumAssets/icons/pending.svg'
+      statusIconUrl = '/assets/curriculum/icons/pending.svg'
   }
   return <img width="25px" height="25px" src={statusIconUrl} />
 }
@@ -255,7 +255,7 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = (
       />
       <div className="card text-center shadow-sm">
         <div className="card-body">
-          <img src={`/curriculumAssets/icons/${imageSrc}`} className="mt-3" />
+          <img src={`/assets/curriculum/icons/${imageSrc}`} className="mt-3" />
           <h4 className="card-title mt-2">Congratulations!</h4>
           <p className="success-message">
             You have successfully completed all challenges

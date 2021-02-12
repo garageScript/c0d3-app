@@ -9,7 +9,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -58,7 +58,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -96,7 +96,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -145,7 +145,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -182,7 +182,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -231,7 +231,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -268,7 +268,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -289,7 +289,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -317,7 +317,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -338,7 +338,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -369,7 +369,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -390,7 +390,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -418,7 +418,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -439,7 +439,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"
@@ -467,7 +467,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
       class="d-flex p-2"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/undefined"
+        src="/assets/curriculum/undefined"
       />
       <div
         class="w-100 pl-4"
@@ -488,7 +488,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
               <img
                 alt="icon-challenge"
                 class="mr-2"
-                src="/curriculumAssets/icons/icon-challenge.svg"
+                src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
                 class="lesson-card__icon-text"

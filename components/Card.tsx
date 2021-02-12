@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactComponent as Checked } from '../assets/images/checked.svg'
-import { ReactComponent as Fail } from '../public/curriculumAssets/icons/exclamation.svg'
+import { ReactComponent as Fail } from '../public/assets/curriculum/icons/exclamation.svg'
 
 type Props = {
   primary?: boolean

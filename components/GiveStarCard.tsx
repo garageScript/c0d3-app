@@ -119,7 +119,7 @@ const GiveStar: React.FC<GiveStarProps> = ({
         <img
           data-testid="backButton"
           className=".img-fluid btn"
-          src="/curriculumAssets/icons/left-arrow.svg"
+          src="/assets/curriculum/icons/left-arrow.svg"
           onClick={goBack}
         />
       </div>

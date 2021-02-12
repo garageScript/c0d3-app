@@ -117,7 +117,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+              src="/assets/curriculum/js-0-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -140,7 +140,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -185,7 +185,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+              src="/assets/curriculum/js-1-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -208,7 +208,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -235,7 +235,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+              src="/assets/curriculum/js-2-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -258,7 +258,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -285,7 +285,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+              src="/assets/curriculum/js-3-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -308,7 +308,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -335,7 +335,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+              src="/assets/curriculum/js-4-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -358,7 +358,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -385,7 +385,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+              src="/assets/curriculum/js-5-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -408,7 +408,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -435,7 +435,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+              src="/assets/curriculum/js-6-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -458,7 +458,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -485,7 +485,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+              src="/assets/curriculum/js-7-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -508,7 +508,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -535,7 +535,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+              src="/assets/curriculum/js-8-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -558,7 +558,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -585,7 +585,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+              src="/assets/curriculum/js-9-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -608,7 +608,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -936,7 +936,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+              src="/assets/curriculum/js-0-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -987,7 +987,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1024,7 +1024,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+              src="/assets/curriculum/js-1-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1075,7 +1075,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1112,7 +1112,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+              src="/assets/curriculum/js-2-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1163,7 +1163,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1200,7 +1200,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+              src="/assets/curriculum/js-3-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1223,7 +1223,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1268,7 +1268,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+              src="/assets/curriculum/js-4-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1291,7 +1291,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1318,7 +1318,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+              src="/assets/curriculum/js-5-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1341,7 +1341,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1368,7 +1368,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+              src="/assets/curriculum/js-6-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1391,7 +1391,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1418,7 +1418,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+              src="/assets/curriculum/js-7-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1441,7 +1441,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1468,7 +1468,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+              src="/assets/curriculum/js-8-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1491,7 +1491,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"
@@ -1518,7 +1518,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+              src="/assets/curriculum/js-9-cover.svg"
             />
             <div
               class="w-100 pl-4"
@@ -1541,7 +1541,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     <img
                       alt="icon-challenge"
                       class="mr-2"
-                      src="/curriculumAssets/icons/icon-challenge.svg"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
                       class="lesson-card__icon-text"

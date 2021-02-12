@@ -101,7 +101,7 @@ exports[`ResetPassword Page Should render alert on error 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M89 9a81 81 0 1 0 2 0zm1 38v58m0 25v1"
+              d="M89 9a81 81 0 102 0 NaN NaNzm1 38v58m0 25v1"
               fill="none"
               stroke="#721c24"
               stroke-linecap="round"

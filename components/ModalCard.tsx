@@ -24,7 +24,7 @@ export const ModalCard: React.FC<ModalCardProps> = ({
     <Modal show={show} onHide={close} dialogClassName={size}>
       <img
         className=".img-fluid btn position-absolute exitBtn"
-        src={'/curriculumAssets/icons/exit.svg'}
+        src={'/assets/curriculum/icons/exit.svg'}
         onClick={() => close()}
       />
       {children}
