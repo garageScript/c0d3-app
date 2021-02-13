@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLayout test Should render children 1`] = `
+<div>
+  <div
+    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
+  >
+    <h1
+      class="text-white font-weight-bold display-3"
+      style="font-family: 'PT Mono', sans-serif;"
+    >
+      C0D3
+    </h1>
+    <div
+      class="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        class="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+    <h1>
+      Test title
+    </h1>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;

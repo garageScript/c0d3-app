@@ -3,8 +3,10 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import Layout from '../../components/Layout'
 import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
-
+import Error, { StatusCode } from '../../components/Error'
+import { useRouter } from 'next/router'
 export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
+  const router = useRouter()
   const { loading, error, session } = data
 
   if (loading) {
@@ -12,14 +14,10 @@ export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
   }
 
   if (error) {
-    return (
-      <Layout>
-        <h1>Error</h1>
-      </Layout>
-    )
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} />
   }
 
-  if (!session) window.location.href = '/login'
+  if (!session) router.push('/login')
 
   const isAdmin = _.get(session, 'user.isAdmin', false)
 

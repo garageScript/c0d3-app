@@ -5,6 +5,7 @@ import changeAdminRights from '../../../graphql/queries/changeAdminRights'
 import { User } from '../../../graphql'
 import { AdminUsersSplitSearch } from './AdminUsersSplitSearch'
 import { filter } from '../../../pages/admin/users'
+import _ from 'lodash'
 
 type UsersListProps = {
   users: User[]
@@ -56,9 +57,9 @@ const AdminOption: React.FC<AdminOptionProps> = ({
     }
   }
 
-  const changeButton = async () => {
-    await changeRights(mutationVariable)
-    const newUsers = [...users]
+  const changeButton = () => {
+    changeRights(mutationVariable)
+    const newUsers = _.cloneDeep(users)
     newUsers[usersIndex].isAdmin = newAdminRights
     setUsers(newUsers)
   }

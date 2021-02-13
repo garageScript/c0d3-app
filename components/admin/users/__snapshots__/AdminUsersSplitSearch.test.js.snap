@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminUsersSplitSearch component Should highlight full search hit 1`] = `
+<div>
+  <span>
+    newbie
+  </span>
+</div>
+`;
+
+exports[`AdminUsersSplitSearch component Should highlight partial search hit 1`] = `
+<div>
+  <span>
+    name
+  </span>
+  <span>
+    Mane
+  </span>
+  <span>
+    Name
+  </span>
+</div>
+`;

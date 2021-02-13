@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminUsersTable test Should add admin rights 1`] = `
+<div>
+  <table
+    class="table table-striped"
+  >
+    <thead>
+      <tr
+        class="text-center"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Username
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Admin
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="text-center"
+      >
+        <td
+          class="align-middle"
+        >
+          5
+        </td>
+        <td
+          class="align-middle"
+        >
+          admin
+        </td>
+        <td
+          class="align-middle"
+        >
+          admin admin
+        </td>
+        <td
+          class="align-middle"
+        >
+          some@mail.com
+        </td>
+        <td
+          class="align-middle"
+        >
+          <button
+            class="btn bg-danger"
+            style="color: rgb(41, 41, 41);"
+          >
+            Remove
+          </button>
+        </td>
+      </tr>
+      <tr
+        class="text-center"
+      >
+        <td
+          class="align-middle"
+        >
+          6
+        </td>
+        <td
+          class="align-middle"
+        >
+          newbie
+        </td>
+        <td
+          class="align-middle"
+        >
+          newbie newbie
+        </td>
+        <td
+          class="align-middle"
+        >
+          some@mail.com
+        </td>
+        <td
+          class="align-middle"
+        >
+          <button
+            class="btn bg-success"
+            style="color: rgb(41, 41, 41);"
+          >
+            Add
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`AdminUsersTable test Should add admin rights 2`] = `
+<div>
+  <table
+    class="table table-striped"
+  >
+    <thead>
+      <tr
+        class="text-center"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Username
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Admin
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="text-center"
+      >
+        <td
+          class="align-middle"
+        >
+          5
+        </td>
+        <td
+          class="align-middle"
+        >
+          admin
+        </td>
+        <td
+          class="align-middle"
+        >
+          admin admin
+        </td>
+        <td
+          class="align-middle"
+        >
+          some@mail.com
+        </td>
+        <td
+          class="align-middle"
+        >
+          <button
+            class="btn bg-danger"
+            style="color: rgb(41, 41, 41);"
+          >
+            Remove
+          </button>
+        </td>
+      </tr>
+      <tr
+        class="text-center"
+      >
+        <td
+          class="align-middle"
+        >
+          6
+        </td>
+        <td
+          class="align-middle"
+        >
+          newbie
+        </td>
+        <td
+          class="align-middle"
+        >
+          newbie newbie
+        </td>
+        <td
+          class="align-middle"
+        >
+          some@mail.com
+        </td>
+        <td
+          class="align-middle"
+        >
+          <button
+            class="btn bg-success"
+            style="color: rgb(41, 41, 41);"
+          >
+            Add
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`AdminUsersTable test Should render successful search 1`] = `
+<div>
+  <table
+    class="table table-striped"
+  >
+    <thead>
+      <tr
+        class="text-center"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Username
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Admin
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="text-center"
+      >
+        <td
+          class="align-middle"
+        >
+          6
+        </td>
+        <td
+          class="align-middle"
+        >
+          <span>
+            newbie
+          </span>
+        </td>
+        <td
+          class="align-middle"
+        >
+          newbie newbie
+        </td>
+        <td
+          class="align-middle"
+        >
+          some@mail.com
+        </td>
+        <td
+          class="align-middle"
+        >
+          <button
+            class="btn bg-success"
+            style="color: rgb(41, 41, 41);"
+          >
+            Add
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`AdminUsersTable test Should search by admin role 1`] = `
+<div>
+  <table
+    class="table table-striped"
+  >
+    <thead>
+      <tr
+        class="text-center"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Username
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Admin
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`AdminUsersTable test Should search by non-admin role 1`] = `
+<div>
+  <table
+    class="table table-striped"
+  >
+    <thead>
+      <tr
+        class="text-center"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Username
+        </th>
+        <th>
+          Name
+        </th>
+        <th>
+          Email
+        </th>
+        <th>
+          Admin
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
