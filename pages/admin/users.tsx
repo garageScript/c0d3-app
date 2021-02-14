@@ -70,10 +70,15 @@ const AdminUsers: React.FC<QueryDataProps<AllUsersData>> = ({ queryData }) => {
           onClick={(value: string) => changeFilter(value, 'option')}
           currentOption={searchOption.option}
         >
-          Search By:
+          <label htmlFor="search">Search By:</label>
         </FilterButtons>
       </div>
-      <input type="text" className="form-control" onChange={handleChange} />
+      <input
+        type="text"
+        id="search"
+        className="form-control"
+        onChange={handleChange}
+      />
       <div className="mt-2 mb-2">
         <FilterButtons
           options={adminFilters}
