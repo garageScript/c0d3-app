@@ -96,7 +96,8 @@ User.hasMany(UserLesson, {
 })
 
 UserLesson.belongsTo(User, {
-  foreignKey: 'userId'
+  foreignKey: 'userId',
+  as: 'user'
 })
 
 sequelize.sync({ alter: !!process.env.ALTER_DB })
