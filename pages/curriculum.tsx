@@ -15,6 +15,10 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   const { loading, error, alerts, lessons, session } = data
   if (loading) return <LoadingSpinner />
   if (error) {
+    if (error.message === "Cannot read property 'id' of null") {
+      Router.push('/login')
+      return null
+    }
     return (
       <Error code={StatusCode.INTERNAL_SERVER_ERROR} message={error.message} />
     )

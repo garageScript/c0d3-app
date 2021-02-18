@@ -1,6 +1,7 @@
 import React from 'react'
 import Curriculum from '../../pages/curriculum'
 import { render, waitFor } from '@testing-library/react'
+import { GraphQLError } from 'graphql'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
@@ -141,7 +142,7 @@ describe('Curriculum Page', () => {
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
-  test('Should redirect to login page if unauthorized', async () => {
+  test('Should redirect to login if no session', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -163,7 +164,26 @@ describe('Curriculum Page', () => {
       expect(global.window.location.pathname).toEqual('/login')
     )
   })
-  test('Should render Error on error', async () => {
+  test('Should redirect to login if no id', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          errors: [new GraphQLError("Cannot read property 'id' of null")]
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+    await waitFor(() =>
+      expect(global.window.location.pathname).toEqual('/login')
+    )
+  })
+  test('Should render internal error if error', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
