@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import MyError from '../../pages/_error'
 import * as Sentry from '@sentry/browser'
@@ -19,7 +19,7 @@ describe('_error page', () => {
     expect(container).toMatchSnapshot()
     expect(Sentry.captureException).not.toHaveBeenCalled()
   })
-  test('Should capture error when component loading', async () => {
+  test('Should capture error when component is loading', async () => {
     const { container } = render(
       <MockedProvider addTypename={false}>
         <MyError

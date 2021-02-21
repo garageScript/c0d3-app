@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`_error page Should capture error when component loading 1`] = `
+exports[`_error page Should capture error when component is loading 1`] = `
 <div>
   <div
     class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
