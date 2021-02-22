@@ -1,4 +1,5 @@
 import { reach } from 'yup'
+import _ from 'lodash'
 import { DROP_DOWN, TEXT_AREA, MD_INPUT } from '../../components/FormCard'
 
 // creates usuable array from graphql data to use as a prop when using FormCard component
@@ -7,8 +8,9 @@ export const getPropertyArr = (
   deleteProps?: string[],
   dropdownChange?: Function
 ) => {
-  ;(deleteProps || []).forEach(prop => delete options[prop])
-  const keys = Object.keys(options)
+  const cloneOptions = _.cloneDeep(options)
+  ;(deleteProps || []).forEach(prop => delete cloneOptions[prop])
+  const keys = Object.keys(cloneOptions)
 
   const res = keys.map((type: any, index: number) => {
     const optionValue = options[type]

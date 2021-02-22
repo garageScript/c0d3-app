@@ -152,7 +152,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   selectedLesson
 }) => {
   // true when user clicks on `create new lesson` button
-  if (lessons && selectedLesson === lessons.length - 1) {
+  if (lessons && selectedLesson === lessons.length) {
     return <NewLesson setLessons={setLessons} />
   }
 
