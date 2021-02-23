@@ -125,7 +125,8 @@
     "collectCoverageFrom": [
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
-      "!**/*.d.ts"
+      "!**/*.d.ts",
+      "!graphql/(resolvers|typeDefs).ts"
     ]
   },
   "husky": {
