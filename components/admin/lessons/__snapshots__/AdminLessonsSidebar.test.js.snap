@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLessonSideBar component Should render empty lessons 1`] = `
+<div>
+  <div
+    class="col-4 mt-4 "
+  >
+    <div
+      aria-orientation="vertical"
+      class="nav flex-column nav-pills"
+      role="tablist"
+    >
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Create New Lesson
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonSideBar component Should render lessons 1`] = `
+<div>
+  <div
+    class="col-4 mt-4 "
+  >
+    <div
+      aria-orientation="vertical"
+      class="nav flex-column nav-pills"
+      role="tablist"
+    >
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Foundations of JavaScript
+      </a>
+      <a
+        class="nav-link active"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Variables & Functions
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Arrays
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Objects
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Front End Engineering
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        End To End
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        React, GraphQL, SocketIO
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        JavaScript Algorithms
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Trees
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        General Algorithms
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Create New Lesson
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonSideBar component Should render lessons 2`] = `
+<div>
+  <div
+    class="col-4 mt-4 "
+  >
+    <div
+      aria-orientation="vertical"
+      class="nav flex-column nav-pills"
+      role="tablist"
+    >
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Foundations of JavaScript
+      </a>
+      <a
+        class="nav-link active"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Variables & Functions
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Arrays
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Objects
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Front End Engineering
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        End To End
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        React, GraphQL, SocketIO
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        JavaScript Algorithms
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Trees
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        General Algorithms
+      </a>
+      <a
+        class="nav-link"
+        data-testid="challenge-title"
+        data-toggle="pill"
+        role="tab"
+        style="word-break: break-word; cursor: pointer;"
+      >
+        Create New Lesson
+      </a>
+    </div>
+  </div>
+</div>
+`;
