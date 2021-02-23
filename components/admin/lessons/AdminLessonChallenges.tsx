@@ -2,6 +2,7 @@ import { useMutation } from '@apollo/client'
 import React, { useEffect, useState } from 'react'
 import updateChallenge from '../../../graphql/queries/updateChallenge'
 import { FormCard } from '../../FormCard'
+import * as Sentry from '@sentry/browser'
 import createNewChallenge from '../../../graphql/queries/createChallenge'
 import { Lesson, Challenge, Maybe } from '../../../graphql/index'
 import {
@@ -19,7 +20,7 @@ const challengeAttributes = {
 }
 
 type LessonChallengeProps = {
-  challenge: Maybe<Challenge>
+  challenge: Challenge
   alter: (options: any) => Promise<void>
 }
 
@@ -63,7 +64,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
 
       window.location.reload()
     } catch (err) {
-      throw new Error(err)
+      Sentry.captureException(err)
     }
   }
 
@@ -129,7 +130,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
     <div className="mt-3">
       <FormCard
         onChange={handleChange}
-        title={(challenge && challenge.title + '') || ''}
+        title={challenge.title ? challenge.title : ''}
         values={challengeProperties}
         onSubmit={handleSubmit}
       />
@@ -156,15 +157,21 @@ export const AdminLessonChallenges: React.FC<LessonChallengesProps> = ({
       await alterChallenge(makeGraphqlVariable(options, { lessonId }))
       window.location.reload()
     } catch (err) {
-      throw new Error(err)
+      Sentry.captureException(err)
     }
   }
-
   const allChallenges = !challenges
     ? []
-    : challenges.map((challenge: Maybe<Challenge>, key: number) => (
-        <LessonChallenge challenge={challenge} alter={alter} key={key} />
-      ))
-
+    : challenges.map((challenge: Maybe<Challenge>, key: number) => {
+        if (challenge !== null) {
+          return (
+            <LessonChallenge
+              challenge={challenge as Challenge}
+              alter={alter}
+              key={key}
+            />
+          )
+        }
+      })
   return <>{allChallenges}</>
 }

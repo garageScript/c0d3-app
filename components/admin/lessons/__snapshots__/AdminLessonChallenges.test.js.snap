@@ -1,0 +1,955 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLessonChallenges component Should create challenge 1`] = `
+<div>
+  <div
+    class="mb-2"
+  >
+    <div
+      class="mb-3 text-center"
+    >
+      <span
+        class="text-primary font-weight-bold display-3"
+      >
+        Create New Challenge
+      </span>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        />
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title0"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input0"
+              placeholder=""
+              type="text"
+              value="New challenge"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description1"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                New challenge description
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order2"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input2"
+              placeholder=""
+              type="text"
+              value="2"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Create Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonChallenges component Should refuse creating  new challenge with incorrect info 1`] = `
+<div>
+  <div
+    class="mb-2"
+  >
+    <div
+      class="mb-3 text-center"
+    >
+      <span
+        class="text-primary font-weight-bold display-3"
+      >
+        Create New Challenge
+      </span>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        />
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title0"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input0"
+              placeholder=""
+              type="text"
+              value="New challenge"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description1"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                New challenge description
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order2"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input2"
+              placeholder=""
+              type="text"
+              value=""
+            />
+            <h6
+              class="text-danger mb-0"
+            >
+              Required
+            </h6>
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Create Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonChallenges component Should refuse updating challenge with incorrect info 1`] = `
+<div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        >
+          <h2
+            class="card-title font-weight-bold mb-3"
+          >
+            Sum of 2 Numbers
+          </h2>
+        </div>
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title1"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input1"
+              placeholder=""
+              type="text"
+              value="New title"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description2"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                New description
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order3"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input3"
+              placeholder=""
+              type="text"
+              value=""
+            />
+            <h6
+              class="text-danger mb-0"
+            >
+              Required
+            </h6>
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        >
+          <h2
+            class="card-title font-weight-bold mb-3"
+          >
+            Sum of 3 Numbers
+          </h2>
+        </div>
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title1"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input1"
+              placeholder=""
+              type="text"
+              value="Sum of 3 Numbers"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description2"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                Write a function that takes in 3 numbers and returns their sum.
+
+Here's how another developer might use your function:
+
+\`\`\`
+solution(5,9,2) // Should return 16
+solution(4,1,9) // Should return 14
+\`\`\`
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order3"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input3"
+              placeholder=""
+              type="text"
+              value="2"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonChallenges component Should render a challenge without title 1`] = `
+<div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        />
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description1"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                Write a function that takes in 2 numbers and returns their sum.
+
+Here's how another developer might use your function:
+
+\`\`\`
+solution(5,9) // Should return 14
+solution(4,1) // Should return 5
+\`\`\`
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order2"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input2"
+              placeholder=""
+              type="text"
+              value="1"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonChallenges component Should render nulled challenges 1`] = `<div />`;
+
+exports[`AdminLessonChallenges component Should render undefined challenges 1`] = `<div />`;
+
+exports[`AdminLessonChallenges component Should update challenge 1`] = `
+<div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        >
+          <h2
+            class="card-title font-weight-bold mb-3"
+          >
+            Sum of 2 Numbers
+          </h2>
+        </div>
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title1"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input1"
+              placeholder=""
+              type="text"
+              value="Sum of 2 Numbers"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description2"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                Write a function that takes in 2 numbers and returns their sum.
+
+Here's how another developer might use your function:
+
+\`\`\`
+solution(5,9) // Should return 14
+solution(4,1) // Should return 5
+\`\`\`
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order3"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input3"
+              placeholder=""
+              type="text"
+              value="1"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        >
+          <h2
+            class="card-title font-weight-bold mb-3"
+          >
+            Sum of 3 Numbers
+          </h2>
+        </div>
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title1"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input1"
+              placeholder=""
+              type="text"
+              value="Sum of 3 Numbers"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description2"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                Write a function that takes in 3 numbers and returns their sum.
+
+Here's how another developer might use your function:
+
+\`\`\`
+solution(5,9,2) // Should return 16
+solution(4,1,9) // Should return 14
+\`\`\`
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order3"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input3"
+              placeholder=""
+              type="text"
+              value="2"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AdminLessonChallenges component Should update challenge 2`] = `
+<div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        >
+          <h2
+            class="card-title font-weight-bold mb-3"
+          >
+            Sum of 2 Numbers
+          </h2>
+        </div>
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title1"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input1"
+              placeholder=""
+              type="text"
+              value="New title"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description2"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                New description
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order3"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input3"
+              placeholder=""
+              type="text"
+              value="15"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-3"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center"
+        >
+          <h2
+            class="card-title font-weight-bold mb-3"
+          >
+            Sum of 3 Numbers
+          </h2>
+        </div>
+        <div
+          class="text-left"
+        >
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5title1"
+            >
+              Title
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input1"
+              placeholder=""
+              type="text"
+              value="Sum of 3 Numbers"
+            />
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5description2"
+            >
+              Description
+            </h5>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              >
+                Write a function that takes in 3 numbers and returns their sum.
+
+Here's how another developer might use your function:
+
+\`\`\`
+solution(5,9,2) // Should return 16
+solution(4,1,9) // Should return 14
+\`\`\`
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="d-flex flex-column ml-3 mr-3 mb-4"
+          >
+            <h5
+              data-testid="h5order3"
+            >
+              Order
+            </h5>
+            <input
+              class="form-control"
+              data-testid="input3"
+              placeholder=""
+              type="text"
+              value="2"
+            />
+          </div>
+        </div>
+        <div
+          class="text-center mb-4"
+        >
+          <button
+            class="btn bg-primary"
+            style="color: rgb(255, 255, 255);"
+          >
+            Update Challenge
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
