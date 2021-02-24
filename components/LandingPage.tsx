@@ -34,9 +34,8 @@ const LandingPage: React.FC = () => {
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3 mb-5">
             <NavLink
-              path="https://www.c0d3.com/book"
+              path="https://www.c0d3.com/curriculum"
               className="btn btn-primary py-3 px-5"
-              external
             >
               Get Started
             </NavLink>
@@ -228,9 +227,8 @@ const LandingPage: React.FC = () => {
           Become a full stack software engineer - 100% Free!
         </p>
         <NavLink
-          path="https://www.c0d3.com/book"
+          path="https://www.c0d3.com/curriculum"
           className="btn btn-primary py-3 px-5 mt-4"
-          external
         >
           Get Started
         </NavLink>
