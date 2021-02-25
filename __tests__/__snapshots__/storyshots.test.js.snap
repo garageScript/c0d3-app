@@ -7795,7 +7795,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <a
           className="btn btn-primary py-3 px-5"
-          href="https://www.c0d3.com/curriculum"
+          href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -8098,7 +8098,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
     </p>
     <a
       className="btn btn-primary py-3 px-5 mt-4"
-      href="https://www.c0d3.com/curriculum"
+      href="/curriculum"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
