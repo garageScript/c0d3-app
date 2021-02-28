@@ -2,7 +2,6 @@ import React from 'react'
 import { Button } from './theme/Button'
 import UserInfoImage from './UserInfoImage'
 import { UserInfo } from '../@types/user'
-import '../scss/submissionCard.scss'
 
 type Props = {
   userId: string

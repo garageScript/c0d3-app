@@ -1,8 +1,6 @@
 import React from 'react'
 import NavLink from './NavLink'
 
-import '../scss/progressCard.scss'
-
 type Props = {
   progressCount: number
 }

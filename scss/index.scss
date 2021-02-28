@@ -17,7 +17,7 @@ $green: #00cf92 !default;
 @import '~bootstrap/scss/bootstrap.scss';
 
 // Import Fonts
-@import "../public/PTMono-Regular.ttf";
+@import "./fonts.scss";
 
 // Global CSS
 body{
@@ -45,5 +45,20 @@ p {
 }
 
 // Local SCSS Imports
+@import './additionalResources.scss';
+@import './alerts.scss';
+@import './announcementCard.scss';
 @import './challengeMaterial.scss';
+@import './contributorCard.scss';
+@import './giveStarCard.scss';
+@import './lessonCard.scss';
+@import './lessonTitleCard.scss';
+@import './modalCard.scss';
+@import './navbar.scss';
 @import './prism.scss';
+@import './profileImageInfo.scss';
+@import './profileLessons.scss';
+@import './profileSubmissions.scss';
+@import './progressCard.scss';
+@import './submissionCard.scss';
+@import './userInfoImage.scss';

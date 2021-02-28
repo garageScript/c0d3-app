@@ -8,7 +8,6 @@ import {
   ReviewCountProps
 } from '../@types/lessonCard'
 import NavLink from './NavLink'
-import '../scss/lessonCard.scss'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {

@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/profileSubmissions.scss'
 import { Star as StarType } from '../@types/lesson'
 import { Star } from 'react-feather'
 

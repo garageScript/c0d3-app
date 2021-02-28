@@ -1,6 +1,5 @@
 import React from 'react'
 import NavLink from './NavLink'
-import '../scss/lessonTitleCard.scss'
 
 type Props = {
   lessonCoverUrl: string

@@ -6,8 +6,6 @@ import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
 
-import '../scss/navbar.scss'
-
 type AuthButtonProps = {
   initial: string
   username: string

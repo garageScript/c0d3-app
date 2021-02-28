@@ -3,7 +3,6 @@ import { User, useSetStarMutation } from '../graphql/index'
 import withQueryLoader, { QueryDataProps } from '../containers/withQueryLoader'
 import { Button } from '../components/theme/Button'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
-import '../scss/giveStarCard.scss'
 import { ModalCard, ModalCardProps } from './ModalCard'
 import { Thanks } from './Thanks'
 

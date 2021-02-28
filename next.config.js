@@ -1,5 +1,4 @@
-const withSass = require('@zeit/next-sass')
-module.exports = withSass({
+module.exports = {
   env: {
     CHAT_URL: process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4',
     CLIENT_URL: process.env.CLIENT_URL || 'https://c0d3.devwong.com',
@@ -18,4 +17,4 @@ module.exports = withSass({
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
     SERVER_URL: process.env.SERVER_URL || '/api/graphql'
   }
-})
+}

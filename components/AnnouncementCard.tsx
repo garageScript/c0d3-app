@@ -1,7 +1,5 @@
 import React from 'react'
 
-import '../scss/announcementCard.scss'
-
 type Props = {
   announcements: string[]
 }

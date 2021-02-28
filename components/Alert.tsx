@@ -2,7 +2,6 @@ import React from 'react'
 import NavLink from './NavLink'
 import { Alert as AlertType } from '../graphql/'
 import _ from 'lodash'
-import '../scss/alerts.scss'
 
 type Props = {
   alert: AlertType

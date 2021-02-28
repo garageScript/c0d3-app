@@ -1,6 +1,5 @@
 import React from 'react'
 import NavLink from './NavLink'
-import '../scss/additionalResources.scss'
 
 const AdditionalResources: React.FC = () => {
   return (

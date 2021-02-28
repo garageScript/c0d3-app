@@ -1,6 +1,5 @@
 import React from 'react'
 import { UserInfo } from '../@types/user'
-import '../scss/userInfoImage.scss'
 
 type UserProps = {
   user: UserInfo
