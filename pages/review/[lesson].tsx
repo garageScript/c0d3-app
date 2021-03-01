@@ -11,6 +11,7 @@ import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
 import { AppData } from '../../@types/app'
 import Error, { StatusCode } from '../../components/Error'
+import { LessonStatus } from '../../@types/lesson'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -49,6 +50,14 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   )
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
+  }
+  if (
+    !session.lessonStatus.find((status: LessonStatus) => {
+      return status.lessonId === currentLesson.id && status.isPassed === 'true'
+    })
+  ) {
+    router.push('/curriculum')
+    return <LoadingSpinner />
   }
   const lessonSubmissions: SubmissionData[] = data
     ? data.submissions.filter(

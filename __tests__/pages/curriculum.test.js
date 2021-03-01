@@ -1,23 +1,17 @@
 import React from 'react'
 import Curriculum from '../../pages/curriculum'
-import { render, waitFor } from '@testing-library/react'
-import { GraphQLError } from 'graphql'
+import {
+  render,
+  waitFor,
+  waitForElementToBeRemoved,
+  screen
+} from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import Router from 'next/router'
-Router.router = {
-  push: jest
-    .fn()
-    .mockImplementation(path => (global.window.location.pathname = path))
-}
 
-// Mock global.window
-global.window = Object.create(window)
-Object.defineProperty(global.window, 'location', {
-  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
-})
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {
     const mocks = [
@@ -142,7 +136,7 @@ describe('Curriculum Page', () => {
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
-  test('Should redirect to login if no session', async () => {
+  test('Should render curriculum with no session', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -155,33 +149,13 @@ describe('Curriculum Page', () => {
         }
       }
     ]
-    render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/login')
-    )
-  })
-  test('Should redirect to login if no id', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          errors: [new GraphQLError("Cannot read property 'id' of null")]
-        }
-      }
-    ]
-
-    render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
-      </MockedProvider>
-    )
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/login')
-    )
+    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+    expect(container).toMatchSnapshot()
   })
   test('Should render internal error if error', async () => {
     const mocks = [

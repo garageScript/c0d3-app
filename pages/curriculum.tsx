@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Layout from '../components/Layout'
-import Router from 'next/router'
 import Error, { StatusCode } from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
@@ -15,17 +14,9 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   const { loading, error, alerts, lessons, session } = data
   if (loading) return <LoadingSpinner />
   if (error) {
-    if (error.message === "Cannot read property 'id' of null") {
-      Router.push('/login')
-      return null
-    }
     return (
       <Error code={StatusCode.INTERNAL_SERVER_ERROR} message={error.message} />
     )
-  }
-  if (!session) {
-    Router.push('/login')
-    return null
   }
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
@@ -37,8 +28,7 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
     'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
     'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
   ]
-
-  const { lessonStatus } = session
+  const { lessonStatus } = session || { lessonStatus: [] }
   const lessonStatusMap: { [id: string]: typeof lessonStatus[0] } = {}
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
