@@ -17,7 +17,7 @@ type AuthLinkProps = {
   session: any
 }
 
-type Button = NavLinkProps & { name: string }
+type ButtonType = NavLinkProps & { name: string }
 
 const dropdownMenuItems = [
   { title: 'Lessons', path: '/admin/lessons' },
@@ -30,7 +30,7 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   //window object is not avaible in server side rendering phase
   const location: string =
     window && '/' + window.location.pathname.split('/')[1]
-  const buttons: Button[] = [
+  const buttons: ButtonType[] = [
     { path: '/curriculum', name: 'Curriculum' },
     {
       path: 'https://github.com/garageScript/c0d3-app',
@@ -53,7 +53,7 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
           path={button.path}
           className="nav-item nav-link"
           key={button.name}
-          external={button.external ? true : undefined}
+          external={button.external}
           activePath={location === button.path}
         >
           {button.name}
