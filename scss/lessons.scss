@@ -1,0 +1,36 @@
+.modal-content{
+    background-color:transparent;
+    border:none
+}
+.modal-dialog{
+    max-width: 90%;
+}
+.modal-body > img{
+    width: 100%;
+}
+
+.inlineCode{
+ background: #f9f9fa; 
+ color: #EB5757; 
+ display: inline;
+}
+
+.highLight{
+    background: #f9f9fa;
+     padding: 0.5em 1em
+}
+.highLight>p{
+    margin-top: 1em;
+}
+
+.MDX_h1,.MDX_h2{
+    font-weight: 600;
+}
+
+.MDX_a{
+    color:#6d6d6d;
+    text-decoration:underline;
+}
+.MDX_a:hover{
+    color:#37352f
+}

@@ -14,21 +14,17 @@ import '../scss/index.scss'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from '../components/CodeBlock'
 import Image from '../components/Image'
-import HighLight from '../components/HighLight'
-const components = {
-  inlineCode: (props: any) => (
-    <div
-      style={{ background: '#f9f9fa', color: '#EB5757', display: 'inline' }}
-      {...props}
-    />
-  ),
 
+const MDXcomponents = {
+  inlineCode: (props: any) => <div className="inlineCode" {...props} />,
   code: CodeBlock,
-  blockquote: HighLight,
+  blockquote: (props: any) => <div className="highLight" {...props} />,
   img: Image,
-  h1: (props: any) => <h1 style={{ fontWeight: 600 }} {...props} />,
-  h2: (props: any) => <h2 style={{ fontWeight: 600 }} {...props} />
+  h1: (props: any) => <h1 className="MDX_h1" {...props} />,
+  h2: (props: any) => <h2 className="MDX_h2" {...props} />,
+  a: (props: any) => <a className="MDX_a" {...props} />
 }
+
 import * as Sentry from '@sentry/browser'
 const SENTRY_DSN = process.env.SENTRY_DSN
 
@@ -51,7 +47,7 @@ function MyApp({ Component, pageProps, err, apollo }: IProps) {
   }, [])
   return (
     <ApolloProvider client={apollo}>
-      <MDXProvider components={components}>
+      <MDXProvider components={MDXcomponents}>
         <Head>
           {/* <!-- Primary Meta Tags --> */}
           <title>C0D3</title>
