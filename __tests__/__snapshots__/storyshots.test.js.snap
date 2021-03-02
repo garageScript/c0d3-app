@@ -7795,9 +7795,9 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <a
           className="btn btn-primary py-3 px-5"
-          href="https://www.c0d3.com/book"
-          rel="noopener noreferrer"
-          target="_blank"
+          href="/curriculum"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Get Started
         </a>
@@ -8098,9 +8098,9 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
     </p>
     <a
       className="btn btn-primary py-3 px-5 mt-4"
-      href="https://www.c0d3.com/book"
-      rel="noopener noreferrer"
-      target="_blank"
+      href="/curriculum"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Get Started
     </a>
