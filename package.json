@@ -34,7 +34,7 @@
     "markdown-to-jsx": "^7.1.1",
     "nanoid": "^3.1.20",
     "next": "^10.0.6",
-    "next-connect": "^0.9.1",
+    "next-connect": "^0.10.0",
     "next-with-apollo": "^5.1.1",
     "node-sass": "^5.0.0",
     "pg": "^8.5.1",
