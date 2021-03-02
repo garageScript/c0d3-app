@@ -14,7 +14,7 @@
     "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.9",
+    "@apollo/client": "^3.3.11",
     "@sentry/browser": "^5.30.0",
     "@zeit/next-sass": "^1.0.1",
     "apollo-server-micro": "^2.20.0",
