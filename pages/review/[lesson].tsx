@@ -53,7 +53,7 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   }
   if (
     !session.lessonStatus.find((status: LessonStatus) => {
-      return status.lessonId === currentLesson.id && status.isPassed === 'true'
+      return status.lessonId === currentLesson.id && status.isPassed
     })
   ) {
     router.push('/curriculum')
