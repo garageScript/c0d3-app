@@ -2007,6 +2007,185 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
 </div>
 `;
 
+exports[`Storyshots Components/Codeblock  JSX 1`] = `
+<pre
+  className="prism-code language-jsx"
+  style={
+    Object {
+      "backgroundColor": "#f6f8fa",
+      "color": "rgb(36, 41, 46)",
+      "padding": "20px",
+    }
+  }
+>
+  <div
+    className="token-line"
+    style={
+      Object {
+        "backgroundColor": null,
+        "color": "rgb(36, 41, 46)",
+      }
+    }
+  >
+    <span
+      className="token keyword"
+      style={
+        Object {
+          "color": "#e3116c",
+        }
+      }
+    >
+      import
+    </span>
+    <span
+      className="token plain"
+    >
+       
+    </span>
+    <span
+      className="token operator"
+      style={
+        Object {
+          "color": "rgb(0, 92, 197)",
+        }
+      }
+    >
+      *
+    </span>
+    <span
+      className="token plain"
+    >
+       
+    </span>
+    <span
+      className="token keyword"
+      style={
+        Object {
+          "color": "#e3116c",
+        }
+      }
+    >
+      as
+    </span>
+    <span
+      className="token plain"
+    >
+       React 
+    </span>
+    <span
+      className="token keyword"
+      style={
+        Object {
+          "color": "#e3116c",
+        }
+      }
+    >
+      from
+    </span>
+    <span
+      className="token plain"
+    >
+       
+    </span>
+    <span
+      className="token string"
+    >
+      'react'
+    </span>
+    <span
+      className="token plain"
+    >
+       
+    </span>
+    <span
+      className="token keyword"
+      style={
+        Object {
+          "color": "#e3116c",
+        }
+      }
+    >
+      const
+    </span>
+    <span
+      className="token plain"
+    >
+       b 
+    </span>
+    <span
+      className="token operator"
+      style={
+        Object {
+          "color": "rgb(0, 92, 197)",
+        }
+      }
+    >
+      =
+    </span>
+    <span
+      className="token plain"
+    >
+       
+    </span>
+    <span
+      className="token number"
+    >
+      3
+    </span>
+    <span
+      className="token plain"
+    >
+       console
+    </span>
+    <span
+      className="token punctuation"
+      style={
+        Object {
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      .
+    </span>
+    <span
+      className="token function"
+      style={
+        Object {
+          "color": "rgb(111, 66, 193)",
+        }
+      }
+    >
+      log
+    </span>
+    <span
+      className="token punctuation"
+      style={
+        Object {
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      (
+    </span>
+    <span
+      className="token string"
+    >
+      'foobar'
+    </span>
+    <span
+      className="token punctuation"
+      style={
+        Object {
+          "color": "rgb(36, 41, 46)",
+        }
+      }
+    >
+      )
+    </span>
+  </div>
+</pre>
+`;
+
 exports[`Storyshots Components/ContributorCard Basic 1`] = `
 <div
   className="card shadow-sm mb-3"
@@ -3667,6 +3846,14 @@ Array [
     </div>
   </div>,
 ]
+`;
+
+exports[`Storyshots Components/Image Image 1`] = `
+<img
+  className="MDX_image"
+  onClick={[Function]}
+  src="/assets/curriculum/lessons/devSetup/inspect.png"
+/>
 `;
 
 exports[`Storyshots Components/Input Email Input 1`] = `
@@ -6978,6 +7165,66 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
     dan
   </a>
 </div>
+`;
+
+exports[`Storyshots Components/Spoiler Default 1`] = `
+Array [
+  <div
+    className="mb-1"
+    onClick={[Function]}
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+  >
+    Answer
+    <div
+      className="spoiler_arrow__down"
+    />
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <h1>
+      This should be hidden
+    </h1>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/Spoiler With Custom Name 1`] = `
+Array [
+  <div
+    className="mb-1"
+    onClick={[Function]}
+    style={
+      Object {
+        "marginLeft": "1em",
+      }
+    }
+  >
+    Click me!
+    <div
+      className="spoiler_arrow__down"
+    />
+  </div>,
+  <div
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <h1>
+      Surprise!
+    </h1>
+  </div>,
+]
 `;
 
 exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `

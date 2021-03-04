@@ -22,7 +22,10 @@ const MDXcomponents = {
   img: Image,
   h1: (props: any) => <h1 className="MDX_h1" {...props} />,
   h2: (props: any) => <h2 className="MDX_h2" {...props} />,
-  a: (props: any) => <a className="MDX_a" {...props} />
+  h3: (props: any) => <h3 className="MDX_h2" {...props} />,
+  a: (props: any) => <a className="MDX_a" {...props} />,
+  td: (props: any) => <td className="MDX_td" {...props} />,
+  th: (props: any) => <th className="MDX_th" {...props} />
 }
 
 import * as Sentry from '@sentry/browser'

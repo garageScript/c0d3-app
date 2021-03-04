@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spoiler component test Should render spoiler 1`] = `
+<div>
+  <div
+    class="mb-1"
+    style="margin-left: 1em;"
+  >
+    TestSpoiler
+    <div
+      class="spoiler_arrow__down"
+    />
+  </div>
+  <div
+    style="display: none;"
+  >
+    <h1>
+      Hidden text
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Spoiler component test Should render spoiler with offset 1`] = `
+<div>
+  <div
+    class="mb-1"
+    style="margin-left: 1em;"
+  >
+    Answer
+    <div
+      class="spoiler_arrow__down"
+    />
+  </div>
+  <div
+    style="display: none;"
+  >
+    <h1>
+      Hidden text
+    </h1>
+  </div>
+</div>
+`;
