@@ -3,6 +3,7 @@ const defaultOptions = {
   host: process.env.DB_HOST || 'city',
   logging: false,
   dialect: 'postgres',
+  port: process.env.DB_PORT || 5432,
   pool: {
     max: 5,
     min: 0,
@@ -14,7 +15,7 @@ describe('dbload tests', () => {
   beforeEach(() => {
     jest.resetModuleRegistry()
   })
-  it('should use default port if no port is provided in development', () => {
+  it('should use default port if no port is provided', () => {
     const customOptions = { ...defaultOptions, port: 5432 }
     const { options } = require('./dbload')
     expect(options).toEqual(customOptions)
@@ -24,11 +25,5 @@ describe('dbload tests', () => {
     const customOptions = { ...defaultOptions, port: '9999' }
     const { options } = require('./dbload')
     expect(options).toEqual(customOptions)
-  })
-
-  it('should default options in production', () => {
-    process.env.NODE_ENV = 'production'
-    const { options } = require('./dbload')
-    expect(options).toEqual(defaultOptions)
   })
 })

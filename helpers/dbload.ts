@@ -11,6 +11,7 @@ const options: Options = {
   host: process.env.DB_HOST || 'city',
   logging: false,
   dialect: 'postgres',
+  port: ((process.env.DB_PORT as unknown) as number) || 5432,
   pool: {
     max: 5,
     min: 0,
@@ -19,9 +20,6 @@ const options: Options = {
   }
 }
 
-if (process.env.NODE_ENV != 'production') {
-  options.port = ((process.env.DB_PORT as unknown) as number) || 5432
-}
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'you',
   process.env.DB_USER || 'failed',
