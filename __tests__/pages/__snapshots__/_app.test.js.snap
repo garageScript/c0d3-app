@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyApp component should render Curriculum component passed in as prop 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Only absolute URLs are supported
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mb-3 col-sm-9"
+        >
+          <div
+            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="display: block; box-sizing: border-box; padding-top: 100%;"
+            />
+            <img
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`MyApp component should render component passed in as prop 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            >
+              Only absolute URLs are supported
+            </div>
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mb-3 col-sm-9"
+        >
+          <div
+            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="display: block; box-sizing: border-box; padding-top: 100%;"
+            />
+            <img
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
