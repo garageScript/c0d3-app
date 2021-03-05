@@ -14,11 +14,12 @@ import '../scss/index.scss'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from '../components/CodeBlock'
 import Image from '../components/Image'
+import BlockQuote from '../components/BlockQuote'
 
 const MDXcomponents = {
   inlineCode: (props: any) => <div className="inlineCode" {...props} />,
   code: CodeBlock,
-  blockquote: (props: any) => <div className="highLight" {...props} />,
+  blockquote: BlockQuote,
   img: Image,
   h1: (props: any) => <h1 className="MDX_h1" {...props} />,
   h2: (props: any) => <h2 className="MDX_h2" {...props} />,

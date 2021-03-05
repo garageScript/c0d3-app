@@ -6,12 +6,12 @@ type Props = {
 const Spoiler: React.FC<Props> = ({ children, name, offset }) => {
   const [status, setStatus] = React.useState({
     css: { display: 'none' },
-    name: 'spoiler_arrow__down'
+    name: 'spoiler_arrow__right'
   })
   const onClick = () => {
     status.css.display === 'none'
-      ? setStatus({ css: { display: 'inherit' }, name: 'spoiler_arrow__up' })
-      : setStatus({ css: { display: 'none' }, name: 'spoiler_arrow__down' })
+      ? setStatus({ css: { display: 'inherit' }, name: 'spoiler_arrow__down' })
+      : setStatus({ css: { display: 'none' }, name: 'spoiler_arrow__right' })
   }
   return (
     <>
@@ -20,8 +20,10 @@ const Spoiler: React.FC<Props> = ({ children, name, offset }) => {
         style={{ marginLeft: offset ? offset : '1em' }}
         onClick={onClick}
       >
-        {name ? name : 'Answer'}
-        <div className={status.name} />
+        <div className="d-flex">
+          <div className={`${status.name} align-self-center mr-3`} />
+          <div className="spoiler__title">{name ? name : 'Answer'}</div>
+        </div>
       </div>
       <div style={status.css}>{children}</div>
     </>

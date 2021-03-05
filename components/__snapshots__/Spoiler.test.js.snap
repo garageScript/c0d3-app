@@ -6,10 +6,18 @@ exports[`Spoiler component test Should render spoiler 1`] = `
     class="mb-1"
     style="margin-left: 1em;"
   >
-    TestSpoiler
     <div
-      class="spoiler_arrow__down"
-    />
+      class="d-flex"
+    >
+      <div
+        class="spoiler_arrow__right align-self-center mr-3"
+      />
+      <div
+        class="spoiler__title"
+      >
+        TestSpoiler
+      </div>
+    </div>
   </div>
   <div
     style="display: none;"
@@ -27,10 +35,18 @@ exports[`Spoiler component test Should render spoiler with offset 1`] = `
     class="mb-1"
     style="margin-left: 1em;"
   >
-    Answer
     <div
-      class="spoiler_arrow__down"
-    />
+      class="d-flex"
+    >
+      <div
+        class="spoiler_arrow__right align-self-center mr-3"
+      />
+      <div
+        class="spoiler__title"
+      >
+        Answer
+      </div>
+    </div>
   </div>
   <div
     style="display: none;"

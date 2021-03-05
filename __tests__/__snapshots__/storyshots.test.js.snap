@@ -7178,10 +7178,18 @@ Array [
       }
     }
   >
-    Answer
     <div
-      className="spoiler_arrow__down"
-    />
+      className="d-flex"
+    >
+      <div
+        className="spoiler_arrow__right align-self-center mr-3"
+      />
+      <div
+        className="spoiler__title"
+      >
+        Answer
+      </div>
+    </div>
   </div>,
   <div
     style={
@@ -7208,10 +7216,18 @@ Array [
       }
     }
   >
-    Click me!
     <div
-      className="spoiler_arrow__down"
-    />
+      className="d-flex"
+    >
+      <div
+        className="spoiler_arrow__right align-self-center mr-3"
+      />
+      <div
+        className="spoiler__title"
+      >
+        Click me!
+      </div>
+    </div>
   </div>,
   <div
     style={

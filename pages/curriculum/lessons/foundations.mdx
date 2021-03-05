@@ -49,6 +49,7 @@ For all the code examples provided, you should be writing and running the code y
 
 # Variables
 
+
 If you imagine yourself doing inventory work and you have to count 20,000 items, you will need to take a break at some point and write down where you stopped, right? The act of storing information into your notes is equivalent to storing data into a variable in the computer world. To do this in JavaScript, we use the `=` assignment operator which assigns a value to the variable. 
 
 An **operator** is a symbol or a set of symbols that does something to the data on either side of it. The assignment operator, `=`, means the left side takes the value of the right side.
@@ -70,19 +71,19 @@ in here!
 hands = 89 // what is the value of hands?
 // console.log(hands)
 ```
-
-<Spoiler name = "Answer">
+<Spoiler>
 
 ```jsx
 marvin = 0
 marvin = 42 // marvin is 42
 hands = 89 // hands is 89
 ```
+
 </Spoiler>
 
 The computer will ignore everything that comes after the `//` symbol and everything within the `/*... */` symbol. Software engineers use these symbols to write **comments** in their code. Comments explain complicated code so that other engineers can read and understand the code better.
 
-If you want to check a variable's value, you can use `console.log`. Remove the comment from the `console.log` lines in the example above and you will be able to see the output when you run the file. There's no need to understand `console.log` now; it is explained later.
+>If you want to check a variable's value, you can use `console.log`. Remove the comment from the `console.log` lines in the example above and you will be able to see the output when you run the file. There's no need to understand `console.log` now; it is explained later.
 
 ## Best Practice
 
@@ -137,7 +138,7 @@ const space = 8 * 8       // what is the value of space?
 const ship = space / 4    // what is the value of ship?
 ```
 
-<Spoiler name="Answer">
+<Spoiler>
 
 ```jsx
 const fi = 5 // 5
@@ -147,6 +148,7 @@ const space = 8 * 8 // 64
 const ship = space / 4 // 16
 ```
 </Spoiler>
+
 One commonly used operator is `%` (Modulus or Division Remainder), which gives you the remainder when you divide 2 numbers. For example:
 `14 % 7` is `0` because 14 divided by 7 has a remainder of 0. 
 `13 % 7` is `6` because 13 divided by 7 is 1 with a remainder of 6. 
@@ -179,7 +181,7 @@ rem = 15 % 7       // 1
 
 A string can be words, sentences, or a bunch of characters. To make a string, you can use double quotes `"` , single quotes `'`, or backticks ``` (the key to the left of 1 on most keyboards). It does not matter which of these 3 symbols you use to create a string, but you cannot mix the symbols, like `"xxx'`. You must terminate the string with the same symbol you started it with: `"xxx"`.
 
-Make sure you never confuse yourself between strings and variables!
+>Make sure you never confuse yourself between strings and variables!
 
 ```jsx
 const hello = "I have 500 bucks"
@@ -323,7 +325,7 @@ review the previous exercise answer for "5helloworld"
 
 Now that you have learned a few data types, you should know that every data in JavaScript is either truthy or falsey. 
 
-**Every data is either truthy or falsey.** 
+>**Every data is either truthy or falsey.** 
 
 **Falsey:** There are only **six falsey values** in JavaScript. (For now, just remember the first 3. The others you will naturally get used to with experience):
 
@@ -474,13 +476,13 @@ const harry = albus > 5 && albus < 10  // false
 ```
 </Spoiler>
 
-`&&` and `||` is **not** associated with boolean `true / false`. It is more about choosing the left value or the right value.
+>`&&` and `||` is **not** associated with boolean `true / false`. It is more about choosing the left value or the right value.
 
 ## Conditional Statement: The if statement
 
 Sometimes we might want our code to change its behavior based on certain conditions. This happens all the time in life!
 
-**If** you work hard at coding, you will become a software engineer.
+>**If** you work hard at coding, you will become a software engineer.
 
 To tell the computer to do this, we use an `if` statement, which looks like the following:
 
@@ -540,7 +542,7 @@ Many engineers make the mistake of using `else` whenever they use `if`. Only use
 
 # Objects
 
-This section (Objects) is moved here from JS3 on 4/29/2020. If this section is too complicated, please ask for help in the chatroom
+>This section (Objects) is moved here from JS3 on 4/29/2020. If this section is too complicated, please ask for help in the chatroom
 
 Objects in JavaScript can be compared to objects in real life. The concept of objects in JavaScript can be understood with real life, tangible objects like cars, house, and people.
 
@@ -585,7 +587,7 @@ a = new EventEmitter()
 
 Have you ever had to do the same thing (like making rice) over and over again and thought to yourself, *What if I wrote down instructions and had someone else do this?* 
 
-Example: Instructions to make rice:
+>Example: Instructions to make rice:
 1. Get a cup, fill it with rice
 2. Pour cup of rice into rice cooker
 3. Add 1 cup of water into rice cooker
@@ -1544,10 +1546,8 @@ const mal2 = draco(3,2,1)
 
 !['exec1'](/assets/curriculum/lessons/foundations/execution11.png)
 </div>
-Next, the computer will run through your code line by line.
 
-**Line 1: create a global variable named points
-Line 2: create a global variable named draco**
+**Line 1 - create a global variable named points. Line 2 - create a global variable named draco.**
 
 <div className="MDX_twoColumns">
 
@@ -1564,9 +1564,10 @@ const draco = (kreacher, winky, fluffy) => {
 !['exec2'](/assets/curriculum/lessons/foundations/execution12.png)
 </div>
 
-**Line 6: Run the draco function with 1,2,3**
+**Line 6 - Run the draco function with 1,2,3.**
 
-Remember, every time a function is run, a box (**local or functional execution context**) is created . Since there are 3 parameters, this local execution context has 3 local variables:
+Remember, every time a function is run, a box (**local or functional execution context**) is created.
+Since there are 3 parameters, this local execution context has 3 local variables.
 
 <div className="MDX_twoColumns">
 
