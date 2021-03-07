@@ -28,7 +28,8 @@ useRouter.mockReturnValue({
   },
   push: jest
     .fn()
-    .mockImplementation(path => (global.window.location.pathname = path))
+    .mockImplementation(path => (global.window.location.pathname = path)),
+  asPath: '/'
 })
 
 const getAppMock = {
@@ -195,7 +196,8 @@ describe('Lesson Page', () => {
       },
       push: jest
         .fn()
-        .mockImplementation(path => (global.window.location.pathname = path))
+        .mockImplementation(path => (global.window.location.pathname = path)),
+      asPath: '/'
     })
     const { container } = render(
       withTestRouter(

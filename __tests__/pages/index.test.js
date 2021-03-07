@@ -35,7 +35,7 @@ describe('<IndexPage />', () => {
 
     test('should redirect to /curriculum and return null', async () => {
       const routerPush = jest.fn()
-      useRouter.mockReturnValue({ push: routerPush })
+      useRouter.mockReturnValue({ push: routerPush, asPath: '/' })
 
       const tree = (
         <MockedProvider mocks={mocks} addTypename={false}>
@@ -57,7 +57,7 @@ describe('<IndexPage />', () => {
 
     test('should not redirect', async () => {
       const routerPush = jest.fn()
-      useRouter.mockReturnValue({ push: routerPush })
+      useRouter.mockReturnValue({ push: routerPush, asPath: '/' })
 
       const tree = (
         <MockedProvider mocks={mocks} addTypename={false}>

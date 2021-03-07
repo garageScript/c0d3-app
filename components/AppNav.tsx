@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
 import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
+import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
@@ -27,9 +28,8 @@ const dropdownMenuItems = [
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const isAdmin = _.get(session, 'user.isAdmin', '')
-  //window object is not avaible in server side rendering phase
-  const location: string =
-    window && '/' + window.location.pathname.split('/')[1]
+  const router = useRouter()
+  const location = '/' + router.asPath.split('/')[1]
   const buttons: ButtonType[] = [
     { path: '/curriculum', name: 'Curriculum' },
     {

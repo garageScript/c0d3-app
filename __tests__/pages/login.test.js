@@ -6,6 +6,9 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
+import { useRouter } from 'next/router'
+jest.mock('next/router')
+useRouter.mockReturnValue({ asPath: '/' })
 
 // Mock global.window
 global.window = Object.create(window)

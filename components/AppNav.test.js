@@ -5,6 +5,9 @@ import GET_APP from '../graphql/queries/getApp'
 import LOGOUT_USER from '../graphql/queries/logoutUser'
 import dummySessionData from '../__dummy__/sessionData'
 import AppNav from './AppNav'
+import { useRouter } from 'next/router'
+jest.mock('next/router')
+useRouter.mockReturnValue({ asPath: '/' })
 
 // Mock global.window
 global.window = Object.create(window)

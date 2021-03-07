@@ -9,6 +9,9 @@ import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
 jest.mock('next/router')
+useRouter.mockReturnValue({
+  asPath: '/'
+})
 
 const session = {
   ...dummySessionData,
@@ -81,7 +84,8 @@ describe('Lesson Page', () => {
     ]
     useRouter.mockReturnValueOnce({
       query: {
-        lesson: '2'
+        lesson: '2',
+        asPath: '/'
       }
     })
     const tree = withTestRouter(
@@ -117,7 +121,8 @@ describe('Lesson Page', () => {
     ]
     useRouter.mockReturnValueOnce({
       query: {
-        lesson: '100'
+        lesson: '100',
+        asPath: '/'
       }
     })
     const tree = withTestRouter(
@@ -150,7 +155,8 @@ describe('Lesson Page', () => {
     ]
     useRouter.mockReturnValueOnce({
       query: {
-        lesson: '25'
+        lesson: '25',
+        asPath: '/'
       }
     })
     const tree = withTestRouter(
@@ -184,7 +190,8 @@ describe('Lesson Page', () => {
     useRouter.mockReturnValueOnce({
       query: {
         lesson: '25'
-      }
+      },
+      asPath: '/'
     })
     const tree = withTestRouter(
       <MockedProvider mocks={mocks} addTypename={false}>

@@ -13,7 +13,8 @@ Object.defineProperty(global.window, 'location', {
 useRouter.mockReturnValue({
   push: jest
     .fn()
-    .mockImplementation(path => (global.window.location.pathname = path))
+    .mockImplementation(path => (global.window.location.pathname = path)),
+  asPath: '/'
 })
 describe('AdminLayout test', () => {
   test('Should return loading spinner when loading', async () => {

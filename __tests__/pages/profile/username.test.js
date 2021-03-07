@@ -15,7 +15,8 @@ useRouter.mockImplementation(() => ({
   query: {
     username: 'fake user'
   },
-  push: jest.fn()
+  push: jest.fn(),
+  asPath: '/'
 }))
 describe('user profile test', () => {
   test('Should render loading spinner if data is not ready', async () => {

@@ -5,6 +5,9 @@ import GET_APP from '../../graphql/queries/getApp'
 import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
+import { useRouter } from 'next/router'
+jest.mock('next/router')
+useRouter.mockReturnValue({ asPath: '/' })
 
 describe('Signup Page', () => {
   const fakeEmail = 'fake@email.com'
