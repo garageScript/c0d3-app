@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Error, { StatusCode } from '../../components/Error'
 import LessonTitleCard from '../../components/LessonTitleCard'
-import LoadingSpinner from '../../components/LoadingSpinner'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import GET_APP from '../../graphql/queries/getApp'
@@ -19,10 +18,6 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
-  if (!session) {
-    router.push('/login')
-    return <LoadingSpinner />
-  }
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }

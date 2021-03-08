@@ -35,7 +35,18 @@ const getAppMock = {
   request: { query: GET_APP },
   result: {
     data: {
-      session: dummySessionData,
+      session: {
+        ...dummySessionData,
+        lessonStatus: [
+          {
+            lessonId: '2',
+            isPassed: '1614694120099', // this column is a timestamp on the DB
+            isTeaching: null,
+            isEnrolled: null,
+            starGiven: null
+          }
+        ]
+      },
       lessons: dummyLessonData,
       alerts: dummyAlertData
     }
@@ -128,6 +139,34 @@ describe('Lesson Page', () => {
     )
     await waitFor(() =>
       expect(global.window.location.pathname).toEqual('/login')
+    )
+  })
+  test("Should redirect to curriculum if user hasn't completed lesson yet", async () => {
+    const noSessionMock = {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          session: dummySessionData,
+          lessons: dummyLessonData,
+          alerts: dummyAlertData
+        }
+      }
+    }
+    render(
+      withTestRouter(
+        <MockedProvider
+          mocks={[noSessionMock, getSubmissionsMock]}
+          addTypename={false}
+        >
+          <Review />
+        </MockedProvider>,
+        {
+          query: { lesson: '2' }
+        }
+      )
+    )
+    await waitFor(() =>
+      expect(global.window.location.pathname).toEqual('/curriculum')
     )
   })
   test('Should render empty submissions', async () => {

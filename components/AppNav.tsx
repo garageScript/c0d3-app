@@ -22,7 +22,7 @@ const dropdownMenuItems = [
   { title: 'Alerts', path: '/admin/alerts' }
 ]
 
-const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
+const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const isAdmin = _.get(session, 'user.isAdmin', '')
   return (
     <div className="navbar-nav collapse navbar-collapse">
@@ -103,41 +103,10 @@ const UnAuthButton = () => (
   </div>
 )
 
-const UnAuthLink = () => (
-  <div className="navbar-nav collapse navbar-collapse">
-    <NavLink
-      path="/"
-      activePath="/"
-      className={`${styles['nav-item']} nav-link`}
-    >
-      Home
-    </NavLink>
-    <NavLink path="/#learning" className={`${styles['nav-item']} nav-link`}>
-      Learning Process
-    </NavLink>
-    <NavLink
-      path="https://c0d3.com/book"
-      className={`${styles['nav-item']} nav-link`}
-      external
-    >
-      Resources
-    </NavLink>
-    <NavLink
-      path="https://chat.c0d3.com"
-      className={`${styles['nav-item']} nav-link`}
-      external
-    >
-      Help
-    </NavLink>
-    <NavLink path="/contributors" className={`${styles['nav-item']} nav-link`}>
-      Contributors
-    </NavLink>
-  </div>
-)
-
 const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   const renderButtons = () => {
-    if (!session) return <UnAuthButton />
+    if (!session || _.get(session, 'user.username') === null)
+      return <UnAuthButton />
 
     const initial = ''
     // TODO: replace with typing
@@ -158,7 +127,7 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {session ? <AuthLink session={session} /> : <UnAuthLink />}
+            <NavBar session={session} />
           </div>
         </div>
         {renderButtons()}

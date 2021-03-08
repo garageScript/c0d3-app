@@ -1,6 +1,7 @@
 import { useMutation } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
 import Alert from '../../components/Alert'
+import * as Sentry from '@sentry/browser'
 import { AdminLayout } from '../../components/admin/AdminLayout'
 import { Button } from '../../components/theme/Button'
 import REMOVE_ALERT from '../../graphql/queries/removeAlert'
@@ -24,7 +25,7 @@ const AlertRow: React.FC<AlertRowProps> = ({ alerts, alert, setAlerts }) => {
       const newAlerts = alerts.filter((alert: AlertType) => alert.id !== id)
       setAlerts(newAlerts)
     } catch (err) {
-      throw new Error(err)
+      Sentry.captureException(err)
     }
   }
 
