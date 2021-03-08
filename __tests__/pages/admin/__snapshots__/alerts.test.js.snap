@@ -1,0 +1,746 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alerts page Should remove alert 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5 text-primary"
+          >
+            Alerts
+          </h1>
+          <p
+            class="card-text"
+          >
+            Add new messages you want c0d3.com students to see or remove old and outdated alerts!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5 text-primary"
+          >
+            Create New Alert
+          </h1>
+          <p
+            class="card-text"
+          >
+            Make a new alert. Look at the preview to see if the alert looks and functions how you want it to!
+          </p>
+          <div
+            class="row mb-4"
+          >
+            <div
+              class="col-8 offset-2"
+            >
+              <div
+                class="mb-3"
+              >
+                <div
+                  class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+                  role="alert"
+                >
+                  <div>
+                    <img
+                      class="mr-3 alert-icon"
+                      src="/assets/curriculum/icons/icon-tip.svg"
+                    />
+                     
+                    
+                  </div>
+                  <button
+                    class="alert-dismiss"
+                    data-testid="dismiss-info"
+                    role="dismiss"
+                  >
+                    <img
+                      src="/assets/curriculum/icons/dismiss-info.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="text-left"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="card shadow-sm col-12"
+                  >
+                    <div
+                      class="card-body text-center"
+                    />
+                    <div
+                      class="text-left"
+                    >
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5text0"
+                        >
+                          Text
+                        </h5>
+                        <input
+                          class="form-control"
+                          data-testid="input0"
+                          placeholder=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5type1"
+                        >
+                          Type
+                        </h5>
+                        <div
+                          class="dropdown"
+                        >
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            class="dropdown-toggle btn btn-none"
+                            type="button"
+                          >
+                            info
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5url2"
+                        >
+                          Url
+                        </h5>
+                        <input
+                          class="form-control"
+                          data-testid="input2"
+                          placeholder=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5urlCaption3"
+                        >
+                          Urlcaption
+                        </h5>
+                        <input
+                          class="form-control"
+                          data-testid="input3"
+                          placeholder=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="text-center mb-4"
+                    >
+                      <button
+                        class="btn bg-primary"
+                        style="color: rgb(255, 255, 255);"
+                      >
+                        Create New Alert
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5 text-primary"
+          >
+            Current Alerts
+          </h1>
+          <p
+            class="card-text"
+          >
+            These alerts are what every students see when they are on their dashboard page.
+          </p>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex flex-column col-10"
+            >
+              <div
+                class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+                role="alert"
+              >
+                <div>
+                  <img
+                    class="mr-3 alert-icon"
+                    src="/assets/curriculum/icons/icon-tip.svg"
+                  />
+                  Set up your computer to submit challenges. 
+                  <a
+                    class="text-white"
+                    href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    View Instructions
+                  </a>
+                </div>
+                <button
+                  class="alert-dismiss"
+                  data-testid="dismiss-info"
+                  role="dismiss"
+                >
+                  <img
+                    src="/assets/curriculum/icons/dismiss-info.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column col-2 mt-3 justify-content-center"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(255, 255, 255);"
+              >
+                Remove Alert
+              </button>
+            </div>
+          </div>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex flex-column col-10"
+            >
+              <div
+                class="alert d-flex justify-content-between mt-3 alert-danger"
+                role="alert"
+              >
+                <div>
+                  <img
+                    class="mr-3 alert-icon"
+                    src="/assets/curriculum/icons/exclamation.svg"
+                  />
+                  Please upgrade your CLI client by running npm update c0d3. 
+                  
+                </div>
+                <button
+                  class="alert-dismiss"
+                  data-testid="dismiss-urgent"
+                  role="dismiss"
+                >
+                  <img
+                    src="/assets/curriculum/icons/dismiss-urgent.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column col-2 mt-3 justify-content-center"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(255, 255, 255);"
+              >
+                Remove Alert
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Alerts page Should remove alert 2`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link active"
+              href="/curriculum"
+            >
+              <span
+                class="sr-only"
+              >
+                (current)
+              </span>
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5 text-primary"
+          >
+            Alerts
+          </h1>
+          <p
+            class="card-text"
+          >
+            Add new messages you want c0d3.com students to see or remove old and outdated alerts!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5 text-primary"
+          >
+            Create New Alert
+          </h1>
+          <p
+            class="card-text"
+          >
+            Make a new alert. Look at the preview to see if the alert looks and functions how you want it to!
+          </p>
+          <div
+            class="row mb-4"
+          >
+            <div
+              class="col-8 offset-2"
+            >
+              <div
+                class="mb-3"
+              >
+                <div
+                  class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+                  role="alert"
+                >
+                  <div>
+                    <img
+                      class="mr-3 alert-icon"
+                      src="/assets/curriculum/icons/icon-tip.svg"
+                    />
+                     
+                    
+                  </div>
+                  <button
+                    class="alert-dismiss"
+                    data-testid="dismiss-info"
+                    role="dismiss"
+                  >
+                    <img
+                      src="/assets/curriculum/icons/dismiss-info.svg"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div
+                class="text-left"
+              >
+                <div
+                  class="row"
+                >
+                  <div
+                    class="card shadow-sm col-12"
+                  >
+                    <div
+                      class="card-body text-center"
+                    />
+                    <div
+                      class="text-left"
+                    >
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5text0"
+                        >
+                          Text
+                        </h5>
+                        <input
+                          class="form-control"
+                          data-testid="input0"
+                          placeholder=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5type1"
+                        >
+                          Type
+                        </h5>
+                        <div
+                          class="dropdown"
+                        >
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            class="dropdown-toggle btn btn-none"
+                            type="button"
+                          >
+                            info
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5url2"
+                        >
+                          Url
+                        </h5>
+                        <input
+                          class="form-control"
+                          data-testid="input2"
+                          placeholder=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                      >
+                        <h5
+                          data-testid="h5urlCaption3"
+                        >
+                          Urlcaption
+                        </h5>
+                        <input
+                          class="form-control"
+                          data-testid="input3"
+                          placeholder=""
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="text-center mb-4"
+                    >
+                      <button
+                        class="btn bg-primary"
+                        style="color: rgb(255, 255, 255);"
+                      >
+                        Create New Alert
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-12"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5 text-primary"
+          >
+            Current Alerts
+          </h1>
+          <p
+            class="card-text"
+          >
+            These alerts are what every students see when they are on their dashboard page.
+          </p>
+          <div
+            class="row"
+          >
+            <div
+              class="d-flex flex-column col-10"
+            >
+              <div
+                class="alert d-flex justify-content-between mt-3 alert-danger"
+                role="alert"
+              >
+                <div>
+                  <img
+                    class="mr-3 alert-icon"
+                    src="/assets/curriculum/icons/exclamation.svg"
+                  />
+                  Please upgrade your CLI client by running npm update c0d3. 
+                  
+                </div>
+                <button
+                  class="alert-dismiss"
+                  data-testid="dismiss-urgent"
+                  role="dismiss"
+                >
+                  <img
+                    src="/assets/curriculum/icons/dismiss-urgent.svg"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column col-2 mt-3 justify-content-center"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(255, 255, 255);"
+              >
+                Remove Alert
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
