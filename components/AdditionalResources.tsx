@@ -1,10 +1,11 @@
 import React from 'react'
 import NavLink from './NavLink'
+import styles from '../scss/additionalResources.module.scss'
 
 const AdditionalResources: React.FC = () => {
   return (
     <div className="additional-resources__container mt-4 mb-0">
-      <h1 className="additional-resources__title text-muted">
+      <h1 className={`${styles['additional-resources__title']} text-muted`}>
         ADDITIONAL RESOURCES
       </h1>
       <hr className="my-2" />

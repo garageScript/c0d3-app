@@ -2,6 +2,7 @@ import React from 'react'
 import NavLink from './NavLink'
 import { Alert as AlertType } from '../graphql/'
 import _ from 'lodash'
+import styles from '../scss/alerts.module.scss'
 
 type Props = {
   alert: AlertType
@@ -26,7 +27,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
     type === 'urgent' ? 'alert-danger' : `bg-primary ${textColor}`
   return (
     <div
-      className={`alert d-flex justify-content-between mt-3 ${alertClasses}`}
+      className={`${styles['alert']} d-flex justify-content-between mt-3 ${alertClasses}`}
       role="alert"
     >
       <div>

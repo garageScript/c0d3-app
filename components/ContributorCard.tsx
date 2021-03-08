@@ -1,6 +1,7 @@
 import React from 'react'
 import { Linkedin, GitHub, File, Code } from 'react-feather'
 import UserInfoImage from './UserInfoImage'
+import styles from '../scss/contributorCard.module.scss'
 
 type ContributorCardProps = {
   user: {
@@ -17,7 +18,9 @@ type ContributorCardProps = {
 const ContributorCard: React.FC<ContributorCardProps> = ({ user }) => {
   return (
     <div className="card shadow-sm mb-3">
-      <div className="ml-auto mr-auto mt-4 contributorCard__avatarContainer">
+      <div
+        className={`ml-auto mr-auto mt-4 ${styles['contributorCard__avatarContainer']}`}
+      >
         <UserInfoImage user={user} />
       </div>
       <h2 className="text-center mt-4">

@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import styles from '../scss/profileLessons.module.scss'
 
 type LessonImageProps = {
   order: number
@@ -15,10 +16,12 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
   const color = lessonProgress === '100%' ? 'success' : 'primary'
   const lessonImageClass =
     lessonProgress === '0%'
-      ? 'lessonimage_opacity_container'
-      : 'lessonimage_container'
+      ? `${styles['lessonimage_opacity_container']}`
+      : `${styles['lessonimage_container']}`
   const progressContainer = (
-    <p className={`lessonimage_progressbadge badge badge-pill badge-${color}`}>
+    <p
+      className={`${styles['lessonimage_progressbadge']} badge badge-pill badge-${color}`}
+    >
       {lessonProgress}
     </p>
   )
@@ -47,7 +50,7 @@ const ProfileLessons: React.FC<ProfileLessonsProps> = ({ lessons }) => {
   return (
     <div className="card shadow-sm">
       <div className="card-body">
-        <h3 className="profilelessons_title">Lessons</h3>
+        <h3 className={`${styles['profilelessons_title']}`}>Lessons</h3>
         {displayLessons}
       </div>
     </div>

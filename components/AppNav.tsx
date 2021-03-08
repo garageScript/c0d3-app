@@ -5,6 +5,7 @@ import { Button } from './theme/Button'
 import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
+import styles from '../scss/appNav.module.scss'
 
 type AuthButtonProps = {
   initial: string
@@ -28,32 +29,35 @@ const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
       <NavLink
         path="/curriculum"
         activePath="/curriculum"
-        className="nav-item nav-link"
+        className={`${styles['nav-item']} nav-link`}
       >
         Curriculum
       </NavLink>
       <NavLink
         path="https://github.com/garageScript/c0d3-app"
-        className="nav-item nav-link"
+        className={`${styles['nav-item']} nav-link`}
         external
       >
         Repo
       </NavLink>
       <NavLink
         path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-        className="nav-item nav-link"
+        className={`${styles['nav-item']} nav-link`}
         external
       >
         Journey
       </NavLink>
       <NavLink
         path="https://chat.c0d3.com"
-        className="nav-item nav-link"
+        className={`${styles['nav-item']} nav-link`}
         external
       >
         Help
       </NavLink>
-      <NavLink path="/contributors" className="nav-item nav-link">
+      <NavLink
+        path="/contributors"
+        className={`${styles['nav-item']} nav-link`}
+      >
         Contributors
       </NavLink>
       {isAdmin === 'true' && (
@@ -101,27 +105,31 @@ const UnAuthButton = () => (
 
 const UnAuthLink = () => (
   <div className="navbar-nav collapse navbar-collapse">
-    <NavLink path="/" activePath="/" className="nav-item nav-link">
+    <NavLink
+      path="/"
+      activePath="/"
+      className={`${styles['nav-item']} nav-link`}
+    >
       Home
     </NavLink>
-    <NavLink path="/#learning" className="nav-item nav-link">
+    <NavLink path="/#learning" className={`${styles['nav-item']} nav-link`}>
       Learning Process
     </NavLink>
     <NavLink
       path="https://c0d3.com/book"
-      className="nav-item nav-link"
+      className={`${styles['nav-item']} nav-link`}
       external
     >
       Resources
     </NavLink>
     <NavLink
       path="https://chat.c0d3.com"
-      className="nav-item nav-link"
+      className={`${styles['nav-item']} nav-link`}
       external
     >
       Help
     </NavLink>
-    <NavLink path="/contributors" className="nav-item nav-link">
+    <NavLink path="/contributors" className={`${styles['nav-item']} nav-link`}>
       Contributors
     </NavLink>
   </div>
@@ -144,7 +152,7 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
       <div className="container">
         <NavLink
           path="/"
-          className="navbar-brand text-primary font-weight-bold"
+          className={`${styles['navbar-brand']} text-primary font-weight-bold`}
         >
           C0D3
         </NavLink>
