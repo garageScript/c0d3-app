@@ -50,7 +50,7 @@
     "swr": "^0.4.2",
     "winston": "^3.3.3",
     "winston-transport-sentry-node": "^0.7.0",
-    "yup": "^0.32.8"
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
