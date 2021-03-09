@@ -2,6 +2,7 @@ import { useMutation } from '@apollo/client'
 import React, { useEffect, useState } from 'react'
 import createNewLesson from '../../../graphql/queries/createLesson'
 import updateLesson from '../../../graphql/queries/updateLesson'
+import * as Sentry from '@sentry/browser'
 import { FormCard } from '../../FormCard'
 import _ from 'lodash'
 import {
@@ -51,7 +52,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
     try {
       await alterLesson(makeGraphqlVariable(lessonProperties))
     } catch (err) {
-      throw new Error(err)
+      Sentry.captureException(err)
     }
   }
 
@@ -116,7 +117,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       await createLesson(makeGraphqlVariable(lessonProperties))
       window.location.reload()
     } catch (err) {
-      throw new Error(err)
+      Sentry.captureException(err)
     }
   }
 
@@ -152,14 +153,15 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   selectedLesson
 }) => {
   // true when user clicks on `create new lesson` button
-  if (lessons && selectedLesson === lessons.length) {
+  if (!lessons || selectedLesson === lessons.length) {
     return <NewLesson setLessons={setLessons} />
   }
 
   // set currently selected lesson
-  const lesson = lessons && lessons[selectedLesson]
+  const lesson = lessons[selectedLesson] ? lessons[selectedLesson] : lessons[0]
 
-  const lessonId = parseInt(lesson ? lesson.id + '' : '')
+  //TO-DO change Lesson type to include non-nullable Int id field
+  const lessonId = parseInt(lesson.id + '')
 
   return (
     <div className="col-8 text-center" key={_.uniqueId()}>
