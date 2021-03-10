@@ -1,17 +1,13 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import { useRouter } from 'next/router'
 import GET_APP from '../../../graphql/queries/getApp'
-import { withTestRouter } from '../../../testUtil/withNextRouter'
 import Lesson from '../../../pages/curriculum/[lesson]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
-jest.mock('next/router')
-useRouter.mockReturnValue({
-  asPath: '/'
-})
+import { withTestRouter } from '../../../testUtil/withNextRouter'
+jest.unmock('next/router')
 
 const session = {
   ...dummySessionData,
@@ -82,12 +78,6 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '2',
-        asPath: '/'
-      }
-    })
     const tree = withTestRouter(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
@@ -119,12 +109,6 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '100',
-        asPath: '/'
-      }
-    })
     const tree = withTestRouter(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
@@ -153,12 +137,6 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '25',
-        asPath: '/'
-      }
-    })
     const tree = withTestRouter(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
@@ -187,12 +165,6 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '25'
-      },
-      asPath: '/'
-    })
     const tree = withTestRouter(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />

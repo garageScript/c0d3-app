@@ -3,17 +3,13 @@ import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import IndexPage from '../../pages/index'
-
-// mocked imports
-jest.mock('next/router')
+import dummySessionData from '../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
 
-// dummy data
-import dummySessionData from '../../__dummy__/sessionData'
-
-describe('<IndexPage />', () => {
+describe('Index Page', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    global.window.location.pathname = '/not-root'
   })
 
   const mocksWithSession = session => [
@@ -29,44 +25,28 @@ describe('<IndexPage />', () => {
     }
   ]
 
-  describe('with session data', () => {
-    // mock data with session
-    const mocks = mocksWithSession(dummySessionData)
-
-    test('should redirect to /curriculum and return null', async () => {
-      const routerPush = jest.fn()
-      useRouter.mockReturnValue({ push: routerPush, asPath: '/' })
-
-      const tree = (
-        <MockedProvider mocks={mocks} addTypename={false}>
-          <IndexPage />
-        </MockedProvider>
-      )
-
-      const { container } = render(tree)
-      await waitFor(() => {
-        expect(routerPush).toBeCalledWith('/curriculum')
-        expect(container.firstChild).toBeNull()
-      }) // wait for loading state to pass
-    })
+  test('Should redirect to /curriculum and return null', async () => {
+    const { container } = render(
+      <MockedProvider
+        mocks={mocksWithSession(dummySessionData)}
+        addTypename={false}
+      >
+        <IndexPage />
+      </MockedProvider>
+    )
+    await waitFor(() => {
+      expect(global.window.location.pathname).toEqual('/curriculum')
+      expect(container.firstChild).toBeNull()
+    }) // wait for loading state to pass
   })
 
-  describe('without session data', () => {
-    // mock data without session
-    const mocks = mocksWithSession(null)
-
-    test('should not redirect', async () => {
-      const routerPush = jest.fn()
-      useRouter.mockReturnValue({ push: routerPush, asPath: '/' })
-
-      const tree = (
-        <MockedProvider mocks={mocks} addTypename={false}>
-          <IndexPage />
-        </MockedProvider>
-      )
-
-      render(tree)
-      await waitFor(() => expect(routerPush).not.toHaveBeenCalled()) // wait for loading state to pass
-    })
+  test('Should not redirect without session', async () => {
+    const { push } = useRouter()
+    render(
+      <MockedProvider mocks={mocksWithSession(null)} addTypename={false}>
+        <IndexPage />
+      </MockedProvider>
+    )
+    await waitFor(() => expect(push).not.toHaveBeenCalled())
   })
 })

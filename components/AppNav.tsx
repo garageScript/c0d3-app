@@ -18,37 +18,38 @@ type AuthLinkProps = {
   session: any
 }
 
-type ButtonType = NavLinkProps & { name: string }
+type NavItem = NavLinkProps & { name: string }
 
 const dropdownMenuItems = [
   { title: 'Lessons', path: '/admin/lessons' },
   { title: 'Users', path: '/admin/users' },
   { title: 'Alerts', path: '/admin/alerts' }
 ]
+const navItems: NavItem[] = [
+  { path: '/curriculum', name: 'Curriculum' },
+  {
+    path: 'https://github.com/garageScript/c0d3-app',
+    name: 'Repo',
+    external: true
+  },
+  {
+    path:
+      'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
+    name: 'Journey',
+    external: true
+  },
+  { path: 'https://chat.c0d3.com', name: 'Help', external: true },
+  { path: '/contributors', name: 'Contributors' }
+]
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
-  const isAdmin = _.get(session, 'user.isAdmin', '')
   const router = useRouter()
+  const isAdmin = _.get(session, 'user.isAdmin', '')
   const location = '/' + router.asPath.split('/')[1]
-  const buttons: ButtonType[] = [
-    { path: '/curriculum', name: 'Curriculum' },
-    {
-      path: 'https://github.com/garageScript/c0d3-app',
-      name: 'Repo',
-      external: true
-    },
-    {
-      path:
-        'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
-      name: 'Journey',
-      external: true
-    },
-    { path: 'https://chat.c0d3.com', name: 'Help', external: true },
-    { path: '/contributors', name: 'Contributors' }
-  ]
+
   return (
     <div className="navbar-nav collapse navbar-collapse">
-      {buttons.map(button => (
+      {navItems.map(button => (
         <NavLink
           path={button.path}
           className="nav-item nav-link"
@@ -70,9 +71,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   const [logoutUser, { data }] = useLogoutMutation()
   useEffect(() => {
     const success = _.get(data, 'logout.success', false)
-    if (success) {
-      window.location.pathname = '/'
-    }
+    if (success) window.location.pathname = '/'
   }, [data])
   return (
     <div className="d-flex">

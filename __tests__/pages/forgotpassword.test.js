@@ -6,9 +6,6 @@ import GET_APP from '../../graphql/queries/getApp'
 import RESET_PASSWORD from '../../graphql/queries/resetPassword'
 import dummySessionData from '../../__dummy__/sessionData'
 import ForgotPassword from '../../pages/forgotpassword'
-import { useRouter } from 'next/router'
-jest.mock('next/router')
-useRouter.mockReturnValue({ asPath: '/' })
 
 describe('ForgotPassword Page', () => {
   test('Should render password reset instructions on success', async () => {

@@ -1,7 +1,4 @@
 import initStoryshots from '@storybook/addon-storyshots'
-import { useRouter } from 'next/router'
-jest.mock('next/router')
-useRouter.mockReturnValue({ asPath: '/' })
 
 /*	
 	This mock is necessary because there is currently a problem

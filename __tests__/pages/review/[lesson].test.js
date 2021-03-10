@@ -7,7 +7,6 @@ import {
 } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
-import { useRouter } from 'next/router'
 import GET_APP from '../../../graphql/queries/getApp'
 import GET_SUBMISSONS from '../../../graphql/queries/getSubmissions'
 import { withTestRouter } from '../../../testUtil/withNextRouter'
@@ -15,22 +14,7 @@ import Review from '../../../pages/review/[lesson]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
-jest.mock('next/router')
-
-// Mock global.window
-global.window = Object.create(window)
-Object.defineProperty(global.window, 'location', {
-  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
-})
-useRouter.mockReturnValue({
-  query: {
-    lesson: '2'
-  },
-  push: jest
-    .fn()
-    .mockImplementation(path => (global.window.location.pathname = path)),
-  asPath: '/'
-})
+jest.unmock('next/router')
 
 const getAppMock = {
   request: { query: GET_APP },
@@ -115,6 +99,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should redirect to login if no session', async () => {
+    const push = jest.fn()
     const noSessionMock = {
       request: { query: GET_APP },
       result: {
@@ -134,15 +119,16 @@ describe('Lesson Page', () => {
           <Review />
         </MockedProvider>,
         {
-          query: { lesson: '2' }
+          query: { lesson: '2' },
+          push
         }
       )
     )
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/login')
-    )
+
+    await waitFor(() => expect(push).toBeCalledWith('/login'))
   })
   test("Should redirect to curriculum if user hasn't completed lesson yet", async () => {
+    const push = jest.fn()
     const noSessionMock = {
       request: { query: GET_APP },
       result: {
@@ -162,13 +148,12 @@ describe('Lesson Page', () => {
           <Review />
         </MockedProvider>,
         {
-          query: { lesson: '2' }
+          query: { lesson: '2' },
+          push
         }
       )
     )
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/curriculum')
-    )
+    await waitFor(() => expect(push).toBeCalledWith('/curriculum'))
   })
   test('Should render empty submissions', async () => {
     const noSubmissionMock = { ...getSubmissionsMock, result: null }
@@ -190,15 +175,6 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render Error component if route is invalid', async () => {
-    useRouter.mockReturnValue({
-      query: {
-        lesson: '100'
-      },
-      push: jest
-        .fn()
-        .mockImplementation(path => (global.window.location.pathname = path)),
-      asPath: '/'
-    })
     const { container } = render(
       withTestRouter(
         <MockedProvider mocks={mocks} addTypename={false}>

@@ -4,6 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import Layout from '../../components/Layout'
+import { withTestRouter } from '../../testUtil/withNextRouter'
 
 const customViewports = {
   LaptopHiDPI: {
@@ -71,7 +72,7 @@ export const LoggedIn: React.FC = () => {
     }
   ]
 
-  return (
+  return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <Layout>
         <FakeChild />
@@ -94,7 +95,7 @@ export const LoggedOut: React.FC = () => {
     }
   ]
 
-  return (
+  return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <Layout>
         <FakeChild />

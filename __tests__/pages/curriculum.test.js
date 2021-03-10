@@ -11,9 +11,6 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import { useRouter } from 'next/router'
-jest.mock('next/router')
-useRouter.mockReturnValue({ asPath: '/' })
 
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {

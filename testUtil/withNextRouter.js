@@ -6,9 +6,9 @@ import { RouterContext } from 'next/dist/next-server/lib/router-context'
 export function withTestRouter(tree, router = {}) {
   const {
     route = '',
-    pathname = '',
+    pathname = '/not-root',
     query = {},
-    asPath = '',
+    asPath = '/not-root',
     push = async () => true,
     replace = async () => true,
     reload = () => null,

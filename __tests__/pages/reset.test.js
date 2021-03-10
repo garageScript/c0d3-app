@@ -5,8 +5,7 @@ import GET_APP from '../../graphql/queries/getApp'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import { withTestRouter } from '../../testUtil/withNextRouter'
 import ResetPassword from '../../pages/confirm/[token]'
-
-const mockFn = jest.fn()
+jest.unmock('next/router')
 
 describe('ResetPassword Page', () => {
   const fillOutResetForm = (getByTestId, password) => {
@@ -64,7 +63,6 @@ describe('ResetPassword Page', () => {
         <ResetPassword />
       </MockedProvider>,
       {
-        push: jest.fn(),
         query: { token: fakeToken }
       }
     )
@@ -115,7 +113,6 @@ describe('ResetPassword Page', () => {
         <ResetPassword />
       </MockedProvider>,
       {
-        push: jest.fn(),
         query: { token: fakeToken }
       }
     )

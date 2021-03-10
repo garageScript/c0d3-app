@@ -3,8 +3,8 @@ import React from 'react'
 import withQueryLoader from '../containers/withQueryLoader'
 import { render, waitFor } from '@testing-library/react'
 import LoadingSpinner from '../components/LoadingSpinner'
+jest.unmock('next/router')
 import Router from 'next/router'
-jest.mock()
 jest.mock('@apollo/client')
 
 Router.router = {

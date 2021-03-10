@@ -7,17 +7,9 @@ import UserProfile from '../../../pages/profile/[username]'
 import { MockedProvider } from '@apollo/client/testing'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
-import { useRouter } from 'next/router'
 import { withTestRouter } from '../../../testUtil/withNextRouter'
-jest.mock('next/router')
+jest.unmock('next/router')
 
-useRouter.mockImplementation(() => ({
-  query: {
-    username: 'fake user'
-  },
-  push: jest.fn(),
-  asPath: '/'
-}))
 describe('user profile test', () => {
   test('Should render loading spinner if data is not ready', async () => {
     const mocks = [
@@ -249,7 +241,7 @@ describe('user profile test', () => {
       </MockedProvider>,
       {
         query: {
-          username: 'newbie'
+          username: 'fake user'
         }
       }
     )
@@ -370,7 +362,7 @@ describe('user profile test', () => {
       </MockedProvider>,
       {
         query: {
-          username: 'newbie'
+          username: 'fake user'
         }
       }
     )
@@ -388,9 +380,16 @@ describe('user profile test', () => {
     ]
 
     const { findByRole } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
-      </MockedProvider>
+      withTestRouter(
+        <MockedProvider mocks={mocks} addTypename={false}>
+          <UserProfile />
+        </MockedProvider>,
+        {
+          query: {
+            username: 'newbie'
+          }
+        }
+      )
     )
 
     const element = await findByRole('heading', { name: /Back/i })
