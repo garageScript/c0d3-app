@@ -154,6 +154,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "kondanna",
+      "name": "Charles",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16906103?v=4",
+      "profile": "https://github.com/kondanna",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
