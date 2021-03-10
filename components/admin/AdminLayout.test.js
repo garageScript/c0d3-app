@@ -2,8 +2,10 @@ import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import { AdminLayout } from './AdminLayout'
+import { useRouter } from 'next/router'
 
 describe('AdminLayout test', () => {
+  const { push } = useRouter()
   test('Should return loading spinner when loading', async () => {
     const { findByRole } = render(
       <MockedProvider addTypename={false}>
@@ -28,9 +30,7 @@ describe('AdminLayout test', () => {
         <AdminLayout data={{ data: {} }} />
       </MockedProvider>
     )
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/login')
-    )
+    await waitFor(() => expect(push).toBeCalledWith('/login'))
   })
   test('Should render children', async () => {
     const { container } = render(

@@ -9,8 +9,9 @@ import { useRouter } from 'next/router'
 describe('Index Page', () => {
   beforeEach(() => {
     jest.clearAllMocks()
-    global.window.location.pathname = '/not-root'
   })
+
+  const { push } = useRouter()
 
   const mocksWithSession = session => [
     {
@@ -35,7 +36,7 @@ describe('Index Page', () => {
       </MockedProvider>
     )
     await waitFor(() => {
-      expect(global.window.location.pathname).toEqual('/curriculum')
+      expect(push).toBeCalledWith('/curriculum')
       expect(container.firstChild).toBeNull()
     }) // wait for loading state to pass
   })

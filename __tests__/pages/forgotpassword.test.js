@@ -1,6 +1,6 @@
 import React from 'react'
 import { GraphQLError } from 'graphql'
-import { render, fireEvent, waitFor, act } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import RESET_PASSWORD from '../../graphql/queries/resetPassword'

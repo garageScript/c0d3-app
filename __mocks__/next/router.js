@@ -1,13 +1,10 @@
-global.window = Object.create(window)
-Object.defineProperty(global.window, 'location', {
-  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
-})
-const push = jest.fn(path => (global.window.location['pathname'] = path))
+const push = jest.fn()
+const query = {}
 export const useRouter = jest.fn().mockImplementation(() => {
   return {
     route: '/',
     pathname: '/',
-    query: {},
+    query,
     asPath: '/',
     push: push,
     replace: async () => true,

@@ -9,12 +9,11 @@ import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
 import GET_SUBMISSONS from '../../../graphql/queries/getSubmissions'
-import { withTestRouter } from '../../../testUtil/withNextRouter'
 import Review from '../../../pages/review/[lesson]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
-jest.unmock('next/router')
+import { useRouter } from 'next/router'
 
 const getAppMock = {
   request: { query: GET_APP },
@@ -66,16 +65,13 @@ const getSubmissionsMock = {
 }
 const mocks = [getAppMock, getSubmissionsMock]
 describe('Lesson Page', () => {
+  const { query, push } = useRouter()
+  query['lesson'] = '2'
   test('Should render new submissions', async () => {
     const { container } = render(
-      withTestRouter(
-        <MockedProvider mocks={mocks} addTypename={false}>
-          <Review />
-        </MockedProvider>,
-        {
-          query: { lesson: '2' }
-        }
-      )
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Review />
+      </MockedProvider>
     )
     await waitFor(() =>
       expect(
@@ -86,20 +82,14 @@ describe('Lesson Page', () => {
   })
   test('Should return loading spinner when loading', async () => {
     const { container } = render(
-      withTestRouter(
-        <MockedProvider mocks={mocks} addTypename={false}>
-          <Review />
-        </MockedProvider>,
-        {
-          query: { lesson: '2' }
-        }
-      )
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Review />
+      </MockedProvider>
     )
     expect(screen.getByText('Loading...')).toBeTruthy()
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should redirect to login if no session', async () => {
-    const push = jest.fn()
     const noSessionMock = {
       request: { query: GET_APP },
       result: {
@@ -111,24 +101,17 @@ describe('Lesson Page', () => {
       }
     }
     render(
-      withTestRouter(
-        <MockedProvider
-          mocks={[noSessionMock, getSubmissionsMock]}
-          addTypename={false}
-        >
-          <Review />
-        </MockedProvider>,
-        {
-          query: { lesson: '2' },
-          push
-        }
-      )
+      <MockedProvider
+        mocks={[noSessionMock, getSubmissionsMock]}
+        addTypename={false}
+      >
+        <Review />
+      </MockedProvider>
     )
 
     await waitFor(() => expect(push).toBeCalledWith('/login'))
   })
   test("Should redirect to curriculum if user hasn't completed lesson yet", async () => {
-    const push = jest.fn()
     const noSessionMock = {
       request: { query: GET_APP },
       result: {
@@ -140,50 +123,35 @@ describe('Lesson Page', () => {
       }
     }
     render(
-      withTestRouter(
-        <MockedProvider
-          mocks={[noSessionMock, getSubmissionsMock]}
-          addTypename={false}
-        >
-          <Review />
-        </MockedProvider>,
-        {
-          query: { lesson: '2' },
-          push
-        }
-      )
+      <MockedProvider
+        mocks={[noSessionMock, getSubmissionsMock]}
+        addTypename={false}
+      >
+        <Review />
+      </MockedProvider>
     )
     await waitFor(() => expect(push).toBeCalledWith('/curriculum'))
   })
   test('Should render empty submissions', async () => {
     const noSubmissionMock = { ...getSubmissionsMock, result: null }
     const { container } = render(
-      withTestRouter(
-        <MockedProvider
-          mocks={[getAppMock, noSubmissionMock]}
-          addTypename={false}
-        >
-          <Review />
-        </MockedProvider>,
-        {
-          query: { lesson: '2' }
-        }
-      )
+      <MockedProvider
+        mocks={[getAppMock, noSubmissionMock]}
+        addTypename={false}
+      >
+        <Review />
+      </MockedProvider>
     )
 
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render Error component if route is invalid', async () => {
+    query['lesson'] = '100'
     const { container } = render(
-      withTestRouter(
-        <MockedProvider mocks={mocks} addTypename={false}>
-          <Review />
-        </MockedProvider>,
-        {
-          query: { lesson: '100' }
-        }
-      )
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Review />
+      </MockedProvider>
     )
     await waitFor(() => screen.getAllByText(/Page not found/i))
 
