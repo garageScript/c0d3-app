@@ -24,7 +24,7 @@ const getAppMock = {
         lessonStatus: [
           {
             lessonId: '2',
-            isPassed: 'true',
+            isPassed: '1614694120099', // this column is a timestamp on the DB
             isTeaching: null,
             isEnrolled: null,
             starGiven: null

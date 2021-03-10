@@ -1,5 +1,6 @@
 import { useMutation } from '@apollo/client'
 import React, { useState, useEffect } from 'react'
+import * as Sentry from '@sentry/browser'
 import Alert from '../../../components/Alert'
 import { FormCard } from '../../../components/FormCard'
 import ADD_ALERT from '../../../graphql/queries/addAlert'
@@ -66,7 +67,7 @@ export const NewAlert: React.FC<NewAlertProps> = ({ setAlerts }) => {
     try {
       await createAlert(makeGraphqlVariable(newProperties))
     } catch (err) {
-      throw new Error(err)
+      Sentry.captureException(err)
     }
   }
 
