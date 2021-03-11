@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MyApp component should render Curriculum component passed in as prop 1`] = `
+exports[`MyApp component should render Login component passed in as prop 1`] = `
 <div>
   <nav
     class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
