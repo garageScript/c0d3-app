@@ -87,56 +87,63 @@ exports[`MyApp component should render Curriculum component passed in as prop 1`
     class="container"
   >
     <div
-      class="container"
+      class="row mt-5"
     >
       <div
-        class="row"
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
       >
         <div
-          class="d-flex col-sm-3 align-items-center justify-content-center"
+          class="card-body text-center pt-5 pb-5"
         >
-          <div
-            class="text-center mt-3"
+          <h1
+            class="card-title h2 font-weight-bold mb-5"
+          >
+            Login
+          </h1>
+          <p
+            class="card-text"
+          />
+          <form
+            action="#"
+            data-testid="form"
           >
             <div
-              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+              class="form-group"
             >
-              <strong>
-                Internal server error
-              </strong>
-            </div>
-            <div
-              style="color: rgb(41, 41, 41); font-size: 1rem;"
-            >
-              Only absolute URLs are supported
-            </div>
-            <a
-              class="btn btn-primary py-3 px-5 mt-3"
-              href="/"
-            >
-              <h3
-                class="font-weight-bold"
+              <div
+                class="mt-3"
               >
-                Back
-              </h3>
-            </a>
-          </div>
-        </div>
-        <div
-          class="mb-3 col-sm-9"
-        >
-          <div
-            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+                <input
+                  class="form-control form-control-lg font-weight-light mb-3 "
+                  data-testid="username"
+                  name="username"
+                  placeholder="Username"
+                  value=""
+                />
+                <input
+                  class="form-control form-control-lg font-weight-light mb-3 "
+                  data-testid="password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+                <button
+                  class="btn btn-primary btn-lg btn-block mb-3"
+                  data-testid="submit"
+                  type="submit"
+                >
+                  Login to Your Account
+                </button>
+              </div>
+            </div>
+          </form>
+          <a
+            class=""
+            href="/forgotpassword"
           >
-            <div
-              style="display: block; box-sizing: border-box; padding-top: 100%;"
-            />
-            <img
-              decoding="async"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-            />
-          </div>
+            Forgot your password?
+          </a>
         </div>
       </div>
     </div>

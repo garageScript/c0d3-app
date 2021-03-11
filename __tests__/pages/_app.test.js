@@ -6,6 +6,7 @@ import {
 } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import MyApp from '../../pages/_app'
+import Login from '../../pages/login'
 import Curriculum from '../../pages/curriculum'
 import * as Sentry from '@sentry/browser'
 import GET_APP from '../../graphql/queries/getApp'
@@ -29,10 +30,10 @@ const mocks = [
 jest.spyOn(Sentry, 'captureException')
 
 describe('MyApp component', () => {
-  test('should render Curriculum component passed in as prop', async () => {
+  test('should render Login component passed in as prop', async () => {
     const { container, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <MyApp Component={Curriculum} />
+        <MyApp Component={Login} />
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
