@@ -7,12 +7,13 @@ import {
 import { MockedProvider } from '@apollo/client/testing'
 import MyApp from '../../pages/_app'
 import Login from '../../pages/login'
-import Curriculum from '../../pages/curriculum'
 import * as Sentry from '@sentry/browser'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
+import posthog from 'posthog-js'
+jest.spyOn(Sentry, 'captureException')
 
 const mocks = [
   {
@@ -27,9 +28,39 @@ const mocks = [
   }
 ]
 
-jest.spyOn(Sentry, 'captureException')
-
 describe('MyApp component', () => {
+  const mockPosthogInit = jest.fn(posthog.init)
+  const OLD_ENV = process.env
+  beforeEach(() => {
+    jest.clearAllMocks();
+    process.env = { ...OLD_ENV };
+  })
+  afterEach(() => {
+    process.env = OLD_ENV;
+  })
+
+  test('posthog init function should not be called if not in production environment', async () => {
+    const { queryByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <MyApp Component={Login} />
+      </MockedProvider>
+    )
+    await waitForElementToBeRemoved(() => queryByText('Loading...'))
+    await(() => expect(mockPosthogInit).not.toHaveBeenCalled())
+  })
+
+  test('posthog init function is being called with the correct arguments', async () => {
+    process.env = { ...process.env, NODE_ENV: 'production' }
+    const { queryByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <MyApp Component={Login} />
+      </MockedProvider>
+    )
+    await waitForElementToBeRemoved(() => queryByText('Loading...'))
+    await(() => expect(mockPosthogInit).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, { api_host: 'https://app.posthog.com' }))
+    await(() => console.log(process.env))
+  })
+
   test('should render Login component passed in as prop', async () => {
     const { container, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
