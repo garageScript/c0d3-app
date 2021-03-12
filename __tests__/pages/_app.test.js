@@ -32,11 +32,11 @@ describe('MyApp component', () => {
   const mockPosthogInit = jest.fn(posthog.init)
   const OLD_ENV = process.env
   beforeEach(() => {
-    jest.clearAllMocks();
-    process.env = { ...OLD_ENV };
+    jest.clearAllMocks()
+    process.env = { ...OLD_ENV }
   })
   afterEach(() => {
-    process.env = OLD_ENV;
+    process.env = OLD_ENV
   })
 
   test('posthog init function should not be called if not in production environment', async () => {
@@ -46,7 +46,7 @@ describe('MyApp component', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await(() => expect(mockPosthogInit).not.toHaveBeenCalled())
+    await (() => expect(mockPosthogInit).not.toHaveBeenCalled())
   })
 
   test('posthog init function is being called with the correct arguments', async () => {
@@ -57,8 +57,12 @@ describe('MyApp component', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await(() => expect(mockPosthogInit).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, { api_host: 'https://app.posthog.com' }))
-    await(() => console.log(process.env))
+    await (() =>
+      expect(mockPosthogInit).toHaveBeenCalledWith(
+        process.env.POSTHOG_API_KEY,
+        { api_host: 'https://app.posthog.com' }
+      ))
+    await (() => console.log(process.env))
   })
 
   test('should render Login component passed in as prop', async () => {
