@@ -50,7 +50,7 @@ describe('MyApp component', () => {
   })
 
   test('posthog init function is being called with the correct arguments', async () => {
-    process.env = { ...process.env, NODE_ENV: 'production' }
+    process.env = { ...process.env, NODE_ENV: 'production', POSTHOG_API_KEY: 'fake-posthog-api-key' }
     const { queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <MyApp Component={Login} />
