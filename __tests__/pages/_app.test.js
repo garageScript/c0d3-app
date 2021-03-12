@@ -63,10 +63,9 @@ describe('MyApp component', () => {
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await (() =>
-      expect(posthog.init).toHaveBeenCalledWith(
-        process.env.POSTHOG_API_KEY,
-        { api_host: 'https://app.posthog.com' }
-      ))
+      expect(posthog.init).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, {
+        api_host: 'https://app.posthog.com'
+      }))
     await (() => console.log(process.env))
   })
 
