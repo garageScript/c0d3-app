@@ -47,7 +47,7 @@ describe('MyApp component', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await (() => expect(posthog.init).not.toHaveBeenCalled())
+    expect(posthog.init).not.toHaveBeenCalled()
   })
 
   test('posthog init function is being called with the correct arguments', async () => {
@@ -62,11 +62,9 @@ describe('MyApp component', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await (() =>
-      expect(posthog.init).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, {
-        api_host: 'https://app.posthog.com'
-      }))
-    await (() => console.log(process.env))
+    expect(posthog.init).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, {
+      api_host: 'https://app.posthog.com'
+    })
   })
 
   test('should render Login component passed in as prop', async () => {
