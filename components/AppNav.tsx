@@ -49,10 +49,9 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
     <div className="navbar-nav collapse navbar-collapse">
       {navItems.map(button => (
         <NavLink
-          path={button.path}
+          {...button}
           className="nav-item nav-link"
           key={button.name}
-          external={button.external}
           activePath={location === button.path}
         >
           {button.name}
