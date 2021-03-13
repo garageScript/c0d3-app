@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import NavLink from './NavLink'
+import NavLink, { NavLinkProps } from './NavLink'
 import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
 import { DropdownMenu } from './DropdownMenu'
@@ -17,47 +17,47 @@ type AuthLinkProps = {
   session: any
 }
 
+type NavItem = NavLinkProps & { name: string }
+
 const dropdownMenuItems = [
   { title: 'Lessons', path: '/admin/lessons' },
   { title: 'Users', path: '/admin/users' },
   { title: 'Alerts', path: '/admin/alerts' }
 ]
+const navItems: NavItem[] = [
+  { path: '/curriculum', name: 'Curriculum' },
+  {
+    path: 'https://github.com/garageScript/c0d3-app',
+    name: 'Repo',
+    external: true
+  },
+  {
+    path:
+      'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
+    name: 'Journey',
+    external: true
+  },
+  { path: 'https://chat.c0d3.com', name: 'Help', external: true },
+  { path: '/contributors', name: 'Contributors' }
+]
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const isAdmin = _.get(session, 'user.isAdmin', '')
+  const location = window && '/' + window.location.pathname.split('/')[1]
+
   return (
     <div className="navbar-nav collapse navbar-collapse">
-      <NavLink
-        path="/curriculum"
-        activePath="/curriculum"
-        className="nav-item nav-link"
-      >
-        Curriculum
-      </NavLink>
-      <NavLink
-        path="https://github.com/garageScript/c0d3-app"
-        className="nav-item nav-link"
-        external
-      >
-        Repo
-      </NavLink>
-      <NavLink
-        path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-        className="nav-item nav-link"
-        external
-      >
-        Journey
-      </NavLink>
-      <NavLink
-        path="https://chat.c0d3.com"
-        className="nav-item nav-link"
-        external
-      >
-        Help
-      </NavLink>
-      <NavLink path="/contributors" className="nav-item nav-link">
-        Contributors
-      </NavLink>
+      {navItems.map(button => (
+        <NavLink
+          path={button.path}
+          className="nav-item nav-link"
+          key={button.name}
+          external={button.external}
+          activePath={location === button.path}
+        >
+          {button.name}
+        </NavLink>
+      ))}
       {isAdmin === 'true' && (
         <DropdownMenu title="Admin" items={dropdownMenuItems} />
       )}
@@ -69,9 +69,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   const [logoutUser, { data }] = useLogoutMutation()
   useEffect(() => {
     const success = _.get(data, 'logout.success', false)
-    if (success) {
-      window.location.pathname = '/'
-    }
+    if (success) window.location.pathname = '/'
   }, [data])
   return (
     <div className="d-flex">

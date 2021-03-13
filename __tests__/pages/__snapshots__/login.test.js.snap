@@ -24,14 +24,9 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
