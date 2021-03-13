@@ -74,7 +74,7 @@ describe('MyApp component', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await waitFor(() => expect(container).toMatchSnapshot())
+    expect(container).toMatchSnapshot()
     expect(Sentry.captureException).not.toHaveBeenCalled()
   })
 })
