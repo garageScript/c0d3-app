@@ -35,12 +35,14 @@ export const userInfo = async (_parent: void, args: Username) => {
     Star.findAll({
       where: {
         mentorId: user.id
-      }
+      },
+      include: [{ model: User, as: 'student', attributes: ['username', 'id'] }]
     })
   ])
   const starMap = starsReceived.reduce((map: any, star: any) => {
     map[star.lessonId] = map[star.lessonId] || []
     map[star.lessonId].push(star.dataValues)
+    console.log(star)
     return map
   }, {})
   lessonStatus.forEach((lesson: any) => {
