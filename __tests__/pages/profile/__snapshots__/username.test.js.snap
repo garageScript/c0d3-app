@@ -24,14 +24,9 @@ exports[`user profile test Should render anonymous users 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -823,14 +818,9 @@ exports[`user profile test Should render loading spinner if data is not ready 1`
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -1622,14 +1612,9 @@ exports[`user profile test Should render nulled lessons 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -1904,14 +1889,9 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -2703,14 +2683,9 @@ exports[`user profile test Should render nulles challenges 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -3543,14 +3518,9 @@ exports[`user profile test Should render profile 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a

@@ -2,6 +2,7 @@ import * as React from 'react'
 import ResetPassword from '../../pages/confirm/[token]'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import { withTestRouter } from '../../testUtil/withNextRouter'
 
 export default {
   component: ResetPassword,
@@ -22,7 +23,7 @@ export const _ResetPassword: React.FC = () => {
     }
   ]
 
-  return (
+  return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <ResetPassword />
     </MockedProvider>

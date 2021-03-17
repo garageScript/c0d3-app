@@ -25,14 +25,9 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               class="navbar-nav collapse navbar-collapse"
             >
               <a
-                class="nav-item nav-link active"
+                class="nav-item nav-link"
                 href="/curriculum"
               >
-                <span
-                  class="sr-only"
-                >
-                  (current)
-                </span>
                 Curriculum
               </a>
               <a
@@ -437,14 +432,9 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -605,14 +595,9 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               class="navbar-nav collapse navbar-collapse"
             >
               <a
-                class="nav-item nav-link active"
+                class="nav-item nav-link"
                 href="/curriculum"
               >
-                <span
-                  class="sr-only"
-                >
-                  (current)
-                </span>
                 Curriculum
               </a>
               <a
@@ -1045,14 +1030,9 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a

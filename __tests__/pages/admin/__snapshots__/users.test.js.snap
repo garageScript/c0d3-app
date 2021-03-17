@@ -24,14 +24,9 @@ exports[`Users test Should be able to switch search options 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -344,14 +339,9 @@ exports[`Users test Should be able to switch search options 2`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -664,14 +654,9 @@ exports[`Users test Should be able to switch search options 3`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -984,14 +969,9 @@ exports[`Users test Should be able to switch search options 4`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a

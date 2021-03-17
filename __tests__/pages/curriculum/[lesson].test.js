@@ -1,14 +1,12 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import { useRouter } from 'next/router'
 import GET_APP from '../../../graphql/queries/getApp'
-import { withTestRouter } from '../../../testUtil/withNextRouter'
 import Lesson from '../../../pages/curriculum/[lesson]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
-jest.mock('next/router')
+import { useRouter } from 'next/router'
 
 const session = {
   ...dummySessionData,
@@ -66,6 +64,8 @@ const session = {
   ]
 }
 describe('Lesson Page', () => {
+  const { query } = useRouter()
+  query['lesson'] = '2'
   test('Should render correctly with valid lesson route', async () => {
     const mocks = [
       {
@@ -79,21 +79,12 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '2'
-      }
-    })
-    const tree = withTestRouter(
+
+    const { container, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
-      </MockedProvider>,
-      {
-        query: { lesson: '2' }
-      }
+      </MockedProvider>
     )
-
-    const { container, getByRole } = render(tree)
 
     await waitFor(() =>
       getByRole('heading', { name: /Variables & Functions/i })
@@ -103,6 +94,7 @@ describe('Lesson Page', () => {
   })
 
   test('Should render correctly with invalid lesson route', async () => {
+    query['lesson'] = '100'
     const mocks = [
       {
         request: { query: GET_APP },
@@ -115,27 +107,18 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '100'
-      }
-    })
-    const tree = withTestRouter(
+    const { container, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
-      </MockedProvider>,
-      {
-        query: { lesson: '100' }
-      }
+      </MockedProvider>
     )
-
-    const { container, getByText } = render(tree)
 
     await waitFor(() => getByText(/Page not found/i))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
+    query['lesson'] = '25'
     const mocks = [
       {
         request: { query: GET_APP },
@@ -148,21 +131,12 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '25'
-      }
-    })
-    const tree = withTestRouter(
+
+    const { container, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
-      </MockedProvider>,
-      {
-        query: { lesson: '25' }
-      }
+      </MockedProvider>
     )
-
-    const { container, getByRole } = render(tree)
 
     await waitFor(() => getByRole('heading', { name: /Trees/i }))
 
@@ -181,21 +155,12 @@ describe('Lesson Page', () => {
         }
       }
     ]
-    useRouter.mockReturnValueOnce({
-      query: {
-        lesson: '25'
-      }
-    })
-    const tree = withTestRouter(
+
+    const { container, findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Lesson />
-      </MockedProvider>,
-      {
-        query: { lesson: '25' }
-      }
+      </MockedProvider>
     )
-
-    const { container, findByText } = render(tree)
 
     const element = await findByText(/Internal server error/i)
     expect(element).toBeTruthy()
