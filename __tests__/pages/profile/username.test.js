@@ -8,16 +8,10 @@ import { MockedProvider } from '@apollo/client/testing'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
-import { withTestRouter } from '../../../testUtil/withNextRouter'
-jest.mock('next/router')
 
-useRouter.mockImplementation(() => ({
-  query: {
-    username: 'fake user'
-  },
-  push: jest.fn()
-}))
 describe('user profile test', () => {
+  const { query } = useRouter()
+  query['username'] = 'fake user'
   test('Should render loading spinner if data is not ready', async () => {
     const mocks = [
       {
@@ -44,17 +38,11 @@ describe('user profile test', () => {
         }
       }
     ]
-    const tree = withTestRouter(
+    const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
-      </MockedProvider>,
-      {
-        query: {
-          username: 'fake user'
-        }
-      }
+      </MockedProvider>
     )
-    const { container, findByRole, queryByText } = render(tree)
     await findByRole('heading', { name: /loading/i })
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     expect(container).toMatchSnapshot()
@@ -150,17 +138,11 @@ describe('user profile test', () => {
         }
       }
     ]
-    const tree = withTestRouter(
+    const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
-      </MockedProvider>,
-      {
-        query: {
-          username: 'fake user'
-        }
-      }
+      </MockedProvider>
     )
-    const { container, findByRole, queryByText } = render(tree)
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
@@ -201,17 +183,11 @@ describe('user profile test', () => {
         }
       }
     ]
-    const tree = withTestRouter(
+    const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
-      </MockedProvider>,
-      {
-        query: {
-          username: 'fake user'
-        }
-      }
+      </MockedProvider>
     )
-    const { container, findByRole, queryByText } = render(tree)
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
@@ -242,17 +218,11 @@ describe('user profile test', () => {
         }
       }
     ]
-    const tree = withTestRouter(
+    const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
-      </MockedProvider>,
-      {
-        query: {
-          username: 'newbie'
-        }
-      }
+      </MockedProvider>
     )
-    const { container, findByRole, queryByText } = render(tree)
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
@@ -300,17 +270,11 @@ describe('user profile test', () => {
         }
       }
     ]
-    const tree = withTestRouter(
+    const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
-      </MockedProvider>,
-      {
-        query: {
-          username: 'fake user'
-        }
-      }
+      </MockedProvider>
     )
-    const { container, findByRole, queryByText } = render(tree)
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
@@ -363,17 +327,11 @@ describe('user profile test', () => {
         }
       }
     ]
-    const tree = withTestRouter(
+    const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
-      </MockedProvider>,
-      {
-        query: {
-          username: 'newbie'
-        }
-      }
+      </MockedProvider>
     )
-    const { container, findByRole, queryByText } = render(tree)
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()

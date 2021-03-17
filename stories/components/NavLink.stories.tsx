@@ -28,10 +28,10 @@ export const StyledLink: React.FC = () => (
 
 export const ActiveLink: React.FC = () => (
   <>
-    <NavLink path="/" activePath="/" className="btn btn-primary">
+    <NavLink path="/" activePath={true} className="btn btn-primary">
       Active Link
     </NavLink>
-    <NavLink path="/other" activePath="/" className="btn btn-primary">
+    <NavLink path="/other" className="btn btn-primary">
       Non-Active Link
     </NavLink>
   </>

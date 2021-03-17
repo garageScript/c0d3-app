@@ -2149,7 +2149,6 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
 <div
   className="dropdown"
-  onKeyDown={[Function]}
 >
   <button
     aria-expanded={false}
@@ -2175,7 +2174,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2198,7 +2196,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2221,7 +2218,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2244,7 +2240,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2267,7 +2262,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2290,7 +2284,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2325,7 +2318,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropleft"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2348,7 +2340,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2371,7 +2362,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropup"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2394,7 +2384,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropright"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -2414,7 +2403,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
 exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
 <div
   className="dropdown"
-  onKeyDown={[Function]}
 >
   <button
     aria-expanded={false}
@@ -3076,7 +3064,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </h5>
           <div
             className="dropdown"
-            onKeyDown={[Function]}
           >
             <button
               aria-expanded={false}

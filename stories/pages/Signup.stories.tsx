@@ -2,6 +2,7 @@ import * as React from 'react'
 import SignupPage, { Signup } from '../../pages/signup'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import { withTestRouter } from '../../testUtil/withNextRouter'
 
 export default {
   component: Signup,
@@ -26,7 +27,7 @@ export const _Signup: React.FC = () => {
     }
   ]
 
-  return (
+  return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <SignupPage />
     </MockedProvider>

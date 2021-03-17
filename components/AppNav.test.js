@@ -6,19 +6,7 @@ import LOGOUT_USER from '../graphql/queries/logoutUser'
 import dummySessionData from '../__dummy__/sessionData'
 import AppNav from './AppNav'
 
-// Mock global.window
-global.window = Object.create(window)
-
-// define property to be modifed beforeEach test
-Object.defineProperty(global.window, 'location', {
-  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
-})
-
 describe('AppNav Component', () => {
-  beforeEach(() => {
-    global.window.location.pathname = '/not-root' // reset path
-  })
-
   test('Should redirect to / route on logout success', async () => {
     const mocks = [
       {

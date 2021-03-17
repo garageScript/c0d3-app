@@ -12,6 +12,7 @@ import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
 import Users from '../../../pages/admin/users'
 import ALL_USERS from '../../../graphql/queries/allUsers'
+
 const dummyUsersData = [
   {
     cliToken: 'WRyzWxDc_DqR3Avi7xcGD',

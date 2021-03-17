@@ -5,6 +5,7 @@ module.exports = {
     DB_NAME: process.env.DB_NAME || 'c0d3dev6',
     DB_USER: process.env.DB_USER || 'c0d3db',
     DB_PW: process.env.DB_PW || 'letmein2',
+    DB_PORT: process.env.DB_PORT || '5432',
     DB_HOST: process.env.DB_HOST || 'freedomains.dev',
     MAILGUN_API_KEY: process.env.MAILGUN_API_KEY,
     MAILGUN_DOMAIN: process.env.MAILGUN_DOMAIN,

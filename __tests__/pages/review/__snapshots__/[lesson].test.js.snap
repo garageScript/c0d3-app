@@ -24,14 +24,9 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link"
               href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
               Curriculum
             </a>
             <a
@@ -192,14 +187,9 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               class="navbar-nav collapse navbar-collapse"
             >
               <a
-                class="nav-item nav-link active"
+                class="nav-item nav-link"
                 href="/curriculum"
               >
-                <span
-                  class="sr-only"
-                >
-                  (current)
-                </span>
                 Curriculum
               </a>
               <a
@@ -370,14 +360,9 @@ exports[`Lesson Page Should render new submissions 1`] = `
               class="navbar-nav collapse navbar-collapse"
             >
               <a
-                class="nav-item nav-link active"
+                class="nav-item nav-link"
                 href="/curriculum"
               >
-                <span
-                  class="sr-only"
-                >
-                  (current)
-                </span>
                 Curriculum
               </a>
               <a
