@@ -1,5 +1,5 @@
 import winston from 'winston'
-import { Request } from 'express'
+import { Request, Response } from 'express'
 import { Session } from 'express-session'
 
 export interface LoggedRequest extends Request {
@@ -25,4 +25,5 @@ export interface UserSession extends Session {
 
 export interface Context {
   req: LoggedRequest
+  res: Response
 }

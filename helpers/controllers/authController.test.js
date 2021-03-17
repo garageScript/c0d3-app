@@ -49,7 +49,12 @@ describe('auth controller', () => {
       .fn()
       .mockReturnValue({ username: 'testuser', cliToken: 'fakeCliToken' })
     bcrypt.compare = jest.fn().mockReturnValue(true)
-    const result = await login({}, userArgs, { req: { session: {} } })
+    const result = await login({}, userArgs, {
+      req: { session: {} },
+      res: {
+        setHeader: () => {}
+      }
+    })
     expect(result).toEqual({
       success: true,
       username: 'testuser',
@@ -63,7 +68,10 @@ describe('auth controller', () => {
       update: obj => jest.fn().mockReturnThis(obj)
     })
     bcrypt.compare = jest.fn().mockReturnValue(true)
-    const result = await login({}, userArgs, { req: { session: {} } })
+    const result = await login({}, userArgs, {
+      req: { session: {} },
+      res: { setHeader: () => {} }
+    })
     expect(result.cliToken).toBeTruthy()
   })
 
@@ -84,7 +92,11 @@ describe('auth controller', () => {
       }
     }
 
-    logout({}, {}, { req: { error: jest.fn(), session } }).catch(e => {
+    logout(
+      {},
+      {},
+      { req: { error: jest.fn(), session }, res: { setHeader: () => {} } }
+    ).catch(e => {
       expect(e).toEqual({
         success: false,
         error: 'OWNED BY TEST'
@@ -98,7 +110,11 @@ describe('auth controller', () => {
         inputCb(false)
       }
     }
-    const result = await logout({}, {}, { req: { session } })
+    const result = await logout(
+      {},
+      {},
+      { req: { session }, res: { setHeader: () => {} } }
+    )
     expect(result).toEqual({
       success: true
     })

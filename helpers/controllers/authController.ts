@@ -10,6 +10,7 @@ import { sendSignupEmail } from '../mail'
 
 const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
+const ONE_WEEK = 1000 * 60 * 60 * 24 * 7
 
 type Login = {
   username: string
@@ -49,6 +50,11 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
     const cliToken = { id: user.id, cliToken: user.cliToken }
 
     session.userId = user.id
+    ctx.res.setHeader(
+      'Set-Cookie',
+      `loggedIn=true; expires=${new Date(Date.now() + ONE_WEEK)}; Path=/`
+    )
+
     return {
       success: true,
       username: user.username,
@@ -72,7 +78,10 @@ export const logout = async (_parent: void, _: void, ctx: Context) => {
         error: 'Session Error'
       })
     }
-
+    ctx.res.setHeader(
+      'Set-Cookie',
+      `loggedIn=false; expires=${new Date(Date.now())}; Path=/`
+    )
     session.destroy(err => {
       if (err) {
         req.error(err)

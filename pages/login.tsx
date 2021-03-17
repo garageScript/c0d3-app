@@ -10,6 +10,7 @@ import Alert from '../components/Alert'
 import LOGIN_USER from '../graphql/queries/loginUser'
 import { Values, LoginFormProps, ErrorDisplayProps } from '../@types/login'
 import _ from 'lodash'
+import { useRouter } from 'next/router'
 
 const initialValues = {
   username: '',
@@ -78,13 +79,14 @@ export const Login: React.FC<LoginFormProps> = ({
 }
 
 const LoginPage: React.FC = () => {
+  const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
   const [loginUser, { data, error }] = useMutation(LOGIN_USER)
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
   useEffect(() => {
     const { success } = _.get(data, 'login', false)
     if (success) {
-      window.location.pathname = '/curriculum'
+      router.push('/curriculum')
     }
     if (error) {
       const graphQLErrors: any = _.get(error, 'graphQLErrors', [])

@@ -2,20 +2,13 @@ import * as React from 'react'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
-import LoadingSpinner from '../components/LoadingSpinner'
-import { withGetApp, GetAppProps } from '../graphql'
 import { useRouter } from 'next/router'
-import _ from 'lodash'
-
-const IndexPage: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
+const IndexPage: React.FC<{}> = () => {
   const router = useRouter()
-
-  if (loading) return <LoadingSpinner />
-  if (session) {
-    router.push('/curriculum')
-    return null
-  }
-
+  React.useEffect(() => {
+    if (document.cookie.split('; ').find(row => row.startsWith('loggedIn=')))
+      router.push('/curriculum')
+  }, [])
   return (
     <>
       <AppNav />
@@ -25,4 +18,4 @@ const IndexPage: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   )
 }
 
-export default withGetApp()(IndexPage)
+export default IndexPage

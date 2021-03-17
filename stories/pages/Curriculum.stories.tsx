@@ -6,7 +6,7 @@ import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 import { withTestRouter } from '../../testUtil/withNextRouter'
-
+import { Session } from '../../graphql/index'
 export default {
   component: Curriculum,
   title: 'Pages/Curriculum'
@@ -54,27 +54,36 @@ export const WithAlerts: React.FC = () => {
   )
 }
 
-export const CompletedLessons: React.FC = () => {
-  const session = {
-    ...dummySessionData,
+export const CompletedLessons: React.FC<{}> = () => {
+  const session: Session = {
+    user: {
+      id: '1',
+      username: 'fakeusername',
+      name: 'fake user',
+      isAdmin: 'true'
+    },
+    submissions: [],
     lessonStatus: [
       {
         lessonId: '5',
-        isPassed: true,
-        isTeaching: true,
-        isEnrolled: false
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
+        starGiven: null
       },
       {
         lessonId: '2',
-        isPassed: true,
-        isTeaching: true,
-        isEnrolled: false
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
+        starGiven: null
       },
       {
         lessonId: '1',
-        isPassed: true,
-        isTeaching: true,
-        isEnrolled: false
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
+        starGiven: null
       }
     ]
   }
@@ -85,8 +94,8 @@ export const CompletedLessons: React.FC = () => {
       result: {
         data: {
           lessons: dummyLessonData,
-          session,
-          alerts: []
+          session: session,
+          alerts: dummyAlertData
         }
       }
     }

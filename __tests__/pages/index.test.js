@@ -25,9 +25,18 @@ describe('Index Page', () => {
       }
     }
   ]
-
-  test('Should redirect to /curriculum and return null', async () => {
-    const { container } = render(
+  test('Should not redirect without cookie', async () => {
+    const { push } = useRouter()
+    render(
+      <MockedProvider mocks={mocksWithSession(null)} addTypename={false}>
+        <IndexPage />
+      </MockedProvider>
+    )
+    await waitFor(() => expect(push).not.toHaveBeenCalled())
+  })
+  test('Should redirect to /curriculum if cookie exists', async () => {
+    document.cookie = 'loggedIn=true'
+    render(
       <MockedProvider
         mocks={mocksWithSession(dummySessionData)}
         addTypename={false}
@@ -37,17 +46,6 @@ describe('Index Page', () => {
     )
     await waitFor(() => {
       expect(push).toBeCalledWith('/curriculum')
-      expect(container.firstChild).toBeNull()
     }) // wait for loading state to pass
-  })
-
-  test('Should not redirect without session', async () => {
-    const { push } = useRouter()
-    render(
-      <MockedProvider mocks={mocksWithSession(null)} addTypename={false}>
-        <IndexPage />
-      </MockedProvider>
-    )
-    await waitFor(() => expect(push).not.toHaveBeenCalled())
   })
 })

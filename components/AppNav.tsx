@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
-import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
-import { useRouter } from 'next/router'
+import { useRouter, NextRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
-import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
+import { useLogoutMutation, useGetAppQuery, Session } from '../graphql'
 import _ from 'lodash'
 
 import '../scss/navbar.scss'
@@ -12,10 +11,12 @@ import '../scss/navbar.scss'
 type AuthButtonProps = {
   initial: string
   username: string
+  router: NextRouter
 }
 
 type AuthLinkProps = {
   session: any
+  router: NextRouter
 }
 
 type NavItem = NavLinkProps & { name: string }
@@ -42,8 +43,7 @@ const navItems: NavItem[] = [
   { path: '/contributors', name: 'Contributors' }
 ]
 
-const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
-  const router = useRouter()
+const NavBar: React.FC<AuthLinkProps> = ({ session, router }) => {
   const isAdmin = _.get(session, 'user.isAdmin', '')
   const location = '/' + router.asPath.split('/')[1]
 
@@ -67,12 +67,24 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   )
 }
 
-const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
-  const [logoutUser, { data }] = useLogoutMutation()
-  useEffect(() => {
-    const success = _.get(data, 'logout.success', false)
-    if (success) window.location.pathname = '/'
-  }, [data])
+const AuthButton: React.FC<AuthButtonProps> = ({
+  initial,
+  username,
+  router
+}) => {
+  const [logoutUser] = useLogoutMutation({
+    update(cache) {
+      cache.modify({
+        fields: {
+          session() {
+            return { lessonStatus: [] }
+          }
+        },
+        broadcast: false
+      })
+    },
+    onCompleted: () => router.push('/')
+  })
   return (
     <div className="d-flex">
       <NavLink
@@ -101,19 +113,27 @@ const UnAuthButton = () => (
   </div>
 )
 
-const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
+const AppNav: React.FC<{}> = () => {
+  const router = useRouter()
+  const [session, setSession] = useState<Session>({ lessonStatus: [] })
+  const { data } = useGetAppQuery()
+  useEffect(() => {
+    if (data && data.session) {
+      setSession(data.session)
+    }
+  }, [data])
   const renderButtons = () => {
-    if (!session || _.get(session, 'user.username') === null)
+    if (!session || _.get(session, 'user.username', null) === null) {
       return <UnAuthButton />
+    }
 
     const initial = ''
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <AuthButton username={username} initial={initial} />
+    return <AuthButton username={username} initial={initial} router={router} />
   }
 
-  if (loading) return <LoadingSpinner />
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -125,7 +145,7 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            <NavBar session={session} />
+            <NavBar session={session} router={router} />
           </div>
         </div>
         {renderButtons()}
@@ -134,4 +154,4 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   )
 }
 
-export default withGetApp()(AppNav)
+export default AppNav

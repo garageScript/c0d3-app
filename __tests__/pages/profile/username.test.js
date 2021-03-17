@@ -38,14 +38,13 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    const { findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
     await findByRole('heading', { name: /loading/i })
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    expect(container).toMatchSnapshot()
   })
   test('Should render profile', async () => {
     const session = {
