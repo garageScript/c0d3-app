@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
-    "@sentry/browser": "^5.30.0",
+    "@sentry/browser": "^6.2.2",
     "@zeit/next-sass": "^1.0.1",
     "apollo-server-micro": "^2.20.0",
     "bcrypt": "5.0.0",
