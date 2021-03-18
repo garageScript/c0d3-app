@@ -1,0 +1,1227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Users test Should be able to switch search options 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="d-flex flex-column col-12"
+    >
+      <h1
+        class="text-primary text-center font-weight-bold display-1"
+      >
+        Users
+      </h1>
+      <div
+        class="mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            <label
+              for="search"
+            >
+              Search By:
+            </label>
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              ID
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Username
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Name
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Email
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        class="form-control"
+        id="search"
+        type="text"
+      />
+      <div
+        class="mt-2 mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            Filter By:
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Non-Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              None
+            </button>
+          </div>
+        </div>
+      </div>
+      <table
+        class="table table-striped"
+      >
+        <thead>
+          <tr
+            class="text-center"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Username
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Admin
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              5
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(41, 41, 41);"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              2
+            </td>
+            <td
+              class="align-middle"
+            >
+              newbie
+            </td>
+            <td
+              class="align-middle"
+            >
+              newbie newbie
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-success"
+                style="color: rgb(41, 41, 41);"
+              >
+                Add
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Users test Should be able to switch search options 2`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="d-flex flex-column col-12"
+    >
+      <h1
+        class="text-primary text-center font-weight-bold display-1"
+      >
+        Users
+      </h1>
+      <div
+        class="mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            <label
+              for="search"
+            >
+              Search By:
+            </label>
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              ID
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Username
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Name
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Email
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        class="form-control"
+        id="search"
+        type="text"
+      />
+      <div
+        class="mt-2 mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            Filter By:
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Non-Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              None
+            </button>
+          </div>
+        </div>
+      </div>
+      <table
+        class="table table-striped"
+      >
+        <thead>
+          <tr
+            class="text-center"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Username
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Admin
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              5
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(41, 41, 41);"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              2
+            </td>
+            <td
+              class="align-middle"
+            >
+              newbie
+            </td>
+            <td
+              class="align-middle"
+            >
+              newbie newbie
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-success"
+                style="color: rgb(41, 41, 41);"
+              >
+                Add
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Users test Should be able to switch search options 3`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="d-flex flex-column col-12"
+    >
+      <h1
+        class="text-primary text-center font-weight-bold display-1"
+      >
+        Users
+      </h1>
+      <div
+        class="mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            <label
+              for="search"
+            >
+              Search By:
+            </label>
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              ID
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Username
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Name
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Email
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        class="form-control"
+        id="search"
+        type="text"
+      />
+      <div
+        class="mt-2 mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            Filter By:
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Non-Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              None
+            </button>
+          </div>
+        </div>
+      </div>
+      <table
+        class="table table-striped"
+      >
+        <thead>
+          <tr
+            class="text-center"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Username
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Admin
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              5
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(41, 41, 41);"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              2
+            </td>
+            <td
+              class="align-middle"
+            >
+              newbie
+            </td>
+            <td
+              class="align-middle"
+            >
+              newbie newbie
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-success"
+                style="color: rgb(41, 41, 41);"
+              >
+                Add
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`Users test Should be able to switch search options 4`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="d-flex flex-column col-12"
+    >
+      <h1
+        class="text-primary text-center font-weight-bold display-1"
+      >
+        Users
+      </h1>
+      <div
+        class="mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            <label
+              for="search"
+            >
+              Search By:
+            </label>
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              ID
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Username
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Name
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Email
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        class="form-control"
+        id="search"
+        type="text"
+      />
+      <div
+        class="mt-2 mb-2"
+      >
+        <div
+          class="d-flex flex-row"
+        >
+          <h4
+            class="text-primary font-weight-bold mr-1"
+          >
+            Filter By:
+          </h4>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn bg-primary"
+              style="color: rgb(255, 255, 255);"
+            >
+              Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              Non-Admins
+            </button>
+          </div>
+          <div
+            style="margin-top: -1.57px;"
+          >
+            <button
+              class="btn"
+              style="color: rgb(142, 142, 142);"
+            >
+              None
+            </button>
+          </div>
+        </div>
+      </div>
+      <table
+        class="table table-striped"
+      >
+        <thead>
+          <tr
+            class="text-center"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Username
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Admin
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="text-center"
+          >
+            <td
+              class="align-middle"
+            >
+              5
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              admin admin
+            </td>
+            <td
+              class="align-middle"
+            >
+              some@mail.com
+            </td>
+            <td
+              class="align-middle"
+            >
+              <button
+                class="btn bg-danger"
+                style="color: rgb(41, 41, 41);"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;

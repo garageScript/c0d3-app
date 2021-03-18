@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thanks Component should call callback function when done button is clicked 1`] = `
+<div>
+  <div
+    class="d-flex justify-content-center align-items-center flex-column modal-height-med"
+  >
+    <img
+      class="h-25 w-25"
+      src="/assets/curriculum/icons/success.svg"
+    />
+    <h2
+      class="mt-4 mb-4 pt-3 pb-3 font-weight-bold text-center"
+    >
+      Thanks for letting us know!
+    </h2>
+    <button
+      class="btn bg-primary btn-lg"
+      style="color: rgb(255, 255, 255);"
+    >
+      Done
+    </button>
+  </div>
+</div>
+`;

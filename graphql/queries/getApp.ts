@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const GET_APP = gql`
   query getApp {
@@ -47,6 +47,7 @@ const GET_APP = gql`
         isPassed
         isTeaching
         isEnrolled
+        starGiven
       }
     }
     alerts {

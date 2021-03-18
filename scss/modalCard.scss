@@ -1,0 +1,27 @@
+@media only screen and (max-width: 812px) {
+  .small, .medium, .large {
+    max-width: 100% !important;
+    padding: 20px 15px;
+  }
+}
+
+.small {
+  max-width: 25%;
+}
+
+.medium {
+  max-width: 35%;
+}
+
+.large {
+  max-width: 45%;
+}
+
+.exitBtn {
+  right: -34px; 
+  top: -27px;
+}
+
+.modal-height-med {
+  height: 53vh;
+}

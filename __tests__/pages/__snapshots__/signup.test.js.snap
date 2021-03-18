@@ -24,29 +24,26 @@ exports[`Signup Page Should render errors on fail 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
-              href="/"
+              class="nav-item nav-link"
+              href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
-              Home
+              Curriculum
             </a>
             <a
               class="nav-item nav-link"
-              href="/#learning"
-            >
-              Learning Process
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://c0d3.com/book"
+              href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Resources
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
             </a>
             <a
               class="nav-item nav-link"
@@ -206,29 +203,26 @@ exports[`Signup Page Should render success component on success 1`] = `
             class="navbar-nav collapse navbar-collapse"
           >
             <a
-              class="nav-item nav-link active"
-              href="/"
+              class="nav-item nav-link"
+              href="/curriculum"
             >
-              <span
-                class="sr-only"
-              >
-                (current)
-              </span>
-              Home
+              Curriculum
             </a>
             <a
               class="nav-item nav-link"
-              href="/#learning"
-            >
-              Learning Process
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://c0d3.com/book"
+              href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Resources
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
             </a>
             <a
               class="nav-item nav-link"

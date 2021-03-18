@@ -28,7 +28,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
+            src="/assets/curriculum/icons/checkmark.svg"
             width="25px"
           />
         </div>
@@ -45,7 +45,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
+            src="/assets/curriculum/icons/checkmark.svg"
             width="25px"
           />
         </div>
@@ -62,7 +62,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/checkmark.svg"
+            src="/assets/curriculum/icons/checkmark.svg"
             width="25px"
           />
         </div>
@@ -79,7 +79,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         >
           <img
             class="mt-3"
-            src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+            src="/assets/curriculum/icons/icon-challenge-complete.jpg"
           />
           <h4
             class="card-title mt-2"
@@ -134,6 +134,678 @@ exports[`Curriculum challenge page Should render challenge material page differe
 </div>
 `;
 
+exports[`Curriculum challenge page Should render challenge material page differently when user has passed all their challenges 2`] = `
+<body
+  class="modal-open"
+  style="padding-right: 0px;"
+>
+  <div
+    aria-hidden="true"
+  >
+    <div
+      class="row challenge-display mt-3"
+    >
+      <div
+        class="col-4"
+      >
+        <div
+          class="card mb-2 challenge-title-card challenge-title-card--done"
+          data-testid="challenge-title"
+        >
+          <div
+            class="card-body d-flex justify-content-between"
+          >
+            <div>
+              0. Greater than 5
+            </div>
+            <img
+              height="25px"
+              src="/assets/curriculum/icons/checkmark.svg"
+              width="25px"
+            />
+          </div>
+        </div>
+        <div
+          class="card mb-2 challenge-title-card challenge-title-card--done"
+          data-testid="challenge-title"
+        >
+          <div
+            class="card-body d-flex justify-content-between"
+          >
+            <div>
+              1. Sum of 2 Numbers
+            </div>
+            <img
+              height="25px"
+              src="/assets/curriculum/icons/checkmark.svg"
+              width="25px"
+            />
+          </div>
+        </div>
+        <div
+          class="card mb-2 challenge-title-card challenge-title-card--active challenge-title-card--done"
+          data-testid="challenge-title"
+        >
+          <div
+            class="card-body d-flex justify-content-between"
+          >
+            <div>
+              3. Challenges Completed!
+            </div>
+            <img
+              height="25px"
+              src="/assets/curriculum/icons/checkmark.svg"
+              width="25px"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-8"
+      >
+        <div
+          class="card text-center shadow-sm"
+        >
+          <div
+            class="card-body"
+          >
+            <img
+              class="mt-3"
+              src="/assets/curriculum/icons/icon-challenge-complete.jpg"
+            />
+            <h4
+              class="card-title mt-2"
+            >
+              Congratulations!
+            </h4>
+            <p
+              class="success-message"
+            >
+              You have successfully completed all challenges
+            </p>
+            <p
+              class="review-message"
+            >
+              You can help your peers by
+              <a
+                class="font-weight-bold mx-1"
+                href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                answering questions
+              </a>
+              they have in the lesson and
+              <a
+                class="font-weight-bold mx-1"
+                href="https://www.c0d3.com/review/5"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                reviewing challenge submissions
+              </a>
+            </p>
+          </div>
+          <div
+            class="card-footer d-flex bg-primary"
+          >
+            <p
+              class="text-white mr-3 my-2"
+            >
+              You can show your appreciation to the user that helped you the most by giving them a star
+            </p>
+            <button
+              class="btn btn-light text-primary font-weight-bold ml-auto"
+            >
+              Give Star
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fade modal-backdrop show"
+  />
+  <div
+    aria-modal="true"
+    class="fade modal show"
+    role="dialog"
+    style="display: block;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog medium"
+    >
+      <div
+        class="modal-content"
+      >
+        <img
+          class=".img-fluid btn position-absolute exitBtn"
+          src="/assets/curriculum/icons/exit.svg"
+        />
+        <div
+          class="chooseMentor d-flex flex-column"
+        >
+          <div
+            class="pt-2 pt-4 pl-5 pr-5 pb-4 searchBar"
+          >
+            <h4
+              class="font-weight-bold mt-2 mb-4 pt-2 pb-1"
+            >
+              Who helped you the most?
+            </h4>
+            <input
+              class="pb-4 form-control-lg form-control font-weight-light"
+              data-testid="giveStarInput"
+            />
+          </div>
+          <div
+            class="pt-4 pb-3 mentorsList"
+          >
+            <div
+              class="row mr-5 ml-5 mt-1 mb-2 d-flex flex-wrap justify-content-between"
+            >
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bob bafet
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bob
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  never wanna
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  enlightenedBanana
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  give you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  seriousToiletPaper
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  let you
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  pencilSaver
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  up down
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  importantBagel
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax on
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  bagelOfAngels
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  wax off
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  l0lCakes
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  potato potatus
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  jammedPrinter
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  bobo bobobo
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  trololololololololololololo
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  sauce hunter
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  hingaD1nGADurgen
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  incredible hulk
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  convincingLampPost
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long long
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  64bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  long int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  32bitsMin
+                </span>
+              </div>
+              <div
+                class="mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column mentor position-relative"
+              >
+                <div
+                  class="text-white position-absolute mentor sendStar align-items-center justify-content-center"
+                >
+                  <h5
+                    class="mt-0 mb-0"
+                  >
+                    Send Star
+                  </h5>
+                </div>
+                <h6
+                  class="mb-0 mt-0 font-weight-light pr-3 pl-3 long"
+                >
+                  signed int
+                </h6>
+                <span
+                  class="text-muted font-weight-light mt-0 mb-0 pr-3 pl-3 long"
+                >
+                  @
+                  16bitsMin
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Curriculum challenge page Should render challenge material page differently when user has passed all their challenges 3`] = `
+<body
+  class=""
+  style="padding-right: 0px;"
+>
+  <div>
+    <div
+      class="row challenge-display mt-3"
+    >
+      <div
+        class="col-4"
+      >
+        <div
+          class="card mb-2 challenge-title-card challenge-title-card--done"
+          data-testid="challenge-title"
+        >
+          <div
+            class="card-body d-flex justify-content-between"
+          >
+            <div>
+              0. Greater than 5
+            </div>
+            <img
+              height="25px"
+              src="/assets/curriculum/icons/checkmark.svg"
+              width="25px"
+            />
+          </div>
+        </div>
+        <div
+          class="card mb-2 challenge-title-card challenge-title-card--done"
+          data-testid="challenge-title"
+        >
+          <div
+            class="card-body d-flex justify-content-between"
+          >
+            <div>
+              1. Sum of 2 Numbers
+            </div>
+            <img
+              height="25px"
+              src="/assets/curriculum/icons/checkmark.svg"
+              width="25px"
+            />
+          </div>
+        </div>
+        <div
+          class="card mb-2 challenge-title-card challenge-title-card--active challenge-title-card--done"
+          data-testid="challenge-title"
+        >
+          <div
+            class="card-body d-flex justify-content-between"
+          >
+            <div>
+              3. Challenges Completed!
+            </div>
+            <img
+              height="25px"
+              src="/assets/curriculum/icons/checkmark.svg"
+              width="25px"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-8"
+      >
+        <div
+          class="card text-center shadow-sm"
+        >
+          <div
+            class="card-body"
+          >
+            <img
+              class="mt-3"
+              src="/assets/curriculum/icons/icon-challenge-complete.jpg"
+            />
+            <h4
+              class="card-title mt-2"
+            >
+              Congratulations!
+            </h4>
+            <p
+              class="success-message"
+            >
+              You have successfully completed all challenges
+            </p>
+            <p
+              class="review-message"
+            >
+              You can help your peers by
+              <a
+                class="font-weight-bold mx-1"
+                href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                answering questions
+              </a>
+              they have in the lesson and
+              <a
+                class="font-weight-bold mx-1"
+                href="https://www.c0d3.com/review/5"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                reviewing challenge submissions
+              </a>
+            </p>
+          </div>
+          <div
+            class="card-footer d-flex bg-primary"
+          >
+            <p
+              class="text-white mr-3 my-2"
+            >
+              You can show your appreciation to the user that helped you the most by giving them a star
+            </p>
+            <button
+              class="btn btn-light text-primary font-weight-bold ml-auto"
+            >
+              Give Star
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Curriculum challenge page Should render clicked challenge within challenge question 1`] = `
 <div>
   <div
@@ -152,6 +824,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           <div>
             0. Greater than 5
           </div>
+          <img
+            height="25px"
+            src="/assets/curriculum/icons/pending.svg"
+            width="25px"
+          />
         </div>
       </div>
       <div
@@ -164,6 +841,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           <div>
             1. Sum of 2 Numbers
           </div>
+          <img
+            height="25px"
+            src="/assets/curriculum/icons/rejected.svg"
+            width="25px"
+          />
         </div>
       </div>
     </div>
@@ -192,7 +874,520 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           </div>
         </div>
       </div>
-      
+      <div
+        class="card shadow-sm border-0 mt-3"
+      >
+        <div
+          class="card-header bg-white"
+        >
+          Submitted 
+          16 days ago
+        </div>
+        <div
+          class="card-body"
+        >
+          <div
+            class="rounded-lg overflow-hidden"
+          >
+            <table
+              class="css-1n5o7vh-diff-container"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="css-17uc4if-title-block"
+                    colspan="4"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      curriculum/js0/2.js
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      1
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      1
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker"
+                  >
+                    <pre />
+                  </td>
+                  <td
+                    class="css-vl0irh-content"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      <span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          *
+                        </span>
+                        <span
+                          class="token operator"
+                        >
+                          /
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      2
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      2
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-10regm7-empty-line"
+                  >
+                    <pre />
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-10regm7-empty-line"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    />
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      3
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      3
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker"
+                  >
+                    <pre />
+                  </td>
+                  <td
+                    class="css-vl0irh-content"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token keyword"
+                        >
+                          const
+                        </span>
+                         
+                        <span
+                          class="token function-variable function"
+                        >
+                          solution
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          a
+                          <span
+                            class="token punctuation"
+                          >
+                            ,
+                          </span>
+                           b
+                          <span
+                            class="token punctuation"
+                          >
+                            ,
+                          </span>
+                           c
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter css-rq9a2a-diff-removed"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      4
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-rq9a2a-diff-removed"
+                  >
+                    <pre>
+                      -
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-rq9a2a-diff-removed"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      <span
+                        class="css-cncyp1-word-diff"
+                      >
+                        <span>
+                            
+                          <span
+                            class="token keyword"
+                          >
+                            return
+                          </span>
+                           
+                        </span>
+                      </span>
+                      <span
+                        class="css-cncyp1-word-diff css-hf3w1f-word-removed"
+                      >
+                        <span>
+                          <span
+                            class="token number"
+                          >
+                            0
+                          </span>
+                        </span>
+                      </span>
+                      <span
+                        class="css-cncyp1-word-diff"
+                      >
+                        <span>
+                          <span
+                            class="token punctuation"
+                          >
+                            ;
+                          </span>
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      4
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      <span
+                        class="css-cncyp1-word-diff"
+                      >
+                        <span>
+                            
+                          <span
+                            class="token keyword"
+                          >
+                            return
+                          </span>
+                           
+                        </span>
+                      </span>
+                      <span
+                        class="css-cncyp1-word-diff css-1u4zuq6-word-added"
+                      >
+                        <span>
+                          a 
+                          <span
+                            class="token operator"
+                          >
+                            +
+                          </span>
+                           b 
+                          <span
+                            class="token operator"
+                          >
+                            +
+                          </span>
+                           c
+                        </span>
+                      </span>
+                      <span
+                        class="css-cncyp1-word-diff"
+                      >
+                        <span>
+                          <span
+                            class="token punctuation"
+                          >
+                            ;
+                          </span>
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      5
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      5
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker"
+                  >
+                    <pre />
+                  </td>
+                  <td
+                    class="css-vl0irh-content"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      6
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      6
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-10regm7-empty-line"
+                  >
+                    <pre />
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-10regm7-empty-line"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    />
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      7
+                    </pre>
+                  </td>
+                  <td
+                    class="css-1ks9aww-gutter"
+                  >
+                    <pre
+                      class="css-h84nzi-line-number"
+                    >
+                      7
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker"
+                  >
+                    <pre />
+                  </td>
+                  <td
+                    class="css-vl0irh-content"
+                  >
+                    <pre
+                      class="css-o1u8iu-content-text"
+                    >
+                      <span>
+                        module
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        exports 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div
+          class="card-footer bg-white"
+        >
+          <span>
+            test comment
+          </span>
+          <div
+            class="text-center p-2 my-2 border border-danger text-danger"
+          >
+            Your solution was reviewed and rejected by 
+            <a
+              class="text-reset"
+              href="/profile/dan"
+            >
+              dan
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -282,7 +1477,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/pending.svg"
+            src="/assets/curriculum/icons/pending.svg"
             width="25px"
           />
         </div>
@@ -299,7 +1494,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           </div>
           <img
             height="25px"
-            src="/curriculumAssets/icons/rejected.svg"
+            src="/assets/curriculum/icons/rejected.svg"
             width="25px"
           />
         </div>
@@ -352,7 +1547,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 <tr>
                   <td
                     class="css-17uc4if-title-block"
-                    colspan="5"
+                    colspan="4"
                   >
                     <pre
                       class="css-o1u8iu-content-text"
@@ -831,7 +2026,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           <div
             class="text-center p-2 my-2 border border-warning text-warning"
           >
-            Your MR is currently waiting to be reviewed
+            Your submission is currently waiting to be reviewed
           </div>
         </div>
       </div>

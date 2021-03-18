@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 const GET_SUBMISSIONS = gql`
   query submissions($lessonId: String!) {
@@ -11,6 +11,7 @@ const GET_SUBMISSIONS = gql`
         title
       }
       challengeId
+      lessonId
       user {
         id
         username

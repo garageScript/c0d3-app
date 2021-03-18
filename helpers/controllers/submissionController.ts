@@ -3,6 +3,7 @@ import { Context } from '../../@types/helpers'
 import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
+import { hasPassedLesson } from '../hasPassedLesson'
 import _ from 'lodash'
 
 const { User, Submission, Challenge, Lesson } = db
@@ -16,6 +17,12 @@ type ArgsCreateSubmission = {
 
 type ArgsGetSubmissions = {
   lessonId: string
+}
+
+export enum SubmissionStatus {
+  OPEN = 'open',
+  PASSED = 'passed',
+  REJECTED = 'needMoreWork'
 }
 
 export const createSubmission = async (
@@ -33,7 +40,11 @@ export const createSubmission = async (
       where: { lessonId, challengeId, userId }
     })
 
-    await submission.update({ diff, status: 'open', viewCount: 0 })
+    await submission.update({
+      diff,
+      status: SubmissionStatus.OPEN,
+      viewCount: 0
+    })
 
     const [currentLesson, challenge] = await Promise.all([
       Lesson.findByPk(lessonId),
@@ -48,7 +59,7 @@ export const createSubmission = async (
     // if no Lesson was found nextLesson is null
     if (nextLesson) {
       const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()
-      const username = await getUserByEmail(email)
+      const { username } = await getUserByEmail(email)
       const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${currentLesson.id}>) to review the code.`
       publicChannelMessage(nextLessonChannelName, message)
     }
@@ -65,10 +76,13 @@ export const acceptSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
-    if (!reviewerId) throw new Error('Invalid user')
-    return updateSubmission({ ...args, reviewerId, status: 'passed' })
+    const reviewerId = await getReviewer(ctx, args.lessonId)
+    return updateSubmission({
+      ...args,
+      reviewerId,
+      status: SubmissionStatus.PASSED
+    })
   } catch (error) {
     throw new Error(error)
   }
@@ -80,22 +94,46 @@ export const rejectSubmission = async (
   ctx: Context
 ) => {
   try {
-    const reviewerId = _.get(ctx, 'req.user.id', false)
     if (!args) throw new Error('Invalid args')
-    if (!reviewerId) throw new Error('Invalid user')
-    return updateSubmission({ ...args, reviewerId, status: 'needMoreWork' })
+    const reviewerId = await getReviewer(ctx, args.lessonId)
+    return updateSubmission({
+      ...args,
+      reviewerId,
+      status: SubmissionStatus.REJECTED
+    })
   } catch (error) {
     throw new Error(error)
   }
 }
 
-export const submissions = async (_parent: void, arg: ArgsGetSubmissions) => {
-  const { lessonId } = arg
-  return Submission.findAll({
-    where: {
-      status: 'open',
-      lessonId
-    },
-    include: ['challenge', 'user']
-  })
+export const submissions = async (
+  _parent: void,
+  arg: ArgsGetSubmissions,
+  ctx: Context
+) => {
+  try {
+    const { lessonId } = arg
+    await getReviewer(ctx, lessonId)
+    return Submission.findAll({
+      where: {
+        status: 'open',
+        lessonId
+      },
+      include: ['challenge', 'user']
+    })
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+const getReviewer = async (
+  ctx: Context,
+  lessonId?: string
+): Promise<number> => {
+  const reviewerId = _.get(ctx, 'req.user.id', false)
+  if (!reviewerId) throw new Error('Invalid user')
+  if (lessonId && !(await hasPassedLesson(reviewerId, lessonId))) {
+    throw new Error('User has not passed this lesson and cannot review.')
+  }
+  return reviewerId
 }

@@ -8,12 +8,13 @@ import { AlertTypes, Alert } from './models/Alert'
 import { StarTypes, Star } from './models/Star'
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || 'you',
-  process.env.DB_USER || 'failed',
-  process.env.DB_PW || 'this',
+  process.env.DB_NAME as string,
+  process.env.DB_USER as string,
+  process.env.DB_PW,
   {
-    host: process.env.DB_HOST || 'city',
+    host: process.env.DB_HOST,
     logging: false,
+    port: parseInt(process.env.DB_PORT as string),
     dialect: 'postgres',
     pool: {
       max: 5,
@@ -91,7 +92,8 @@ User.hasMany(UserLesson, {
 })
 
 UserLesson.belongsTo(User, {
-  foreignKey: 'userId'
+  foreignKey: 'userId',
+  as: 'user'
 })
 
 sequelize.sync({ alter: !!process.env.ALTER_DB })

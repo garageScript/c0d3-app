@@ -1,6 +1,6 @@
 # c0d3.com
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -15,13 +15,7 @@ Repo for c0d3.com powered by NextJS. A website to train people to be full stack 
 
 ## How to Start
 
-1. Clone the repository with SSH or HTTPS
-    > SSH - `git clone git@github.com:garageScript/c0d3.com.git`
-
-    > HTTPS - `git clone https://github.com/garageScript/c0d3.com.git`
-2. After cloning the repository, run `yarn`.
-3. Start the local development server with `PORT=3000 yarn dev`.
-4. Navigate to [http://localhost:3000](http://localhost:3000) to view your application.
+Follow [development setup guide](https://github.com/garageScript/c0d3-app/wiki/Development-Setup).
 
 ## How to Use Storybook
 
@@ -61,8 +55,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/danielthalhuber"><img src="https://avatars1.githubusercontent.com/u/32470229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Thalhuber</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=danielthalhuber" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Cijin"><img src="https://avatars0.githubusercontent.com/u/1990966?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cijin Cherian</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=Cijin" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/stevenlay"><img src="https://avatars1.githubusercontent.com/u/20160586?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Steven Lay</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=stevenlay" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/anthonykhoa"><img src="https://avatars2.githubusercontent.com/u/45890848?v=4" width="100px;" alt=""/><br /><sub><b>anthonykhoa</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=anthonykhoa" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/ggwadera"><img src="https://avatars2.githubusercontent.com/u/16023489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guilherme Gwadera</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=ggwadera" title="Documentation">📖</a> <a href="https://github.com/garageScript/c0d3-app/pulls?q=is%3Apr+reviewed-by%3Aggwadera" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/anthonykhoa"><img src="https://avatars2.githubusercontent.com/u/45890848?v=4?s=100" width="100px;" alt=""/><br /><sub><b>anthonykhoa</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=anthonykhoa" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/guilherme-gwadera/"><img src="https://avatars2.githubusercontent.com/u/16023489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guilherme Gwadera</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=ggwadera" title="Documentation">📖</a> <a href="https://github.com/garageScript/c0d3-app/pulls?q=is%3Apr+reviewed-by%3Aggwadera" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="http://www.linkedin.com/in/petermulard/"><img src="https://avatars2.githubusercontent.com/u/45550174?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Peter Mulard</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=pmulard" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Ulisseus"><img src="https://avatars3.githubusercontent.com/u/3845012?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ulisseus</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=Ulisseus" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=Ulisseus" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/kondanna"><img src="https://avatars.githubusercontent.com/u/16906103?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charles</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=kondanna" title="Code">💻</a></td>
   </tr>
 </table>
 

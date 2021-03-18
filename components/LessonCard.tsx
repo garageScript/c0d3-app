@@ -1,5 +1,5 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { CheckCircle } from 'react-feather'
 import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
 import {
@@ -62,7 +62,7 @@ const LessonCard: React.FC<Props> = props => {
     <div className={`card shadow-sm mt-3 d-block ${containerClass}`}>
       <div className="d-flex p-2">
         <img
-          src={`/curriculumAssets/lessonCoversSvg/${props.coverImg}`}
+          src={`/assets/curriculum/${props.coverImg}`}
           alt={props.coverImg}
         />
 
@@ -86,7 +86,7 @@ const LessonCard: React.FC<Props> = props => {
               <div className="d-inline-block mr-4">
                 <img
                   className="mr-2"
-                  src="/curriculumAssets/icons/icon-challenge.svg"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
                   alt="icon-challenge"
                 />
                 <span className="lesson-card__icon-text">

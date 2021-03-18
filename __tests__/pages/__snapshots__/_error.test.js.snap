@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_error page Should capture error when component is loading 1`] = `
+<div>
+  <div
+    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
+  >
+    <h1
+      class="text-white font-weight-bold display-3"
+      style="font-family: 'PT Mono', sans-serif;"
+    >
+      C0D3
+    </h1>
+    <div
+      class="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        class="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            />
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mb-3 col-sm-9"
+        >
+          <div
+            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="display: block; box-sizing: border-box; padding-top: 100%;"
+            />
+            <img
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`_error page Should return Error 500 component 1`] = `
+<div>
+  <div
+    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
+  >
+    <h1
+      class="text-white font-weight-bold display-3"
+      style="font-family: 'PT Mono', sans-serif;"
+    >
+      C0D3
+    </h1>
+    <div
+      class="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        class="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            class="text-center mt-3"
+          >
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            />
+            <a
+              class="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mb-3 col-sm-9"
+        >
+          <div
+            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="display: block; box-sizing: border-box; padding-top: 100%;"
+            />
+            <img
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;

@@ -15,8 +15,8 @@ type Props = {
 }
 
 const alertIconMap: { [type: string]: string } = {
-  info: '/curriculumAssets/icons/icon-tip.svg',
-  urgent: '/curriculumAssets/icons/exclamation.svg'
+  info: '/assets/curriculum/icons/icon-tip.svg',
+  urgent: '/assets/curriculum/icons/exclamation.svg'
 }
 
 const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
@@ -48,7 +48,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
             onDismiss(id)
           }}
         >
-          <img src={`/curriculumAssets/icons/dismiss-${type}.svg`} />
+          <img src={`/assets/curriculum/icons/dismiss-${type}.svg`} />
         </button>
       )}
     </div>

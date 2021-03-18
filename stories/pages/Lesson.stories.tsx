@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Lesson from '../../pages/curriculum/[lesson]'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import { withTestRouter } from '../../testUtil/withNextRouter'
 import dummyLessonData from '../../__dummy__/lessonData'

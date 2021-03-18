@@ -25,7 +25,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
   />
   <a
     className="mx-3"
-    href="#"
+    href="/#"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
@@ -67,7 +67,7 @@ exports[`Storyshots Components/Alert Info 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/icon-tip.svg"
+      src="/assets/curriculum/icons/icon-tip.svg"
     />
     Set up your computer to submit challenges. 
   </div>
@@ -82,7 +82,7 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/icon-tip.svg"
+      src="/assets/curriculum/icons/icon-tip.svg"
     />
     Set up your computer to submit challenges. 
     <a
@@ -101,7 +101,7 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
     role="dismiss"
   >
     <img
-      src="/curriculumAssets/icons/dismiss-info.svg"
+      src="/assets/curriculum/icons/dismiss-info.svg"
     />
   </button>
 </div>
@@ -115,7 +115,7 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/exclamation.svg"
+      src="/assets/curriculum/icons/exclamation.svg"
     />
     Invalid password 
   </div>
@@ -130,7 +130,7 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
   <div>
     <img
       className="mr-3 alert-icon"
-      src="/curriculumAssets/icons/exclamation.svg"
+      src="/assets/curriculum/icons/exclamation.svg"
     />
     Please upgrade your CLI client by running npm update c0d3. 
     <a
@@ -149,7 +149,7 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
     role="dismiss"
   >
     <img
-      src="/curriculumAssets/icons/dismiss-urgent.svg"
+      src="/assets/curriculum/icons/dismiss-urgent.svg"
     />
   </button>
 </div>
@@ -393,7 +393,7 @@ exports[`Storyshots Components/Card With Fail 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M89 9a81 81 0 1 0 2 0zm1 38v58m0 25v1"
+          d="M89 9a81 81 0 102 0 NaN NaNzm1 38v58m0 25v1"
           fill="none"
           stroke="#721c24"
           strokeLinecap="round"
@@ -570,6 +570,134 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
+<div
+  className="row challenge-display mt-3"
+>
+  <div
+    className="col-4"
+  >
+    <div
+      className="card mb-2 challenge-title-card challenge-title-card--done"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          0. Greater than 5
+        </div>
+        <img
+          height="25px"
+          src="/assets/curriculum/icons/checkmark.svg"
+          width="25px"
+        />
+      </div>
+    </div>
+    <div
+      className="card mb-2 challenge-title-card challenge-title-card--done"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          1. Sum of 2 Numbers
+        </div>
+        <img
+          height="25px"
+          src="/assets/curriculum/icons/checkmark.svg"
+          width="25px"
+        />
+      </div>
+    </div>
+    <div
+      className="card mb-2 challenge-title-card challenge-title-card--active challenge-title-card--done"
+      data-testid="challenge-title"
+      onClick={[Function]}
+    >
+      <div
+        className="card-body d-flex justify-content-between"
+      >
+        <div>
+          3. Challenges Completed!
+        </div>
+        <img
+          height="25px"
+          src="/assets/curriculum/icons/checkmark.svg"
+          width="25px"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="col-8"
+  >
+    <div
+      className="card text-center shadow-sm"
+    >
+      <div
+        className="card-body"
+      >
+        <img
+          className="mt-3"
+          src="/assets/curriculum/icons/icon-challenge-complete.jpg"
+        />
+        <h4
+          className="card-title mt-2"
+        >
+          Congratulations!
+        </h4>
+        <p
+          className="success-message"
+        >
+          You have successfully completed all challenges
+        </p>
+        <p
+          className="review-message"
+        >
+          You can help your peers by
+          <a
+            className="font-weight-bold mx-1"
+            href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            answering questions
+          </a>
+          they have in the lesson and
+          <a
+            className="font-weight-bold mx-1"
+            href="https://www.c0d3.com/review/5"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            reviewing challenge submissions
+          </a>
+        </p>
+      </div>
+      <div
+        className="card-footer d-flex bg-primary"
+      >
+        <p
+          className="text-white mr-3 my-2"
+        >
+          You can show your appreciation to the user that helped you the most by giving them a star
+        </p>
+        <button
+          className="btn btn-light text-primary font-weight-bold ml-auto"
+          onClick={[Function]}
+        >
+          Give Star
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ChallengeMaterial No Challenges 1`] = `
 <h1>
   No Challenges for this lesson
@@ -596,7 +724,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         </div>
         <img
           height="25px"
-          src="/curriculumAssets/icons/checkmark.svg"
+          src="/assets/curriculum/icons/checkmark.svg"
           width="25px"
         />
       </div>
@@ -640,7 +768,437 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         </div>
       </div>
     </div>
-    
+    <div
+      className="card shadow-sm border-0 mt-3"
+    >
+      <div
+        className="card-header bg-white"
+      >
+        Submitted 
+        a few seconds ago
+      </div>
+      <div
+        className="card-body"
+      >
+        <div
+          className="rounded-lg overflow-hidden"
+        >
+          <table
+            className="css-1n5o7vh-diff-container"
+          >
+            <tbody>
+              <tr>
+                <td
+                  className="css-17uc4if-title-block"
+                  colSpan={4}
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    curriculum/js0/2.js
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    1
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    1
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker"
+                >
+                  <pre />
+                </td>
+                <td
+                  className="css-vl0irh-content"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": " <span class=\\"token operator\\">*</span><span class=\\"token operator\\">/</span>",
+                        }
+                      }
+                    />
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    2
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    2
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker css-10regm7-empty-line"
+                >
+                  <pre />
+                </td>
+                <td
+                  className="css-vl0irh-content css-10regm7-empty-line"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  />
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    3
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    3
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker"
+                >
+                  <pre />
+                </td>
+                <td
+                  className="css-vl0irh-content"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">a<span class=\\"token punctuation\\">,</span> b<span class=\\"token punctuation\\">,</span> c</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                        }
+                      }
+                    />
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter css-rq9a2a-diff-removed"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    4
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  />
+                </td>
+                <td
+                  className="css-17vezug-marker css-rq9a2a-diff-removed"
+                >
+                  <pre>
+                    -
+                  </pre>
+                </td>
+                <td
+                  className="css-vl0irh-content css-rq9a2a-diff-removed"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    <span
+                      className="css-cncyp1-word-diff"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "  <span class=\\"token keyword\\">return</span> ",
+                          }
+                        }
+                      />
+                    </span>
+                    <span
+                      className="css-cncyp1-word-diff css-hf3w1f-word-removed"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<span class=\\"token number\\">0</span>",
+                          }
+                        }
+                      />
+                    </span>
+                    <span
+                      className="css-cncyp1-word-diff"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<span class=\\"token punctuation\\">;</span>",
+                          }
+                        }
+                      />
+                    </span>
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    4
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
+                >
+                  <pre>
+                    +
+                  </pre>
+                </td>
+                <td
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    <span
+                      className="css-cncyp1-word-diff"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "  <span class=\\"token keyword\\">return</span> ",
+                          }
+                        }
+                      />
+                    </span>
+                    <span
+                      className="css-cncyp1-word-diff css-1u4zuq6-word-added"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c",
+                          }
+                        }
+                      />
+                    </span>
+                    <span
+                      className="css-cncyp1-word-diff"
+                    >
+                      <span
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": "<span class=\\"token punctuation\\">;</span>",
+                          }
+                        }
+                      />
+                    </span>
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    5
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    5
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker"
+                >
+                  <pre />
+                </td>
+                <td
+                  className="css-vl0irh-content"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+                        }
+                      }
+                    />
+                  </pre>
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    6
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    6
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker css-10regm7-empty-line"
+                >
+                  <pre />
+                </td>
+                <td
+                  className="css-vl0irh-content css-10regm7-empty-line"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  />
+                </td>
+              </tr>
+              <tr
+                className="css-1n7ec1i-line"
+              >
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    7
+                  </pre>
+                </td>
+                <td
+                  className="css-1ks9aww-gutter"
+                  onClick={[Function]}
+                >
+                  <pre
+                    className="css-h84nzi-line-number"
+                  >
+                    7
+                  </pre>
+                </td>
+                <td
+                  className="css-17vezug-marker"
+                >
+                  <pre />
+                </td>
+                <td
+                  className="css-vl0irh-content"
+                >
+                  <pre
+                    className="css-o1u8iu-content-text"
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span>",
+                        }
+                      }
+                    />
+                  </pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        className="card-footer bg-white"
+      >
+        <code>
+          test comment
+        </code>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -726,7 +1284,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               <tr>
                 <td
                   className="css-17uc4if-title-block"
-                  colSpan={5}
+                  colSpan={4}
                 >
                   <pre
                     className="css-o1u8iu-content-text"
@@ -1197,7 +1755,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Complete 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/checkmark.svg"
+      src="/assets/curriculum/icons/checkmark.svg"
       width="25px"
     />
   </div>
@@ -1218,7 +1776,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Pending 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/rejected.svg"
+      src="/assets/curriculum/icons/rejected.svg"
       width="25px"
     />
   </div>
@@ -1239,7 +1797,7 @@ exports[`Storyshots Components/ChallengeTitleCard Active Rejected 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/rejected.svg"
+      src="/assets/curriculum/icons/rejected.svg"
       width="25px"
     />
   </div>
@@ -1276,7 +1834,7 @@ exports[`Storyshots Components/ChallengeTitleCard Complete 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/checkmark.svg"
+      src="/assets/curriculum/icons/checkmark.svg"
       width="25px"
     />
   </div>
@@ -1297,7 +1855,7 @@ exports[`Storyshots Components/ChallengeTitleCard Pending 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/pending.svg"
+      src="/assets/curriculum/icons/pending.svg"
       width="25px"
     />
   </div>
@@ -1318,14 +1876,14 @@ exports[`Storyshots Components/ChallengeTitleCard Rejected 1`] = `
     </div>
     <img
       height="25px"
-      src="/curriculumAssets/icons/rejected.svg"
+      src="/assets/curriculum/icons/rejected.svg"
       width="25px"
     />
   </div>
 </div>
 `;
 
-exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] = `
+exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = `
 <div
   className="card text-center shadow-sm"
 >
@@ -1334,7 +1892,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] 
   >
     <img
       className="mt-3"
-      src="/curriculumAssets/icons/icon-challenge-complete.jpg"
+      src="/assets/curriculum/icons/icon-challenge-complete.jpg"
     />
     <h4
       className="card-title mt-2"
@@ -1379,6 +1937,69 @@ exports[`Storyshots Components/ChallengesCompletedCard Challenges Completed 1`] 
     </p>
     <button
       className="btn btn-light text-primary font-weight-bold ml-auto"
+      onClick={[Function]}
+    >
+      Give Star
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = `
+<div
+  className="card text-center shadow-sm"
+>
+  <div
+    className="card-body"
+  >
+    <img
+      className="mt-3"
+      src="/assets/curriculum/icons/icon-challenge-complete.jpg"
+    />
+    <h4
+      className="card-title mt-2"
+    >
+      Congratulations!
+    </h4>
+    <p
+      className="success-message"
+    >
+      You have successfully completed all challenges
+    </p>
+    <p
+      className="review-message"
+    >
+      You can help your peers by
+      <a
+        className="font-weight-bold mx-1"
+        href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        answering questions
+      </a>
+      they have in the lesson and
+      <a
+        className="font-weight-bold mx-1"
+        href="https://c0d3.com/teacher/5"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        reviewing challenge submissions
+      </a>
+    </p>
+  </div>
+  <div
+    className="card-footer d-flex bg-primary"
+  >
+    <p
+      className="text-white mr-3 my-2"
+    >
+      You can show your appreciation to the user that helped you the most by giving them a star
+    </p>
+    <button
+      className="btn btn-light text-primary font-weight-bold ml-auto"
+      onClick={[Function]}
     >
       Give Star
     </button>
@@ -1528,7 +2149,6 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
 <div
   className="dropdown"
-  onKeyDown={[Function]}
 >
   <button
     aria-expanded={false}
@@ -1554,7 +2174,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1577,7 +2196,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1600,7 +2218,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1623,7 +2240,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1646,7 +2262,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1669,7 +2284,6 @@ Array [
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1704,7 +2318,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropleft"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1727,7 +2340,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropdown"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1750,7 +2362,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropup"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1773,7 +2384,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
   >
     <div
       className="dropright"
-      onKeyDown={[Function]}
     >
       <button
         aria-expanded={false}
@@ -1793,7 +2403,6 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
 exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
 <div
   className="dropdown"
-  onKeyDown={[Function]}
 >
   <button
     aria-expanded={false}
@@ -1806,6 +2415,228 @@ exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
     Admin
   </button>
 </div>
+`;
+
+exports[`Storyshots Components/Error Internal 1`] = `
+Array [
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            className="text-center mt-3"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1.5rem",
+                }
+              }
+            >
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              No data
+            </div>
+            <a
+              className="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <h3
+                className="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          className="mb-3 col-sm-9"
+        >
+          <img
+            className="img-fluid"
+            height={1200}
+            layout="responsive"
+            objectFit="contain"
+            src="/assets/errors/500.svg"
+            width={1200}
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
+exports[`Storyshots Components/Error Not Found 1`] = `
+Array [
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="d-flex col-sm-3 align-items-center justify-content-center"
+        >
+          <div
+            className="text-center mt-3"
+          >
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1.5rem",
+                }
+              }
+            >
+              <strong>
+                Page not found
+              </strong>
+            </div>
+            <div
+              style={
+                Object {
+                  "color": "#292929",
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              404 error
+            </div>
+            <a
+              className="btn btn-primary py-3 px-5 mt-3"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <h3
+                className="font-weight-bold"
+              >
+                Back
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div
+          className="mb-3 col-sm-9"
+        >
+          <img
+            className="img-fluid"
+            height={1200}
+            layout="responsive"
+            objectFit="contain"
+            src="/assets/errors/404.svg"
+            width={1200}
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
 `;
 
 exports[`Storyshots Components/FilterButtons Basic 1`] = `
@@ -2233,7 +3064,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </h5>
           <div
             className="dropdown"
-            onKeyDown={[Function]}
           >
             <button
               aria-expanded={false}
@@ -2735,6 +3565,97 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/GiveStarCard Already Gave Star 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
+exports[`Storyshots Components/GiveStarCard Basic 1`] = `
+Array [
+  <button
+    className="btn"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Launch demo modal
+  </button>,
+  <button
+    className="btn bg-primary"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fff",
+      }
+    }
+  >
+    Reset star
+  </button>,
+  <h1
+    className="mt-5"
+  >
+    Type in
+    <span
+      className="font-italic"
+    >
+       1 
+    </span>
+    as a
+  </h1>,
+  <h1>
+    comment for the
+  </h1>,
+  <h1>
+    Give Star button to work
+  </h1>,
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots Components/Input Email Input 1`] = `
 <form
   action="#"
@@ -3159,7 +4080,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      src="/assets/curriculum/js-4-cover.svg"
     />
     <div
       className="w-100 pl-4"
@@ -3184,7 +4105,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             <img
               alt="icon-challenge"
               className="mr-2"
-              src="/curriculumAssets/icons/icon-challenge.svg"
+              src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
               className="lesson-card__icon-text"
@@ -3214,7 +4135,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      src="/assets/curriculum/js-4-cover.svg"
     />
     <div
       className="w-100 pl-4"
@@ -3271,7 +4192,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             <img
               alt="icon-challenge"
               className="mr-2"
-              src="/curriculumAssets/icons/icon-challenge.svg"
+              src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
               className="lesson-card__icon-text"
@@ -3312,7 +4233,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+      src="/assets/curriculum/js-4-cover.svg"
     />
     <div
       className="w-100 pl-4"
@@ -3337,7 +4258,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             <img
               alt="icon-challenge"
               className="mr-2"
-              src="/curriculumAssets/icons/icon-challenge.svg"
+              src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
               className="lesson-card__icon-text"
@@ -3391,7 +4312,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       <img
         alt="lesson-cover"
         className="lessonTitleCard__lesson-cover mr-3"
-        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        src="/assets/curriculum/js-0-cover.svg"
       />
       <div>
         <p
@@ -3450,7 +4371,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       <img
         alt="lesson-cover"
         className="lessonTitleCard__lesson-cover mr-3"
-        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        src="/assets/curriculum/js-0-cover.svg"
       />
       <div>
         <p
@@ -3744,6 +4665,48 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ModalCard Large 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
+exports[`Storyshots Components/ModalCard Medium 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
+exports[`Storyshots Components/ModalCard Small 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
+`;
+
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
@@ -3861,14 +4824,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         23%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+        src="/assets/curriculum/js-0-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+        src="/assets/curriculum/js-1-cover.svg"
       />
     </div>
     <div
@@ -3880,7 +4843,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         60%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+        src="/assets/curriculum/js-2-cover.svg"
       />
     </div>
     <div
@@ -3892,21 +4855,21 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         100%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+        src="/assets/curriculum/js-3-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+        src="/assets/curriculum/js-4-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+        src="/assets/curriculum/js-5-cover.svg"
       />
     </div>
     <div
@@ -3918,14 +4881,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         80%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+        src="/assets/curriculum/js-6-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+        src="/assets/curriculum/js-7-cover.svg"
       />
     </div>
     <div
@@ -3937,14 +4900,14 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
         100%
       </p>
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+        src="/assets/curriculum/js-8-cover.svg"
       />
     </div>
     <div
       className="lessonimage_opacity_container"
     >
       <img
-        src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+        src="/assets/curriculum/js-9-cover.svg"
       />
     </div>
   </div>
@@ -3995,7 +4958,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-0-cover.svg"
+            src="/assets/curriculum/js-0-cover.svg"
           />
         </div>
         <div
@@ -4076,7 +5039,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-1-cover.svg"
+            src="/assets/curriculum/js-1-cover.svg"
           />
         </div>
         <div
@@ -4163,7 +5126,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-2-cover.svg"
+            src="/assets/curriculum/js-2-cover.svg"
           />
         </div>
         <div
@@ -4247,7 +5210,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-3-cover.svg"
+            src="/assets/curriculum/js-3-cover.svg"
           />
         </div>
         <div
@@ -4328,7 +5291,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-4-cover.svg"
+            src="/assets/curriculum/js-4-cover.svg"
           />
         </div>
         <div
@@ -4400,7 +5363,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-5-cover.svg"
+            src="/assets/curriculum/js-5-cover.svg"
           />
         </div>
         <div
@@ -4487,7 +5450,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-6-cover.svg"
+            src="/assets/curriculum/js-6-cover.svg"
           />
         </div>
         <div
@@ -4562,7 +5525,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-7-cover.svg"
+            src="/assets/curriculum/js-7-cover.svg"
           />
         </div>
         <div
@@ -4646,7 +5609,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
             </span>
           </p>
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-8-cover.svg"
+            src="/assets/curriculum/js-8-cover.svg"
           />
         </div>
         <div
@@ -4709,7 +5672,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <img
-            src="/curriculumAssets/lessonCoversSvg/js-9-cover.svg"
+            src="/assets/curriculum/js-9-cover.svg"
           />
         </div>
         <div
@@ -5007,11 +5970,976 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ReviewCard Active Card 1`] = `
+<div
+  className="card shadow-sm border-0 mt-3"
+>
+  <div
+    className="card-header bg-white"
+  >
+    <h4>
+      fake user
+       - 
+      <span
+        className="text-primary"
+      >
+        fake challenge
+      </span>
+    </h4>
+    <div
+      style={
+        Object {
+          "color": "#8e8e8e",
+          "fontSize": "0.85rem",
+        }
+      }
+    >
+      51 years ago
+    </div>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="rounded-lg overflow-hidden"
+    >
+      <table
+        className="css-1n5o7vh-diff-container"
+      >
+        <tbody>
+          <tr>
+            <td
+              className="css-17uc4if-title-block"
+              colSpan={4}
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                js7/1.js
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                1
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                2
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                3
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                4
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                5
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                6
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                7
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                8
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                9
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                10
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                11
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                12
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "    <span class=\\"token punctuation\\">}</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                13
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                14
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                15
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                16
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                17
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                18
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-10regm7-empty-line css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              />
+            </td>
+          </tr>
+          <tr
+            className="css-1n7ec1i-line"
+          >
+            <td
+              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              onClick={null}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              />
+            </td>
+            <td
+              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              onClick={[Function]}
+            >
+              <pre
+                className="css-h84nzi-line-number"
+              >
+                19
+              </pre>
+            </td>
+            <td
+              className="css-17vezug-marker css-cnnxkz-diff-added"
+            >
+              <pre>
+                +
+              </pre>
+            </td>
+            <td
+              className="css-vl0irh-content css-cnnxkz-diff-added"
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+                    }
+                  }
+                />
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    className="card-footer bg-white"
+  >
+    <span>
+      Some comment
+    </span>
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Accept
+    </button>
+    <button
+      className="btn bg-danger m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Reject
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewCard No Diff Card 1`] = `""`;
+
 exports[`Storyshots Components/ReviewStatus Need More Work Status 1`] = `
 <div
   className="text-center p-2 my-2 border border-danger text-danger"
 >
-  Your solution was reviewed and rejected by dan
+  Your solution was reviewed and rejected by 
+  <a
+    className="text-reset"
+    href="/profile/dan"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    dan
+  </a>
 </div>
 `;
 
@@ -5019,7 +6947,7 @@ exports[`Storyshots Components/ReviewStatus Open Status 1`] = `
 <div
   className="text-center p-2 my-2 border border-warning text-warning"
 >
-  Your MR is currently waiting to be reviewed
+  Your submission is currently waiting to be reviewed
 </div>
 `;
 
@@ -5027,7 +6955,15 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
 <div
   className="text-center p-2 my-2 border border-success text-success"
 >
-  Your solution was reviewed and accepted by dan
+  Your solution was reviewed and accepted by 
+  <a
+    className="text-reset"
+    href="/profile/dan"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    dan
+  </a>
 </div>
 `;
 
@@ -5307,6 +7243,59 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
     </a>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/Thanks Basic 1`] = `
+<div
+  className="row mt-5 d-flex justify-content-center"
+>
+  <div
+    className="card shadow-sm"
+  >
+    <div
+      className="text-center pl-4 pr-4"
+    >
+      <div
+        className="d-flex justify-content-center align-items-center flex-column modal-height-med"
+      >
+        <img
+          className="h-25 w-25"
+          src="/assets/curriculum/icons/success.svg"
+        />
+        <h2
+          className="mt-4 mb-4 pt-3 pb-3 font-weight-bold text-center"
+        >
+          Thanks for letting us know!
+        </h2>
+        <button
+          className="btn bg-primary btn-lg"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "#fff",
+            }
+          }
+        >
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Thanks Modal 1`] = `
+<button
+  className="btn"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Launch demo modal
+</button>
 `;
 
 exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
@@ -5745,7 +7734,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         <img
           alt="Hero Image"
           className="img-fluid"
-          src="header-01.svg"
+          src="/assets/landing/header-01.svg"
         />
       </div>
     </div>
@@ -5793,9 +7782,9 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <a
           className="btn btn-primary py-3 px-5"
-          href="https://www.c0d3.com/book"
-          rel="noopener noreferrer"
-          target="_blank"
+          href="/curriculum"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Get Started
         </a>
@@ -5841,7 +7830,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <img
           alt=""
-          src="choose-01.svg"
+          src="/assets/landing/choose-01.svg"
           style={
             Object {
               "height": "170px",
@@ -5864,7 +7853,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <img
           alt=""
-          src="choose-02.svg"
+          src="/assets/landing/choose-02.svg"
           style={
             Object {
               "height": "170px",
@@ -5887,7 +7876,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       >
         <img
           alt=""
-          src="choose-03.svg"
+          src="/assets/landing/choose-03.svg"
           style={
             Object {
               "height": "170px",
@@ -5944,7 +7933,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-01.svg"
+            src="/assets/landing/journey-01.svg"
           />
         </div>
         <div
@@ -5976,7 +7965,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-02.svg"
+            src="/assets/landing/journey-02.svg"
           />
         </div>
         <div
@@ -6018,7 +8007,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-03.svg"
+            src="/assets/landing/journey-03.svg"
           />
         </div>
         <div
@@ -6050,7 +8039,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           <img
             alt=""
             className="mb-3 img-fluid"
-            src="journey-04.svg"
+            src="/assets/landing/journey-04.svg"
           />
         </div>
         <div
@@ -6081,7 +8070,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
     <h1
       className="display-4 font-weight-bold"
     >
-      Get Started Now
+      Start Your Journey
     </h1>
     <p
       className="mt-3 font-weight-light"
@@ -6092,13 +8081,13 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         }
       }
     >
-      Start your journey to being a full stack software engineer
+      Become a full stack software engineer - 100% Free!
     </p>
     <a
       className="btn btn-primary py-3 px-5 mt-4"
-      href="https://www.c0d3.com/book"
-      rel="noopener noreferrer"
-      target="_blank"
+      href="/curriculum"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Get Started
     </a>
@@ -6438,7 +8427,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
             <div>
               <img
                 className="mr-3 alert-icon"
-                src="/curriculumAssets/icons/exclamation.svg"
+                src="/assets/curriculum/icons/exclamation.svg"
               />
                Please try again! 
             </div>
@@ -7155,6 +9144,20 @@ Array [
 ]
 `;
 
+exports[`Storyshots Theme/Button Large Button 1`] = `
+<button
+  className="btn btn-lg"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Large Button
+</button>
+`;
+
 exports[`Storyshots Theme/Button Margined Button 1`] = `
 <button
   className="btn m-1"
@@ -7166,6 +9169,20 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
   }
 >
   Margined Button
+</button>
+`;
+
+exports[`Storyshots Theme/Button Small Button 1`] = `
+<button
+  className="btn btn-sm"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Small Button
 </button>
 `;
 

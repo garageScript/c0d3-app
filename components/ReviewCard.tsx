@@ -1,14 +1,14 @@
-import React, { memo, useState } from 'react'
+import { useMutation } from '@apollo/client'
 
+import React, { memo, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
+
 import Prism from 'prismjs'
-
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
 
-import { useMutation } from '@apollo/react-hooks'
+import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { SubmissionData } from '../@types/submission'
@@ -29,11 +29,18 @@ type DiffViewProps = {
   diff?: string
 }
 
-const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
+const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
+
+export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
   const files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: String[] = []
+    if (!hunks.length || !newPath) return
+    let extension = newPath.split('.').pop() || prismLanguages[0]
+    if (!prismLanguages.includes(extension)) {
+      extension = 'javascript'
+    }
 
     hunks.forEach(hunk => {
       hunk.changes.forEach(change => {
@@ -46,8 +53,8 @@ const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 
       const language = Prism.highlight(
         str,
-        Prism.languages.javascript,
-        'javascript'
+        Prism.languages[extension],
+        extension
       )
       return <span dangerouslySetInnerHTML={{ __html: language }} />
     }
@@ -75,7 +82,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     comment,
     updatedAt,
     user: { username },
-    challenge: { title }
+    challenge: { title },
+    lessonId
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -85,6 +93,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     await review({
       variables: {
         submissionId: id,
+        lessonId,
         comment: commentValue
       }
     })

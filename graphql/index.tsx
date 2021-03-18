@@ -1,14 +1,14 @@
+import * as ApolloReactHooks from '@apollo/client'
+import { gql } from '@apollo/client'
 import {
   GraphQLResolveInfo,
   GraphQLScalarType,
   GraphQLScalarTypeConfig
 } from 'graphql'
-import gql from 'graphql-tag'
-import * as ApolloReactCommon from '@apollo/react-common'
+import * as ApolloReactCommon from '@apollo/client'
 import * as React from 'react'
-import * as ApolloReactComponents from '@apollo/react-components'
-import * as ApolloReactHoc from '@apollo/react-hoc'
-import * as ApolloReactHooks from '@apollo/react-hooks'
+import * as ApolloReactComponents from '@apollo/client/react/components'
+import * as ApolloReactHoc from '@apollo/client/react/hoc'
 export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] }
 export type RequireFields<T, K extends keyof T> = {
@@ -75,6 +75,7 @@ export type Lesson = {
 
 export type Mutation = {
   __typename?: 'Mutation'
+  setStar: SuccessResponse
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   reqPwReset?: Maybe<TokenResponse>
@@ -90,6 +91,12 @@ export type Mutation = {
   updateLesson?: Maybe<Array<Maybe<Lesson>>>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
+}
+
+export type MutationSetStarArgs = {
+  mentorId: Scalars['Int']
+  lessonId: Scalars['Int']
+  comment?: Maybe<Scalars['String']>
 }
 
 export type MutationLoginArgs = {
@@ -278,6 +285,7 @@ export type UserLesson = {
   isTeaching?: Maybe<Scalars['String']>
   isEnrolled?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
+  starGiven?: Maybe<Scalars['String']>
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
@@ -481,7 +489,7 @@ export type GetAppQuery = { __typename?: 'Query' } & {
       lessonStatus: Array<
         { __typename?: 'UserLesson' } & Pick<
           UserLesson,
-          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
+          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
         >
       >
     }
@@ -490,6 +498,18 @@ export type GetAppQuery = { __typename?: 'Query' } & {
     { __typename?: 'Alert' } & Pick<
       Alert,
       'id' | 'text' | 'type' | 'url' | 'urlCaption'
+    >
+  >
+}
+
+export type LessonMentorsQueryVariables = Exact<{
+  lessonId: Scalars['String']
+}>
+
+export type LessonMentorsQuery = { __typename?: 'Query' } & {
+  getLessonMentors?: Maybe<
+    Array<
+      Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name' | 'id'>>
     >
   >
 }
@@ -509,6 +529,7 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'diff'
           | 'comment'
           | 'challengeId'
+          | 'lessonId'
           | 'createdAt'
           | 'updatedAt'
         > & {
@@ -581,6 +602,16 @@ export type ReqPwResetMutation = { __typename?: 'Mutation' } & {
   reqPwReset?: Maybe<
     { __typename?: 'TokenResponse' } & Pick<TokenResponse, 'success' | 'token'>
   >
+}
+
+export type SetStarMutationVariables = Exact<{
+  mentorId: Scalars['Int']
+  lessonId: Scalars['Int']
+  comment?: Maybe<Scalars['String']>
+}>
+
+export type SetStarMutation = { __typename?: 'Mutation' } & {
+  setStar: { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
 }
 
 export type SignupMutationVariables = Exact<{
@@ -895,9 +926,9 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   Alert: ResolverTypeWrapper<Alert>
   Mutation: ResolverTypeWrapper<{}>
+  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   AuthResponse: ResolverTypeWrapper<AuthResponse>
   TokenResponse: ResolverTypeWrapper<TokenResponse>
-  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   CacheControlScope: CacheControlScope
   Upload: ResolverTypeWrapper<Scalars['Upload']>
 }
@@ -917,9 +948,9 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']
   Alert: Alert
   Mutation: {}
+  SuccessResponse: SuccessResponse
   AuthResponse: AuthResponse
   TokenResponse: TokenResponse
-  SuccessResponse: SuccessResponse
   Upload: Scalars['Upload']
 }
 
@@ -1000,6 +1031,12 @@ export type MutationResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
 > = {
+  setStar?: Resolver<
+    ResolversTypes['SuccessResponse'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationSetStarArgs, 'mentorId' | 'lessonId'>
+  >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
     ParentType,
@@ -1266,6 +1303,7 @@ export type UserLessonResolvers<
     ParentType,
     ContextType
   >
+  starGiven?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType>
 }
 
@@ -1390,9 +1428,7 @@ export function useAcceptSubmissionMutation(
 export type AcceptSubmissionMutationHookResult = ReturnType<
   typeof useAcceptSubmissionMutation
 >
-export type AcceptSubmissionMutationResult = ApolloReactCommon.MutationResult<
-  AcceptSubmissionMutation
->
+export type AcceptSubmissionMutationResult = ApolloReactCommon.MutationResult<AcceptSubmissionMutation>
 export type AcceptSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
   AcceptSubmissionMutation,
   AcceptSubmissionMutationVariables
@@ -1497,9 +1533,7 @@ export function useAddAlertMutation(
   >(AddAlertDocument, baseOptions)
 }
 export type AddAlertMutationHookResult = ReturnType<typeof useAddAlertMutation>
-export type AddAlertMutationResult = ApolloReactCommon.MutationResult<
-  AddAlertMutation
->
+export type AddAlertMutationResult = ApolloReactCommon.MutationResult<AddAlertMutation>
 export type AddAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
   AddAlertMutation,
   AddAlertMutationVariables
@@ -1694,9 +1728,7 @@ export function useChangeAdminRightsMutation(
 export type ChangeAdminRightsMutationHookResult = ReturnType<
   typeof useChangeAdminRightsMutation
 >
-export type ChangeAdminRightsMutationResult = ApolloReactCommon.MutationResult<
-  ChangeAdminRightsMutation
->
+export type ChangeAdminRightsMutationResult = ApolloReactCommon.MutationResult<ChangeAdminRightsMutation>
 export type ChangeAdminRightsMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ChangeAdminRightsMutation,
   ChangeAdminRightsMutationVariables
@@ -1823,9 +1855,7 @@ export function useCreateChallengeMutation(
 export type CreateChallengeMutationHookResult = ReturnType<
   typeof useCreateChallengeMutation
 >
-export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<
-  CreateChallengeMutation
->
+export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<CreateChallengeMutation>
 export type CreateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
   CreateChallengeMutation,
   CreateChallengeMutationVariables
@@ -1959,9 +1989,7 @@ export function useCreateLessonMutation(
 export type CreateLessonMutationHookResult = ReturnType<
   typeof useCreateLessonMutation
 >
-export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<
-  CreateLessonMutation
->
+export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<CreateLessonMutation>
 export type CreateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
@@ -2013,6 +2041,7 @@ export const GetAppDocument = gql`
         isPassed
         isTeaching
         isEnrolled
+        starGiven
       }
     }
     alerts {
@@ -2112,6 +2141,115 @@ export type GetAppQueryResult = ApolloReactCommon.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
 >
+export const LessonMentorsDocument = gql`
+  query lessonMentors($lessonId: String!) {
+    getLessonMentors(lessonId: $lessonId) {
+      username
+      name
+      id
+    }
+  }
+`
+export type LessonMentorsComponentProps = Omit<
+  ApolloReactComponents.QueryComponentOptions<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >,
+  'query'
+> &
+  (
+    | { variables: LessonMentorsQueryVariables; skip?: boolean }
+    | { skip: boolean }
+  )
+
+export const LessonMentorsComponent = (props: LessonMentorsComponentProps) => (
+  <ApolloReactComponents.Query<LessonMentorsQuery, LessonMentorsQueryVariables>
+    query={LessonMentorsDocument}
+    {...props}
+  />
+)
+
+export type LessonMentorsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >
+} &
+  TChildProps
+export function withLessonMentors<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables,
+    LessonMentorsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables,
+    LessonMentorsProps<TChildProps, TDataName>
+  >(LessonMentorsDocument, {
+    alias: 'lessonMentors',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useLessonMentorsQuery__
+ *
+ * To run a query within a React component, call `useLessonMentorsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLessonMentorsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useLessonMentorsQuery({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *   },
+ * });
+ */
+export function useLessonMentorsQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >
+) {
+  return ApolloReactHooks.useQuery<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >(LessonMentorsDocument, baseOptions)
+}
+export function useLessonMentorsLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >
+) {
+  return ApolloReactHooks.useLazyQuery<
+    LessonMentorsQuery,
+    LessonMentorsQueryVariables
+  >(LessonMentorsDocument, baseOptions)
+}
+export type LessonMentorsQueryHookResult = ReturnType<
+  typeof useLessonMentorsQuery
+>
+export type LessonMentorsLazyQueryHookResult = ReturnType<
+  typeof useLessonMentorsLazyQuery
+>
+export type LessonMentorsQueryResult = ApolloReactCommon.QueryResult<
+  LessonMentorsQuery,
+  LessonMentorsQueryVariables
+>
 export const SubmissionsDocument = gql`
   query submissions($lessonId: String!) {
     submissions(lessonId: $lessonId) {
@@ -2123,6 +2261,7 @@ export const SubmissionsDocument = gql`
         title
       }
       challengeId
+      lessonId
       user {
         id
         username
@@ -2319,9 +2458,7 @@ export function useLoginMutation(
   )
 }
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>
-export type LoginMutationResult = ApolloReactCommon.MutationResult<
-  LoginMutation
->
+export type LoginMutationResult = ApolloReactCommon.MutationResult<LoginMutation>
 export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
@@ -2415,9 +2552,7 @@ export function useLogoutMutation(
   )
 }
 export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>
-export type LogoutMutationResult = ApolloReactCommon.MutationResult<
-  LogoutMutation
->
+export type LogoutMutationResult = ApolloReactCommon.MutationResult<LogoutMutation>
 export type LogoutMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LogoutMutation,
   LogoutMutationVariables
@@ -2520,9 +2655,7 @@ export function useRejectSubmissionMutation(
 export type RejectSubmissionMutationHookResult = ReturnType<
   typeof useRejectSubmissionMutation
 >
-export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<
-  RejectSubmissionMutation
->
+export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<RejectSubmissionMutation>
 export type RejectSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
   RejectSubmissionMutation,
   RejectSubmissionMutationVariables
@@ -2620,9 +2753,7 @@ export function useRemoveAlertMutation(
 export type RemoveAlertMutationHookResult = ReturnType<
   typeof useRemoveAlertMutation
 >
-export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<
-  RemoveAlertMutation
->
+export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<RemoveAlertMutation>
 export type RemoveAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
@@ -2721,12 +2852,105 @@ export function useReqPwResetMutation(
 export type ReqPwResetMutationHookResult = ReturnType<
   typeof useReqPwResetMutation
 >
-export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<
-  ReqPwResetMutation
->
+export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<ReqPwResetMutation>
 export type ReqPwResetMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ReqPwResetMutation,
   ReqPwResetMutationVariables
+>
+export const SetStarDocument = gql`
+  mutation setStar($mentorId: Int!, $lessonId: Int!, $comment: String) {
+    setStar(mentorId: $mentorId, lessonId: $lessonId, comment: $comment) {
+      success
+    }
+  }
+`
+export type SetStarMutationFn = ApolloReactCommon.MutationFunction<
+  SetStarMutation,
+  SetStarMutationVariables
+>
+export type SetStarComponentProps = Omit<
+  ApolloReactComponents.MutationComponentOptions<
+    SetStarMutation,
+    SetStarMutationVariables
+  >,
+  'mutation'
+>
+
+export const SetStarComponent = (props: SetStarComponentProps) => (
+  <ApolloReactComponents.Mutation<SetStarMutation, SetStarMutationVariables>
+    mutation={SetStarDocument}
+    {...props}
+  />
+)
+
+export type SetStarProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: ApolloReactCommon.MutationFunction<
+    SetStarMutation,
+    SetStarMutationVariables
+  >
+} &
+  TChildProps
+export function withSetStar<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    SetStarMutation,
+    SetStarMutationVariables,
+    SetStarProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    SetStarMutation,
+    SetStarMutationVariables,
+    SetStarProps<TChildProps, TDataName>
+  >(SetStarDocument, {
+    alias: 'setStar',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useSetStarMutation__
+ *
+ * To run a mutation, you first call `useSetStarMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useSetStarMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [setStarMutation, { data, loading, error }] = useSetStarMutation({
+ *   variables: {
+ *      mentorId: // value for 'mentorId'
+ *      lessonId: // value for 'lessonId'
+ *      comment: // value for 'comment'
+ *   },
+ * });
+ */
+export function useSetStarMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    SetStarMutation,
+    SetStarMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<
+    SetStarMutation,
+    SetStarMutationVariables
+  >(SetStarDocument, baseOptions)
+}
+export type SetStarMutationHookResult = ReturnType<typeof useSetStarMutation>
+export type SetStarMutationResult = ApolloReactCommon.MutationResult<SetStarMutation>
+export type SetStarMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  SetStarMutation,
+  SetStarMutationVariables
 >
 export const SignupDocument = gql`
   mutation signup(
@@ -2831,9 +3055,7 @@ export function useSignupMutation(
   )
 }
 export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>
-export type SignupMutationResult = ApolloReactCommon.MutationResult<
-  SignupMutation
->
+export type SignupMutationResult = ApolloReactCommon.MutationResult<SignupMutation>
 export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
@@ -2963,9 +3185,7 @@ export function useUpdateChallengeMutation(
 export type UpdateChallengeMutationHookResult = ReturnType<
   typeof useUpdateChallengeMutation
 >
-export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<
-  UpdateChallengeMutation
->
+export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<UpdateChallengeMutation>
 export type UpdateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
   UpdateChallengeMutation,
   UpdateChallengeMutationVariables
@@ -3102,9 +3322,7 @@ export function useUpdateLessonMutation(
 export type UpdateLessonMutationHookResult = ReturnType<
   typeof useUpdateLessonMutation
 >
-export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<
-  UpdateLessonMutation
->
+export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<UpdateLessonMutation>
 export type UpdateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
   UpdateLessonMutation,
   UpdateLessonMutationVariables
@@ -3198,9 +3416,7 @@ export function useChangePwMutation(
   >(ChangePwDocument, baseOptions)
 }
 export type ChangePwMutationHookResult = ReturnType<typeof useChangePwMutation>
-export type ChangePwMutationResult = ApolloReactCommon.MutationResult<
-  ChangePwMutation
->
+export type ChangePwMutationResult = ApolloReactCommon.MutationResult<ChangePwMutation>
 export type ChangePwMutationOptions = ApolloReactCommon.BaseMutationOptions<
   ChangePwMutation,
   ChangePwMutationVariables

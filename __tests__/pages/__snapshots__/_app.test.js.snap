@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyApp component should render Login component passed in as prop 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-5"
+    >
+      <div
+        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      >
+        <div
+          class="card-body text-center pt-5 pb-5"
+        >
+          <h1
+            class="card-title h2 font-weight-bold mb-5"
+          >
+            Login
+          </h1>
+          <p
+            class="card-text"
+          />
+          <form
+            action="#"
+            data-testid="form"
+          >
+            <div
+              class="form-group"
+            >
+              <div
+                class="mt-3"
+              >
+                <input
+                  class="form-control form-control-lg font-weight-light mb-3 "
+                  data-testid="username"
+                  name="username"
+                  placeholder="Username"
+                  value=""
+                />
+                <input
+                  class="form-control form-control-lg font-weight-light mb-3 "
+                  data-testid="password"
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+                <button
+                  class="btn btn-primary btn-lg btn-block mb-3"
+                  data-testid="submit"
+                  type="submit"
+                >
+                  Login to Your Account
+                </button>
+              </div>
+            </div>
+          </form>
+          <a
+            class=""
+            href="/forgotpassword"
+          >
+            Forgot your password?
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;

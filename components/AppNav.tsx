@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import NavLink from './NavLink'
+import NavLink, { NavLinkProps } from './NavLink'
 import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
+import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
 import _ from 'lodash'
@@ -17,47 +18,48 @@ type AuthLinkProps = {
   session: any
 }
 
+type NavItem = NavLinkProps & { name: string }
+
 const dropdownMenuItems = [
   { title: 'Lessons', path: '/admin/lessons' },
   { title: 'Users', path: '/admin/users' },
   { title: 'Alerts', path: '/admin/alerts' }
 ]
+const navItems: NavItem[] = [
+  { path: '/curriculum', name: 'Curriculum' },
+  {
+    path: 'https://github.com/garageScript/c0d3-app',
+    name: 'Repo',
+    external: true
+  },
+  {
+    path:
+      'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
+    name: 'Journey',
+    external: true
+  },
+  { path: 'https://chat.c0d3.com', name: 'Help', external: true },
+  { path: '/contributors', name: 'Contributors' }
+]
 
-const AuthLink: React.FC<AuthLinkProps> = ({ session }) => {
+const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
+  const router = useRouter()
   const isAdmin = _.get(session, 'user.isAdmin', '')
+  const location = '/' + router.asPath.split('/')[1]
+
   return (
     <div className="navbar-nav collapse navbar-collapse">
-      <NavLink
-        path="/curriculum"
-        activePath="/curriculum"
-        className="nav-item nav-link"
-      >
-        Curriculum
-      </NavLink>
-      <NavLink
-        path="https://github.com/garageScript/c0d3-app"
-        className="nav-item nav-link"
-        external
-      >
-        Repo
-      </NavLink>
-      <NavLink
-        path="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-        className="nav-item nav-link"
-        external
-      >
-        Journey
-      </NavLink>
-      <NavLink
-        path="https://chat.c0d3.com"
-        className="nav-item nav-link"
-        external
-      >
-        Help
-      </NavLink>
-      <NavLink path="/contributors" className="nav-item nav-link">
-        Contributors
-      </NavLink>
+      {navItems.map(button => (
+        <NavLink
+          path={button.path}
+          className="nav-item nav-link"
+          key={button.name}
+          external={button.external}
+          activePath={location === button.path}
+        >
+          {button.name}
+        </NavLink>
+      ))}
       {isAdmin === 'true' && (
         <DropdownMenu title="Admin" items={dropdownMenuItems} />
       )}
@@ -69,9 +71,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
   const [logoutUser, { data }] = useLogoutMutation()
   useEffect(() => {
     const success = _.get(data, 'logout.success', false)
-    if (success) {
-      window.location.pathname = '/'
-    }
+    if (success) window.location.pathname = '/'
   }, [data])
   return (
     <div className="d-flex">
@@ -101,37 +101,10 @@ const UnAuthButton = () => (
   </div>
 )
 
-const UnAuthLink = () => (
-  <div className="navbar-nav collapse navbar-collapse">
-    <NavLink path="/" activePath="/" className="nav-item nav-link">
-      Home
-    </NavLink>
-    <NavLink path="/#learning" className="nav-item nav-link">
-      Learning Process
-    </NavLink>
-    <NavLink
-      path="https://c0d3.com/book"
-      className="nav-item nav-link"
-      external
-    >
-      Resources
-    </NavLink>
-    <NavLink
-      path="https://chat.c0d3.com"
-      className="nav-item nav-link"
-      external
-    >
-      Help
-    </NavLink>
-    <NavLink path="/contributors" className="nav-item nav-link">
-      Contributors
-    </NavLink>
-  </div>
-)
-
 const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   const renderButtons = () => {
-    if (!session) return <UnAuthButton />
+    if (!session || _.get(session, 'user.username') === null)
+      return <UnAuthButton />
 
     const initial = ''
     // TODO: replace with typing
@@ -152,7 +125,7 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            {session ? <AuthLink session={session} /> : <UnAuthLink />}
+            <NavBar session={session} />
           </div>
         </div>
         {renderButtons()}

@@ -1,6 +1,5 @@
 import React from 'react'
-import Error from 'next/error'
-
+import Error, { StatusCode } from '../components/Error'
 export default function NotFound() {
-  return <Error statusCode={404} />
+  return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
 }

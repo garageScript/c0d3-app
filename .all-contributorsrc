@@ -135,6 +135,34 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "pmulard",
+      "name": "Peter Mulard",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/45550174?v=4",
+      "profile": "http://www.linkedin.com/in/petermulard/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Ulisseus",
+      "name": "Ulisseus",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3845012?v=4",
+      "profile": "https://github.com/Ulisseus",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "kondanna",
+      "name": "Charles",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16906103?v=4",
+      "profile": "https://github.com/kondanna",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7

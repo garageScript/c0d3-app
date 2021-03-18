@@ -1,4 +1,8 @@
 import { User, UserLesson } from '../../helpers/dbload'
+import { validateLessonId } from '../../helpers/validateLessonId'
+import { Op } from 'sequelize'
+import { Context } from '../../@types/helpers'
+import _ from 'lodash'
 
 type ArgsGetLessonMentors = {
   lessonId: string
@@ -6,19 +10,24 @@ type ArgsGetLessonMentors = {
 
 export const getLessonMentors = async (
   _parent: void,
-  args: ArgsGetLessonMentors
-): Promise<[User]> => {
+  args: ArgsGetLessonMentors,
+  context: Context
+): Promise<User[]> => {
   const { lessonId } = args
+  const userId: number | undefined = _.get(context, 'req.user.id', undefined)
   try {
-    const results = await UserLesson.findAll({
-      where: { lessonId },
-      include: [{ model: User }]
+    await validateLessonId(parseInt(lessonId))
+    const results: [UserLesson & { user: User }] = await UserLesson.findAll({
+      where: {
+        lessonId,
+        ...(userId && { userId: { [Op.ne]: userId } })
+      },
+      include: [
+        { model: User, as: 'user', attributes: ['username', 'name', 'id'] }
+      ]
     })
-
-    return results.map((result: { User: User }) => {
-      return { username: result.User.username }
-    })
+    return results.map(({ user }) => user)
   } catch (err) {
-    throw new Error(`An Error was thrown: ${err}`)
+    throw new Error(err)
   }
 }

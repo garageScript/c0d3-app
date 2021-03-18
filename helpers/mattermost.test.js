@@ -5,8 +5,17 @@ import {
   changeChatPassword,
   getChannelInfo,
   getUserByEmail,
-  publicChannelMessage
+  getChatUserById,
+  publicChannelMessage,
+  findOrCreateDirectMessageChannel,
+  sendDirectMessage
 } from './mattermost'
+
+const userMock = {
+  username: 'fakeuser',
+  id: 'fakeid123456',
+  email: 'fake@email.com'
+}
 
 describe('Chat Signup', () => {
   let userArgs
@@ -185,10 +194,83 @@ describe('getUserByEmail', () => {
     expect(getUserByEmail('fakeEmail')).rejects.toThrowError('errorMessage')
   })
 
-  test('Should return username', async () => {
+  test('Should return user info', async () => {
     fetch.mockResolvedValue({
-      json: () => Promise.resolve({ username: 'fakeuser' })
+      json: () => Promise.resolve(userMock)
     })
-    return expect(getUserByEmail('fakeemail')).resolves.toEqual('fakeuser')
+    return expect(getUserByEmail('fakeemail')).resolves.toEqual(userMock)
+  })
+})
+
+describe('getChatUserById', () => {
+  beforeEach(() => {
+    getChatUserById.cache.clear()
+    jest.clearAllMocks()
+  })
+
+  test('Should return user info', async () => {
+    fetch.mockResolvedValue({
+      json: () => Promise.resolve(userMock)
+    })
+    await expect(getChatUserById(userMock.id)).resolves.toEqual(userMock)
+  })
+
+  test('Should throw error when id is not found', async () => {
+    fetch.mockRejectedValue('errorMessage')
+    await expect(getChatUserById(userMock.id)).rejects.toThrowError()
+  })
+
+  test('Should memoize the result when called with the same id', async () => {
+    fetch.mockResolvedValue({
+      json: () => Promise.resolve(userMock)
+    })
+    await expect(getChatUserById(userMock.id)).resolves.toEqual(userMock)
+    await expect(getChatUserById(userMock.id)).resolves.toEqual(userMock)
+    expect(fetch).toBeCalledTimes(1)
+  })
+})
+
+describe('findOrCreateDirectMessageChannel', () => {
+  beforeEach(() => {
+    findOrCreateDirectMessageChannel.cache.clear()
+    jest.clearAllMocks()
+  })
+
+  test('Should return the direct message channel id', async () => {
+    const res = {
+      id: 'channelid12345'
+    }
+    fetch.mockResolvedValue({
+      json: () => Promise.resolve(res)
+    })
+    await expect(
+      findOrCreateDirectMessageChannel('senderId', 'receiverId')
+    ).resolves.toEqual(res)
+  })
+
+  test('Should throw error', async () => {
+    fetch.mockRejectedValue('errorMessage')
+    await expect(
+      findOrCreateDirectMessageChannel('senderId', 'receiverId')
+    ).rejects.toThrowError()
+  })
+})
+
+describe('sendDirectMessage', () => {
+  beforeEach(() => jest.clearAllMocks())
+
+  test('Should call sendMessage with the right parameters', async () => {
+    const message = 'this is a test'
+    const userId = 'fakeuserid'
+    const botId = 'fakebotid'
+    const channelId = 'fakechannelid'
+    fetch
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ id: botId }) })
+      .mockResolvedValueOnce({ json: () => Promise.resolve({ id: channelId }) })
+      .mockResolvedValueOnce({ status: 200 })
+    await sendDirectMessage(userId, message)
+    expect(fetch.mock.calls[2][1].body).toEqual(
+      JSON.stringify({ channel_id: channelId, message })
+    )
   })
 })

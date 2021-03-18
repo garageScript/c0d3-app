@@ -4,6 +4,7 @@ export type LessonStatus = {
   isTeaching: string | null
   lessonId: string
   starsReceived?: Star[]
+  starGiven?: string
 }
 
 export type User = {
@@ -11,7 +12,7 @@ export type User = {
 }
 
 export type Lesson = {
-  id: number
+  id: string
   title: string
   description: string
   order: number

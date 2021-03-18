@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import Error, { StatusCode } from '../../components/Error'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
@@ -15,13 +16,20 @@ import _ from 'lodash'
 
 const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
-  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
-  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
+  if (!lessons || !alerts) {
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
+  }
   const currentLesson: Lesson | undefined = lessons.find(
-    (lesson: Lesson) => lesson.id.toString() === currentlessonId
+    (lesson: Lesson) => lesson.id === currentlessonId
   )
+  if (!currentLesson) {
+    return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
+  }
+  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
+
   const currentLessonStatus: LessonStatus = lessonStatus.find(
     lessonStatus => lessonStatus.lessonId === currentlessonId
   ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
@@ -46,7 +54,7 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
-                lessonId={currentLesson.id.toString()}
+                lessonId={currentLesson.id}
               />
             </div>
           )}

@@ -1,7 +1,13 @@
 import React from 'react'
 import Curriculum from '../../pages/curriculum'
-import { render, wait } from '@testing-library/react'
-import { MockedProvider } from '@apollo/react-testing'
+import {
+  render,
+  waitFor,
+  waitForElementToBeRemoved,
+  screen
+} from '@testing-library/react'
+import '@testing-library/jest-dom'
+import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
@@ -21,53 +27,37 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container } = render(
+    const { findByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    await wait(() => expect(container).toMatchSnapshot())
+    const element = await findByRole('heading', { name: /loading/i })
+    expect(element).toBeTruthy()
   })
 
-  test('Should render Error on error', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        error: new Error('error')
-      }
-    ]
-
-    const { container } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
-      </MockedProvider>
-    )
-
-    await wait(() => expect(container).toMatchSnapshot())
-  })
-
-  test('Should render No Data when no session', async () => {
+  test('Should render Bad Data when no lessons', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
         result: {
           data: {
-            lessons: dummyLessonData,
-            session: null,
+            lessons: null,
+            session: dummySessionData,
             alerts: []
           }
         }
       }
     ]
 
-    const { container } = render(
+    const { findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
-
-    await wait(() => expect(container).toMatchSnapshot())
+    const element = await findByText(/Internal server error/i)
+    expect(element).toBeTruthy()
   })
 
   test('Should render with basic dummy data', async () => {
@@ -84,13 +74,15 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container } = render(
+    const { container, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    await wait(() => expect(container).toMatchSnapshot())
+    await waitFor(() => getByRole('link', { name: 'C0D3' }))
+
+    await waitFor(() => expect(container).toMatchSnapshot())
   })
 
   test('Should render with lessonStatus data', async () => {
@@ -101,19 +93,22 @@ describe('Curriculum Page', () => {
           lessonId: '5',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         },
         {
           lessonId: '2',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         },
         {
           lessonId: '1',
           isPassed: true,
           isTeaching: true,
-          isEnrolled: false
+          isEnrolled: false,
+          starGiven: null
         }
       ]
     }
@@ -131,12 +126,51 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container } = render(
+    const { container, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
 
-    await wait(() => expect(container).toMatchSnapshot())
+    await waitFor(() => getByRole('link', { name: 'C0D3' }))
+
+    await waitFor(() => expect(container).toMatchSnapshot())
+  })
+  test('Should render curriculum with no session', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: null,
+            alerts: []
+          }
+        }
+      }
+    ]
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+    expect(container).toMatchSnapshot()
+  })
+  test('Should render internal error if error', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        error: new Error('error')
+      }
+    ]
+
+    const { findByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum />
+      </MockedProvider>
+    )
+    const element = await findByText(/Internal server error/i)
+    expect(element).toBeTruthy()
   })
 })

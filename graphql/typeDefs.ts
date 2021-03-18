@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost'
+import { gql } from '@apollo/client'
 
 export default gql`
   type Query {
@@ -18,6 +18,7 @@ export default gql`
   }
 
   type Mutation {
+    setStar(mentorId: Int!, lessonId: Int!, comment: String): SuccessResponse!
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse
@@ -133,6 +134,7 @@ export default gql`
     isTeaching: String
     isEnrolled: String
     starsReceived: [Star]
+    starGiven: String
   }
 
   type Lesson {

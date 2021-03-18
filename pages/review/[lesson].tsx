@@ -1,5 +1,5 @@
+import { useQuery } from '@apollo/client'
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'
@@ -10,6 +10,8 @@ import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
 import { SubmissionData } from '../../@types/submission'
 import { AppData } from '../../@types/app'
+import Error, { StatusCode } from '../../components/Error'
+import { LessonStatus } from '../../@types/lesson'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -30,7 +32,7 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
 )
 
 const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
-  const { lessons } = queryData
+  const { lessons, session } = queryData
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
@@ -39,14 +41,30 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   if (loading) {
     return <LoadingSpinner />
   }
-  const lessonSubmissions: SubmissionData[] = data.submissions.filter(
-    (submission: SubmissionData) =>
-      submission.status !== 'passed' && submission.status !== 'needMoreWork'
+  if (!session) {
+    router.push('/login')
+    return <LoadingSpinner />
+  }
+  const currentLesson: Lesson | undefined = lessons.find(
+    (lesson: Lesson) => lesson.id === currentlessonId
   )
-  const currentLesson: Lesson =
-    lessons.find(
-      (lesson: Lesson) => lesson.id.toString() === currentlessonId
-    ) || ({} as Lesson)
+  if (!currentLesson) {
+    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
+  }
+  if (
+    !session.lessonStatus.find((status: LessonStatus) => {
+      return status.lessonId === currentLesson.id && status.isPassed
+    })
+  ) {
+    router.push('/curriculum')
+    return <LoadingSpinner />
+  }
+  const lessonSubmissions: SubmissionData[] = data
+    ? data.submissions.filter(
+        (submission: SubmissionData) =>
+          submission.status !== 'passed' && submission.status !== 'needMoreWork'
+      )
+    : []
   return (
     <div>
       <Layout>

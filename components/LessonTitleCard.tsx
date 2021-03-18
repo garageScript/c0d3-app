@@ -17,7 +17,7 @@ const LessonTitleCard: React.FC<Props> = props => {
         <div className="d-flex mb-3 px-3">
           <img
             className="lessonTitleCard__lesson-cover mr-3"
-            src={`/curriculumAssets/lessonCoversSvg/${props.lessonCoverUrl}`}
+            src={`/assets/curriculum/${props.lessonCoverUrl}`}
             alt="lesson-cover"
           />
           <div>
