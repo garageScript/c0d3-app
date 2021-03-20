@@ -94,7 +94,7 @@ export const CompletedLessons: React.FC<{}> = () => {
       result: {
         data: {
           lessons: dummyLessonData,
-          session: session,
+          session,
           alerts: dummyAlertData
         }
       }
