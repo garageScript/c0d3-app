@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+.profile-comments {
+    .comments-container{
+        display: flex;
+        margin-top: 15px;
+    }
+    .comments-container-title {
+        display: flex;
+        margin: auto;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2;
+        letter-spacing: normal;
+        color: grey;
+      }
+    .comment-box {
+        padding: 16px 0 22px 1px;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        background-color: #ffffff;
+    }
+
+    .comment-box:last-child{
+        margin-bottom: 0px;
+    }
+    .comment-profile-container {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: left;
+    }
+    .user-info-image{
+        display: flex;
+        justify-content: center;
+        align-Items: center;
+        width: 41px;
+        height: 41px;
+        margin: 2px 12px 0px 27px;
+        border-radius: 26.5px;
+      }
+    .comment-username {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: bold;
+        color: #5d656e;
+    }
+    .comment-lesson-title {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: normal;
+        color: #8e8e8e;
+        margin: 0px;
+      }
+    .comment-text-container {
+        flex: auto;
+    }
+    .comment-star-icon {
+        margin: 0px;
+    }
+    .comment-text {
+        font-family: Roboto;
+        font-size: 15px;
+        padding: 0.5rem 1rem 0rem 1rem;
+        font-weight: 500;
+        color: #5438dc;
+      }
+  }

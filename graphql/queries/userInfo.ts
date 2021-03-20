@@ -47,7 +47,14 @@ const USER_INFO = gql`
         isTeaching
         isEnrolled
         starsReceived {
+          id
+          mentorId
+          studentId
+          studentUsername
+          studentName
           lessonId
+          lessonTitle
+          lessonDifficulty
           comment
         }
       }

@@ -5,7 +5,7 @@ type Username = {
   username: string
 }
 
-const { User, UserLesson, Submission, Star } = db
+const { User, UserLesson, Lesson, Submission, Star } = db
 
 export const userInfo = async (_parent: void, args: Username) => {
   const username = _.get(args, 'username')
@@ -36,17 +36,24 @@ export const userInfo = async (_parent: void, args: Username) => {
       where: {
         mentorId: user.id
       },
-      include: [{ model: User, as: 'student', attributes: ['username', 'id'] }]
+      include: [
+        { model: User, as: 'student', attributes: ['username', 'id', 'name'] },
+        { model: Lesson, as: 'lesson', attributes: ['id', 'title', 'order'] }
+      ]
     })
   ])
   const starMap = starsReceived.reduce((map: any, star: any) => {
     map[star.lessonId] = map[star.lessonId] || []
+    star.dataValues.studentUsername = star.student.username
+    star.dataValues.studentName = star.student.name
+    star.dataValues.lessonDifficulty = star.lesson.order
+    star.dataValues.lessonTitle = star.lesson.title
     map[star.lessonId].push(star.dataValues)
-    console.log(star)
     return map
   }, {})
   lessonStatus.forEach((lesson: any) => {
     lesson.starsReceived = starMap[lesson.lessonId] || []
+    console.log(lesson.starsReceived)
   })
 
   return {
