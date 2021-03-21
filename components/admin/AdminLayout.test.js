@@ -3,19 +3,9 @@ import { render, waitFor } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import { AdminLayout } from './AdminLayout'
 import { useRouter } from 'next/router'
-jest.mock('next/router')
 
-// Mock global.window
-global.window = Object.create(window)
-Object.defineProperty(global.window, 'location', {
-  value: { pathname: '/not-root' } // make sure pathname isnt '/' by default
-})
-useRouter.mockReturnValue({
-  push: jest
-    .fn()
-    .mockImplementation(path => (global.window.location.pathname = path))
-})
 describe('AdminLayout test', () => {
+  const { push } = useRouter()
   test('Should return loading spinner when loading', async () => {
     const { findByRole } = render(
       <MockedProvider addTypename={false}>
@@ -40,9 +30,7 @@ describe('AdminLayout test', () => {
         <AdminLayout data={{ data: {} }} />
       </MockedProvider>
     )
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/login')
-    )
+    await waitFor(() => expect(push).toBeCalledWith('/login'))
   })
   test('Should render children', async () => {
     const { container } = render(

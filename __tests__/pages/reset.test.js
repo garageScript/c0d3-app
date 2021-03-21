@@ -3,12 +3,13 @@ import { render, fireEvent, waitFor, act } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
-import { withTestRouter } from '../../testUtil/withNextRouter'
 import ResetPassword from '../../pages/confirm/[token]'
-
-const mockFn = jest.fn()
+import { useRouter } from 'next/router'
 
 describe('ResetPassword Page', () => {
+  const { query } = useRouter()
+  const fakeToken = 'fake token'
+  query['token'] = fakeToken
   const fillOutResetForm = (getByTestId, password) => {
     const passwordField = getByTestId('password')
     const confirmPasswordField = getByTestId('confirmPassword')
@@ -27,7 +28,6 @@ describe('ResetPassword Page', () => {
   }
 
   test('Should render confirm success on success', async () => {
-    const fakeToken = 'fake token'
     const fakeResetPassword = 'fake reset password'
 
     const mocks = [
@@ -59,17 +59,11 @@ describe('ResetPassword Page', () => {
       }
     ]
 
-    const tree = withTestRouter(
+    const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ResetPassword />
-      </MockedProvider>,
-      {
-        push: jest.fn(),
-        query: { token: fakeToken }
-      }
+      </MockedProvider>
     )
-
-    const { container, getByTestId, getByText } = render(tree)
 
     const submitButton = getByTestId('submit')
 
@@ -84,7 +78,6 @@ describe('ResetPassword Page', () => {
   })
 
   test('Should render alert on error', async () => {
-    const fakeToken = 'fake token'
     const fakeResetPassword = 'fake reset password'
 
     const mocks = [
@@ -110,17 +103,11 @@ describe('ResetPassword Page', () => {
       }
     ]
 
-    const tree = withTestRouter(
+    const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ResetPassword />
-      </MockedProvider>,
-      {
-        push: jest.fn(),
-        query: { token: fakeToken }
-      }
+      </MockedProvider>
     )
-
-    const { container, getByTestId, getByText } = render(tree)
 
     const submitButton = getByTestId('submit')
 

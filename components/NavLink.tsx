@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 
-type NavLinkProps = {
+export type NavLinkProps = {
   path: string
-  activePath?: string
+  activePath?: boolean
   external?: true
   as?: string
   className?: string
@@ -18,10 +18,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   className = ''
 }) => {
   if (!path) return null
-  const active = path === activePath
-  if (active) {
-    className += ' active'
-  }
+  if (activePath) className += ' active'
   if (external) {
     return (
       <a
@@ -37,7 +34,7 @@ const NavLink: React.FC<NavLinkProps> = ({
   return (
     <Link href={path} as={as}>
       <a className={className}>
-        {active && <span className="sr-only">(current)</span>}
+        {activePath && <span className="sr-only">(current)</span>}
         {children}
       </a>
     </Link>

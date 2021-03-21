@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login Page Should set alert visible on invalid credentials 1`] = `
+exports[`MyApp component should render Login component passed in as prop 1`] = `
 <div>
   <nav
     class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
@@ -106,18 +106,6 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
               class="form-group"
             >
               <div
-                class="alert d-flex justify-content-between mt-3 alert-danger"
-                role="alert"
-              >
-                <div>
-                  <img
-                    class="mr-3 alert-icon"
-                    src="/assets/curriculum/icons/exclamation.svg"
-                  />
-                   User does not exist! 
-                </div>
-              </div>
-              <div
                 class="mt-3"
               >
                 <input
@@ -125,7 +113,7 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
                   data-testid="username"
                   name="username"
                   placeholder="Username"
-                  value="fake username"
+                  value=""
                 />
                 <input
                   class="form-control form-control-lg font-weight-light mb-3 "
@@ -133,7 +121,7 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
                   name="password"
                   placeholder="Password"
                   type="password"
-                  value="fake password"
+                  value=""
                 />
                 <button
                   class="btn btn-primary btn-lg btn-block mb-3"

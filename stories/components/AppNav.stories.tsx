@@ -2,6 +2,7 @@ import * as React from 'react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import AppNav from '../../components/AppNav'
+import { withTestRouter } from '../../testUtil/withNextRouter'
 
 export default {
   component: AppNav,
@@ -30,7 +31,7 @@ export const LoggedIn: React.FC = () => {
     }
   ]
 
-  return (
+  return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <AppNav />
     </MockedProvider>
@@ -51,7 +52,7 @@ export const LoggedOut: React.FC = () => {
     }
   ]
 
-  return (
+  return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       <AppNav />
     </MockedProvider>
