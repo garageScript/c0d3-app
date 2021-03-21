@@ -84,7 +84,6 @@ const UserProfile: React.FC = () => {
   lessonStatus.forEach(({ starsReceived }) => {
     if (starsReceived) {
       starsReceived.forEach(star => {
-        console.log(star)
         profileStars.push(star)
       })
     }

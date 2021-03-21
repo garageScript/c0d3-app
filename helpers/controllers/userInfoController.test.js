@@ -2,7 +2,7 @@ jest.mock('../dbload')
 import db from '../dbload'
 import { userInfo } from './userInfoController'
 
-const { User, UserLesson, Submission, Star } = db
+const { User, Lesson, UserLesson, Submission, Star } = db
 describe('userInfo controller tests', () => {
   test('should return error of invalid username if no username is passed in', async () => {
     await expect(userInfo({}, {})).rejects.toThrow('Invalid username')
@@ -30,11 +30,20 @@ describe('userInfo controller tests', () => {
     ])
     Star.findAll = jest.fn().mockReturnValue([
       {
+        student: {
+          id: 2,
+          username: 'noob222',
+          name: 'fake user'
+        },
+        lesson: {
+          order: '3',
+          title: 'Objects'
+        },
         dataValues: {
           id: 12,
           lessonId: 1,
           studentId: 2,
-          mentorId: 10,
+          mentorId: 5,
           comment: 'Thank you'
         },
         lessonId: 1
@@ -57,7 +66,11 @@ describe('userInfo controller tests', () => {
               id: 12,
               lessonId: 1,
               studentId: 2,
-              mentorId: 10,
+              studentUsername: 'noob222',
+              studentName: 'fake user',
+              lessonTitle: 'Objects',
+              lessonDifficulty: '3',
+              mentorId: 5,
               comment: 'Thank you'
             }
           ]

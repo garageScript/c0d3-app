@@ -1,8 +1,7 @@
 import React from 'react'
 import { Star as StarType } from '../@types/lesson'
 import { Star as StarIcon } from 'react-feather'
-import '../scss/profileStarComments.scss'
-import _ from 'lodash'
+import '../scss/profileStarComments.module.scss'
 
 type StarCommentsProps = {
   stars: StarType[]
@@ -43,7 +42,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
   )
 }
 
-const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
+export const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
   stars.sort((a, b) => b.lessonDifficulty - a.lessonDifficulty)
 
   const displayStarComments = stars.map((star: StarType, commentId: number) => {
