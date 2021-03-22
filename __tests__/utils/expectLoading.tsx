@@ -11,14 +11,13 @@ const mocks = [
   }
 ]
 
-const expectLoading = async (Component: React.ComponentType) => {
-  const { findByRole } = render(
+const expectLoading = (Component: React.ComponentType) => {
+  const { getByRole } = render(
     <MockedProvider mocks={mocks} addTypename={false}>
       <Component />
     </MockedProvider>
   )
-  const element = await findByRole('heading', { name: /loading/i })
-  await waitFor(() => expect(element).toBeInTheDocument())
+  expect(getByRole('heading', { name: /loading/i })).toBeInTheDocument()
 }
 
 export default expectLoading

@@ -15,7 +15,7 @@ import expectLoading from '../utils/expectLoading'
 
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {
-    await expectLoading(Curriculum)
+    expectLoading(Curriculum)
   })
 
   test('Should render Bad Data when no lessons', async () => {

@@ -14,7 +14,7 @@ describe('user profile test', () => {
   const { query } = useRouter()
   query['username'] = 'fake user'
   test('Should render loading spinner if data is not ready', async () => {
-    await expectLoading(UserProfile)
+    expectLoading(UserProfile)
   })
   test('Should render profile', async () => {
     const session = {
