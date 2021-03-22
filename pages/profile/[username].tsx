@@ -79,15 +79,7 @@ const UserProfile: React.FC = () => {
     }
   })
 
-  const lessonStatus: LessonStatus[] = _.get(data, 'userInfo.lessonStatus', [])
-  const profileStars: Star[] = []
-  lessonStatus.forEach(({ starsReceived }) => {
-    if (starsReceived) {
-      starsReceived.forEach(star => {
-        profileStars.push(star)
-      })
-    }
-  })
+  const profileStars = [] as Star[]
 
   const profileSubmissions = lessonsList.map(lessonInfo => {
     const lesson = lessonInfo || {}
@@ -118,10 +110,19 @@ const UserProfile: React.FC = () => {
       },
       {}
     )
+
     let starsReceived = [] as Star[]
     if (lessonStatusMap[String(lesson.id)]) {
       starsReceived = lessonStatusMap[String(lesson.id)].starsReceived as Star[]
     }
+
+    lessonStatus.forEach(({ starsReceived }) => {
+      if (starsReceived) {
+        starsReceived.forEach(star => {
+          profileStars.push(star)
+        })
+      }
+    })
 
     return {
       order: lesson.order || 0,

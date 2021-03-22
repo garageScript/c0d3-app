@@ -27,9 +27,5 @@ export type Star = {
   studentId: number
   mentorId: number
   lessonId: number
-  lessonTitle: string
-  lessonDifficulty: number
-  studentUsername: string
-  studentName: string
   comment?: string
 }
