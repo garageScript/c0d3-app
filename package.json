@@ -114,7 +114,11 @@
     "coveragePathIgnorePatterns": [
       "stories",
       "testUtil",
-      "graphql/index.tsx"
+      "graphql/index.tsx",
+      "<rootDir>/__tests__/utils/"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/utils/"
     ]
   },
   "husky": {
