@@ -3,7 +3,7 @@ import ForgotPassword from '../../pages/forgotpassword'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummySessionData from '../../__dummy__/sessionData'
-import { withTestRouter } from '../../testUtil/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withNextRouter'
 
 export default {
   component: ForgotPassword,

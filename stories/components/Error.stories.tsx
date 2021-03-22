@@ -4,7 +4,7 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import * as nextImage from 'next/image'
 import { ImageProps } from '../../node_modules/next/dist/client/image'
-import { withTestRouter } from '../../testUtil/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withNextRouter'
 //storybook doesn't support nextImage yet
 Object.defineProperty(nextImage, 'default', {
   configurable: true,

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import AppNav from '../../components/AppNav'
-import { withTestRouter } from '../../testUtil/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withNextRouter'
 
 export default {
   component: AppNav,
