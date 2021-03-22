@@ -11,30 +11,11 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+import expectLoading from '../utils/expectLoading'
 
 describe('Curriculum Page', () => {
   test('Should render Loading Spinner when loading', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            lessons: dummyLessonData,
-            session: dummySessionData,
-            alerts: []
-          }
-        }
-      }
-    ]
-
-    const { findByRole } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
-      </MockedProvider>
-    )
-
-    const element = await findByRole('heading', { name: /loading/i })
-    expect(element).toBeTruthy()
+    await expectLoading(Curriculum)
   })
 
   test('Should render Bad Data when no lessons', async () => {
