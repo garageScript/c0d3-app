@@ -43,7 +43,7 @@ describe('userInfo controller tests', () => {
           id: 12,
           lessonId: 1,
           studentId: 2,
-          mentorId: 5,
+          mentorId: 10,
           comment: 'Thank you'
         },
         lessonId: 1
@@ -66,11 +66,11 @@ describe('userInfo controller tests', () => {
               id: 12,
               lessonId: 1,
               studentId: 2,
+              mentorId: 10,
               studentUsername: 'noob222',
               studentName: 'fake user',
               lessonTitle: 'Objects',
               lessonDifficulty: '3',
-              mentorId: 5,
               comment: 'Thank you'
             }
           ]

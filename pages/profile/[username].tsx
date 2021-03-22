@@ -130,6 +130,7 @@ const UserProfile: React.FC = () => {
       starsReceived
     }
   })
+
   return (
     <Layout>
       <div className="row mt-4">
