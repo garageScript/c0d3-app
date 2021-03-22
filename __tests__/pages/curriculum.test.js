@@ -14,7 +14,7 @@ import dummySessionData from '../../__dummy__/sessionData'
 import expectLoading from '../utils/expectLoading'
 
 describe('Curriculum Page', () => {
-  test('Should render Loading Spinner when loading', async () => {
+  test('Should render Loading Spinner when loading', () => {
     expectLoading(Curriculum)
   })
 

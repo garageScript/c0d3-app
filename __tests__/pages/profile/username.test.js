@@ -13,7 +13,7 @@ import expectLoading from '../../utils/expectLoading'
 describe('user profile test', () => {
   const { query } = useRouter()
   query['username'] = 'fake user'
-  test('Should render loading spinner if data is not ready', async () => {
+  test('Should render loading spinner if data is not ready', () => {
     expectLoading(UserProfile)
   })
   test('Should render profile', async () => {

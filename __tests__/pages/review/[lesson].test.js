@@ -81,7 +81,7 @@ describe('Lesson Page', () => {
     )
     await waitFor(() => expect(container).toMatchSnapshot())
   })
-  test('Should return loading spinner when loading', async () => {
+  test('Should return loading spinner when loading', () => {
     expectLoading(Review)
   })
   test('Should redirect to login if no session', async () => {
