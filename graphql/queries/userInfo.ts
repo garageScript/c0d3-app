@@ -48,6 +48,12 @@ const USER_INFO = gql`
         isEnrolled
         starsReceived {
           lessonId
+          mentorId
+          studentId
+          studentUsername
+          studentName
+          lessonTitle
+          lessonDifficulty
           comment
         }
       }

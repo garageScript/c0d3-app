@@ -8,6 +8,7 @@ import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
+import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { Star } from '../../@types/lesson'
 import Error, { StatusCode } from '../../components/Error'
@@ -78,6 +79,16 @@ const UserProfile: React.FC = () => {
     }
   })
 
+  const lessonStatus: LessonStatus[] = _.get(data, 'userInfo.lessonStatus', [])
+  const profileStars: Star[] = []
+  lessonStatus.forEach(({ starsReceived }) => {
+    if (starsReceived) {
+      starsReceived.forEach(star => {
+        profileStars.push(star)
+      })
+    }
+  })
+
   const profileSubmissions = lessonsList.map(lessonInfo => {
     const lesson = lessonInfo || {}
     const challengeList = lesson.challenges || []
@@ -125,6 +136,7 @@ const UserProfile: React.FC = () => {
       <div className="row mt-4">
         <div className="col-4">
           <ProfileImageInfo user={userInfo} />
+          <ProfileStarComments stars={profileStars} />
         </div>
         <div className="col-8">
           <ProfileLessons lessons={profileLessons} />
