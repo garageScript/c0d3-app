@@ -3469,6 +3469,12 @@ export const UserInfoDocument = gql`
         isEnrolled
         starsReceived {
           lessonId
+          mentorId
+          studentId
+          studentUsername
+          studentName
+          lessonTitle
+          lessonDifficulty
           comment
         }
       }
