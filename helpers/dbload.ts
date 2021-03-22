@@ -77,6 +77,7 @@ Submission.belongsTo(Lesson, { as: 'lesson' })
 
 Star.belongsTo(User, { as: 'student' })
 Star.belongsTo(User, { as: 'mentor' })
+Star.belongsTo(Lesson, { as: 'lesson' })
 
 User.belongsToMany(Lesson, {
   foreignKey: 'userId', // Defaults to UserId
