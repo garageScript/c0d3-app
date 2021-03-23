@@ -5,7 +5,7 @@ type Username = {
   username: string
 }
 
-const { User, UserLesson, Submission, Star } = db
+const { Lesson, User, UserLesson, Submission, Star } = db
 
 export const userInfo = async (_parent: void, args: Username) => {
   const username = _.get(args, 'username')
@@ -35,11 +35,26 @@ export const userInfo = async (_parent: void, args: Username) => {
     Star.findAll({
       where: {
         mentorId: user.id
-      }
+      },
+      include: [
+        { model: User, as: 'student', attributes: ['username', 'id', 'name'] },
+        { model: Lesson, as: 'lesson', attributes: ['id', 'title', 'order'] }
+      ]
     })
   ])
   const starMap = starsReceived.reduce((map: any, star: any) => {
     map[star.lessonId] = map[star.lessonId] || []
+    const {
+      student: { username, name },
+      lesson: { order, title }
+    } = star
+    star.dataValues = {
+      ...star.dataValues,
+      studentUsername: username,
+      studentName: name,
+      lessonDifficulty: order,
+      lessonTitle: title
+    }
     map[star.lessonId].push(star.dataValues)
     return map
   }, {})

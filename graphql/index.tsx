@@ -1,1400 +1,996 @@
-import * as ApolloReactHooks from '@apollo/client'
-import { gql } from '@apollo/client'
-import {
-  GraphQLResolveInfo,
-  GraphQLScalarType,
-  GraphQLScalarTypeConfig
-} from 'graphql'
-import * as ApolloReactCommon from '@apollo/client'
-import * as React from 'react'
-import * as ApolloReactComponents from '@apollo/client/react/components'
-import * as ApolloReactHoc from '@apollo/client/react/hoc'
-export type Maybe<T> = T | null
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] }
-export type RequireFields<T, K extends keyof T> = {
-  [X in Exclude<keyof T, K>]?: T[X]
-} &
-  { [P in K]-?: NonNullable<T[P]> }
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
+import { gql } from '@apollo/client';
+import * as Apollo from '@apollo/client';
+import * as ApolloReactHoc from '@apollo/client/react/hoc';
+export type Maybe<T> = T | null;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string
-  String: string
-  Boolean: boolean
-  Int: number
-  Float: number
+  ID: string;
+  String: string;
+  Boolean: boolean;
+  Int: number;
+  Float: number;
   /** The `Upload` scalar type represents a file upload. */
-  Upload: any
-}
+  Upload: any;
+};
 
-export type Alert = {
-  __typename?: 'Alert'
-  id: Scalars['String']
-  text?: Maybe<Scalars['String']>
-  type?: Maybe<Scalars['String']>
-  url?: Maybe<Scalars['String']>
-  urlCaption?: Maybe<Scalars['String']>
-}
+
+export type Query = {
+  __typename?: 'Query';
+  lessons: Array<Lesson>;
+  session?: Maybe<Session>;
+  allUsers?: Maybe<Array<Maybe<User>>>;
+  getLessonMentors?: Maybe<Array<Maybe<User>>>;
+  userInfo?: Maybe<Session>;
+  isTokenValid: Scalars['Boolean'];
+  submissions?: Maybe<Array<Maybe<Submission>>>;
+  alerts: Array<Alert>;
+};
+
+
+export type QueryGetLessonMentorsArgs = {
+  lessonId: Scalars['String'];
+};
+
+
+export type QueryUserInfoArgs = {
+  username: Scalars['String'];
+};
+
+
+export type QueryIsTokenValidArgs = {
+  cliToken: Scalars['String'];
+};
+
+
+export type QuerySubmissionsArgs = {
+  lessonId: Scalars['String'];
+};
+
+export type TokenResponse = {
+  __typename?: 'TokenResponse';
+  success?: Maybe<Scalars['Boolean']>;
+  token?: Maybe<Scalars['String']>;
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  setStar: SuccessResponse;
+  login?: Maybe<AuthResponse>;
+  logout?: Maybe<AuthResponse>;
+  reqPwReset?: Maybe<TokenResponse>;
+  changePw?: Maybe<AuthResponse>;
+  changeAdminRights?: Maybe<SuccessResponse>;
+  signup?: Maybe<AuthResponse>;
+  addAlert?: Maybe<Array<Maybe<Alert>>>;
+  removeAlert?: Maybe<SuccessResponse>;
+  createSubmission?: Maybe<Submission>;
+  acceptSubmission?: Maybe<Submission>;
+  rejectSubmission?: Maybe<Submission>;
+  createLesson?: Maybe<Array<Maybe<Lesson>>>;
+  updateLesson?: Maybe<Array<Maybe<Lesson>>>;
+  createChallenge?: Maybe<Array<Maybe<Lesson>>>;
+  updateChallenge?: Maybe<Array<Maybe<Lesson>>>;
+};
+
+
+export type MutationSetStarArgs = {
+  mentorId: Scalars['Int'];
+  lessonId: Scalars['Int'];
+  comment?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationLoginArgs = {
+  username: Scalars['String'];
+  password: Scalars['String'];
+};
+
+
+export type MutationReqPwResetArgs = {
+  userOrEmail: Scalars['String'];
+};
+
+
+export type MutationChangePwArgs = {
+  token: Scalars['String'];
+  password: Scalars['String'];
+};
+
+
+export type MutationChangeAdminRightsArgs = {
+  id: Scalars['Int'];
+  status: Scalars['String'];
+};
+
+
+export type MutationSignupArgs = {
+  firstName: Scalars['String'];
+  lastName: Scalars['String'];
+  email: Scalars['String'];
+  username: Scalars['String'];
+  password?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationAddAlertArgs = {
+  text: Scalars['String'];
+  type: Scalars['String'];
+  url?: Maybe<Scalars['String']>;
+  urlCaption?: Maybe<Scalars['String']>;
+};
+
+
+export type MutationRemoveAlertArgs = {
+  id: Scalars['String'];
+};
+
+
+export type MutationCreateSubmissionArgs = {
+  lessonId: Scalars['String'];
+  challengeId: Scalars['String'];
+  cliToken: Scalars['String'];
+  diff: Scalars['String'];
+};
+
+
+export type MutationAcceptSubmissionArgs = {
+  id: Scalars['String'];
+  comment: Scalars['String'];
+};
+
+
+export type MutationRejectSubmissionArgs = {
+  id: Scalars['String'];
+  comment: Scalars['String'];
+};
+
+
+export type MutationCreateLessonArgs = {
+  description: Scalars['String'];
+  docUrl?: Maybe<Scalars['String']>;
+  githubUrl?: Maybe<Scalars['String']>;
+  videoUrl?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
+  chatUrl?: Maybe<Scalars['String']>;
+  order: Scalars['Int'];
+};
+
+
+export type MutationUpdateLessonArgs = {
+  id: Scalars['Int'];
+  description?: Maybe<Scalars['String']>;
+  docUrl?: Maybe<Scalars['String']>;
+  githubUrl?: Maybe<Scalars['String']>;
+  videoUrl?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  chatUrl?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
+};
+
+
+export type MutationCreateChallengeArgs = {
+  lessonId: Scalars['Int'];
+  order: Scalars['Int'];
+  description: Scalars['String'];
+  title: Scalars['String'];
+};
+
+
+export type MutationUpdateChallengeArgs = {
+  lessonId: Scalars['Int'];
+  id: Scalars['Int'];
+  order?: Maybe<Scalars['Int']>;
+  description?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
 
 export type AuthResponse = {
-  __typename?: 'AuthResponse'
-  success?: Maybe<Scalars['Boolean']>
-  username?: Maybe<Scalars['String']>
-  error?: Maybe<Scalars['String']>
-  cliToken?: Maybe<Scalars['String']>
-}
+  __typename?: 'AuthResponse';
+  success?: Maybe<Scalars['Boolean']>;
+  username?: Maybe<Scalars['String']>;
+  error?: Maybe<Scalars['String']>;
+  cliToken?: Maybe<Scalars['String']>;
+};
+
+export type SuccessResponse = {
+  __typename?: 'SuccessResponse';
+  success?: Maybe<Scalars['Boolean']>;
+};
+
+export type Submission = {
+  __typename?: 'Submission';
+  id?: Maybe<Scalars['String']>;
+  status?: Maybe<Scalars['String']>;
+  mrUrl?: Maybe<Scalars['String']>;
+  diff?: Maybe<Scalars['String']>;
+  viewCount?: Maybe<Scalars['Int']>;
+  comment?: Maybe<Scalars['String']>;
+  userId?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
+  lessonId?: Maybe<Scalars['String']>;
+  challengeId?: Maybe<Scalars['String']>;
+  challenge?: Maybe<Challenge>;
+  reviewer?: Maybe<User>;
+  user?: Maybe<User>;
+  reviewerId?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['String']>;
+};
+
+export type User = {
+  __typename?: 'User';
+  id?: Maybe<Scalars['String']>;
+  username?: Maybe<Scalars['String']>;
+  userLesson?: Maybe<UserLesson>;
+  email?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  isAdmin?: Maybe<Scalars['String']>;
+  cliToken?: Maybe<Scalars['String']>;
+};
+
+export type Session = {
+  __typename?: 'Session';
+  user?: Maybe<User>;
+  submissions?: Maybe<Array<Maybe<Submission>>>;
+  lessonStatus: Array<UserLesson>;
+};
+
+export type UserLesson = {
+  __typename?: 'UserLesson';
+  id?: Maybe<Scalars['String']>;
+  userId?: Maybe<Scalars['String']>;
+  lessonId?: Maybe<Scalars['String']>;
+  isPassed?: Maybe<Scalars['String']>;
+  isTeaching?: Maybe<Scalars['String']>;
+  isEnrolled?: Maybe<Scalars['String']>;
+  starsReceived?: Maybe<Array<Maybe<Star>>>;
+  starGiven?: Maybe<Scalars['String']>;
+};
+
+export type Lesson = {
+  __typename?: 'Lesson';
+  id?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  docUrl?: Maybe<Scalars['String']>;
+  githubUrl?: Maybe<Scalars['String']>;
+  videoUrl?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
+  title?: Maybe<Scalars['String']>;
+  challenges?: Maybe<Array<Maybe<Challenge>>>;
+  users?: Maybe<Array<Maybe<User>>>;
+  currentUser?: Maybe<User>;
+  chatUrl?: Maybe<Scalars['String']>;
+};
+
+export type Challenge = {
+  __typename?: 'Challenge';
+  id?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  lessonId?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
+};
+
+export type Alert = {
+  __typename?: 'Alert';
+  id: Scalars['String'];
+  text?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  urlCaption?: Maybe<Scalars['String']>;
+};
+
+export type Star = {
+  __typename?: 'Star';
+  id: Scalars['String'];
+  studentId?: Maybe<Scalars['Int']>;
+  studentUsername?: Maybe<Scalars['String']>;
+  studentName?: Maybe<Scalars['String']>;
+  mentorId?: Maybe<Scalars['Int']>;
+  lessonId?: Maybe<Scalars['Int']>;
+  lessonTitle?: Maybe<Scalars['String']>;
+  lessonDifficulty?: Maybe<Scalars['Int']>;
+  comment?: Maybe<Scalars['String']>;
+};
 
 export enum CacheControlScope {
   Public = 'PUBLIC',
   Private = 'PRIVATE'
 }
 
-export type Challenge = {
-  __typename?: 'Challenge'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-}
-
-export type Lesson = {
-  __typename?: 'Lesson'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  docUrl?: Maybe<Scalars['String']>
-  githubUrl?: Maybe<Scalars['String']>
-  videoUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  title?: Maybe<Scalars['String']>
-  challenges?: Maybe<Array<Maybe<Challenge>>>
-  users?: Maybe<Array<Maybe<User>>>
-  currentUser?: Maybe<User>
-  chatUrl?: Maybe<Scalars['String']>
-}
-
-export type Mutation = {
-  __typename?: 'Mutation'
-  setStar: SuccessResponse
-  login?: Maybe<AuthResponse>
-  logout?: Maybe<AuthResponse>
-  reqPwReset?: Maybe<TokenResponse>
-  changePw?: Maybe<AuthResponse>
-  changeAdminRights?: Maybe<SuccessResponse>
-  signup?: Maybe<AuthResponse>
-  addAlert?: Maybe<Array<Maybe<Alert>>>
-  removeAlert?: Maybe<SuccessResponse>
-  createSubmission?: Maybe<Submission>
-  acceptSubmission?: Maybe<Submission>
-  rejectSubmission?: Maybe<Submission>
-  createLesson?: Maybe<Array<Maybe<Lesson>>>
-  updateLesson?: Maybe<Array<Maybe<Lesson>>>
-  createChallenge?: Maybe<Array<Maybe<Lesson>>>
-  updateChallenge?: Maybe<Array<Maybe<Lesson>>>
-}
-
-export type MutationSetStarArgs = {
-  mentorId: Scalars['Int']
-  lessonId: Scalars['Int']
-  comment?: Maybe<Scalars['String']>
-}
-
-export type MutationLoginArgs = {
-  username: Scalars['String']
-  password: Scalars['String']
-}
-
-export type MutationReqPwResetArgs = {
-  userOrEmail: Scalars['String']
-}
-
-export type MutationChangePwArgs = {
-  token: Scalars['String']
-  password: Scalars['String']
-}
-
-export type MutationChangeAdminRightsArgs = {
-  id: Scalars['Int']
-  status: Scalars['String']
-}
-
-export type MutationSignupArgs = {
-  firstName: Scalars['String']
-  lastName: Scalars['String']
-  email: Scalars['String']
-  username: Scalars['String']
-  password?: Maybe<Scalars['String']>
-}
-
-export type MutationAddAlertArgs = {
-  text: Scalars['String']
-  type: Scalars['String']
-  url?: Maybe<Scalars['String']>
-  urlCaption?: Maybe<Scalars['String']>
-}
-
-export type MutationRemoveAlertArgs = {
-  id: Scalars['String']
-}
-
-export type MutationCreateSubmissionArgs = {
-  lessonId: Scalars['String']
-  challengeId: Scalars['String']
-  cliToken: Scalars['String']
-  diff: Scalars['String']
-}
-
-export type MutationAcceptSubmissionArgs = {
-  id: Scalars['String']
-  comment: Scalars['String']
-}
-
-export type MutationRejectSubmissionArgs = {
-  id: Scalars['String']
-  comment: Scalars['String']
-}
-
-export type MutationCreateLessonArgs = {
-  description: Scalars['String']
-  docUrl?: Maybe<Scalars['String']>
-  githubUrl?: Maybe<Scalars['String']>
-  videoUrl?: Maybe<Scalars['String']>
-  title: Scalars['String']
-  chatUrl?: Maybe<Scalars['String']>
-  order: Scalars['Int']
-}
-
-export type MutationUpdateLessonArgs = {
-  id: Scalars['Int']
-  description?: Maybe<Scalars['String']>
-  docUrl?: Maybe<Scalars['String']>
-  githubUrl?: Maybe<Scalars['String']>
-  videoUrl?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-}
-
-export type MutationCreateChallengeArgs = {
-  lessonId: Scalars['Int']
-  order: Scalars['Int']
-  description: Scalars['String']
-  title: Scalars['String']
-}
-
-export type MutationUpdateChallengeArgs = {
-  lessonId: Scalars['Int']
-  id: Scalars['Int']
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-}
-
-export type Query = {
-  __typename?: 'Query'
-  lessons: Array<Lesson>
-  session?: Maybe<Session>
-  allUsers?: Maybe<Array<Maybe<User>>>
-  getLessonMentors?: Maybe<Array<Maybe<User>>>
-  userInfo?: Maybe<Session>
-  isTokenValid: Scalars['Boolean']
-  submissions?: Maybe<Array<Maybe<Submission>>>
-  alerts: Array<Alert>
-}
-
-export type QueryGetLessonMentorsArgs = {
-  lessonId: Scalars['String']
-}
-
-export type QueryUserInfoArgs = {
-  username: Scalars['String']
-}
-
-export type QueryIsTokenValidArgs = {
-  cliToken: Scalars['String']
-}
-
-export type QuerySubmissionsArgs = {
-  lessonId: Scalars['String']
-}
-
-export type Session = {
-  __typename?: 'Session'
-  user?: Maybe<User>
-  submissions?: Maybe<Array<Maybe<Submission>>>
-  lessonStatus: Array<UserLesson>
-}
-
-export type Star = {
-  __typename?: 'Star'
-  id: Scalars['String']
-  studentId?: Maybe<Scalars['Int']>
-  mentorId?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['Int']>
-  comment?: Maybe<Scalars['String']>
-}
-
-export type Submission = {
-  __typename?: 'Submission'
-  id?: Maybe<Scalars['String']>
-  status?: Maybe<Scalars['String']>
-  mrUrl?: Maybe<Scalars['String']>
-  diff?: Maybe<Scalars['String']>
-  viewCount?: Maybe<Scalars['Int']>
-  comment?: Maybe<Scalars['String']>
-  userId?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['String']>
-  challengeId?: Maybe<Scalars['String']>
-  challenge?: Maybe<Challenge>
-  reviewer?: Maybe<User>
-  user?: Maybe<User>
-  reviewerId?: Maybe<Scalars['String']>
-  createdAt?: Maybe<Scalars['String']>
-  updatedAt?: Maybe<Scalars['String']>
-}
-
-export type SuccessResponse = {
-  __typename?: 'SuccessResponse'
-  success?: Maybe<Scalars['Boolean']>
-}
-
-export type TokenResponse = {
-  __typename?: 'TokenResponse'
-  success?: Maybe<Scalars['Boolean']>
-  token?: Maybe<Scalars['String']>
-}
-
-export type User = {
-  __typename?: 'User'
-  id?: Maybe<Scalars['String']>
-  username?: Maybe<Scalars['String']>
-  userLesson?: Maybe<UserLesson>
-  email?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  isAdmin?: Maybe<Scalars['String']>
-  cliToken?: Maybe<Scalars['String']>
-}
-
-export type UserLesson = {
-  __typename?: 'UserLesson'
-  id?: Maybe<Scalars['String']>
-  userId?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
-  isPassed?: Maybe<Scalars['String']>
-  isTeaching?: Maybe<Scalars['String']>
-  isEnrolled?: Maybe<Scalars['String']>
-  starsReceived?: Maybe<Array<Maybe<Star>>>
-  starGiven?: Maybe<Scalars['String']>
-}
 
 export type AcceptSubmissionMutationVariables = Exact<{
-  submissionId: Scalars['String']
-  comment: Scalars['String']
-}>
+  submissionId: Scalars['String'];
+  comment: Scalars['String'];
+}>;
 
-export type AcceptSubmissionMutation = { __typename?: 'Mutation' } & {
-  acceptSubmission?: Maybe<
-    { __typename?: 'Submission' } & Pick<
-      Submission,
-      'id' | 'comment' | 'status'
-    >
-  >
-}
+
+export type AcceptSubmissionMutation = (
+  { __typename?: 'Mutation' }
+  & { acceptSubmission?: Maybe<(
+    { __typename?: 'Submission' }
+    & Pick<Submission, 'id' | 'comment' | 'status'>
+  )> }
+);
 
 export type AddAlertMutationVariables = Exact<{
-  text: Scalars['String']
-  type: Scalars['String']
-  url?: Maybe<Scalars['String']>
-  urlCaption?: Maybe<Scalars['String']>
-}>
+  text: Scalars['String'];
+  type: Scalars['String'];
+  url?: Maybe<Scalars['String']>;
+  urlCaption?: Maybe<Scalars['String']>;
+}>;
 
-export type AddAlertMutation = { __typename?: 'Mutation' } & {
-  addAlert?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Alert' } & Pick<
-          Alert,
-          'id' | 'text' | 'type' | 'url' | 'urlCaption'
-        >
-      >
-    >
-  >
-}
 
-export type UsersQueryVariables = Exact<{ [key: string]: never }>
+export type AddAlertMutation = (
+  { __typename?: 'Mutation' }
+  & { addAlert?: Maybe<Array<Maybe<(
+    { __typename?: 'Alert' }
+    & Pick<Alert, 'id' | 'text' | 'type' | 'url' | 'urlCaption'>
+  )>>> }
+);
 
-export type UsersQuery = { __typename?: 'Query' } & {
-  allUsers?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'User' } & Pick<
-          User,
-          'id' | 'username' | 'name' | 'isAdmin' | 'email' | 'cliToken'
-        >
-      >
-    >
-  >
-}
+export type UsersQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type UsersQuery = (
+  { __typename?: 'Query' }
+  & { allUsers?: Maybe<Array<Maybe<(
+    { __typename?: 'User' }
+    & Pick<User, 'id' | 'username' | 'name' | 'isAdmin' | 'email' | 'cliToken'>
+  )>>> }
+);
 
 export type ChangeAdminRightsMutationVariables = Exact<{
-  id: Scalars['Int']
-  status: Scalars['String']
-}>
+  id: Scalars['Int'];
+  status: Scalars['String'];
+}>;
 
-export type ChangeAdminRightsMutation = { __typename?: 'Mutation' } & {
-  changeAdminRights?: Maybe<
-    { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
-  >
-}
+
+export type ChangeAdminRightsMutation = (
+  { __typename?: 'Mutation' }
+  & { changeAdminRights?: Maybe<(
+    { __typename?: 'SuccessResponse' }
+    & Pick<SuccessResponse, 'success'>
+  )> }
+);
 
 export type CreateChallengeMutationVariables = Exact<{
-  lessonId: Scalars['Int']
-  order: Scalars['Int']
-  description: Scalars['String']
-  title: Scalars['String']
-}>
+  lessonId: Scalars['Int'];
+  order: Scalars['Int'];
+  description: Scalars['String'];
+  title: Scalars['String'];
+}>;
 
-export type CreateChallengeMutation = { __typename?: 'Mutation' } & {
-  createChallenge?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
-    >
-  >
-}
+
+export type CreateChallengeMutation = (
+  { __typename?: 'Mutation' }
+  & { createChallenge?: Maybe<Array<Maybe<(
+    { __typename?: 'Lesson' }
+    & Pick<Lesson, 'id' | 'docUrl' | 'githubUrl' | 'videoUrl' | 'chatUrl' | 'order' | 'description' | 'title'>
+    & { challenges?: Maybe<Array<Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'id' | 'description' | 'lessonId' | 'title' | 'order'>
+    )>>> }
+  )>>> }
+);
 
 export type CreateLessonMutationVariables = Exact<{
-  docUrl?: Maybe<Scalars['String']>
-  githubUrl?: Maybe<Scalars['String']>
-  videoUrl?: Maybe<Scalars['String']>
-  chatUrl?: Maybe<Scalars['String']>
-  order: Scalars['Int']
-  description: Scalars['String']
-  title: Scalars['String']
-}>
+  docUrl?: Maybe<Scalars['String']>;
+  githubUrl?: Maybe<Scalars['String']>;
+  videoUrl?: Maybe<Scalars['String']>;
+  chatUrl?: Maybe<Scalars['String']>;
+  order: Scalars['Int'];
+  description: Scalars['String'];
+  title: Scalars['String'];
+}>;
 
-export type CreateLessonMutation = { __typename?: 'Mutation' } & {
-  createLesson?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
-    >
-  >
-}
 
-export type GetAppQueryVariables = Exact<{ [key: string]: never }>
+export type CreateLessonMutation = (
+  { __typename?: 'Mutation' }
+  & { createLesson?: Maybe<Array<Maybe<(
+    { __typename?: 'Lesson' }
+    & Pick<Lesson, 'id' | 'docUrl' | 'githubUrl' | 'videoUrl' | 'chatUrl' | 'order' | 'description' | 'title'>
+    & { challenges?: Maybe<Array<Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'id' | 'description' | 'lessonId' | 'title' | 'order'>
+    )>>> }
+  )>>> }
+);
 
-export type GetAppQuery = { __typename?: 'Query' } & {
-  lessons: Array<
-    { __typename?: 'Lesson' } & Pick<
-      Lesson,
-      | 'id'
-      | 'title'
-      | 'description'
-      | 'docUrl'
-      | 'githubUrl'
-      | 'videoUrl'
-      | 'order'
-      | 'chatUrl'
-    > & {
-        challenges?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'title' | 'description' | 'order'
-              >
-            >
-          >
-        >
-      }
-  >
-  session?: Maybe<
-    { __typename?: 'Session' } & {
-      user?: Maybe<
-        { __typename?: 'User' } & Pick<
-          User,
-          'id' | 'username' | 'name' | 'isAdmin'
-        >
-      >
-      submissions?: Maybe<
-        Array<
-          Maybe<
-            { __typename?: 'Submission' } & Pick<
-              Submission,
-              | 'id'
-              | 'status'
-              | 'mrUrl'
-              | 'diff'
-              | 'viewCount'
-              | 'comment'
-              | 'order'
-              | 'challengeId'
-              | 'lessonId'
-              | 'createdAt'
-              | 'updatedAt'
-            > & {
-                reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-                >
-              }
-          >
-        >
-      >
-      lessonStatus: Array<
-        { __typename?: 'UserLesson' } & Pick<
-          UserLesson,
-          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
-        >
-      >
-    }
-  >
-  alerts: Array<
-    { __typename?: 'Alert' } & Pick<
-      Alert,
-      'id' | 'text' | 'type' | 'url' | 'urlCaption'
-    >
-  >
-}
+export type GetAppQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAppQuery = (
+  { __typename?: 'Query' }
+  & { lessons: Array<(
+    { __typename?: 'Lesson' }
+    & Pick<Lesson, 'id' | 'title' | 'description' | 'docUrl' | 'githubUrl' | 'videoUrl' | 'order' | 'chatUrl'>
+    & { challenges?: Maybe<Array<Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'id' | 'title' | 'description' | 'order'>
+    )>>> }
+  )>, session?: Maybe<(
+    { __typename?: 'Session' }
+    & { user?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'username' | 'name' | 'isAdmin'>
+    )>, submissions?: Maybe<Array<Maybe<(
+      { __typename?: 'Submission' }
+      & Pick<Submission, 'id' | 'status' | 'mrUrl' | 'diff' | 'viewCount' | 'comment' | 'order' | 'challengeId' | 'lessonId' | 'createdAt' | 'updatedAt'>
+      & { reviewer?: Maybe<(
+        { __typename?: 'User' }
+        & Pick<User, 'id' | 'username'>
+      )> }
+    )>>>, lessonStatus: Array<(
+      { __typename?: 'UserLesson' }
+      & Pick<UserLesson, 'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'>
+    )> }
+  )>, alerts: Array<(
+    { __typename?: 'Alert' }
+    & Pick<Alert, 'id' | 'text' | 'type' | 'url' | 'urlCaption'>
+  )> }
+);
 
 export type LessonMentorsQueryVariables = Exact<{
-  lessonId: Scalars['String']
-}>
+  lessonId: Scalars['String'];
+}>;
 
-export type LessonMentorsQuery = { __typename?: 'Query' } & {
-  getLessonMentors?: Maybe<
-    Array<
-      Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name' | 'id'>>
-    >
-  >
-}
+
+export type LessonMentorsQuery = (
+  { __typename?: 'Query' }
+  & { getLessonMentors?: Maybe<Array<Maybe<(
+    { __typename?: 'User' }
+    & Pick<User, 'username' | 'name' | 'id'>
+  )>>> }
+);
 
 export type SubmissionsQueryVariables = Exact<{
-  lessonId: Scalars['String']
-}>
+  lessonId: Scalars['String'];
+}>;
 
-export type SubmissionsQuery = { __typename?: 'Query' } & {
-  submissions?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Submission' } & Pick<
-          Submission,
-          | 'id'
-          | 'status'
-          | 'diff'
-          | 'comment'
-          | 'challengeId'
-          | 'lessonId'
-          | 'createdAt'
-          | 'updatedAt'
-        > & {
-            challenge?: Maybe<
-              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-            >
-            user?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-            >
-          }
-      >
-    >
-  >
-}
+
+export type SubmissionsQuery = (
+  { __typename?: 'Query' }
+  & { submissions?: Maybe<Array<Maybe<(
+    { __typename?: 'Submission' }
+    & Pick<Submission, 'id' | 'status' | 'diff' | 'comment' | 'challengeId' | 'lessonId' | 'createdAt' | 'updatedAt'>
+    & { challenge?: Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'title'>
+    )>, user?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'username'>
+    )> }
+  )>>> }
+);
 
 export type LoginMutationVariables = Exact<{
-  username: Scalars['String']
-  password: Scalars['String']
-}>
+  username: Scalars['String'];
+  password: Scalars['String'];
+}>;
 
-export type LoginMutation = { __typename?: 'Mutation' } & {
-  login?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<
-      AuthResponse,
-      'success' | 'username' | 'cliToken' | 'error'
-    >
-  >
-}
 
-export type LogoutMutationVariables = Exact<{ [key: string]: never }>
+export type LoginMutation = (
+  { __typename?: 'Mutation' }
+  & { login?: Maybe<(
+    { __typename?: 'AuthResponse' }
+    & Pick<AuthResponse, 'success' | 'username' | 'cliToken' | 'error'>
+  )> }
+);
 
-export type LogoutMutation = { __typename?: 'Mutation' } & {
-  logout?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<
-      AuthResponse,
-      'success' | 'username' | 'error'
-    >
-  >
-}
+export type LogoutMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LogoutMutation = (
+  { __typename?: 'Mutation' }
+  & { logout?: Maybe<(
+    { __typename?: 'AuthResponse' }
+    & Pick<AuthResponse, 'success' | 'username' | 'error'>
+  )> }
+);
 
 export type RejectSubmissionMutationVariables = Exact<{
-  submissionId: Scalars['String']
-  comment: Scalars['String']
-}>
+  submissionId: Scalars['String'];
+  comment: Scalars['String'];
+}>;
 
-export type RejectSubmissionMutation = { __typename?: 'Mutation' } & {
-  rejectSubmission?: Maybe<
-    { __typename?: 'Submission' } & Pick<
-      Submission,
-      'id' | 'comment' | 'status'
-    >
-  >
-}
+
+export type RejectSubmissionMutation = (
+  { __typename?: 'Mutation' }
+  & { rejectSubmission?: Maybe<(
+    { __typename?: 'Submission' }
+    & Pick<Submission, 'id' | 'comment' | 'status'>
+  )> }
+);
 
 export type RemoveAlertMutationVariables = Exact<{
-  id: Scalars['String']
-}>
+  id: Scalars['String'];
+}>;
 
-export type RemoveAlertMutation = { __typename?: 'Mutation' } & {
-  removeAlert?: Maybe<
-    { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
-  >
-}
+
+export type RemoveAlertMutation = (
+  { __typename?: 'Mutation' }
+  & { removeAlert?: Maybe<(
+    { __typename?: 'SuccessResponse' }
+    & Pick<SuccessResponse, 'success'>
+  )> }
+);
 
 export type ReqPwResetMutationVariables = Exact<{
-  userOrEmail: Scalars['String']
-}>
+  userOrEmail: Scalars['String'];
+}>;
 
-export type ReqPwResetMutation = { __typename?: 'Mutation' } & {
-  reqPwReset?: Maybe<
-    { __typename?: 'TokenResponse' } & Pick<TokenResponse, 'success' | 'token'>
-  >
-}
+
+export type ReqPwResetMutation = (
+  { __typename?: 'Mutation' }
+  & { reqPwReset?: Maybe<(
+    { __typename?: 'TokenResponse' }
+    & Pick<TokenResponse, 'success' | 'token'>
+  )> }
+);
 
 export type SetStarMutationVariables = Exact<{
-  mentorId: Scalars['Int']
-  lessonId: Scalars['Int']
-  comment?: Maybe<Scalars['String']>
-}>
+  mentorId: Scalars['Int'];
+  lessonId: Scalars['Int'];
+  comment?: Maybe<Scalars['String']>;
+}>;
 
-export type SetStarMutation = { __typename?: 'Mutation' } & {
-  setStar: { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
-}
+
+export type SetStarMutation = (
+  { __typename?: 'Mutation' }
+  & { setStar: (
+    { __typename?: 'SuccessResponse' }
+    & Pick<SuccessResponse, 'success'>
+  ) }
+);
 
 export type SignupMutationVariables = Exact<{
-  firstName: Scalars['String']
-  lastName: Scalars['String']
-  email: Scalars['String']
-  username: Scalars['String']
-}>
+  firstName: Scalars['String'];
+  lastName: Scalars['String'];
+  email: Scalars['String'];
+  username: Scalars['String'];
+}>;
 
-export type SignupMutation = { __typename?: 'Mutation' } & {
-  signup?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<
-      AuthResponse,
-      'success' | 'username' | 'error'
-    >
-  >
-}
+
+export type SignupMutation = (
+  { __typename?: 'Mutation' }
+  & { signup?: Maybe<(
+    { __typename?: 'AuthResponse' }
+    & Pick<AuthResponse, 'success' | 'username' | 'error'>
+  )> }
+);
 
 export type UpdateChallengeMutationVariables = Exact<{
-  lessonId: Scalars['Int']
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  id: Scalars['Int']
-}>
+  lessonId: Scalars['Int'];
+  order?: Maybe<Scalars['Int']>;
+  description?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  id: Scalars['Int'];
+}>;
 
-export type UpdateChallengeMutation = { __typename?: 'Mutation' } & {
-  updateChallenge?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
-    >
-  >
-}
+
+export type UpdateChallengeMutation = (
+  { __typename?: 'Mutation' }
+  & { updateChallenge?: Maybe<Array<Maybe<(
+    { __typename?: 'Lesson' }
+    & Pick<Lesson, 'id' | 'docUrl' | 'githubUrl' | 'videoUrl' | 'chatUrl' | 'order' | 'description' | 'title'>
+    & { challenges?: Maybe<Array<Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'id' | 'description' | 'lessonId' | 'title' | 'order'>
+    )>>> }
+  )>>> }
+);
 
 export type UpdateLessonMutationVariables = Exact<{
-  id: Scalars['Int']
-  docUrl?: Maybe<Scalars['String']>
-  githubUrl?: Maybe<Scalars['String']>
-  videoUrl?: Maybe<Scalars['String']>
-  chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-}>
+  id: Scalars['Int'];
+  docUrl?: Maybe<Scalars['String']>;
+  githubUrl?: Maybe<Scalars['String']>;
+  videoUrl?: Maybe<Scalars['String']>;
+  chatUrl?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
+  description?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+}>;
 
-export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
-  updateLesson?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
-    >
-  >
-}
+
+export type UpdateLessonMutation = (
+  { __typename?: 'Mutation' }
+  & { updateLesson?: Maybe<Array<Maybe<(
+    { __typename?: 'Lesson' }
+    & Pick<Lesson, 'id' | 'docUrl' | 'githubUrl' | 'videoUrl' | 'chatUrl' | 'order' | 'description' | 'title'>
+    & { challenges?: Maybe<Array<Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'id' | 'description' | 'lessonId' | 'title' | 'order'>
+    )>>> }
+  )>>> }
+);
 
 export type ChangePwMutationVariables = Exact<{
-  token: Scalars['String']
-  password: Scalars['String']
-}>
+  token: Scalars['String'];
+  password: Scalars['String'];
+}>;
 
-export type ChangePwMutation = { __typename?: 'Mutation' } & {
-  changePw?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<AuthResponse, 'success'>
-  >
-}
+
+export type ChangePwMutation = (
+  { __typename?: 'Mutation' }
+  & { changePw?: Maybe<(
+    { __typename?: 'AuthResponse' }
+    & Pick<AuthResponse, 'success'>
+  )> }
+);
 
 export type UserInfoQueryVariables = Exact<{
-  username: Scalars['String']
-}>
+  username: Scalars['String'];
+}>;
 
-export type UserInfoQuery = { __typename?: 'Query' } & {
-  lessons: Array<
-    { __typename?: 'Lesson' } & Pick<
-      Lesson,
-      | 'id'
-      | 'title'
-      | 'description'
-      | 'docUrl'
-      | 'githubUrl'
-      | 'videoUrl'
-      | 'order'
-      | 'chatUrl'
-    > & {
-        challenges?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'title' | 'description' | 'order'
-              >
-            >
-          >
-        >
-      }
-  >
-  userInfo?: Maybe<
-    { __typename?: 'Session' } & {
-      user?: Maybe<
-        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
-      >
-      submissions?: Maybe<
-        Array<
-          Maybe<
-            { __typename?: 'Submission' } & Pick<
-              Submission,
-              | 'id'
-              | 'status'
-              | 'mrUrl'
-              | 'diff'
-              | 'viewCount'
-              | 'comment'
-              | 'order'
-              | 'challengeId'
-              | 'lessonId'
-              | 'createdAt'
-              | 'updatedAt'
-            > & {
-                reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-                >
-              }
-          >
-        >
-      >
-      lessonStatus: Array<
-        { __typename?: 'UserLesson' } & Pick<
-          UserLesson,
-          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
-        > & {
-            starsReceived?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Star' } & Pick<Star, 'lessonId' | 'comment'>
-                >
-              >
-            >
-          }
-      >
-    }
-  >
-}
 
-export type ResolverTypeWrapper<T> = Promise<T> | T
+export type UserInfoQuery = (
+  { __typename?: 'Query' }
+  & { lessons: Array<(
+    { __typename?: 'Lesson' }
+    & Pick<Lesson, 'id' | 'title' | 'description' | 'docUrl' | 'githubUrl' | 'videoUrl' | 'order' | 'chatUrl'>
+    & { challenges?: Maybe<Array<Maybe<(
+      { __typename?: 'Challenge' }
+      & Pick<Challenge, 'id' | 'title' | 'description' | 'order'>
+    )>>> }
+  )>, userInfo?: Maybe<(
+    { __typename?: 'Session' }
+    & { user?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'username' | 'name'>
+    )>, submissions?: Maybe<Array<Maybe<(
+      { __typename?: 'Submission' }
+      & Pick<Submission, 'id' | 'status' | 'mrUrl' | 'diff' | 'viewCount' | 'comment' | 'order' | 'challengeId' | 'lessonId' | 'createdAt' | 'updatedAt'>
+      & { reviewer?: Maybe<(
+        { __typename?: 'User' }
+        & Pick<User, 'id' | 'username'>
+      )> }
+    )>>>, lessonStatus: Array<(
+      { __typename?: 'UserLesson' }
+      & Pick<UserLesson, 'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'>
+      & { starsReceived?: Maybe<Array<Maybe<(
+        { __typename?: 'Star' }
+        & Pick<Star, 'lessonId' | 'mentorId' | 'studentId' | 'studentUsername' | 'studentName' | 'lessonTitle' | 'lessonDifficulty' | 'comment'>
+      )>>> }
+    )> }
+  )> }
+);
+
+
+
+export type ResolverTypeWrapper<T> = Promise<T> | T;
+
 
 export type LegacyStitchingResolver<TResult, TParent, TContext, TArgs> = {
-  fragment: string
-  resolve: ResolverFn<TResult, TParent, TContext, TArgs>
-}
+  fragment: string;
+  resolve: ResolverFn<TResult, TParent, TContext, TArgs>;
+};
 
 export type NewStitchingResolver<TResult, TParent, TContext, TArgs> = {
-  selectionSet: string
-  resolve: ResolverFn<TResult, TParent, TContext, TArgs>
-}
-export type StitchingResolver<TResult, TParent, TContext, TArgs> =
-  | LegacyStitchingResolver<TResult, TParent, TContext, TArgs>
-  | NewStitchingResolver<TResult, TParent, TContext, TArgs>
+  selectionSet: string;
+  resolve: ResolverFn<TResult, TParent, TContext, TArgs>;
+};
+export type StitchingResolver<TResult, TParent, TContext, TArgs> = LegacyStitchingResolver<TResult, TParent, TContext, TArgs> | NewStitchingResolver<TResult, TParent, TContext, TArgs>;
 export type Resolver<TResult, TParent = {}, TContext = {}, TArgs = {}> =
   | ResolverFn<TResult, TParent, TContext, TArgs>
-  | StitchingResolver<TResult, TParent, TContext, TArgs>
+  | StitchingResolver<TResult, TParent, TContext, TArgs>;
 
 export type ResolverFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
   info: GraphQLResolveInfo
-) => Promise<TResult> | TResult
+) => Promise<TResult> | TResult;
 
 export type SubscriptionSubscribeFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
   info: GraphQLResolveInfo
-) => AsyncIterator<TResult> | Promise<AsyncIterator<TResult>>
+) => AsyncIterator<TResult> | Promise<AsyncIterator<TResult>>;
 
 export type SubscriptionResolveFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
   args: TArgs,
   context: TContext,
   info: GraphQLResolveInfo
-) => TResult | Promise<TResult>
+) => TResult | Promise<TResult>;
 
-export interface SubscriptionSubscriberObject<
-  TResult,
-  TKey extends string,
-  TParent,
-  TContext,
-  TArgs
-> {
-  subscribe: SubscriptionSubscribeFn<
-    { [key in TKey]: TResult },
-    TParent,
-    TContext,
-    TArgs
-  >
-  resolve?: SubscriptionResolveFn<
-    TResult,
-    { [key in TKey]: TResult },
-    TContext,
-    TArgs
-  >
+export interface SubscriptionSubscriberObject<TResult, TKey extends string, TParent, TContext, TArgs> {
+  subscribe: SubscriptionSubscribeFn<{ [key in TKey]: TResult }, TParent, TContext, TArgs>;
+  resolve?: SubscriptionResolveFn<TResult, { [key in TKey]: TResult }, TContext, TArgs>;
 }
 
 export interface SubscriptionResolverObject<TResult, TParent, TContext, TArgs> {
-  subscribe: SubscriptionSubscribeFn<any, TParent, TContext, TArgs>
-  resolve: SubscriptionResolveFn<TResult, any, TContext, TArgs>
+  subscribe: SubscriptionSubscribeFn<any, TParent, TContext, TArgs>;
+  resolve: SubscriptionResolveFn<TResult, any, TContext, TArgs>;
 }
 
-export type SubscriptionObject<
-  TResult,
-  TKey extends string,
-  TParent,
-  TContext,
-  TArgs
-> =
+export type SubscriptionObject<TResult, TKey extends string, TParent, TContext, TArgs> =
   | SubscriptionSubscriberObject<TResult, TKey, TParent, TContext, TArgs>
-  | SubscriptionResolverObject<TResult, TParent, TContext, TArgs>
+  | SubscriptionResolverObject<TResult, TParent, TContext, TArgs>;
 
-export type SubscriptionResolver<
-  TResult,
-  TKey extends string,
-  TParent = {},
-  TContext = {},
-  TArgs = {}
-> =
-  | ((
-      ...args: any[]
-    ) => SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>)
-  | SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>
+export type SubscriptionResolver<TResult, TKey extends string, TParent = {}, TContext = {}, TArgs = {}> =
+  | ((...args: any[]) => SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>)
+  | SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>;
 
 export type TypeResolveFn<TTypes, TParent = {}, TContext = {}> = (
   parent: TParent,
   context: TContext,
   info: GraphQLResolveInfo
-) => Maybe<TTypes> | Promise<Maybe<TTypes>>
+) => Maybe<TTypes> | Promise<Maybe<TTypes>>;
 
-export type IsTypeOfResolverFn<T = {}> = (
-  obj: T,
-  info: GraphQLResolveInfo
-) => boolean | Promise<boolean>
+export type IsTypeOfResolverFn<T = {}, TContext = {}> = (obj: T, context: TContext, info: GraphQLResolveInfo) => boolean | Promise<boolean>;
 
-export type NextResolverFn<T> = () => Promise<T>
+export type NextResolverFn<T> = () => Promise<T>;
 
-export type DirectiveResolverFn<
-  TResult = {},
-  TParent = {},
-  TContext = {},
-  TArgs = {}
-> = (
+export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs = {}> = (
   next: NextResolverFn<TResult>,
   parent: TParent,
   args: TArgs,
   context: TContext,
   info: GraphQLResolveInfo
-) => TResult | Promise<TResult>
+) => TResult | Promise<TResult>;
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Query: ResolverTypeWrapper<{}>
-  Lesson: ResolverTypeWrapper<Lesson>
-  String: ResolverTypeWrapper<Scalars['String']>
-  Int: ResolverTypeWrapper<Scalars['Int']>
-  Challenge: ResolverTypeWrapper<Challenge>
-  User: ResolverTypeWrapper<User>
-  UserLesson: ResolverTypeWrapper<UserLesson>
-  Star: ResolverTypeWrapper<Star>
-  Session: ResolverTypeWrapper<Session>
-  Submission: ResolverTypeWrapper<Submission>
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>
-  Alert: ResolverTypeWrapper<Alert>
-  Mutation: ResolverTypeWrapper<{}>
-  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
-  AuthResponse: ResolverTypeWrapper<AuthResponse>
-  TokenResponse: ResolverTypeWrapper<TokenResponse>
-  CacheControlScope: CacheControlScope
-  Upload: ResolverTypeWrapper<Scalars['Upload']>
-}
+  Query: ResolverTypeWrapper<{}>;
+  String: ResolverTypeWrapper<Scalars['String']>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  TokenResponse: ResolverTypeWrapper<TokenResponse>;
+  Mutation: ResolverTypeWrapper<{}>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
+  AuthResponse: ResolverTypeWrapper<AuthResponse>;
+  SuccessResponse: ResolverTypeWrapper<SuccessResponse>;
+  Submission: ResolverTypeWrapper<Submission>;
+  User: ResolverTypeWrapper<User>;
+  Session: ResolverTypeWrapper<Session>;
+  UserLesson: ResolverTypeWrapper<UserLesson>;
+  Lesson: ResolverTypeWrapper<Lesson>;
+  Challenge: ResolverTypeWrapper<Challenge>;
+  Alert: ResolverTypeWrapper<Alert>;
+  Star: ResolverTypeWrapper<Star>;
+  CacheControlScope: CacheControlScope;
+  Upload: ResolverTypeWrapper<Scalars['Upload']>;
+};
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Query: {}
-  Lesson: Lesson
-  String: Scalars['String']
-  Int: Scalars['Int']
-  Challenge: Challenge
-  User: User
-  UserLesson: UserLesson
-  Star: Star
-  Session: Session
-  Submission: Submission
-  Boolean: Scalars['Boolean']
-  Alert: Alert
-  Mutation: {}
-  SuccessResponse: SuccessResponse
-  AuthResponse: AuthResponse
-  TokenResponse: TokenResponse
-  Upload: Scalars['Upload']
-}
+  Query: {};
+  String: Scalars['String'];
+  Boolean: Scalars['Boolean'];
+  TokenResponse: TokenResponse;
+  Mutation: {};
+  Int: Scalars['Int'];
+  AuthResponse: AuthResponse;
+  SuccessResponse: SuccessResponse;
+  Submission: Submission;
+  User: User;
+  Session: Session;
+  UserLesson: UserLesson;
+  Lesson: Lesson;
+  Challenge: Challenge;
+  Alert: Alert;
+  Star: Star;
+  Upload: Scalars['Upload'];
+};
 
-export type AlertResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
-> = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  urlCaption?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type CacheControlDirectiveArgs = {   maxAge?: Maybe<Scalars['Int']>;
+  scope?: Maybe<CacheControlScope>; };
 
-export type AuthResponseResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']
-> = {
-  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
-  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  error?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = CacheControlDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
-export type ChallengeResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
-> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
+  lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>;
+  session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>;
+  allUsers?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
+  getLessonMentors?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType, RequireFields<QueryGetLessonMentorsArgs, 'lessonId'>>;
+  userInfo?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType, RequireFields<QueryUserInfoArgs, 'username'>>;
+  isTokenValid?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType, RequireFields<QueryIsTokenValidArgs, 'cliToken'>>;
+  submissions?: Resolver<Maybe<Array<Maybe<ResolversTypes['Submission']>>>, ParentType, ContextType, RequireFields<QuerySubmissionsArgs, 'lessonId'>>;
+  alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>;
+};
 
-export type LessonResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
-> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  challenges?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
-    ParentType,
-    ContextType
-  >
-  users?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['User']>>>,
-    ParentType,
-    ContextType
-  >
-  currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  chatUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type TokenResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']> = {
+  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type MutationResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
-> = {
-  setStar?: Resolver<
-    ResolversTypes['SuccessResponse'],
-    ParentType,
-    ContextType,
-    RequireFields<MutationSetStarArgs, 'mentorId' | 'lessonId'>
-  >
-  login?: Resolver<
-    Maybe<ResolversTypes['AuthResponse']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationLoginArgs, 'username' | 'password'>
-  >
-  logout?: Resolver<
-    Maybe<ResolversTypes['AuthResponse']>,
-    ParentType,
-    ContextType
-  >
-  reqPwReset?: Resolver<
-    Maybe<ResolversTypes['TokenResponse']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationReqPwResetArgs, 'userOrEmail'>
-  >
-  changePw?: Resolver<
-    Maybe<ResolversTypes['AuthResponse']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationChangePwArgs, 'token' | 'password'>
-  >
-  changeAdminRights?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationChangeAdminRightsArgs, 'id' | 'status'>
-  >
-  signup?: Resolver<
-    Maybe<ResolversTypes['AuthResponse']>,
-    ParentType,
-    ContextType,
-    RequireFields<
-      MutationSignupArgs,
-      'firstName' | 'lastName' | 'email' | 'username'
-    >
-  >
-  addAlert?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Alert']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationAddAlertArgs, 'text' | 'type'>
-  >
-  removeAlert?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationRemoveAlertArgs, 'id'>
-  >
-  createSubmission?: Resolver<
-    Maybe<ResolversTypes['Submission']>,
-    ParentType,
-    ContextType,
-    RequireFields<
-      MutationCreateSubmissionArgs,
-      'lessonId' | 'challengeId' | 'cliToken' | 'diff'
-    >
-  >
-  acceptSubmission?: Resolver<
-    Maybe<ResolversTypes['Submission']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationAcceptSubmissionArgs, 'id' | 'comment'>
-  >
-  rejectSubmission?: Resolver<
-    Maybe<ResolversTypes['Submission']>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>
-  >
-  createLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
-  >
-  updateLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationUpdateLessonArgs, 'id'>
-  >
-  createChallenge?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<
-      MutationCreateChallengeArgs,
-      'lessonId' | 'order' | 'description' | 'title'
-    >
-  >
-  updateChallenge?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id'>
-  >
-}
+export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  setStar?: Resolver<ResolversTypes['SuccessResponse'], ParentType, ContextType, RequireFields<MutationSetStarArgs, 'mentorId' | 'lessonId'>>;
+  login?: Resolver<Maybe<ResolversTypes['AuthResponse']>, ParentType, ContextType, RequireFields<MutationLoginArgs, 'username' | 'password'>>;
+  logout?: Resolver<Maybe<ResolversTypes['AuthResponse']>, ParentType, ContextType>;
+  reqPwReset?: Resolver<Maybe<ResolversTypes['TokenResponse']>, ParentType, ContextType, RequireFields<MutationReqPwResetArgs, 'userOrEmail'>>;
+  changePw?: Resolver<Maybe<ResolversTypes['AuthResponse']>, ParentType, ContextType, RequireFields<MutationChangePwArgs, 'token' | 'password'>>;
+  changeAdminRights?: Resolver<Maybe<ResolversTypes['SuccessResponse']>, ParentType, ContextType, RequireFields<MutationChangeAdminRightsArgs, 'id' | 'status'>>;
+  signup?: Resolver<Maybe<ResolversTypes['AuthResponse']>, ParentType, ContextType, RequireFields<MutationSignupArgs, 'firstName' | 'lastName' | 'email' | 'username'>>;
+  addAlert?: Resolver<Maybe<Array<Maybe<ResolversTypes['Alert']>>>, ParentType, ContextType, RequireFields<MutationAddAlertArgs, 'text' | 'type'>>;
+  removeAlert?: Resolver<Maybe<ResolversTypes['SuccessResponse']>, ParentType, ContextType, RequireFields<MutationRemoveAlertArgs, 'id'>>;
+  createSubmission?: Resolver<Maybe<ResolversTypes['Submission']>, ParentType, ContextType, RequireFields<MutationCreateSubmissionArgs, 'lessonId' | 'challengeId' | 'cliToken' | 'diff'>>;
+  acceptSubmission?: Resolver<Maybe<ResolversTypes['Submission']>, ParentType, ContextType, RequireFields<MutationAcceptSubmissionArgs, 'id' | 'comment'>>;
+  rejectSubmission?: Resolver<Maybe<ResolversTypes['Submission']>, ParentType, ContextType, RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>>;
+  createLesson?: Resolver<Maybe<Array<Maybe<ResolversTypes['Lesson']>>>, ParentType, ContextType, RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>>;
+  updateLesson?: Resolver<Maybe<Array<Maybe<ResolversTypes['Lesson']>>>, ParentType, ContextType, RequireFields<MutationUpdateLessonArgs, 'id'>>;
+  createChallenge?: Resolver<Maybe<Array<Maybe<ResolversTypes['Lesson']>>>, ParentType, ContextType, RequireFields<MutationCreateChallengeArgs, 'lessonId' | 'order' | 'description' | 'title'>>;
+  updateChallenge?: Resolver<Maybe<Array<Maybe<ResolversTypes['Lesson']>>>, ParentType, ContextType, RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id'>>;
+};
 
-export type QueryResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
-> = {
-  lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
-  session?: Resolver<Maybe<ResolversTypes['Session']>, ParentType, ContextType>
-  allUsers?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['User']>>>,
-    ParentType,
-    ContextType
-  >
-  getLessonMentors?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['User']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<QueryGetLessonMentorsArgs, 'lessonId'>
-  >
-  userInfo?: Resolver<
-    Maybe<ResolversTypes['Session']>,
-    ParentType,
-    ContextType,
-    RequireFields<QueryUserInfoArgs, 'username'>
-  >
-  isTokenValid?: Resolver<
-    ResolversTypes['Boolean'],
-    ParentType,
-    ContextType,
-    RequireFields<QueryIsTokenValidArgs, 'cliToken'>
-  >
-  submissions?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Submission']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<QuerySubmissionsArgs, 'lessonId'>
-  >
-  alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
-}
+export type AuthResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']> = {
+  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  error?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type SessionResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Session'] = ResolversParentTypes['Session']
-> = {
-  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  submissions?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Submission']>>>,
-    ParentType,
-    ContextType
-  >
-  lessonStatus?: Resolver<
-    Array<ResolversTypes['UserLesson']>,
-    ParentType,
-    ContextType
-  >
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type SuccessResponseResolvers<ContextType = any, ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']> = {
+  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type StarResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
-> = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type SubmissionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']> = {
+  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  status?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  viewCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  challengeId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  challenge?: Resolver<Maybe<ResolversTypes['Challenge']>, ParentType, ContextType>;
+  reviewer?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  reviewerId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type SubmissionResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
-> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  status?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  viewCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  challengeId?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  challenge?: Resolver<
-    Maybe<ResolversTypes['Challenge']>,
-    ParentType,
-    ContextType
-  >
-  reviewer?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  reviewerId?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  userLesson?: Resolver<Maybe<ResolversTypes['UserLesson']>, ParentType, ContextType>;
+  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  isAdmin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type SuccessResponseResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
-> = {
-  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type SessionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Session'] = ResolversParentTypes['Session']> = {
+  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  submissions?: Resolver<Maybe<Array<Maybe<ResolversTypes['Submission']>>>, ParentType, ContextType>;
+  lessonStatus?: Resolver<Array<ResolversTypes['UserLesson']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type TokenResponseResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
-> = {
-  success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
-  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type UserLessonResolvers<ContextType = any, ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']> = {
+  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  isPassed?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  isTeaching?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  isEnrolled?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  starsReceived?: Resolver<Maybe<Array<Maybe<ResolversTypes['Star']>>>, ParentType, ContextType>;
+  starGiven?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export interface UploadScalarConfig
-  extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
-  name: 'Upload'
-}
+export type LessonResolvers<ContextType = any, ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']> = {
+  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  challenges?: Resolver<Maybe<Array<Maybe<ResolversTypes['Challenge']>>>, ParentType, ContextType>;
+  users?: Resolver<Maybe<Array<Maybe<ResolversTypes['User']>>>, ParentType, ContextType>;
+  currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  chatUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type UserResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
-> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  userLesson?: Resolver<
-    Maybe<ResolversTypes['UserLesson']>,
-    ParentType,
-    ContextType
-  >
-  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  isAdmin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
-}
+export type ChallengeResolvers<ContextType = any, ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']> = {
+  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
 
-export type UserLessonResolvers<
-  ContextType = any,
-  ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
-> = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  isPassed?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  isTeaching?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  isEnrolled?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  starsReceived?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Star']>>>,
-    ParentType,
-    ContextType
-  >
-  starGiven?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+export type AlertResolvers<ContextType = any, ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']> = {
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  urlCaption?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type StarResolvers<ContextType = any, ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']> = {
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  studentUsername?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  studentName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  lessonTitle?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  lessonDifficulty?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export interface UploadScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
+  name: 'Upload';
 }
 
 export type Resolvers<ContextType = any> = {
-  Alert?: AlertResolvers<ContextType>
-  AuthResponse?: AuthResponseResolvers<ContextType>
-  Challenge?: ChallengeResolvers<ContextType>
-  Lesson?: LessonResolvers<ContextType>
-  Mutation?: MutationResolvers<ContextType>
-  Query?: QueryResolvers<ContextType>
-  Session?: SessionResolvers<ContextType>
-  Star?: StarResolvers<ContextType>
-  Submission?: SubmissionResolvers<ContextType>
-  SuccessResponse?: SuccessResponseResolvers<ContextType>
-  TokenResponse?: TokenResponseResolvers<ContextType>
-  Upload?: GraphQLScalarType
-  User?: UserResolvers<ContextType>
-  UserLesson?: UserLessonResolvers<ContextType>
-}
+  Query?: QueryResolvers<ContextType>;
+  TokenResponse?: TokenResponseResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
+  AuthResponse?: AuthResponseResolvers<ContextType>;
+  SuccessResponse?: SuccessResponseResolvers<ContextType>;
+  Submission?: SubmissionResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
+  Session?: SessionResolvers<ContextType>;
+  UserLesson?: UserLessonResolvers<ContextType>;
+  Lesson?: LessonResolvers<ContextType>;
+  Challenge?: ChallengeResolvers<ContextType>;
+  Alert?: AlertResolvers<ContextType>;
+  Star?: StarResolvers<ContextType>;
+  Upload?: GraphQLScalarType;
+};
+
 
 /**
  * @deprecated
  * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
  */
-export type IResolvers<ContextType = any> = Resolvers<ContextType>
+export type IResolvers<ContextType = any> = Resolvers<ContextType>;
+export type DirectiveResolvers<ContextType = any> = {
+  cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>;
+};
+
+
+/**
+ * @deprecated
+ * Use "DirectiveResolvers" root object instead. If you wish to get "IDirectiveResolvers", add "typesPrefix: I" to your config.
+ */
+export type IDirectiveResolvers<ContextType = any> = DirectiveResolvers<ContextType>;
 
 export const AcceptSubmissionDocument = gql`
-  mutation acceptSubmission($submissionId: String!, $comment: String!) {
-    acceptSubmission(id: $submissionId, comment: $comment) {
-      id
-      comment
-      status
-    }
+    mutation acceptSubmission($submissionId: String!, $comment: String!) {
+  acceptSubmission(id: $submissionId, comment: $comment) {
+    id
+    comment
+    status
   }
-`
-export type AcceptSubmissionMutationFn = ApolloReactCommon.MutationFunction<
-  AcceptSubmissionMutation,
-  AcceptSubmissionMutationVariables
->
-export type AcceptSubmissionComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >,
-  'mutation'
->
-
-export const AcceptSubmissionComponent = (
-  props: AcceptSubmissionComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >
-    mutation={AcceptSubmissionDocument}
-    {...props}
-  />
-)
-
-export type AcceptSubmissionProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >
-} &
-  TChildProps
-export function withAcceptSubmission<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables,
-    AcceptSubmissionProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables,
-    AcceptSubmissionProps<TChildProps, TDataName>
-  >(AcceptSubmissionDocument, {
-    alias: 'acceptSubmission',
-    ...operationOptions
-  })
 }
+    `;
+export type AcceptSubmissionMutationFn = Apollo.MutationFunction<AcceptSubmissionMutation, AcceptSubmissionMutationVariables>;
+export type AcceptSubmissionProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<AcceptSubmissionMutation, AcceptSubmissionMutationVariables>
+    } & TChildProps;
+export function withAcceptSubmission<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  AcceptSubmissionMutation,
+  AcceptSubmissionMutationVariables,
+  AcceptSubmissionProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, AcceptSubmissionMutation, AcceptSubmissionMutationVariables, AcceptSubmissionProps<TChildProps, TDataName>>(AcceptSubmissionDocument, {
+      alias: 'acceptSubmission',
+      ...operationOptions
+    });
+};
 
 /**
  * __useAcceptSubmissionMutation__
@@ -1414,92 +1010,37 @@ export function withAcceptSubmission<
  *   },
  * });
  */
-export function useAcceptSubmissionMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >(AcceptSubmissionDocument, baseOptions)
-}
-export type AcceptSubmissionMutationHookResult = ReturnType<
-  typeof useAcceptSubmissionMutation
->
-export type AcceptSubmissionMutationResult = ApolloReactCommon.MutationResult<AcceptSubmissionMutation>
-export type AcceptSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  AcceptSubmissionMutation,
-  AcceptSubmissionMutationVariables
->
+export function useAcceptSubmissionMutation(baseOptions?: Apollo.MutationHookOptions<AcceptSubmissionMutation, AcceptSubmissionMutationVariables>) {
+        return Apollo.useMutation<AcceptSubmissionMutation, AcceptSubmissionMutationVariables>(AcceptSubmissionDocument, baseOptions);
+      }
+export type AcceptSubmissionMutationHookResult = ReturnType<typeof useAcceptSubmissionMutation>;
+export type AcceptSubmissionMutationResult = Apollo.MutationResult<AcceptSubmissionMutation>;
+export type AcceptSubmissionMutationOptions = Apollo.BaseMutationOptions<AcceptSubmissionMutation, AcceptSubmissionMutationVariables>;
 export const AddAlertDocument = gql`
-  mutation addAlert(
-    $text: String!
-    $type: String!
-    $url: String
-    $urlCaption: String
-  ) {
-    addAlert(text: $text, type: $type, url: $url, urlCaption: $urlCaption) {
-      id
-      text
-      type
-      url
-      urlCaption
-    }
+    mutation addAlert($text: String!, $type: String!, $url: String, $urlCaption: String) {
+  addAlert(text: $text, type: $type, url: $url, urlCaption: $urlCaption) {
+    id
+    text
+    type
+    url
+    urlCaption
   }
-`
-export type AddAlertMutationFn = ApolloReactCommon.MutationFunction<
-  AddAlertMutation,
-  AddAlertMutationVariables
->
-export type AddAlertComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    AddAlertMutation,
-    AddAlertMutationVariables
-  >,
-  'mutation'
->
-
-export const AddAlertComponent = (props: AddAlertComponentProps) => (
-  <ApolloReactComponents.Mutation<AddAlertMutation, AddAlertMutationVariables>
-    mutation={AddAlertDocument}
-    {...props}
-  />
-)
-
-export type AddAlertProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    AddAlertMutation,
-    AddAlertMutationVariables
-  >
-} &
-  TChildProps
-export function withAddAlert<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    AddAlertMutation,
-    AddAlertMutationVariables,
-    AddAlertProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    AddAlertMutation,
-    AddAlertMutationVariables,
-    AddAlertProps<TChildProps, TDataName>
-  >(AddAlertDocument, {
-    alias: 'addAlert',
-    ...operationOptions
-  })
 }
+    `;
+export type AddAlertMutationFn = Apollo.MutationFunction<AddAlertMutation, AddAlertMutationVariables>;
+export type AddAlertProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<AddAlertMutation, AddAlertMutationVariables>
+    } & TChildProps;
+export function withAddAlert<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  AddAlertMutation,
+  AddAlertMutationVariables,
+  AddAlertProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, AddAlertMutation, AddAlertMutationVariables, AddAlertProps<TChildProps, TDataName>>(AddAlertDocument, {
+      alias: 'addAlert',
+      ...operationOptions
+    });
+};
 
 /**
  * __useAddAlertMutation__
@@ -1521,73 +1062,37 @@ export function withAddAlert<
  *   },
  * });
  */
-export function useAddAlertMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    AddAlertMutation,
-    AddAlertMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    AddAlertMutation,
-    AddAlertMutationVariables
-  >(AddAlertDocument, baseOptions)
-}
-export type AddAlertMutationHookResult = ReturnType<typeof useAddAlertMutation>
-export type AddAlertMutationResult = ApolloReactCommon.MutationResult<AddAlertMutation>
-export type AddAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  AddAlertMutation,
-  AddAlertMutationVariables
->
+export function useAddAlertMutation(baseOptions?: Apollo.MutationHookOptions<AddAlertMutation, AddAlertMutationVariables>) {
+        return Apollo.useMutation<AddAlertMutation, AddAlertMutationVariables>(AddAlertDocument, baseOptions);
+      }
+export type AddAlertMutationHookResult = ReturnType<typeof useAddAlertMutation>;
+export type AddAlertMutationResult = Apollo.MutationResult<AddAlertMutation>;
+export type AddAlertMutationOptions = Apollo.BaseMutationOptions<AddAlertMutation, AddAlertMutationVariables>;
 export const UsersDocument = gql`
-  query users {
-    allUsers {
-      id
-      username
-      name
-      isAdmin
-      email
-      cliToken
-    }
+    query users {
+  allUsers {
+    id
+    username
+    name
+    isAdmin
+    email
+    cliToken
   }
-`
-export type UsersComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<UsersQuery, UsersQueryVariables>,
-  'query'
->
-
-export const UsersComponent = (props: UsersComponentProps) => (
-  <ApolloReactComponents.Query<UsersQuery, UsersQueryVariables>
-    query={UsersDocument}
-    {...props}
-  />
-)
-
-export type UsersProps<TChildProps = {}, TDataName extends string = 'data'> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<UsersQuery, UsersQueryVariables>
-} &
-  TChildProps
-export function withUsers<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    UsersQuery,
-    UsersQueryVariables,
-    UsersProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    UsersQuery,
-    UsersQueryVariables,
-    UsersProps<TChildProps, TDataName>
-  >(UsersDocument, {
-    alias: 'users',
-    ...operationOptions
-  })
 }
+    `;
+export type UsersProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<UsersQuery, UsersQueryVariables>
+    } & TChildProps;
+export function withUsers<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  UsersQuery,
+  UsersQueryVariables,
+  UsersProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, UsersQuery, UsersQueryVariables, UsersProps<TChildProps, TDataName>>(UsersDocument, {
+      alias: 'users',
+      ...operationOptions
+    });
+};
 
 /**
  * __useUsersQuery__
@@ -1604,97 +1109,36 @@ export function withUsers<
  *   },
  * });
  */
-export function useUsersQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    UsersQuery,
-    UsersQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<UsersQuery, UsersQueryVariables>(
-    UsersDocument,
-    baseOptions
-  )
-}
-export function useUsersLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    UsersQuery,
-    UsersQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<UsersQuery, UsersQueryVariables>(
-    UsersDocument,
-    baseOptions
-  )
-}
-export type UsersQueryHookResult = ReturnType<typeof useUsersQuery>
-export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>
-export type UsersQueryResult = ApolloReactCommon.QueryResult<
-  UsersQuery,
-  UsersQueryVariables
->
+export function useUsersQuery(baseOptions?: Apollo.QueryHookOptions<UsersQuery, UsersQueryVariables>) {
+        return Apollo.useQuery<UsersQuery, UsersQueryVariables>(UsersDocument, baseOptions);
+      }
+export function useUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UsersQuery, UsersQueryVariables>) {
+          return Apollo.useLazyQuery<UsersQuery, UsersQueryVariables>(UsersDocument, baseOptions);
+        }
+export type UsersQueryHookResult = ReturnType<typeof useUsersQuery>;
+export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>;
+export type UsersQueryResult = Apollo.QueryResult<UsersQuery, UsersQueryVariables>;
 export const ChangeAdminRightsDocument = gql`
-  mutation changeAdminRights($id: Int!, $status: String!) {
-    changeAdminRights(id: $id, status: $status) {
-      success
-    }
+    mutation changeAdminRights($id: Int!, $status: String!) {
+  changeAdminRights(id: $id, status: $status) {
+    success
   }
-`
-export type ChangeAdminRightsMutationFn = ApolloReactCommon.MutationFunction<
-  ChangeAdminRightsMutation,
-  ChangeAdminRightsMutationVariables
->
-export type ChangeAdminRightsComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >,
-  'mutation'
->
-
-export const ChangeAdminRightsComponent = (
-  props: ChangeAdminRightsComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >
-    mutation={ChangeAdminRightsDocument}
-    {...props}
-  />
-)
-
-export type ChangeAdminRightsProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >
-} &
-  TChildProps
-export function withChangeAdminRights<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables,
-    ChangeAdminRightsProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables,
-    ChangeAdminRightsProps<TChildProps, TDataName>
-  >(ChangeAdminRightsDocument, {
-    alias: 'changeAdminRights',
-    ...operationOptions
-  })
 }
+    `;
+export type ChangeAdminRightsMutationFn = Apollo.MutationFunction<ChangeAdminRightsMutation, ChangeAdminRightsMutationVariables>;
+export type ChangeAdminRightsProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<ChangeAdminRightsMutation, ChangeAdminRightsMutationVariables>
+    } & TChildProps;
+export function withChangeAdminRights<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  ChangeAdminRightsMutation,
+  ChangeAdminRightsMutationVariables,
+  ChangeAdminRightsProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, ChangeAdminRightsMutation, ChangeAdminRightsMutationVariables, ChangeAdminRightsProps<TChildProps, TDataName>>(ChangeAdminRightsDocument, {
+      alias: 'changeAdminRights',
+      ...operationOptions
+    });
+};
 
 /**
  * __useChangeAdminRightsMutation__
@@ -1714,112 +1158,52 @@ export function withChangeAdminRights<
  *   },
  * });
  */
-export function useChangeAdminRightsMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >(ChangeAdminRightsDocument, baseOptions)
-}
-export type ChangeAdminRightsMutationHookResult = ReturnType<
-  typeof useChangeAdminRightsMutation
->
-export type ChangeAdminRightsMutationResult = ApolloReactCommon.MutationResult<ChangeAdminRightsMutation>
-export type ChangeAdminRightsMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  ChangeAdminRightsMutation,
-  ChangeAdminRightsMutationVariables
->
-export const CreateChallengeDocument = gql`
-  mutation createChallenge(
-    $lessonId: Int!
-    $order: Int!
-    $description: String!
-    $title: String!
-  ) {
-    createChallenge(
-      lessonId: $lessonId
-      order: $order
-      description: $description
-      title: $title
-    ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
+export function useChangeAdminRightsMutation(baseOptions?: Apollo.MutationHookOptions<ChangeAdminRightsMutation, ChangeAdminRightsMutationVariables>) {
+        return Apollo.useMutation<ChangeAdminRightsMutation, ChangeAdminRightsMutationVariables>(ChangeAdminRightsDocument, baseOptions);
       }
+export type ChangeAdminRightsMutationHookResult = ReturnType<typeof useChangeAdminRightsMutation>;
+export type ChangeAdminRightsMutationResult = Apollo.MutationResult<ChangeAdminRightsMutation>;
+export type ChangeAdminRightsMutationOptions = Apollo.BaseMutationOptions<ChangeAdminRightsMutation, ChangeAdminRightsMutationVariables>;
+export const CreateChallengeDocument = gql`
+    mutation createChallenge($lessonId: Int!, $order: Int!, $description: String!, $title: String!) {
+  createChallenge(
+    lessonId: $lessonId
+    order: $order
+    description: $description
+    title: $title
+  ) {
+    id
+    docUrl
+    githubUrl
+    videoUrl
+    chatUrl
+    order
+    description
+    title
+    challenges {
+      id
+      description
+      lessonId
+      title
+      order
     }
   }
-`
-export type CreateChallengeMutationFn = ApolloReactCommon.MutationFunction<
-  CreateChallengeMutation,
-  CreateChallengeMutationVariables
->
-export type CreateChallengeComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >,
-  'mutation'
->
-
-export const CreateChallengeComponent = (
-  props: CreateChallengeComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >
-    mutation={CreateChallengeDocument}
-    {...props}
-  />
-)
-
-export type CreateChallengeProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >
-} &
-  TChildProps
-export function withCreateChallenge<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables,
-    CreateChallengeProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables,
-    CreateChallengeProps<TChildProps, TDataName>
-  >(CreateChallengeDocument, {
-    alias: 'createChallenge',
-    ...operationOptions
-  })
 }
+    `;
+export type CreateChallengeMutationFn = Apollo.MutationFunction<CreateChallengeMutation, CreateChallengeMutationVariables>;
+export type CreateChallengeProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<CreateChallengeMutation, CreateChallengeMutationVariables>
+    } & TChildProps;
+export function withCreateChallenge<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  CreateChallengeMutation,
+  CreateChallengeMutationVariables,
+  CreateChallengeProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, CreateChallengeMutation, CreateChallengeMutationVariables, CreateChallengeProps<TChildProps, TDataName>>(CreateChallengeDocument, {
+      alias: 'createChallenge',
+      ...operationOptions
+    });
+};
 
 /**
  * __useCreateChallengeMutation__
@@ -1841,116 +1225,55 @@ export function withCreateChallenge<
  *   },
  * });
  */
-export function useCreateChallengeMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >(CreateChallengeDocument, baseOptions)
-}
-export type CreateChallengeMutationHookResult = ReturnType<
-  typeof useCreateChallengeMutation
->
-export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<CreateChallengeMutation>
-export type CreateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  CreateChallengeMutation,
-  CreateChallengeMutationVariables
->
-export const CreateLessonDocument = gql`
-  mutation createLesson(
-    $docUrl: String
-    $githubUrl: String
-    $videoUrl: String
-    $chatUrl: String
-    $order: Int!
-    $description: String!
-    $title: String!
-  ) {
-    createLesson(
-      docUrl: $docUrl
-      githubUrl: $githubUrl
-      videoUrl: $videoUrl
-      chatUrl: $chatUrl
-      order: $order
-      description: $description
-      title: $title
-    ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
+export function useCreateChallengeMutation(baseOptions?: Apollo.MutationHookOptions<CreateChallengeMutation, CreateChallengeMutationVariables>) {
+        return Apollo.useMutation<CreateChallengeMutation, CreateChallengeMutationVariables>(CreateChallengeDocument, baseOptions);
       }
+export type CreateChallengeMutationHookResult = ReturnType<typeof useCreateChallengeMutation>;
+export type CreateChallengeMutationResult = Apollo.MutationResult<CreateChallengeMutation>;
+export type CreateChallengeMutationOptions = Apollo.BaseMutationOptions<CreateChallengeMutation, CreateChallengeMutationVariables>;
+export const CreateLessonDocument = gql`
+    mutation createLesson($docUrl: String, $githubUrl: String, $videoUrl: String, $chatUrl: String, $order: Int!, $description: String!, $title: String!) {
+  createLesson(
+    docUrl: $docUrl
+    githubUrl: $githubUrl
+    videoUrl: $videoUrl
+    chatUrl: $chatUrl
+    order: $order
+    description: $description
+    title: $title
+  ) {
+    id
+    docUrl
+    githubUrl
+    videoUrl
+    chatUrl
+    order
+    description
+    title
+    challenges {
+      id
+      description
+      lessonId
+      title
+      order
     }
   }
-`
-export type CreateLessonMutationFn = ApolloReactCommon.MutationFunction<
-  CreateLessonMutation,
-  CreateLessonMutationVariables
->
-export type CreateLessonComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >,
-  'mutation'
->
-
-export const CreateLessonComponent = (props: CreateLessonComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >
-    mutation={CreateLessonDocument}
-    {...props}
-  />
-)
-
-export type CreateLessonProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >
-} &
-  TChildProps
-export function withCreateLesson<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    CreateLessonMutation,
-    CreateLessonMutationVariables,
-    CreateLessonProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    CreateLessonMutation,
-    CreateLessonMutationVariables,
-    CreateLessonProps<TChildProps, TDataName>
-  >(CreateLessonDocument, {
-    alias: 'createLesson',
-    ...operationOptions
-  })
 }
+    `;
+export type CreateLessonMutationFn = Apollo.MutationFunction<CreateLessonMutation, CreateLessonMutationVariables>;
+export type CreateLessonProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<CreateLessonMutation, CreateLessonMutationVariables>
+    } & TChildProps;
+export function withCreateLesson<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  CreateLessonMutation,
+  CreateLessonMutationVariables,
+  CreateLessonProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, CreateLessonMutation, CreateLessonMutationVariables, CreateLessonProps<TChildProps, TDataName>>(CreateLessonDocument, {
+      alias: 'createLesson',
+      ...operationOptions
+    });
+};
 
 /**
  * __useCreateLessonMutation__
@@ -1975,128 +1298,84 @@ export function withCreateLesson<
  *   },
  * });
  */
-export function useCreateLessonMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >(CreateLessonDocument, baseOptions)
-}
-export type CreateLessonMutationHookResult = ReturnType<
-  typeof useCreateLessonMutation
->
-export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<CreateLessonMutation>
-export type CreateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  CreateLessonMutation,
-  CreateLessonMutationVariables
->
+export function useCreateLessonMutation(baseOptions?: Apollo.MutationHookOptions<CreateLessonMutation, CreateLessonMutationVariables>) {
+        return Apollo.useMutation<CreateLessonMutation, CreateLessonMutationVariables>(CreateLessonDocument, baseOptions);
+      }
+export type CreateLessonMutationHookResult = ReturnType<typeof useCreateLessonMutation>;
+export type CreateLessonMutationResult = Apollo.MutationResult<CreateLessonMutation>;
+export type CreateLessonMutationOptions = Apollo.BaseMutationOptions<CreateLessonMutation, CreateLessonMutationVariables>;
 export const GetAppDocument = gql`
-  query getApp {
-    lessons {
+    query getApp {
+  lessons {
+    id
+    title
+    description
+    docUrl
+    githubUrl
+    videoUrl
+    order
+    challenges {
       id
       title
       description
-      docUrl
-      githubUrl
-      videoUrl
       order
-      challenges {
-        id
-        title
-        description
-        order
-      }
-      chatUrl
     }
-    session {
-      user {
+    chatUrl
+  }
+  session {
+    user {
+      id
+      username
+      name
+      isAdmin
+    }
+    submissions {
+      id
+      status
+      mrUrl
+      diff
+      viewCount
+      comment
+      order
+      challengeId
+      lessonId
+      reviewer {
         id
         username
-        name
-        isAdmin
       }
-      submissions {
-        id
-        status
-        mrUrl
-        diff
-        viewCount
-        comment
-        order
-        challengeId
-        lessonId
-        reviewer {
-          id
-          username
-        }
-        createdAt
-        updatedAt
-      }
-      lessonStatus {
-        lessonId
-        isPassed
-        isTeaching
-        isEnrolled
-        starGiven
-      }
+      createdAt
+      updatedAt
     }
-    alerts {
-      id
-      text
-      type
-      url
-      urlCaption
+    lessonStatus {
+      lessonId
+      isPassed
+      isTeaching
+      isEnrolled
+      starGiven
     }
   }
-`
-export type GetAppComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    GetAppQuery,
-    GetAppQueryVariables
-  >,
-  'query'
->
-
-export const GetAppComponent = (props: GetAppComponentProps) => (
-  <ApolloReactComponents.Query<GetAppQuery, GetAppQueryVariables>
-    query={GetAppDocument}
-    {...props}
-  />
-)
-
-export type GetAppProps<TChildProps = {}, TDataName extends string = 'data'> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    GetAppQuery,
-    GetAppQueryVariables
-  >
-} &
-  TChildProps
-export function withGetApp<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    GetAppQuery,
-    GetAppQueryVariables,
-    GetAppProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    GetAppQuery,
-    GetAppQueryVariables,
-    GetAppProps<TChildProps, TDataName>
-  >(GetAppDocument, {
-    alias: 'getApp',
-    ...operationOptions
-  })
+  alerts {
+    id
+    text
+    type
+    url
+    urlCaption
+  }
 }
+    `;
+export type GetAppProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<GetAppQuery, GetAppQueryVariables>
+    } & TChildProps;
+export function withGetApp<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  GetAppQuery,
+  GetAppQueryVariables,
+  GetAppProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, GetAppQuery, GetAppQueryVariables, GetAppProps<TChildProps, TDataName>>(GetAppDocument, {
+      alias: 'getApp',
+      ...operationOptions
+    });
+};
 
 /**
  * __useGetAppQuery__
@@ -2113,94 +1392,37 @@ export function withGetApp<
  *   },
  * });
  */
-export function useGetAppQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    GetAppQuery,
-    GetAppQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<GetAppQuery, GetAppQueryVariables>(
-    GetAppDocument,
-    baseOptions
-  )
-}
-export function useGetAppLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    GetAppQuery,
-    GetAppQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<GetAppQuery, GetAppQueryVariables>(
-    GetAppDocument,
-    baseOptions
-  )
-}
-export type GetAppQueryHookResult = ReturnType<typeof useGetAppQuery>
-export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
-export type GetAppQueryResult = ApolloReactCommon.QueryResult<
-  GetAppQuery,
-  GetAppQueryVariables
->
+export function useGetAppQuery(baseOptions?: Apollo.QueryHookOptions<GetAppQuery, GetAppQueryVariables>) {
+        return Apollo.useQuery<GetAppQuery, GetAppQueryVariables>(GetAppDocument, baseOptions);
+      }
+export function useGetAppLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAppQuery, GetAppQueryVariables>) {
+          return Apollo.useLazyQuery<GetAppQuery, GetAppQueryVariables>(GetAppDocument, baseOptions);
+        }
+export type GetAppQueryHookResult = ReturnType<typeof useGetAppQuery>;
+export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>;
+export type GetAppQueryResult = Apollo.QueryResult<GetAppQuery, GetAppQueryVariables>;
 export const LessonMentorsDocument = gql`
-  query lessonMentors($lessonId: String!) {
-    getLessonMentors(lessonId: $lessonId) {
-      username
-      name
-      id
-    }
+    query lessonMentors($lessonId: String!) {
+  getLessonMentors(lessonId: $lessonId) {
+    username
+    name
+    id
   }
-`
-export type LessonMentorsComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >,
-  'query'
-> &
-  (
-    | { variables: LessonMentorsQueryVariables; skip?: boolean }
-    | { skip: boolean }
-  )
-
-export const LessonMentorsComponent = (props: LessonMentorsComponentProps) => (
-  <ApolloReactComponents.Query<LessonMentorsQuery, LessonMentorsQueryVariables>
-    query={LessonMentorsDocument}
-    {...props}
-  />
-)
-
-export type LessonMentorsProps<
-  TChildProps = {},
-  TDataName extends string = 'data'
-> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >
-} &
-  TChildProps
-export function withLessonMentors<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables,
-    LessonMentorsProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables,
-    LessonMentorsProps<TChildProps, TDataName>
-  >(LessonMentorsDocument, {
-    alias: 'lessonMentors',
-    ...operationOptions
-  })
 }
+    `;
+export type LessonMentorsProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<LessonMentorsQuery, LessonMentorsQueryVariables>
+    } & TChildProps;
+export function withLessonMentors<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  LessonMentorsQuery,
+  LessonMentorsQueryVariables,
+  LessonMentorsProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, LessonMentorsQuery, LessonMentorsQueryVariables, LessonMentorsProps<TChildProps, TDataName>>(LessonMentorsDocument, {
+      alias: 'lessonMentors',
+      ...operationOptions
+    });
+};
 
 /**
  * __useLessonMentorsQuery__
@@ -2218,107 +1440,49 @@ export function withLessonMentors<
  *   },
  * });
  */
-export function useLessonMentorsQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >(LessonMentorsDocument, baseOptions)
-}
-export function useLessonMentorsLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >(LessonMentorsDocument, baseOptions)
-}
-export type LessonMentorsQueryHookResult = ReturnType<
-  typeof useLessonMentorsQuery
->
-export type LessonMentorsLazyQueryHookResult = ReturnType<
-  typeof useLessonMentorsLazyQuery
->
-export type LessonMentorsQueryResult = ApolloReactCommon.QueryResult<
-  LessonMentorsQuery,
-  LessonMentorsQueryVariables
->
+export function useLessonMentorsQuery(baseOptions: Apollo.QueryHookOptions<LessonMentorsQuery, LessonMentorsQueryVariables>) {
+        return Apollo.useQuery<LessonMentorsQuery, LessonMentorsQueryVariables>(LessonMentorsDocument, baseOptions);
+      }
+export function useLessonMentorsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LessonMentorsQuery, LessonMentorsQueryVariables>) {
+          return Apollo.useLazyQuery<LessonMentorsQuery, LessonMentorsQueryVariables>(LessonMentorsDocument, baseOptions);
+        }
+export type LessonMentorsQueryHookResult = ReturnType<typeof useLessonMentorsQuery>;
+export type LessonMentorsLazyQueryHookResult = ReturnType<typeof useLessonMentorsLazyQuery>;
+export type LessonMentorsQueryResult = Apollo.QueryResult<LessonMentorsQuery, LessonMentorsQueryVariables>;
 export const SubmissionsDocument = gql`
-  query submissions($lessonId: String!) {
-    submissions(lessonId: $lessonId) {
-      id
-      status
-      diff
-      comment
-      challenge {
-        title
-      }
-      challengeId
-      lessonId
-      user {
-        id
-        username
-      }
-      createdAt
-      updatedAt
+    query submissions($lessonId: String!) {
+  submissions(lessonId: $lessonId) {
+    id
+    status
+    diff
+    comment
+    challenge {
+      title
     }
+    challengeId
+    lessonId
+    user {
+      id
+      username
+    }
+    createdAt
+    updatedAt
   }
-`
-export type SubmissionsComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >,
-  'query'
-> &
-  ({ variables: SubmissionsQueryVariables; skip?: boolean } | { skip: boolean })
-
-export const SubmissionsComponent = (props: SubmissionsComponentProps) => (
-  <ApolloReactComponents.Query<SubmissionsQuery, SubmissionsQueryVariables>
-    query={SubmissionsDocument}
-    {...props}
-  />
-)
-
-export type SubmissionsProps<
-  TChildProps = {},
-  TDataName extends string = 'data'
-> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >
-} &
-  TChildProps
-export function withSubmissions<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    SubmissionsQuery,
-    SubmissionsQueryVariables,
-    SubmissionsProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    SubmissionsQuery,
-    SubmissionsQueryVariables,
-    SubmissionsProps<TChildProps, TDataName>
-  >(SubmissionsDocument, {
-    alias: 'submissions',
-    ...operationOptions
-  })
 }
+    `;
+export type SubmissionsProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<SubmissionsQuery, SubmissionsQueryVariables>
+    } & TChildProps;
+export function withSubmissions<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  SubmissionsQuery,
+  SubmissionsQueryVariables,
+  SubmissionsProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, SubmissionsQuery, SubmissionsQueryVariables, SubmissionsProps<TChildProps, TDataName>>(SubmissionsDocument, {
+      alias: 'submissions',
+      ...operationOptions
+    });
+};
 
 /**
  * __useSubmissionsQuery__
@@ -2336,97 +1500,39 @@ export function withSubmissions<
  *   },
  * });
  */
-export function useSubmissionsQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<SubmissionsQuery, SubmissionsQueryVariables>(
-    SubmissionsDocument,
-    baseOptions
-  )
-}
-export function useSubmissionsLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >(SubmissionsDocument, baseOptions)
-}
-export type SubmissionsQueryHookResult = ReturnType<typeof useSubmissionsQuery>
-export type SubmissionsLazyQueryHookResult = ReturnType<
-  typeof useSubmissionsLazyQuery
->
-export type SubmissionsQueryResult = ApolloReactCommon.QueryResult<
-  SubmissionsQuery,
-  SubmissionsQueryVariables
->
+export function useSubmissionsQuery(baseOptions: Apollo.QueryHookOptions<SubmissionsQuery, SubmissionsQueryVariables>) {
+        return Apollo.useQuery<SubmissionsQuery, SubmissionsQueryVariables>(SubmissionsDocument, baseOptions);
+      }
+export function useSubmissionsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SubmissionsQuery, SubmissionsQueryVariables>) {
+          return Apollo.useLazyQuery<SubmissionsQuery, SubmissionsQueryVariables>(SubmissionsDocument, baseOptions);
+        }
+export type SubmissionsQueryHookResult = ReturnType<typeof useSubmissionsQuery>;
+export type SubmissionsLazyQueryHookResult = ReturnType<typeof useSubmissionsLazyQuery>;
+export type SubmissionsQueryResult = Apollo.QueryResult<SubmissionsQuery, SubmissionsQueryVariables>;
 export const LoginDocument = gql`
-  mutation login($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
-      success
-      username
-      cliToken
-      error
-    }
+    mutation login($username: String!, $password: String!) {
+  login(username: $username, password: $password) {
+    success
+    username
+    cliToken
+    error
   }
-`
-export type LoginMutationFn = ApolloReactCommon.MutationFunction<
-  LoginMutation,
-  LoginMutationVariables
->
-export type LoginComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    LoginMutation,
-    LoginMutationVariables
-  >,
-  'mutation'
->
-
-export const LoginComponent = (props: LoginComponentProps) => (
-  <ApolloReactComponents.Mutation<LoginMutation, LoginMutationVariables>
-    mutation={LoginDocument}
-    {...props}
-  />
-)
-
-export type LoginProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    LoginMutation,
-    LoginMutationVariables
-  >
-} &
-  TChildProps
-export function withLogin<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    LoginMutation,
-    LoginMutationVariables,
-    LoginProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    LoginMutation,
-    LoginMutationVariables,
-    LoginProps<TChildProps, TDataName>
-  >(LoginDocument, {
-    alias: 'login',
-    ...operationOptions
-  })
 }
+    `;
+export type LoginMutationFn = Apollo.MutationFunction<LoginMutation, LoginMutationVariables>;
+export type LoginProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<LoginMutation, LoginMutationVariables>
+    } & TChildProps;
+export function withLogin<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  LoginMutation,
+  LoginMutationVariables,
+  LoginProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, LoginMutation, LoginMutationVariables, LoginProps<TChildProps, TDataName>>(LoginDocument, {
+      alias: 'login',
+      ...operationOptions
+    });
+};
 
 /**
  * __useLoginMutation__
@@ -2446,83 +1552,35 @@ export function withLogin<
  *   },
  * });
  */
-export function useLoginMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    LoginMutation,
-    LoginMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<LoginMutation, LoginMutationVariables>(
-    LoginDocument,
-    baseOptions
-  )
-}
-export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>
-export type LoginMutationResult = ApolloReactCommon.MutationResult<LoginMutation>
-export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  LoginMutation,
-  LoginMutationVariables
->
+export function useLoginMutation(baseOptions?: Apollo.MutationHookOptions<LoginMutation, LoginMutationVariables>) {
+        return Apollo.useMutation<LoginMutation, LoginMutationVariables>(LoginDocument, baseOptions);
+      }
+export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>;
+export type LoginMutationResult = Apollo.MutationResult<LoginMutation>;
+export type LoginMutationOptions = Apollo.BaseMutationOptions<LoginMutation, LoginMutationVariables>;
 export const LogoutDocument = gql`
-  mutation logout {
-    logout {
-      success
-      username
-      error
-    }
+    mutation logout {
+  logout {
+    success
+    username
+    error
   }
-`
-export type LogoutMutationFn = ApolloReactCommon.MutationFunction<
-  LogoutMutation,
-  LogoutMutationVariables
->
-export type LogoutComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    LogoutMutation,
-    LogoutMutationVariables
-  >,
-  'mutation'
->
-
-export const LogoutComponent = (props: LogoutComponentProps) => (
-  <ApolloReactComponents.Mutation<LogoutMutation, LogoutMutationVariables>
-    mutation={LogoutDocument}
-    {...props}
-  />
-)
-
-export type LogoutProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    LogoutMutation,
-    LogoutMutationVariables
-  >
-} &
-  TChildProps
-export function withLogout<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    LogoutMutation,
-    LogoutMutationVariables,
-    LogoutProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    LogoutMutation,
-    LogoutMutationVariables,
-    LogoutProps<TChildProps, TDataName>
-  >(LogoutDocument, {
-    alias: 'logout',
-    ...operationOptions
-  })
 }
+    `;
+export type LogoutMutationFn = Apollo.MutationFunction<LogoutMutation, LogoutMutationVariables>;
+export type LogoutProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<LogoutMutation, LogoutMutationVariables>
+    } & TChildProps;
+export function withLogout<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  LogoutMutation,
+  LogoutMutationVariables,
+  LogoutProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, LogoutMutation, LogoutMutationVariables, LogoutProps<TChildProps, TDataName>>(LogoutDocument, {
+      alias: 'logout',
+      ...operationOptions
+    });
+};
 
 /**
  * __useLogoutMutation__
@@ -2540,88 +1598,35 @@ export function withLogout<
  *   },
  * });
  */
-export function useLogoutMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    LogoutMutation,
-    LogoutMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<LogoutMutation, LogoutMutationVariables>(
-    LogoutDocument,
-    baseOptions
-  )
-}
-export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>
-export type LogoutMutationResult = ApolloReactCommon.MutationResult<LogoutMutation>
-export type LogoutMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  LogoutMutation,
-  LogoutMutationVariables
->
+export function useLogoutMutation(baseOptions?: Apollo.MutationHookOptions<LogoutMutation, LogoutMutationVariables>) {
+        return Apollo.useMutation<LogoutMutation, LogoutMutationVariables>(LogoutDocument, baseOptions);
+      }
+export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>;
+export type LogoutMutationResult = Apollo.MutationResult<LogoutMutation>;
+export type LogoutMutationOptions = Apollo.BaseMutationOptions<LogoutMutation, LogoutMutationVariables>;
 export const RejectSubmissionDocument = gql`
-  mutation rejectSubmission($submissionId: String!, $comment: String!) {
-    rejectSubmission(id: $submissionId, comment: $comment) {
-      id
-      comment
-      status
-    }
+    mutation rejectSubmission($submissionId: String!, $comment: String!) {
+  rejectSubmission(id: $submissionId, comment: $comment) {
+    id
+    comment
+    status
   }
-`
-export type RejectSubmissionMutationFn = ApolloReactCommon.MutationFunction<
-  RejectSubmissionMutation,
-  RejectSubmissionMutationVariables
->
-export type RejectSubmissionComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >,
-  'mutation'
->
-
-export const RejectSubmissionComponent = (
-  props: RejectSubmissionComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >
-    mutation={RejectSubmissionDocument}
-    {...props}
-  />
-)
-
-export type RejectSubmissionProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >
-} &
-  TChildProps
-export function withRejectSubmission<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables,
-    RejectSubmissionProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables,
-    RejectSubmissionProps<TChildProps, TDataName>
-  >(RejectSubmissionDocument, {
-    alias: 'rejectSubmission',
-    ...operationOptions
-  })
 }
+    `;
+export type RejectSubmissionMutationFn = Apollo.MutationFunction<RejectSubmissionMutation, RejectSubmissionMutationVariables>;
+export type RejectSubmissionProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<RejectSubmissionMutation, RejectSubmissionMutationVariables>
+    } & TChildProps;
+export function withRejectSubmission<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  RejectSubmissionMutation,
+  RejectSubmissionMutationVariables,
+  RejectSubmissionProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, RejectSubmissionMutation, RejectSubmissionMutationVariables, RejectSubmissionProps<TChildProps, TDataName>>(RejectSubmissionDocument, {
+      alias: 'rejectSubmission',
+      ...operationOptions
+    });
+};
 
 /**
  * __useRejectSubmissionMutation__
@@ -2641,86 +1646,33 @@ export function withRejectSubmission<
  *   },
  * });
  */
-export function useRejectSubmissionMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >(RejectSubmissionDocument, baseOptions)
-}
-export type RejectSubmissionMutationHookResult = ReturnType<
-  typeof useRejectSubmissionMutation
->
-export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<RejectSubmissionMutation>
-export type RejectSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  RejectSubmissionMutation,
-  RejectSubmissionMutationVariables
->
+export function useRejectSubmissionMutation(baseOptions?: Apollo.MutationHookOptions<RejectSubmissionMutation, RejectSubmissionMutationVariables>) {
+        return Apollo.useMutation<RejectSubmissionMutation, RejectSubmissionMutationVariables>(RejectSubmissionDocument, baseOptions);
+      }
+export type RejectSubmissionMutationHookResult = ReturnType<typeof useRejectSubmissionMutation>;
+export type RejectSubmissionMutationResult = Apollo.MutationResult<RejectSubmissionMutation>;
+export type RejectSubmissionMutationOptions = Apollo.BaseMutationOptions<RejectSubmissionMutation, RejectSubmissionMutationVariables>;
 export const RemoveAlertDocument = gql`
-  mutation removeAlert($id: String!) {
-    removeAlert(id: $id) {
-      success
-    }
+    mutation removeAlert($id: String!) {
+  removeAlert(id: $id) {
+    success
   }
-`
-export type RemoveAlertMutationFn = ApolloReactCommon.MutationFunction<
-  RemoveAlertMutation,
-  RemoveAlertMutationVariables
->
-export type RemoveAlertComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >,
-  'mutation'
->
-
-export const RemoveAlertComponent = (props: RemoveAlertComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >
-    mutation={RemoveAlertDocument}
-    {...props}
-  />
-)
-
-export type RemoveAlertProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >
-} &
-  TChildProps
-export function withRemoveAlert<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables,
-    RemoveAlertProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables,
-    RemoveAlertProps<TChildProps, TDataName>
-  >(RemoveAlertDocument, {
-    alias: 'removeAlert',
-    ...operationOptions
-  })
 }
+    `;
+export type RemoveAlertMutationFn = Apollo.MutationFunction<RemoveAlertMutation, RemoveAlertMutationVariables>;
+export type RemoveAlertProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<RemoveAlertMutation, RemoveAlertMutationVariables>
+    } & TChildProps;
+export function withRemoveAlert<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  RemoveAlertMutation,
+  RemoveAlertMutationVariables,
+  RemoveAlertProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, RemoveAlertMutation, RemoveAlertMutationVariables, RemoveAlertProps<TChildProps, TDataName>>(RemoveAlertDocument, {
+      alias: 'removeAlert',
+      ...operationOptions
+    });
+};
 
 /**
  * __useRemoveAlertMutation__
@@ -2739,87 +1691,34 @@ export function withRemoveAlert<
  *   },
  * });
  */
-export function useRemoveAlertMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >(RemoveAlertDocument, baseOptions)
-}
-export type RemoveAlertMutationHookResult = ReturnType<
-  typeof useRemoveAlertMutation
->
-export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<RemoveAlertMutation>
-export type RemoveAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  RemoveAlertMutation,
-  RemoveAlertMutationVariables
->
+export function useRemoveAlertMutation(baseOptions?: Apollo.MutationHookOptions<RemoveAlertMutation, RemoveAlertMutationVariables>) {
+        return Apollo.useMutation<RemoveAlertMutation, RemoveAlertMutationVariables>(RemoveAlertDocument, baseOptions);
+      }
+export type RemoveAlertMutationHookResult = ReturnType<typeof useRemoveAlertMutation>;
+export type RemoveAlertMutationResult = Apollo.MutationResult<RemoveAlertMutation>;
+export type RemoveAlertMutationOptions = Apollo.BaseMutationOptions<RemoveAlertMutation, RemoveAlertMutationVariables>;
 export const ReqPwResetDocument = gql`
-  mutation reqPwReset($userOrEmail: String!) {
-    reqPwReset(userOrEmail: $userOrEmail) {
-      success
-      token
-    }
+    mutation reqPwReset($userOrEmail: String!) {
+  reqPwReset(userOrEmail: $userOrEmail) {
+    success
+    token
   }
-`
-export type ReqPwResetMutationFn = ApolloReactCommon.MutationFunction<
-  ReqPwResetMutation,
-  ReqPwResetMutationVariables
->
-export type ReqPwResetComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >,
-  'mutation'
->
-
-export const ReqPwResetComponent = (props: ReqPwResetComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >
-    mutation={ReqPwResetDocument}
-    {...props}
-  />
-)
-
-export type ReqPwResetProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >
-} &
-  TChildProps
-export function withReqPwReset<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables,
-    ReqPwResetProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables,
-    ReqPwResetProps<TChildProps, TDataName>
-  >(ReqPwResetDocument, {
-    alias: 'reqPwReset',
-    ...operationOptions
-  })
 }
+    `;
+export type ReqPwResetMutationFn = Apollo.MutationFunction<ReqPwResetMutation, ReqPwResetMutationVariables>;
+export type ReqPwResetProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<ReqPwResetMutation, ReqPwResetMutationVariables>
+    } & TChildProps;
+export function withReqPwReset<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  ReqPwResetMutation,
+  ReqPwResetMutationVariables,
+  ReqPwResetProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, ReqPwResetMutation, ReqPwResetMutationVariables, ReqPwResetProps<TChildProps, TDataName>>(ReqPwResetDocument, {
+      alias: 'reqPwReset',
+      ...operationOptions
+    });
+};
 
 /**
  * __useReqPwResetMutation__
@@ -2838,83 +1737,33 @@ export function withReqPwReset<
  *   },
  * });
  */
-export function useReqPwResetMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >(ReqPwResetDocument, baseOptions)
-}
-export type ReqPwResetMutationHookResult = ReturnType<
-  typeof useReqPwResetMutation
->
-export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<ReqPwResetMutation>
-export type ReqPwResetMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  ReqPwResetMutation,
-  ReqPwResetMutationVariables
->
+export function useReqPwResetMutation(baseOptions?: Apollo.MutationHookOptions<ReqPwResetMutation, ReqPwResetMutationVariables>) {
+        return Apollo.useMutation<ReqPwResetMutation, ReqPwResetMutationVariables>(ReqPwResetDocument, baseOptions);
+      }
+export type ReqPwResetMutationHookResult = ReturnType<typeof useReqPwResetMutation>;
+export type ReqPwResetMutationResult = Apollo.MutationResult<ReqPwResetMutation>;
+export type ReqPwResetMutationOptions = Apollo.BaseMutationOptions<ReqPwResetMutation, ReqPwResetMutationVariables>;
 export const SetStarDocument = gql`
-  mutation setStar($mentorId: Int!, $lessonId: Int!, $comment: String) {
-    setStar(mentorId: $mentorId, lessonId: $lessonId, comment: $comment) {
-      success
-    }
+    mutation setStar($mentorId: Int!, $lessonId: Int!, $comment: String) {
+  setStar(mentorId: $mentorId, lessonId: $lessonId, comment: $comment) {
+    success
   }
-`
-export type SetStarMutationFn = ApolloReactCommon.MutationFunction<
-  SetStarMutation,
-  SetStarMutationVariables
->
-export type SetStarComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    SetStarMutation,
-    SetStarMutationVariables
-  >,
-  'mutation'
->
-
-export const SetStarComponent = (props: SetStarComponentProps) => (
-  <ApolloReactComponents.Mutation<SetStarMutation, SetStarMutationVariables>
-    mutation={SetStarDocument}
-    {...props}
-  />
-)
-
-export type SetStarProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    SetStarMutation,
-    SetStarMutationVariables
-  >
-} &
-  TChildProps
-export function withSetStar<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    SetStarMutation,
-    SetStarMutationVariables,
-    SetStarProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    SetStarMutation,
-    SetStarMutationVariables,
-    SetStarProps<TChildProps, TDataName>
-  >(SetStarDocument, {
-    alias: 'setStar',
-    ...operationOptions
-  })
 }
+    `;
+export type SetStarMutationFn = Apollo.MutationFunction<SetStarMutation, SetStarMutationVariables>;
+export type SetStarProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<SetStarMutation, SetStarMutationVariables>
+    } & TChildProps;
+export function withSetStar<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  SetStarMutation,
+  SetStarMutationVariables,
+  SetStarProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, SetStarMutation, SetStarMutationVariables, SetStarProps<TChildProps, TDataName>>(SetStarDocument, {
+      alias: 'setStar',
+      ...operationOptions
+    });
+};
 
 /**
  * __useSetStarMutation__
@@ -2935,93 +1784,40 @@ export function withSetStar<
  *   },
  * });
  */
-export function useSetStarMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    SetStarMutation,
-    SetStarMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    SetStarMutation,
-    SetStarMutationVariables
-  >(SetStarDocument, baseOptions)
-}
-export type SetStarMutationHookResult = ReturnType<typeof useSetStarMutation>
-export type SetStarMutationResult = ApolloReactCommon.MutationResult<SetStarMutation>
-export type SetStarMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  SetStarMutation,
-  SetStarMutationVariables
->
+export function useSetStarMutation(baseOptions?: Apollo.MutationHookOptions<SetStarMutation, SetStarMutationVariables>) {
+        return Apollo.useMutation<SetStarMutation, SetStarMutationVariables>(SetStarDocument, baseOptions);
+      }
+export type SetStarMutationHookResult = ReturnType<typeof useSetStarMutation>;
+export type SetStarMutationResult = Apollo.MutationResult<SetStarMutation>;
+export type SetStarMutationOptions = Apollo.BaseMutationOptions<SetStarMutation, SetStarMutationVariables>;
 export const SignupDocument = gql`
-  mutation signup(
-    $firstName: String!
-    $lastName: String!
-    $email: String!
-    $username: String!
+    mutation signup($firstName: String!, $lastName: String!, $email: String!, $username: String!) {
+  signup(
+    firstName: $firstName
+    lastName: $lastName
+    email: $email
+    username: $username
   ) {
-    signup(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      username: $username
-    ) {
-      success
-      username
-      error
-    }
+    success
+    username
+    error
   }
-`
-export type SignupMutationFn = ApolloReactCommon.MutationFunction<
-  SignupMutation,
-  SignupMutationVariables
->
-export type SignupComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    SignupMutation,
-    SignupMutationVariables
-  >,
-  'mutation'
->
-
-export const SignupComponent = (props: SignupComponentProps) => (
-  <ApolloReactComponents.Mutation<SignupMutation, SignupMutationVariables>
-    mutation={SignupDocument}
-    {...props}
-  />
-)
-
-export type SignupProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    SignupMutation,
-    SignupMutationVariables
-  >
-} &
-  TChildProps
-export function withSignup<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    SignupMutation,
-    SignupMutationVariables,
-    SignupProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    SignupMutation,
-    SignupMutationVariables,
-    SignupProps<TChildProps, TDataName>
-  >(SignupDocument, {
-    alias: 'signup',
-    ...operationOptions
-  })
 }
+    `;
+export type SignupMutationFn = Apollo.MutationFunction<SignupMutation, SignupMutationVariables>;
+export type SignupProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<SignupMutation, SignupMutationVariables>
+    } & TChildProps;
+export function withSignup<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  SignupMutation,
+  SignupMutationVariables,
+  SignupProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, SignupMutation, SignupMutationVariables, SignupProps<TChildProps, TDataName>>(SignupDocument, {
+      alias: 'signup',
+      ...operationOptions
+    });
+};
 
 /**
  * __useSignupMutation__
@@ -3043,112 +1839,53 @@ export function withSignup<
  *   },
  * });
  */
-export function useSignupMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    SignupMutation,
-    SignupMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<SignupMutation, SignupMutationVariables>(
-    SignupDocument,
-    baseOptions
-  )
-}
-export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>
-export type SignupMutationResult = ApolloReactCommon.MutationResult<SignupMutation>
-export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  SignupMutation,
-  SignupMutationVariables
->
-export const UpdateChallengeDocument = gql`
-  mutation updateChallenge(
-    $lessonId: Int!
-    $order: Int
-    $description: String
-    $title: String
-    $id: Int!
-  ) {
-    updateChallenge(
-      id: $id
-      lessonId: $lessonId
-      order: $order
-      description: $description
-      title: $title
-    ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
+export function useSignupMutation(baseOptions?: Apollo.MutationHookOptions<SignupMutation, SignupMutationVariables>) {
+        return Apollo.useMutation<SignupMutation, SignupMutationVariables>(SignupDocument, baseOptions);
       }
+export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>;
+export type SignupMutationResult = Apollo.MutationResult<SignupMutation>;
+export type SignupMutationOptions = Apollo.BaseMutationOptions<SignupMutation, SignupMutationVariables>;
+export const UpdateChallengeDocument = gql`
+    mutation updateChallenge($lessonId: Int!, $order: Int, $description: String, $title: String, $id: Int!) {
+  updateChallenge(
+    id: $id
+    lessonId: $lessonId
+    order: $order
+    description: $description
+    title: $title
+  ) {
+    id
+    docUrl
+    githubUrl
+    videoUrl
+    chatUrl
+    order
+    description
+    title
+    challenges {
+      id
+      description
+      lessonId
+      title
+      order
     }
   }
-`
-export type UpdateChallengeMutationFn = ApolloReactCommon.MutationFunction<
-  UpdateChallengeMutation,
-  UpdateChallengeMutationVariables
->
-export type UpdateChallengeComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >,
-  'mutation'
->
-
-export const UpdateChallengeComponent = (
-  props: UpdateChallengeComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >
-    mutation={UpdateChallengeDocument}
-    {...props}
-  />
-)
-
-export type UpdateChallengeProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >
-} &
-  TChildProps
-export function withUpdateChallenge<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables,
-    UpdateChallengeProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables,
-    UpdateChallengeProps<TChildProps, TDataName>
-  >(UpdateChallengeDocument, {
-    alias: 'updateChallenge',
-    ...operationOptions
-  })
 }
+    `;
+export type UpdateChallengeMutationFn = Apollo.MutationFunction<UpdateChallengeMutation, UpdateChallengeMutationVariables>;
+export type UpdateChallengeProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<UpdateChallengeMutation, UpdateChallengeMutationVariables>
+    } & TChildProps;
+export function withUpdateChallenge<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  UpdateChallengeMutation,
+  UpdateChallengeMutationVariables,
+  UpdateChallengeProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, UpdateChallengeMutation, UpdateChallengeMutationVariables, UpdateChallengeProps<TChildProps, TDataName>>(UpdateChallengeDocument, {
+      alias: 'updateChallenge',
+      ...operationOptions
+    });
+};
 
 /**
  * __useUpdateChallengeMutation__
@@ -3171,118 +1908,56 @@ export function withUpdateChallenge<
  *   },
  * });
  */
-export function useUpdateChallengeMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >(UpdateChallengeDocument, baseOptions)
-}
-export type UpdateChallengeMutationHookResult = ReturnType<
-  typeof useUpdateChallengeMutation
->
-export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<UpdateChallengeMutation>
-export type UpdateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  UpdateChallengeMutation,
-  UpdateChallengeMutationVariables
->
-export const UpdateLessonDocument = gql`
-  mutation updateLesson(
-    $id: Int!
-    $docUrl: String
-    $githubUrl: String
-    $videoUrl: String
-    $chatUrl: String
-    $order: Int
-    $description: String
-    $title: String
-  ) {
-    updateLesson(
-      docUrl: $docUrl
-      githubUrl: $githubUrl
-      videoUrl: $videoUrl
-      chatUrl: $chatUrl
-      id: $id
-      order: $order
-      description: $description
-      title: $title
-    ) {
-      id
-      docUrl
-      githubUrl
-      videoUrl
-      chatUrl
-      order
-      description
-      title
-      challenges {
-        id
-        description
-        lessonId
-        title
-        order
+export function useUpdateChallengeMutation(baseOptions?: Apollo.MutationHookOptions<UpdateChallengeMutation, UpdateChallengeMutationVariables>) {
+        return Apollo.useMutation<UpdateChallengeMutation, UpdateChallengeMutationVariables>(UpdateChallengeDocument, baseOptions);
       }
+export type UpdateChallengeMutationHookResult = ReturnType<typeof useUpdateChallengeMutation>;
+export type UpdateChallengeMutationResult = Apollo.MutationResult<UpdateChallengeMutation>;
+export type UpdateChallengeMutationOptions = Apollo.BaseMutationOptions<UpdateChallengeMutation, UpdateChallengeMutationVariables>;
+export const UpdateLessonDocument = gql`
+    mutation updateLesson($id: Int!, $docUrl: String, $githubUrl: String, $videoUrl: String, $chatUrl: String, $order: Int, $description: String, $title: String) {
+  updateLesson(
+    docUrl: $docUrl
+    githubUrl: $githubUrl
+    videoUrl: $videoUrl
+    chatUrl: $chatUrl
+    id: $id
+    order: $order
+    description: $description
+    title: $title
+  ) {
+    id
+    docUrl
+    githubUrl
+    videoUrl
+    chatUrl
+    order
+    description
+    title
+    challenges {
+      id
+      description
+      lessonId
+      title
+      order
     }
   }
-`
-export type UpdateLessonMutationFn = ApolloReactCommon.MutationFunction<
-  UpdateLessonMutation,
-  UpdateLessonMutationVariables
->
-export type UpdateLessonComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >,
-  'mutation'
->
-
-export const UpdateLessonComponent = (props: UpdateLessonComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >
-    mutation={UpdateLessonDocument}
-    {...props}
-  />
-)
-
-export type UpdateLessonProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >
-} &
-  TChildProps
-export function withUpdateLesson<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables,
-    UpdateLessonProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables,
-    UpdateLessonProps<TChildProps, TDataName>
-  >(UpdateLessonDocument, {
-    alias: 'updateLesson',
-    ...operationOptions
-  })
 }
+    `;
+export type UpdateLessonMutationFn = Apollo.MutationFunction<UpdateLessonMutation, UpdateLessonMutationVariables>;
+export type UpdateLessonProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<UpdateLessonMutation, UpdateLessonMutationVariables>
+    } & TChildProps;
+export function withUpdateLesson<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  UpdateLessonMutation,
+  UpdateLessonMutationVariables,
+  UpdateLessonProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, UpdateLessonMutation, UpdateLessonMutationVariables, UpdateLessonProps<TChildProps, TDataName>>(UpdateLessonDocument, {
+      alias: 'updateLesson',
+      ...operationOptions
+    });
+};
 
 /**
  * __useUpdateLessonMutation__
@@ -3308,83 +1983,33 @@ export function withUpdateLesson<
  *   },
  * });
  */
-export function useUpdateLessonMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >(UpdateLessonDocument, baseOptions)
-}
-export type UpdateLessonMutationHookResult = ReturnType<
-  typeof useUpdateLessonMutation
->
-export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<UpdateLessonMutation>
-export type UpdateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  UpdateLessonMutation,
-  UpdateLessonMutationVariables
->
+export function useUpdateLessonMutation(baseOptions?: Apollo.MutationHookOptions<UpdateLessonMutation, UpdateLessonMutationVariables>) {
+        return Apollo.useMutation<UpdateLessonMutation, UpdateLessonMutationVariables>(UpdateLessonDocument, baseOptions);
+      }
+export type UpdateLessonMutationHookResult = ReturnType<typeof useUpdateLessonMutation>;
+export type UpdateLessonMutationResult = Apollo.MutationResult<UpdateLessonMutation>;
+export type UpdateLessonMutationOptions = Apollo.BaseMutationOptions<UpdateLessonMutation, UpdateLessonMutationVariables>;
 export const ChangePwDocument = gql`
-  mutation changePw($token: String!, $password: String!) {
-    changePw(token: $token, password: $password) {
-      success
-    }
+    mutation changePw($token: String!, $password: String!) {
+  changePw(token: $token, password: $password) {
+    success
   }
-`
-export type ChangePwMutationFn = ApolloReactCommon.MutationFunction<
-  ChangePwMutation,
-  ChangePwMutationVariables
->
-export type ChangePwComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    ChangePwMutation,
-    ChangePwMutationVariables
-  >,
-  'mutation'
->
-
-export const ChangePwComponent = (props: ChangePwComponentProps) => (
-  <ApolloReactComponents.Mutation<ChangePwMutation, ChangePwMutationVariables>
-    mutation={ChangePwDocument}
-    {...props}
-  />
-)
-
-export type ChangePwProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
-    ChangePwMutation,
-    ChangePwMutationVariables
-  >
-} &
-  TChildProps
-export function withChangePw<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'mutate'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    ChangePwMutation,
-    ChangePwMutationVariables,
-    ChangePwProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withMutation<
-    TProps,
-    ChangePwMutation,
-    ChangePwMutationVariables,
-    ChangePwProps<TChildProps, TDataName>
-  >(ChangePwDocument, {
-    alias: 'changePw',
-    ...operationOptions
-  })
 }
+    `;
+export type ChangePwMutationFn = Apollo.MutationFunction<ChangePwMutation, ChangePwMutationVariables>;
+export type ChangePwProps<TChildProps = {}, TDataName extends string = 'mutate'> = {
+      [key in TDataName]: Apollo.MutationFunction<ChangePwMutation, ChangePwMutationVariables>
+    } & TChildProps;
+export function withChangePw<TProps, TChildProps = {}, TDataName extends string = 'mutate'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  ChangePwMutation,
+  ChangePwMutationVariables,
+  ChangePwProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withMutation<TProps, ChangePwMutation, ChangePwMutationVariables, ChangePwProps<TChildProps, TDataName>>(ChangePwDocument, {
+      alias: 'changePw',
+      ...operationOptions
+    });
+};
 
 /**
  * __useChangePwMutation__
@@ -3404,125 +2029,85 @@ export function withChangePw<
  *   },
  * });
  */
-export function useChangePwMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
-    ChangePwMutation,
-    ChangePwMutationVariables
-  >
-) {
-  return ApolloReactHooks.useMutation<
-    ChangePwMutation,
-    ChangePwMutationVariables
-  >(ChangePwDocument, baseOptions)
-}
-export type ChangePwMutationHookResult = ReturnType<typeof useChangePwMutation>
-export type ChangePwMutationResult = ApolloReactCommon.MutationResult<ChangePwMutation>
-export type ChangePwMutationOptions = ApolloReactCommon.BaseMutationOptions<
-  ChangePwMutation,
-  ChangePwMutationVariables
->
+export function useChangePwMutation(baseOptions?: Apollo.MutationHookOptions<ChangePwMutation, ChangePwMutationVariables>) {
+        return Apollo.useMutation<ChangePwMutation, ChangePwMutationVariables>(ChangePwDocument, baseOptions);
+      }
+export type ChangePwMutationHookResult = ReturnType<typeof useChangePwMutation>;
+export type ChangePwMutationResult = Apollo.MutationResult<ChangePwMutation>;
+export type ChangePwMutationOptions = Apollo.BaseMutationOptions<ChangePwMutation, ChangePwMutationVariables>;
 export const UserInfoDocument = gql`
-  query userInfo($username: String!) {
-    lessons {
+    query userInfo($username: String!) {
+  lessons {
+    id
+    title
+    description
+    docUrl
+    githubUrl
+    videoUrl
+    order
+    challenges {
       id
       title
       description
-      docUrl
-      githubUrl
-      videoUrl
       order
-      challenges {
-        id
-        title
-        description
-        order
-      }
-      chatUrl
     }
-    userInfo(username: $username) {
-      user {
+    chatUrl
+  }
+  userInfo(username: $username) {
+    user {
+      id
+      username
+      name
+    }
+    submissions {
+      id
+      status
+      mrUrl
+      diff
+      viewCount
+      comment
+      order
+      challengeId
+      lessonId
+      reviewer {
         id
         username
-        name
       }
-      submissions {
-        id
-        status
-        mrUrl
-        diff
-        viewCount
+      createdAt
+      updatedAt
+    }
+    lessonStatus {
+      lessonId
+      isPassed
+      isTeaching
+      isEnrolled
+      starsReceived {
+        lessonId
+        mentorId
+        studentId
+        studentUsername
+        studentName
+        lessonTitle
+        lessonDifficulty
         comment
-        order
-        challengeId
-        lessonId
-        reviewer {
-          id
-          username
-        }
-        createdAt
-        updatedAt
-      }
-      lessonStatus {
-        lessonId
-        isPassed
-        isTeaching
-        isEnrolled
-        starsReceived {
-          lessonId
-          comment
-        }
       }
     }
   }
-`
-export type UserInfoComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >,
-  'query'
-> &
-  ({ variables: UserInfoQueryVariables; skip?: boolean } | { skip: boolean })
-
-export const UserInfoComponent = (props: UserInfoComponentProps) => (
-  <ApolloReactComponents.Query<UserInfoQuery, UserInfoQueryVariables>
-    query={UserInfoDocument}
-    {...props}
-  />
-)
-
-export type UserInfoProps<
-  TChildProps = {},
-  TDataName extends string = 'data'
-> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >
-} &
-  TChildProps
-export function withUserInfo<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    UserInfoQuery,
-    UserInfoQueryVariables,
-    UserInfoProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    UserInfoQuery,
-    UserInfoQueryVariables,
-    UserInfoProps<TChildProps, TDataName>
-  >(UserInfoDocument, {
-    alias: 'userInfo',
-    ...operationOptions
-  })
 }
+    `;
+export type UserInfoProps<TChildProps = {}, TDataName extends string = 'data'> = {
+      [key in TDataName]: ApolloReactHoc.DataValue<UserInfoQuery, UserInfoQueryVariables>
+    } & TChildProps;
+export function withUserInfo<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  UserInfoQuery,
+  UserInfoQueryVariables,
+  UserInfoProps<TChildProps, TDataName>>) {
+    return ApolloReactHoc.withQuery<TProps, UserInfoQuery, UserInfoQueryVariables, UserInfoProps<TChildProps, TDataName>>(UserInfoDocument, {
+      alias: 'userInfo',
+      ...operationOptions
+    });
+};
 
 /**
  * __useUserInfoQuery__
@@ -3540,33 +2125,12 @@ export function withUserInfo<
  *   },
  * });
  */
-export function useUserInfoQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<UserInfoQuery, UserInfoQueryVariables>(
-    UserInfoDocument,
-    baseOptions
-  )
-}
-export function useUserInfoLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<UserInfoQuery, UserInfoQueryVariables>(
-    UserInfoDocument,
-    baseOptions
-  )
-}
-export type UserInfoQueryHookResult = ReturnType<typeof useUserInfoQuery>
-export type UserInfoLazyQueryHookResult = ReturnType<
-  typeof useUserInfoLazyQuery
->
-export type UserInfoQueryResult = ApolloReactCommon.QueryResult<
-  UserInfoQuery,
-  UserInfoQueryVariables
->
+export function useUserInfoQuery(baseOptions: Apollo.QueryHookOptions<UserInfoQuery, UserInfoQueryVariables>) {
+        return Apollo.useQuery<UserInfoQuery, UserInfoQueryVariables>(UserInfoDocument, baseOptions);
+      }
+export function useUserInfoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserInfoQuery, UserInfoQueryVariables>) {
+          return Apollo.useLazyQuery<UserInfoQuery, UserInfoQueryVariables>(UserInfoDocument, baseOptions);
+        }
+export type UserInfoQueryHookResult = ReturnType<typeof useUserInfoQuery>;
+export type UserInfoLazyQueryHookResult = ReturnType<typeof useUserInfoLazyQuery>;
+export type UserInfoQueryResult = Apollo.QueryResult<UserInfoQuery, UserInfoQueryVariables>;
