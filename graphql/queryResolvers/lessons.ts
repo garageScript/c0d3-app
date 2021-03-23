@@ -1,13 +1,10 @@
-import db from '../../helpers/dbload'
-
-const { Lesson } = db
+import { prisma } from '../../prisma'
 
 export const lessons = () => {
-  return Lesson.findAll({
-    include: ['challenges'],
-    order: [
-      ['order', 'ASC'],
-      ['challenges', 'order', 'ASC']
-    ]
+  return prisma.lesson.findMany({
+    include: { challenges: { orderBy: { order: 'asc' } } },
+    orderBy: {
+      order: 'asc'
+    }
   })
 }
