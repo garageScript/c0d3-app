@@ -7,6 +7,7 @@ import bcrypt from 'bcrypt'
 import db from '../dbload'
 import { login, logout, signup, isTokenValid } from './authController'
 import { chatSignUp } from '../mattermost'
+import { prisma } from '../../prisma'
 
 describe('auth controller', () => {
   let userArgs
@@ -30,14 +31,14 @@ describe('auth controller', () => {
   })
 
   test('Login - should throw error if user cannot be found', async () => {
-    db.User.findOne = jest.fn().mockReturnValue(null)
+    prisma.user.findFirst = jest.fn().mockReturnValue(null)
     return expect(
       login({}, userArgs, { req: { session: {} } })
     ).rejects.toThrowError('User does not exist')
   })
 
   test('Login - should throw error if password is invalid', async () => {
-    db.User.findOne = jest.fn().mockReturnValue({})
+    prisma.user.findFirst = jest.fn().mockReturnValue({})
     bcrypt.compare = jest.fn().mockReturnValue(false)
     return expect(
       login({}, userArgs, { req: { session: {} } })
@@ -45,9 +46,11 @@ describe('auth controller', () => {
   })
 
   test('Login - should return success true if successful login', async () => {
-    db.User.findOne = jest
-      .fn()
-      .mockReturnValue({ username: 'testuser', cliToken: 'fakeCliToken' })
+    prisma.user.findFirst = jest.fn().mockReturnValue({
+      username: 'testuser',
+      password: 'fakepassword',
+      cliToken: 'fakeCliToken'
+    })
     bcrypt.compare = jest.fn().mockReturnValue(true)
     const result = await login({}, userArgs, { req: { session: {} } })
     expect(result).toEqual({
@@ -58,10 +61,10 @@ describe('auth controller', () => {
   })
 
   test('Login - should return user with a new CLI token', async () => {
-    db.User.findOne = jest.fn().mockResolvedValue({
-      username: 'fakeUser',
-      update: obj => jest.fn().mockReturnThis(obj)
-    })
+    prisma.user.findFirst = jest
+      .fn()
+      .mockReturnValue({ username: 'fakeUser', password: 'fakePassword' })
+    prisma.user.update = obj => jest.fn().mockReturnThis(obj)
     bcrypt.compare = jest.fn().mockReturnValue(true)
     const result = await login({}, userArgs, { req: { session: {} } })
     expect(result.cliToken).toBeTruthy()

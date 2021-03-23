@@ -7,6 +7,7 @@ import { chatSignUp } from '../mattermost'
 import { Context } from '../../@types/helpers'
 import { encode, decode } from '../encoding'
 import { sendSignupEmail } from '../mail'
+import { prisma } from '../../prisma'
 
 const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
@@ -34,17 +35,28 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
       throw new Error('Session Error')
     }
 
-    const user = await User.findOne({ where: { username } })
+    const user = await prisma.user.findFirst({ where: { username } })
+    // TODO change username column to be unique
+    // const user = await prisma.user.findUnique({ where: { username } })
     if (!user) {
       throw new UserInputError('User does not exist')
     }
 
-    const validLogin = await bcrypt.compare(password, user.password)
+    const validLogin = user.password
+      ? await bcrypt.compare(password, user.password)
+      : false
     if (!validLogin) {
       throw new AuthenticationError('Password is invalid')
     }
 
-    if (!user.cliToken) await user.update({ cliToken: nanoid() })
+    if (!user.cliToken) {
+      await prisma.user.update({
+        where: {
+          id: user.id
+        },
+        data: { cliToken: nanoid() }
+      })
+    }
 
     const cliToken = { id: user.id, cliToken: user.cliToken }
 
