@@ -8,6 +8,7 @@ import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
+import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { Star } from '../../@types/lesson'
 import Error, { StatusCode } from '../../components/Error'
@@ -78,6 +79,19 @@ const UserProfile: React.FC = () => {
     }
   })
 
+  const lessonStatus: LessonStatus[] = _.get(data, 'userInfo.lessonStatus', [])
+  const validProfiles = lessonStatus.filter(
+    ({ starsReceived }) => (starsReceived || []).length !== 0
+  )
+  console.log(validProfiles)
+  const profileStars: Star[] = validProfiles.reduce(
+    (acc, { starsReceived }) => {
+      acc.push(...starsReceived)
+      return acc
+    },
+    []
+  )
+
   const profileSubmissions = lessonsList.map(lessonInfo => {
     const lesson = lessonInfo || {}
     const challengeList = lesson.challenges || []
@@ -107,6 +121,7 @@ const UserProfile: React.FC = () => {
       },
       {}
     )
+
     let starsReceived = [] as Star[]
     if (lessonStatusMap[String(lesson.id)]) {
       starsReceived = lessonStatusMap[String(lesson.id)].starsReceived as Star[]
@@ -125,6 +140,7 @@ const UserProfile: React.FC = () => {
       <div className="row mt-4">
         <div className="col-4">
           <ProfileImageInfo user={userInfo} />
+          <ProfileStarComments stars={profileStars} />
         </div>
         <div className="col-8">
           <ProfileLessons lessons={profileLessons} />
