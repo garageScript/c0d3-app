@@ -3,7 +3,7 @@ import Contributors from '../../pages/contributors'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummySessionData from '../../__dummy__/sessionData'
-import { withTestRouter } from '../../__tests__/utils/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 
 export default {
   component: Contributors,

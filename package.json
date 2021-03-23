@@ -113,7 +113,6 @@
     },
     "coveragePathIgnorePatterns": [
       "stories",
-      "testUtil",
       "graphql/index.tsx",
       "<rootDir>/__tests__/utils/"
     ],

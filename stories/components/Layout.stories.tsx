@@ -4,7 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import Layout from '../../components/Layout'
-import { withTestRouter } from '../../__tests__/utils/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 
 const customViewports = {
   LaptopHiDPI: {

@@ -2,7 +2,7 @@ import * as React from 'react'
 import SignupPage, { Signup } from '../../pages/signup'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
-import { withTestRouter } from '../../__tests__/utils/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 
 export default {
   component: Signup,
