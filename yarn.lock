@@ -12294,10 +12294,10 @@ postgres-interval@^1.1.0:
   dependencies:
     xtend "^4.0.0"
 
-posthog-js@^1.8.7:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.9.1.tgz#facc74b08a9bcf3fe981d923b3af0957f0efe438"
-  integrity sha512-CnCLC82lgWdVfFrzVu4kgd47xrl11bENAfWzNi6JHPcHYENhcpZwKK4CA66SPVFt0dc6/qf1p0Dx8XggVF5DQQ==
+posthog-js@^1.9.5:
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.9.5.tgz#b3bbf9efda17a4099058eb3590e996d5613cdfcb"
+  integrity sha512-+yLS5aTy383p8KDUNObteztY84hrLf2B/Bmkvj52SmEruyl3P32XPRUA08CLeUdLdSc8BxRNBY3MnW7+VSQVXQ==
   dependencies:
     fflate "^0.4.1"
 
