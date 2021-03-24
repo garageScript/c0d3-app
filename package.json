@@ -15,7 +15,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.11",
+    "@apollo/client": "^3.3.12",
     "@prisma/client": "2.19.0",
     "@sentry/browser": "^5.30.0",
     "@zeit/next-sass": "^1.0.1",
