@@ -49,7 +49,6 @@ export const userInfo = async (_parent: void, args: Username) => {
     star.dataValues.lessonOrder = _.get(star, 'lesson.order', '')
     star.dataValues.lessonTitle = _.get(star, 'lesson.title', '')
     map[star.lessonId].push(star.dataValues)
-    console.log(star)
     return map
   }, {})
   lessonStatus.forEach((lesson: any) => {
