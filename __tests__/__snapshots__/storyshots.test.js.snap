@@ -11663,6 +11663,62 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
 </pre>
 `;
 
+exports[`Storyshots mdx/Layout With Text 1`] = `
+Array [
+  <div
+    className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+    style={
+      Object {
+        "left": 0,
+        "minHeight": "100vh",
+        "position": "fixed",
+        "top": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <h1
+      className="text-white font-weight-bold display-3"
+      style={
+        Object {
+          "fontFamily": "'PT Mono', sans-serif",
+        }
+      }
+    >
+      C0D3
+    </h1>
+    <div
+      className="spinner-border text-white"
+      role="status"
+    >
+      <h1
+        className="sr-only"
+      >
+        Loading...
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <div
+      className="card shadow-sm mt-3 d-block border-0 p-4 bg-white"
+    >
+      <p>
+        Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
+      </p>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
+`;
+
 exports[`Storyshots mdx/ModalImage Image 1`] = `
 <img
   className="mdx-image"
