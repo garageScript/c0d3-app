@@ -794,6 +794,1666 @@ exports[`user profile test Should render anonymous users 1`] = `
 </div>
 `;
 
+exports[`user profile test Should render if no stars received 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-4"
+    >
+      <div
+        class="col-4"
+      >
+        <div
+          class="card shadow-sm"
+        >
+          <div
+            class="ml-auto mr-auto mt-4 profile_image_container"
+          >
+            <div
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+            >
+              fu
+            </div>
+          </div>
+          <h2
+            class="text-center mt-4"
+          >
+            fake user
+          </h2>
+          <h4
+            class="text-center text-muted mb-4"
+          >
+            @fake user
+          </h4>
+        </div>
+        <div
+          class="profile-comments"
+        >
+          <div
+            class="comments-container card shadow-sm"
+          >
+            <div
+              class="card-body text-center"
+            >
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-8"
+      >
+        <div
+          class="card shadow-sm"
+        >
+          <div
+            class="card-body"
+          >
+            <h3
+              class="profilelessons_title"
+            >
+              Lessons
+            </h3>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-0-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_container"
+            >
+              <p
+                class="lessonimage_progressbadge badge badge-pill badge-primary"
+              >
+                8%
+              </p>
+              <img
+                src="/assets/curriculum/js-1-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-2-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-3-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-4-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-5-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-6-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-7-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-8-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-9-cover.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="card shadow-sm profile-submissions mt-3"
+        >
+          <div
+            class="card-body"
+          >
+            <h3>
+              Challenges
+            </h3>
+            <div
+              class="display_lessons"
+            >
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-0-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Foundations of JavaScript
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 10  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-1-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Variables & Functions
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    1 of 12  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-success"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-2-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Arrays
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 11  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-3-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Objects
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 10  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-4-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Front End Engineering
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 7  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-5-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    End To End
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 9  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-6-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    React, GraphQL, SocketIO
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 8  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-7-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    JavaScript Algorithms
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 11  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-8-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Trees
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 12  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-9-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    General Algorithms
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 5  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
+exports[`user profile test Should render nulled challenges 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle btn btn-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex"
+      >
+        <a
+          class="btn btn-secondary border overflow-hidden p-2 text-truncate"
+          href="/profile/fakeusername"
+        >
+           fakeusername
+        </a>
+        <button
+          class="btn border ml-2"
+          style="color: rgb(41, 41, 41);"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container"
+  >
+    <div
+      class="row mt-4"
+    >
+      <div
+        class="col-4"
+      >
+        <div
+          class="card shadow-sm"
+        >
+          <div
+            class="ml-auto mr-auto mt-4 profile_image_container"
+          >
+            <div
+              class="text-uppercase bg-primary rounded-circle text-light user_info_image"
+            >
+              fu
+            </div>
+          </div>
+          <h2
+            class="text-center mt-4"
+          >
+            fake user
+          </h2>
+          <h4
+            class="text-center text-muted mb-4"
+          >
+            @fake user
+          </h4>
+        </div>
+        <div
+          class="profile-comments"
+        >
+          <div
+            class="comments-container card shadow-sm"
+          >
+            <div
+              class="card-body text-center"
+            >
+              <div />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-8"
+      >
+        <div
+          class="card shadow-sm"
+        >
+          <div
+            class="card-body"
+          >
+            <h3
+              class="profilelessons_title"
+            >
+              Lessons
+            </h3>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-0-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-1-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-2-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-3-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-4-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-5-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-6-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-7-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-8-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-9-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-0-cover.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="card shadow-sm profile-submissions mt-3"
+        >
+          <div
+            class="card-body"
+          >
+            <h3>
+              Challenges
+            </h3>
+            <div
+              class="display_lessons"
+            >
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-0-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Foundations of JavaScript
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 10  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-1-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Variables & Functions
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 12  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-2-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Arrays
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 11  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-3-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Objects
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 10  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-4-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Front End Engineering
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 7  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-5-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    End To End
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 9  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-6-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    React, GraphQL, SocketIO
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 8  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-7-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    JavaScript Algorithms
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 11  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-8-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Trees
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 12  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-9-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    General Algorithms
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 5  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-0-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  />
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 3  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;
+
 exports[`user profile test Should render nulled lessons 1`] = `
 <div>
   <nav

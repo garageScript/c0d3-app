@@ -8,14 +8,10 @@ import { MockedProvider } from '@apollo/client/testing'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
-import expectLoading from '../../utils/expectLoading'
 
 describe('user profile test', () => {
   const { query } = useRouter()
   query['username'] = 'fake user'
-  test('Should render loading spinner if data is not ready', () => {
-    expectLoading(<UserProfile />)
-  })
   test('Should render profile', async () => {
     const session = {
       ...dummySessionData,
@@ -62,7 +58,19 @@ describe('user profile test', () => {
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
-          starsReceived: null
+          starsReceived: [
+            {
+              id: '13',
+              mentorId: '1',
+              studentId: '6',
+              studentUsername: 'newbie',
+              studentName: '',
+              lessonId: '5',
+              lessonTitle: 'Foundations of JavaScript',
+              lessonDifficulty: '0',
+              comment: "You're the best!!"
+            }
+          ]
         },
         {
           lessonId: '2',
@@ -70,10 +78,98 @@ describe('user profile test', () => {
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
-          starsReceived: null
+          starsReceived: [
+            {
+              id: '17',
+              mentorId: '1',
+              studentId: '6',
+              studentUsername: 'newbie',
+              studentName: '',
+              lessonId: '2',
+              lessonTitle: 'Variables & Functions',
+              lessonDifficulty: '1',
+              comment: 'Thanks for your halp!'
+            }
+          ]
         },
         {
           lessonId: '1',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
+          starGiven: null,
+          starsReceived: []
+        }
+      ]
+    }
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: USER_INFO,
+          variables: {
+            username: 'fake user'
+          }
+        },
+        result: {
+          data: {
+            userInfo: session
+          }
+        }
+      }
+    ]
+    const { container, findByRole, queryByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+    await waitForElementToBeRemoved(() => queryByText('Loading...'))
+    await findByRole('heading', { name: /@fake user/i })
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Should render if no stars received', async () => {
+    const session = {
+      ...dummySessionData,
+      submissions: [
+        {
+          id: '1',
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '146',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: '5',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
+          starGiven: null,
+          starsReceived: null
+        },
+        {
+          lessonId: '2',
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
@@ -196,7 +292,7 @@ describe('user profile test', () => {
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
   })
-  test('Should render nulles challenges', async () => {
+  test('Should render nulled challenges', async () => {
     const lessons = [
       ...dummyLessonData,
       {
