@@ -44,20 +44,12 @@ export const userInfo = async (_parent: void, args: Username) => {
   ])
   const starMap = starsReceived.reduce((map: any, star: any) => {
     map[star.lessonId] = map[star.lessonId] || []
-    const {
-      student: { username, name },
-      lesson: { order, title }
-    } = star
-    const s = _.get(star, 'username')
-    console.log(s)
-    star.dataValues = {
-      ...star.dataValues,
-      studentUsername: username,
-      studentName: name,
-      lessonOrder: order,
-      lessonTitle: title
-    }
+    star.dataValues.studentUsername = _.get(star, 'student.username', '')
+    star.dataValues.studentName = _.get(star, 'student.name', '')
+    star.dataValues.lessonOrder = _.get(star, 'lesson.order', '')
+    star.dataValues.lessonTitle = _.get(star, 'lesson.title', '')
     map[star.lessonId].push(star.dataValues)
+    console.log(star)
     return map
   }, {})
   lessonStatus.forEach((lesson: any) => {
