@@ -1,0 +1,136 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["orderByRelation"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+model Session {
+  sid       String    @id @db.VarChar(36)
+  expires   DateTime? @db.Timestamptz(6)
+  data      String?
+  createdAt DateTime  @db.Timestamptz(6)
+  updatedAt DateTime  @db.Timestamptz(6)
+}
+
+model Alert {
+  id         Int      @id @default(autoincrement())
+  text       String?  @db.VarChar(255)
+  type       String?  @db.VarChar(255)
+  url        String?  @db.VarChar(255)
+  urlCaption String?  @db.VarChar(255)
+  createdAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @db.Timestamptz(6)
+
+  @@map("alerts")
+}
+
+model Challenge {
+  id          Int          @id @default(autoincrement())
+  status      String?      @db.VarChar(255)
+  description String?
+  title       String?      @db.VarChar(255)
+  order       Int?
+  createdAt   DateTime     @db.Timestamptz(6)
+  updatedAt   DateTime     @db.Timestamptz(6)
+  lessonId    Int?
+  lesson      Lesson?      @relation(fields: [lessonId], references: [id])
+  submissions Submission[]
+
+  @@map("challenges")
+}
+
+model Lesson {
+  id          Int          @id @default(autoincrement())
+  description String?
+  docUrl      String?      @db.VarChar(255)
+  githubUrl   String?      @db.VarChar(255)
+  videoUrl    String?      @db.VarChar(255)
+  order       Int?
+  title       String?      @db.VarChar(255)
+  createdAt   DateTime     @db.Timestamptz(6)
+  updatedAt   DateTime     @db.Timestamptz(6)
+  chatUrl     String?      @db.VarChar(255)
+  challenges  Challenge[]
+  submissions Submission[]
+  userLessons UserLesson[]
+
+  @@map("lessons")
+}
+
+model Star {
+  id        Int      @id @default(autoincrement())
+  lessonId  Int?
+  createdAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @db.Timestamptz(6)
+  studentId Int?
+  mentorId  Int?
+  comment   String?  @db.VarChar(255)
+  mentor    User?    @relation("starMentor", fields: [mentorId], references: [id])
+  student   User?    @relation("starStudent", fields: [studentId], references: [id])
+
+  @@map("stars")
+}
+
+model Submission {
+  id          Int        @id @default(autoincrement())
+  mrUrl       String?    @db.VarChar(255)
+  diff        String?
+  comment     String?
+  status      String?    @db.VarChar(255)
+  viewCount   Int?       @default(0)
+  createdAt   DateTime   @db.Timestamptz(6)
+  updatedAt   DateTime   @db.Timestamptz(6)
+  userId      Int?
+  reviewerId  Int?
+  challengeId Int?
+  lessonId    Int?
+  challenge   Challenge? @relation(fields: [challengeId], references: [id])
+  lesson      Lesson?    @relation(fields: [lessonId], references: [id])
+  reviewer    User?      @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
+  user        User?      @relation("userSubmissions", fields: [userId], references: [id])
+
+  @@map("submissions")
+}
+
+model UserLesson {
+  isPassed   String?  @db.VarChar(255)
+  isTeaching String?  @db.VarChar(255)
+  isEnrolled String?  @db.VarChar(255)
+  createdAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @db.Timestamptz(6)
+  lessonId   Int
+  userId     Int
+  lesson     Lesson   @relation(fields: [lessonId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@id([lessonId, userId])
+  @@map("userLessons")
+}
+
+model User {
+  id                     Int          @id @default(autoincrement())
+  name                   String?      @db.VarChar(255)
+  username               String?      @db.VarChar(255)
+  password               String?      @db.VarChar(255)
+  email                  String?      @db.VarChar(255)
+  gsId                   Int?
+  isOnline               Boolean?
+  createdAt              DateTime     @db.Timestamptz(6)
+  updatedAt              DateTime     @db.Timestamptz(6)
+  isAdmin                String?      @default(dbgenerated("false")) @db.VarChar(255)
+  forgotToken            String?      @db.VarChar(255)
+  cliToken               String?      @db.VarChar(255)
+  emailVerificationToken String?      @db.VarChar(255)
+  tokenExpiration        DateTime?    @db.Timestamptz(6)
+  starsMentor            Star[]       @relation("starMentor")
+  starsGiven             Star[]       @relation("starStudent")
+  submissionsReviewed    Submission[] @relation("userReviewedSubmissions")
+  submissions            Submission[] @relation("userSubmissions")
+  userLessons            UserLesson[]
+
+  @@map("users")
+}
