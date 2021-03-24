@@ -29,7 +29,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
           <div className={`${styles['comment-username']} text-left`}>
             {'@' + studentUsername}
           </div>
-          <h6 className={`${styles['comment-lesson-title text-left']}`}>
+          <h6 className={`${styles['comment-lesson-title']} text-left`}>
             {lessonTitle}
           </h6>
         </div>
@@ -37,7 +37,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
       <hr />
       <div className={`${styles['comment-text-container']}`}>
         <StarIcon
-          className="comment-star-icon"
+          className={`${styles['comment-star-icon']}`}
           strokeWidth={'1'}
           size={30}
           fill="yellow"
