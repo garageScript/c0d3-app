@@ -58,7 +58,9 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     let starBadge = <></>
     if (lesson.starsReceived && lesson.starsReceived.length) {
       starBadge = (
-        <p className={`lesson_image_star_badge badge badge-pill badge-primary`}>
+        <p
+          className={`${styles['lesson_image_star_badge']} badge badge-pill badge-primary`}
+        >
           {lesson.starsReceived && lesson.starsReceived.length}
           <span className="ml-1">
             <Star size={15} fill="yellow" />
@@ -67,14 +69,14 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
       )
     }
     return (
-      <div key={lessonId} className="lesson_challenges">
-        <div className="lesson_image_container">
+      <div key={lessonId} className={`${styles['lesson_challenges']}`}>
+        <div className={`${styles['lesson_image_container']}`}>
           {starBadge}
           <img src={`/assets/curriculum/js-${lesson.order}-cover.svg`} />
         </div>
-        <div className="lesson_title_container">
-          <h6 className="lesson_title">{lesson.title}</h6>
-          <h6 className="challenges_stats">
+        <div className={`${styles['lesson_title_container']}`}>
+          <h6 className={`${styles['lesson_title']}`}>{lesson.title}</h6>
+          <h6 className={`${styles['challenges_stats']}`}>
             {`${filterPassedChallenges.length} of ${lesson.challenges.length}  Challenges completed`}
           </h6>
           <SubmissionStatus challengesData={lesson.challenges} />
