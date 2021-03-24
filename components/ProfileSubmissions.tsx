@@ -41,7 +41,7 @@ export const SubmissionStatus: React.FC<ChallengeStatusProps> = ({
       return (
         <span
           key={challengeId}
-          className={`challenge_status ${challengeStatus}`}
+          className={`${styles['challenge_status']} ${challengeStatus}`}
         />
       )
     }
@@ -88,7 +88,9 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     <div className={`card shadow-sm ${styles['profile-submissions']} mt-3`}>
       <div className="card-body">
         <h3>Challenges</h3>
-        <div className="display_lessons">{displaySubmissions}</div>
+        <div className={`${styles['display_lessons']}`}>
+          {displaySubmissions}
+        </div>
       </div>
     </div>
   )
