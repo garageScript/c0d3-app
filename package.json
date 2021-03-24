@@ -12,7 +12,8 @@
     "test": "jest --coverage",
     "type-check": "tsc",
     "generate": "graphql-codegen --config codegen.yml",
-    "postinstall": "prisma generate"
+    "postinstall": "node scripts/prismaEnv.js && prisma generate",
+    "vercel-build": "test $VERCEL_ENV = 'production' && prisma migrate deploy; next build"
   },
   "dependencies": {
     "@apollo/client": "^3.3.12",
