@@ -119,6 +119,12 @@
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/__tests__/utils/"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/*.d.ts",
+      "!graphql/(resolvers|typeDefs).ts"
     ]
   },
   "husky": {
