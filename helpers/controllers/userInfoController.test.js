@@ -30,6 +30,15 @@ describe('userInfo controller tests', () => {
     ])
     Star.findAll = jest.fn().mockReturnValue([
       {
+        student: {
+          id: 2,
+          username: 'noob222',
+          name: 'fake user'
+        },
+        lesson: {
+          order: '3',
+          title: 'Objects'
+        },
         dataValues: {
           id: 12,
           lessonId: 1,
@@ -55,8 +64,12 @@ describe('userInfo controller tests', () => {
           starsReceived: [
             {
               id: 12,
+              lessonDifficulty: '3',
               lessonId: 1,
+              lessonTitle: 'Objects',
               studentId: 2,
+              studentName: 'fake user',
+              studentUsername: 'noob222',
               mentorId: 10,
               comment: 'Thank you'
             }
