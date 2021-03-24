@@ -1,7 +1,7 @@
 import React from 'react'
 import { Star as StarType } from '../graphql/index'
 import { Star as StarIcon } from 'react-feather'
-import '../scss/profileStarComments.scss'
+import styles from '../scss/profileStarComments.module.scss'
 
 type StarCommentsProps = {
   stars: StarType[]
@@ -17,42 +17,46 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
   const firstName = fullName[0]
   const lastName = fullName[1] || ''
   return (
-    <div className="comment-box shadow-sm">
-      <div className="comment-profile-container">
-        <div className="text-uppercase bg-primary rounded-circle text-light user-info-image">
+    <div className={`${styles['comment-box']} shadow-sm`}>
+      <div className={`${styles['comment-profile-container']}`}>
+        <div
+          className={`${styles['user-info-image']} text-uppercase bg-primary rounded-circle text-light`}
+        >
           {firstName[0]}
           {lastName[0]}
         </div>
         <div>
-          <div className="comment-username text-left">
+          <div className={`${styles['comment-username']} text-left`}>
             {'@' + studentUsername}
           </div>
-          <h6 className="comment-lesson-title text-left">{lessonTitle}</h6>
+          <h6 className={`${styles['comment-lesson-title text-left']}`}>
+            {lessonTitle}
+          </h6>
         </div>
       </div>
       <hr />
-      <div className="comment-text-container">
+      <div className={`${styles['comment-text-container']}`}>
         <StarIcon
           className="comment-star-icon"
           strokeWidth={'1'}
           size={30}
           fill="yellow"
         />
-        <div className="comment-text">{comment}</div>
+        <div className={`${styles['comment-text']}`}>{comment}</div>
       </div>
     </div>
   )
 }
 
 export const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
-  stars.sort((a, b) => b.lessonDifficulty - a.lessonDifficulty)
+  stars.sort((a, b) => b.lessonOrder - a.lessonOrder)
 
   const displayStarComments = stars.map((star: StarType, commentId: number) => {
     return <StarComment key={commentId} star={star} />
   })
   return (
-    <div className="profile-comments">
-      <div className="comments-container card shadow-sm">
+    <div className={`${styles['profile-comments']}`}>
+      <div className={`${styles['comments-container']} card shadow-sm`}>
         <div className="card-body text-center">
           <div>{displayStarComments}</div>
         </div>
