@@ -64,7 +64,7 @@ describe('userInfo controller tests', () => {
           starsReceived: [
             {
               id: 12,
-              lessonDifficulty: '3',
+              lessonOrder: '3',
               lessonId: 1,
               lessonTitle: 'Objects',
               studentId: 2,
