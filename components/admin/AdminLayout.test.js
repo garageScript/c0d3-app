@@ -1,19 +1,15 @@
 import React from 'react'
 import { render, waitFor } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import { AdminLayout } from './AdminLayout'
 import { useRouter } from 'next/router'
+import expectLoading from '../../__tests__/utils/expectLoading'
 
 describe('AdminLayout test', () => {
   const { push } = useRouter()
   test('Should return loading spinner when loading', async () => {
-    const { findByRole } = render(
-      <MockedProvider addTypename={false}>
-        <AdminLayout data={{ loading: true }} />
-      </MockedProvider>
-    )
-    const element = await findByRole('heading', { name: /loading/i })
-    expect(element).toBeTruthy()
+    expectLoading(<AdminLayout data={{ loading: true }} />)
   })
   test('Should return Error on error', async () => {
     const { findByText } = render(
