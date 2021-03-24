@@ -1,7 +1,7 @@
 import React from 'react'
-import '../scss/profileSubmissions.scss'
 import { Star as StarType } from '../@types/lesson'
 import { Star } from 'react-feather'
+import styles from '../scss/profileSubmissions.module.scss'
 
 type ChallengeStatusProps = {
   challengesData: Challenge[]
@@ -83,7 +83,7 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
     )
   })
   return (
-    <div className="card shadow-sm profile-submissions mt-3">
+    <div className={`card shadow-sm ${styles['profile-submissions']} mt-3`}>
       <div className="card-body">
         <h3>Challenges</h3>
         <div className="display_lessons">{displaySubmissions}</div>

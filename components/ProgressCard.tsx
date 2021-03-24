@@ -1,8 +1,6 @@
 import React from 'react'
 import NavLink from './NavLink'
-
-import '../scss/progressCard.scss'
-
+import styles from '../scss/progressCard.module.scss'
 type Props = {
   progressCount: number
 }
@@ -50,16 +48,18 @@ const ProgressSVG: React.FC<Props> = ({ progressCount }) => {
 
 const ProgressCard: React.FC<Props> = ({ progressCount }) => {
   return (
-    <div className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0">
+    <div
+      className={`${styles['progress-card__container']} d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0`}
+    >
       <div className="card-body">
         <ProgressSVG progressCount={progressCount} />
-        <h4 className="progress-card__title mt-3">
+        <h4 className={`${styles['progress-card__title']} mt-3`}>
           You&#39;re off to a great start!
         </h4>
         <div className="mt-3">
           Login to
           <NavLink
-            className="progress-newuser__chatlink text-white"
+            className={`${styles['progress-newuser__chatlink']} text-white`}
             path="https://chat.c0d3.com/login"
             external
           >
@@ -73,7 +73,7 @@ const ProgressCard: React.FC<Props> = ({ progressCount }) => {
         </div>
         <NavLink
           path="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
-          className="btn btn-light progress-card__button mt-2 text-primary"
+          className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
           external
         >
           Setup Development Environment
