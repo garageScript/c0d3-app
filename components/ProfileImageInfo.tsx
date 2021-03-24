@@ -1,8 +1,7 @@
 import React from 'react'
 import UserInfoImage from './UserInfoImage'
 import { UserInfo } from '../@types/user'
-import '../scss/profileImageInfo.scss'
-
+import styles from '../scss/profileImageInfo.module.scss'
 type ProfileImageInfoProps = {
   user: UserInfo
 }
@@ -10,7 +9,9 @@ type ProfileImageInfoProps = {
 const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
   return (
     <div className="card shadow-sm">
-      <div className="ml-auto mr-auto mt-4 profile_image_container">
+      <div
+        className={`ml-auto mr-auto mt-4 ${styles['profile_image_container']}`}
+      >
         <UserInfoImage user={user} />
       </div>
       <h2 className="text-center mt-4">

@@ -1752,29 +1752,3 @@ exports[`Lesson Page Should render new submissions 1`] = `
   </div>
 </div>
 `;
-
-exports[`Lesson Page Should return loading spinner when loading 1`] = `
-<div>
-  <div
-    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
-    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
-  >
-    <h1
-      class="text-white font-weight-bold display-3"
-      style="font-family: 'PT Mono', sans-serif;"
-    >
-      C0D3
-    </h1>
-    <div
-      class="spinner-border text-white"
-      role="status"
-    >
-      <h1
-        class="sr-only"
-      >
-        Loading...
-      </h1>
-    </div>
-  </div>
-</div>
-`;

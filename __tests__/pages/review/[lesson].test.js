@@ -14,6 +14,7 @@ import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
 import { useRouter } from 'next/router'
+import expectLoading from '../../utils/expectLoading'
 
 const getAppMock = {
   request: { query: GET_APP },
@@ -80,14 +81,8 @@ describe('Lesson Page', () => {
     )
     await waitFor(() => expect(container).toMatchSnapshot())
   })
-  test('Should return loading spinner when loading', async () => {
-    const { container } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Review />
-      </MockedProvider>
-    )
-    expect(screen.getByText('Loading...')).toBeTruthy()
-    await waitFor(() => expect(container).toMatchSnapshot())
+  test('Should return loading spinner when loading', () => {
+    expectLoading(<Review />)
   })
   test('Should redirect to login if no session', async () => {
     const noSessionMock = {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from './theme/Button'
 import UserInfoImage from './UserInfoImage'
 import { UserInfo } from '../@types/user'
-import '../scss/submissionCard.scss'
+import styles from '../scss/submissionCard.module.scss'
 
 type Props = {
   userId: string
@@ -24,7 +24,9 @@ const SubmissionCard: React.FC<Props> = ({
       <div className="card-header bg-white">
         <div className="row no-gutters">
           <div className="col-0 mr-3">
-            <div className="submissioncard_user_info_image_container">
+            <div
+              className={`${styles['submissioncard_user_info_image_container']}`}
+            >
               <UserInfoImage user={user} />
             </div>
           </div>

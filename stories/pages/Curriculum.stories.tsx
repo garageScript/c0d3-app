@@ -5,7 +5,7 @@ import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
-import { withTestRouter } from '../../testUtil/withNextRouter'
+import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 
 export default {
   component: Curriculum,

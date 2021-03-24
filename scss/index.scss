@@ -17,7 +17,7 @@ $green: #00cf92 !default;
 @import '~bootstrap/scss/bootstrap.scss';
 
 // Import Fonts
-@import "../public/PTMono-Regular.ttf";
+@import "./fonts.scss";
 
 // Global CSS
 body{
@@ -46,4 +46,5 @@ p {
 
 // Local SCSS Imports
 @import './challengeMaterial.scss';
+@import './modalCard.scss';
 @import './prism.scss';
