@@ -1,2 +1,0 @@
--- AddForeignKey
-ALTER TABLE "stars" ADD FOREIGN KEY ("lessonId") REFERENCES "lessons"("id") ON DELETE SET NULL ON UPDATE CASCADE;

@@ -12,8 +12,8 @@
     "test": "jest --coverage",
     "type-check": "tsc",
     "generate": "graphql-codegen --config codegen.yml",
-    "postinstall": "node scripts/prismaEnv.js && prisma generate",
-    "vercel-build": "test $VERCEL_ENV = 'production' && prisma migrate deploy; next build"
+    "postinstall": "./scripts/prismaUtils.js setup && prisma generate",
+    "vercel-build": "./scripts/prismaUtils.js baseline migrate && next build"
   },
   "dependencies": {
     "@apollo/client": "^3.3.12",
@@ -120,7 +120,8 @@
       "stories",
       "graphql/index.tsx",
       "<rootDir>/__tests__/utils/",
-      "prisma"
+      "prisma",
+      "scripts"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/__tests__/utils/"
