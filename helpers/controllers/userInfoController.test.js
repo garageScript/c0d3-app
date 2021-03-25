@@ -36,7 +36,7 @@ describe('userInfo controller tests', () => {
           name: 'fake user'
         },
         lesson: {
-          order: '3',
+          order: 3,
           title: 'Objects'
         },
         dataValues: {
@@ -64,7 +64,7 @@ describe('userInfo controller tests', () => {
           starsReceived: [
             {
               id: 12,
-              lessonOrder: '3',
+              lessonOrder: 3,
               lessonId: 1,
               lessonTitle: 'Objects',
               studentId: 2,

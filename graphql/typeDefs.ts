@@ -133,7 +133,7 @@ export default gql`
     isPassed: String
     isTeaching: String
     isEnrolled: String
-    starsReceived: [Star]
+    starsReceived: [Star!]!
     starGiven: String
   }
 

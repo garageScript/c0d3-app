@@ -46,7 +46,7 @@ export const userInfo = async (_parent: void, args: Username) => {
     map[star.lessonId] = map[star.lessonId] || []
     star.dataValues.studentUsername = _.get(star, 'student.username', '')
     star.dataValues.studentName = _.get(star, 'student.name', '')
-    star.dataValues.lessonOrder = _.get(star, 'lesson.order', '')
+    star.dataValues.lessonOrder = _.get(star, 'lesson.order', 0)
     star.dataValues.lessonTitle = _.get(star, 'lesson.title', '')
     map[star.lessonId].push(star.dataValues)
     return map
