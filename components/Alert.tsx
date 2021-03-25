@@ -27,7 +27,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
     type === 'urgent' ? 'alert-danger' : `bg-primary ${textColor}`
   return (
     <div
-      className={`${styles.alert} d-flex justify-content-between mt-3 ${alertClasses}`}
+      className={`${styles['alert']} d-flex justify-content-between mt-3 ${alertClasses}`}
       role="alert"
     >
       <div>
