@@ -10,7 +10,7 @@ import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
 import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import { Star } from '../../@types/lesson'
+import { Star } from '../../graphql/index'
 import Error, { StatusCode } from '../../components/Error'
 
 export type UserInfo = {
