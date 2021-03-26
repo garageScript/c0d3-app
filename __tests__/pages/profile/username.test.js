@@ -218,7 +218,7 @@ describe('user profile test', () => {
       ...dummySessionData,
       user: {
         id: 1,
-        username: 'fakeusername',
+        username: 'fake user',
         name: '',
         isAdmin: 'true'
       }
