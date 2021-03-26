@@ -124,9 +124,7 @@
       "<rootDir>/__tests__/utils/",
       "prisma"
     ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/__tests__/utils/"
-    ],
+    "testPathIgnorePatterns": ["<rootDir>/__tests__/utils/"],
     "collectCoverageFrom": [
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
@@ -135,7 +133,7 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npm run lint --fix",
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{json,md,scss}": "prettier --write",
     "*.svg": "svgo --multipass"
   }
