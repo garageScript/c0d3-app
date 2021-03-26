@@ -795,6 +795,7 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
             starsReceived: Array<
               { __typename?: 'Star' } & Pick<
                 Star,
+                | 'id'
                 | 'lessonId'
                 | 'mentorId'
                 | 'studentId'
@@ -3208,6 +3209,7 @@ export const UserInfoDocument = gql`
         isTeaching
         isEnrolled
         starsReceived {
+          id
           lessonId
           mentorId
           studentId
