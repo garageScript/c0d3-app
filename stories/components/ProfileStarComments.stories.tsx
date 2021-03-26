@@ -15,7 +15,7 @@ const stars: StarType[] = [
     lessonTitle: 'Objects',
     lessonOrder: 3,
     comment:
-      "Thanks for your help. I was once lost but now I'm found. Was blind but now I see."
+      "Thanks. I was once lost but now I'm found. Was blind but now I see."
   },
   {
     id: '2',
@@ -23,7 +23,7 @@ const stars: StarType[] = [
     studentUsername: 'ccc',
     lessonTitle: 'End to End',
     lessonOrder: 5,
-    comment: 'Many thanks, sir.'
+    comment: "Objects ain't easy, but thanks to you, they're now lemon squeezy."
   }
 ]
 

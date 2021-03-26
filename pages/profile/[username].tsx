@@ -80,17 +80,10 @@ const UserProfile: React.FC = () => {
   })
 
   const lessonStatus: LessonStatus[] = _.get(data, 'userInfo.lessonStatus', [])
-  const validProfiles = lessonStatus.filter(
-    ({ starsReceived }) => (starsReceived || []).length !== 0
-  )
-  console.log(validProfiles)
-  const profileStars: Star[] = validProfiles.reduce(
-    (acc, { starsReceived }) => {
-      acc.push(...starsReceived)
-      return acc
-    },
-    []
-  )
+  const profileStars: Star[] = lessonStatus.reduce((acc, { starsReceived }) => {
+    acc.push(...(starsReceived as Star[]))
+    return acc
+  }, [] as Star[])
 
   const profileSubmissions = lessonsList.map(lessonInfo => {
     const lesson = lessonInfo || {}
