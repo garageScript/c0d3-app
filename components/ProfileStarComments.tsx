@@ -13,9 +13,8 @@ type StarCommentProps = {
 
 const StarComment: React.FC<StarCommentProps> = ({ star }) => {
   const { lessonTitle, studentUsername, studentName, comment } = star
-  const fullName = (studentName || 'A').split(' ') // A for Anonymous
-  const firstName = fullName[0]
-  const lastName = fullName[1] || ''
+  const firstName = studentName!.split(' ')[0] || 'A'
+  const lastName = studentName!.split(' ')[1] || ' '
   return (
     <div className={`${styles['comment-box']} shadow-sm`}>
       <div className={`${styles['comment-profile-container']}`}>

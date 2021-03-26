@@ -2,8 +2,8 @@ import * as React from 'react'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
-import { UserSubmission } from '../../@types/challenge'
-import { LessonStatus } from '../../@types/lesson'
+import { Submission } from '../../graphql/index'
+import { UserLesson } from '../../graphql/index'
 import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
@@ -19,8 +19,8 @@ export type UserInfo = {
   lastName: string
 }
 
-type LessonStatusMap = {
-  [id: string]: LessonStatus
+type UserLessonMap = {
+  [id: string]: UserLesson
 }
 
 const UserProfile: React.FC = () => {
@@ -50,11 +50,7 @@ const UserProfile: React.FC = () => {
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' '
   }
-  const userSubmissions: UserSubmission[] = _.get(
-    data,
-    'userInfo.submissions',
-    []
-  )
+  const userSubmissions: Submission[] = _.get(data, 'userInfo.submissions', [])
   const profileLessons = (lessons || []).map(lessonInfo => {
     const lesson = lessonInfo || {}
     const { challenges } = lesson
@@ -79,7 +75,7 @@ const UserProfile: React.FC = () => {
     }
   })
 
-  const lessonStatus: LessonStatus[] = _.get(data, 'userInfo.lessonStatus', [])
+  const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
   const validProfiles = lessonStatus.filter(
     ({ starsReceived }) => (starsReceived || []).length !== 0
   )
@@ -107,13 +103,9 @@ const UserProfile: React.FC = () => {
           : 'open'
       }
     })
-    const lessonStatus: LessonStatus[] = _.get(
-      data,
-      'userInfo.lessonStatus',
-      []
-    )
-    const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
-      (map: LessonStatusMap, lesson: LessonStatus) => {
+    const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
+    const lessonStatusMap: UserLessonMap = lessonStatus.reduce(
+      (map: UserLessonMap, lesson: UserLesson) => {
         //https://stackoverflow.com/questions/46043087/type-null-cannot-be-used-as-an-index-type
         map[String(lesson.lessonId)] = lesson
         return map

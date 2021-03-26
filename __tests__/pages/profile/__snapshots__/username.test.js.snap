@@ -3708,6 +3708,7 @@ exports[`user profile test Should render profile 1`] = `
                       class="user-info-image text-uppercase bg-primary rounded-circle text-light"
                     >
                       A
+                       
                     </div>
                     <div>
                       <div
@@ -3759,6 +3760,7 @@ exports[`user profile test Should render profile 1`] = `
                       class="user-info-image text-uppercase bg-primary rounded-circle text-light"
                     >
                       A
+                       
                     </div>
                     <div>
                       <div
