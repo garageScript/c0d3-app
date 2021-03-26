@@ -136,6 +136,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "npm run lint --fix",
-    "*.{json,md,scss}": "prettier --write"
+    "*.{json,md,scss}": "prettier --write",
+    "*.svg": "svgo --multipass"
   }
 }
