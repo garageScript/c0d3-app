@@ -11719,14 +11719,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots mdx/ModalImage Image 1`] = `
-<img
-  className="mdx-image"
-  onClick={[Function]}
-  src="/assets/landing/header-01.svg"
-/>
-`;
-
 exports[`Storyshots mdx/Spoiler Default 1`] = `
 Array [
   <div

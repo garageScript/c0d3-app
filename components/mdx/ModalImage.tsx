@@ -1,22 +1,30 @@
 import * as React from 'react'
 import Modal from 'react-bootstrap/Modal'
-type Props = {
-  src: string
-}
-const Image: React.FC<Props> = (props: any) => {
+import Image, { ImageProps } from 'next/image'
+
+const ModalImage: React.FC<ImageProps> = (props: ImageProps) => {
   const [show, setShow] = React.useState(false)
+  const handle = (state: boolean) => () => setShow(state)
   return (
     <>
-      <img className="mdx-image" {...props} onClick={() => setShow(true)} />
-      <Modal className="mdx-modal-image" show={show} centered>
-        <Modal.Dialog>
-          <Modal.Body>
-            <img {...props} onClick={() => setShow(false)} />
-          </Modal.Body>
-        </Modal.Dialog>
+      <Image className="mdx-image" {...props} onClick={handle(true)} />
+      <Modal
+        className="mdx-modal-image"
+        show={show}
+        onHide={handle(false)}
+        centered
+        onClick={handle(false)}
+      >
+        <Modal.Body>
+          <Image
+            height={(props.height as number) * 2}
+            width={(props.width as number) * 2}
+            src={props.src}
+          />
+        </Modal.Body>
       </Modal>
     </>
   )
 }
 
-export default Image
+export default ModalImage

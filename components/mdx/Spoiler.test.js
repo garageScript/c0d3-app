@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import Spoiler from './Spoiler'
 
@@ -12,7 +13,7 @@ describe('Spoiler component test', () => {
     )
     expect(container).toMatchSnapshot()
     userEvent.click(screen.getByText('TestSpoiler'))
-    expect(screen.getByText('Hidden text')).toBeTruthy
+    expect(screen.getByText('Hidden text')).toBeVisible()
     userEvent.click(screen.getByText('TestSpoiler'))
   })
   test('Should render spoiler without name', () => {
@@ -22,13 +23,5 @@ describe('Spoiler component test', () => {
       </Spoiler>
     )
     expect(screen.getByText('Answer')).toBeTruthy()
-  })
-  test('Should render spoiler with offset', () => {
-    const { container } = render(
-      <Spoiler offset="1em">
-        <h1>Hidden text</h1>
-      </Spoiler>
-    )
-    expect(container).toMatchSnapshot()
   })
 })

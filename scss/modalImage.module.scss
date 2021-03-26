@@ -1,17 +1,12 @@
-.modal-content{
-    background-color:transparent;
-    border:none
+.modal-content {
+  background-color: transparent;
+  border: none;
 }
-.modal-dialog{
-    max-width: 90%;
+.modal-dialog {
+  max-width: 80%;
+  width: 80%;
+  text-align: center;
 }
-.modal-body > img{
-    width: 100%;
-}
-.mdx-image{
-    max-height: 50vh;
-    max-width: 100%;
-}
-.mdx-modal-image{
-    overflow: scroll;
+.mdx-modal-image {
+  overflow: scroll;
 }

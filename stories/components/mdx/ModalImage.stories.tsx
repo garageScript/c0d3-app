@@ -7,5 +7,8 @@ export default {
 }
 
 export const Image: React.FC = () => (
-  <MdxImage src="/assets/landing/header-01.svg" />
+  <MdxImage width={313} height={360} src="/assets/landing/header-01.svg" />
+)
+export const Kanban: React.FC = () => (
+  <MdxImage width={1280} height={511} src="/challenges/assets/kanban.png" />
 )

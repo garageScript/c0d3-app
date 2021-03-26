@@ -1,15 +1,22 @@
 import * as React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import Image from './ModalImage'
 import userEvent from '@testing-library/user-event'
 
 describe('Image component test', () => {
-  test('Should render image', () => {
-    const container = render(
-      <Image src="/assets/curriculum/js-0-cover.svg" alt="test" />
+  test('Should render image', async () => {
+    render(
+      <Image
+        width={313}
+        height={360}
+        src="/assets/landing/header-01.svg"
+        data-testid="modal-image"
+      />
     )
-    userEvent.click(screen.getByAltText('test'))
-    expect(container).toMatchSnapshot()
-    userEvent.click(screen.getAllByAltText('test')[1])
+    expect(screen.getByTestId('modal-image')).not.toBeVisible()
+    userEvent.click(screen.getByRole('presentation', { hidden: true }))
+    await waitFor(() => expect(screen.getByTestId('modal-image')).toBeVisible())
+    userEvent.click(screen.getByTestId('modal-image'))
   })
 })
