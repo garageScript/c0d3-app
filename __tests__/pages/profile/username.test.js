@@ -61,13 +61,13 @@ describe('user profile test', () => {
           starsReceived: [
             {
               id: '13',
-              mentorId: '1',
+              mentorId: 1,
               studentId: '6',
               studentUsername: 'newbie',
               studentName: '',
               lessonId: '5',
               lessonTitle: 'Foundations of JavaScript',
-              lessonDifficulty: '0',
+              lessonOrder: 0,
               comment: "You're the best!!"
             }
           ]
@@ -81,13 +81,13 @@ describe('user profile test', () => {
           starsReceived: [
             {
               id: '17',
-              mentorId: '1',
+              mentorId: 1,
               studentId: '6',
               studentUsername: 'newbie',
               studentName: '',
               lessonId: '2',
               lessonTitle: 'Variables & Functions',
-              lessonDifficulty: '1',
+              lessonOrder: 1,
               comment: 'Thanks for your halp!'
             }
           ]
