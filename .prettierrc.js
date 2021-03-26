@@ -10,6 +10,18 @@ module.exports = {
       options: {
         parser: 'scss'
       }
+    },
+    {
+      files: '*.md',
+      options: {
+        parser: 'markdown'
+      }
+    },
+    {
+      files: '*.json',
+      options: {
+        parser: 'json'
+      }
     }
   ]
 }
