@@ -1,5 +1,7 @@
 @media only screen and (max-width: 812px) {
-  .small, .medium, .large {
+  .small,
+  .medium,
+  .large {
     max-width: 100% !important;
     padding: 20px 15px;
   }
@@ -18,7 +20,7 @@
 }
 
 .exitBtn {
-  right: -34px; 
+  right: -34px;
   top: -27px;
 }
 

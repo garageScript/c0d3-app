@@ -1,5 +1,5 @@
 .challenges-container {
-  width: 100%
+  width: 100%;
 }
 
 .challenge-title-card {
@@ -8,11 +8,11 @@
     cursor: pointer;
   }
   &--done {
-      color: #6d7278;
-      background-color: rgba(255, 255, 255, 0.5);
+    color: #6d7278;
+    background-color: rgba(255, 255, 255, 0.5);
   }
   &--active {
-      border-left: 3px solid map-get($theme-colors, "primary") !important;
+    border-left: 3px solid map-get($theme-colors, 'primary') !important;
   }
 }
 .challenge-question {
