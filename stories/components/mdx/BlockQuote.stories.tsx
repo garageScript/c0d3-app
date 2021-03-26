@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import BlockQuote from '../../../components/mdx/BlockQuote'
 import Layout from '../../../components/mdx/Layout'
 import { MockedProvider } from '@apollo/client/testing'

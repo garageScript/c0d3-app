@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import CodeBlock from '../../../components/mdx/CodeBlock'
 
 export default {

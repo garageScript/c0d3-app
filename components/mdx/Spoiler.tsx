@@ -1,10 +1,10 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import styles from '../../scss/spoiler.module.scss'
 type Props = {
   name?: string
 }
 const Spoiler: React.FC<Props> = ({ children, name }) => {
-  const [status, setStatus] = React.useState({
+  const [status, setStatus] = useState({
     css: { display: 'none' },
     name: 'spoiler-arrow__right'
   })
@@ -19,7 +19,7 @@ const Spoiler: React.FC<Props> = ({ children, name }) => {
         <div className="d-flex">
           <div className={`${styles[status.name]} align-self-center mr-3`} />
           <div className={`${styles['spoiler__title']}`}>
-            {name ? name : 'Answer'}
+            {name || 'Answer'}
           </div>
         </div>
       </div>

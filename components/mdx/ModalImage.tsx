@@ -1,9 +1,9 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Image, { ImageProps } from 'next/image'
 
 const ModalImage: React.FC<ImageProps> = (props: ImageProps) => {
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = useState(false)
   const handle = (state: boolean) => () => setShow(state)
   return (
     <>

@@ -4,7 +4,7 @@ import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import github from 'prism-react-renderer/themes/github'
 type Props = {
   className: Language
-  children: any
+  children: string
 }
 const CodeBlock: React.FC<Props> = ({ children, className }) => {
   const language = className.replace(/language-/, '') as Language
