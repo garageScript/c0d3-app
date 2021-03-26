@@ -4935,6 +4935,7 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
               className="user-info-image text-uppercase bg-primary rounded-circle text-light"
             >
               C
+               
             </div>
             <div>
               <div
