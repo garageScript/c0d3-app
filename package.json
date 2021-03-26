@@ -18,7 +18,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.12",
     "@prisma/client": "2.19.0",
-    "@sentry/browser": "^5.30.0",
+    "@sentry/browser": "^6.2.3",
     "apollo-server-micro": "^2.20.0",
     "bcrypt": "5.0.0",
     "bootstrap": "^4.6.0",
