@@ -4,7 +4,7 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import dummyAlertData from '../../__dummy__/alertData
+import dummyAlertData from '../../__dummy__/alertData'
 import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 
 export default {
@@ -54,36 +54,27 @@ export const WithAlerts: React.FC = () => {
   )
 }
 
-export const CompletedLessons: React.FC<{}> = () => {
-  const session: Session = {
-    user: {
-      id: '1',
-      username: 'fakeusername',
-      name: 'fake user',
-      isAdmin: 'true'
-    },
-    submissions: [],
+export const CompletedLessons: React.FC = () => {
+  const session = {
+    ...dummySessionData,
     lessonStatus: [
       {
         lessonId: '5',
-        isPassed: 'true',
-        isTeaching: 'true',
-        isEnrolled: 'false',
-        starGiven: null
+        isPassed: true,
+        isTeaching: true,
+        isEnrolled: false
       },
       {
         lessonId: '2',
-        isPassed: 'true',
-        isTeaching: 'true',
-        isEnrolled: 'false',
-        starGiven: null
+        isPassed: true,
+        isTeaching: true,
+        isEnrolled: false
       },
       {
         lessonId: '1',
-        isPassed: 'true',
-        isTeaching: 'true',
-        isEnrolled: 'false',
-        starGiven: null
+        isPassed: true,
+        isTeaching: true,
+        isEnrolled: false
       }
     ]
   }
@@ -95,7 +86,7 @@ export const CompletedLessons: React.FC<{}> = () => {
         data: {
           lessons: dummyLessonData,
           session,
-          alerts: dummyAlertData
+          alerts: []
         }
       }
     }
