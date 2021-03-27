@@ -2,57 +2,90 @@
 
 exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 <div
-  className="additional-resources__container mt-4 mb-0"
+  className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
 >
   <h1
-    className="additional-resources__title text-muted"
+    className="additional-resources__title font-weight-bold"
   >
     ADDITIONAL RESOURCES
   </h1>
-  <hr
-    className="my-2"
-  />
   <a
-    className="mx-3"
-    href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
+    className="additional-resources_link mr-1"
+    href="https://developer.mozilla.org/en-US/"
     rel="noopener noreferrer"
     target="_blank"
   >
-    Setup Instructions
+    <h2
+      className="additional-resources__subtitle mr-0"
+    >
+      MDN Web Docs
+    </h2>
   </a>
-  <hr
-    className="my-2"
-  />
-  <a
-    className="mx-3"
-    href="/#"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+  <h3
+    className="additional-resources__description"
   >
-    Github Basics
-  </a>
+    The encyclopedia of web development
+  </h3>
   <hr
     className="my-2"
   />
   <a
-    className="mx-3"
-    href="https://stackoverflow.com/"
+    className="additional-resources_link mr-1"
+    href="https://javascript.info/"
     rel="noopener noreferrer"
     target="_blank"
   >
-    Stack Overflow
+    <h2
+      className="additional-resources__subtitle"
+    >
+      The Modern JavaScript Tutorial
+    </h2>
   </a>
+  <h3
+    className="additional-resources__description"
+  >
+    In-depth overview of javascript language
+  </h3>
   <hr
     className="my-2"
   />
   <a
-    className="mx-3"
-    href="https://chat.c0d3.com/"
+    className="additional-resources_link mr-1"
+    href="https://missing.csail.mit.edu/"
     rel="noopener noreferrer"
     target="_blank"
   >
-    Help & Support
+    <h2
+      className="additional-resources__subtitle "
+    >
+      The Missing Semester
+    </h2>
   </a>
+  <h3
+    className="additional-resources__description"
+  >
+    Introduction to shell, git, vim, tmux and etc.
+  </h3>
+  <hr
+    className="my-2"
+  />
+  <a
+    className="additional-resources_link mr-1"
+    href="https://teachyourselfcs.com/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <h2
+      className="additional-resources__subtitle"
+    >
+      Teach Yourself Computer Science
+    </h2>
+  </a>
+  <h3
+    className="additional-resources__description"
+  >
+    Self-study guide
+  </h3>
   <hr
     className="my-2"
   />
@@ -157,10 +190,10 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
 
 exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 <div
-  className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+  className="announcement-card__container card shadow-sm mt-3 p-2 border-0"
 >
   <div
-    className="card-body"
+    className="card-body d-flex flex-column justify-content-around"
   >
     <h1
       className="announcement-card__title"
@@ -4073,13 +4106,14 @@ exports[`Storyshots Components/Layout No Layout 1`] = `
 
 exports[`Storyshots Components/LessonCard Basic 1`] = `
 <div
-  className="card shadow-sm mt-3 d-block border-0"
+  className="card shadow-sm mt-3 border-0"
 >
   <div
     className="d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
+      className="lesson-card__image"
       src="/assets/curriculum/js-4-cover.svg"
     />
     <div
@@ -4128,13 +4162,14 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
 
 exports[`Storyshots Components/LessonCard With Completed 1`] = `
 <div
-  className="card shadow-sm mt-3 d-block border-0"
+  className="card shadow-sm mt-3 border-0"
 >
   <div
     className="d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
+      className="lesson-card__image"
       src="/assets/curriculum/js-4-cover.svg"
     />
     <div
@@ -4226,13 +4261,14 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
 
 exports[`Storyshots Components/LessonCard With In Progress 1`] = `
 <div
-  className="card shadow-sm mt-3 d-block lesson-card__container_inprogress border-primary"
+  className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
 >
   <div
     className="d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
+      className="lesson-card__image"
       src="/assets/curriculum/js-4-cover.svg"
     />
     <div
@@ -5714,10 +5750,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white p-2 border-0"
 >
   <div
-    className="card-body"
+    className="card-body d-flex flex-column justify-content-around"
   >
     <svg
       viewBox="0 0 40 40"
@@ -5800,10 +5836,10 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 
 exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white p-2 border-0"
 >
   <div
-    className="card-body"
+    className="card-body d-flex flex-column justify-content-around"
   >
     <svg
       viewBox="0 0 40 40"
@@ -5886,10 +5922,10 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 
 exports[`Storyshots Components/ProgressCard Progress 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white p-2 border-0"
 >
   <div
-    className="card-body"
+    className="card-body d-flex flex-column justify-content-around"
   >
     <svg
       viewBox="0 0 40 40"

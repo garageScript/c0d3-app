@@ -82,14 +82,27 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   })
   return (
     <Layout>
-      <div className="row">
+      <div className="row ">
         <AlertsDisplay alerts={alerts} page="curriculum" />
-        <div className="col-8">{lessonsToRender}</div>
-        <div className="col-4">
+        <div className="d-xl-flex col-xl-4 order-xl-2">
           <ProgressCard progressCount={progressPercentage} />
+        </div>
+        <div className="col-xl-8">{lessonsToRender.slice(0, 2)}</div>
+      </div>
+      <div className="row">
+        <div className="col-xl-8">{lessonsToRender.slice(2, 5)}</div>
+        <div className="d-none d-xl-flex col-xl-4">
           <AnnouncementCard announcements={announcements} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-xl-8">{lessonsToRender.slice(5, 7)}</div>
+        <div className="d-none d-xl-block col-xl-4">
           <AdditionalResources />
         </div>
+      </div>
+      <div className="row">
+        <div className="col-xl-8">{lessonsToRender.slice(7)}</div>
       </div>
     </Layout>
   )

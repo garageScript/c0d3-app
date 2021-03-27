@@ -1,4 +1,23 @@
 .additional-resources__title {
-  font-size: 13px;
+  font-size: 1em;
   line-height: 2.9;
+  color: #717171;
+}
+
+.additional-resources_link {
+  text-decoration-color: rgb(61, 61, 61) !important;
+  :hover {
+    color: rgb(34, 34, 34) !important;
+  }
+  .additional-resources__subtitle {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #717171;
+    margin-bottom: 0;
+  }
+}
+.additional-resources__description {
+  font-size: 0.8em;
+  line-height: 1;
+  color: #717171;
 }

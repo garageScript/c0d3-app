@@ -49,9 +49,9 @@ const ProgressSVG: React.FC<Props> = ({ progressCount }) => {
 const ProgressCard: React.FC<Props> = ({ progressCount }) => {
   return (
     <div
-      className={`${styles['progress-card__container']} d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0`}
+      className={`${styles['progress-card__container']} card shadow-sm mt-3 bg-primary text-white p-2 border-0`}
     >
-      <div className="card-body">
+      <div className="card-body d-flex flex-column justify-content-around">
         <ProgressSVG progressCount={progressCount} />
         <h4 className={`${styles['progress-card__title']} mt-3`}>
           You&#39;re off to a great start!

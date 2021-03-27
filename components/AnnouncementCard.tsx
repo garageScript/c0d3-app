@@ -8,9 +8,9 @@ type Props = {
 const AnnouncementCard: React.FC<Props> = ({ announcements }) => {
   return (
     <div
-      className={`${styles['announcement-card__container']} card shadow-sm mt-3 p-2 d-flex border-0`}
+      className={`${styles['announcement-card__container']} card shadow-sm mt-3 p-2 border-0`}
     >
-      <div className="card-body">
+      <div className="card-body d-flex flex-column justify-content-around">
         <h1 className={`${styles['announcement-card__title']}`}>
           General Announcements
         </h1>

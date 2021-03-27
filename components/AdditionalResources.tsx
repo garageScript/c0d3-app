@@ -4,30 +4,66 @@ import styles from '../scss/additionalResources.module.scss'
 
 const AdditionalResources: React.FC = () => {
   return (
-    <div className="additional-resources__container mt-4 mb-0">
-      <h1 className={`${styles['additional-resources__title']} text-muted`}>
+    <div className="additional-resources__container ml-4 d-flex flex-column justify-content-around">
+      <h1
+        className={`${styles['additional-resources__title']} font-weight-bold`}
+      >
         ADDITIONAL RESOURCES
       </h1>
-      <hr className="my-2" />
       <NavLink
-        path="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4"
-        className="mx-3"
+        path="https://developer.mozilla.org/en-US/"
+        className={`${styles['additional-resources_link']} mr-1`}
         external
       >
-        Setup Instructions
+        <h2 className={`${styles['additional-resources__subtitle']} mr-0`}>
+          MDN Web Docs
+        </h2>
       </NavLink>
+      <h3 className={`${styles['additional-resources__description']}`}>
+        The encyclopedia of web development
+      </h3>
+
       <hr className="my-2" />
-      <NavLink path="#" className="mx-3">
-        Github Basics
+      <NavLink
+        path="https://javascript.info/"
+        className={`${styles['additional-resources_link']} mr-1`}
+        external
+      >
+        <h2 className={`${styles['additional-resources__subtitle']}`}>
+          The Modern JavaScript Tutorial
+        </h2>
       </NavLink>
+      <h3 className={`${styles['additional-resources__description']}`}>
+        In-depth overview of javascript language
+      </h3>
+
       <hr className="my-2" />
-      <NavLink path="https://stackoverflow.com/" className="mx-3" external>
-        Stack Overflow
+      <NavLink
+        path="https://missing.csail.mit.edu/"
+        className={`${styles['additional-resources_link']} mr-1`}
+        external
+      >
+        <h2 className={`${styles['additional-resources__subtitle']} `}>
+          The Missing Semester
+        </h2>
       </NavLink>
+      <h3 className={`${styles['additional-resources__description']}`}>
+        Introduction to shell, git, vim, tmux and etc.
+      </h3>
+
       <hr className="my-2" />
-      <NavLink path="https://chat.c0d3.com/" className="mx-3" external>
-        Help &amp; Support
+      <NavLink
+        path="https://teachyourselfcs.com/"
+        className={`${styles['additional-resources_link']} mr-1`}
+        external
+      >
+        <h2 className={`${styles['additional-resources__subtitle']}`}>
+          Teach Yourself Computer Science
+        </h2>
       </NavLink>
+      <h3 className={`${styles['additional-resources__description']}`}>
+        Self-study guide
+      </h3>
       <hr className="my-2" />
     </div>
   )
