@@ -5,8 +5,7 @@ import { useRouter, NextRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, useGetAppQuery, Session } from '../graphql'
 import _ from 'lodash'
-
-import '../scss/navbar.scss'
+import styles from '../scss/appNav.module.scss'
 
 type AuthButtonProps = {
   initial: string
@@ -51,10 +50,9 @@ const NavBar: React.FC<AuthLinkProps> = ({ session, router }) => {
     <div className="navbar-nav collapse navbar-collapse">
       {navItems.map(button => (
         <NavLink
-          path={button.path}
-          className="nav-item nav-link"
+          {...button}
+          className={`${styles['nav-item']} nav-link`}
           key={button.name}
-          external={button.external}
           activePath={location === button.path}
         >
           {button.name}
@@ -139,7 +137,7 @@ const AppNav: React.FC<{}> = () => {
       <div className="container">
         <NavLink
           path="/"
-          className="navbar-brand text-primary font-weight-bold"
+          className={`${styles['navbar-brand']} text-primary font-weight-bold`}
         >
           C0D3
         </NavLink>

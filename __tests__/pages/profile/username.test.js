@@ -8,42 +8,13 @@ import { MockedProvider } from '@apollo/client/testing'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
+import expectLoading from '../../utils/expectLoading'
 
 describe('user profile test', () => {
   const { query } = useRouter()
   query['username'] = 'fake user'
-  test('Should render loading spinner if data is not ready', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: dummySessionData,
-            lessons: dummyLessonData,
-            alerts: []
-          }
-        }
-      },
-      {
-        request: {
-          query: USER_INFO,
-          variables: {
-            username: 'fake user'
-          }
-        },
-        result: {
-          data: {
-            userInfo: dummySessionData
-          }
-        }
-      }
-    ]
-    const { queryByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
-      </MockedProvider>
-    )
-    await waitForElementToBeRemoved(queryByText('Loading...'))
+  test('Should render loading spinner if data is not ready', () => {
+    expectLoading(<UserProfile />)
   })
   test('Should render profile', async () => {
     const session = {

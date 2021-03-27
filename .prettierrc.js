@@ -3,5 +3,13 @@ module.exports = {
   singleQuote: true,
   parser: 'typescript',
   trailingComma: 'none',
-  arrowParens: 'avoid'
+  arrowParens: 'avoid',
+  overrides: [
+    {
+      files: '*.scss',
+      options: {
+        parser: 'scss'
+      }
+    }
+  ]
 }

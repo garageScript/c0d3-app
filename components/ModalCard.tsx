@@ -1,6 +1,5 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
-import '../scss/modalCard.scss'
 
 export enum ModalSize {
   SMALL = 'small',

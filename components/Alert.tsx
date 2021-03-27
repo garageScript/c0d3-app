@@ -2,7 +2,7 @@ import React from 'react'
 import NavLink from './NavLink'
 import { Alert as AlertType } from '../graphql/'
 import _ from 'lodash'
-import '../scss/alerts.scss'
+import styles from '../scss/alerts.module.scss'
 
 type Props = {
   alert: AlertType
@@ -27,11 +27,11 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
     type === 'urgent' ? 'alert-danger' : `bg-primary ${textColor}`
   return (
     <div
-      className={`alert d-flex justify-content-between mt-3 ${alertClasses}`}
+      className={`${styles['alert']} d-flex justify-content-between mt-3 ${alertClasses}`}
       role="alert"
     >
       <div>
-        {icon && <img className="mr-3 alert-icon" src={icon} />}
+        {icon && <img className={`mr-3 ${styles['alert-icon']}`} src={icon} />}
         {text + ' '}
         {url && (
           <NavLink path={url} className={textColor} external>
@@ -42,7 +42,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
       {id && onDismiss && (
         <button
           role="dismiss"
-          className="alert-dismiss"
+          className={`${styles['alert-dismiss']}`}
           data-testid={`dismiss-${type}`}
           onClick={() => {
             onDismiss(id)

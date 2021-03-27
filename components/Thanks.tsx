@@ -1,5 +1,4 @@
 import React from 'react'
-import '../scss/modalCard.scss'
 import { Button } from './theme/Button'
 
 export const Thanks: React.FC<{ close: Function }> = ({ close }) => (
