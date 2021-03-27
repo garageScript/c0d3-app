@@ -1,4 +1,15 @@
-module.exports = {
+const slug = require('remark-slug')
+const toc = require('remark-toc')
+const gfm = require('remark-gfm')
+
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [slug, toc, gfm]
+  }
+})
+module.exports = withMDX({
+  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
   env: {
     CHAT_URL: process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4',
     CLIENT_URL: process.env.CLIENT_URL || 'https://c0d3.devwong.com',
@@ -18,4 +29,4 @@ module.exports = {
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
     SERVER_URL: process.env.SERVER_URL || '/api/graphql'
   }
-}
+})
