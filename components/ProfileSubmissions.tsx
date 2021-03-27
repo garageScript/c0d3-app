@@ -11,7 +11,7 @@ type LessonChallengeProps = {
   lessons: LessonChallenge[]
 }
 
-type LessonChallenge = {
+export type LessonChallenge = {
   order: number
   title: string
   challenges: Challenge[]

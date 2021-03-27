@@ -1,5 +1,6 @@
 import * as React from 'react'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
+import { LessonChallenge } from '../../components/ProfileSubmissions'
 
 export default {
   component: ProfileSubmissions,
@@ -79,12 +80,14 @@ const challengesLesson9 = [
 
 const starsReceived = [
   {
+    id: '1',
     studentId: 2,
     mentorId: 5,
     lessonId: 1,
     comment: 'Thank you'
   },
   {
+    id: '2',
     studentId: 7,
     mentorId: 5,
     lessonId: 1,
@@ -92,7 +95,7 @@ const starsReceived = [
   }
 ]
 
-const lessons = [
+const lessons: LessonChallenge[] = [
   {
     order: 0,
     title: 'Foundation of Javascript',

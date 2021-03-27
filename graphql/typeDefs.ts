@@ -169,11 +169,11 @@ export default gql`
 
   type Star {
     id: String!
-    studentId: Int
+    studentId: Int!
     studentUsername: String
     studentName: String
-    mentorId: Int
-    lessonId: Int
+    mentorId: Int!
+    lessonId: Int!
     lessonTitle: String
     lessonOrder: Int
     comment: String

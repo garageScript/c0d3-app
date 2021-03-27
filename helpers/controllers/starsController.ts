@@ -1,6 +1,6 @@
 import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
-import { Star as StarType } from '../../@types/lesson'
+import { Star as StarType } from '../../graphql/index'
 import _ from 'lodash'
 import { validateLessonId } from '../validateLessonId'
 import { validateStudentId } from '../validation/validateStudentId'

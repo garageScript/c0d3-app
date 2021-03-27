@@ -231,11 +231,11 @@ export type Session = {
 export type Star = {
   __typename?: 'Star'
   id: Scalars['String']
-  studentId?: Maybe<Scalars['Int']>
+  studentId: Scalars['Int']
   studentUsername?: Maybe<Scalars['String']>
   studentName?: Maybe<Scalars['String']>
-  mentorId?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['Int']>
+  mentorId: Scalars['Int']
+  lessonId: Scalars['Int']
   lessonTitle?: Maybe<Scalars['String']>
   lessonOrder?: Maybe<Scalars['Int']>
   comment?: Maybe<Scalars['String']>
@@ -1225,7 +1225,7 @@ export type StarResolvers<
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
 > = {
   id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  studentId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   studentUsername?: Resolver<
     Maybe<ResolversTypes['String']>,
     ParentType,
@@ -1236,8 +1236,8 @@ export type StarResolvers<
     ParentType,
     ContextType
   >
-  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  mentorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonTitle?: Resolver<
     Maybe<ResolversTypes['String']>,
     ParentType,

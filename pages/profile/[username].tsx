@@ -7,7 +7,9 @@ import { UserLesson } from '../../graphql/index'
 import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
-import ProfileSubmissions from '../../components/ProfileSubmissions'
+import ProfileSubmissions, {
+  LessonChallenge
+} from '../../components/ProfileSubmissions'
 import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import { Star } from '../../graphql/index'
@@ -87,7 +89,7 @@ const UserProfile: React.FC = () => {
     [] as Star[]
   )
 
-  const profileSubmissions = lessonsList.map(lessonInfo => {
+  const profileSubmissions: LessonChallenge[] = lessonsList.map(lessonInfo => {
     const lesson = lessonInfo || {}
     const challengeList = lesson.challenges || []
     const challengesStatus = challengeList.map(challengeInfo => {
@@ -123,7 +125,7 @@ const UserProfile: React.FC = () => {
       title: lesson.title || '',
       challenges: challengesStatus,
       starsReceived
-    }
+    } as LessonChallenge
   })
 
   return (

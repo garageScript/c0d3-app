@@ -10,8 +10,11 @@ export default {
 const stars: StarType[] = [
   {
     id: '1',
+    mentorId: 5,
+    studentId: 10,
     studentName: 'Fake User',
     studentUsername: 'rahul',
+    lessonId: 23,
     lessonTitle: 'Objects',
     lessonOrder: 3,
     comment:
@@ -19,8 +22,11 @@ const stars: StarType[] = [
   },
   {
     id: '2',
+    mentorId: 5,
+    studentId: 10,
     studentName: 'Charlie',
     studentUsername: 'ccc',
+    lessonId: 33,
     lessonTitle: 'End to End',
     lessonOrder: 5,
     comment: "Objects ain't easy, but thanks to you, they're now lemon squeezy."
