@@ -13,7 +13,7 @@ model Session {
   expires   DateTime? @db.Timestamptz(6)
   data      String?
   createdAt DateTime  @db.Timestamptz(6)
-  updatedAt DateTime  @db.Timestamptz(6)
+  updatedAt DateTime  @updatedAt @db.Timestamptz(6)
 }
 
 model Alert {
@@ -23,7 +23,7 @@ model Alert {
   url        String?  @db.VarChar(255)
   urlCaption String?  @db.VarChar(255)
   createdAt  DateTime @db.Timestamptz(6)
-  updatedAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @updatedAt @db.Timestamptz(6)
 
   @@map("alerts")
 }
@@ -35,7 +35,7 @@ model Challenge {
   title       String?      @db.VarChar(255)
   order       Int?
   createdAt   DateTime     @db.Timestamptz(6)
-  updatedAt   DateTime     @db.Timestamptz(6)
+  updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   lessonId    Int?
   lesson      Lesson?      @relation(fields: [lessonId], references: [id])
   submissions Submission[]
@@ -52,7 +52,7 @@ model Lesson {
   order       Int?
   title       String?      @db.VarChar(255)
   createdAt   DateTime     @db.Timestamptz(6)
-  updatedAt   DateTime     @db.Timestamptz(6)
+  updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
   challenges  Challenge[]
   submissions Submission[]
@@ -65,7 +65,7 @@ model Star {
   id        Int      @id @default(autoincrement())
   lessonId  Int?
   createdAt DateTime @db.Timestamptz(6)
-  updatedAt DateTime @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
   studentId Int?
   mentorId  Int?
   comment   String?  @db.VarChar(255)
@@ -83,7 +83,7 @@ model Submission {
   status      String?    @db.VarChar(255)
   viewCount   Int?       @default(0)
   createdAt   DateTime   @db.Timestamptz(6)
-  updatedAt   DateTime   @db.Timestamptz(6)
+  updatedAt   DateTime   @updatedAt @db.Timestamptz(6)
   userId      Int?
   reviewerId  Int?
   challengeId Int?
@@ -101,7 +101,7 @@ model UserLesson {
   isTeaching String?  @db.VarChar(255)
   isEnrolled String?  @db.VarChar(255)
   createdAt  DateTime @db.Timestamptz(6)
-  updatedAt  DateTime @db.Timestamptz(6)
+  updatedAt  DateTime @updatedAt @db.Timestamptz(6)
   lessonId   Int
   userId     Int
   lesson     Lesson   @relation(fields: [lessonId], references: [id])
@@ -120,7 +120,7 @@ model User {
   gsId                   Int?
   isOnline               Boolean?
   createdAt              DateTime     @db.Timestamptz(6)
-  updatedAt              DateTime     @db.Timestamptz(6)
+  updatedAt              DateTime     @updatedAt @db.Timestamptz(6)
   isAdmin                String?      @default(dbgenerated("false")) @db.VarChar(255)
   forgotToken            String?      @db.VarChar(255)
   cliToken               String?      @db.VarChar(255)
