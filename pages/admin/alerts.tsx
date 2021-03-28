@@ -19,7 +19,7 @@ type AlertRowProps = {
 const AlertRow: React.FC<AlertRowProps> = ({ alerts, alert, setAlerts }) => {
   const [removeAlert] = useMutation(REMOVE_ALERT)
 
-  const removeDatAlert = async (id: string) => {
+  const removeDatAlert = async (id: number) => {
     try {
       await removeAlert({ variables: { id } })
       const newAlerts = alerts.filter((alert: AlertType) => alert.id !== id)

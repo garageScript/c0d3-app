@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 const REMOVE_ALERT = gql`
-  mutation removeAlert($id: String!) {
+  mutation removeAlert($id: Int!) {
     removeAlert(id: $id) {
       success
     }
