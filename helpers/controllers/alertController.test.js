@@ -1,11 +1,12 @@
 jest.mock('../dbload')
 jest.mock('../mattermost')
+jest.mock('../../graphql/queryResolvers/alerts')
+import { alerts } from '../../graphql/queryResolvers/alerts'
 import db from '../dbload'
 import { addAlert, removeAlert } from './alertController'
 
-const { Alert } = db
 const mockAlerts = ['excuse me sir', 'did u just', 'turn into a potato?']
-Alert.findAll = jest.fn().mockReturnValue(mockAlerts)
+alerts.mockReturnValue(mockAlerts)
 
 describe('Alert controller tests', () => {
   const ctx = {
