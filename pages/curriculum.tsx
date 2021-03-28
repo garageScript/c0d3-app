@@ -16,9 +16,7 @@ const announcements = [
   'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
 ]
 export const Curriculum: React.FC<{}> = () => {
-  const { loading, error, data } = useGetAppQuery({
-    fetchPolicy: 'cache-and-network'
-  })
+  const { loading, error, data } = useGetAppQuery()
   if (loading) return <LoadingSpinner />
   if (error) {
     return (

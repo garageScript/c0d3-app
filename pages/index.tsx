@@ -3,12 +3,13 @@ import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
+import LoadingSpinner from '../components/LoadingSpinner'
 const IndexPage: React.FC<{}> = () => {
   const router = useRouter()
-  React.useEffect(() => {
-    if (document.cookie.split('; ').find(row => row.startsWith('loggedIn=')))
-      router.push('/curriculum')
-  }, [])
+  if (process.browser && window.localStorage.getItem('loggedIn')) {
+    router.push('/curriculum')
+    return <LoadingSpinner />
+  }
   return (
     <>
       <AppNav />

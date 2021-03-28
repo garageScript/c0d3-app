@@ -52,12 +52,7 @@ describe('auth controller', () => {
       cliToken: 'fakeCliToken'
     })
     bcrypt.compare = jest.fn().mockReturnValue(true)
-    const result = await login({}, userArgs, {
-      req: { session: {} },
-      res: {
-        setHeader: () => {}
-      }
-    })
+    const result = await login({}, userArgs, { req: { session: {} } })
     expect(result).toEqual({
       success: true,
       username: 'testuser',
@@ -71,10 +66,7 @@ describe('auth controller', () => {
       .mockReturnValue({ username: 'fakeUser', password: 'fakePassword' })
     prisma.user.update = obj => jest.fn().mockReturnThis(obj)
     bcrypt.compare = jest.fn().mockReturnValue(true)
-    const result = await login({}, userArgs, {
-      req: { session: {} },
-      res: { setHeader: () => {} }
-    })
+    const result = await login({}, userArgs, { req: { session: {} } })
     expect(result.cliToken).toBeTruthy()
   })
 
@@ -95,11 +87,7 @@ describe('auth controller', () => {
       }
     }
 
-    logout(
-      {},
-      {},
-      { req: { error: jest.fn(), session }, res: { setHeader: () => {} } }
-    ).catch(e => {
+    logout({}, {}, { req: { error: jest.fn(), session } }).catch(e => {
       expect(e).toEqual({
         success: false,
         error: 'OWNED BY TEST'
@@ -113,11 +101,7 @@ describe('auth controller', () => {
         inputCb(false)
       }
     }
-    const result = await logout(
-      {},
-      {},
-      { req: { session }, res: { setHeader: () => {} } }
-    )
+    const result = await logout({}, {}, { req: { session } })
     expect(result).toEqual({
       success: true
     })

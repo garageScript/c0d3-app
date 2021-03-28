@@ -25,7 +25,7 @@ describe('Index Page', () => {
       }
     }
   ]
-  test('Should not redirect without cookie', async () => {
+  test('Should not redirect on first load', async () => {
     const { push } = useRouter()
     render(
       <MockedProvider mocks={mocksWithSession(null)} addTypename={false}>
@@ -34,8 +34,9 @@ describe('Index Page', () => {
     )
     await waitFor(() => expect(push).not.toHaveBeenCalled())
   })
-  test('Should redirect to /curriculum if cookie exists', async () => {
-    document.cookie = 'loggedIn=true'
+  test('Should redirect to /curriculum if localstorage loggedIn exists', async () => {
+    process['browser'] = true
+    window.localStorage.setItem('loggedIn', 'true')
     render(
       <MockedProvider
         mocks={mocksWithSession(dummySessionData)}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
 import { Button } from './theme/Button'
-import { useRouter, NextRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, useGetAppQuery, Session } from '../graphql'
 import _ from 'lodash'
@@ -10,12 +10,10 @@ import styles from '../scss/appNav.module.scss'
 type AuthButtonProps = {
   initial: string
   username: string
-  router: NextRouter
 }
 
 type AuthLinkProps = {
   session: any
-  router: NextRouter
 }
 
 type NavItem = NavLinkProps & { name: string }
@@ -42,7 +40,8 @@ const navItems: NavItem[] = [
   { path: '/contributors', name: 'Contributors' }
 ]
 
-const NavBar: React.FC<AuthLinkProps> = ({ session, router }) => {
+const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
+  const router = useRouter()
   const isAdmin = _.get(session, 'user.isAdmin', '')
   const location = '/' + router.asPath.split('/')[1]
 
@@ -65,11 +64,8 @@ const NavBar: React.FC<AuthLinkProps> = ({ session, router }) => {
   )
 }
 
-const AuthButton: React.FC<AuthButtonProps> = ({
-  initial,
-  username,
-  router
-}) => {
+const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
+  const router = useRouter()
   const [logoutUser] = useLogoutMutation({
     update(cache) {
       cache.modify({
@@ -81,7 +77,10 @@ const AuthButton: React.FC<AuthButtonProps> = ({
         broadcast: false
       })
     },
-    onCompleted: () => router.push('/')
+    onCompleted: () => {
+      window.localStorage.removeItem('loggedIn')
+      router.push('/')
+    }
   })
   return (
     <div className="d-flex">
@@ -112,7 +111,6 @@ const UnAuthButton = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
-  const router = useRouter()
   const [session, setSession] = useState<Session>({ lessonStatus: [] })
   const { data } = useGetAppQuery()
   useEffect(() => {
@@ -129,7 +127,7 @@ const AppNav: React.FC<{}> = () => {
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <AuthButton username={username} initial={initial} router={router} />
+    return <AuthButton username={username} initial={initial} />
   }
 
   return (
@@ -143,7 +141,7 @@ const AppNav: React.FC<{}> = () => {
         </NavLink>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
-            <NavBar session={session} router={router} />
+            <NavBar session={session} />
           </div>
         </div>
         {renderButtons()}
