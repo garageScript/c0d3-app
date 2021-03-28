@@ -7,8 +7,6 @@ import GET_APP from '../../graphql/queries/getApp'
 import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
 import { useRouter } from 'next/router'
-import dummyLessonData from '../../__dummy__/lessonData'
-import dummySessionData from '../../__dummy__/sessionData'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
