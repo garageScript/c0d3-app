@@ -1,15 +1,13 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import AppNav from '../components/AppNav'
 import LandingPage from '../components/LandingPage'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/router'
-import LoadingSpinner from '../components/LoadingSpinner'
 const IndexPage: React.FC<{}> = () => {
   const router = useRouter()
-  if (process.browser && window.localStorage.getItem('loggedIn')) {
-    router.push('/curriculum')
-    return <LoadingSpinner />
-  }
+  useEffect(() => {
+    localStorage.getItem('loggedIn') && router.push('/curriculum')
+  }, [])
   return (
     <>
       <AppNav />
