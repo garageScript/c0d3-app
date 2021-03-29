@@ -330,9 +330,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   const challengesCopy = [...challenges]
   //create a new Challenges array with user submission data integrated and sorted
   const challengesWithSubmissionData: ChallengeSubmissionData[] = challengesCopy
-    .sort((a, b) => a.order! - b.order!)
+    .sort((a, b) => a.order - b.order)
     .map((challenge: Challenge) => {
-      const submission = userSubmissionsObject[challenge.id!] || {}
+      const submission = userSubmissionsObject[challenge.id] || {}
       return {
         ...challenge,
         status: submission.status || 'unsubmitted',
