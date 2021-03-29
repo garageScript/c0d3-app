@@ -20,7 +20,7 @@
     "@prisma/client": "2.19.0",
     "@sentry/browser": "^5.30.0",
     "apollo-server-micro": "^2.20.0",
-    "bcrypt": "5.0.0",
+    "bcrypt": "5.0.1",
     "bootstrap": "^4.6.0",
     "connect-session-sequelize": "^6.1.1",
     "dayjs": "^1.10.4",
