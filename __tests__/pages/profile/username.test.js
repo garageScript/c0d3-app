@@ -7,6 +7,7 @@ import UserProfile from '../../../pages/profile/[username]'
 import { MockedProvider } from '@apollo/client/testing'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
+import dummyAlertData from '../../../__dummy__/alertData'
 import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
 
@@ -58,9 +59,9 @@ describe('user profile test', () => {
       lessonStatus: [
         {
           lessonId: '5',
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          isPassed: 'true',
+          isTeaching: 'true',
+          isEnrolled: 'false',
           starGiven: null,
           starsReceived: [
             {
@@ -78,9 +79,9 @@ describe('user profile test', () => {
         },
         {
           lessonId: '2',
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          isPassed: 'true',
+          isTeaching: 'true',
+          isEnrolled: 'false',
           starGiven: null,
           starsReceived: [
             {
@@ -98,9 +99,9 @@ describe('user profile test', () => {
         },
         {
           lessonId: '1',
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          isPassed: 'true',
+          isTeaching: 'true',
+          isEnrolled: 'false',
           starGiven: null,
           starsReceived: []
         }
@@ -113,7 +114,7 @@ describe('user profile test', () => {
           data: {
             session,
             lessons: dummyLessonData,
-            alerts: []
+            alerts: dummyAlertData
           }
         }
       },
