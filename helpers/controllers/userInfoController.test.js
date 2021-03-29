@@ -1,6 +1,28 @@
 import { prisma } from '../../prisma'
 import { userInfo } from './userInfoController'
 
+const user = {
+  id: '10',
+  username: 'noob222',
+  email: 'testing2020@gmail.com'
+}
+
+const userLesson = { id: '1', status: 'passed', lessonId: 1 }
+
+const submission = {
+  id: '1',
+  diff: 'testing2020'
+}
+
+const star = {
+  id: 12,
+  lessonId: 1,
+  studentId: 2,
+  mentorId: 10,
+  comment: 'Thank you',
+  lessonId: 1
+}
+
 describe('userInfo controller tests', () => {
   test('should return error of invalid username if no username is passed in', () => {
     expect(userInfo({}, {})).rejects.toThrow('Invalid username')
@@ -12,98 +34,39 @@ describe('userInfo controller tests', () => {
     )
   })
   test('should return correct submissions and user lesson', async () => {
-    prisma.user.findFirst = jest.fn().mockReturnValue({
-      id: '10',
-      username: 'noob222',
-      email: 'testing2020@gmail.com'
-    })
-    prisma.userLesson.findMany = jest
+    prisma.user.findFirst = jest.fn().mockReturnValue(user)
+    prisma.userLesson.findMany = jest.fn().mockReturnValue([userLesson])
+    prisma.submission.findMany = jest.fn().mockReturnValue([submission])
+    prisma.star.findMany = jest
       .fn()
-      .mockReturnValue([{ id: '1', status: 'passed', lessonId: 1 }])
-    prisma.submission.findMany = jest.fn().mockReturnValue([
-      {
-        id: '1',
-        diff: 'testing2020'
-      }
-    ])
-    prisma.star.findMany = jest.fn().mockReturnValue([
-      {
-        id: 12,
-        lessonId: 1,
-        studentId: 2,
-        mentorId: 10,
-        comment: 'Thank you',
-        lessonId: 1
-      }
-    ])
-    const returnValue = await userInfo({}, { username: 'noob222' })
+      .mockReturnValue([star, { id: 1 /* test empty lessonId case */ }])
+    const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
-      user: {
-        id: '10',
-        username: 'noob222',
-        email: 'testing2020@gmail.com'
-      },
+      user,
       lessonStatus: [
         {
-          id: '1',
-          status: 'passed',
-          lessonId: 1,
-          starsReceived: [
-            {
-              id: 12,
-              lessonId: 1,
-              studentId: 2,
-              mentorId: 10,
-              comment: 'Thank you'
-            }
-          ]
+          ...userLesson,
+          starsReceived: [star]
         }
       ],
-      submissions: [
-        {
-          id: '1',
-          diff: 'testing2020'
-        }
-      ]
+      submissions: [submission]
     })
   })
   test('Should return empty Stars array if no Stars are given', async () => {
-    prisma.user.findFirst = jest.fn().mockReturnValue({
-      id: '10',
-      username: 'noob222',
-      email: 'testing2020@gmail.com'
-    })
-    prisma.userLesson.findMany = jest
-      .fn()
-      .mockReturnValue([{ id: '1', status: 'passed', lessonId: 1 }])
-    prisma.submission.findMany = jest.fn().mockReturnValue([
-      {
-        id: '1',
-        diff: 'testing2020'
-      }
-    ])
+    prisma.user.findFirst = jest.fn().mockReturnValue(user)
+    prisma.userLesson.findMany = jest.fn().mockReturnValue([userLesson])
+    prisma.submission.findMany = jest.fn().mockReturnValue([submission])
     prisma.star.findMany = jest.fn().mockReturnValue([])
-    const returnValue = await userInfo({}, { username: 'noob222' })
+    const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
-      user: {
-        id: '10',
-        username: 'noob222',
-        email: 'testing2020@gmail.com'
-      },
+      user,
       lessonStatus: [
         {
-          id: '1',
-          status: 'passed',
-          lessonId: 1,
+          ...userLesson,
           starsReceived: []
         }
       ],
-      submissions: [
-        {
-          id: '1',
-          diff: 'testing2020'
-        }
-      ]
+      submissions: [submission]
     })
   })
 })
