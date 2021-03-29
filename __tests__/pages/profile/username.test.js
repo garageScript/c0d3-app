@@ -19,7 +19,42 @@ describe('user profile test', () => {
   test('Should render profile', async () => {
     const session = {
       ...dummySessionData,
-      submissions: [],
+      submissions: [
+        {
+          id: '1',
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '146',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        },
+        {
+          id: '2',
+          status: 'passed',
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '145',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        }
+      ],
       lessonStatus: [
         {
           lessonId: '5',
