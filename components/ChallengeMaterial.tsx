@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Challenge,
-  ChallengeSubmissionData,
-  UserSubmission,
-  UserSubmissionsObject
-} from '../@types/challenge'
+import { Challenge, Submission } from '../graphql/index'
 import { LessonStatus } from '../@types/lesson'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
@@ -23,6 +18,19 @@ type CurrentChallengeID = string | null
 type ReviewStatusProps = {
   status: string
   reviewerUserName: string | null
+}
+
+export type ChallengeSubmissionData = {
+  title: string
+  id: string
+  order: number
+  description: string
+  status: string
+  submission?: Submission
+}
+
+export type UserSubmissionsObject = {
+  [submissionId: string]: Submission
 }
 
 export const ReviewStatus: React.FC<ReviewStatusProps> = ({
@@ -294,7 +302,7 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = (
 
 type ChallengeMaterialProps = {
   challenges: Challenge[]
-  userSubmissions: UserSubmission[]
+  userSubmissions: Submission[]
   lessonStatus: LessonStatus
   chatUrl: string
   lessonId: string
@@ -312,8 +320,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   }
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
-    (acc: UserSubmissionsObject, submission: UserSubmission) => {
-      acc[submission.challengeId] = submission
+    (acc: UserSubmissionsObject, submission: Submission) => {
+      acc[submission.challengeId!] = submission
       return acc
     },
     {}
@@ -322,9 +330,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   const challengesCopy = [...challenges]
   //create a new Challenges array with user submission data integrated and sorted
   const challengesWithSubmissionData: ChallengeSubmissionData[] = challengesCopy
-    .sort((a, b) => a.order - b.order)
+    .sort((a, b) => a.order! - b.order!)
     .map((challenge: Challenge) => {
-      const submission = userSubmissionsObject[challenge.id] || {}
+      const submission = userSubmissionsObject[challenge.id!] || {}
       return {
         ...challenge,
         status: submission.status || 'unsubmitted',

@@ -1,21 +1,24 @@
-import * as ApolloReactHooks from '@apollo/client'
-import { gql } from '@apollo/client'
 import {
   GraphQLResolveInfo,
   GraphQLScalarType,
   GraphQLScalarTypeConfig
 } from 'graphql'
-import * as ApolloReactCommon from '@apollo/client'
-import * as React from 'react'
-import * as ApolloReactComponents from '@apollo/client/react/components'
+import { gql } from '@apollo/client'
+import * as Apollo from '@apollo/client'
 import * as ApolloReactHoc from '@apollo/client/react/hoc'
 export type Maybe<T> = T | null
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] }
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K]
+}
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
+  { [SubKey in K]?: Maybe<T[SubKey]> }
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
+  { [SubKey in K]: Maybe<T[SubKey]> }
 export type RequireFields<T, K extends keyof T> = {
   [X in Exclude<keyof T, K>]?: T[X]
 } &
   { [P in K]-?: NonNullable<T[P]> }
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+const defaultOptions = {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -51,11 +54,11 @@ export enum CacheControlScope {
 
 export type Challenge = {
   __typename?: 'Challenge'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  id: Scalars['String']
+  description: Scalars['String']
+  lessonId: Scalars['String']
+  title: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Lesson = {
@@ -891,8 +894,9 @@ export type TypeResolveFn<TTypes, TParent = {}, TContext = {}> = (
   info: GraphQLResolveInfo
 ) => Maybe<TTypes> | Promise<Maybe<TTypes>>
 
-export type IsTypeOfResolverFn<T = {}> = (
+export type IsTypeOfResolverFn<T = {}, TContext = {}> = (
   obj: T,
+  context: TContext,
   info: GraphQLResolveInfo
 ) => boolean | Promise<boolean>
 
@@ -913,46 +917,58 @@ export type DirectiveResolverFn<
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Query: ResolverTypeWrapper<{}>
-  Lesson: ResolverTypeWrapper<Lesson>
+  Alert: ResolverTypeWrapper<Alert>
   String: ResolverTypeWrapper<Scalars['String']>
-  Int: ResolverTypeWrapper<Scalars['Int']>
+  AuthResponse: ResolverTypeWrapper<AuthResponse>
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>
+  CacheControlScope: CacheControlScope
   Challenge: ResolverTypeWrapper<Challenge>
+  Int: ResolverTypeWrapper<Scalars['Int']>
+  Lesson: ResolverTypeWrapper<Lesson>
+  Mutation: ResolverTypeWrapper<{}>
+  Query: ResolverTypeWrapper<{}>
+  Session: ResolverTypeWrapper<Session>
+  Star: ResolverTypeWrapper<Star>
+  Submission: ResolverTypeWrapper<Submission>
+  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
+  TokenResponse: ResolverTypeWrapper<TokenResponse>
+  Upload: ResolverTypeWrapper<Scalars['Upload']>
   User: ResolverTypeWrapper<User>
   UserLesson: ResolverTypeWrapper<UserLesson>
-  Star: ResolverTypeWrapper<Star>
-  Session: ResolverTypeWrapper<Session>
-  Submission: ResolverTypeWrapper<Submission>
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>
-  Alert: ResolverTypeWrapper<Alert>
-  Mutation: ResolverTypeWrapper<{}>
-  SuccessResponse: ResolverTypeWrapper<SuccessResponse>
-  AuthResponse: ResolverTypeWrapper<AuthResponse>
-  TokenResponse: ResolverTypeWrapper<TokenResponse>
-  CacheControlScope: CacheControlScope
-  Upload: ResolverTypeWrapper<Scalars['Upload']>
 }
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Query: {}
-  Lesson: Lesson
-  String: Scalars['String']
-  Int: Scalars['Int']
-  Challenge: Challenge
-  User: User
-  UserLesson: UserLesson
-  Star: Star
-  Session: Session
-  Submission: Submission
-  Boolean: Scalars['Boolean']
   Alert: Alert
-  Mutation: {}
-  SuccessResponse: SuccessResponse
+  String: Scalars['String']
   AuthResponse: AuthResponse
+  Boolean: Scalars['Boolean']
+  Challenge: Challenge
+  Int: Scalars['Int']
+  Lesson: Lesson
+  Mutation: {}
+  Query: {}
+  Session: Session
+  Star: Star
+  Submission: Submission
+  SuccessResponse: SuccessResponse
   TokenResponse: TokenResponse
   Upload: Scalars['Upload']
+  User: User
+  UserLesson: UserLesson
 }
+
+export type CacheControlDirectiveArgs = {
+  maxAge?: Maybe<Scalars['Int']>
+  scope?: Maybe<CacheControlScope>
+}
+
+export type CacheControlDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = any,
+  Args = CacheControlDirectiveArgs
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>
 
 export type AlertResolvers<
   ContextType = any,
@@ -967,7 +983,7 @@ export type AlertResolvers<
     ParentType,
     ContextType
   >
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type AuthResponseResolvers<
@@ -978,23 +994,19 @@ export type AuthResponseResolvers<
   username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   error?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type ChallengeResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type LessonResolvers<
@@ -1024,7 +1036,7 @@ export type LessonResolvers<
   >
   currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   chatUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type MutationResolvers<
@@ -1190,7 +1202,7 @@ export type SessionResolvers<
     ParentType,
     ContextType
   >
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type StarResolvers<
@@ -1202,7 +1214,7 @@ export type StarResolvers<
   mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type SubmissionResolvers<
@@ -1237,7 +1249,7 @@ export type SubmissionResolvers<
   >
   createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type SuccessResponseResolvers<
@@ -1245,7 +1257,7 @@ export type SuccessResponseResolvers<
   ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
 > = {
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type TokenResponseResolvers<
@@ -1254,7 +1266,7 @@ export type TokenResponseResolvers<
 > = {
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export interface UploadScalarConfig
@@ -1277,7 +1289,7 @@ export type UserResolvers<
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   isAdmin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type UserLessonResolvers<
@@ -1304,7 +1316,7 @@ export type UserLessonResolvers<
     ContextType
   >
   starGiven?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  __isTypeOf?: IsTypeOfResolverFn<ParentType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
 export type Resolvers<ContextType = any> = {
@@ -1329,6 +1341,17 @@ export type Resolvers<ContextType = any> = {
  * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
  */
 export type IResolvers<ContextType = any> = Resolvers<ContextType>
+export type DirectiveResolvers<ContextType = any> = {
+  cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>
+}
+
+/**
+ * @deprecated
+ * Use "DirectiveResolvers" root object instead. If you wish to get "IDirectiveResolvers", add "typesPrefix: I" to your config.
+ */
+export type IDirectiveResolvers<
+  ContextType = any
+> = DirectiveResolvers<ContextType>
 
 export const AcceptSubmissionDocument = gql`
   mutation acceptSubmission($submissionId: String!, $comment: String!) {
@@ -1339,35 +1362,15 @@ export const AcceptSubmissionDocument = gql`
     }
   }
 `
-export type AcceptSubmissionMutationFn = ApolloReactCommon.MutationFunction<
+export type AcceptSubmissionMutationFn = Apollo.MutationFunction<
   AcceptSubmissionMutation,
   AcceptSubmissionMutationVariables
 >
-export type AcceptSubmissionComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >,
-  'mutation'
->
-
-export const AcceptSubmissionComponent = (
-  props: AcceptSubmissionComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    AcceptSubmissionMutation,
-    AcceptSubmissionMutationVariables
-  >
-    mutation={AcceptSubmissionDocument}
-    {...props}
-  />
-)
-
 export type AcceptSubmissionProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     AcceptSubmissionMutation,
     AcceptSubmissionMutationVariables
   >
@@ -1415,21 +1418,22 @@ export function withAcceptSubmission<
  * });
  */
 export function useAcceptSubmissionMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     AcceptSubmissionMutation,
     AcceptSubmissionMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     AcceptSubmissionMutation,
     AcceptSubmissionMutationVariables
-  >(AcceptSubmissionDocument, baseOptions)
+  >(AcceptSubmissionDocument, options)
 }
 export type AcceptSubmissionMutationHookResult = ReturnType<
   typeof useAcceptSubmissionMutation
 >
-export type AcceptSubmissionMutationResult = ApolloReactCommon.MutationResult<AcceptSubmissionMutation>
-export type AcceptSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type AcceptSubmissionMutationResult = Apollo.MutationResult<AcceptSubmissionMutation>
+export type AcceptSubmissionMutationOptions = Apollo.BaseMutationOptions<
   AcceptSubmissionMutation,
   AcceptSubmissionMutationVariables
 >
@@ -1449,30 +1453,15 @@ export const AddAlertDocument = gql`
     }
   }
 `
-export type AddAlertMutationFn = ApolloReactCommon.MutationFunction<
+export type AddAlertMutationFn = Apollo.MutationFunction<
   AddAlertMutation,
   AddAlertMutationVariables
 >
-export type AddAlertComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    AddAlertMutation,
-    AddAlertMutationVariables
-  >,
-  'mutation'
->
-
-export const AddAlertComponent = (props: AddAlertComponentProps) => (
-  <ApolloReactComponents.Mutation<AddAlertMutation, AddAlertMutationVariables>
-    mutation={AddAlertDocument}
-    {...props}
-  />
-)
-
 export type AddAlertProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     AddAlertMutation,
     AddAlertMutationVariables
   >
@@ -1522,19 +1511,20 @@ export function withAddAlert<
  * });
  */
 export function useAddAlertMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     AddAlertMutation,
     AddAlertMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
-    AddAlertMutation,
-    AddAlertMutationVariables
-  >(AddAlertDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<AddAlertMutation, AddAlertMutationVariables>(
+    AddAlertDocument,
+    options
+  )
 }
 export type AddAlertMutationHookResult = ReturnType<typeof useAddAlertMutation>
-export type AddAlertMutationResult = ApolloReactCommon.MutationResult<AddAlertMutation>
-export type AddAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type AddAlertMutationResult = Apollo.MutationResult<AddAlertMutation>
+export type AddAlertMutationOptions = Apollo.BaseMutationOptions<
   AddAlertMutation,
   AddAlertMutationVariables
 >
@@ -1550,18 +1540,6 @@ export const UsersDocument = gql`
     }
   }
 `
-export type UsersComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<UsersQuery, UsersQueryVariables>,
-  'query'
->
-
-export const UsersComponent = (props: UsersComponentProps) => (
-  <ApolloReactComponents.Query<UsersQuery, UsersQueryVariables>
-    query={UsersDocument}
-    {...props}
-  />
-)
-
 export type UsersProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<UsersQuery, UsersQueryVariables>
 } &
@@ -1605,30 +1583,26 @@ export function withUsers<
  * });
  */
 export function useUsersQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    UsersQuery,
-    UsersQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<UsersQuery, UsersQueryVariables>
 ) {
-  return ApolloReactHooks.useQuery<UsersQuery, UsersQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<UsersQuery, UsersQueryVariables>(
     UsersDocument,
-    baseOptions
+    options
   )
 }
 export function useUsersLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    UsersQuery,
-    UsersQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<UsersQuery, UsersQueryVariables>
 ) {
-  return ApolloReactHooks.useLazyQuery<UsersQuery, UsersQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<UsersQuery, UsersQueryVariables>(
     UsersDocument,
-    baseOptions
+    options
   )
 }
 export type UsersQueryHookResult = ReturnType<typeof useUsersQuery>
 export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>
-export type UsersQueryResult = ApolloReactCommon.QueryResult<
+export type UsersQueryResult = Apollo.QueryResult<
   UsersQuery,
   UsersQueryVariables
 >
@@ -1639,35 +1613,15 @@ export const ChangeAdminRightsDocument = gql`
     }
   }
 `
-export type ChangeAdminRightsMutationFn = ApolloReactCommon.MutationFunction<
+export type ChangeAdminRightsMutationFn = Apollo.MutationFunction<
   ChangeAdminRightsMutation,
   ChangeAdminRightsMutationVariables
 >
-export type ChangeAdminRightsComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >,
-  'mutation'
->
-
-export const ChangeAdminRightsComponent = (
-  props: ChangeAdminRightsComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    ChangeAdminRightsMutation,
-    ChangeAdminRightsMutationVariables
-  >
-    mutation={ChangeAdminRightsDocument}
-    {...props}
-  />
-)
-
 export type ChangeAdminRightsProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     ChangeAdminRightsMutation,
     ChangeAdminRightsMutationVariables
   >
@@ -1715,21 +1669,22 @@ export function withChangeAdminRights<
  * });
  */
 export function useChangeAdminRightsMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     ChangeAdminRightsMutation,
     ChangeAdminRightsMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     ChangeAdminRightsMutation,
     ChangeAdminRightsMutationVariables
-  >(ChangeAdminRightsDocument, baseOptions)
+  >(ChangeAdminRightsDocument, options)
 }
 export type ChangeAdminRightsMutationHookResult = ReturnType<
   typeof useChangeAdminRightsMutation
 >
-export type ChangeAdminRightsMutationResult = ApolloReactCommon.MutationResult<ChangeAdminRightsMutation>
-export type ChangeAdminRightsMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type ChangeAdminRightsMutationResult = Apollo.MutationResult<ChangeAdminRightsMutation>
+export type ChangeAdminRightsMutationOptions = Apollo.BaseMutationOptions<
   ChangeAdminRightsMutation,
   ChangeAdminRightsMutationVariables
 >
@@ -1764,35 +1719,15 @@ export const CreateChallengeDocument = gql`
     }
   }
 `
-export type CreateChallengeMutationFn = ApolloReactCommon.MutationFunction<
+export type CreateChallengeMutationFn = Apollo.MutationFunction<
   CreateChallengeMutation,
   CreateChallengeMutationVariables
 >
-export type CreateChallengeComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >,
-  'mutation'
->
-
-export const CreateChallengeComponent = (
-  props: CreateChallengeComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    CreateChallengeMutation,
-    CreateChallengeMutationVariables
-  >
-    mutation={CreateChallengeDocument}
-    {...props}
-  />
-)
-
 export type CreateChallengeProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     CreateChallengeMutation,
     CreateChallengeMutationVariables
   >
@@ -1842,21 +1777,22 @@ export function withCreateChallenge<
  * });
  */
 export function useCreateChallengeMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     CreateChallengeMutation,
     CreateChallengeMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     CreateChallengeMutation,
     CreateChallengeMutationVariables
-  >(CreateChallengeDocument, baseOptions)
+  >(CreateChallengeDocument, options)
 }
 export type CreateChallengeMutationHookResult = ReturnType<
   typeof useCreateChallengeMutation
 >
-export type CreateChallengeMutationResult = ApolloReactCommon.MutationResult<CreateChallengeMutation>
-export type CreateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type CreateChallengeMutationResult = Apollo.MutationResult<CreateChallengeMutation>
+export type CreateChallengeMutationOptions = Apollo.BaseMutationOptions<
   CreateChallengeMutation,
   CreateChallengeMutationVariables
 >
@@ -1897,33 +1833,15 @@ export const CreateLessonDocument = gql`
     }
   }
 `
-export type CreateLessonMutationFn = ApolloReactCommon.MutationFunction<
+export type CreateLessonMutationFn = Apollo.MutationFunction<
   CreateLessonMutation,
   CreateLessonMutationVariables
 >
-export type CreateLessonComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >,
-  'mutation'
->
-
-export const CreateLessonComponent = (props: CreateLessonComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    CreateLessonMutation,
-    CreateLessonMutationVariables
-  >
-    mutation={CreateLessonDocument}
-    {...props}
-  />
-)
-
 export type CreateLessonProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     CreateLessonMutation,
     CreateLessonMutationVariables
   >
@@ -1976,21 +1894,22 @@ export function withCreateLesson<
  * });
  */
 export function useCreateLessonMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     CreateLessonMutation,
     CreateLessonMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     CreateLessonMutation,
     CreateLessonMutationVariables
-  >(CreateLessonDocument, baseOptions)
+  >(CreateLessonDocument, options)
 }
 export type CreateLessonMutationHookResult = ReturnType<
   typeof useCreateLessonMutation
 >
-export type CreateLessonMutationResult = ApolloReactCommon.MutationResult<CreateLessonMutation>
-export type CreateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type CreateLessonMutationResult = Apollo.MutationResult<CreateLessonMutation>
+export type CreateLessonMutationOptions = Apollo.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
 >
@@ -2053,21 +1972,6 @@ export const GetAppDocument = gql`
     }
   }
 `
-export type GetAppComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    GetAppQuery,
-    GetAppQueryVariables
-  >,
-  'query'
->
-
-export const GetAppComponent = (props: GetAppComponentProps) => (
-  <ApolloReactComponents.Query<GetAppQuery, GetAppQueryVariables>
-    query={GetAppDocument}
-    {...props}
-  />
-)
-
 export type GetAppProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<
     GetAppQuery,
@@ -2114,30 +2018,26 @@ export function withGetApp<
  * });
  */
 export function useGetAppQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    GetAppQuery,
-    GetAppQueryVariables
-  >
+  baseOptions?: Apollo.QueryHookOptions<GetAppQuery, GetAppQueryVariables>
 ) {
-  return ApolloReactHooks.useQuery<GetAppQuery, GetAppQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetAppQuery, GetAppQueryVariables>(
     GetAppDocument,
-    baseOptions
+    options
   )
 }
 export function useGetAppLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    GetAppQuery,
-    GetAppQueryVariables
-  >
+  baseOptions?: Apollo.LazyQueryHookOptions<GetAppQuery, GetAppQueryVariables>
 ) {
-  return ApolloReactHooks.useLazyQuery<GetAppQuery, GetAppQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetAppQuery, GetAppQueryVariables>(
     GetAppDocument,
-    baseOptions
+    options
   )
 }
 export type GetAppQueryHookResult = ReturnType<typeof useGetAppQuery>
 export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
-export type GetAppQueryResult = ApolloReactCommon.QueryResult<
+export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
 >
@@ -2150,25 +2050,6 @@ export const LessonMentorsDocument = gql`
     }
   }
 `
-export type LessonMentorsComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >,
-  'query'
-> &
-  (
-    | { variables: LessonMentorsQueryVariables; skip?: boolean }
-    | { skip: boolean }
-  )
-
-export const LessonMentorsComponent = (props: LessonMentorsComponentProps) => (
-  <ApolloReactComponents.Query<LessonMentorsQuery, LessonMentorsQueryVariables>
-    query={LessonMentorsDocument}
-    {...props}
-  />
-)
-
 export type LessonMentorsProps<
   TChildProps = {},
   TDataName extends string = 'data'
@@ -2219,26 +2100,28 @@ export function withLessonMentors<
  * });
  */
 export function useLessonMentorsQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
+  baseOptions: Apollo.QueryHookOptions<
     LessonMentorsQuery,
     LessonMentorsQueryVariables
   >
 ) {
-  return ApolloReactHooks.useQuery<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >(LessonMentorsDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<LessonMentorsQuery, LessonMentorsQueryVariables>(
+    LessonMentorsDocument,
+    options
+  )
 }
 export function useLessonMentorsLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryHookOptions<
     LessonMentorsQuery,
     LessonMentorsQueryVariables
   >
 ) {
-  return ApolloReactHooks.useLazyQuery<
-    LessonMentorsQuery,
-    LessonMentorsQueryVariables
-  >(LessonMentorsDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<LessonMentorsQuery, LessonMentorsQueryVariables>(
+    LessonMentorsDocument,
+    options
+  )
 }
 export type LessonMentorsQueryHookResult = ReturnType<
   typeof useLessonMentorsQuery
@@ -2246,7 +2129,7 @@ export type LessonMentorsQueryHookResult = ReturnType<
 export type LessonMentorsLazyQueryHookResult = ReturnType<
   typeof useLessonMentorsLazyQuery
 >
-export type LessonMentorsQueryResult = ApolloReactCommon.QueryResult<
+export type LessonMentorsQueryResult = Apollo.QueryResult<
   LessonMentorsQuery,
   LessonMentorsQueryVariables
 >
@@ -2271,22 +2154,6 @@ export const SubmissionsDocument = gql`
     }
   }
 `
-export type SubmissionsComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >,
-  'query'
-> &
-  ({ variables: SubmissionsQueryVariables; skip?: boolean } | { skip: boolean })
-
-export const SubmissionsComponent = (props: SubmissionsComponentProps) => (
-  <ApolloReactComponents.Query<SubmissionsQuery, SubmissionsQueryVariables>
-    query={SubmissionsDocument}
-    {...props}
-  />
-)
-
 export type SubmissionsProps<
   TChildProps = {},
   TDataName extends string = 'data'
@@ -2337,32 +2204,34 @@ export function withSubmissions<
  * });
  */
 export function useSubmissionsQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
+  baseOptions: Apollo.QueryHookOptions<
     SubmissionsQuery,
     SubmissionsQueryVariables
   >
 ) {
-  return ApolloReactHooks.useQuery<SubmissionsQuery, SubmissionsQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<SubmissionsQuery, SubmissionsQueryVariables>(
     SubmissionsDocument,
-    baseOptions
+    options
   )
 }
 export function useSubmissionsLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryHookOptions<
     SubmissionsQuery,
     SubmissionsQueryVariables
   >
 ) {
-  return ApolloReactHooks.useLazyQuery<
-    SubmissionsQuery,
-    SubmissionsQueryVariables
-  >(SubmissionsDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<SubmissionsQuery, SubmissionsQueryVariables>(
+    SubmissionsDocument,
+    options
+  )
 }
 export type SubmissionsQueryHookResult = ReturnType<typeof useSubmissionsQuery>
 export type SubmissionsLazyQueryHookResult = ReturnType<
   typeof useSubmissionsLazyQuery
 >
-export type SubmissionsQueryResult = ApolloReactCommon.QueryResult<
+export type SubmissionsQueryResult = Apollo.QueryResult<
   SubmissionsQuery,
   SubmissionsQueryVariables
 >
@@ -2376,30 +2245,15 @@ export const LoginDocument = gql`
     }
   }
 `
-export type LoginMutationFn = ApolloReactCommon.MutationFunction<
+export type LoginMutationFn = Apollo.MutationFunction<
   LoginMutation,
   LoginMutationVariables
 >
-export type LoginComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    LoginMutation,
-    LoginMutationVariables
-  >,
-  'mutation'
->
-
-export const LoginComponent = (props: LoginComponentProps) => (
-  <ApolloReactComponents.Mutation<LoginMutation, LoginMutationVariables>
-    mutation={LoginDocument}
-    {...props}
-  />
-)
-
 export type LoginProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     LoginMutation,
     LoginMutationVariables
   >
@@ -2447,19 +2301,20 @@ export function withLogin<
  * });
  */
 export function useLoginMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     LoginMutation,
     LoginMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<LoginMutation, LoginMutationVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<LoginMutation, LoginMutationVariables>(
     LoginDocument,
-    baseOptions
+    options
   )
 }
 export type LoginMutationHookResult = ReturnType<typeof useLoginMutation>
-export type LoginMutationResult = ApolloReactCommon.MutationResult<LoginMutation>
-export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type LoginMutationResult = Apollo.MutationResult<LoginMutation>
+export type LoginMutationOptions = Apollo.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
 >
@@ -2472,30 +2327,15 @@ export const LogoutDocument = gql`
     }
   }
 `
-export type LogoutMutationFn = ApolloReactCommon.MutationFunction<
+export type LogoutMutationFn = Apollo.MutationFunction<
   LogoutMutation,
   LogoutMutationVariables
 >
-export type LogoutComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    LogoutMutation,
-    LogoutMutationVariables
-  >,
-  'mutation'
->
-
-export const LogoutComponent = (props: LogoutComponentProps) => (
-  <ApolloReactComponents.Mutation<LogoutMutation, LogoutMutationVariables>
-    mutation={LogoutDocument}
-    {...props}
-  />
-)
-
 export type LogoutProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     LogoutMutation,
     LogoutMutationVariables
   >
@@ -2541,19 +2381,20 @@ export function withLogout<
  * });
  */
 export function useLogoutMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     LogoutMutation,
     LogoutMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<LogoutMutation, LogoutMutationVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<LogoutMutation, LogoutMutationVariables>(
     LogoutDocument,
-    baseOptions
+    options
   )
 }
 export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>
-export type LogoutMutationResult = ApolloReactCommon.MutationResult<LogoutMutation>
-export type LogoutMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type LogoutMutationResult = Apollo.MutationResult<LogoutMutation>
+export type LogoutMutationOptions = Apollo.BaseMutationOptions<
   LogoutMutation,
   LogoutMutationVariables
 >
@@ -2566,35 +2407,15 @@ export const RejectSubmissionDocument = gql`
     }
   }
 `
-export type RejectSubmissionMutationFn = ApolloReactCommon.MutationFunction<
+export type RejectSubmissionMutationFn = Apollo.MutationFunction<
   RejectSubmissionMutation,
   RejectSubmissionMutationVariables
 >
-export type RejectSubmissionComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >,
-  'mutation'
->
-
-export const RejectSubmissionComponent = (
-  props: RejectSubmissionComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    RejectSubmissionMutation,
-    RejectSubmissionMutationVariables
-  >
-    mutation={RejectSubmissionDocument}
-    {...props}
-  />
-)
-
 export type RejectSubmissionProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     RejectSubmissionMutation,
     RejectSubmissionMutationVariables
   >
@@ -2642,21 +2463,22 @@ export function withRejectSubmission<
  * });
  */
 export function useRejectSubmissionMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     RejectSubmissionMutation,
     RejectSubmissionMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     RejectSubmissionMutation,
     RejectSubmissionMutationVariables
-  >(RejectSubmissionDocument, baseOptions)
+  >(RejectSubmissionDocument, options)
 }
 export type RejectSubmissionMutationHookResult = ReturnType<
   typeof useRejectSubmissionMutation
 >
-export type RejectSubmissionMutationResult = ApolloReactCommon.MutationResult<RejectSubmissionMutation>
-export type RejectSubmissionMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type RejectSubmissionMutationResult = Apollo.MutationResult<RejectSubmissionMutation>
+export type RejectSubmissionMutationOptions = Apollo.BaseMutationOptions<
   RejectSubmissionMutation,
   RejectSubmissionMutationVariables
 >
@@ -2667,33 +2489,15 @@ export const RemoveAlertDocument = gql`
     }
   }
 `
-export type RemoveAlertMutationFn = ApolloReactCommon.MutationFunction<
+export type RemoveAlertMutationFn = Apollo.MutationFunction<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
 >
-export type RemoveAlertComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >,
-  'mutation'
->
-
-export const RemoveAlertComponent = (props: RemoveAlertComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >
-    mutation={RemoveAlertDocument}
-    {...props}
-  />
-)
-
 export type RemoveAlertProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     RemoveAlertMutation,
     RemoveAlertMutationVariables
   >
@@ -2740,21 +2544,22 @@ export function withRemoveAlert<
  * });
  */
 export function useRemoveAlertMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     RemoveAlertMutation,
     RemoveAlertMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
-    RemoveAlertMutation,
-    RemoveAlertMutationVariables
-  >(RemoveAlertDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<RemoveAlertMutation, RemoveAlertMutationVariables>(
+    RemoveAlertDocument,
+    options
+  )
 }
 export type RemoveAlertMutationHookResult = ReturnType<
   typeof useRemoveAlertMutation
 >
-export type RemoveAlertMutationResult = ApolloReactCommon.MutationResult<RemoveAlertMutation>
-export type RemoveAlertMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type RemoveAlertMutationResult = Apollo.MutationResult<RemoveAlertMutation>
+export type RemoveAlertMutationOptions = Apollo.BaseMutationOptions<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
 >
@@ -2766,33 +2571,15 @@ export const ReqPwResetDocument = gql`
     }
   }
 `
-export type ReqPwResetMutationFn = ApolloReactCommon.MutationFunction<
+export type ReqPwResetMutationFn = Apollo.MutationFunction<
   ReqPwResetMutation,
   ReqPwResetMutationVariables
 >
-export type ReqPwResetComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >,
-  'mutation'
->
-
-export const ReqPwResetComponent = (props: ReqPwResetComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >
-    mutation={ReqPwResetDocument}
-    {...props}
-  />
-)
-
 export type ReqPwResetProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     ReqPwResetMutation,
     ReqPwResetMutationVariables
   >
@@ -2839,21 +2626,22 @@ export function withReqPwReset<
  * });
  */
 export function useReqPwResetMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     ReqPwResetMutation,
     ReqPwResetMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
-    ReqPwResetMutation,
-    ReqPwResetMutationVariables
-  >(ReqPwResetDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<ReqPwResetMutation, ReqPwResetMutationVariables>(
+    ReqPwResetDocument,
+    options
+  )
 }
 export type ReqPwResetMutationHookResult = ReturnType<
   typeof useReqPwResetMutation
 >
-export type ReqPwResetMutationResult = ApolloReactCommon.MutationResult<ReqPwResetMutation>
-export type ReqPwResetMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type ReqPwResetMutationResult = Apollo.MutationResult<ReqPwResetMutation>
+export type ReqPwResetMutationOptions = Apollo.BaseMutationOptions<
   ReqPwResetMutation,
   ReqPwResetMutationVariables
 >
@@ -2864,30 +2652,15 @@ export const SetStarDocument = gql`
     }
   }
 `
-export type SetStarMutationFn = ApolloReactCommon.MutationFunction<
+export type SetStarMutationFn = Apollo.MutationFunction<
   SetStarMutation,
   SetStarMutationVariables
 >
-export type SetStarComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    SetStarMutation,
-    SetStarMutationVariables
-  >,
-  'mutation'
->
-
-export const SetStarComponent = (props: SetStarComponentProps) => (
-  <ApolloReactComponents.Mutation<SetStarMutation, SetStarMutationVariables>
-    mutation={SetStarDocument}
-    {...props}
-  />
-)
-
 export type SetStarProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     SetStarMutation,
     SetStarMutationVariables
   >
@@ -2936,19 +2709,20 @@ export function withSetStar<
  * });
  */
 export function useSetStarMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     SetStarMutation,
     SetStarMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
-    SetStarMutation,
-    SetStarMutationVariables
-  >(SetStarDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<SetStarMutation, SetStarMutationVariables>(
+    SetStarDocument,
+    options
+  )
 }
 export type SetStarMutationHookResult = ReturnType<typeof useSetStarMutation>
-export type SetStarMutationResult = ApolloReactCommon.MutationResult<SetStarMutation>
-export type SetStarMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type SetStarMutationResult = Apollo.MutationResult<SetStarMutation>
+export type SetStarMutationOptions = Apollo.BaseMutationOptions<
   SetStarMutation,
   SetStarMutationVariables
 >
@@ -2971,30 +2745,15 @@ export const SignupDocument = gql`
     }
   }
 `
-export type SignupMutationFn = ApolloReactCommon.MutationFunction<
+export type SignupMutationFn = Apollo.MutationFunction<
   SignupMutation,
   SignupMutationVariables
 >
-export type SignupComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    SignupMutation,
-    SignupMutationVariables
-  >,
-  'mutation'
->
-
-export const SignupComponent = (props: SignupComponentProps) => (
-  <ApolloReactComponents.Mutation<SignupMutation, SignupMutationVariables>
-    mutation={SignupDocument}
-    {...props}
-  />
-)
-
 export type SignupProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     SignupMutation,
     SignupMutationVariables
   >
@@ -3044,19 +2803,20 @@ export function withSignup<
  * });
  */
 export function useSignupMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     SignupMutation,
     SignupMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<SignupMutation, SignupMutationVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<SignupMutation, SignupMutationVariables>(
     SignupDocument,
-    baseOptions
+    options
   )
 }
 export type SignupMutationHookResult = ReturnType<typeof useSignupMutation>
-export type SignupMutationResult = ApolloReactCommon.MutationResult<SignupMutation>
-export type SignupMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type SignupMutationResult = Apollo.MutationResult<SignupMutation>
+export type SignupMutationOptions = Apollo.BaseMutationOptions<
   SignupMutation,
   SignupMutationVariables
 >
@@ -3093,35 +2853,15 @@ export const UpdateChallengeDocument = gql`
     }
   }
 `
-export type UpdateChallengeMutationFn = ApolloReactCommon.MutationFunction<
+export type UpdateChallengeMutationFn = Apollo.MutationFunction<
   UpdateChallengeMutation,
   UpdateChallengeMutationVariables
 >
-export type UpdateChallengeComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >,
-  'mutation'
->
-
-export const UpdateChallengeComponent = (
-  props: UpdateChallengeComponentProps
-) => (
-  <ApolloReactComponents.Mutation<
-    UpdateChallengeMutation,
-    UpdateChallengeMutationVariables
-  >
-    mutation={UpdateChallengeDocument}
-    {...props}
-  />
-)
-
 export type UpdateChallengeProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     UpdateChallengeMutation,
     UpdateChallengeMutationVariables
   >
@@ -3172,21 +2912,22 @@ export function withUpdateChallenge<
  * });
  */
 export function useUpdateChallengeMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     UpdateChallengeMutation,
     UpdateChallengeMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     UpdateChallengeMutation,
     UpdateChallengeMutationVariables
-  >(UpdateChallengeDocument, baseOptions)
+  >(UpdateChallengeDocument, options)
 }
 export type UpdateChallengeMutationHookResult = ReturnType<
   typeof useUpdateChallengeMutation
 >
-export type UpdateChallengeMutationResult = ApolloReactCommon.MutationResult<UpdateChallengeMutation>
-export type UpdateChallengeMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type UpdateChallengeMutationResult = Apollo.MutationResult<UpdateChallengeMutation>
+export type UpdateChallengeMutationOptions = Apollo.BaseMutationOptions<
   UpdateChallengeMutation,
   UpdateChallengeMutationVariables
 >
@@ -3229,33 +2970,15 @@ export const UpdateLessonDocument = gql`
     }
   }
 `
-export type UpdateLessonMutationFn = ApolloReactCommon.MutationFunction<
+export type UpdateLessonMutationFn = Apollo.MutationFunction<
   UpdateLessonMutation,
   UpdateLessonMutationVariables
 >
-export type UpdateLessonComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >,
-  'mutation'
->
-
-export const UpdateLessonComponent = (props: UpdateLessonComponentProps) => (
-  <ApolloReactComponents.Mutation<
-    UpdateLessonMutation,
-    UpdateLessonMutationVariables
-  >
-    mutation={UpdateLessonDocument}
-    {...props}
-  />
-)
-
 export type UpdateLessonProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     UpdateLessonMutation,
     UpdateLessonMutationVariables
   >
@@ -3309,21 +3032,22 @@ export function withUpdateLesson<
  * });
  */
 export function useUpdateLessonMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     UpdateLessonMutation,
     UpdateLessonMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
     UpdateLessonMutation,
     UpdateLessonMutationVariables
-  >(UpdateLessonDocument, baseOptions)
+  >(UpdateLessonDocument, options)
 }
 export type UpdateLessonMutationHookResult = ReturnType<
   typeof useUpdateLessonMutation
 >
-export type UpdateLessonMutationResult = ApolloReactCommon.MutationResult<UpdateLessonMutation>
-export type UpdateLessonMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type UpdateLessonMutationResult = Apollo.MutationResult<UpdateLessonMutation>
+export type UpdateLessonMutationOptions = Apollo.BaseMutationOptions<
   UpdateLessonMutation,
   UpdateLessonMutationVariables
 >
@@ -3334,30 +3058,15 @@ export const ChangePwDocument = gql`
     }
   }
 `
-export type ChangePwMutationFn = ApolloReactCommon.MutationFunction<
+export type ChangePwMutationFn = Apollo.MutationFunction<
   ChangePwMutation,
   ChangePwMutationVariables
 >
-export type ChangePwComponentProps = Omit<
-  ApolloReactComponents.MutationComponentOptions<
-    ChangePwMutation,
-    ChangePwMutationVariables
-  >,
-  'mutation'
->
-
-export const ChangePwComponent = (props: ChangePwComponentProps) => (
-  <ApolloReactComponents.Mutation<ChangePwMutation, ChangePwMutationVariables>
-    mutation={ChangePwDocument}
-    {...props}
-  />
-)
-
 export type ChangePwProps<
   TChildProps = {},
   TDataName extends string = 'mutate'
 > = {
-  [key in TDataName]: ApolloReactCommon.MutationFunction<
+  [key in TDataName]: Apollo.MutationFunction<
     ChangePwMutation,
     ChangePwMutationVariables
   >
@@ -3405,19 +3114,20 @@ export function withChangePw<
  * });
  */
 export function useChangePwMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     ChangePwMutation,
     ChangePwMutationVariables
   >
 ) {
-  return ApolloReactHooks.useMutation<
-    ChangePwMutation,
-    ChangePwMutationVariables
-  >(ChangePwDocument, baseOptions)
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<ChangePwMutation, ChangePwMutationVariables>(
+    ChangePwDocument,
+    options
+  )
 }
 export type ChangePwMutationHookResult = ReturnType<typeof useChangePwMutation>
-export type ChangePwMutationResult = ApolloReactCommon.MutationResult<ChangePwMutation>
-export type ChangePwMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type ChangePwMutationResult = Apollo.MutationResult<ChangePwMutation>
+export type ChangePwMutationOptions = Apollo.BaseMutationOptions<
   ChangePwMutation,
   ChangePwMutationVariables
 >
@@ -3475,22 +3185,6 @@ export const UserInfoDocument = gql`
     }
   }
 `
-export type UserInfoComponentProps = Omit<
-  ApolloReactComponents.QueryComponentOptions<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >,
-  'query'
-> &
-  ({ variables: UserInfoQueryVariables; skip?: boolean } | { skip: boolean })
-
-export const UserInfoComponent = (props: UserInfoComponentProps) => (
-  <ApolloReactComponents.Query<UserInfoQuery, UserInfoQueryVariables>
-    query={UserInfoDocument}
-    {...props}
-  />
-)
-
 export type UserInfoProps<
   TChildProps = {},
   TDataName extends string = 'data'
@@ -3541,32 +3235,31 @@ export function withUserInfo<
  * });
  */
 export function useUserInfoQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >
+  baseOptions: Apollo.QueryHookOptions<UserInfoQuery, UserInfoQueryVariables>
 ) {
-  return ApolloReactHooks.useQuery<UserInfoQuery, UserInfoQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<UserInfoQuery, UserInfoQueryVariables>(
     UserInfoDocument,
-    baseOptions
+    options
   )
 }
 export function useUserInfoLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryHookOptions<
     UserInfoQuery,
     UserInfoQueryVariables
   >
 ) {
-  return ApolloReactHooks.useLazyQuery<UserInfoQuery, UserInfoQueryVariables>(
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<UserInfoQuery, UserInfoQueryVariables>(
     UserInfoDocument,
-    baseOptions
+    options
   )
 }
 export type UserInfoQueryHookResult = ReturnType<typeof useUserInfoQuery>
 export type UserInfoLazyQueryHookResult = ReturnType<
   typeof useUserInfoLazyQuery
 >
-export type UserInfoQueryResult = ApolloReactCommon.QueryResult<
+export type UserInfoQueryResult = Apollo.QueryResult<
   UserInfoQuery,
   UserInfoQueryVariables
 >
