@@ -11,7 +11,7 @@ export default {
 
 export const StarGivenAlready: React.FC = () => (
   <ChallengesCompletedCard
-    lessonId="5"
+    lessonId={5}
     starGiven="flimmy"
     imageSrc="icon-challenge-complete.jpg"
     reviewUrl="https://c0d3.com/teacher/5"
@@ -41,7 +41,7 @@ export const StarNotGivenYet: React.FC = () => {
   return (
     <MockedProvider mocks={mocks} addTypename={false}>
       <ChallengesCompletedCard
-        lessonId="5"
+        lessonId={5}
         starGiven=""
         imageSrc="icon-challenge-complete.jpg"
         reviewUrl="https://c0d3.com/teacher/5"

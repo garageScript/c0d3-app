@@ -15,7 +15,7 @@ const mockSetStarMutatation = {
   }
 }
 const mockGetLessonMentors = {
-  request: { query: GET_LESSON_MENTORS, variables: { lessonId: '4' } },
+  request: { query: GET_LESSON_MENTORS, variables: { lessonId: 4 } },
   result: {
     data: { getLessonMentors: lessonMentorsData }
   }
@@ -43,7 +43,7 @@ describe('GiveStarCard Component', () => {
       show: true,
       close: jest.fn(),
       setStarGiven: jest.fn(),
-      lessonId: '4',
+      lessonId: 4,
       starGiven: 'flimmy flam jam'
     }
   })

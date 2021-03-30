@@ -62,7 +62,7 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
       key={key}
       username={username as string}
       name={name as string}
-      mentorId={parseInt(id as string)}
+      mentorId={id}
       setMentor={setMentor}
     />
   ))
@@ -194,7 +194,7 @@ const StarCard: React.FC<StarCardProps> = ({
 }
 
 type GiveStarCardProps = {
-  lessonId: string
+  lessonId: number
   starGiven: string
   setStarGiven: Function
 } & ModalCardProps
@@ -229,5 +229,5 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
       getParams: () => ({ variables: { lessonId } })
     },
     props => <StarCard {...(props as StarCardProps)} />
-  )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
+  )({ lessonId: lessonId, close, setStarGiven, show })
 }
