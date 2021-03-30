@@ -25,9 +25,19 @@ describe('Index Page', () => {
       }
     }
   ]
-
-  test('Should redirect to /curriculum and return null', async () => {
-    const { container } = render(
+  test('Should not redirect on first load', async () => {
+    const { push } = useRouter()
+    render(
+      <MockedProvider mocks={mocksWithSession(null)} addTypename={false}>
+        <IndexPage />
+      </MockedProvider>
+    )
+    await waitFor(() => expect(push).not.toHaveBeenCalled())
+  })
+  test('Should redirect to /curriculum if localstorage loggedIn exists', async () => {
+    process['browser'] = true
+    window.localStorage.setItem('loggedIn', 'true')
+    render(
       <MockedProvider
         mocks={mocksWithSession(dummySessionData)}
         addTypename={false}
@@ -37,17 +47,6 @@ describe('Index Page', () => {
     )
     await waitFor(() => {
       expect(push).toBeCalledWith('/curriculum')
-      expect(container.firstChild).toBeNull()
     }) // wait for loading state to pass
-  })
-
-  test('Should not redirect without session', async () => {
-    const { push } = useRouter()
-    render(
-      <MockedProvider mocks={mocksWithSession(null)} addTypename={false}>
-        <IndexPage />
-      </MockedProvider>
-    )
-    await waitFor(() => expect(push).not.toHaveBeenCalled())
   })
 })
