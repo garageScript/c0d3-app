@@ -93,7 +93,7 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
   return <img width="25px" height="25px" src={statusIconUrl} />
 }
 
-type ChallengeTitleCardProps = {
+export type ChallengeTitleCardProps = {
   key: number
   id: number
   title: string
