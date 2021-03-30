@@ -92,7 +92,7 @@ export default gql`
   }
 
   type Submission {
-    id: String
+    id: Int!
     status: String
     mrUrl: String
     diff: String
@@ -100,8 +100,8 @@ export default gql`
     comment: String
     userId: String
     order: Int
-    lessonId: String
-    challengeId: String
+    lessonId: Int!
+    challengeId: Int!
     challenge: Challenge
     reviewer: User
     user: User
@@ -127,9 +127,9 @@ export default gql`
   }
 
   type UserLesson {
-    id: String
-    userId: String
-    lessonId: String
+    id: Int!
+    userId: Int!
+    lessonId: Int!
     isPassed: String
     isTeaching: String
     isEnrolled: String
@@ -138,7 +138,7 @@ export default gql`
   }
 
   type Lesson {
-    id: String
+    id: Int!
     description: String
     docUrl: String
     githubUrl: String
@@ -152,9 +152,9 @@ export default gql`
   }
 
   type Challenge {
-    id: String!
+    id: Int!
     description: String!
-    lessonId: String!
+    lessonId: Int!
     title: String!
     order: Int!
   }

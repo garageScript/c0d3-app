@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Challenge, Submission } from '../graphql/index'
-import { LessonStatus } from '../@types/lesson'
+import { Challenge, Submission, UserLesson } from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
@@ -13,24 +12,20 @@ import _ from 'lodash'
 
 dayjs.extend(relativeTime)
 
-type CurrentChallengeID = string | null
+type CurrentChallengeID = number | null
 
 type ReviewStatusProps = {
   status: string
   reviewerUserName: string | null
 }
 
-export type ChallengeSubmissionData = {
-  title: string
-  id: string
-  order: number
-  description: string
+export type ChallengeWithSubmission = Challenge & {
   status: string
-  submission?: Submission
+  submission: Submission
 }
 
 export type UserSubmissionsObject = {
-  [submissionId: string]: Submission
+  [submissionId: number]: Submission
 }
 
 export const ReviewStatus: React.FC<ReviewStatusProps> = ({
@@ -99,8 +94,8 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
 }
 
 type ChallengeTitleCardProps = {
-  key: string
-  id: string
+  key: number
+  id: number
   title: string
   challengeNum: number
   submissionStatus: string
@@ -141,7 +136,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 }
 
 type ChallengeQuestionCardProps = {
-  currentChallenge: ChallengeSubmissionData
+  currentChallenge: ChallengeWithSubmission
 }
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
@@ -236,7 +231,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 }
 
 type ChallengesCompletedCardProps = {
-  lessonId: string
+  lessonId: number
   starGiven: string
   imageSrc: string
   reviewUrl: string
@@ -303,9 +298,9 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = (
 type ChallengeMaterialProps = {
   challenges: Challenge[]
   userSubmissions: Submission[]
-  lessonStatus: LessonStatus
+  lessonStatus: UserLesson
   chatUrl: string
-  lessonId: string
+  lessonId: number
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
@@ -320,8 +315,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   }
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
-    (acc: UserSubmissionsObject, submission: Submission) => {
-      acc[submission.challengeId!] = submission
+    (acc: UserSubmissionsObject, submission) => {
+      acc[submission.challengeId] = submission
       return acc
     },
     {}
@@ -329,12 +324,13 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   //chain sort-map causes errors in tests without a copy
   const challengesCopy = [...challenges]
   //create a new Challenges array with user submission data integrated and sorted
-  const challengesWithSubmissionData: ChallengeSubmissionData[] = challengesCopy
+  const challengesWithSubmissionData: ChallengeWithSubmission[] = challengesCopy
     .sort((a, b) => a.order - b.order)
     .map((challenge: Challenge) => {
       const submission = userSubmissionsObject[challenge.id] || {}
       return {
         ...challenge,
+        lessonId,
         status: submission.status || 'unsubmitted',
         submission
       }
@@ -346,15 +342,16 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
 
   const finalChallenge = {
     title: 'Challenges Completed!',
-    id: 'finalChallenge',
+    id: 9999,
+    lessonId,
     order: challenges.length + 1,
     description:
       'Congratulations, you have completed all Challenges for this Lesson',
     status: 'passed'
-  }
+  } as ChallengeWithSubmission
   //find first challenge that is not passed on initial render after clicks will render clicked challenge
   const currentChallenge =
-    challengesWithSubmissionData.find((challenge: ChallengeSubmissionData) => {
+    challengesWithSubmissionData.find((challenge: ChallengeWithSubmission) => {
       if (currentChallengeID) return challenge.id === currentChallengeID
       return challenge.status !== 'passed'
     }) || finalChallenge
@@ -390,10 +387,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         )}
       </div>
       <div className="col-8">
-        {currentChallenge.id !== 'finalChallenge' && (
+        {currentChallenge.id !== 9999 && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
-        {lessonStatus.isPassed && currentChallenge.id === 'finalChallenge' && (
+        {lessonStatus.isPassed && currentChallenge.id === 9999 && (
           <ChallengesCompletedCard
             lessonId={lessonId}
             starGiven={lessonStatus.starGiven || ''}

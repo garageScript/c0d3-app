@@ -194,7 +194,7 @@ const StarCard: React.FC<StarCardProps> = ({
 }
 
 type GiveStarCardProps = {
-  lessonId: string
+  lessonId: number
   starGiven: string
   setStarGiven: Function
 } & ModalCardProps
