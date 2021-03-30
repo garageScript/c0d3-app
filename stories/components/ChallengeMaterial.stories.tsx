@@ -1,5 +1,6 @@
 import * as React from 'react'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
+import { Challenge } from '../../graphql/index'
 import SET_STAR from '../../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../../__dummy__/getLessonMentorsData'
@@ -29,21 +30,23 @@ const challenges = [
   {
     description:
       'Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.',
-    id: '105',
+    id: 105,
     order: 0,
     title: 'Greater than 5'
   },
   {
     description:
       'Write a function that takes in 2 numbers and returns their sum.',
-    id: '107',
+    id: 107,
     order: 1,
     title: 'Sum of 2 Numbers'
   }
-]
+] as Challenge[]
 
 const lessonStatus = {
-  lessonId: '5',
+  id: 1,
+  userId: 6,
+  lessonId: 5,
   isEnrolled: '213423534',
   isTeaching: null
 }
@@ -54,7 +57,7 @@ export const Basic: React.FC = () => (
     userSubmissions={[]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -64,24 +67,26 @@ export const WithDiff: React.FC = () => (
     userSubmissions={[
       {
         status: '',
-        id: '1',
+        id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
         viewCount: 0,
         comment: '```test comment```',
-        challengeId: '105',
+        challengeId: 105,
+        lessonId: 23,
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
       },
       {
         status: '',
-        id: '1',
+        id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
         viewCount: 0,
         comment: '```test comment```',
-        challengeId: '107',
+        challengeId: 107,
+        lessonId: 23,
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -89,7 +94,7 @@ export const WithDiff: React.FC = () => (
     ]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -99,12 +104,13 @@ export const WithComments: React.FC = () => (
     userSubmissions={[
       {
         status: 'passed',
-        id: '1',
+        id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
         viewCount: 0,
         comment: '```Great Job```',
-        challengeId: '105',
+        challengeId: 105,
+        lessonId: 23,
         reviewer: {
           id: '1',
           username: 'dan'
@@ -115,12 +121,13 @@ export const WithComments: React.FC = () => (
       },
       {
         status: '',
-        id: '1',
+        id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
         viewCount: 0,
         comment: '```test comment```',
-        challengeId: '107',
+        challengeId: 107,
+        lessonId: 23,
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -128,7 +135,7 @@ export const WithComments: React.FC = () => (
     ]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -138,7 +145,7 @@ export const NoChallenges: React.FC = () => (
     userSubmissions={[]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -149,12 +156,13 @@ export const FinalChallenge: React.FC = () => (
       userSubmissions={[
         {
           status: 'passed',
-          id: '1',
+          id: 1,
           mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```Great Job```',
-          challengeId: '105',
+          challengeId: 105,
+          lessonId: 23,
           reviewer: {
             id: '1',
             username: 'dan'
@@ -165,12 +173,13 @@ export const FinalChallenge: React.FC = () => (
         },
         {
           status: 'passed',
-          id: '1',
+          id: 1,
           mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
           viewCount: 0,
           comment: '```test comment```',
-          challengeId: '107',
+          challengeId: 107,
+          lessonId: 23,
           reviewerId: '',
           createdAt: '',
           updatedAt: Date.now().toString()
@@ -178,7 +187,7 @@ export const FinalChallenge: React.FC = () => (
       ]}
       lessonStatus={{ ...lessonStatus, isPassed: 'aef' }}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-      lessonId="5"
+      lessonId={5}
     />
   </MockedProvider>
 )

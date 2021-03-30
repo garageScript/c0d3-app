@@ -229,5 +229,5 @@ export const GiveStarCard: React.FC<GiveStarCardProps> = ({
       getParams: () => ({ variables: { lessonId } })
     },
     props => <StarCard {...(props as StarCardProps)} />
-  )({ lessonId: parseInt(lessonId), close, setStarGiven, show })
+  )({ lessonId, close, setStarGiven, show })
 }
