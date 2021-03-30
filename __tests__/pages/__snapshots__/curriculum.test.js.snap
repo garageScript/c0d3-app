@@ -462,7 +462,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
         >
           <div
-            class="card-body d-flex flex-column justify-content-around"
+            class="card-body"
           >
             <h1
               class="announcement-card__title"
@@ -478,22 +478,22 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 Updates and Guidelines
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
               </p>
@@ -1353,7 +1353,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
         >
           <div
-            class="card-body d-flex flex-column justify-content-around"
+            class="card-body"
           >
             <h1
               class="announcement-card__title"
@@ -1369,22 +1369,22 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 Updates and Guidelines
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
               </p>
@@ -2358,7 +2358,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
         >
           <div
-            class="card-body d-flex flex-column justify-content-around"
+            class="card-body"
           >
             <h1
               class="announcement-card__title"
@@ -2374,22 +2374,22 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 Updates and Guidelines
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
               </p>
               <p
-                class="mt-4"
+                class="mt-3"
               >
                 After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
               </p>
