@@ -454,60 +454,6 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="d-none d-xl-flex col-xl-4"
-      >
-        <div
-          class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
-        >
-          <div
-            class="card-body"
-          >
-            <h1
-              class="announcement-card__title"
-            >
-              General Announcements
-            </h1>
-            <div
-              class="mt-3"
-            >
-              <p
-                class="font-weight-bold"
-              >
-                Updates and Guidelines
-              </p>
-              <p
-                class="mt-3"
-              >
-                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
-              </p>
-              <p
-                class="mt-3"
-              >
-                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
-              </p>
-              <p
-                class="mt-3"
-              >
-                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
-              </p>
-              <p
-                class="mt-3"
-              >
-                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <div
-        class="col-xl-8"
-      >
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -559,6 +505,60 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="d-none d-xl-flex col-xl-4"
+      >
+        <div
+          class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
+        >
+          <div
+            class="card-body d-flex flex-column justify-content-around"
+          >
+            <h1
+              class="announcement-card__title font-weight-bold"
+            >
+              General Announcements
+            </h1>
+            <div
+              class="mt-3 d-flex flex-column justify-content-between"
+            >
+              <p
+                class="announcement-card__subtitle font-weight-bold"
+              >
+                Updates and Guidelines
+              </p>
+              <p
+                class="mt-3"
+              >
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                class="mt-3"
+              >
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                class="mt-3"
+              >
+                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                class="mt-3"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-xl-8"
+      >
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -605,6 +605,57 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__description mt-2"
                 >
                   React and GraphQL Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card shadow-sm mt-3 border-0"
+        >
+          <div
+            class="d-flex p-2"
+          >
+            <img
+              alt="js-7-cover.svg"
+              class="lesson-card__image"
+              src="/assets/curriculum/js-7-cover.svg"
+            />
+            <div
+              class="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  class="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/28"
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    class="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      class="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      class="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  class="lesson-card__description mt-2"
+                >
+                  Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
             </div>
@@ -711,57 +762,6 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
       <div
         class="col-xl-8"
       >
-        <div
-          class="card shadow-sm mt-3 border-0"
-        >
-          <div
-            class="d-flex p-2"
-          >
-            <img
-              alt="js-7-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-7-cover.svg"
-            />
-            <div
-              class="w-100 pl-4"
-            >
-              <div>
-                <h4
-                  class="lesson-card__title font-weight-bold mt-3"
-                >
-                  <a
-                    class=""
-                    href="/curriculum/28"
-                  >
-                    JavaScript Algorithms
-                  </a>
-                </h4>
-                <div>
-                  <div
-                    class="d-inline-block mr-4"
-                  >
-                    <img
-                      alt="icon-challenge"
-                      class="mr-2"
-                      src="/assets/curriculum/icons/icon-challenge.svg"
-                    />
-                    <span
-                      class="lesson-card__icon-text"
-                    >
-                      11
-                       CHALLENGES
-                    </span>
-                  </div>
-                </div>
-                <p
-                  class="lesson-card__description mt-2"
-                >
-                  Problems that are commonly asked to test your JavaScript knowledge
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -1345,60 +1345,6 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="d-none d-xl-flex col-xl-4"
-      >
-        <div
-          class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
-        >
-          <div
-            class="card-body"
-          >
-            <h1
-              class="announcement-card__title"
-            >
-              General Announcements
-            </h1>
-            <div
-              class="mt-3"
-            >
-              <p
-                class="font-weight-bold"
-              >
-                Updates and Guidelines
-              </p>
-              <p
-                class="mt-3"
-              >
-                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
-              </p>
-              <p
-                class="mt-3"
-              >
-                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
-              </p>
-              <p
-                class="mt-3"
-              >
-                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
-              </p>
-              <p
-                class="mt-3"
-              >
-                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <div
-        class="col-xl-8"
-      >
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -1450,6 +1396,60 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="d-none d-xl-flex col-xl-4"
+      >
+        <div
+          class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
+        >
+          <div
+            class="card-body d-flex flex-column justify-content-around"
+          >
+            <h1
+              class="announcement-card__title font-weight-bold"
+            >
+              General Announcements
+            </h1>
+            <div
+              class="mt-3 d-flex flex-column justify-content-between"
+            >
+              <p
+                class="announcement-card__subtitle font-weight-bold"
+              >
+                Updates and Guidelines
+              </p>
+              <p
+                class="mt-3"
+              >
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                class="mt-3"
+              >
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                class="mt-3"
+              >
+                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                class="mt-3"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-xl-8"
+      >
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -1496,6 +1496,57 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__description mt-2"
                 >
                   React and GraphQL Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card shadow-sm mt-3 border-0"
+        >
+          <div
+            class="d-flex p-2"
+          >
+            <img
+              alt="js-7-cover.svg"
+              class="lesson-card__image"
+              src="/assets/curriculum/js-7-cover.svg"
+            />
+            <div
+              class="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  class="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/28"
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    class="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      class="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      class="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  class="lesson-card__description mt-2"
+                >
+                  Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
             </div>
@@ -1602,57 +1653,6 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
       <div
         class="col-xl-8"
       >
-        <div
-          class="card shadow-sm mt-3 border-0"
-        >
-          <div
-            class="d-flex p-2"
-          >
-            <img
-              alt="js-7-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-7-cover.svg"
-            />
-            <div
-              class="w-100 pl-4"
-            >
-              <div>
-                <h4
-                  class="lesson-card__title font-weight-bold mt-3"
-                >
-                  <a
-                    class=""
-                    href="/curriculum/28"
-                  >
-                    JavaScript Algorithms
-                  </a>
-                </h4>
-                <div>
-                  <div
-                    class="d-inline-block mr-4"
-                  >
-                    <img
-                      alt="icon-challenge"
-                      class="mr-2"
-                      src="/assets/curriculum/icons/icon-challenge.svg"
-                    />
-                    <span
-                      class="lesson-card__icon-text"
-                    >
-                      11
-                       CHALLENGES
-                    </span>
-                  </div>
-                </div>
-                <p
-                  class="lesson-card__description mt-2"
-                >
-                  Problems that are commonly asked to test your JavaScript knowledge
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -2350,60 +2350,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="d-none d-xl-flex col-xl-4"
-      >
-        <div
-          class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
-        >
-          <div
-            class="card-body"
-          >
-            <h1
-              class="announcement-card__title"
-            >
-              General Announcements
-            </h1>
-            <div
-              class="mt-3"
-            >
-              <p
-                class="font-weight-bold"
-              >
-                Updates and Guidelines
-              </p>
-              <p
-                class="mt-3"
-              >
-                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
-              </p>
-              <p
-                class="mt-3"
-              >
-                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
-              </p>
-              <p
-                class="mt-3"
-              >
-                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
-              </p>
-              <p
-                class="mt-3"
-              >
-                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="row"
-    >
-      <div
-        class="col-xl-8"
-      >
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -2455,6 +2401,60 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="d-none d-xl-flex col-xl-4"
+      >
+        <div
+          class="announcement-card__container card shadow-sm mt-3 p-2 border-0"
+        >
+          <div
+            class="card-body d-flex flex-column justify-content-around"
+          >
+            <h1
+              class="announcement-card__title font-weight-bold"
+            >
+              General Announcements
+            </h1>
+            <div
+              class="mt-3 d-flex flex-column justify-content-between"
+            >
+              <p
+                class="announcement-card__subtitle font-weight-bold"
+              >
+                Updates and Guidelines
+              </p>
+              <p
+                class="mt-3"
+              >
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                class="mt-3"
+              >
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                class="mt-3"
+              >
+                This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                class="mt-3"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-xl-8"
+      >
         <div
           class="card shadow-sm mt-3 border-0"
         >
@@ -2501,6 +2501,57 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__description mt-2"
                 >
                   React and GraphQL Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card shadow-sm mt-3 border-0"
+        >
+          <div
+            class="d-flex p-2"
+          >
+            <img
+              alt="js-7-cover.svg"
+              class="lesson-card__image"
+              src="/assets/curriculum/js-7-cover.svg"
+            />
+            <div
+              class="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  class="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/28"
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    class="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      class="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      class="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  class="lesson-card__description mt-2"
+                >
+                  Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
             </div>
@@ -2607,57 +2658,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
       <div
         class="col-xl-8"
       >
-        <div
-          class="card shadow-sm mt-3 border-0"
-        >
-          <div
-            class="d-flex p-2"
-          >
-            <img
-              alt="js-7-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-7-cover.svg"
-            />
-            <div
-              class="w-100 pl-4"
-            >
-              <div>
-                <h4
-                  class="lesson-card__title font-weight-bold mt-3"
-                >
-                  <a
-                    class=""
-                    href="/curriculum/28"
-                  >
-                    JavaScript Algorithms
-                  </a>
-                </h4>
-                <div>
-                  <div
-                    class="d-inline-block mr-4"
-                  >
-                    <img
-                      alt="icon-challenge"
-                      class="mr-2"
-                      src="/assets/curriculum/icons/icon-challenge.svg"
-                    />
-                    <span
-                      class="lesson-card__icon-text"
-                    >
-                      11
-                       CHALLENGES
-                    </span>
-                  </div>
-                </div>
-                <p
-                  class="lesson-card__description mt-2"
-                >
-                  Problems that are commonly asked to test your JavaScript knowledge
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
         <div
           class="card shadow-sm mt-3 border-0"
         >

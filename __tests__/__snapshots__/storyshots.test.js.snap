@@ -193,18 +193,18 @@ exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
   className="announcement-card__container card shadow-sm mt-3 p-2 border-0"
 >
   <div
-    className="card-body"
+    className="card-body d-flex flex-column justify-content-around"
   >
     <h1
-      className="announcement-card__title"
+      className="announcement-card__title font-weight-bold"
     >
       General Announcements
     </h1>
     <div
-      className="mt-3"
+      className="mt-3 d-flex flex-column justify-content-between"
     >
       <p
-        className="font-weight-bold"
+        className="announcement-card__subtitle font-weight-bold"
       >
         Updates and Guidelines
       </p>
