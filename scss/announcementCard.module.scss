@@ -1,14 +1,13 @@
 .announcement-card__container {
   background-color: #edf1f6;
-  flex-basis: 0px;
-  flex-grow: 1;
-  overflow-y: auto;
 }
 
 .announcement-card__title {
-  color: rgb(90, 90, 90);
   font-size: 1.5rem;
+  line-height: 1.5;
+  color: rgb(80, 80, 80);
 }
+
 .announcement-card__subtitle {
-  color: rgb(90, 90, 90);
+  color: rgb(80, 80, 80);
 }
