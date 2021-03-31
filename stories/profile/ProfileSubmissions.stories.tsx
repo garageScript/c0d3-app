@@ -1,5 +1,7 @@
 import * as React from 'react'
-import ProfileSubmissions from '../../components/ProfileSubmissions'
+import ProfileSubmissions, {
+  LessonChallenge
+} from '../../components/ProfileSubmissions'
 
 export default {
   component: ProfileSubmissions,
@@ -152,7 +154,7 @@ const lessons = [
     title: 'General Algorithms',
     challenges: challengesLesson9
   }
-]
+] as LessonChallenge[]
 
 export const ProfileSubmissionsCard: React.FC = () => (
   <ProfileSubmissions lessons={lessons} />

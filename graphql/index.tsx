@@ -270,7 +270,7 @@ export type TokenResponse = {
 
 export type User = {
   __typename?: 'User'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['Int']
   username?: Maybe<Scalars['String']>
   userLesson?: Maybe<UserLesson>
   email?: Maybe<Scalars['String']>
@@ -1274,7 +1274,7 @@ export type UserResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   userLesson?: Resolver<
     Maybe<ResolversTypes['UserLesson']>,

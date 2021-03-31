@@ -112,7 +112,7 @@ export const WithComments: React.FC = () => (
         challengeId: 105,
         lessonId: 23,
         reviewer: {
-          id: '1',
+          id: 1,
           username: 'dan'
         },
         reviewerId: '1',
@@ -164,7 +164,7 @@ export const FinalChallenge: React.FC = () => (
           challengeId: 105,
           lessonId: 23,
           reviewer: {
-            id: '1',
+            id: 1,
             username: 'dan'
           },
           reviewerId: '1',

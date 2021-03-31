@@ -62,7 +62,7 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
       key={key}
       username={username as string}
       name={name as string}
-      mentorId={parseInt(id as string)}
+      mentorId={id}
       setMentor={setMentor}
     />
   ))

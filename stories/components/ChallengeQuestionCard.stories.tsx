@@ -1,5 +1,8 @@
 import * as React from 'react'
-import { ChallengeQuestionCard } from '../../components/ChallengeMaterial'
+import {
+  ChallengeQuestionCard,
+  ChallengeWithSubmission
+} from '../../components/ChallengeMaterial'
 
 export default {
   component: ChallengeQuestionCard,
@@ -9,11 +12,11 @@ export default {
 const currentChallenge = {
   description:
     'Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.',
-  id: '105',
+  id: 105,
   order: 0,
   title: 'Greater than 5',
   status: 'unsubmitted'
-}
+} as ChallengeWithSubmission
 
 export const Basic: React.FC = () => (
   <ChallengeQuestionCard currentChallenge={currentChallenge} />

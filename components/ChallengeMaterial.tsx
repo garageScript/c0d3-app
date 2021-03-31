@@ -295,7 +295,7 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = (
   )
 }
 
-type ChallengeMaterialProps = {
+export type ChallengeMaterialProps = {
   challenges: Challenge[]
   userSubmissions: Submission[]
   lessonStatus: UserLesson
@@ -342,7 +342,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
 
   const finalChallenge = {
     title: 'Challenges Completed!',
-    id: 9999,
+    id: -1,
     lessonId,
     order: challenges.length + 1,
     description:
@@ -387,10 +387,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         )}
       </div>
       <div className="col-8">
-        {currentChallenge.id !== 9999 && (
+        {currentChallenge.id !== finalChallenge.id && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
-        {lessonStatus.isPassed && currentChallenge.id === 9999 && (
+        {lessonStatus.isPassed && currentChallenge.id === finalChallenge.id && (
           <ChallengesCompletedCard
             lessonId={lessonId}
             starGiven={lessonStatus.starGiven || ''}
