@@ -206,7 +206,7 @@ export type Query = {
 }
 
 export type QueryGetLessonMentorsArgs = {
-  lessonId: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type QueryUserInfoArgs = {
@@ -270,7 +270,7 @@ export type TokenResponse = {
 
 export type User = {
   __typename?: 'User'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['Int']
   username?: Maybe<Scalars['String']>
   userLesson?: Maybe<UserLesson>
   email?: Maybe<Scalars['String']>
@@ -506,7 +506,7 @@ export type GetAppQuery = { __typename?: 'Query' } & {
 }
 
 export type LessonMentorsQueryVariables = Exact<{
-  lessonId: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type LessonMentorsQuery = { __typename?: 'Query' } & {
@@ -1282,7 +1282,7 @@ export type UserResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   userLesson?: Resolver<
     Maybe<ResolversTypes['UserLesson']>,
@@ -2046,7 +2046,7 @@ export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQueryVariables
 >
 export const LessonMentorsDocument = gql`
-  query lessonMentors($lessonId: String!) {
+  query lessonMentors($lessonId: Int!) {
     getLessonMentors(lessonId: $lessonId) {
       username
       name

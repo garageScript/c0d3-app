@@ -5,7 +5,7 @@ export default gql`
     lessons: [Lesson!]!
     session: Session
     allUsers: [User]
-    getLessonMentors(lessonId: String!): [User]
+    getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: String!): [Submission]
@@ -111,7 +111,7 @@ export default gql`
   }
 
   type User {
-    id: String
+    id: Int!
     username: String
     userLesson: UserLesson
     email: String

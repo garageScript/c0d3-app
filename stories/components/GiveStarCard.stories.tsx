@@ -49,7 +49,7 @@ const MockBasic: React.FC = () => {
       <MockedProvider mocks={mocks} addTypename={false}>
         <GiveStarCard
           starGiven={starGiven}
-          lessonId={'4'}
+          lessonId={4}
           show={show}
           close={close}
           setStarGiven={setStarGiven}
@@ -67,7 +67,7 @@ const MockAlreadyGaveStar: React.FC = () => {
       <Button onClick={() => setShow(!show)}>Launch demo modal</Button>
       <GiveStarCard
         starGiven="omega shenron"
-        lessonId={'4'}
+        lessonId={4}
         show={show}
         setStarGiven={noop}
         close={close}
