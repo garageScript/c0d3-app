@@ -27,7 +27,7 @@ type AdminOptionProps = {
   users: User[]
   setUsers: React.Dispatch<React.SetStateAction<User[]>>
   usersIndex: number
-  id: string | null | undefined
+  id: number | null | undefined
 }
 
 type UsersTableProps = {

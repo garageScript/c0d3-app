@@ -228,7 +228,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
 }
 
 type ChallengesCompletedCardProps = {
-  lessonId: string
+  lessonId: number
   starGiven: string
   imageSrc: string
   reviewUrl: string
@@ -297,7 +297,7 @@ type ChallengeMaterialProps = {
   userSubmissions: UserSubmission[]
   lessonStatus: LessonStatus
   chatUrl: string
-  lessonId: string
+  lessonId: number
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
