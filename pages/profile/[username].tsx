@@ -85,7 +85,7 @@ const UserProfile: React.FC = () => {
       const challenge = challengeInfo || ({} as Challenge)
       const challengeSubmission = userSubmissions.find(
         submission => challenge.id === +submission.challengeId
-      ) as UserSubmission
+      )
 
       return {
         challengeNumber: challenge.order || 0,
