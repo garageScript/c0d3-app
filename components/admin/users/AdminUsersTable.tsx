@@ -48,7 +48,7 @@ const AdminOption: React.FC<AdminOptionProps> = ({
 }) => {
   const [changeRights] = useMutation(changeAdminRights)
 
-  const newAdminRights = isAdmin ? 'false' : 'true'
+  const newAdminRights = isAdmin ? false : true
 
   const mutationVariable = {
     variables: {
@@ -91,7 +91,7 @@ const RowData: React.FC<RowDataProps> = ({
     if (property === 'isAdmin')
       value = (
         <AdminOption
-          isAdmin={user[property] === 'true'}
+          isAdmin={user[property] === true}
           setUsers={setUsers}
           usersIndex={usersIndex}
           users={users}
