@@ -1,25 +1,59 @@
 {
   "name": "with-typescript",
   "version": "1.0.0",
+  "license": "ISC",
   "scripts": {
     "dev": "next -p $PORT",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
-    "autofix": "eslint . --ext .js --ext .ts --ext .tsx --fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",
+    "lint:fix": "yarn lint --fix && prettier --write ./scss/",
+    "autofix": "yarn lint:fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -s ./public",
     "test": "jest --coverage",
     "type-check": "tsc",
     "generate": "graphql-codegen --config codegen.yml",
     "postinstall": "./scripts/prismaUtils.js setup && prisma generate",
+    "prepare": "husky install",
     "vercel-build": "./scripts/prismaUtils.js baseline migrate && next build"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{json,md,scss}": "prettier --write",
+    "*.svg": "svgo --multipass"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!**/*.d.ts",
+      "!graphql/(resolvers|typeDefs).ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "stories",
+      "graphql/index.tsx",
+      "<rootDir>/__tests__/utils/",
+      "prisma",
+      "scripts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "testPathIgnorePatterns": ["<rootDir>/__tests__/utils/"]
   },
   "dependencies": {
     "@apollo/client": "^3.3.12",
     "@prisma/client": "2.19.0",
-    "@sentry/browser": "^5.30.0",
-    "@zeit/next-sass": "^1.0.1",
+    "@sentry/browser": "^6.2.3",
     "apollo-server-micro": "^2.20.0",
     "bcrypt": "5.0.0",
     "bootstrap": "^4.6.0",
@@ -42,6 +76,7 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "posthog-js": "^1.9.5",
+    "prism-react-renderer": "^1.2.0",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
@@ -65,6 +100,9 @@
     "@graphql-codegen/typescript-operations": "^1.17.14",
     "@graphql-codegen/typescript-react-apollo": "^2.2.3",
     "@graphql-codegen/typescript-resolvers": "^1.18.2",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^10.0.9",
     "@storybook/addon-actions": "^6.1.21",
     "@storybook/addon-storyshots": "^6.1.17",
     "@storybook/addon-storysource": "^6.1.21",
@@ -77,6 +115,7 @@
     "@types/express-session": "^1.17.3",
     "@types/lodash": "^4.14.168",
     "@types/mailgun-js": "^0.22.11",
+    "@types/mdx-js__react": "^1.5.3",
     "@types/node": "^14.14.32",
     "@types/node-fetch": "^2.5.8",
     "@types/prismjs": "^1.16.2",
@@ -84,59 +123,27 @@
     "@types/react-dom": "^17.0.0",
     "@types/styled-jsx": "^2.2.8",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.17.0",
+    "@typescript-eslint/parser": "^4.20.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-react-app": "^10.0.0",
     "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
-    "husky": "^4.3.7",
+    "husky": "^5.2.0",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "prisma": "2.19.0",
     "react-test-renderer": "^17.0.1",
+    "remark-gfm": "^1.0.0",
+    "remark-slug": "^6.0.0",
+    "remark-toc": "^7.2.0",
     "sass-loader": "^10.0.1",
-    "svgo": "^1.3.2",
+    "svgo": "^2.3.0",
     "typescript": "^4.1.5"
-  },
-  "license": "ISC",
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "coveragePathIgnorePatterns": [
-      "stories",
-      "graphql/index.tsx",
-      "<rootDir>/__tests__/utils/",
-      "prisma",
-      "scripts"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/__tests__/utils/"
-    ],
-    "collectCoverageFrom": [
-      "**/*.{ts,tsx}",
-      "!**/node_modules/**",
-      "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs).ts"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run test && npm run type-check",
-      "pre-push": "npm run lint && npm run test && npm run type-check"
-    }
   }
 }

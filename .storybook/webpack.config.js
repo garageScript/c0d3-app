@@ -11,7 +11,7 @@ module.exports = ({ config }) => {
 
   config.module.rules.push({
     test: /\.scss$/,
-    use: ['style-loader', 'css-loader', 'sass-loader'],
+    use: ['style-loader', 'css-loader?modules=true', 'sass-loader'],
     include: path.resolve(__dirname, '../')
   })
 

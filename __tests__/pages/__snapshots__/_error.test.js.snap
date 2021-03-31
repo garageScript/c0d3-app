@@ -2,27 +2,82 @@
 
 exports[`_error page Should capture error when component is loading 1`] = `
 <div>
-  <div
-    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
-    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
   >
-    <h1
-      class="text-white font-weight-bold display-3"
-      style="font-family: 'PT Mono', sans-serif;"
-    >
-      C0D3
-    </h1>
     <div
-      class="spinner-border text-white"
-      role="status"
+      class="container"
     >
-      <h1
-        class="sr-only"
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
-        Loading...
-      </h1>
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
     </div>
-  </div>
+  </nav>
   <div
     class="container"
   >
@@ -91,27 +146,82 @@ exports[`_error page Should capture error when component is loading 1`] = `
 
 exports[`_error page Should return Error 500 component 1`] = `
 <div>
-  <div
-    class="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
-    style="min-height: 100vh; position: fixed; top: 0px; left: 0px; z-index: 1;"
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
   >
-    <h1
-      class="text-white font-weight-bold display-3"
-      style="font-family: 'PT Mono', sans-serif;"
-    >
-      C0D3
-    </h1>
     <div
-      class="spinner-border text-white"
-      role="status"
+      class="container"
     >
-      <h1
-        class="sr-only"
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
-        Loading...
-      </h1>
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
     </div>
-  </div>
+  </nav>
   <div
     class="container"
   >

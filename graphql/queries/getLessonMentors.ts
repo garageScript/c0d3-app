@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 const LESSON_MENTORS = gql`
-  query lessonMentors($lessonId: String!) {
+  query lessonMentors($lessonId: Int!) {
     getLessonMentors(lessonId: $lessonId) {
       username
       name

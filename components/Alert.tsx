@@ -31,7 +31,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
       role="alert"
     >
       <div>
-        {icon && <img className="mr-3 alert-icon" src={icon} />}
+        {icon && <img className={`mr-3 ${styles['alert-icon']}`} src={icon} />}
         {text + ' '}
         {url && (
           <NavLink path={url} className={textColor} external>
@@ -42,7 +42,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
       {id && onDismiss && (
         <button
           role="dismiss"
-          className="alert-dismiss"
+          className={`${styles['alert-dismiss']}`}
           data-testid={`dismiss-${type}`}
           onClick={() => {
             onDismiss(id)

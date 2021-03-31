@@ -54,7 +54,7 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
-                lessonId={currentLesson.id}
+                lessonId={parseInt(currentLesson.id, 10)}
               />
             </div>
           )}
