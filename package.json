@@ -128,7 +128,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-react-app": "^10.0.0",
     "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "husky": "^5.2.0",
