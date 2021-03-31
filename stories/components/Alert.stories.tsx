@@ -11,7 +11,7 @@ export default {
 export const Info: React.FC = () => (
   <Alert
     alert={{
-      id: '0',
+      id: 0,
       text: 'Set up your computer to submit challenges.',
       type: 'info'
     }}
@@ -21,7 +21,7 @@ export const Info: React.FC = () => (
 export const Urgent: React.FC = () => (
   <Alert
     alert={{
-      id: '-1',
+      id: -1,
       text: 'Invalid password',
       type: 'urgent'
     }}
@@ -31,7 +31,7 @@ export const Urgent: React.FC = () => (
 export const infoWithLinkAndDismiss: React.FC = () => (
   <Alert
     alert={{
-      id: '0',
+      id: 0,
       text: 'Set up your computer to submit challenges.',
       type: 'info',
       url:
@@ -45,7 +45,7 @@ export const infoWithLinkAndDismiss: React.FC = () => (
 export const urgentWithIconAndDismiss: React.FC = () => (
   <Alert
     alert={{
-      id: '0',
+      id: 0,
       text: 'Please upgrade your CLI client by running npm update c0d3.',
       type: 'urgent',
       url: 'https://www.npmjs.com/package/c0d3',

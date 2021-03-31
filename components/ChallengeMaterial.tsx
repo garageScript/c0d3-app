@@ -316,7 +316,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
     (acc: UserSubmissionsObject, submission) => {
-      acc[submission.challengeId] = submission
+      acc[submission.challengeId! as number] = submission
       return acc
     },
     {}

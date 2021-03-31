@@ -21,7 +21,7 @@ const AlertsDisplay: React.FC<Props> = ({ alerts = [], page }) => {
     setLoading(false)
   }, [])
 
-  const dismissAlert = (id: string) => {
+  const dismissAlert = (id: number) => {
     onDismiss(prevDismissedAlerts => {
       const newDismissedAlerts = { ...prevDismissedAlerts, [id]: true }
       localStorage.setItem(

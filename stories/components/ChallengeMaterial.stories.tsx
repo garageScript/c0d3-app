@@ -66,6 +66,7 @@ export const WithDiff: React.FC = () => (
     challenges={challenges}
     userSubmissions={[
       {
+        userId: 5,
         status: '',
         id: 1,
         mrUrl: '',
@@ -79,6 +80,7 @@ export const WithDiff: React.FC = () => (
         updatedAt: Date.now().toString()
       },
       {
+        userId: 5,
         status: '',
         id: 1,
         mrUrl: '',
@@ -103,6 +105,7 @@ export const WithComments: React.FC = () => (
     challenges={challenges}
     userSubmissions={[
       {
+        userId: 5,
         status: 'passed',
         id: 1,
         mrUrl: '',
@@ -113,13 +116,17 @@ export const WithComments: React.FC = () => (
         lessonId: 23,
         reviewer: {
           id: 1,
-          username: 'dan'
+          username: 'dan',
+          name: 'danny',
+          email: 'dan@fakemail.com',
+          isAdmin: false
         },
         reviewerId: '1',
         createdAt: '',
         updatedAt: Date.now().toString()
       },
       {
+        userId: 5,
         status: '',
         id: 1,
         mrUrl: '',
@@ -155,6 +162,7 @@ export const FinalChallenge: React.FC = () => (
       challenges={challenges}
       userSubmissions={[
         {
+          userId: 5,
           status: 'passed',
           id: 1,
           mrUrl: '',
@@ -165,13 +173,17 @@ export const FinalChallenge: React.FC = () => (
           lessonId: 23,
           reviewer: {
             id: 1,
-            username: 'dan'
+            username: 'dan',
+            name: 'danny',
+            email: 'dan@fakemail.com',
+            isAdmin: false
           },
           reviewerId: '1',
           createdAt: '',
           updatedAt: Date.now().toString()
         },
         {
+          userId: 5,
           status: 'passed',
           id: 1,
           mrUrl: '',

@@ -5,10 +5,10 @@ export default gql`
     lessons: [Lesson!]!
     session: Session
     allUsers: [User]
-    getLessonMentors(lessonId: String!): [User]
+    getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
-    submissions(lessonId: String!): [Submission]
+    submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
   }
 
@@ -37,15 +37,15 @@ export default gql`
       url: String
       urlCaption: String
     ): [Alert]
-    removeAlert(id: String!): SuccessResponse
+    removeAlert(id: Int!): SuccessResponse
     createSubmission(
-      lessonId: String!
-      challengeId: String!
+      lessonId: Int!
+      challengeId: Int!
       cliToken: String!
       diff: String!
     ): Submission
-    acceptSubmission(id: String!, comment: String!): Submission
-    rejectSubmission(id: String!, comment: String!): Submission
+    acceptSubmission(id: Int!, comment: String!): Submission
+    rejectSubmission(id: Int!, comment: String!): Submission
     createLesson(
       description: String!
       docUrl: String
@@ -98,7 +98,7 @@ export default gql`
     diff: String
     viewCount: Int
     comment: String
-    userId: String
+    userId: Int!
     order: Int
     lessonId: Int!
     challengeId: Int!
@@ -112,11 +112,11 @@ export default gql`
 
   type User {
     id: Int!
-    username: String
+    username: String!
     userLesson: UserLesson
-    email: String
-    name: String
-    isAdmin: String
+    email: String!
+    name: String!
+    isAdmin: Boolean!
     cliToken: String
   }
 
@@ -139,12 +139,12 @@ export default gql`
 
   type Lesson {
     id: Int!
-    description: String
+    description: String!
     docUrl: String
     githubUrl: String
     videoUrl: String
-    order: Int
-    title: String
+    order: Int!
+    title: String!
     challenges: [Challenge]
     users: [User]
     currentUser: User
@@ -160,7 +160,7 @@ export default gql`
   }
 
   type Alert {
-    id: String!
+    id: Int!
     text: String
     type: String
     url: String
@@ -168,10 +168,10 @@ export default gql`
   }
 
   type Star {
-    id: String!
-    studentId: Int
-    mentorId: Int
-    lessonId: Int
+    id: Int!
+    studentId: Int!
+    mentorId: Int!
+    lessonId: Int!
     comment: String
   }
 `

@@ -7,7 +7,7 @@ const dummyUsersData = [
   {
     cliToken: 'WRyzWxDc_DqR3Avi7xcGD',
     email: 'some@mail.com',
-    id: '5',
+    id: 5,
     isAdmin: 'true',
     name: 'admin admin',
     username: 'admin'
@@ -15,7 +15,7 @@ const dummyUsersData = [
   {
     cliToken: 'acRy_p-HK9sTU8H1GfrJV',
     email: 'some@mail.com',
-    id: '6',
+    id: 6,
     isAdmin: 'false',
     name: 'newbie newbie',
     username: 'newbie'

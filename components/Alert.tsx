@@ -11,7 +11,7 @@ type Props = {
   icon?: string
   type?: string
   prompt?: string
-  onDismiss?: (id: string) => void
+  onDismiss?: (id: number) => void
 }
 
 const alertIconMap: { [type: string]: string } = {

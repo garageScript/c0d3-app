@@ -48,7 +48,7 @@ const AdminOption: React.FC<AdminOptionProps> = ({
 }) => {
   const [changeRights] = useMutation(changeAdminRights)
 
-  const newAdminRights = isAdmin ? 'false' : 'true'
+  const newAdminRights = isAdmin ? false : true
 
   const mutationVariable = {
     variables: {
