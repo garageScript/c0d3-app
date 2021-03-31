@@ -1,43 +1,40 @@
-.profile-submissions{
-
-  .lesson_challenges{
+.profile-submissions {
+  .lesson_challenges {
     display: flex;
-    margin-top: 15px
+    margin-top: 15px;
   }
 
- .display_lessons{
+  .display_lessons {
     margin-top: 40px;
   }
-  .lesson_title_container{
+  .lesson_title_container {
     margin-left: 50px;
   }
 
-  .challenge_status{
+  .challenge_status {
     height: 12px;
     width: 40px;
     margin-right: 2px;
     display: inline-block;
   }
 
-  .challenges_stats{
+  .challenges_stats {
     margin-top: 15px;
   }
 
-
-  .lesson_title{
+  .lesson_title {
     margin-top: 10px;
     color: grey;
-
   }
 
-  .lesson_image_container{
+  .lesson_image_container {
     position: relative;
     padding: 8px;
     display: inline-block;
     opacity: 1;
   }
 
-  .lesson_image_star_badge{
+  .lesson_image_star_badge {
     position: absolute;
     top: 15px;
     right: 15px;

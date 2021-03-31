@@ -10,3 +10,4 @@ generates:
       - "typescript-react-apollo"
     config:
       withHooks: true
+      withHOC: true

@@ -7,27 +7,26 @@ import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
 import AlertsDisplay from '../components/AlertsDisplay'
 import LoadingSpinner from '../components/LoadingSpinner'
-import { withGetApp, GetAppProps } from '../graphql/'
+import { useGetAppQuery, GetAppQuery } from '../graphql/'
 import _ from 'lodash'
-
-export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
-  const { loading, error, alerts, lessons, session } = data
+const announcements = [
+  'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
+  'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
+  'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
+  'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
+]
+export const Curriculum: React.FC<{}> = () => {
+  const { loading, error, data } = useGetAppQuery()
   if (loading) return <LoadingSpinner />
   if (error) {
     return (
       <Error code={StatusCode.INTERNAL_SERVER_ERROR} message={error.message} />
     )
   }
+  const { alerts, lessons, session } = data as GetAppQuery
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
-
-  const announcements = [
-    'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
-    'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
-    'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
-    'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
-  ]
   const { lessonStatus } = session || { lessonStatus: [] }
   const lessonStatusMap: { [id: string]: typeof lessonStatus[0] } = {}
   for (const status of lessonStatus) {
@@ -95,4 +94,4 @@ export const Curriculum: React.FC<GetAppProps> = ({ data }) => {
   )
 }
 
-export default withGetApp()(Curriculum)
+export default Curriculum

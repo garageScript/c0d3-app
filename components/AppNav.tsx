@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
-import LoadingSpinner from './LoadingSpinner'
 import { Button } from './theme/Button'
 import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
-import { useLogoutMutation, withGetApp, GetAppProps } from '../graphql'
+import { useLogoutMutation, useGetAppQuery, Session } from '../graphql'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 
@@ -66,11 +65,23 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
 }
 
 const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
-  const [logoutUser, { data }] = useLogoutMutation()
-  useEffect(() => {
-    const success = _.get(data, 'logout.success', false)
-    if (success) window.location.pathname = '/'
-  }, [data])
+  const router = useRouter()
+  const [logoutUser] = useLogoutMutation({
+    update(cache) {
+      cache.modify({
+        fields: {
+          session() {
+            return { lessonStatus: [] }
+          }
+        },
+        broadcast: false
+      })
+    },
+    onCompleted: () => {
+      window.localStorage.removeItem('loggedIn')
+      router.push('/')
+    }
+  })
   return (
     <div className="d-flex">
       <NavLink
@@ -99,10 +110,18 @@ const UnAuthButton = () => (
   </div>
 )
 
-const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
+const AppNav: React.FC<{}> = () => {
+  const [session, setSession] = useState<Session>({ lessonStatus: [] })
+  const { data } = useGetAppQuery()
+  useEffect(() => {
+    if (data && data.session) {
+      setSession(data.session as Session)
+    }
+  }, [data])
   const renderButtons = () => {
-    if (!session || _.get(session, 'user.username') === null)
+    if (!session || _.get(session, 'user.username', null) === null) {
       return <UnAuthButton />
+    }
 
     const initial = ''
     // TODO: replace with typing
@@ -111,7 +130,6 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
     return <AuthButton username={username} initial={initial} />
   }
 
-  if (loading) return <LoadingSpinner />
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
@@ -132,4 +150,4 @@ const AppNav: React.FC<GetAppProps> = ({ data: { loading, session } }) => {
   )
 }
 
-export default withGetApp()(AppNav)
+export default AppNav

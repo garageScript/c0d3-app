@@ -6,7 +6,7 @@ import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 import { withTestRouter } from '../../__tests__/utils/withTestRouter'
-
+import { Session } from '../../graphql/index'
 export default {
   component: Curriculum,
   title: 'Pages/Curriculum'
@@ -54,27 +54,43 @@ export const WithAlerts: React.FC = () => {
   )
 }
 
-export const CompletedLessons: React.FC = () => {
-  const session = {
-    ...dummySessionData,
+export const CompletedLessons: React.FC<{}> = () => {
+  const session: Session = {
+    user: {
+      id: 1,
+      username: 'fakeusername',
+      name: 'fake user',
+      email: 'fake@gmail.com',
+      isAdmin: true
+    },
+    submissions: [],
     lessonStatus: [
       {
-        lessonId: '5',
-        isPassed: true,
-        isTeaching: true,
-        isEnrolled: false
+        id: 1,
+        userId: 6,
+        lessonId: 5,
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
+        starGiven: null
       },
       {
-        lessonId: '2',
-        isPassed: true,
-        isTeaching: true,
-        isEnrolled: false
+        id: 1,
+        userId: 6,
+        lessonId: 2,
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
+        starGiven: null
       },
       {
-        lessonId: '1',
-        isPassed: true,
-        isTeaching: true,
-        isEnrolled: false
+        id: 1,
+        userId: 6,
+        lessonId: 1,
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
+        starGiven: null
       }
     ]
   }
@@ -86,7 +102,7 @@ export const CompletedLessons: React.FC = () => {
         data: {
           lessons: dummyLessonData,
           session,
-          alerts: []
+          alerts: dummyAlertData
         }
       }
     }

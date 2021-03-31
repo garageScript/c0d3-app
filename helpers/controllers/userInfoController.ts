@@ -1,18 +1,18 @@
-import db from '../dbload'
+import type { Star } from '.prisma/client'
 import _ from 'lodash'
+import { UserInfoQueryVariables } from '../../graphql'
+import { prisma } from '../../prisma'
 
-type Username = {
-  username: string
+type StarMap = {
+  [lessonId: number]: Star[]
 }
 
-const { User, UserLesson, Submission, Star } = db
-
-export const userInfo = async (_parent: void, args: Username) => {
+export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
   const username = _.get(args, 'username')
   if (!username) {
     throw new Error('Invalid username')
   }
-  const user = await User.findOne({
+  const user = await prisma.user.findFirst({
     where: {
       username
     }
@@ -21,31 +21,37 @@ export const userInfo = async (_parent: void, args: Username) => {
   if (!user) {
     throw new Error('Invalid user object')
   }
-  const [lessonStatus, submissions, starsReceived] = await Promise.all([
-    UserLesson.findAll({
+  const [userLessons, submissions, stars] = await Promise.all([
+    prisma.userLesson.findMany({
       where: {
         userId: user.id
       }
     }),
-    Submission.findAll({
+    prisma.submission.findMany({
       where: {
         userId: user.id
       }
     }),
-    Star.findAll({
+    prisma.star.findMany({
       where: {
         mentorId: user.id
       }
     })
   ])
-  const starMap = starsReceived.reduce((map: any, star: any) => {
+
+  const starMap = stars.reduce((map: StarMap, star) => {
+    // TODO change star table so lessonId is not null
+    // the null check is needed so typescript doesn't complain
+    if (!star.lessonId) return map
     map[star.lessonId] = map[star.lessonId] || []
-    map[star.lessonId].push(star.dataValues)
+    map[star.lessonId].push(star)
     return map
   }, {})
-  lessonStatus.forEach((lesson: any) => {
-    lesson.starsReceived = starMap[lesson.lessonId] || []
-  })
+
+  const lessonStatus = userLessons.map(userLesson => ({
+    ...userLesson,
+    starsReceived: starMap[userLesson.lessonId] || []
+  }))
 
   return {
     user,
