@@ -75,7 +75,7 @@
     "next-with-apollo": "^5.1.1",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "posthog-js": "^1.9.5",
+    "posthog-js": "^1.9.6",
     "prism-react-renderer": "^1.2.0",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
