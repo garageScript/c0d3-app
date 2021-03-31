@@ -1,113 +1,72 @@
-jest.mock('../dbload')
-import db from '../dbload'
+import { prisma } from '../../prisma'
 import { userInfo } from './userInfoController'
 
-const { User, UserLesson, Submission, Star } = db
+const user = {
+  id: '10',
+  username: 'noob222',
+  email: 'testing2020@gmail.com'
+}
+
+const userLesson = { id: '1', status: 'passed', lessonId: 1 }
+
+const submission = {
+  id: '1',
+  diff: 'testing2020'
+}
+
+const star = {
+  id: 12,
+  lessonId: 1,
+  studentId: 2,
+  mentorId: 10,
+  comment: 'Thank you',
+  lessonId: 1
+}
+
 describe('userInfo controller tests', () => {
-  test('should return error of invalid username if no username is passed in', async () => {
-    await expect(userInfo({}, {})).rejects.toThrow('Invalid username')
+  test('should return error of invalid username if no username is passed in', () => {
+    expect(userInfo({}, {})).rejects.toThrow('Invalid username')
   })
-  test('should return error if User.findOne returns invalid user object', async () => {
-    User.findOne = jest.fn()
-    await expect(userInfo({}, { username: 'testing2020' })).rejects.toThrow(
+  test('should return error if prisma.user.findFirst returns invalid user object', () => {
+    prisma.user.findFirst = jest.fn()
+    expect(userInfo({}, { username: 'testing2020' })).rejects.toThrow(
       'Invalid user object'
     )
   })
   test('should return correct submissions and user lesson', async () => {
-    User.findOne = jest.fn().mockReturnValue({
-      id: '10',
-      username: 'noob222',
-      email: 'testing2020@gmail.com'
-    })
-    UserLesson.findAll = jest
+    prisma.user.findFirst = jest.fn().mockReturnValue(user)
+    prisma.userLesson.findMany = jest.fn().mockReturnValue([userLesson])
+    prisma.submission.findMany = jest.fn().mockReturnValue([submission])
+    prisma.star.findMany = jest
       .fn()
-      .mockReturnValue([{ id: '1', status: 'passed', lessonId: 1 }])
-    Submission.findAll = jest.fn().mockReturnValue([
-      {
-        id: '1',
-        diff: 'testing2020'
-      }
-    ])
-    Star.findAll = jest.fn().mockReturnValue([
-      {
-        dataValues: {
-          id: 12,
-          lessonId: 1,
-          studentId: 2,
-          mentorId: 10,
-          comment: 'Thank you'
-        },
-        lessonId: 1
-      }
-    ])
-    const returnValue = await userInfo({}, { username: 'noob222' })
+      .mockReturnValue([star, { id: 1 /* test empty lessonId case */ }])
+    const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
-      user: {
-        id: '10',
-        username: 'noob222',
-        email: 'testing2020@gmail.com'
-      },
+      user,
       lessonStatus: [
         {
-          id: '1',
-          status: 'passed',
-          lessonId: 1,
-          starsReceived: [
-            {
-              id: 12,
-              lessonId: 1,
-              studentId: 2,
-              mentorId: 10,
-              comment: 'Thank you'
-            }
-          ]
+          ...userLesson,
+          starsReceived: [star]
         }
       ],
-      submissions: [
-        {
-          id: '1',
-          diff: 'testing2020'
-        }
-      ]
+      submissions: [submission]
     })
   })
   test('Should return empty Stars array if no Stars are given', async () => {
-    User.findOne = jest.fn().mockReturnValue({
-      id: '10',
-      username: 'noob222',
-      email: 'testing2020@gmail.com'
-    })
-    UserLesson.findAll = jest
-      .fn()
-      .mockReturnValue([{ id: '1', status: 'passed', lessonId: 1 }])
-    Submission.findAll = jest.fn().mockReturnValue([
-      {
-        id: '1',
-        diff: 'testing2020'
-      }
-    ])
-    Star.findAll = jest.fn().mockReturnValue([])
-    const returnValue = await userInfo({}, { username: 'noob222' })
+    prisma.user.findFirst = jest.fn().mockReturnValue(user)
+    prisma.userLesson.findMany = jest.fn().mockReturnValue([userLesson])
+    prisma.submission.findMany = jest.fn().mockReturnValue([submission])
+    prisma.star.findMany = jest.fn().mockReturnValue([])
+    const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
-      user: {
-        id: '10',
-        username: 'noob222',
-        email: 'testing2020@gmail.com'
-      },
+      user,
       lessonStatus: [
         {
-          id: '1',
-          status: 'passed',
-          lessonId: 1,
+          ...userLesson,
           starsReceived: []
         }
       ],
-      submissions: [
-        {
-          id: '1',
-          diff: 'testing2020'
-        }
-      ]
+      submissions: [submission]
     })
   })
 })
