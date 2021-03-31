@@ -84,7 +84,7 @@ const UserProfile: React.FC = () => {
     const challengesStatus = challengeList.map(challengeInfo => {
       const challenge = challengeInfo || ({} as Challenge)
       const challengeSubmission = userSubmissions.find(
-        submission => +challenge.id === +submission.challengeId
+        submission => challenge.id === Number(submission.challengeId)
       )
 
       return {
