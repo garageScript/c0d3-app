@@ -87,7 +87,7 @@
     "sequelize": "^5.22.3",
     "swr": "^0.4.2",
     "winston": "^3.3.3",
-    "winston-transport-sentry-node": "^0.7.0",
+    "winston-transport-sentry-node": "^1.0.2",
     "yup": "^0.32.8"
   },
   "devDependencies": {
