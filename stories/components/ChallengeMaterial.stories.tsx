@@ -54,7 +54,7 @@ export const Basic: React.FC = () => (
     userSubmissions={[]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -89,7 +89,7 @@ export const WithDiff: React.FC = () => (
     ]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -128,7 +128,7 @@ export const WithComments: React.FC = () => (
     ]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -138,7 +138,7 @@ export const NoChallenges: React.FC = () => (
     userSubmissions={[]}
     lessonStatus={lessonStatus}
     chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -178,7 +178,7 @@ export const FinalChallenge: React.FC = () => (
       ]}
       lessonStatus={{ ...lessonStatus, isPassed: 'aef' }}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-      lessonId="5"
+      lessonId={5}
     />
   </MockedProvider>
 )

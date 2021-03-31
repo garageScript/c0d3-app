@@ -6,14 +6,7 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
-
-// Mock global.window
-global.window = Object.create(window)
-
-// define property to be modifed beforeEach test
-Object.defineProperty(global.window, 'location', {
-  value: { pathname: '/' }
-})
+import { useRouter } from 'next/router'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -27,13 +20,22 @@ describe('Login Page', () => {
     await userEvent.type(usernameField, fakeUsername, { delay: 1 })
     await userEvent.type(passwordField, fakePassword, { delay: 1 })
   }
-
+  const { push } = useRouter()
   beforeEach(() => {
-    global.window.location.pathname = '/login' // reset path
+    jest.clearAllMocks()
   })
-
   test('Should redirect to /curriculum on success', async () => {
     const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: null,
+            lessons: [],
+            alerts: []
+          }
+        }
+      },
       {
         request: { query: GET_APP },
         result: {
@@ -76,9 +78,7 @@ describe('Login Page', () => {
     await fillOutLoginForm(getByTestId)
     fireEvent.click(submitButton)
 
-    await waitFor(() =>
-      expect(global.window.location.pathname).toEqual('/curriculum')
-    )
+    await waitFor(() => expect(push).toBeCalledWith('/curriculum'))
   })
 
   test('Should set alert visible on invalid credentials', async () => {
@@ -119,10 +119,7 @@ describe('Login Page', () => {
     userEvent.click(submitButton)
 
     await findByText(mocks[1].result.errors[0].message.split(':')[1].trim())
-
-    await waitFor(() => {
-      expect(global.window.location.pathname).toEqual('/login')
-      expect(container).toMatchSnapshot()
-    })
+    expect(container).toMatchSnapshot()
+    expect(push).not.toBeCalled()
   })
 })

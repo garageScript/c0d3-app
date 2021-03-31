@@ -1,0 +1,28 @@
+.inline-code {
+  background: #edeceb;
+  color: #eb5757;
+  display: inline;
+}
+.MDX_h1,
+.MDX_h2,
+.MDX_h3 {
+  font-weight: 600;
+}
+
+.MDX_a {
+  color: #6d6d6d;
+  text-decoration: underline;
+}
+.MDX_a:hover {
+  color: #37352f;
+}
+
+.MDX_td,
+.MDX_th {
+  padding: 1em;
+}
+
+.MDX_twoColumns {
+  display: flex;
+  align-items: center;
+}

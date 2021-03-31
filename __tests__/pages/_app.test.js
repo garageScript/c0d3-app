@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   render,
+  screen,
   waitFor,
   waitForElementToBeRemoved
 } from '@testing-library/react'
@@ -41,13 +42,15 @@ describe('MyApp component', () => {
   })
 
   test('posthog init function should not be called if not in production environment', async () => {
-    const { queryByText } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <MyApp Component={Login} />
       </MockedProvider>
     )
-    await waitForElementToBeRemoved(() => queryByText('Loading...'))
     expect(posthog.init).not.toHaveBeenCalled()
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: /login/i })).toBeTruthy()
+    )
   })
 
   test('posthog init function is being called with the correct arguments', async () => {
@@ -56,25 +59,29 @@ describe('MyApp component', () => {
       NODE_ENV: 'production',
       POSTHOG_API_KEY: 'fake-posthog-api-key'
     }
-    const { queryByText } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <MyApp Component={Login} />
       </MockedProvider>
     )
-    await waitForElementToBeRemoved(() => queryByText('Loading...'))
     expect(posthog.init).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, {
       api_host: 'https://app.posthog.com'
     })
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: /login/i })).toBeTruthy()
+    )
   })
 
   test('should render Login component passed in as prop', async () => {
-    const { container, queryByText } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <MyApp Component={Login} />
       </MockedProvider>
     )
-    await waitForElementToBeRemoved(() => queryByText('Loading...'))
     expect(container).toMatchSnapshot()
     expect(Sentry.captureException).not.toHaveBeenCalled()
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: /login/i })).toBeTruthy()
+    )
   })
 })
