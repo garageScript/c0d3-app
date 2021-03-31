@@ -30,7 +30,7 @@ export const getLessonMentors = async (
       orderBy: {
         username: 'asc'
       }
-    })
+    }) as any
   } catch (err) {
     throw new Error(err)
   }
