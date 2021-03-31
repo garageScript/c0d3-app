@@ -1,12 +1,12 @@
-import db from './dbload'
-const { Lesson } = db
+import { prisma } from '../prisma'
 
 export const validateLessonId = async (
   id: number,
   errMsg?: string
 ): Promise<true> => {
   try {
-    if (await Lesson.findOne({ where: { id } })) {
+    const lesson = await prisma.lesson.findUnique({ where: { id } })
+    if (lesson !== null) {
       return true
     }
     throw new Error(errMsg || 'lessonId does not exist in database')

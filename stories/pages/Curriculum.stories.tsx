@@ -57,7 +57,7 @@ export const WithAlerts: React.FC = () => {
 export const CompletedLessons: React.FC<{}> = () => {
   const session: Session = {
     user: {
-      id: '1',
+      id: 1,
       username: 'fakeusername',
       name: 'fake user',
       isAdmin: 'true'
