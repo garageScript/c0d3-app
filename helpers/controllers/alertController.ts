@@ -1,21 +1,16 @@
-import db from '../dbload'
 import { LoggedRequest } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
 import { alerts } from '../../graphql/queryResolvers/alerts'
-
-const { Alert } = db
-
-type AlertData = {
-  text: string
-  type: string
-  url?: string
-  urlCaption?: string
-}
+import { prisma } from '../../prisma'
+import {
+  AddAlertMutationVariables,
+  RemoveAlertMutationVariables
+} from '../../graphql'
 
 export const addAlert = async (
   _parent: void,
-  arg: AlertData,
+  arg: AddAlertMutationVariables,
   ctx: { req: LoggedRequest }
 ) => {
   const { req } = ctx
@@ -27,7 +22,10 @@ export const addAlert = async (
     if (!text || !type) {
       throw new Error('Missing alert parameters')
     }
-    await Alert.create({ text, type, url, urlCaption })
+    // TODO: change createdAt columns to have default value on the DB
+    await prisma.alert.create({
+      data: { text, type, url, urlCaption, createdAt: new Date() }
+    })
     const updatedAlerts = await alerts()
     return updatedAlerts
   } catch (err) {
@@ -38,7 +36,7 @@ export const addAlert = async (
 
 export const removeAlert = async (
   _parent: void,
-  arg: { id: string },
+  arg: RemoveAlertMutationVariables,
   ctx: { req: LoggedRequest }
 ) => {
   const { req } = ctx
@@ -47,7 +45,7 @@ export const removeAlert = async (
       throw new Error('User is not an admin')
     }
     const { id } = arg
-    await Alert.destroy({ where: { id } })
+    await prisma.alert.delete({ where: { id } })
     return {
       success: true
     }

@@ -25,7 +25,7 @@ const ErrorMessages: React.FC<ErrorDisplayProps> = ({ loginErrors }) => {
     return (
       <Alert
         key={idx}
-        alert={{ id: '-1', text: formattedMessage, type: 'urgent' }}
+        alert={{ id: -1, text: formattedMessage, type: 'urgent' }}
       />
     )
   })

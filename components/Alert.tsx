@@ -11,7 +11,7 @@ type Props = {
   icon?: string
   type?: string
   prompt?: string
-  onDismiss?: (id: string) => void
+  onDismiss?: (id: number) => void
 }
 
 const alertIconMap: { [type: string]: string } = {
@@ -39,7 +39,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
           </NavLink>
         )}
       </div>
-      {id && onDismiss && (
+      {onDismiss && (
         <button
           role="dismiss"
           className={`${styles['alert-dismiss']}`}
