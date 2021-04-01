@@ -37,7 +37,7 @@ export default gql`
       url: String
       urlCaption: String
     ): [Alert]
-    removeAlert(id: String!): SuccessResponse
+    removeAlert(id: Int!): SuccessResponse
     createSubmission(
       lessonId: String!
       challengeId: String!
@@ -152,15 +152,15 @@ export default gql`
   }
 
   type Challenge {
-    id: String
-    description: String
-    lessonId: String
-    title: String
-    order: Int
+    id: Int!
+    description: String!
+    lessonId: Int!
+    title: String!
+    order: Int!
   }
 
   type Alert {
-    id: String!
+    id: Int!
     text: String
     type: String
     url: String

@@ -32,7 +32,7 @@ export type Scalars = {
 
 export type Alert = {
   __typename?: 'Alert'
-  id: Scalars['String']
+  id: Scalars['Int']
   text?: Maybe<Scalars['String']>
   type?: Maybe<Scalars['String']>
   url?: Maybe<Scalars['String']>
@@ -54,11 +54,11 @@ export enum CacheControlScope {
 
 export type Challenge = {
   __typename?: 'Challenge'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  description: Scalars['String']
+  lessonId: Scalars['Int']
+  title: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Lesson = {
@@ -137,7 +137,7 @@ export type MutationAddAlertArgs = {
 }
 
 export type MutationRemoveAlertArgs = {
-  id: Scalars['String']
+  id: Scalars['Int']
 }
 
 export type MutationCreateSubmissionArgs = {
@@ -588,7 +588,7 @@ export type RejectSubmissionMutation = { __typename?: 'Mutation' } & {
 }
 
 export type RemoveAlertMutationVariables = Exact<{
-  id: Scalars['String']
+  id: Scalars['Int']
 }>
 
 export type RemoveAlertMutation = { __typename?: 'Mutation' } & {
@@ -918,12 +918,12 @@ export type DirectiveResolverFn<
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Alert: ResolverTypeWrapper<Alert>
+  Int: ResolverTypeWrapper<Scalars['Int']>
   String: ResolverTypeWrapper<Scalars['String']>
   AuthResponse: ResolverTypeWrapper<AuthResponse>
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   CacheControlScope: CacheControlScope
   Challenge: ResolverTypeWrapper<Challenge>
-  Int: ResolverTypeWrapper<Scalars['Int']>
   Lesson: ResolverTypeWrapper<Lesson>
   Mutation: ResolverTypeWrapper<{}>
   Query: ResolverTypeWrapper<{}>
@@ -940,11 +940,11 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Alert: Alert
+  Int: Scalars['Int']
   String: Scalars['String']
   AuthResponse: AuthResponse
   Boolean: Scalars['Boolean']
   Challenge: Challenge
-  Int: Scalars['Int']
   Lesson: Lesson
   Mutation: {}
   Query: {}
@@ -974,7 +974,7 @@ export type AlertResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
 > = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   url?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1001,15 +1001,11 @@ export type ChallengeResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -2487,7 +2483,7 @@ export type RejectSubmissionMutationOptions = Apollo.BaseMutationOptions<
   RejectSubmissionMutationVariables
 >
 export const RemoveAlertDocument = gql`
-  mutation removeAlert($id: String!) {
+  mutation removeAlert($id: Int!) {
     removeAlert(id: $id) {
       success
     }

@@ -1,15 +1,14 @@
 import { alerts } from './alerts'
-import db from '../../helpers/dbload'
+import { prisma } from '../../prisma'
 
 describe('Alerts resolver', () => {
-  const { Alert } = db
   test('should return empty array if no alerts', async () => {
-    Alert.findAll = jest.fn().mockReturnValue([])
+    prisma.alert.findMany = jest.fn().mockReturnValue([])
     expect(alerts()).toEqual([])
   })
 
   test('should return list of alerts', async () => {
-    Alert.findAll = jest.fn().mockReturnValue([
+    prisma.alert.findMany = jest.fn().mockReturnValue([
       {
         id: 0,
         text: 'Set up your computer to submit challenges.',

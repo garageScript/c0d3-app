@@ -1,7 +1,3 @@
-import db from '../../helpers/dbload'
+import { prisma } from '../../prisma'
 
-const { Alert } = db
-
-export const alerts = () => {
-  return Alert.findAll()
-}
+export const alerts = () => prisma.alert.findMany()

@@ -1,51 +1,45 @@
-jest.mock('../dbload')
 jest.mock('../mattermost')
-import db from '../dbload'
+jest.mock('../../graphql/queryResolvers/alerts')
+import { alerts } from '../../graphql/queryResolvers/alerts'
+import { prisma } from '../../prisma'
 import { addAlert, removeAlert } from './alertController'
 
-const { Alert } = db
 const mockAlerts = ['excuse me sir', 'did u just', 'turn into a potato?']
-Alert.findAll = jest.fn().mockReturnValue(mockAlerts)
+const context = {
+  req: {
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+    session: {},
+    user: { isAdmin: 'true' }
+  }
+}
+
+alerts.mockResolvedValue(mockAlerts)
+prisma.alert.create = jest.fn().mockImplementation(a => Promise.resolve(a))
+prisma.alert.delete = jest.fn().mockImplementation(a => Promise.resolve(a))
 
 describe('Alert controller tests', () => {
-  const ctx = {
-    req: {
-      info: jest.fn(),
-      warn: jest.fn(),
-      error: jest.fn(),
-      session: {},
-      user: { isAdmin: 'true' }
-    }
+  let ctx
+
+  const newAlert = {
+    text: 'Set up your computer to submit challenges.',
+    type: 'info',
+    url:
+      'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
+    urlCaption: 'View Instructions'
   }
+
+  beforeEach(() => {
+    jest.clearAllMocks()
+    ctx = { ...context }
+  })
+
   test('Should add alert', async () => {
-    expect(
-      addAlert(
-        {},
-        {
-          text: 'Set up your computer to submit challenges.',
-          type: 'info',
-          url:
-            'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
-          urlCaption: 'View Instructions'
-        },
-        ctx
-      )
-    ).resolves.toEqual(mockAlerts)
+    expect(addAlert({}, newAlert, ctx)).resolves.toEqual(mockAlerts)
   })
   test('Should add alert with url and caption', async () => {
-    expect(
-      addAlert(
-        {},
-        {
-          text: 'Set up your computer to submit challenges.',
-          type: 'info',
-          url:
-            'https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc',
-          urlCaption: 'View Instructions'
-        },
-        ctx
-      )
-    ).resolves.toEqual(mockAlerts)
+    expect(addAlert({}, newAlert, ctx)).resolves.toEqual(mockAlerts)
   })
   test('Should throw error if missing parameters', async () => {
     expect(
@@ -57,7 +51,9 @@ describe('Alert controller tests', () => {
     expect(removeAlert({}, { id: 5 }, ctx)).resolves.toEqual({ success: true })
   })
   test('Should throw error if no id provided when removing alert', async () => {
-    db.Alert.destroy = jest.fn().mockRejectedValueOnce('No alert id provided')
+    prisma.alert.delete = jest
+      .fn()
+      .mockRejectedValueOnce('No alert id provided')
     expect(removeAlert({}, {}, ctx)).rejects.toThrowError(
       'No alert id provided'
     )

@@ -4,7 +4,7 @@ import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
 import { UserSubmission } from '../../@types/challenge'
 import { LessonStatus } from '../../@types/lesson'
-import { useUserInfoQuery } from '../../graphql/index'
+import { Challenge, useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
@@ -82,9 +82,9 @@ const UserProfile: React.FC = () => {
     const lesson = lessonInfo || {}
     const challengeList = lesson.challenges || []
     const challengesStatus = challengeList.map(challengeInfo => {
-      const challenge = challengeInfo || {}
+      const challenge = challengeInfo || ({} as Challenge)
       const challengeSubmission = userSubmissions.find(
-        submission => challenge.id === submission.challengeId
+        submission => challenge.id === Number(submission.challengeId)
       )
 
       return {
