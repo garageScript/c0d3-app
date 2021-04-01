@@ -12,7 +12,7 @@ model Session {
   sid       String    @id @db.VarChar(36)
   expires   DateTime? @db.Timestamptz(6)
   data      String?
-  createdAt DateTime  @db.Timestamptz(6)
+  createdAt DateTime  @default(now()) @db.Timestamptz(6)
   updatedAt DateTime  @db.Timestamptz(6)
 }
 
@@ -22,7 +22,7 @@ model Alert {
   type       String?  @db.VarChar(255)
   url        String?  @db.VarChar(255)
   urlCaption String?  @db.VarChar(255)
-  createdAt  DateTime @db.Timestamptz(6)
+  createdAt  DateTime @default(now()) @db.Timestamptz(6)
   updatedAt  DateTime @db.Timestamptz(6)
 
   @@map("alerts")
@@ -34,7 +34,7 @@ model Challenge {
   description String?
   title       String?      @db.VarChar(255)
   order       Int?
-  createdAt   DateTime     @db.Timestamptz(6)
+  createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @db.Timestamptz(6)
   lessonId    Int?
   lesson      Lesson?      @relation(fields: [lessonId], references: [id])
@@ -51,7 +51,7 @@ model Lesson {
   videoUrl    String?      @db.VarChar(255)
   order       Int?
   title       String?      @db.VarChar(255)
-  createdAt   DateTime     @db.Timestamptz(6)
+  createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
   challenges  Challenge[]
@@ -64,7 +64,7 @@ model Lesson {
 model Star {
   id        Int      @id @default(autoincrement())
   lessonId  Int?
-  createdAt DateTime @db.Timestamptz(6)
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
   updatedAt DateTime @db.Timestamptz(6)
   studentId Int?
   mentorId  Int?
@@ -82,7 +82,7 @@ model Submission {
   comment     String?
   status      String?    @db.VarChar(255)
   viewCount   Int?       @default(0)
-  createdAt   DateTime   @db.Timestamptz(6)
+  createdAt   DateTime   @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime   @db.Timestamptz(6)
   userId      Int?
   reviewerId  Int?
@@ -100,7 +100,7 @@ model UserLesson {
   isPassed   String?  @db.VarChar(255)
   isTeaching String?  @db.VarChar(255)
   isEnrolled String?  @db.VarChar(255)
-  createdAt  DateTime @db.Timestamptz(6)
+  createdAt  DateTime @default(now()) @db.Timestamptz(6)
   updatedAt  DateTime @db.Timestamptz(6)
   lessonId   Int
   userId     Int
@@ -119,7 +119,7 @@ model User {
   email                  String?      @db.VarChar(255)
   gsId                   Int?
   isOnline               Boolean?
-  createdAt              DateTime     @db.Timestamptz(6)
+  createdAt              DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt              DateTime     @db.Timestamptz(6)
   isAdmin                String?      @default(dbgenerated("false")) @db.VarChar(255)
   forgotToken            String?      @db.VarChar(255)
