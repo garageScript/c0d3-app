@@ -54,11 +54,11 @@ export enum CacheControlScope {
 
 export type Challenge = {
   __typename?: 'Challenge'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  description: Scalars['String']
+  lessonId: Scalars['Int']
+  title: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Lesson = {
@@ -1001,15 +1001,11 @@ export type ChallengeResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
