@@ -340,8 +340,6 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
 </div>
 `;
 
-exports[`AdminLessonsInfo component Should refuse creating new lesson incomplete info 1`] = `<div />`;
-
 exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
 <div>
   <div
