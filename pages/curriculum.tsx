@@ -9,12 +9,14 @@ import AlertsDisplay from '../components/AlertsDisplay'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { useGetAppQuery, GetAppQuery } from '../graphql/'
 import _ from 'lodash'
+
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
   'Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.',
-  'This lesson will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
-  'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be technically ready to contribute to our codebase.'
+  'These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
+  'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.'
 ]
+
 export const Curriculum: React.FC<{}> = () => {
   const { loading, error, data } = useGetAppQuery()
   if (loading) return <LoadingSpinner />
@@ -83,11 +85,15 @@ export const Curriculum: React.FC<{}> = () => {
     <Layout>
       <div className="row">
         <AlertsDisplay alerts={alerts} page="curriculum" />
-        <div className="col-8">{lessonsToRender}</div>
-        <div className="col-4">
-          <ProgressCard progressCount={progressPercentage} />
-          <AnnouncementCard announcements={announcements} />
-          <AdditionalResources />
+        <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
+        <div className="col-xl-4">
+          <div className="d-xl-block">
+            <ProgressCard progressCount={progressPercentage} />
+          </div>
+          <div className="d-none d-xl-block">
+            <AnnouncementCard announcements={announcements} />
+            <AdditionalResources />
+          </div>
         </div>
       </div>
     </Layout>
