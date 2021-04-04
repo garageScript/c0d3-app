@@ -152,11 +152,11 @@ export default gql`
   }
 
   type Challenge {
-    id: Int!
-    description: String!
-    lessonId: Int!
-    title: String!
-    order: Int!
+    id: String
+    description: String
+    lessonId: String
+    title: String
+    order: Int
   }
 
   type Alert {
