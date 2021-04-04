@@ -7,24 +7,11 @@ import {
 } from '@apollo/client'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
-import { persistCache } from 'apollo3-cache-persist'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 let apolloClient: ApolloClient<NormalizedCacheObject>
 const cache = new InMemoryCache()
-async function loadCache() {
-  if (typeof window !== 'undefined') {
-    try {
-      await persistCache({
-        cache,
-        storage: window.localStorage
-      })
-    } catch (error) {
-      console.error('Error restoring Apollo cache', error)
-    }
-  }
-}
-loadCache()
+
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
     const { SchemaLink } = require('@apollo/client/link/schema')

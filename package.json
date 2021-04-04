@@ -55,7 +55,6 @@
     "@prisma/client": "2.20.1",
     "@sentry/browser": "^6.2.5",
     "apollo-server-micro": "^2.20.0",
-    "apollo3-cache-persist": "^0.9.1",
     "bcrypt": "5.0.0",
     "bootstrap": "^4.6.0",
     "connect-session-sequelize": "^6.1.1",

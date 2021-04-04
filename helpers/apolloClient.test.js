@@ -24,18 +24,6 @@ describe('apolloClient', () => {
   beforeEach(() => {
     global.window = window
   })
-  test('should catch error while restoring the cache', () => {
-    jest.mock('apollo3-cache-persist', () => ({
-      persistCache: jest.fn().mockRejectedValueOnce('fail')
-    }))
-    jest.spyOn(console, 'error').mockImplementation(() => {})
-    jest.resetModules()
-    try {
-      require('./apolloClient')
-    } catch (e) {
-      expect(e).toBeTruthy()
-    }
-  })
   test('should use Schema link on server', () => {
     const mockSchema = jest.fn()
     jest.mock('@apollo/client/link/schema', () => ({
