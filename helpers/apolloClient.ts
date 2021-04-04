@@ -3,11 +3,8 @@ import { useMemo } from 'react'
 import {
   ApolloClient,
   InMemoryCache,
-  NormalizedCacheObject,
-  HttpLink
+  NormalizedCacheObject
 } from '@apollo/client'
-import { SchemaLink } from '@apollo/client/link/schema'
-import { schema } from '../graphql/schema'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
 import { persistCache } from 'apollo3-cache-persist'
@@ -15,16 +12,26 @@ import { persistCache } from 'apollo3-cache-persist'
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 let apolloClient: ApolloClient<NormalizedCacheObject>
 const cache = new InMemoryCache()
-if (typeof window !== 'undefined') {
-  persistCache({
-    cache,
-    storage: window.localStorage
-  })
+async function loadCache() {
+  if (typeof window !== 'undefined') {
+    try {
+      await persistCache({
+        cache,
+        storage: window.localStorage
+      })
+    } catch (error) {
+      console.error('Error restoring Apollo cache', error)
+    }
+  }
 }
+loadCache()
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
+    const { SchemaLink } = require('@apollo/client/link/schema')
+    const { schema } = require('../graphql/schema')
     return new SchemaLink({ schema })
   } else {
+    const { HttpLink } = require('@apollo/client/link/http')
     return new HttpLink({
       uri: '/api/graphql',
       credentials: 'same-origin'
@@ -50,6 +57,7 @@ export function initializeApollo(
   if (initialState) {
     // Get existing cache, loaded during client side data fetching
     const existingCache = _apolloClient.extract()
+
     // Merge the existing cache into data passed from getStaticProps/getServerSideProps
     const data = merge(initialState, existingCache, {
       // combine arrays using object equality (like in sets)

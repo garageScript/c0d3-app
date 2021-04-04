@@ -1,34 +1,46 @@
+/*
+mocking useMemo hook because it's causing errors with resetModules
+https://github.com/facebook/jest/issues/8987
+*/
+
 const mockMemo = jest.fn(f => {
   f()
 })
-
-/*
-mocking react hook because it's causing errors with resetModules
-https://github.com/facebook/jest/issues/8987
-*/
 jest.mock('react', () => ({
   ...jest.requireActual('react'),
   useMemo: mockMemo
 }))
-const mockHTTP = jest.fn()
-const mockSchema = jest.fn()
 jest.mock('@apollo/client', () => ({
   ...jest.requireActual('@apollo/client'),
-  HttpLink: mockHTTP,
   ApolloClient: jest.fn().mockImplementation(() => ({
     extract: () => ({ foo: ['foo', 'bar', 'babaz'] }),
     cache: { restore: jest.fn() }
   }))
 }))
-jest.mock('@apollo/client/link/schema', () => ({
-  SchemaLink: mockSchema
-}))
-
 describe('apolloClient', () => {
   global.fetch = jest.fn()
   const window = global.window
   const apollo = require('./apolloClient')
+  beforeEach(() => {
+    global.window = window
+  })
+  test('should catch error while restoring the cache', () => {
+    jest.mock('apollo3-cache-persist', () => ({
+      persistCache: jest.fn().mockRejectedValueOnce('fail')
+    }))
+    jest.spyOn(console, 'error').mockImplementation(() => {})
+    jest.resetModules()
+    try {
+      require('./apolloClient')
+    } catch (e) {
+      expect(e).toBeTruthy()
+    }
+  })
   test('should use Schema link on server', () => {
+    const mockSchema = jest.fn()
+    jest.mock('@apollo/client/link/schema', () => ({
+      SchemaLink: mockSchema
+    }))
     jest.resetModules()
     delete global.window
     const apollo = require('./apolloClient')
@@ -37,6 +49,10 @@ describe('apolloClient', () => {
   })
 
   test('should use HTTP link in browser', () => {
+    const mockHTTP = jest.fn()
+    jest.mock('@apollo/client/link/http', () => ({
+      HttpLink: jest.fn().mockImplementation(mockHTTP)
+    }))
     global.window = window
     apollo.initializeApollo()
     expect(mockHTTP).toBeCalled()
