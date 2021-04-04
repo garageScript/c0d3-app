@@ -33,9 +33,6 @@
     "coveragePathIgnorePatterns": [
       "stories",
       "graphql/index.tsx",
-      "graphql/schema.ts",
-      "pages/_app.tsx",
-      "helpers/apolloClient.ts",
       "<rootDir>/__tests__/utils/",
       "prisma",
       "scripts"

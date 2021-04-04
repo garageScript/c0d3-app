@@ -15,16 +15,11 @@ import { persistCache } from 'apollo3-cache-persist'
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 let apolloClient: ApolloClient<NormalizedCacheObject>
 const cache = new InMemoryCache()
-
 if (typeof window !== 'undefined') {
-  try {
-    persistCache({
-      cache,
-      storage: window.localStorage
-    })
-  } catch (error) {
-    console.error('Error restoring Apollo cache', error)
-  }
+  persistCache({
+    cache,
+    storage: window.localStorage
+  })
 }
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
@@ -45,7 +40,9 @@ function createApolloClient() {
   })
 }
 
-export function initializeApollo(initialState: NormalizedCacheObject = {}) {
+export function initializeApollo(
+  initialState: NormalizedCacheObject | null = null
+) {
   const _apolloClient = apolloClient || createApolloClient()
 
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
@@ -53,7 +50,6 @@ export function initializeApollo(initialState: NormalizedCacheObject = {}) {
   if (initialState) {
     // Get existing cache, loaded during client side data fetching
     const existingCache = _apolloClient.extract()
-
     // Merge the existing cache into data passed from getStaticProps/getServerSideProps
     const data = merge(initialState, existingCache, {
       // combine arrays using object equality (like in sets)
@@ -76,7 +72,7 @@ export function initializeApollo(initialState: NormalizedCacheObject = {}) {
 
 export function addApolloState(
   client: ApolloClient<NormalizedCacheObject>,
-  pageProps: any
+  pageProps: Record<string, any>
 ) {
   if (pageProps && pageProps.props) {
     pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract()
@@ -85,7 +81,7 @@ export function addApolloState(
   return pageProps
 }
 
-export function useApollo(pageProps: any) {
+export function useApollo(pageProps: Record<string, any>) {
   const state = pageProps[APOLLO_STATE_PROP_NAME]
   const store = useMemo(() => initializeApollo(state), [state])
   return store

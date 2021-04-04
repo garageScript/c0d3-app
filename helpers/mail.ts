@@ -2,7 +2,7 @@ import _ from 'lodash'
 import mailgun from 'mailgun-js'
 
 const CLIENT_URL = _.get(process, 'env.CLIENT_URL', 'https://c0d3.devwong.com')
-const MAILGUN_API_KEY = _.get(process, 'env.MAILGUN_API_KEY', '')
+const MAILGUN_API_KEY = _.get(process, 'env.MAILGUN_API_KEY', 'test-key')
 const MAIL_DOMAIN = _.get(process, 'env.MAIL_DOMAIN', 'c0d3.com')
 const mgClient = mailgun({ apiKey: MAILGUN_API_KEY, domain: MAIL_DOMAIN })
 
