@@ -124,7 +124,7 @@ describe('user profile test', () => {
         id: 1,
         username: 'fakeusername',
         name: '',
-        isAdmin: 'true'
+        isAdmin: true
       }
     }
     const mocks = [
@@ -200,7 +200,7 @@ describe('user profile test', () => {
     const lessons = [
       ...dummyLessonData,
       {
-        id: '2',
+        id: 2,
         title: null,
         description: 'A super simple introduction to help you get started!',
         docUrl:
