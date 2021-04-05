@@ -18,7 +18,7 @@ interface mentorIdsMapType {
 export const session = async (_parent: void, _args: void, context: Context) => {
   const user = _.get(context, 'req.user', {})
   const userId = _.get(user, 'id', null)
-  if (!user || !userId) return null
+  if (!user || !userId) return { lessonStatus: [] }
 
   // FYI: The reason we are querying with parallelized promises:
   // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
