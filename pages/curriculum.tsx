@@ -12,13 +12,12 @@ import {
   Lesson,
   Alert,
   Session,
-  UserLesson
+  UserLesson,
+  useGetAppQuery
 } from '../graphql/'
 import _ from 'lodash'
 import { initializeApollo } from '../helpers/apolloClient'
 import { GetStaticProps } from 'next'
-import { useQuery } from '@apollo/client'
-import GET_SESSION from '../graphql/queries/getSession'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -30,11 +29,41 @@ type Props = {
   lessons: Lesson[]
   alerts: Alert[]
 }
+const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
+  console.log(session,'sess')
+  const { lessonStatus } = session || { lessonStatus: [] }
+  const lessonStatusMap: { [id: string]: UserLesson } = {}
+  for (const status of lessonStatus) {
+    const lessonId = _.get(status, 'lessonId', '-1') as string
+    lessonStatusMap[lessonId] = status
+  }
+
+  const lessonInProgressIdx = _.cond([
+    [_.isEqual.bind(null, -1), _.constant(0)],
+    [_.constant(true), (output: number) => output]
+  ])(
+    lessons.findIndex(lesson => {
+      const lessonId = _.get(lesson, 'id', '-1') as string
+      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
+      return !passed
+    })
+  )
+  console.log(lessonInProgressIdx,'id')
+
+  // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
+  const TOTAL_LESSONS = 7
+  return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
+}
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   const [session, setSession] = React.useState<Session>({ lessonStatus: [] })
-  const { data } = useQuery<Session>(GET_SESSION)
+  const { data } = useGetAppQuery()
+  const [progress, setProgress] = React.useState(0)
   React.useEffect(() => {
-    data && data.lessonStatus && setSession(data)
+    if (data && data.session) {
+      setSession(data.session)
+      const foo = calculateCurrent(data.session, lessons)
+      console.log(foo)
+    }
   }, [data])
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
@@ -98,7 +127,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
-            <ProgressCard progressCount={progressPercentage} />
+            <ProgressCard progressCount={progress} />
           </div>
           <div className="d-none d-xl-block">
             <AnnouncementCard announcements={announcements} />
