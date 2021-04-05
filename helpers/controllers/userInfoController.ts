@@ -35,16 +35,28 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
     prisma.star.findMany({
       where: {
         mentorId: user.id
+      },
+      include: {
+        student: {
+          select: {
+            name: true,
+            username: true
+          }
+        },
+        lesson: {
+          select: {
+            order: true,
+            title: true
+          }
+        }
       }
     })
   ])
 
   const starMap = stars.reduce((map: StarMap, star) => {
-    // TODO change star table so lessonId is not null
-    // the null check is needed so typescript doesn't complain
-    if (!star.lessonId) return map
-    map[star.lessonId] = map[star.lessonId] || []
-    map[star.lessonId].push(star)
+    console.log(star)
+    map[star.lessonId!] = map[star.lessonId!] || []
+    map[star.lessonId!].push(star)
     return map
   }, {})
 

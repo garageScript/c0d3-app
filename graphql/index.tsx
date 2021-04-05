@@ -232,8 +232,12 @@ export type Star = {
   __typename?: 'Star'
   id: Scalars['String']
   studentId: Scalars['Int']
+  studentUsername?: Maybe<Scalars['String']>
+  studentName?: Maybe<Scalars['String']>
   mentorId: Scalars['Int']
   lessonId: Scalars['Int']
+  lessonTitle?: Maybe<Scalars['String']>
+  lessonOrder?: Maybe<Scalars['Int']>
   comment?: Maybe<Scalars['String']>
 }
 
@@ -1215,8 +1219,24 @@ export type StarResolvers<
 > = {
   id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   studentId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  studentUsername?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
+  studentName?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
   mentorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lessonTitle?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
+  lessonOrder?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }

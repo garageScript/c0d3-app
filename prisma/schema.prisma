@@ -55,6 +55,7 @@ model Lesson {
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
   challenges  Challenge[]
+  starLesson  Star[]       @relation("starLesson")
   submissions Submission[]
   userLessons UserLesson[]
 
@@ -69,6 +70,7 @@ model Star {
   studentId Int?
   mentorId  Int?
   comment   String?  @db.VarChar(255)
+  lesson    Lesson?  @relation("starLesson", fields: [lessonId], references: [id])
   mentor    User?    @relation("starMentor", fields: [mentorId], references: [id])
   student   User?    @relation("starStudent", fields: [studentId], references: [id])
 
