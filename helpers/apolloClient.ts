@@ -12,6 +12,25 @@ export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 let apolloClient: ApolloClient<NormalizedCacheObject>
 const cache = new InMemoryCache()
 
+import { persistCache } from 'apollo3-cache-persist'
+//restoring cache doesn't work with loading spinner
+const allowedRouters = ['/curriculum']
+;(async function () {
+  if (
+    typeof window !== 'undefined' &&
+    allowedRouters.includes(window.location.pathname)
+  ) {
+    try {
+      await persistCache({
+        cache,
+        storage: window.localStorage
+      })
+    } catch (error) {
+      console.error('Error restoring Apollo cache', error)
+    }
+  }
+})()
+
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
     const { SchemaLink } = require('@apollo/client/link/schema')

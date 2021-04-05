@@ -29,15 +29,18 @@ type Props = {
   lessons: Lesson[]
   alerts: Alert[]
 }
-const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
-  console.log(session,'sess')
-  const { lessonStatus } = session || { lessonStatus: [] }
+
+const generateMap = (session: Session): { [id: string]: UserLesson } => {
+  const { lessonStatus } = session
   const lessonStatusMap: { [id: string]: UserLesson } = {}
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
     lessonStatusMap[lessonId] = status
   }
-
+  return lessonStatusMap
+}
+const calculateProgress = (session: Session, lessons: Lesson[]): number => {
+  const lessonStatusMap = generateMap(session)
   const lessonInProgressIdx = _.cond([
     [_.isEqual.bind(null, -1), _.constant(0)],
     [_.constant(true), (output: number) => output]
@@ -48,54 +51,45 @@ const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
       return !passed
     })
   )
-  console.log(lessonInProgressIdx,'id')
-
   // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
   const TOTAL_LESSONS = 7
   return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
 }
+
+const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
+  const lessonStatusMap = generateMap(session)
+  return _.cond([
+    [_.isEqual.bind(null, -1), _.constant(0)],
+    [_.constant(true), (output: number) => output]
+  ])(
+    lessons.findIndex(lesson => {
+      const lessonId = _.get(lesson, 'id', '-1') as string
+      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
+      return !passed
+    })
+  )
+}
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
-  const [session, setSession] = React.useState<Session>({ lessonStatus: [] })
   const { data } = useGetAppQuery()
+  const [session, setSession] = React.useState<Session>({ lessonStatus: [] })
   const [progress, setProgress] = React.useState(0)
+  const [current, setCurrent] = React.useState(-1)
   React.useEffect(() => {
     if (data && data.session) {
       setSession(data.session)
-      const foo = calculateCurrent(data.session, lessons)
-      console.log(foo)
+      setProgress(calculateProgress(data.session, lessons))
+      setCurrent(calculateCurrent(data.session, lessons))
     }
   }, [data])
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
-  const { lessonStatus } = session || { lessonStatus: [] }
-  const lessonStatusMap: { [id: string]: UserLesson } = {}
-  for (const status of lessonStatus) {
-    const lessonId = _.get(status, 'lessonId', '-1') as string
-    lessonStatusMap[lessonId] = status
-  }
-
-  const lessonInProgressIdx = _.cond([
-    [_.isEqual.bind(null, -1), _.constant(0)],
-    [_.constant(true), (output: number) => output]
-  ])(
-    lessons.findIndex(lesson => {
-      const lessonId = _.get(lesson, 'id', '-1') as string
-      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
-      return !passed
-    })
-  )
-
-  // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
-  const TOTAL_LESSONS = 7
-  const progressPercentage = Math.floor(
-    (lessonInProgressIdx * 100) / TOTAL_LESSONS
-  )
+  const lessonStatusMap = generateMap(session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const id = _.get(lesson, 'id', idx) as number
     const status = lessonStatusMap[id]
     let lessonState = ''
-    if (idx === lessonInProgressIdx) {
+    if (idx === current) {
       lessonState = 'inProgress'
     }
     const passed = _.get(status, 'isPassed', false)
@@ -140,14 +134,14 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
 }
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
-  const data = await apolloClient.query<GetAppQuery>({
+  const query = await apolloClient.query<GetAppQuery>({
     query: GetAppDocument
   })
 
   return {
     props: {
-      lessons: data.data.lessons,
-      alerts: data.data.alerts
+      lessons: query.data.lessons,
+      alerts: query.data.alerts
     }
   }
 }
