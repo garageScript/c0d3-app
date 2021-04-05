@@ -9,14 +9,14 @@ import _ from 'lodash'
 const { User, Submission, Challenge, Lesson } = db
 
 type ArgsCreateSubmission = {
-  lessonId: string
+  lessonId: number
   cliToken: string
   diff: string
-  challengeId: string
+  challengeId: number
 }
 
 type ArgsGetSubmissions = {
-  lessonId: string
+  lessonId: number
 }
 
 export enum SubmissionStatus {
@@ -126,10 +126,7 @@ export const submissions = async (
   }
 }
 
-const getReviewer = async (
-  ctx: Context,
-  lessonId?: string
-): Promise<number> => {
+const getReviewer = async (ctx: Context, lessonId: number): Promise<number> => {
   const reviewerId = _.get(ctx, 'req.user.id', false)
   if (!reviewerId) throw new Error('Invalid user')
   if (lessonId && !(await hasPassedLesson(reviewerId, lessonId))) {

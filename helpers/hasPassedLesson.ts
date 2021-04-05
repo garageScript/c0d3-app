@@ -4,7 +4,7 @@ import { LessonStatus } from '../@types/lesson'
 
 export const hasPassedLesson = async (
   reviewerId: number,
-  lessonId: string
+  lessonId: number
 ): Promise<Boolean> => {
   // query userlesson that belongs to lesson and user
   const userLesson = (await UserLesson.findOne({
