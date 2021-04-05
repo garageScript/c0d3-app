@@ -239,7 +239,7 @@ export type Star = {
 
 export type Submission = {
   __typename?: 'Submission'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['Int']
   status?: Maybe<Scalars['String']>
   mrUrl?: Maybe<Scalars['String']>
   diff?: Maybe<Scalars['String']>
@@ -247,8 +247,8 @@ export type Submission = {
   comment?: Maybe<Scalars['String']>
   userId?: Maybe<Scalars['String']>
   order?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['String']>
-  challengeId?: Maybe<Scalars['String']>
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
   challenge?: Maybe<Challenge>
   reviewer?: Maybe<User>
   user?: Maybe<User>
@@ -1221,7 +1221,7 @@ export type SubmissionResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   status?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1229,12 +1229,8 @@ export type SubmissionResolvers<
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  challengeId?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  challengeId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   challenge?: Resolver<
     Maybe<ResolversTypes['Challenge']>,
     ParentType,

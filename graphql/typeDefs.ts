@@ -92,7 +92,7 @@ export default gql`
   }
 
   type Submission {
-    id: String
+    id: Int!
     status: String
     mrUrl: String
     diff: String
@@ -100,8 +100,8 @@ export default gql`
     comment: String
     userId: String
     order: Int
-    lessonId: String
-    challengeId: String
+    lessonId: Int!
+    challengeId: Int!
     challenge: Challenge
     reviewer: User
     user: User
