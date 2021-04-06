@@ -39,8 +39,8 @@ export default gql`
     ): [Alert]
     removeAlert(id: Int!): SuccessResponse
     createSubmission(
-      lessonId: String!
-      challengeId: String!
+      lessonId: Int!
+      challengeId: Int!
       cliToken: String!
       diff: String!
     ): Submission
@@ -127,9 +127,9 @@ export default gql`
   }
 
   type UserLesson {
-    id: String
+    id: Int!
     userId: String
-    lessonId: String
+    lessonId: Int!
     isPassed: String
     isTeaching: String
     isEnrolled: String
@@ -138,7 +138,7 @@ export default gql`
   }
 
   type Lesson {
-    id: String
+    id: Int!
     description: String
     docUrl: String
     githubUrl: String

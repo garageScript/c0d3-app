@@ -21,7 +21,7 @@ import _ from 'lodash'
 const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
   const router = useRouter()
-  const currentlessonId = router.query.lesson! as string
+  const currentlessonId = Number(router.query.lesson) as number
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
@@ -42,9 +42,15 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     []
   ) as UserLesson[]
 
-  const currentLessonStatus: UserLesson = lessonStatus.find(
-    lessonStatus => lessonStatus.lessonId === currentlessonId
-  ) || { isEnrolled: null, isTeaching: null, lessonId: currentlessonId }
+  const currentLessonStatus: UserLesson =
+    lessonStatus.find(
+      lessonStatus => lessonStatus.lessonId! === currentlessonId
+    ) ||
+    ({
+      isEnrolled: null,
+      isTeaching: null,
+      lessonId: currentlessonId
+    } as UserLesson)
   const isPassed = !!currentLessonStatus.isTeaching
   return (
     <div>
@@ -66,7 +72,7 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl!}
-                lessonId={parseInt(currentLesson.id!, 10)}
+                lessonId={currentLesson.id}
               />
             </div>
           )}

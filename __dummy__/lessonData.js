@@ -1,6 +1,6 @@
 export default [
   {
-    id: '5',
+    id: 5,
     title: 'Foundations of JavaScript',
     description: 'A super simple introduction to help you get started!',
     docUrl:
@@ -84,7 +84,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js1-variablesfunction'
   },
   {
-    id: '2',
+    id: 2,
     title: 'Variables & Functions',
     description:
       'Learn how to solve simple algorithm problems recursively with the following exercises. ',
@@ -183,7 +183,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js2-arrays'
   },
   {
-    id: '1',
+    id: 1,
     title: 'Arrays',
     description:
       'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
@@ -276,7 +276,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js3-objects'
   },
   {
-    id: '4',
+    id: 4,
     title: 'Objects',
     description:
       'These exercises will test your understanding of objects, which includes linked lists and trees',
@@ -362,7 +362,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js5-htmlcssjs'
   },
   {
-    id: '24',
+    id: 24,
     title: 'Front End Engineering',
     description:
       'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)',
@@ -425,7 +425,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js4-endtoend'
   },
   {
-    id: '3',
+    id: 3,
     title: 'End To End',
     description:
       'These exercises will help you build a strong understanding of how the web works.',
@@ -502,7 +502,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js6-reactgqlsocketio'
   },
   {
-    id: '29',
+    id: 29,
     title: 'React, GraphQL, SocketIO',
     description: 'React and GraphQL Lessons',
     docUrl: '',
@@ -570,7 +570,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js7-javascriptalg'
   },
   {
-    id: '28',
+    id: 28,
     title: 'JavaScript Algorithms',
     description:
       'Problems that are commonly asked to test your JavaScript knowledge',
@@ -661,7 +661,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js8-trees'
   },
   {
-    id: '25',
+    id: 25,
     title: 'Trees',
     description: 'Tree problems with high difficulty',
     docUrl: '',
@@ -759,7 +759,7 @@ export default [
     chatUrl: 'https://chat.c0d3.com/c0d3/channels/js8-trees'
   },
   {
-    id: '27',
+    id: 27,
     title: 'General Algorithms',
     description: 'General Algorithm from interviews',
     docUrl: '',

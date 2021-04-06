@@ -63,7 +63,7 @@ export type Challenge = {
 
 export type Lesson = {
   __typename?: 'Lesson'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['Int']
   description?: Maybe<Scalars['String']>
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
@@ -141,8 +141,8 @@ export type MutationRemoveAlertArgs = {
 }
 
 export type MutationCreateSubmissionArgs = {
-  lessonId: Scalars['String']
-  challengeId: Scalars['String']
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
   cliToken: Scalars['String']
   diff: Scalars['String']
 }
@@ -281,9 +281,9 @@ export type User = {
 
 export type UserLesson = {
   __typename?: 'UserLesson'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['Int']
   userId?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
+  lessonId: Scalars['Int']
   isPassed?: Maybe<Scalars['String']>
   isTeaching?: Maybe<Scalars['String']>
   isEnrolled?: Maybe<Scalars['String']>
@@ -1013,7 +1013,7 @@ export type LessonResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   description?: Resolver<
     Maybe<ResolversTypes['String']>,
     ParentType,
@@ -1292,9 +1292,9 @@ export type UserLessonResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   isPassed?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   isTeaching?: Resolver<
     Maybe<ResolversTypes['String']>,
