@@ -29,7 +29,11 @@ type Props = {
   lessons: Lesson[]
   alerts: Alert[]
 }
-
+interface State {
+  session: Session
+  progress: number
+  current: number
+}
 const generateMap = (session: Session): { [id: string]: UserLesson } => {
   const { lessonStatus } = session
   const lessonStatusMap: { [id: string]: UserLesson } = {}
@@ -55,7 +59,6 @@ const calculateProgress = (session: Session, lessons: Lesson[]): number => {
   const TOTAL_LESSONS = 7
   return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
 }
-
 const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
   const lessonStatusMap = generateMap(session)
   return _.cond([
@@ -71,25 +74,29 @@ const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   const { data } = useGetAppQuery()
-  const [session, setSession] = React.useState<Session>({ lessonStatus: [] })
-  const [progress, setProgress] = React.useState(0)
-  const [current, setCurrent] = React.useState(-1)
+  const [state, setState] = React.useState<State>({
+    session: { lessonStatus: [] },
+    progress: 0,
+    current: -1
+  })
   React.useEffect(() => {
     if (data && data.session) {
-      setSession(data.session)
-      setProgress(calculateProgress(data.session, lessons))
-      setCurrent(calculateCurrent(data.session, lessons))
+      setState({
+        session: data.session,
+        progress: calculateProgress(data.session, lessons),
+        current: calculateCurrent(data.session, lessons)
+      })
     }
   }, [data])
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
-  const lessonStatusMap = generateMap(session)
+  const lessonStatusMap = generateMap(state.session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const id = _.get(lesson, 'id', idx) as number
     const status = lessonStatusMap[id]
     let lessonState = ''
-    if (idx === current) {
+    if (idx === state.current) {
       lessonState = 'inProgress'
     }
     const passed = _.get(status, 'isPassed', false)
@@ -121,7 +128,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
-            <ProgressCard progressCount={progress} />
+            <ProgressCard progressCount={state.progress} />
           </div>
           <div className="d-none d-xl-block">
             <AnnouncementCard announcements={announcements} />

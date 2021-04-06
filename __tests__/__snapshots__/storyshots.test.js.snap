@@ -7916,111 +7916,2601 @@ Array [
 `;
 
 exports[`Storyshots Pages/Curriculum Basic 1`] = `
-<div
-  className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
-  style={
-    Object {
-      "left": 0,
-      "minHeight": "100vh",
-      "position": "fixed",
-      "top": 0,
-      "zIndex": 1,
-    }
-  }
->
-  <h1
-    className="text-white font-weight-bold display-3"
-    style={
-      Object {
-        "fontFamily": "'PT Mono', sans-serif",
-      }
-    }
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
   >
-    C0D3
-  </h1>
-  <div
-    className="spinner-border text-white"
-    role="status"
-  >
-    <h1
-      className="sr-only"
+    <div
+      className="container"
     >
-      Loading...
-    </h1>
-  </div>
-</div>
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/curriculum"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Curriculum
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/contributors"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-xl-8 order-xl-0 order-1"
+      >
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-0-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-0-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      10
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  A super simple introduction to help you get started!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-1-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-1-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Variables & Functions
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      12
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Learn how to solve simple algorithm problems recursively with the following exercises. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-2-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-2-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Arrays
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-3-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-3-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Objects
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      10
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will test your understanding of objects, which includes linked lists and trees
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-4-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-4-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/24"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Front End Engineering
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      7
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-5-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-5-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    End To End
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      9
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will help you build a strong understanding of how the web works.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-6-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-6-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/29"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      8
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  React and GraphQL Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-7-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-7-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/28"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Problems that are commonly asked to test your JavaScript knowledge
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-8-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-8-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/25"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Trees
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      12
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Tree problems with high difficulty
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-9-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-9-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/27"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    General Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      5
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  General Algorithm from interviews
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xl-4"
+      >
+        <div
+          className="d-xl-block"
+        >
+          <div
+            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <svg
+                viewBox="0 0 40 40"
+                width="65px"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="transparent"
+                  r="17"
+                  stroke="#3a22b8"
+                  strokeWidth="4.5"
+                />
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="transparent"
+                  r="17"
+                  stroke="#fff"
+                  strokeDasharray="0 100"
+                  strokeDashoffset="20"
+                  strokeWidth="4.5"
+                />
+                <g
+                  className="circle-label"
+                >
+                  <text
+                    color="#fff"
+                    fill="#fff"
+                    style={
+                      Object {
+                        "font": "bold 10px sans-serif",
+                      }
+                    }
+                    x={15}
+                    y="23"
+                  >
+                    0
+                    <tspan
+                      fontSize="8px"
+                    >
+                      %
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+              <h4
+                className="progress-card__title mt-3"
+              >
+                You're off to a great start!
+              </h4>
+              <div
+                className="mt-3"
+              >
+                Login to
+                <a
+                  className="progress-newuser__chatlink text-white"
+                  href="https://chat.c0d3.com/login"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  chat.c0d3.com
+                </a>
+                to ask your questions.
+                <p>
+                  Start by setting up your development environment and then follow the lessons in the course.
+                </p>
+              </div>
+              <a
+                className="btn btn-light progress-card__button mt-2 text-primary"
+                href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Setup Development Environment
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="d-none d-xl-block"
+        >
+          <div
+            className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <h1
+                className="announcement-card__title font-weight-bold"
+              >
+                General Announcements
+              </h1>
+              <div
+                className="mt-3"
+              >
+                <p
+                  className="announcement-card__subtitle font-weight-bold"
+                >
+                  Updates and Guidelines
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          >
+            <h1
+              className="additional-resources__title font-weight-bold"
+            >
+              ADDITIONAL RESOURCES
+            </h1>
+            <a
+              className="additional-resources_link mr-1"
+              href="https://developer.mozilla.org/en-US/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle mr-0"
+              >
+                MDN Web Docs
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              The encyclopedia of web development
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://javascript.info/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle"
+              >
+                The Modern JavaScript Tutorial
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              In-depth overview of javascript language
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://missing.csail.mit.edu/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle "
+              >
+                The Missing Semester
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              Introduction to shell, git, vim, tmux and etc.
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://teachyourselfcs.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle"
+              >
+                Teach Yourself Computer Science
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              Self-study guide
+            </h3>
+            <hr
+              className="my-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
-<div
-  className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
-  style={
-    Object {
-      "left": 0,
-      "minHeight": "100vh",
-      "position": "fixed",
-      "top": 0,
-      "zIndex": 1,
-    }
-  }
->
-  <h1
-    className="text-white font-weight-bold display-3"
-    style={
-      Object {
-        "fontFamily": "'PT Mono', sans-serif",
-      }
-    }
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
   >
-    C0D3
-  </h1>
-  <div
-    className="spinner-border text-white"
-    role="status"
-  >
-    <h1
-      className="sr-only"
+    <div
+      className="container"
     >
-      Loading...
-    </h1>
-  </div>
-</div>
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/curriculum"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Curriculum
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/contributors"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-xl-8 order-xl-0 order-1"
+      >
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-0-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-0-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      10
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  A super simple introduction to help you get started!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-1-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-1-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Variables & Functions
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      12
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Learn how to solve simple algorithm problems recursively with the following exercises. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-2-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-2-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Arrays
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-3-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-3-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Objects
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      10
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will test your understanding of objects, which includes linked lists and trees
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-4-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-4-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/24"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Front End Engineering
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      7
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-5-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-5-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    End To End
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      9
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will help you build a strong understanding of how the web works.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-6-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-6-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/29"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      8
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  React and GraphQL Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-7-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-7-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/28"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Problems that are commonly asked to test your JavaScript knowledge
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-8-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-8-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/25"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Trees
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      12
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Tree problems with high difficulty
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-9-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-9-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/27"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    General Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      5
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  General Algorithm from interviews
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xl-4"
+      >
+        <div
+          className="d-xl-block"
+        >
+          <div
+            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <svg
+                viewBox="0 0 40 40"
+                width="65px"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="transparent"
+                  r="17"
+                  stroke="#3a22b8"
+                  strokeWidth="4.5"
+                />
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="transparent"
+                  r="17"
+                  stroke="#fff"
+                  strokeDasharray="0 100"
+                  strokeDashoffset="20"
+                  strokeWidth="4.5"
+                />
+                <g
+                  className="circle-label"
+                >
+                  <text
+                    color="#fff"
+                    fill="#fff"
+                    style={
+                      Object {
+                        "font": "bold 10px sans-serif",
+                      }
+                    }
+                    x={15}
+                    y="23"
+                  >
+                    0
+                    <tspan
+                      fontSize="8px"
+                    >
+                      %
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+              <h4
+                className="progress-card__title mt-3"
+              >
+                You're off to a great start!
+              </h4>
+              <div
+                className="mt-3"
+              >
+                Login to
+                <a
+                  className="progress-newuser__chatlink text-white"
+                  href="https://chat.c0d3.com/login"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  chat.c0d3.com
+                </a>
+                to ask your questions.
+                <p>
+                  Start by setting up your development environment and then follow the lessons in the course.
+                </p>
+              </div>
+              <a
+                className="btn btn-light progress-card__button mt-2 text-primary"
+                href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Setup Development Environment
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="d-none d-xl-block"
+        >
+          <div
+            className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <h1
+                className="announcement-card__title font-weight-bold"
+              >
+                General Announcements
+              </h1>
+              <div
+                className="mt-3"
+              >
+                <p
+                  className="announcement-card__subtitle font-weight-bold"
+                >
+                  Updates and Guidelines
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          >
+            <h1
+              className="additional-resources__title font-weight-bold"
+            >
+              ADDITIONAL RESOURCES
+            </h1>
+            <a
+              className="additional-resources_link mr-1"
+              href="https://developer.mozilla.org/en-US/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle mr-0"
+              >
+                MDN Web Docs
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              The encyclopedia of web development
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://javascript.info/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle"
+              >
+                The Modern JavaScript Tutorial
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              In-depth overview of javascript language
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://missing.csail.mit.edu/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle "
+              >
+                The Missing Semester
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              Introduction to shell, git, vim, tmux and etc.
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://teachyourselfcs.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle"
+              >
+                Teach Yourself Computer Science
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              Self-study guide
+            </h3>
+            <hr
+              className="my-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
-<div
-  className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
-  style={
-    Object {
-      "left": 0,
-      "minHeight": "100vh",
-      "position": "fixed",
-      "top": 0,
-      "zIndex": 1,
-    }
-  }
->
-  <h1
-    className="text-white font-weight-bold display-3"
-    style={
-      Object {
-        "fontFamily": "'PT Mono', sans-serif",
-      }
-    }
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
   >
-    C0D3
-  </h1>
-  <div
-    className="spinner-border text-white"
-    role="status"
-  >
-    <h1
-      className="sr-only"
+    <div
+      className="container"
     >
-      Loading...
-    </h1>
-  </div>
-</div>
+      <a
+        className="navbar-brand text-primary font-weight-bold"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          className="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            className="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              className="nav-item nav-link"
+              href="/curriculum"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Curriculum
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              className="nav-item nav-link"
+              href="/contributors"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border mr-3"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-xl-8 order-xl-0 order-1"
+      >
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-0-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-0-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      10
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  A super simple introduction to help you get started!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-1-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-1-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Variables & Functions
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      12
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Learn how to solve simple algorithm problems recursively with the following exercises. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-2-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-2-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Arrays
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-3-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-3-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Objects
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      10
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will test your understanding of objects, which includes linked lists and trees
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-4-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-4-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/24"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Front End Engineering
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      7
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-5-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-5-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    End To End
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      9
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  These exercises will help you build a strong understanding of how the web works.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-6-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-6-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/29"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      8
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  React and GraphQL Lessons
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-7-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-7-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/28"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      11
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Problems that are commonly asked to test your JavaScript knowledge
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-8-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-8-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/25"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Trees
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      12
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  Tree problems with high difficulty
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="card shadow-sm mt-3 border-0"
+        >
+          <div
+            className="d-flex p-2"
+          >
+            <img
+              alt="js-9-cover.svg"
+              className="lesson-card__image"
+              src="/assets/curriculum/js-9-cover.svg"
+            />
+            <div
+              className="w-100 pl-4"
+            >
+              <div>
+                <h4
+                  className="lesson-card__title font-weight-bold mt-3"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/27"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    General Algorithms
+                  </a>
+                </h4>
+                <div>
+                  <div
+                    className="d-inline-block mr-4"
+                  >
+                    <img
+                      alt="icon-challenge"
+                      className="mr-2"
+                      src="/assets/curriculum/icons/icon-challenge.svg"
+                    />
+                    <span
+                      className="lesson-card__icon-text"
+                    >
+                      5
+                       CHALLENGES
+                    </span>
+                  </div>
+                </div>
+                <p
+                  className="lesson-card__description mt-2"
+                >
+                  General Algorithm from interviews
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xl-4"
+      >
+        <div
+          className="d-xl-block"
+        >
+          <div
+            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <svg
+                viewBox="0 0 40 40"
+                width="65px"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="transparent"
+                  r="17"
+                  stroke="#3a22b8"
+                  strokeWidth="4.5"
+                />
+                <circle
+                  cx="20"
+                  cy="20"
+                  fill="transparent"
+                  r="17"
+                  stroke="#fff"
+                  strokeDasharray="0 100"
+                  strokeDashoffset="20"
+                  strokeWidth="4.5"
+                />
+                <g
+                  className="circle-label"
+                >
+                  <text
+                    color="#fff"
+                    fill="#fff"
+                    style={
+                      Object {
+                        "font": "bold 10px sans-serif",
+                      }
+                    }
+                    x={15}
+                    y="23"
+                  >
+                    0
+                    <tspan
+                      fontSize="8px"
+                    >
+                      %
+                    </tspan>
+                  </text>
+                </g>
+              </svg>
+              <h4
+                className="progress-card__title mt-3"
+              >
+                You're off to a great start!
+              </h4>
+              <div
+                className="mt-3"
+              >
+                Login to
+                <a
+                  className="progress-newuser__chatlink text-white"
+                  href="https://chat.c0d3.com/login"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  chat.c0d3.com
+                </a>
+                to ask your questions.
+                <p>
+                  Start by setting up your development environment and then follow the lessons in the course.
+                </p>
+              </div>
+              <a
+                className="btn btn-light progress-card__button mt-2 text-primary"
+                href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Setup Development Environment
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="d-none d-xl-block"
+        >
+          <div
+            className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <h1
+                className="announcement-card__title font-weight-bold"
+              >
+                General Announcements
+              </h1>
+              <div
+                className="mt-3"
+              >
+                <p
+                  className="announcement-card__subtitle font-weight-bold"
+                >
+                  Updates and Guidelines
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+                </p>
+                <p
+                  className="mt-4"
+                >
+                  After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          >
+            <h1
+              className="additional-resources__title font-weight-bold"
+            >
+              ADDITIONAL RESOURCES
+            </h1>
+            <a
+              className="additional-resources_link mr-1"
+              href="https://developer.mozilla.org/en-US/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle mr-0"
+              >
+                MDN Web Docs
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              The encyclopedia of web development
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://javascript.info/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle"
+              >
+                The Modern JavaScript Tutorial
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              In-depth overview of javascript language
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://missing.csail.mit.edu/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle "
+              >
+                The Missing Semester
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              Introduction to shell, git, vim, tmux and etc.
+            </h3>
+            <hr
+              className="my-2"
+            />
+            <a
+              className="additional-resources_link mr-1"
+              href="https://teachyourselfcs.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <h2
+                className="additional-resources__subtitle"
+              >
+                Teach Yourself Computer Science
+              </h2>
+            </a>
+            <h3
+              className="additional-resources__description"
+            >
+              Self-study guide
+            </h3>
+            <hr
+              className="my-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>,
+]
 `;
 
 exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
