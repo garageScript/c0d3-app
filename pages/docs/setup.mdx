@@ -1,0 +1,123 @@
+import LessonLayout from '../../../components/LessonLayout'
+
+<br />
+
+# Setup Instructions
+
+Now that you know your way around the terminal, you can start setting up your
+computer to write some code.
+
+## Code Editor
+
+We will use VS Code (Visual Studio Code) for code editing.
+[VS Code](https://code.visualstudio.com/) is a open source-code editor for
+macOS, Linux, and Windows. [Install VS Code](https://code.visualstudio.com/).
+
+If you get a server provisioned for you, you can setup VSCode to code remotely.
+
+## Creating a File
+
+1. Launch VS Code. For Windows, type **code** in command prompt or search bar.
+
+> **Pro tip**: In the terminal, you can simply type `code .` to launch VS Code
+> in the current folder. For macOS, look below to see how to set it up.
+
+To set up this terminal shortcut in macOS, open up VS Code, and use
+`cmd + shift + p` to open Search. Type in `shell`, and install the 'code'
+command.
+
+![shell](/assets/curriculum/lessons/devSetup/shell.png)
+
+2. Use your code editor to write some JavaScript code. Type the following:
+
+   ```jsx
+   a = 'hello'
+   console.log(a)
+   ```
+
+3. Save your file as `test.js` in any folder you decide.O
+
+## Running JavaScript Codes On Computer
+
+Now that you have your code, you need to run it with a program called
+**`node.js`**.
+
+1. Download the latest stable version of [node.js](https://nodejs.org/en/), **a
+   program to run JavaScript**.
+1. For companies that use `node`, the best practice is to use
+   [nvm](`https://github.com/nvm-sh/nvm`) to install node.js.
+
+   1. [Install nvm](https://github.com/nvm-sh/nvm)
+   2. use `nvm` to install node version 10 by typing into your terminal:
+
+      `nvm i 10`
+
+1. Open your terminal and use `cd` to go to the folder that contains your file.
+1. Run your file using node: `node test.js`
+1. You should see the output `hello`
+
+[Installing NodeJS on ChromeBook](https://www.notion.so/Installing-NodeJS-on-ChromeBook-6ce67ee440674605b5ecafdeab7c9b3e)
+
+## Running HTML Codes on the Browser
+
+Sometimes, you want to test something really quick and you are simply too lazy
+to create a new file. You can also write some quick code on the browser and
+immediately run it.
+
+1. Open your browser, then right-click on the browser, then click on
+   `Inspect Element` or `Inspect`:
+
+   ### Firefox and Chrome
+
+   ![inspect](/assets/curriculum/lessons/devSetup/inspect.png)
+
+2. In the screen that appears, click on the `Console` tab:
+
+   ![console](/assets/curriculum/lessons/devSetup/console.png)
+
+3. After that, you can start typing code! For now, type `console.log("hello")`.
+   And then type enter key:
+
+4. To write code on multiple lines, you must type Shift + Enter (only Enter for
+   Windows):
+
+   ![lines](/assets/curriculum/lessons/devSetup/lines.png)
+
+## Running HTML Codes from VS Code
+
+Once you have completed writing and saving your HTML codes on a file name
+xxxx.html, you are ready to run the html codes on a browser. The easiest way is
+to run the codes directly from VS Code. However, before you can run the html
+codes, you will need to install the **_open in browser_** extension by
+**_techER._**
+
+Launch VS Code.
+
+For Mac users: Click on **Code** → **Preferences** → **Extensions**. Or use
+[**shift**] + [**command**] + [**x**] keys.
+
+For window users: Click on **File** → **Preferences** → **Extensions**. Or use
+[**Ctrl**] + [**Shift**] + [**X**] keys.
+
+Enter **open in browser** in search box, and then select **open in browser** by
+**techER**. Install the extension.
+
+While you are in VS Code, edit your html file. For window users, **right click**
+and select **View in Browser.** For Mac users, press [**control**] key and
+**click** and select **Open in Default Browser,** or press [**option**]+[**B**]
+keys.
+
+Your default browser will be launched with your html file running.
+
+# Next Step
+
+Congratulations! You have written your first JavaScript program and you know how
+to run code directly in the browser. Now you are ready to start your journey.
+
+[JS 0 - Foundations](https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672)
+
+---
+
+[Remote VSCode](https://www.notion.so/Remote-VSCode-da21983625cb4e688d93c39c6bd1d0f5)
+
+export default ({ children }) => <LessonLayout>{children}</LessonLayout>

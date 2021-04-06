@@ -6,7 +6,6 @@
     "dev": "next -p $PORT",
     "build": "next build",
     "start": "next start",
-    "mdx": "eslint . --ext .mdx --fix",
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
     "lint:fix": "yarn lint --fix && prettier --write ./scss/",
     "autofix": "yarn lint:fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",
@@ -20,8 +19,8 @@
     "vercel-build": "./scripts/prismaUtils.js baseline migrate && next build"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --fix",
-    "*.{json,md,scss}": "prettier --write",
+    "*.{js,jsx,ts,tsx,mdx}": "eslint --fix",
+    "*.{json,md,scss,mdx}": "prettier --write",
     "*.svg": "svgo --multipass"
   },
   "jest": {
