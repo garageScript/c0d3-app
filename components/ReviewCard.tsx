@@ -11,7 +11,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import { SubmissionData } from '../@types/submission'
+import { Submission } from '../graphql/index'
 
 import _ from 'lodash'
 
@@ -22,7 +22,7 @@ import { MdInput } from './MdInput'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
-  submissionData: SubmissionData
+  submissionData: Submission
 }
 
 type DiffViewProps = {
@@ -108,7 +108,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               {username} - <span className="text-primary">{title}</span>
             </h4>
             <Text color="lightgrey" size="sm">
-              {dayjs(parseInt(updatedAt)).fromNow()}
+              {dayjs(parseInt(updatedAt!)).fromNow()}
             </Text>
           </div>
 

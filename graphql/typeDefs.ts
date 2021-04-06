@@ -8,7 +8,7 @@ export default gql`
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
-    submissions(lessonId: String!): [Submission]
+    submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
   }
 
@@ -44,8 +44,8 @@ export default gql`
       cliToken: String!
       diff: String!
     ): Submission
-    acceptSubmission(id: String!, comment: String!): Submission
-    rejectSubmission(id: String!, comment: String!): Submission
+    acceptSubmission(id: Int!, comment: String!): Submission
+    rejectSubmission(id: Int!, comment: String!): Submission
     createLesson(
       description: String!
       docUrl: String
@@ -102,9 +102,9 @@ export default gql`
     order: Int
     lessonId: Int!
     challengeId: Int!
-    challenge: Challenge
+    challenge: Challenge!
     reviewer: User
-    user: User
+    user: User!
     reviewerId: String
     createdAt: String
     updatedAt: String

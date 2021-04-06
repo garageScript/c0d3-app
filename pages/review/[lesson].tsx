@@ -7,8 +7,7 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
-import { SubmissionData } from '../../@types/submission'
-import { Lesson, GetAppQuery } from '../../graphql/index'
+import { Lesson, GetAppQuery, Submission } from '../../graphql/index'
 import Error, { StatusCode } from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
@@ -16,14 +15,14 @@ import withQueryLoader, {
 import _ from 'lodash'
 
 type SubmissionDisplayProps = {
-  submissions: SubmissionData[]
+  submissions: Submission[]
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
   <div className="submissions-container container p-0">
-    {submissions.map((submission: SubmissionData) => (
+    {submissions.map((submission: Submission) => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>
@@ -33,6 +32,7 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
   const currentlessonId = Number(router.query.lesson)
+  console.log(currentlessonId)
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentlessonId }
   })
@@ -57,9 +57,9 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     router.push('/curriculum')
     return <LoadingSpinner />
   }
-  const lessonSubmissions: SubmissionData[] = data
+  const lessonSubmissions: Submission[] = data
     ? data.submissions.filter(
-        (submission: SubmissionData) =>
+        (submission: Submission) =>
           submission.status !== 'passed' && submission.status !== 'needMoreWork'
       )
     : []

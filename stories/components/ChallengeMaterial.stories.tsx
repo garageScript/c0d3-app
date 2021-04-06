@@ -76,6 +76,14 @@ export const WithDiff: React.FC = () => (
         comment: '```test comment```',
         lessonId: 23,
         challengeId: 105,
+        challenge: {
+          id: 1,
+          title: 'fake challenge',
+          description: 'fake description',
+          order: 1,
+          lessonId: 23
+        },
+        user: { id: 1 },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -89,6 +97,14 @@ export const WithDiff: React.FC = () => (
         comment: '```test comment```',
         lessonId: 23,
         challengeId: 107,
+        challenge: {
+          id: 1,
+          title: 'fake challenge',
+          description: 'fake description',
+          order: 1,
+          lessonId: 23
+        },
+        user: { id: 1 },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -113,6 +129,14 @@ export const WithComments: React.FC = () => (
         comment: '```Great Job```',
         lessonId: 23,
         challengeId: 105,
+        challenge: {
+          id: 1,
+          title: 'fake challenge',
+          description: 'fake description',
+          order: 1,
+          lessonId: 23
+        },
+        user: { id: 1 },
         reviewer: {
           id: 1,
           username: 'dan'
@@ -130,6 +154,14 @@ export const WithComments: React.FC = () => (
         comment: '```test comment```',
         lessonId: 23,
         challengeId: 107,
+        challenge: {
+          id: 1,
+          title: 'fake challenge',
+          description: 'fake description',
+          order: 1,
+          lessonId: 23
+        },
+        user: { id: 1 },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -165,6 +197,14 @@ export const FinalChallenge: React.FC = () => (
           comment: '```Great Job```',
           lessonId: 23,
           challengeId: 105,
+          challenge: {
+            id: 1,
+            title: 'fake challenge',
+            description: 'fake description',
+            order: 1,
+            lessonId: 23
+          },
+          user: { id: 5 },
           reviewer: {
             id: 1,
             username: 'dan'
@@ -182,6 +222,16 @@ export const FinalChallenge: React.FC = () => (
           comment: '```test comment```',
           lessonId: 23,
           challengeId: 107,
+          challenge: {
+            id: 1,
+            title: 'fake challenge',
+            description: 'fake description',
+            order: 1,
+            lessonId: 23
+          },
+          user: {
+            id: 1
+          },
           reviewerId: '',
           createdAt: '',
           updatedAt: Date.now().toString()

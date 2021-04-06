@@ -148,12 +148,12 @@ export type MutationCreateSubmissionArgs = {
 }
 
 export type MutationAcceptSubmissionArgs = {
-  id: Scalars['String']
+  id: Scalars['Int']
   comment: Scalars['String']
 }
 
 export type MutationRejectSubmissionArgs = {
-  id: Scalars['String']
+  id: Scalars['Int']
   comment: Scalars['String']
 }
 
@@ -218,7 +218,7 @@ export type QueryIsTokenValidArgs = {
 }
 
 export type QuerySubmissionsArgs = {
-  lessonId: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type Session = {
@@ -249,9 +249,9 @@ export type Submission = {
   order?: Maybe<Scalars['Int']>
   lessonId: Scalars['Int']
   challengeId: Scalars['Int']
-  challenge?: Maybe<Challenge>
+  challenge: Challenge
   reviewer?: Maybe<User>
-  user?: Maybe<User>
+  user: User
   reviewerId?: Maybe<Scalars['String']>
   createdAt?: Maybe<Scalars['String']>
   updatedAt?: Maybe<Scalars['String']>
@@ -292,7 +292,7 @@ export type UserLesson = {
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
-  submissionId: Scalars['String']
+  submissionId: Scalars['Int']
   comment: Scalars['String']
 }>
 
@@ -518,7 +518,7 @@ export type LessonMentorsQuery = { __typename?: 'Query' } & {
 }
 
 export type SubmissionsQueryVariables = Exact<{
-  lessonId: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type SubmissionsQuery = { __typename?: 'Query' } & {
@@ -536,12 +536,8 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'createdAt'
           | 'updatedAt'
         > & {
-            challenge?: Maybe<
-              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-            >
-            user?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-            >
+            challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+            user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
           }
       >
     >
@@ -574,7 +570,7 @@ export type LogoutMutation = { __typename?: 'Mutation' } & {
 }
 
 export type RejectSubmissionMutationVariables = Exact<{
-  submissionId: Scalars['String']
+  submissionId: Scalars['Int']
   comment: Scalars['String']
 }>
 
@@ -1231,13 +1227,9 @@ export type SubmissionResolvers<
   order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   challengeId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  challenge?: Resolver<
-    Maybe<ResolversTypes['Challenge']>,
-    ParentType,
-    ContextType
-  >
+  challenge?: Resolver<ResolversTypes['Challenge'], ParentType, ContextType>
   reviewer?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   reviewerId?: Resolver<
     Maybe<ResolversTypes['String']>,
     ParentType,
@@ -1350,7 +1342,7 @@ export type IDirectiveResolvers<
 > = DirectiveResolvers<ContextType>
 
 export const AcceptSubmissionDocument = gql`
-  mutation acceptSubmission($submissionId: String!, $comment: String!) {
+  mutation acceptSubmission($submissionId: Int!, $comment: String!) {
     acceptSubmission(id: $submissionId, comment: $comment) {
       id
       comment
@@ -2130,7 +2122,7 @@ export type LessonMentorsQueryResult = Apollo.QueryResult<
   LessonMentorsQueryVariables
 >
 export const SubmissionsDocument = gql`
-  query submissions($lessonId: String!) {
+  query submissions($lessonId: Int!) {
     submissions(lessonId: $lessonId) {
       id
       status
@@ -2395,7 +2387,7 @@ export type LogoutMutationOptions = Apollo.BaseMutationOptions<
   LogoutMutationVariables
 >
 export const RejectSubmissionDocument = gql`
-  mutation rejectSubmission($submissionId: String!, $comment: String!) {
+  mutation rejectSubmission($submissionId: Int!, $comment: String!) {
     rejectSubmission(id: $submissionId, comment: $comment) {
       id
       comment
