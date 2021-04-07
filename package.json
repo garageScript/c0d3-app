@@ -21,7 +21,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{json,md,scss}": "prettier --write",
-    "*.svg": "svgo --multipass"
+    "*.svg": "svgo --multipass",
+    "prisma/schema.prisma": "npx prisma format"
   },
   "jest": {
     "collectCoverageFrom": [
