@@ -52,7 +52,7 @@
     "testPathIgnorePatterns": ["<rootDir>/__tests__/utils/"]
   },
   "dependencies": {
-    "@apollo/client": "^3.3.12",
+    "@apollo/client": "^3.3.14",
     "@prisma/client": "2.20.1",
     "@sentry/browser": "^6.2.5",
     "apollo-server-micro": "^2.20.0",
