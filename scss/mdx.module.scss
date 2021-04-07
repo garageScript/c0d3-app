@@ -2,6 +2,8 @@
   background: #edeceb;
   color: #eb5757;
   display: inline;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
 }
 .MDX_h1,
 .MDX_h2,
@@ -10,11 +12,18 @@
 }
 
 .MDX_a {
-  color: #6d6d6d;
+  color: #4e4e4e;
+  text-decoration-color: #7a7a7a !important;
   text-decoration: underline;
+  line-height: 1.5;
+  opacity: 0.7;
+  text-underline-offset: 30%;
+  text-decoration-thickness: 3%;
 }
 .MDX_a:hover {
   color: #37352f;
+  opacity: 0.9;
+  text-decoration-color: #37352f !important;
 }
 
 .MDX_td,

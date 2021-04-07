@@ -1,32 +1,27 @@
-import LessonLayout from '../../../components/LessonLayout'
-
-<br />
+import LessonLayout from '../../components/mdx/Layout'
 
 # Setup Instructions
 
-Now that you know your way around the terminal, you can start setting up your
-computer to write some code.
+<br />
 
 ## Code Editor
 
-We will use VS Code (Visual Studio Code) for code editing.
-[VS Code](https://code.visualstudio.com/) is a open source-code editor for
-macOS, Linux, and Windows. [Install VS Code](https://code.visualstudio.com/).
+You can choose any editor you want VS Code, WebStorm IDE, Sublime Text or even
+Vim.
 
-If you get a server provisioned for you, you can setup VSCode to code remotely.
+We recommend using VS Code. [Install](https://code.visualstudio.com/) VS Code.
 
 ## Creating a File
 
-1. Launch VS Code. For Windows, type **code** in command prompt or search bar.
+1. Launch VS Code. Type **code** in command line interface prompt or search bar
+   (the most common CLI [commands](/docs/cli)).
 
 > **Pro tip**: In the terminal, you can simply type `code .` to launch VS Code
-> in the current folder. For macOS, look below to see how to set it up.
+> in the current folder. To set up this terminal shortcut in macOS, open up VS
+> Code, and use `cmd + shift + p` to open Search. Type in `shell`, and install
+> the 'code' command.
 
-To set up this terminal shortcut in macOS, open up VS Code, and use
-`cmd + shift + p` to open Search. Type in `shell`, and install the 'code'
-command.
-
-![shell](/assets/curriculum/lessons/devSetup/shell.png)
+<Image height={258} width={1200} src={'/assets/docs/setup/shell.png'} />
 
 2. Use your code editor to write some JavaScript code. Type the following:
 
@@ -35,7 +30,7 @@ command.
    console.log(a)
    ```
 
-3. Save your file as `test.js` in any folder you decide.O
+3. Save your file as `test.js` in any folder you decide.
 
 ## Running JavaScript Codes On Computer
 
@@ -43,20 +38,28 @@ Now that you have your code, you need to run it with a program called
 **`node.js`**.
 
 1. Download the latest stable version of [node.js](https://nodejs.org/en/), **a
-   program to run JavaScript**.
-1. For companies that use `node`, the best practice is to use
-   [nvm](`https://github.com/nvm-sh/nvm`) to install node.js.
+   program to run JavaScript**. If you're using Windows install
+   [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+   first and follow instructions for Linux from now on.
 
-   1. [Install nvm](https://github.com/nvm-sh/nvm)
-   2. use `nvm` to install node version 10 by typing into your terminal:
+   1. For companies that use `node`, the best practice is to use
+      [nvm](`https://github.com/nvm-sh/nvm`) to install node.js.
+   1. [Install nvm](https://github.com/nvm-sh/nvm).
+   1. use `nvm` to install node version 14 by typing into your terminal:
+      `nvm i 14`.
 
-      `nvm i 10`
+   [Installing NodeJS on ChromeBook](/docs/chromebook).
 
 1. Open your terminal and use `cd` to go to the folder that contains your file.
-1. Run your file using node: `node test.js`
-1. You should see the output `hello`
+1. Run your file using node: `node test.js`.
+1. You should see the output `hello`.
 
-[Installing NodeJS on ChromeBook](https://www.notion.so/Installing-NodeJS-on-ChromeBook-6ce67ee440674605b5ecafdeab7c9b3e)
+## Browser-based setup
+
+If you don't want to install node locally you use run javascript code in your
+browser. Go to
+[GitPod](https://gitpod.io/#https://github.com/garageScript/curriculum). You'll
+be asked to create an account or you can also login using a Github account.
 
 ## Running HTML Codes on the Browser
 
@@ -65,23 +68,22 @@ to create a new file. You can also write some quick code on the browser and
 immediately run it.
 
 1. Open your browser, then right-click on the browser, then click on
-   `Inspect Element` or `Inspect`:
+   `Inspect Element` or `Inspect` (Firefox and Chrome).
 
-   ### Firefox and Chrome
-
-   ![inspect](/assets/curriculum/lessons/devSetup/inspect.png)
+<Image height={471} width={513} src={'/assets/docs/setup/inspect.png'} />
 
 2. In the screen that appears, click on the `Console` tab:
 
-   ![console](/assets/curriculum/lessons/devSetup/console.png)
+<Image height={448} width={1444} src={'/assets/docs/setup/console.png'} />
 
 3. After that, you can start typing code! For now, type `console.log("hello")`.
-   And then type enter key:
+   And then type enter key.
 
 4. To write code on multiple lines, you must type Shift + Enter (only Enter for
-   Windows):
+   Windows).
 
-   ![lines](/assets/curriculum/lessons/devSetup/lines.png)
+Alternatively, you can run node directly from terminal. Type `node` to start
+node REPL (read–eval–print loop).
 
 ## Running HTML Codes from VS Code
 
@@ -115,9 +117,5 @@ Congratulations! You have written your first JavaScript program and you know how
 to run code directly in the browser. Now you are ready to start your journey.
 
 [JS 0 - Foundations](https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672)
-
----
-
-[Remote VSCode](https://www.notion.so/Remote-VSCode-da21983625cb4e688d93c39c6bd1d0f5)
 
 export default ({ children }) => <LessonLayout>{children}</LessonLayout>

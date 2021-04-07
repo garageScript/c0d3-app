@@ -1,0 +1,53 @@
+import LessonLayout from '../../components/mdx/Layout'
+
+## Step 1 install Linux
+
+In order to install nodejs on a chromebook you must have linux enabled. If you
+do not have linux enabled on your computer please follow the steps outlined
+below.
+
+- On the bottom left, click on the Launch button
+- Type in Settings
+- Click on Settings or press enter to open it
+- On the left panel click on Linux (Beta)
+- Click Turn On
+- Click Install
+
+Note: You can also get to the Settings section by selecting time on the bottom
+right and clicking on Settings.
+
+Once Linux has been successfully installed, the terminal should open up
+automatically (if not, navigate to it by searching in the app Launcher). Check
+for any updates by typing
+
+`sudo apt update`
+
+Update any packages that need to be upgrated by typing
+
+`sudo apt upgrade`
+
+## Step 2 Install nodejs
+
+You need to install NVM (Node Virtual Manager) before you can install nodejs.
+Follow the steps listed below.
+
+### Install NVM
+
+- Got to the github repo for NVM
+  - [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+- Scroll down to the Table of Contents and click on Install and Upgrade Script
+- Copy and paste the cURL command in the terminal, then press enter.
+
+### Install nodejs
+
+Note: Depending on when you are reading this, you may need to install a later
+version of node. As of this example, node 10 will be installed.
+
+- In the terminal type: `nvm i 10`
+
+Once all these is done, you should have node and npm installed. Type in
+`node -v` to double check.
+
+---
+
+export default ({ children }) => <LessonLayout>{children}</LessonLayout>
