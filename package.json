@@ -28,7 +28,8 @@
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
       "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs).ts"
+      "!graphql/(resolvers|typeDefs).ts",
+      "!graphql/schema.ts"
     ],
     "coveragePathIgnorePatterns": [
       "stories",
