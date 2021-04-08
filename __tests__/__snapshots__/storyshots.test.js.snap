@@ -6073,51 +6073,55 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
   <div
     className="card-body"
   >
-    <svg
-      viewBox="0 0 40 40"
-      width="65px"
+    <div
+      className="progress-card__wrapper d-flex align-items-center"
     >
-      <circle
-        cx="20"
-        cy="20"
-        fill="transparent"
-        r="17"
-        stroke="#3a22b8"
-        strokeWidth="4.5"
-      />
-      <circle
-        cx="20"
-        cy="20"
-        fill="transparent"
-        r="17"
-        stroke="#fff"
-        strokeDasharray="0 100"
-        strokeDashoffset="20"
-        strokeWidth="4.5"
-      />
-      <g
-        className="circle-label"
+      <svg
+        viewBox="0 0 40 40"
+        width="65px"
       >
-        <text
-          color="#fff"
-          fill="#fff"
-          style={
-            Object {
-              "font": "bold 10px sans-serif",
-            }
-          }
-          x={15}
-          y="23"
+        <circle
+          cx="20"
+          cy="20"
+          fill="transparent"
+          r="17"
+          stroke="#3a22b8"
+          strokeWidth="4.5"
+        />
+        <circle
+          cx="20"
+          cy="20"
+          fill="transparent"
+          r="17"
+          stroke="#fff"
+          strokeDasharray="0 100"
+          strokeDashoffset="20"
+          strokeWidth="4.5"
+        />
+        <g
+          className="circle-label"
         >
-          0
-          <tspan
-            fontSize="8px"
+          <text
+            color="#fff"
+            fill="#fff"
+            style={
+              Object {
+                "font": "bold 10px sans-serif",
+              }
+            }
+            x={15}
+            y="23"
           >
-            %
-          </tspan>
-        </text>
-      </g>
-    </svg>
+            0
+            <tspan
+              fontSize="8px"
+            >
+              %
+            </tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
     <h4
       className="progress-card__title mt-3"
     >
@@ -6159,51 +6163,104 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
   <div
     className="card-body"
   >
-    <svg
-      viewBox="0 0 40 40"
-      width="65px"
+    <div
+      className="progress-card__wrapper d-flex align-items-center"
     >
-      <circle
-        cx="20"
-        cy="20"
-        fill="transparent"
-        r="17"
-        stroke="#3a22b8"
-        strokeWidth="4.5"
-      />
-      <circle
-        cx="20"
-        cy="20"
-        fill="transparent"
-        r="17"
-        stroke="#fff"
-        strokeDasharray="100 0"
-        strokeDashoffset="20"
-        strokeWidth="4.5"
-      />
-      <g
-        className="circle-label"
+      <svg
+        viewBox="0 0 40 40"
+        width="65px"
       >
-        <text
-          color="#fff"
-          fill="#fff"
-          style={
-            Object {
-              "font": "bold 10px sans-serif",
-            }
-          }
-          x={9}
-          y="23"
+        <circle
+          cx="20"
+          cy="20"
+          fill="transparent"
+          r="17"
+          stroke="#3a22b8"
+          strokeWidth="4.5"
+        />
+        <circle
+          cx="20"
+          cy="20"
+          fill="transparent"
+          r="17"
+          stroke="#fff"
+          strokeDasharray="100 0"
+          strokeDashoffset="20"
+          strokeWidth="4.5"
+        />
+        <g
+          className="circle-label"
         >
-          100
-          <tspan
-            fontSize="8px"
+          <text
+            color="#fff"
+            fill="#fff"
+            style={
+              Object {
+                "font": "bold 10px sans-serif",
+              }
+            }
+            x={9}
+            y="23"
           >
-            %
-          </tspan>
-        </text>
-      </g>
-    </svg>
+            100
+            <tspan
+              fontSize="8px"
+            >
+              %
+            </tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
+    <h4
+      className="progress-card__title mt-3"
+    >
+      You're off to a great start!
+    </h4>
+    <div
+      className="mt-3"
+    >
+      Login to
+      <a
+        className="progress-newuser__chatlink text-white"
+        href="https://chat.c0d3.com/login"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        chat.c0d3.com
+      </a>
+      to ask your questions.
+      <p>
+        Start by setting up your development environment and then follow the lessons in the course.
+      </p>
+    </div>
+    <a
+      className="btn btn-light progress-card__button mt-2 text-primary"
+      href="https://www.notion.so/Setup-Instructions-fc8f8fcc1376482ead839fa6b1034cb4#10ab6286f4d942c58bd330f68cb8cb95"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Setup Development Environment
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ProgressCard Loading 1`] = `
+<div
+  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+>
+  <div
+    className="card-body"
+  >
+    <div
+      className="progress-card__wrapper d-flex align-items-center"
+    >
+      <div
+        className="progress-card__spinner spinner-border text-light"
+        role="status"
+      />
+    </div>
     <h4
       className="progress-card__title mt-3"
     >
@@ -6245,51 +6302,55 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
   <div
     className="card-body"
   >
-    <svg
-      viewBox="0 0 40 40"
-      width="65px"
+    <div
+      className="progress-card__wrapper d-flex align-items-center"
     >
-      <circle
-        cx="20"
-        cy="20"
-        fill="transparent"
-        r="17"
-        stroke="#3a22b8"
-        strokeWidth="4.5"
-      />
-      <circle
-        cx="20"
-        cy="20"
-        fill="transparent"
-        r="17"
-        stroke="#fff"
-        strokeDasharray="40 60"
-        strokeDashoffset="20"
-        strokeWidth="4.5"
-      />
-      <g
-        className="circle-label"
+      <svg
+        viewBox="0 0 40 40"
+        width="65px"
       >
-        <text
-          color="#fff"
-          fill="#fff"
-          style={
-            Object {
-              "font": "bold 10px sans-serif",
-            }
-          }
-          x={11}
-          y="23"
+        <circle
+          cx="20"
+          cy="20"
+          fill="transparent"
+          r="17"
+          stroke="#3a22b8"
+          strokeWidth="4.5"
+        />
+        <circle
+          cx="20"
+          cy="20"
+          fill="transparent"
+          r="17"
+          stroke="#fff"
+          strokeDasharray="40 60"
+          strokeDashoffset="20"
+          strokeWidth="4.5"
+        />
+        <g
+          className="circle-label"
         >
-          40
-          <tspan
-            fontSize="8px"
+          <text
+            color="#fff"
+            fill="#fff"
+            style={
+              Object {
+                "font": "bold 10px sans-serif",
+              }
+            }
+            x={11}
+            y="23"
           >
-            %
-          </tspan>
-        </text>
-      </g>
-    </svg>
+            40
+            <tspan
+              fontSize="8px"
+            >
+              %
+            </tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
     <h4
       className="progress-card__title mt-3"
     >
@@ -8555,51 +8616,14 @@ Array [
             <div
               className="card-body"
             >
-              <svg
-                viewBox="0 0 40 40"
-                width="65px"
+              <div
+                className="progress-card__wrapper d-flex align-items-center"
               >
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#3a22b8"
-                  strokeWidth="4.5"
+                <div
+                  className="progress-card__spinner spinner-border text-light"
+                  role="status"
                 />
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#fff"
-                  strokeDasharray="0 100"
-                  strokeDashoffset="20"
-                  strokeWidth="4.5"
-                />
-                <g
-                  className="circle-label"
-                >
-                  <text
-                    color="#fff"
-                    fill="#fff"
-                    style={
-                      Object {
-                        "font": "bold 10px sans-serif",
-                      }
-                    }
-                    x={15}
-                    y="23"
-                  >
-                    0
-                    <tspan
-                      fontSize="8px"
-                    >
-                      %
-                    </tspan>
-                  </text>
-                </g>
-              </svg>
+              </div>
               <h4
                 className="progress-card__title mt-3"
               >
@@ -9421,51 +9445,14 @@ Array [
             <div
               className="card-body"
             >
-              <svg
-                viewBox="0 0 40 40"
-                width="65px"
+              <div
+                className="progress-card__wrapper d-flex align-items-center"
               >
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#3a22b8"
-                  strokeWidth="4.5"
+                <div
+                  className="progress-card__spinner spinner-border text-light"
+                  role="status"
                 />
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#fff"
-                  strokeDasharray="0 100"
-                  strokeDashoffset="20"
-                  strokeWidth="4.5"
-                />
-                <g
-                  className="circle-label"
-                >
-                  <text
-                    color="#fff"
-                    fill="#fff"
-                    style={
-                      Object {
-                        "font": "bold 10px sans-serif",
-                      }
-                    }
-                    x={15}
-                    y="23"
-                  >
-                    0
-                    <tspan
-                      fontSize="8px"
-                    >
-                      %
-                    </tspan>
-                  </text>
-                </g>
-              </svg>
+              </div>
               <h4
                 className="progress-card__title mt-3"
               >
@@ -10287,51 +10274,14 @@ Array [
             <div
               className="card-body"
             >
-              <svg
-                viewBox="0 0 40 40"
-                width="65px"
+              <div
+                className="progress-card__wrapper d-flex align-items-center"
               >
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#3a22b8"
-                  strokeWidth="4.5"
+                <div
+                  className="progress-card__spinner spinner-border text-light"
+                  role="status"
                 />
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#fff"
-                  strokeDasharray="0 100"
-                  strokeDashoffset="20"
-                  strokeWidth="4.5"
-                />
-                <g
-                  className="circle-label"
-                >
-                  <text
-                    color="#fff"
-                    fill="#fff"
-                    style={
-                      Object {
-                        "font": "bold 10px sans-serif",
-                      }
-                    }
-                    x={15}
-                    y="23"
-                  >
-                    0
-                    <tspan
-                      fontSize="8px"
-                    >
-                      %
-                    </tspan>
-                  </text>
-                </g>
-              </svg>
+              </div>
               <h4
                 className="progress-card__title mt-3"
               >

@@ -13,7 +13,7 @@ import {
   Alert,
   Session,
   UserLesson,
-  useGetAppQuery
+  useGetSessionQuery
 } from '../graphql/'
 import _ from 'lodash'
 import { initializeApollo } from '../helpers/apolloClient'
@@ -73,10 +73,10 @@ const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
   )
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
-  const { data } = useGetAppQuery()
+  const { data } = useGetSessionQuery()
   const [state, setState] = React.useState<State>({
     session: { lessonStatus: [] },
-    progress: 0,
+    progress: -1,
     current: -1
   })
   React.useEffect(() => {

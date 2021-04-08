@@ -2,6 +2,7 @@ import * as React from 'react'
 import Curriculum from '../../pages/curriculum'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import GET_SESSION from '../../graphql/queries/getSession'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
@@ -15,14 +16,8 @@ export default {
 export const Basic: React.FC = () => {
   const mocks = [
     {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          lessons: dummyLessonData,
-          session: dummySessionData,
-          alerts: []
-        }
-      }
+      request: { query: GET_SESSION },
+      result: { data: { session: dummySessionData } }
     }
   ]
 
