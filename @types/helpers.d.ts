@@ -1,6 +1,7 @@
 import winston from 'winston'
 import { Request } from 'express'
 import { Session } from 'express-session'
+import http from 'http'
 
 export interface LoggedRequest extends Request {
   info: (obj: any) => void
@@ -25,4 +26,5 @@ export interface UserSession extends Session {
 
 export interface Context {
   req: LoggedRequest
+  res: http.ServerResponse
 }
