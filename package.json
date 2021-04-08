@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": "eslint --fix",
-    "*.{json,md,scss,mdx}": "prettier --write",
+    "*.{json,md,scss}": "prettier --write",
     "*.svg": "svgo --multipass"
   },
   "jest": {
