@@ -9,6 +9,8 @@ describe('mdxComponents', () => {
     expect(mdxComponents.inlineCode()).toEqual(<code className="inline-code" />)
     expect(mdxComponents.a()).toEqual(<a className="MDX_a" />)
     expect(mdxComponents.td()).toEqual(<td className="MDX_td" />)
+    expect(mdxComponents.ol()).toEqual(<ol className="MDX_ol" />)
+    expect(mdxComponents.ul()).toEqual(<ul className="MDX_ul" />)
     expect(mdxComponents.th()).toEqual(<th className="MDX_th" />)
   })
 })
