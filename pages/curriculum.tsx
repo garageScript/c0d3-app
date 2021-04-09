@@ -20,7 +20,7 @@ const announcements = [
 const DiscordWidget = () => (
   <iframe
     className="mt-3 w-100"
-    src="https://discord.com/widget?id=828783458469675019&theme=dark"
+    src="https://discord.com/widget?id=828783458469675019&theme=light"
     height="500"
     allowTransparency
     frameBorder="0"
