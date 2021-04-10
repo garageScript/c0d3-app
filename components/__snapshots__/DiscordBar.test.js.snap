@@ -48,6 +48,7 @@ exports[`DiscordBar component Should render one user 1`] = `
       <a
         class="font-weight-bold text-white"
         href="https://discord.com/invite/5KZ99KAs"
+        rel="noreferrer"
         target="_blank"
       >
         JOIN
@@ -113,6 +114,7 @@ exports[`DiscordBar component Should render two users 1`] = `
       <a
         class="font-weight-bold text-white"
         href="https://discord.com/invite/5KZ99KAs"
+        rel="noreferrer"
         target="_blank"
       >
         JOIN

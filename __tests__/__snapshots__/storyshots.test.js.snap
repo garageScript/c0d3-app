@@ -2330,6 +2330,7 @@ exports[`Storyshots Components/Discord Empty 1`] = `
       <a
         className="font-weight-bold text-white"
         href="https://discord.com/invite/5KZ99KAs"
+        rel="noreferrer"
         target="_blank"
       >
         JOIN
@@ -2384,6 +2385,7 @@ exports[`Storyshots Components/Discord Twenty Users 1`] = `
       <a
         className="font-weight-bold text-white"
         href="https://discord.com/invite/5KZ99KAs"
+        rel="noreferrer"
         target="_blank"
       >
         JOIN
@@ -2438,6 +2440,7 @@ exports[`Storyshots Components/Discord Two Users 1`] = `
       <a
         className="font-weight-bold text-white"
         href="https://discord.com/invite/5KZ99KAs"
+        rel="noreferrer"
         target="_blank"
       >
         JOIN

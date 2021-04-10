@@ -662,6 +662,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <a
                 class="font-weight-bold text-white"
                 href="https://discord.com/invite/5KZ99KAs"
+                rel="noreferrer"
                 target="_blank"
               >
                 JOIN
@@ -1572,6 +1573,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <a
                 class="font-weight-bold text-white"
                 href="https://discord.com/invite/5KZ99KAs"
+                rel="noreferrer"
                 target="_blank"
               >
                 JOIN
@@ -2596,6 +2598,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <a
                 class="font-weight-bold text-white"
                 href="https://discord.com/invite/5KZ99KAs"
+                rel="noreferrer"
                 target="_blank"
               >
                 JOIN
