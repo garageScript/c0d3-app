@@ -3,7 +3,7 @@ import NavLink, { NavLinkProps } from './NavLink'
 import { Button } from './theme/Button'
 import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
-import { useLogoutMutation, useGetAppQuery, Session } from '../graphql'
+import { useLogoutMutation, useGetAppQuery, GetAppQuery } from '../graphql'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 
@@ -111,7 +111,9 @@ const UnAuthButton = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
-  const [session, setSession] = useState<Session>({ lessonStatus: [] })
+  const [session, setSession] = useState<GetAppQuery['session']>({
+    lessonStatus: []
+  })
   const { data } = useGetAppQuery()
   useEffect(() => {
     if (data && data.session) {
