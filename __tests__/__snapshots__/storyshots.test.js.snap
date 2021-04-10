@@ -524,21 +524,13 @@ exports[`Storyshots Components/Card With Fail 1`] = `
     <div
       className="card-body text-center pt-5 pb-5"
     >
-      <svg
+      <img
+        alt="Dark red circle with a exclamation sign inside."
         className="mb-4"
         height="100px"
-        viewBox="0 0 180 180"
+        src="/assets/curriculum/icons/exclamation.svg"
         width="100px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M89 9a81 81 0 102 0 NaN NaNzm1 38v58m0 25v1"
-          fill="none"
-          stroke="#721c24"
-          strokeLinecap="round"
-          strokeWidth="16"
-        />
-      </svg>
+      />
       <h1
         className="card-title h2 font-weight-bold mb-5"
       >
@@ -587,24 +579,13 @@ exports[`Storyshots Components/Card With Success 1`] = `
     <div
       className="card-body text-center pt-5 pb-5"
     >
-      <svg
+      <img
+        alt="Green circle with a checkmark inside."
         className="mb-4"
         height="100px"
-        viewBox="0 0 426.667 426.667"
+        src="/assets/curriculum/icons/checked.svg"
         width="100px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          className="active-path"
-          d="M293.333 135.04L190.08 240.213l-52.907-53.12-28.373 28.374 83.413 83.2 133.974-129.92z"
-          fill="#00CF92"
-        />
-        <path
-          className="active-path"
-          d="M213.333 0C95.513 0 0 95.513 0 213.333s95.513 213.333 213.333 213.333 213.333-95.513 213.333-213.333S331.154 0 213.333 0zm0 388.053c-96.495 0-174.72-78.225-174.72-174.72s78.225-174.72 174.72-174.72c96.446.117 174.602 78.273 174.72 174.72 0 96.496-78.224 174.72-174.72 174.72z"
-          fill="#00CF92"
-        />
-      </svg>
+      />
       <h1
         className="card-title h2 font-weight-bold mb-5"
       >
@@ -9652,24 +9633,13 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
     <div
       className="card-body text-center pt-5 pb-5"
     >
-      <svg
+      <img
+        alt="Green circle with a checkmark inside."
         className="mb-4"
         height="100px"
-        viewBox="0 0 426.667 426.667"
+        src="/assets/curriculum/icons/checked.svg"
         width="100px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          className="active-path"
-          d="M293.333 135.04L190.08 240.213l-52.907-53.12-28.373 28.374 83.413 83.2 133.974-129.92z"
-          fill="#00CF92"
-        />
-        <path
-          className="active-path"
-          d="M213.333 0C95.513 0 0 95.513 0 213.333s95.513 213.333 213.333 213.333 213.333-95.513 213.333-213.333S331.154 0 213.333 0zm0 388.053c-96.495 0-174.72-78.225-174.72-174.72s78.225-174.72 174.72-174.72c96.446.117 174.602 78.273 174.72 174.72 0 96.496-78.224 174.72-174.72 174.72z"
-          fill="#00CF92"
-        />
-      </svg>
+      />
       <h1
         className="card-title h2 font-weight-bold mb-5"
       >
