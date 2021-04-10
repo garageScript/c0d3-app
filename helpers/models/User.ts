@@ -26,7 +26,7 @@ export const UserTypes = {
   gsId: DataTypes.INTEGER,
   isOnline: DataTypes.BOOLEAN,
   isAdmin: {
-    type: DataTypes.STRING,
+    type: DataTypes.BOOLEAN,
     defaultValue: false
   },
   forgotToken: DataTypes.STRING,

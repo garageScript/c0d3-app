@@ -121,7 +121,7 @@ model User {
   isOnline               Boolean?
   createdAt              DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt              DateTime     @updatedAt @db.Timestamptz(6)
-  isAdmin                String?      @default(dbgenerated("false")) @db.VarChar(255)
+  isAdmin                Boolean      @default(false)
   forgotToken            String?      @db.VarChar(255)
   cliToken               String?      @db.VarChar(255)
   emailVerificationToken String?      @db.VarChar(255)
