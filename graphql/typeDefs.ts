@@ -23,7 +23,7 @@ export default gql`
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse
     changePw(token: String!, password: String!): AuthResponse
-    changeAdminRights(id: Int!, status: String!): SuccessResponse
+    changeAdminRights(id: Int!, status: Boolean!): SuccessResponse
     signup(
       firstName: String!
       lastName: String!

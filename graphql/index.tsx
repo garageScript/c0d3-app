@@ -118,7 +118,7 @@ export type MutationChangePwArgs = {
 
 export type MutationChangeAdminRightsArgs = {
   id: Scalars['Int']
-  status: Scalars['String']
+  status: Scalars['Boolean']
 }
 
 export type MutationSignupArgs = {
@@ -342,7 +342,7 @@ export type UsersQuery = { __typename?: 'Query' } & {
 
 export type ChangeAdminRightsMutationVariables = Exact<{
   id: Scalars['Int']
-  status: Scalars['String']
+  status: Scalars['Boolean']
 }>
 
 export type ChangeAdminRightsMutation = { __typename?: 'Mutation' } & {
@@ -1611,7 +1611,7 @@ export type UsersQueryResult = Apollo.QueryResult<
   UsersQueryVariables
 >
 export const ChangeAdminRightsDocument = gql`
-  mutation changeAdminRights($id: Int!, $status: String!) {
+  mutation changeAdminRights($id: Int!, $status: Boolean!) {
     changeAdminRights(id: $id, status: $status) {
       success
     }
