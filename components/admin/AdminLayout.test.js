@@ -35,7 +35,7 @@ describe('AdminLayout test', () => {
           data={{
             session: {
               user: {
-                isAdmin: 'true'
+                isAdmin: true
               }
             }
           }}

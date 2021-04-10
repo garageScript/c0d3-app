@@ -91,7 +91,7 @@ const RowData: React.FC<RowDataProps> = ({
     if (property === 'isAdmin')
       value = (
         <AdminOption
-          isAdmin={user[property] === 'true'}
+          isAdmin={user[property]}
           setUsers={setUsers}
           usersIndex={usersIndex}
           users={users}
@@ -115,26 +115,20 @@ const UsersList: React.FC<UsersListProps> = ({
   searchOption
 }) => {
   const { searchTerm, admin } = searchOption
-  let { option } = searchOption
-  option = option.toLowerCase()
+  const option: any = searchOption.option.toLowerCase()
 
   // usersIndex is needed for the RowData component to function properly
   const usersListIndex: any = []
+  const searchTermRegex = new RegExp(searchTerm.toLowerCase(), 'i')
 
   // remove all users from list that are not going to be rendered
-  const list: User[] = users.filter((user: any, usersIndex: number) => {
+  const list: User[] = users.filter((user: any, usersIndex) => {
     let bool = true
 
-    /* 
-      Need to make searchTerm and value of user[option] lowercase, 
-      to ensure both lower and uppercase characters can be searched for
-    */
-    const lowerCaseSearchTerm = searchTerm.toLowerCase()
-    const lowerCaseOptionValue = user[option].toLowerCase()
-
-    if (searchTerm) bool = lowerCaseOptionValue.includes(lowerCaseSearchTerm)
-    if (bool && admin === 'Non-Admins') bool = user.isAdmin === 'false'
-    if (bool && admin === 'Admins') bool = user.isAdmin === 'true'
+    if (searchTerm) bool = searchTermRegex.test(user[option])
+    if (bool && admin !== undefined) {
+      bool = admin === user.isAdmin
+    }
 
     bool && usersListIndex.push(usersIndex)
     return bool

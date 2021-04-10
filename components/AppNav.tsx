@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const router = useRouter()
-  const isAdmin = _.get(session, 'user.isAdmin', '')
+  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
   const location = '/' + router.asPath.split('/')[1]
 
   return (
@@ -57,9 +57,7 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
           {button.name}
         </NavLink>
       ))}
-      {isAdmin === 'true' && (
-        <DropdownMenu title="Admin" items={dropdownMenuItems} />
-      )}
+      {isAdmin && <DropdownMenu title="Admin" items={dropdownMenuItems} />}
     </div>
   )
 }
