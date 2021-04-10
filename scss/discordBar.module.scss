@@ -1,0 +1,20 @@
+.discord-join {
+  font-size: 1.3rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  letter-spacing: 0.1rem;
+  & > a {
+    cursor: pointer;
+  }
+}
+.discord-list {
+  max-height: 50px;
+  min-height: 50px;
+}
+
+.member-avatar {
+  max-height: 50px;
+  width: auto;
+  border-radius: 50%;
+  opacity: 80%;
+}
