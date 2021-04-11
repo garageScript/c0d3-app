@@ -83,14 +83,13 @@ const DiscordWidget = () => (
   ></iframe>
 )
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
-  const { data } = useGetSessionQuery()
+  const { data } = useGetSessionQuery({ fetchPolicy: 'cache-and-network' })
   const [state, setState] = React.useState<State>({
     session: { lessonStatus: [] },
     progress: -1,
     current: -1
   })
   if (!lessons || !alerts) {
-    console.log('INSIIIDE')
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
   React.useEffect(() => {
