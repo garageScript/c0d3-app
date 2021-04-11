@@ -8610,6 +8610,14 @@ Array [
         <div
           className="d-xl-block"
         >
+          <iframe
+            allowTransparency={true}
+            className="mt-3 w-100"
+            frameBorder="0"
+            height="500"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            src="https://discord.com/widget?id=828783458469675019&theme=light"
+          />
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -9439,6 +9447,14 @@ Array [
         <div
           className="d-xl-block"
         >
+          <iframe
+            allowTransparency={true}
+            className="mt-3 w-100"
+            frameBorder="0"
+            height="500"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            src="https://discord.com/widget?id=828783458469675019&theme=light"
+          />
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -10268,6 +10284,14 @@ Array [
         <div
           className="d-xl-block"
         >
+          <iframe
+            allowTransparency={true}
+            className="mt-3 w-100"
+            frameBorder="0"
+            height="500"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            src="https://discord.com/widget?id=828783458469675019&theme=light"
+          />
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >

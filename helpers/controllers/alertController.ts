@@ -24,7 +24,7 @@ export const addAlert = async (
     }
     // TODO: change createdAt columns to have default value on the DB
     await prisma.alert.create({
-      data: { text, type, url, urlCaption, createdAt: new Date() }
+      data: { text, type, url, urlCaption }
     })
     const updatedAlerts = await alerts()
     return updatedAlerts
