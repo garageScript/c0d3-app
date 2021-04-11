@@ -89,6 +89,10 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     progress: -1,
     current: -1
   })
+  if (!lessons || !alerts) {
+    console.log('INSIIIDE')
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
+  }
   React.useEffect(() => {
     if (data && data.session) {
       setState({
@@ -98,9 +102,6 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
       })
     }
   }, [data])
-  if (!lessons || !alerts) {
-    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
-  }
   const lessonStatusMap = generateMap(state.session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const id = _.get(lesson, 'id', idx) as number
