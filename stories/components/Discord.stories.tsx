@@ -19,6 +19,16 @@ export default {
   component: DiscordBar,
   title: 'Components/Discord'
 }
+export const Error: React.FC = () => {
+  global.fetch = (jest.fn() as any).mockRejectedValue({
+    json: async () => ({ presence_count: 0 })
+  })
+  return (
+    <Wrapper>
+      <DiscordBar />
+    </Wrapper>
+  )
+}
 export const Empty: React.FC = () => {
   global.fetch = (jest.fn() as any).mockResolvedValue({
     json: async () => ({ presence_count: 0 })
@@ -39,7 +49,19 @@ export const TwoUsers: React.FC = () => {
     </Wrapper>
   )
 }
-
+export const SixUsers: React.FC = () => {
+  global.fetch = (jest.fn() as any).mockResolvedValue({
+    json: async () => ({
+      presence_count: 6,
+      members: [Sly, Sly, Bobby, Sly, Sly, Bobby]
+    })
+  })
+  return (
+    <Wrapper>
+      <DiscordBar />
+    </Wrapper>
+  )
+}
 export const TwentyUsers: React.FC = () => {
   global.fetch = (jest.fn() as any).mockResolvedValue({
     json: async () => ({ presence_count: 20, members: Array(20).fill(Bobby) })

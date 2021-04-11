@@ -2324,18 +2324,128 @@ exports[`Storyshots Components/Discord Empty 1`] = `
         />
       </div>
     </div>
-    <div
-      className="discord-join bg-primary text-center"
+    <a
+      className="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
     >
-      <a
-        className="font-weight-bold text-white"
-        href="https://discord.com/invite/5KZ99KAs"
-        rel="noreferrer"
-        target="_blank"
+      <div
+        className="discord-join bg-primary text-center"
       >
         JOIN
-      </a>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord Error 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
     </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="discord-join bg-primary text-center"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord Six Users 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="discord-join bg-primary text-center"
+      >
+        JOIN
+      </div>
+    </a>
   </div>
 </div>
 `;
@@ -2379,18 +2489,18 @@ exports[`Storyshots Components/Discord Twenty Users 1`] = `
         />
       </div>
     </div>
-    <div
-      className="discord-join bg-primary text-center"
+    <a
+      className="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
     >
-      <a
-        className="font-weight-bold text-white"
-        href="https://discord.com/invite/5KZ99KAs"
-        rel="noreferrer"
-        target="_blank"
+      <div
+        className="discord-join bg-primary text-center"
       >
         JOIN
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
 `;
@@ -2434,18 +2544,18 @@ exports[`Storyshots Components/Discord Two Users 1`] = `
         />
       </div>
     </div>
-    <div
-      className="discord-join bg-primary text-center"
+    <a
+      className="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
     >
-      <a
-        className="font-weight-bold text-white"
-        href="https://discord.com/invite/5KZ99KAs"
-        rel="noreferrer"
-        target="_blank"
+      <div
+        className="discord-join bg-primary text-center"
       >
         JOIN
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
 `;

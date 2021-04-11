@@ -1,7 +1,6 @@
 import React from 'react'
 import DiscordBar from './DiscordBar'
 import { render, screen, waitFor } from '@testing-library/react'
-jest.mock()
 describe('DiscordBar component', () => {
   const Bobby = {
     avatar_url:

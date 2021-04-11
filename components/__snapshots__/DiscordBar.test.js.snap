@@ -42,18 +42,18 @@ exports[`DiscordBar component Should render one user 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="discord-join bg-primary text-center"
+    <a
+      class="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
     >
-      <a
-        class="font-weight-bold text-white"
-        href="https://discord.com/invite/5KZ99KAs"
-        rel="noreferrer"
-        target="_blank"
+      <div
+        class="discord-join bg-primary text-center"
       >
         JOIN
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
 `;
@@ -108,18 +108,18 @@ exports[`DiscordBar component Should render two users 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="discord-join bg-primary text-center"
+    <a
+      class="font-weight-bold text-white"
+      href="https://discord.com/invite/5KZ99KAs"
+      rel="noreferrer"
+      target="_blank"
     >
-      <a
-        class="font-weight-bold text-white"
-        href="https://discord.com/invite/5KZ99KAs"
-        rel="noreferrer"
-        target="_blank"
+      <div
+        class="discord-join bg-primary text-center"
       >
         JOIN
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </div>
 `;

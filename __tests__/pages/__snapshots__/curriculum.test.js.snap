@@ -640,9 +640,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 <span
                   class="font-weight-bold"
                 >
-                  0
+                  Error fetching data...
                 </span>
-                 members online
+                
               </div>
             </div>
             <div
@@ -656,18 +656,18 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 />
               </div>
             </div>
-            <div
-              class="discord-join bg-primary text-center"
+            <a
+              class="font-weight-bold text-white"
+              href="https://discord.com/invite/5KZ99KAs"
+              rel="noreferrer"
+              target="_blank"
             >
-              <a
-                class="font-weight-bold text-white"
-                href="https://discord.com/invite/5KZ99KAs"
-                rel="noreferrer"
-                target="_blank"
+              <div
+                class="discord-join bg-primary text-center"
               >
                 JOIN
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
           <div
             class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
@@ -1551,9 +1551,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 <span
                   class="font-weight-bold"
                 >
-                  0
+                  Error fetching data...
                 </span>
-                 members online
+                
               </div>
             </div>
             <div
@@ -1567,18 +1567,18 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 />
               </div>
             </div>
-            <div
-              class="discord-join bg-primary text-center"
+            <a
+              class="font-weight-bold text-white"
+              href="https://discord.com/invite/5KZ99KAs"
+              rel="noreferrer"
+              target="_blank"
             >
-              <a
-                class="font-weight-bold text-white"
-                href="https://discord.com/invite/5KZ99KAs"
-                rel="noreferrer"
-                target="_blank"
+              <div
+                class="discord-join bg-primary text-center"
               >
                 JOIN
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
           <div
             class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
@@ -2576,9 +2576,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 <span
                   class="font-weight-bold"
                 >
-                  0
+                  Error fetching data...
                 </span>
-                 members online
+                
               </div>
             </div>
             <div
@@ -2592,18 +2592,18 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 />
               </div>
             </div>
-            <div
-              class="discord-join bg-primary text-center"
+            <a
+              class="font-weight-bold text-white"
+              href="https://discord.com/invite/5KZ99KAs"
+              rel="noreferrer"
+              target="_blank"
             >
-              <a
-                class="font-weight-bold text-white"
-                href="https://discord.com/invite/5KZ99KAs"
-                rel="noreferrer"
-                target="_blank"
+              <div
+                class="discord-join bg-primary text-center"
               >
                 JOIN
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
           <div
             class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
