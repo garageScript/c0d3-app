@@ -15,12 +15,12 @@ const Lessons: React.FC<GetAppProps> = ({ data }) => {
         <AdminLessonsSideBar
           setLessons={setLessons}
           selectedLesson={selectedLesson}
-          lessons={lessonsList! || lessons}
+          lessons={lessonsList || lessons}
           setSelectedLesson={setSelectedLesson}
         />
         <AdminLessonInfo
           setLessons={setLessons}
-          lessons={lessonsList! || lessons}
+          lessons={lessonsList || lessons}
           selectedLesson={selectedLesson}
         />
       </div>
