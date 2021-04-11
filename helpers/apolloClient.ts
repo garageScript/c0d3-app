@@ -13,12 +13,12 @@ let apolloClient: ApolloClient<NormalizedCacheObject>
 const cache = new InMemoryCache()
 
 import { persistCache } from 'apollo3-cache-persist'
-//restoring cache doesn't work with loading spinner
-const allowedRouters = ['/curriculum']
+//restoring cache doesn't work with loading spinner, so I need to enable cache page by page
+const whiteList = ['/curriculum']
 ;(async function () {
   if (
     typeof window !== 'undefined' &&
-    allowedRouters.includes(window.location.pathname)
+    whiteList.includes(window.location.pathname)
   ) {
     try {
       await persistCache({
