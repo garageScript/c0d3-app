@@ -29,7 +29,8 @@
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
       "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs).ts"
+      "!graphql/(resolvers|typeDefs).ts",
+      "!graphql/schema.ts"
     ],
     "coveragePathIgnorePatterns": [
       "stories",
@@ -73,7 +74,6 @@
     "nanoid": "^3.1.20",
     "next": "^10.0.6",
     "next-connect": "^0.10.0",
-    "next-with-apollo": "^5.1.1",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "posthog-js": "^1.9.6",
