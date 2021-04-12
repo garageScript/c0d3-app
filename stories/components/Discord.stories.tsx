@@ -19,7 +19,7 @@ export default {
   component: DiscordBar,
   title: 'Components/Discord'
 }
-export const Error: React.FC = () => {
+export const ErrorFetching: React.FC = () => {
   global.fetch = (jest.fn() as any).mockRejectedValue({
     json: async () => ({ presence_count: 0 })
   })
@@ -29,9 +29,19 @@ export const Error: React.FC = () => {
     </Wrapper>
   )
 }
-export const Empty: React.FC = () => {
+export const EmptyMembers: React.FC = () => {
   global.fetch = (jest.fn() as any).mockResolvedValue({
     json: async () => ({ presence_count: 0 })
+  })
+  return (
+    <Wrapper>
+      <DiscordBar />
+    </Wrapper>
+  )
+}
+export const OneUser: React.FC = () => {
+  global.fetch = (jest.fn() as any).mockResolvedValue({
+    json: async () => ({ presence_count: 1, members: [Sly] })
   })
   return (
     <Wrapper>

@@ -7,7 +7,10 @@ type Member = {
   avatar_url: string
 }
 interface discordJSON {
-  members?: Member[]
+  members: Member[]
+}
+interface State extends discordJSON {
+  error?: string
 }
 const ONE_MINUTE = 60 * 1000
 const Member: React.FC<{ avatar: string }> = ({ avatar }) => {
@@ -18,9 +21,6 @@ const Member: React.FC<{ avatar: string }> = ({ avatar }) => {
   )
 }
 const DiscordBar: React.FC = () => {
-  interface State extends discordJSON {
-    error?: string
-  }
   const [data, setData] = useState<State>({
     members: []
   })
@@ -30,7 +30,9 @@ const DiscordBar: React.FC = () => {
         'https://discord.com/api/guilds/828783458469675019/widget.json'
       )
       const json: discordJSON = await data.json()
-      setData(json)
+      json.members
+        ? setData(json)
+        : setData({ members: [], error: 'Something went wrong ;(' })
     } catch (e) {
       setData({
         members: [],
@@ -44,19 +46,17 @@ const DiscordBar: React.FC = () => {
     getData()
   }, [])
   const reshuffle = (data: discordJSON) => {
-    if (data.members) {
-      const shuffled = data.members.sort(() => 0.5 - Math.random())
-      const remaining = data.members.length - 5
-      const profiles = shuffled.slice(0, 5).map(member => {
-        return <Member avatar={member.avatar_url} key={member.avatar_url} />
-      })
-      return (
-        <div className="text-center font-weight-bold text-primary">
-          {profiles}
-          {remaining > 0 && `+${data.members.length - 5}`}
-        </div>
-      )
-    }
+    const shuffled = data.members.sort(() => 0.5 - Math.random())
+    const remaining = data.members.length - 5
+    const profiles = shuffled.slice(0, 5).map(member => {
+      return <Member avatar={member.avatar_url} key={member.avatar_url} />
+    })
+    return (
+      <div className="text-center font-weight-bold text-primary">
+        {profiles}
+        {remaining > 0 && `+${data.members.length - 5}`}
+      </div>
+    )
   }
   return (
     <div className="bg-white mt-3">
@@ -64,11 +64,11 @@ const DiscordBar: React.FC = () => {
         <img src="/assets/discordLogo.svg" />
         <div className="text-primary mt-n3 text-center">
           <span className="font-weight-bold">
-            {data.error || (data.members ? data.members.length : '0')}
+            {data.error || data.members.length}
           </span>
           {data.error
             ? ''
-            : data.members && data.members.length === 1
+            : data.members.length === 1
             ? ' member online'
             : ' members online'}
         </div>
