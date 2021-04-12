@@ -2325,13 +2325,13 @@ exports[`Storyshots Components/Discord Empty Members 1`] = `
       </div>
     </div>
     <a
-      className="font-weight-bold text-white"
+      className="discord_link font-weight-bold text-white"
       href="https://discord.com/invite/5KZ99KAs"
       rel="noreferrer"
       target="_blank"
     >
       <div
-        className="discord-join bg-primary text-center"
+        className="border border-primary text-center bg-white text-primary"
       >
         JOIN
       </div>
@@ -2380,13 +2380,13 @@ exports[`Storyshots Components/Discord Error Fetching 1`] = `
       </div>
     </div>
     <a
-      className="font-weight-bold text-white"
+      className="discord_link font-weight-bold text-white"
       href="https://discord.com/invite/5KZ99KAs"
       rel="noreferrer"
       target="_blank"
     >
       <div
-        className="discord-join bg-primary text-center"
+        className="border border-primary text-center bg-white text-primary"
       >
         JOIN
       </div>
@@ -2435,13 +2435,13 @@ exports[`Storyshots Components/Discord One User 1`] = `
       </div>
     </div>
     <a
-      className="font-weight-bold text-white"
+      className="discord_link font-weight-bold text-white"
       href="https://discord.com/invite/5KZ99KAs"
       rel="noreferrer"
       target="_blank"
     >
       <div
-        className="discord-join bg-primary text-center"
+        className="border border-primary text-center bg-white text-primary"
       >
         JOIN
       </div>
@@ -2490,13 +2490,13 @@ exports[`Storyshots Components/Discord Six Users 1`] = `
       </div>
     </div>
     <a
-      className="font-weight-bold text-white"
+      className="discord_link font-weight-bold text-white"
       href="https://discord.com/invite/5KZ99KAs"
       rel="noreferrer"
       target="_blank"
     >
       <div
-        className="discord-join bg-primary text-center"
+        className="border border-primary text-center bg-white text-primary"
       >
         JOIN
       </div>
@@ -2545,13 +2545,13 @@ exports[`Storyshots Components/Discord Twenty Users 1`] = `
       </div>
     </div>
     <a
-      className="font-weight-bold text-white"
+      className="discord_link font-weight-bold text-white"
       href="https://discord.com/invite/5KZ99KAs"
       rel="noreferrer"
       target="_blank"
     >
       <div
-        className="discord-join bg-primary text-center"
+        className="border border-primary text-center bg-white text-primary"
       >
         JOIN
       </div>
@@ -2600,13 +2600,13 @@ exports[`Storyshots Components/Discord Two Users 1`] = `
       </div>
     </div>
     <a
-      className="font-weight-bold text-white"
+      className="discord_link font-weight-bold text-white"
       href="https://discord.com/invite/5KZ99KAs"
       rel="noreferrer"
       target="_blank"
     >
       <div
-        className="discord-join bg-primary text-center"
+        className="border border-primary text-center bg-white text-primary"
       >
         JOIN
       </div>

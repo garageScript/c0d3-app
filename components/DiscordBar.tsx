@@ -12,7 +12,7 @@ interface discordJSON {
 interface State extends discordJSON {
   error?: string
 }
-const ONE_MINUTE = 60 * 1000
+const TWO_MINUTES = 2 * 60 * 1000
 const Member: React.FC<{ avatar: string }> = ({ avatar }) => {
   return (
     <div className="d-inline-block">
@@ -26,20 +26,18 @@ const DiscordBar: React.FC = () => {
   })
   const getData = async () => {
     try {
-      const data = await fetch(
+      const json = await fetch(
         'https://discord.com/api/guilds/828783458469675019/widget.json'
-      )
-      const json: discordJSON = await data.json()
-      json.members
-        ? setData(json)
-        : setData({ members: [], error: 'Something went wrong ;(' })
+      ).then(r => r.json())
+      if ('members' in json) setData(json as discordJSON)
+      else setData({ members: [], error: 'Something went wrong ;(' })
     } catch (e) {
       setData({
         members: [],
         error: `Error fetching data...`
       })
     } finally {
-      setTimeout(getData, ONE_MINUTE)
+      setTimeout(getData, TWO_MINUTES)
     }
   }
   useEffect(() => {
@@ -77,12 +75,14 @@ const DiscordBar: React.FC = () => {
         <div className={`${styles['discord-list']}`}>{reshuffle(data)}</div>
       </div>
       <a
-        className="font-weight-bold text-white"
+        className={`${styles['discord_link']} font-weight-bold text-white`}
         href="https://discord.com/invite/5KZ99KAs"
         target="_blank"
         rel="noreferrer"
       >
-        <div className={`${styles['discord-join']} bg-primary text-center`}>
+        <div
+          className={`border border-primary text-center bg-white text-primary`}
+        >
           JOIN
         </div>
       </a>

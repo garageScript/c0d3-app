@@ -657,13 +657,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               </div>
             </div>
             <a
-              class="font-weight-bold text-white"
+              class="discord_link font-weight-bold text-white"
               href="https://discord.com/invite/5KZ99KAs"
               rel="noreferrer"
               target="_blank"
             >
               <div
-                class="discord-join bg-primary text-center"
+                class="border border-primary text-center bg-white text-primary"
               >
                 JOIN
               </div>
@@ -1568,13 +1568,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               </div>
             </div>
             <a
-              class="font-weight-bold text-white"
+              class="discord_link font-weight-bold text-white"
               href="https://discord.com/invite/5KZ99KAs"
               rel="noreferrer"
               target="_blank"
             >
               <div
-                class="discord-join bg-primary text-center"
+                class="border border-primary text-center bg-white text-primary"
               >
                 JOIN
               </div>
@@ -2593,13 +2593,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
             </div>
             <a
-              class="font-weight-bold text-white"
+              class="discord_link font-weight-bold text-white"
               href="https://discord.com/invite/5KZ99KAs"
               rel="noreferrer"
               target="_blank"
             >
               <div
-                class="discord-join bg-primary text-center"
+                class="border border-primary text-center bg-white text-primary"
               >
                 JOIN
               </div>
