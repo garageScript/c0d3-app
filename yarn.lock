@@ -8276,10 +8276,10 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
 
-eslint@^7.23.0:
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.23.0.tgz#8d029d252f6e8cf45894b4bee08f5493f8e94325"
-  integrity sha512-kqvNVbdkjzpFy0XOszNwjkKzZ+6TcwCQ/h+ozlcIWwaimBBuhlQ4nN6kbiM2L+OjDcznkTJxzYfRFH92sx4a0Q==
+eslint@^7.24.0:
+  version "7.24.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.24.0.tgz#2e44fa62d93892bfdb100521f17345ba54b8513a"
+  integrity sha512-k9gaHeHiFmGCDQ2rEfvULlSLruz6tgfA8DEn+rY9/oYPFFTlz55mM/Q/Rij1b2Y42jwZiK3lXvNTw6w6TXzcKQ==
   dependencies:
     "@babel/code-frame" "7.12.11"
     "@eslint/eslintrc" "^0.4.0"
@@ -10570,7 +10570,7 @@ isomorphic-fetch@^3.0.0:
     node-fetch "^2.6.1"
     whatwg-fetch "^3.4.1"
 
-isomorphic-unfetch@^3.0.0, isomorphic-unfetch@^3.1.0:
+isomorphic-unfetch@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/isomorphic-unfetch/-/isomorphic-unfetch-3.1.0.tgz#87341d5f4f7b63843d468438128cb087b7c3e98f"
   integrity sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==
@@ -12386,13 +12386,6 @@ next-connect@^0.10.0:
   integrity sha512-gNpH53DtYfZhfOzmAVrE3jiEDj7kGtodeGcyUd2gvPsB+6/hQSmRVekCzNuF20+vpHnkpE8VUDQmzARzzqwpYA==
   dependencies:
     trouter "^3.1.0"
-
-next-with-apollo@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-5.1.1.tgz#491e1112ba2ac1993cd669d610801c554b9ddd16"
-  integrity sha512-SqI+q4q8ib2YrRXhzVETTBKyk9zyCsHdfGdqCixVOZsnHMl/qsozNgw7/a5drGpsP3jAFQCbenAB3sYc6Gi04g==
-  dependencies:
-    isomorphic-unfetch "^3.0.0"
 
 next@^10.0.6:
   version "10.0.9"
