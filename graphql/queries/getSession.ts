@@ -22,6 +22,7 @@ const GET_SESSION = gql`
         reviewer {
           id
           username
+          isAdmin
         }
         createdAt
         updatedAt

@@ -540,7 +540,10 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
               | 'updatedAt'
             > & {
                 reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+                  { __typename?: 'User' } & Pick<
+                    User,
+                    'id' | 'username' | 'isAdmin'
+                  >
                 >
               }
           >
@@ -2190,6 +2193,7 @@ export const GetSessionDocument = gql`
         reviewer {
           id
           username
+          isAdmin
         }
         createdAt
         updatedAt

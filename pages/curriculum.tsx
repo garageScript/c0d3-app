@@ -150,6 +150,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     </Layout>
   )
 }
+const FIVE_MINUTES = 5 * 60
+
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
   const query = await apolloClient.query<GetAppQuery>({
@@ -160,7 +162,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       lessons: query.data.lessons,
       alerts: query.data.alerts
-    }
+    },
+    revalidate: FIVE_MINUTES
   }
 }
 export default Curriculum

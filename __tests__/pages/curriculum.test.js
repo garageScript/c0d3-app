@@ -137,7 +137,8 @@ describe('Curriculum Page', () => {
   test('Should callProps', async () => {
     window.fetch = jest.fn()
     expect(await getStaticProps()).toEqual({
-      props: { lessons: [], alerts: [] }
+      props: { lessons: [], alerts: [] },
+      revalidate: 300
     })
   })
 })
