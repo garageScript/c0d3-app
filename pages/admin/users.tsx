@@ -18,17 +18,17 @@ type AllUsersData = {
 
 export type filter = {
   option: string
-  admin: string
+  admin?: boolean
   searchTerm: string
 }
 
 const initialSearchOptions: filter = {
   option: 'Username',
-  admin: 'None',
+  admin: undefined,
   searchTerm: ''
 }
 
-const adminFilters = ['Admins', 'Non-Admins', 'None']
+const adminFilters = { Admins: true, 'Non-Admins': false, None: undefined }
 
 const searchHeaders = [...headerTitles]
 
@@ -53,9 +53,9 @@ const AdminUsers: React.FC<QueryDataProps<AllUsersData>> = ({ queryData }) => {
     run(newSearchOption)
   }
 
-  const changeFilter = (str: string, type: string) => {
+  const changeFilter = (value: string | boolean | undefined, type: string) => {
     const newSearchOption: any = { ...searchOption }
-    newSearchOption[type] = str
+    newSearchOption[type] = value
     setSearchOption(newSearchOption)
   }
 
@@ -80,10 +80,22 @@ const AdminUsers: React.FC<QueryDataProps<AllUsersData>> = ({ queryData }) => {
         onChange={handleChange}
       />
       <div className="mt-2 mb-2">
+        {/*
+         * TODO this is very ugly but it is what worked,
+         * definetely could use some refactoring
+         */}
         <FilterButtons
-          options={adminFilters}
-          onClick={(value: string) => changeFilter(value, 'admin')}
-          currentOption={searchOption.admin}
+          options={Object.keys(adminFilters)}
+          onClick={(value: keyof typeof adminFilters) =>
+            changeFilter(adminFilters[value], 'admin')
+          }
+          currentOption={
+            Object.keys(adminFilters).find(
+              k =>
+                adminFilters[k as keyof typeof adminFilters] ===
+                searchOption.admin
+            )!
+          }
         >
           Filter By:
         </FilterButtons>

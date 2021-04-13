@@ -268,7 +268,7 @@ CREATE TABLE public.users (
     email character varying(255),
     "gsId" integer,
     "isOnline" boolean,
-    "isAdmin" character varying(255) DEFAULT false,
+    "isAdmin" boolean DEFAULT false,
     "forgotToken" character varying(255),
     "cliToken" character varying(255),
     "emailVerificationToken" character varying(255),
