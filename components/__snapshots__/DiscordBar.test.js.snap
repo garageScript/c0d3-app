@@ -44,7 +44,7 @@ exports[`DiscordBar component Should render one user 1`] = `
     </div>
     <a
       class="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
@@ -110,7 +110,7 @@ exports[`DiscordBar component Should render two users 1`] = `
     </div>
     <a
       class="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >

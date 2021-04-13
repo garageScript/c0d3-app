@@ -26,9 +26,10 @@ const DiscordBar: React.FC = () => {
   })
   const getData = async () => {
     try {
-      const json = await fetch(
+      const data = await fetch(
         'https://discord.com/api/guilds/828783458469675019/widget.json'
-      ).then(r => r.json())
+      )
+      const json = await data.json()
       if ('members' in json) setData(json as discordJSON)
       else setData({ members: [], error: 'Something went wrong ;(' })
     } catch (e) {
@@ -44,6 +45,7 @@ const DiscordBar: React.FC = () => {
     getData()
   }, [])
   const reshuffle = (data: discordJSON) => {
+    //randomize user order and select first five avatars to render
     const shuffled = data.members.sort(() => 0.5 - Math.random())
     const remaining = data.members.length - 5
     const profiles = shuffled.slice(0, 5).map(member => {
@@ -76,7 +78,7 @@ const DiscordBar: React.FC = () => {
       </div>
       <a
         className={`${styles['discord_link']} font-weight-bold text-white`}
-        href="https://discord.com/invite/5KZ99KAs"
+        href="https://discord.gg/c0d3"
         target="_blank"
         rel="noreferrer"
       >

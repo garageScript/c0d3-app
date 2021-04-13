@@ -2326,7 +2326,7 @@ exports[`Storyshots Components/Discord Empty Members 1`] = `
     </div>
     <a
       className="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
@@ -2381,7 +2381,7 @@ exports[`Storyshots Components/Discord Error Fetching 1`] = `
     </div>
     <a
       className="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
@@ -2436,7 +2436,7 @@ exports[`Storyshots Components/Discord One User 1`] = `
     </div>
     <a
       className="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
@@ -2491,7 +2491,7 @@ exports[`Storyshots Components/Discord Six Users 1`] = `
     </div>
     <a
       className="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
@@ -2546,7 +2546,7 @@ exports[`Storyshots Components/Discord Twenty Users 1`] = `
     </div>
     <a
       className="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
@@ -2601,7 +2601,7 @@ exports[`Storyshots Components/Discord Two Users 1`] = `
     </div>
     <a
       className="discord_link font-weight-bold text-white"
-      href="https://discord.com/invite/5KZ99KAs"
+      href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
     >
