@@ -19,9 +19,9 @@ export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
 
   if (!session) router.push('/login')
 
-  const isAdmin = _.get(session, 'user.isAdmin', false)
+  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
 
-  if (isAdmin !== 'true') {
+  if (!isAdmin) {
     return (
       <Layout>
         <h1>You must be admin to access this page</h1>

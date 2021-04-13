@@ -112,7 +112,7 @@ export type MutationChangePwArgs = {
 
 export type MutationChangeAdminRightsArgs = {
   id: Scalars['Int']
-  status: Scalars['String']
+  status: Scalars['Boolean']
 }
 
 export type MutationSignupArgs = {
@@ -269,7 +269,7 @@ export type User = {
   userLesson?: Maybe<UserLesson>
   email?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
-  isAdmin?: Maybe<Scalars['String']>
+  isAdmin: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
 }
 
@@ -336,7 +336,7 @@ export type UsersQuery = { __typename?: 'Query' } & {
 
 export type ChangeAdminRightsMutationVariables = Exact<{
   id: Scalars['Int']
-  status: Scalars['String']
+  status: Scalars['Boolean']
 }>
 
 export type ChangeAdminRightsMutation = { __typename?: 'Mutation' } & {
@@ -1323,7 +1323,7 @@ export type UserResolvers<
   >
   email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  isAdmin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
@@ -1642,7 +1642,7 @@ export type UsersQueryResult = Apollo.QueryResult<
   UsersQueryVariables
 >
 export const ChangeAdminRightsDocument = gql`
-  mutation changeAdminRights($id: Int!, $status: String!) {
+  mutation changeAdminRights($id: Int!, $status: Boolean!) {
     changeAdminRights(id: $id, status: $status) {
       success
     }

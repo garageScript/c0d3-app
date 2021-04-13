@@ -1,18 +1,12 @@
-import db from '../dbload'
 import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
-
-const { User } = db
-
-type adminData = {
-  id: number
-  status: string
-}
+import { ChangeAdminRightsMutationVariables } from '../../graphql'
+import { prisma } from '../../prisma'
 
 export const changeAdminRights = async (
   _parent: void,
-  arg: adminData,
+  arg: ChangeAdminRightsMutationVariables,
   ctx: Context
 ) => {
   const { req } = ctx
@@ -23,7 +17,7 @@ export const changeAdminRights = async (
 
     const { id, status } = arg
 
-    await User.update({ isAdmin: status }, { where: { id } })
+    await prisma.user.update({ where: { id }, data: { isAdmin: status } })
 
     return {
       success: true
