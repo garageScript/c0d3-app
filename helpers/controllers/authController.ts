@@ -94,7 +94,7 @@ export const logout = async (_parent: void, _: void, ctx: Context) => {
       }
       res.setHeader(
         'Set-Cookie',
-        `connect.sid=false; expires=${new Date(Date.now())}; Path=/`
+        `connect.sid=; expires=${new Date(0)}; Path=/`
       )
 
       resolve({

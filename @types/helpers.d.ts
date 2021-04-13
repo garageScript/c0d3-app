@@ -1,9 +1,8 @@
 import winston from 'winston'
-import { Request } from 'express'
 import { Session } from 'express-session'
-import http from 'http'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export interface LoggedRequest extends Request {
+export interface LoggedRequest extends NextApiRequest {
   info: (obj: any) => void
   warn: (obj: any) => void
   error: (obj: any) => void
@@ -15,7 +14,7 @@ export interface LoggedRequest extends Request {
     userLesson: UserLesson
     email: string
     name: string
-    isAdmin: string
+    isAdmin: boolean
     cliToken: string
   } | null
 }
@@ -26,5 +25,5 @@ export interface UserSession extends Session {
 
 export interface Context {
   req: LoggedRequest
-  res: http.ServerResponse
+  res: NextApiResponse
 }
