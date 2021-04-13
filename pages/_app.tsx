@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 // TODO: type the posthog library
 // @ts-ignore
 import posthog from 'posthog-js'
-import withApollo from '../helpers/withApollo'
 import {
   ApolloProvider,
   ApolloClient,
@@ -14,6 +13,7 @@ import Head from 'next/head'
 import '../scss/index.scss'
 import MDXcomponents from '../helpers/mdxComponents'
 import * as Sentry from '@sentry/browser'
+import { useApollo } from '../helpers/apolloClient'
 const SENTRY_DSN = process.env.SENTRY_DSN
 
 Sentry.init({
@@ -25,7 +25,8 @@ interface IProps extends AppProps {
   apollo: ApolloClient<NormalizedCacheObject>
 }
 
-function MyApp({ Component, pageProps, err, apollo }: IProps) {
+function MyApp({ Component, pageProps, err }: IProps) {
+  const apolloClient = useApollo(pageProps)
   useEffect(() => {
     if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
       posthog.init(process.env.POSTHOG_API_KEY, {
@@ -34,7 +35,7 @@ function MyApp({ Component, pageProps, err, apollo }: IProps) {
     }
   }, [])
   return (
-    <ApolloProvider client={apollo}>
+    <ApolloProvider client={apolloClient}>
       <MDXProvider components={MDXcomponents}>
         <Head>
           {/* <!-- Primary Meta Tags --> */}
@@ -84,4 +85,4 @@ function MyApp({ Component, pageProps, err, apollo }: IProps) {
   )
 }
 
-export default withApollo(MyApp)
+export default MyApp

@@ -23,7 +23,7 @@ export default gql`
     logout: AuthResponse
     reqPwReset(userOrEmail: String!): TokenResponse
     changePw(token: String!, password: String!): AuthResponse
-    changeAdminRights(id: Int!, status: String!): SuccessResponse
+    changeAdminRights(id: Int!, status: Boolean!): SuccessResponse
     signup(
       firstName: String!
       lastName: String!
@@ -116,7 +116,7 @@ export default gql`
     userLesson: UserLesson
     email: String
     name: String
-    isAdmin: String
+    isAdmin: Boolean!
     cliToken: String
   }
 
@@ -152,11 +152,11 @@ export default gql`
   }
 
   type Challenge {
-    id: Int!
-    description: String!
-    lessonId: Int!
-    title: String!
-    order: Int!
+    id: String
+    description: String
+    lessonId: String
+    title: String
+    order: Int
   }
 
   type Alert {

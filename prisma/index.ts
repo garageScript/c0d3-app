@@ -8,7 +8,7 @@ declare global {
 const prismaOptions = {
   datasources: {
     db: {
-      url: `postgresql://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+      url: `postgresql://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?connection_limit=1`
     }
   }
 }

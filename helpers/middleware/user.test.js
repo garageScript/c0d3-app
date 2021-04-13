@@ -10,7 +10,7 @@ const mockUserInfo = {
     username: 'moreThanFake',
     password: '$2b$10$W9KwQ6Sbi0RJjD2GZYX9BugAtgSm/W999gNW1f/XiRcI6NiC9pTdK',
     email: 'superduperkamehameha@gmail.com',
-    isAdmin: 'false',
+    isAdmin: false,
     cliToken: 'KfizzIlWp111fizzDbuzzr'
   }
 }

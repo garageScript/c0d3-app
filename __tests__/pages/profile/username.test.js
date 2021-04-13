@@ -196,11 +196,11 @@ describe('user profile test', () => {
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
   })
-  test('Should render nulled challenges', async () => {
+  test('Should render nulles challenges', async () => {
     const lessons = [
       ...dummyLessonData,
       {
-        id: 2,
+        id: '2',
         title: null,
         description: 'A super simple introduction to help you get started!',
         docUrl:
