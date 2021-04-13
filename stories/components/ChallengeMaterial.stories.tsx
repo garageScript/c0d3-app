@@ -83,7 +83,7 @@ export const WithDiff: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1 },
+        user: { id: 1, isAdmin: false },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -104,7 +104,7 @@ export const WithDiff: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1 },
+        user: { id: 1, isAdmin: false },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -136,10 +136,11 @@ export const WithComments: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1 },
+        user: { id: 1, isAdmin: false },
         reviewer: {
           id: 1,
-          username: 'dan'
+          username: 'dan',
+          isAdmin: false
         },
         reviewerId: '1',
         createdAt: '',
@@ -161,7 +162,7 @@ export const WithComments: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1 },
+        user: { id: 1, isAdmin: false },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -204,10 +205,11 @@ export const FinalChallenge: React.FC = () => (
             order: 1,
             lessonId: 23
           },
-          user: { id: 5 },
+          user: { id: 5, isAdmin: false },
           reviewer: {
             id: 1,
-            username: 'dan'
+            username: 'dan',
+            isAdmin: false
           },
           reviewerId: '1',
           createdAt: '',
@@ -230,7 +232,8 @@ export const FinalChallenge: React.FC = () => (
             lessonId: 23
           },
           user: {
-            id: 1
+            id: 1,
+            isAdmin: false
           },
           reviewerId: '',
           createdAt: '',

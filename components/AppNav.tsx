@@ -115,7 +115,7 @@ const AppNav: React.FC<{}> = () => {
   const { data } = useGetAppQuery()
   useEffect(() => {
     if (data && data.session) {
-      setSession(data.session as Session)
+      setSession(data.session)
     }
   }, [data])
   const renderButtons = () => {

@@ -58,7 +58,8 @@ const submissionData = {
   lessonId: 2,
   user: {
     username: 'fake user',
-    id: 1
+    id: 1,
+    isAdmin: false
   },
   challenge: {
     id: 23,
@@ -69,7 +70,8 @@ const submissionData = {
   },
   reviewer: {
     id: 1,
-    username: 'fake reviewer'
+    username: 'fake reviewer',
+    isAdmin: false
   },
   createdAt: '123',
   updatedAt: '123'
