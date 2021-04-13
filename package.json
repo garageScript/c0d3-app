@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "license": "ISC",
   "scripts": {
+    "db:init": "prisma migrate reset",
+    "db:seed": "prisma db seed --preview-feature",
     "dev": "next -p $PORT",
     "build": "next build",
     "start": "next start",
@@ -12,6 +14,7 @@
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -s ./public",
     "test": "jest --coverage",
+    "ts-node": "ts-node --compiler-options '{\"module\":\"CommonJS\"}'",
     "type-check": "tsc",
     "generate": "graphql-codegen --config codegen.yml",
     "postinstall": "./scripts/prismaUtils.js setup && prisma generate",
@@ -54,7 +57,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.14",
-    "@prisma/client": "2.20.1",
+    "@prisma/client": "^2.21.0",
     "@sentry/browser": "^6.2.5",
     "apollo-server-micro": "^2.20.0",
     "bcrypt": "5.0.0",
@@ -137,13 +140,14 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
-    "prisma": "2.20.1",
+    "prisma": "^2.21.0",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^1.0.0",
     "remark-slug": "^6.0.0",
     "remark-toc": "^7.2.0",
     "sass-loader": "^10.0.1",
     "svgo": "^2.3.0",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
 }
