@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiscordBar component Should render one user 1`] = `
+<div>
+  <div
+    class="bg-white mt-3"
+  >
+    <div
+      class="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        class="text-primary mt-n3 text-center"
+      >
+        <span
+          class="font-weight-bold"
+        >
+          1
+        </span>
+         member online
+      </div>
+    </div>
+    <div
+      class="p-2"
+    >
+      <div
+        class="discord-list"
+      >
+        <div
+          class="text-center font-weight-bold text-primary"
+        >
+          <div
+            class="d-inline-block"
+          >
+            <img
+              class="member-avatar mx-1"
+              src="https://cdn.discordapp.com/widget-avatars/Niju_ahWJDG-ehJlK3DLrBV2kceVq5gNEEb3pnDqO7Y/dpYnY4uiLVWlkMqjQCsG8vRqu9DUjZu_Burf1MHBQ2DxS0GUfACw7Or1oCLR061S9v906uMu3Wfl_e3HHizB1NfjbZfxiqHmAj2Ob7hM_xXARZvl2mgC7xq1y3jYKlgQQBGMVeQ_KutHDw"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      class="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        class="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`DiscordBar component Should render two users 1`] = `
+<div>
+  <div
+    class="bg-white mt-3"
+  >
+    <div
+      class="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        class="text-primary mt-n3 text-center"
+      >
+        <span
+          class="font-weight-bold"
+        >
+          2
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      class="p-2"
+    >
+      <div
+        class="discord-list"
+      >
+        <div
+          class="text-center font-weight-bold text-primary"
+        >
+          <div
+            class="d-inline-block"
+          >
+            <img
+              class="member-avatar mx-1"
+              src="https://cdn.discordapp.com/widget-avatars/JbWqF_-A-fVbRlrdu1vtB6JU1cQp8bNJIeoDfKt_5NM/suFvloPCkCf8iut738QMC2F6Pqvm02gd0m_fq7hHXtw15bmIDqmYQ-3xRhmScXEcjFGoJVB2Q-FZf37ClwvMP3t3JPfxELAdCpzSjq9GHM8X7bzaDuamjMZiOsHE6OuD7wlZf-i4FlrbBg"
+            />
+          </div>
+          <div
+            class="d-inline-block"
+          >
+            <img
+              class="member-avatar mx-1"
+              src="https://cdn.discordapp.com/widget-avatars/Niju_ahWJDG-ehJlK3DLrBV2kceVq5gNEEb3pnDqO7Y/dpYnY4uiLVWlkMqjQCsG8vRqu9DUjZu_Burf1MHBQ2DxS0GUfACw7Or1oCLR061S9v906uMu3Wfl_e3HHizB1NfjbZfxiqHmAj2Ob7hM_xXARZvl2mgC7xq1y3jYKlgQQBGMVeQ_KutHDw"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      class="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        class="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
