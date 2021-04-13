@@ -8,7 +8,7 @@ const dummyUsersData = [
     cliToken: 'WRyzWxDc_DqR3Avi7xcGD',
     email: 'some@mail.com',
     id: 5,
-    isAdmin: 'true',
+    isAdmin: true,
     name: 'admin admin',
     username: 'admin'
   },
@@ -16,7 +16,7 @@ const dummyUsersData = [
     cliToken: 'acRy_p-HK9sTU8H1GfrJV',
     email: 'some@mail.com',
     id: 6,
-    isAdmin: 'false',
+    isAdmin: false,
     name: 'newbie newbie',
     username: 'newbie'
   }
@@ -26,7 +26,7 @@ const mocks = [
   {
     request: {
       query: CHANGE_ADMIN_RIGHTS,
-      variables: { id: 6, status: 'true' }
+      variables: { id: 6, status: true }
     },
     result: {
       data: { changeAdminRights: { success: true } }
@@ -42,7 +42,7 @@ describe('AdminUsersTable test', () => {
           users={dummyUsersData}
           searchOption={{
             option: 'username',
-            admin: 'None',
+            admin: undefined,
             searchTerm: ''
           }}
           setUsers={jest.fn()}
@@ -61,8 +61,8 @@ describe('AdminUsersTable test', () => {
           users={dummyUsersData}
           searchOption={{
             option: 'username',
-            admin: 'Non-Admins',
-            searchTerm: 'admin'
+            admin: false,
+            searchTerm: ''
           }}
           setUsers={jest.fn()}
         />
@@ -77,8 +77,8 @@ describe('AdminUsersTable test', () => {
           users={dummyUsersData}
           searchOption={{
             option: 'username',
-            admin: 'Admins',
-            searchTerm: 'newbie'
+            admin: true,
+            searchTerm: ''
           }}
           setUsers={jest.fn()}
         />
@@ -93,7 +93,7 @@ describe('AdminUsersTable test', () => {
           users={dummyUsersData}
           searchOption={{
             option: 'username',
-            admin: 'None',
+            admin: undefined,
             searchTerm: 'newbie'
           }}
           setUsers={jest.fn()}

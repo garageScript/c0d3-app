@@ -8,6 +8,7 @@ import AdditionalResources from '../components/AdditionalResources'
 import AlertsDisplay from '../components/AlertsDisplay'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { useGetAppQuery, GetAppQuery } from '../graphql/'
+import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
 
 const announcements = [
@@ -88,6 +89,7 @@ export const Curriculum: React.FC<{}> = () => {
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
+            <DiscordBar />
             <ProgressCard progressCount={progressPercentage} />
           </div>
           <div className="d-none d-xl-block">
