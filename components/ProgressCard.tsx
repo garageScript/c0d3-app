@@ -9,40 +9,50 @@ const ProgressSVG: React.FC<Props> = ({ progressCount }) => {
   let x = 15
   if (progressCount === 100) x = 9
   else if (progressCount >= 10) x = 11
-
   return (
-    <svg viewBox="0 0 40 40" width="65px">
-      <circle
-        cx="20"
-        cy="20"
-        r="17"
-        fill="transparent"
-        stroke="#3a22b8"
-        strokeWidth="4.5"
-      />
-      <circle
-        cx="20"
-        cy="20"
-        r="17"
-        fill="transparent"
-        stroke="#fff"
-        strokeDasharray={`${progressCount} ${100 - progressCount}`}
-        strokeDashoffset="20"
-        strokeWidth="4.5"
-      />
-      <g className="circle-label">
-        <text
-          color="#fff"
-          x={x}
-          y="23"
-          fill="#fff"
-          style={{ font: 'bold 10px sans-serif' }}
-        >
-          {progressCount}
-          <tspan fontSize="8px">%</tspan>
-        </text>
-      </g>
-    </svg>
+    <div
+      className={`${styles['progress-card__wrapper']} d-flex align-items-center`}
+    >
+      {progressCount < 0 ? (
+        <div
+          className={`${styles['progress-card__spinner']} spinner-border text-light`}
+          role="status"
+        />
+      ) : (
+        <svg viewBox="0 0 40 40" width="65px">
+          <circle
+            cx="20"
+            cy="20"
+            r="17"
+            fill="transparent"
+            stroke="#3a22b8"
+            strokeWidth="4.5"
+          />
+          <circle
+            cx="20"
+            cy="20"
+            r="17"
+            fill="transparent"
+            stroke="#fff"
+            strokeDasharray={`${progressCount} ${100 - progressCount}`}
+            strokeDashoffset="20"
+            strokeWidth="4.5"
+          />
+          <g className="circle-label">
+            <text
+              color="#fff"
+              x={x}
+              y="23"
+              fill="#fff"
+              style={{ font: 'bold 10px sans-serif' }}
+            >
+              {progressCount}
+              <tspan fontSize="8px">%</tspan>
+            </text>
+          </g>
+        </svg>
+      )}
+    </div>
   )
 }
 

@@ -101,7 +101,11 @@ describe('auth controller', () => {
         inputCb(false)
       }
     }
-    const result = await logout({}, {}, { req: { session } })
+    const result = await logout(
+      {},
+      {},
+      { req: { session }, res: { setHeader: () => {} } }
+    )
     expect(result).toEqual({
       success: true
     })

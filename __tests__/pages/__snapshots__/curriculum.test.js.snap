@@ -91,7 +91,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
         class="col-xl-8 order-xl-0 order-1"
       >
         <div
-          class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
+          class="card shadow-sm mt-3 border-0"
         >
           <div
             class="d-flex p-2"
@@ -139,24 +139,6 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 </p>
               </div>
             </div>
-          </div>
-          <div
-            class="p-2 bg-primary"
-          >
-            <a
-              class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
-              href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Start Lesson
-            </a>
-            <a
-              class="lesson-card__button btn bg-primary my-1 text-white border border-white"
-              href="/curriculum/5"
-            >
-              View Challenges
-            </a>
           </div>
         </div>
         <div
@@ -675,47 +657,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             <div
               class="card-body"
             >
-              <svg
-                viewBox="0 0 40 40"
-                width="65px"
+              <div
+                class="progress-card__wrapper d-flex align-items-center"
               >
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#3a22b8"
-                  stroke-width="4.5"
+                <div
+                  class="progress-card__spinner spinner-border text-light"
+                  role="status"
                 />
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#fff"
-                  stroke-dasharray="0 100"
-                  stroke-dashoffset="20"
-                  stroke-width="4.5"
-                />
-                <g
-                  class="circle-label"
-                >
-                  <text
-                    color="#fff"
-                    fill="#fff"
-                    style="font: sans-serif 10px bold 10px;"
-                    x="15"
-                    y="23"
-                  >
-                    0
-                    <tspan
-                      font-size="8px"
-                    >
-                      %
-                    </tspan>
-                  </text>
-                </g>
-              </svg>
+              </div>
               <h4
                 class="progress-card__title mt-3"
               >
@@ -1586,47 +1535,51 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             <div
               class="card-body"
             >
-              <svg
-                viewBox="0 0 40 40"
-                width="65px"
+              <div
+                class="progress-card__wrapper d-flex align-items-center"
               >
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#3a22b8"
-                  stroke-width="4.5"
-                />
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#fff"
-                  stroke-dasharray="0 100"
-                  stroke-dashoffset="20"
-                  stroke-width="4.5"
-                />
-                <g
-                  class="circle-label"
+                <svg
+                  viewBox="0 0 40 40"
+                  width="65px"
                 >
-                  <text
-                    color="#fff"
-                    fill="#fff"
-                    style="font: sans-serif 10px bold 10px;"
-                    x="15"
-                    y="23"
+                  <circle
+                    cx="20"
+                    cy="20"
+                    fill="transparent"
+                    r="17"
+                    stroke="#3a22b8"
+                    stroke-width="4.5"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20"
+                    fill="transparent"
+                    r="17"
+                    stroke="#fff"
+                    stroke-dasharray="0 100"
+                    stroke-dashoffset="20"
+                    stroke-width="4.5"
+                  />
+                  <g
+                    class="circle-label"
                   >
-                    0
-                    <tspan
-                      font-size="8px"
+                    <text
+                      color="#fff"
+                      fill="#fff"
+                      style="font: sans-serif 10px bold 10px;"
+                      x="15"
+                      y="23"
                     >
-                      %
-                    </tspan>
-                  </text>
-                </g>
-              </svg>
+                      0
+                      <tspan
+                        font-size="8px"
+                      >
+                        %
+                      </tspan>
+                    </text>
+                  </g>
+                </svg>
+              </div>
               <h4
                 class="progress-card__title mt-3"
               >
@@ -2611,47 +2564,51 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             <div
               class="card-body"
             >
-              <svg
-                viewBox="0 0 40 40"
-                width="65px"
+              <div
+                class="progress-card__wrapper d-flex align-items-center"
               >
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#3a22b8"
-                  stroke-width="4.5"
-                />
-                <circle
-                  cx="20"
-                  cy="20"
-                  fill="transparent"
-                  r="17"
-                  stroke="#fff"
-                  stroke-dasharray="42 58"
-                  stroke-dashoffset="20"
-                  stroke-width="4.5"
-                />
-                <g
-                  class="circle-label"
+                <svg
+                  viewBox="0 0 40 40"
+                  width="65px"
                 >
-                  <text
-                    color="#fff"
-                    fill="#fff"
-                    style="font: sans-serif 10px bold 10px;"
-                    x="11"
-                    y="23"
+                  <circle
+                    cx="20"
+                    cy="20"
+                    fill="transparent"
+                    r="17"
+                    stroke="#3a22b8"
+                    stroke-width="4.5"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20"
+                    fill="transparent"
+                    r="17"
+                    stroke="#fff"
+                    stroke-dasharray="42 58"
+                    stroke-dashoffset="20"
+                    stroke-width="4.5"
+                  />
+                  <g
+                    class="circle-label"
                   >
-                    42
-                    <tspan
-                      font-size="8px"
+                    <text
+                      color="#fff"
+                      fill="#fff"
+                      style="font: sans-serif 10px bold 10px;"
+                      x="11"
+                      y="23"
                     >
-                      %
-                    </tspan>
-                  </text>
-                </g>
-              </svg>
+                      42
+                      <tspan
+                        font-size="8px"
+                      >
+                        %
+                      </tspan>
+                    </text>
+                  </g>
+                </svg>
+              </div>
               <h4
                 class="progress-card__title mt-3"
               >
