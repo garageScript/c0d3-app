@@ -8047,10 +8047,10 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.1.0.tgz#4ef1eaf97afe5176e6a75ddfb57c335121abc5a6"
-  integrity sha512-oKMhGv3ihGbCIimCAjqkdzx2Q+jthoqnXSP+d86M9tptwugycmTFdVR4IpLgq2c4SHifbwO90z2fQ8/Aio73yw==
+eslint-config-prettier@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.2.0.tgz#78de77d63bca8e9e59dae75a614b5299925bb7b3"
+  integrity sha512-dWV9EVeSo2qodOPi1iBYU/x6F6diHv8uujxbxr77xExs3zTAlNXvVZKiyLsQGNz7yPV2K49JY5WjPzNIuDc2Bw==
 
 eslint-plugin-prettier@^3.3.1:
   version "3.3.1"
@@ -13337,10 +13337,10 @@ postgres-interval@^1.1.0:
   dependencies:
     xtend "^4.0.0"
 
-posthog-js@^1.9.6:
-  version "1.9.6"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.9.6.tgz#af32b315992948366650a8f215ffbc26ffd4ed3e"
-  integrity sha512-+o/4pMEZS9s77y+1UCrhBQ+7V9+/0yZ8FHnAJ/2bRWiJbG0lSgliRIdKtFFtMjASs9GQoEfaod6preICz2Fxtw==
+posthog-js@^1.9.7:
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.9.7.tgz#2ef27f3ab4e7608262c4b414e9c652499bb0dcbd"
+  integrity sha512-eTcR9+anOUyTsm69E0Efb7L4sOYAPuOiLQsGkD99w8T9PYCSt26NoFI/u6A8apZLtSDClDUnRsbsFtpHEfxCyw==
   dependencies:
     fflate "^0.4.1"
 
