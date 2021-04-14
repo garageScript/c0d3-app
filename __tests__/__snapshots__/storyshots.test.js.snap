@@ -2285,6 +2285,336 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Discord Empty Members 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord Error Fetching 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord One User 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord Six Users 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord Twenty Users 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Discord Two Users 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "350px",
+    }
+  }
+>
+  <div
+    className="bg-white mt-3"
+  >
+    <div
+      className="container"
+    >
+      <img
+        src="/assets/discordLogo.svg"
+      />
+      <div
+        className="text-primary mt-n3 text-center"
+      >
+        <span
+          className="font-weight-bold"
+        >
+          0
+        </span>
+         members online
+      </div>
+    </div>
+    <div
+      className="p-2"
+    >
+      <div
+        className="discord-list"
+      >
+        <div
+          className="text-center font-weight-bold text-primary"
+        />
+      </div>
+    </div>
+    <a
+      className="discord_link font-weight-bold text-white"
+      href="https://discord.gg/c0d3"
+      rel="noreferrer"
+      target="_blank"
+    >
+      <div
+        className="border border-primary text-center bg-white text-primary"
+      >
+        JOIN
+      </div>
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
 <div
   className="dropdown"
@@ -8610,14 +8940,50 @@ Array [
         <div
           className="d-xl-block"
         >
-          <iframe
-            allowTransparency={true}
-            className="mt-3 w-100"
-            frameBorder="0"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            src="https://discord.com/widget?id=828783458469675019&theme=light"
-          />
+          <div
+            className="bg-white mt-3"
+          >
+            <div
+              className="container"
+            >
+              <img
+                src="/assets/discordLogo.svg"
+              />
+              <div
+                className="text-primary mt-n3 text-center"
+              >
+                <span
+                  className="font-weight-bold"
+                >
+                  0
+                </span>
+                 members online
+              </div>
+            </div>
+            <div
+              className="p-2"
+            >
+              <div
+                className="discord-list"
+              >
+                <div
+                  className="text-center font-weight-bold text-primary"
+                />
+              </div>
+            </div>
+            <a
+              className="discord_link font-weight-bold text-white"
+              href="https://discord.gg/c0d3"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                className="border border-primary text-center bg-white text-primary"
+              >
+                JOIN
+              </div>
+            </a>
+          </div>
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -9447,14 +9813,50 @@ Array [
         <div
           className="d-xl-block"
         >
-          <iframe
-            allowTransparency={true}
-            className="mt-3 w-100"
-            frameBorder="0"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            src="https://discord.com/widget?id=828783458469675019&theme=light"
-          />
+          <div
+            className="bg-white mt-3"
+          >
+            <div
+              className="container"
+            >
+              <img
+                src="/assets/discordLogo.svg"
+              />
+              <div
+                className="text-primary mt-n3 text-center"
+              >
+                <span
+                  className="font-weight-bold"
+                >
+                  0
+                </span>
+                 members online
+              </div>
+            </div>
+            <div
+              className="p-2"
+            >
+              <div
+                className="discord-list"
+              >
+                <div
+                  className="text-center font-weight-bold text-primary"
+                />
+              </div>
+            </div>
+            <a
+              className="discord_link font-weight-bold text-white"
+              href="https://discord.gg/c0d3"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                className="border border-primary text-center bg-white text-primary"
+              >
+                JOIN
+              </div>
+            </a>
+          </div>
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -10284,14 +10686,50 @@ Array [
         <div
           className="d-xl-block"
         >
-          <iframe
-            allowTransparency={true}
-            className="mt-3 w-100"
-            frameBorder="0"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            src="https://discord.com/widget?id=828783458469675019&theme=light"
-          />
+          <div
+            className="bg-white mt-3"
+          >
+            <div
+              className="container"
+            >
+              <img
+                src="/assets/discordLogo.svg"
+              />
+              <div
+                className="text-primary mt-n3 text-center"
+              >
+                <span
+                  className="font-weight-bold"
+                >
+                  0
+                </span>
+                 members online
+              </div>
+            </div>
+            <div
+              className="p-2"
+            >
+              <div
+                className="discord-list"
+              >
+                <div
+                  className="text-center font-weight-bold text-primary"
+                />
+              </div>
+            </div>
+            <a
+              className="discord_link font-weight-bold text-white"
+              href="https://discord.gg/c0d3"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                className="border border-primary text-center bg-white text-primary"
+              >
+                JOIN
+              </div>
+            </a>
+          </div>
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >

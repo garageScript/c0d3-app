@@ -607,13 +607,50 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
         <div
           class="d-xl-block"
         >
-          <iframe
-            class="mt-3 w-100"
-            frameborder="0"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            src="https://discord.com/widget?id=828783458469675019&theme=light"
-          />
+          <div
+            class="bg-white mt-3"
+          >
+            <div
+              class="container"
+            >
+              <img
+                src="/assets/discordLogo.svg"
+              />
+              <div
+                class="text-primary mt-n3 text-center"
+              >
+                <span
+                  class="font-weight-bold"
+                >
+                  Error fetching data...
+                </span>
+                
+              </div>
+            </div>
+            <div
+              class="p-2"
+            >
+              <div
+                class="discord-list"
+              >
+                <div
+                  class="text-center font-weight-bold text-primary"
+                />
+              </div>
+            </div>
+            <a
+              class="discord_link font-weight-bold text-white"
+              href="https://discord.gg/c0d3"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="border border-primary text-center bg-white text-primary"
+              >
+                JOIN
+              </div>
+            </a>
+          </div>
           <div
             class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -1448,13 +1485,50 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
         <div
           class="d-xl-block"
         >
-          <iframe
-            class="mt-3 w-100"
-            frameborder="0"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            src="https://discord.com/widget?id=828783458469675019&theme=light"
-          />
+          <div
+            class="bg-white mt-3"
+          >
+            <div
+              class="container"
+            >
+              <img
+                src="/assets/discordLogo.svg"
+              />
+              <div
+                class="text-primary mt-n3 text-center"
+              >
+                <span
+                  class="font-weight-bold"
+                >
+                  Error fetching data...
+                </span>
+                
+              </div>
+            </div>
+            <div
+              class="p-2"
+            >
+              <div
+                class="discord-list"
+              >
+                <div
+                  class="text-center font-weight-bold text-primary"
+                />
+              </div>
+            </div>
+            <a
+              class="discord_link font-weight-bold text-white"
+              href="https://discord.gg/c0d3"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="border border-primary text-center bg-white text-primary"
+              >
+                JOIN
+              </div>
+            </a>
+          </div>
           <div
             class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -2440,13 +2514,50 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
         <div
           class="d-xl-block"
         >
-          <iframe
-            class="mt-3 w-100"
-            frameborder="0"
-            height="500"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            src="https://discord.com/widget?id=828783458469675019&theme=light"
-          />
+          <div
+            class="bg-white mt-3"
+          >
+            <div
+              class="container"
+            >
+              <img
+                src="/assets/discordLogo.svg"
+              />
+              <div
+                class="text-primary mt-n3 text-center"
+              >
+                <span
+                  class="font-weight-bold"
+                >
+                  Error fetching data...
+                </span>
+                
+              </div>
+            </div>
+            <div
+              class="p-2"
+            >
+              <div
+                class="discord-list"
+              >
+                <div
+                  class="text-center font-weight-bold text-primary"
+                />
+              </div>
+            </div>
+            <a
+              class="discord_link font-weight-bold text-white"
+              href="https://discord.gg/c0d3"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="border border-primary text-center bg-white text-primary"
+              >
+                JOIN
+              </div>
+            </a>
+          </div>
           <div
             class="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >

@@ -15,6 +15,7 @@ import {
   UserLesson,
   useGetSessionQuery
 } from '../graphql/'
+import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
 import { initializeApollo } from '../helpers/apolloClient'
 import { GetStaticProps } from 'next'
@@ -72,17 +73,8 @@ const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
     })
   )
 }
-const DiscordWidget = () => (
-  <iframe
-    className="mt-3 w-100"
-    src="https://discord.com/widget?id=828783458469675019&theme=light"
-    height="500"
-    allowTransparency
-    frameBorder="0"
-    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-  ></iframe>
-)
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
+  //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data } = useGetSessionQuery({ fetchPolicy: 'cache-and-network' })
   const [state, setState] = React.useState<State>({
     session: { lessonStatus: [] },
@@ -138,7 +130,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
-            <DiscordWidget />
+            <DiscordBar />
             <ProgressCard progressCount={state.progress} />
           </div>
           <div className="d-none d-xl-block">
