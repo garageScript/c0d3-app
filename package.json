@@ -111,7 +111,7 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.7.0",
-    "@types/bcrypt": "^3.0.0",
+    "@types/bcrypt": "^3.0.1",
     "@types/express-session": "^1.17.3",
     "@types/lodash": "^4.14.168",
     "@types/mailgun-js": "^0.22.11",
