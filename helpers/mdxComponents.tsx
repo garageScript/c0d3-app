@@ -6,14 +6,16 @@ import styles from '../scss/mdx.module.scss'
 
 const MDXcomponents = {
   inlineCode: (props: any) => (
-    <div className={`${styles['inline-code']}`} {...props} />
+    <code className={`${styles['inline-code']}`} {...props} />
   ),
   code: CodeBlock,
   blockquote: BlockQuote,
-  img: ModalImage,
+  Image: ModalImage,
   h1: (props: any) => <h1 className={`${styles['MDX_h1']}`} {...props} />,
   h2: (props: any) => <h2 className={`${styles['MDX_h2']}`} {...props} />,
   h3: (props: any) => <h3 className={`${styles['MDX_h3']}`} {...props} />,
+  ul: (props: any) => <ul className={`${styles['MDX_ul']}`} {...props} />,
+  ol: (props: any) => <ol className={`${styles['MDX_ol']}`} {...props} />,
   a: (props: any) => <a className={`${styles['MDX_a']}`} {...props} />,
   td: (props: any) => <td className={`${styles['MDX_td']}`} {...props} />,
   th: (props: any) => <th className={`${styles['MDX_th']}`} {...props} />

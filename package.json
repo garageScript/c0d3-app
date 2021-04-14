@@ -19,7 +19,7 @@
     "vercel-build": "./scripts/prismaUtils.js baseline migrate && next build"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,mdx}": "eslint --fix",
     "*.{json,md,scss}": "prettier --write",
     "*.svg": "svgo --multipass",
     "prisma/schema.prisma": "npx prisma format"
@@ -132,6 +132,7 @@
     "babel-preset-react-app": "^10.0.0",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-mdx": "^1.12.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.2",
     "husky": "^5.2.0",
