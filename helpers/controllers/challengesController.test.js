@@ -27,7 +27,7 @@ describe('Challenges controller tests', () => {
   })
   const ctx = {
     req: {
-      user: { isAdmin: 'true' }
+      user: { isAdmin: true }
     }
   }
 
@@ -67,7 +67,7 @@ describe('Challenges controller tests', () => {
 
   test('Should throw "User is not admin" error if user is not an admin \
   when updating challenge', async () => {
-    ctx.req.user.isAdmin = 'false'
+    ctx.req.user.isAdmin = false
     await expect(
       updateChallenge(null, mockChallengeData, ctx)
     ).rejects.toThrowError('User is not an admin')
@@ -75,7 +75,7 @@ describe('Challenges controller tests', () => {
 
   test('Should throw "User is not an admin" error if user is not an admin when \
   creating challenge', async () => {
-    ctx.req.user.isAdmin = 'false'
+    ctx.req.user.isAdmin = false
     await expect(
       createChallenge(null, mockChallengeData, ctx)
     ).rejects.toThrowError('User is not an admin')

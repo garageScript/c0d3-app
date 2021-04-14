@@ -18,7 +18,10 @@ const handler: any = nextConnect() // For session middleware. TODO: Need to defi
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({ req }) // This lets GraphQL have access to sessions
+  context: ({ req, res }) => ({ req, res }), // This lets GraphQL have access to sessions
+  /* Syncs server schema (used for server static generation) and api route server settings. 
+  By default apolloServer accepts uploads, while schema-generated server does not.*/
+  uploads: false
 })
 
 const graphQLHandler = apolloServer.createHandler({ path: '/api/graphql' })

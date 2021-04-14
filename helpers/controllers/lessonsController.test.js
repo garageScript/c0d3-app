@@ -33,7 +33,7 @@ describe('Lessons controller tests', () => {
   })
   const ctx = {
     req: {
-      user: { isAdmin: 'true' }
+      user: { isAdmin: true }
     }
   }
 
@@ -58,14 +58,14 @@ describe('Lessons controller tests', () => {
   })
 
   test('Should throw "User is not an admin" error when user is not an admin when updating lesson', async () => {
-    ctx.req.user.isAdmin = 'false'
+    ctx.req.user.isAdmin = false
     await expect(createLesson(null, mockLessonData, ctx)).rejects.toThrowError(
       'User is not an admin'
     )
   })
 
   test('Should throw "User is not an admin" error when user is not an admin when creating lesson', async () => {
-    ctx.req.user.isAdmin = 'false'
+    ctx.req.user.isAdmin = false
     await expect(updateLesson(null, mockLessonData, ctx)).rejects.toThrowError(
       'User is not an admin'
     )

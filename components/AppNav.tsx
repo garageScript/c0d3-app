@@ -3,7 +3,7 @@ import NavLink, { NavLinkProps } from './NavLink'
 import { Button } from './theme/Button'
 import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
-import { useLogoutMutation, useGetAppQuery, Session } from '../graphql'
+import { useLogoutMutation, useGetAppQuery, GetAppQuery } from '../graphql'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 
@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const router = useRouter()
-  const isAdmin = _.get(session, 'user.isAdmin', '')
+  const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
   const location = '/' + router.asPath.split('/')[1]
 
   return (
@@ -57,9 +57,7 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
           {button.name}
         </NavLink>
       ))}
-      {isAdmin === 'true' && (
-        <DropdownMenu title="Admin" items={dropdownMenuItems} />
-      )}
+      {isAdmin && <DropdownMenu title="Admin" items={dropdownMenuItems} />}
     </div>
   )
 }
@@ -78,7 +76,6 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
       })
     },
     onCompleted: () => {
-      window.localStorage.removeItem('loggedIn')
       router.push('/')
     }
   })
@@ -111,7 +108,9 @@ const UnAuthButton = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
-  const [session, setSession] = useState<Session>({ lessonStatus: [] })
+  const [session, setSession] = useState<GetAppQuery['session']>({
+    lessonStatus: []
+  })
   const { data } = useGetAppQuery()
   useEffect(() => {
     if (data && data.session) {

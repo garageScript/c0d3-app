@@ -16,5 +16,15 @@ module.exports = ({ config }) => {
   })
 
   config.resolve.extensions.push('.ts', '.tsx')
+  //exclude backend dependancies
+  config.externals = {
+    'aws-sdk': 'aws-sdk',
+    child_process: 'child_process',
+    dns: 'dns',
+    fs: 'fs',
+    net: 'net',
+    tls: 'tls',
+    'pg-native': 'pg-native'
+  }
   return config
 }

@@ -33,6 +33,7 @@ const mocks = [
 
 describe('MyApp component', () => {
   const OLD_ENV = process.env
+  window.fetch = jest.fn()
   beforeEach(() => {
     jest.clearAllMocks()
     process.env = { ...OLD_ENV }
@@ -44,7 +45,7 @@ describe('MyApp component', () => {
   test('posthog init function should not be called if not in production environment', async () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <MyApp Component={Login} />
+        <MyApp Component={Login} pageProps={{}} />
       </MockedProvider>
     )
     expect(posthog.init).not.toHaveBeenCalled()
@@ -61,7 +62,7 @@ describe('MyApp component', () => {
     }
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <MyApp Component={Login} />
+        <MyApp Component={Login} pageProps={{}} />
       </MockedProvider>
     )
     expect(posthog.init).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, {
@@ -75,7 +76,7 @@ describe('MyApp component', () => {
   test('should render Login component passed in as prop', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <MyApp Component={Login} />
+        <MyApp Component={Login} pageProps={{}} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()

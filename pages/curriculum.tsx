@@ -6,9 +6,19 @@ import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
 import AlertsDisplay from '../components/AlertsDisplay'
-import LoadingSpinner from '../components/LoadingSpinner'
-import { useGetAppQuery, GetAppQuery } from '../graphql/'
+import {
+  GetAppQuery,
+  GetAppDocument,
+  Lesson,
+  Alert,
+  Session,
+  UserLesson,
+  useGetSessionQuery
+} from '../graphql/'
+import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
+import { initializeApollo } from '../helpers/apolloClient'
+import { GetStaticProps } from 'next'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -16,26 +26,26 @@ const announcements = [
   'These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.',
   'After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.'
 ]
-
-export const Curriculum: React.FC<{}> = () => {
-  const { loading, error, data } = useGetAppQuery()
-  if (loading) return <LoadingSpinner />
-  if (error) {
-    return (
-      <Error code={StatusCode.INTERNAL_SERVER_ERROR} message={error.message} />
-    )
-  }
-  const { alerts, lessons, session } = data as GetAppQuery
-  if (!lessons || !alerts) {
-    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
-  }
-  const { lessonStatus } = session || { lessonStatus: [] }
-  const lessonStatusMap: { [id: string]: typeof lessonStatus[0] } = {}
+type Props = {
+  lessons: Lesson[]
+  alerts: Alert[]
+}
+interface State {
+  session: Session
+  progress: number
+  current: number
+}
+const generateMap = (session: Session): { [id: string]: UserLesson } => {
+  const { lessonStatus } = session
+  const lessonStatusMap: { [id: string]: UserLesson } = {}
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
     lessonStatusMap[lessonId] = status
   }
-
+  return lessonStatusMap
+}
+const calculateProgress = (session: Session, lessons: Lesson[]): number => {
+  const lessonStatusMap = generateMap(session)
   const lessonInProgressIdx = _.cond([
     [_.isEqual.bind(null, -1), _.constant(0)],
     [_.constant(true), (output: number) => output]
@@ -46,17 +56,49 @@ export const Curriculum: React.FC<{}> = () => {
       return !passed
     })
   )
-
   // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
   const TOTAL_LESSONS = 7
-  const progressPercentage = Math.floor(
-    (lessonInProgressIdx * 100) / TOTAL_LESSONS
+  return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
+}
+const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
+  const lessonStatusMap = generateMap(session)
+  return _.cond([
+    [_.isEqual.bind(null, -1), _.constant(0)],
+    [_.constant(true), (output: number) => output]
+  ])(
+    lessons.findIndex(lesson => {
+      const lessonId = _.get(lesson, 'id', '-1') as string
+      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
+      return !passed
+    })
   )
+}
+export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
+  //fallback in case if localStorage (which is used by persistent cache) is disabled
+  const { data } = useGetSessionQuery({ fetchPolicy: 'cache-and-network' })
+  const [state, setState] = React.useState<State>({
+    session: { lessonStatus: [] },
+    progress: -1,
+    current: -1
+  })
+  if (!lessons || !alerts) {
+    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
+  }
+  React.useEffect(() => {
+    if (data && data.session) {
+      setState({
+        session: data.session,
+        progress: calculateProgress(data.session, lessons),
+        current: calculateCurrent(data.session, lessons)
+      })
+    }
+  }, [data])
+  const lessonStatusMap = generateMap(state.session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const id = _.get(lesson, 'id', idx) as number
     const status = lessonStatusMap[id]
     let lessonState = ''
-    if (idx === lessonInProgressIdx) {
+    if (idx === state.current) {
       lessonState = 'inProgress'
     }
     const passed = _.get(status, 'isPassed', false)
@@ -88,7 +130,8 @@ export const Curriculum: React.FC<{}> = () => {
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
-            <ProgressCard progressCount={progressPercentage} />
+            <DiscordBar />
+            <ProgressCard progressCount={state.progress} />
           </div>
           <div className="d-none d-xl-block">
             <AnnouncementCard announcements={announcements} />
@@ -99,5 +142,20 @@ export const Curriculum: React.FC<{}> = () => {
     </Layout>
   )
 }
+const FIVE_MINUTES = 5 * 60
 
+export const getStaticProps: GetStaticProps = async () => {
+  const apolloClient = initializeApollo()
+  const query = await apolloClient.query<GetAppQuery>({
+    query: GetAppDocument
+  })
+
+  return {
+    props: {
+      lessons: query.data.lessons,
+      alerts: query.data.alerts
+    },
+    revalidate: FIVE_MINUTES
+  }
+}
 export default Curriculum
