@@ -8,7 +8,6 @@ import ChallengeMaterial from '../../components/ChallengeMaterial'
 import GET_APP from '../../graphql/queries/getApp'
 import {
   Challenge,
-  Lesson,
   UserLesson,
   Submission,
   GetAppQuery
@@ -21,13 +20,11 @@ import _ from 'lodash'
 const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
   const router = useRouter()
-  const currentlessonId = Number(router.query.lesson) as number
+  const currentlessonId = Number(router.query.lesson)
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
-  const currentLesson: Lesson | undefined = lessons.find(
-    lesson => lesson.id === currentlessonId
-  ) as Lesson
+  const currentLesson = lessons.find(lesson => lesson.id === currentlessonId)
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
   }

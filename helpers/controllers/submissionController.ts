@@ -4,20 +4,13 @@ import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
 import { hasPassedLesson } from '../hasPassedLesson'
+import {
+  MutationCreateSubmissionArgs,
+  QuerySubmissionsArgs
+} from '../../graphql'
 import _ from 'lodash'
 
 const { User, Submission, Challenge, Lesson } = db
-
-type ArgsCreateSubmission = {
-  lessonId: number
-  cliToken: string
-  diff: string
-  challengeId: number
-}
-
-type ArgsGetSubmissions = {
-  lessonId: number
-}
 
 export enum SubmissionStatus {
   OPEN = 'open',
@@ -27,7 +20,7 @@ export enum SubmissionStatus {
 
 export const createSubmission = async (
   _parent: void,
-  args: ArgsCreateSubmission
+  args: MutationCreateSubmissionArgs
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
@@ -108,7 +101,7 @@ export const rejectSubmission = async (
 
 export const submissions = async (
   _parent: void,
-  arg: ArgsGetSubmissions,
+  arg: QuerySubmissionsArgs,
   ctx: Context
 ) => {
   try {

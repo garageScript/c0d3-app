@@ -7,7 +7,7 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
-import { Lesson, GetAppQuery, Submission } from '../../graphql/index'
+import { GetAppQuery, Submission } from '../../graphql/index'
 import Error, { StatusCode } from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
@@ -22,7 +22,7 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
   <div className="submissions-container container p-0">
-    {submissions.map((submission: Submission) => (
+    {submissions.map(submission => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>
@@ -32,7 +32,6 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
   const currentlessonId = Number(router.query.lesson)
-  console.log(currentlessonId)
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentlessonId }
   })
@@ -43,9 +42,7 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     router.push('/login')
     return <LoadingSpinner />
   }
-  const currentLesson: Lesson | undefined = lessons.find(
-    lesson => lesson.id === currentlessonId
-  ) as Lesson
+  const currentLesson = lessons.find(lesson => lesson.id === currentlessonId)
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
