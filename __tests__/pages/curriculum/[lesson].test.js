@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, waitFor } from '@testing-library/react'
+import { render, waitFor, screen } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
 import Lesson from '../../../pages/curriculum/[lesson]'
@@ -166,5 +166,30 @@ describe('Lesson Page', () => {
     expect(element).toBeTruthy()
 
     await waitFor(() => expect(container).toMatchSnapshot())
+  })
+  test('Should render with nulled submissions', async () => {
+    query['lesson'] = '2'
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: { ...session, submissions: null },
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Lesson />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      screen.getByRole('heading', { name: /Variables & Functions/i })
+    )
   })
 })
