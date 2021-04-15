@@ -76,7 +76,6 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
       })
     },
     onCompleted: () => {
-      window.localStorage.removeItem('loggedIn')
       router.push('/')
     }
   })

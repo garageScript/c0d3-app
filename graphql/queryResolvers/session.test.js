@@ -5,9 +5,9 @@ import db from '../../helpers/dbload'
 const { Submission, UserLesson, Star, User } = db
 
 describe('Session resolver', () => {
-  test('should return null if req.user does not exist', async () => {
+  test('should return empty session if req.user does not exist', async () => {
     const req = {}
-    expect(await session({}, {}, { req })).toEqual(null)
+    expect(await session({}, {}, { req })).toEqual({ lessonStatus: [] })
   })
 
   test('should return user including submissions and lessonStatus', async () => {

@@ -2,6 +2,15 @@
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.07);
 }
 
+.progress-card__spinner {
+  width: 58px;
+  height: 58px;
+  border: 6px solid;
+  border-right-color: transparent;
+}
+.progress-card__wrapper {
+  min-height: 65px;
+}
 .progress-card__title {
   line-height: 1.5;
 }

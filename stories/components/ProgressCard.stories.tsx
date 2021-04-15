@@ -7,6 +7,7 @@ export default {
 }
 
 export const Basic: React.FC = () => <ProgressCard progressCount={0} />
+export const Loading: React.FC = () => <ProgressCard progressCount={-1} />
 export const Progress: React.FC = () => <ProgressCard progressCount={40} />
 export const CompletedProgress: React.FC = () => (
   <ProgressCard progressCount={100} />

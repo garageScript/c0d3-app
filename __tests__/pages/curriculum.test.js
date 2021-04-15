@@ -1,23 +1,20 @@
 import React from 'react'
-import Curriculum from '../../pages/curriculum'
-import {
-  render,
-  waitFor,
-  waitForElementToBeRemoved,
-  screen
-} from '@testing-library/react'
+import Curriculum, { getStaticProps } from '../../pages/curriculum'
+import { render, waitFor, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import expectLoading from '../utils/expectLoading'
-
+jest.mock('@apollo/client', () => ({
+  ...jest.requireActual('@apollo/client'),
+  ApolloClient: jest.fn().mockImplementation(() => ({
+    query: jest
+      .fn()
+      .mockResolvedValueOnce({ data: { lessons: [], alerts: [] } })
+  }))
+}))
 describe('Curriculum Page', () => {
-  test('Should render Loading Spinner when loading', () => {
-    expectLoading(<Curriculum />)
-  })
-
   test('Should render Bad Data when no lessons', async () => {
     const mocks = [
       {
@@ -32,12 +29,12 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { findByText } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
-    const element = await findByText(/Internal server error/i)
+    const element = await screen.findByText(/Internal server error/i)
     expect(element).toBeTruthy()
   })
 
@@ -55,14 +52,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('link', { name: 'C0D3' }))
-
+    await waitFor(() => screen.getByRole('link', { name: 'fakeusername' }))
+    await waitFor(() => screen.getByText('%'))
     await waitFor(() => expect(container).toMatchSnapshot())
   })
 
@@ -107,13 +104,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('link', { name: 'C0D3' }))
+    await waitFor(() => screen.getByRole('link', { name: 'fakeusername' }))
+    await waitFor(() => screen.getByText('%'))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
@@ -132,26 +130,17 @@ describe('Curriculum Page', () => {
     ]
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
-    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+    await waitFor(() => screen.getByRole('link', { name: 'Login' }))
     expect(container).toMatchSnapshot()
   })
-  test('Should render internal error if error', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        error: new Error('error')
-      }
-    ]
-
-    const { findByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum />
-      </MockedProvider>
-    )
-    const element = await findByText(/Internal server error/i)
-    expect(element).toBeTruthy()
+  test('Should callProps', async () => {
+    window.fetch = jest.fn()
+    expect(await getStaticProps()).toEqual({
+      props: { lessons: [], alerts: [] },
+      revalidate: 300
+    })
   })
 })
