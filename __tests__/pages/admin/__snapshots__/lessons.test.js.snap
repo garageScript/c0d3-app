@@ -8,12 +8,11 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -1567,12 +1566,11 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >

@@ -76,6 +76,7 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
       })
     },
     onCompleted: () => {
+      window.localStorage.removeItem('loggedIn')
       router.push('/')
     }
   })
@@ -108,6 +109,7 @@ const UnAuthButton = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
+  const router = useRouter()
   const [session, setSession] = useState<GetAppQuery['session']>({
     lessonStatus: []
   })
@@ -132,12 +134,14 @@ const AppNav: React.FC<{}> = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
       <div className="container">
-        <NavLink
-          path="/"
+        <div
           className={`${styles['navbar-brand']} text-primary font-weight-bold`}
+          onClick={() => {
+            !window.localStorage.getItem('loggedIn') && router.push('/')
+          }}
         >
           C0D3
-        </NavLink>
+        </div>
         <div id="navbarNav">
           <div className="navbar-nav collapse navbar-collapse">
             <NavBar session={session} />

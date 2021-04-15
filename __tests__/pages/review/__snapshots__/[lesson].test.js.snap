@@ -8,12 +8,11 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -171,12 +170,11 @@ exports[`Lesson Page Should render empty submissions 1`] = `
       <div
         class="container"
       >
-        <a
+        <div
           class="navbar-brand text-primary font-weight-bold"
-          href="/"
         >
           C0D3
-        </a>
+        </div>
         <div
           id="navbarNav"
         >
@@ -344,12 +342,11 @@ exports[`Lesson Page Should render new submissions 1`] = `
       <div
         class="container"
       >
-        <a
+        <div
           class="navbar-brand text-primary font-weight-bold"
-          href="/"
         >
           C0D3
-        </a>
+        </div>
         <div
           id="navbarNav"
         >

@@ -8,12 +8,11 @@ exports[`_error page Should capture error when component is loading 1`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -152,12 +151,11 @@ exports[`_error page Should return Error 500 component 1`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >

@@ -1,6 +1,11 @@
 .navbar-brand {
   font-family: 'PT Mono', sans-serif;
   font-size: 30px;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #3423a9 !important;
+  }
 }
 
 .nav-item {

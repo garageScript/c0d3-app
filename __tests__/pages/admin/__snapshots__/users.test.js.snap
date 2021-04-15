@@ -8,12 +8,11 @@ exports[`Users test Should be able to switch search options 1`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -323,12 +322,11 @@ exports[`Users test Should be able to switch search options 2`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -638,12 +636,11 @@ exports[`Users test Should be able to switch search options 3`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -953,12 +950,11 @@ exports[`Users test Should be able to switch search options 4`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >

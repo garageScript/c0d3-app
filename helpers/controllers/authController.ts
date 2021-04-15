@@ -92,10 +92,6 @@ export const logout = async (_parent: void, _: void, ctx: Context) => {
           error: err.message
         })
       }
-      res.setHeader(
-        'Set-Cookie',
-        `connect.sid=; expires=${new Date(0)}; Path=/`
-      )
 
       resolve({
         success: true

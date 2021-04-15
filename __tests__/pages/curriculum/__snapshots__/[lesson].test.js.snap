@@ -9,12 +9,11 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
       <div
         class="container"
       >
-        <a
+        <div
           class="navbar-brand text-primary font-weight-bold"
-          href="/"
         >
           C0D3
-        </a>
+        </div>
         <div
           id="navbarNav"
         >
@@ -416,12 +415,11 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
@@ -579,12 +577,11 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
       <div
         class="container"
       >
-        <a
+        <div
           class="navbar-brand text-primary font-weight-bold"
-          href="/"
         >
           C0D3
-        </a>
+        </div>
         <div
           id="navbarNav"
         >
@@ -1014,12 +1011,11 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
     <div
       class="container"
     >
-      <a
+      <div
         class="navbar-brand text-primary font-weight-bold"
-        href="/"
       >
         C0D3
-      </a>
+      </div>
       <div
         id="navbarNav"
       >
