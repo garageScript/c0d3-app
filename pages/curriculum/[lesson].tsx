@@ -27,7 +27,8 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
   }
-  const userSubmissions: UserSubmission[] = _.get(session, 'submissions', [])
+  const userSubmissions: UserSubmission[] =
+    _.get(session, 'submissions', []) || []
   const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
 
   const currentLessonStatus: LessonStatus = lessonStatus.find(

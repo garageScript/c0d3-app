@@ -4,6 +4,7 @@ module.exports = {
   parser: 'typescript',
   trailingComma: 'none',
   arrowParens: 'avoid',
+  proseWrap: 'always',
   overrides: [
     {
       files: '*.scss',
@@ -21,6 +22,12 @@ module.exports = {
       files: '*.json',
       options: {
         parser: 'json'
+      }
+    },
+    {
+      files: '*.mdx',
+      options: {
+        parser: 'mdx'
       }
     }
   ]

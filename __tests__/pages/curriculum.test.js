@@ -1,6 +1,6 @@
 import React from 'react'
 import Curriculum, { getStaticProps } from '../../pages/curriculum'
-import { render, waitFor } from '@testing-library/react'
+import { render, waitFor, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
@@ -29,12 +29,12 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { findByText } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum />
       </MockedProvider>
     )
-    const element = await findByText(/Internal server error/i)
+    const element = await screen.findByText(/Internal server error/i)
     expect(element).toBeTruthy()
   })
 
@@ -52,14 +52,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('link', { name: 'fakeusername' }))
-
+    await waitFor(() => screen.getByRole('link', { name: 'fakeusername' }))
+    await waitFor(() => screen.getByText('%'))
     await waitFor(() => expect(container).toMatchSnapshot())
   })
 
@@ -104,13 +104,14 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    const { container, getByRole } = render(
+    const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
 
-    await waitFor(() => getByRole('link', { name: 'fakeusername' }))
+    await waitFor(() => screen.getByRole('link', { name: 'fakeusername' }))
+    await waitFor(() => screen.getByText('%'))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
@@ -132,6 +133,7 @@ describe('Curriculum Page', () => {
         <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
+    await waitFor(() => screen.getByRole('link', { name: 'Login' }))
     expect(container).toMatchSnapshot()
   })
   test('Should callProps', async () => {

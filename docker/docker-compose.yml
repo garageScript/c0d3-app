@@ -4,15 +4,14 @@ services:
     container_name: c0d3_db
     image: postgres:12-alpine
     ports:
-      - 7000:5432
+      - 5432:5432
     environment:
       - POSTGRES_USER=c0d3_admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=c0d3
     volumes:
-      - ./volumes/postgres/var/lib/postgresql/data:/var/lib/postgresql/data
+      - c0d3_db:/var/lib/postgresql/data
       - ./initScripts:/docker-entrypoint-initdb.d/
-      - /etc/localtime:/etc/localtime:ro
 
   mattermost:
     build:
@@ -45,3 +44,7 @@ services:
 
       # in case your config is not in default location
       #- MM_CONFIG=/mattermost/config/config.json
+
+# Use volume managed by docker
+volumes:
+  c0d3_db:
