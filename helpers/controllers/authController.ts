@@ -75,7 +75,7 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
 }
 
 export const logout = async (_parent: void, _: void, ctx: Context) => {
-  const { req, res } = ctx
+  const { req } = ctx
   const { session } = req
   return new Promise(async (resolve, reject) => {
     if (!session) {
