@@ -1,4 +1,5 @@
 import type { Star } from '.prisma/client'
+import { truncate } from 'fs'
 import _ from 'lodash'
 import { UserInfoQueryVariables } from '../../graphql'
 import { prisma } from '../../prisma'
@@ -39,19 +40,20 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
       include: {
         student: {
           select: {
-            name: true,
-            username: true
+            username: true,
+            name: true
           }
         },
         lesson: {
           select: {
-            order: true,
-            title: true
+            title: true,
+            order: true
           }
         }
       }
     })
   ])
+  console.log(stars)
 
   const starMap = stars.reduce((map: StarMap, star) => {
     console.log(star)
