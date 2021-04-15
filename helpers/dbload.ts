@@ -7,6 +7,7 @@ import { ChallengeTypes, Challenge } from './models/Challenge'
 import { AlertTypes, Alert } from './models/Alert'
 import { StarTypes, Star } from './models/Star'
 
+/* istanbul ignore next */
 const sequelize = new Sequelize(
   process.env.DB_NAME as string,
   process.env.DB_USER as string,
@@ -17,10 +18,10 @@ const sequelize = new Sequelize(
     port: parseInt(process.env.DB_PORT as string),
     dialect: 'postgres',
     pool: {
-      max: 5,
+      max: process.env.VERCEL_REGION ? 1 : 5,
       min: 0,
-      acquire: 30000,
-      idle: 10000
+      acquire: process.env.VERCEL_REGION ? 3000 : 30000,
+      idle: process.env.VERCEL_REGION ? 0 : 10000
     }
   }
 )
