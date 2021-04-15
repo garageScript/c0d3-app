@@ -1,6 +1,6 @@
 import React from 'react'
 import Curriculum, { getStaticProps } from '../../pages/curriculum'
-import { render, waitFor } from '@testing-library/react'
+import { render, waitFor, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
@@ -111,6 +111,7 @@ describe('Curriculum Page', () => {
     )
 
     await waitFor(() => getByRole('link', { name: 'fakeusername' }))
+    await waitFor(() => screen.getByText('%'))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
