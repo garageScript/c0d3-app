@@ -11,14 +11,17 @@ const IndexPage: React.FC<{}> = () => {
       ? router.push('/curriculum')
       : setStatus(true)
   }, [])
+  //render empty white background with AppNav before possible redirect to prevent 'flickering'
   return (
     <>
       <AppNav />
-      {status && (
+      {status ? (
         <>
           <LandingPage />
           <Footer footerType="py-5 bg-white text-muted" />
         </>
+      ) : (
+        <div className="bg-white vh-100" />
       )}
     </>
   )
