@@ -5,40 +5,36 @@ import GET_APP from '../graphql/queries/getApp'
 import LOGOUT_USER from '../graphql/queries/logoutUser'
 import dummySessionData from '../__dummy__/sessionData'
 import AppNav from './AppNav'
-import { useRouter } from 'next/router'
 
 describe('AppNav Component', () => {
-  const { push } = useRouter()
-  const mocks = [
-    {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          session: dummySessionData,
-          lessons: [],
-          alerts: []
+  test('Should redirect to / route on logout success', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session: dummySessionData,
+            lessons: [],
+            alerts: []
+          }
         }
-      }
-    },
-    {
-      request: {
-        query: LOGOUT_USER
       },
-      result: {
-        data: {
-          logout: {
-            success: true,
-            username: 'fake user',
-            error: null
+      {
+        request: {
+          query: LOGOUT_USER
+        },
+        result: {
+          data: {
+            logout: {
+              success: true,
+              username: 'fake user',
+              error: null
+            }
           }
         }
       }
-    }
-  ]
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
-  test('Should redirect to / route on logout success', async () => {
+    ]
+
     const { getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <AppNav />
@@ -51,34 +47,5 @@ describe('AppNav Component', () => {
     })
 
     await waitFor(() => expect(global.window.location.pathname).toEqual('/'))
-  })
-  test('should redirect to / when clicking on logo', async () => {
-    const { getByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <AppNav />
-      </MockedProvider>
-    )
-
-    await act(async () => {
-      await waitFor(() => getByText('C0D3'))
-      fireEvent.click(getByText('C0D3'))
-    })
-
-    await waitFor(() => expect(push).toHaveBeenCalled())
-  })
-  test('should not redirect to / when clicking on logo based on localStorage', async () => {
-    window.localStorage.setItem('loggedIn', true)
-    const { getByText } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <AppNav />
-      </MockedProvider>
-    )
-
-    await act(async () => {
-      await waitFor(() => getByText('C0D3'))
-      fireEvent.click(getByText('C0D3'))
-    })
-
-    await waitFor(() => expect(push).not.toHaveBeenCalled())
   })
 })

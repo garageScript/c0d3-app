@@ -8,11 +8,12 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >

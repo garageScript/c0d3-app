@@ -8,11 +8,12 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -853,11 +854,12 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -1767,11 +1769,12 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >

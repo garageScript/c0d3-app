@@ -8,11 +8,12 @@ exports[`user profile test Should render anonymous users 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -801,11 +802,12 @@ exports[`user profile test Should render nulled lessons 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -1077,11 +1079,12 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -1870,11 +1873,12 @@ exports[`user profile test Should render nulles challenges 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -2704,11 +2708,12 @@ exports[`user profile test Should render profile 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >

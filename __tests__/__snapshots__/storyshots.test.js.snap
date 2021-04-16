@@ -240,12 +240,14 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
   <div
     className="container"
   >
-    <div
+    <a
       className="navbar-brand text-primary font-weight-bold"
+      href="/"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       C0D3
-    </div>
+    </a>
     <div
       id="navbarNav"
     >
@@ -327,12 +329,14 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
   <div
     className="container"
   >
-    <div
+    <a
       className="navbar-brand text-primary font-weight-bold"
+      href="/"
       onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       C0D3
-    </div>
+    </a>
     <div
       id="navbarNav"
     >
@@ -2871,12 +2875,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -3033,12 +3039,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -4427,12 +4435,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -4560,12 +4570,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -8037,12 +8049,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -8281,12 +8295,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -9152,12 +9168,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -10023,12 +10041,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -10894,12 +10914,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -11532,12 +11554,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -11857,12 +11881,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -12020,12 +12046,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -12823,12 +12851,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -15185,12 +15215,14 @@ Array [
     <div
       className="container"
     >
-      <div
+      <a
         className="navbar-brand text-primary font-weight-bold"
+        href="/"
         onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >

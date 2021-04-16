@@ -8,11 +8,12 @@ exports[`Alerts page Should remove alert 1`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
@@ -398,11 +399,12 @@ exports[`Alerts page Should remove alert 2`] = `
     <div
       class="container"
     >
-      <div
+      <a
         class="navbar-brand text-primary font-weight-bold"
+        href="/"
       >
         C0D3
-      </div>
+      </a>
       <div
         id="navbarNav"
       >
