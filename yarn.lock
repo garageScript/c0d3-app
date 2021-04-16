@@ -2278,10 +2278,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.1.tgz#7f554e7368c9ab679a11f4a042ca17149d70cf12"
   integrity sha512-DvJbbn3dUgMxDnJLH+RZQPnXak1h4ZVYQ7CWiFWjQwBFkVajT4rfw2PdpHLTSTwxrYfnoEXkuBiwkDm6tPMQeA==
 
-"@prisma/client@^2.21.0":
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.21.0.tgz#97cb64d7ac76c1cce7f65f7a207320733efbac3a"
-  integrity sha512-RMtX0sdDl5MDJ49WOvGMzqgPF5yN6DQMSpzr+jpCkL7kuHASGiVcBYpvkBlNNA5a186zKCHuaMdNb8h7hDS4/A==
+"@prisma/client@^2.21.2":
+  version "2.21.2"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.21.2.tgz#ca8489832da1d61add429390210be4d7896e5e29"
+  integrity sha512-UjkOXYpxLuHyoMDsP2m0LTcxhrjQa1dEOLFe3aDrO/BLrs/2yUxyPdtwSKxizRXFzuXSGkKIK225vcjZRuMpAg==
   dependencies:
     "@prisma/engines-version" "2.21.0-36.e421996c87d5f3c8f7eeadd502d4ad402c89464d"
 
@@ -13373,10 +13373,10 @@ prism-react-renderer@^1.2.0:
   resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.2.0.tgz#5ad4f90c3e447069426c8a53a0eafde60909cdf4"
   integrity sha512-GHqzxLYImx1iKN1jJURcuRoA/0ygCcNhfGw1IT8nPIMzarmKQ3Nc+JcG0gi8JXQzuh0C5ShE4npMIoqNin40hg==
 
-prisma@^2.21.0:
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.21.0.tgz#ffab3901fbd2335b77d9d939c5cf3031fe11a8f3"
-  integrity sha512-lmlfcWEyl24AO788DmZOerFl8npH0xW2aY1BmXLeTgHvovvk3/AJIYZNfaDEx9wuvjNLhZTExICMDAtJIFi3kQ==
+prisma@^2.21.2:
+  version "2.21.2"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.21.2.tgz#a73b4cbe92a884aa98b317684d6741871b5e94a5"
+  integrity sha512-Ux9ovDIUHsMNLGLtuo6BBKCuuBVLpZmhM2LXF+VBUQvsbmsVfp3u5CRyHGEqaZqMibYQJISy7YZYF/RgozHKkQ==
   dependencies:
     "@prisma/engines" "2.21.0-36.e421996c87d5f3c8f7eeadd502d4ad402c89464d"
 
