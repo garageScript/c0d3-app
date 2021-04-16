@@ -73,7 +73,7 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
 }
 
 export const logout = async (_parent: void, _: void, ctx: Context) => {
-  const { req, res } = ctx
+  const { req } = ctx
   const { session } = req
   return new Promise((resolve, reject) => {
     if (!session) {
@@ -90,10 +90,6 @@ export const logout = async (_parent: void, _: void, ctx: Context) => {
           error: err.message
         })
       }
-      res.setHeader(
-        'Set-Cookie',
-        `connect.sid=; expires=${new Date(0)}; Path=/`
-      )
 
       resolve({
         success: true
