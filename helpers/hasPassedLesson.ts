@@ -1,17 +1,15 @@
-import { UserLesson } from './dbload'
-import _ from 'lodash'
-import { LessonStatus } from '../@types/lesson'
+import { prisma } from '../prisma'
 
 export const hasPassedLesson = async (
   reviewerId: number,
   lessonId: string
 ): Promise<Boolean> => {
   // query userlesson that belongs to lesson and user
-  const userLesson = (await UserLesson.findOne({
+  const userLesson = await prisma.userLesson.findFirst({
     where: {
-      lessonId: lessonId,
+      lessonId: Number(lessonId),
       userId: reviewerId
     }
-  })) as LessonStatus
+  })
   return userLesson ? Boolean(userLesson.isPassed) : false
 }
