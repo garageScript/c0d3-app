@@ -1,5 +1,4 @@
 import type { Star } from '.prisma/client'
-import { truncate } from 'fs'
 import _ from 'lodash'
 import { UserInfoQueryVariables } from '../../graphql'
 import { prisma } from '../../prisma'
@@ -53,10 +52,8 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
       }
     })
   ])
-  console.log(stars)
 
   const starMap = stars.reduce((map: StarMap, star) => {
-    console.log(star)
     map[star.lessonId!] = map[star.lessonId!] || []
     map[star.lessonId!].push(star)
     return map
