@@ -1,21 +1,17 @@
+import { prisma } from '../../prisma'
 import userMiddleware from './user'
-import db from '../dbload'
-
-const { User } = db
 
 const mockUserInfo = {
-  dataValues: {
-    id: 408,
-    name: 'Kevin Le',
-    username: 'moreThanFake',
-    password: '$2b$10$W9KwQ6Sbi0RJjD2GZYX9BugAtgSm/W999gNW1f/XiRcI6NiC9pTdK',
-    email: 'superduperkamehameha@gmail.com',
-    isAdmin: false,
-    cliToken: 'KfizzIlWp111fizzDbuzzr'
-  }
+  id: 408,
+  name: 'Kevin Le',
+  username: 'moreThanFake',
+  password: '$2b$10$W9KwQ6Sbi0RJjD2GZYX9BugAtgSm/W999gNW1f/XiRcI6NiC9pTdK',
+  email: 'superduperkamehameha@gmail.com',
+  isAdmin: false,
+  cliToken: 'KfizzIlWp111fizzDbuzzr'
 }
 
-User.findOne = jest.fn().mockReturnValue(mockUserInfo)
+prisma.user.findUnique = jest.fn().mockReturnValue(mockUserInfo)
 
 const res = {}
 const next = () => {}
@@ -35,6 +31,6 @@ describe('User Middleware', () => {
   test('Should return correct info from database if session.userId exists', async () => {
     const req = { session: { userId: 'noob' } }
     await userMiddleware(req, res, next)
-    expect(req.user).toEqual(mockUserInfo.dataValues)
+    expect(req.user).toEqual(mockUserInfo)
   })
 })
