@@ -84,7 +84,6 @@ export const logout = async (_parent: void, _: void, ctx: Context) => {
         error: 'Session Error'
       })
     }
-
     session.destroy(err => {
       if (err) {
         req.error(err)

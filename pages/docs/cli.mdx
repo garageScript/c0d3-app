@@ -1,0 +1,68 @@
+import LessonLayout from '../../components/mdx/Layout'
+
+# Important Commands
+
+In this section we will be going over the following commonly used commands:
+
+> `pwd`, `ls`, `cd`, `mkdir`
+
+Type `pwd` **(print working directory)** into your terminal. If your username is
+`cookie`, you might see:
+
+- `/Users/cookie` (on a Mac)
+- `/home/cookie` (on Ubuntu)
+- `C:\Users\cookie\Documents` (on Windows).
+  - If you are on Windows, type `cd ..` to go up a folder; then if you type
+    `pwd` again, you should see `C:\Users\cookie\`.
+
+This is the folder in which all your files and folders are saved, called the
+**home folder**.
+
+Type `ls` **(list)**, \***\*or `dir` **(directory)\*\* for Windows, into your
+terminal. This command shows you a list of all the files and folders in the
+current folder (which should be your home folder). `Desktop` should be one of
+the folders; let's go in there!
+
+`cd` **(change directory)** is the command that lets you go into a folder.
+However, you need to tell the computer which folder to go into. You need to type
+`cd Desktop` and press `Enter` to go into the Desktop folder.
+
+> **Pro tip**: You can type cd Desk and then hit `tab` to auto-complete.
+> Software engineers use tab to type less, which reduces the chance of typos. If
+> you have multiple files and folders that start with the same name, hitting
+> `tab` may fail because the computer does not know how to autocomplete your
+> request. You will have to type a few more characters and then hit `tab`.
+
+`mkdir notes2357` creates a new folder called notes2357 in the current folder
+(which should be Desktop), and you should be able to see the folder if look at
+your desktop in the GUI.
+
+To see all the files and folder in your desktop folder, type `ls` (`dir` for
+Windows).
+
+## Path
+
+The **path** to a folder is the list of all the other folders you have to go
+through to get to it. The longer the path is, the "deeper" that folder is nested
+inside other folders. To see the full path of where you currently are, you can
+type `pwd` (`cd` for Windows).
+
+When using paths, `~` is a short way to write out the path to your home folder:
+
+- For example, if your home folder is `/home/cookie`,
+  `mkdir ~/Desktop/notes2357/curriculum` will create a folder called
+  `curriculum` inside the `notes2357` folder.
+
+`..` means the **parent folder**:
+
+Let's assume our current path is: `/home/cookie/Desktop/notes2357/curriculum`
+
+- `ls ..` will list out the files and folders in
+  `/home/cookie/Desktop/notes2357`
+- `ls ../../..` will list out the files and folders in `/home/cookie`
+- `cd ../..` will take you to `/home/cookie/Desktop/`
+
+> Make sure you include a space between the command (`ls`) and the options (like
+> `..`, `../..`, etc.).
+
+export default ({ children }) => <LessonLayout>{children}</LessonLayout>
