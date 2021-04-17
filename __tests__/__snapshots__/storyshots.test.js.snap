@@ -11075,9 +11075,11 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-6 offset-md-3"
       >
         <img
-          alt="Hero Image"
+          alt="Hero image"
           className="img-fluid"
+          height="360"
           src="/assets/landing/header-01.svg"
+          width="313"
         />
       </div>
     </div>
@@ -11172,13 +11174,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-4"
       >
         <img
-          alt=""
+          alt="Modern curriculum"
+          className="img-fluid"
+          height="170"
+          layout="fixed"
           src="/assets/landing/choose-01.svg"
-          style={
-            Object {
-              "height": "170px",
-            }
-          }
+          width="163"
         />
         <h4
           className="mt-3 font-weight-bold"
@@ -11195,13 +11196,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-4"
       >
         <img
-          alt=""
+          alt="Support"
+          className="img-fluid"
+          height="170"
+          layout="fixed"
           src="/assets/landing/choose-02.svg"
-          style={
-            Object {
-              "height": "170px",
-            }
-          }
+          width="259"
         />
         <h4
           className="mt-3 font-weight-bold"
@@ -11218,13 +11218,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-4"
       >
         <img
-          alt=""
+          alt="Work Experience"
+          className="img-fluid"
+          height="170"
+          layout="fixed"
           src="/assets/landing/choose-03.svg"
-          style={
-            Object {
-              "height": "170px",
-            }
-          }
+          width="93"
         />
         <h4
           className="mt-3 font-weight-bold"
@@ -11274,13 +11273,16 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 order-md-2 text-center"
         >
           <img
-            alt=""
-            className="mb-3 img-fluid"
+            alt="Creating an account"
+            className="img-fluid"
+            height="293"
+            layout="intrinsic"
             src="/assets/landing/journey-01.svg"
+            width="403"
           />
         </div>
         <div
-          className="col-md-5 offset-md-1 order-md-1"
+          className="col-md-5 offset-md-1 order-md-1 align-self-center"
         >
           <h2
             className="font-weight-bold"
@@ -11306,13 +11308,16 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 offset-md-1 text-center"
         >
           <img
-            alt=""
-            className="mb-3 img-fluid"
+            alt="Curriculum"
+            className="img-fluid"
+            height="449"
+            layout="intrinsic"
             src="/assets/landing/journey-02.svg"
+            width="419"
           />
         </div>
         <div
-          className="col-md-5"
+          className="col-md-5 align-self-center"
         >
           <h2
             className="font-weight-bold"
@@ -11348,13 +11353,16 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 order-md-2 text-center"
         >
           <img
-            alt=""
-            className="mb-3 img-fluid"
+            alt="Pay it forward"
+            className="img-fluid"
+            height="437"
+            layout="intrinsic"
             src="/assets/landing/journey-03.svg"
+            width="419"
           />
         </div>
         <div
-          className="col-md-5 order-md-1 offset-md-1"
+          className="col-md-5 order-md-1 offset-md-1 align-self-center"
         >
           <h2
             className="font-weight-bold"
@@ -11380,13 +11388,16 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 offset-md-1 text-center"
         >
           <img
-            alt=""
-            className="mb-3 img-fluid"
+            alt="Work Experience"
+            className="img-fluid"
+            height="418"
+            layout="intrinsic"
             src="/assets/landing/journey-04.svg"
+            width="316"
           />
         </div>
         <div
-          className="col-md-5"
+          className="col-md-5 align-self-center"
         >
           <h2
             className="font-weight-bold"
