@@ -123,10 +123,10 @@ const UserProfile: React.FC = () => {
   return (
     <Layout>
       <div className="row mt-4">
-        <div className="col-4">
+        <div className="mb-3 mb-md-0 col-md-4">
           <ProfileImageInfo user={userInfo} />
         </div>
-        <div className="col-8">
+        <div className="col-md-8">
           <ProfileLessons lessons={profileLessons} />
           <ProfileSubmissions lessons={profileSubmissions} />
         </div>

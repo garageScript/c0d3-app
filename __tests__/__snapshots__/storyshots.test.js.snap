@@ -5593,7 +5593,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
       className="display_lessons"
     >
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -5674,7 +5674,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -5761,7 +5761,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -5845,7 +5845,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -5926,7 +5926,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -5998,7 +5998,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -6085,7 +6085,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -6160,7 +6160,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -6244,7 +6244,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"
@@ -6331,7 +6331,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
         </div>
       </div>
       <div
-        className="lesson_challenges"
+        className="lesson_challenges d-flex align-items-center align-items-md-stretch"
       >
         <div
           className="lesson_image_container"

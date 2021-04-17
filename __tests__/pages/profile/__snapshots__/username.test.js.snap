@@ -99,7 +99,7 @@ exports[`user profile test Should render anonymous users 1`] = `
       class="row mt-4"
     >
       <div
-        class="col-4"
+        class="mb-3 mb-md-0 col-md-4"
       >
         <div
           class="card shadow-sm"
@@ -126,7 +126,7 @@ exports[`user profile test Should render anonymous users 1`] = `
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card shadow-sm"
@@ -224,7 +224,7 @@ exports[`user profile test Should render anonymous users 1`] = `
               class="display_lessons"
             >
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -281,7 +281,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -344,7 +344,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -404,7 +404,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -461,7 +461,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -509,7 +509,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -563,7 +563,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -614,7 +614,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -674,7 +674,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -737,7 +737,7 @@ exports[`user profile test Should render anonymous users 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -893,7 +893,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
       class="row mt-4"
     >
       <div
-        class="col-4"
+        class="mb-3 mb-md-0 col-md-4"
       >
         <div
           class="card shadow-sm"
@@ -920,7 +920,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card shadow-sm"
@@ -984,7 +984,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
               class="display_lessons"
             >
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1008,7 +1008,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1032,7 +1032,7 @@ exports[`user profile test Should render nulled lessons 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1170,7 +1170,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
       class="row mt-4"
     >
       <div
-        class="col-4"
+        class="mb-3 mb-md-0 col-md-4"
       >
         <div
           class="card shadow-sm"
@@ -1197,7 +1197,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card shadow-sm"
@@ -1295,7 +1295,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               class="display_lessons"
             >
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1352,7 +1352,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1415,7 +1415,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1475,7 +1475,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1532,7 +1532,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1580,7 +1580,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1634,7 +1634,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1685,7 +1685,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1745,7 +1745,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1808,7 +1808,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -1964,7 +1964,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
       class="row mt-4"
     >
       <div
-        class="col-4"
+        class="mb-3 mb-md-0 col-md-4"
       >
         <div
           class="card shadow-sm"
@@ -1991,7 +1991,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card shadow-sm"
@@ -2096,7 +2096,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
               class="display_lessons"
             >
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2153,7 +2153,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2216,7 +2216,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2276,7 +2276,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2333,7 +2333,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2381,7 +2381,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2435,7 +2435,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2486,7 +2486,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2546,7 +2546,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2609,7 +2609,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2651,7 +2651,7 @@ exports[`user profile test Should render nulles challenges 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2799,7 +2799,7 @@ exports[`user profile test Should render profile 1`] = `
       class="row mt-4"
     >
       <div
-        class="col-4"
+        class="mb-3 mb-md-0 col-md-4"
       >
         <div
           class="card shadow-sm"
@@ -2826,7 +2826,7 @@ exports[`user profile test Should render profile 1`] = `
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card shadow-sm"
@@ -2929,7 +2929,7 @@ exports[`user profile test Should render profile 1`] = `
               class="display_lessons"
             >
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -2986,7 +2986,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3049,7 +3049,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3109,7 +3109,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3166,7 +3166,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3214,7 +3214,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3268,7 +3268,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3319,7 +3319,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3379,7 +3379,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
@@ -3442,7 +3442,7 @@ exports[`user profile test Should render profile 1`] = `
                 </div>
               </div>
               <div
-                class="lesson_challenges"
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
               >
                 <div
                   class="lesson_image_container"
