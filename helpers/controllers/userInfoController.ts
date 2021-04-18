@@ -95,6 +95,6 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
   return {
     user,
     lessonStatus,
-    submissions,
+    submissions
   }
 }
