@@ -5579,6 +5579,142 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
+<div
+  className="profile-comments"
+>
+  <div
+    className="comments-container card shadow-sm"
+  >
+    <div
+      className="comments-container-title card-body"
+    >
+      <h3>
+        Stars
+      </h3>
+    </div>
+    <div
+      className="card-body text-center"
+    >
+      <div>
+        <div
+          className="comment-box shadow-sm"
+        >
+          <div
+            className="comment-profile-container"
+          >
+            <div
+              className="user-info-wrapper"
+            >
+              <div
+                className="user-info-image text-uppercase bg-primary rounded-circle text-light"
+              >
+                C
+                 
+              </div>
+              <div>
+                <div
+                  className="comment-username text-left"
+                >
+                  @cko
+                </div>
+                <h6
+                  className="comment-lesson-title text-left"
+                >
+                  End to End
+                </h6>
+              </div>
+            </div>
+            <svg
+              className="comment-star-icon"
+              fill="yellow"
+              height={15}
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
+              viewBox="0 0 24 24"
+              width={15}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          </div>
+          <hr />
+          <div
+            className="comment-text-container"
+          >
+            <div
+              className="comment-text"
+            >
+              Objects ain't easy, but thanks to you, they're now lemon squeezy.
+            </div>
+          </div>
+        </div>
+        <div
+          className="comment-box shadow-sm"
+        >
+          <div
+            className="comment-profile-container"
+          >
+            <div
+              className="user-info-wrapper"
+            >
+              <div
+                className="user-info-image text-uppercase bg-primary rounded-circle text-light"
+              >
+                A
+                 
+              </div>
+              <div>
+                <div
+                  className="comment-username text-left"
+                >
+                  @ale
+                </div>
+                <h6
+                  className="comment-lesson-title text-left"
+                >
+                  Objects
+                </h6>
+              </div>
+            </div>
+            <svg
+              className="comment-star-icon"
+              fill="yellow"
+              height={15}
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1"
+              viewBox="0 0 24 24"
+              width={15}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          </div>
+          <hr />
+          <div
+            className="comment-text-container"
+          >
+            <div
+              className="comment-text"
+            >
+              Thanks. I was once lost but now I'm found. Was blind but now I see.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] = `
 <div
   className="card shadow-sm profile-submissions mt-3"
@@ -12554,6 +12690,114 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
         You will receive a link to confirm your email address and to set your password.
       </p>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/UserProfile User Profile Few Comments 1`] = `
+<div
+  className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+  style={
+    Object {
+      "left": 0,
+      "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
+      "zIndex": 1,
+    }
+  }
+>
+  <h1
+    className="text-white font-weight-bold display-3"
+    style={
+      Object {
+        "fontFamily": "'PT Mono', sans-serif",
+      }
+    }
+  >
+    C0D3
+  </h1>
+  <div
+    className="spinner-border text-white"
+    role="status"
+  >
+    <h1
+      className="sr-only"
+    >
+      Loading...
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/UserProfile User Profile Many Comments 1`] = `
+<div
+  className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+  style={
+    Object {
+      "left": 0,
+      "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
+      "zIndex": 1,
+    }
+  }
+>
+  <h1
+    className="text-white font-weight-bold display-3"
+    style={
+      Object {
+        "fontFamily": "'PT Mono', sans-serif",
+      }
+    }
+  >
+    C0D3
+  </h1>
+  <div
+    className="spinner-border text-white"
+    role="status"
+  >
+    <h1
+      className="sr-only"
+    >
+      Loading...
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Pages/UserProfile User Profile Zero Comments 1`] = `
+<div
+  className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
+  style={
+    Object {
+      "left": 0,
+      "minHeight": "100vh",
+      "position": "fixed",
+      "top": 0,
+      "zIndex": 1,
+    }
+  }
+>
+  <h1
+    className="text-white font-weight-bold display-3"
+    style={
+      Object {
+        "fontFamily": "'PT Mono', sans-serif",
+      }
+    }
+  >
+    C0D3
+  </h1>
+  <div
+    className="spinner-border text-white"
+    role="status"
+  >
+    <h1
+      className="sr-only"
+    >
+      Loading...
+    </h1>
   </div>
 </div>
 `;
