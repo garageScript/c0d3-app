@@ -1,16 +1,11 @@
 .challenges-container {
   width: 100%;
 }
-.challenge-display_challenges {
-  @media (max-width: 750px) {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    &.show {
-      display: block;
-    }
-  }
+.challenge-modal .modal-content {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
+
 .challenge-title-card {
   :hover {
     cursor: hand;

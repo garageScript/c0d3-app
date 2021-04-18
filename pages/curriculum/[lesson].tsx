@@ -60,6 +60,7 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 chatUrl={currentLesson.chatUrl}
                 lessonId={parseInt(currentLesson.id, 10)}
                 show={show}
+                setShow={setShow}
               />
             </div>
           )}
