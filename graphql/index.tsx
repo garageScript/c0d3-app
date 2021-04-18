@@ -231,7 +231,6 @@ export type Star = {
   comment?: Maybe<Scalars['String']>
   student: User
   lesson: Lesson
-  mentor: User
 }
 
 export type Submission = {
@@ -1263,7 +1262,6 @@ export type StarResolvers<
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   student?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
-  mentor?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
