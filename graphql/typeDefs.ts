@@ -175,5 +175,6 @@ export default gql`
     comment: String
     student: User!
     lesson: Lesson!
+    mentor: User!
   }
 `
