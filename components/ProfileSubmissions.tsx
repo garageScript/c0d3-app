@@ -1,5 +1,5 @@
 import React from 'react'
-import { Star as StarType } from '../@types/lesson'
+import { Star as StarType } from '../graphql/index'
 import { Star } from 'react-feather'
 import styles from '../scss/profileSubmissions.module.scss'
 
@@ -11,7 +11,7 @@ type LessonChallengeProps = {
   lessons: LessonChallenge[]
 }
 
-type LessonChallenge = {
+export type LessonChallenge = {
   order: number
   title: string
   challenges: Challenge[]
