@@ -1,6 +1,7 @@
 import React from 'react'
 import { Star as StarType } from '../graphql/index'
 import { Star as StarIcon } from 'react-feather'
+import _ from 'lodash'
 import styles from '../scss/profileStarComments.module.scss'
 
 type StarCommentsProps = {
@@ -12,13 +13,12 @@ type StarCommentProps = {
 }
 
 const StarComment: React.FC<StarCommentProps> = ({ star }) => {
-  const {
-    lesson: { title },
-    student: { username, name },
-    comment
-  } = star
-  const firstName = name!.split(' ')[0] || 'A'
-  const lastName = name!.split(' ')[1] || ' '
+  const fullname = _.get(star, 'student.name', '')
+  const username = _.get(star, 'student.username', '')
+  const lessonTitle = _.get(star, 'lesson.title', '')
+  const starComment = _.get(star, 'comment', '')
+  const firstName = fullname.split(' ')[0] || 'A'
+  const lastName = fullname.split(' ')[1] || ' '
   return (
     <div className={`${styles['comment-box']} shadow-sm`}>
       <div className={`${styles['comment-profile-container']}`}>
@@ -34,7 +34,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
               {'@' + username}
             </div>
             <h6 className={`${styles['comment-lesson-title']} text-left`}>
-              {title}
+              {lessonTitle}
             </h6>
           </div>
         </div>
@@ -47,7 +47,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
       </div>
       <hr />
       <div className={`${styles['comment-text-container']}`}>
-        <div className={`${styles['comment-text']}`}>{comment}</div>
+        <div className={`${styles['comment-text']}`}>{starComment}</div>
       </div>
     </div>
   )
