@@ -52,6 +52,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
 }
 
 export const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
+  console.log(stars)
   stars.sort((a, b) => b.lesson.order! - a.lesson.order!)
 
   const displayStarComments = stars.map((star: StarType, commentId: number) => {

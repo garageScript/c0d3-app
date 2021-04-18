@@ -8,6 +8,20 @@ export default {
   title: 'Components/ProfileSubmissions'
 }
 
+const student = {
+  id: 2,
+  username: 'fakeusername',
+  name: 'fake user',
+  isAdmin: false
+}
+
+const mentor = {
+  id: 1,
+  username: 'admin',
+  name: 'Admin Admin',
+  isAdmin: true
+}
+
 const completedChallenges = [
   { challengeNumber: 1, challengeStatus: 'passed' },
   { challengeNumber: 2, challengeStatus: 'passed' },
@@ -86,12 +100,8 @@ const starsReceived = [
     mentorId: 5,
     lessonId: 1,
     lesson: dummyLesson[2],
-    student: {
-      id: '1',
-      username: 'fakeusername',
-      name: 'fake user',
-      isAdmin: true
-    },
+    student,
+    mentor,
     comment: 'Thank you'
   },
   {
@@ -100,12 +110,8 @@ const starsReceived = [
     mentorId: 5,
     lessonId: 1,
     lesson: dummyLesson[2],
-    student: {
-      id: '1',
-      username: 'fakeusername',
-      name: 'fake user',
-      isAdmin: true
-    },
+    student,
+    mentor,
     comment: 'Thank you so much!'
   }
 ]
