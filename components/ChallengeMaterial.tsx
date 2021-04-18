@@ -315,6 +315,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }
+  const [status, setStatus] = useState('')
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
     (acc: UserSubmissionsObject, submission: UserSubmission) => {
@@ -371,7 +372,18 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     }
   )
   const challengeList = (
-    <div className={`challenge-display_challenges ${show && 'show'} col-md-4`}>
+    <div
+      className={`challenge-display_challenges ${show && 'show'} col-md-4`}
+      onClick={e => {
+        const target = e.target as HTMLElement
+        if (!show) {
+          setShow(true)
+          setStatus(target.innerText)
+        } else if (status === target.innerText) {
+          setShow(!show)
+        } else setStatus(target.innerText)
+      }}
+    >
       {challengeTitleCards}
       {lessonStatus.isPassed && (
         <ChallengeTitleCard
@@ -388,16 +400,19 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   )
   return (
     <div className="row challenge-display mt-3">
-      {window.innerWidth > 765 ? challengeList :  <Modal
-        show={show}
-        onHide={() => setShow(!show)}
-        size="lg"
-        centered
-        className="challenge-modal"
-      >
-        <Modal.Body>{challengeList}</Modal.Body>
-      </Modal>}
-     
+      {window.innerWidth > 765 ? (
+        challengeList
+      ) : (
+        <Modal
+          show={show}
+          onHide={() => setShow(!show)}
+          centered
+          className="challenge-modal"
+        >
+          <Modal.Body>{challengeList}</Modal.Body>
+        </Modal>
+      )}
+
       <div className="col-md-8">
         {currentChallenge.id !== 'finalChallenge' && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />

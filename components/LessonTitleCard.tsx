@@ -1,7 +1,7 @@
 import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
-import Button from 'react-bootstrap/Button'
+import { Button } from './theme/Button'
 
 type Props = {
   lessonCoverUrl: string
@@ -40,9 +40,9 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             LESSON
           </NavLink>
-          {window.innerWidth < 750 && (
+          {window.innerWidth < 768 && (
             <Button onClick={() => props.setShow(!props.show)}>
-              CHALLENGES
+              SHOW CHALLENGES
             </Button>
           )}
           {props.isPassed && (
