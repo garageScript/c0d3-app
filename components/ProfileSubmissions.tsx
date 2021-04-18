@@ -69,7 +69,10 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
       )
     }
     return (
-      <div key={lessonId} className={`${styles['lesson_challenges']}`}>
+      <div
+        key={lessonId}
+        className={`${styles['lesson_challenges']} d-flex align-items-center align-items-md-stretch`}
+      >
         <div className={`${styles['lesson_image_container']}`}>
           {starBadge}
           <img src={`/assets/curriculum/js-${lesson.order}-cover.svg`} />
