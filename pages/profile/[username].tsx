@@ -131,7 +131,9 @@ const UserProfile: React.FC = () => {
       <div className="row mt-4">
         <div className="col-4">
           <ProfileImageInfo user={userInfo} />
-          <ProfileStarComments stars={profileStars} />
+          {profileStars.length === 0 ? null : (
+            <ProfileStarComments stars={profileStars} />
+          )}
         </div>
         <div className="col-8">
           <ProfileLessons lessons={profileLessons} />
