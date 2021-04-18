@@ -298,6 +298,7 @@ type ChallengeMaterialProps = {
   lessonStatus: LessonStatus
   chatUrl: string
   lessonId: number
+  show: boolean
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
@@ -305,7 +306,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   userSubmissions,
   lessonStatus,
   chatUrl,
-  lessonId
+  lessonId,
+  show
 }) => {
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
@@ -367,7 +369,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   )
   return (
     <div className="row challenge-display mt-3">
-      <div className="col-4">
+      <div
+        className={`challenge-display_challenges ${show && 'show'} col-md-4`}
+      >
         {challengeTitleCards}
         {lessonStatus.isPassed && (
           <ChallengeTitleCard
@@ -381,7 +385,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
           />
         )}
       </div>
-      <div className="col-8">
+      <div className="col-md-8">
         {currentChallenge.id !== 'finalChallenge' && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}

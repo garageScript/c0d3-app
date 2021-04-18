@@ -16,6 +16,7 @@ import _ from 'lodash'
 
 const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
+  const [show, setShow] = React.useState(true)
   const router = useRouter()
   const currentlessonId = router.query.lesson as string
   if (!lessons || !alerts) {
@@ -47,6 +48,8 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 lessonTitle={currentLesson.title}
                 lessonId={currentlessonId}
                 isPassed={isPassed}
+                setShow={setShow}
+                show={show}
               />
               {/* Casting alerts as any until type is migrated */}
               {alerts && <AlertsDisplay alerts={alerts as any} />}
@@ -56,6 +59,7 @@ const Challenges: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
                 lessonStatus={currentLessonStatus}
                 chatUrl={currentLesson.chatUrl}
                 lessonId={parseInt(currentLesson.id, 10)}
+                show={show}
               />
             </div>
           )}
