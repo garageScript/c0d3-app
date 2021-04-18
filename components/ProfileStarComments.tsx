@@ -22,29 +22,31 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
   return (
     <div className={`${styles['comment-box']} shadow-sm`}>
       <div className={`${styles['comment-profile-container']}`}>
-        <div
-          className={`${styles['user-info-image']} text-uppercase bg-primary rounded-circle text-light`}
-        >
-          {firstName[0]}
-          {lastName[0]}
-        </div>
-        <div>
-          <div className={`${styles['comment-username']} text-left`}>
-            {'@' + username}
+        <div className={`${styles['user-info-wrapper']}`}>
+          <div
+            className={`${styles['user-info-image']} text-uppercase bg-primary rounded-circle text-light`}
+          >
+            {firstName[0]}
+            {lastName[0]}
           </div>
-          <h6 className={`${styles['comment-lesson-title']} text-left`}>
-            {title}
-          </h6>
+          <div>
+            <div className={`${styles['comment-username']} text-left`}>
+              {'@' + username}
+            </div>
+            <h6 className={`${styles['comment-lesson-title']} text-left`}>
+              {title}
+            </h6>
+          </div>
         </div>
-      </div>
-      <hr />
-      <div className={`${styles['comment-text-container']}`}>
         <StarIcon
           className={`${styles['comment-star-icon']}`}
           strokeWidth={'1'}
-          size={30}
+          size={15}
           fill="yellow"
         />
+      </div>
+      <hr />
+      <div className={`${styles['comment-text-container']}`}>
         <div className={`${styles['comment-text']}`}>{comment}</div>
       </div>
     </div>
@@ -52,8 +54,12 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
 }
 
 export const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
-  console.log(stars)
-  stars.sort((a, b) => b.lesson.order! - a.lesson.order!)
+  stars.sort((a, b) => {
+    if (a.lesson.order! > b.lesson.order!) return -1
+    if (a.lesson.order! <= b.lesson.order!) return 1
+    if (!a.comment || !b.comment) return -1
+    return 1
+  })
 
   const displayStarComments = stars.map((star: StarType, commentId: number) => {
     return <StarComment key={commentId} star={star} />
@@ -61,6 +67,9 @@ export const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
   return (
     <div className={`${styles['profile-comments']}`}>
       <div className={`${styles['comments-container']} card shadow-sm`}>
+        <div className={`${styles['comments-container-title']} card-body`}>
+          <h3>Stars</h3>
+        </div>
         <div className="card-body text-center">
           <div>{displayStarComments}</div>
         </div>

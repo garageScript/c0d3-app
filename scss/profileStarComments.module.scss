@@ -6,14 +6,7 @@
     }
     .comments-container-title {
         display: flex;
-        margin: auto;
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 2;
-        letter-spacing: normal;
-        color: grey;
+
       }
     .comment-box {
         padding: 16px 0 22px 1px;
@@ -27,9 +20,12 @@
     }
     .comment-profile-container {
         display: flex;
-        margin: auto;
+        margin: 0rem 1rem;
         align-items: center;
-        justify-content: left;
+        justify-content: space-between;
+    }
+    .user-info-wrapper {
+        display: flex;
     }
     .user-info-image{
         display: flex;
@@ -37,7 +33,7 @@
         align-Items: center;
         width: 41px;
         height: 41px;
-        margin: 2px 12px 0px 27px;
+        margin: 0rem 1rem;
         border-radius: 26.5px;
       }
     .comment-username {
@@ -57,7 +53,7 @@
         flex: auto;
     }
     .comment-star-icon {
-        margin: 0px;
+        margin: 0rem 1rem;
     }
     .comment-text {
         font-family: Roboto;

@@ -114,6 +114,7 @@ const UserProfile: React.FC = () => {
   })
 
   const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
+  console.log(lessonStatus)
   const validProfiles = lessonStatus.filter(
     ({ starsReceived }) => (starsReceived || []).length !== 0
   )
