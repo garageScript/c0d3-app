@@ -2612,7 +2612,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <h4
                 class="progress-card__title mt-3"
               >
-                You're off to a great start!
+                Keep up the great work!
               </h4>
               <div
                 class="mt-3"
