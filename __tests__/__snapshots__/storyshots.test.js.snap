@@ -5584,10 +5584,10 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
   className="profile-comments"
 >
   <div
-    className="comments-container card shadow-sm"
+    className="d-flex card mt-4 shadow-sm"
   >
     <div
-      className="comments-container-title card-body"
+      className="d-flex card-body"
     >
       <h3>
         Stars
@@ -5598,35 +5598,34 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
     >
       <div>
         <div
-          className="comment-box shadow-sm"
+          className="mb-3 py-3 bg-white rounded shadow-sm"
         >
           <div
-            className="comment-profile-container"
+            className="mx-2 d-flex justify-content-between align-items-center"
           >
             <div
-              className="user-info-wrapper"
+              className="d-flex mt-1 align-items-center"
             >
-              <div
-                className="user-info-image text-uppercase bg-primary rounded-circle text-light"
+              <h6
+                className="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
               >
-                C
-                 
-              </div>
+                C 
+              </h6>
               <div>
-                <div
-                  className="comment-username text-left"
+                <h6
+                  className="text-md-left text-muted font-weight-bold mb-0"
                 >
                   @cko
-                </div>
+                </h6>
                 <h6
-                  className="comment-lesson-title text-left"
+                  className="comment-lesson-title text-muted text-left"
                 >
                   End to End
                 </h6>
               </div>
             </div>
             <svg
-              className="comment-star-icon"
+              className="mx-3"
               fill="yellow"
               height={15}
               stroke="currentColor"
@@ -5644,45 +5643,44 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
           </div>
           <hr />
           <div
-            className="comment-text-container"
+            className="flex-auto"
           >
-            <div
-              className="comment-text"
+            <p
+              className="comment-text pt-2 px-3 text-md"
             >
               Objects ain't easy, but thanks to you, they're now lemon squeezy.
-            </div>
+            </p>
           </div>
         </div>
         <div
-          className="comment-box shadow-sm"
+          className="mb-3 py-3 bg-white rounded shadow-sm"
         >
           <div
-            className="comment-profile-container"
+            className="mx-2 d-flex justify-content-between align-items-center"
           >
             <div
-              className="user-info-wrapper"
+              className="d-flex mt-1 align-items-center"
             >
-              <div
-                className="user-info-image text-uppercase bg-primary rounded-circle text-light"
+              <h6
+                className="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
               >
-                A
-                 
-              </div>
+                A 
+              </h6>
               <div>
-                <div
-                  className="comment-username text-left"
+                <h6
+                  className="text-md-left text-muted font-weight-bold mb-0"
                 >
                   @ale
-                </div>
+                </h6>
                 <h6
-                  className="comment-lesson-title text-left"
+                  className="comment-lesson-title text-muted text-left"
                 >
                   Objects
                 </h6>
               </div>
             </div>
             <svg
-              className="comment-star-icon"
+              className="mx-3"
               fill="yellow"
               height={15}
               stroke="currentColor"
@@ -5700,13 +5698,13 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
           </div>
           <hr />
           <div
-            className="comment-text-container"
+            className="flex-auto"
           >
-            <div
-              className="comment-text"
+            <p
+              className="comment-text pt-2 px-3 text-md"
             >
               Thanks. I was once lost but now I'm found. Was blind but now I see.
-            </div>
+            </p>
           </div>
         </div>
       </div>
