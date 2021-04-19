@@ -43,12 +43,16 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
         </div>
         <StarIcon className="mx-3" strokeWidth="1" size={15} fill="yellow" />
       </div>
-      <hr />
-      <div className="flex-auto">
-        <p className={`${styles['comment-text']} pt-2 px-3 text-md`}>
-          {starComment}
-        </p>
-      </div>
+      {starComment ? (
+        <>
+          <hr />
+          <div className="flex-auto">
+            <p className={`${styles['comment-text']} pt-2 px-3 text-md`}>
+              {starComment}
+            </p>
+          </div>
+        </>
+      ) : null}
     </div>
   )
 }
