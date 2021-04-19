@@ -110,7 +110,23 @@ describe('user profile test', () => {
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
-          starsReceived: []
+          starsReceived: [
+            {
+              id: '17',
+              mentorId: 1,
+              studentId: '6',
+              lessonId: '2',
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: ''
+            }
+          ]
         }
       ]
     }

@@ -3627,10 +3627,10 @@ exports[`user profile test Should render profile 1`] = `
           class="profile-comments"
         >
           <div
-            class="comments-container card shadow-sm"
+            class="d-flex card mt-4 shadow-sm"
           >
             <div
-              class="comments-container-title card-body"
+              class="d-flex card-body"
             >
               <h3>
                 Stars
@@ -3641,35 +3641,34 @@ exports[`user profile test Should render profile 1`] = `
             >
               <div>
                 <div
-                  class="comment-box shadow-sm"
+                  class="mb-3 py-3 bg-white rounded shadow-sm"
                 >
                   <div
-                    class="comment-profile-container"
+                    class="mx-2 d-flex justify-content-between align-items-center"
                   >
                     <div
-                      class="user-info-wrapper"
+                      class="d-flex mt-1 align-items-center"
                     >
-                      <div
-                        class="user-info-image text-uppercase bg-primary rounded-circle text-light"
+                      <h6
+                        class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
                       >
-                        n
-                        n
-                      </div>
+                        nn
+                      </h6>
                       <div>
-                        <div
-                          class="comment-username text-left"
+                        <h6
+                          class="text-md-left text-muted font-weight-bold mb-0"
                         >
                           @newbie
-                        </div>
+                        </h6>
                         <h6
-                          class="comment-lesson-title text-left"
+                          class="comment-lesson-title text-muted text-left"
                         >
                           Foundations of JavaScript
                         </h6>
                       </div>
                     </div>
                     <svg
-                      class="comment-star-icon"
+                      class="mx-3"
                       fill="yellow"
                       height="15"
                       stroke="currentColor"
@@ -3687,45 +3686,44 @@ exports[`user profile test Should render profile 1`] = `
                   </div>
                   <hr />
                   <div
-                    class="comment-text-container"
+                    class="flex-auto"
                   >
-                    <div
-                      class="comment-text"
+                    <p
+                      class="comment-text pt-2 px-3 text-md"
                     >
                       Thanks for your halp!
-                    </div>
+                    </p>
                   </div>
                 </div>
                 <div
-                  class="comment-box shadow-sm"
+                  class="mb-3 py-3 bg-white rounded shadow-sm"
                 >
                   <div
-                    class="comment-profile-container"
+                    class="mx-2 d-flex justify-content-between align-items-center"
                   >
                     <div
-                      class="user-info-wrapper"
+                      class="d-flex mt-1 align-items-center"
                     >
-                      <div
-                        class="user-info-image text-uppercase bg-primary rounded-circle text-light"
+                      <h6
+                        class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
                       >
-                        n
-                        n
-                      </div>
+                        nn
+                      </h6>
                       <div>
-                        <div
-                          class="comment-username text-left"
+                        <h6
+                          class="text-md-left text-muted font-weight-bold mb-0"
                         >
                           @newbie
-                        </div>
+                        </h6>
                         <h6
-                          class="comment-lesson-title text-left"
+                          class="comment-lesson-title text-muted text-left"
                         >
                           Variables & Functions
                         </h6>
                       </div>
                     </div>
                     <svg
-                      class="comment-star-icon"
+                      class="mx-3"
                       fill="yellow"
                       height="15"
                       stroke="currentColor"
@@ -3743,13 +3741,58 @@ exports[`user profile test Should render profile 1`] = `
                   </div>
                   <hr />
                   <div
-                    class="comment-text-container"
+                    class="flex-auto"
                   >
-                    <div
-                      class="comment-text"
+                    <p
+                      class="comment-text pt-2 px-3 text-md"
                     >
                       Thanks for your halp!
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="mb-3 py-3 bg-white rounded shadow-sm"
+                >
+                  <div
+                    class="mx-2 d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="d-flex mt-1 align-items-center"
+                    >
+                      <h6
+                        class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
+                      >
+                        nn
+                      </h6>
+                      <div>
+                        <h6
+                          class="text-md-left text-muted font-weight-bold mb-0"
+                        >
+                          @newbie
+                        </h6>
+                        <h6
+                          class="comment-lesson-title text-muted text-left"
+                        >
+                          Variables & Functions
+                        </h6>
+                      </div>
                     </div>
+                    <svg
+                      class="mx-3"
+                      fill="yellow"
+                      height="15"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      viewBox="0 0 24 24"
+                      width="15"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -4034,6 +4077,30 @@ exports[`user profile test Should render profile 1`] = `
                 <div
                   class="lesson_image_container"
                 >
+                  <p
+                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                  >
+                    1
+                    <span
+                      class="ml-1"
+                    >
+                      <svg
+                        fill="yellow"
+                        height="15"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="15"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon
+                          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        />
+                      </svg>
+                    </span>
+                  </p>
                   <img
                     src="/assets/curriculum/js-2-cover.svg"
                   />

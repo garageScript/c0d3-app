@@ -24,11 +24,9 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
       <div className="mx-2 d-flex justify-content-between align-items-center">
         <div className="d-flex mt-1 align-items-center">
           <h6
-            className="mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
-            style={{ width: '41px', height: '41px' }}
+            className={`${styles['comment-student-initials']} mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light`}
           >
-            {firstName[0]}
-            {lastName[0]}
+            {firstName[0] + lastName[0]}
           </h6>
           <div>
             <h6 className="text-md-left text-muted font-weight-bold mb-0">
