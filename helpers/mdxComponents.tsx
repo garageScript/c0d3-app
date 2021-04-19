@@ -3,6 +3,7 @@ import CodeBlock from '../components/mdx/CodeBlock'
 import BlockQuote from '../components/mdx/BlockQuote'
 import ModalImage from '../components/mdx/ModalImage'
 import styles from '../scss/mdx.module.scss'
+import Spoiler from '../components/mdx/Spoiler'
 
 const MDXcomponents = {
   inlineCode: (props: any) => (
@@ -11,6 +12,7 @@ const MDXcomponents = {
   code: CodeBlock,
   blockquote: BlockQuote,
   Image: ModalImage,
+  Spoiler: Spoiler,
   h1: (props: any) => <h1 className={`${styles['MDX_h1']}`} {...props} />,
   h2: (props: any) => <h2 className={`${styles['MDX_h2']}`} {...props} />,
   h3: (props: any) => <h3 className={`${styles['MDX_h3']}`} {...props} />,

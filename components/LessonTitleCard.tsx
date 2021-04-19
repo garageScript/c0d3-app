@@ -2,7 +2,7 @@ import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
 
-type Props = {
+export type LessonTitleProps = {
   lessonCoverUrl: string
   lessonUrl: string
   lessonTitle: string
@@ -10,7 +10,7 @@ type Props = {
   isPassed: boolean
 }
 
-const LessonTitleCard: React.FC<Props> = props => {
+const LessonTitleCard: React.FC<LessonTitleProps> = props => {
   return (
     <div className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0">
       <div className="card-body p-0">
