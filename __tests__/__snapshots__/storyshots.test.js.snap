@@ -4742,11 +4742,14 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      className="lesson-card__image"
+      className="img-fluid"
+      height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
+      width="116"
     />
     <div
-      className="w-100 pl-4"
+      className="lesson-card__description pl-4"
     >
       <div>
         <h4
@@ -4779,7 +4782,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           </div>
         </div>
         <p
-          className="lesson-card__description mt-2"
+          className="mt-2"
         >
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
@@ -4798,11 +4801,14 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      className="lesson-card__image"
+      className="img-fluid"
+      height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
+      width="116"
     />
     <div
-      className="w-100 pl-4"
+      className="lesson-card__description pl-4"
     >
       <span
         className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -4867,7 +4873,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           </div>
         </div>
         <p
-          className="lesson-card__description mt-2"
+          className="mt-2"
         >
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
@@ -4897,11 +4903,14 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   >
     <img
       alt="js-4-cover.svg"
-      className="lesson-card__image"
+      className="img-fluid"
+      height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
+      width="116"
     />
     <div
-      className="w-100 pl-4"
+      className="lesson-card__description pl-4"
     >
       <div>
         <h4
@@ -4934,7 +4943,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           </div>
         </div>
         <p
-          className="lesson-card__description mt-2"
+          className="mt-2"
         >
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
@@ -8392,11 +8401,14 @@ Array [
           >
             <img
               alt="js-0-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8429,7 +8441,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -8445,11 +8457,14 @@ Array [
           >
             <img
               alt="js-1-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8482,7 +8497,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -8498,11 +8513,14 @@ Array [
           >
             <img
               alt="js-2-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8535,7 +8553,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -8551,11 +8569,14 @@ Array [
           >
             <img
               alt="js-3-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8588,7 +8609,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -8604,11 +8625,14 @@ Array [
           >
             <img
               alt="js-4-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8641,7 +8665,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -8657,11 +8681,14 @@ Array [
           >
             <img
               alt="js-5-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8694,7 +8721,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -8710,11 +8737,14 @@ Array [
           >
             <img
               alt="js-6-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8747,7 +8777,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -8763,11 +8793,14 @@ Array [
           >
             <img
               alt="js-7-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8800,7 +8833,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -8816,11 +8849,14 @@ Array [
           >
             <img
               alt="js-8-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8853,7 +8889,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -8869,11 +8905,14 @@ Array [
           >
             <img
               alt="js-9-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -8906,7 +8945,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -9265,11 +9304,14 @@ Array [
           >
             <img
               alt="js-0-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9302,7 +9344,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -9318,11 +9360,14 @@ Array [
           >
             <img
               alt="js-1-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9355,7 +9400,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -9371,11 +9416,14 @@ Array [
           >
             <img
               alt="js-2-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9408,7 +9456,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -9424,11 +9472,14 @@ Array [
           >
             <img
               alt="js-3-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9461,7 +9512,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -9477,11 +9528,14 @@ Array [
           >
             <img
               alt="js-4-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9514,7 +9568,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -9530,11 +9584,14 @@ Array [
           >
             <img
               alt="js-5-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9567,7 +9624,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -9583,11 +9640,14 @@ Array [
           >
             <img
               alt="js-6-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9620,7 +9680,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -9636,11 +9696,14 @@ Array [
           >
             <img
               alt="js-7-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9673,7 +9736,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -9689,11 +9752,14 @@ Array [
           >
             <img
               alt="js-8-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9726,7 +9792,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -9742,11 +9808,14 @@ Array [
           >
             <img
               alt="js-9-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -9779,7 +9848,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -10138,11 +10207,14 @@ Array [
           >
             <img
               alt="js-0-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10175,7 +10247,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -10191,11 +10263,14 @@ Array [
           >
             <img
               alt="js-1-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10228,7 +10303,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -10244,11 +10319,14 @@ Array [
           >
             <img
               alt="js-2-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10281,7 +10359,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -10297,11 +10375,14 @@ Array [
           >
             <img
               alt="js-3-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10334,7 +10415,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -10350,11 +10431,14 @@ Array [
           >
             <img
               alt="js-4-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10387,7 +10471,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -10403,11 +10487,14 @@ Array [
           >
             <img
               alt="js-5-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10440,7 +10527,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -10456,11 +10543,14 @@ Array [
           >
             <img
               alt="js-6-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10493,7 +10583,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -10509,11 +10599,14 @@ Array [
           >
             <img
               alt="js-7-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10546,7 +10639,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -10562,11 +10655,14 @@ Array [
           >
             <img
               alt="js-8-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10599,7 +10695,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -10615,11 +10711,14 @@ Array [
           >
             <img
               alt="js-9-cover.svg"
-              className="lesson-card__image"
+              className="img-fluid"
+              height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
+              width="116"
             />
             <div
-              className="w-100 pl-4"
+              className="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -10652,7 +10751,7 @@ Array [
                   </div>
                 </div>
                 <p
-                  className="lesson-card__description mt-2"
+                  className="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
