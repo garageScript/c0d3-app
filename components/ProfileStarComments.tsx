@@ -20,15 +20,16 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
   const firstName = fullname.split(' ')[0] || 'A'
   const lastName = fullname.split(' ')[1] || ' '
   return (
-    <div className={`${styles['comment-box']} shadow-sm`}>
-      <div className={`${styles['comment-profile-container']}`}>
-        <div className={`${styles['user-info-wrapper']}`}>
-          <div
-            className={`${styles['user-info-image']} text-uppercase bg-primary rounded-circle text-light`}
+    <div className="mb-3 py-3 bg-white rounded shadow-sm">
+      <div className="mx-2 d-flex justify-content-between align-items-center">
+        <div className="d-flex mt-1">
+          <h6
+            className="mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
+            style={{ width: '41px', height: '41px' }}
           >
             {firstName[0]}
             {lastName[0]}
-          </div>
+          </h6>
           <div>
             <div className={`${styles['comment-username']} text-left`}>
               {'@' + username}
@@ -38,16 +39,11 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
             </h6>
           </div>
         </div>
-        <StarIcon
-          className={`${styles['comment-star-icon']}`}
-          strokeWidth={'1'}
-          size={15}
-          fill="yellow"
-        />
+        <StarIcon className="mx-3" strokeWidth="1" size={15} fill="yellow" />
       </div>
       <hr />
-      <div className={`${styles['comment-text-container']}`}>
-        <div className={`${styles['comment-text']}`}>{starComment}</div>
+      <div className="flex-auto">
+        <div className={`${styles['comment-text']} px-3`}>{starComment}</div>
       </div>
     </div>
   )
@@ -61,8 +57,8 @@ export const ProfileStarComments: React.FC<StarCommentsProps> = ({ stars }) => {
   })
   return (
     <div className={`${styles['profile-comments']}`}>
-      <div className={`${styles['comments-container']} card shadow-sm`}>
-        <div className={`${styles['comments-container-title']} card-body`}>
+      <div className="d-flex card mt-4 shadow-sm">
+        <div className="d-flex card-body">
           <h3>Stars</h3>
         </div>
         <div className="card-body text-center">
