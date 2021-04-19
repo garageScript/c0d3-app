@@ -14,7 +14,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -69,7 +69,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card text-center shadow-sm"
@@ -146,7 +146,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       class="row challenge-display mt-3"
     >
       <div
-        class="col-4"
+        class="challenge-display_challenges undefined col-md-4"
       >
         <div
           class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -201,7 +201,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card text-center shadow-sm"
@@ -685,7 +685,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       class="row challenge-display mt-3"
     >
       <div
-        class="col-4"
+        class="challenge-display_challenges undefined col-md-4"
       >
         <div
           class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -740,7 +740,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card text-center shadow-sm"
@@ -812,7 +812,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card shadow-sm border-0"
@@ -850,7 +850,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card shadow-sm border-0"
@@ -1399,7 +1399,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
@@ -1427,7 +1427,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card shadow-sm border-0"
@@ -1463,7 +1463,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
@@ -1501,7 +1501,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card shadow-sm border-0"

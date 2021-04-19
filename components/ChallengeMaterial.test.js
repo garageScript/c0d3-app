@@ -84,13 +84,15 @@ const userSubmissions = [
 
 describe('Curriculum challenge page', () => {
   let props
+  const setShow = jest.fn()
   beforeEach(() => {
     props = {
       challenges,
       lessonStatus: lessonStatusNoPass,
       userSubmissions,
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
-      lessonId: '5'
+      lessonId: '5',
+      setShow
     }
   })
 

@@ -40,10 +40,18 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             LESSON
           </NavLink>
-          {window.innerWidth < 768 && (
+          {/* 768 px is md bootstrap breakpoint */}
+          {window.innerWidth < 768 ? (
             <Button onClick={() => props.setShow(!props.show)}>
-              SHOW CHALLENGES
+              CHALLENGES
             </Button>
+          ) : (
+            <NavLink
+              path={`/curriculum/${props.lessonId}`}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              CHALLENGES
+            </NavLink>
           )}
           {props.isPassed && (
             <NavLink
