@@ -288,7 +288,8 @@ exports[`Alerts page Should remove alert 1`] = `
           <p
             class="card-text"
           >
-            These alerts are what every students see when they are on their dashboard page.
+            These alerts are what every students see when they are on their
+ dashboard page.
           </p>
           <div
             class="row"
@@ -679,7 +680,8 @@ exports[`Alerts page Should remove alert 2`] = `
           <p
             class="card-text"
           >
-            These alerts are what every students see when they are on their dashboard page.
+            These alerts are what every students see when they are on their
+ dashboard page.
           </p>
           <div
             class="row"

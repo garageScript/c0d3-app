@@ -6526,7 +6526,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
     <h4
       className="progress-card__title mt-3"
     >
-      You're off to a great start!
+      Congratulations! You've finished the course!
     </h4>
     <div
       className="mt-3"
@@ -6665,7 +6665,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
     <h4
       className="progress-card__title mt-3"
     >
-      You're off to a great start!
+      Keep up the great work!
     </h4>
     <div
       className="mt-3"
