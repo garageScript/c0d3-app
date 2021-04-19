@@ -1,4 +1,3 @@
-import db from '../dbload'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
 import { UserInputError, AuthenticationError } from 'apollo-server-micro'
@@ -9,7 +8,6 @@ import { encode, decode } from '../encoding'
 import { sendSignupEmail } from '../mail'
 import { prisma } from '../../prisma'
 
-const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
 type Login = {
@@ -77,7 +75,7 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
 export const logout = async (_parent: void, _: void, ctx: Context) => {
   const { req } = ctx
   const { session } = req
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     if (!session) {
       return reject({
         success: false,
@@ -122,7 +120,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
     }
 
     // Check for existing user or email
-    const existingUser = await User.findOne({
+    const existingUser = await prisma.user.findFirst({
       where: {
         username
       }
@@ -132,7 +130,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
       throw new UserInputError('User already exists')
     }
 
-    const existingEmail = await User.findOne({
+    const existingEmail = await prisma.user.findFirst({
       where: {
         email
       }
@@ -147,26 +145,36 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
     // Chat Signup
     await chatSignUp(username, password, email)
 
-    const userRecord = await User.create({
-      name,
-      username,
-      email
+    let newUser = await prisma.user.create({
+      data: {
+        name,
+        username,
+        email
+      }
     })
 
-    const encodedToken = encode({
-      userId: userRecord.id,
+    const forgotToken = encode({
+      userId: newUser.id,
       userToken: nanoid()
     })
 
-    userRecord.forgotToken = encodedToken
-    userRecord.tokenExpiration = new Date(Date.now() + THREE_DAYS)
-    await userRecord.save()
+    const tokenExpiration = new Date(Date.now() + THREE_DAYS)
 
-    sendSignupEmail(email, encodedToken)
+    newUser = await prisma.user.update({
+      where: {
+        id: newUser.id
+      },
+      data: {
+        forgotToken,
+        tokenExpiration
+      }
+    })
+
+    sendSignupEmail(email, forgotToken)
 
     return {
       success: true,
-      username: userRecord.username
+      username: newUser.username
     }
   } catch (err) {
     if (!err.extensions) {
@@ -182,9 +190,8 @@ export const isTokenValid = async (
 ) => {
   try {
     const { id, cliToken } = decode(arg.cliToken)
-    const user = await User.findByPk(id)
-
-    return user.cliToken === cliToken
+    const user = await prisma.user.findUnique({ where: { id } })
+    return user ? user.cliToken === cliToken : false
   } catch (err) {
     throw new Error(err)
   }
