@@ -22,7 +22,7 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
   return (
     <div className="mb-3 py-3 bg-white rounded shadow-sm">
       <div className="mx-2 d-flex justify-content-between align-items-center">
-        <div className="d-flex mt-1">
+        <div className="d-flex mt-1 align-items-center">
           <h6
             className="mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
             style={{ width: '41px', height: '41px' }}
@@ -31,10 +31,12 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
             {lastName[0]}
           </h6>
           <div>
-            <div className={`${styles['comment-username']} text-left`}>
+            <h6 className="text-md-left text-muted font-weight-bold mb-0">
               {'@' + username}
-            </div>
-            <h6 className={`${styles['comment-lesson-title']} text-left`}>
+            </h6>
+            <h6
+              className={`${styles['comment-lesson-title']} text-muted text-left`}
+            >
               {lessonTitle}
             </h6>
           </div>
@@ -43,7 +45,9 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
       </div>
       <hr />
       <div className="flex-auto">
-        <div className={`${styles['comment-text']} px-3`}>{starComment}</div>
+        <p className={`${styles['comment-text']} pt-2 px-3 text-md`}>
+          {starComment}
+        </p>
       </div>
     </div>
   )
