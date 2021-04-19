@@ -3762,13 +3762,13 @@ exports[`user profile test Should render profile 1`] = `
                       <h6
                         class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
                       >
-                        nn
+                        A 
                       </h6>
                       <div>
                         <h6
                           class="text-md-left text-muted font-weight-bold mb-0"
                         >
-                          @newbie
+                          @anonymous
                         </h6>
                         <h6
                           class="comment-lesson-title text-muted text-left"

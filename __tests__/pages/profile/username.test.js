@@ -117,8 +117,8 @@ describe('user profile test', () => {
               studentId: '6',
               lessonId: '2',
               student: {
-                username: 'newbie',
-                name: 'newbie newbie'
+                username: 'anonymous',
+                name: ''
               },
               lesson: {
                 title: 'Variables & Functions',
