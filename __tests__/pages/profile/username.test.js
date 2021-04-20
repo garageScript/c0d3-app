@@ -61,7 +61,6 @@ describe('user profile test', () => {
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
-          starGiven: null,
           starsReceived: null
         },
         {
@@ -69,7 +68,6 @@ describe('user profile test', () => {
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
-          starGiven: null,
           starsReceived: null
         },
         {
@@ -77,7 +75,6 @@ describe('user profile test', () => {
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
-          starGiven: null,
           starsReceived: null
         }
       ]
