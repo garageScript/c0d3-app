@@ -81,8 +81,8 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
   }, {} as lessonMentorMapType)
 
   const starMap = stars.reduce((map: StarMap, star) => {
-    map[star.lessonId!] = map[star.lessonId!] || []
-    map[star.lessonId!].push(star)
+    map[star.lessonId] = map[star.lessonId] || []
+    map[star.lessonId].push(star)
     return map
   }, {})
 
