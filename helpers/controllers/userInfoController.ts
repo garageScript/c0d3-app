@@ -25,7 +25,7 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
   if (!user) {
     throw new Error('Invalid user object')
   }
-  const [userLessons, submissions, stars, starsGiven] = await Promise.all([
+  const [userLessons, submissions, stars] = await Promise.all([
     prisma.userLesson.findMany({
       where: {
         userId: user.id
@@ -54,31 +54,8 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
           }
         }
       }
-    }),
-    prisma.star.findMany({
-      where: {
-        studentId: user.id
-      },
-      include: {
-        lesson: {
-          select: {
-            id: true
-          }
-        },
-        mentor: {
-          select: {
-            username: true
-          }
-        }
-      }
     })
   ])
-
-  const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
-    const mentorUsername = _.get(starGiven, 'mentor.username', '')
-    map[starGiven.lessonId] = mentorUsername
-    return map
-  }, {} as lessonMentorMapType)
 
   const starMap = stars.reduce((map: StarMap, star) => {
     map[star.lessonId] = map[star.lessonId] || []
@@ -88,7 +65,6 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
 
   const lessonStatus = userLessons.map(userLesson => ({
     ...userLesson,
-    starGiven: lessonMentorMap[userLesson.lessonId] || '',
     starsReceived: starMap[userLesson.lessonId] || []
   }))
 
