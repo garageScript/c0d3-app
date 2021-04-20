@@ -146,16 +146,13 @@ describe('Curriculum challenge page', () => {
     fireEvent.click(getByRole('img'))
     expect(document.body).toMatchSnapshot()
   })
-  test('Should hide mobile modal on double tap', async () => {
+  test('Should hide mobile modal on click', async () => {
     global.window.innerWidth = 500
     const { container } = render(
       <ChallengeMaterial {...{ ...props, show: true }} />
     )
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
     expect(container).toMatchSnapshot()
-    fireEvent.click(screen.getByText('0. Greater than 5'), {
-      target: { innerText: '0. Greater than 5' }
-    })
 
     fireEvent.click(screen.getByText('0. Greater than 5'), {
       target: { innerText: '0. Greater than 5' }

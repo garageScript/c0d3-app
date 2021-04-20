@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Curriculum challenge page Should hide mobile modal on double tap 1`] = `
+exports[`Curriculum challenge page Should hide mobile modal on click 1`] = `
 <div
   aria-hidden="true"
 >
