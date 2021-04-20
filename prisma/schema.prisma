@@ -67,12 +67,12 @@ model Star {
   lessonId  Int
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   updatedAt DateTime @updatedAt @db.Timestamptz(6)
-  studentId Int?
-  mentorId  Int?
+  studentId Int
+  mentorId  Int
   comment   String?  @db.VarChar(255)
   lesson    Lesson   @relation("starLesson", fields: [lessonId], references: [id])
-  mentor    User?    @relation("starMentor", fields: [mentorId], references: [id])
-  student   User?    @relation("starStudent", fields: [studentId], references: [id])
+  mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
+  student   User     @relation("starStudent", fields: [studentId], references: [id])
 
   @@map("stars")
 }
