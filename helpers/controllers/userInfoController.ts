@@ -76,7 +76,7 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
 
   const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
     const mentorUsername = _.get(starGiven, 'mentor.username', '')
-    map[starGiven.lessonId!] = mentorUsername
+    map[starGiven.lessonId] = mentorUsername
     return map
   }, {} as lessonMentorMapType)
 
