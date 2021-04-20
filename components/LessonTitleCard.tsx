@@ -8,6 +8,8 @@ type Props = {
   lessonTitle: string
   lessonId: string
   isPassed: boolean
+  setShow?: React.Dispatch<React.SetStateAction<boolean>>
+  show?: boolean
 }
 
 const LessonTitleCard: React.FC<Props> = props => {
@@ -37,12 +39,22 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             LESSON
           </NavLink>
-          <NavLink
-            path={`/curriculum/${props.lessonId}`}
-            className="btn border-right rounded-0 px-4 py-3"
-          >
-            CHALLENGES
-          </NavLink>
+          {/* 768 px is md bootstrap breakpoint */}
+          {window.innerWidth <= 768 ? (
+            <div
+              onClick={() => props.setShow && props.setShow(!props.show)}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              SHOW CHALLENGES
+            </div>
+          ) : (
+            <NavLink
+              path={`/curriculum/${props.lessonId}`}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              CHALLENGES
+            </NavLink>
+          )}
           {props.isPassed && (
             <NavLink
               path={`/review/${props.lessonId}`}
