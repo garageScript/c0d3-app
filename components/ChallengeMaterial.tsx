@@ -376,10 +376,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       className={`challenge-display_challenges ${show && 'show'} col-md-4`}
       onClick={e => {
         const target = e.target as HTMLElement
-        if (!show) {
-          setShow(true)
-          setStatus(target.innerText)
-        } else if (status === target.innerText) {
+        if (status === target.innerText) {
           setShow(!show)
         } else setStatus(target.innerText)
       }}
@@ -405,9 +402,12 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       ) : (
         <Modal
           show={show}
-          onHide={() => setShow(!show)}
+          onHide={() => {
+            setShow(!show)
+          }}
           centered
           className="challenge-modal"
+          data-testid="modal-challenges"
         >
           <Modal.Body>{challengeList}</Modal.Body>
         </Modal>
