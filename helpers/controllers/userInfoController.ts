@@ -3,6 +3,10 @@ import _ from 'lodash'
 import { UserInfoQueryVariables } from '../../graphql'
 import { prisma } from '../../prisma'
 
+interface lessonMentorMapType {
+  [lessonId: string]: string
+}
+
 type StarMap = {
   [lessonId: number]: Star[]
 }
@@ -69,10 +73,6 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
       }
     })
   ])
-
-  interface lessonMentorMapType {
-    [lessonId: string]: string
-  }
 
   const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
     const mentorUsername = _.get(starGiven, 'mentor.username', '')
