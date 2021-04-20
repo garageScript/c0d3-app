@@ -3,10 +3,6 @@ import _ from 'lodash'
 import { UserInfoQueryVariables } from '../../graphql'
 import { prisma } from '../../prisma'
 
-interface lessonMentorMapType {
-  [lessonId: string]: string
-}
-
 type StarMap = {
   [lessonId: number]: Star[]
 }
