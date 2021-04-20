@@ -108,12 +108,11 @@ exports[`LessonTitleCard component Should show challenges on click on mobile dev
         >
           LESSON
         </a>
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
+        <div
+          class="btn border-right rounded-0 px-4 py-3"
         >
-          CHALLENGES
-        </button>
+          SHOW CHALLENGES
+        </div>
         <a
           class="btn border-right rounded-0 px-4 py-3"
           href="/review/0"

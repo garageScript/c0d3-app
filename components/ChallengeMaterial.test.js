@@ -87,6 +87,7 @@ describe('Curriculum challenge page', () => {
   let props
   const setShow = jest.fn()
   beforeEach(() => {
+    jest.clearAllMocks()
     props = {
       challenges,
       lessonStatus: lessonStatusNoPass,
@@ -147,8 +148,9 @@ describe('Curriculum challenge page', () => {
   })
   test('Should hide mobile modal on double tap', async () => {
     global.window.innerWidth = 500
-    const foo = { ...props, show: true }
-    const { container } = render(<ChallengeMaterial {...foo} />)
+    const { container } = render(
+      <ChallengeMaterial {...{ ...props, show: true }} />
+    )
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
     expect(container).toMatchSnapshot()
     fireEvent.click(screen.getByText('0. Greater than 5'), {
@@ -162,8 +164,9 @@ describe('Curriculum challenge page', () => {
   })
   test('Should hide mobile modal by clicking on the background', async () => {
     global.window.innerWidth = 500
-    const foo = { ...props, show: true }
-    const { container } = render(<ChallengeMaterial {...foo} />)
+    const { container } = render(
+      <ChallengeMaterial {...{ ...props, show: true }} />
+    )
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
     fireEvent.keyDown(container, {
       key: 'Escape',

@@ -15,7 +15,7 @@ describe('LessonTitleCard component', () => {
   test('Should show challenges on click on mobile devices', async () => {
     global.window.innerWidth = 500
     const { container } = render(<LessonTitleCard {...props} />)
-    await waitFor(() => fireEvent.click(screen.getByText('CHALLENGES')))
+    await waitFor(() => fireEvent.click(screen.getByText('SHOW CHALLENGES')))
     expect(setShow).toBeCalledWith(true)
     expect(container).toMatchSnapshot()
   })

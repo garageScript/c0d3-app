@@ -397,7 +397,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   )
   return (
     <div className="row challenge-display mt-3">
-      {window.innerWidth > 765 ? (
+      {window.innerWidth > 768 ? (
         challengeList
       ) : (
         <Modal

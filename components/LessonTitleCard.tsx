@@ -1,7 +1,6 @@
 import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
-import { Button } from './theme/Button'
 
 type Props = {
   lessonCoverUrl: string
@@ -9,8 +8,8 @@ type Props = {
   lessonTitle: string
   lessonId: string
   isPassed: boolean
-  setShow: React.Dispatch<React.SetStateAction<boolean>>
-  show: boolean
+  setShow?: React.Dispatch<React.SetStateAction<boolean>>
+  show?: boolean
 }
 
 const LessonTitleCard: React.FC<Props> = props => {
@@ -41,10 +40,13 @@ const LessonTitleCard: React.FC<Props> = props => {
             LESSON
           </NavLink>
           {/* 768 px is md bootstrap breakpoint */}
-          {window.innerWidth < 768 ? (
-            <Button onClick={() => props.setShow(!props.show)}>
-              CHALLENGES
-            </Button>
+          {window.innerWidth <= 768 ? (
+            <div
+              onClick={() => props.setShow && props.setShow(!props.show)}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              SHOW CHALLENGES
+            </div>
           ) : (
             <NavLink
               path={`/curriculum/${props.lessonId}`}
