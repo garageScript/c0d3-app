@@ -46,7 +46,6 @@ describe('userInfo controller tests', () => {
       lessonStatus: [
         {
           ...userLesson,
-          starGiven: '',
           starsReceived: [star]
         }
       ],
@@ -64,7 +63,6 @@ describe('userInfo controller tests', () => {
       lessonStatus: [
         {
           ...userLesson,
-          starGiven: '',
           starsReceived: []
         }
       ],
