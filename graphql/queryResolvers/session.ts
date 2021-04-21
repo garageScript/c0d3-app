@@ -2,7 +2,7 @@ import _ from 'lodash'
 import { userInfo } from '../../helpers/controllers/userInfoController'
 import { Context } from '../../@types/helpers'
 import { prisma } from '../../prisma'
-import { UserLesson } from '../index'
+import type { UserLesson } from '.prisma/client'
 
 interface lessonMentorMapType {
   [lessonId: string]: string
@@ -37,7 +37,7 @@ export const session = async (_parent: void, _args: void, context: Context) => {
   ])
 
   const submissions = _.get(session, 'submissions', [])
-  const userLessons = _.get(session, 'lessonStatus', [] as UserLesson[])
+  const userLessons = _.get(session, 'lessonStatus', [])
 
   const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
     const mentorUsername = _.get(starGiven, 'mentor.username', '')
@@ -45,7 +45,7 @@ export const session = async (_parent: void, _args: void, context: Context) => {
     return map
   }, {} as lessonMentorMapType)
 
-  const lessonStatus = userLessons.map(userLesson => ({
+  const lessonStatus = userLessons.map((userLesson: UserLesson) => ({
     ...userLesson,
     starGiven: lessonMentorMap[userLesson.lessonId!] || ''
   }))
