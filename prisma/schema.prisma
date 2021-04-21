@@ -55,6 +55,7 @@ model Lesson {
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
   challenges  Challenge[]
+  starLesson  Star[]       @relation("starLesson")
   submissions Submission[]
   userLessons UserLesson[]
 
@@ -63,14 +64,15 @@ model Lesson {
 
 model Star {
   id        Int      @id @default(autoincrement())
-  lessonId  Int?
+  lessonId  Int
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   updatedAt DateTime @updatedAt @db.Timestamptz(6)
-  studentId Int?
-  mentorId  Int?
+  studentId Int
+  mentorId  Int
   comment   String?  @db.VarChar(255)
-  mentor    User?    @relation("starMentor", fields: [mentorId], references: [id])
-  student   User?    @relation("starStudent", fields: [studentId], references: [id])
+  lesson    Lesson   @relation("starLesson", fields: [lessonId], references: [id])
+  mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
+  student   User     @relation("starStudent", fields: [studentId], references: [id])
 
   @@map("stars")
 }

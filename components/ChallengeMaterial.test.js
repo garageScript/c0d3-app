@@ -1,11 +1,12 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { render, fireEvent, waitFor } from '@testing-library/react'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import ChallengeMaterial from './ChallengeMaterial'
 import SET_STAR from '../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
 import { MockedProvider } from '@apollo/client/testing'
+import '@testing-library/jest-dom'
 
 const mocks = [
   {
@@ -84,13 +85,16 @@ const userSubmissions = [
 
 describe('Curriculum challenge page', () => {
   let props
+  const setShow = jest.fn()
   beforeEach(() => {
+    jest.clearAllMocks()
     props = {
       challenges,
       lessonStatus: lessonStatusNoPass,
       userSubmissions,
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
-      lessonId: '5'
+      lessonId: '5',
+      setShow
     }
   })
 
@@ -141,5 +145,32 @@ describe('Curriculum challenge page', () => {
     // click exit button of GiveStarCard
     fireEvent.click(getByRole('img'))
     expect(document.body).toMatchSnapshot()
+  })
+  test('Should hide mobile modal on click', async () => {
+    global.window.innerWidth = 500
+    const { container } = render(
+      <ChallengeMaterial {...{ ...props, show: true }} />
+    )
+    expect(screen.getByTestId('modal-challenges')).toBeVisible()
+    expect(container).toMatchSnapshot()
+
+    fireEvent.click(screen.getByText('0. Greater than 5'), {
+      target: { innerText: '0. Greater than 5' }
+    })
+    expect(setShow).toBeCalledWith(false)
+  })
+  test('Should hide mobile modal by clicking on the background', async () => {
+    global.window.innerWidth = 500
+    const { container } = render(
+      <ChallengeMaterial {...{ ...props, show: true }} />
+    )
+    expect(screen.getByTestId('modal-challenges')).toBeVisible()
+    fireEvent.keyDown(container, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+      charCode: 27
+    })
+    expect(setShow).toBeCalledWith(false)
   })
 })
