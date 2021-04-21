@@ -103,7 +103,7 @@
     "@babel/preset-typescript": "^7.12.13",
     "@graphql-codegen/cli": "^1.21.4",
     "@graphql-codegen/typescript": "^1.21.0",
-    "@graphql-codegen/typescript-operations": "^1.17.14",
+    "@graphql-codegen/typescript-operations": "^1.17.16",
     "@graphql-codegen/typescript-react-apollo": "^2.2.4",
     "@graphql-codegen/typescript-resolvers": "^1.19.1",
     "@mdx-js/loader": "^1.6.22",
