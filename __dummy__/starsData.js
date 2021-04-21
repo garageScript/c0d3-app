@@ -1,8 +1,6 @@
 export default [
   {
     id: 1,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -18,8 +16,6 @@ export default [
   },
   {
     id: 2,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -35,8 +31,6 @@ export default [
   },
   {
     id: 3,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -52,8 +46,6 @@ export default [
   },
   {
     id: 4,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -69,8 +61,6 @@ export default [
   },
   {
     id: 5,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -86,8 +76,6 @@ export default [
   },
   {
     id: 6,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -103,8 +91,6 @@ export default [
   },
   {
     id: 7,
-    mentorId: 1,
-    studentId: 6,
     student: {
       id: 1,
       username: 'newbie',
@@ -120,8 +106,6 @@ export default [
   },
   {
     id: 8,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'newbie',
@@ -138,8 +122,6 @@ export default [
   },
   {
     id: 9,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'nubbie',
@@ -153,8 +135,6 @@ export default [
   },
   {
     id: 10,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'nubbie',
@@ -168,8 +148,6 @@ export default [
   },
   {
     id: 11,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'nubbie',
@@ -185,8 +163,6 @@ export default [
   },
   {
     id: 12,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'nubbie',
@@ -202,8 +178,6 @@ export default [
   },
   {
     id: 13,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'nubbie',
@@ -219,8 +193,6 @@ export default [
   },
   {
     id: 14,
-    mentorId: 1,
-    studentId: 7,
     student: {
       id: 1,
       username: 'nubbie',
