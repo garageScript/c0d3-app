@@ -12946,8 +12946,14 @@ Array [
     className="container"
   >
     <div
-      className="card shadow-sm mt-3 d-block border-0 p-4 bg-white"
+      className="mt-4"
+    />
+    <div
+      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-4 bg-white"
     >
+      <h1
+        className="title font-weight-bold"
+      />
       <div
         className="blockQuote d-flex"
       >
@@ -15310,8 +15316,14 @@ Array [
     className="container"
   >
     <div
-      className="card shadow-sm mt-3 d-block border-0 p-4 bg-white"
+      className="mt-4"
+    />
+    <div
+      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-4 bg-white"
     >
+      <h1
+        className="title font-weight-bold"
+      />
       <p>
         Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
       </p>
