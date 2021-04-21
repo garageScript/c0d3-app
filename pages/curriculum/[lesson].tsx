@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Error, { StatusCode } from '../../components/Error'
@@ -19,6 +19,7 @@ import _ from 'lodash'
 
 const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
+  const [show, setShow] = useState(false)
   const router = useRouter()
   const currentlessonId = Number(router.query.lesson)
   if (!lessons || !alerts) {
@@ -28,16 +29,9 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
   }
-  const userSubmissions: Submission[] = _.get(
-    session,
-    'submissions',
-    []
-  ) as Submission[]
-  const lessonStatus: UserLesson[] = _.get(
-    session,
-    'lessonStatus',
-    []
-  ) as UserLesson[]
+  const userSubmissions: UserSubmission[] =
+    _.get(session, 'submissions', []) || []
+  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
 
   const currentLessonStatus: UserLesson =
     lessonStatus.find(
@@ -61,6 +55,8 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 lessonTitle={currentLesson.title!}
                 lessonId={currentlessonId}
                 isPassed={isPassed}
+                setShow={setShow}
+                show={show}
               />
               {/* Casting alerts as any until type is migrated */}
               {alerts && <AlertsDisplay alerts={alerts as any} />}
@@ -68,8 +64,15 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 challenges={currentLesson.challenges as Challenge[]}
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
+<<<<<<< HEAD
                 chatUrl={currentLesson.chatUrl!}
                 lessonId={currentLesson.id}
+=======
+                chatUrl={currentLesson.chatUrl}
+                lessonId={parseInt(currentLesson.id, 10)}
+                show={show}
+                setShow={setShow}
+>>>>>>> f3343513934c4c5842bde13243c44a67735e0373
               />
             </div>
           )}

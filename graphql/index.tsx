@@ -1,8 +1,4 @@
-import {
-  GraphQLResolveInfo,
-  GraphQLScalarType,
-  GraphQLScalarTypeConfig
-} from 'graphql'
+import { GraphQLResolveInfo } from 'graphql'
 import { gql } from '@apollo/client'
 import * as Apollo from '@apollo/client'
 import * as ApolloReactHoc from '@apollo/client/react/hoc'
@@ -26,8 +22,6 @@ export type Scalars = {
   Boolean: boolean
   Int: number
   Float: number
-  /** The `Upload` scalar type represents a file upload. */
-  Upload: any
 }
 
 export type Alert = {
@@ -230,11 +224,11 @@ export type Session = {
 
 export type Star = {
   __typename?: 'Star'
-  id: Scalars['String']
-  studentId?: Maybe<Scalars['Int']>
-  mentorId?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  lessonId: Scalars['Int']
   comment?: Maybe<Scalars['String']>
+  student: User
+  lesson: Lesson
 }
 
 export type Submission = {
@@ -517,6 +511,54 @@ export type LessonMentorsQuery = { __typename?: 'Query' } & {
   >
 }
 
+export type GetSessionQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetSessionQuery = { __typename?: 'Query' } & {
+  session?: Maybe<
+    { __typename?: 'Session' } & {
+      user?: Maybe<
+        { __typename?: 'User' } & Pick<
+          User,
+          'id' | 'username' | 'name' | 'isAdmin'
+        >
+      >
+      submissions?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'Submission' } & Pick<
+              Submission,
+              | 'id'
+              | 'status'
+              | 'mrUrl'
+              | 'diff'
+              | 'viewCount'
+              | 'comment'
+              | 'order'
+              | 'challengeId'
+              | 'lessonId'
+              | 'createdAt'
+              | 'updatedAt'
+            > & {
+                reviewer?: Maybe<
+                  { __typename?: 'User' } & Pick<
+                    User,
+                    'id' | 'username' | 'isAdmin'
+                  >
+                >
+              }
+          >
+        >
+      >
+      lessonStatus: Array<
+        { __typename?: 'UserLesson' } & Pick<
+          UserLesson,
+          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
+        >
+      >
+    }
+  >
+}
+
 export type SubmissionsQueryVariables = Exact<{
   lessonId: Scalars['Int']
 }>
@@ -787,7 +829,19 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
             starsReceived?: Maybe<
               Array<
                 Maybe<
-                  { __typename?: 'Star' } & Pick<Star, 'lessonId' | 'comment'>
+                  { __typename?: 'Star' } & Pick<
+                    Star,
+                    'lessonId' | 'comment'
+                  > & {
+                      student: { __typename?: 'User' } & Pick<
+                        User,
+                        'username' | 'name'
+                      >
+                      lesson: { __typename?: 'Lesson' } & Pick<
+                        Lesson,
+                        'title' | 'order'
+                      >
+                    }
                 >
               >
             >
@@ -928,7 +982,6 @@ export type ResolversTypes = {
   Submission: ResolverTypeWrapper<Submission>
   SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   TokenResponse: ResolverTypeWrapper<TokenResponse>
-  Upload: ResolverTypeWrapper<Scalars['Upload']>
   User: ResolverTypeWrapper<User>
   UserLesson: ResolverTypeWrapper<UserLesson>
 }
@@ -949,7 +1002,6 @@ export type ResolversParentTypes = {
   Submission: Submission
   SuccessResponse: SuccessResponse
   TokenResponse: TokenResponse
-  Upload: Scalars['Upload']
   User: User
   UserLesson: UserLesson
 }
@@ -1205,11 +1257,11 @@ export type StarResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
 > = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  student?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1255,11 +1307,6 @@ export type TokenResponseResolvers<
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
-
-export interface UploadScalarConfig
-  extends GraphQLScalarTypeConfig<ResolversTypes['Upload'], any> {
-  name: 'Upload'
 }
 
 export type UserResolvers<
@@ -1319,7 +1366,6 @@ export type Resolvers<ContextType = any> = {
   Submission?: SubmissionResolvers<ContextType>
   SuccessResponse?: SuccessResponseResolvers<ContextType>
   TokenResponse?: TokenResponseResolvers<ContextType>
-  Upload?: GraphQLScalarType
   User?: UserResolvers<ContextType>
   UserLesson?: UserLessonResolvers<ContextType>
 }
@@ -2120,6 +2166,123 @@ export type LessonMentorsLazyQueryHookResult = ReturnType<
 export type LessonMentorsQueryResult = Apollo.QueryResult<
   LessonMentorsQuery,
   LessonMentorsQueryVariables
+>
+export const GetSessionDocument = gql`
+  query getSession {
+    session {
+      user {
+        id
+        username
+        name
+        isAdmin
+      }
+      submissions {
+        id
+        status
+        mrUrl
+        diff
+        viewCount
+        comment
+        order
+        challengeId
+        lessonId
+        reviewer {
+          id
+          username
+          isAdmin
+        }
+        createdAt
+        updatedAt
+      }
+      lessonStatus {
+        lessonId
+        isPassed
+        isTeaching
+        isEnrolled
+        starGiven
+      }
+    }
+  }
+`
+export type GetSessionProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetSessionQuery,
+    GetSessionQueryVariables
+  >
+} &
+  TChildProps
+export function withGetSession<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetSessionQuery,
+    GetSessionQueryVariables,
+    GetSessionProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetSessionQuery,
+    GetSessionQueryVariables,
+    GetSessionProps<TChildProps, TDataName>
+  >(GetSessionDocument, {
+    alias: 'getSession',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetSessionQuery__
+ *
+ * To run a query within a React component, call `useGetSessionQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetSessionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetSessionQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetSessionQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetSessionQuery,
+    GetSessionQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetSessionQuery, GetSessionQueryVariables>(
+    GetSessionDocument,
+    options
+  )
+}
+export function useGetSessionLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetSessionQuery,
+    GetSessionQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetSessionQuery, GetSessionQueryVariables>(
+    GetSessionDocument,
+    options
+  )
+}
+export type GetSessionQueryHookResult = ReturnType<typeof useGetSessionQuery>
+export type GetSessionLazyQueryHookResult = ReturnType<
+  typeof useGetSessionLazyQuery
+>
+export type GetSessionQueryResult = Apollo.QueryResult<
+  GetSessionQuery,
+  GetSessionQueryVariables
 >
 export const SubmissionsDocument = gql`
   query submissions($lessonId: Int!) {
@@ -3168,6 +3331,14 @@ export const UserInfoDocument = gql`
         starsReceived {
           lessonId
           comment
+          student {
+            username
+            name
+          }
+          lesson {
+            title
+            order
+          }
         }
       }
     }

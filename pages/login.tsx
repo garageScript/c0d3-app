@@ -83,7 +83,9 @@ const LoginPage: React.FC = () => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
   const [loginUser, { data, error }] = useMutation(LOGIN_USER, {
-    refetchQueries: [{ query: GET_APP }]
+    refetchQueries: [{ query: GET_APP }],
+    //prevents additonal render with unauthorized state on redirect
+    awaitRefetchQueries: true
   })
   // TODO: Error Handling for login / signup. Blocked by backend implementation.
   useEffect(() => {

@@ -2,11 +2,12 @@ import * as React from 'react'
 import Curriculum from '../../pages/curriculum'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
+import GET_SESSION from '../../graphql/queries/getSession'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 import { withTestRouter } from '../../__tests__/utils/withTestRouter'
-import { Session } from '../../graphql/index'
+import { Session, Lesson, Alert } from '../../graphql/index'
 export default {
   component: Curriculum,
   title: 'Pages/Curriculum'
@@ -15,20 +16,17 @@ export default {
 export const Basic: React.FC = () => {
   const mocks = [
     {
-      request: { query: GET_APP },
-      result: {
-        data: {
-          lessons: dummyLessonData,
-          session: dummySessionData,
-          alerts: []
-        }
-      }
+      request: { query: GET_SESSION },
+      result: { data: { session: dummySessionData } }
     }
   ]
 
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Curriculum />
+      <Curriculum
+        lessons={dummyLessonData as Lesson[]}
+        alerts={(dummyAlertData as unknown) as Alert[]}
+      />
     </MockedProvider>
   )
 }
@@ -49,7 +47,10 @@ export const WithAlerts: React.FC = () => {
 
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Curriculum />
+      <Curriculum
+        lessons={dummyLessonData as Lesson[]}
+        alerts={(dummyAlertData as unknown) as Alert[]}
+      />
     </MockedProvider>
   )
 }
@@ -106,7 +107,10 @@ export const CompletedLessons: React.FC<{}> = () => {
 
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Curriculum />
+      <Curriculum
+        lessons={dummyLessonData as Lesson[]}
+        alerts={(dummyAlertData as unknown) as Alert[]}
+      />
     </MockedProvider>
   )
 }

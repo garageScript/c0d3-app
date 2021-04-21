@@ -1,0 +1,499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Page Should render index page 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand text-primary font-weight-bold"
+        href="/"
+      >
+        C0D3
+      </a>
+      <div
+        id="navbarNav"
+      >
+        <div
+          class="navbar-nav collapse navbar-collapse"
+        >
+          <div
+            class="navbar-nav collapse navbar-collapse"
+          >
+            <a
+              class="nav-item nav-link"
+              href="/curriculum"
+            >
+              Curriculum
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://github.com/garageScript/c0d3-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Repo
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Journey
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="https://chat.c0d3.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Help
+            </a>
+            <a
+              class="nav-item nav-link"
+              href="/contributors"
+            >
+              Contributors
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/login"
+        >
+          Login
+        </a>
+        <a
+          class="btn btn-secondary border mr-3"
+          href="/signup"
+        >
+          Signup
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="bg-white"
+  >
+    <div
+      class="container text-center pb-5"
+    >
+      <div
+        class="row justify-center pt-5"
+      >
+        <div
+          class="col-md-6 offset-md-3"
+        >
+          <div
+            style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+          >
+            <div
+              style="box-sizing: border-box; display: block; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                role="presentation"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEzIiBoZWlnaHQ9IjM2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+              />
+            </div>
+            <img
+              alt="Hero image"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="row justify-center mt-5"
+      >
+        <div
+          class="col-md-8 offset-md-2"
+        >
+          <h1
+            style="font-weight: 900; font-size: 3.8rem;"
+          >
+            Become a Software Engineer the Hard Way
+          </h1>
+        </div>
+      </div>
+      <div
+        class="row justify-center mt-4"
+      >
+        <div
+          class="col-md-10 offset-md-1"
+        >
+          <p
+            class="font-weight-light h4"
+            style="line-height: 1.5;"
+          >
+            Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
+          </p>
+        </div>
+      </div>
+      <div
+        class="row mt-5"
+      >
+        <div
+          class="col-md-6 offset-md-3 mb-5"
+        >
+          <a
+            class="btn btn-primary py-3 px-5"
+            href="/curriculum"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+      <div
+        class="row mt-5"
+      >
+        <div
+          class="col-md-6 offset-md-3"
+        >
+          <h1
+            class="display-4 font-weight-bold"
+            id="learning"
+          >
+            Learning Process
+          </h1>
+        </div>
+      </div>
+      <div
+        class="row mt-5"
+      >
+        <div
+          class="col-md-10 offset-md-1"
+        >
+          <p
+            class="font-weight-light h4"
+            style="line-height: 1.5;"
+          >
+            Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
+          </p>
+        </div>
+      </div>
+      <div
+        class="row mt-5 align-items-start mb-5"
+      >
+        <div
+          class="col-md-4"
+        >
+          <div
+            style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 163px; height: 170px;"
+          >
+            <img
+              alt="Modern curriculum"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+          </div>
+          <h4
+            class="mt-3 font-weight-bold"
+          >
+            Modern Curriculum
+          </h4>
+          <p
+            class="mt-4 font-weight-light"
+          >
+            First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
+          </p>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <div
+            style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 259px; height: 170px;"
+          >
+            <img
+              alt="Support"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+          </div>
+          <h4
+            class="mt-3 font-weight-bold"
+          >
+            Support
+          </h4>
+          <p
+            class="mt-4 font-weight-light"
+          >
+            One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
+          </p>
+        </div>
+        <div
+          class="col-md-4"
+        >
+          <div
+            style="overflow: hidden; box-sizing: border-box; display: inline-block; position: relative; width: 93px; height: 170px;"
+          >
+            <img
+              alt="Work Experience"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+          </div>
+          <h4
+            class="mt-3 font-weight-bold"
+          >
+            Work Experience
+          </h4>
+          <p
+            class="mt-4 font-weight-light"
+          >
+            Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container-fluid py-5"
+      style="background: rgb(84, 64, 216); color: white;"
+    >
+      <div
+        class="container mt-5"
+      >
+        <h1
+          class="mt-5 display-4 font-weight-bold text-center"
+          id="journey"
+        >
+          Your Learning Journey
+        </h1>
+        <p
+          class="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+          style="line-height: 1.5;"
+        >
+          Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
+        </p>
+        <div
+          class="row mt-5 pb-5"
+        >
+          <div
+            class="col-md-5 order-md-2 text-center"
+          >
+            <div
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAzIiBoZWlnaHQ9IjI5MyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="Creating an account"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-5 offset-md-1 order-md-1 align-self-center"
+          >
+            <h2
+              class="font-weight-bold"
+            >
+              Creating an account
+            </h2>
+            <p
+              class="mt-3 font-weight-light"
+              style="line-height: 1.5;"
+            >
+              After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row mt-5 pb-5"
+        >
+          <div
+            class="col-md-5 offset-md-1 text-center"
+          >
+            <div
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDE5IiBoZWlnaHQ9IjQ0OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="Curriculum"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-5 align-self-center"
+          >
+            <h2
+              class="font-weight-bold"
+            >
+              Curriculum
+            </h2>
+            <p
+              class="mt-3 font-weight-light"
+              style="line-height: 1.5;"
+            >
+              Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
+               
+              <a
+                class="text-warning"
+                href="https://www.meetup.com/San-Jose-C0D3/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                meetup groups
+              </a>
+              . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row mt-5 pb-5"
+        >
+          <div
+            class="col-md-5 order-md-2 text-center"
+          >
+            <div
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDE5IiBoZWlnaHQ9IjQzNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="Pay it forward"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-5 order-md-1 offset-md-1 align-self-center"
+          >
+            <h2
+              class="font-weight-bold"
+            >
+              Pay It Forward
+            </h2>
+            <p
+              class="mt-3 font-weight-light"
+              style="line-height: 1.5;"
+            >
+              When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row mt-5 pb-5"
+        >
+          <div
+            class="col-md-5 offset-md-1 text-center"
+          >
+            <div
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzE2IiBoZWlnaHQ9IjQxOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="Work Experience"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="visibility: hidden; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+            </div>
+          </div>
+          <div
+            class="col-md-5 align-self-center"
+          >
+            <h2
+              class="font-weight-bold"
+            >
+              Work Experience
+            </h2>
+            <p
+              class="mt-3 font-weight-light"
+              style="line-height: 1.5;"
+            >
+              After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container mt-5 py-5 text-center"
+    >
+      <h1
+        class="display-4 font-weight-bold"
+      >
+        Start Your Journey
+      </h1>
+      <p
+        class="mt-3 font-weight-light"
+        style="line-height: 1.5; font-size: 1.5rem;"
+      >
+        Become a full stack software engineer - 100% Free!
+      </p>
+      <a
+        class="btn btn-primary py-3 px-5 mt-4"
+        href="/curriculum"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+  <footer
+    class="font-weight-light text-center py-5 bg-white text-muted"
+  >
+    © Copyright 2020 GarageScript
+    <br />
+    All Rights Reserved
+  </footer>
+</div>
+`;

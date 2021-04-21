@@ -1,5 +1,5 @@
 import React from 'react'
-import { Star as StarType } from '../@types/lesson'
+import { Star as StarType } from '../graphql/index'
 import { Star } from 'react-feather'
 import styles from '../scss/profileSubmissions.module.scss'
 
@@ -11,7 +11,7 @@ type LessonChallengeProps = {
   lessons: LessonChallenge[]
 }
 
-type LessonChallenge = {
+export type LessonChallenge = {
   order: number
   title: string
   challenges: Challenge[]
@@ -69,7 +69,10 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
       )
     }
     return (
-      <div key={lessonId} className={`${styles['lesson_challenges']}`}>
+      <div
+        key={lessonId}
+        className={`${styles['lesson_challenges']} d-flex align-items-center align-items-md-stretch`}
+      >
         <div className={`${styles['lesson_image_container']}`}>
           {starBadge}
           <img src={`/assets/curriculum/js-${lesson.order}-cover.svg`} />

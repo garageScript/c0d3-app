@@ -9,6 +9,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
+import Modal from 'react-bootstrap/Modal'
 
 dayjs.extend(relativeTime)
 
@@ -301,6 +302,8 @@ type ChallengeMaterialProps = {
   lessonStatus: UserLesson
   chatUrl: string
   lessonId: number
+  show: boolean
+  setShow: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
@@ -308,7 +311,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   userSubmissions,
   lessonStatus,
   chatUrl,
-  lessonId
+  lessonId,
+  show,
+  setShow
 }) => {
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
@@ -369,24 +374,47 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       )
     }
   )
+  const challengeList = (
+    <div
+      className={`challenge-display_challenges ${show && 'show'} col-md-4`}
+      onClick={() => {
+        setShow(!show)
+      }}
+    >
+      {challengeTitleCards}
+      {lessonStatus.isPassed && (
+        <ChallengeTitleCard
+          key={finalChallenge.id}
+          id={finalChallenge.id}
+          challengeNum={finalChallenge.order}
+          title={finalChallenge.title}
+          setCurrentChallenge={setCurrentChallenge}
+          active={finalChallenge.id === currentChallenge.id}
+          submissionStatus={finalChallenge.status}
+        />
+      )}
+    </div>
+  )
   return (
     <div className="row challenge-display mt-3">
-      <div className="col-4">
-        {challengeTitleCards}
-        {lessonStatus.isPassed && (
-          <ChallengeTitleCard
-            key={finalChallenge.id}
-            id={finalChallenge.id}
-            challengeNum={finalChallenge.order}
-            title={finalChallenge.title}
-            setCurrentChallenge={setCurrentChallenge}
-            active={finalChallenge.id === currentChallenge.id}
-            submissionStatus={finalChallenge.status}
-          />
-        )}
-      </div>
-      <div className="col-8">
-        {currentChallenge.id !== 0 && (
+      {window.innerWidth > 768 ? (
+        challengeList
+      ) : (
+        <Modal
+          show={show}
+          onHide={() => {
+            setShow(!show)
+          }}
+          centered
+          className="challenge-modal"
+          data-testid="modal-challenges"
+        >
+          <Modal.Body>{challengeList}</Modal.Body>
+        </Modal>
+      )}
+
+      <div className="col-md-8">
+        {currentChallenge.id !== 'finalChallenge' && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
         {lessonStatus.isPassed && currentChallenge.id === 0 && (
