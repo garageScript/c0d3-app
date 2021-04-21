@@ -224,11 +224,11 @@ export type Session = {
 
 export type Star = {
   __typename?: 'Star'
-  id: Scalars['String']
-  studentId?: Maybe<Scalars['Int']>
-  mentorId?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  lessonId: Scalars['Int']
   comment?: Maybe<Scalars['String']>
+  student: User
+  lesson: Lesson
 }
 
 export type Submission = {
@@ -1253,11 +1253,11 @@ export type StarResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
 > = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  student?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
