@@ -833,7 +833,19 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
             starsReceived?: Maybe<
               Array<
                 Maybe<
-                  { __typename?: 'Star' } & Pick<Star, 'lessonId' | 'comment'>
+                  { __typename?: 'Star' } & Pick<
+                    Star,
+                    'lessonId' | 'comment'
+                  > & {
+                      student: { __typename?: 'User' } & Pick<
+                        User,
+                        'username' | 'name'
+                      >
+                      lesson: { __typename?: 'Lesson' } & Pick<
+                        Lesson,
+                        'title' | 'order'
+                      >
+                    }
                 >
               >
             >
@@ -3335,6 +3347,14 @@ export const UserInfoDocument = gql`
         starsReceived {
           lessonId
           comment
+          student {
+            username
+            name
+          }
+          lesson {
+            title
+            order
+          }
         }
       }
     }
