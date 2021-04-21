@@ -64,21 +64,12 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 challenges={currentLesson.challenges as Challenge[]}
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
-<<<<<<< HEAD
-<<<<<<< HEAD
                 chatUrl={currentLesson.chatUrl!}
                 lessonId={currentLesson.id}
-=======
-=======
->>>>>>> a4f5a576bb620cd22cd1f6830b133549d5df3d21
                 chatUrl={currentLesson.chatUrl}
                 lessonId={parseInt(currentLesson.id, 10)}
                 show={show}
                 setShow={setShow}
-<<<<<<< HEAD
->>>>>>> f3343513934c4c5842bde13243c44a67735e0373
-=======
->>>>>>> a4f5a576bb620cd22cd1f6830b133549d5df3d21
               />
             </div>
           )}
