@@ -12984,7 +12984,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     Object {
       "backgroundColor": "#f6f8fa",
       "color": "rgb(36, 41, 46)",
-      "padding": "20px",
+      "padding": "20px 20px 0 20px",
     }
   }
 >
@@ -15342,7 +15342,7 @@ Array [
 exports[`Storyshots mdx/Spoiler Default 1`] = `
 Array [
   <div
-    className="mb-1 ml-1"
+    className="mb-1 ml-1 spoiler"
     onClick={[Function]}
   >
     <div
@@ -15375,7 +15375,7 @@ Array [
 exports[`Storyshots mdx/Spoiler With Custom Name 1`] = `
 Array [
   <div
-    className="mb-1 ml-1"
+    className="mb-1 ml-1 spoiler"
     onClick={[Function]}
   >
     <div

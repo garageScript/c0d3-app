@@ -3,7 +3,7 @@
 exports[`Spoiler component test Should render spoiler 1`] = `
 <div>
   <div
-    class="mb-1 ml-1"
+    class="mb-1 ml-1 spoiler"
   >
     <div
       class="d-flex"

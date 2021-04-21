@@ -13,7 +13,10 @@ const ChallengeBar: React.FC<{ src: string }> = ({ src }) => {
           foundation.
         </p>
         <div className="d-flex justify-content-center">
-          <NavLink path={src} className={`btn btn-light mt-2 text-primary`}>
+          <NavLink
+            path={src}
+            className={`btn btn-light mt-2 text-primary w-50`}
+          >
             View Challenges
           </NavLink>
         </div>

@@ -22,7 +22,7 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
         class="d-flex justify-content-center"
       >
         <a
-          class="btn btn-light mt-2 text-primary"
+          class="btn btn-light mt-2 text-primary w-50"
           href="/foo"
         >
           View Challenges

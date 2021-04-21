@@ -15,7 +15,7 @@ const Spoiler: React.FC<Props> = ({ children, name }) => {
   }
   return (
     <>
-      <div className="mb-1 ml-1" onClick={onClick}>
+      <div className="mb-1 ml-1 spoiler" onClick={onClick}>
         <div className="d-flex">
           <div className={`${styles[status.name]} align-self-center mr-3`} />
           <div className={`${styles['spoiler__title']}`}>
