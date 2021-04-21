@@ -1,18 +1,10 @@
-import db from '../../helpers/dbload'
-import { Context } from '../../@types/helpers'
-import { User as UserType } from '../../helpers/models/User'
-import { Star as StarType, LessonStatus } from '../../@types/lesson'
 import _ from 'lodash'
-const { User, Submission, UserLesson, Star } = db
+import { userInfo } from '../../helpers/controllers/userInfoController'
+import { Context } from '../../@types/helpers'
+import { prisma } from '../../prisma'
 
-type Submission = {
-  lessonId: string
-}
-interface mentorUsernamesMapType {
-  [userId: number]: string
-}
-interface mentorIdsMapType {
-  [lessonId: string]: number
+interface lessonMentorMapType {
+  [lessonId: string]: string
 }
 
 export const session = async (_parent: void, _args: void, context: Context) => {
@@ -22,46 +14,44 @@ export const session = async (_parent: void, _args: void, context: Context) => {
 
   // FYI: The reason we are querying with parallelized promises:
   // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
-  const [submissions, lessonStatus, stars] = await Promise.all([
-    Submission.findAll({
-      where: { userId },
-      include: [{ model: User, as: 'reviewer' }]
-    }),
-    UserLesson.findAll({ where: { userId } }),
-    Star.findAll({ where: { studentId: userId } })
+  const [session, starsGiven] = await Promise.all([
+    userInfo(_parent, user.username),
+    prisma.star.findMany({
+      where: {
+        studentId: user.id
+      },
+      include: {
+        lesson: {
+          select: {
+            id: true
+          }
+        },
+        mentor: {
+          select: {
+            username: true
+          }
+        }
+      }
+    })
   ])
 
-  const mentorIdsMap: mentorIdsMapType = stars.reduce(
-    (map: mentorIdsMapType, { dataValues }: { dataValues: StarType }) => {
-      const { lessonId, mentorId } = dataValues
-      map[lessonId] = mentorId
-      return map
-    },
-    {}
-  )
+  const submissions = _.get(session, 'submissions', [])
+  const userLessons = _.get(session, 'lessonStatus', [])
 
-  const mentors = await User.findAll({
-    where: { id: Object.values(mentorIdsMap) as number[] }
-  })
+  const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
+    const mentorUsername = _.get(starGiven, 'mentor.username', '')
+    map[starGiven.lessonId] = mentorUsername
+    return map
+  }, {} as lessonMentorMapType)
 
-  const mentorUsernamesMap: mentorUsernamesMapType = mentors.reduce(
-    (map: mentorUsernamesMapType, { dataValues }: { dataValues: UserType }) => {
-      const { id, username } = dataValues
-      map[id] = username
-      return map
-    },
-    {}
-  )
-
-  lessonStatus.forEach((lesson: LessonStatus) => {
-    const mentorId = mentorIdsMap[lesson.lessonId]
-    const username = mentorUsernamesMap[mentorId]
-    lesson.starGiven = username
-  })
+  const lessonStatus = userLessons.map(userLesson => ({
+    ...userLesson,
+    starGiven: lessonMentorMap[userLesson.lessonId] || ''
+  }))
 
   return {
     user,
-    submissions,
-    lessonStatus
+    lessonStatus,
+    submissions
   }
 }
