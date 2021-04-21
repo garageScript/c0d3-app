@@ -1,13 +1,12 @@
-import db from './dbload'
-const { User } = db
+import { prisma } from '../prisma'
 
 export default async (userOrEmail: string) => {
   if (userOrEmail.indexOf('@') !== -1) {
-    return User.findOne({
+    return prisma.user.findFirst({
       where: { email: userOrEmail }
     })
   }
-  return User.findOne({
+  return prisma.user.findFirst({
     where: { username: userOrEmail }
   })
 }
