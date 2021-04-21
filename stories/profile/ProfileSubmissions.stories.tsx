@@ -1,9 +1,25 @@
 import * as React from 'react'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
+import { LessonChallenge } from '../../components/ProfileSubmissions'
+import dummyLesson from '../../__dummy__/lessonData'
 
 export default {
   component: ProfileSubmissions,
   title: 'Components/ProfileSubmissions'
+}
+
+const student = {
+  id: 2,
+  username: 'fakeusername',
+  name: 'fake user',
+  isAdmin: false
+}
+
+const mentor = {
+  id: 1,
+  username: 'admin',
+  name: 'Admin Admin',
+  isAdmin: true
 }
 
 const completedChallenges = [
@@ -79,20 +95,28 @@ const challengesLesson9 = [
 
 const starsReceived = [
   {
+    id: 1,
     studentId: 2,
     mentorId: 5,
     lessonId: 1,
+    lesson: dummyLesson[2],
+    student,
+    mentor,
     comment: 'Thank you'
   },
   {
+    id: 2,
     studentId: 7,
     mentorId: 5,
     lessonId: 1,
+    lesson: dummyLesson[2],
+    student,
+    mentor,
     comment: 'Thank you so much!'
   }
 ]
 
-const lessons = [
+const lessons: LessonChallenge[] = [
   {
     order: 0,
     title: 'Foundation of Javascript',

@@ -1,5 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Curriculum challenge page Should hide mobile modal on click 1`] = `
+<div
+  aria-hidden="true"
+>
+  <div
+    class="row challenge-display mt-3"
+  >
+    <div
+      class="col-md-8"
+    >
+      <div
+        class="card text-center shadow-sm"
+      >
+        <div
+          class="card-body"
+        >
+          <img
+            class="mt-3"
+            src="/assets/curriculum/icons/icon-challenge-complete.jpg"
+          />
+          <h4
+            class="card-title mt-2"
+          >
+            Congratulations!
+          </h4>
+          <p
+            class="success-message"
+          >
+            You have successfully completed all challenges
+          </p>
+          <p
+            class="review-message"
+          >
+            You can help your peers by
+            <a
+              class="font-weight-bold mx-1"
+              href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              answering questions
+            </a>
+            they have in the lesson and
+            <a
+              class="font-weight-bold mx-1"
+              href="https://www.c0d3.com/review/5"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              reviewing challenge submissions
+            </a>
+          </p>
+        </div>
+        <div
+          class="card-footer d-flex bg-primary"
+        >
+          <p
+            class="text-white mr-3 my-2"
+          >
+            You can show your appreciation to the user that helped you the most by giving them a star
+          </p>
+          <button
+            class="btn btn-light text-primary font-weight-bold ml-auto"
+          >
+            Give Star
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Curriculum challenge page Should render appropriately when no challenges are passed to component 1`] = `
 <div>
   <h1>
@@ -14,7 +87,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -69,7 +142,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card text-center shadow-sm"
@@ -146,7 +219,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       class="row challenge-display mt-3"
     >
       <div
-        class="col-4"
+        class="challenge-display_challenges undefined col-md-4"
       >
         <div
           class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -201,7 +274,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card text-center shadow-sm"
@@ -685,7 +758,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
       class="row challenge-display mt-3"
     >
       <div
-        class="col-4"
+        class="challenge-display_challenges undefined col-md-4"
       >
         <div
           class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -740,7 +813,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         </div>
       </div>
       <div
-        class="col-8"
+        class="col-md-8"
       >
         <div
           class="card text-center shadow-sm"
@@ -812,7 +885,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card shadow-sm border-0"
@@ -850,7 +923,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card shadow-sm border-0"
@@ -1399,7 +1472,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
@@ -1427,7 +1500,7 @@ exports[`Curriculum challenge page Should render first challenge by default when
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card shadow-sm border-0"
@@ -1463,7 +1536,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
     class="row challenge-display mt-3"
   >
     <div
-      class="col-4"
+      class="challenge-display_challenges undefined col-md-4"
     >
       <div
         class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
@@ -1501,7 +1574,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
       </div>
     </div>
     <div
-      class="col-8"
+      class="col-md-8"
     >
       <div
         class="card shadow-sm border-0"

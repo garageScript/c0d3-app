@@ -224,11 +224,11 @@ export type Session = {
 
 export type Star = {
   __typename?: 'Star'
-  id: Scalars['String']
-  studentId?: Maybe<Scalars['Int']>
-  mentorId?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  lessonId: Scalars['Int']
   comment?: Maybe<Scalars['String']>
+  student: User
+  lesson: Lesson
 }
 
 export type Submission = {
@@ -833,7 +833,19 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
             starsReceived?: Maybe<
               Array<
                 Maybe<
-                  { __typename?: 'Star' } & Pick<Star, 'lessonId' | 'comment'>
+                  { __typename?: 'Star' } & Pick<
+                    Star,
+                    'lessonId' | 'comment'
+                  > & {
+                      student: { __typename?: 'User' } & Pick<
+                        User,
+                        'username' | 'name'
+                      >
+                      lesson: { __typename?: 'Lesson' } & Pick<
+                        Lesson,
+                        'title' | 'order'
+                      >
+                    }
                 >
               >
             >
@@ -1253,11 +1265,11 @@ export type StarResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
 > = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  student?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -3335,6 +3347,14 @@ export const UserInfoDocument = gql`
         starsReceived {
           lessonId
           comment
+          student {
+            username
+            name
+          }
+          lesson {
+            title
+            order
+          }
         }
       }
     }

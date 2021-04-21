@@ -96,13 +96,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-0-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-0-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-0-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -133,7 +151,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -147,13 +165,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-1-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-1-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-1-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -184,7 +220,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -198,13 +234,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-2-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-2-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-2-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -235,7 +289,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -249,13 +303,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-3-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-3-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-3-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -286,7 +358,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -300,13 +372,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-4-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-4-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-4-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -337,7 +427,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -351,13 +441,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-5-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-5-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-5-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -388,7 +496,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -402,13 +510,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-6-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-6-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-6-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -439,7 +565,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -453,13 +579,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-7-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-7-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-7-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -490,7 +634,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -504,13 +648,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-8-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-8-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-8-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -541,7 +703,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -555,13 +717,31 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-9-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-9-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-9-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -592,7 +772,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -956,13 +1136,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-0-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-0-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-0-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -993,7 +1191,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -1025,13 +1223,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-1-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-1-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-1-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1062,7 +1278,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -1076,13 +1292,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-2-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-2-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-2-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1113,7 +1347,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -1127,13 +1361,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-3-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-3-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-3-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1164,7 +1416,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -1178,13 +1430,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-4-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-4-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-4-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1215,7 +1485,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -1229,13 +1499,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-5-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-5-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-5-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1266,7 +1554,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -1280,13 +1568,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-6-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-6-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-6-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1317,7 +1623,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -1331,13 +1637,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-7-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-7-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-7-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1368,7 +1692,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -1382,13 +1706,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-8-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-8-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-8-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1419,7 +1761,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -1433,13 +1775,31 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-9-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-9-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-9-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1470,7 +1830,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -1871,13 +2231,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-0-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-0-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-0-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-0-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <span
                 class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -1936,7 +2314,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -1960,13 +2338,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-1-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-1-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-1-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-1-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <span
                 class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -2025,7 +2421,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -2049,13 +2445,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-2-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-2-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-2-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-2-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <span
                 class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -2114,7 +2528,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -2138,13 +2552,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-3-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-3-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-3-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-3-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2175,7 +2607,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -2207,13 +2639,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-4-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-4-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-4-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-4-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2244,7 +2694,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -2258,13 +2708,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-5-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-5-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-5-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-5-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2295,7 +2763,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -2309,13 +2777,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-6-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-6-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-6-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-6-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2346,7 +2832,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -2360,13 +2846,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-7-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-7-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-7-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-7-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2397,7 +2901,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -2411,13 +2915,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-8-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-8-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-8-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-8-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2448,7 +2970,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -2462,13 +2984,31 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           <div
             class="d-flex p-2"
           >
-            <img
-              alt="js-9-cover.svg"
-              class="lesson-card__image"
-              src="/assets/curriculum/js-9-cover.svg"
-            />
             <div
-              class="w-100 pl-4"
+              style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+            >
+              <div
+                style="box-sizing: border-box; display: block; max-width: 100%;"
+              >
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  role="presentation"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE2IiBoZWlnaHQ9IjE2NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+                  style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+                />
+              </div>
+              <img
+                alt="js-9-cover.svg"
+                class="align-self-center"
+                decoding="async"
+                src="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=256&q=75"
+                srcset="/_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=128&q=75 1x, /_next/image?url=%2Fassets%2Fcurriculum%2Fjs-9-cover.svg&w=256&q=75 2x"
+                style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+              />
+            </div>
+            <div
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2499,7 +3039,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -2612,7 +3152,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <h4
                 class="progress-card__title mt-3"
               >
-                You're off to a great start!
+                Keep up the great work!
               </h4>
               <div
                 class="mt-3"

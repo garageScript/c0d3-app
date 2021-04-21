@@ -91,6 +91,7 @@ const LoginPage: React.FC = () => {
   useEffect(() => {
     const { success } = _.get(data, 'login', false)
     if (success) {
+      window.localStorage.setItem('loggedIn', 'true')
       router.push('/curriculum')
     }
     if (error) {
