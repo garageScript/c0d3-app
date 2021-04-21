@@ -739,8 +739,11 @@ Let's break down the above example.
 
 - **Return**: The result of running the function. If the key word `return` is
   not in your function body, the function will automatically return `undefined`
-
-  ![parameters](/assets/curriculum/lessons/foundations/parameters.png)
+  <Image
+    src="/assets/curriculum/lessons/foundations/params.png"
+    width="1000"
+    height="400"
+  />
 
 ## Exercises
 
@@ -1260,7 +1263,11 @@ original number.
 
 <div style = {{display:'flex', justifyContent:"space-between"}}>
 
-!['example1'](/assets/curriculum/lessons/foundations/example1.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/example1.png"
+  width="669"
+  height="226"
+/>
 
 <div style = {{marginLeft:"1em"}}>
 
@@ -1713,7 +1720,7 @@ where the function was created (after you understand this, replace the word
 
 Before the computer runs the code, it first creates a global execution context.
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1725,14 +1732,18 @@ const malfoy = draco(1, 2, 3)
 const mal2 = draco(3, 2, 1)
 ```
 
-!['exec1'](/assets/curriculum/lessons/foundations/execution11.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution11.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 1 - create a global variable named points. Line 2 - create a global
 variable named draco.**
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1744,9 +1755,13 @@ const draco = (kreacher, winky, fluffy) => {
 ...
 ```
 
-!['exec2'](/assets/curriculum/lessons/foundations/execution12.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution12.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 6 - Run the draco function with 1,2,3.**
 
@@ -1754,7 +1769,7 @@ Remember, every time a function is run, a box (**local or functional execution
 context**) is created. Since there are 3 parameters, this local execution
 context has 3 local variables.
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1766,14 +1781,18 @@ const malfoy = draco(1,2,3) // line 6
 ...
 ```
 
-!['exec3'](/assets/curriculum/lessons/foundations/execution13.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution13.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 3: Inside the draco function, the gobal variable `points` in the global
 execution context is updated to 3.**
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1785,15 +1804,19 @@ const malfoy = draco(1,2,3)
 ...
 ```
 
-!['exec4'](/assets/curriculum/lessons/foundations/execution14.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution14.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 4: draco function returns 6** - Function is done, line 6 continues, and
 malfoy takes the value of 6. The local execution context for draco function is
 removed and is no longer accessible.
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1805,9 +1828,13 @@ const malfoy = draco(1,2,3)  // line 6
 ...
 ```
 
-!['exec5'](/assets/curriculum/lessons/foundations/execution15.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution15.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 7: Run draco function with 3,2,1**
 
@@ -1815,7 +1842,7 @@ Remember, every time a function is run, a new **local execution context** is
 created. Since there are 3 parameters, this new local execution context has 3
 local variables:
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1827,14 +1854,18 @@ const malfoy = draco(1, 2, 3)
 const mal2 = draco(3, 2, 1) // line 7
 ```
 
-!['exec6'](/assets/curriculum/lessons/foundations/execution16.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution16.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 3: Inside the draco function. The global `points` variable is updated
 to 5.**
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1846,14 +1877,18 @@ const malfoy = draco(1,2,3)
 const mal2 = draco(3,2,1)
 ```
 
-!['exec7'](/assets/curriculum/lessons/foundations/execution17.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution17.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 **Line 4: draco function returns 6** - Function is done, line 7 continues, and
 mal2 takes the value of 6
 
-<div className="MDX_twoColumns">
+<twoColumns>
 
 ```jsx
 let points = 0
@@ -1865,9 +1900,13 @@ const malfoy = draco(1, 2, 3)
 const mal2 = draco(3, 2, 1) // line 7
 ```
 
-!['exec8'](/assets/curriculum/lessons/foundations/execution18.png)
+<Image
+  src="/assets/curriculum/lessons/foundations/execution18.png"
+  height="258"
+  width="400"
+/>
 
-</div>
+</twoColumns>
 
 Done! Before the execution of the codes ends, the global execution context has
 the following global variables:
@@ -1892,6 +1931,8 @@ Concepts you must know:
 - When **truthy / falsey** properties are important
 - What it means to write a function and what it means to run a function
 - What `return` does
+
+<ChallengeBar src="/foobar" />
 
 export default ({ children }) => (
   <Layout
