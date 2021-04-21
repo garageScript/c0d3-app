@@ -10,8 +10,6 @@ export default {
 const stars: StarType[] = [
   {
     id: 1,
-    mentorId: 5,
-    studentId: 10,
     student: {
       id: 1,
       name: 'Alexandra',
@@ -28,8 +26,6 @@ const stars: StarType[] = [
   },
   {
     id: 2,
-    mentorId: 5,
-    studentId: 10,
     student: {
       id: 2,
       name: 'Charles',
