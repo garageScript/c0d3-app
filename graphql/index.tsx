@@ -225,8 +225,6 @@ export type Session = {
 export type Star = {
   __typename?: 'Star'
   id: Scalars['Int']
-  studentId: Scalars['Int']
-  mentorId: Scalars['Int']
   lessonId: Scalars['Int']
   comment?: Maybe<Scalars['String']>
   student: User
@@ -1268,8 +1266,6 @@ export type StarResolvers<
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  studentId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  mentorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   student?: Resolver<ResolversTypes['User'], ParentType, ContextType>

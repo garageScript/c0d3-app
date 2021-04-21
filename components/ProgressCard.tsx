@@ -57,6 +57,20 @@ const ProgressSVG: React.FC<Props> = ({ progressCount }) => {
 }
 
 const ProgressCard: React.FC<Props> = ({ progressCount }) => {
+  const setHeaderFromProgress = () => {
+    if (progressCount <= 13) {
+      // Has not finished 1st module yet
+      return `You're off to a great start!`
+    } else if (progressCount <= 50) {
+      return `Keep up the great work!`
+    } else if (progressCount < 100) {
+      return `Well done! You're over half way!`
+    } else {
+      // Assertion: progressCount = 100
+      return `Congratulations! You've finished the course!`
+    }
+  }
+
   return (
     <div
       className={`${styles['progress-card__container']} d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0`}
@@ -64,7 +78,7 @@ const ProgressCard: React.FC<Props> = ({ progressCount }) => {
       <div className="card-body">
         <ProgressSVG progressCount={progressCount} />
         <h4 className={`${styles['progress-card__title']} mt-3`}>
-          You&#39;re off to a great start!
+          {setHeaderFromProgress()}
         </h4>
         <div className="mt-3">
           Login to

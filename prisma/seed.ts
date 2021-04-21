@@ -1,59 +1,70 @@
-import { PrismaClient } from '@prisma/client'
-import lessonsData from './seedData'
+import type { Challenge, Lesson, User } from '@prisma/client'
+import { Prisma, PrismaClient } from '@prisma/client'
+import {
+  adminData,
+  leetData,
+  lessonsData,
+  noobData,
+  starData,
+  submissionData,
+  userLessonData
+} from './seedData'
 
 const prisma = new PrismaClient()
 
+async function main() {
+  await seedLessons()
+  const [admin, leet] = await seedUsers()
+  const lessons = await prisma.lesson.findMany({
+    include: { challenges: true }
+  })
+  await seedUserLessons(admin, lessons)
+  await seedUserLessons(leet, lessons)
+  await seedSubmissions(leet, admin, lessons)
+  await seedStars(leet, admin, lessons)
+}
+
 async function seedLessons() {
   for (const lessonData of lessonsData) {
-    const { challenges, ...lesson } = lessonData
-    await prisma.lesson.create({
-      data: {
-        ...lesson,
-        challenges: {
-          createMany: {
-            data: challenges
-          }
-        }
-      }
-    })
+    await prisma.lesson.create({ data: lessonData })
   }
 }
 
 async function seedUsers() {
-  const admin = await prisma.user.create({
-    data: {
-      name: 'Admin Administrator',
-      username: 'admin',
-      password: '$2b$10$OKsH6r5//AtYlIW/EzUWQeUYdwcKF8JUEeD8RXfLURj8BPw1ilir2',
-      email: 'admin@mail.com',
-      isAdmin: true
-    }
-  })
+  const admin = await prisma.user.create({ data: adminData })
+  const leet = await prisma.user.create({ data: leetData })
+  const noob = await prisma.user.create({ data: noobData })
+  return [admin, leet, noob]
+}
 
-  await prisma.user.create({
-    data: {
-      name: 'Noob Newbie',
-      username: 'newbie',
-      password: '$2b$10$1N3HMPuhWETfwWZWEJp85ONwWbUbBet7.aeZFvdCBjqx5muZ6Elyq',
-      email: 'newbie@mail.com',
-      isAdmin: false
-    }
-  })
-
-  const userLessons = (await prisma.lesson.findMany()).map(l => ({
-    lessonId: l.id,
-    userId: admin.id,
-    isPassed: Date.now().toString()
-  }))
-
+async function seedUserLessons(user: User, lessons: Lesson[]) {
   await prisma.userLesson.createMany({
-    data: userLessons
+    data: lessons.map(({ id }) => userLessonData(id, user.id))
   })
 }
 
-async function main() {
-  await seedLessons()
-  await seedUsers()
+async function seedSubmissions(
+  user: User,
+  reviewer: User,
+  lessons: (Lesson & { challenges: Challenge[] })[]
+) {
+  await prisma.submission.createMany({
+    data: lessons.reduce(
+      (acc, { challenges }) => [
+        ...acc,
+        ...challenges.map(({ id, lessonId }) =>
+          submissionData(user.id, lessonId!, id, reviewer.id)
+        )
+      ],
+      [] as Prisma.SubmissionCreateManyInput[]
+    )
+  })
+}
+
+async function seedStars(user: User, mentor: User, lessons: Lesson[]) {
+  await prisma.star.createMany({
+    data: lessons.map(({ id }) => starData(id, user.id, mentor.id))
+  })
 }
 
 main()
