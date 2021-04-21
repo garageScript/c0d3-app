@@ -1,8 +1,7 @@
-jest.mock('../../helpers/dbload')
+jest.mock('../../helpers/controllers/userInfoController')
+import { userInfo } from '../../helpers/controllers/userInfoController'
 import { session } from './session'
-import db from '../../helpers/dbload'
-
-const { Submission, UserLesson, Star, User } = db
+import { prisma } from '../../prisma'
 
 describe('Session resolver', () => {
   test('should return empty session if req.user does not exist', async () => {
@@ -11,26 +10,32 @@ describe('Session resolver', () => {
   })
 
   test('should return user including submissions and lessonStatus', async () => {
-    const result = {
-      user: { username: 'test', id: 815 },
-      submissions: { id: '1' },
-      lessonStatus: { id: '1', lessonId: 4, starGiven: 'jobless' }
+    const userInfoData = {
+      user: { id: 815, username: 'test' },
+      submissions: [{ id: 1 }],
+      lessonStatus: [
+        { id: 1, lessonId: 4 },
+        { id: 2, lessonId: 666 }
+      ]
     }
-    const req = { user: { ...result.user } }
-    Submission.findAll = jest.fn().mockReturnValue([{ ...result.submissions }])
-    UserLesson.findAll = jest.fn().mockReturnValue([{ ...result.lessonStatus }])
-    Star.findAll = jest
+    const sessionData = {
+      ...userInfoData,
+      lessonStatus: [
+        { id: 1, lessonId: 4, starGiven: 'superReviewer' },
+        { id: 2, lessonId: 666, starGiven: '' }
+      ]
+    }
+    const req = { user: userInfoData.user }
+    userInfo.mockReturnValue(userInfoData)
+    prisma.star.findMany = jest
       .fn()
-      .mockReturnValue([
-        { dataValues: { mentorId: 3, studentId: 815, lessonId: 4 } }
-      ])
-    User.findAll = jest
-      .fn()
-      .mockReturnValue([{ dataValues: { id: 3, username: 'jobless' } }])
-    const returnValue = await session({}, {}, { req })
+      .mockReturnValue([{ mentor: { username: 'superReviewer' }, lessonId: 4 }])
+    const sessionReturnValue = await session(
+      {},
+      {},
+      { req: { user: { id: 815, username: 'test' } } }
+    )
 
-    expect(returnValue.user).toEqual(result.user)
-    expect(returnValue.submissions).toEqual([result.submissions])
-    expect(returnValue.lessonStatus).toEqual([result.lessonStatus])
+    expect(sessionReturnValue).toEqual(sessionData)
   })
 })
