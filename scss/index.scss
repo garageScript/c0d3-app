@@ -38,10 +38,35 @@ body {
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
+#table-of-contents {
+  float: right;
+  color: rgb(92, 92, 92);
+  & + ul {
+    list-style: none;
+    float: right;
+    clear: both;
+    text-decoration: none;
+    & > li {
+      & > p {
+        margin: 0;
+        & > a {
+          text-decoration: none;
+        }
+      }
+      & > ul > li {
+        list-style: none;
+        > a {
+          text-decoration: none;
+          list-style: none;
+        }
+      }
+    }
+  }
+}
 .text-danger {
   color: #721c24 !important;
 }

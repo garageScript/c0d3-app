@@ -3,6 +3,7 @@ import Layout from '../Layout'
 import LessonTitleCard, {
   LessonTitleProps
 } from '../../components/LessonTitleCard'
+import styles from '../../scss/mdx.module.scss'
 const LessonLayout: React.FC<Partial<LessonTitleProps>> = props => {
   return (
     <Layout>
@@ -11,7 +12,10 @@ const LessonLayout: React.FC<Partial<LessonTitleProps>> = props => {
           <LessonTitleCard {...(props as LessonTitleProps)} />
         )}
       </div>
-      <div className={`card shadow-sm mt-3 d-block border-0 p-4 bg-white`}>
+      <div
+        className={`${styles['lesson-wrapper']} card shadow-sm mt-3 d-block border-0 p-4 bg-white`}
+      >
+        <h1 className="title font-weight-bold">{props.lessonTitle}</h1>
         {props.children}
       </div>
     </Layout>
