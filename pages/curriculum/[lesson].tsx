@@ -29,9 +29,8 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
   }
-  const userSubmissions: UserSubmission[] =
-    _.get(session, 'submissions', []) || []
-  const lessonStatus: LessonStatus[] = _.get(session, 'lessonStatus', [])
+  const userSubmissions: Submission[] = _.get(session, 'submissions', []) || []
+  const lessonStatus: UserLesson[] = _.get(session, 'lessonStatus', [])
 
   const currentLessonStatus: UserLesson =
     lessonStatus.find(
@@ -64,10 +63,8 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 challenges={currentLesson.challenges as Challenge[]}
                 userSubmissions={userSubmissions}
                 lessonStatus={currentLessonStatus}
-                chatUrl={currentLesson.chatUrl!}
                 lessonId={currentLesson.id}
-                chatUrl={currentLesson.chatUrl}
-                lessonId={parseInt(currentLesson.id, 10)}
+                chatUrl={currentLesson.chatUrl!}
                 show={show}
                 setShow={setShow}
               />

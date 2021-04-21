@@ -96,8 +96,6 @@ const challengesLesson9 = [
 const starsReceived = [
   {
     id: 1,
-    studentId: 2,
-    mentorId: 5,
     lessonId: 1,
     lesson: dummyLesson[2],
     student,
@@ -106,8 +104,6 @@ const starsReceived = [
   },
   {
     id: 2,
-    studentId: 7,
-    mentorId: 5,
     lessonId: 1,
     lesson: dummyLesson[2],
     student,
