@@ -13,4 +13,4 @@ generates:
       withHOC: true
 hooks:
   afterAllFileWrite:
-    - prettier --write
+    - eslint --fix
