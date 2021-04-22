@@ -18,6 +18,7 @@ const stars: StarType[] = [
     },
     lessonId: 23,
     lesson: {
+      id: 4,
       title: 'Objects',
       order: 3
     },
@@ -34,6 +35,7 @@ const stars: StarType[] = [
     },
     lessonId: 33,
     lesson: {
+      id: 3,
       title: 'End to End',
       order: 5
     },

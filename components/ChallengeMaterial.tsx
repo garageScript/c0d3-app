@@ -414,7 +414,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       )}
 
       <div className="col-md-8">
-        {currentChallenge.id !== 'finalChallenge' && (
+        {currentChallenge.id !== finalChallenge.id && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
         {lessonStatus.isPassed && currentChallenge.id === 0 && (
