@@ -248,34 +248,34 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -305,40 +305,40 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -368,37 +368,37 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -428,34 +428,34 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -485,25 +485,25 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -533,31 +533,31 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -587,28 +587,28 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -638,37 +638,37 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -698,40 +698,40 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -761,19 +761,19 @@ exports[`user profile test Should render anonymous users 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1047,34 +1047,34 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1107,37 +1107,37 @@ exports[`user profile test Should render if no stars received 1`] = `
                       class="challenge_status bg-success"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1167,37 +1167,37 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1227,34 +1227,34 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1284,25 +1284,25 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1332,31 +1332,31 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1386,28 +1386,28 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1437,37 +1437,37 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1497,40 +1497,40 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1560,19 +1560,19 @@ exports[`user profile test Should render if no stars received 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1848,34 +1848,34 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1905,40 +1905,40 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -1968,37 +1968,37 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2028,34 +2028,34 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2085,25 +2085,25 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2133,31 +2133,31 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2187,28 +2187,28 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2238,37 +2238,37 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2298,40 +2298,40 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2361,19 +2361,19 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2401,13 +2401,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -2953,34 +2953,34 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3013,37 +3013,37 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                       class="challenge_status bg-success"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3073,37 +3073,37 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3133,34 +3133,34 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3190,25 +3190,25 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3238,31 +3238,31 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3292,28 +3292,28 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3343,37 +3343,37 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3403,40 +3403,40 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3466,19 +3466,19 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -3952,34 +3952,34 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4039,34 +4039,34 @@ exports[`user profile test Should render profile 1`] = `
                       class="challenge_status bg-success"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4120,37 +4120,37 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4180,34 +4180,34 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4237,25 +4237,25 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4285,31 +4285,31 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4339,28 +4339,28 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4390,37 +4390,37 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4450,40 +4450,40 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>
@@ -4513,19 +4513,19 @@ exports[`user profile test Should render profile 1`] = `
                   </h6>
                   <div>
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                     <span
-                      class="challenge_status bg-gray"
+                      class="challenge_status bg-warning"
                     />
                   </div>
                 </div>

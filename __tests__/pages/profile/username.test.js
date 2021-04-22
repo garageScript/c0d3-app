@@ -9,6 +9,7 @@ import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
+import { SubmissionStatus } from '../../../graphql'
 
 describe('user profile test', () => {
   const { query } = useRouter()
@@ -22,7 +23,7 @@ describe('user profile test', () => {
       submissions: [
         {
           id: 1,
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,
@@ -39,7 +40,7 @@ describe('user profile test', () => {
         },
         {
           id: 2,
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,
@@ -171,7 +172,7 @@ describe('user profile test', () => {
       submissions: [
         {
           id: 1,
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,
@@ -377,7 +378,7 @@ describe('user profile test', () => {
       submissions: [
         {
           id: 1,
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,

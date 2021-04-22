@@ -10,6 +10,7 @@ import {
 import NavLink from './NavLink'
 import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
+import { SubmissionStatus } from '../graphql'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
@@ -27,7 +28,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
-      if (val.status === 'open') {
+      if (val.status === SubmissionStatus.Open) {
         acc = acc + 1
         return acc
       }

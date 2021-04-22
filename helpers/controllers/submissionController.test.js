@@ -8,6 +8,8 @@ import resolvers from '../../graphql/resolvers'
 import { publicChannelMessage, getUserByEmail } from '../mattermost'
 import { submissions } from './submissionController'
 import { hasPassedLesson } from '../hasPassedLesson'
+import { prisma } from '../../prisma'
+import { SubmissionStatus } from '../../graphql'
 const { Mutation } = resolvers
 const { Lesson, Submission, User, Challenge } = db
 
@@ -147,7 +149,7 @@ describe('Submissions Mutations', () => {
     expect(controller.updateSubmission).toHaveBeenCalledWith({
       ...submission,
       reviewerId: 2,
-      status: 'passed'
+      status: SubmissionStatus.Passed
     })
   })
 
@@ -211,7 +213,7 @@ describe('Submissions Mutations', () => {
 
 describe('Submissions Queries', () => {
   test('should return no submissions if there are none open', async () => {
-    Submission.findAll = jest.fn().mockReturnValue([])
+    prisma.submission.findMany = jest.fn().mockReturnValue([])
     hasPassedLesson.mockReturnValue(true)
     const result = await submissions(
       null,
@@ -231,7 +233,9 @@ describe('Submissions Queries', () => {
       createdAt: '1586386486986',
       challengeId: '200'
     }
-    Submission.findAll = jest.fn().mockResolvedValue([submissionResults])
+    prisma.submission.findMany = jest
+      .fn()
+      .mockResolvedValue([submissionResults])
     hasPassedLesson.mockReturnValue(true)
     const result = await submissions(
       null,

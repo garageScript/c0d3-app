@@ -5,7 +5,7 @@ import {
   publicChannelMessage,
   sendDirectMessage
 } from './mattermost'
-import { SubmissionStatus } from './controllers/submissionController'
+import { SubmissionStatus } from '../graphql'
 
 const { Submission, Challenge, User, UserLesson, Lesson } = db
 
@@ -67,7 +67,7 @@ export const updateSubmission = async (
     // count how many submissions user passed in total
     const passedLessonSubmissions = lessonSubmissions.reduce(
       (sum: number, s: any) =>
-        sum + (s.status === SubmissionStatus.PASSED ? 1 : 0),
+        sum + (s.status === SubmissionStatus.Passed ? 1 : 0),
       0
     )
 
@@ -134,7 +134,7 @@ export const sendChatNotification = async (
   const { username: reviewerChatUsername } = await getUserByEmail(reviewerEmail)
   const { title } = await Challenge.findByPk(challengeId)
   let message = `Your submission for the challenge **_${title}_** has been **${
-    status === SubmissionStatus.PASSED ? 'ACCEPTED' : 'REJECTED'
+    status === SubmissionStatus.Passed ? 'ACCEPTED' : 'REJECTED'
   }** by @${reviewerChatUsername}.`
   if (comment) {
     message += `\n\nThe reviewer left the following comment:\n\n___\n\n${comment}`

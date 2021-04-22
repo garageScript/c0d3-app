@@ -4,23 +4,26 @@ import { decode } from '../encoding'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
 import { hasPassedLesson } from '../hasPassedLesson'
-import {
-  MutationCreateSubmissionArgs,
-  QuerySubmissionsArgs
-} from '../../graphql'
 import _ from 'lodash'
+import { SubmissionStatus } from '../../graphql'
+import { prisma } from '../../prisma'
 
 const { User, Submission, Challenge, Lesson } = db
 
-export enum SubmissionStatus {
-  OPEN = 'open',
-  PASSED = 'passed',
-  REJECTED = 'needMoreWork'
+type ArgsCreateSubmission = {
+  lessonId: number
+  cliToken: string
+  diff: string
+  challengeId: string
+}
+
+type ArgsGetSubmissions = {
+  lessonId: number
 }
 
 export const createSubmission = async (
   _parent: void,
-  args: MutationCreateSubmissionArgs
+  args: ArgsCreateSubmission
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
@@ -35,7 +38,7 @@ export const createSubmission = async (
 
     await submission.update({
       diff,
-      status: SubmissionStatus.OPEN,
+      status: SubmissionStatus.Open,
       viewCount: 0
     })
 
@@ -74,7 +77,7 @@ export const acceptSubmission = async (
     return updateSubmission({
       ...args,
       reviewerId,
-      status: SubmissionStatus.PASSED
+      status: SubmissionStatus.Passed
     })
   } catch (error) {
     throw new Error(error)
@@ -92,7 +95,7 @@ export const rejectSubmission = async (
     return updateSubmission({
       ...args,
       reviewerId,
-      status: SubmissionStatus.REJECTED
+      status: SubmissionStatus.NeedMoreWork
     })
   } catch (error) {
     throw new Error(error)
@@ -101,26 +104,33 @@ export const rejectSubmission = async (
 
 export const submissions = async (
   _parent: void,
-  arg: QuerySubmissionsArgs,
+  arg: ArgsGetSubmissions,
   ctx: Context
 ) => {
   try {
     const { lessonId } = arg
     await getReviewer(ctx, lessonId)
-    return Submission.findAll({
+    // TODO fix lessonId graphql typedef to Int
+    return prisma.submission.findMany({
       where: {
-        status: 'open',
-        lessonId
+        status: SubmissionStatus.Open,
+        lessonId: Number(lessonId)
       },
-      include: ['challenge', 'user']
+      include: {
+        challenge: true,
+        user: true
+      }
     })
   } catch (error) {
     throw new Error(error)
   }
 }
 
-const getReviewer = async (ctx: Context, lessonId: number): Promise<number> => {
-  const reviewerId = _.get(ctx, 'req.user.id', false)
+const getReviewer = async (
+  ctx: Context,
+  lessonId?: number
+): Promise<number> => {
+  const reviewerId: number | undefined = _.get(ctx, 'req.user.id', undefined)
   if (!reviewerId) throw new Error('Invalid user')
   if (lessonId && !(await hasPassedLesson(reviewerId, lessonId))) {
     throw new Error('User has not passed this lesson and cannot review.')

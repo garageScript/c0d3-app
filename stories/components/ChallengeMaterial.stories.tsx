@@ -4,6 +4,7 @@ import SET_STAR from '../../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../../__dummy__/getLessonMentorsData'
 import { MockedProvider } from '@apollo/client/testing'
+import { SubmissionStatus } from '../../graphql'
 export default {
   component: ChallengeMaterial,
   title: 'Components/ChallengeMaterial'
@@ -70,7 +71,7 @@ export const WithDiff: React.FC = () => (
     challenges={challenges}
     userSubmissions={[
       {
-        status: '',
+        status: SubmissionStatus.Open,
         id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
@@ -91,7 +92,7 @@ export const WithDiff: React.FC = () => (
         updatedAt: Date.now().toString()
       },
       {
-        status: '',
+        status: SubmissionStatus.Open,
         id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
@@ -125,7 +126,7 @@ export const WithComments: React.FC = () => (
     challenges={challenges}
     userSubmissions={[
       {
-        status: 'passed',
+        status: SubmissionStatus.Passed,
         id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
@@ -151,7 +152,7 @@ export const WithComments: React.FC = () => (
         updatedAt: Date.now().toString()
       },
       {
-        status: '',
+        status: SubmissionStatus.Open,
         id: 1,
         mrUrl: '',
         diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
@@ -198,7 +199,7 @@ export const FinalChallenge: React.FC = () => (
       challenges={challenges}
       userSubmissions={[
         {
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           id: 1,
           mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
@@ -224,7 +225,7 @@ export const FinalChallenge: React.FC = () => (
           updatedAt: Date.now().toString()
         },
         {
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           id: 1,
           mrUrl: '',
           diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,

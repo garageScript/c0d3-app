@@ -13,6 +13,7 @@ import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
 import _ from 'lodash'
+import { SubmissionStatus } from '../../graphql'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -57,7 +58,8 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const lessonSubmissions: Submission[] = data
     ? data.submissions.filter(
         (submission: Submission) =>
-          submission.status !== 'passed' && submission.status !== 'needMoreWork'
+          submission.status !== SubmissionStatus.Passed &&
+          submission.status !== SubmissionStatus.NeedMoreWork
       )
     : []
   return (
