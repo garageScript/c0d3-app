@@ -1,5 +1,6 @@
 import type { Challenge, Lesson, User } from '@prisma/client'
 import { Prisma, PrismaClient } from '@prisma/client'
+import { SubmissionStatus } from '../graphql'
 import {
   adminData,
   leetData,
@@ -14,13 +15,14 @@ const prisma = new PrismaClient()
 
 async function main() {
   await seedLessons()
-  const [admin, leet] = await seedUsers()
+  const [admin, leet, noob] = await seedUsers()
   const lessons = await prisma.lesson.findMany({
     include: { challenges: true }
   })
   await seedUserLessons(admin, lessons)
   await seedUserLessons(leet, lessons)
-  await seedSubmissions(leet, admin, lessons)
+  await seedSubmissions(leet, admin, lessons, SubmissionStatus.Passed)
+  await seedSubmissions(noob, null, lessons.slice(0), SubmissionStatus.Open)
   await seedStars(leet, admin, lessons)
 }
 
@@ -45,15 +47,16 @@ async function seedUserLessons(user: User, lessons: Lesson[]) {
 
 async function seedSubmissions(
   user: User,
-  reviewer: User,
-  lessons: (Lesson & { challenges: Challenge[] })[]
+  reviewer: User | null,
+  lessons: (Lesson & { challenges: Challenge[] })[],
+  status?: SubmissionStatus
 ) {
   await prisma.submission.createMany({
     data: lessons.reduce(
       (acc, { challenges }) => [
         ...acc,
         ...challenges.map(({ id, lessonId }) =>
-          submissionData(user.id, lessonId!, id, reviewer.id)
+          submissionData(user.id, lessonId!, id, reviewer?.id, status)
         )
       ],
       [] as Prisma.SubmissionCreateManyInput[]
