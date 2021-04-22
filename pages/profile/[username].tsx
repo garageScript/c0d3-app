@@ -91,9 +91,7 @@ const UserProfile: React.FC = () => {
 
       return {
         challengeNumber: challenge.order || 0,
-        challengeStatus: challengeSubmission
-          ? challengeSubmission.status
-          : SubmissionStatus.Open
+        challengeStatus: challengeSubmission?.status
       }
     })
     const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
