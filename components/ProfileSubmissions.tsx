@@ -29,7 +29,6 @@ export const SubmissionStatus: React.FC<ChallengeStatusProps> = ({
 }) => {
   const submissionsStatus = challengesData.map(
     (eachChallenge: Challenge, challengeId: number) => {
-      console.log(eachChallenge)
       let challengeStatus = 'bg-gray'
       if (eachChallenge.challengeStatus === SubmissionStatusEnum.Passed) {
         challengeStatus = 'bg-success'
