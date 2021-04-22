@@ -21,34 +21,34 @@ describe('user profile test', () => {
       ...dummySessionData,
       submissions: [
         {
-          id: '1',
+          id: 1,
           status: 'passed',
           mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
           order: 0,
-          challengeId: '146',
-          lessonId: '2',
+          challengeId: 146,
+          lessonId: 2,
           reviewer: {
-            id: '1',
+            id: 1,
             username: 'fake reviewer'
           },
           createdAt: '123',
           updatedAt: '123'
         },
         {
-          id: '2',
+          id: 2,
           status: 'passed',
           mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
           order: 0,
-          challengeId: '145',
-          lessonId: '2',
+          challengeId: 145,
+          lessonId: 2,
           reviewer: {
-            id: '1',
+            id: 1,
             username: 'fake reviewer'
           },
           createdAt: '123',
@@ -57,17 +57,17 @@ describe('user profile test', () => {
       ],
       lessonStatus: [
         {
-          lessonId: '5',
+          lessonId: 5,
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
           starsReceived: [
             {
-              id: '17',
+              id: 17,
               mentorId: 1,
-              studentId: '6',
-              lessonId: '5',
+              studentId: 6,
+              lessonId: 5,
               student: {
                 username: 'newbie',
                 name: 'newbie newbie'
@@ -81,17 +81,17 @@ describe('user profile test', () => {
           ]
         },
         {
-          lessonId: '2',
+          lessonId: 2,
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
           starsReceived: [
             {
-              id: '17',
+              id: 17,
               mentorId: 1,
-              studentId: '6',
-              lessonId: '2',
+              studentId: 6,
+              lessonId: 2,
               student: {
                 username: 'newbie',
                 name: 'newbie newbie'
@@ -105,17 +105,17 @@ describe('user profile test', () => {
           ]
         },
         {
-          lessonId: '1',
+          lessonId: 1,
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
           starsReceived: [
             {
-              id: '17',
+              id: 17,
               mentorId: 1,
-              studentId: '6',
-              lessonId: '2',
+              studentId: 6,
+              lessonId: 2,
               student: {
                 username: 'anonymous',
                 name: ''
@@ -170,17 +170,17 @@ describe('user profile test', () => {
       ...dummySessionData,
       submissions: [
         {
-          id: '1',
+          id: 1,
           status: 'passed',
           mrUrl: '',
           diff: '',
           viewCount: 0,
           comment: '',
           order: 0,
-          challengeId: '146',
-          lessonId: '2',
+          challengeId: 146,
+          lessonId: 2,
           reviewer: {
-            id: '1',
+            id: 1,
             username: 'fake reviewer'
           },
           createdAt: '123',
@@ -189,7 +189,7 @@ describe('user profile test', () => {
       ],
       lessonStatus: [
         {
-          lessonId: '5',
+          lessonId: 5,
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
@@ -197,7 +197,7 @@ describe('user profile test', () => {
           starsReceived: null
         },
         {
-          lessonId: '2',
+          lessonId: 2,
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
@@ -383,10 +383,10 @@ describe('user profile test', () => {
           viewCount: 0,
           comment: '',
           order: 0,
-          challengeId: '146',
+          challengeId: 146,
           lessonId: null,
           reviewer: {
-            id: '1',
+            id: 1,
             username: 'fake reviewer'
           },
           createdAt: '123',
