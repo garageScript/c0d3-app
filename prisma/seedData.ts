@@ -1,4 +1,5 @@
 import { Prisma } from '@prisma/client'
+import { SubmissionStatus } from '../graphql'
 
 export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
   {
@@ -743,14 +744,15 @@ export const submissionData = (
   userId: number,
   lessonId: number,
   challengeId: number,
-  reviewerId: number
+  reviewerId: number | undefined | null,
+  status: SubmissionStatus = SubmissionStatus.Open
 ) =>
   Prisma.validator<Prisma.SubmissionCreateManyInput>()({
     userId,
     lessonId,
     challengeId,
     reviewerId,
-    status: 'passed',
+    status,
     diff:
       'diff --git a/js0/1.js b/js0/1.js\nindex d7dcc70..0eff076 100644\n--- a/js0/1.js\n+++ b/js0/1.js\n@@ -6,9 +6,7 @@\n  * @returns {number}\n  */\n \n-const solution = (num1, num2) => {\n-  return 0\n-}\n+const solution = (num1, num2) => num1 + num2\n \n module.exports = {\n   solution\n'
   })

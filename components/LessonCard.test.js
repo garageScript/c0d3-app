@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import * as React from 'react'
 import LessonCard from './LessonCard'
 import { render } from '@testing-library/react'
+import { SubmissionStatus } from '../graphql'
 
 describe('Lesson Card Complete State', () => {
   test('Should render lessonCard with null if no data', async () => {
@@ -26,13 +27,13 @@ describe('Lesson Card Complete State', () => {
       data: {
         submissions: [
           {
-            status: 'open'
+            status: SubmissionStatus.Open
           },
           {
-            status: 'open'
+            status: SubmissionStatus.Open
           },
           {
-            status: 'needMoreWork'
+            status: SubmissionStatus.NeedMoreWork
           }
         ]
       }
@@ -63,14 +64,7 @@ describe('Lesson Card', () => {
   test('Should render lessonCard with no submission count', async () => {
     useQuery.mockReturnValue({
       data: {
-        submissions: [
-          {
-            status: 'underReview'
-          },
-          {
-            status: 'underReview'
-          }
-        ]
+        submissions: []
       }
     })
 

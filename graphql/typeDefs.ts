@@ -93,7 +93,7 @@ export default gql`
 
   type Submission {
     id: String
-    status: String
+    status: SubmissionStatus!
     mrUrl: String
     diff: String
     viewCount: Int
@@ -108,6 +108,12 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String
+  }
+
+  enum SubmissionStatus {
+    needMoreWork
+    open
+    passed
   }
 
   type User {

@@ -82,7 +82,7 @@ model Submission {
   mrUrl       String?    @db.VarChar(255)
   diff        String?
   comment     String?
-  status      String?    @db.VarChar(255)
+  status      String     @default("open") @db.VarChar(255)
   viewCount   Int?       @default(0)
   createdAt   DateTime   @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime   @updatedAt @db.Timestamptz(6)
