@@ -224,8 +224,10 @@ rem = 15 % 7 // 1
 ## Strings
 
 A string can be words, sentences, or a bunch of characters. To make a string,
-you can use double quotes `"` , single quotes `'`, or backticks
-```(the key to the left of 1 on most keyboards). It does not matter which of these 3 symbols you use to create a string, but you cannot mix the symbols, like`"xxx'`. You must terminate the string with the same symbol you started it with: `"xxx"`.
+you can use double quotes `"` , single quotes `'`, or backticks `` ` ``(the key
+to the left of 1 on most keyboards). It does not matter which of these 3 symbols
+you use to create a string, but you cannot mix the symbols, like`"xxx'`. You
+must terminate the string with the same symbol you started it with: `"xxx"`.
 
 > Make sure you never confuse yourself between strings and variables!
 
@@ -311,8 +313,8 @@ const message =
 Try typing the variable message out like the example above, and you will realize
 how painful it is. Therefore, using `+` with strings is not common.
 
-We can use ```(backticks) and`${expression}` (placeholder) instead, which allows
-us to put the variables directly into the string:
+We can use `` ` `` (backticks) and`${expression}` (placeholder) instead, which
+allows us to put the variables directly into the string:
 
 ```jsx
 const message = `Welcome to ${location}, ${firstName} ${lastName}!`
@@ -320,7 +322,7 @@ const message = `Welcome to ${location}, ${firstName} ${lastName}!`
 //    message = "Welcome to " + location + ', ' + firstName + ' ' + lastName + '!'
 ```
 
-**Exercise:** Rewrite the `story` variable to use ```
+**Exercise:** Rewrite the `story` variable to use `` ` ``
 
 ```jsx
 const actor = 'We'
@@ -1645,11 +1647,9 @@ const nick = charlie(9, 2) // nick is 6, because charlie(9,2) returns 6
 <Spoiler>
 
 ```jsx
-const massiveOrSmall = (a, b) => {
-  if (a + b > 100) {
-    return 'massive'
-  }
-  return 'small'
+const massiveOrSmall = (a,b)=>{
+  if(a+b>100) return "big"
+  return "small"
 }
 ```
 
