@@ -7,13 +7,14 @@ import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
 import { useRouter } from 'next/router'
+import { SubmissionStatus } from '../../../graphql'
 
 const session = {
   ...dummySessionData,
   submissions: [
     {
       id: '1',
-      status: 'passed',
+      status: SubmissionStatus.Passed,
       mrUrl: '',
       diff: '',
       viewCount: 0,
@@ -30,7 +31,7 @@ const session = {
     },
     {
       id: '1',
-      status: 'passed',
+      status: SubmissionStatus.Passed,
       mrUrl: '',
       diff: '',
       viewCount: 0,

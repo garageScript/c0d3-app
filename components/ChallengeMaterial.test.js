@@ -7,6 +7,7 @@ import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
 import { MockedProvider } from '@apollo/client/testing'
 import '@testing-library/jest-dom'
+import { SubmissionStatus } from '../graphql'
 
 const mocks = [
   {
@@ -54,7 +55,7 @@ const challenges = [
 const userSubmissions = [
   {
     id: '3500',
-    status: 'open',
+    status: SubmissionStatus.Open,
     mrUrl: 'github.com/testmrurl',
     diff:
       'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
@@ -67,7 +68,7 @@ const userSubmissions = [
   },
   {
     id: '3501',
-    status: 'needMoreWork',
+    status: SubmissionStatus.NeedMoreWork,
     mrUrl: 'github.com/testmrurl2',
     diff:
       'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
@@ -128,7 +129,9 @@ describe('Curriculum challenge page', () => {
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
     const { lessonStatus, userSubmissions } = props
     lessonStatus.isPassed = 'cmon bruh ive passed already'
-    userSubmissions.forEach(submission => (submission.status = 'passed'))
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Passed)
+    )
     const { container, getByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
