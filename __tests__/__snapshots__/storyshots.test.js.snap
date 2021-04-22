@@ -863,6 +863,11 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         <div>
           1. Sum of 2 Numbers
         </div>
+        <img
+          height="25px"
+          src="/assets/curriculum/icons/pending.svg"
+          width="25px"
+        />
       </div>
     </div>
   </div>
@@ -1320,6 +1325,11 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         <code>
           test comment
         </code>
+        <div
+          className="text-center p-2 my-2 border border-warning text-warning"
+        >
+          Your submission is currently waiting to be reviewed
+        </div>
       </div>
     </div>
   </div>
@@ -1345,6 +1355,11 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
         <div>
           0. Greater than 5
         </div>
+        <img
+          height="25px"
+          src="/assets/curriculum/icons/pending.svg"
+          width="25px"
+        />
       </div>
     </div>
     <div
@@ -1358,6 +1373,11 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
         <div>
           1. Sum of 2 Numbers
         </div>
+        <img
+          height="25px"
+          src="/assets/curriculum/icons/pending.svg"
+          width="25px"
+        />
       </div>
     </div>
   </div>
@@ -1815,6 +1835,11 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
         <code>
           test comment
         </code>
+        <div
+          className="text-center p-2 my-2 border border-warning text-warning"
+        >
+          Your submission is currently waiting to be reviewed
+        </div>
       </div>
     </div>
   </div>
