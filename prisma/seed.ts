@@ -22,7 +22,7 @@ async function main() {
   await seedUserLessons(admin, lessons)
   await seedUserLessons(leet, lessons)
   await seedSubmissions(leet, admin, lessons, SubmissionStatus.Passed)
-  await seedSubmissions(noob, null, lessons.slice(0), SubmissionStatus.Open)
+  await seedSubmissions(noob, null, lessons.slice(0, 1), SubmissionStatus.Open)
   await seedStars(leet, admin, lessons)
 }
 
