@@ -37,8 +37,6 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     []
   ) as UserLesson[]
 
-  console.log(currentLesson, userSubmissions)
-
   const currentLessonStatus: UserLesson =
     lessonStatus.find(
       lessonStatus => lessonStatus.lessonId! === currentlessonId
