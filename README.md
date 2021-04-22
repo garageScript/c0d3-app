@@ -1,6 +1,6 @@
 # c0d3.com
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
@@ -62,6 +62,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/Ulisseus"><img src="https://avatars3.githubusercontent.com/u/3845012?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ulisseus</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=Ulisseus" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=Ulisseus" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/kondanna"><img src="https://avatars.githubusercontent.com/u/16906103?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charles</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=kondanna" title="Code">💻</a></td>
+    <td align="center"><a href="http://zaeem.dev"><img src="https://avatars.githubusercontent.com/u/20666236?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JasirZaeem</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=JasirZaeem" title="Code">💻</a></td>
   </tr>
 </table>
 
