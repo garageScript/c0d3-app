@@ -10,3 +10,7 @@ generates:
       - "typescript-react-apollo"
     config:
       withHooks: true
+      withHOC: true
+hooks:
+  afterAllFileWrite:
+    - prettier --write
