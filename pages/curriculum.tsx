@@ -39,8 +39,7 @@ const generateMap = (
   session: GetSessionQuery['session']
 ): { [id: string]: UserLesson } => {
   const lessonStatusMap: { [id: string]: UserLesson } = {}
-  if (!session) return lessonStatusMap
-  const { lessonStatus } = session
+  const { lessonStatus } = session!
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
     lessonStatusMap[lessonId] = status
