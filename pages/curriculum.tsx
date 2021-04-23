@@ -87,9 +87,9 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   React.useEffect(() => {
     if (data && data.session) {
       setState({
-        session: data.session as Session,
-        progress: calculateProgress(data.session as Session, lessons),
-        current: calculateCurrent(data.session as Session, lessons)
+        session: data.session,
+        progress: calculateProgress(data.session, lessons),
+        current: calculateCurrent(data.session, lessons)
       })
     }
   }, [data])
