@@ -3,9 +3,9 @@ import { gql } from '@apollo/client'
 const UPDATE_CHALLENGE = gql`
   mutation updateChallenge(
     $lessonId: Int!
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
     $id: Int!
   ) {
     updateChallenge(
