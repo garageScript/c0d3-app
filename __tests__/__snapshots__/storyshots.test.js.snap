@@ -5869,7 +5869,28 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           </h6>
           <div>
             <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
               className="challenge_status bg-gray"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
             />
             <span
               className="challenge_status bg-gray"
@@ -5878,31 +5899,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
               className="challenge_status bg-gray"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
           </div>
         </div>
@@ -6193,7 +6193,28 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           </h6>
           <div>
             <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
               className="challenge_status bg-gray"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
             />
             <span
               className="challenge_status bg-gray"
@@ -6202,31 +6223,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
               className="challenge_status bg-gray"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
           </div>
         </div>
@@ -6280,28 +6280,28 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           </h6>
           <div>
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
           </div>
         </div>
@@ -6439,7 +6439,28 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           </h6>
           <div>
             <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
               className="challenge_status bg-gray"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
+            />
+            <span
+              className="challenge_status bg-warning"
             />
             <span
               className="challenge_status bg-gray"
@@ -6448,31 +6469,10 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
               className="challenge_status bg-gray"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
-            />
-            <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
           </div>
         </div>
@@ -6502,19 +6502,19 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           </h6>
           <div>
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
             <span
-              className="challenge_status bg-gray"
+              className="challenge_status bg-warning"
             />
           </div>
         </div>

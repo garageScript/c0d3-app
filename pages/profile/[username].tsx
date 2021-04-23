@@ -2,7 +2,12 @@ import * as React from 'react'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
-import { UserLesson, Submission, Star } from '../../graphql/index'
+import {
+  UserLesson,
+  Submission,
+  Star,
+  SubmissionStatus
+} from '../../graphql/index'
 import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
@@ -59,7 +64,7 @@ const UserProfile: React.FC = () => {
       ({ status, lessonId }) => {
         // TODO: Fix lesson.id and lessonId types
         return (
-          status === 'passed' &&
+          status === SubmissionStatus.Passed &&
           parseInt(lessonId || '') === parseInt(lesson.id + '')
         )
       }
@@ -86,9 +91,7 @@ const UserProfile: React.FC = () => {
 
       return {
         challengeNumber: challenge.order || 0,
-        challengeStatus: challengeSubmission
-          ? challengeSubmission.status
-          : 'open'
+        challengeStatus: challengeSubmission?.status
       }
     })
     const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])

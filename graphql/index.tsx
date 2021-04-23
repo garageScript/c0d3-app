@@ -234,7 +234,7 @@ export type Star = {
 export type Submission = {
   __typename?: 'Submission'
   id?: Maybe<Scalars['String']>
-  status?: Maybe<Scalars['String']>
+  status: SubmissionStatus
   mrUrl?: Maybe<Scalars['String']>
   diff?: Maybe<Scalars['String']>
   viewCount?: Maybe<Scalars['Int']>
@@ -249,6 +249,12 @@ export type Submission = {
   reviewerId?: Maybe<Scalars['String']>
   createdAt?: Maybe<Scalars['String']>
   updatedAt?: Maybe<Scalars['String']>
+}
+
+export enum SubmissionStatus {
+  NeedMoreWork = 'needMoreWork',
+  Open = 'open',
+  Passed = 'passed'
 }
 
 export type SuccessResponse = {
@@ -540,10 +546,7 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
               | 'updatedAt'
             > & {
                 reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<
-                    User,
-                    'id' | 'username' | 'isAdmin'
-                  >
+                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
                 >
               }
           >
@@ -984,6 +987,7 @@ export type ResolversTypes = {
   Session: ResolverTypeWrapper<Session>
   Star: ResolverTypeWrapper<Star>
   Submission: ResolverTypeWrapper<Submission>
+  SubmissionStatus: SubmissionStatus
   SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   TokenResponse: ResolverTypeWrapper<TokenResponse>
   User: ResolverTypeWrapper<User>
@@ -1278,7 +1282,7 @@ export type SubmissionResolvers<
   ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
 > = {
   id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  status?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  status?: Resolver<ResolversTypes['SubmissionStatus'], ParentType, ContextType>
   mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   viewCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
@@ -2205,7 +2209,6 @@ export const GetSessionDocument = gql`
         reviewer {
           id
           username
-          isAdmin
         }
         createdAt
         updatedAt

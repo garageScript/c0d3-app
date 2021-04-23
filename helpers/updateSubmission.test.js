@@ -5,10 +5,9 @@ import { updateSubmission, sendChatNotification } from './updateSubmission'
 import {
   publicChannelMessage,
   getUserByEmail,
-  getChatUserById,
   sendDirectMessage
 } from './mattermost'
-import { SubmissionStatus } from './controllers/submissionController'
+import { SubmissionStatus } from '../graphql'
 
 const { Challenge, Submission, User, UserLesson, Lesson } = db
 
@@ -36,9 +35,9 @@ describe('updateSubmission', () => {
     }
 
     const submissions = [
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
       { status: 'not passed' } // don't update userlesson
     ]
 
@@ -77,10 +76,10 @@ describe('updateSubmission', () => {
     }
 
     const submissions = [
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' } // update userlesson
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed } // update userlesson
     ]
 
     const setStub = jest.fn()
@@ -124,10 +123,10 @@ describe('updateSubmission', () => {
     }
 
     const submissions = [
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' } // update userlesson
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed } // update userlesson
     ]
 
     const setStub = jest.fn()
@@ -191,10 +190,10 @@ describe('updateSubmission', () => {
     }
 
     const submissions = [
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' } // update userlesson
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed } // update userlesson
     ]
 
     const userLesson = {
@@ -248,10 +247,10 @@ describe('updateSubmission', () => {
     }
 
     const submissions = [
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' },
-      { status: 'passed' } // update userlesson
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed },
+      { status: SubmissionStatus.Passed } // update userlesson
     ]
 
     const userLesson = {
@@ -298,7 +297,7 @@ describe('sendChatNotification', () => {
   })
 
   test('Should send submission accepted notification', async () => {
-    const submission = { status: SubmissionStatus.PASSED, challengeId: '1' }
+    const submission = { status: SubmissionStatus.Passed, challengeId: '1' }
     const reviewer = { username: 'reviewer', email: 'reviewer@fake.com' }
     const challenge = { title: 'Fake Challenge' }
     User.findByPk = jest.fn().mockReturnValue(reviewer)
@@ -312,7 +311,10 @@ describe('sendChatNotification', () => {
   })
 
   test('Should send submission reject notification', async () => {
-    const submission = { status: SubmissionStatus.REJECTED, challengeId: '1' }
+    const submission = {
+      status: SubmissionStatus.NeedMoreWork,
+      challengeId: '1'
+    }
     const reviewer = { username: 'reviewer', email: 'reviewer@fake.com' }
     const challenge = { title: 'Fake Challenge' }
     User.findByPk = jest.fn().mockReturnValue(reviewer)
@@ -327,7 +329,7 @@ describe('sendChatNotification', () => {
 
   test('Should include comment in the message', async () => {
     const submission = {
-      status: SubmissionStatus.PASSED,
+      status: SubmissionStatus.Passed,
       challengeId: '1',
       comment: 'nice work'
     }

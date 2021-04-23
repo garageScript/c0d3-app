@@ -5,6 +5,8 @@ import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
 import { hasPassedLesson } from '../hasPassedLesson'
 import _ from 'lodash'
+import { SubmissionStatus } from '../../graphql'
+import { prisma } from '../../prisma'
 
 const { User, Submission, Challenge, Lesson } = db
 
@@ -17,12 +19,6 @@ type ArgsCreateSubmission = {
 
 type ArgsGetSubmissions = {
   lessonId: string
-}
-
-export enum SubmissionStatus {
-  OPEN = 'open',
-  PASSED = 'passed',
-  REJECTED = 'needMoreWork'
 }
 
 export const createSubmission = async (
@@ -42,7 +38,7 @@ export const createSubmission = async (
 
     await submission.update({
       diff,
-      status: SubmissionStatus.OPEN,
+      status: SubmissionStatus.Open,
       viewCount: 0
     })
 
@@ -81,7 +77,7 @@ export const acceptSubmission = async (
     return updateSubmission({
       ...args,
       reviewerId,
-      status: SubmissionStatus.PASSED
+      status: SubmissionStatus.Passed
     })
   } catch (error) {
     throw new Error(error)
@@ -99,7 +95,7 @@ export const rejectSubmission = async (
     return updateSubmission({
       ...args,
       reviewerId,
-      status: SubmissionStatus.REJECTED
+      status: SubmissionStatus.NeedMoreWork
     })
   } catch (error) {
     throw new Error(error)
@@ -114,12 +110,16 @@ export const submissions = async (
   try {
     const { lessonId } = arg
     await getReviewer(ctx, lessonId)
-    return Submission.findAll({
+    // TODO fix lessonId graphql typedef to Int
+    return prisma.submission.findMany({
       where: {
-        status: 'open',
-        lessonId
+        status: SubmissionStatus.Open,
+        lessonId: Number(lessonId)
       },
-      include: ['challenge', 'user']
+      include: {
+        challenge: true,
+        user: true
+      }
     })
   } catch (error) {
     throw new Error(error)
@@ -130,7 +130,7 @@ const getReviewer = async (
   ctx: Context,
   lessonId?: string
 ): Promise<number> => {
-  const reviewerId = _.get(ctx, 'req.user.id', false)
+  const reviewerId: number | undefined = _.get(ctx, 'req.user.id', undefined)
   if (!reviewerId) throw new Error('Invalid user')
   if (lessonId && !(await hasPassedLesson(reviewerId, lessonId))) {
     throw new Error('User has not passed this lesson and cannot review.')
