@@ -1,22 +1,16 @@
-import db from '../dbload'
 import { Context } from '../../@types/helpers'
-import _ from 'lodash'
-import { isAdmin } from '../isAdmin'
+import type {
+  CreateChallengeMutationVariables,
+  UpdateChallengeMutationVariables
+} from '../../graphql'
 import { lessons } from '../../graphql/queryResolvers/lessons'
+import { prisma } from '../../prisma'
+import { isAdmin } from '../isAdmin'
 import { validateLessonId } from '../validateLessonId'
-const { Challenge } = db
-
-type challengeData = {
-  lessonId: number
-  id: number
-  order?: number
-  description?: string
-  title?: string
-}
 
 export const createChallenge = async (
   _parent: void,
-  arg: challengeData,
+  arg: CreateChallengeMutationVariables,
   ctx: Context
 ) => {
   const { req } = ctx
@@ -24,14 +18,9 @@ export const createChallenge = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
     await validateLessonId(arg.lessonId)
-
-    const newChallenge = Challenge.build(arg)
-
-    await newChallenge.save()
-
-    return await lessons()
+    await prisma.challenge.create({ data: arg })
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }
@@ -39,7 +28,7 @@ export const createChallenge = async (
 
 export const updateChallenge = async (
   _parent: void,
-  arg: challengeData,
+  arg: UpdateChallengeMutationVariables,
   ctx: Context
 ) => {
   const { req } = ctx
@@ -47,14 +36,13 @@ export const updateChallenge = async (
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
-    await validateLessonId(arg.lessonId)
-
-    const { id } = arg
-
-    await Challenge.update(arg, { where: { id } })
-
-    return await lessons()
+    const { id, lessonId, ...data } = arg
+    await validateLessonId(lessonId)
+    await prisma.challenge.update({
+      where: { id },
+      data
+    })
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }
