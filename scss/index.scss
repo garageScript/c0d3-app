@@ -44,7 +44,7 @@ p {
 
 #table-of-contents {
   float: right;
-  color: rgb(92, 92, 92);
+  color: #6c757d;
   & + ul {
     list-style: none;
     float: right;
@@ -71,6 +71,7 @@ ol + .spoiler {
   margin-left: 1.25em !important;
   margin-top: -0.75em !important;
 }
+
 .text-danger {
   color: #721c24 !important;
 }
