@@ -108,7 +108,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               {username} - <span className="text-primary">{title}</span>
             </h4>
             <Text color="lightgrey" size="sm">
-              {dayjs(parseInt(updatedAt!)).fromNow()}
+              {dayjs(parseInt(updatedAt)).fromNow()}
             </Text>
           </div>
 
