@@ -19,8 +19,6 @@ const ctx = {
 }
 
 describe('allUsers resolver', () => {
-  const { User } = db
-
   test('Should return list of users', async () => {
     prisma.user.findMany = jest.fn().mockReturnValue(mockUsers)
     expect(allUsers(null, null, ctx)).toEqual(mockUsers)
