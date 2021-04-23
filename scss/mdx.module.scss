@@ -19,6 +19,15 @@
     line-height: 24px;
   }
 }
+.arrow {
+  height: 3em;
+  @media (max-width: 768px) {
+    height: 2em;
+  }
+  z-index: 1;
+  top: 90%;
+  left: 90%;
+}
 .MDX_ol > li::marker {
   font-weight: bold;
   color: rgb(65, 65, 65);
