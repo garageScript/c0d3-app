@@ -1,5 +1,5 @@
 import { allUsers } from './allUsers'
-import db from '../../helpers/dbload'
+import { prisma } from '../../prisma'
 
 const mockUsers = [
   {
@@ -19,10 +19,8 @@ const ctx = {
 }
 
 describe('allUsers resolver', () => {
-  const { User } = db
-
   test('Should return list of users', async () => {
-    User.findAll = jest.fn().mockReturnValue(mockUsers)
+    prisma.user.findMany = jest.fn().mockReturnValue(mockUsers)
     expect(allUsers(null, null, ctx)).toEqual(mockUsers)
   })
 
