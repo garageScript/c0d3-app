@@ -30,6 +30,14 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
     prisma.submission.findMany({
       where: {
         userId: user.id
+      },
+      include: {
+        reviewer: {
+          select: {
+            id: true,
+            username: true
+          }
+        }
       }
     }),
     prisma.star.findMany({
