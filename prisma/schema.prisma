@@ -30,14 +30,13 @@ model Alert {
 
 model Challenge {
   id          Int          @id @default(autoincrement())
-  status      String?      @db.VarChar(255)
-  description String?
-  title       String?      @db.VarChar(255)
-  order       Int?
+  description String
+  title       String       @db.VarChar(255)
+  order       Int
   createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
-  lessonId    Int?
-  lesson      Lesson?      @relation(fields: [lessonId], references: [id])
+  lessonId    Int
+  lesson      Lesson       @relation(fields: [lessonId], references: [id])
   submissions Submission[]
 
   @@map("challenges")

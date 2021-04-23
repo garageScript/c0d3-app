@@ -181,10 +181,10 @@ export type MutationCreateChallengeArgs = {
 
 export type MutationUpdateChallengeArgs = {
   lessonId: Scalars['Int']
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
   id: Scalars['Int']
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
 }
 
 export type Query = {
@@ -546,10 +546,7 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
               | 'updatedAt'
             > & {
                 reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<
-                    User,
-                    'id' | 'username' | 'isAdmin'
-                  >
+                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
                 >
               }
           >
@@ -679,9 +676,9 @@ export type SignupMutation = { __typename?: 'Mutation' } & {
 
 export type UpdateChallengeMutationVariables = Exact<{
   lessonId: Scalars['Int']
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
   id: Scalars['Int']
 }>
 
@@ -1200,7 +1197,10 @@ export type MutationResolvers<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id'>
+    RequireFields<
+      MutationUpdateChallengeArgs,
+      'lessonId' | 'order' | 'description' | 'title' | 'id'
+    >
   >
 }
 
@@ -2196,7 +2196,6 @@ export const GetSessionDocument = gql`
         reviewer {
           id
           username
-          isAdmin
         }
         createdAt
         updatedAt
@@ -2981,9 +2980,9 @@ export type SignupMutationOptions = Apollo.BaseMutationOptions<
 export const UpdateChallengeDocument = gql`
   mutation updateChallenge(
     $lessonId: Int!
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
     $id: Int!
   ) {
     updateChallenge(

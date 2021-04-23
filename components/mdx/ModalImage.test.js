@@ -3,6 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Image from './ModalImage'
 import userEvent from '@testing-library/user-event'
+jest.unmock('next/image')
 
 describe('Image component test', () => {
   test('Should render image', async () => {

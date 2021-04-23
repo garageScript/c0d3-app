@@ -73,10 +73,10 @@ export default gql`
     ): [Lesson]
     updateChallenge(
       lessonId: Int!
+      order: Int!
+      description: String!
+      title: String!
       id: Int!
-      order: Int
-      description: String
-      title: String
     ): [Lesson]
   }
 

@@ -11,9 +11,9 @@ import {
   GetAppDocument,
   Lesson,
   Alert,
-  Session,
   UserLesson,
-  useGetSessionQuery
+  useGetSessionQuery,
+  GetSessionQuery
 } from '../graphql/'
 import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
@@ -31,20 +31,25 @@ type Props = {
   alerts: Alert[]
 }
 interface State {
-  session: Session
+  session: GetSessionQuery['session']
   progress: number
   current: number
 }
-const generateMap = (session: Session): { [id: string]: UserLesson } => {
-  const { lessonStatus } = session
+const generateMap = (
+  session: GetSessionQuery['session']
+): { [id: string]: UserLesson } => {
   const lessonStatusMap: { [id: string]: UserLesson } = {}
+  const { lessonStatus } = session!
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
     lessonStatusMap[lessonId] = status
   }
   return lessonStatusMap
 }
-const calculateProgress = (session: Session, lessons: Lesson[]): number => {
+const calculateProgress = (
+  session: GetSessionQuery['session'],
+  lessons: Lesson[]
+): number => {
   const lessonStatusMap = generateMap(session)
   const lessonInProgressIdx = _.cond([
     [_.isEqual.bind(null, -1), _.constant(0)],
@@ -60,7 +65,10 @@ const calculateProgress = (session: Session, lessons: Lesson[]): number => {
   const TOTAL_LESSONS = 7
   return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
 }
-const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
+const calculateCurrent = (
+  session: GetSessionQuery['session'],
+  lessons: Lesson[]
+): number => {
   const lessonStatusMap = generateMap(session)
   return _.cond([
     [_.isEqual.bind(null, -1), _.constant(0)],
