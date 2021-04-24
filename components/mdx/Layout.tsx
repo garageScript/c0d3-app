@@ -23,6 +23,7 @@ const ScrollTop: React.FC<{ scroll: number }> = ({ scroll }) => {
           behavior: 'smooth'
         })
       }
+      data-testid="arrow"
     />
   )
 }
@@ -33,7 +34,7 @@ const LessonLayout: React.FC<LayoutProps> = props => {
   const [scroll, setScroll] = useState(0)
   const throttled = _.throttle(() => {
     setScroll(
-      window.scrollY / (document.body.scrollHeight - window.innerHeight)
+      window.scrollY / (window.document.body.scrollHeight - window.innerHeight)
     )
   }, 100)
   useEffect(() => {

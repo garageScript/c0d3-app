@@ -79,7 +79,7 @@ exports[`500 Error Page should render 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"

@@ -2956,7 +2956,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="container"
@@ -3120,7 +3120,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="container"
@@ -4516,7 +4516,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row"
@@ -4651,7 +4651,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row"
@@ -8130,7 +8130,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row mt-4"
@@ -8376,7 +8376,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row"
@@ -9249,7 +9249,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row"
@@ -10122,7 +10122,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row"
@@ -10995,7 +10995,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row mt-5"
@@ -11646,7 +11646,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row mt-5"
@@ -11973,7 +11973,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row mt-5"
@@ -12138,7 +12138,7 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="row mt-5"
@@ -12943,19 +12943,31 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="mt-4"
     />
     <div
-      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-4 bg-white"
+      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
     >
-      <h1
-        className="title font-weight-bold"
+      <button
+        className="btn btn-link text-primary p-0"
+        onClick={[Function]}
+      >
+        Go Back
+      </button>
+      <img
+        className="d-none position-fixed arrow"
+        data-testid="arrow"
+        onClick={[Function]}
+        src="/assets/mdx/topArrow.svg"
       />
       <div
-        className="blockQuote d-flex"
+        className="title"
+      />
+      <div
+        className="blockQuote d-flex flex-column flex-md-row"
       >
         <img
           className="blockQuote__bulb mr-3"
@@ -15313,16 +15325,28 @@ Array [
     </div>
   </nav>,
   <div
-    className="container"
+    className="container-md"
   >
     <div
       className="mt-4"
     />
     <div
-      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-4 bg-white"
+      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
     >
-      <h1
-        className="title font-weight-bold"
+      <button
+        className="btn btn-link text-primary p-0"
+        onClick={[Function]}
+      >
+        Go Back
+      </button>
+      <img
+        className="d-none position-fixed arrow"
+        data-testid="arrow"
+        onClick={[Function]}
+        src="/assets/mdx/topArrow.svg"
+      />
+      <div
+        className="title"
       />
       <p>
         Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!

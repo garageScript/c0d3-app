@@ -6,28 +6,17 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
     class="d-flex justify-content-center"
   >
     <div
-      class="w-100 card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+      class="card shadow-sm bg-primary text-white px-4 py-2 border-0"
     >
       <h1
-        class="text-center font-weight-bold"
-      >
-        Master your skills by solving challenges
-      </h1>
+        class="text-center font-weight-bold align-self-center"
+      />
       <p
-        class="px-2 text-center"
-      >
-        We have curated the challenges so that it can give you concrete foundation.
-      </p>
+        class="px-2 m-0 text-center"
+      />
       <div
-        class="d-flex justify-content-center"
-      >
-        <a
-          class="btn btn-light mt-2 text-primary w-50"
-          href="/foo"
-        >
-          View Challenges
-        </a>
-      </div>
+        class="text-center"
+      />
     </div>
   </div>
 </div>
