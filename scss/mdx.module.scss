@@ -9,6 +9,7 @@
 .MDX_h2,
 .MDX_h3 {
   font-weight: 600;
+  display: inline-block;
 }
 
 .lesson-wrapper {
@@ -17,6 +18,7 @@
     'Segoe UI Symbol', 'Noto Color Emoji';
   & > p {
     line-height: 24px;
+    font-size: 1rem;
   }
 }
 .arrow {
