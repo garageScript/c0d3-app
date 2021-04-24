@@ -107,7 +107,7 @@ export default gql`
     user: User!
     reviewerId: String
     createdAt: String
-    updatedAt: String
+    updatedAt: String!
   }
 
   enum SubmissionStatus {

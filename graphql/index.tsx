@@ -248,7 +248,7 @@ export type Submission = {
   user: User
   reviewerId?: Maybe<Scalars['String']>
   createdAt?: Maybe<Scalars['String']>
-  updatedAt?: Maybe<Scalars['String']>
+  updatedAt: Scalars['String']
 }
 
 export enum SubmissionStatus {
@@ -1276,7 +1276,7 @@ export type SubmissionResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   status?: Resolver<ResolversTypes['SubmissionStatus'], ParentType, ContextType>
   mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1295,7 +1295,7 @@ export type SubmissionResolvers<
     ContextType
   >
   createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  updatedAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
