@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-import Layout from './Layout'
+import { render, screen, fireEvent } from '@testing-library/react'
+import Layout from './LessonLayout'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummySessionData from '../../__dummy__/sessionData'
@@ -8,8 +8,6 @@ import lessonData from '../../__dummy__/lessonData'
 import '@testing-library/jest-dom'
 import LessonCard from '../../components/LessonCard'
 import { useRouter } from 'next/router'
-import withTestRouter from '../../__tests__/utils/withTestRouter'
-import { isJsxText } from 'typescript'
 
 describe('Layout component', () => {
   const mocks = [
@@ -63,6 +61,8 @@ describe('Layout component', () => {
     })
   })
   test('Should show arrow after scroll', async () => {
+    //supressing updating unmounted component warning
+    jest.spyOn(global.console, 'error').mockImplementationOnce(() => {})
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Layout

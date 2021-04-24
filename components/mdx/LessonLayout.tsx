@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../Layout'
-import LessonTitleCard, {
-  LessonTitleProps
-} from '../../components/LessonTitleCard'
+import LessonTitleCard, { LessonTitleProps } from '../LessonTitleCard'
 import styles from '../../scss/mdx.module.scss'
 import { useRouter } from 'next/router'
 import _ from 'lodash'
 
 type LayoutProps = Partial<LessonTitleProps & { subLessons?: string[] }>
 
-const ScrollTop: React.FC<{ scroll: number }> = ({ scroll }) => {
+const ScrollTop: React.FC<{ scroll: boolean }> = ({ scroll }) => {
   return (
     <img
       src="/assets/mdx/topArrow.svg"
-      className={`${scroll > 0.3 ? 'd-block' : 'd-none'} position-fixed ${
+      className={`${scroll ? 'd-block' : 'd-none'} position-fixed ${
         styles['arrow']
       }`}
       onClick={() =>
@@ -31,11 +29,9 @@ const LessonLayout: React.FC<LayoutProps> = props => {
   const router = useRouter()
   const location = router.pathname.split('/')
   const current = location[location.length - 1]
-  const [scroll, setScroll] = useState(0)
+  const [scroll, setScroll] = useState(false)
   const throttled = _.throttle(() => {
-    setScroll(
-      window.scrollY / (window.document.body.scrollHeight - window.innerHeight)
-    )
+    setScroll(window.scrollY > 2 * window.document.documentElement.clientHeight)
   }, 100)
   useEffect(() => {
     window.addEventListener('scroll', throttled)

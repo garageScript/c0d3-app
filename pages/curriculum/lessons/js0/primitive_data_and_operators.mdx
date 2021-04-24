@@ -1,4 +1,4 @@
-import Layout from '../../../../components/mdx/Layout'
+import Layout from '../../../../components/mdx/LessonLayout'
 
 <hr />
 
@@ -627,8 +627,8 @@ pay attention to your code review feedback from people reviewing your code.
 
 # Objects
 
-> This section (Objects) is moved here from JS3. If this section is
-> too complicated, please ask for help in the chatroom
+> This section (Objects) is moved here from JS3. If this section is too
+> complicated, please ask for help in the chatroom
 
 Objects in JavaScript can be compared to objects in real life. The concept of
 objects in JavaScript can be understood with real life, tangible objects like
@@ -686,8 +686,8 @@ a = new EventEmitter()
 </Spoiler>
 
 <ChallengeBar
-  href="/curriculum/1"
-  description="Complete the first seven JS0 challenges"
+  href="/curriculum/5"
+  description="Complete the first seven of JS0 challenges"
   title="Master your skill by solving challenges"
 />
 
@@ -695,9 +695,12 @@ export default ({ children }) => (
   <Layout
     lessonCoverUrl={`js-0-cover.svg`}
     lessonTitle="Foundations of JavaScript"
-    lessonUrl="/curriculum/lessons/foundations"
-    lessonId="1"
-    subLessons={['Primitive data and operators', 'Functions and execution context']}
+    lessonUrl="/curriculum/lessons/js0/primitive_data_and_operators"
+    lessonId="5"
+    subLessons={[
+      'Primitive data and operators',
+      'Functions and execution context'
+    ]}
   >
     {children}
   </Layout>
