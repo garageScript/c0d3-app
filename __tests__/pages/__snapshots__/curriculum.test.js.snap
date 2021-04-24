@@ -98,11 +98,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-0-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -133,7 +136,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -149,11 +152,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-1-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -184,7 +190,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -200,11 +206,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-2-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -235,7 +244,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -251,11 +260,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-3-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -286,7 +298,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -302,11 +314,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-4-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -337,7 +352,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -353,11 +368,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-5-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -388,7 +406,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -404,11 +422,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-6-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -439,7 +460,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -455,11 +476,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-7-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -490,7 +514,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -506,11 +530,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-8-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -541,7 +568,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -557,11 +584,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-9-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -592,7 +622,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -958,11 +988,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-0-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -993,7 +1026,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -1027,11 +1060,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-1-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1062,7 +1098,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -1078,11 +1114,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-2-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1113,7 +1152,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -1129,11 +1168,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-3-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1164,7 +1206,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -1180,11 +1222,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-4-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1215,7 +1260,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -1231,11 +1276,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-5-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1266,7 +1314,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -1282,11 +1330,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-6-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1317,7 +1368,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -1333,11 +1384,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-7-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1368,7 +1422,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -1384,11 +1438,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-8-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1419,7 +1476,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -1435,11 +1492,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-9-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -1470,7 +1530,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   General Algorithm from interviews
                 </p>
@@ -1873,11 +1933,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-0-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-0-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <span
                 class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -1936,7 +1999,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   A super simple introduction to help you get started!
                 </p>
@@ -1962,11 +2025,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-1-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-1-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <span
                 class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -2025,7 +2091,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
@@ -2051,11 +2117,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-2-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-2-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <span
                 class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -2114,7 +2183,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
@@ -2140,11 +2209,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-3-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-3-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2175,7 +2247,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
@@ -2209,11 +2281,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-4-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-4-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2244,7 +2319,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
@@ -2260,11 +2335,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-5-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-5-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2295,7 +2373,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
@@ -2311,11 +2389,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-6-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-6-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2346,7 +2427,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   React and GraphQL Lessons
                 </p>
@@ -2362,11 +2443,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-7-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-7-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2397,7 +2481,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
@@ -2413,11 +2497,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-8-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-8-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2448,7 +2535,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   Tree problems with high difficulty
                 </p>
@@ -2464,11 +2551,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             <img
               alt="js-9-cover.svg"
-              class="lesson-card__image"
+              class="align-self-center"
+              height="165"
+              objectfit="contain"
               src="/assets/curriculum/js-9-cover.svg"
+              width="116"
             />
             <div
-              class="w-100 pl-4"
+              class="lesson-card__description pl-4"
             >
               <div>
                 <h4
@@ -2499,7 +2589,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </div>
                 </div>
                 <p
-                  class="lesson-card__description mt-2"
+                  class="mt-2"
                 >
                   General Algorithm from interviews
                 </p>

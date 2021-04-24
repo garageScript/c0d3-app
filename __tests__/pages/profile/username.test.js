@@ -14,6 +14,7 @@ import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
+import { SubmissionStatus } from '../../../graphql'
 
 describe('user profile test', () => {
   const { query } = useRouter()
@@ -27,7 +28,7 @@ describe('user profile test', () => {
       submissions: [
         {
           id: '1',
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,
@@ -44,7 +45,7 @@ describe('user profile test', () => {
         },
         {
           id: '2',
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,
@@ -67,7 +68,23 @@ describe('user profile test', () => {
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
-          starsReceived: null
+          starsReceived: [
+            {
+              id: '17',
+              mentorId: 1,
+              studentId: '6',
+              lessonId: '5',
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Foundations of JavaScript',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
         },
         {
           lessonId: '2',
@@ -75,10 +92,118 @@ describe('user profile test', () => {
           isTeaching: true,
           isEnrolled: false,
           starGiven: null,
-          starsReceived: null
+          starsReceived: [
+            {
+              id: '17',
+              mentorId: 1,
+              studentId: '6',
+              lessonId: '2',
+              student: {
+                username: 'newbie',
+                name: 'newbie newbie'
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: 'Thanks for your halp!'
+            }
+          ]
         },
         {
           lessonId: '1',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
+          starGiven: null,
+          starsReceived: [
+            {
+              id: '17',
+              mentorId: 1,
+              studentId: '6',
+              lessonId: '2',
+              student: {
+                username: 'anonymous',
+                name: ''
+              },
+              lesson: {
+                title: 'Variables & Functions',
+                order: 1
+              },
+              comment: ''
+            }
+          ]
+        }
+      ]
+    }
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: []
+          }
+        }
+      },
+      {
+        request: {
+          query: USER_INFO,
+          variables: {
+            username: 'fake user'
+          }
+        },
+        result: {
+          data: {
+            userInfo: session
+          }
+        }
+      }
+    ]
+    const { container, findByRole, queryByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <UserProfile />
+      </MockedProvider>
+    )
+    await waitForElementToBeRemoved(() => queryByText('Loading...'))
+    await findByRole('heading', { name: /@fake user/i })
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Should render if no stars received', async () => {
+    const session = {
+      ...dummySessionData,
+      submissions: [
+        {
+          id: '1',
+          status: SubmissionStatus.Passed,
+          mrUrl: '',
+          diff: '',
+          viewCount: 0,
+          comment: '',
+          order: 0,
+          challengeId: '146',
+          lessonId: '2',
+          reviewer: {
+            id: '1',
+            username: 'fake reviewer'
+          },
+          createdAt: '123',
+          updatedAt: '123'
+        }
+      ],
+      lessonStatus: [
+        {
+          lessonId: '5',
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
+          starGiven: null,
+          starsReceived: null
+        },
+        {
+          lessonId: '2',
           isPassed: true,
           isTeaching: true,
           isEnrolled: false,
@@ -121,13 +246,12 @@ describe('user profile test', () => {
     await findByRole('heading', { name: /@fake user/i })
     expect(container).toMatchSnapshot()
   })
-
   test('Should render anonymous users', async () => {
     const anonymous = {
       ...dummySessionData,
       user: {
         id: 1,
-        username: 'fakeusername',
+        username: 'fake user',
         name: '',
         isAdmin: true
       }
@@ -259,7 +383,7 @@ describe('user profile test', () => {
       submissions: [
         {
           id: 1,
-          status: 'passed',
+          status: SubmissionStatus.Passed,
           mrUrl: '',
           diff: '',
           viewCount: 0,

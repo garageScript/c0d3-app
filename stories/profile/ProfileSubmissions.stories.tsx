@@ -1,98 +1,123 @@
 import * as React from 'react'
 import ProfileSubmissions from '../../components/ProfileSubmissions'
+import { LessonChallenge } from '../../components/ProfileSubmissions'
+import { SubmissionStatus } from '../../graphql'
+import dummyLesson from '../../__dummy__/lessonData'
 
 export default {
   component: ProfileSubmissions,
   title: 'Components/ProfileSubmissions'
 }
 
+const student = {
+  id: 2,
+  username: 'fakeusername',
+  name: 'fake user',
+  isAdmin: false
+}
+
+const mentor = {
+  id: 1,
+  username: 'admin',
+  name: 'Admin Admin',
+  isAdmin: true
+}
+
 const completedChallenges = [
-  { challengeNumber: 1, challengeStatus: 'passed' },
-  { challengeNumber: 2, challengeStatus: 'passed' },
-  { challengeNumber: 3, challengeStatus: 'passed' },
-  { challengeNumber: 4, challengeStatus: 'passed' },
-  { challengeNumber: 5, challengeStatus: 'passed' },
-  { challengeNumber: 6, challengeStatus: 'passed' },
-  { challengeNumber: 7, challengeStatus: 'passed' },
-  { challengeNumber: 8, challengeStatus: 'passed' },
-  { challengeNumber: 9, challengeStatus: 'passed' },
-  { challengeNumber: 10, challengeStatus: 'passed' }
+  { challengeNumber: 1, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 2, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 3, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 4, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 5, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 6, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 7, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 8, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 9, challengeStatus: SubmissionStatus.Passed },
+  { challengeNumber: 10, challengeStatus: SubmissionStatus.Passed }
 ]
 
 const defaultChallenges = [
-  { challengeNumber: 1, challengeStatus: 'open' },
-  { challengeNumber: 2, challengeStatus: 'open' },
-  { challengeNumber: 3, challengeStatus: 'open' },
-  { challengeNumber: 4, challengeStatus: 'open' },
+  { challengeNumber: 1, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 2, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 3, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 4, challengeStatus: SubmissionStatus.Open },
   { challengeNumber: 5 },
-  { challengeNumber: 6, challengeStatus: 'open' },
-  { challengeNumber: 7, challengeStatus: 'open' },
-  { challengeNumber: 8, challengeStatus: 'open' },
+  { challengeNumber: 6, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 7, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 8, challengeStatus: SubmissionStatus.Open },
   { challengeNumber: 9 },
   { challengeNumber: 10 },
-  { challengeNumber: 11, challengeStatus: 'open' },
-  { challengeNumber: 12, challengeStatus: 'open' }
+  { challengeNumber: 11, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 12, challengeStatus: SubmissionStatus.Open }
 ]
 
 const pendingChallenges = [
-  { challengeNumber: 1, challengeStatus: 'pending' },
-  { challengeNumber: 2, challengeStatus: 'pending' },
-  { challengeNumber: 3, challengeStatus: 'pending' },
-  { challengeNumber: 4, challengeStatus: 'pending' },
-  { challengeNumber: 5, challengeStatus: 'pending' },
-  { challengeNumber: 6, challengeStatus: 'pending' },
-  { challengeNumber: 7, challengeStatus: 'pending' },
-  { challengeNumber: 8, challengeStatus: 'pending' },
-  { challengeNumber: 9, challengeStatus: 'pending' },
-  { challengeNumber: 10, challengeStatus: 'pending' },
-  { challengeNumber: 11, challengeStatus: 'pending' }
+  { challengeNumber: 1, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 2, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 3, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 4, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 5, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 6, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 7, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 8, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 9, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 10, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 11, challengeStatus: SubmissionStatus.Open }
 ]
 
 const rejectedChallenges = [
-  { challengeNumber: 1, challengeStatus: 'needMoreWork' },
-  { challengeNumber: 2, challengeStatus: 'needMoreWork' },
-  { challengeNumber: 3, challengeStatus: 'needMoreWork' },
-  { challengeNumber: 4, challengeStatus: 'needMoreWork' },
-  { challengeNumber: 5, challengeStatus: 'needMoreWork' },
-  { challengeNumber: 6, challengeStatus: 'needMoreWork' },
-  { challengeNumber: 7, challengeStatus: 'needMoreWork' }
+  { challengeNumber: 1, challengeStatus: SubmissionStatus.NeedMoreWork },
+  { challengeNumber: 2, challengeStatus: SubmissionStatus.NeedMoreWork },
+  { challengeNumber: 3, challengeStatus: SubmissionStatus.NeedMoreWork },
+  { challengeNumber: 4, challengeStatus: SubmissionStatus.NeedMoreWork },
+  { challengeNumber: 5, challengeStatus: SubmissionStatus.NeedMoreWork },
+  { challengeNumber: 6, challengeStatus: SubmissionStatus.NeedMoreWork },
+  { challengeNumber: 7, challengeStatus: SubmissionStatus.NeedMoreWork }
 ]
 
 const challengesLesson6 = [
-  { challengeNumber: 1, challengeStatus: 'open' },
-  { challengeNumber: 2, challengeStatus: 'open' },
-  { challengeNumber: 3, challengeStatus: 'open' },
-  { challengeNumber: 4, challengeStatus: 'open' },
-  { challengeNumber: 5, challengeStatus: 'open' },
-  { challengeNumber: 6, challengeStatus: 'open' },
-  { challengeNumber: 7, challengeStatus: 'open' },
-  { challengeNumber: 8, challengeStatus: 'open' }
+  { challengeNumber: 1, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 2, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 3, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 4, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 5, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 6, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 7, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 8, challengeStatus: SubmissionStatus.Open }
 ]
 
 const challengesLesson9 = [
-  { challengeNumber: 1, challengeStatus: 'open' },
-  { challengeNumber: 2, challengeStatus: 'open' },
-  { challengeNumber: 3, challengeStatus: 'open' },
-  { challengeNumber: 4, challengeStatus: 'open' },
-  { challengeNumber: 5, challengeStatus: 'open' }
+  { challengeNumber: 1, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 2, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 3, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 4, challengeStatus: SubmissionStatus.Open },
+  { challengeNumber: 5, challengeStatus: SubmissionStatus.Open }
 ]
 
 const starsReceived = [
   {
+    id: 1,
     studentId: 2,
     mentorId: 5,
     lessonId: 1,
+    lesson: dummyLesson[2],
+    student,
+    mentor,
     comment: 'Thank you'
   },
   {
+    id: 2,
     studentId: 7,
     mentorId: 5,
     lessonId: 1,
+    lesson: dummyLesson[2],
+    student,
+    mentor,
     comment: 'Thank you so much!'
   }
 ]
 
-const lessons = [
+const lessons: LessonChallenge[] = [
   {
     order: 0,
     title: 'Foundation of Javascript',

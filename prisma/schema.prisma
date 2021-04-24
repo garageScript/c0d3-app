@@ -30,14 +30,13 @@ model Alert {
 
 model Challenge {
   id          Int          @id @default(autoincrement())
-  status      String?      @db.VarChar(255)
-  description String?
-  title       String?      @db.VarChar(255)
-  order       Int?
+  description String
+  title       String       @db.VarChar(255)
+  order       Int
   createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
-  lessonId    Int?
-  lesson      Lesson?      @relation(fields: [lessonId], references: [id])
+  lessonId    Int
+  lesson      Lesson       @relation(fields: [lessonId], references: [id])
   submissions Submission[]
 
   @@map("challenges")
@@ -55,6 +54,7 @@ model Lesson {
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
   challenges  Challenge[]
+  starLesson  Star[]       @relation("starLesson")
   submissions Submission[]
   userLessons UserLesson[]
 
@@ -63,14 +63,15 @@ model Lesson {
 
 model Star {
   id        Int      @id @default(autoincrement())
-  lessonId  Int?
+  lessonId  Int
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   updatedAt DateTime @updatedAt @db.Timestamptz(6)
-  studentId Int?
-  mentorId  Int?
+  studentId Int
+  mentorId  Int
   comment   String?  @db.VarChar(255)
-  mentor    User?    @relation("starMentor", fields: [mentorId], references: [id])
-  student   User?    @relation("starStudent", fields: [studentId], references: [id])
+  lesson    Lesson   @relation("starLesson", fields: [lessonId], references: [id])
+  mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
+  student   User     @relation("starStudent", fields: [studentId], references: [id])
 
   @@map("stars")
 }
@@ -80,7 +81,7 @@ model Submission {
   mrUrl       String?    @db.VarChar(255)
   diff        String?
   comment     String?
-  status      String?    @db.VarChar(255)
+  status      String     @default("open") @db.VarChar(255)
   viewCount   Int?       @default(0)
   createdAt   DateTime   @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime   @updatedAt @db.Timestamptz(6)

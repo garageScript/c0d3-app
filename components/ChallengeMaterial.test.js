@@ -1,11 +1,13 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { render, fireEvent, waitFor } from '@testing-library/react'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import ChallengeMaterial from './ChallengeMaterial'
 import SET_STAR from '../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
 import { MockedProvider } from '@apollo/client/testing'
+import '@testing-library/jest-dom'
+import { SubmissionStatus } from '../graphql'
 
 const mocks = [
   {
@@ -53,7 +55,7 @@ const challenges = [
 const userSubmissions = [
   {
     id: '3500',
-    status: 'open',
+    status: SubmissionStatus.Open,
     mrUrl: 'github.com/testmrurl',
     diff:
       'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
@@ -66,7 +68,7 @@ const userSubmissions = [
   },
   {
     id: '3501',
-    status: 'needMoreWork',
+    status: SubmissionStatus.NeedMoreWork,
     mrUrl: 'github.com/testmrurl2',
     diff:
       'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
@@ -84,13 +86,16 @@ const userSubmissions = [
 
 describe('Curriculum challenge page', () => {
   let props
+  const setShow = jest.fn()
   beforeEach(() => {
+    jest.clearAllMocks()
     props = {
       challenges,
       lessonStatus: lessonStatusNoPass,
       userSubmissions,
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js0-foundations',
-      lessonId: '5'
+      lessonId: '5',
+      setShow
     }
   })
 
@@ -124,7 +129,9 @@ describe('Curriculum challenge page', () => {
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
     const { lessonStatus, userSubmissions } = props
     lessonStatus.isPassed = 'cmon bruh ive passed already'
-    userSubmissions.forEach(submission => (submission.status = 'passed'))
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Passed)
+    )
     const { container, getByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
@@ -141,5 +148,32 @@ describe('Curriculum challenge page', () => {
     // click exit button of GiveStarCard
     fireEvent.click(getByRole('img'))
     expect(document.body).toMatchSnapshot()
+  })
+  test('Should hide mobile modal on click', async () => {
+    global.window.innerWidth = 500
+    const { container } = render(
+      <ChallengeMaterial {...{ ...props, show: true }} />
+    )
+    expect(screen.getByTestId('modal-challenges')).toBeVisible()
+    expect(container).toMatchSnapshot()
+
+    fireEvent.click(screen.getByText('0. Greater than 5'), {
+      target: { innerText: '0. Greater than 5' }
+    })
+    expect(setShow).toBeCalledWith(false)
+  })
+  test('Should hide mobile modal by clicking on the background', async () => {
+    global.window.innerWidth = 500
+    const { container } = render(
+      <ChallengeMaterial {...{ ...props, show: true }} />
+    )
+    expect(screen.getByTestId('modal-challenges')).toBeVisible()
+    fireEvent.keyDown(container, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+      charCode: 27
+    })
+    expect(setShow).toBeCalledWith(false)
   })
 })

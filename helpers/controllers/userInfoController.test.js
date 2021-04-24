@@ -1,3 +1,4 @@
+import { SubmissionStatus } from '../../graphql'
 import { prisma } from '../../prisma'
 import { userInfo } from './userInfoController'
 
@@ -7,7 +8,7 @@ const user = {
   email: 'testing2020@gmail.com'
 }
 
-const userLesson = { id: '1', status: 'passed', lessonId: 1 }
+const userLesson = { id: '1', status: SubmissionStatus.Passed, lessonId: 1 }
 
 const submission = {
   id: '1',

@@ -73,10 +73,10 @@ export default gql`
     ): [Lesson]
     updateChallenge(
       lessonId: Int!
+      order: Int!
+      description: String!
+      title: String!
       id: Int!
-      order: Int
-      description: String
-      title: String
     ): [Lesson]
   }
 
@@ -93,7 +93,7 @@ export default gql`
 
   type Submission {
     id: String
-    status: String
+    status: SubmissionStatus!
     mrUrl: String
     diff: String
     viewCount: Int
@@ -108,6 +108,12 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String
+  }
+
+  enum SubmissionStatus {
+    needMoreWork
+    open
+    passed
   }
 
   type User {
@@ -168,10 +174,10 @@ export default gql`
   }
 
   type Star {
-    id: String!
-    studentId: Int
-    mentorId: Int
-    lessonId: Int
+    id: Int!
+    lessonId: Int!
     comment: String
+    student: User!
+    lesson: Lesson!
   }
 `

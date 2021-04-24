@@ -8,7 +8,9 @@ import {
   ReviewCountProps
 } from '../@types/lessonCard'
 import NavLink from './NavLink'
+import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
+import { SubmissionStatus } from '../graphql'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
@@ -26,7 +28,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   }
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
-      if (val.status === 'open') {
+      if (val.status === SubmissionStatus.Open) {
         acc = acc + 1
         return acc
       }
@@ -61,13 +63,16 @@ const LessonCard: React.FC<Props> = props => {
   return (
     <div className={`card shadow-sm mt-3 ${containerClass}`}>
       <div className="d-flex p-2">
-        <img
+        <Image
           src={`/assets/curriculum/${props.coverImg}`}
-          className={`${styles['lesson-card__image']}`}
           alt={props.coverImg}
+          objectFit="contain"
+          className="align-self-center"
+          width="116"
+          height="165"
         />
 
-        <div className="w-100 pl-4">
+        <div className={`${styles['lesson-card__description']} pl-4`}>
           {props.currentState === 'completed' && (
             <span className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center">
               <CheckCircle style={{ height: '15px' }} />
@@ -97,9 +102,7 @@ const LessonCard: React.FC<Props> = props => {
                 </span>
               </div>
             </div>
-            <p className={`${styles['lesson-card__description']} mt-2`}>
-              {props.description}
-            </p>
+            <p className="mt-2">{props.description}</p>
           </div>
           <ReviewButton
             isCompleted={props.currentState === 'completed'}

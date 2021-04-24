@@ -15,6 +15,8 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
+import Modal from 'react-bootstrap/Modal'
+import { SubmissionStatus } from '../graphql'
 
 dayjs.extend(relativeTime)
 
@@ -41,19 +43,19 @@ export const ReviewStatus: React.FC<ReviewStatusProps> = ({
     </NavLink>
   )
   switch (status) {
-    case 'passed':
+    case SubmissionStatus.Passed:
       reviewStatusComment = (
         <>Your solution was reviewed and accepted by {profileLink}</>
       )
       statusClassName = 'border border-success text-success'
       break
-    case 'needMoreWork':
+    case SubmissionStatus.NeedMoreWork:
       reviewStatusComment = (
         <>Your solution was reviewed and rejected by {profileLink}</>
       )
       statusClassName = 'border border-danger text-danger'
       break
-    case 'open':
+    case SubmissionStatus.Open:
       reviewStatusComment = (
         <>Your submission is currently waiting to be reviewed</>
       )
@@ -78,13 +80,13 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
   }
   let statusIconUrl
   switch (status) {
-    case 'passed':
+    case SubmissionStatus.Passed:
       statusIconUrl = '/assets/curriculum/icons/checkmark.svg'
       break
-    case 'needMoreWork':
+    case SubmissionStatus.NeedMoreWork:
       statusIconUrl = '/assets/curriculum/icons/rejected.svg'
       break
-    case 'open':
+    case SubmissionStatus.Open:
       statusIconUrl = '/assets/curriculum/icons/pending.svg'
   }
   return <img width="25px" height="25px" src={statusIconUrl} />
@@ -112,7 +114,7 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
   if (active) {
     cardStyles.push('challenge-title-card--active')
   }
-  if (submissionStatus === 'passed') {
+  if (submissionStatus === SubmissionStatus.Passed) {
     cardStyles.push('challenge-title-card--done')
   } else {
     cardStyles.push('shadow-sm', 'border-0')
@@ -298,6 +300,8 @@ type ChallengeMaterialProps = {
   lessonStatus: LessonStatus
   chatUrl: string
   lessonId: number
+  show: boolean
+  setShow: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
@@ -305,7 +309,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   userSubmissions,
   lessonStatus,
   chatUrl,
-  lessonId
+  lessonId,
+  show,
+  setShow
 }) => {
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
@@ -342,13 +348,13 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     order: challenges.length + 1,
     description:
       'Congratulations, you have completed all Challenges for this Lesson',
-    status: 'passed'
+    status: SubmissionStatus.Passed
   }
   //find first challenge that is not passed on initial render after clicks will render clicked challenge
   const currentChallenge =
     challengesWithSubmissionData.find((challenge: ChallengeSubmissionData) => {
       if (currentChallengeID) return challenge.id === currentChallengeID
-      return challenge.status !== 'passed'
+      return challenge.status !== SubmissionStatus.Passed
     }) || finalChallenge
   const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
     challenge => {
@@ -365,23 +371,46 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       )
     }
   )
+  const challengeList = (
+    <div
+      className={`challenge-display_challenges ${show && 'show'} col-md-4`}
+      onClick={() => {
+        setShow(!show)
+      }}
+    >
+      {challengeTitleCards}
+      {lessonStatus.isPassed && (
+        <ChallengeTitleCard
+          key={finalChallenge.id}
+          id={finalChallenge.id}
+          challengeNum={finalChallenge.order}
+          title={finalChallenge.title}
+          setCurrentChallenge={setCurrentChallenge}
+          active={finalChallenge.id === currentChallenge.id}
+          submissionStatus={finalChallenge.status}
+        />
+      )}
+    </div>
+  )
   return (
     <div className="row challenge-display mt-3">
-      <div className="col-4">
-        {challengeTitleCards}
-        {lessonStatus.isPassed && (
-          <ChallengeTitleCard
-            key={finalChallenge.id}
-            id={finalChallenge.id}
-            challengeNum={finalChallenge.order}
-            title={finalChallenge.title}
-            setCurrentChallenge={setCurrentChallenge}
-            active={finalChallenge.id === currentChallenge.id}
-            submissionStatus={finalChallenge.status}
-          />
-        )}
-      </div>
-      <div className="col-8">
+      {window.innerWidth > 768 ? (
+        challengeList
+      ) : (
+        <Modal
+          show={show}
+          onHide={() => {
+            setShow(!show)
+          }}
+          centered
+          className="challenge-modal"
+          data-testid="modal-challenges"
+        >
+          <Modal.Body>{challengeList}</Modal.Body>
+        </Modal>
+      )}
+
+      <div className="col-md-8">
         {currentChallenge.id !== 'finalChallenge' && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
