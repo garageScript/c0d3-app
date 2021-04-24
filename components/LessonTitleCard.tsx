@@ -40,7 +40,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
             LESSON
           </NavLink>
           {/* 768 px is md bootstrap breakpoint */}
-          {window.innerWidth <= 768 ? (
+          {typeof window !== 'undefined' && window.innerWidth <= 768 ? (
             <div
               onClick={() => props.setShow && props.setShow(!props.show)}
               className="btn border-right rounded-0 px-4 py-3"

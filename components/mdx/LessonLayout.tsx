@@ -30,10 +30,12 @@ const LessonLayout: React.FC<LayoutProps> = props => {
   const location = router.pathname.split('/')
   const current = location[location.length - 1]
   const [scroll, setScroll] = useState(false)
-  const throttled = _.throttle(() => {
-    setScroll(window.scrollY > 2 * window.document.documentElement.clientHeight)
-  }, 100)
   useEffect(() => {
+    const throttled = _.throttle(() => {
+      setScroll(
+        window.scrollY > 2 * window.document.documentElement.clientHeight
+      )
+    }, 100)
     window.addEventListener('scroll', throttled)
   }, [])
   const lessonParts =
