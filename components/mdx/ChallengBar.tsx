@@ -14,10 +14,7 @@ const ChallengeBar: React.FC<{
         </h1>
         <p className="px-2 m-0 text-center">{description}</p>
         <div className="text-center">
-          <NavLink
-            path={href}
-            className={`btn btn-light mt-2 text-primary`}
-          >
+          <NavLink path={href} className={`btn btn-light mt-2 text-primary`}>
             View Challenges
           </NavLink>
         </div>
