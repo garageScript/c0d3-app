@@ -1,5 +1,2 @@
 #docker volumes
 docker/volumes/
-#eslint-mdx has trouble parsing > and < in code blocks under spoiler tag
-pages/curriculum/lessons/js0
-pages/docs/numbers.mdx

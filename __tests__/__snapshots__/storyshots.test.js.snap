@@ -15934,67 +15934,23 @@ Array [
 `;
 
 exports[`Storyshots mdx/Spoiler Default 1`] = `
-Array [
-  <div
-    className="mb-1 ml-1 spoiler"
-    onClick={[Function]}
-  >
-    <div
-      className="d-flex"
-    >
-      <div
-        className="spoiler-arrow__right align-self-center mr-3"
-      />
-      <div
-        className="spoiler__title"
-      >
-        Answer
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  >
-    <h1>
-      This should be hidden
-    </h1>
-  </div>,
-]
+<details>
+  <summary>
+    Answer
+  </summary>
+  <h1>
+    This should be hidden
+  </h1>
+</details>
 `;
 
 exports[`Storyshots mdx/Spoiler With Custom Name 1`] = `
-Array [
-  <div
-    className="mb-1 ml-1 spoiler"
-    onClick={[Function]}
-  >
-    <div
-      className="d-flex"
-    >
-      <div
-        className="spoiler-arrow__right align-self-center mr-3"
-      />
-      <div
-        className="spoiler__title"
-      >
-        Click me!
-      </div>
-    </div>
-  </div>,
-  <div
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  >
-    <h1>
-      Surprise!
-    </h1>
-  </div>,
-]
+<details>
+  <summary>
+    Click me!
+  </summary>
+  <h1>
+    Surprise!
+  </h1>
+</details>
 `;

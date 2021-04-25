@@ -2,28 +2,13 @@
 
 exports[`Spoiler component test Should render spoiler 1`] = `
 <div>
-  <div
-    class="mb-1 ml-1 spoiler"
-  >
-    <div
-      class="d-flex"
-    >
-      <div
-        class="spoiler-arrow__right align-self-center mr-3"
-      />
-      <div
-        class="spoiler__title"
-      >
-        TestSpoiler
-      </div>
-    </div>
-  </div>
-  <div
-    style="display: none;"
-  >
+  <details>
+    <summary>
+      TestSpoiler
+    </summary>
     <h1>
       Hidden text
     </h1>
-  </div>
+  </details>
 </div>
 `;
