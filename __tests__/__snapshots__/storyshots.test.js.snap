@@ -6531,71 +6531,21 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
   <div
     className="card-body"
   >
-    <div
-      className="progress-card__wrapper d-flex align-items-center"
-    >
-      <svg
-        viewBox="0 0 40 40"
-        width="65px"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          fill="transparent"
-          r="17"
-          stroke="#3a22b8"
-          strokeWidth="4.5"
-        />
-        <circle
-          cx="20"
-          cy="20"
-          fill="transparent"
-          r="17"
-          stroke="#fff"
-          strokeDasharray="0 100"
-          strokeDashoffset="20"
-          strokeWidth="4.5"
-        />
-        <g
-          className="circle-label"
-        >
-          <text
-            color="#fff"
-            fill="#fff"
-            style={
-              Object {
-                "font": "bold 10px sans-serif",
-              }
-            }
-            x={15}
-            y="23"
-          >
-            0
-            <tspan
-              fontSize="8px"
-            >
-              %
-            </tspan>
-          </text>
-        </g>
-      </svg>
-    </div>
     <h4
       className="progress-card__title mt-3"
     >
-      You're off to a great start!
+      Join and start learning!
     </h4>
     <div
       className="mt-3"
     >
-      Login to
       <a
         className="progress-newuser__chatlink text-white"
-        href="https://chat.c0d3.com/login"
+        href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        chat.c0d3.com
+        Join us on Discord
       </a>
       to ask your questions.
       <p>
@@ -6621,71 +6571,21 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
   <div
     className="card-body"
   >
-    <div
-      className="progress-card__wrapper d-flex align-items-center"
-    >
-      <svg
-        viewBox="0 0 40 40"
-        width="65px"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          fill="transparent"
-          r="17"
-          stroke="#3a22b8"
-          strokeWidth="4.5"
-        />
-        <circle
-          cx="20"
-          cy="20"
-          fill="transparent"
-          r="17"
-          stroke="#fff"
-          strokeDasharray="100 0"
-          strokeDashoffset="20"
-          strokeWidth="4.5"
-        />
-        <g
-          className="circle-label"
-        >
-          <text
-            color="#fff"
-            fill="#fff"
-            style={
-              Object {
-                "font": "bold 10px sans-serif",
-              }
-            }
-            x={9}
-            y="23"
-          >
-            100
-            <tspan
-              fontSize="8px"
-            >
-              %
-            </tspan>
-          </text>
-        </g>
-      </svg>
-    </div>
     <h4
       className="progress-card__title mt-3"
     >
-      Congratulations! You've finished the course!
+      Join and start learning!
     </h4>
     <div
       className="mt-3"
     >
-      Login to
       <a
         className="progress-newuser__chatlink text-white"
-        href="https://chat.c0d3.com/login"
+        href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        chat.c0d3.com
+        Join us on Discord
       </a>
       to ask your questions.
       <p>
@@ -6711,30 +6611,21 @@ exports[`Storyshots Components/ProgressCard Loading 1`] = `
   <div
     className="card-body"
   >
-    <div
-      className="progress-card__wrapper d-flex align-items-center"
-    >
-      <div
-        className="progress-card__spinner spinner-border text-light"
-        role="status"
-      />
-    </div>
     <h4
       className="progress-card__title mt-3"
     >
-      You're off to a great start!
+      Join and start learning!
     </h4>
     <div
       className="mt-3"
     >
-      Login to
       <a
         className="progress-newuser__chatlink text-white"
-        href="https://chat.c0d3.com/login"
+        href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        chat.c0d3.com
+        Join us on Discord
       </a>
       to ask your questions.
       <p>
@@ -6760,71 +6651,21 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
   <div
     className="card-body"
   >
-    <div
-      className="progress-card__wrapper d-flex align-items-center"
-    >
-      <svg
-        viewBox="0 0 40 40"
-        width="65px"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          fill="transparent"
-          r="17"
-          stroke="#3a22b8"
-          strokeWidth="4.5"
-        />
-        <circle
-          cx="20"
-          cy="20"
-          fill="transparent"
-          r="17"
-          stroke="#fff"
-          strokeDasharray="40 60"
-          strokeDashoffset="20"
-          strokeWidth="4.5"
-        />
-        <g
-          className="circle-label"
-        >
-          <text
-            color="#fff"
-            fill="#fff"
-            style={
-              Object {
-                "font": "bold 10px sans-serif",
-              }
-            }
-            x={11}
-            y="23"
-          >
-            40
-            <tspan
-              fontSize="8px"
-            >
-              %
-            </tspan>
-          </text>
-        </g>
-      </svg>
-    </div>
     <h4
       className="progress-card__title mt-3"
     >
-      Keep up the great work!
+      Join and start learning!
     </h4>
     <div
       className="mt-3"
     >
-      Login to
       <a
         className="progress-newuser__chatlink text-white"
-        href="https://chat.c0d3.com/login"
+        href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        chat.c0d3.com
+        Join us on Discord
       </a>
       to ask your questions.
       <p>
@@ -9148,30 +8989,21 @@ Array [
             <div
               className="card-body"
             >
-              <div
-                className="progress-card__wrapper d-flex align-items-center"
-              >
-                <div
-                  className="progress-card__spinner spinner-border text-light"
-                  role="status"
-                />
-              </div>
               <h4
                 className="progress-card__title mt-3"
               >
-                You're off to a great start!
+                Join and start learning!
               </h4>
               <div
                 className="mt-3"
               >
-                Login to
                 <a
                   className="progress-newuser__chatlink text-white"
-                  href="https://chat.c0d3.com/login"
+                  href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  chat.c0d3.com
+                  Join us on Discord
                 </a>
                 to ask your questions.
                 <p>
@@ -10051,30 +9883,21 @@ Array [
             <div
               className="card-body"
             >
-              <div
-                className="progress-card__wrapper d-flex align-items-center"
-              >
-                <div
-                  className="progress-card__spinner spinner-border text-light"
-                  role="status"
-                />
-              </div>
               <h4
                 className="progress-card__title mt-3"
               >
-                You're off to a great start!
+                Join and start learning!
               </h4>
               <div
                 className="mt-3"
               >
-                Login to
                 <a
                   className="progress-newuser__chatlink text-white"
-                  href="https://chat.c0d3.com/login"
+                  href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  chat.c0d3.com
+                  Join us on Discord
                 </a>
                 to ask your questions.
                 <p>
@@ -10954,30 +10777,21 @@ Array [
             <div
               className="card-body"
             >
-              <div
-                className="progress-card__wrapper d-flex align-items-center"
-              >
-                <div
-                  className="progress-card__spinner spinner-border text-light"
-                  role="status"
-                />
-              </div>
               <h4
                 className="progress-card__title mt-3"
               >
-                You're off to a great start!
+                Join and start learning!
               </h4>
               <div
                 className="mt-3"
               >
-                Login to
                 <a
                   className="progress-newuser__chatlink text-white"
-                  href="https://chat.c0d3.com/login"
+                  href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  chat.c0d3.com
+                  Join us on Discord
                 </a>
                 to ask your questions.
                 <p>
