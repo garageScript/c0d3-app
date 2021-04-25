@@ -30,11 +30,13 @@ type Props = {
   lessons: Lesson[]
   alerts: Alert[]
 }
+
 interface State {
   session: GetSessionQuery['session']
   progress: number
   current: number
 }
+
 const generateMap = (
   session: GetSessionQuery['session']
 ): { [id: string]: UserLesson } => {
@@ -139,7 +141,10 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
         <div className="col-xl-4">
           <div className="d-xl-block">
             <DiscordBar />
-            <ProgressCard progressCount={state.progress} />
+            <ProgressCard
+              progressCount={state.progress}
+              loggedIn={!!state.session?.user}
+            />
           </div>
           <div className="d-none d-xl-block">
             <AnnouncementCard announcements={announcements} />
