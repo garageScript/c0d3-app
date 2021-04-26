@@ -12,6 +12,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { SubmissionData } from '../@types/submission'
+import { Submission } from '../graphql/index'
 
 import _ from 'lodash'
 
@@ -22,7 +23,7 @@ import { MdInput } from './MdInput'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
-  submissionData: SubmissionData
+  submissionData: Submission
 }
 
 type DiffViewProps = {
@@ -74,16 +75,35 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 }
 
 const MemoDiffView = memo(DiffView)
-
+type UserProfileProps = {
+  username: string | undefined | null
+  name: string | undefined | null
+}
+const UserProfile: React.FC<UserProfileProps> = ({ username, name }) => {
+  //TO-DO fix User type to make these fields non-nulled
+  const firstName = name ? name.split(' ')[0] : ''
+  const lastName = name ? name.split(' ')[1] : ''
+  return (
+    <div className="d-flex flex-column align-items-center justify-content-between">
+      <div className="text-center">{`${firstName} ${
+        lastName ? lastName : ''
+      }`}</div>
+      <div className="text-md-left text-muted font-weight-bold mb-0">
+        {username ? '@' + username : 'Anonymous user'}
+      </div>
+    </div>
+  )
+}
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const {
     id,
     diff,
     comment,
     updatedAt,
-    user: { username },
-    challenge: { title },
-    lessonId
+    user,
+    challenge,
+    lessonId,
+    reviewer
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -98,17 +118,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       }
     })
   }
-
   return (
     <>
       {diff && (
         <div className="card shadow-sm border-0 mt-3">
           <div className="card-header bg-white">
             <h4>
-              {username} - <span className="text-primary">{title}</span>
+              {user?.username} -{' '}
+              <span className="text-primary">{challenge?.title}</span>
             </h4>
             <Text color="lightgrey" size="sm">
-              {dayjs(parseInt(updatedAt)).fromNow()}
+              {dayjs(parseInt(updatedAt || '0')).fromNow()}
             </Text>
           </div>
 
@@ -119,7 +139,19 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
 
           <div className="card-footer bg-white">
-            {comment && <Markdown>{comment}</Markdown>}
+            <div className="container">
+              <div className="row">
+                <div className="col-2">
+                  <UserProfile
+                    username={reviewer?.username}
+                    name={reviewer?.name}
+                  />
+                </div>
+                <div className="col-10 align-self-center ">
+                  {comment && <Markdown>{comment}</Markdown>}
+                </div>
+              </div>
+            </div>
             <MdInput onChange={setCommentValue} bgColor={'white'} />
             <Button
               m="1"

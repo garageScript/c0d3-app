@@ -118,7 +118,8 @@ export const submissions = async (
       },
       include: {
         challenge: true,
-        user: true
+        user: true,
+        reviewer: true
       }
     })
   } catch (error) {

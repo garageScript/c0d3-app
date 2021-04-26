@@ -8,7 +8,7 @@ import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { Lesson } from '../../@types/lesson'
-import { SubmissionData } from '../../@types/submission'
+import { Submission } from '../../graphql/'
 import { AppData } from '../../@types/app'
 import Error, { StatusCode } from '../../components/Error'
 import { LessonStatus } from '../../@types/lesson'
@@ -19,14 +19,14 @@ import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 
 type SubmissionDisplayProps = {
-  submissions: SubmissionData[]
+  submissions: Submission[]
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
   <div className="submissions-container container p-0">
-    {submissions.map((submission: SubmissionData) => (
+    {submissions.map((submission: Submission) => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>
@@ -60,9 +60,9 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     router.push('/curriculum')
     return <LoadingSpinner />
   }
-  const lessonSubmissions: SubmissionData[] = data
+  const lessonSubmissions: Submission[] = data
     ? data.submissions.filter(
-        (submission: SubmissionData) =>
+        (submission: Submission) =>
           submission.status !== SubmissionStatus.Passed &&
           submission.status !== SubmissionStatus.NeedMoreWork
       )

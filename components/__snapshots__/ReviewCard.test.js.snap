@@ -10,7 +10,8 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
     >
       <h4>
         fake user
-         - 
+         -
+         
         <span
           class="text-primary"
         >
@@ -1208,9 +1209,39 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <span>
-        Some comment
-      </span>
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-2"
+          >
+            <div
+              class="d-flex flex-column align-items-center justify-content-between"
+            >
+              <div
+                class="text-center"
+              >
+                 
+              </div>
+              <div
+                class="text-md-left text-muted font-weight-bold mb-0"
+              >
+                @fake reviewer
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-10 align-self-center "
+          >
+            <span>
+              Some comment
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         style="background-color: white;"
       >
@@ -1261,7 +1292,8 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
     >
       <h4>
         fake user
-         - 
+         -
+         
         <span
           class="text-primary"
         >
@@ -2459,9 +2491,39 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <span>
-        Some comment
-      </span>
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-2"
+          >
+            <div
+              class="d-flex flex-column align-items-center justify-content-between"
+            >
+              <div
+                class="text-center"
+              >
+                 
+              </div>
+              <div
+                class="text-md-left text-muted font-weight-bold mb-0"
+              >
+                @fake reviewer
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-10 align-self-center "
+          >
+            <span>
+              Some comment
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         style="background-color: white;"
       >
@@ -2510,7 +2572,8 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
     >
       <h4>
         fake user
-         - 
+         -
+         
         <span
           class="text-primary"
         >
@@ -3708,9 +3771,39 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <span>
-        Some comment
-      </span>
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-2"
+          >
+            <div
+              class="d-flex flex-column align-items-center justify-content-between"
+            >
+              <div
+                class="text-center"
+              >
+                 
+              </div>
+              <div
+                class="text-md-left text-muted font-weight-bold mb-0"
+              >
+                @fake reviewer
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-10 align-self-center "
+          >
+            <span>
+              Some comment
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         style="background-color: white;"
       >
@@ -3761,7 +3854,8 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
     >
       <h4>
         fake user
-         - 
+         -
+         
         <span
           class="text-primary"
         >
@@ -3784,9 +3878,39 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <span>
-        Some comment
-      </span>
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-2"
+          >
+            <div
+              class="d-flex flex-column align-items-center justify-content-between"
+            >
+              <div
+                class="text-center"
+              >
+                 
+              </div>
+              <div
+                class="text-md-left text-muted font-weight-bold mb-0"
+              >
+                @fake reviewer
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-10 align-self-center "
+          >
+            <span>
+              Some comment
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         style="background-color: white;"
       >
@@ -3835,7 +3959,8 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
     >
       <h4>
         fake user
-         - 
+         -
+         
         <span
           class="text-primary"
         >
@@ -5033,9 +5158,39 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
     <div
       class="card-footer bg-white"
     >
-      <span>
-        Some comment
-      </span>
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-2"
+          >
+            <div
+              class="d-flex flex-column align-items-center justify-content-between"
+            >
+              <div
+                class="text-center"
+              >
+                 
+              </div>
+              <div
+                class="text-md-left text-muted font-weight-bold mb-0"
+              >
+                @fake reviewer
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-10 align-self-center "
+          >
+            <span>
+              Some comment
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         style="background-color: white;"
       >

@@ -587,6 +587,9 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
             user?: Maybe<
               { __typename?: 'User' } & Pick<User, 'id' | 'username'>
             >
+            reviewer?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+            >
           }
       >
     >
@@ -2321,6 +2324,11 @@ export const SubmissionsDocument = gql`
       user {
         id
         username
+      }
+      reviewer {
+        id
+        username
+        name
       }
       createdAt
       updatedAt
