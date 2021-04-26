@@ -117,6 +117,6 @@ export const WithLongComment: React.FC = () => (
 )
 export const NoDiffCard: React.FC = () => (
   <MockedProvider mocks={mocks}>
-    <ReviewCard submissionData={{ ...submissionData, diff: ""}} />
+    <ReviewCard submissionData={{ ...submissionData, diff: '' }} />
   </MockedProvider>
 )
