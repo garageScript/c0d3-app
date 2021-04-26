@@ -61,13 +61,14 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       <div
         class="mt-3"
       >
+        Join us on
         <a
           class="progress-newuser__chatlink text-white"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Join us on Discord
+          Discord
         </a>
         to ask your questions.
         <p>
@@ -148,13 +149,14 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       <div
         class="mt-3"
       >
+        Join us on
         <a
           class="progress-newuser__chatlink text-white"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Join us on Discord
+          Discord
         </a>
         to ask your questions.
         <p>
@@ -235,13 +237,14 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       <div
         class="mt-3"
       >
+        Join us on
         <a
           class="progress-newuser__chatlink text-white"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Join us on Discord
+          Discord
         </a>
         to ask your questions.
         <p>
@@ -322,13 +325,14 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       <div
         class="mt-3"
       >
+        Join us on
         <a
           class="progress-newuser__chatlink text-white"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Join us on Discord
+          Discord
         </a>
         to ask your questions.
         <p>
@@ -359,18 +363,19 @@ exports[`ProgressCard component renders correctly when user is not logged in sho
       <h4
         class="progress-card__title mt-3"
       >
-        Join and start learning!
+        Join C0D3 now and start your software engineering journey!
       </h4>
       <div
         class="mt-3"
       >
+        Join us on
         <a
           class="progress-newuser__chatlink text-white"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Join us on Discord
+          Discord
         </a>
         to ask your questions.
         <p>

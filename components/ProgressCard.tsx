@@ -83,17 +83,18 @@ const ProgressCard: React.FC<CardProps> = ({ progressCount, loggedIn }) => {
           </>
         ) : (
           <h4 className={`${styles['progress-card__title']} mt-3`}>
-            Join and start learning!
+            Join C0D3 now and start your software engineering journey!
           </h4>
         )}
 
         <div className="mt-3">
+          Join us on
           <NavLink
             className={`${styles['progress-newuser__chatlink']} text-white`}
             path="https://discord.gg/c0d3"
             external
           >
-            Join us on Discord
+            Discord
           </NavLink>
           to ask your questions.
           <p>

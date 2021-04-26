@@ -6588,13 +6588,14 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     <div
       className="mt-3"
     >
+      Join us on
       <a
         className="progress-newuser__chatlink text-white"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        Join us on Discord
+        Discord
       </a>
       to ask your questions.
       <p>
@@ -6677,13 +6678,14 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
     <div
       className="mt-3"
     >
+      Join us on
       <a
         className="progress-newuser__chatlink text-white"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        Join us on Discord
+        Discord
       </a>
       to ask your questions.
       <p>
@@ -6712,18 +6714,19 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
     <h4
       className="progress-card__title mt-3"
     >
-      Join and start learning!
+      Join C0D3 now and start your software engineering journey!
     </h4>
     <div
       className="mt-3"
     >
+      Join us on
       <a
         className="progress-newuser__chatlink text-white"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        Join us on Discord
+        Discord
       </a>
       to ask your questions.
       <p>
@@ -6806,13 +6809,14 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
     <div
       className="mt-3"
     >
+      Join us on
       <a
         className="progress-newuser__chatlink text-white"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
-        Join us on Discord
+        Discord
       </a>
       to ask your questions.
       <p>
@@ -9139,18 +9143,19 @@ Array [
               <h4
                 className="progress-card__title mt-3"
               >
-                Join and start learning!
+                Join C0D3 now and start your software engineering journey!
               </h4>
               <div
                 className="mt-3"
               >
+                Join us on
                 <a
                   className="progress-newuser__chatlink text-white"
                   href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Join us on Discord
+                  Discord
                 </a>
                 to ask your questions.
                 <p>
@@ -10033,18 +10038,19 @@ Array [
               <h4
                 className="progress-card__title mt-3"
               >
-                Join and start learning!
+                Join C0D3 now and start your software engineering journey!
               </h4>
               <div
                 className="mt-3"
               >
+                Join us on
                 <a
                   className="progress-newuser__chatlink text-white"
                   href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Join us on Discord
+                  Discord
                 </a>
                 to ask your questions.
                 <p>
@@ -10927,18 +10933,19 @@ Array [
               <h4
                 className="progress-card__title mt-3"
               >
-                Join and start learning!
+                Join C0D3 now and start your software engineering journey!
               </h4>
               <div
                 className="mt-3"
               >
+                Join us on
                 <a
                   className="progress-newuser__chatlink text-white"
                   href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  Join us on Discord
+                  Discord
                 </a>
                 to ask your questions.
                 <p>
