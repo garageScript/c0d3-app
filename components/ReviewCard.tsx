@@ -11,7 +11,6 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import { SubmissionData } from '../@types/submission'
 import { Submission } from '../graphql/index'
 
 import _ from 'lodash'

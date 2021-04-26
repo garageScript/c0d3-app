@@ -8817,8 +8817,6 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/ReviewCard Test 1`] = `""`;
-
 exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
 <div
   className="card shadow-sm border-0 mt-3"
