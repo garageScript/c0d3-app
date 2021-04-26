@@ -86,6 +86,16 @@ export const NoLastName: React.FC = () => (
     />
   </MockedProvider>
 )
+export const WithoutComment: React.FC = () => (
+  <MockedProvider mocks={mocks}>
+    <ReviewCard
+      submissionData={{
+        ...submissionData,
+        comment: null
+      }}
+    />
+  </MockedProvider>
+)
 export const WithLongComment: React.FC = () => (
   <MockedProvider mocks={mocks}>
     <ReviewCard

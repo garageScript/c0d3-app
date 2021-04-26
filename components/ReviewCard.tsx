@@ -138,19 +138,21 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
 
           <div className="card-footer bg-white">
-            <div className="container">
-              <div className="row">
-                <div className="col-2">
-                  <UserProfile
-                    username={reviewer?.username}
-                    name={reviewer?.name}
-                  />
-                </div>
-                <div className="col-10 align-self-center ">
-                  {comment && <Markdown>{comment}</Markdown>}
+            {comment && (
+              <div className="container">
+                <div className="row">
+                  <div className="col-2">
+                    <UserProfile
+                      username={reviewer?.username}
+                      name={reviewer?.name}
+                    />
+                  </div>
+                  <div className="col-10 align-self-center ">
+                    <Markdown>{comment}</Markdown>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             <MdInput onChange={setCommentValue} bgColor={'white'} />
             <Button
               m="1"
