@@ -687,30 +687,22 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             <div
               class="card-body"
             >
-              <div
-                class="progress-card__wrapper d-flex align-items-center"
-              >
-                <div
-                  class="progress-card__spinner spinner-border text-light"
-                  role="status"
-                />
-              </div>
               <h4
                 class="progress-card__title mt-3"
               >
-                You're off to a great start!
+                Join C0D3 now and start your software engineering journey!
               </h4>
               <div
                 class="mt-3"
               >
-                Login to
+                Join us on
                 <a
                   class="progress-newuser__chatlink text-white"
-                  href="https://chat.c0d3.com/login"
+                  href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  chat.c0d3.com
+                  Discord
                 </a>
                 to ask your questions.
                 <p>
@@ -1648,14 +1640,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div
                 class="mt-3"
               >
-                Login to
+                Join us on
                 <a
                   class="progress-newuser__chatlink text-white"
-                  href="https://chat.c0d3.com/login"
+                  href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  chat.c0d3.com
+                  Discord
                 </a>
                 to ask your questions.
                 <p>
@@ -2707,14 +2699,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div
                 class="mt-3"
               >
-                Login to
+                Join us on
                 <a
                   class="progress-newuser__chatlink text-white"
-                  href="https://chat.c0d3.com/login"
+                  href="https://discord.gg/c0d3"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  chat.c0d3.com
+                  Discord
                 </a>
                 to ask your questions.
                 <p>
