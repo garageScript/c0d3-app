@@ -5,7 +5,7 @@ const gfm = require('remark-gfm')
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [slug, toc, gfm]
+    remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
   }
 })
 module.exports = withMDX({

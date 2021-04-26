@@ -16,7 +16,10 @@ const CodeBlock: React.FC<Props> = ({ children, className }) => {
       theme={github}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px' }}>
+        <pre
+          className={className}
+          style={{ ...style, padding: '20px 20px 0 20px' }}
+        >
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

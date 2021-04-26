@@ -79,7 +79,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -218,7 +218,7 @@ exports[`_error page Should return Error 500 component 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"

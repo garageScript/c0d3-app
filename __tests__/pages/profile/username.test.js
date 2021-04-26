@@ -1,5 +1,10 @@
 import React from 'react'
-import { render, waitForElementToBeRemoved } from '@testing-library/react'
+import {
+  render,
+  waitForElementToBeRemoved,
+  screen,
+  waitFor
+} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import GET_APP from '../../../graphql/queries/getApp'
 import USER_INFO from '../../../graphql/queries/userInfo'
@@ -311,14 +316,14 @@ describe('user profile test', () => {
         }
       }
     ]
-    const { container, findByRole, queryByText } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <UserProfile />
       </MockedProvider>
     )
-    await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fake user/i })
-    expect(container).toMatchSnapshot()
+    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
+    await waitFor(() => screen.findByRole('heading', { name: /@fake user/i }))
+    expect(screen.getAllByText('NaN%')[0]).toBeVisible()
   })
   test('Should render nulled challenges', async () => {
     const lessons = [

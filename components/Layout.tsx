@@ -5,7 +5,7 @@ import Footer from './Footer'
 const Layout: React.FC = ({ children }) => (
   <>
     <AppNav />
-    <div className="container">{children}</div>
+    <div className="container-md">{children}</div>
     <Footer />
   </>
 )

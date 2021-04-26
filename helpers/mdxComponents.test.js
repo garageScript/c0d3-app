@@ -1,4 +1,5 @@
 import mdxComponents from './mdxComponents'
+import { render } from '@testing-library/react'
 import React from 'react'
 
 describe('mdxComponents', () => {
@@ -12,5 +13,8 @@ describe('mdxComponents', () => {
     expect(mdxComponents.ol()).toEqual(<ol className="MDX_ol" />)
     expect(mdxComponents.ul()).toEqual(<ul className="MDX_ul" />)
     expect(mdxComponents.th()).toEqual(<th className="MDX_th" />)
+    expect(mdxComponents.twoColumns(<div></div>)).toEqual(
+      <div className="MDX_twoColumns" />
+    )
   })
 })
