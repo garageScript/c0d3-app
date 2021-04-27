@@ -33,7 +33,7 @@ describe('Layout component', () => {
         <Layout
           lessonCoverUrl="test"
           lessonId="1"
-          lessonTitle="Test title"
+          title="Test title"
           isPassed={true}
         />
       </MockedProvider>

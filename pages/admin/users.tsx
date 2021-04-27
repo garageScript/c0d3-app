@@ -118,7 +118,7 @@ const LoadUsers: React.FC = withQueryLoader<AllUsersData>(
 
 const Users: React.FC<GetAppProps> = ({ data }) => {
   return (
-    <AdminLayout data={data}>
+    <AdminLayout data={data} title="Admin users">
       <LoadUsers />
     </AdminLayout>
   )

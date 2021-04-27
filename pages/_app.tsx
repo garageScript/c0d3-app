@@ -39,7 +39,6 @@ function MyApp({ Component, pageProps, err }: IProps) {
       <MDXProvider components={MDXcomponents}>
         <Head>
           {/* <!-- Primary Meta Tags --> */}
-          <title>C0D3</title>
           <meta name="title" content="C0D3" />
           <meta
             name="description"

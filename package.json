@@ -10,7 +10,7 @@
     "dev": "next --port $PORT",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .js --ext .ts --ext .tsx",
+    "lint": "eslint . --ext .js --ext .ts --ext .tsx --ext .mdx",
     "lint:fix": "yarn lint --fix && prettier --write ./scss/",
     "autofix": "yarn lint:fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",

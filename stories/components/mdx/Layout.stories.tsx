@@ -45,8 +45,8 @@ export const WithLesson: React.FC = () => {
     <MockedProvider mocks={mocks} addTypename={false}>
       <Layout
         lessonCoverUrl={`js-0-cover.svg`}
-        lessonTitle="Foundations of JavaScript"
-        lessonUrl="/"
+        title="Foundations of JavaScript"
+        lessonUrl="/curriculum/lessons/js0/primitive_data_and_operators"
         lessonId="1"
         subLessons={[
           'Primitive data and operators',

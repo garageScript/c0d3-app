@@ -69,7 +69,7 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     : []
   return (
     <div>
-      <Layout>
+      <Layout title={`Review - ${currentLesson.title}`}>
         <div className="row mt-4">
           <LessonTitleCard
             lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}

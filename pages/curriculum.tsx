@@ -132,7 +132,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     )
   })
   return (
-    <Layout>
+    <Layout title="Curriculum">
       <div className="row">
         <AlertsDisplay alerts={alerts} page="curriculum" />
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>

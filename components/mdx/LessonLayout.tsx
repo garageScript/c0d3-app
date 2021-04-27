@@ -5,7 +5,9 @@ import styles from '../../scss/mdx.module.scss'
 import { useRouter } from 'next/router'
 import _ from 'lodash'
 
-type LayoutProps = Partial<LessonTitleProps & { subLessons?: string[] }>
+type LayoutProps = Partial<
+  LessonTitleProps & { subLessons?: string[]; title?: string }
+>
 
 const ScrollTop: React.FC<{ scroll: boolean }> = ({ scroll }) => {
   return (
@@ -55,16 +57,19 @@ const LessonLayout: React.FC<LayoutProps> = props => {
       )
     })
   return (
-    <Layout>
+    <Layout title={props.title || 'C0D3'}>
       <div className="mt-4">
-        {props.lessonTitle && (
-          <LessonTitleCard {...(props as LessonTitleProps)} />
+        {props.lessonCoverUrl && (
+          <LessonTitleCard
+            {...(props as LessonTitleProps)}
+            lessonTitle={props.title!}
+          />
         )}
       </div>
       <div
         className={`${styles['lesson-wrapper']} card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white`}
       >
-        {!props.lessonTitle && (
+        {!props.lessonCoverUrl && (
           <button
             className="btn btn-link text-primary p-0"
             onClick={() => router.back()}
@@ -73,7 +78,7 @@ const LessonLayout: React.FC<LayoutProps> = props => {
           </button>
         )}
         <ScrollTop scroll={scroll} />
-        <div className={styles.title}>{props.lessonTitle}</div>
+        <div className={styles.title}>{props.title}</div>
         {lessonParts}
         {props.children}
       </div>
