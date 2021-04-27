@@ -9,11 +9,13 @@ datasource db {
 }
 
 model Session {
-  sid       String    @id @db.VarChar(36)
-  expires   DateTime? @db.Timestamptz(6)
-  data      String?
-  createdAt DateTime  @default(now()) @db.Timestamptz(6)
-  updatedAt DateTime  @updatedAt @db.Timestamptz(6)
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+
 }
 
 model Alert {
