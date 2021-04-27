@@ -19,6 +19,8 @@ import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
 
+import styles from '../scss/reviewCard.module.scss'
+
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -83,14 +85,14 @@ const UserProfile: React.FC<UserProfileProps> = ({ username, name }) => {
   const firstName = name ? name.split(' ')[0] : ''
   const lastName = name ? name.split(' ')[1] : ''
   return (
-    <div className="d-flex flex-column align-items-center justify-content-between">
-      <div className="text-center">{`${firstName} ${
+    <footer className={`${styles['comment_author']} mt-2`}>
+      <div className="d-inline">{`${firstName} ${
         lastName ? lastName : ''
       }`}</div>
-      <div className="text-md-left text-muted font-weight-bold mb-0">
+      <div className="d-inline text-muted">
         {username ? '@' + username : 'Anonymous user'}
       </div>
-    </div>
+    </footer>
   )
 }
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
@@ -139,18 +141,12 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-footer bg-white">
             {comment && (
-              <div className="container">
-                <div className="row">
-                  <div className="col-2">
-                    <UserProfile
-                      username={reviewer?.username}
-                      name={reviewer?.name}
-                    />
-                  </div>
-                  <div className="col-10 align-self-center ">
-                    <Markdown>{comment}</Markdown>
-                  </div>
-                </div>
+              <div>
+                <Markdown>{comment}</Markdown>
+                <UserProfile
+                  username={reviewer?.username}
+                  name={reviewer?.name}
+                />
               </div>
             )}
             <MdInput onChange={setCommentValue} bgColor={'white'} />

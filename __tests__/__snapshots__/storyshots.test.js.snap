@@ -7728,38 +7728,24 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div
-      className="container"
-    >
-      <div
-        className="row"
+    <div>
+      <span>
+        Some comment
+      </span>
+      <footer
+        className="comment_author mt-2"
       >
         <div
-          className="col-2"
+          className="d-inline"
         >
-          <div
-            className="d-flex flex-column align-items-center justify-content-between"
-          >
-            <div
-              className="text-center"
-            >
-               
-            </div>
-            <div
-              className="text-md-left text-muted font-weight-bold mb-0"
-            >
-              @fake reviewer
-            </div>
-          </div>
+           
         </div>
         <div
-          className="col-10 align-self-center "
+          className="d-inline text-muted"
         >
-          <span>
-            Some comment
-          </span>
+          @fake reviewer
         </div>
-      </div>
+      </footer>
     </div>
     <div
       style={
@@ -8716,38 +8702,24 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div
-      className="container"
-    >
-      <div
-        className="row"
+    <div>
+      <span>
+        Some comment
+      </span>
+      <footer
+        className="comment_author mt-2"
       >
         <div
-          className="col-2"
+          className="d-inline"
         >
-          <div
-            className="d-flex flex-column align-items-center justify-content-between"
-          >
-            <div
-              className="text-center"
-            >
-              User 
-            </div>
-            <div
-              className="text-md-left text-muted font-weight-bold mb-0"
-            >
-              @fake user
-            </div>
-          </div>
+          User 
         </div>
         <div
-          className="col-10 align-self-center "
+          className="d-inline text-muted"
         >
-          <span>
-            Some comment
-          </span>
+          @fake user
         </div>
-      </div>
+      </footer>
     </div>
     <div
       style={
@@ -9702,40 +9674,14 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div
-      className="container"
-    >
-      <div
-        className="row"
-      >
-        <div
-          className="col-2"
-        >
-          <div
-            className="d-flex flex-column align-items-center justify-content-between"
-          >
-            <div
-              className="text-center"
-            >
-               
-            </div>
-            <div
-              className="text-md-left text-muted font-weight-bold mb-0"
-            >
-              @fake reviewer
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-10 align-self-center "
-        >
-          <div>
-            <p>
-              You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
-            </p>
-            <pre>
-              <code>
-                Let's say we have an array arr [9,7,2,3] and the sum is 10
+    <div>
+      <div>
+        <p>
+          You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
+        </p>
+        <pre>
+          <code>
+            Let's say we have an array arr [9,7,2,3] and the sum is 10
 
 Does 10 - arr[0] exist in the map? (No).
 
@@ -9752,11 +9698,23 @@ Update map to { 9: true, 7: true, 2: true }
 Does 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true
 
 if you have questions, don't hesitate to reach out in the chat.
-              </code>
-            </pre>
-          </div>
-        </div>
+          </code>
+        </pre>
       </div>
+      <footer
+        className="comment_author mt-2"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin Admin
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          @admin
+        </div>
+      </footer>
     </div>
     <div
       style={

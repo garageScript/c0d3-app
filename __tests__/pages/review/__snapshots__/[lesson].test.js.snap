@@ -1695,38 +1695,24 @@ exports[`Lesson Page Should render new submissions 1`] = `
             <div
               class="card-footer bg-white"
             >
-              <div
-                class="container"
-              >
-                <div
-                  class="row"
+              <div>
+                <span>
+                  TEST 2
+                </span>
+                <footer
+                  class="comment_author mt-2"
                 >
                   <div
-                    class="col-2"
+                    class="d-inline"
                   >
-                    <div
-                      class="d-flex flex-column align-items-center justify-content-between"
-                    >
-                      <div
-                        class="text-center"
-                      >
-                        Admin Admin
-                      </div>
-                      <div
-                        class="text-md-left text-muted font-weight-bold mb-0"
-                      >
-                        @admin
-                      </div>
-                    </div>
+                    Admin Admin
                   </div>
                   <div
-                    class="col-10 align-self-center "
+                    class="d-inline text-muted"
                   >
-                    <span>
-                      TEST 2
-                    </span>
+                    @admin
                   </div>
-                </div>
+                </footer>
               </div>
               <div
                 style="background-color: white;"

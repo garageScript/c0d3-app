@@ -101,6 +101,11 @@ export const WithLongComment: React.FC = () => (
     <ReviewCard
       submissionData={{
         ...submissionData,
+        reviewer: {
+          ...user,
+          name: 'Admin Admin',
+          username: 'admin'
+        },
         comment: `You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
 
     Let's say we have an array arr [9,7,2,3] and the sum is 10
