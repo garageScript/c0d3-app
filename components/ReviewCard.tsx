@@ -85,14 +85,17 @@ const UserProfile: React.FC<UserProfileProps> = ({ username, name }) => {
   const firstName = name ? name.split(' ')[0] : ''
   const lastName = name ? name.split(' ')[1] : ''
   return (
-    <footer className={`${styles['comment_author']} mt-2`}>
+    <a
+      className={`${styles['comment_author']} mt-2 d-block`}
+      href={`/profile/${username}`}
+    >
       <div className="d-inline">{`${firstName} ${
         lastName ? lastName : ''
       }`}</div>
       <div className="d-inline text-muted">
         {username ? '@' + username : 'Anonymous user'}
       </div>
-    </footer>
+    </a>
   )
 }
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {

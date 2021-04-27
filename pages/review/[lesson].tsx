@@ -26,7 +26,7 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
   <div className="submissions-container container p-0">
-    {submissions.map((submission: Submission) => (
+    {submissions.map(submission => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>

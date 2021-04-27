@@ -1,8 +1,8 @@
 .comment_author {
   font-size: 1.25rem;
-}
-.comment_author__name {
-  &::before {
-    content: '\2014\00A0';
+  color: black;
+  &:hover {
+    color: black;
+    text-decoration-color: gray;
   }
 }

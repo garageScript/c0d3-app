@@ -7732,8 +7732,9 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       <span>
         Some comment
       </span>
-      <footer
-        className="comment_author mt-2"
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/fake reviewer"
       >
         <div
           className="d-inline"
@@ -7745,7 +7746,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         >
           @fake reviewer
         </div>
-      </footer>
+      </a>
     </div>
     <div
       style={
@@ -8706,8 +8707,9 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       <span>
         Some comment
       </span>
-      <footer
-        className="comment_author mt-2"
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/fake user"
       >
         <div
           className="d-inline"
@@ -8719,7 +8721,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         >
           @fake user
         </div>
-      </footer>
+      </a>
     </div>
     <div
       style={
@@ -9701,8 +9703,9 @@ if you have questions, don't hesitate to reach out in the chat.
           </code>
         </pre>
       </div>
-      <footer
-        className="comment_author mt-2"
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/admin"
       >
         <div
           className="d-inline"
@@ -9714,7 +9717,7 @@ if you have questions, don't hesitate to reach out in the chat.
         >
           @admin
         </div>
-      </footer>
+      </a>
     </div>
     <div
       style={
