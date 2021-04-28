@@ -69,6 +69,7 @@ const LessonCard: React.FC<Props> = props => {
           className="align-self-center"
           width="116"
           height="165"
+          objectFit="contain"
         />
 
         <div className={`${styles['lesson-card__description']} pl-4`}>

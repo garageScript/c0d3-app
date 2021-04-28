@@ -2712,6 +2712,7 @@ Array [
             className="img-fluid"
             height={1200}
             layout="responsive"
+            objectFit="contain"
             src="/assets/errors/500.svg"
             width={1200}
           />
@@ -2875,6 +2876,7 @@ Array [
             className="img-fluid"
             height={1200}
             layout="responsive"
+            objectFit="contain"
             src="/assets/errors/404.svg"
             width={1200}
           />
@@ -4441,6 +4443,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       alt="js-4-cover.svg"
       className="img-fluid"
       height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
       width="116"
     />
@@ -4499,6 +4502,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       alt="js-4-cover.svg"
       className="img-fluid"
       height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
       width="116"
     />
@@ -4600,6 +4604,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       alt="js-4-cover.svg"
       className="img-fluid"
       height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
       width="116"
     />
@@ -8223,6 +8228,7 @@ Array [
               alt="js-0-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
             />
@@ -8278,6 +8284,7 @@ Array [
               alt="js-1-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
             />
@@ -8333,6 +8340,7 @@ Array [
               alt="js-2-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
             />
@@ -8388,6 +8396,7 @@ Array [
               alt="js-3-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
             />
@@ -8443,6 +8452,7 @@ Array [
               alt="js-4-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
             />
@@ -8498,6 +8508,7 @@ Array [
               alt="js-5-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
             />
@@ -8553,6 +8564,7 @@ Array [
               alt="js-6-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
             />
@@ -8608,6 +8620,7 @@ Array [
               alt="js-7-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
             />
@@ -8663,6 +8676,7 @@ Array [
               alt="js-8-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
             />
@@ -8718,6 +8732,7 @@ Array [
               alt="js-9-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
             />
@@ -9108,6 +9123,7 @@ Array [
               alt="js-0-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
             />
@@ -9163,6 +9179,7 @@ Array [
               alt="js-1-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
             />
@@ -9218,6 +9235,7 @@ Array [
               alt="js-2-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
             />
@@ -9273,6 +9291,7 @@ Array [
               alt="js-3-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
             />
@@ -9328,6 +9347,7 @@ Array [
               alt="js-4-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
             />
@@ -9383,6 +9403,7 @@ Array [
               alt="js-5-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
             />
@@ -9438,6 +9459,7 @@ Array [
               alt="js-6-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
             />
@@ -9493,6 +9515,7 @@ Array [
               alt="js-7-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
             />
@@ -9548,6 +9571,7 @@ Array [
               alt="js-8-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
             />
@@ -9603,6 +9627,7 @@ Array [
               alt="js-9-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
             />
@@ -9993,6 +10018,7 @@ Array [
               alt="js-0-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
             />
@@ -10048,6 +10074,7 @@ Array [
               alt="js-1-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
             />
@@ -10103,6 +10130,7 @@ Array [
               alt="js-2-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
             />
@@ -10158,6 +10186,7 @@ Array [
               alt="js-3-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
             />
@@ -10213,6 +10242,7 @@ Array [
               alt="js-4-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
             />
@@ -10268,6 +10298,7 @@ Array [
               alt="js-5-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
             />
@@ -10323,6 +10354,7 @@ Array [
               alt="js-6-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
             />
@@ -10378,6 +10410,7 @@ Array [
               alt="js-7-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
             />
@@ -10433,6 +10466,7 @@ Array [
               alt="js-8-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
             />
@@ -10488,6 +10522,7 @@ Array [
               alt="js-9-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
             />
