@@ -149,7 +149,8 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
       data: {
         name,
         username,
-        email
+        email,
+        password
       }
     })
 

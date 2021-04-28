@@ -56,6 +56,8 @@ const submissionData = {
   lessonId: 2,
   user: {
     username: 'fake user',
+    name: 'fake student',
+    email: 'fake@fakemail.com',
     id: 1,
     isAdmin: false
   },
@@ -69,6 +71,8 @@ const submissionData = {
   reviewer: {
     id: 1,
     username: 'fake reviewer',
+    name: 'fake reviewer',
+    email: 'fake@fakemail.com',
     isAdmin: false
   },
   createdAt: '123',
