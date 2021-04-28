@@ -14,7 +14,7 @@ import { SubmissionStatus } from '../graphql'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
-    variables: { lessonId: `${props.lessonId}` }
+    variables: { lessonId: props.lessonId }
   })
 
   if (loading) {

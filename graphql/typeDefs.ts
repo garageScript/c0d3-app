@@ -8,7 +8,7 @@ export default gql`
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
-    submissions(lessonId: String!): [Submission]
+    submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
   }
 
@@ -39,13 +39,13 @@ export default gql`
     ): [Alert]
     removeAlert(id: Int!): SuccessResponse
     createSubmission(
-      lessonId: String!
-      challengeId: String!
+      lessonId: Int!
+      challengeId: Int!
       cliToken: String!
       diff: String!
     ): Submission
-    acceptSubmission(id: String!, comment: String!): Submission
-    rejectSubmission(id: String!, comment: String!): Submission
+    acceptSubmission(id: Int!, comment: String!): Submission
+    rejectSubmission(id: Int!, comment: String!): Submission
     createLesson(
       description: String!
       docUrl: String
@@ -92,7 +92,7 @@ export default gql`
   }
 
   type Submission {
-    id: String
+    id: Int!
     status: SubmissionStatus!
     mrUrl: String
     diff: String
@@ -100,14 +100,14 @@ export default gql`
     comment: String
     userId: String
     order: Int
-    lessonId: String
-    challengeId: String
-    challenge: Challenge
+    lessonId: Int!
+    challengeId: Int!
+    challenge: Challenge!
     reviewer: User
-    user: User
+    user: User!
     reviewerId: String
     createdAt: String
-    updatedAt: String
+    updatedAt: String!
   }
 
   enum SubmissionStatus {
@@ -133,9 +133,9 @@ export default gql`
   }
 
   type UserLesson {
-    id: String
+    id: Int!
     userId: String
-    lessonId: String
+    lessonId: Int!
     isPassed: String
     isTeaching: String
     isEnrolled: String
@@ -144,7 +144,7 @@ export default gql`
   }
 
   type Lesson {
-    id: String
+    id: Int!
     description: String
     docUrl: String
     githubUrl: String
@@ -158,11 +158,11 @@ export default gql`
   }
 
   type Challenge {
-    id: String
-    description: String
-    lessonId: String
-    title: String
-    order: Int
+    id: Int!
+    description: String!
+    lessonId: Int!
+    title: String!
+    order: Int!
   }
 
   type Alert {

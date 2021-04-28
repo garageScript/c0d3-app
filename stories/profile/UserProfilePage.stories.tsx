@@ -19,9 +19,9 @@ const session: Session = {
   ...dummySessionData,
   lessonStatus: [
     {
-      id: '1',
+      id: 1,
       userId: '1',
-      lessonId: '5',
+      lessonId: 5,
       isPassed: 'true',
       isTeaching: 'true',
       isEnrolled: 'false',
@@ -29,9 +29,9 @@ const session: Session = {
       starsReceived: [dummyStarsData[0] as Star]
     },
     {
-      id: '2',
+      id: 2,
       userId: '1',
-      lessonId: '2',
+      lessonId: 2,
       isPassed: 'true',
       isTeaching: 'true',
       isEnrolled: 'false',
@@ -39,9 +39,9 @@ const session: Session = {
       starsReceived: [dummyStarsData[1] as Star]
     },
     {
-      id: '3',
+      id: 3,
       userId: '1',
-      lessonId: '1',
+      lessonId: 1,
       isPassed: 'true',
       isTeaching: 'true',
       isEnrolled: 'false',

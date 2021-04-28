@@ -6,7 +6,7 @@ export type LessonTitleProps = {
   lessonCoverUrl: string
   lessonUrl: string
   lessonTitle: string
-  lessonId: string
+  lessonId: number
   isPassed: boolean
   setShow?: React.Dispatch<React.SetStateAction<boolean>>
   show?: boolean

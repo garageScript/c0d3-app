@@ -44,7 +44,7 @@ const generateMap = (
   const { lessonStatus } = session!
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
-    lessonStatusMap[lessonId] = status
+    lessonStatusMap[lessonId] = status as UserLesson
   }
   return lessonStatusMap
 }

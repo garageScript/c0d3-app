@@ -3,6 +3,7 @@ import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
 import {
+  Challenge,
   UserLesson,
   Submission,
   Star,
@@ -63,10 +64,7 @@ const UserProfile: React.FC = () => {
     const passedLessonSubmissions = userSubmissions.filter(
       ({ status, lessonId }) => {
         // TODO: Fix lesson.id and lessonId types
-        return (
-          status === SubmissionStatus.Passed &&
-          parseInt(lessonId || '') === parseInt(lesson.id + '')
-        )
+        return status === SubmissionStatus.Passed && lessonId === lesson.id
       }
     )
     const completedSubmissions = passedLessonSubmissions.filter(
@@ -84,9 +82,9 @@ const UserProfile: React.FC = () => {
     const lesson = lessonInfo || {}
     const challengeList = lesson.challenges || []
     const challengesStatus = challengeList.map(challengeInfo => {
-      const challenge = challengeInfo || {}
+      const challenge = challengeInfo || ({} as Challenge)
       const challengeSubmission = userSubmissions.find(
-        submission => challenge.id === submission.challengeId
+        submission => challenge.id === Number(submission.challengeId)
       )
 
       return {

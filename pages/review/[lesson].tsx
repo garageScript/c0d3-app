@@ -7,11 +7,8 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
-import { Lesson } from '../../@types/lesson'
-import { SubmissionData } from '../../@types/submission'
-import { AppData } from '../../@types/app'
+import { GetAppQuery, Submission } from '../../graphql/index'
 import Error, { StatusCode } from '../../components/Error'
-import { LessonStatus } from '../../@types/lesson'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
@@ -19,23 +16,23 @@ import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 
 type SubmissionDisplayProps = {
-  submissions: SubmissionData[]
+  submissions: Submission[]
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
   submissions
 }) => (
   <div className="submissions-container container p-0">
-    {submissions.map((submission: SubmissionData) => (
+    {submissions.map(submission => (
       <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>
 )
 
-const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
+const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
-  const currentlessonId = router.query.lesson as string
+  const currentlessonId = Number(router.query.lesson)
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentlessonId }
   })
@@ -46,23 +43,21 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
     router.push('/login')
     return <LoadingSpinner />
   }
-  const currentLesson: Lesson | undefined = lessons.find(
-    (lesson: Lesson) => lesson.id === currentlessonId
-  )
+  const currentLesson = lessons.find(lesson => lesson.id === currentlessonId)
   if (!currentLesson) {
     return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
   if (
-    !session.lessonStatus.find((status: LessonStatus) => {
+    !session.lessonStatus.find(status => {
       return status.lessonId === currentLesson.id && status.isPassed
     })
   ) {
     router.push('/curriculum')
     return <LoadingSpinner />
   }
-  const lessonSubmissions: SubmissionData[] = data
+  const lessonSubmissions: Submission[] = data
     ? data.submissions.filter(
-        (submission: SubmissionData) =>
+        (submission: Submission) =>
           submission.status !== SubmissionStatus.Passed &&
           submission.status !== SubmissionStatus.NeedMoreWork
       )
@@ -73,8 +68,8 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
         <div className="row mt-4">
           <LessonTitleCard
             lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
-            lessonUrl={currentLesson.docUrl}
-            lessonTitle={currentLesson.title}
+            lessonUrl={currentLesson.docUrl!}
+            lessonTitle={currentLesson.title!}
             lessonId={currentlessonId}
             isPassed={true}
           />
@@ -87,7 +82,7 @@ const Review: React.FC<QueryDataProps<AppData>> = ({ queryData }) => {
   )
 }
 
-export default withQueryLoader<AppData>(
+export default withQueryLoader<GetAppQuery>(
   {
     query: GET_APP
   },
