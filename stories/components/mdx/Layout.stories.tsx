@@ -47,7 +47,7 @@ export const WithLesson: React.FC = () => {
         lessonCoverUrl={`js-0-cover.svg`}
         title="Foundations of JavaScript"
         lessonUrl="/curriculum/lessons/js0/primitive_data_and_operators"
-        lessonId="1"
+        lessonId={1}
         subLessons={[
           'Primitive data and operators',
           'Functions and execution context'
