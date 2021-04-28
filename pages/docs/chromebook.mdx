@@ -1,6 +1,4 @@
-import LessonLayout from '../../components/mdx/Layout'
-
-## Step 1 install Linux
+import LessonLayout from '../../components/mdx/LessonLayout'
 
 In order to install nodejs on a chromebook you must have linux enabled. If you
 do not have linux enabled on your computer please follow the steps outlined
@@ -50,4 +48,6 @@ Once all these is done, you should have node and npm installed. Type in
 
 ---
 
-export default ({ children }) => <LessonLayout>{children}</LessonLayout>
+export default ({ children }) => (
+  <LessonLayout title="Installing Linux on Chromebook">{children}</LessonLayout>
+)

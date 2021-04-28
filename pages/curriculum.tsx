@@ -30,11 +30,13 @@ type Props = {
   lessons: Lesson[]
   alerts: Alert[]
 }
+
 interface State {
   session: GetSessionQuery['session']
   progress: number
   current: number
 }
+
 const generateMap = (
   session: GetSessionQuery['session']
 ): { [id: string]: UserLesson } => {
@@ -42,7 +44,7 @@ const generateMap = (
   const { lessonStatus } = session!
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
-    lessonStatusMap[lessonId] = status
+    lessonStatusMap[lessonId] = status as UserLesson
   }
   return lessonStatusMap
 }
@@ -132,14 +134,17 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     )
   })
   return (
-    <Layout>
+    <Layout title="Curriculum">
       <div className="row">
         <AlertsDisplay alerts={alerts} page="curriculum" />
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
             <DiscordBar />
-            <ProgressCard progressCount={state.progress} />
+            <ProgressCard
+              progressCount={state.progress}
+              loggedIn={!!state.session?.user}
+            />
           </div>
           <div className="d-none d-xl-block">
             <AnnouncementCard announcements={announcements} />

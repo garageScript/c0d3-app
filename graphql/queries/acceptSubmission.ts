@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 const ACCEPT_SUBMISSION = gql`
-  mutation acceptSubmission($submissionId: String!, $comment: String!) {
+  mutation acceptSubmission($submissionId: Int!, $comment: String!) {
     acceptSubmission(id: $submissionId, comment: $comment) {
       id
       comment

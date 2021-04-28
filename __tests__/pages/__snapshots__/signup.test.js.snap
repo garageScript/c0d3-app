@@ -79,7 +79,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="row mt-5"
@@ -258,7 +258,7 @@ exports[`Signup Page Should render success component on success 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="row mt-5"

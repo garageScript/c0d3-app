@@ -93,7 +93,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="row mt-4"
@@ -1652,7 +1652,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="row mt-4"

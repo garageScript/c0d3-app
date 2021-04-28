@@ -50,17 +50,27 @@ const user = {
   isAdmin: false
 }
 const submissionData = {
-  id: '1',
+  id: 1,
   status: SubmissionStatus.Open,
   mrUrl: '',
   diff: JsDiff,
   viewCount: 0,
   comment: 'Some comment',
   order: 0,
-  challengeId: '146',
-  lessonId: '2',
-  user,
-  challenge: { title: 'fake challenge' },
+  challengeId: 146,
+  lessonId: 2,
+  user: {
+    username: 'fake user',
+    id: 1,
+    isAdmin: false
+  },
+  challenge: {
+    id: 23,
+    title: 'fake challenge',
+    description: 'fake description',
+    lessonId: 2,
+    order: 1
+  },
   reviewer: {
     id: 1,
     username: 'fake reviewer',
@@ -81,7 +91,7 @@ export const NoLastName: React.FC = () => (
       submissionData={{
         ...submissionData,
         reviewer: { ...user, name: 'User' },
-        updatedAt: null
+        updatedAt: ''
       }}
     />
   </MockedProvider>

@@ -78,7 +78,7 @@ export const ResetPassword: React.FC = () => {
 }
 
 export const ResetPasswordContainer = () => (
-  <Layout>
+  <Layout title="Reset password">
     <ResetPassword />
   </Layout>
 )

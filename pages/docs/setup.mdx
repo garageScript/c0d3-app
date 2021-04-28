@@ -1,8 +1,4 @@
-import LessonLayout from '../../components/mdx/Layout'
-
-# Setup Instructions
-
-<br />
+import LessonLayout from '../../components/mdx/LessonLayout'
 
 ## Code Editor
 
@@ -239,8 +235,7 @@ You should be able to see your submissions when you go to the
 [Curriculum](/curriculum) and selecting a lesson.
 
 It can take some time for a mentor to review your code. Feel free to go to
-[JS0-Foundations chatroom](https://chat.c0d3.com/c0d3/channels/js0-foundations)
-to request a review.
+[JS0-Foundations chatroom](https://discord.gg/VcQchQVSat) to request a review.
 
 If your code is not following best practices, your submission will get rejected.
 The following steps will help you resubmit.
@@ -284,6 +279,8 @@ steps ([video instructions](https://www.youtube.com/watch?v=jzZqwUXIc00)):
 Congratulations! You have written your first JavaScript program and you know how
 to run code directly in the browser. Now you are ready to start your journey.
 
-[JS 0 - Foundations](https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672)
+[JS 0 - Foundations](/curriculum/lessons/js0/primitive_data_and_operators)
 
-export default ({ children }) => <LessonLayout>{children}</LessonLayout>
+export default ({ children }) => (
+  <LessonLayout title="Development setup">{children}</LessonLayout>
+)

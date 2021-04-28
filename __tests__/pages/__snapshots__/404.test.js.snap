@@ -79,7 +79,7 @@ exports[`404 Error Page should render 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -123,7 +123,6 @@ exports[`404 Error Page should render 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/404.svg"
             width="1200"
           />

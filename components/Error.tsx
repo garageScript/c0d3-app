@@ -18,7 +18,7 @@ const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
 
 const Error: React.FC<ErrorProps> = ({ code, message }) => {
   return (
-    <Layout>
+    <Layout title={errorTitle[code]}>
       <div className="container">
         <div className="row">
           <div className="d-flex col-sm-3 align-items-center justify-content-center">
@@ -36,7 +36,6 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
             <Image
               src={`/assets/errors/${code}.svg`}
               layout="responsive"
-              objectFit="contain"
               width={1200}
               height={1200}
             />

@@ -2,7 +2,7 @@ import { prisma } from '../prisma'
 
 export const hasPassedLesson = async (
   reviewerId: number,
-  lessonId: string
+  lessonId: number
 ): Promise<Boolean> => {
   // query userlesson that belongs to lesson and user
   // TODO fix lessonId graphql typedef to Int

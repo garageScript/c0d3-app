@@ -6,9 +6,13 @@ export default {
   title: 'Components/ProgressCard'
 }
 
-export const Basic: React.FC = () => <ProgressCard progressCount={0} />
-export const Loading: React.FC = () => <ProgressCard progressCount={-1} />
-export const Progress: React.FC = () => <ProgressCard progressCount={40} />
+export const LoggedOut: React.FC = () => (
+  <ProgressCard progressCount={-1} loggedIn={false} />
+)
+export const Basic: React.FC = () => <ProgressCard progressCount={0} loggedIn />
+export const Progress: React.FC = () => (
+  <ProgressCard progressCount={40} loggedIn />
+)
 export const CompletedProgress: React.FC = () => (
-  <ProgressCard progressCount={100} />
+  <ProgressCard progressCount={100} loggedIn />
 )

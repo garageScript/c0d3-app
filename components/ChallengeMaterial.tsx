@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Challenge,
-  ChallengeSubmissionData,
-  UserSubmission,
-  UserSubmissionsObject
-} from '../@types/challenge'
-import { LessonStatus } from '../@types/lesson'
+import { Challenge, Submission, UserLesson } from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
@@ -20,11 +14,20 @@ import { SubmissionStatus } from '../graphql'
 
 dayjs.extend(relativeTime)
 
-type CurrentChallengeID = string | null
+type CurrentChallengeID = number | null
 
 type ReviewStatusProps = {
   status: string
   reviewerUserName: string | null
+}
+
+type ChallengeSubmissionData = Challenge & {
+  status: string
+  submission?: Submission
+}
+
+type UserSubmissionsObject = {
+  [submissionId: number]: Submission
 }
 
 export const ReviewStatus: React.FC<ReviewStatusProps> = ({
@@ -93,8 +96,8 @@ const StatusIcon: React.FC<StatusIconProps> = ({ status }) => {
 }
 
 type ChallengeTitleCardProps = {
-  key: string
-  id: string
+  key: number
+  id: number
   title: string
   challengeNum: number
   submissionStatus: string
@@ -296,8 +299,8 @@ export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = (
 
 type ChallengeMaterialProps = {
   challenges: Challenge[]
-  userSubmissions: UserSubmission[]
-  lessonStatus: LessonStatus
+  userSubmissions: Submission[]
+  lessonStatus: UserLesson
   chatUrl: string
   lessonId: number
   show: boolean
@@ -318,7 +321,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   }
   //create an object to evaluate the student's status with a challenge
   const userSubmissionsObject: UserSubmissionsObject = userSubmissions.reduce(
-    (acc: UserSubmissionsObject, submission: UserSubmission) => {
+    (acc: UserSubmissionsObject, submission: Submission) => {
       acc[submission.challengeId] = submission
       return acc
     },
@@ -344,8 +347,9 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
 
   const finalChallenge = {
     title: 'Challenges Completed!',
-    id: 'finalChallenge',
+    id: 0,
     order: challenges.length + 1,
+    lessonId: 0,
     description:
       'Congratulations, you have completed all Challenges for this Lesson',
     status: SubmissionStatus.Passed
@@ -411,10 +415,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       )}
 
       <div className="col-md-8">
-        {currentChallenge.id !== 'finalChallenge' && (
+        {currentChallenge.id !== finalChallenge.id && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
-        {lessonStatus.isPassed && currentChallenge.id === 'finalChallenge' && (
+        {lessonStatus.isPassed && currentChallenge.id === 0 && (
           <ChallengesCompletedCard
             lessonId={lessonId}
             starGiven={lessonStatus.starGiven || ''}

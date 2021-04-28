@@ -13,7 +13,7 @@ export const Contributors = () => {
     )
   })
   return (
-    <Layout>
+    <Layout title="Contributors">
       <div className="row mt-4">{userData}</div>
     </Layout>
   )

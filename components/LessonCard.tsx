@@ -14,7 +14,7 @@ import { SubmissionStatus } from '../graphql'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
-    variables: { lessonId: `${props.lessonId}` }
+    variables: { lessonId: props.lessonId }
   })
 
   if (loading) {
@@ -66,7 +66,6 @@ const LessonCard: React.FC<Props> = props => {
         <Image
           src={`/assets/curriculum/${props.coverImg}`}
           alt={props.coverImg}
-          objectFit="contain"
           className="align-self-center"
           width="116"
           height="165"

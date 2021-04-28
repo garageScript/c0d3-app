@@ -7,23 +7,16 @@ import { hasPassedLesson } from '../hasPassedLesson'
 import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 import { prisma } from '../../prisma'
+import {
+  MutationCreateSubmissionArgs,
+  QuerySubmissionsArgs
+} from '../../graphql'
 
 const { User, Submission, Challenge, Lesson } = db
 
-type ArgsCreateSubmission = {
-  lessonId: string
-  cliToken: string
-  diff: string
-  challengeId: string
-}
-
-type ArgsGetSubmissions = {
-  lessonId: string
-}
-
 export const createSubmission = async (
   _parent: void,
-  args: ArgsCreateSubmission
+  args: MutationCreateSubmissionArgs
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
@@ -104,7 +97,7 @@ export const rejectSubmission = async (
 
 export const submissions = async (
   _parent: void,
-  arg: ArgsGetSubmissions,
+  arg: QuerySubmissionsArgs,
   ctx: Context
 ) => {
   try {
@@ -129,7 +122,7 @@ export const submissions = async (
 
 const getReviewer = async (
   ctx: Context,
-  lessonId?: string
+  lessonId?: number
 ): Promise<number> => {
   const reviewerId: number | undefined = _.get(ctx, 'req.user.id', undefined)
   if (!reviewerId) throw new Error('Invalid user')

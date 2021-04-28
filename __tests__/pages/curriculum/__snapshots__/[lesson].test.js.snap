@@ -94,7 +94,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
       </div>
     </nav>
     <div
-      class="container"
+      class="container-md"
     >
       <div
         class="row mt-4"
@@ -501,7 +501,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -545,7 +545,6 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/404.svg"
             width="1200"
           />
@@ -657,7 +656,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
       </div>
     </nav>
     <div
-      class="container"
+      class="container-md"
     >
       <div
         class="row mt-4"
@@ -1092,7 +1091,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -1136,7 +1135,6 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/500.svg"
             width="1200"
           />

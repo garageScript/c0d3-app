@@ -24,7 +24,7 @@ const getAppMock = {
         ...dummySessionData,
         lessonStatus: [
           {
-            lessonId: '2',
+            lessonId: 2,
             isPassed: '1614694120099', // this column is a timestamp on the DB
             isTeaching: null,
             isEnrolled: null,
@@ -38,12 +38,12 @@ const getAppMock = {
   }
 }
 const getSubmissionsMock = {
-  request: { query: GET_SUBMISSONS, variables: { lessonId: '2' } },
+  request: { query: GET_SUBMISSONS, variables: { lessonId: 2 } },
   result: {
     data: {
       submissions: [
         {
-          id: '2',
+          id: 1,
           status: 'open',
           diff:
             'diff --git a/js7/1.js b/js7/1.js\nindex 9c96b34..853bddf 100644\n--- a/js7/1.js\n+++ b/js7/1.js\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;\n',
@@ -51,8 +51,8 @@ const getSubmissionsMock = {
           challenge: {
             title: 'Sum of 1 Numbers'
           },
-          challengeId: '107',
-          lessonId: '5',
+          challengeId: 107,
+          lessonId: 5,
           user: {
             id: '6',
             username: 'newbie'

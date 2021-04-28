@@ -93,7 +93,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -137,7 +137,6 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/404.svg"
             width="1200"
           />
@@ -249,7 +248,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
       </div>
     </nav>
     <div
-      class="container"
+      class="container-md"
     >
       <div
         class="row mt-4"
@@ -422,7 +421,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
       </div>
     </nav>
     <div
-      class="container"
+      class="container-md"
     >
       <div
         class="row mt-4"

@@ -1,12 +1,16 @@
 # c0d3.com
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![CI](https://github.com/garageScript/c0d3.com/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/garageScript/c0d3-app/branch/master/graph/badge.svg)](https://codecov.io/gh/garageScript/c0d3-app)
 
-Repo for c0d3.com powered by NextJS. A website to train people to be full stack software engineers.
+Repo for c0d3.com powered by NextJS. A website to train people to be full stack
+software engineers.
 
 ## Prerequisites
 
@@ -15,7 +19,8 @@ Repo for c0d3.com powered by NextJS. A website to train people to be full stack 
 
 ## How to Start
 
-Follow [development setup guide](https://github.com/garageScript/c0d3-app/wiki/Development-Setup).
+Follow
+[development setup guide](https://github.com/garageScript/c0d3-app/wiki/Development-Setup).
 
 ## How to Use Storybook
 
@@ -31,11 +36,13 @@ Watch the video below to find out how to develop with TypeScript in React
 ### PR Criteria
 
 1. Before submitting your code run `yarn autofix`.
-2. When creating a new Component, include a StoryBook demo of the Component with the PR.
+2. When creating a new Component, include a StoryBook demo of the Component with
+   the PR.
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -71,4 +78,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
