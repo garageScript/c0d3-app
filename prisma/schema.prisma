@@ -44,12 +44,12 @@ model Challenge {
 
 model Lesson {
   id          Int          @id @default(autoincrement())
-  description String?
+  description String
   docUrl      String?      @db.VarChar(255)
   githubUrl   String?      @db.VarChar(255)
   videoUrl    String?      @db.VarChar(255)
-  order       Int?
-  title       String?      @db.VarChar(255)
+  order       Int
+  title       String       @db.VarChar(255)
   createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
