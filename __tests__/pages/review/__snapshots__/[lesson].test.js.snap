@@ -137,7 +137,6 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/404.svg"
             width="1200"
           />

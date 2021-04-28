@@ -11,7 +11,6 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -102,7 +101,6 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -192,7 +190,6 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -282,7 +279,6 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -335,7 +331,6 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -391,7 +386,6 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -444,7 +438,6 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />
@@ -497,7 +490,6 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
       <img
         class="align-self-center"
         height="165"
-        objectfit="contain"
         src="/assets/curriculum/undefined"
         width="116"
       />

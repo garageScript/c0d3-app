@@ -10,6 +10,7 @@
     "dev": "next --port $PORT",
     "build": "next build",
     "start": "next start",
+    "jest": "jest",
     "lint": "eslint . --ext .js --ext .ts --ext .tsx",
     "lint:fix": "yarn lint --fix && prettier --write ./scss/",
     "autofix": "yarn lint:fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",

@@ -36,7 +36,6 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
             <Image
               src={`/assets/errors/${code}.svg`}
               layout="responsive"
-              objectFit="contain"
               width={1200}
               height={1200}
             />
