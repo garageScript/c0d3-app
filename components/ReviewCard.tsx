@@ -18,6 +18,7 @@ import _ from 'lodash'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
+import { string } from 'yup'
 
 dayjs.extend(relativeTime)
 
@@ -30,9 +31,11 @@ type DiffViewProps = {
 }
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
-
 export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
   const files = gitDiffParser.parse(diff)
+  console.log(files,'files')
+  const [state, setState] = useState(files)
+  console.log(files, 'files')
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: String[] = []
@@ -50,15 +53,27 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 
     const syntaxHighlight = (str: string): any => {
       if (!str) return
-
+      const comment = str.split('|||foobar')
       const language = Prism.highlight(
         str,
         Prism.languages[extension],
         extension
       )
-      return <span dangerouslySetInnerHTML={{ __html: language }} />
+      console.log(str, str.split('|||foobar'))
+      return (
+        <>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: comment[1] ? comment[0] : language
+            }}
+          />
+          {comment[1] && (
+            <div style={{ backgroundColor: 'white' }}> FOOBAR</div>
+          )}
+        </>
+      )
     }
-
+    console.log(newValue, 'newlines')
     return (
       <ReactDiffViewer
         key={_.uniqueId()}
@@ -66,11 +81,14 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
         renderContent={syntaxHighlight}
         splitView={false}
         leftTitle={`${newPath}`}
+        onLineNumberClick={n => {
+          console.log(n)
+        }}
       />
     )
   }
 
-  return <>{files.map(renderFile)}</>
+  return <>{state.map(renderFile)}</>
 }
 
 const MemoDiffView = memo(DiffView)
@@ -114,7 +132,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <MemoDiffView diff={diff} />
+              <DiffView diff={diff} />
             </div>
           </div>
 
