@@ -127,7 +127,7 @@ const UserProfile: React.FC = () => {
   )
 
   return (
-    <Layout>
+    <Layout title={userInfo.username}>
       <div className="row mt-4">
         <div className="mb-3 mb-md-0 col-md-4">
           <ProfileImageInfo user={userInfo} />

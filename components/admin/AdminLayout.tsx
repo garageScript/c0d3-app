@@ -5,7 +5,11 @@ import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
 import { useRouter } from 'next/router'
-export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
+export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
+  data,
+  children,
+  title
+}) => {
   const router = useRouter()
   const { loading, error, session } = data
 
@@ -23,7 +27,7 @@ export const AdminLayout: React.FC<GetAppProps> = ({ data, children }) => {
 
   if (!isAdmin) {
     return (
-      <Layout>
+      <Layout title={title}>
         <h1>You must be admin to access this page</h1>
       </Layout>
     )

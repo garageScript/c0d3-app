@@ -155,7 +155,7 @@ const SignUpPage: React.FC = () => {
     setIsSubmitting(false)
   }
   return (
-    <Layout>
+    <Layout title="Sign up">
       <Signup
         handleSubmit={handleSubmit}
         isLoading={isSubmitting}

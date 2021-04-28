@@ -49,7 +49,7 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const isPassed = !!currentLessonStatus.isTeaching
   return (
     <div>
-      <Layout>
+      <Layout title={`${currentLesson.title}`}>
         <div className="row mt-4">
           {currentLesson && (
             <div className="challenges-container">

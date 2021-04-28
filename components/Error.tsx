@@ -18,7 +18,7 @@ const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
 
 const Error: React.FC<ErrorProps> = ({ code, message }) => {
   return (
-    <Layout>
+    <Layout title={errorTitle[code]}>
       <div className="container">
         <div className="row">
           <div className="d-flex col-sm-3 align-items-center justify-content-center">

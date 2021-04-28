@@ -10,7 +10,7 @@ const Lessons: React.FC<GetAppProps> = ({ data }) => {
   const [lessonsList, setLessons] = useState<null | Lesson[]>(null)
   const { lessons } = data
   return (
-    <AdminLayout data={data}>
+    <AdminLayout data={data} title="Admin lessons">
       <div className="row mt-4">
         <AdminLessonsSideBar
           setLessons={setLessons}
