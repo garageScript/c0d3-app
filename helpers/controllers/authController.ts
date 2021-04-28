@@ -148,9 +148,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
     let newUser = await prisma.user.create({
       data: {
         name,
-        username,
-        email,
-        password
+        username
       }
     })
 
