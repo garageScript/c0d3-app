@@ -66,7 +66,6 @@ const LessonCard: React.FC<Props> = props => {
         <Image
           src={`/assets/curriculum/${props.coverImg}`}
           alt={props.coverImg}
-          objectFit="contain"
           className="align-self-center"
           width="116"
           height="165"

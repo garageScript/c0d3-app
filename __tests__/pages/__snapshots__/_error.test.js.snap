@@ -121,7 +121,6 @@ exports[`_error page Should capture error when component is loading 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/500.svg"
             width="1200"
           />
@@ -260,7 +259,6 @@ exports[`_error page Should return Error 500 component 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/500.svg"
             width="1200"
           />

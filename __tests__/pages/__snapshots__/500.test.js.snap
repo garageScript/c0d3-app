@@ -121,7 +121,6 @@ exports[`500 Error Page should render 1`] = `
           <img
             height="1200"
             layout="responsive"
-            objectfit="contain"
             src="/assets/errors/500.svg"
             width="1200"
           />
