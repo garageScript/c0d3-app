@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LessonTitleCard component Should render default layout for wider screens 1`] = `
+exports[`LessonTitleCard component on Curriculum Page Should render default layout for wider screens 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
@@ -63,7 +63,7 @@ exports[`LessonTitleCard component Should render default layout for wider screen
 </div>
 `;
 
-exports[`LessonTitleCard component Should show challenges on click on mobile devices 1`] = `
+exports[`LessonTitleCard component on Curriculum Page Should show challenges on click on mobile devices 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
@@ -113,6 +113,132 @@ exports[`LessonTitleCard component Should show challenges on click on mobile dev
         >
           SHOW CHALLENGES
         </div>
+        <a
+          class="btn border-right rounded-0 px-4 py-3"
+          href="/review/0"
+        >
+          REVIEW
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LessonTitleCard component on Review Page Should render default layout for all screens 1`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+  >
+    <div
+      class="card-body p-0"
+    >
+      <div
+        class="d-flex mb-3 px-3"
+      >
+        <img
+          alt="lesson-cover"
+          class="lessonTitleCard__lesson-cover mr-3"
+          src="/assets/curriculum/coverUrl"
+        />
+        <div>
+          <p
+            class="m-0"
+          >
+            <a
+              class=""
+              href="/curriculum"
+            >
+              Go Back
+            </a>
+          </p>
+          <h1
+            class="lessonTitleCard__lesson-title"
+          >
+            Test Lesson
+          </h1>
+        </div>
+      </div>
+      <div
+        class="card-footer bg-white p-0"
+      >
+        <a
+          class="btn border-right rounded-0 px-4 py-3"
+          href="lessonUrl"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          LESSON
+        </a>
+        <a
+          class="btn border-right rounded-0 px-4 py-3"
+          href="/curriculum/0"
+        >
+          CHALLENGES
+        </a>
+        <a
+          class="btn border-right rounded-0 px-4 py-3"
+          href="/review/0"
+        >
+          REVIEW
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LessonTitleCard component on Review Page Should render default layout for all screens 2`] = `
+<div>
+  <div
+    class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+  >
+    <div
+      class="card-body p-0"
+    >
+      <div
+        class="d-flex mb-3 px-3"
+      >
+        <img
+          alt="lesson-cover"
+          class="lessonTitleCard__lesson-cover mr-3"
+          src="/assets/curriculum/coverUrl"
+        />
+        <div>
+          <p
+            class="m-0"
+          >
+            <a
+              class=""
+              href="/curriculum"
+            >
+              Go Back
+            </a>
+          </p>
+          <h1
+            class="lessonTitleCard__lesson-title"
+          >
+            Test Lesson
+          </h1>
+        </div>
+      </div>
+      <div
+        class="card-footer bg-white p-0"
+      >
+        <a
+          class="btn border-right rounded-0 px-4 py-3"
+          href="lessonUrl"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          LESSON
+        </a>
+        <a
+          class="btn border-right rounded-0 px-4 py-3"
+          href="/curriculum/0"
+        >
+          CHALLENGES
+        </a>
         <a
           class="btn border-right rounded-0 px-4 py-3"
           href="/review/0"
