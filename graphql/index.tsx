@@ -58,12 +58,12 @@ export type Challenge = {
 export type Lesson = {
   __typename?: 'Lesson'
   id: Scalars['Int']
-  description?: Maybe<Scalars['String']>
+  description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  title: Scalars['String']
   challenges?: Maybe<Array<Maybe<Challenge>>>
   users?: Maybe<Array<Maybe<User>>>
   currentUser?: Maybe<User>
@@ -1066,16 +1066,12 @@ export type LessonResolvers<
   ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
     ParentType,

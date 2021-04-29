@@ -3,16 +3,13 @@ import session from 'express-session'
 import nextConnect from 'next-connect'
 import userMiddleware from '../../helpers/middleware/user'
 import loggingMiddleware from '../../helpers/middleware/logger'
-import db from '../../helpers/dbload'
 import typeDefs from '../../graphql/typeDefs'
 import resolvers from '../../graphql/resolvers'
-import connectSequelize from 'connect-session-sequelize'
+import { PrismaSessionStore } from '@quixo3/prisma-session-store'
+import { prisma } from '../../prisma'
 
-// Sequelize Store for express-sessions
-const { sequelize } = db
-const SequelizeStore = connectSequelize(session.Store)
-
-const ONE_WEEK = 1000 * 60 * 60 * 24 * 7
+const ONE_DAY = 1000 * 60 * 60 * 24
+const ONE_WEEK = ONE_DAY * 7
 
 const handler: any = nextConnect() // For session middleware. TODO: Need to define types for Session
 const apolloServer = new ApolloServer({
@@ -31,8 +28,10 @@ handler
   .use(
     session({
       secret: process.env.SESSION_SECRET || '',
-      store: new SequelizeStore({
-        db: sequelize
+      store: new PrismaSessionStore(prisma, {
+        dbRecordIdIsSessionId: true,
+        dbRecordIdFunction: undefined,
+        checkPeriod: ONE_DAY
       }),
       resave: false,
       saveUninitialized: false,
