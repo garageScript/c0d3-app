@@ -145,12 +145,12 @@ export default gql`
 
   type Lesson {
     id: Int!
-    description: String
+    description: String!
     docUrl: String
     githubUrl: String
     videoUrl: String
-    order: Int
-    title: String
+    order: Int!
+    title: String!
     challenges: [Challenge]
     users: [User]
     currentUser: User
