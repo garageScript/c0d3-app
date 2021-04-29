@@ -78,7 +78,7 @@
     "mailgun-js": "^0.22.0",
     "markdown-to-jsx": "^7.1.1",
     "nanoid": "^3.1.20",
-    "next": "^10.0.6",
+    "next": "^10.2.0",
     "next-connect": "^0.10.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
