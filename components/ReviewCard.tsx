@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/client'
 
-import React, { memo, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import ReactDiffViewer from 'react-diff-viewer'
@@ -18,7 +18,6 @@ import _ from 'lodash'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
-import { string } from 'yup'
 
 dayjs.extend(relativeTime)
 
@@ -29,37 +28,64 @@ type ReviewCardProps = {
 type DiffViewProps = {
   diff?: string
 }
-
+const CommentBox: React.FC = () => {
+  const [comments, setComments] = useState<String[]>([])
+  const [input, setInput] = useState('')
+  return (
+    <div className="commentBox bg-white">
+      {comments.map(c => (
+        <p>{c}</p>
+      ))}
+      <input
+        type="text"
+        className="commentBox__input d-block"
+        onChange={e => {
+          setInput(e.target.value)
+        }}
+        value={input}
+      />
+      <button
+        className="button"
+        onClick={() => {
+          setComments([...comments, input])
+          setInput('')
+        }}
+      >
+        Comment
+      </button>
+    </div>
+  )
+}
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
   const files = gitDiffParser.parse(diff)
-  console.log(files,'files')
-  const [state, setState] = useState(files)
-  console.log(files, 'files')
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: String[] = []
-    if (!hunks.length || !newPath) return
+    const [innerState, setInnerState] = React.useState<String[]>([])
     let extension = newPath.split('.').pop() || prismLanguages[0]
-    if (!prismLanguages.includes(extension)) {
-      extension = 'javascript'
-    }
+    useEffect(() => {
+      if (!hunks.length || !newPath) return
+      if (!prismLanguages.includes(extension)) {
+        extension = 'javascript'
+      }
 
-    hunks.forEach(hunk => {
-      hunk.changes.forEach(change => {
-        if (!change.isDelete) newValue.push(change.content)
+      hunks.forEach(hunk => {
+        hunk.changes.forEach(change => {
+          if (!change.isDelete) newValue.push(change.content)
+        })
       })
-    })
+      setInnerState(newValue)
+    }, [])
 
     const syntaxHighlight = (str: string): any => {
       if (!str) return
-      const comment = str.split('|||foobar')
+      const comment = str.split('|||withComment')
       const language = Prism.highlight(
         str,
         Prism.languages[extension],
         extension
       )
-      console.log(str, str.split('|||foobar'))
       return (
         <>
           <span
@@ -67,28 +93,31 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
               __html: comment[1] ? comment[0] : language
             }}
           />
-          {comment[1] && (
-            <div style={{ backgroundColor: 'white' }}> FOOBAR</div>
-          )}
+          {comment[1] && <CommentBox />}
         </>
       )
     }
-    console.log(newValue, 'newlines')
     return (
       <ReactDiffViewer
         key={_.uniqueId()}
-        newValue={newValue.join('\n')}
+        newValue={innerState.join('\n')}
         renderContent={syntaxHighlight}
         splitView={false}
         leftTitle={`${newPath}`}
         onLineNumberClick={n => {
-          console.log(n)
+          innerState.map((s, i) => {
+            if (i + 1 === Number.parseInt(n.split('-')[1])) {
+              const copy = [...innerState]
+              copy[i] = innerState[i] + `|||withComment|||${i + 1}`
+              setInnerState(copy)
+            }
+          })
         }}
       />
     )
   }
 
-  return <>{state.map(renderFile)}</>
+  return <>{files.map(renderFile)}</>
 }
 
 const MemoDiffView = memo(DiffView)
