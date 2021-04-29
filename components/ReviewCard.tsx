@@ -87,13 +87,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ username, name }) => {
   return (
     <a
       className={`${styles['comment_author']} mt-2 d-block`}
-      href={`/profile/${username}`}
+      href={username ? `/profile/${username}` : undefined}
     >
       <div className="d-inline">{`${firstName} ${
-        lastName ? lastName : ''
+        lastName ? `${lastName} ` : ''
       }`}</div>
       <div className="d-inline text-muted">
-        {username ? '@' + username : 'Anonymous user'}
+        {username ? ' @' + username : ''}
       </div>
     </a>
   )
