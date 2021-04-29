@@ -76,12 +76,15 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 }
 
 const MemoDiffView = memo(DiffView)
-type UserProfileProps = {
+type ReviewerProfileProps = {
   username: string | undefined | null
   name: string | undefined | null
 }
-const UserProfile: React.FC<UserProfileProps> = ({ username, name }) => {
-  //TO-DO fix User type to make these fields non-nulled
+const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
+  username,
+  name
+}) => {
+  //TO-DO fix User type to make these fields non-nullable
   const firstName = name ? name.split(' ')[0] : ''
   const lastName = name ? name.split(' ')[1] : ''
   return (
@@ -146,7 +149,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             {comment && (
               <div>
                 <Markdown>{comment}</Markdown>
-                <UserProfile
+                <ReviewerProfile
                   username={reviewer?.username}
                   name={reviewer?.name}
                 />
