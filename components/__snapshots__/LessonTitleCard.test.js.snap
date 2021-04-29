@@ -21,8 +21,7 @@ exports[`LessonTitleCard component on Curriculum Page Should render default layo
             class="m-0"
           >
             <a
-              class=""
-              href="/curriculum"
+              href=""
             >
               Go Back
             </a>
@@ -84,8 +83,7 @@ exports[`LessonTitleCard component on Curriculum Page Should show challenges on 
             class="m-0"
           >
             <a
-              class=""
-              href="/curriculum"
+              href=""
             >
               Go Back
             </a>
@@ -146,8 +144,7 @@ exports[`LessonTitleCard component on Review Page Should render default layout f
             class="m-0"
           >
             <a
-              class=""
-              href="/curriculum"
+              href=""
             >
               Go Back
             </a>
@@ -209,8 +206,7 @@ exports[`LessonTitleCard component on Review Page Should render default layout f
             class="m-0"
           >
             <a
-              class=""
-              href="/curriculum"
+              href=""
             >
               Go Back
             </a>

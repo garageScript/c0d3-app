@@ -121,8 +121,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                     class="m-0"
                   >
                     <a
-                      class=""
-                      href="/curriculum"
+                      href=""
                     >
                       Go Back
                     </a>
@@ -683,8 +682,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                     class="m-0"
                   >
                     <a
-                      class=""
-                      href="/curriculum"
+                      href=""
                     >
                       Go Back
                     </a>
