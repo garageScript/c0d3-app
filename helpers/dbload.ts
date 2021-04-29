@@ -14,6 +14,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     logging: false,
+    sync: { alter: false },
     port: parseInt(process.env.DB_PORT as string),
     dialect: 'postgres',
     pool: {
@@ -96,7 +97,8 @@ UserLesson.belongsTo(User, {
   as: 'user'
 })
 
-sequelize.sync({ alter: !!process.env.ALTER_DB })
+// Calling this method causes Sequelize to alter the DB, undoing changes from Prisma migrations
+// sequelize.sync({ alter: !!process.env.ALTER_DB })
 
 export default {
   Lesson,
