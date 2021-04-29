@@ -9392,7 +9392,7 @@ if you have questions, don't hesitate to reach out in the chat.
         <div
           className="d-inline"
         >
-          Admin Admin 
+          Admin Admin
         </div>
         <div
           className="d-inline text-muted"
@@ -11317,7 +11317,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         <div
           className="d-inline"
         >
-          Admin Admin 
+          Admin Admin
         </div>
         <div
           className="d-inline text-muted"

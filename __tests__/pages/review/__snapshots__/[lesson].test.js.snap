@@ -1705,7 +1705,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   <div
                     class="d-inline"
                   >
-                    Admin Admin 
+                    Admin Admin
                   </div>
                   <div
                     class="d-inline text-muted"

@@ -86,15 +86,13 @@ const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
 }) => {
   //TO-DO fix User type to make these fields non-nullable
   const firstName = name ? name.split(' ')[0] : ''
-  const lastName = name ? name.split(' ')[1] : ''
+  const lastName = name?.split(' ')[1] ?? ''
   return (
     <a
       className={`${styles['comment_author']} mt-2 d-block`}
       href={username ? `/profile/${username}` : undefined}
     >
-      <div className="d-inline">{`${firstName} ${
-        lastName ? `${lastName} ` : ''
-      }`}</div>
+      <div className="d-inline">{`${firstName} ${lastName}`}</div>
       <div className="d-inline text-muted">
         {username ? ' @' + username : ''}
       </div>
