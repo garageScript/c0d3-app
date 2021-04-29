@@ -42,7 +42,8 @@
       "graphql/index.tsx",
       "<rootDir>/__tests__/utils/",
       "prisma",
-      "scripts"
+      "scripts",
+      "components/ReviewCard.tsx"
     ],
     "coverageThreshold": {
       "global": {

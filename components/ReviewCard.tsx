@@ -28,20 +28,29 @@ type ReviewCardProps = {
 type DiffViewProps = {
   diff?: string
 }
-const CommentBox: React.FC = () => {
+const CommentBox: React.FC<{
+  line: number
+  newPath: string
+  files: File[]
+}> = ({ line, newPath, files }) => {
   const [comments, setComments] = useState<String[]>([])
   const [input, setInput] = useState('')
+  const updateFile = (_line: number, _newPath: string, _files: File[]) => {
+    //iterate over files and create updated diff by adding to line '|||withComment|||commentInfo
+    //send the diff back to server with createSubmission mutation
+  }
   return (
     <div className="commentBox bg-white">
       {comments.map(c => (
-        <p>{c}</p>
+        <p key={c.valueOf()}>{c}</p>
       ))}
       <input
         type="text"
-        className="commentBox__input d-block"
+        className="d-block"
         onChange={e => {
           setInput(e.target.value)
         }}
+        id="commentBox__input"
         value={input}
       />
       <button
@@ -49,9 +58,10 @@ const CommentBox: React.FC = () => {
         onClick={() => {
           setComments([...comments, input])
           setInput('')
+          updateFile(line, newPath, files)
         }}
       >
-        Comment
+        <label htmlFor="commentBox__input">Comment</label>
       </button>
     </div>
   )
@@ -64,12 +74,11 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
     const newValue: String[] = []
     const [innerState, setInnerState] = React.useState<String[]>([])
     let extension = newPath.split('.').pop() || prismLanguages[0]
+    if (!hunks.length || !newPath) return
+    if (!prismLanguages.includes(extension)) {
+      extension = 'javascript'
+    }
     useEffect(() => {
-      if (!hunks.length || !newPath) return
-      if (!prismLanguages.includes(extension)) {
-        extension = 'javascript'
-      }
-
       hunks.forEach(hunk => {
         hunk.changes.forEach(change => {
           if (!change.isDelete) newValue.push(change.content)
@@ -93,7 +102,13 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
               __html: comment[1] ? comment[0] : language
             }}
           />
-          {comment[1] && <CommentBox />}
+          {comment[1] && (
+            <CommentBox
+              line={Number.parseInt(comment[1].split('|||')[1])}
+              newPath={newPath}
+              files={files}
+            />
+          )}
         </>
       )
     }
@@ -105,7 +120,7 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
         splitView={false}
         leftTitle={`${newPath}`}
         onLineNumberClick={n => {
-          innerState.map((s, i) => {
+          innerState.map((_, i) => {
             if (i + 1 === Number.parseInt(n.split('-')[1])) {
               const copy = [...innerState]
               copy[i] = innerState[i] + `|||withComment|||${i + 1}`
@@ -161,7 +176,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <DiffView diff={diff} />
+              <MemoDiffView diff={diff} />
             </div>
           </div>
 
