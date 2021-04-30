@@ -117,7 +117,7 @@ model User {
   name                   String       @db.VarChar(255)
   username               String       @db.VarChar(255)
   password               String?      @db.VarChar(255)
-  email                  String       @db.VarChar(255) @unique
+  email                  String       @db.VarChar(255)
   gsId                   Int?
   isOnline               Boolean?
   createdAt              DateTime     @default(now()) @db.Timestamptz(6)
