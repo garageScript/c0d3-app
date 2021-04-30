@@ -1,6 +1,32 @@
 import React from 'react'
 import LessonTitleCard from './LessonTitleCard'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+
+const mockBack = jest.fn()
+
+jest.mock('next/router', () => ({
+  useRouter: () => ({
+    back: mockBack
+  })
+}))
+
+describe('LessonTitleCard Component', () => {
+  const props = {
+    lessonCoverUrl: 'coverUrl',
+    lessonUrl: 'lessonUrl',
+    lessonTitle: 'Test Lesson',
+    lessonId: '0',
+    isPassed: true
+  }
+
+  test('Go back should call router.back()', async () => {
+    const { container } = render(<LessonTitleCard {...props} />)
+    await waitFor(() => fireEvent.click(screen.getByText('Go Back')))
+    expect(mockBack).toHaveBeenCalled()
+    expect(container).toMatchSnapshot()
+  })
+})
+
 describe('LessonTitleCard component on Curriculum Page', () => {
   const setShow = jest.fn()
   const props = {

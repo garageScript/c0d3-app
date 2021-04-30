@@ -28,11 +28,10 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
           <div>
             <p className="m-0">
               <a
-                href=""
+                href="#"
                 onClick={e => {
                   // Link does not get correct styles without the href
-                  // Router does not work without preventing link's
-                  // default behaviour when using href
+                  // Prevent scroll to top before going back
                   e.preventDefault()
                   router.back()
                 }}
