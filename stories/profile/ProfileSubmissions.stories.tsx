@@ -13,6 +13,7 @@ const student = {
   id: 2,
   username: 'fakeusername',
   name: 'fake user',
+  email: 'student@fakemail.com',
   isAdmin: false
 }
 
@@ -20,6 +21,7 @@ const mentor = {
   id: 1,
   username: 'admin',
   name: 'Admin Admin',
+  email: 'mentor@fakemail.com',
   isAdmin: true
 }
 

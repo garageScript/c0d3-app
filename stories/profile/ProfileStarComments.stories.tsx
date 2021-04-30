@@ -14,6 +14,7 @@ const stars: StarType[] = [
       id: 1,
       name: 'Alexandra',
       username: 'ale',
+      email: 'ale@fakemail.com',
       isAdmin: false
     },
     lessonId: 23,
@@ -32,6 +33,7 @@ const stars: StarType[] = [
       id: 2,
       name: 'Charles',
       username: 'cko',
+      email: 'cko@fakemail.com',
       isAdmin: false
     },
     lessonId: 33,

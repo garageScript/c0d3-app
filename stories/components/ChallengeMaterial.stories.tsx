@@ -86,7 +86,13 @@ export const WithDiff: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1, isAdmin: false },
+        user: {
+          id: 1,
+          username: 'fakeuser',
+          name: 'fake user',
+          email: 'fake@fakemail.com',
+          isAdmin: false
+        },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -107,7 +113,13 @@ export const WithDiff: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1, isAdmin: false },
+        user: {
+          id: 1,
+          username: 'fakeuser',
+          name: 'fake user',
+          email: 'fake@fakemail.com',
+          isAdmin: false
+        },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -141,10 +153,18 @@ export const WithComments: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1, isAdmin: false },
+        user: {
+          id: 1,
+          username: 'fakeuser',
+          name: 'fake user',
+          email: 'fake@fakemail.com',
+          isAdmin: false
+        },
         reviewer: {
           id: 1,
           username: 'dan',
+          name: 'danny boy',
+          email: 'danny@fakemail.com',
           isAdmin: false
         },
         reviewerId: '1',
@@ -167,7 +187,13 @@ export const WithComments: React.FC = () => (
           order: 1,
           lessonId: 23
         },
-        user: { id: 1, isAdmin: false },
+        user: {
+          id: 1,
+          username: 'fakeuser',
+          name: 'fake user',
+          email: 'fake@fakemail.com',
+          isAdmin: false
+        },
         reviewerId: '',
         createdAt: '',
         updatedAt: Date.now().toString()
@@ -214,10 +240,18 @@ export const FinalChallenge: React.FC = () => (
             order: 1,
             lessonId: 23
           },
-          user: { id: 5, isAdmin: false },
+          user: {
+            id: 1,
+            username: 'fakeuser',
+            name: 'fake user',
+            email: 'fake@fakemail.com',
+            isAdmin: false
+          },
           reviewer: {
             id: 1,
             username: 'dan',
+            name: 'danny boy',
+            email: 'danny@fakemail.com',
             isAdmin: false
           },
           reviewerId: '1',
@@ -242,6 +276,9 @@ export const FinalChallenge: React.FC = () => (
           },
           user: {
             id: 1,
+            username: 'fakeuser',
+            name: 'fake user',
+            email: 'fake@fakemail.com',
             isAdmin: false
           },
           reviewerId: '',

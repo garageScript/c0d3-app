@@ -118,10 +118,10 @@ export default gql`
 
   type User {
     id: Int!
-    username: String
+    username: String!
     userLesson: UserLesson
-    email: String
-    name: String
+    email: String!
+    name: String!
     isAdmin: Boolean!
     cliToken: String
   }

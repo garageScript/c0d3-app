@@ -7426,7 +7426,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         <div
           className="d-inline"
         >
-           
+          fake reviewer
         </div>
         <div
           className="d-inline text-muted"
@@ -8396,17 +8396,17 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       </span>
       <a
         className="comment_author mt-2 d-block"
-        href="/profile/fake user"
+        href="/profile/admin"
       >
         <div
           className="d-inline"
         >
-          User 
+          Admin admin
         </div>
         <div
           className="d-inline text-muted"
         >
-           @fake user
+           @admin
         </div>
       </a>
     </div>
@@ -11318,6 +11318,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       </span>
       <a
         className="comment_author mt-2 d-block"
+        href="/profile/admin"
       >
         <div
           className="d-inline"
@@ -11327,7 +11328,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         <div
           className="d-inline text-muted"
         >
-          
+           @admin
         </div>
       </a>
     </div>

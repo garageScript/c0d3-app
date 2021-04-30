@@ -271,10 +271,10 @@ export type TokenResponse = {
 export type User = {
   __typename?: 'User'
   id: Scalars['Int']
-  username?: Maybe<Scalars['String']>
+  username: Scalars['String']
   userLesson?: Maybe<UserLesson>
-  email?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
+  email: Scalars['String']
+  name: Scalars['String']
   isAdmin: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
 }
@@ -1324,14 +1324,14 @@ export type UserResolvers<
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  username?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   userLesson?: Resolver<
     Maybe<ResolversTypes['UserLesson']>,
     ParentType,
     ContextType
   >
-  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
