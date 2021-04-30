@@ -7426,7 +7426,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         <div
           className="d-inline"
         >
-           
+          fake reviewer
         </div>
         <div
           className="d-inline text-muted"
