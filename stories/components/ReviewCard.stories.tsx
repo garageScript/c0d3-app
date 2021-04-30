@@ -94,7 +94,12 @@ export const NoLastName: React.FC = () => (
     <ReviewCard
       submissionData={{
         ...submissionData,
-        reviewer: { ...user, name: 'User' },
+        reviewer: {
+          ...user,
+          name: 'Admin admin',
+          username: 'admin',
+          email: 'admin@fakemail.com'
+        },
         updatedAt: ''
       }}
     />
@@ -115,7 +120,12 @@ export const WithoutUsername: React.FC = () => (
     <ReviewCard
       submissionData={{
         ...submissionData,
-        reviewer: { ...user, username: null, name: 'Admin Admin' }
+        reviewer: {
+          ...user,
+          username: 'admin',
+          name: 'Admin Admin',
+          email: 'admin@fakemail.com'
+        }
       }}
     />
   </MockedProvider>
@@ -128,7 +138,8 @@ export const WithLongComment: React.FC = () => (
         reviewer: {
           ...user,
           name: 'Admin Admin',
-          username: 'admin'
+          username: 'admin',
+          email: 'admin@fakemail.com'
         },
         comment: `You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
 
