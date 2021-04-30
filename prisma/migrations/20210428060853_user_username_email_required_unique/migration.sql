@@ -12,9 +12,3 @@
 ALTER TABLE "users" ALTER COLUMN "name" SET NOT NULL,
 ALTER COLUMN "username" SET NOT NULL,
 ALTER COLUMN "email" SET NOT NULL;
-
--- CreateIndex
-CREATE UNIQUE INDEX "users.username_unique" ON "users"("username");
-
--- CreateIndex
-CREATE UNIQUE INDEX "users.email_unique" ON "users"("email");
