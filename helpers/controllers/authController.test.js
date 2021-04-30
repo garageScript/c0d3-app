@@ -1,10 +1,8 @@
 jest.mock('bcrypt')
 jest.mock('mailgun-js')
-jest.mock('../dbload')
 jest.mock('../mattermost')
 jest.mock('../mail')
 import bcrypt from 'bcrypt'
-import db from '../dbload'
 import { login, logout, signup, isTokenValid } from './authController'
 import { chatSignUp } from '../mattermost'
 import { prisma } from '../../prisma'

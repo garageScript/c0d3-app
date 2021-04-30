@@ -34,8 +34,8 @@
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
       "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs).ts",
-      "!graphql/schema.ts"
+      "!graphql/(resolvers|typeDefs|schema).ts",
+      "!graphql/queries/*.ts"
     ],
     "coveragePathIgnorePatterns": [
       "stories",
@@ -91,7 +91,6 @@
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "sass": "^1.32.12",
-    "sequelize": "^5.22.3",
     "winston": "^3.3.3",
     "winston-transport-sentry-node": "^1.0.2",
     "yup": "^0.32.8"
