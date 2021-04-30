@@ -160,8 +160,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
   // set currently selected lesson
   const lesson = lessons[selectedLesson] ? lessons[selectedLesson] : lessons[0]
 
-  //TO-DO change Lesson type to include non-nullable Int id field
-  const lessonId = parseInt(lesson.id + '')
+  const lessonId = lesson.id
 
   return (
     <div className="col-8 text-center" key={_.uniqueId()}>
