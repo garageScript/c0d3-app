@@ -75,6 +75,7 @@ model Star {
   mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
   student   User     @relation("starStudent", fields: [studentId], references: [id])
 
+  @@unique([studentId, lessonId])
   @@map("stars")
 }
 

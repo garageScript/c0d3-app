@@ -57,13 +57,13 @@ export default gql`
     ): [Lesson]
     updateLesson(
       id: Int!
-      description: String
+      description: String!
       docUrl: String
       githubUrl: String
       videoUrl: String
-      title: String
+      title: String!
       chatUrl: String
-      order: Int
+      order: Int!
     ): [Lesson]
     createChallenge(
       lessonId: Int!

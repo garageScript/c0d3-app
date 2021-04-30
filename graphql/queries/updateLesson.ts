@@ -7,9 +7,9 @@ const UPDATE_LESSON = gql`
     $githubUrl: String
     $videoUrl: String
     $chatUrl: String
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
   ) {
     updateLesson(
       docUrl: $docUrl

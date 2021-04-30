@@ -1,15 +1,11 @@
-jest.mock('../dbload')
 jest.mock('../mattermost')
 jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
-import db from '../dbload'
-import { createLesson, updateLesson } from './lessonsController'
+import { lessons } from '../../graphql/queryResolvers/lessons'
+import { prisma } from '../../prisma'
 import lessonData from '../../__dummy__/lessonData'
 import { validateLessonId } from '../validateLessonId'
-import { lessons } from '../../graphql/queryResolvers/lessons'
-
-lessons.mockReturnValue(lessonData)
-const { Lesson } = db
+import { createLesson, updateLesson } from './lessonsController'
 
 const mockLessonData = {
   lessonId: 5,
@@ -23,9 +19,9 @@ const mockLessonData = {
   chatUrl: ''
 }
 
-Lesson.findAll.mockReturnValue(lessonData)
-Lesson.update.mockReturnValue(() => {})
-Lesson.build.mockReturnValue({ save: () => {} })
+lessons.mockReturnValue(lessonData)
+prisma.lesson.update = jest.fn()
+prisma.lesson.create = jest.fn()
 
 describe('Lessons controller tests', () => {
   beforeEach(() => {
