@@ -21,6 +21,7 @@ const stars: StarType[] = [
     lesson: {
       id: 4,
       title: 'Objects',
+      description: 'Objects description',
       order: 3
     },
     comment:
@@ -39,6 +40,7 @@ const stars: StarType[] = [
     lesson: {
       id: 3,
       title: 'End to End',
+      description: 'End to End description',
       order: 5
     },
     comment: "Objects ain't easy, but thanks to you, they're now lemon squeezy."
