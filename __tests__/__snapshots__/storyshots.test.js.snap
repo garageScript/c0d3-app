@@ -4687,7 +4687,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
-            href=""
+            href="#"
             onClick={[Function]}
           >
             Go Back
@@ -4744,7 +4744,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
           className="m-0"
         >
           <a
-            href=""
+            href="#"
             onClick={[Function]}
           >
             Go Back
@@ -15351,7 +15351,7 @@ Array [
                 className="m-0"
               >
                 <a
-                  href=""
+                  href="#"
                   onClick={[Function]}
                 >
                   Go Back

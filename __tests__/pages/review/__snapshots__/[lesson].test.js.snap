@@ -272,7 +272,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                   class="m-0"
                 >
                   <a
-                    href=""
+                    href="#"
                   >
                     Go Back
                   </a>
@@ -444,7 +444,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   class="m-0"
                 >
                   <a
-                    href=""
+                    href="#"
                   >
                     Go Back
                   </a>
