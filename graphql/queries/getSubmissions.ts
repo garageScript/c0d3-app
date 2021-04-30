@@ -16,6 +16,11 @@ const GET_SUBMISSIONS = gql`
         id
         username
       }
+      reviewer {
+        id
+        username
+        name
+      }
       createdAt
       updatedAt
     }

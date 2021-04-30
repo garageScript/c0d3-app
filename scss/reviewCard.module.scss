@@ -1,0 +1,8 @@
+.comment_author {
+  font-size: 1.25rem;
+  color: black;
+  &:hover {
+    color: black;
+    text-decoration-color: gray;
+  }
+}
