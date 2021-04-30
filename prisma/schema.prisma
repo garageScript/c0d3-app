@@ -115,7 +115,7 @@ model UserLesson {
 model User {
   id                     Int          @id @default(autoincrement())
   name                   String       @db.VarChar(255)
-  username               String       @db.VarChar(255) @unique
+  username               String       @db.VarChar(255)
   password               String?      @db.VarChar(255)
   email                  String       @db.VarChar(255) @unique
   gsId                   Int?
