@@ -1,37 +1,27 @@
-import db from '../dbload'
 import { Context } from '../../@types/helpers'
-import _ from 'lodash'
-import { isAdmin } from '../isAdmin'
+import type {
+  CreateLessonMutation,
+  CreateLessonMutationVariables,
+  UpdateLessonMutation,
+  UpdateLessonMutationVariables
+} from '../../graphql'
 import { lessons } from '../../graphql/queryResolvers/lessons'
+import { prisma } from '../../prisma'
+import { isAdmin } from '../isAdmin'
 import { validateLessonId } from '../validateLessonId'
-const { Lesson } = db
-
-type lessonData = {
-  id: number
-  order: number
-  description: string
-  docUrl: string
-  githubUrl: string
-  videoUrl: string
-  title: string
-  chatUrl: string
-}
 
 export const createLesson = async (
   _parent: void,
-  arg: lessonData,
+  arg: CreateLessonMutationVariables,
   ctx: Context
-) => {
+): Promise<CreateLessonMutation['createLesson']> => {
   const { req } = ctx
   try {
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-    const newLesson = Lesson.build(arg)
-
-    await newLesson.save()
-
-    return await lessons()
+    await prisma.lesson.create({ data: arg })
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }
@@ -39,22 +29,18 @@ export const createLesson = async (
 
 export const updateLesson = async (
   _parent: void,
-  arg: lessonData,
+  arg: UpdateLessonMutationVariables,
   ctx: Context
-) => {
+): Promise<UpdateLessonMutation['updateLesson']> => {
   const { req } = ctx
   try {
     if (!isAdmin(req)) {
       throw new Error('User is not an admin')
     }
-
-    const { id } = arg
-
+    const { id, ...data } = arg
     await validateLessonId(id)
-
-    await Lesson.update(arg, { where: { id } })
-
-    return await lessons()
+    await prisma.lesson.update({ where: { id }, data })
+    return lessons()
   } catch (err) {
     throw new Error(err)
   }
