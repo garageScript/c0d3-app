@@ -163,13 +163,13 @@ export type MutationCreateLessonArgs = {
 
 export type MutationUpdateLessonArgs = {
   id: Scalars['Int']
-  description?: Maybe<Scalars['String']>
+  description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  order: Scalars['Int']
 }
 
 export type MutationCreateChallengeArgs = {
@@ -719,9 +719,9 @@ export type UpdateLessonMutationVariables = Exact<{
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
 }>
 
 export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
@@ -1178,7 +1178,10 @@ export type MutationResolvers<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateLessonArgs, 'id'>
+    RequireFields<
+      MutationUpdateLessonArgs,
+      'id' | 'description' | 'title' | 'order'
+    >
   >
   createChallenge?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -3091,9 +3094,9 @@ export const UpdateLessonDocument = gql`
     $githubUrl: String
     $videoUrl: String
     $chatUrl: String
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
   ) {
     updateLesson(
       docUrl: $docUrl
