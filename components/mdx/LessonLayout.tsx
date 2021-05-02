@@ -43,7 +43,7 @@ const LessonLayout: React.FC<LayoutProps> = props => {
   const lessonParts =
     props.subLessons &&
     props.subLessons.map((l, i) => {
-      const url = l.toLowerCase().split(' ').join('_')
+      const url = l.replace(',', '').toLowerCase().split(' ').join('_')
       return (
         <a
           className={`${styles['subtitle']} ${
