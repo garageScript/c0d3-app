@@ -57,13 +57,13 @@ export default gql`
     ): [Lesson]
     updateLesson(
       id: Int!
-      description: String
+      description: String!
       docUrl: String
       githubUrl: String
       videoUrl: String
-      title: String
+      title: String!
       chatUrl: String
-      order: Int
+      order: Int!
     ): [Lesson]
     createChallenge(
       lessonId: Int!
@@ -118,10 +118,10 @@ export default gql`
 
   type User {
     id: Int!
-    username: String
+    username: String!
     userLesson: UserLesson
-    email: String
-    name: String
+    email: String!
+    name: String!
     isAdmin: Boolean!
     cliToken: String
   }
@@ -145,12 +145,12 @@ export default gql`
 
   type Lesson {
     id: Int!
-    description: String
+    description: String!
     docUrl: String
     githubUrl: String
     videoUrl: String
-    order: Int
-    title: String
+    order: Int!
+    title: String!
     challenges: [Challenge]
     users: [User]
     currentUser: User

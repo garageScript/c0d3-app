@@ -9,11 +9,13 @@ datasource db {
 }
 
 model Session {
-  sid       String    @id @db.VarChar(36)
-  expires   DateTime? @db.Timestamptz(6)
-  data      String?
-  createdAt DateTime  @default(now()) @db.Timestamptz(6)
-  updatedAt DateTime  @updatedAt @db.Timestamptz(6)
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+
 }
 
 model Alert {
@@ -44,12 +46,12 @@ model Challenge {
 
 model Lesson {
   id          Int          @id @default(autoincrement())
-  description String?
+  description String
   docUrl      String?      @db.VarChar(255)
   githubUrl   String?      @db.VarChar(255)
   videoUrl    String?      @db.VarChar(255)
-  order       Int?
-  title       String?      @db.VarChar(255)
+  order       Int
+  title       String       @db.VarChar(255)
   createdAt   DateTime     @default(now()) @db.Timestamptz(6)
   updatedAt   DateTime     @updatedAt @db.Timestamptz(6)
   chatUrl     String?      @db.VarChar(255)
@@ -73,6 +75,7 @@ model Star {
   mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
   student   User     @relation("starStudent", fields: [studentId], references: [id])
 
+  @@unique([studentId, lessonId])
   @@map("stars")
 }
 
@@ -114,10 +117,10 @@ model UserLesson {
 
 model User {
   id                     Int          @id @default(autoincrement())
-  name                   String?      @db.VarChar(255)
-  username               String?      @db.VarChar(255)
+  name                   String       @db.VarChar(255)
+  username               String       @db.VarChar(255)
   password               String?      @db.VarChar(255)
-  email                  String?      @db.VarChar(255)
+  email                  String       @db.VarChar(255)
   gsId                   Int?
   isOnline               Boolean?
   createdAt              DateTime     @default(now()) @db.Timestamptz(6)

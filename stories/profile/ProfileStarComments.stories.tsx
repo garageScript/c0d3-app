@@ -14,12 +14,14 @@ const stars: StarType[] = [
       id: 1,
       name: 'Alexandra',
       username: 'ale',
+      email: 'ale@fakemail.com',
       isAdmin: false
     },
     lessonId: 23,
     lesson: {
       id: 4,
       title: 'Objects',
+      description: 'Objects description',
       order: 3
     },
     comment:
@@ -31,12 +33,14 @@ const stars: StarType[] = [
       id: 2,
       name: 'Charles',
       username: 'cko',
+      email: 'cko@fakemail.com',
       isAdmin: false
     },
     lessonId: 33,
     lesson: {
       id: 3,
       title: 'End to End',
+      description: 'End to End description',
       order: 5
     },
     comment: "Objects ain't easy, but thanks to you, they're now lemon squeezy."

@@ -1,10 +1,11 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import ReviewCard, { DiffView } from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
 import _ from 'lodash'
+import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
 // correct javascript submission
 const JsDiff =
@@ -121,5 +122,33 @@ describe('ReviewCard Component', () => {
     userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
     userEvent.click(getByRole('button', { name: 'Accept' }))
     expect(container).toMatchSnapshot()
+  })
+  test('Should render reviewer with name', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{
+            ...submissionData,
+            reviewer: {
+              name: 'Admin admin'
+            }
+          }}
+        />
+      </MockedProvider>
+    )
+    expect(screen.queryByText('undefined')).toBeFalsy()
+  })
+  test('Should render submission without timestamp', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{
+            ...submissionData,
+            updatedAt: null
+          }}
+        />
+      </MockedProvider>
+    )
+    expect(screen.getByText('51 years ago')).toBeVisible()
   })
 })

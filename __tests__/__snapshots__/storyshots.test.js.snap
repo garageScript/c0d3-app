@@ -2712,6 +2712,7 @@ Array [
             className="img-fluid"
             height={1200}
             layout="responsive"
+            objectFit="contain"
             src="/assets/errors/500.svg"
             width={1200}
           />
@@ -2875,6 +2876,7 @@ Array [
             className="img-fluid"
             height={1200}
             layout="responsive"
+            objectFit="contain"
             src="/assets/errors/404.svg"
             width={1200}
           />
@@ -4441,6 +4443,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       alt="js-4-cover.svg"
       className="img-fluid"
       height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
       width="116"
     />
@@ -4499,6 +4502,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       alt="js-4-cover.svg"
       className="img-fluid"
       height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
       width="116"
     />
@@ -4600,6 +4604,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       alt="js-4-cover.svg"
       className="img-fluid"
       height="165"
+      objectFit="contain"
       src="/assets/curriculum/js-4-cover.svg"
       width="116"
     />
@@ -6534,7 +6539,8 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   >
     <h4>
       fake user
-       - 
+       -
+       
       <span
         className="text-primary"
       >
@@ -6581,9 +6587,26 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <span>
-      Some comment
-    </span>
+    <div>
+      <span>
+        Some comment
+      </span>
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/fake reviewer"
+      >
+        <div
+          className="d-inline"
+        >
+          fake reviewer
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @fake reviewer
+        </div>
+      </a>
+    </div>
     <div
       style={
         Object {
@@ -6654,6 +6677,319 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
 
 exports[`Storyshots Components/ReviewCard No Diff Card 1`] = `""`;
 
+exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
+<div
+  className="card shadow-sm border-0 mt-3"
+>
+  <div
+    className="card-header bg-white"
+  >
+    <h4>
+      fake user
+       -
+       
+      <span
+        className="text-primary"
+      >
+        fake challenge
+      </span>
+    </h4>
+    <div
+      style={
+        Object {
+          "color": "#8e8e8e",
+          "fontSize": "0.85rem",
+        }
+      }
+    >
+      51 years ago
+    </div>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="rounded-lg overflow-hidden"
+    >
+      <table
+        className="css-1n5o7vh-diff-container"
+      >
+        <tbody>
+          <tr>
+            <td
+              className="css-17uc4if-title-block"
+              colSpan={4}
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                js7/1.js
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    className="card-footer bg-white"
+  >
+    <div>
+      <span>
+        Some comment
+      </span>
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin admin
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Accept
+    </button>
+    <button
+      className="btn bg-danger m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Reject
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
+<div
+  className="card shadow-sm border-0 mt-3"
+>
+  <div
+    className="card-header bg-white"
+  >
+    <h4>
+      fake user
+       -
+       
+      <span
+        className="text-primary"
+      >
+        fake challenge
+      </span>
+    </h4>
+    <div
+      style={
+        Object {
+          "color": "#8e8e8e",
+          "fontSize": "0.85rem",
+        }
+      }
+    >
+      51 years ago
+    </div>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="rounded-lg overflow-hidden"
+    >
+      <table
+        className="css-1n5o7vh-diff-container"
+      >
+        <tbody>
+          <tr>
+            <td
+              className="css-17uc4if-title-block"
+              colSpan={4}
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                js7/1.js
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    className="card-footer bg-white"
+  >
+    <div>
+      <div>
+        <p>
+          You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
+        </p>
+        <pre>
+          <code>
+            Let's say we have an array arr [9,7,2,3] and the sum is 10
+
+Does 10 - arr[0] exist in the map? (No).
+
+Update map to { 9: true }
+
+Does 10 - arr[1] exist in the map? (No).
+
+Update map to { 9: true, 7: true }
+
+Does 10 - arr[2] exist in the map? (No).
+
+Update map to { 9: true, 7: true, 2: true }
+
+Does 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true
+
+if you have questions, don't hesitate to reach out in the chat.
+          </code>
+        </pre>
+      </div>
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin Admin
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Accept
+    </button>
+    <button
+      className="btn bg-danger m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Reject
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ReviewCard With Long Diff 1`] = `
 <div
   className="card shadow-sm border-0 mt-3"
@@ -6663,7 +6999,8 @@ exports[`Storyshots Components/ReviewCard With Long Diff 1`] = `
   >
     <h4>
       fake user
-       - 
+       -
+       
       <span
         className="text-primary"
       >
@@ -6746,9 +7083,296 @@ exports[`Storyshots Components/ReviewCard With Long Diff 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <span>
-      Some comment
-    </span>
+    <div>
+      <span>
+        Some comment
+      </span>
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/fake reviewer"
+      >
+        <div
+          className="d-inline"
+        >
+          fake reviewer
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @fake reviewer
+        </div>
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Accept
+    </button>
+    <button
+      className="btn bg-danger m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Reject
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
+<div
+  className="card shadow-sm border-0 mt-3"
+>
+  <div
+    className="card-header bg-white"
+  >
+    <h4>
+      fake user
+       -
+       
+      <span
+        className="text-primary"
+      >
+        fake challenge
+      </span>
+    </h4>
+    <div
+      style={
+        Object {
+          "color": "#8e8e8e",
+          "fontSize": "0.85rem",
+        }
+      }
+    >
+      51 years ago
+    </div>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="rounded-lg overflow-hidden"
+    >
+      <table
+        className="css-1n5o7vh-diff-container"
+      >
+        <tbody>
+          <tr>
+            <td
+              className="css-17uc4if-title-block"
+              colSpan={4}
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                js7/1.js
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    className="card-footer bg-white"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Accept
+    </button>
+    <button
+      className="btn bg-danger m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Reject
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewCard Without Username 1`] = `
+<div
+  className="card shadow-sm border-0 mt-3"
+>
+  <div
+    className="card-header bg-white"
+  >
+    <h4>
+      fake user
+       -
+       
+      <span
+        className="text-primary"
+      >
+        fake challenge
+      </span>
+    </h4>
+    <div
+      style={
+        Object {
+          "color": "#8e8e8e",
+          "fontSize": "0.85rem",
+        }
+      }
+    >
+      51 years ago
+    </div>
+  </div>
+  <div
+    className="card-body"
+  >
+    <div
+      className="rounded-lg overflow-hidden"
+    >
+      <table
+        className="css-1n5o7vh-diff-container"
+      >
+        <tbody>
+          <tr>
+            <td
+              className="css-17uc4if-title-block"
+              colSpan={4}
+            >
+              <pre
+                className="css-o1u8iu-content-text"
+              >
+                js7/1.js
+              </pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    className="card-footer bg-white"
+  >
+    <div>
+      <span>
+        Some comment
+      </span>
+      <a
+        className="comment_author mt-2 d-block"
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin Admin
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
     <div
       style={
         Object {
@@ -7558,6 +8182,7 @@ Array [
               alt="js-0-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
             />
@@ -7613,6 +8238,7 @@ Array [
               alt="js-1-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
             />
@@ -7668,6 +8294,7 @@ Array [
               alt="js-2-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
             />
@@ -7723,6 +8350,7 @@ Array [
               alt="js-3-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
             />
@@ -7778,6 +8406,7 @@ Array [
               alt="js-4-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
             />
@@ -7833,6 +8462,7 @@ Array [
               alt="js-5-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
             />
@@ -7888,6 +8518,7 @@ Array [
               alt="js-6-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
             />
@@ -7943,6 +8574,7 @@ Array [
               alt="js-7-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
             />
@@ -7998,6 +8630,7 @@ Array [
               alt="js-8-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
             />
@@ -8053,6 +8686,7 @@ Array [
               alt="js-9-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
             />
@@ -8443,6 +9077,7 @@ Array [
               alt="js-0-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
             />
@@ -8498,6 +9133,7 @@ Array [
               alt="js-1-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
             />
@@ -8553,6 +9189,7 @@ Array [
               alt="js-2-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
             />
@@ -8608,6 +9245,7 @@ Array [
               alt="js-3-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
             />
@@ -8663,6 +9301,7 @@ Array [
               alt="js-4-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
             />
@@ -8718,6 +9357,7 @@ Array [
               alt="js-5-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
             />
@@ -8773,6 +9413,7 @@ Array [
               alt="js-6-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
             />
@@ -8828,6 +9469,7 @@ Array [
               alt="js-7-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
             />
@@ -8883,6 +9525,7 @@ Array [
               alt="js-8-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
             />
@@ -8938,6 +9581,7 @@ Array [
               alt="js-9-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
             />
@@ -9328,6 +9972,7 @@ Array [
               alt="js-0-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-0-cover.svg"
               width="116"
             />
@@ -9383,6 +10028,7 @@ Array [
               alt="js-1-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-1-cover.svg"
               width="116"
             />
@@ -9438,6 +10084,7 @@ Array [
               alt="js-2-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-2-cover.svg"
               width="116"
             />
@@ -9493,6 +10140,7 @@ Array [
               alt="js-3-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-3-cover.svg"
               width="116"
             />
@@ -9548,6 +10196,7 @@ Array [
               alt="js-4-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-4-cover.svg"
               width="116"
             />
@@ -9603,6 +10252,7 @@ Array [
               alt="js-5-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-5-cover.svg"
               width="116"
             />
@@ -9658,6 +10308,7 @@ Array [
               alt="js-6-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-6-cover.svg"
               width="116"
             />
@@ -9713,6 +10364,7 @@ Array [
               alt="js-7-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-7-cover.svg"
               width="116"
             />
@@ -9768,6 +10420,7 @@ Array [
               alt="js-8-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-8-cover.svg"
               width="116"
             />
@@ -9823,6 +10476,7 @@ Array [
               alt="js-9-cover.svg"
               className="img-fluid"
               height="165"
+              objectFit="contain"
               src="/assets/curriculum/js-9-cover.svg"
               width="116"
             />

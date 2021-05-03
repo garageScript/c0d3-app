@@ -57,6 +57,11 @@ const getSubmissionsMock = {
             id: '6',
             username: 'newbie'
           },
+          reviewer: {
+            id: '0',
+            username: 'admin',
+            name: 'Admin Admin'
+          },
           createdAt: '',
           updatedAt: ''
         }

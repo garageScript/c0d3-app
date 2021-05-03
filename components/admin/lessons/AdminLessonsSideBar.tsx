@@ -16,13 +16,23 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
 }) => {
   const lessonListData = _.cloneDeep(lessons) || []
   if (lessonListData.length === 0) {
-    lessonListData.push({ id: 0, title: 'Create New Lesson' })
+    lessonListData.push({
+      id: 0,
+      title: 'Create New Lesson',
+      description: '',
+      order: -1
+    })
   }
   //check if create new lesson has already been pushed to the lessons array
   const lastIndex = lessonListData.length - 1
   const { title } = lessonListData[lastIndex]
   if (title !== 'Create New Lesson') {
-    lessonListData.push({ id: 0, title: 'Create New Lesson' })
+    lessonListData.push({
+      id: 0,
+      title: 'Create New Lesson',
+      description: '',
+      order: -1
+    })
   }
 
   const lessonList = lessonListData.map((obj: any, arrIndex: number) => (

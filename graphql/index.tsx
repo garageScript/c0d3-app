@@ -58,12 +58,12 @@ export type Challenge = {
 export type Lesson = {
   __typename?: 'Lesson'
   id: Scalars['Int']
-  description?: Maybe<Scalars['String']>
+  description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  title: Scalars['String']
   challenges?: Maybe<Array<Maybe<Challenge>>>
   users?: Maybe<Array<Maybe<User>>>
   currentUser?: Maybe<User>
@@ -163,13 +163,13 @@ export type MutationCreateLessonArgs = {
 
 export type MutationUpdateLessonArgs = {
   id: Scalars['Int']
-  description?: Maybe<Scalars['String']>
+  description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  order: Scalars['Int']
 }
 
 export type MutationCreateChallengeArgs = {
@@ -271,10 +271,10 @@ export type TokenResponse = {
 export type User = {
   __typename?: 'User'
   id: Scalars['Int']
-  username?: Maybe<Scalars['String']>
+  username: Scalars['String']
   userLesson?: Maybe<UserLesson>
-  email?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
+  email: Scalars['String']
+  name: Scalars['String']
   isAdmin: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
 }
@@ -581,8 +581,15 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'createdAt'
           | 'updatedAt'
         > & {
-            challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-            user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            challenge?: Maybe<
+              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+            >
+            user?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            >
+            reviewer?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+            >
           }
       >
     >
@@ -719,9 +726,9 @@ export type UpdateLessonMutationVariables = Exact<{
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
 }>
 
 export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
@@ -1066,16 +1073,12 @@ export type LessonResolvers<
   ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
     ParentType,
@@ -1182,7 +1185,10 @@ export type MutationResolvers<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateLessonArgs, 'id'>
+    RequireFields<
+      MutationUpdateLessonArgs,
+      'id' | 'description' | 'title' | 'order'
+    >
   >
   createChallenge?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -1321,14 +1327,14 @@ export type UserResolvers<
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  username?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   userLesson?: Resolver<
     Maybe<ResolversTypes['UserLesson']>,
     ParentType,
     ContextType
   >
-  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
@@ -2306,6 +2312,11 @@ export const SubmissionsDocument = gql`
         id
         username
       }
+      reviewer {
+        id
+        username
+        name
+      }
       createdAt
       updatedAt
     }
@@ -3095,9 +3106,9 @@ export const UpdateLessonDocument = gql`
     $githubUrl: String
     $videoUrl: String
     $chatUrl: String
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
   ) {
     updateLesson(
       docUrl: $docUrl
