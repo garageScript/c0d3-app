@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Image, { ImageProps } from 'next/image'
 
-const ModalImage: React.FC<ImageProps> = (props: ImageProps) => {
+const ModalImage: React.FC<
+  ImageProps & { long?: string | boolean; tall?: string | boolean }
+> = props => {
   const [show, setShow] = useState(false)
   const handle = (state: boolean) => () => setShow(state)
   return (
     <>
-      <Image className="mdx-image" {...props} onClick={handle(true)} />
+      <Image
+        className="mdx-image"
+        {...props}
+        onClick={handle(true)}
+        objectFit="contain"
+      />
       <Modal
         className="mdx-modal-image"
         show={show}
@@ -16,10 +23,9 @@ const ModalImage: React.FC<ImageProps> = (props: ImageProps) => {
         onClick={handle(false)}
       >
         <Modal.Body>
-          <Image
-            height={(props.height as number) * 2}
-            width={(props.width as number) * 2}
+          <img
             src={props.src}
+            className={`${props.tall ? 'tall' : props.long ? 'long' : ''}`}
           />
         </Modal.Body>
       </Modal>

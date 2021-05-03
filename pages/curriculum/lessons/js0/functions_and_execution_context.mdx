@@ -65,6 +65,7 @@ Let's break down the above example.
     src="/assets/curriculum/lessons/foundations/params.png"
     width="1000"
     height="400"
+    long='true'
   />
 
 ## Exercises
@@ -583,7 +584,7 @@ In the computer world, some functions might need additional data to run. For
 example, the function `add2` would need a number first so it can add 2 to the
 original number.
 
-<div style = {{display:'flex', justifyContent:"space-between"}}>
+<twoColumns>
 
 <Image
   src="/assets/curriculum/lessons/foundations/example1.png"
@@ -591,16 +592,19 @@ original number.
   height="226"
 />
 
-<div style = {{marginLeft:"1em"}}>
+<div>
 
 **Parameters** are inputs into a function. When writing a function, all
 parameters are simply made-up variable names that will take the value of the
 respective data when the function is called.
 
+</div>
+
+</twoColumns>
+
 When you run a function, the data you pass in are called **arguments**.
 
- </div>
-</div>
+
 
 ```jsx
 const lucius = dobby => {
