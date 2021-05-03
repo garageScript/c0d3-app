@@ -58,7 +58,7 @@
     "testPathIgnorePatterns": ["<rootDir>/__tests__/utils/"]
   },
   "dependencies": {
-    "@apollo/client": "^3.3.15",
+    "@apollo/client": "^3.3.16",
     "@prisma/client": "^2.21.2",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/browser": "^6.3.4",
