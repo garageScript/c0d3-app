@@ -61,7 +61,7 @@
     "@apollo/client": "^3.3.16",
     "@prisma/client": "^2.21.2",
     "@quixo3/prisma-session-store": "^3.0.1",
-    "@sentry/browser": "^6.3.4",
+    "@sentry/browser": "^6.3.5",
     "apollo-server-micro": "^2.24.0",
     "apollo3-cache-persist": "^0.9.1",
     "bcrypt": "5.0.0",
