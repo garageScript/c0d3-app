@@ -19,6 +19,8 @@ import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
 
+import rebuildDiff from '../helpers/rebuildDiff'
+
 import styles from '../scss/reviewCard.module.scss'
 
 dayjs.extend(relativeTime)
@@ -29,17 +31,49 @@ type ReviewCardProps = {
 
 type DiffViewProps = {
   diff?: string
+  lessonId: number
+  challengeId: number
+  userId: string
 }
+
 const CommentBox: React.FC<{
   line: number
   newPath: string
   files: File[]
-}> = ({ line, newPath, files }) => {
+  str: string
+  lessonId: number
+  challengeId: number
+  userId: string
+}> = ({ line, newPath, files, str, lessonId, challengeId, userId }) => {
   const [comments, setComments] = useState<String[]>([])
   const [input, setInput] = useState('')
-  const updateFile = (_line: number, _newPath: string, _files: File[]) => {
-    //iterate over files and create updated diff by adding to line '|||withComment|||commentInfo
-    //send the diff back to server with createSubmission mutation
+  const updateFile = (
+    _line: number,
+    _newPath: string,
+    _files: File[],
+    str: string
+  ) => {
+    //there could be only one file with give path
+    const edited = _files.filter(f => f.newPath === _newPath)
+    const pre = str.split('|||withComment')[0]
+    edited[0].hunks.map(h =>
+      h.changes.map((c, i) => {
+        if (c.content === pre) {
+          h.changes[i].content = str
+        }
+      })
+    )
+    console.log(edited, 'updated')
+    const copyFiles = [..._files]
+    copyFiles.map((f, i) => {
+      if (f.newPath === newPath) {
+        _files[i] = edited[0]
+      }
+    })
+    console.log(copyFiles, 'copiedFullFiles')
+    rebuildDiff(copyFiles)
+    console.log(lessonId, challengeId, userId, 'ID')
+    //SEND BACK NEW DIFF
   }
   return (
     <div className="commentBox bg-white">
@@ -60,7 +94,7 @@ const CommentBox: React.FC<{
         onClick={() => {
           setComments([...comments, input])
           setInput('')
-          updateFile(line, newPath, files)
+          updateFile(line, newPath, files, str)
         }}
       >
         <label htmlFor="commentBox__input">Comment</label>
@@ -69,7 +103,13 @@ const CommentBox: React.FC<{
   )
 }
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
-export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
+
+export const DiffView: React.FC<DiffViewProps> = ({
+  diff = '',
+  lessonId,
+  userId,
+  challengeId
+}) => {
   const files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
@@ -109,6 +149,10 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
               line={Number.parseInt(comment[1].split('|||')[1])}
               newPath={newPath}
               files={files}
+              str={str}
+              lessonId={lessonId}
+              challengeId={challengeId}
+              userId={userId}
             />
           )}
         </>
@@ -170,7 +214,9 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     user,
     challenge,
     lessonId,
-    reviewer
+    reviewer,
+    challengeId,
+    userId
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -201,7 +247,12 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <MemoDiffView diff={diff} />
+              <MemoDiffView
+                diff={diff}
+                lessonId={lessonId}
+                challengeId={challengeId}
+                userId={userId!}
+              />
             </div>
           </div>
 
