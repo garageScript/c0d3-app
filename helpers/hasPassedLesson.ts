@@ -4,11 +4,9 @@ export const hasPassedLesson = async (
   reviewerId: number,
   lessonId: number
 ): Promise<Boolean> => {
-  // query userlesson that belongs to lesson and user
-  // TODO fix lessonId graphql typedef to Int
   const userLesson = await prisma.userLesson.findFirst({
     where: {
-      lessonId: Number(lessonId),
+      lessonId: lessonId,
       userId: reviewerId
     }
   })

@@ -63,7 +63,6 @@ const UserProfile: React.FC = () => {
     const challengeList = challenges || []
     const passedLessonSubmissions = userSubmissions.filter(
       ({ status, lessonId }) => {
-        // TODO: Fix lesson.id and lessonId types
         return status === SubmissionStatus.Passed && lessonId === lesson.id
       }
     )

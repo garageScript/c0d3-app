@@ -34,8 +34,8 @@
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
       "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs).ts",
-      "!graphql/schema.ts"
+      "!graphql/(resolvers|typeDefs|schema).ts",
+      "!graphql/queries/*.ts"
     ],
     "coveragePathIgnorePatterns": [
       "stories",
@@ -80,8 +80,6 @@
     "nanoid": "^3.1.20",
     "next": "^10.2.0",
     "next-connect": "^0.10.0",
-    "pg": "^8.6.0",
-    "pg-hstore": "^2.3.3",
     "posthog-js": "^1.9.7",
     "prism-react-renderer": "^1.2.0",
     "prismjs": "^1.23.0",
@@ -91,7 +89,6 @@
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "sass": "^1.32.12",
-    "sequelize": "^5.22.3",
     "winston": "^3.3.3",
     "winston-transport-sentry-node": "^1.0.2",
     "yup": "^0.32.8"

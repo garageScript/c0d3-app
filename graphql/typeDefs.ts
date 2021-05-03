@@ -44,8 +44,8 @@ export default gql`
       cliToken: String!
       diff: String!
     ): Submission
-    acceptSubmission(id: Int!, comment: String!): Submission
-    rejectSubmission(id: Int!, comment: String!): Submission
+    acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
+    rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     createLesson(
       description: String!
       docUrl: String

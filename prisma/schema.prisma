@@ -80,23 +80,24 @@ model Star {
 }
 
 model Submission {
-  id          Int        @id @default(autoincrement())
-  mrUrl       String?    @db.VarChar(255)
+  id          Int       @id @default(autoincrement())
+  mrUrl       String?   @db.VarChar(255)
   diff        String?
   comment     String?
-  status      String     @default("open") @db.VarChar(255)
-  viewCount   Int?       @default(0)
-  createdAt   DateTime   @default(now()) @db.Timestamptz(6)
-  updatedAt   DateTime   @updatedAt @db.Timestamptz(6)
-  userId      Int?
+  status      String    @default("open") @db.VarChar(255)
+  viewCount   Int?      @default(0)
+  createdAt   DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime  @updatedAt @db.Timestamptz(6)
+  userId      Int
   reviewerId  Int?
-  challengeId Int?
-  lessonId    Int?
-  challenge   Challenge? @relation(fields: [challengeId], references: [id])
-  lesson      Lesson?    @relation(fields: [lessonId], references: [id])
-  reviewer    User?      @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
-  user        User?      @relation("userSubmissions", fields: [userId], references: [id])
+  challengeId Int
+  lessonId    Int
+  challenge   Challenge @relation(fields: [challengeId], references: [id])
+  lesson      Lesson    @relation(fields: [lessonId], references: [id])
+  reviewer    User?     @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
+  user        User      @relation("userSubmissions", fields: [userId], references: [id])
 
+  @@unique([userId, lessonId, challengeId])
   @@map("submissions")
 }
 
