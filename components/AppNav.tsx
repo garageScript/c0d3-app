@@ -33,11 +33,14 @@ const navItems: NavItem[] = [
   {
     path:
       'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
-    name: 'Journey',
+    name: 'Learn',
     external: true
   },
-  { path: 'https://chat.c0d3.com', name: 'Help', external: true },
-  { path: '/contributors', name: 'Contributors' }
+  {
+    path: 'https://discord.com/channels/828783458469675019/',
+    name: 'Community',
+    external: true
+  }
 ]
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {

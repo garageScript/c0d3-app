@@ -43,21 +43,15 @@ exports[`Alerts page Should remove alert 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.com/channels/828783458469675019/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -288,7 +282,8 @@ exports[`Alerts page Should remove alert 1`] = `
           <p
             class="card-text"
           >
-            These alerts are what every students see when they are on their dashboard page.
+            These alerts are what every students see when they are on their
+ dashboard page.
           </p>
           <div
             class="row"
@@ -434,21 +429,15 @@ exports[`Alerts page Should remove alert 2`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.com/channels/828783458469675019/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -679,7 +668,8 @@ exports[`Alerts page Should remove alert 2`] = `
           <p
             class="card-text"
           >
-            These alerts are what every students see when they are on their dashboard page.
+            These alerts are what every students see when they are on their
+ dashboard page.
           </p>
           <div
             class="row"
