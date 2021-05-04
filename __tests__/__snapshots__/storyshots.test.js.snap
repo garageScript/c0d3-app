@@ -19301,23 +19301,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.com/channels/828783458469675019/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
