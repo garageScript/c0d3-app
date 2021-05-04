@@ -1,6 +1,7 @@
 import winston from 'winston'
 import { Session } from 'express-session'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { User } from '.prisma/client'
 
 export interface LoggedRequest extends NextApiRequest {
   info: (obj: any) => void
@@ -8,15 +9,7 @@ export interface LoggedRequest extends NextApiRequest {
   error: (obj: any) => void
   session: UserSession
   requestId: string
-  user: {
-    id: number
-    username: string
-    userLesson: UserLesson
-    email: string
-    name: string
-    isAdmin: boolean
-    cliToken: string
-  } | null
+  user: User | null
 }
 
 export interface UserSession extends Session {

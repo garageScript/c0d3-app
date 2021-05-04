@@ -73,7 +73,7 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="row mt-5"

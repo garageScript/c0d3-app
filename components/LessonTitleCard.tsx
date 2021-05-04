@@ -2,15 +2,17 @@ import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
 
-type Props = {
+export type LessonTitleProps = {
   lessonCoverUrl: string
   lessonUrl: string
   lessonTitle: string
-  lessonId: string
+  lessonId: number
   isPassed: boolean
+  setShow?: React.Dispatch<React.SetStateAction<boolean>>
+  show?: boolean
 }
 
-const LessonTitleCard: React.FC<Props> = props => {
+const LessonTitleCard: React.FC<LessonTitleProps> = props => {
   return (
     <div className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0">
       <div className="card-body p-0">
@@ -37,12 +39,22 @@ const LessonTitleCard: React.FC<Props> = props => {
           >
             LESSON
           </NavLink>
-          <NavLink
-            path={`/curriculum/${props.lessonId}`}
-            className="btn border-right rounded-0 px-4 py-3"
-          >
-            CHALLENGES
-          </NavLink>
+          {/* 768 px is md bootstrap breakpoint */}
+          {typeof window !== 'undefined' && window.innerWidth <= 768 ? (
+            <div
+              onClick={() => props.setShow && props.setShow(!props.show)}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              SHOW CHALLENGES
+            </div>
+          ) : (
+            <NavLink
+              path={`/curriculum/${props.lessonId}`}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              CHALLENGES
+            </NavLink>
+          )}
           {props.isPassed && (
             <NavLink
               path={`/review/${props.lessonId}`}

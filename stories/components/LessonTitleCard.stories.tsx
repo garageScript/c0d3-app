@@ -12,7 +12,7 @@ export const Basic: React.FC = () => (
     lessonUrl="#"
     lessonTitle="Foundations"
     isPassed={false}
-    lessonId="5"
+    lessonId={5}
   />
 )
 
@@ -22,6 +22,6 @@ export const PassedLesson: React.FC = () => (
     lessonUrl="#"
     lessonTitle="Foundations"
     isPassed={true}
-    lessonId="5"
+    lessonId={5}
   />
 )

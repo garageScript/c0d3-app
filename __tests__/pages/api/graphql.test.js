@@ -6,23 +6,12 @@
 
 jest.mock('apollo-server-micro')
 jest.mock('next-connect')
-jest.mock('connect-session-sequelize')
+jest.mock('@quixo3/prisma-session-store')
 jest.mock('express-session')
-jest.mock('sequelize')
 jest.mock('mailgun-js')
-jest.mock('../../../helpers/dbload')
 import nextConnect from 'next-connect'
-import connectSequelize from 'connect-session-sequelize'
 import session from 'express-session'
-import sequelize from 'sequelize'
 const asm = require('apollo-server-micro')
-
-sequelize.mockImplementation(function () {
-  return { sync: () => {} }
-})
-
-const db = require('../../../helpers/dbload')
-db.sequelize = {}
 
 const returnHandler = () => {
   return {
@@ -45,9 +34,6 @@ describe('Graphql Api', () => {
         get: returnHandler,
         post: returnHandler
       }
-    })
-    connectSequelize.mockImplementation(() => {
-      return function () {}
     })
     asm.ApolloServer = function (data) {
       apolloServerInput = data

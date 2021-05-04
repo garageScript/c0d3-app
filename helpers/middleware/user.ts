@@ -1,8 +1,6 @@
 import { LoggedRequest } from '../../@types/helpers'
 import { NextApiResponse } from 'next'
-import db from '../dbload'
-
-const { User } = db
+import { prisma } from '../../prisma'
 
 export default async (
   req: LoggedRequest,
@@ -12,9 +10,9 @@ export default async (
   req.user = null
   const { session } = req
   if (session && session.userId) {
-    const { userId } = session
-    const user = await User.findOne({ where: { id: userId } })
-    req.user = user.dataValues
+    const { userId: id } = session
+    const user = await prisma.user.findUnique({ where: { id } })
+    req.user = user
   }
   next()
 }

@@ -1,4 +1,5 @@
 const push = jest.fn()
+const back = jest.fn()
 const query = {}
 export const useRouter = jest.fn().mockImplementation(() => {
   return {
@@ -6,9 +7,9 @@ export const useRouter = jest.fn().mockImplementation(() => {
     pathname: '/',
     query,
     asPath: '/',
-    push: push,
+    push,
     replace: async () => true,
     reload: () => null,
-    back: () => null
+    back
   }
 })

@@ -1,4 +1,3 @@
-import db from '../dbload'
 import _ from 'lodash'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
@@ -9,8 +8,8 @@ import { sendResetEmail } from '../mail'
 import { decode, encode } from '../encoding'
 import { passwordValidation } from '../formValidation'
 import findUser from '../findUser'
+import { prisma } from '../../prisma'
 
-const { User } = db
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
 export const reqPwReset = async (
@@ -25,21 +24,29 @@ export const reqPwReset = async (
       throw new UserInputError('Please provide username or email')
     }
 
-    const user = await findUser(userOrEmail)
+    let user = await findUser(userOrEmail)
 
     if (!user) {
       throw new UserInputError('User does not exist')
     }
 
-    const encodedToken = encode({
+    const forgotToken = encode({
       userId: user.id,
       userToken: nanoid()
     })
+    const tokenExpiration = new Date(Date.now() + THREE_DAYS)
 
-    user.forgotToken = encodedToken
-    user.tokenExpiration = new Date(Date.now() + THREE_DAYS)
-    await user.save()
-    sendResetEmail(user.email, user.forgotToken)
+    user = await prisma.user.update({
+      where: {
+        id: user.id
+      },
+      data: {
+        forgotToken,
+        tokenExpiration
+      }
+    })
+
+    sendResetEmail(user.email!, user.forgotToken!)
 
     return { success: true, token: user.forgotToken }
   } catch (err) {
@@ -73,23 +80,31 @@ export const changePw = async (
       throw new UserInputError('Password does not meet criteria')
     }
 
-    const user = await User.findByPk(userId)
+    let user = await prisma.user.findUnique({ where: { id: userId } })
     if (!user) {
       throw new AuthenticationError('User does not exist')
     }
-    if (token !== user.forgotToken || Date.now() > user.tokenExpiration) {
+    if (
+      token !== user.forgotToken ||
+      !user.tokenExpiration ||
+      user.tokenExpiration < new Date()
+    ) {
       throw new AuthenticationError('Invalid Token')
     }
     const hash = await bcrypt.hash(password, 10)
     try {
-      await changeChatPassword(user.email, password)
+      await changeChatPassword(user.email!, password)
     } catch {
       throw new Error('Mattermost did not set password')
     }
-    user.tokenExpiration = null
-    user.forgotToken = null
-    user.password = hash
-    await user.save()
+    user = await prisma.user.update({
+      where: { id: user.id },
+      data: {
+        tokenExpiration: null,
+        forgotToken: null,
+        password: hash
+      }
+    })
 
     req.session.userId = user.id
     return {

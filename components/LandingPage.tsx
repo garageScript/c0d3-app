@@ -1,5 +1,6 @@
 import * as React from 'react'
 import NavLink from './NavLink'
+import Image from 'next/image'
 
 const LandingPage: React.FC = () => {
   return (
@@ -7,10 +8,11 @@ const LandingPage: React.FC = () => {
       <div className="container text-center pb-5">
         <div className="row justify-center pt-5">
           <div className="col-md-6 offset-md-3">
-            <img
+            <Image
+              height="360"
+              width="313"
+              alt="Hero image"
               src="/assets/landing/header-01.svg"
-              alt="Hero Image"
-              className="img-fluid"
             />
           </div>
         </div>
@@ -57,10 +59,12 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row mt-5 align-items-start mb-5">
           <div className="col-md-4">
-            <img
+            <Image
               src="/assets/landing/choose-01.svg"
-              alt=""
-              style={{ height: '170px' }}
+              height="170"
+              layout="fixed"
+              alt="Modern curriculum"
+              width="163"
             />
             <h4 className="mt-3 font-weight-bold">Modern Curriculum</h4>
             <p className="mt-4 font-weight-light">
@@ -71,10 +75,12 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <img
+            <Image
               src="/assets/landing/choose-02.svg"
-              alt=""
-              style={{ height: '170px' }}
+              height="170"
+              layout="fixed"
+              alt="Support"
+              width="259"
             />
             <h4 className="mt-3 font-weight-bold">Support</h4>
             <p className="mt-4 font-weight-light">
@@ -85,10 +91,12 @@ const LandingPage: React.FC = () => {
             </p>
           </div>
           <div className="col-md-4">
-            <img
+            <Image
               src="/assets/landing/choose-03.svg"
-              alt=""
-              style={{ height: '170px' }}
+              height="170"
+              width="93"
+              alt="Work Experience"
+              layout="fixed"
             />
             <h4 className="mt-3 font-weight-bold">Work Experience</h4>
             <p className="mt-4 font-weight-light">
@@ -121,13 +129,15 @@ const LandingPage: React.FC = () => {
           </p>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 order-md-2 text-center">
-              <img
+              <Image
                 src="/assets/landing/journey-01.svg"
-                alt=""
-                className="mb-3 img-fluid"
+                alt="Creating an account"
+                layout="intrinsic"
+                width="403"
+                height="293"
               />
             </div>
-            <div className="col-md-5 offset-md-1 order-md-1">
+            <div className="col-md-5 offset-md-1 order-md-1 align-self-center">
               <h2 className="font-weight-bold">Creating an account</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 After creating an account, you will gain access to our code
@@ -140,13 +150,15 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 offset-md-1 text-center">
-              <img
+              <Image
+                height="449"
+                width="419"
+                alt="Curriculum"
                 src="/assets/landing/journey-02.svg"
-                alt=""
-                className="mb-3 img-fluid"
+                layout="intrinsic"
               />
             </div>
-            <div className="col-md-5">
+            <div className="col-md-5 align-self-center">
               <h2 className="font-weight-bold">Curriculum</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 Each lesson in our curriculum is designed to be hands on and you
@@ -170,13 +182,15 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 order-md-2 text-center">
-              <img
+              <Image
                 src="/assets/landing/journey-03.svg"
-                className="mb-3 img-fluid"
-                alt=""
+                alt="Pay it forward"
+                layout="intrinsic"
+                height="437"
+                width="419"
               />
             </div>
-            <div className="col-md-5 order-md-1 offset-md-1">
+            <div className="col-md-5 order-md-1 offset-md-1 align-self-center">
               <h2 className="font-weight-bold">Pay It Forward</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 When you finish your lesson, you will have the opportunity to
@@ -191,13 +205,15 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="row mt-5 pb-5">
             <div className="col-md-5 offset-md-1 text-center">
-              <img
+              <Image
                 src="/assets/landing/journey-04.svg"
-                className="mb-3 img-fluid"
-                alt=""
+                layout="intrinsic"
+                width="316"
+                height="418"
+                alt="Work Experience"
               />
             </div>
-            <div className="col-md-5">
+            <div className="col-md-5 align-self-center">
               <h2 className="font-weight-bold">Work Experience</h2>
               <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
                 After completing our curriculum, you will gain access to our

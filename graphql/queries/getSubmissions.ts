@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 const GET_SUBMISSIONS = gql`
-  query submissions($lessonId: String!) {
+  query submissions($lessonId: Int!) {
     submissions(lessonId: $lessonId) {
       id
       status
@@ -15,6 +15,11 @@ const GET_SUBMISSIONS = gql`
       user {
         id
         username
+      }
+      reviewer {
+        id
+        username
+        name
       }
       createdAt
       updatedAt

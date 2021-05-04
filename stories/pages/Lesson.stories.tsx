@@ -6,6 +6,7 @@ import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
+import { SubmissionStatus } from '../../graphql'
 
 export default {
   component: Lesson,
@@ -66,7 +67,7 @@ export const CompletedChallenges: React.FC = () => {
     submissions: [
       {
         id: '1',
-        status: 'passed',
+        status: SubmissionStatus.Passed,
         mrUrl: '',
         diff: '',
         viewCount: 0,
@@ -83,7 +84,7 @@ export const CompletedChallenges: React.FC = () => {
       },
       {
         id: '1',
-        status: 'passed',
+        status: SubmissionStatus.Passed,
         mrUrl: '',
         diff: '',
         viewCount: 0,

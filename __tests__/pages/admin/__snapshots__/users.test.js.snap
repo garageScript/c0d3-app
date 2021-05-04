@@ -87,7 +87,7 @@ exports[`Users test Should be able to switch search options 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="d-flex flex-column col-12"
@@ -396,7 +396,7 @@ exports[`Users test Should be able to switch search options 2`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="d-flex flex-column col-12"
@@ -705,7 +705,7 @@ exports[`Users test Should be able to switch search options 3`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="d-flex flex-column col-12"
@@ -1014,7 +1014,7 @@ exports[`Users test Should be able to switch search options 4`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="d-flex flex-column col-12"

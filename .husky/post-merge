@@ -1,0 +1,48 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Don't need to run this on CI environments
+[ -n "$CI" ] && exit 0
+
+##
+# This command will run after `git pull`, and check if new modules need to be
+# installed.
+
+# Collect a list of changed files
+changedFiles="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+# NOTE - Uncomment one of the below lines to test against yarn or npm changes
+# changedFiles="$changedFiles"$'\n'"yarn.lock"
+# changedFiles="$changedFiles"$'\n'"package-lock.json"
+
+depsChanged=$(echo "$changedFiles" | grep -e "package-lock.json" -e "yarn.lock")
+
+prismaChanged=$(echo "$changedFiles" | grep -e "schema.prisma")
+
+# Define update msg variable
+upgradeMsg=$(cat <<-DOC
+ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+ ┃ Node dependencies have changed. ┃
+ ┃     Updating dependencies...    ┃
+ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+DOC
+)
+
+prismaMsg=$(cat <<-DOC
+ ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+ ┃   Prisma schema has changed.    ┃
+ ┃       Generating client..       ┃
+ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+DOC
+)
+
+# Update deps
+if [ -n "$depsChanged" ]; then
+  echo "$upgradeMsg"
+  yarn
+  exit 0
+fi
+if [ -n "$prismaChanged" ]; then
+  echo "$prismaMsg"
+  yarn prisma generate
+fi

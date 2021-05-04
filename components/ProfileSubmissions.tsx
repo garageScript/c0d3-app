@@ -1,7 +1,8 @@
 import React from 'react'
-import { Star as StarType } from '../@types/lesson'
+import { Star as StarType } from '../graphql/index'
 import { Star } from 'react-feather'
 import styles from '../scss/profileSubmissions.module.scss'
+import { SubmissionStatus as SubmissionStatusEnum } from '../graphql'
 
 type ChallengeStatusProps = {
   challengesData: Challenge[]
@@ -11,7 +12,7 @@ type LessonChallengeProps = {
   lessons: LessonChallenge[]
 }
 
-type LessonChallenge = {
+export type LessonChallenge = {
   order: number
   title: string
   challenges: Challenge[]
@@ -29,13 +30,13 @@ export const SubmissionStatus: React.FC<ChallengeStatusProps> = ({
   const submissionsStatus = challengesData.map(
     (eachChallenge: Challenge, challengeId: number) => {
       let challengeStatus = 'bg-gray'
-      if (eachChallenge.challengeStatus === 'passed') {
+      if (eachChallenge.challengeStatus === SubmissionStatusEnum.Passed) {
         challengeStatus = 'bg-success'
       }
-      if (eachChallenge.challengeStatus === 'needMoreWork') {
+      if (eachChallenge.challengeStatus === SubmissionStatusEnum.NeedMoreWork) {
         challengeStatus = 'bg-danger'
       }
-      if (eachChallenge.challengeStatus === 'pending') {
+      if (eachChallenge.challengeStatus === SubmissionStatusEnum.Open) {
         challengeStatus = 'bg-warning'
       }
       return (
@@ -52,7 +53,8 @@ export const SubmissionStatus: React.FC<ChallengeStatusProps> = ({
 const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
   const displaySubmissions = lessons.map((lesson, lessonId) => {
     const filterPassedChallenges = lesson.challenges.filter(
-      eachChallenge => eachChallenge.challengeStatus === 'passed'
+      eachChallenge =>
+        eachChallenge.challengeStatus === SubmissionStatusEnum.Passed
     )
 
     let starBadge = <></>
@@ -69,7 +71,10 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
       )
     }
     return (
-      <div key={lessonId} className={`${styles['lesson_challenges']}`}>
+      <div
+        key={lessonId}
+        className={`${styles['lesson_challenges']} d-flex align-items-center align-items-md-stretch`}
+      >
         <div className={`${styles['lesson_image_container']}`}>
           {starBadge}
           <img src={`/assets/curriculum/js-${lesson.order}-cover.svg`} />

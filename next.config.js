@@ -5,7 +5,7 @@ const gfm = require('remark-gfm')
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [slug, toc, gfm]
+    remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
   }
 })
 module.exports = withMDX({
@@ -28,5 +28,8 @@ module.exports = withMDX({
     POSTHOG_API_KEY: process.env.POSTHOG_API_KEY,
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
     SERVER_URL: process.env.SERVER_URL || '/api/graphql'
+  },
+  future: {
+    webpack5: true
   }
 })

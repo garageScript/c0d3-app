@@ -1,6 +1,4 @@
-import LessonLayout from '../../components/mdx/Layout'
-
-# Common Git Commands
+import LessonLayout from '../../components/mdx/LessonLayout'
 
 ## Git Overview
 
@@ -112,4 +110,6 @@ Check
 [The Missing Semester](https://missing.csail.mit.edu/2020/version-control/) if
 you want to learn more about git and other useful tools.
 
-export default ({ children }) => <LessonLayout>{children}</LessonLayout>
+export default ({ children }) => (
+  <LessonLayout title="Common Git commands">{children}</LessonLayout>
+)

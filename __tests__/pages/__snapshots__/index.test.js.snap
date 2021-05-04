@@ -85,9 +85,10 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-6 offset-md-3"
         >
           <img
-            alt="Hero Image"
-            class="img-fluid"
+            alt="Hero image"
+            height="360"
             src="/assets/landing/header-01.svg"
+            width="313"
           />
         </div>
       </div>
@@ -167,9 +168,11 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-4"
         >
           <img
-            alt=""
+            alt="Modern curriculum"
+            height="170"
+            layout="fixed"
             src="/assets/landing/choose-01.svg"
-            style="height: 170px;"
+            width="163"
           />
           <h4
             class="mt-3 font-weight-bold"
@@ -186,9 +189,11 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-4"
         >
           <img
-            alt=""
+            alt="Support"
+            height="170"
+            layout="fixed"
             src="/assets/landing/choose-02.svg"
-            style="height: 170px;"
+            width="259"
           />
           <h4
             class="mt-3 font-weight-bold"
@@ -205,9 +210,11 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-4"
         >
           <img
-            alt=""
+            alt="Work Experience"
+            height="170"
+            layout="fixed"
             src="/assets/landing/choose-03.svg"
-            style="height: 170px;"
+            width="93"
           />
           <h4
             class="mt-3 font-weight-bold"
@@ -248,13 +255,15 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 order-md-2 text-center"
           >
             <img
-              alt=""
-              class="mb-3 img-fluid"
+              alt="Creating an account"
+              height="293"
+              layout="intrinsic"
               src="/assets/landing/journey-01.svg"
+              width="403"
             />
           </div>
           <div
-            class="col-md-5 offset-md-1 order-md-1"
+            class="col-md-5 offset-md-1 order-md-1 align-self-center"
           >
             <h2
               class="font-weight-bold"
@@ -276,13 +285,15 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 offset-md-1 text-center"
           >
             <img
-              alt=""
-              class="mb-3 img-fluid"
+              alt="Curriculum"
+              height="449"
+              layout="intrinsic"
               src="/assets/landing/journey-02.svg"
+              width="419"
             />
           </div>
           <div
-            class="col-md-5"
+            class="col-md-5 align-self-center"
           >
             <h2
               class="font-weight-bold"
@@ -314,13 +325,15 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 order-md-2 text-center"
           >
             <img
-              alt=""
-              class="mb-3 img-fluid"
+              alt="Pay it forward"
+              height="437"
+              layout="intrinsic"
               src="/assets/landing/journey-03.svg"
+              width="419"
             />
           </div>
           <div
-            class="col-md-5 order-md-1 offset-md-1"
+            class="col-md-5 order-md-1 offset-md-1 align-self-center"
           >
             <h2
               class="font-weight-bold"
@@ -342,13 +355,15 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 offset-md-1 text-center"
           >
             <img
-              alt=""
-              class="mb-3 img-fluid"
+              alt="Work Experience"
+              height="418"
+              layout="intrinsic"
               src="/assets/landing/journey-04.svg"
+              width="316"
             />
           </div>
           <div
-            class="col-md-5"
+            class="col-md-5 align-self-center"
           >
             <h2
               class="font-weight-bold"

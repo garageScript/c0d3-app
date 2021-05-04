@@ -61,26 +61,30 @@ export const CompletedLessons: React.FC<{}> = () => {
       id: 1,
       username: 'fakeusername',
       name: 'fake user',
+      email: 'fake@fakemail.com',
       isAdmin: true
     },
     submissions: [],
     lessonStatus: [
       {
-        lessonId: '5',
+        id: 1,
+        lessonId: 5,
         isPassed: 'true',
         isTeaching: 'true',
         isEnrolled: 'false',
         starGiven: null
       },
       {
-        lessonId: '2',
+        id: 2,
+        lessonId: 2,
         isPassed: 'true',
         isTeaching: 'true',
         isEnrolled: 'false',
         starGiven: null
       },
       {
-        lessonId: '1',
+        id: 3,
+        lessonId: 1,
         isPassed: 'true',
         isTeaching: 'true',
         isEnrolled: 'false',
