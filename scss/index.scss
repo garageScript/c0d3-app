@@ -42,36 +42,6 @@ p {
   font-size: 15px;
 }
 
-#table-of-contents {
-  float: right;
-  color: #6c757d;
-  & + ul {
-    list-style: none;
-    float: right;
-    clear: both;
-    text-decoration: none;
-    & > li {
-      & > p {
-        margin: 0;
-        & > a {
-          text-decoration: none;
-        }
-      }
-      & > ul > li {
-        list-style: none;
-        > a {
-          text-decoration: none;
-          list-style: none;
-        }
-      }
-    }
-  }
-}
-ol + details {
-  margin-left: 1.25em !important;
-  margin-top: -0.75em !important;
-}
-
 .text-danger {
   color: #721c24 !important;
 }
@@ -81,3 +51,4 @@ ol + details {
 @import './modalCard.scss';
 @import './prism.scss';
 @import './modalImage.module.scss';
+@import './globalMDX.scss';

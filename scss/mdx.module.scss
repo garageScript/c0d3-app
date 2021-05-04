@@ -1,7 +1,7 @@
 .inline-code {
   background: #edeceb;
   color: #eb5757;
-  display: inline;
+  display: inline-block;
   padding: 0.1em 0.3em;
   border-radius: 2px;
 }
@@ -37,7 +37,7 @@
 
 .MDX_a {
   color: #4e4e4e;
-  text-decoration-color: #7a7a7a !important;
+  text-decoration-color: #bdbcbc !important;
   text-decoration: underline;
   line-height: 1.5;
   opacity: 0.7;

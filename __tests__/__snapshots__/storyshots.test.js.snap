@@ -16948,7 +16948,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
   className="prism-code language-jsx"
   style={
     Object {
-      "backgroundColor": "#f6f8fa",
+      "backgroundColor": "#f7f6f3",
       "color": "rgb(36, 41, 46)",
       "padding": "20px 20px 0 20px",
     }
@@ -16967,7 +16967,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token keyword"
       style={
         Object {
-          "color": "#e3116c",
+          "color": "rgb(0, 119, 170)",
         }
       }
     >
@@ -17177,7 +17177,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token keyword"
       style={
         Object {
-          "color": "#e3116c",
+          "color": "rgb(0, 119, 170)",
         }
       }
     >
@@ -17217,7 +17217,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token function"
       style={
         Object {
-          "color": "rgb(111, 66, 193)",
+          "color": "rgb(221, 74, 104)",
         }
       }
     >
@@ -17290,7 +17290,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token keyword"
       style={
         Object {
-          "color": "#e3116c",
+          "color": "rgb(0, 119, 170)",
         }
       }
     >
@@ -17320,7 +17320,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token keyword"
       style={
         Object {
-          "color": "#e3116c",
+          "color": "rgb(0, 119, 170)",
         }
       }
     >
@@ -17385,7 +17385,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17405,7 +17405,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17435,7 +17435,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag spread attr-value"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(0, 119, 170)",
         }
       }
     >
@@ -17455,7 +17455,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17475,7 +17475,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17485,7 +17485,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag attr-name"
       style={
         Object {
-          "color": "rgb(156, 220, 254)",
+          "color": "rgb(102, 153, 0)",
         }
       }
     >
@@ -17515,7 +17515,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17535,7 +17535,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17555,7 +17555,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17565,7 +17565,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag attr-name"
       style={
         Object {
-          "color": "rgb(156, 220, 254)",
+          "color": "rgb(102, 153, 0)",
         }
       }
     >
@@ -17595,7 +17595,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17615,7 +17615,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17635,7 +17635,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17645,7 +17645,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag attr-name"
       style={
         Object {
-          "color": "rgb(156, 220, 254)",
+          "color": "rgb(102, 153, 0)",
         }
       }
     >
@@ -17675,7 +17675,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17695,7 +17695,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17715,7 +17715,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17930,7 +17930,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17940,7 +17940,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -17950,7 +17950,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag attr-name"
       style={
         Object {
-          "color": "rgb(156, 220, 254)",
+          "color": "rgb(102, 153, 0)",
         }
       }
     >
@@ -17980,7 +17980,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18000,7 +18000,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18010,7 +18010,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag attr-name"
       style={
         Object {
-          "color": "rgb(156, 220, 254)",
+          "color": "rgb(102, 153, 0)",
         }
       }
     >
@@ -18050,7 +18050,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18070,7 +18070,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18090,7 +18090,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18110,7 +18110,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18120,7 +18120,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript string"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18130,7 +18130,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -18215,7 +18215,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token function"
       style={
         Object {
-          "color": "rgb(111, 66, 193)",
+          "color": "rgb(221, 74, 104)",
         }
       }
     >
@@ -18400,7 +18400,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token function"
       style={
         Object {
-          "color": "rgb(111, 66, 193)",
+          "color": "rgb(221, 74, 104)",
         }
       }
     >
@@ -18550,7 +18550,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token function"
       style={
         Object {
-          "color": "rgb(111, 66, 193)",
+          "color": "rgb(221, 74, 104)",
         }
       }
     >
@@ -18735,7 +18735,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token function"
       style={
         Object {
-          "color": "rgb(111, 66, 193)",
+          "color": "rgb(221, 74, 104)",
         }
       }
     >
@@ -18920,7 +18920,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -19020,7 +19020,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag"
       style={
         Object {
-          "color": "rgb(78, 201, 176)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
