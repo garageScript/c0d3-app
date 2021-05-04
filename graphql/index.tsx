@@ -144,11 +144,13 @@ export type MutationCreateSubmissionArgs = {
 export type MutationAcceptSubmissionArgs = {
   id: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type MutationRejectSubmissionArgs = {
   id: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type MutationCreateLessonArgs = {
@@ -294,6 +296,7 @@ export type UserLesson = {
 export type AcceptSubmissionMutationVariables = Exact<{
   submissionId: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type AcceptSubmissionMutation = { __typename?: 'Mutation' } & {
@@ -427,6 +430,19 @@ export type CreateLessonMutation = { __typename?: 'Mutation' } & {
           }
       >
     >
+  >
+}
+
+export type CreateSubmissionMutationVariables = Exact<{
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
+  cliToken: Scalars['String']
+  diff: Scalars['String']
+}>
+
+export type CreateSubmissionMutation = { __typename?: 'Mutation' } & {
+  createSubmission?: Maybe<
+    { __typename?: 'Submission' } & Pick<Submission, 'id' | 'diff'>
   >
 }
 
@@ -581,12 +597,8 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'createdAt'
           | 'updatedAt'
         > & {
-            challenge?: Maybe<
-              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-            >
-            user?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-            >
+            challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+            user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
             reviewer?: Maybe<
               { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
             >
@@ -624,6 +636,7 @@ export type LogoutMutation = { __typename?: 'Mutation' } & {
 export type RejectSubmissionMutationVariables = Exact<{
   submissionId: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type RejectSubmissionMutation = { __typename?: 'Mutation' } & {
@@ -1167,13 +1180,13 @@ export type MutationResolvers<
     Maybe<ResolversTypes['Submission']>,
     ParentType,
     ContextType,
-    RequireFields<MutationAcceptSubmissionArgs, 'id' | 'comment'>
+    RequireFields<MutationAcceptSubmissionArgs, 'id' | 'comment' | 'lessonId'>
   >
   rejectSubmission?: Resolver<
     Maybe<ResolversTypes['Submission']>,
     ParentType,
     ContextType,
-    RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>
+    RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment' | 'lessonId'>
   >
   createLesson?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -1401,8 +1414,16 @@ export type IDirectiveResolvers<
 > = DirectiveResolvers<ContextType>
 
 export const AcceptSubmissionDocument = gql`
-  mutation acceptSubmission($submissionId: Int!, $comment: String!) {
-    acceptSubmission(id: $submissionId, comment: $comment) {
+  mutation acceptSubmission(
+    $submissionId: Int!
+    $comment: String!
+    $lessonId: Int!
+  ) {
+    acceptSubmission(
+      id: $submissionId
+      comment: $comment
+      lessonId: $lessonId
+    ) {
       id
       comment
       status
@@ -1461,6 +1482,7 @@ export function withAcceptSubmission<
  *   variables: {
  *      submissionId: // value for 'submissionId'
  *      comment: // value for 'comment'
+ *      lessonId: // value for 'lessonId'
  *   },
  * });
  */
@@ -1959,6 +1981,101 @@ export type CreateLessonMutationResult = Apollo.MutationResult<CreateLessonMutat
 export type CreateLessonMutationOptions = Apollo.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
+>
+export const CreateSubmissionDocument = gql`
+  mutation createSubmission(
+    $lessonId: Int!
+    $challengeId: Int!
+    $cliToken: String!
+    $diff: String!
+  ) {
+    createSubmission(
+      lessonId: $lessonId
+      challengeId: $challengeId
+      cliToken: $cliToken
+      diff: $diff
+    ) {
+      id
+      diff
+    }
+  }
+`
+export type CreateSubmissionMutationFn = Apollo.MutationFunction<
+  CreateSubmissionMutation,
+  CreateSubmissionMutationVariables
+>
+export type CreateSubmissionProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables
+  >
+} &
+  TChildProps
+export function withCreateSubmission<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables,
+    CreateSubmissionProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables,
+    CreateSubmissionProps<TChildProps, TDataName>
+  >(CreateSubmissionDocument, {
+    alias: 'createSubmission',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useCreateSubmissionMutation__
+ *
+ * To run a mutation, you first call `useCreateSubmissionMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateSubmissionMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createSubmissionMutation, { data, loading, error }] = useCreateSubmissionMutation({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *      challengeId: // value for 'challengeId'
+ *      cliToken: // value for 'cliToken'
+ *      diff: // value for 'diff'
+ *   },
+ * });
+ */
+export function useCreateSubmissionMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables
+  >(CreateSubmissionDocument, options)
+}
+export type CreateSubmissionMutationHookResult = ReturnType<
+  typeof useCreateSubmissionMutation
+>
+export type CreateSubmissionMutationResult = Apollo.MutationResult<CreateSubmissionMutation>
+export type CreateSubmissionMutationOptions = Apollo.BaseMutationOptions<
+  CreateSubmissionMutation,
+  CreateSubmissionMutationVariables
 >
 export const GetAppDocument = gql`
   query getApp {
@@ -2567,8 +2684,16 @@ export type LogoutMutationOptions = Apollo.BaseMutationOptions<
   LogoutMutationVariables
 >
 export const RejectSubmissionDocument = gql`
-  mutation rejectSubmission($submissionId: Int!, $comment: String!) {
-    rejectSubmission(id: $submissionId, comment: $comment) {
+  mutation rejectSubmission(
+    $submissionId: Int!
+    $comment: String!
+    $lessonId: Int!
+  ) {
+    rejectSubmission(
+      id: $submissionId
+      comment: $comment
+      lessonId: $lessonId
+    ) {
       id
       comment
       status
@@ -2627,6 +2752,7 @@ export function withRejectSubmission<
  *   variables: {
  *      submissionId: // value for 'submissionId'
  *      comment: // value for 'comment'
+ *      lessonId: // value for 'lessonId'
  *   },
  * });
  */

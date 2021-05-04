@@ -34,8 +34,8 @@
       "**/*.{ts,tsx}",
       "!**/node_modules/**",
       "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs).ts",
-      "!graphql/schema.ts"
+      "!graphql/(resolvers|typeDefs|schema).ts",
+      "!graphql/queries/*.ts"
     ],
     "coveragePathIgnorePatterns": [
       "stories",
@@ -59,11 +59,11 @@
     "testPathIgnorePatterns": ["<rootDir>/__tests__/utils/"]
   },
   "dependencies": {
-    "@apollo/client": "^3.3.15",
+    "@apollo/client": "^3.3.16",
     "@prisma/client": "^2.21.2",
     "@quixo3/prisma-session-store": "^3.0.1",
-    "@sentry/browser": "^6.3.4",
-    "apollo-server-micro": "^2.23.0",
+    "@sentry/browser": "^6.3.5",
+    "apollo-server-micro": "^2.24.0",
     "apollo3-cache-persist": "^0.9.1",
     "bcrypt": "5.0.0",
     "bootstrap": "^4.6.0",
@@ -81,8 +81,6 @@
     "nanoid": "^3.1.20",
     "next": "^10.2.0",
     "next-connect": "^0.10.0",
-    "pg": "^8.6.0",
-    "pg-hstore": "^2.3.3",
     "posthog-js": "^1.9.7",
     "prism-react-renderer": "^1.2.0",
     "prismjs": "^1.23.0",
@@ -92,7 +90,6 @@
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "sass": "^1.32.12",
-    "sequelize": "^5.22.3",
     "winston": "^3.3.3",
     "winston-transport-sentry-node": "^1.0.2",
     "yup": "^0.32.8"

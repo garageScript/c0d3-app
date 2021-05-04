@@ -22,7 +22,6 @@ export const addAlert = async (
     if (!text || !type) {
       throw new Error('Missing alert parameters')
     }
-    // TODO: change createdAt columns to have default value on the DB
     await prisma.alert.create({
       data: { text, type, url, urlCaption }
     })
