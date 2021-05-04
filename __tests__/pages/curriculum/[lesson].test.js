@@ -7,39 +7,40 @@ import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
 import { useRouter } from 'next/router'
+import { SubmissionStatus } from '../../../graphql'
 
 const session = {
   ...dummySessionData,
   submissions: [
     {
-      id: '1',
-      status: 'passed',
+      id: 1,
+      status: SubmissionStatus.Passed,
       mrUrl: '',
       diff: '',
       viewCount: 0,
       comment: '',
       order: 0,
-      challengeId: '146',
-      lessonId: '2',
+      challengeId: 146,
+      lessonId: 2,
       reviewer: {
-        id: '1',
+        id: 1,
         username: 'fake reviewer'
       },
       createdAt: '123',
       updatedAt: '123'
     },
     {
-      id: '1',
-      status: 'passed',
+      id: 1,
+      status: SubmissionStatus.Passed,
       mrUrl: '',
       diff: '',
       viewCount: 0,
       comment: '',
       order: 0,
-      challengeId: '145',
-      lessonId: '2',
+      challengeId: 145,
+      lessonId: 2,
       reviewer: {
-        id: '1',
+        id: 1,
         username: 'fake reviewer'
       },
       createdAt: '123',
@@ -48,14 +49,14 @@ const session = {
   ],
   lessonStatus: [
     {
-      lessonId: '5',
+      lessonId: 5,
       isPassed: true,
       isTeaching: true,
       isEnrolled: false,
       starGiven: null
     },
     {
-      lessonId: '2',
+      lessonId: 2,
       isPassed: false,
       isTeaching: false,
       isEnrolled: true,
@@ -65,7 +66,7 @@ const session = {
 }
 describe('Lesson Page', () => {
   const { query } = useRouter()
-  query['lesson'] = '2'
+  query['lesson'] = 2
   test('Should render correctly with valid lesson route', async () => {
     const mocks = [
       {
@@ -94,7 +95,7 @@ describe('Lesson Page', () => {
   })
 
   test('Should render correctly with invalid lesson route', async () => {
-    query['lesson'] = '100'
+    query['lesson'] = 100
     const mocks = [
       {
         request: { query: GET_APP },
@@ -118,7 +119,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
-    query['lesson'] = '25'
+    query['lesson'] = 25
     const mocks = [
       {
         request: { query: GET_APP },
@@ -168,7 +169,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render with nulled submissions', async () => {
-    query['lesson'] = '2'
+    query['lesson'] = 2
     const mocks = [
       {
         request: { query: GET_APP },

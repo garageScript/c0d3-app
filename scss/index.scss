@@ -38,8 +38,8 @@ body {
 }
 
 p {
-  font-size: 15px;
   line-height: 1.6;
+  font-size: 15px;
 }
 
 .text-danger {
@@ -51,3 +51,4 @@ p {
 @import './modalCard.scss';
 @import './prism.scss';
 @import './modalImage.module.scss';
+@import './globalMDX.scss';

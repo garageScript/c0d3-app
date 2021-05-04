@@ -48,22 +48,22 @@ export enum CacheControlScope {
 
 export type Challenge = {
   __typename?: 'Challenge'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  description: Scalars['String']
+  lessonId: Scalars['Int']
+  title: Scalars['String']
+  order: Scalars['Int']
 }
 
 export type Lesson = {
   __typename?: 'Lesson'
-  id?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
+  id: Scalars['Int']
+  description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  title: Scalars['String']
   challenges?: Maybe<Array<Maybe<Challenge>>>
   users?: Maybe<Array<Maybe<User>>>
   currentUser?: Maybe<User>
@@ -135,20 +135,22 @@ export type MutationRemoveAlertArgs = {
 }
 
 export type MutationCreateSubmissionArgs = {
-  lessonId: Scalars['String']
-  challengeId: Scalars['String']
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
   cliToken: Scalars['String']
   diff: Scalars['String']
 }
 
 export type MutationAcceptSubmissionArgs = {
-  id: Scalars['String']
+  id: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type MutationRejectSubmissionArgs = {
-  id: Scalars['String']
+  id: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type MutationCreateLessonArgs = {
@@ -163,13 +165,13 @@ export type MutationCreateLessonArgs = {
 
 export type MutationUpdateLessonArgs = {
   id: Scalars['Int']
-  description?: Maybe<Scalars['String']>
+  description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
+  order: Scalars['Int']
 }
 
 export type MutationCreateChallengeArgs = {
@@ -181,10 +183,10 @@ export type MutationCreateChallengeArgs = {
 
 export type MutationUpdateChallengeArgs = {
   lessonId: Scalars['Int']
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
   id: Scalars['Int']
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
 }
 
 export type Query = {
@@ -212,7 +214,7 @@ export type QueryIsTokenValidArgs = {
 }
 
 export type QuerySubmissionsArgs = {
-  lessonId: Scalars['String']
+  lessonId: Scalars['Int']
 }
 
 export type Session = {
@@ -224,31 +226,37 @@ export type Session = {
 
 export type Star = {
   __typename?: 'Star'
-  id: Scalars['String']
-  studentId?: Maybe<Scalars['Int']>
-  mentorId?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['Int']>
+  id: Scalars['Int']
+  lessonId: Scalars['Int']
   comment?: Maybe<Scalars['String']>
+  student: User
+  lesson: Lesson
 }
 
 export type Submission = {
   __typename?: 'Submission'
-  id?: Maybe<Scalars['String']>
-  status?: Maybe<Scalars['String']>
+  id: Scalars['Int']
+  status: SubmissionStatus
   mrUrl?: Maybe<Scalars['String']>
   diff?: Maybe<Scalars['String']>
   viewCount?: Maybe<Scalars['Int']>
   comment?: Maybe<Scalars['String']>
   userId?: Maybe<Scalars['String']>
   order?: Maybe<Scalars['Int']>
-  lessonId?: Maybe<Scalars['String']>
-  challengeId?: Maybe<Scalars['String']>
-  challenge?: Maybe<Challenge>
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
+  challenge: Challenge
   reviewer?: Maybe<User>
-  user?: Maybe<User>
+  user: User
   reviewerId?: Maybe<Scalars['String']>
   createdAt?: Maybe<Scalars['String']>
-  updatedAt?: Maybe<Scalars['String']>
+  updatedAt: Scalars['String']
+}
+
+export enum SubmissionStatus {
+  NeedMoreWork = 'needMoreWork',
+  Open = 'open',
+  Passed = 'passed'
 }
 
 export type SuccessResponse = {
@@ -265,19 +273,19 @@ export type TokenResponse = {
 export type User = {
   __typename?: 'User'
   id: Scalars['Int']
-  username?: Maybe<Scalars['String']>
+  username: Scalars['String']
   userLesson?: Maybe<UserLesson>
-  email?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
+  email: Scalars['String']
+  name: Scalars['String']
   isAdmin: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
 }
 
 export type UserLesson = {
   __typename?: 'UserLesson'
-  id?: Maybe<Scalars['String']>
+  id: Scalars['Int']
   userId?: Maybe<Scalars['String']>
-  lessonId?: Maybe<Scalars['String']>
+  lessonId: Scalars['Int']
   isPassed?: Maybe<Scalars['String']>
   isTeaching?: Maybe<Scalars['String']>
   isEnrolled?: Maybe<Scalars['String']>
@@ -286,8 +294,9 @@ export type UserLesson = {
 }
 
 export type AcceptSubmissionMutationVariables = Exact<{
-  submissionId: Scalars['String']
+  submissionId: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type AcceptSubmissionMutation = { __typename?: 'Mutation' } & {
@@ -424,6 +433,19 @@ export type CreateLessonMutation = { __typename?: 'Mutation' } & {
   >
 }
 
+export type CreateSubmissionMutationVariables = Exact<{
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
+  cliToken: Scalars['String']
+  diff: Scalars['String']
+}>
+
+export type CreateSubmissionMutation = { __typename?: 'Mutation' } & {
+  createSubmission?: Maybe<
+    { __typename?: 'Submission' } & Pick<Submission, 'id' | 'diff'>
+  >
+}
+
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetAppQuery = { __typename?: 'Query' } & {
@@ -540,10 +562,7 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
               | 'updatedAt'
             > & {
                 reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<
-                    User,
-                    'id' | 'username' | 'isAdmin'
-                  >
+                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
                 >
               }
           >
@@ -560,7 +579,7 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
 }
 
 export type SubmissionsQueryVariables = Exact<{
-  lessonId: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type SubmissionsQuery = { __typename?: 'Query' } & {
@@ -578,11 +597,10 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
           | 'createdAt'
           | 'updatedAt'
         > & {
-            challenge?: Maybe<
-              { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-            >
-            user?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+            user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            reviewer?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
             >
           }
       >
@@ -616,8 +634,9 @@ export type LogoutMutation = { __typename?: 'Mutation' } & {
 }
 
 export type RejectSubmissionMutationVariables = Exact<{
-  submissionId: Scalars['String']
+  submissionId: Scalars['Int']
   comment: Scalars['String']
+  lessonId: Scalars['Int']
 }>
 
 export type RejectSubmissionMutation = { __typename?: 'Mutation' } & {
@@ -677,9 +696,9 @@ export type SignupMutation = { __typename?: 'Mutation' } & {
 
 export type UpdateChallengeMutationVariables = Exact<{
   lessonId: Scalars['Int']
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
   id: Scalars['Int']
 }>
 
@@ -720,9 +739,9 @@ export type UpdateLessonMutationVariables = Exact<{
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
-  order?: Maybe<Scalars['Int']>
-  description?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  order: Scalars['Int']
+  description: Scalars['String']
+  title: Scalars['String']
 }>
 
 export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
@@ -833,7 +852,19 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
             starsReceived?: Maybe<
               Array<
                 Maybe<
-                  { __typename?: 'Star' } & Pick<Star, 'lessonId' | 'comment'>
+                  { __typename?: 'Star' } & Pick<
+                    Star,
+                    'lessonId' | 'comment'
+                  > & {
+                      student: { __typename?: 'User' } & Pick<
+                        User,
+                        'username' | 'name'
+                      >
+                      lesson: { __typename?: 'Lesson' } & Pick<
+                        Lesson,
+                        'title' | 'order'
+                      >
+                    }
                 >
               >
             >
@@ -972,6 +1003,7 @@ export type ResolversTypes = {
   Session: ResolverTypeWrapper<Session>
   Star: ResolverTypeWrapper<Star>
   Submission: ResolverTypeWrapper<Submission>
+  SubmissionStatus: SubmissionStatus
   SuccessResponse: ResolverTypeWrapper<SuccessResponse>
   TokenResponse: ResolverTypeWrapper<TokenResponse>
   User: ResolverTypeWrapper<User>
@@ -1041,15 +1073,11 @@ export type ChallengeResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1057,17 +1085,13 @@ export type LessonResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  description?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
     ParentType,
@@ -1156,13 +1180,13 @@ export type MutationResolvers<
     Maybe<ResolversTypes['Submission']>,
     ParentType,
     ContextType,
-    RequireFields<MutationAcceptSubmissionArgs, 'id' | 'comment'>
+    RequireFields<MutationAcceptSubmissionArgs, 'id' | 'comment' | 'lessonId'>
   >
   rejectSubmission?: Resolver<
     Maybe<ResolversTypes['Submission']>,
     ParentType,
     ContextType,
-    RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment'>
+    RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment' | 'lessonId'>
   >
   createLesson?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -1174,7 +1198,10 @@ export type MutationResolvers<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateLessonArgs, 'id'>
+    RequireFields<
+      MutationUpdateLessonArgs,
+      'id' | 'description' | 'title' | 'order'
+    >
   >
   createChallenge?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -1189,7 +1216,10 @@ export type MutationResolvers<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateChallengeArgs, 'lessonId' | 'id'>
+    RequireFields<
+      MutationUpdateChallengeArgs,
+      'lessonId' | 'order' | 'description' | 'title' | 'id'
+    >
   >
 }
 
@@ -1253,11 +1283,11 @@ export type StarResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
 > = {
-  id?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  studentId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  mentorId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  student?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1265,34 +1295,26 @@ export type SubmissionResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  status?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  status?: Resolver<ResolversTypes['SubmissionStatus'], ParentType, ContextType>
   mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   diff?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   viewCount?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   order?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  challengeId?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  challenge?: Resolver<
-    Maybe<ResolversTypes['Challenge']>,
-    ParentType,
-    ContextType
-  >
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  challengeId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  challenge?: Resolver<ResolversTypes['Challenge'], ParentType, ContextType>
   reviewer?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   reviewerId?: Resolver<
     Maybe<ResolversTypes['String']>,
     ParentType,
     ContextType
   >
   createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  updatedAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1318,14 +1340,14 @@ export type UserResolvers<
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  username?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   userLesson?: Resolver<
     Maybe<ResolversTypes['UserLesson']>,
     ParentType,
     ContextType
   >
-  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
@@ -1335,9 +1357,9 @@ export type UserLessonResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
 > = {
-  id?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  lessonId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   isPassed?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   isTeaching?: Resolver<
     Maybe<ResolversTypes['String']>,
@@ -1392,8 +1414,16 @@ export type IDirectiveResolvers<
 > = DirectiveResolvers<ContextType>
 
 export const AcceptSubmissionDocument = gql`
-  mutation acceptSubmission($submissionId: String!, $comment: String!) {
-    acceptSubmission(id: $submissionId, comment: $comment) {
+  mutation acceptSubmission(
+    $submissionId: Int!
+    $comment: String!
+    $lessonId: Int!
+  ) {
+    acceptSubmission(
+      id: $submissionId
+      comment: $comment
+      lessonId: $lessonId
+    ) {
       id
       comment
       status
@@ -1452,6 +1482,7 @@ export function withAcceptSubmission<
  *   variables: {
  *      submissionId: // value for 'submissionId'
  *      comment: // value for 'comment'
+ *      lessonId: // value for 'lessonId'
  *   },
  * });
  */
@@ -1951,6 +1982,101 @@ export type CreateLessonMutationOptions = Apollo.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
 >
+export const CreateSubmissionDocument = gql`
+  mutation createSubmission(
+    $lessonId: Int!
+    $challengeId: Int!
+    $cliToken: String!
+    $diff: String!
+  ) {
+    createSubmission(
+      lessonId: $lessonId
+      challengeId: $challengeId
+      cliToken: $cliToken
+      diff: $diff
+    ) {
+      id
+      diff
+    }
+  }
+`
+export type CreateSubmissionMutationFn = Apollo.MutationFunction<
+  CreateSubmissionMutation,
+  CreateSubmissionMutationVariables
+>
+export type CreateSubmissionProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables
+  >
+} &
+  TChildProps
+export function withCreateSubmission<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables,
+    CreateSubmissionProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables,
+    CreateSubmissionProps<TChildProps, TDataName>
+  >(CreateSubmissionDocument, {
+    alias: 'createSubmission',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useCreateSubmissionMutation__
+ *
+ * To run a mutation, you first call `useCreateSubmissionMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateSubmissionMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createSubmissionMutation, { data, loading, error }] = useCreateSubmissionMutation({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *      challengeId: // value for 'challengeId'
+ *      cliToken: // value for 'cliToken'
+ *      diff: // value for 'diff'
+ *   },
+ * });
+ */
+export function useCreateSubmissionMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    CreateSubmissionMutation,
+    CreateSubmissionMutationVariables
+  >(CreateSubmissionDocument, options)
+}
+export type CreateSubmissionMutationHookResult = ReturnType<
+  typeof useCreateSubmissionMutation
+>
+export type CreateSubmissionMutationResult = Apollo.MutationResult<CreateSubmissionMutation>
+export type CreateSubmissionMutationOptions = Apollo.BaseMutationOptions<
+  CreateSubmissionMutation,
+  CreateSubmissionMutationVariables
+>
 export const GetAppDocument = gql`
   query getApp {
     lessons {
@@ -2193,7 +2319,6 @@ export const GetSessionDocument = gql`
         reviewer {
           id
           username
-          isAdmin
         }
         createdAt
         updatedAt
@@ -2289,7 +2414,7 @@ export type GetSessionQueryResult = Apollo.QueryResult<
   GetSessionQueryVariables
 >
 export const SubmissionsDocument = gql`
-  query submissions($lessonId: String!) {
+  query submissions($lessonId: Int!) {
     submissions(lessonId: $lessonId) {
       id
       status
@@ -2303,6 +2428,11 @@ export const SubmissionsDocument = gql`
       user {
         id
         username
+      }
+      reviewer {
+        id
+        username
+        name
       }
       createdAt
       updatedAt
@@ -2554,8 +2684,16 @@ export type LogoutMutationOptions = Apollo.BaseMutationOptions<
   LogoutMutationVariables
 >
 export const RejectSubmissionDocument = gql`
-  mutation rejectSubmission($submissionId: String!, $comment: String!) {
-    rejectSubmission(id: $submissionId, comment: $comment) {
+  mutation rejectSubmission(
+    $submissionId: Int!
+    $comment: String!
+    $lessonId: Int!
+  ) {
+    rejectSubmission(
+      id: $submissionId
+      comment: $comment
+      lessonId: $lessonId
+    ) {
       id
       comment
       status
@@ -2614,6 +2752,7 @@ export function withRejectSubmission<
  *   variables: {
  *      submissionId: // value for 'submissionId'
  *      comment: // value for 'comment'
+ *      lessonId: // value for 'lessonId'
  *   },
  * });
  */
@@ -2978,9 +3117,9 @@ export type SignupMutationOptions = Apollo.BaseMutationOptions<
 export const UpdateChallengeDocument = gql`
   mutation updateChallenge(
     $lessonId: Int!
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
     $id: Int!
   ) {
     updateChallenge(
@@ -3093,9 +3232,9 @@ export const UpdateLessonDocument = gql`
     $githubUrl: String
     $videoUrl: String
     $chatUrl: String
-    $order: Int
-    $description: String
-    $title: String
+    $order: Int!
+    $description: String!
+    $title: String!
   ) {
     updateLesson(
       docUrl: $docUrl
@@ -3335,6 +3474,14 @@ export const UserInfoDocument = gql`
         starsReceived {
           lessonId
           comment
+          student {
+            username
+            name
+          }
+          lesson {
+            title
+            order
+          }
         }
       }
     }

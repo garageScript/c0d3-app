@@ -92,7 +92,7 @@ export const ResetPassword: React.FC = () => {
 }
 
 export const ResetPasswordContainer = () => (
-  <Layout>
+  <Layout title="Confirm">
     <ResetPassword />
   </Layout>
 )

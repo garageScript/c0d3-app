@@ -64,7 +64,7 @@ const Alerts: React.FC<GetAppProps> = ({ data }) => {
   ))
 
   return (
-    <AdminLayout data={data}>
+    <AdminLayout data={data} title="Admin alerts">
       <Card
         primary={true}
         title="Alerts"

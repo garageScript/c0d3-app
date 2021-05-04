@@ -2,6 +2,7 @@ import * as React from 'react'
 import LessonCard from '../../components/LessonCard'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
+import { SubmissionStatus } from '../../graphql'
 
 export default {
   component: LessonCard,
@@ -25,7 +26,7 @@ const mocks = [
         submissions: [
           {
             id: '',
-            status: 'open',
+            status: SubmissionStatus.Open,
             diff: '',
             comment: '',
             challengeId: '0',
@@ -40,7 +41,7 @@ const mocks = [
           },
           {
             id: '',
-            status: 'open',
+            status: SubmissionStatus.Open,
             diff: '',
             comment: '',
             challengeId: '1',

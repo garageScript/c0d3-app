@@ -111,7 +111,7 @@ const LoginPage: React.FC = () => {
     } catch {} // catch error that's thrown by default from mutation
   }
   return (
-    <Layout>
+    <Layout title="Login">
       <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
     </Layout>
   )

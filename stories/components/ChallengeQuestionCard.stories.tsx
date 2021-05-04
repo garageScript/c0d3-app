@@ -9,8 +9,9 @@ export default {
 const currentChallenge = {
   description:
     'Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.',
-  id: '105',
+  id: 105,
   order: 0,
+  lessonId: 23,
   title: 'Greater than 5',
   status: 'unsubmitted'
 }

@@ -11,9 +11,9 @@ import {
   GetAppDocument,
   Lesson,
   Alert,
-  Session,
   UserLesson,
-  useGetSessionQuery
+  useGetSessionQuery,
+  GetSessionQuery
 } from '../graphql/'
 import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
@@ -30,21 +30,28 @@ type Props = {
   lessons: Lesson[]
   alerts: Alert[]
 }
+
 interface State {
-  session: Session
+  session: GetSessionQuery['session']
   progress: number
   current: number
 }
-const generateMap = (session: Session): { [id: string]: UserLesson } => {
-  const { lessonStatus } = session
+
+const generateMap = (
+  session: GetSessionQuery['session']
+): { [id: string]: UserLesson } => {
   const lessonStatusMap: { [id: string]: UserLesson } = {}
+  const { lessonStatus } = session!
   for (const status of lessonStatus) {
     const lessonId = _.get(status, 'lessonId', '-1') as string
-    lessonStatusMap[lessonId] = status
+    lessonStatusMap[lessonId] = status as UserLesson
   }
   return lessonStatusMap
 }
-const calculateProgress = (session: Session, lessons: Lesson[]): number => {
+const calculateProgress = (
+  session: GetSessionQuery['session'],
+  lessons: Lesson[]
+): number => {
   const lessonStatusMap = generateMap(session)
   const lessonInProgressIdx = _.cond([
     [_.isEqual.bind(null, -1), _.constant(0)],
@@ -60,7 +67,10 @@ const calculateProgress = (session: Session, lessons: Lesson[]): number => {
   const TOTAL_LESSONS = 7
   return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
 }
-const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
+const calculateCurrent = (
+  session: GetSessionQuery['session'],
+  lessons: Lesson[]
+): number => {
   const lessonStatusMap = generateMap(session)
   return _.cond([
     [_.isEqual.bind(null, -1), _.constant(0)],
@@ -124,14 +134,17 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     )
   })
   return (
-    <Layout>
+    <Layout title="Curriculum">
       <div className="row">
         <AlertsDisplay alerts={alerts} page="curriculum" />
         <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
         <div className="col-xl-4">
           <div className="d-xl-block">
             <DiscordBar />
-            <ProgressCard progressCount={state.progress} />
+            <ProgressCard
+              progressCount={state.progress}
+              loggedIn={!!state.session?.user}
+            />
           </div>
           <div className="d-none d-xl-block">
             <AnnouncementCard announcements={announcements} />

@@ -8,7 +8,7 @@ export default gql`
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
-    submissions(lessonId: String!): [Submission]
+    submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
   }
 
@@ -39,13 +39,13 @@ export default gql`
     ): [Alert]
     removeAlert(id: Int!): SuccessResponse
     createSubmission(
-      lessonId: String!
-      challengeId: String!
+      lessonId: Int!
+      challengeId: Int!
       cliToken: String!
       diff: String!
     ): Submission
-    acceptSubmission(id: String!, comment: String!): Submission
-    rejectSubmission(id: String!, comment: String!): Submission
+    acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
+    rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     createLesson(
       description: String!
       docUrl: String
@@ -57,13 +57,13 @@ export default gql`
     ): [Lesson]
     updateLesson(
       id: Int!
-      description: String
+      description: String!
       docUrl: String
       githubUrl: String
       videoUrl: String
-      title: String
+      title: String!
       chatUrl: String
-      order: Int
+      order: Int!
     ): [Lesson]
     createChallenge(
       lessonId: Int!
@@ -73,10 +73,10 @@ export default gql`
     ): [Lesson]
     updateChallenge(
       lessonId: Int!
+      order: Int!
+      description: String!
+      title: String!
       id: Int!
-      order: Int
-      description: String
-      title: String
     ): [Lesson]
   }
 
@@ -92,30 +92,36 @@ export default gql`
   }
 
   type Submission {
-    id: String
-    status: String
+    id: Int!
+    status: SubmissionStatus!
     mrUrl: String
     diff: String
     viewCount: Int
     comment: String
     userId: String
     order: Int
-    lessonId: String
-    challengeId: String
-    challenge: Challenge
+    lessonId: Int!
+    challengeId: Int!
+    challenge: Challenge!
     reviewer: User
-    user: User
+    user: User!
     reviewerId: String
     createdAt: String
-    updatedAt: String
+    updatedAt: String!
+  }
+
+  enum SubmissionStatus {
+    needMoreWork
+    open
+    passed
   }
 
   type User {
     id: Int!
-    username: String
+    username: String!
     userLesson: UserLesson
-    email: String
-    name: String
+    email: String!
+    name: String!
     isAdmin: Boolean!
     cliToken: String
   }
@@ -127,9 +133,9 @@ export default gql`
   }
 
   type UserLesson {
-    id: String
+    id: Int!
     userId: String
-    lessonId: String
+    lessonId: Int!
     isPassed: String
     isTeaching: String
     isEnrolled: String
@@ -138,13 +144,13 @@ export default gql`
   }
 
   type Lesson {
-    id: String
-    description: String
+    id: Int!
+    description: String!
     docUrl: String
     githubUrl: String
     videoUrl: String
-    order: Int
-    title: String
+    order: Int!
+    title: String!
     challenges: [Challenge]
     users: [User]
     currentUser: User
@@ -152,11 +158,11 @@ export default gql`
   }
 
   type Challenge {
-    id: String
-    description: String
-    lessonId: String
-    title: String
-    order: Int
+    id: Int!
+    description: String!
+    lessonId: Int!
+    title: String!
+    order: Int!
   }
 
   type Alert {
@@ -168,10 +174,10 @@ export default gql`
   }
 
   type Star {
-    id: String!
-    studentId: Int
-    mentorId: Int
-    lessonId: Int
+    id: Int!
+    lessonId: Int!
     comment: String
+    student: User!
+    lesson: Lesson!
   }
 `

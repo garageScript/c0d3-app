@@ -2,14 +2,21 @@ import * as React from 'react'
 import _ from 'lodash'
 import Layout from '../../components/Layout'
 import { useRouter } from 'next/router'
-import { UserSubmission } from '../../@types/challenge'
-import { LessonStatus } from '../../@types/lesson'
+import {
+  Challenge,
+  UserLesson,
+  Submission,
+  Star,
+  SubmissionStatus
+} from '../../graphql/index'
 import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
-import ProfileSubmissions from '../../components/ProfileSubmissions'
+import ProfileSubmissions, {
+  LessonChallenge
+} from '../../components/ProfileSubmissions'
+import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
-import { Star } from '../../@types/lesson'
 import Error, { StatusCode } from '../../components/Error'
 
 export type UserInfo = {
@@ -19,7 +26,7 @@ export type UserInfo = {
 }
 
 type LessonStatusMap = {
-  [id: string]: LessonStatus
+  [id: string]: UserLesson
 }
 
 const UserProfile: React.FC = () => {
@@ -49,22 +56,14 @@ const UserProfile: React.FC = () => {
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' '
   }
-  const userSubmissions: UserSubmission[] = _.get(
-    data,
-    'userInfo.submissions',
-    []
-  )
+  const userSubmissions: Submission[] = _.get(data, 'userInfo.submissions', [])
   const profileLessons = (lessons || []).map(lessonInfo => {
     const lesson = lessonInfo || {}
     const { challenges } = lesson
     const challengeList = challenges || []
     const passedLessonSubmissions = userSubmissions.filter(
       ({ status, lessonId }) => {
-        // TODO: Fix lesson.id and lessonId types
-        return (
-          status === 'passed' &&
-          parseInt(lessonId || '') === parseInt(lesson.id + '')
-        )
+        return status === SubmissionStatus.Passed && lessonId === lesson.id
       }
     )
     const completedSubmissions = passedLessonSubmissions.filter(
@@ -82,25 +81,19 @@ const UserProfile: React.FC = () => {
     const lesson = lessonInfo || {}
     const challengeList = lesson.challenges || []
     const challengesStatus = challengeList.map(challengeInfo => {
-      const challenge = challengeInfo || {}
+      const challenge = challengeInfo || ({} as Challenge)
       const challengeSubmission = userSubmissions.find(
-        submission => challenge.id === submission.challengeId
+        submission => challenge.id === Number(submission.challengeId)
       )
 
       return {
         challengeNumber: challenge.order || 0,
-        challengeStatus: challengeSubmission
-          ? challengeSubmission.status
-          : 'open'
+        challengeStatus: challengeSubmission?.status
       }
     })
-    const lessonStatus: LessonStatus[] = _.get(
-      data,
-      'userInfo.lessonStatus',
-      []
-    )
+    const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
     const lessonStatusMap: LessonStatusMap = lessonStatus.reduce(
-      (map: LessonStatusMap, lesson: LessonStatus) => {
+      (map: LessonStatusMap, lesson: UserLesson) => {
         //https://stackoverflow.com/questions/46043087/type-null-cannot-be-used-as-an-index-type
         map[String(lesson.lessonId)] = lesson
         return map
@@ -117,16 +110,31 @@ const UserProfile: React.FC = () => {
       title: lesson.title || '',
       challenges: challengesStatus,
       starsReceived
-    }
+    } as LessonChallenge
   })
 
+  const lessonStatus: UserLesson[] = _.get(data, 'userInfo.lessonStatus', [])
+  const validProfiles = lessonStatus.filter(
+    ({ starsReceived }) => (starsReceived || []).length !== 0
+  )
+  const profileStars: Star[] = validProfiles.reduce(
+    (acc, { starsReceived }) => {
+      acc.push(...(starsReceived as Star[]))
+      return acc
+    },
+    [] as Star[]
+  )
+
   return (
-    <Layout>
+    <Layout title={userInfo.username}>
       <div className="row mt-4">
-        <div className="col-4">
+        <div className="mb-3 mb-md-0 col-md-4">
           <ProfileImageInfo user={userInfo} />
+          {profileStars.length === 0 ? null : (
+            <ProfileStarComments stars={profileStars} />
+          )}
         </div>
-        <div className="col-8">
+        <div className="col-md-8">
           <ProfileLessons lessons={profileLessons} />
           <ProfileSubmissions lessons={profileSubmissions} />
         </div>

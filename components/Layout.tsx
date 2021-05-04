@@ -1,11 +1,14 @@
 import React from 'react'
 import AppNav from './AppNav'
 import Footer from './Footer'
-
-const Layout: React.FC = ({ children }) => (
+import Head from 'next/head'
+const Layout: React.FC<{ title?: string }> = ({ children, title }) => (
   <>
+    <Head>
+      <title key="title">{title ? `${title} — C0D3` : 'C0D3'}</title>
+    </Head>
     <AppNav />
-    <div className="container">{children}</div>
+    <div className="container-md">{children}</div>
     <Footer />
   </>
 )

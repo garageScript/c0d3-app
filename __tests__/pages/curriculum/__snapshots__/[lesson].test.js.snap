@@ -88,7 +88,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
       </div>
     </nav>
     <div
-      class="container"
+      class="container-md"
     >
       <div
         class="row mt-4"
@@ -199,7 +199,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="row challenge-display mt-3"
           >
             <div
-              class="col-4"
+              class="challenge-display_challenges false col-md-4"
             >
               <div
                 class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
@@ -347,7 +347,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               </div>
             </div>
             <div
-              class="col-8"
+              class="col-md-8"
             >
               <div
                 class="card shadow-sm border-0"
@@ -489,7 +489,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -530,20 +530,12 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
         <div
           class="mb-3 col-sm-9"
         >
-          <div
-            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
-          >
-            <div
-              style="display: block; box-sizing: border-box; padding-top: 100%;"
-            />
-            <img
-              decoding="async"
-              sizes="100vw"
-              src="/_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=3840&q=75"
-              srcset="/_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=640&q=75 640w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=750&q=75 750w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=828&q=75 828w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=1080&q=75 1080w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=1200&q=75 1200w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=1920&q=75 1920w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=2048&q=75 2048w, /_next/image?url=%2Fassets%2Ferrors%2F404.svg&w=3840&q=75 3840w"
-              style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-            />
-          </div>
+          <img
+            height="1200"
+            layout="responsive"
+            src="/assets/errors/404.svg"
+            width="1200"
+          />
         </div>
       </div>
     </div>
@@ -646,7 +638,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
       </div>
     </nav>
     <div
-      class="container"
+      class="container-md"
     >
       <div
         class="row mt-4"
@@ -765,7 +757,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="row challenge-display mt-3"
           >
             <div
-              class="col-4"
+              class="challenge-display_challenges false col-md-4"
             >
               <div
                 class="card mb-2 challenge-title-card challenge-title-card--done"
@@ -923,7 +915,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               </div>
             </div>
             <div
-              class="col-8"
+              class="col-md-8"
             >
               <div
                 class="card shadow-sm border-0"
@@ -1075,7 +1067,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
     </div>
   </nav>
   <div
-    class="container"
+    class="container-md"
   >
     <div
       class="container"
@@ -1116,20 +1108,12 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
         <div
           class="mb-3 col-sm-9"
         >
-          <div
-            style="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
-          >
-            <div
-              style="display: block; box-sizing: border-box; padding-top: 100%;"
-            />
-            <img
-              decoding="async"
-              sizes="100vw"
-              src="/_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=3840&q=75"
-              srcset="/_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=640&q=75 640w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=750&q=75 750w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=828&q=75 828w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=1080&q=75 1080w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=1200&q=75 1200w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=1920&q=75 1920w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=2048&q=75 2048w, /_next/image?url=%2Fassets%2Ferrors%2F500.svg&w=3840&q=75 3840w"
-              style="visibility: inherit; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-            />
-          </div>
+          <img
+            height="1200"
+            layout="responsive"
+            src="/assets/errors/500.svg"
+            width="1200"
+          />
         </div>
       </div>
     </div>

@@ -9,11 +9,13 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <span
           class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -69,7 +71,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
         <a
@@ -97,11 +99,13 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <span
           class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -157,7 +161,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
         <a
@@ -184,11 +188,13 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <span
           class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
@@ -244,7 +250,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
         <a
@@ -271,11 +277,13 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <div>
           <h4
@@ -303,7 +311,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
       </div>
@@ -321,11 +329,13 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <div>
           <h4
@@ -353,7 +363,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
       </div>
@@ -374,11 +384,13 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <div>
           <h4
@@ -406,7 +418,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
       </div>
@@ -424,11 +436,13 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <div>
           <h4
@@ -456,7 +470,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
       </div>
@@ -474,11 +488,13 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
       class="d-flex p-2"
     >
       <img
-        class="lesson-card__image"
+        class="align-self-center"
+        height="165"
         src="/assets/curriculum/undefined"
+        width="116"
       />
       <div
-        class="w-100 pl-4"
+        class="lesson-card__description pl-4"
       >
         <div>
           <h4
@@ -506,7 +522,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
             </div>
           </div>
           <p
-            class="lesson-card__description mt-2"
+            class="mt-2"
           />
         </div>
       </div>

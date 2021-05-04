@@ -1,15 +1,15 @@
-jest.mock('../dbload')
 jest.mock('../mattermost')
 jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
-import db from '../dbload'
 import { createChallenge, updateChallenge } from './challengesController'
 import { validateLessonId } from '../validateLessonId'
 import lessonData from '../../__dummy__/lessonData'
 import { lessons } from '../../graphql/queryResolvers/lessons'
+import { prisma } from '../../prisma'
 
 lessons.mockReturnValue(lessonData)
-const { Challenge, Lesson } = db
+prisma.challenge.create = jest.fn()
+prisma.challenge.update = jest.fn()
 
 const mockChallengeData = {
   lessonId: 5,
@@ -19,11 +19,10 @@ const mockChallengeData = {
   title: 'potato'
 }
 
-Lesson.findAll.mockReturnValue(lessonData)
-
 describe('Challenges controller tests', () => {
   beforeEach(() => {
-    validateLessonId.mockReturnValue(true)
+    jest.clearAllMocks()
+    validateLessonId.mockResolvedValue(true)
   })
   const ctx = {
     req: {
@@ -31,38 +30,37 @@ describe('Challenges controller tests', () => {
     }
   }
 
-  Challenge.build.mockReturnValue({ save: () => {} })
-
   test('Should create new challenge', async () => {
     await expect(
       createChallenge(null, mockChallengeData, ctx)
     ).resolves.toEqual(lessonData)
+    expect(prisma.challenge.create).toBeCalledWith({ data: mockChallengeData })
   })
 
   test('Should update challenge', async () => {
+    const { id, lessonId, ...data } = mockChallengeData
     await expect(
       updateChallenge(null, mockChallengeData, ctx)
     ).resolves.toEqual(lessonData)
+    expect(prisma.challenge.update).toBeCalledWith({ where: { id }, data })
   })
 
   test('Should throw error if lessonId does not exist \
    in database when creating challenge', async () => {
-    validateLessonId.mockImplementation(() => {
-      throw new Error()
-    })
+    validateLessonId.mockRejectedValueOnce(new Error())
     await expect(
       createChallenge(null, mockChallengeData, ctx)
     ).rejects.toThrowError()
+    expect(prisma.challenge.create).not.toBeCalled()
   })
 
   test('Should throw error if lessonId does not exist \
   in database when updating challenge', async () => {
-    validateLessonId.mockImplementation(() => {
-      throw new Error()
-    })
+    validateLessonId.mockRejectedValueOnce(new Error())
     await expect(
       updateChallenge(null, mockChallengeData, ctx)
     ).rejects.toThrowError()
+    expect(prisma.challenge.update).not.toBeCalled()
   })
 
   test('Should throw "User is not admin" error if user is not an admin \
@@ -71,6 +69,7 @@ describe('Challenges controller tests', () => {
     await expect(
       updateChallenge(null, mockChallengeData, ctx)
     ).rejects.toThrowError('User is not an admin')
+    expect(prisma.challenge.create).not.toBeCalled()
   })
 
   test('Should throw "User is not an admin" error if user is not an admin when \
@@ -79,5 +78,6 @@ describe('Challenges controller tests', () => {
     await expect(
       createChallenge(null, mockChallengeData, ctx)
     ).rejects.toThrowError('User is not an admin')
+    expect(prisma.challenge.update).not.toBeCalled()
   })
 })

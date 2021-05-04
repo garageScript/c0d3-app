@@ -1,66 +1,60 @@
-import db from '../dbload'
+import { User } from '.prisma/client'
 import { Context } from '../../@types/helpers'
+import {
+  CreateSubmissionMutation,
+  MutationAcceptSubmissionArgs,
+  MutationCreateSubmissionArgs,
+  MutationRejectSubmissionArgs,
+  QuerySubmissionsArgs,
+  SubmissionStatus
+} from '../../graphql'
+import { prisma } from '../../prisma'
 import { decode } from '../encoding'
-import { getUserByEmail, publicChannelMessage } from '../mattermost'
-import { updateSubmission, ArgsUpdateSubmission } from '../updateSubmission'
 import { hasPassedLesson } from '../hasPassedLesson'
-import _ from 'lodash'
-
-const { User, Submission, Challenge, Lesson } = db
-
-type ArgsCreateSubmission = {
-  lessonId: string
-  cliToken: string
-  diff: string
-  challengeId: string
-}
-
-type ArgsGetSubmissions = {
-  lessonId: string
-}
-
-export enum SubmissionStatus {
-  OPEN = 'open',
-  PASSED = 'passed',
-  REJECTED = 'needMoreWork'
-}
+import { getUserByEmail, publicChannelMessage } from '../mattermost'
+import { updateSubmission } from '../updateSubmission'
 
 export const createSubmission = async (
   _parent: void,
-  args: ArgsCreateSubmission
-) => {
+  args: MutationCreateSubmissionArgs
+): Promise<CreateSubmissionMutation['createSubmission']> => {
   try {
     if (!args) throw new Error('Invalid args')
     const { challengeId, cliToken, diff, lessonId } = args
-    //to revert once CLI is fixed
-    //regex removes the colors from the submission diff data
     const { id } = decode(cliToken)
-    const { email, id: userId } = await User.findByPk(id)
-    const [submission] = await Submission.findOrCreate({
-      where: { lessonId, challengeId, userId }
+    const submissionData = { diff, status: SubmissionStatus.Open }
+    const {
+      lesson,
+      challenge,
+      user,
+      ...submission
+    } = await prisma.submission.upsert({
+      where: {
+        userId_lessonId_challengeId: {
+          userId: Number(id),
+          lessonId,
+          challengeId
+        }
+      },
+      create: { ...submissionData, challengeId, lessonId, userId: Number(id) },
+      update: submissionData,
+      include: {
+        user: true,
+        lesson: true,
+        challenge: true
+      }
     })
-
-    await submission.update({
-      diff,
-      status: SubmissionStatus.OPEN,
-      viewCount: 0
-    })
-
-    const [currentLesson, challenge] = await Promise.all([
-      Lesson.findByPk(lessonId),
-      Challenge.findByPk(challengeId)
-    ])
 
     // query nextLesson based off order property of currentLesson
-    const nextLesson = await Lesson.findOne({
-      where: { order: currentLesson.order + 1 }
+    const nextLesson = await prisma.lesson.findFirst({
+      where: { order: lesson.order + 1 }
     })
 
     // if no Lesson was found nextLesson is null
-    if (nextLesson) {
-      const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()
-      const { username } = await getUserByEmail(email)
-      const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${currentLesson.id}>) to review the code.`
+    if (nextLesson?.chatUrl) {
+      const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()!
+      const { username } = await getUserByEmail(user.email)
+      const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${lessonId}>) to review the code.`
       publicChannelMessage(nextLessonChannelName, message)
     }
 
@@ -72,16 +66,16 @@ export const createSubmission = async (
 
 export const acceptSubmission = async (
   _parent: void,
-  args: ArgsUpdateSubmission,
+  args: MutationAcceptSubmissionArgs,
   ctx: Context
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
-    const reviewerId = await getReviewer(ctx, args.lessonId)
+    const reviewerId = await getReviewer(ctx.req.user, args.lessonId)
     return updateSubmission({
       ...args,
       reviewerId,
-      status: SubmissionStatus.PASSED
+      status: SubmissionStatus.Passed
     })
   } catch (error) {
     throw new Error(error)
@@ -90,16 +84,16 @@ export const acceptSubmission = async (
 
 export const rejectSubmission = async (
   _parent: void,
-  args: ArgsUpdateSubmission,
+  args: MutationRejectSubmissionArgs,
   ctx: Context
 ) => {
   try {
     if (!args) throw new Error('Invalid args')
-    const reviewerId = await getReviewer(ctx, args.lessonId)
+    const reviewerId = await getReviewer(ctx.req.user, args.lessonId)
     return updateSubmission({
       ...args,
       reviewerId,
-      status: SubmissionStatus.REJECTED
+      status: SubmissionStatus.NeedMoreWork
     })
   } catch (error) {
     throw new Error(error)
@@ -108,31 +102,35 @@ export const rejectSubmission = async (
 
 export const submissions = async (
   _parent: void,
-  arg: ArgsGetSubmissions,
+  arg: QuerySubmissionsArgs,
   ctx: Context
 ) => {
   try {
     const { lessonId } = arg
-    await getReviewer(ctx, lessonId)
-    return Submission.findAll({
+    await getReviewer(ctx.req.user, lessonId)
+    return prisma.submission.findMany({
       where: {
-        status: 'open',
-        lessonId
+        status: SubmissionStatus.Open,
+        lessonId: lessonId
       },
-      include: ['challenge', 'user']
+      include: {
+        challenge: true,
+        user: true,
+        reviewer: true
+      }
     })
   } catch (error) {
     throw new Error(error)
   }
 }
 
-const getReviewer = async (
-  ctx: Context,
-  lessonId?: string
+export const getReviewer = async (
+  user: User | null,
+  lessonId: number
 ): Promise<number> => {
-  const reviewerId = _.get(ctx, 'req.user.id', false)
+  const reviewerId = user?.id
   if (!reviewerId) throw new Error('Invalid user')
-  if (lessonId && !(await hasPassedLesson(reviewerId, lessonId))) {
+  if (!(await hasPassedLesson(reviewerId, lessonId))) {
     throw new Error('User has not passed this lesson and cannot review.')
   }
   return reviewerId

@@ -1,7 +1,11 @@
 //From https://mdxjs.com/guides/syntax-highlighting
 import React from 'react'
-import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import github from 'prism-react-renderer/themes/github'
+import Highlight, {
+  defaultProps,
+  Language,
+  PrismTheme
+} from 'prism-react-renderer'
+import custom from './customTheme'
 type Props = {
   className: Language
   children: string
@@ -13,10 +17,13 @@ const CodeBlock: React.FC<Props> = ({ children, className }) => {
       {...defaultProps}
       code={children}
       language={language}
-      theme={github}
+      theme={custom as PrismTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px' }}>
+        <pre
+          className={className}
+          style={{ ...style, padding: '20px 20px 0 20px' }}
+        >
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
