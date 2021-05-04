@@ -9,12 +9,7 @@ const ModalImage: React.FC<
   const handle = (state: boolean) => () => setShow(state)
   return (
     <>
-      <Image
-        className="mdx-image"
-        {...props}
-        onClick={handle(true)}
-        objectFit="contain"
-      />
+      <Image className="mdx-image" {...props} onClick={handle(true)} />
       <Modal
         className="mdx-modal-image"
         show={show}
