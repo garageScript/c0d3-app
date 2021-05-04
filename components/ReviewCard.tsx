@@ -33,7 +33,7 @@ type DiffViewProps = {
   diff?: string
   lessonId: number
   challengeId: number
-  userId: string
+  userId: number
 }
 
 const CommentBox: React.FC<{
@@ -43,7 +43,7 @@ const CommentBox: React.FC<{
   str: string
   lessonId: number
   challengeId: number
-  userId: string
+  userId: number
 }> = ({ line, newPath, files, str, lessonId, challengeId, userId }) => {
   const [comments, setComments] = useState<String[]>([])
   const [input, setInput] = useState('')
@@ -215,8 +215,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     challenge,
     lessonId,
     reviewer,
-    challengeId,
-    userId
+    challengeId
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
@@ -251,7 +250,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                 diff={diff}
                 lessonId={lessonId}
                 challengeId={challengeId}
-                userId={userId!}
+                userId={user.id!}
               />
             </div>
           </div>
