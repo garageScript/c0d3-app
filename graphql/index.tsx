@@ -84,6 +84,7 @@ export type Mutation = {
   createSubmission?: Maybe<Submission>
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
+  commentSubmission?: Maybe<Submission>
   createLesson?: Maybe<Array<Maybe<Lesson>>>
   updateLesson?: Maybe<Array<Maybe<Lesson>>>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
@@ -151,6 +152,11 @@ export type MutationRejectSubmissionArgs = {
   id: Scalars['Int']
   comment: Scalars['String']
   lessonId: Scalars['Int']
+}
+
+export type MutationCommentSubmissionArgs = {
+  diff: Scalars['String']
+  id: Scalars['Int']
 }
 
 export type MutationCreateLessonArgs = {
@@ -351,6 +357,17 @@ export type ChangeAdminRightsMutationVariables = Exact<{
 export type ChangeAdminRightsMutation = { __typename?: 'Mutation' } & {
   changeAdminRights?: Maybe<
     { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
+  >
+}
+
+export type CommentSubmissionMutationVariables = Exact<{
+  diff: Scalars['String']
+  id: Scalars['Int']
+}>
+
+export type CommentSubmissionMutation = { __typename?: 'Mutation' } & {
+  commentSubmission?: Maybe<
+    { __typename?: 'Submission' } & Pick<Submission, 'id' | 'diff'>
   >
 }
 
@@ -1188,6 +1205,12 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment' | 'lessonId'>
   >
+  commentSubmission?: Resolver<
+    Maybe<ResolversTypes['Submission']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationCommentSubmissionArgs, 'diff' | 'id'>
+  >
   createLesson?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
@@ -1756,6 +1779,89 @@ export type ChangeAdminRightsMutationResult = Apollo.MutationResult<ChangeAdminR
 export type ChangeAdminRightsMutationOptions = Apollo.BaseMutationOptions<
   ChangeAdminRightsMutation,
   ChangeAdminRightsMutationVariables
+>
+export const CommentSubmissionDocument = gql`
+  mutation commentSubmission($diff: String!, $id: Int!) {
+    commentSubmission(id: $id, diff: $diff) {
+      id
+      diff
+    }
+  }
+`
+export type CommentSubmissionMutationFn = Apollo.MutationFunction<
+  CommentSubmissionMutation,
+  CommentSubmissionMutationVariables
+>
+export type CommentSubmissionProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    CommentSubmissionMutation,
+    CommentSubmissionMutationVariables
+  >
+} &
+  TChildProps
+export function withCommentSubmission<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    CommentSubmissionMutation,
+    CommentSubmissionMutationVariables,
+    CommentSubmissionProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    CommentSubmissionMutation,
+    CommentSubmissionMutationVariables,
+    CommentSubmissionProps<TChildProps, TDataName>
+  >(CommentSubmissionDocument, {
+    alias: 'commentSubmission',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useCommentSubmissionMutation__
+ *
+ * To run a mutation, you first call `useCommentSubmissionMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCommentSubmissionMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [commentSubmissionMutation, { data, loading, error }] = useCommentSubmissionMutation({
+ *   variables: {
+ *      diff: // value for 'diff'
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useCommentSubmissionMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CommentSubmissionMutation,
+    CommentSubmissionMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    CommentSubmissionMutation,
+    CommentSubmissionMutationVariables
+  >(CommentSubmissionDocument, options)
+}
+export type CommentSubmissionMutationHookResult = ReturnType<
+  typeof useCommentSubmissionMutation
+>
+export type CommentSubmissionMutationResult = Apollo.MutationResult<CommentSubmissionMutation>
+export type CommentSubmissionMutationOptions = Apollo.BaseMutationOptions<
+  CommentSubmissionMutation,
+  CommentSubmissionMutationVariables
 >
 export const CreateChallengeDocument = gql`
   mutation createChallenge(

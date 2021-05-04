@@ -5,6 +5,7 @@ import {
   MutationAcceptSubmissionArgs,
   MutationCreateSubmissionArgs,
   MutationRejectSubmissionArgs,
+  MutationCommentSubmissionArgs,
   QuerySubmissionsArgs,
   SubmissionStatus
 } from '../../graphql'
@@ -13,6 +14,23 @@ import { decode } from '../encoding'
 import { hasPassedLesson } from '../hasPassedLesson'
 import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission } from '../updateSubmission'
+
+export const commentSubmission = async (
+  _parent: void,
+  args: MutationCommentSubmissionArgs
+): Promise<CreateSubmissionMutation['createSubmission']> => {
+  if (!args) throw new Error('Invalid args')
+  const { id, diff } = args
+  await prisma.submission.update({
+    where: {
+      id
+    },
+    data: {
+      diff
+    }
+  })
+  return { diff, id }
+}
 
 export const createSubmission = async (
   _parent: void,

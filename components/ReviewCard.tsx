@@ -1,4 +1,4 @@
-import { useMutation } from '@apollo/client'
+import { useMutation, useQuery } from '@apollo/client'
 
 import React, { memo, useEffect, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
@@ -10,6 +10,7 @@ import dayjs from 'dayjs'
 
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
+import COMMENT_SUBMISSION from '../graphql/queries/commentSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { Submission } from '../graphql/index'
 
@@ -34,6 +35,7 @@ type DiffViewProps = {
   lessonId: number
   challengeId: number
   userId: number
+  id: number
 }
 
 const CommentBox: React.FC<{
@@ -44,8 +46,10 @@ const CommentBox: React.FC<{
   lessonId: number
   challengeId: number
   userId: number
-}> = ({ line, newPath, files, str, lessonId, challengeId, userId }) => {
+  id: number
+}> = ({ line, newPath, files, str, lessonId, challengeId, userId, id }) => {
   const [comments, setComments] = useState<String[]>([])
+  const [comment] = useMutation(COMMENT_SUBMISSION)
   const [input, setInput] = useState('')
   const updateFile = (
     _line: number,
@@ -71,9 +75,11 @@ const CommentBox: React.FC<{
       }
     })
     console.log(copyFiles, 'copiedFullFiles')
-    rebuildDiff(copyFiles)
-    console.log(lessonId, challengeId, userId, 'ID')
-    //SEND BACK NEW DIFF
+    const newDiff = rebuildDiff(copyFiles)
+    console.log(id, 'ID')
+    comment({
+      variables: { diff: newDiff, id: id }
+    })
   }
   return (
     <div className="commentBox bg-white">
@@ -108,7 +114,8 @@ export const DiffView: React.FC<DiffViewProps> = ({
   diff = '',
   lessonId,
   userId,
-  challengeId
+  challengeId,
+  id
 }) => {
   const files = gitDiffParser.parse(diff)
 
@@ -153,6 +160,7 @@ export const DiffView: React.FC<DiffViewProps> = ({
               lessonId={lessonId}
               challengeId={challengeId}
               userId={userId}
+              id={id}
             />
           )}
         </>
@@ -217,6 +225,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     reviewer,
     challengeId
   } = submissionData
+  //console.log(id, challenge.title, 'props')
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
@@ -251,6 +260,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                 lessonId={lessonId}
                 challengeId={challengeId}
                 userId={user.id!}
+                id={id}
               />
             </div>
           </div>

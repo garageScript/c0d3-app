@@ -15,7 +15,8 @@ import {
   createSubmission,
   acceptSubmission,
   rejectSubmission,
-  submissions
+  submissions,
+  commentSubmission
 } from '../helpers/controllers/submissionController'
 import { setStar } from '../helpers/controllers/starsController'
 import { alerts } from './queryResolvers/alerts'
@@ -48,6 +49,7 @@ export default {
     createSubmission,
     acceptSubmission,
     rejectSubmission,
+    commentSubmission,
     createLesson,
     updateLesson,
     login,

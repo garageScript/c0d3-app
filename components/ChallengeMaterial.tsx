@@ -173,12 +173,23 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     const syntaxHighlight = (str: string): any => {
       if (!str) return
 
+      const comment = str.split('|||withComment')
+
       const language = Prism.highlight(
         str,
         Prism.languages.javascript,
         'javascript'
       )
-      return <span dangerouslySetInnerHTML={{ __html: language }} />
+      return (
+        <>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: comment[1] ? comment[0] : language
+            }}
+          />
+          {comment[1] && <h1>WITH COMMENT</h1>}
+        </>
+      )
     }
 
     return (
