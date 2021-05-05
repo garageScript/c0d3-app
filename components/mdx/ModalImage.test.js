@@ -49,7 +49,7 @@ describe('Image component test', () => {
         height={360}
         src="/assets/landing/header-01.svg"
         data-testid="modal-image"
-        tall="true"
+        proportions="tall"
       />
     )
     userEvent.click(getByTestId('modal-image'))
@@ -63,7 +63,7 @@ describe('Image component test', () => {
         height={360}
         src="/assets/landing/header-01.svg"
         data-testid="modal-image"
-        long="true"
+        proportions="long"
       />
     )
     userEvent.click(getByTestId('modal-image'))
