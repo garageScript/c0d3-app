@@ -15,6 +15,8 @@ import {
 } from './submissionController'
 
 describe('Submissions Mutations', () => {
+  hasPassedLesson.mockResolvedValue(true)
+
   const submissionMock = {
     diff: 'fakeDiff',
     lesson: {
@@ -30,11 +32,6 @@ describe('Submissions Mutations', () => {
     }
   }
 
-  beforeEach(() => {
-    jest.clearAllMocks()
-    hasPassedLesson.mockResolvedValue(true)
-  })
-
   describe('createSubmission', () => {
     const args = {
       challengeId: 1,
@@ -45,12 +42,17 @@ describe('Submissions Mutations', () => {
     }
 
     beforeEach(() => {
-      prisma.submission.upsert = jest.fn().mockResolvedValue(submissionMock)
+      prisma.submission.upsert = jest
+        .fn()
+        .mockResolvedValue({ id: 1, ...submissionMock })
       prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
     })
 
     test('should return submission', () => {
-      expect(createSubmission(null, args)).resolves.toEqual(submissionMock)
+      return expect(createSubmission(null, args)).resolves.toEqual({
+        id: 1,
+        diff: 'fakeDiff'
+      })
     })
 
     test('should notify next lesson channel when there is a next lesson', async () => {
@@ -75,7 +77,9 @@ describe('Submissions Mutations', () => {
     })
 
     test('should throw error Invalid args', () => {
-      expect(createSubmission(null, null)).rejects.toThrow('Invalid args')
+      return expect(createSubmission(null, null)).rejects.toThrow(
+        'Invalid args'
+      )
     })
   })
 
@@ -92,12 +96,16 @@ describe('Submissions Mutations', () => {
     })
 
     it('should throw error with no args', () => {
-      expect(acceptSubmission()).rejects.toThrow('Invalid args')
+      return expect(acceptSubmission(null, null, { req: {} })).rejects.toThrow(
+        'Invalid args'
+      )
     })
 
     it('should throw error with no user', () => {
       const submission = { id: 1, comment: 'fake comment' }
-      expect(acceptSubmission(null, submission)).rejects.toThrow('Invalid user')
+      return expect(
+        acceptSubmission(null, submission, { req: {} })
+      ).rejects.toThrow('Invalid user')
     })
   })
 
@@ -114,21 +122,22 @@ describe('Submissions Mutations', () => {
     })
 
     it('should throw error with no args', () => {
-      expect(rejectSubmission()).rejects.toThrow('Invalid args')
+      return expect(rejectSubmission(null, null, { req: {} })).rejects.toThrow(
+        'Invalid args'
+      )
     })
 
     it('should throw error with no user', () => {
       const submission = { id: 1, comment: 'fake comment' }
-      expect(rejectSubmission(null, submission)).rejects.toThrow('Invalid user')
+      return expect(
+        rejectSubmission(null, submission, { req: {} })
+      ).rejects.toThrow('Invalid user')
     })
   })
 })
 
 describe('Submissions Queries', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-    hasPassedLesson.mockResolvedValue(true)
-  })
+  hasPassedLesson.mockResolvedValue(true)
 
   it('should return no submissions if there are none open', async () => {
     prisma.submission.findMany = jest.fn().mockReturnValue([])
@@ -157,34 +166,31 @@ describe('Submissions Queries', () => {
     const result = await submissions(
       null,
       { lessonId: '2' },
-      { req: { error: jest.fn(), user: { id: 2 } } }
+      { req: { user: { id: 2 } } }
     )
     expect(result).toEqual([submissionResults])
   })
 
   it('should throw error if no user is authenticated', () => {
-    expect(submissions(null, { lessonId: '2' }, null)).rejects.toThrow(
-      'Invalid user'
-    )
+    return expect(
+      submissions(null, { lessonId: '2' }, { req: {} })
+    ).rejects.toThrow('Invalid user')
   })
 })
 
 describe('getReviewer', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
   it('should throw error if reviewerId is falsy', () => {
-    expect(getReviewer()).rejects.toThrow('Invalid user')
+    return expect(getReviewer()).rejects.toThrow('Invalid user')
   })
 
-  it('should return true if user has completed the lesson', () => {
+  it('should return user id if user has completed the lesson', () => {
     hasPassedLesson.mockResolvedValueOnce(true)
-    expect(getReviewer({ id: 1 }, 1)).resolves.toBe(true)
+    return expect(getReviewer({ id: 1 }, 1)).resolves.toBe(1)
   })
 
   it('should throw error if user has not completed the lesson', () => {
     hasPassedLesson.mockResolvedValueOnce(false)
-    expect(getReviewer({ id: 1 }, 1)).rejects.toThrow(
+    return expect(getReviewer({ id: 1 }, 1)).rejects.toThrow(
       'User has not passed this lesson and cannot review.'
     )
   })
