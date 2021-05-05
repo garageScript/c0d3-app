@@ -11,6 +11,7 @@ import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import { SubmissionStatus } from '../graphql'
+import CommentBox from './CommentBox'
 
 dayjs.extend(relativeTime)
 
@@ -151,7 +152,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     'submission.reviewer.username',
     null
   )
-  let files = null
+  let files: File[] | null = null
 
   if (diff) files = gitDiffParser.parse(diff)
 
@@ -187,7 +188,18 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
               __html: comment[1] ? comment[0] : language
             }}
           />
-          {comment[1] && <h1>WITH COMMENT</h1>}
+          {comment[1] && (
+            <CommentBox
+              line={Number.parseInt(comment[1].split('|||')[1])}
+              newPath={newPath}
+              files={files as File[]}
+              str={str}
+              lessonId={currentChallenge.lessonId!}
+              challengeId={currentChallenge.submission?.challengeId!}
+              userId={Number.parseInt(currentChallenge.submission?.userId!)}
+              id={currentChallenge.submission?.id!}
+            />
+          )}
         </>
       )
     }

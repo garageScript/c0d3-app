@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from '@apollo/client'
+import { useMutation } from '@apollo/client'
 
 import React, { memo, useEffect, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
@@ -10,7 +10,6 @@ import dayjs from 'dayjs'
 
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
-import COMMENT_SUBMISSION from '../graphql/queries/commentSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { Submission } from '../graphql/index'
 
@@ -19,8 +18,7 @@ import _ from 'lodash'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
-
-import rebuildDiff from '../helpers/rebuildDiff'
+import CommentBox from './CommentBox'
 
 import styles from '../scss/reviewCard.module.scss'
 
@@ -38,76 +36,6 @@ type DiffViewProps = {
   id: number
 }
 
-const CommentBox: React.FC<{
-  line: number
-  newPath: string
-  files: File[]
-  str: string
-  lessonId: number
-  challengeId: number
-  userId: number
-  id: number
-}> = ({ line, newPath, files, str, lessonId, challengeId, userId, id }) => {
-  const [comments, setComments] = useState<String[]>([])
-  const [comment] = useMutation(COMMENT_SUBMISSION)
-  const [input, setInput] = useState('')
-  const updateFile = (
-    _line: number,
-    _newPath: string,
-    _files: File[],
-    str: string
-  ) => {
-    //there could be only one file with give path
-    const edited = _files.filter(f => f.newPath === _newPath)
-    const pre = str.split('|||withComment')[0]
-    edited[0].hunks.map(h =>
-      h.changes.map((c, i) => {
-        if (c.content === pre) {
-          h.changes[i].content = str
-        }
-      })
-    )
-    console.log(edited, 'updated')
-    const copyFiles = [..._files]
-    copyFiles.map((f, i) => {
-      if (f.newPath === newPath) {
-        _files[i] = edited[0]
-      }
-    })
-    console.log(copyFiles, 'copiedFullFiles')
-    const newDiff = rebuildDiff(copyFiles)
-    console.log(id, 'ID')
-    comment({
-      variables: { diff: newDiff, id: id }
-    })
-  }
-  return (
-    <div className="commentBox bg-white">
-      {comments.map(c => (
-        <p key={c.valueOf()}>{c}</p>
-      ))}
-      <input
-        type="text"
-        className="d-block"
-        onChange={e => {
-          setInput(e.target.value)
-        }}
-        id="commentBox__input"
-        value={input}
-      />
-      <button
-        className="button"
-        onClick={() => {
-          setComments([...comments, input])
-          setInput('')
-          updateFile(line, newPath, files, str)
-        }}
-      >
-        <label htmlFor="commentBox__input">Comment</label>
-      </button>
-    </div>
-  )
-}
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 
 export const DiffView: React.FC<DiffViewProps> = ({
