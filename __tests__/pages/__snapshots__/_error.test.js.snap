@@ -47,7 +47,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -179,7 +179,7 @@ exports[`_error page Should return Error 500 component 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >

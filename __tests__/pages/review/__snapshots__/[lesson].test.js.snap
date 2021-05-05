@@ -47,7 +47,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -196,7 +196,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://discord.com/channels/828783458469675019/"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -363,7 +363,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://discord.com/channels/828783458469675019/"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >

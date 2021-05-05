@@ -37,7 +37,7 @@ const navItems: NavItem[] = [
     external: true
   },
   {
-    path: 'https://discord.com/channels/828783458469675019/',
+    path: 'https://discord.gg/c0d3',
     name: 'Community',
     external: true
   }

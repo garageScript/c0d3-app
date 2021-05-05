@@ -47,7 +47,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -1600,7 +1600,7 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >

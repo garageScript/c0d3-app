@@ -48,7 +48,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://discord.com/channels/828783458469675019/"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -449,7 +449,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -598,7 +598,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://discord.com/channels/828783458469675019/"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -1027,7 +1027,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >

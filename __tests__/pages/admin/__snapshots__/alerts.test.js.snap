@@ -47,7 +47,7 @@ exports[`Alerts page Should remove alert 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -432,7 +432,7 @@ exports[`Alerts page Should remove alert 2`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://discord.com/channels/828783458469675019/"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
