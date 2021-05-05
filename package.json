@@ -29,34 +29,6 @@
     "*.svg": "svgo --multipass",
     "prisma/schema.prisma": "npx prisma format"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "**/*.{ts,tsx}",
-      "!**/node_modules/**",
-      "!**/*.d.ts",
-      "!graphql/(resolvers|typeDefs|schema).ts",
-      "!graphql/queries/*.ts"
-    ],
-    "coveragePathIgnorePatterns": [
-      "stories",
-      "graphql/index.tsx",
-      "<rootDir>/__tests__/utils/",
-      "prisma",
-      "scripts"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "testPathIgnorePatterns": ["<rootDir>/__tests__/utils/"]
-  },
   "dependencies": {
     "@apollo/client": "^3.3.16",
     "@prisma/client": "^2.21.2",
