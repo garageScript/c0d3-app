@@ -279,23 +279,15 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Journey
+            Learn
           </a>
           <a
             className="nav-item nav-link"
-            href="https://chat.c0d3.com"
+            href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Help
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/contributors"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Contributors
+            Community
           </a>
         </div>
       </div>
@@ -368,23 +360,15 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
             rel="noopener noreferrer"
             target="_blank"
           >
-            Journey
+            Learn
           </a>
           <a
             className="nav-item nav-link"
-            href="https://chat.c0d3.com"
+            href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
           >
-            Help
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/contributors"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Contributors
+            Community
           </a>
         </div>
       </div>
@@ -2613,23 +2597,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -2777,23 +2753,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -4173,23 +4141,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -4308,23 +4268,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -11835,23 +11787,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -12081,23 +12025,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -12976,23 +12912,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -13871,23 +13799,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -14766,23 +14686,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -15417,23 +15329,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -15744,23 +15648,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -15909,23 +15805,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -16822,23 +16710,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -19237,23 +19117,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -19429,23 +19301,15 @@ Array [
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               className="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/contributors"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>

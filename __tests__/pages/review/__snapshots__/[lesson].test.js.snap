@@ -43,21 +43,15 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -198,21 +192,15 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -371,21 +359,15 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"

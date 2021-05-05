@@ -44,21 +44,15 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -451,21 +445,15 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -606,21 +594,15 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -1041,21 +1023,15 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
