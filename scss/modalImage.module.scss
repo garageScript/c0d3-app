@@ -2,10 +2,30 @@
   .modal-content {
     background-color: transparent;
     border: none;
+    & > .modal-body {
+      @media (max-width: 768px) {
+        overflow: scroll;
+        width: auto;
+        & > img {
+          max-width: 150vw;
+          &.long {
+            max-width: 300vw;
+          }
+        }
+      }
+      & > img {
+        @media (min-width: 768px) {
+          width: 100%;
+          &.tall {
+            max-width: 30%;
+          }
+        }
+      }
+    }
   }
   .modal-dialog {
-    max-width: 80%;
-    width: 80%;
+    max-width: 90%;
+    width: 90%;
     text-align: center;
   }
   .mdx-modal-image {

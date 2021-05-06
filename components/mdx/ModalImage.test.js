@@ -42,4 +42,32 @@ describe('Image component test', () => {
     userEvent.type(hidden, 'esc')
     await waitFor(() => expect(hidden).not.toBeInTheDocument())
   })
+  test('Should add classname according to props', async () => {
+    const { getByTestId, baseElement } = render(
+      <Image
+        width={313}
+        height={360}
+        src="/assets/landing/header-01.svg"
+        data-testid="modal-image"
+        proportions="tall"
+      />
+    )
+    userEvent.click(getByTestId('modal-image'))
+    const hidden = baseElement.querySelector('.modal-body > img')
+    expect(hidden.className).toEqual('tall')
+  })
+  test('Should add classname according to props', async () => {
+    const { getByTestId, baseElement } = render(
+      <Image
+        width={313}
+        height={360}
+        src="/assets/landing/header-01.svg"
+        data-testid="modal-image"
+        proportions="long"
+      />
+    )
+    userEvent.click(getByTestId('modal-image'))
+    const hidden = baseElement.querySelector('.modal-body > img')
+    expect(hidden.className).toEqual('long')
+  })
 })

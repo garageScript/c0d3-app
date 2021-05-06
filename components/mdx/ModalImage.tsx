@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Image, { ImageProps } from 'next/image'
 
-const ModalImage: React.FC<ImageProps> = (props: ImageProps) => {
+type Proportions = 'long' | 'tall'
+
+const ModalImage: React.FC<
+  ImageProps & { proportions?: Proportions }
+> = props => {
   const [show, setShow] = useState(false)
   const handle = (state: boolean) => () => setShow(state)
   return (
@@ -16,10 +20,9 @@ const ModalImage: React.FC<ImageProps> = (props: ImageProps) => {
         onClick={handle(false)}
       >
         <Modal.Body>
-          <Image
-            height={(props.height as number) * 2}
-            width={(props.width as number) * 2}
+          <img
             src={props.src}
+            className={`${props.proportions || 'mdx-modal__inner-image'}`}
           />
         </Modal.Body>
       </Modal>
