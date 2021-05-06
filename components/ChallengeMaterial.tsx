@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Challenge, Submission, UserLesson } from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
@@ -160,17 +160,17 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     const oldValue: String[] = []
     const newValue: String[] = []
 
-    hunks.forEach(hunk => {
-      hunk.changes.forEach(change => {
-        if (change.isDelete) oldValue.push(change.content)
-        else if (change.isInsert) newValue.push(change.content)
-        else {
-          oldValue.push(change.content)
-          newValue.push(change.content)
-        }
-      })
-    })
+    const [innerState, setInnerState] = React.useState<String[]>([])
 
+    useEffect(() => {
+      hunks.forEach(hunk => {
+        hunk.changes.forEach(change => {
+          if (!change.isDelete) newValue.push(change.content)
+        })
+      })
+      setInnerState(newValue)
+      console.log(Date.now(), 'refresh')
+    }, [currentChallenge.id])
     const syntaxHighlight = (str: string): any => {
       if (!str) return
 
@@ -207,11 +207,19 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     return (
       <ReactDiffViewer
         key={_.uniqueId()}
-        oldValue={oldValue.join('\n')}
-        newValue={newValue.join('\n')}
+        newValue={innerState.join('\n')}
         renderContent={syntaxHighlight}
         splitView={false}
         leftTitle={`${newPath}`}
+        onLineNumberClick={n => {
+          innerState.map((_, i) => {
+            if (i + 1 === Number.parseInt(n.split('-')[1])) {
+              const copy = [...innerState]
+              copy[i] = innerState[i] + `|||withComment|||${i + 1}`
+              setInnerState(copy)
+            }
+          })
+        }}
       />
     )
   }
