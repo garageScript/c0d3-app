@@ -96,9 +96,24 @@ model Submission {
   lesson      Lesson    @relation(fields: [lessonId], references: [id])
   reviewer    User?     @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
   user        User      @relation("userSubmissions", fields: [userId], references: [id])
+  comments    Comment[]
 
   @@unique([userId, lessonId, challengeId])
   @@map("submissions")
+}
+
+model Comment {
+  submissionId Int
+  submission   Submission @relation(fields: [submissionId], references: [id])
+  userId       Int
+  user         User       @relation(fields: [userId], references: [id])
+  id           Int        @unique @default(autoincrement())
+  line         Int
+  order        Int
+  content      String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
 }
 
 model UserLesson {
@@ -136,6 +151,7 @@ model User {
   submissionsReviewed    Submission[] @relation("userReviewedSubmissions")
   submissions            Submission[] @relation("userSubmissions")
   userLessons            UserLesson[]
+  comment                Comment[]
 
   @@map("users")
 }

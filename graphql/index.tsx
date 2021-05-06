@@ -55,6 +55,18 @@ export type Challenge = {
   order: Scalars['Int']
 }
 
+export type Comment = {
+  __typename?: 'Comment'
+  id: Scalars['Int']
+  userId: Scalars['Int']
+  submissionId: Scalars['Int']
+  line: Scalars['Int']
+  order: Scalars['Int']
+  content: Scalars['String']
+  createdAt: Scalars['String']
+  updatedAt: Scalars['String']
+}
+
 export type Lesson = {
   __typename?: 'Lesson'
   id: Scalars['Int']
@@ -205,6 +217,7 @@ export type Query = {
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
   alerts: Array<Alert>
+  getComments?: Maybe<Array<Maybe<Comment>>>
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -221,6 +234,12 @@ export type QueryIsTokenValidArgs = {
 
 export type QuerySubmissionsArgs = {
   lessonId: Scalars['Int']
+}
+
+export type QueryGetCommentsArgs = {
+  line: Scalars['Int']
+  challengeId: Scalars['Int']
+  userId: Scalars['Int']
 }
 
 export type Session = {
@@ -1014,6 +1033,7 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   CacheControlScope: CacheControlScope
   Challenge: ResolverTypeWrapper<Challenge>
+  Comment: ResolverTypeWrapper<Comment>
   Lesson: ResolverTypeWrapper<Lesson>
   Mutation: ResolverTypeWrapper<{}>
   Query: ResolverTypeWrapper<{}>
@@ -1035,6 +1055,7 @@ export type ResolversParentTypes = {
   AuthResponse: AuthResponse
   Boolean: Scalars['Boolean']
   Challenge: Challenge
+  Comment: Comment
   Lesson: Lesson
   Mutation: {}
   Query: {}
@@ -1095,6 +1116,21 @@ export type ChallengeResolvers<
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}
+
+export type CommentResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
+> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  userId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  submissionId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  line?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  updatedAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1282,6 +1318,12 @@ export type QueryResolvers<
     RequireFields<QuerySubmissionsArgs, 'lessonId'>
   >
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
+  getComments?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['Comment']>>>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryGetCommentsArgs, 'line' | 'challengeId' | 'userId'>
+  >
 }
 
 export type SessionResolvers<
@@ -1407,6 +1449,7 @@ export type Resolvers<ContextType = any> = {
   Alert?: AlertResolvers<ContextType>
   AuthResponse?: AuthResponseResolvers<ContextType>
   Challenge?: ChallengeResolvers<ContextType>
+  Comment?: CommentResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
   Mutation?: MutationResolvers<ContextType>
   Query?: QueryResolvers<ContextType>

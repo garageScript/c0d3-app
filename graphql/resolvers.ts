@@ -23,6 +23,7 @@ import { alerts } from './queryResolvers/alerts'
 import { lessons } from './queryResolvers/lessons'
 import { session } from './queryResolvers/session'
 import { allUsers } from './queryResolvers/allUsers'
+import { getComments } from './queryResolvers/getComments'
 import { getLessonMentors } from './queryResolvers/getLessonMentors'
 import { changeAdminRights } from '../helpers/controllers/adminController'
 import {
@@ -39,7 +40,8 @@ export default {
     userInfo,
     lessons,
     session,
-    alerts
+    alerts,
+    getComments
   },
 
   Mutation: {

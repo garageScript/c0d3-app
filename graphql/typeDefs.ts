@@ -10,13 +10,13 @@ export default gql`
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
+    getComments(line: Int!, submissionId: Int!, userId: Int!): [Comment]
   }
 
   type TokenResponse {
     success: Boolean
     token: String
   }
-
   type Mutation {
     setStar(mentorId: Int!, lessonId: Int!, comment: String): SuccessResponse!
     login(username: String!, password: String!): AuthResponse
@@ -110,7 +110,16 @@ export default gql`
     createdAt: String
     updatedAt: String!
   }
-
+  type Comment {
+    id: Int!
+    userId: Int!
+    submissionId: Int!
+    line: Int!
+    order: Int!
+    content: String!
+    createdAt: String!
+    updatedAt: String!
+  }
   enum SubmissionStatus {
     needMoreWork
     open
