@@ -8,14 +8,11 @@ export const getComments = async (
   _ctx: Context
 ) => {
   const { line, challengeId, userId } = arg
-  const comments = prisma.comment.findMany({
+  const comments = await prisma.comment.findMany({
     where: {
       line: line,
       userId: userId,
       submissionId: challengeId
-    },
-    select: {
-      content: true
     },
     orderBy: {
       order: 'asc'

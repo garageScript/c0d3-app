@@ -144,6 +144,7 @@ type ChallengeQuestionCardProps = {
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
+  console.log(currentChallenge, 'input')
   const diff = _.get(currentChallenge, 'submission.diff', '')
   const comment = _.get(currentChallenge, 'submission.comment', '')
   const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
@@ -157,10 +158,10 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   if (diff) files = gitDiffParser.parse(diff)
 
   const renderFile = ({ hunks, newPath }: File) => {
-    const oldValue: String[] = []
     const newValue: String[] = []
 
     const [innerState, setInnerState] = React.useState<String[]>([])
+    console.log(currentChallenge.submission?.user.id, 'INPUT')
 
     useEffect(() => {
       hunks.forEach(hunk => {
@@ -169,7 +170,6 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         })
       })
       setInnerState(newValue)
-      console.log(Date.now(), 'refresh')
     }, [currentChallenge.id])
     const syntaxHighlight = (str: string): any => {
       if (!str) return
@@ -197,7 +197,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
               lessonId={currentChallenge.lessonId!}
               challengeId={currentChallenge.submission?.challengeId!}
               userId={Number.parseInt(currentChallenge.submission?.userId!)}
-              id={currentChallenge.submission?.id!}
+              id={currentChallenge.submission?.user.id!}
             />
           )}
         </>
@@ -347,6 +347,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   show,
   setShow
 }) => {
+  console.log(userSubmissions, 'submissions')
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }

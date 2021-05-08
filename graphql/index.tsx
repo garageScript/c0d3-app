@@ -238,7 +238,7 @@ export type QuerySubmissionsArgs = {
 
 export type QueryGetCommentsArgs = {
   line: Scalars['Int']
-  challengeId: Scalars['Int']
+  submissionId: Scalars['Int']
   userId: Scalars['Int']
 }
 
@@ -533,7 +533,9 @@ export type GetAppQuery = { __typename?: 'Query' } & {
               | 'lessonId'
               | 'createdAt'
               | 'updatedAt'
+              | 'userId'
             > & {
+                user: { __typename?: 'User' } & Pick<User, 'username' | 'id'>
                 reviewer?: Maybe<
                   { __typename?: 'User' } & Pick<User, 'id' | 'username'>
                 >
@@ -553,6 +555,25 @@ export type GetAppQuery = { __typename?: 'Query' } & {
     { __typename?: 'Alert' } & Pick<
       Alert,
       'id' | 'text' | 'type' | 'url' | 'urlCaption'
+    >
+  >
+}
+
+export type GetCommentsQueryVariables = Exact<{
+  line: Scalars['Int']
+  submissionId: Scalars['Int']
+  userId: Scalars['Int']
+}>
+
+export type GetCommentsQuery = { __typename?: 'Query' } & {
+  getComments?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Comment' } & Pick<
+          Comment,
+          'content' | 'createdAt' | 'userId'
+        >
+      >
     >
   >
 }
@@ -1322,7 +1343,7 @@ export type QueryResolvers<
     Maybe<Array<Maybe<ResolversTypes['Comment']>>>,
     ParentType,
     ContextType,
-    RequireFields<QueryGetCommentsArgs, 'line' | 'challengeId' | 'userId'>
+    RequireFields<QueryGetCommentsArgs, 'line' | 'submissionId' | 'userId'>
   >
 }
 
@@ -2252,6 +2273,10 @@ export const GetAppDocument = gql`
         isAdmin
       }
       submissions {
+        user {
+          username
+          id
+        }
         id
         status
         mrUrl
@@ -2265,8 +2290,12 @@ export const GetAppDocument = gql`
           id
           username
         }
+        user {
+          id
+        }
         createdAt
         updatedAt
+        userId
       }
       lessonStatus {
         lessonId
@@ -2353,6 +2382,98 @@ export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
 export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
+>
+export const GetCommentsDocument = gql`
+  query getComments($line: Int!, $submissionId: Int!, $userId: Int!) {
+    getComments(line: $line, submissionId: $submissionId, userId: $userId) {
+      content
+      createdAt
+      userId
+    }
+  }
+`
+export type GetCommentsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetCommentsQuery,
+    GetCommentsQueryVariables
+  >
+} &
+  TChildProps
+export function withGetComments<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetCommentsQuery,
+    GetCommentsQueryVariables,
+    GetCommentsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetCommentsQuery,
+    GetCommentsQueryVariables,
+    GetCommentsProps<TChildProps, TDataName>
+  >(GetCommentsDocument, {
+    alias: 'getComments',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetCommentsQuery__
+ *
+ * To run a query within a React component, call `useGetCommentsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCommentsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCommentsQuery({
+ *   variables: {
+ *      line: // value for 'line'
+ *      submissionId: // value for 'submissionId'
+ *      userId: // value for 'userId'
+ *   },
+ * });
+ */
+export function useGetCommentsQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    GetCommentsQuery,
+    GetCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetCommentsQuery, GetCommentsQueryVariables>(
+    GetCommentsDocument,
+    options
+  )
+}
+export function useGetCommentsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetCommentsQuery,
+    GetCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetCommentsQuery, GetCommentsQueryVariables>(
+    GetCommentsDocument,
+    options
+  )
+}
+export type GetCommentsQueryHookResult = ReturnType<typeof useGetCommentsQuery>
+export type GetCommentsLazyQueryHookResult = ReturnType<
+  typeof useGetCommentsLazyQuery
+>
+export type GetCommentsQueryResult = Apollo.QueryResult<
+  GetCommentsQuery,
+  GetCommentsQueryVariables
 >
 export const LessonMentorsDocument = gql`
   query lessonMentors($lessonId: Int!) {

@@ -37,6 +37,12 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
             id: true,
             username: true
           }
+        },
+        user: {
+          select: {
+            id: true,
+            username: true
+          }
         }
       }
     }),
@@ -60,7 +66,7 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
       }
     })
   ])
-
+  console.log(submissions, 'subs')
   const starMap = stars.reduce((map: StarMap, star) => {
     map[star.lessonId] = map[star.lessonId] || []
     map[star.lessonId].push(star)
@@ -71,7 +77,6 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
     ...userLesson,
     starsReceived: starMap[userLesson.lessonId] || []
   }))
-
   return {
     user,
     lessonStatus,

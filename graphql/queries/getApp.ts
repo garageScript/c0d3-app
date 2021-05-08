@@ -26,6 +26,9 @@ const GET_APP = gql`
         isAdmin
       }
       submissions {
+        user {
+          username
+        }
         id
         status
         mrUrl
@@ -39,8 +42,12 @@ const GET_APP = gql`
           id
           username
         }
+        user {
+          id
+        }
         createdAt
         updatedAt
+        userId
       }
       lessonStatus {
         lessonId
