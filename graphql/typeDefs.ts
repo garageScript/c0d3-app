@@ -47,6 +47,12 @@ export default gql`
     acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     commentSubmission(diff: String!, id: Int!): Submission
+    addComment(
+      line: Int!
+      submissionId: Int!
+      userId: Int!
+      content: String!
+    ): Comment
     createLesson(
       description: String!
       docUrl: String

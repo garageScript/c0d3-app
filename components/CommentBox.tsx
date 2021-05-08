@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useMutation, useQuery } from '@apollo/client'
+import { useMutation } from '@apollo/client'
 import COMMENT_SUBMISSION from '../graphql/queries/commentSubmission'
-import { useGetCommentsQuery } from '../graphql'
+import { useGetCommentsQuery, useAddCommentMutation } from '../graphql'
 import { File } from 'gitdiff-parser'
 import rebuildDiff from '../helpers/rebuildDiff'
-import _ from 'lodash'
 
 const CommentBox: React.FC<{
   line: number
@@ -18,6 +17,7 @@ const CommentBox: React.FC<{
 }> = ({ line, newPath, files, str, lessonId, challengeId, userId, id }) => {
   const [comments, setComments] = useState<String[]>([])
   console.log(userId, 'id')
+  const [addComment] = useAddCommentMutation()
   const { data } = useGetCommentsQuery({
     variables: { line, submissionId: challengeId, userId }
   })
@@ -74,10 +74,18 @@ const CommentBox: React.FC<{
       />
       <button
         className="button"
-        onClick={() => {
+        onClick={async () => {
           setComments([...comments, input])
-          setInput('')
           updateFile(line, newPath, files, str)
+          await addComment({
+            variables: {
+              line,
+              submissionId: challengeId,
+              userId,
+              content: input
+            }
+          })
+          setInput('')
         }}
       >
         <label htmlFor="commentBox__input">Comment</label>

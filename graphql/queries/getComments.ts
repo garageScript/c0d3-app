@@ -9,3 +9,5 @@ const GET_COMMENTS = gql`
     }
   }
 `
+
+export default GET_COMMENTS

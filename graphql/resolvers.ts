@@ -30,6 +30,7 @@ import {
   createLesson,
   updateLesson
 } from '../helpers/controllers/lessonsController'
+import { addComment } from './queryResolvers/addComment'
 
 export default {
   Query: {
@@ -61,6 +62,7 @@ export default {
     removeAlert,
     reqPwReset,
     createChallenge,
-    updateChallenge
+    updateChallenge,
+    addComment
   }
 }
