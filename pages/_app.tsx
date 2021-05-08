@@ -78,29 +78,6 @@ function MyApp({ Component, pageProps, err }: IProps) {
             content="https://www.c0d3.com/assets/c0d3-meta.svg"
           />
         </Head>
-        <noscript>
-          <pre>
-            {`
-        |------------|
-        | TO         |
-        | LEARN      |
-        | JAVASCRIPT |
-        | YOU        |
-        | FIRST      |
-        | NEED       |
-        | TO         |
-        | ENABLE     |
-        | JAVASCRIPT |
-        | IN         |
-        | YOUR       |
-        | BROWSER!   |
-        |------------|
-        (\__/) ||
-        (•ㅅ•) ||
-        / 　 づ
-          `}
-          </pre>
-        </noscript>
         <Component {...pageProps} err={err} />
       </MDXProvider>
     </ApolloProvider>
