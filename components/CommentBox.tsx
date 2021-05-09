@@ -4,6 +4,8 @@ import COMMENT_SUBMISSION from '../graphql/queries/commentSubmission'
 import { useGetCommentsQuery, useAddCommentMutation } from '../graphql'
 import { File } from 'gitdiff-parser'
 import rebuildDiff from '../helpers/rebuildDiff'
+import Markdown from 'markdown-to-jsx'
+import { ReviewerProfile } from './ReviewCard'
 
 const CommentBox: React.FC<{
   line: number
@@ -14,12 +16,27 @@ const CommentBox: React.FC<{
   challengeId: number
   userId: number
   id: number
-}> = ({ line, newPath, files, str, lessonId, challengeId, userId, id }) => {
+  commentingUserId?: number
+}> = ({
+  line,
+  newPath,
+  files,
+  str,
+  lessonId,
+  challengeId,
+  userId,
+  id,
+  commentingUserId
+}) => {
   const [comments, setComments] = useState<String[]>([])
-  console.log(userId, 'id')
+  console.log(commentingUserId, 'reviewer')
   const [addComment] = useAddCommentMutation()
   const { data } = useGetCommentsQuery({
-    variables: { line, submissionId: challengeId, userId }
+    variables: {
+      line,
+      submissionId: challengeId,
+      userId: userId
+    }
   })
   useEffect(() => {
     if (data?.getComments) {
@@ -44,16 +61,13 @@ const CommentBox: React.FC<{
         }
       })
     )
-    console.log(edited, 'updated')
     const copyFiles = [..._files]
     copyFiles.map((f, i) => {
       if (f.newPath === newPath) {
         _files[i] = edited[0]
       }
     })
-    console.log(copyFiles, 'copiedFullFiles')
     const newDiff = rebuildDiff(copyFiles)
-    console.log(id, 'ID')
     comment({
       variables: { diff: newDiff, id: id }
     })
@@ -61,7 +75,10 @@ const CommentBox: React.FC<{
   return (
     <div className="commentBox bg-white">
       {comments.map(c => (
-        <p key={c.valueOf()}>{c}</p>
+        <div key={c.valueOf()}>
+          <Markdown>{c.toString()}</Markdown>
+          <ReviewerProfile name="anon" username="Aonon" />
+        </div>
       ))}
       <input
         type="text"

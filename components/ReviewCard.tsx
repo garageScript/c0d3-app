@@ -11,7 +11,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import { Submission } from '../graphql/index'
+import { Submission, GetAppQuery } from '../graphql/index'
 
 import _ from 'lodash'
 
@@ -26,6 +26,7 @@ dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
   submissionData: Submission
+  session: GetAppQuery['session']
 }
 
 type DiffViewProps = {
@@ -34,6 +35,7 @@ type DiffViewProps = {
   challengeId: number
   userId: number
   id: number
+  session: GetAppQuery['session']
 }
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
@@ -43,7 +45,8 @@ export const DiffView: React.FC<DiffViewProps> = ({
   lessonId,
   userId,
   challengeId,
-  id
+  id,
+  session
 }) => {
   const files = gitDiffParser.parse(diff)
 
@@ -89,6 +92,7 @@ export const DiffView: React.FC<DiffViewProps> = ({
               challengeId={challengeId}
               userId={userId}
               id={id}
+              commentingUserId={session?.user?.id}
             />
           )}
         </>
@@ -122,7 +126,7 @@ type ReviewerProfileProps = {
   username: string | undefined | null
   name: string | undefined | null
 }
-const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
+export const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
   username,
   name
 }) => {
@@ -141,7 +145,10 @@ const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
     </a>
   )
 }
-export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
+export const ReviewCard: React.FC<ReviewCardProps> = ({
+  submissionData,
+  session
+}) => {
   const {
     id,
     diff,
@@ -153,7 +160,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     reviewer,
     challengeId
   } = submissionData
-  //console.log(id, challenge.title, 'props')
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
@@ -189,6 +195,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                 challengeId={challengeId}
                 userId={user.id!}
                 id={id}
+                session={session}
               />
             </div>
           </div>
