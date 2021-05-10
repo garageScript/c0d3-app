@@ -81,7 +81,8 @@ const theme = {
     {
       types: ['punctuation', 'operator'],
       style: {
-        color: 'rgb(36, 41, 46)'
+        color: 'rgb(36, 41, 46)',
+        backgroundColor: '#f7f6f3'
       }
     },
     {

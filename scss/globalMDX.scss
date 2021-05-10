@@ -41,3 +41,14 @@ ol + details {
     }
   }
 }
+
+ul + details {
+  margin-left: 1.25em !important;
+  margin-top: -0.75em !important;
+  & + details {
+    margin-left: 1.25em !important;
+    & + details {
+      margin-left: 1.25em !important;
+    }
+  }
+}

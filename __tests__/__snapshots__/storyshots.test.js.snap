@@ -16862,6 +16862,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -16877,6 +16878,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16897,6 +16899,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16917,6 +16920,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16932,6 +16936,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -16947,6 +16952,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16957,6 +16963,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16972,6 +16979,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16987,6 +16995,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -16997,6 +17006,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17012,6 +17022,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -17027,6 +17038,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17072,6 +17084,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -17087,6 +17100,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17107,6 +17121,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17135,6 +17150,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17155,6 +17171,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17215,6 +17232,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17245,6 +17263,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17295,6 +17314,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag spread punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17305,6 +17325,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag spread punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17325,6 +17346,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag spread punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17375,6 +17397,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17385,6 +17408,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17405,6 +17429,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17455,6 +17480,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17465,6 +17491,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17485,6 +17512,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17535,6 +17563,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17545,6 +17574,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17565,6 +17595,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17605,6 +17636,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17635,6 +17667,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17645,6 +17678,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17655,6 +17689,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17670,6 +17705,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17685,6 +17721,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17700,6 +17737,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17715,6 +17753,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17730,6 +17769,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17740,6 +17780,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17755,6 +17796,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -17770,6 +17812,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17800,6 +17843,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17840,6 +17884,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17850,6 +17895,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17870,6 +17916,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17900,6 +17947,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17910,6 +17958,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17920,6 +17969,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17940,6 +17990,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -17960,6 +18011,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -17980,6 +18032,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18020,6 +18073,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18030,6 +18084,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag script language-javascript punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18040,6 +18095,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18070,6 +18126,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18085,6 +18142,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18105,6 +18163,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18115,6 +18174,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18130,6 +18190,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18145,6 +18206,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18160,6 +18222,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18175,6 +18238,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18205,6 +18269,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18220,6 +18285,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18230,6 +18296,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18245,6 +18312,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18260,6 +18328,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18270,6 +18339,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18290,6 +18360,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18300,6 +18371,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18315,6 +18387,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18330,6 +18403,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18345,6 +18419,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18355,6 +18430,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18365,6 +18441,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18375,6 +18452,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18405,6 +18483,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18420,6 +18499,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18440,6 +18520,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18450,6 +18531,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18465,6 +18547,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token parameter punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18480,6 +18563,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18495,6 +18579,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18510,6 +18595,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18540,6 +18626,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18555,6 +18642,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18565,6 +18653,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18580,6 +18669,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18595,6 +18685,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18605,6 +18696,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18625,6 +18717,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18635,6 +18728,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18650,6 +18744,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18665,6 +18760,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18675,6 +18771,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18685,6 +18782,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18700,6 +18798,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18710,6 +18809,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token operator"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(0, 92, 197)",
         }
       }
@@ -18740,6 +18840,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18750,6 +18851,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18760,6 +18862,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18790,6 +18893,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18810,6 +18914,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18840,6 +18945,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18850,6 +18956,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18860,6 +18967,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18890,6 +18998,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18910,6 +19019,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18940,6 +19050,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18950,6 +19061,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -18980,6 +19092,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -19000,6 +19113,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token tag punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -19030,6 +19144,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
@@ -19060,6 +19175,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       className="token punctuation"
       style={
         Object {
+          "backgroundColor": "#f7f6f3",
           "color": "rgb(36, 41, 46)",
         }
       }
