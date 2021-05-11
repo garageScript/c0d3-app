@@ -23,27 +23,28 @@ export const createSubmission = async (
     const { challengeId, cliToken, diff, lessonId } = args
     const { id } = decode(cliToken)
     const submissionData = { diff, status: SubmissionStatus.Open }
-    const {
-      lesson,
-      challenge,
-      user,
-      ...submission
-    } = await prisma.submission.upsert({
-      where: {
-        userId_lessonId_challengeId: {
-          userId: Number(id),
+    const { lesson, challenge, user, ...submission } =
+      await prisma.submission.upsert({
+        where: {
+          userId_lessonId_challengeId: {
+            userId: Number(id),
+            lessonId,
+            challengeId
+          }
+        },
+        create: {
+          ...submissionData,
+          challengeId,
           lessonId,
-          challengeId
+          userId: Number(id)
+        },
+        update: submissionData,
+        include: {
+          user: true,
+          lesson: true,
+          challenge: true
         }
-      },
-      create: { ...submissionData, challengeId, lessonId, userId: Number(id) },
-      update: submissionData,
-      include: {
-        user: true,
-        lesson: true,
-        challenge: true
-      }
-    })
+      })
 
     // query nextLesson based off order property of currentLesson
     const nextLesson = await prisma.lesson.findFirst({

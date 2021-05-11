@@ -1409,9 +1409,8 @@ export type DirectiveResolvers<ContextType = any> = {
  * @deprecated
  * Use "DirectiveResolvers" root object instead. If you wish to get "IDirectiveResolvers", add "typesPrefix: I" to your config.
  */
-export type IDirectiveResolvers<
-  ContextType = any
-> = DirectiveResolvers<ContextType>
+export type IDirectiveResolvers<ContextType = any> =
+  DirectiveResolvers<ContextType>
 
 export const AcceptSubmissionDocument = gql`
   mutation acceptSubmission(
@@ -1501,7 +1500,8 @@ export function useAcceptSubmissionMutation(
 export type AcceptSubmissionMutationHookResult = ReturnType<
   typeof useAcceptSubmissionMutation
 >
-export type AcceptSubmissionMutationResult = Apollo.MutationResult<AcceptSubmissionMutation>
+export type AcceptSubmissionMutationResult =
+  Apollo.MutationResult<AcceptSubmissionMutation>
 export type AcceptSubmissionMutationOptions = Apollo.BaseMutationOptions<
   AcceptSubmissionMutation,
   AcceptSubmissionMutationVariables
@@ -1752,7 +1752,8 @@ export function useChangeAdminRightsMutation(
 export type ChangeAdminRightsMutationHookResult = ReturnType<
   typeof useChangeAdminRightsMutation
 >
-export type ChangeAdminRightsMutationResult = Apollo.MutationResult<ChangeAdminRightsMutation>
+export type ChangeAdminRightsMutationResult =
+  Apollo.MutationResult<ChangeAdminRightsMutation>
 export type ChangeAdminRightsMutationOptions = Apollo.BaseMutationOptions<
   ChangeAdminRightsMutation,
   ChangeAdminRightsMutationVariables
@@ -1860,7 +1861,8 @@ export function useCreateChallengeMutation(
 export type CreateChallengeMutationHookResult = ReturnType<
   typeof useCreateChallengeMutation
 >
-export type CreateChallengeMutationResult = Apollo.MutationResult<CreateChallengeMutation>
+export type CreateChallengeMutationResult =
+  Apollo.MutationResult<CreateChallengeMutation>
 export type CreateChallengeMutationOptions = Apollo.BaseMutationOptions<
   CreateChallengeMutation,
   CreateChallengeMutationVariables
@@ -1977,7 +1979,8 @@ export function useCreateLessonMutation(
 export type CreateLessonMutationHookResult = ReturnType<
   typeof useCreateLessonMutation
 >
-export type CreateLessonMutationResult = Apollo.MutationResult<CreateLessonMutation>
+export type CreateLessonMutationResult =
+  Apollo.MutationResult<CreateLessonMutation>
 export type CreateLessonMutationOptions = Apollo.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
@@ -2072,7 +2075,8 @@ export function useCreateSubmissionMutation(
 export type CreateSubmissionMutationHookResult = ReturnType<
   typeof useCreateSubmissionMutation
 >
-export type CreateSubmissionMutationResult = Apollo.MutationResult<CreateSubmissionMutation>
+export type CreateSubmissionMutationResult =
+  Apollo.MutationResult<CreateSubmissionMutation>
 export type CreateSubmissionMutationOptions = Apollo.BaseMutationOptions<
   CreateSubmissionMutation,
   CreateSubmissionMutationVariables
@@ -2534,16 +2538,14 @@ export type LoginMutationFn = Apollo.MutationFunction<
   LoginMutation,
   LoginMutationVariables
 >
-export type LoginProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: Apollo.MutationFunction<
-    LoginMutation,
-    LoginMutationVariables
-  >
-} &
-  TChildProps
+export type LoginProps<TChildProps = {}, TDataName extends string = 'mutate'> =
+  {
+    [key in TDataName]: Apollo.MutationFunction<
+      LoginMutation,
+      LoginMutationVariables
+    >
+  } &
+    TChildProps
 export function withLogin<
   TProps,
   TChildProps = {},
@@ -2616,16 +2618,14 @@ export type LogoutMutationFn = Apollo.MutationFunction<
   LogoutMutation,
   LogoutMutationVariables
 >
-export type LogoutProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: Apollo.MutationFunction<
-    LogoutMutation,
-    LogoutMutationVariables
-  >
-} &
-  TChildProps
+export type LogoutProps<TChildProps = {}, TDataName extends string = 'mutate'> =
+  {
+    [key in TDataName]: Apollo.MutationFunction<
+      LogoutMutation,
+      LogoutMutationVariables
+    >
+  } &
+    TChildProps
 export function withLogout<
   TProps,
   TChildProps = {},
@@ -2771,7 +2771,8 @@ export function useRejectSubmissionMutation(
 export type RejectSubmissionMutationHookResult = ReturnType<
   typeof useRejectSubmissionMutation
 >
-export type RejectSubmissionMutationResult = Apollo.MutationResult<RejectSubmissionMutation>
+export type RejectSubmissionMutationResult =
+  Apollo.MutationResult<RejectSubmissionMutation>
 export type RejectSubmissionMutationOptions = Apollo.BaseMutationOptions<
   RejectSubmissionMutation,
   RejectSubmissionMutationVariables
@@ -2852,7 +2853,8 @@ export function useRemoveAlertMutation(
 export type RemoveAlertMutationHookResult = ReturnType<
   typeof useRemoveAlertMutation
 >
-export type RemoveAlertMutationResult = Apollo.MutationResult<RemoveAlertMutation>
+export type RemoveAlertMutationResult =
+  Apollo.MutationResult<RemoveAlertMutation>
 export type RemoveAlertMutationOptions = Apollo.BaseMutationOptions<
   RemoveAlertMutation,
   RemoveAlertMutationVariables
@@ -3043,16 +3045,14 @@ export type SignupMutationFn = Apollo.MutationFunction<
   SignupMutation,
   SignupMutationVariables
 >
-export type SignupProps<
-  TChildProps = {},
-  TDataName extends string = 'mutate'
-> = {
-  [key in TDataName]: Apollo.MutationFunction<
-    SignupMutation,
-    SignupMutationVariables
-  >
-} &
-  TChildProps
+export type SignupProps<TChildProps = {}, TDataName extends string = 'mutate'> =
+  {
+    [key in TDataName]: Apollo.MutationFunction<
+      SignupMutation,
+      SignupMutationVariables
+    >
+  } &
+    TChildProps
 export function withSignup<
   TProps,
   TChildProps = {},
@@ -3220,7 +3220,8 @@ export function useUpdateChallengeMutation(
 export type UpdateChallengeMutationHookResult = ReturnType<
   typeof useUpdateChallengeMutation
 >
-export type UpdateChallengeMutationResult = Apollo.MutationResult<UpdateChallengeMutation>
+export type UpdateChallengeMutationResult =
+  Apollo.MutationResult<UpdateChallengeMutation>
 export type UpdateChallengeMutationOptions = Apollo.BaseMutationOptions<
   UpdateChallengeMutation,
   UpdateChallengeMutationVariables
@@ -3340,7 +3341,8 @@ export function useUpdateLessonMutation(
 export type UpdateLessonMutationHookResult = ReturnType<
   typeof useUpdateLessonMutation
 >
-export type UpdateLessonMutationResult = Apollo.MutationResult<UpdateLessonMutation>
+export type UpdateLessonMutationResult =
+  Apollo.MutationResult<UpdateLessonMutation>
 export type UpdateLessonMutationOptions = Apollo.BaseMutationOptions<
   UpdateLessonMutation,
   UpdateLessonMutationVariables
@@ -3487,16 +3489,14 @@ export const UserInfoDocument = gql`
     }
   }
 `
-export type UserInfoProps<
-  TChildProps = {},
-  TDataName extends string = 'data'
-> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    UserInfoQuery,
-    UserInfoQueryVariables
-  >
-} &
-  TChildProps
+export type UserInfoProps<TChildProps = {}, TDataName extends string = 'data'> =
+  {
+    [key in TDataName]: ApolloReactHoc.DataValue<
+      UserInfoQuery,
+      UserInfoQueryVariables
+    >
+  } &
+    TChildProps
 export function withUserInfo<
   TProps,
   TChildProps = {},

@@ -240,62 +240,64 @@ type ChallengesCompletedCardProps = {
   chatUrl: string
 }
 
-export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> = ({
-  imageSrc,
-  chatUrl,
-  reviewUrl,
-  starGiven,
-  lessonId
-}) => {
-  const [show, setShow] = useState<boolean>(false)
-  const [star, setStar] = useState<string>(starGiven)
-  return (
-    <>
-      <GiveStarCard
-        close={() => setShow(false)}
-        show={show}
-        starGiven={star}
-        setStarGiven={setStar}
-        lessonId={lessonId}
-      />
-      <div className="card text-center shadow-sm">
-        <div className="card-body">
-          <img src={`/assets/curriculum/icons/${imageSrc}`} className="mt-3" />
-          <h4 className="card-title mt-2">Congratulations!</h4>
-          <p className="success-message">
-            You have successfully completed all challenges
-          </p>
-          <p className="review-message">
-            You can help your peers by
-            <NavLink path={chatUrl} className="font-weight-bold mx-1" external>
-              answering questions
-            </NavLink>
-            they have in the lesson and
-            <NavLink
-              path={reviewUrl}
-              className="font-weight-bold mx-1"
-              external
+export const ChallengesCompletedCard: React.FC<ChallengesCompletedCardProps> =
+  ({ imageSrc, chatUrl, reviewUrl, starGiven, lessonId }) => {
+    const [show, setShow] = useState<boolean>(false)
+    const [star, setStar] = useState<string>(starGiven)
+    return (
+      <>
+        <GiveStarCard
+          close={() => setShow(false)}
+          show={show}
+          starGiven={star}
+          setStarGiven={setStar}
+          lessonId={lessonId}
+        />
+        <div className="card text-center shadow-sm">
+          <div className="card-body">
+            <img
+              src={`/assets/curriculum/icons/${imageSrc}`}
+              className="mt-3"
+            />
+            <h4 className="card-title mt-2">Congratulations!</h4>
+            <p className="success-message">
+              You have successfully completed all challenges
+            </p>
+            <p className="review-message">
+              You can help your peers by
+              <NavLink
+                path={chatUrl}
+                className="font-weight-bold mx-1"
+                external
+              >
+                answering questions
+              </NavLink>
+              they have in the lesson and
+              <NavLink
+                path={reviewUrl}
+                className="font-weight-bold mx-1"
+                external
+              >
+                reviewing challenge submissions
+              </NavLink>
+            </p>
+          </div>
+          <div className="card-footer d-flex bg-primary">
+            <p className="text-white mr-3 my-2">
+              You can show your appreciation to the user that helped you the
+              most by giving them a star
+            </p>
+            <button
+              className="btn btn-light text-primary font-weight-bold ml-auto"
+              onClick={() => setShow(true)}
             >
-              reviewing challenge submissions
-            </NavLink>
-          </p>
+              Give Star
+            </button>
+          </div>
         </div>
-        <div className="card-footer d-flex bg-primary">
-          <p className="text-white mr-3 my-2">
-            You can show your appreciation to the user that helped you the most
-            by giving them a star
-          </p>
-          <button
-            className="btn btn-light text-primary font-weight-bold ml-auto"
-            onClick={() => setShow(true)}
-          >
-            Give Star
-          </button>
-        </div>
-      </div>
-    </>
-  )
-}
+      </>
+    )
+  }
 
 type ChallengeMaterialProps = {
   challenges: Challenge[]
@@ -340,10 +342,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         submission
       }
     })
-  const [
-    currentChallengeID,
-    setCurrentChallenge
-  ] = useState<CurrentChallengeID>(null)
+  const [currentChallengeID, setCurrentChallenge] =
+    useState<CurrentChallengeID>(null)
 
   const finalChallenge = {
     title: 'Challenges Completed!',
@@ -360,8 +360,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       if (currentChallengeID) return challenge.id === currentChallengeID
       return challenge.status !== SubmissionStatus.Passed
     }) || finalChallenge
-  const challengeTitleCards: React.ReactElement[] = challengesWithSubmissionData.map(
-    challenge => {
+  const challengeTitleCards: React.ReactElement[] =
+    challengesWithSubmissionData.map(challenge => {
       return (
         <ChallengeTitleCard
           key={challenge.id}
@@ -373,8 +373,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
           submissionStatus={challenge.status}
         />
       )
-    }
-  )
+    })
   const challengeList = (
     <div
       className={`challenge-display_challenges ${show && 'show'} col-md-4`}
