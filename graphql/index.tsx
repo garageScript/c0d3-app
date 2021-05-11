@@ -55,6 +55,19 @@ export type Challenge = {
   order: Scalars['Int']
 }
 
+export type Comment = {
+  __typename?: 'Comment'
+  id: Scalars['Int']
+  fileName: Scalars['String']
+  line: Scalars['Int']
+  content: Scalars['String']
+  authorId: Scalars['Int']
+  submissionId: Scalars['Int']
+  createdAt: Scalars['String']
+  author?: Maybe<User>
+  submission?: Maybe<Submission>
+}
+
 export type Lesson = {
   __typename?: 'Lesson'
   id: Scalars['Int']
@@ -84,6 +97,7 @@ export type Mutation = {
   createSubmission?: Maybe<Submission>
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
+  addComment?: Maybe<Comment>
   createLesson?: Maybe<Array<Maybe<Lesson>>>
   updateLesson?: Maybe<Array<Maybe<Lesson>>>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
@@ -153,6 +167,14 @@ export type MutationRejectSubmissionArgs = {
   lessonId: Scalars['Int']
 }
 
+export type MutationAddCommentArgs = {
+  line: Scalars['Int']
+  fileName: Scalars['String']
+  submissionId: Scalars['Int']
+  authorId: Scalars['Int']
+  content: Scalars['String']
+}
+
 export type MutationCreateLessonArgs = {
   description: Scalars['String']
   docUrl?: Maybe<Scalars['String']>
@@ -199,6 +221,7 @@ export type Query = {
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
   alerts: Array<Alert>
+  getComments?: Maybe<Array<Maybe<Comment>>>
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -215,6 +238,11 @@ export type QueryIsTokenValidArgs = {
 
 export type QuerySubmissionsArgs = {
   lessonId: Scalars['Int']
+}
+
+export type QueryGetCommentsArgs = {
+  fileName: Scalars['String']
+  submissionId: Scalars['Int']
 }
 
 export type Session = {
@@ -326,6 +354,18 @@ export type AddAlertMutation = { __typename?: 'Mutation' } & {
       >
     >
   >
+}
+
+export type AddCommentMutationVariables = Exact<{
+  line: Scalars['Int']
+  submissionId: Scalars['Int']
+  content: Scalars['String']
+  fileName: Scalars['String']
+  authorId: Scalars['Int']
+}>
+
+export type AddCommentMutation = { __typename?: 'Mutation' } & {
+  addComment?: Maybe<{ __typename?: 'Comment' } & Pick<Comment, 'id'>>
 }
 
 export type UsersQueryVariables = Exact<{ [key: string]: never }>
@@ -517,6 +557,28 @@ export type GetAppQuery = { __typename?: 'Query' } & {
     { __typename?: 'Alert' } & Pick<
       Alert,
       'id' | 'text' | 'type' | 'url' | 'urlCaption'
+    >
+  >
+}
+
+export type GetCommentsQueryVariables = Exact<{
+  submissionId: Scalars['Int']
+  fileName: Scalars['String']
+}>
+
+export type GetCommentsQuery = { __typename?: 'Query' } & {
+  getComments?: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Comment' } & Pick<
+          Comment,
+          'content' | 'createdAt' | 'authorId' | 'line'
+        > & {
+            author?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'username' | 'name'>
+            >
+          }
+      >
     >
   >
 }
@@ -997,6 +1059,7 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   CacheControlScope: CacheControlScope
   Challenge: ResolverTypeWrapper<Challenge>
+  Comment: ResolverTypeWrapper<Comment>
   Lesson: ResolverTypeWrapper<Lesson>
   Mutation: ResolverTypeWrapper<{}>
   Query: ResolverTypeWrapper<{}>
@@ -1018,6 +1081,7 @@ export type ResolversParentTypes = {
   AuthResponse: AuthResponse
   Boolean: Scalars['Boolean']
   Challenge: Challenge
+  Comment: Comment
   Lesson: Lesson
   Mutation: {}
   Query: {}
@@ -1078,6 +1142,26 @@ export type ChallengeResolvers<
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}
+
+export type CommentResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
+> = {
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  fileName?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  line?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  submissionId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  submission?: Resolver<
+    Maybe<ResolversTypes['Submission']>,
+    ParentType,
+    ContextType
+  >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1188,6 +1272,15 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationRejectSubmissionArgs, 'id' | 'comment' | 'lessonId'>
   >
+  addComment?: Resolver<
+    Maybe<ResolversTypes['Comment']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      MutationAddCommentArgs,
+      'line' | 'fileName' | 'submissionId' | 'authorId' | 'content'
+    >
+  >
   createLesson?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
     ParentType,
@@ -1259,6 +1352,12 @@ export type QueryResolvers<
     RequireFields<QuerySubmissionsArgs, 'lessonId'>
   >
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
+  getComments?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['Comment']>>>,
+    ParentType,
+    ContextType,
+    RequireFields<QueryGetCommentsArgs, 'fileName' | 'submissionId'>
+  >
 }
 
 export type SessionResolvers<
@@ -1384,6 +1483,7 @@ export type Resolvers<ContextType = any> = {
   Alert?: AlertResolvers<ContextType>
   AuthResponse?: AuthResponseResolvers<ContextType>
   Challenge?: ChallengeResolvers<ContextType>
+  Comment?: CommentResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
   Mutation?: MutationResolvers<ContextType>
   Query?: QueryResolvers<ContextType>
@@ -1596,6 +1696,103 @@ export type AddAlertMutationResult = Apollo.MutationResult<AddAlertMutation>
 export type AddAlertMutationOptions = Apollo.BaseMutationOptions<
   AddAlertMutation,
   AddAlertMutationVariables
+>
+export const AddCommentDocument = gql`
+  mutation addComment(
+    $line: Int!
+    $submissionId: Int!
+    $content: String!
+    $fileName: String!
+    $authorId: Int!
+  ) {
+    addComment(
+      line: $line
+      submissionId: $submissionId
+      content: $content
+      fileName: $fileName
+      authorId: $authorId
+    ) {
+      id
+    }
+  }
+`
+export type AddCommentMutationFn = Apollo.MutationFunction<
+  AddCommentMutation,
+  AddCommentMutationVariables
+>
+export type AddCommentProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    AddCommentMutation,
+    AddCommentMutationVariables
+  >
+} &
+  TChildProps
+export function withAddComment<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    AddCommentMutation,
+    AddCommentMutationVariables,
+    AddCommentProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    AddCommentMutation,
+    AddCommentMutationVariables,
+    AddCommentProps<TChildProps, TDataName>
+  >(AddCommentDocument, {
+    alias: 'addComment',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useAddCommentMutation__
+ *
+ * To run a mutation, you first call `useAddCommentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddCommentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addCommentMutation, { data, loading, error }] = useAddCommentMutation({
+ *   variables: {
+ *      line: // value for 'line'
+ *      submissionId: // value for 'submissionId'
+ *      content: // value for 'content'
+ *      fileName: // value for 'fileName'
+ *      authorId: // value for 'authorId'
+ *   },
+ * });
+ */
+export function useAddCommentMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    AddCommentMutation,
+    AddCommentMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<AddCommentMutation, AddCommentMutationVariables>(
+    AddCommentDocument,
+    options
+  )
+}
+export type AddCommentMutationHookResult = ReturnType<
+  typeof useAddCommentMutation
+>
+export type AddCommentMutationResult = Apollo.MutationResult<AddCommentMutation>
+export type AddCommentMutationOptions = Apollo.BaseMutationOptions<
+  AddCommentMutation,
+  AddCommentMutationVariables
 >
 export const UsersDocument = gql`
   query users {
@@ -2204,6 +2401,102 @@ export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
 export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
+>
+export const GetCommentsDocument = gql`
+  query getComments($submissionId: Int!, $fileName: String!) {
+    getComments(submissionId: $submissionId, fileName: $fileName) {
+      content
+      createdAt
+      authorId
+      line
+      author {
+        username
+        name
+      }
+    }
+  }
+`
+export type GetCommentsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetCommentsQuery,
+    GetCommentsQueryVariables
+  >
+} &
+  TChildProps
+export function withGetComments<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetCommentsQuery,
+    GetCommentsQueryVariables,
+    GetCommentsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetCommentsQuery,
+    GetCommentsQueryVariables,
+    GetCommentsProps<TChildProps, TDataName>
+  >(GetCommentsDocument, {
+    alias: 'getComments',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetCommentsQuery__
+ *
+ * To run a query within a React component, call `useGetCommentsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCommentsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCommentsQuery({
+ *   variables: {
+ *      submissionId: // value for 'submissionId'
+ *      fileName: // value for 'fileName'
+ *   },
+ * });
+ */
+export function useGetCommentsQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    GetCommentsQuery,
+    GetCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetCommentsQuery, GetCommentsQueryVariables>(
+    GetCommentsDocument,
+    options
+  )
+}
+export function useGetCommentsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetCommentsQuery,
+    GetCommentsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetCommentsQuery, GetCommentsQueryVariables>(
+    GetCommentsDocument,
+    options
+  )
+}
+export type GetCommentsQueryHookResult = ReturnType<typeof useGetCommentsQuery>
+export type GetCommentsLazyQueryHookResult = ReturnType<
+  typeof useGetCommentsLazyQuery
+>
+export type GetCommentsQueryResult = Apollo.QueryResult<
+  GetCommentsQuery,
+  GetCommentsQueryVariables
 >
 export const LessonMentorsDocument = gql`
   query lessonMentors($lessonId: Int!) {

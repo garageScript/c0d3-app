@@ -10,6 +10,7 @@ export default gql`
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
+    getComments(fileName: String!, submissionId: Int!): [Comment]
   }
 
   type TokenResponse {
@@ -46,6 +47,13 @@ export default gql`
     ): Submission
     acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
+    addComment(
+      line: Int!
+      fileName: String!
+      submissionId: Int!
+      authorId: Int!
+      content: String!
+    ): Comment
     createLesson(
       description: String!
       docUrl: String
@@ -108,6 +116,18 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String!
+  }
+
+  type Comment {
+    id: Int!
+    fileName: String!
+    line: Int!
+    content: String!
+    authorId: Int!
+    submissionId: Int!
+    createdAt: String!
+    author: User
+    submission: Submission
   }
 
   enum SubmissionStatus {
