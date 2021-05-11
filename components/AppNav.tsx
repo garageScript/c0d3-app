@@ -31,8 +31,7 @@ const navItems: NavItem[] = [
     external: true
   },
   {
-    path:
-      'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
+    path: 'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
     name: 'Learn',
     external: true
   },

@@ -100,16 +100,8 @@ const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
   )
 }
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const {
-    id,
-    diff,
-    comment,
-    updatedAt,
-    user,
-    challenge,
-    lessonId,
-    reviewer
-  } = submissionData
+  const { id, diff, comment, updatedAt, user, challenge, lessonId, reviewer } =
+    submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)

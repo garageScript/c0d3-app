@@ -12,20 +12,22 @@ export type QueryDataProps<T> = {
   queryData: T
 }
 
-const withQueryLoader = <T extends {}>(
-  { query, getParams = () => ({}) }: QueryProps,
-  Component: React.FC<QueryDataProps<T>>
-) => (props: any) => {
-  const router = useRouter()
-  const { loading, data } = useQuery(query, getParams(props))
-  if (loading) {
+const withQueryLoader =
+  <T extends {}>(
+    { query, getParams = () => ({}) }: QueryProps,
+    Component: React.FC<QueryDataProps<T>>
+  ) =>
+  (props: any) => {
+    const router = useRouter()
+    const { loading, data } = useQuery(query, getParams(props))
+    if (loading) {
+      return <LoadingSpinner />
+    }
+    if (data) {
+      return <Component queryData={data} {...props} />
+    }
+    router.push('/500')
     return <LoadingSpinner />
   }
-  if (data) {
-    return <Component queryData={data} {...props} />
-  }
-  router.push('/500')
-  return <LoadingSpinner />
-}
 
 export default withQueryLoader
