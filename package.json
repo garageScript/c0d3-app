@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.16",
-    "@prisma/client": "^2.22.0",
+    "@prisma/client": "^2.22.1",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/browser": "^6.3.5",
     "apollo-server-micro": "^2.24.0",
