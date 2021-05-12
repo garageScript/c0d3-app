@@ -49,7 +49,7 @@
     "lodash": "^4.17.20",
     "mailgun-js": "^0.22.0",
     "markdown-to-jsx": "^7.1.1",
-    "nanoid": "^3.1.20",
+    "nanoid": "^3.1.23",
     "next": "^10.2.0",
     "next-connect": "^0.10.0",
     "posthog-js": "^1.10.0",
