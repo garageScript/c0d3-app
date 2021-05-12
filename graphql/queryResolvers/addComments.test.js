@@ -1,7 +1,6 @@
 import { prisma } from '../../prisma'
 import { addComment } from './addComment'
 
-//should be added to coverageIngorePatters
 describe('Add comment resolver', () => {
   test('should invoke prisma create', async () => {
     prisma.comment.create = jest.fn().mockReturnValue({
@@ -19,11 +18,11 @@ describe('Add comment resolver', () => {
         {
           line: 1,
           submissionId: 1,
-          authorId: 1,
           fileName: 'testFile.js',
           content: 'testing'
         },
-        {}
+
+        { req: { user: { id: 1 } } }
       )
     ).toEqual({
       authorId: 1,
@@ -34,5 +33,22 @@ describe('Add comment resolver', () => {
       line: 1,
       submissionId: 1
     })
+  })
+  test('should throw error if no user.id in context', async () => {
+    try {
+      await addComment(
+        {},
+        {
+          line: 1,
+          submissionId: 1,
+          fileName: 'testFile.js',
+          content: 'testing'
+        },
+
+        { req: {} }
+      )
+    } catch (e) {
+      expect(e.message).toEqual('No authorId field')
+    }
   })
 })

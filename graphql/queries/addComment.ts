@@ -6,14 +6,12 @@ const ADD_COMMENT = gql`
     $submissionId: Int!
     $content: String!
     $fileName: String!
-    $authorId: Int!
   ) {
     addComment(
       line: $line
       submissionId: $submissionId
       content: $content
       fileName: $fileName
-      authorId: $authorId
     ) {
       id
     }

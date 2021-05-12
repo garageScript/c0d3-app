@@ -5,9 +5,11 @@ import { Context } from '../../@types/helpers'
 export const addComment = async (
   _parent: void,
   arg: MutationAddCommentArgs,
-  _ctx: Context
+  ctx: Context
 ) => {
-  const { line, submissionId, authorId, fileName, content } = arg
+  const { line, submissionId, fileName, content } = arg
+  const authorId = ctx.req.user?.id
+  if (!authorId) throw new Error('No authorId field')
   const update = await prisma.comment.create({
     data: {
       line,

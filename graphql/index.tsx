@@ -64,8 +64,8 @@ export type Comment = {
   authorId: Scalars['Int']
   submissionId: Scalars['Int']
   createdAt: Scalars['String']
-  author?: Maybe<User>
-  submission?: Maybe<Submission>
+  author: User
+  submission: Submission
 }
 
 export type Lesson = {
@@ -171,7 +171,6 @@ export type MutationAddCommentArgs = {
   line: Scalars['Int']
   fileName: Scalars['String']
   submissionId: Scalars['Int']
-  authorId: Scalars['Int']
   content: Scalars['String']
 }
 
@@ -361,7 +360,6 @@ export type AddCommentMutationVariables = Exact<{
   submissionId: Scalars['Int']
   content: Scalars['String']
   fileName: Scalars['String']
-  authorId: Scalars['Int']
 }>
 
 export type AddCommentMutation = { __typename?: 'Mutation' } & {
@@ -574,9 +572,7 @@ export type GetCommentsQuery = { __typename?: 'Query' } & {
           Comment,
           'content' | 'createdAt' | 'authorId' | 'line'
         > & {
-            author?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'username' | 'name'>
-            >
+            author: { __typename?: 'User' } & Pick<User, 'username' | 'name'>
           }
       >
     >
@@ -1156,12 +1152,8 @@ export type CommentResolvers<
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   submissionId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
-  submission?: Resolver<
-    Maybe<ResolversTypes['Submission']>,
-    ParentType,
-    ContextType
-  >
+  author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  submission?: Resolver<ResolversTypes['Submission'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1278,7 +1270,7 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationAddCommentArgs,
-      'line' | 'fileName' | 'submissionId' | 'authorId' | 'content'
+      'line' | 'fileName' | 'submissionId' | 'content'
     >
   >
   createLesson?: Resolver<
@@ -1703,14 +1695,12 @@ export const AddCommentDocument = gql`
     $submissionId: Int!
     $content: String!
     $fileName: String!
-    $authorId: Int!
   ) {
     addComment(
       line: $line
       submissionId: $submissionId
       content: $content
       fileName: $fileName
-      authorId: $authorId
     ) {
       id
     }
@@ -1770,7 +1760,6 @@ export function withAddComment<
  *      submissionId: // value for 'submissionId'
  *      content: // value for 'content'
  *      fileName: // value for 'fileName'
- *      authorId: // value for 'authorId'
  *   },
  * });
  */

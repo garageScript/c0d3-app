@@ -51,7 +51,6 @@ export default gql`
       line: Int!
       fileName: String!
       submissionId: Int!
-      authorId: Int!
       content: String!
     ): Comment
     createLesson(
@@ -126,8 +125,8 @@ export default gql`
     authorId: Int!
     submissionId: Int!
     createdAt: String!
-    author: User
-    submission: Submission
+    author: User!
+    submission: Submission!
   }
 
   enum SubmissionStatus {
