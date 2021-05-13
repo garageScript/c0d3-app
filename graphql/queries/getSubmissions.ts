@@ -21,6 +21,18 @@ const GET_SUBMISSIONS = gql`
         username
         name
       }
+      comments {
+        content
+        submissionId
+        createdAt
+        authorId
+        line
+        fileName
+        author {
+          username
+          name
+        }
+      }
       createdAt
       updatedAt
     }

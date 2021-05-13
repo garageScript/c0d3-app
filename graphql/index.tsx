@@ -657,6 +657,28 @@ export type SubmissionsQuery = { __typename?: 'Query' } & {
             reviewer?: Maybe<
               { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
             >
+            comments?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Comment' } & Pick<
+                    Comment,
+                    | 'content'
+                    | 'submissionId'
+                    | 'createdAt'
+                    | 'authorId'
+                    | 'line'
+                    | 'fileName'
+                  > & {
+                      author?: Maybe<
+                        { __typename?: 'User' } & Pick<
+                          User,
+                          'username' | 'name'
+                        >
+                      >
+                    }
+                >
+              >
+            >
           }
       >
     >
@@ -2631,6 +2653,18 @@ export const SubmissionsDocument = gql`
         id
         username
         name
+      }
+      comments {
+        content
+        submissionId
+        createdAt
+        authorId
+        line
+        fileName
+        author {
+          username
+          name
+        }
       }
       createdAt
       updatedAt
