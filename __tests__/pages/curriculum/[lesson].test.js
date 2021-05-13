@@ -27,7 +27,8 @@ const session = {
         username: 'fake reviewer'
       },
       createdAt: '123',
-      updatedAt: '123'
+      updatedAt: '123',
+      comments: null
     },
     {
       id: 1,
@@ -44,7 +45,8 @@ const session = {
         username: 'fake reviewer'
       },
       createdAt: '123',
-      updatedAt: '123'
+      updatedAt: '123',
+      comments: null
     }
   ],
   lessonStatus: [

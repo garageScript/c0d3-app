@@ -10,7 +10,6 @@ export default gql`
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: Int!): [Submission]
     alerts: [Alert!]!
-    getComments(fileName: String!, submissionId: Int!): [Comment]
   }
 
   type TokenResponse {
@@ -115,6 +114,7 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String!
+    comments: [Comment]
   }
 
   type Comment {
@@ -125,8 +125,8 @@ export default gql`
     authorId: Int!
     submissionId: Int!
     createdAt: String!
-    author: User!
-    submission: Submission!
+    author: User
+    submission: Submission
   }
 
   enum SubmissionStatus {

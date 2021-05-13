@@ -64,8 +64,8 @@ export type Comment = {
   authorId: Scalars['Int']
   submissionId: Scalars['Int']
   createdAt: Scalars['String']
-  author: User
-  submission: Submission
+  author?: Maybe<User>
+  submission?: Maybe<Submission>
 }
 
 export type Lesson = {
@@ -220,7 +220,6 @@ export type Query = {
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Maybe<Submission>>>
   alerts: Array<Alert>
-  getComments?: Maybe<Array<Maybe<Comment>>>
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -237,11 +236,6 @@ export type QueryIsTokenValidArgs = {
 
 export type QuerySubmissionsArgs = {
   lessonId: Scalars['Int']
-}
-
-export type QueryGetCommentsArgs = {
-  fileName: Scalars['String']
-  submissionId: Scalars['Int']
 }
 
 export type Session = {
@@ -278,6 +272,7 @@ export type Submission = {
   reviewerId?: Maybe<Scalars['String']>
   createdAt?: Maybe<Scalars['String']>
   updatedAt: Scalars['String']
+  comments?: Maybe<Array<Maybe<Comment>>>
 }
 
 export enum SubmissionStatus {
@@ -539,6 +534,28 @@ export type GetAppQuery = { __typename?: 'Query' } & {
                 reviewer?: Maybe<
                   { __typename?: 'User' } & Pick<User, 'id' | 'username'>
                 >
+                comments?: Maybe<
+                  Array<
+                    Maybe<
+                      { __typename?: 'Comment' } & Pick<
+                        Comment,
+                        | 'content'
+                        | 'submissionId'
+                        | 'createdAt'
+                        | 'authorId'
+                        | 'line'
+                        | 'fileName'
+                      > & {
+                          author?: Maybe<
+                            { __typename?: 'User' } & Pick<
+                              User,
+                              'username' | 'name'
+                            >
+                          >
+                        }
+                    >
+                  >
+                >
               }
           >
         >
@@ -555,26 +572,6 @@ export type GetAppQuery = { __typename?: 'Query' } & {
     { __typename?: 'Alert' } & Pick<
       Alert,
       'id' | 'text' | 'type' | 'url' | 'urlCaption'
-    >
-  >
-}
-
-export type GetCommentsQueryVariables = Exact<{
-  submissionId: Scalars['Int']
-  fileName: Scalars['String']
-}>
-
-export type GetCommentsQuery = { __typename?: 'Query' } & {
-  getComments?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Comment' } & Pick<
-          Comment,
-          'content' | 'createdAt' | 'authorId' | 'line'
-        > & {
-            author: { __typename?: 'User' } & Pick<User, 'username' | 'name'>
-          }
-      >
     >
   >
 }
@@ -1152,8 +1149,12 @@ export type CommentResolvers<
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   submissionId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
-  submission?: Resolver<ResolversTypes['Submission'], ParentType, ContextType>
+  author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
+  submission?: Resolver<
+    Maybe<ResolversTypes['Submission']>,
+    ParentType,
+    ContextType
+  >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -1344,12 +1345,6 @@ export type QueryResolvers<
     RequireFields<QuerySubmissionsArgs, 'lessonId'>
   >
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
-  getComments?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Comment']>>>,
-    ParentType,
-    ContextType,
-    RequireFields<QueryGetCommentsArgs, 'fileName' | 'submissionId'>
-  >
 }
 
 export type SessionResolvers<
@@ -1406,6 +1401,11 @@ export type SubmissionResolvers<
   >
   createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   updatedAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  comments?: Resolver<
+    Maybe<Array<Maybe<ResolversTypes['Comment']>>>,
+    ParentType,
+    ContextType
+  >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -2304,6 +2304,18 @@ export const GetAppDocument = gql`
         }
         createdAt
         updatedAt
+        comments {
+          content
+          submissionId
+          createdAt
+          authorId
+          line
+          fileName
+          author {
+            username
+            name
+          }
+        }
       }
       lessonStatus {
         lessonId
@@ -2390,102 +2402,6 @@ export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>
 export type GetAppQueryResult = Apollo.QueryResult<
   GetAppQuery,
   GetAppQueryVariables
->
-export const GetCommentsDocument = gql`
-  query getComments($submissionId: Int!, $fileName: String!) {
-    getComments(submissionId: $submissionId, fileName: $fileName) {
-      content
-      createdAt
-      authorId
-      line
-      author {
-        username
-        name
-      }
-    }
-  }
-`
-export type GetCommentsProps<
-  TChildProps = {},
-  TDataName extends string = 'data'
-> = {
-  [key in TDataName]: ApolloReactHoc.DataValue<
-    GetCommentsQuery,
-    GetCommentsQueryVariables
-  >
-} &
-  TChildProps
-export function withGetComments<
-  TProps,
-  TChildProps = {},
-  TDataName extends string = 'data'
->(
-  operationOptions?: ApolloReactHoc.OperationOption<
-    TProps,
-    GetCommentsQuery,
-    GetCommentsQueryVariables,
-    GetCommentsProps<TChildProps, TDataName>
-  >
-) {
-  return ApolloReactHoc.withQuery<
-    TProps,
-    GetCommentsQuery,
-    GetCommentsQueryVariables,
-    GetCommentsProps<TChildProps, TDataName>
-  >(GetCommentsDocument, {
-    alias: 'getComments',
-    ...operationOptions
-  })
-}
-
-/**
- * __useGetCommentsQuery__
- *
- * To run a query within a React component, call `useGetCommentsQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetCommentsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetCommentsQuery({
- *   variables: {
- *      submissionId: // value for 'submissionId'
- *      fileName: // value for 'fileName'
- *   },
- * });
- */
-export function useGetCommentsQuery(
-  baseOptions: Apollo.QueryHookOptions<
-    GetCommentsQuery,
-    GetCommentsQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useQuery<GetCommentsQuery, GetCommentsQueryVariables>(
-    GetCommentsDocument,
-    options
-  )
-}
-export function useGetCommentsLazyQuery(
-  baseOptions?: Apollo.LazyQueryHookOptions<
-    GetCommentsQuery,
-    GetCommentsQueryVariables
-  >
-) {
-  const options = { ...defaultOptions, ...baseOptions }
-  return Apollo.useLazyQuery<GetCommentsQuery, GetCommentsQueryVariables>(
-    GetCommentsDocument,
-    options
-  )
-}
-export type GetCommentsQueryHookResult = ReturnType<typeof useGetCommentsQuery>
-export type GetCommentsLazyQueryHookResult = ReturnType<
-  typeof useGetCommentsLazyQuery
->
-export type GetCommentsQueryResult = Apollo.QueryResult<
-  GetCommentsQuery,
-  GetCommentsQueryVariables
 >
 export const LessonMentorsDocument = gql`
   query lessonMentors($lessonId: Int!) {

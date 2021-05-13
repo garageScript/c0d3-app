@@ -103,25 +103,25 @@ export const rejectSubmission = async (
 export const submissions = async (
   _parent: void,
   arg: QuerySubmissionsArgs,
-  ctx: Context
+  _ctx: Context
 ) => {
-  try {
-    const { lessonId } = arg
-    await getReviewer(ctx.req.user, lessonId)
-    return prisma.submission.findMany({
-      where: {
-        status: SubmissionStatus.Open,
-        lessonId: lessonId
-      },
-      include: {
-        challenge: true,
-        user: true,
-        reviewer: true
+  const { lessonId } = arg
+  return prisma.submission.findMany({
+    where: {
+      status: SubmissionStatus.Open,
+      lessonId: lessonId
+    },
+    include: {
+      challenge: true,
+      user: true,
+      reviewer: true,
+      comments: {
+        include: {
+          author: true
+        }
       }
-    })
-  } catch (error) {
-    throw new Error(error)
-  }
+    }
+  })
 }
 
 export const getReviewer = async (

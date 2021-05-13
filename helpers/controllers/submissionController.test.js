@@ -170,12 +170,6 @@ describe('Submissions Queries', () => {
     )
     expect(result).toEqual([submissionResults])
   })
-
-  it('should throw error if no user is authenticated', () => {
-    return expect(
-      submissions(null, { lessonId: '2' }, { req: {} })
-    ).rejects.toThrow('Invalid user')
-  })
 })
 
 describe('getReviewer', () => {
