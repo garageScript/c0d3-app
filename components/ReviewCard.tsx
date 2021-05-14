@@ -18,8 +18,7 @@ import _ from 'lodash'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
-
-import styles from '../scss/reviewCard.module.scss'
+import ReviewerProfile from './ReviewerProfile'
 
 dayjs.extend(relativeTime)
 
@@ -76,29 +75,7 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 }
 
 const MemoDiffView = memo(DiffView)
-type ReviewerProfileProps = {
-  username: string | undefined | null
-  name: string | undefined | null
-}
-const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
-  username,
-  name
-}) => {
-  //TO-DO fix User type to make these fields non-nullable
-  const firstName = name ? name.split(' ')[0] : ''
-  const lastName = name?.split(' ')[1] || ''
-  return (
-    <a
-      className={`${styles['comment_author']} mt-2 d-block`}
-      href={username ? `/profile/${username}` : undefined}
-    >
-      <div className="d-inline">{`${firstName} ${lastName}`}</div>
-      <div className="d-inline text-muted">
-        {username ? ' @' + username : ''}
-      </div>
-    </a>
-  )
-}
+
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const { id, diff, comment, updatedAt, user, challenge, lessonId, reviewer } =
     submissionData

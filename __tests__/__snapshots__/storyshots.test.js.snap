@@ -2140,6 +2140,198 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
 </div>
 `;
 
+exports[`Storyshots Components/CommentBox Empty 1`] = `
+Array [
+  <div
+    className="showHide"
+    onClick={[Function]}
+  >
+    Hide conversation
+  </div>,
+  <div
+    className="commentBox bg-white d-auto"
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Add comment
+    </button>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components/CommentBox With Comments 1`] = `
+Array [
+  <div
+    className="showHide"
+    onClick={[Function]}
+  >
+    Hide conversation
+  </div>,
+  <div
+    className="commentBox bg-white d-auto"
+  >
+    <div
+      className="border"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        First Comment
+      </span>
+      <div
+        className="wrapper"
+      >
+        <a
+          className="comment_author__inline mt-2 d-block"
+          href="/profile/newbie"
+        >
+          <div
+            className="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      className="border"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        Second Comment
+      </span>
+      <div
+        className="wrapper"
+      >
+        <a
+          className="comment_author__inline mt-2 d-block"
+          href="/profile/newbie"
+        >
+          <div
+            className="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "white",
+        }
+      }
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </button>
+      <button
+        className="btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        onChange={[Function]}
+        placeholder="Type something..."
+        style={
+          Object {
+            "padding": "1rem",
+            "width": "100%",
+          }
+        }
+        value=""
+      />
+    </div>
+    <button
+      className="btn bg-success"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#fff",
+        }
+      }
+    >
+      Add comment
+    </button>
+  </div>,
+]
+`;
+
 exports[`Storyshots Components/ContributorCard Basic 1`] = `
 <div
   className="card shadow-sm mb-3"
@@ -7371,21 +7563,25 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       <span>
         Some comment
       </span>
-      <a
-        className="comment_author mt-2 d-block"
-        href="/profile/fake reviewer"
+      <div
+        className=""
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author mt-2 d-block"
+          href="/profile/fake reviewer"
         >
-          fake reviewer
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @fake reviewer
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            fake reviewer
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @fake reviewer
+          </div>
+        </a>
+      </div>
     </div>
     <div
       style={
@@ -8346,21 +8542,25 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       <span>
         Some comment
       </span>
-      <a
-        className="comment_author mt-2 d-block"
-        href="/profile/admin"
+      <div
+        className=""
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author mt-2 d-block"
+          href="/profile/admin"
         >
-          Admin admin
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @admin
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            Admin admin
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @admin
+          </div>
+        </a>
+      </div>
     </div>
     <div
       style={
@@ -9342,21 +9542,25 @@ if you have questions, don't hesitate to reach out in the chat.
           </code>
         </pre>
       </div>
-      <a
-        className="comment_author mt-2 d-block"
-        href="/profile/admin"
+      <div
+        className=""
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author mt-2 d-block"
+          href="/profile/admin"
         >
-          Admin Admin
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @admin
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            Admin Admin
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @admin
+          </div>
+        </a>
+      </div>
     </div>
     <div
       style={
@@ -11268,21 +11472,25 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       <span>
         Some comment
       </span>
-      <a
-        className="comment_author mt-2 d-block"
-        href="/profile/admin"
+      <div
+        className=""
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author mt-2 d-block"
+          href="/profile/admin"
         >
-          Admin Admin
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @admin
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            Admin Admin
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @admin
+          </div>
+        </a>
+      </div>
     </div>
     <div
       style={

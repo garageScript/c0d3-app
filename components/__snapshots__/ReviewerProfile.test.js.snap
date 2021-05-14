@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewerProfile test Should render default component 1`] = `
+<div>
+  <div
+    class=""
+  >
+    <a
+      class="comment_author mt-2 d-block"
+      href="/profile/user"
+    >
+      <div
+        class="d-inline"
+      >
+        User User
+      </div>
+      <div
+        class="d-inline text-muted"
+      >
+         @user
+      </div>
+    </a>
+  </div>
+</div>
+`;

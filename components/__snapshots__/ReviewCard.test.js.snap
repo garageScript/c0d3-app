@@ -1213,21 +1213,25 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
         <span>
           Some comment
         </span>
-        <a
-          class="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
+        <div
+          class=""
         >
-          <div
-            class="d-inline"
+          <a
+            class="comment_author mt-2 d-block"
+            href="/profile/fake reviewer"
           >
-             
-          </div>
-          <div
-            class="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
+            <div
+              class="d-inline"
+            >
+               
+            </div>
+            <div
+              class="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
       </div>
       <div
         style="background-color: white;"
@@ -2482,21 +2486,25 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
         <span>
           Some comment
         </span>
-        <a
-          class="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
+        <div
+          class=""
         >
-          <div
-            class="d-inline"
+          <a
+            class="comment_author mt-2 d-block"
+            href="/profile/fake reviewer"
           >
-             
-          </div>
-          <div
-            class="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
+            <div
+              class="d-inline"
+            >
+               
+            </div>
+            <div
+              class="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
       </div>
       <div
         style="background-color: white;"
@@ -3749,21 +3757,25 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
         <span>
           Some comment
         </span>
-        <a
-          class="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
+        <div
+          class=""
         >
-          <div
-            class="d-inline"
+          <a
+            class="comment_author mt-2 d-block"
+            href="/profile/fake reviewer"
           >
-             
-          </div>
-          <div
-            class="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
+            <div
+              class="d-inline"
+            >
+               
+            </div>
+            <div
+              class="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
       </div>
       <div
         style="background-color: white;"
@@ -3843,21 +3855,25 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
         <span>
           Some comment
         </span>
-        <a
-          class="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
+        <div
+          class=""
         >
-          <div
-            class="d-inline"
+          <a
+            class="comment_author mt-2 d-block"
+            href="/profile/fake reviewer"
           >
-             
-          </div>
-          <div
-            class="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
+            <div
+              class="d-inline"
+            >
+               
+            </div>
+            <div
+              class="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
       </div>
       <div
         style="background-color: white;"
@@ -5110,21 +5126,25 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
         <span>
           Some comment
         </span>
-        <a
-          class="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
+        <div
+          class=""
         >
-          <div
-            class="d-inline"
+          <a
+            class="comment_author mt-2 d-block"
+            href="/profile/fake reviewer"
           >
-             
-          </div>
-          <div
-            class="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
+            <div
+              class="d-inline"
+            >
+               
+            </div>
+            <div
+              class="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
       </div>
       <div
         style="background-color: white;"
