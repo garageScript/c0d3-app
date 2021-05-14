@@ -117,7 +117,12 @@ export const submissions = async (
       include: {
         challenge: true,
         user: true,
-        reviewer: true
+        reviewer: true,
+        comments: {
+          include: {
+            author: true
+          }
+        }
       }
     })
   } catch (error) {

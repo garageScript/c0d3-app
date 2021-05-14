@@ -62,7 +62,8 @@ const getSubmissionsMock = {
             name: 'Admin Admin'
           },
           createdAt: '',
-          updatedAt: ''
+          updatedAt: '',
+          comments: null
         }
       ]
     }

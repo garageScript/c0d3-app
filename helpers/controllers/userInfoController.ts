@@ -37,6 +37,11 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
             id: true,
             username: true
           }
+        },
+        comments: {
+          include: {
+            author: true
+          }
         }
       }
     }),

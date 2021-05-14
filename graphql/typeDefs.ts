@@ -46,6 +46,12 @@ export default gql`
     ): Submission
     acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
+    addComment(
+      line: Int!
+      fileName: String!
+      submissionId: Int!
+      content: String!
+    ): Comment
     createLesson(
       description: String!
       docUrl: String
@@ -108,6 +114,19 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String!
+    comments: [Comment]
+  }
+
+  type Comment {
+    id: Int!
+    fileName: String!
+    line: Int!
+    content: String!
+    authorId: Int!
+    submissionId: Int!
+    createdAt: String!
+    author: User
+    submission: Submission
   }
 
   enum SubmissionStatus {
