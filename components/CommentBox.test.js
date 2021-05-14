@@ -47,7 +47,6 @@ describe('CommentBox component', () => {
           line: 4,
           fileName: 'test.js',
           submissionId: 0,
-          authorId: 0,
           content: 'A very unique test comment!'
         }
       },
