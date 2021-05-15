@@ -1,11 +1,12 @@
 import React from 'react'
 import Curriculum, { getStaticProps } from '../../pages/curriculum'
-import { render, waitFor, screen } from '@testing-library/react'
+import { render, waitFor, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+//mock for server side generation
 jest.mock('@apollo/client', () => ({
   ...jest.requireActual('@apollo/client'),
   ApolloClient: jest.fn().mockImplementation(() => ({
@@ -59,7 +60,7 @@ describe('Curriculum Page', () => {
     )
 
     await waitFor(() => screen.getByRole('link', { name: 'fakeusername' }))
-    await waitFor(() => screen.getByText('%'))
+    await waitFor(() => screen.getAllByText(`You're off to a great start!`))
     await waitFor(() => expect(container).toMatchSnapshot())
   })
 
@@ -111,7 +112,7 @@ describe('Curriculum Page', () => {
     )
 
     await waitFor(() => screen.getByRole('link', { name: 'fakeusername' }))
-    await waitFor(() => screen.getByText('%'))
+    await waitFor(() => screen.getAllByText('Keep up the great work!'))
 
     await waitFor(() => expect(container).toMatchSnapshot())
   })
@@ -142,5 +143,42 @@ describe('Curriculum Page', () => {
       props: { lessons: [], alerts: [] },
       revalidate: 300
     })
+  })
+  test('Should change navigation arrow direction on scroll', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: dummySessionData,
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
+      </MockedProvider>
+    )
+    jest
+      .spyOn(window.localStorage.__proto__, 'getItem')
+      .mockImplementation(() => null)
+    const arrow = screen.getByTestId('arrow')
+    expect(arrow.className.includes('right'))
+    await waitFor(() =>
+      fireEvent.scroll(screen.getByTestId('parent-scroll'), { x: 10 })
+    )
+    //jest-dom doesn't render elements the way browsers do, it only reconstructs dom,
+    //so some of their properties are always zero, hence the mock
+    jest
+      .spyOn(screen.getByTestId('parent-scroll'), 'scrollLeft', 'get')
+      .mockImplementation(() => 1024)
+    await waitFor(() =>
+      fireEvent.scroll(screen.getByTestId('parent-scroll'), { x: 1024 })
+    )
+    expect(arrow.className.includes('left'))
   })
 })
