@@ -426,7 +426,7 @@ If we have an array of strings that we want to use for the options, we can use
 
 ## Browser Functions
 
-### JSON.stringify
+## JSON.stringify
 
 When websites send information to each other, the data is always sent and
 received as strings. So what do you do if you need to send an array across the
@@ -467,7 +467,7 @@ const strArr = JSON.stringify(arr)
 // strArr is '[-18, "Charizard", true]'
 ```
 
-### JSON.parse
+## JSON.parse
 
 If you used the previous function `JSON.stringify` to convert an array into a
 string, how do you convert the string back into an array? You use the
@@ -501,7 +501,7 @@ the computer creates a new array (at a new address).
 
 </Spoiler>
 
-### JSON
+## JSON
 
 Let's review how all of this works.
 
@@ -510,7 +510,7 @@ pass into `JSON.parse`.
 
 JSON.stringify( data ) ——> JSON ——> JSON.parse(JSON) ——> data
 
-### LocalStorage
+## LocalStorage
 
 LocalStorage lets you store data, like a database in the browser. There are many
 ways you can make use of LocalStorage when writing a JavaScript program, and
@@ -587,7 +587,7 @@ Instead of the `Storage` tab, you should click on the `Applications` tab:
   height="513"
 />
 
-### document.querySelectorAll
+## document.querySelectorAll
 
 Recall how `document.querySelector` selects the first element it finds that
 matches its argument. `document.querySelectorAll` is similar, except it returns
@@ -619,7 +619,7 @@ an array of _all the elements_ that match the query.
 </script>
 ```
 
-## Exercises
+# Exercises
 
 Some of these UI exercises may seem intimidating. When you feel overwhelmed,
 take a deep breath, think about _what you know_, and make sure to start with
@@ -939,7 +939,7 @@ The new function we had to add here was the Filter button's onclick. We chose to
 </Spoiler>
 
 - **Part 2:**
-  [Add localStorage to store the data, then hide the age](https://songz.c0d3.com/js2/3b.html)
+  [ Add localStorage to store the data, then hide the age](https://songz.c0d3.com/js2/3b.html)
   (don't display it). When you click on a name, alert the friend's age.
 
 <Spoiler name = "Overview">
@@ -960,11 +960,7 @@ The new function we had to add here was the Filter button's onclick. We chose to
 
 </Spoiler>
 
-<ChallengeBar
-  href="/curriculum/2"
-  description="Complete HTML challenges (TO-DO add HTML challenges)"
-  title="Master your skill by solving challenges"
-/>
+<hr />
 
 export default ({ children }) => (
   <Layout
