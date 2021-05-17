@@ -32,23 +32,29 @@
   }
 }
 ol + details {
-  margin-left: 1.25em !important;
-  margin-top: -0.75em !important;
+  margin-left: 1.25em;
+  margin-top: -0.75em;
   & + details {
-    margin-left: 1.25em !important;
+    margin-left: 1.25em;
     & + details {
-      margin-left: 1.25em !important;
+      margin-left: 1.25em;
+    }
+  }
+  & + p {
+    margin-left: 1.25em;
+    & + details {
+      margin-left: 1.25em;
     }
   }
 }
 
 ul + details {
-  margin-left: 1.25em !important;
-  margin-top: -0.75em !important;
+  margin-left: 1.25em;
+  margin-top: -0.75em;
   & + details {
-    margin-left: 1.25em !important;
+    margin-left: 1.25em;
     & + details {
-      margin-left: 1.25em !important;
+      margin-left: 1.25em;
     }
   }
 }
