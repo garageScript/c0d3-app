@@ -7,7 +7,7 @@ import Layout from '../../../../components/mdx/LessonLayout'
 # Objects
 
 Objects are the most important concept in JavaScript. But wait, didn't we
-[already say that functions are the most important concept in JavaScript](https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#420f9a48361e4cc88c2171c63525d050)?!
+[already say that functions are the most important concept in JavaScript](/curriculum/lessons/js0/functions_and_execution_context#running-a-function)?!
 Yes we did. But functions are actually objects in JavaScript (and so are
 arrays)! In fact, almost everything in JavaScript is an object.
 
@@ -771,9 +771,8 @@ method available to them.
 
 The `hasOwnProperty` method allows us to check if a particular property exists
 **ONLY** on the object in context and not down the prototype chain of the
-object. Go
-[here](https://www.notion.so/JS-3-Objects-3df846eaf0404fe6b012208773063a04#ed309fd8496a44bbad12714ea879889d)
-to read more on prototypes.
+object. Go [here](/curriculum/lessons/js3/objects#prototype-inheritance) to read
+more on prototypes.
 
 Let's look at an example to see why we may use this method.
 
@@ -1508,20 +1507,19 @@ Below is a note from the MDN page which talks all about prototypes in
 JavaScript.
 [MDN JS Prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes):
 
-***Note***: *It's important to understand that there is a distinction between an
+**_Note_**: _It's important to understand that there is a distinction between an
 object's prototype (available via Object.getPrototypeOf(obj), or via the
-deprecated* ***proto*** *property) and the prototype property on constructor
-functions.*
+deprecated_ **_proto_** _property) and the prototype property on constructor
+functions._
 
-*The constructor function Foobar() has its own prototype, which can be found by
+_The constructor function Foobar() has its own prototype, which can be found by
 calling Object.getPrototypeOf(Foobar). However this differs from its prototype
 property, Foobar.prototype, which is the blueprint for instances of this
-constructor function.*
+constructor function._
 
-*If we were to create a new instance — let fooInstance = new Foobar() —
+_If we were to create a new instance — let fooInstance = new Foobar() —
 fooInstance would take its prototype from its constructor function's prototype
-property. Thus Object.getPrototypeOf(fooInstance) === Foobar.prototype.*
-
+property. Thus Object.getPrototypeOf(fooInstance) === Foobar.prototype._
 
 ## Exercises
 
