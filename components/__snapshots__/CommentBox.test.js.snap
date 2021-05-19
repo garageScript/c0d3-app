@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentBox component Should render commentBox with comments 1`] = `
+<div>
+  <div
+    class="showHide"
+  >
+    Hide conversation
+  </div>
+  <div
+    class="commentBox bg-white d-auto"
+  >
+    <div
+      class="border"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        First Comment
+      </span>
+      <div
+        class="wrapper"
+      >
+        <a
+          class="comment_author__inline mt-2 d-block"
+          href="/profile/newbie"
+        >
+          <div
+            class="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            class="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      class="border"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        Second Comment
+      </span>
+      <div
+        class="wrapper"
+      >
+        <a
+          class="comment_author__inline mt-2 d-block"
+          href="/profile/newbie"
+        >
+          <div
+            class="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            class="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      style="background-color: white;"
+    >
+      <button
+        class="btn"
+        style="color: rgb(41, 41, 41);"
+      >
+        Write
+      </button>
+      <button
+        class="btn"
+        style="color: rgb(142, 142, 142);"
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        placeholder="Type something..."
+        style="padding: 1rem; width: 100%;"
+      />
+    </div>
+    <button
+      class="btn bg-success"
+      style="color: rgb(255, 255, 255);"
+    >
+      Add comment
+    </button>
+  </div>
+</div>
+`;
+
+exports[`CommentBox component Should render empty commentBox 1`] = `
+<div>
+  <div
+    class="showHide"
+  >
+    Hide conversation
+  </div>
+  <div
+    class="commentBox bg-white d-auto"
+  >
+    <div
+      style="background-color: white;"
+    >
+      <button
+        class="btn"
+        style="color: rgb(41, 41, 41);"
+      >
+        Write
+      </button>
+      <button
+        class="btn"
+        style="color: rgb(142, 142, 142);"
+      >
+        Preview
+      </button>
+      <textarea
+        data-testid="textbox"
+        placeholder="Type something..."
+        style="padding: 1rem; width: 100%;"
+      />
+    </div>
+    <button
+      class="btn bg-success"
+      style="color: rgb(255, 255, 255);"
+    >
+      Add comment
+    </button>
+  </div>
+</div>
+`;

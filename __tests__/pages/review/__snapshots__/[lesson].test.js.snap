@@ -1680,21 +1680,25 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 <span>
                   TEST 2
                 </span>
-                <a
-                  class="comment_author mt-2 d-block"
-                  href="/profile/admin"
+                <div
+                  class=""
                 >
-                  <div
-                    class="d-inline"
+                  <a
+                    class="comment_author mt-2 d-block"
+                    href="/profile/admin"
                   >
-                    Admin Admin
-                  </div>
-                  <div
-                    class="d-inline text-muted"
-                  >
-                     @admin
-                  </div>
-                </a>
+                    <div
+                      class="d-inline"
+                    >
+                      Admin Admin
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    >
+                       @admin
+                    </div>
+                  </a>
+                </div>
               </div>
               <div
                 style="background-color: white;"
