@@ -16602,9 +16602,14 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
       <p
         className="card-text"
       />
-      <p>
-        You will receive a link to confirm your email address and to set your password.
-      </p>
+      <a
+        className="btn btn-primary"
+        href="/confirm/undefined"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Click here to set your password.
+      </a>
     </div>
   </div>
 </div>
