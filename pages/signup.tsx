@@ -53,8 +53,9 @@ const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
     title="Account created successfully!"
   >
     <p>
-      Link to set your password:
-      <a>{`https://www.c0d3.com/confirm/${forgotToken}`}</a>
+      <a href={`https://www.c0d3.com/confirm/${forgotToken}`}>
+        Link to set your password
+      </a>
     </p>
   </Card>
 )
@@ -138,12 +139,10 @@ const SignUpPage: React.FC = () => {
   const [signupErrors, setSignupErrors] = useState<string[]>([])
   const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
-    console.log('submitting')
     setIsSubmitting(true)
     try {
       const { data } = await signupUser({ variables: values })
       if (data.signup.success) {
-        console.log('success!!', data.signup)
         setForgotToken(data.signup.cliToken)
         return setSignupSuccess(true)
       }
