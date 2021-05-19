@@ -16,7 +16,7 @@ const SIGNUP_USER = gql`
       success
       username
       error
-      forgotToken
+      cliToken
     }
   }
 `

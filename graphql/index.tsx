@@ -766,7 +766,7 @@ export type SignupMutation = { __typename?: 'Mutation' } & {
   signup?: Maybe<
     { __typename?: 'AuthResponse' } & Pick<
       AuthResponse,
-      'success' | 'username' | 'error'
+      'success' | 'username' | 'error' | 'cliToken'
     >
   >
 }
@@ -3270,6 +3270,7 @@ export const SignupDocument = gql`
       success
       username
       error
+      cliToken
     }
   }
 `

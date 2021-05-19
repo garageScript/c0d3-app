@@ -182,7 +182,7 @@ describe('auth controller', () => {
       expect(result).toEqual({
         username: 'user',
         success: true,
-        forgotToken: result.forgotToken
+        cliToken: result.cliToken
       })
       expect(prisma.user.update).toBeCalled()
     })

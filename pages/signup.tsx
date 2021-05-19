@@ -137,11 +137,13 @@ const SignUpPage: React.FC = () => {
   const [signupErrors, setSignupErrors] = useState<string[]>([])
   const [signupUser] = useMutation(SIGNUP_USER)
   const handleSubmit = async (values: Values) => {
+    console.log('submitting')
     setIsSubmitting(true)
     try {
       const { data } = await signupUser({ variables: values })
       if (data.signup.success) {
-        setForgotToken(data.signup.forgotToken)
+        console.log('success!!', data.signup)
+        setForgotToken(data.signup.cliToken)
         return setSignupSuccess(true)
       }
       const err = new Error(

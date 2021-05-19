@@ -175,7 +175,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
     return {
       success: true,
       username: newUser.username,
-      forgotToken
+      cliToken: forgotToken
     }
   } catch (err) {
     if (!err.extensions) {
