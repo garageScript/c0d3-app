@@ -15,7 +15,12 @@ import { signupValidation } from '../helpers/formValidation'
 import SIGNUP_USER from '../graphql/queries/signupUser'
 
 //import types
-import { SignupFormProps, Values, ErrorDisplayProps } from '../@types/signup'
+import {
+  SignupFormProps,
+  Values,
+  ErrorDisplayProps,
+  SignupSuccessProps
+} from '../@types/signup'
 
 const initialValues: Values = {
   email: '',
@@ -41,15 +46,14 @@ const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   return <>{errorMessages}</>
 }
 
-const SignupSuccess: React.FC = () => (
+const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
   <Card
     type="success"
     data-testid="signup-success"
     title="Account created successfully!"
   >
     <p>
-      You will receive a link to confirm your email address and to set your
-      password.
+      {`Link to set your password: https://www.c0d3.com/confirm/${forgotToken}`}
     </p>
   </Card>
 )
@@ -128,6 +132,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
 
 const SignUpPage: React.FC = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
+  const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [signupErrors, setSignupErrors] = useState<string[]>([])
   const [signupUser] = useMutation(SIGNUP_USER)
@@ -136,6 +141,7 @@ const SignUpPage: React.FC = () => {
     try {
       const { data } = await signupUser({ variables: values })
       if (data.signup.success) {
+        setForgotToken(data.signup.forgotToken)
         return setSignupSuccess(true)
       }
       const err = new Error(
@@ -160,6 +166,7 @@ const SignUpPage: React.FC = () => {
         handleSubmit={handleSubmit}
         isLoading={isSubmitting}
         isSuccess={signupSuccess}
+        forgotToken={forgotToken}
         signupErrors={signupErrors}
       />
     </Layout>
@@ -170,12 +177,13 @@ export const Signup: React.FC<SignupFormProps> = ({
   handleSubmit,
   isSuccess,
   signupErrors,
-  isLoading
+  isLoading,
+  forgotToken
 }) => {
   return (
     <>
       {isSuccess ? (
-        <SignupSuccess />
+        <SignupSuccess forgotToken={forgotToken} />
       ) : (
         <SignupForm
           handleSubmit={handleSubmit}

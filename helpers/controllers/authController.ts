@@ -174,7 +174,8 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
 
     return {
       success: true,
-      username: newUser.username
+      username: newUser.username,
+      forgotToken
     }
   } catch (err) {
     if (!err.extensions) {
