@@ -16602,13 +16602,14 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
       <p
         className="card-text"
       />
-      <p>
-        <a
-          href="https://www.c0d3.com/confirm/undefined"
-        >
-          Link to set your password
-        </a>
-      </p>
+      <a
+        className="btn btn-primary"
+        href="/confirm/undefined"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Click here to set your password.
+      </a>
     </div>
   </div>
 </div>
