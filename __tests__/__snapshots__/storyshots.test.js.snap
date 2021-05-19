@@ -12269,12 +12269,60 @@ Array [
   <div
     className="container-md"
   >
+    <img
+      className="arrow false position-fixed d-xl-none"
+      data-testid="arrow"
+      src="/assets/curriculum/icons/scroll-right.svg"
+    />
     <div
-      className="row"
+      className="row overflow-auto flex-nowrap parent-scroll"
+      data-testid="parent-scroll"
     >
       <div
-        className="col-xl-8 order-xl-0 order-1"
+        className="col-12 col-xl-8 child-scroll"
       >
+        <div
+          className="d-xl-none"
+        >
+          <div
+            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <h4
+                className="progress-card__title mt-3"
+              >
+                Join C0D3 now and start your software engineering journey!
+              </h4>
+              <div
+                className="mt-3"
+              >
+                Join us on
+                <a
+                  className="progress-newuser__chatlink text-white"
+                  href="https://discord.gg/c0d3"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Discord
+                </a>
+                to ask your questions.
+                <p>
+                  Start by setting up your development environment and then follow the lessons in the course.
+                </p>
+              </div>
+              <a
+                className="btn btn-light progress-card__button mt-2 text-primary"
+                href="/docs/setup"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Setup Development Environment
+              </a>
+            </div>
+          </div>
+        </div>
         <div
           className="card shadow-sm mt-3 border-0"
         >
@@ -12837,55 +12885,55 @@ Array [
         </div>
       </div>
       <div
-        className="col-xl-4"
+        className="col-12 col-xl-4 child-scroll"
       >
         <div
-          className="d-xl-block"
+          className="bg-white mt-3"
         >
           <div
-            className="bg-white mt-3"
+            className="container"
+          >
+            <img
+              src="/assets/discordLogo.svg"
+            />
+            <div
+              className="text-primary mt-n3 text-center"
+            >
+              <span
+                className="font-weight-bold"
+              >
+                0
+              </span>
+               members online
+            </div>
+          </div>
+          <div
+            className="p-2"
           >
             <div
-              className="container"
+              className="discord-list"
             >
-              <img
-                src="/assets/discordLogo.svg"
+              <div
+                className="text-center font-weight-bold text-primary"
               />
-              <div
-                className="text-primary mt-n3 text-center"
-              >
-                <span
-                  className="font-weight-bold"
-                >
-                  0
-                </span>
-                 members online
-              </div>
             </div>
-            <div
-              className="p-2"
-            >
-              <div
-                className="discord-list"
-              >
-                <div
-                  className="text-center font-weight-bold text-primary"
-                />
-              </div>
-            </div>
-            <a
-              className="discord_link font-weight-bold text-white"
-              href="https://discord.gg/c0d3"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <div
-                className="border border-primary text-center bg-white text-primary"
-              >
-                JOIN
-              </div>
-            </a>
           </div>
+          <a
+            className="discord_link font-weight-bold text-white"
+            href="https://discord.gg/c0d3"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div
+              className="border border-primary text-center bg-white text-primary"
+            >
+              JOIN
+            </div>
+          </a>
+        </div>
+        <div
+          className="d-none d-xl-block"
+        >
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -12926,139 +12974,135 @@ Array [
           </div>
         </div>
         <div
-          className="d-none d-xl-block"
+          className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
         >
           <div
-            className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
-          >
-            <div
-              className="card-body"
-            >
-              <h1
-                className="announcement-card__title font-weight-bold"
-              >
-                General Announcements
-              </h1>
-              <div
-                className="mt-3"
-              >
-                <p
-                  className="announcement-card__subtitle font-weight-bold"
-                >
-                  Updates and Guidelines
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+            className="card-body"
           >
             <h1
-              className="additional-resources__title font-weight-bold"
+              className="announcement-card__title font-weight-bold"
             >
-              ADDITIONAL RESOURCES
+              General Announcements
             </h1>
-            <a
-              className="additional-resources_link mr-1"
-              href="https://developer.mozilla.org/en-US/"
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="mt-3"
             >
-              <h2
-                className="additional-resources__subtitle mr-0"
+              <p
+                className="announcement-card__subtitle font-weight-bold"
               >
-                MDN Web Docs
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              The encyclopedia of web development
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://javascript.info/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle"
+                Updates and Guidelines
+              </p>
+              <p
+                className="mt-4"
               >
-                The Modern JavaScript Tutorial
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              In-depth overview of javascript language
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://missing.csail.mit.edu/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle "
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                className="mt-4"
               >
-                The Missing Semester
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              Introduction to shell, git, vim, tmux and etc.
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://teachyourselfcs.com/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle"
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                className="mt-4"
               >
-                Teach Yourself Computer Science
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              Self-study guide
-            </h3>
-            <hr
-              className="my-2"
-            />
+                These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                className="mt-4"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
+              </p>
+            </div>
           </div>
+        </div>
+        <div
+          className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+        >
+          <h1
+            className="additional-resources__title font-weight-bold"
+          >
+            ADDITIONAL RESOURCES
+          </h1>
+          <a
+            className="additional-resources_link mr-1"
+            href="https://developer.mozilla.org/en-US/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle mr-0"
+            >
+              MDN Web Docs
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            The encyclopedia of web development
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://javascript.info/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle"
+            >
+              The Modern JavaScript Tutorial
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            In-depth overview of javascript language
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://missing.csail.mit.edu/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle "
+            >
+              The Missing Semester
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            Introduction to shell, git, vim, tmux and etc.
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://teachyourselfcs.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle"
+            >
+              Teach Yourself Computer Science
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            Self-study guide
+          </h3>
+          <hr
+            className="my-2"
+          />
         </div>
       </div>
     </div>
@@ -13156,12 +13200,60 @@ Array [
   <div
     className="container-md"
   >
+    <img
+      className="arrow false position-fixed d-xl-none"
+      data-testid="arrow"
+      src="/assets/curriculum/icons/scroll-right.svg"
+    />
     <div
-      className="row"
+      className="row overflow-auto flex-nowrap parent-scroll"
+      data-testid="parent-scroll"
     >
       <div
-        className="col-xl-8 order-xl-0 order-1"
+        className="col-12 col-xl-8 child-scroll"
       >
+        <div
+          className="d-xl-none"
+        >
+          <div
+            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <h4
+                className="progress-card__title mt-3"
+              >
+                Join C0D3 now and start your software engineering journey!
+              </h4>
+              <div
+                className="mt-3"
+              >
+                Join us on
+                <a
+                  className="progress-newuser__chatlink text-white"
+                  href="https://discord.gg/c0d3"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Discord
+                </a>
+                to ask your questions.
+                <p>
+                  Start by setting up your development environment and then follow the lessons in the course.
+                </p>
+              </div>
+              <a
+                className="btn btn-light progress-card__button mt-2 text-primary"
+                href="/docs/setup"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Setup Development Environment
+              </a>
+            </div>
+          </div>
+        </div>
         <div
           className="card shadow-sm mt-3 border-0"
         >
@@ -13724,55 +13816,55 @@ Array [
         </div>
       </div>
       <div
-        className="col-xl-4"
+        className="col-12 col-xl-4 child-scroll"
       >
         <div
-          className="d-xl-block"
+          className="bg-white mt-3"
         >
           <div
-            className="bg-white mt-3"
+            className="container"
+          >
+            <img
+              src="/assets/discordLogo.svg"
+            />
+            <div
+              className="text-primary mt-n3 text-center"
+            >
+              <span
+                className="font-weight-bold"
+              >
+                0
+              </span>
+               members online
+            </div>
+          </div>
+          <div
+            className="p-2"
           >
             <div
-              className="container"
+              className="discord-list"
             >
-              <img
-                src="/assets/discordLogo.svg"
+              <div
+                className="text-center font-weight-bold text-primary"
               />
-              <div
-                className="text-primary mt-n3 text-center"
-              >
-                <span
-                  className="font-weight-bold"
-                >
-                  0
-                </span>
-                 members online
-              </div>
             </div>
-            <div
-              className="p-2"
-            >
-              <div
-                className="discord-list"
-              >
-                <div
-                  className="text-center font-weight-bold text-primary"
-                />
-              </div>
-            </div>
-            <a
-              className="discord_link font-weight-bold text-white"
-              href="https://discord.gg/c0d3"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <div
-                className="border border-primary text-center bg-white text-primary"
-              >
-                JOIN
-              </div>
-            </a>
           </div>
+          <a
+            className="discord_link font-weight-bold text-white"
+            href="https://discord.gg/c0d3"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div
+              className="border border-primary text-center bg-white text-primary"
+            >
+              JOIN
+            </div>
+          </a>
+        </div>
+        <div
+          className="d-none d-xl-block"
+        >
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -13813,139 +13905,135 @@ Array [
           </div>
         </div>
         <div
-          className="d-none d-xl-block"
+          className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
         >
           <div
-            className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
-          >
-            <div
-              className="card-body"
-            >
-              <h1
-                className="announcement-card__title font-weight-bold"
-              >
-                General Announcements
-              </h1>
-              <div
-                className="mt-3"
-              >
-                <p
-                  className="announcement-card__subtitle font-weight-bold"
-                >
-                  Updates and Guidelines
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+            className="card-body"
           >
             <h1
-              className="additional-resources__title font-weight-bold"
+              className="announcement-card__title font-weight-bold"
             >
-              ADDITIONAL RESOURCES
+              General Announcements
             </h1>
-            <a
-              className="additional-resources_link mr-1"
-              href="https://developer.mozilla.org/en-US/"
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="mt-3"
             >
-              <h2
-                className="additional-resources__subtitle mr-0"
+              <p
+                className="announcement-card__subtitle font-weight-bold"
               >
-                MDN Web Docs
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              The encyclopedia of web development
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://javascript.info/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle"
+                Updates and Guidelines
+              </p>
+              <p
+                className="mt-4"
               >
-                The Modern JavaScript Tutorial
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              In-depth overview of javascript language
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://missing.csail.mit.edu/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle "
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                className="mt-4"
               >
-                The Missing Semester
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              Introduction to shell, git, vim, tmux and etc.
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://teachyourselfcs.com/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle"
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                className="mt-4"
               >
-                Teach Yourself Computer Science
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              Self-study guide
-            </h3>
-            <hr
-              className="my-2"
-            />
+                These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                className="mt-4"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
+              </p>
+            </div>
           </div>
+        </div>
+        <div
+          className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+        >
+          <h1
+            className="additional-resources__title font-weight-bold"
+          >
+            ADDITIONAL RESOURCES
+          </h1>
+          <a
+            className="additional-resources_link mr-1"
+            href="https://developer.mozilla.org/en-US/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle mr-0"
+            >
+              MDN Web Docs
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            The encyclopedia of web development
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://javascript.info/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle"
+            >
+              The Modern JavaScript Tutorial
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            In-depth overview of javascript language
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://missing.csail.mit.edu/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle "
+            >
+              The Missing Semester
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            Introduction to shell, git, vim, tmux and etc.
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://teachyourselfcs.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle"
+            >
+              Teach Yourself Computer Science
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            Self-study guide
+          </h3>
+          <hr
+            className="my-2"
+          />
         </div>
       </div>
     </div>
@@ -14043,12 +14131,60 @@ Array [
   <div
     className="container-md"
   >
+    <img
+      className="arrow false position-fixed d-xl-none"
+      data-testid="arrow"
+      src="/assets/curriculum/icons/scroll-right.svg"
+    />
     <div
-      className="row"
+      className="row overflow-auto flex-nowrap parent-scroll"
+      data-testid="parent-scroll"
     >
       <div
-        className="col-xl-8 order-xl-0 order-1"
+        className="col-12 col-xl-8 child-scroll"
       >
+        <div
+          className="d-xl-none"
+        >
+          <div
+            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+          >
+            <div
+              className="card-body"
+            >
+              <h4
+                className="progress-card__title mt-3"
+              >
+                Join C0D3 now and start your software engineering journey!
+              </h4>
+              <div
+                className="mt-3"
+              >
+                Join us on
+                <a
+                  className="progress-newuser__chatlink text-white"
+                  href="https://discord.gg/c0d3"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Discord
+                </a>
+                to ask your questions.
+                <p>
+                  Start by setting up your development environment and then follow the lessons in the course.
+                </p>
+              </div>
+              <a
+                className="btn btn-light progress-card__button mt-2 text-primary"
+                href="/docs/setup"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Setup Development Environment
+              </a>
+            </div>
+          </div>
+        </div>
         <div
           className="card shadow-sm mt-3 border-0"
         >
@@ -14611,55 +14747,55 @@ Array [
         </div>
       </div>
       <div
-        className="col-xl-4"
+        className="col-12 col-xl-4 child-scroll"
       >
         <div
-          className="d-xl-block"
+          className="bg-white mt-3"
         >
           <div
-            className="bg-white mt-3"
+            className="container"
+          >
+            <img
+              src="/assets/discordLogo.svg"
+            />
+            <div
+              className="text-primary mt-n3 text-center"
+            >
+              <span
+                className="font-weight-bold"
+              >
+                0
+              </span>
+               members online
+            </div>
+          </div>
+          <div
+            className="p-2"
           >
             <div
-              className="container"
+              className="discord-list"
             >
-              <img
-                src="/assets/discordLogo.svg"
+              <div
+                className="text-center font-weight-bold text-primary"
               />
-              <div
-                className="text-primary mt-n3 text-center"
-              >
-                <span
-                  className="font-weight-bold"
-                >
-                  0
-                </span>
-                 members online
-              </div>
             </div>
-            <div
-              className="p-2"
-            >
-              <div
-                className="discord-list"
-              >
-                <div
-                  className="text-center font-weight-bold text-primary"
-                />
-              </div>
-            </div>
-            <a
-              className="discord_link font-weight-bold text-white"
-              href="https://discord.gg/c0d3"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <div
-                className="border border-primary text-center bg-white text-primary"
-              >
-                JOIN
-              </div>
-            </a>
           </div>
+          <a
+            className="discord_link font-weight-bold text-white"
+            href="https://discord.gg/c0d3"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div
+              className="border border-primary text-center bg-white text-primary"
+            >
+              JOIN
+            </div>
+          </a>
+        </div>
+        <div
+          className="d-none d-xl-block"
+        >
           <div
             className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
           >
@@ -14700,139 +14836,135 @@ Array [
           </div>
         </div>
         <div
-          className="d-none d-xl-block"
+          className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
         >
           <div
-            className="announcement-card__container card shadow-sm mt-3 p-2 d-flex border-0"
-          >
-            <div
-              className="card-body"
-            >
-              <h1
-                className="announcement-card__title font-weight-bold"
-              >
-                General Announcements
-              </h1>
-              <div
-                className="mt-3"
-              >
-                <p
-                  className="announcement-card__subtitle font-weight-bold"
-                >
-                  Updates and Guidelines
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
-                </p>
-                <p
-                  className="mt-4"
-                >
-                  After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+            className="card-body"
           >
             <h1
-              className="additional-resources__title font-weight-bold"
+              className="announcement-card__title font-weight-bold"
             >
-              ADDITIONAL RESOURCES
+              General Announcements
             </h1>
-            <a
-              className="additional-resources_link mr-1"
-              href="https://developer.mozilla.org/en-US/"
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              className="mt-3"
             >
-              <h2
-                className="additional-resources__subtitle mr-0"
+              <p
+                className="announcement-card__subtitle font-weight-bold"
               >
-                MDN Web Docs
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              The encyclopedia of web development
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://javascript.info/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle"
+                Updates and Guidelines
+              </p>
+              <p
+                className="mt-4"
               >
-                The Modern JavaScript Tutorial
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              In-depth overview of javascript language
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://missing.csail.mit.edu/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle "
+                To make space for other students on our servers, your account will be deleted after 30 days of inactivity.
+              </p>
+              <p
+                className="mt-4"
               >
-                The Missing Semester
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              Introduction to shell, git, vim, tmux and etc.
-            </h3>
-            <hr
-              className="my-2"
-            />
-            <a
-              className="additional-resources_link mr-1"
-              href="https://teachyourselfcs.com/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <h2
-                className="additional-resources__subtitle"
+                Take each lesson challenge seriously and do them over and over again until you can solve them. With the exception End to End, all challenges are questions and exercises taken from real interviews.
+              </p>
+              <p
+                className="mt-4"
               >
-                Teach Yourself Computer Science
-              </h2>
-            </a>
-            <h3
-              className="additional-resources__description"
-            >
-              Self-study guide
-            </h3>
-            <hr
-              className="my-2"
-            />
+                These lessons will not only prepare you for interviews, but it will also help teach you the skills that you need to become an effective engineer.
+              </p>
+              <p
+                className="mt-4"
+              >
+                After completing Foundations of JavaScript, Variables & Functions, Array, Objects, End to End, HTML/CSS/JavaScript, React/GraphQL/SocketIO, you will be ready to contribute to our codebase.
+              </p>
+            </div>
           </div>
+        </div>
+        <div
+          className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+        >
+          <h1
+            className="additional-resources__title font-weight-bold"
+          >
+            ADDITIONAL RESOURCES
+          </h1>
+          <a
+            className="additional-resources_link mr-1"
+            href="https://developer.mozilla.org/en-US/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle mr-0"
+            >
+              MDN Web Docs
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            The encyclopedia of web development
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://javascript.info/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle"
+            >
+              The Modern JavaScript Tutorial
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            In-depth overview of javascript language
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://missing.csail.mit.edu/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle "
+            >
+              The Missing Semester
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            Introduction to shell, git, vim, tmux and etc.
+          </h3>
+          <hr
+            className="my-2"
+          />
+          <a
+            className="additional-resources_link mr-1"
+            href="https://teachyourselfcs.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <h2
+              className="additional-resources__subtitle"
+            >
+              Teach Yourself Computer Science
+            </h2>
+          </a>
+          <h3
+            className="additional-resources__description"
+          >
+            Self-study guide
+          </h3>
+          <hr
+            className="my-2"
+          />
         </div>
       </div>
     </div>

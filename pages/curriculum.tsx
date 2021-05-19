@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Layout from '../components/Layout'
 import Error, { StatusCode } from '../components/Error'
 import LessonCard from '../components/LessonCard'
@@ -19,6 +19,7 @@ import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
 import { initializeApollo } from '../helpers/apolloClient'
 import { GetStaticProps } from 'next'
+import styles from '../scss/curriculum.module.scss'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -83,10 +84,26 @@ const calculateCurrent = (
     })
   )
 }
+
+const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
+  scrolledRight
+}) => {
+  return (
+    <img
+      src={`/assets/curriculum/icons/scroll-${
+        scrolledRight ? 'left' : 'right'
+      }.svg`}
+      className={`${styles['arrow']} ${
+        scrolledRight && styles['right']
+      } position-fixed d-xl-none`}
+      data-testid="arrow"
+    />
+  )
+}
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data } = useGetSessionQuery({ fetchPolicy: 'cache-and-network' })
-  const [state, setState] = React.useState<State>({
+  const [state, setState] = useState<State>({
     session: { lessonStatus: [] },
     progress: -1,
     current: -1
@@ -94,7 +111,28 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
-  React.useEffect(() => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [scrolledRight, setScrolledRight] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      /*istanbul ignore else*/
+      if (scrollContainerRef.current) {
+        const status = scrollContainerRef.current.scrollLeft / window.innerWidth
+        if (status > 0.9) {
+          setScrolledRight(true)
+          window.localStorage.setItem('horizontalScrollUsed', 'true')
+        }
+        if (status < 0.1) setScrolledRight(false)
+      }
+    }
+    scrollContainerRef.current &&
+      scrollContainerRef.current.addEventListener(
+        'scroll',
+        _.throttle(onScroll)
+      )
+  }, [])
+  useEffect(() => {
     if (data && data.session) {
       setState({
         session: data.session,
@@ -135,21 +173,35 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   })
   return (
     <Layout title="Curriculum">
-      <div className="row">
-        <AlertsDisplay alerts={alerts} page="curriculum" />
-        <div className="col-xl-8 order-xl-0 order-1">{lessonsToRender}</div>
-        <div className="col-xl-4">
-          <div className="d-xl-block">
-            <DiscordBar />
+      {typeof window !== 'undefined' &&
+        !window.localStorage.getItem('horizontalScrollUsed') && (
+          <ScrollArrow scrolledRight={scrolledRight} />
+        )}
+      <div
+        className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
+        ref={scrollContainerRef}
+        data-testid="parent-scroll"
+      >
+        <div className={`col-12 col-xl-8 ${styles['child-scroll']}`}>
+          <AlertsDisplay alerts={alerts} page="curriculum" />
+          <div className="d-xl-none">
             <ProgressCard
               progressCount={state.progress}
               loggedIn={!!state.session?.user}
             />
           </div>
+          {lessonsToRender}
+        </div>
+        <div className={`col-12 col-xl-4 ${styles['child-scroll']}`}>
+          <DiscordBar />
           <div className="d-none d-xl-block">
-            <AnnouncementCard announcements={announcements} />
-            <AdditionalResources />
+            <ProgressCard
+              progressCount={state.progress}
+              loggedIn={!!state.session?.user}
+            />
           </div>
+          <AnnouncementCard announcements={announcements} />
+          <AdditionalResources />
         </div>
       </div>
     </Layout>
