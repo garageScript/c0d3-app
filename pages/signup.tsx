@@ -52,11 +52,9 @@ const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
     data-testid="signup-success"
     title="Account created successfully!"
   >
-    <p>
-      <a href={`https://www.c0d3.com/confirm/${forgotToken}`}>
-        Link to set your password
-      </a>
-    </p>
+    <NavLink path={`/confirm/${forgotToken}`} className="btn btn-primary">
+      Click here to set your password.
+    </NavLink>
   </Card>
 )
 

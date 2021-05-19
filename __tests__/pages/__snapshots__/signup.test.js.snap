@@ -273,9 +273,10 @@ exports[`Signup Page Should render success component on success 1`] = `
             class="card-text"
           />
           <p>
-            Link to set your password:
-            <a>
-              https://www.c0d3.com/confirm/undefined
+            <a
+              href="https://www.c0d3.com/confirm/undefined"
+            >
+              Link to set your password
             </a>
           </p>
         </div>
