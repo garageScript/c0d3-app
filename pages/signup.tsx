@@ -53,7 +53,8 @@ const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
     title="Account created successfully!"
   >
     <p>
-      {`Link to set your password: https://www.c0d3.com/confirm/${forgotToken}`}
+      Link to set your password:
+      <a>{`https://www.c0d3.com/confirm/${forgotToken}`}</a>
     </p>
   </Card>
 )
