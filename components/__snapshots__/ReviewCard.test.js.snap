@@ -36,11 +36,11 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
           <tbody>
             <tr>
               <td
-                class="css-17uc4if-title-block"
+                class="css-1rwygp7-title-block"
                 colspan="4"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   js7/1.js
                 </pre>
@@ -76,7 +76,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -153,7 +153,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -218,7 +218,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -273,7 +273,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -361,7 +361,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -438,7 +438,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         allT
@@ -502,7 +502,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -551,7 +551,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -599,7 +599,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -676,7 +676,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -743,7 +743,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                           
@@ -822,7 +822,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -865,7 +865,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -913,7 +913,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -985,7 +985,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         window
@@ -1048,7 +1048,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -1096,7 +1096,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -1143,7 +1143,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 />
               </td>
             </tr>
@@ -1177,7 +1177,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     module
@@ -1309,11 +1309,11 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           <tbody>
             <tr>
               <td
-                class="css-17uc4if-title-block"
+                class="css-1rwygp7-title-block"
                 colspan="4"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   .
                 </pre>
@@ -1349,7 +1349,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -1426,7 +1426,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -1491,7 +1491,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -1546,7 +1546,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -1634,7 +1634,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -1711,7 +1711,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         allT
@@ -1775,7 +1775,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -1824,7 +1824,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -1872,7 +1872,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -1949,7 +1949,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -2016,7 +2016,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                           
@@ -2095,7 +2095,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -2138,7 +2138,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -2186,7 +2186,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -2258,7 +2258,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         window
@@ -2321,7 +2321,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -2369,7 +2369,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -2416,7 +2416,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 />
               </td>
             </tr>
@@ -2450,7 +2450,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     module
@@ -2580,11 +2580,11 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           <tbody>
             <tr>
               <td
-                class="css-17uc4if-title-block"
+                class="css-1rwygp7-title-block"
                 colspan="4"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   js7/1
                 </pre>
@@ -2620,7 +2620,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -2697,7 +2697,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -2762,7 +2762,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -2817,7 +2817,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -2905,7 +2905,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -2982,7 +2982,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         allT
@@ -3046,7 +3046,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -3095,7 +3095,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -3143,7 +3143,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -3220,7 +3220,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -3287,7 +3287,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                           
@@ -3366,7 +3366,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -3409,7 +3409,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -3457,7 +3457,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -3529,7 +3529,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         window
@@ -3592,7 +3592,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -3640,7 +3640,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -3687,7 +3687,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 />
               </td>
             </tr>
@@ -3721,7 +3721,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     module
@@ -3949,11 +3949,11 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           <tbody>
             <tr>
               <td
-                class="css-17uc4if-title-block"
+                class="css-1rwygp7-title-block"
                 colspan="4"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   js7/1.c
                 </pre>
@@ -3989,7 +3989,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -4066,7 +4066,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -4131,7 +4131,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -4186,7 +4186,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -4274,7 +4274,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -4351,7 +4351,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         allT
@@ -4415,7 +4415,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -4464,7 +4464,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -4512,7 +4512,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       window
@@ -4589,7 +4589,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -4656,7 +4656,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                           
@@ -4735,7 +4735,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         
@@ -4778,7 +4778,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -4826,7 +4826,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -4898,7 +4898,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                         window
@@ -4961,7 +4961,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                       
@@ -5009,7 +5009,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     <span
@@ -5056,7 +5056,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 />
               </td>
             </tr>
@@ -5090,7 +5090,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                 class="css-vl0irh-content css-cnnxkz-diff-added"
               >
                 <pre
-                  class="css-o1u8iu-content-text"
+                  class="css-pa3tg-content-text"
                 >
                   <span>
                     module
