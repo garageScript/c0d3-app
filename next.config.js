@@ -18,8 +18,6 @@ module.exports = withMDX({
     DB_PW: process.env.DB_PW || 'letmein2',
     DB_PORT: process.env.DB_PORT || '5432',
     DB_HOST: process.env.DB_HOST || 'freedomains.dev',
-    MAILGUN_API_KEY: process.env.MAILGUN_API_KEY,
-    MAILGUN_DOMAIN: process.env.MAILGUN_DOMAIN,
     MATTERMOST_ACCESS_TOKEN:
       process.env.MATTERMOST_ACCESS_TOKEN || 'nzk11f9s6jfpbpim8xpbdb9nea',
     SENTRY_DSN:
@@ -27,7 +25,9 @@ module.exports = withMDX({
       'https://e95626afb0454145b569bc69116f838c@o385150.ingest.sentry.io/5221680',
     POSTHOG_API_KEY: process.env.POSTHOG_API_KEY,
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
-    SERVER_URL: process.env.SERVER_URL || '/api/graphql'
+    SERVER_URL: process.env.SERVER_URL || '/api/graphql',
+    SES_KEY_ID: process.env.SES_KEY_ID,
+    SES_SECRET_KEY: process.env.SES_SECRET_KEY
   },
   future: {
     webpack5: true
