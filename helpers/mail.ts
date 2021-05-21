@@ -3,12 +3,15 @@ import * as aws from '@aws-sdk/client-ses'
 import nodemailer from 'nodemailer'
 import { getResetTemplate, getSignupTemplate } from './mailTemplate'
 
+const SES_KEY_ID = process.env.SES_KEY_ID ?? ''
+const SES_SECRET_KEY = process.env.SES_SECRET_KEY ?? ''
+
 // configure AWS SDK
 const ses = new aws.SES({
   region: 'us-east-2',
   credentials: {
-    accessKeyId: process.env.SES_KEY_ID ?? '',
-    secretAccessKey: process.env.SES_SECRET_KEY ?? ''
+    accessKeyId: SES_KEY_ID,
+    secretAccessKey: SES_SECRET_KEY
   }
 })
 
