@@ -1,14 +1,26 @@
 import React, { useState } from 'react'
 import Markdown from 'markdown-to-jsx'
+import { ApolloCache } from '@apollo/client'
 import ReviewerProfile from './ReviewerProfile'
 import { MdInput } from './MdInput'
 import { Button } from './theme/Button'
 import styles from '../scss/commentBox.module.scss'
 import GET_APP from '../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
-import { useAddCommentMutation, Comment, User } from '../graphql'
+import {
+  useAddCommentMutation,
+  Comment,
+  User,
+  AddCommentMutation,
+  GetAppQuery,
+  SubmissionsQuery,
+  Submission
+} from '../graphql'
 import _ from 'lodash'
 type CommentData = Pick<Comment, 'content'> & Pick<User, 'name' | 'username'>
+type RecursivePartial<T> = {
+  [P in keyof T]?: RecursivePartial<T[P]>
+}
 
 const CommentBox: React.FC<{
   line: number
@@ -18,6 +30,7 @@ const CommentBox: React.FC<{
   name: string
   username: string
   lessonId?: number
+  status?: string
 }> = ({
   line,
   fileName,
@@ -25,7 +38,8 @@ const CommentBox: React.FC<{
   commentsData,
   name,
   username,
-  lessonId
+  lessonId,
+  status
 }) => {
   const commentData: CommentData[] = []
   commentsData &&
@@ -39,19 +53,69 @@ const CommentBox: React.FC<{
       }
     })
   const [comments, setComments] = useState(commentData)
-  const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(status === 'passed')
   const [input, setInput] = useState('')
-  const queriesToRefetch = lessonId
-    ? {
+  /*
+  update function modifies client cache after mutation
+  lessonId prop is used to differentiate between student and reviewer 
+  student data comes from GetApp query while reviewer uses getSubmission query
+  */
+  const update = (cache: ApolloCache<AddCommentMutation>) => {
+    if (lessonId) {
+      const data = cache.readQuery<SubmissionsQuery>({
         query: GET_SUBMISSIONS,
-        variables: {
-          lessonId
+        variables: { lessonId }
+      })
+      const current = data!.submissions?.filter(s => s!.id === submissionId)
+      const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
+      copy[0]!.comments!.push({
+        content: input,
+        fileName,
+        line,
+        submissionId,
+        author: {
+          name,
+          username
         }
+      })
+      const newData = data!.submissions!.map(s => {
+        if (s!.id === submissionId) return copy[0]
+        return s
+      })
+      cache.writeQuery({
+        query: GET_SUBMISSIONS,
+        variables: { lessonId },
+        data: { ...data, submissions: newData }
+      })
+    } else {
+      const data = cache.readQuery<GetAppQuery>({
+        query: GET_APP
+      })
+      const current = data!.session!.submissions!.filter(
+        s => s!.id === submissionId
+      )
+      const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
+      copy[0]!.comments!.push({
+        content: input,
+        fileName,
+        line,
+        submissionId,
+        author: {
+          name,
+          username
+        }
+      })
+      const newData = {
+        ...data,
+        session: { ...data!.session, submissions: copy }
       }
-    : { query: GET_APP }
-  const [addComment] = useAddCommentMutation({
-    refetchQueries: [queriesToRefetch]
-  })
+      cache.writeQuery({
+        query: GET_APP,
+        data: newData
+      })
+    }
+  }
+  const [addComment] = useAddCommentMutation()
   return (
     <>
       <div
@@ -72,26 +136,31 @@ const CommentBox: React.FC<{
               <ReviewerProfile name={c.name} username={c.username} inline />
             </div>
           ))}
-        <MdInput onChange={setInput} bgColor="white" />
-        <Button
-          color="white"
-          type="success"
-          onClick={() => {
-            if (!input) return
-            setComments([...comments, { name, username, content: input }])
-            addComment({
-              variables: {
-                line,
-                submissionId,
-                content: input,
-                fileName
-              }
-            })
-            setInput('')
-          }}
-        >
-          Add comment
-        </Button>
+        {status !== 'passed' && (
+          <>
+            <MdInput onChange={setInput} bgColor="white" />
+            <Button
+              color="white"
+              type="success"
+              onClick={() => {
+                if (!input) return
+                setComments([...comments, { name, username, content: input }])
+                addComment({
+                  variables: {
+                    line,
+                    submissionId,
+                    content: input,
+                    fileName
+                  },
+                  update
+                })
+                setInput('')
+              }}
+            >
+              Add comment
+            </Button>
+          </>
+        )}
       </div>
     </>
   )
