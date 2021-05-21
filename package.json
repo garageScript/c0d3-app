@@ -60,7 +60,7 @@
     "react-diff-viewer": "^3.1.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
-    "sass": "^1.32.12",
+    "sass": "^1.32.13",
     "winston": "^3.3.3",
     "winston-transport-sentry-node": "^1.0.2",
     "yup": "^0.32.8"
