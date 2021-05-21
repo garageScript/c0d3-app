@@ -31,7 +31,7 @@
     "prisma/schema.prisma": "npx prisma format"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.17",
+    "@apollo/client": "^3.3.19",
     "@prisma/client": "^2.22.1",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/browser": "^6.3.6",
@@ -74,7 +74,7 @@
     "@jest/types": "^26.6.2",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "^10.2.0",
+    "@next/mdx": "^10.2.2",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-storyshots": "^6.2.9",
