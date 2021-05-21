@@ -86,7 +86,7 @@
     "@testing-library/user-event": "^12.7.0",
     "@types/bcrypt": "^5.0.0",
     "@types/express-session": "^1.17.3",
-    "@types/lodash": "^4.14.168",
+    "@types/lodash": "^4.14.169",
     "@types/mailgun-js": "^0.22.11",
     "@types/mdx-js__react": "^1.5.3",
     "@types/node": "^15.0.2",
