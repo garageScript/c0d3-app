@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
 import { UserInputError, AuthenticationError } from 'apollo-server-micro'
@@ -9,23 +8,20 @@ import { decode, encode } from '../encoding'
 import { passwordValidation } from '../formValidation'
 import findUser from '../findUser'
 import { prisma } from '../../prisma'
+import { ReqPwResetMutation, ReqPwResetMutationVariables } from '../../graphql'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
 export const reqPwReset = async (
   _parent: void,
-  arg: { userOrEmail: string },
+  arg: ReqPwResetMutationVariables,
   ctx: Context
-) => {
+): Promise<ReqPwResetMutation['reqPwReset']> => {
   const { req } = ctx
   try {
-    const userOrEmail = _.get(arg, 'userOrEmail', null)
-    if (!userOrEmail) {
-      throw new UserInputError('Please provide username or email')
-    }
+    const { userOrEmail } = arg
 
     let user = await findUser(userOrEmail)
-
     if (!user) {
       throw new UserInputError('User does not exist')
     }
@@ -46,9 +42,9 @@ export const reqPwReset = async (
       }
     })
 
-    sendResetEmail(user.email!, user.forgotToken!)
+    sendResetEmail(user.email, user.forgotToken!)
 
-    return { success: true, token: user.forgotToken }
+    return { success: true }
   } catch (err) {
     if (!err.extensions) {
       req.error(err)
