@@ -2,7 +2,6 @@ import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
 import { UserInputError, AuthenticationError } from 'apollo-server-micro'
 import { signupValidation } from '../formValidation'
-import { chatSignUp } from '../mattermost'
 import { Context } from '../../@types/helpers'
 import { encode, decode } from '../encoding'
 import { sendSignupEmail } from '../mail'
@@ -141,9 +140,6 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
     }
 
     const name = `${firstName} ${lastName}`
-    const password = nanoid() // Placeholder for Mattermost
-    // Chat Signup
-    await chatSignUp(username, password, email)
 
     let newUser = await prisma.user.create({
       data: {

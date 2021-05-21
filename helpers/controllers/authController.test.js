@@ -1,10 +1,7 @@
 jest.mock('bcrypt')
-jest.mock('mailgun-js')
-jest.mock('../mattermost')
 jest.mock('../mail')
 import bcrypt from 'bcrypt'
 import { login, logout, signup, isTokenValid } from './authController'
-import { chatSignUp } from '../mattermost'
 import { prisma } from '../../prisma'
 
 describe('auth controller', () => {
@@ -136,36 +133,6 @@ describe('auth controller', () => {
       ).rejects.toThrowError('Email already exists')
     })
 
-    test('should not create user if chat signup responds with 401 or 403', async () => {
-      prisma.user.findFirst = jest.fn().mockReturnValue(null)
-      prisma.user.create = jest.fn()
-
-      chatSignUp.mockRejectedValue(
-        'Invalid or missing parameter in mattermost request'
-      )
-
-      await expect(
-        signup({}, userArgs, { req: { error: jest.fn(), session: {} } })
-      ).rejects.toThrowError(
-        'Invalid or missing parameter in mattermost request'
-      )
-
-      expect(prisma.user.create).not.toBeCalled()
-    })
-
-    test('should not create user if chat signup throws an error', () => {
-      prisma.user.findFirst = jest.fn().mockReturnValue(null)
-      prisma.user.create = jest.fn()
-
-      chatSignUp.mockRejectedValueOnce('Mattermost Error')
-
-      expect(
-        signup({}, userArgs, { req: { error: jest.fn(), session: {} } })
-      ).rejects.toThrow('Mattermost Error')
-
-      expect(prisma.user.create).not.toBeCalled()
-    })
-
     test('should resolve with success true if signup successful ', async () => {
       prisma.user.findFirst = jest.fn().mockReturnValue(null)
       prisma.user.create = jest.fn().mockReturnValue({
@@ -173,9 +140,6 @@ describe('auth controller', () => {
         id: 1234
       })
       prisma.user.update = jest.fn().mockReturnValue({ username: 'user' })
-      chatSignUp.mockResolvedValueOnce({
-        success: true
-      })
       const result = await signup({}, userArgs, {
         req: { error: jest.fn(), session: {} }
       })
