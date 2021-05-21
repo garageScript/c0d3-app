@@ -4,7 +4,6 @@ const RESET_PASSWORD = gql`
   mutation reqPwReset($userOrEmail: String!) {
     reqPwReset(userOrEmail: $userOrEmail) {
       success
-      token
     }
   }
 `
