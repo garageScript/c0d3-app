@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client'
 import React, { memo, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
-import ReactDiffViewer from 'react-diff-viewer'
+import ReactDiffViewer from 'c0d3-diff'
 
 import Prism from 'prismjs'
 import dayjs from 'dayjs'
