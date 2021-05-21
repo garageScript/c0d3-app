@@ -1,5 +1,4 @@
 jest.mock('bcrypt')
-jest.mock('mailgun-js')
 jest.mock('nanoid')
 jest.mock('../mail')
 jest.mock('../mattermost')
