@@ -1,13 +1,11 @@
-// aws-sdk needs to be imported like this as it does not have a default export
-import * as aws from '@aws-sdk/client-ses'
-import nodemailer from 'nodemailer'
+import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses'
 import { getResetTemplate, getSignupTemplate } from './mailTemplate'
 
 const SES_KEY_ID = process.env.SES_KEY_ID ?? ''
 const SES_SECRET_KEY = process.env.SES_SECRET_KEY ?? ''
 
 // configure AWS SDK
-const ses = new aws.SES({
+export const sesClient = new SESClient({
   region: 'us-east-2',
   credentials: {
     accessKeyId: SES_KEY_ID,
@@ -15,33 +13,49 @@ const ses = new aws.SES({
   }
 })
 
-// create Nodemailer SES transporter
-const transporter = nodemailer.createTransport({
-  SES: { ses, aws }
-})
+interface sendMailArgs {
+  from: string
+  to: string
+  subject: string
+  html: string
+}
 
-export const sendSignupEmail = async (email: string, token: string) => {
-  try {
-    await transporter.sendMail({
+export const mailParams = ({ from, to, subject, html }: sendMailArgs) =>
+  new SendEmailCommand({
+    Source: from,
+    Destination: {
+      ToAddresses: [to]
+    },
+    Message: {
+      Subject: {
+        Charset: 'UTF-8',
+        Data: subject
+      },
+      Body: {
+        Html: {
+          Charset: 'UTF-8',
+          Data: html
+        }
+      }
+    }
+  })
+
+export const sendSignupEmail = (email: string, token: string) =>
+  sesClient.send(
+    mailParams({
       from: '<hello@c0d3.com>',
       to: email,
       subject: 'Welcome to c0d3.com',
       html: getSignupTemplate(token)
     })
-  } catch (error) {
-    throw new Error(`Error while sending signup email\n${error}`)
-  }
-}
+  )
 
-export const sendResetEmail = async (email: string, token: string) => {
-  try {
-    await transporter.sendMail({
+export const sendResetEmail = (email: string, token: string) =>
+  sesClient.send(
+    mailParams({
       from: `<admin@c0d3.com>`,
       to: email,
       subject: 'Forgot Password',
       html: getResetTemplate(token)
     })
-  } catch (error) {
-    throw new Error(`Error while sending password reset email\n${error}`)
-  }
-}
+  )
