@@ -107,10 +107,25 @@ const DiffView: React.FC<{
           const index = `${id}:${newPath}`
           if (!commentsState[index])
             commentsState[index] = { lines: [], comments: [] }
-          if (commentsState[index].lines!.includes(lineNumber)) return
-          const copy = _.cloneDeep(commentsState)
-          copy[index].lines?.push(lineNumber)
-          setCommentsState(copy)
+          //remove CommentBox on click if there are no comments for this line
+          if (
+            commentsState[index].lines!.includes(lineNumber) &&
+            !commentsState[index].comments?.filter(
+              comment => comment.line === lineNumber
+            )[0]
+          ) {
+            const copy = _.cloneDeep(commentsState)
+            copy[index].lines = copy[index].lines?.filter(
+              line => line !== lineNumber
+            )
+            setCommentsState(copy)
+          }
+          //add new CommentBox on click
+          if (!commentsState[index].lines!.includes(lineNumber)) {
+            const copy = _.cloneDeep(commentsState)
+            copy[index].lines?.push(lineNumber)
+            setCommentsState(copy)
+          }
         }}
       />
     )

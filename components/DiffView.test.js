@@ -79,6 +79,23 @@ describe('DiffView component', () => {
     expect(container).toMatchSnapshot()
     expect(screen.getByText('Add comment')).toBeVisible()
   })
+  test('Should remove comment box with no comments', async () => {
+    render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView
+          diff={diff}
+          comments={[]}
+          name="Noob Newbie"
+          username="newbie"
+          id={1}
+        />
+      </MockedProvider>
+    )
+    userEvent.click(screen.getByText('4'))
+    expect(screen.getByText('Add comment')).toBeVisible()
+    userEvent.click(screen.getByText('4'))
+    expect(screen.queryByText('Add comment')).toBeFalsy()
+  })
   test('Should not add comment box if submission was accepted', async () => {
     render(
       <MockedProvider mocks={[]} addTypename={false}>
@@ -103,7 +120,7 @@ describe('DiffView component', () => {
   })
   test('Should default to javascript if language is not supported', async () => {
     const cDiff =
-      'diff --git a/js7/1.c b/js7/1.c\nindex 9c96b34..853bddf 100644\n--- a/js7/1\n+++ b/js7/1\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
+      'diff --git a/js7/1.c b/js7/1.c\nindex 9c96b34..853bddf 100644\n--- a/js7/1.c\n+++ b/js7/1.c\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
     render(
       <DiffView
         comments={comments}
@@ -112,6 +129,7 @@ describe('DiffView component', () => {
         username="newbie"
       />
     )
+    expect(screen.getByText('js7/1.c')).toBeVisible()
   })
   test('Should do nothing with incorrect diff', async () => {
     const incorrectDiff =
