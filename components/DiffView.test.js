@@ -79,6 +79,22 @@ describe('DiffView component', () => {
     expect(container).toMatchSnapshot()
     expect(screen.getByText('Add comment')).toBeVisible()
   })
+  test('Should not add comment box if submission was accepted', async () => {
+    render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView
+          diff={diff}
+          comments={[]}
+          name="Noob Newbie"
+          username="newbie"
+          id={1}
+          status="passed"
+        />
+      </MockedProvider>
+    )
+    userEvent.click(screen.getByText('4'))
+    expect(screen.queryByText('Add comment')).toBeFalsy()
+  })
   test('Should render empty div if no diff is provided', async () => {
     const { container } = render(
       <DiffView comments={comments} name="Noob Newbie" username="newbie" />

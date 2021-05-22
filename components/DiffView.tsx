@@ -1,12 +1,29 @@
 import React, { useEffect, memo } from 'react'
 import gitDiffParser, { File } from 'gitdiff-parser'
 import Prism from 'prismjs'
-import ReactDiffViewer from 'c0d3-diff'
+import ReactDiffViewer, { ReactDiffViewerStylesOverride } from 'c0d3-diff'
 import _ from 'lodash'
 import CommentBox from './CommentBox'
 import { Comment } from '../graphql'
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
+
+const styles: ReactDiffViewerStylesOverride = {
+  lineNumber: {
+    fontWeight: 'bold',
+    color: '#364d3b'
+  },
+  gutter: {
+    background: '#cdffd8',
+    '&:hover': {
+      fontSize: '1.2rem',
+      opacity: '0.75'
+    }
+  },
+  emptyGutter: {
+    pointerEvents: 'none'
+  }
+}
 
 const DiffView: React.FC<{
   diff?: string
@@ -23,24 +40,25 @@ const DiffView: React.FC<{
   const [commentsState, setCommentsState] = React.useState<fileComments>({})
 
   useEffect(() => {
-    const commentMap: fileComments = {}
-    comments &&
-      comments.forEach(c => {
-        if (!commentMap[`${c.submissionId}:${c.fileName}`])
-          commentMap[`${c.submissionId}:${c.fileName}`] = {
+    const commentsMap: fileComments =
+      comments &&
+      comments.reduce((acc: fileComments, comment) => {
+        const index = `${comment.submissionId}:${comment.fileName}`
+        if (!acc[index])
+          acc[index] = {
             lines: [],
             comments: []
           }
-        commentMap[`${c.submissionId}:${c.fileName}`].lines!.push(c.line)
-        commentMap[`${c.submissionId}:${c.fileName}`].comments!.push(c)
-      })
-    setCommentsState(commentMap)
+        acc[index].lines?.push(comment.line)
+        acc[index].comments?.push(comment)
+        return acc
+      }, {})
+    setCommentsState(commentsMap)
     //rerunning useEffect on id rerenders submission when student clicks on another challenge
   }, [id, comments])
 
   const renderFile = ({ hunks, newPath }: File) => {
     const newValue: string[] = []
-
     if (!hunks.length || !newPath) return
     let extension = newPath.split('.').pop()!
     if (!prismLanguages.includes(extension)) extension = 'javascript'
@@ -49,7 +67,6 @@ const DiffView: React.FC<{
         if (!change.isDelete) newValue.push(change.content)
       })
     })
-
     const syntaxHighlight = (str: string, n: number): any => {
       const highlighted = Prism.highlight(
         str,
@@ -82,15 +99,17 @@ const DiffView: React.FC<{
         renderContent={syntaxHighlight}
         splitView={false}
         leftTitle={`${newPath}`}
+        styles={styles}
         onLineNumberClick={(n: string) => {
-          //line number is a string in format of L-10, R-4 and etc (left-right split views)
+          //number is a string in format of L-10, R-4 and etc (left-right split views)
+          if (status === 'passed') return
           const lineNumber = Number.parseInt(n.split('-')[1])
-          if (!commentsState[`${id}:${newPath}`])
-            commentsState[`${id}:${newPath}`] = { lines: [], comments: [] }
-          if (commentsState[`${id}:${newPath}`].lines!.includes(lineNumber))
-            return
+          const index = `${id}:${newPath}`
+          if (!commentsState[index])
+            commentsState[index] = { lines: [], comments: [] }
+          if (commentsState[index].lines!.includes(lineNumber)) return
           const copy = _.cloneDeep(commentsState)
-          copy[`${id}:${newPath}`].lines?.push(lineNumber)
+          copy[index].lines?.push(lineNumber)
           setCommentsState(copy)
         }}
       />
