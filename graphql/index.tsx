@@ -88,7 +88,7 @@ export type Mutation = {
   setStar: SuccessResponse
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
-  reqPwReset?: Maybe<TokenResponse>
+  reqPwReset: SuccessResponse
   changePw?: Maybe<AuthResponse>
   changeAdminRights?: Maybe<SuccessResponse>
   signup?: Maybe<AuthResponse>
@@ -740,8 +740,9 @@ export type ReqPwResetMutationVariables = Exact<{
 }>
 
 export type ReqPwResetMutation = { __typename?: 'Mutation' } & {
-  reqPwReset?: Maybe<
-    { __typename?: 'TokenResponse' } & Pick<TokenResponse, 'success' | 'token'>
+  reqPwReset: { __typename?: 'SuccessResponse' } & Pick<
+    SuccessResponse,
+    'success'
   >
 }
 
@@ -1228,7 +1229,7 @@ export type MutationResolvers<
     ContextType
   >
   reqPwReset?: Resolver<
-    Maybe<ResolversTypes['TokenResponse']>,
+    ResolversTypes['SuccessResponse'],
     ParentType,
     ContextType,
     RequireFields<MutationReqPwResetArgs, 'userOrEmail'>
@@ -3095,7 +3096,6 @@ export const ReqPwResetDocument = gql`
   mutation reqPwReset($userOrEmail: String!) {
     reqPwReset(userOrEmail: $userOrEmail) {
       success
-      token
     }
   }
 `

@@ -5800,6 +5800,18 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
+c0d3-diff@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/c0d3-diff/-/c0d3-diff-0.0.1.tgz#a751146a636a18c73ae16fbfe4d7e60296c20fc3"
+  integrity sha512-aWeGYVXVgHd3xfWlX2LjGFbA8C+vXWSjBf0tWdTE01EYnwe9CyNNw8qdO5kd56poAxdWYxLgANC14Omh3GJgWA==
+  dependencies:
+    classnames "^2.2.6"
+    create-emotion "^10.0.14"
+    diff "^4.0.1"
+    emotion "^10.0.14"
+    memoize-one "^5.0.4"
+    prop-types "^15.6.2"
+
 cacache@^12.0.2:
   version "12.0.4"
   resolved "https://registry.yarnpkg.com/cacache/-/cacache-12.0.4.tgz#668bcbd105aeb5f1d92fe25570ec9525c8faa40c"
@@ -13105,18 +13117,6 @@ react-dev-utils@^11.0.3:
     shell-quote "1.7.2"
     strip-ansi "6.0.0"
     text-table "0.2.0"
-
-react-diff-viewer@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-diff-viewer/-/react-diff-viewer-3.1.1.tgz#21ac9c891193d05a3734bfd6bd54b107ee6d46cc"
-  integrity sha512-rmvwNdcClp6ZWdS11m1m01UnBA4OwYaLG/li0dB781e/bQEzsGyj+qewVd6W5ztBwseQ72pO7nwaCcq5jnlzcw==
-  dependencies:
-    classnames "^2.2.6"
-    create-emotion "^10.0.14"
-    diff "^4.0.1"
-    emotion "^10.0.14"
-    memoize-one "^5.0.4"
-    prop-types "^15.6.2"
 
 react-docgen-typescript-plugin@^0.6.2:
   version "0.6.3"

@@ -16,23 +16,15 @@ describe('Request Password Reset', () => {
   })
   const ctx = { req: { error: jest.fn() } }
 
-  test('It throws an error when user or email is not provided', () => {
-    expect(reqPwReset(() => {}, null, ctx)).rejects.toThrowError(
-      'Please provide username or email'
-    )
-  })
-
   test('It should find a user with username if it is provided', async () => {
     nanoid.mockReturnValue('fake123')
     prisma.user.findFirst = jest.fn().mockResolvedValueOnce({
       id: 3
     })
-    const expectedEncodedToken = encode({ userId: 3, userToken: 'fake123' })
     await expect(
       reqPwReset(() => {}, { userOrEmail: 'c0d3r' }, ctx)
     ).resolves.toEqual({
-      success: true,
-      token: expectedEncodedToken
+      success: true
     })
     expect(prisma.user.findFirst).toBeCalledWith({
       where: { username: 'c0d3r' }
@@ -45,12 +37,10 @@ describe('Request Password Reset', () => {
     prisma.user.findFirst = jest.fn().mockResolvedValueOnce({
       id: 3
     })
-    const expectedEncodedToken = encode({ userId: 3, userToken: 'fake123' })
     await expect(
       reqPwReset(() => {}, { userOrEmail: 'c0d3r@c0d3.com' }, ctx)
     ).resolves.toEqual({
-      success: true,
-      token: expectedEncodedToken
+      success: true
     })
     expect(prisma.user.findFirst).toBeCalledWith({
       where: { email: 'c0d3r@c0d3.com' }

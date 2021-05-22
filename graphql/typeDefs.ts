@@ -21,7 +21,7 @@ export default gql`
     setStar(mentorId: Int!, lessonId: Int!, comment: String): SuccessResponse!
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
-    reqPwReset(userOrEmail: String!): TokenResponse
+    reqPwReset(userOrEmail: String!): SuccessResponse!
     changePw(token: String!, password: String!): AuthResponse
     changeAdminRights(id: Int!, status: Boolean!): SuccessResponse
     signup(
