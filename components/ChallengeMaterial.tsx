@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { Challenge, Submission, UserLesson } from '../graphql/index'
+import {
+  Challenge,
+  GetAppQuery,
+  Submission,
+  UserLesson
+} from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
@@ -11,6 +16,7 @@ import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import { SubmissionStatus } from '../graphql'
+import DiffView from './DiffView'
 
 dayjs.extend(relativeTime)
 
@@ -139,9 +145,11 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 
 type ChallengeQuestionCardProps = {
   currentChallenge: ChallengeSubmissionData
+  session: GetAppQuery['session']
 }
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
-  currentChallenge
+  currentChallenge,
+  session
 }) => {
   const diff = _.get(currentChallenge, 'submission.diff', '')
   const comment = _.get(currentChallenge, 'submission.comment', '')
@@ -151,48 +159,6 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     'submission.reviewer.username',
     null
   )
-  let files = null
-
-  if (diff) files = gitDiffParser.parse(diff)
-
-  const renderFile = ({ hunks, newPath }: File) => {
-    const oldValue: String[] = []
-    const newValue: String[] = []
-
-    hunks.forEach(hunk => {
-      hunk.changes.forEach(change => {
-        if (change.isDelete) oldValue.push(change.content)
-        else if (change.isInsert) newValue.push(change.content)
-        else {
-          oldValue.push(change.content)
-          newValue.push(change.content)
-        }
-      })
-    })
-
-    const syntaxHighlight = (str: string): any => {
-      if (!str) return
-
-      const language = Prism.highlight(
-        str,
-        Prism.languages.javascript,
-        'javascript'
-      )
-      return <span dangerouslySetInnerHTML={{ __html: language }} />
-    }
-
-    return (
-      <ReactDiffViewer
-        key={_.uniqueId()}
-        oldValue={oldValue.join('\n')}
-        newValue={newValue.join('\n')}
-        renderContent={syntaxHighlight}
-        splitView={false}
-        leftTitle={`${newPath}`}
-      />
-    )
-  }
-
   return (
     <>
       <div className="card shadow-sm border-0">
@@ -216,7 +182,16 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {files && files.map(renderFile)}
+              {
+                <DiffView
+                  diff={diff}
+                  id={currentChallenge.submission!.id}
+                  name={session?.user?.name!}
+                  username={session?.user?.username!}
+                  comments={currentChallenge.submission?.comments}
+                  status={currentChallenge.status}
+                />
+              }
             </div>
           </div>
           <div className="card-footer bg-white">
@@ -307,6 +282,7 @@ type ChallengeMaterialProps = {
   lessonId: number
   show: boolean
   setShow: React.Dispatch<React.SetStateAction<boolean>>
+  session: GetAppQuery['session']
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
@@ -316,7 +292,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   chatUrl,
   lessonId,
   show,
-  setShow
+  setShow,
+  session
 }) => {
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
@@ -415,7 +392,10 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
 
       <div className="col-md-8">
         {currentChallenge.id !== finalChallenge.id && (
-          <ChallengeQuestionCard currentChallenge={currentChallenge} />
+          <ChallengeQuestionCard
+            currentChallenge={currentChallenge}
+            session={session}
+          />
         )}
         {lessonStatus.isPassed && currentChallenge.id === 0 && (
           <ChallengesCompletedCard

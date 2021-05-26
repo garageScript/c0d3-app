@@ -72,6 +72,7 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 chatUrl={currentLesson.chatUrl!}
                 show={show}
                 setShow={setShow}
+                session={session}
               />
             </div>
           )}
