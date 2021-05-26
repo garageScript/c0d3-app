@@ -977,30 +977,30 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       1
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      1
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1025,64 +1025,66 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       2
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      2
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker css-10regm7-empty-line"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content css-10regm7-empty-line"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
-                    />
+                    >
+                      <span />
+                    </pre>
                   </td>
                 </tr>
                 <tr
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       3
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      3
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1153,87 +1155,17 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter css-rq9a2a-diff-removed"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      4
-                    </pre>
-                  </td>
-                  <td
-                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
-                  >
-                    <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
                     />
                   </td>
                   <td
-                    class="css-17vezug-marker css-rq9a2a-diff-removed"
-                  >
-                    <pre>
-                      -
-                    </pre>
-                  </td>
-                  <td
-                    class="css-vl0irh-content css-rq9a2a-diff-removed"
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-pa3tg-content-text"
-                    >
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                            
-                          <span
-                            class="token keyword"
-                          >
-                            return
-                          </span>
-                           
-                        </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff css-hf3w1f-word-removed"
-                      >
-                        <span>
-                          <span
-                            class="token number"
-                          >
-                            0
-                          </span>
-                        </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                          <span
-                            class="token punctuation"
-                          >
-                            ;
-                          </span>
-                        </span>
-                      </span>
-                    </pre>
-                  </td>
-                </tr>
-                <tr
-                  class="css-1n7ec1i-line"
-                >
-                  <td
-                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
-                  >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    />
-                  </td>
-                  <td
-                    class="css-1ks9aww-gutter css-cnnxkz-diff-added"
-                  >
-                    <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
                     >
                       4
                     </pre>
@@ -1251,47 +1183,30 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     <pre
                       class="css-pa3tg-content-text"
                     >
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                            
-                          <span
-                            class="token keyword"
-                          >
-                            return
-                          </span>
-                           
+                      <span>
+                          
+                        <span
+                          class="token keyword"
+                        >
+                          return
                         </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff css-1u4zuq6-word-added"
-                      >
-                        <span>
-                          a 
-                          <span
-                            class="token operator"
-                          >
-                            +
-                          </span>
-                           b 
-                          <span
-                            class="token operator"
-                          >
-                            +
-                          </span>
-                           c
+                         a 
+                        <span
+                          class="token operator"
+                        >
+                          +
                         </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                          <span
-                            class="token punctuation"
-                          >
-                            ;
-                          </span>
+                         b 
+                        <span
+                          class="token operator"
+                        >
+                          +
+                        </span>
+                         c
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
                         </span>
                       </span>
                     </pre>
@@ -1301,30 +1216,30 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       5
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      5
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1348,64 +1263,66 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       6
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      6
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker css-10regm7-empty-line"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content css-10regm7-empty-line"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
-                    />
+                    >
+                      <span />
+                    </pre>
                   </td>
                 </tr>
                 <tr
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       7
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      7
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1623,30 +1540,30 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       1
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      1
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1671,64 +1588,66 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       2
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      2
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker css-10regm7-empty-line"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content css-10regm7-empty-line"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
-                    />
+                    >
+                      <span />
+                    </pre>
                   </td>
                 </tr>
                 <tr
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       3
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      3
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1799,87 +1718,17 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter css-rq9a2a-diff-removed"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      4
-                    </pre>
-                  </td>
-                  <td
-                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
-                  >
-                    <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
                     />
                   </td>
                   <td
-                    class="css-17vezug-marker css-rq9a2a-diff-removed"
-                  >
-                    <pre>
-                      -
-                    </pre>
-                  </td>
-                  <td
-                    class="css-vl0irh-content css-rq9a2a-diff-removed"
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-pa3tg-content-text"
-                    >
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                            
-                          <span
-                            class="token keyword"
-                          >
-                            return
-                          </span>
-                           
-                        </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff css-hf3w1f-word-removed"
-                      >
-                        <span>
-                          <span
-                            class="token number"
-                          >
-                            0
-                          </span>
-                        </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                          <span
-                            class="token punctuation"
-                          >
-                            ;
-                          </span>
-                        </span>
-                      </span>
-                    </pre>
-                  </td>
-                </tr>
-                <tr
-                  class="css-1n7ec1i-line"
-                >
-                  <td
-                    class="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
-                  >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    />
-                  </td>
-                  <td
-                    class="css-1ks9aww-gutter css-cnnxkz-diff-added"
-                  >
-                    <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
                     >
                       4
                     </pre>
@@ -1897,47 +1746,30 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     <pre
                       class="css-pa3tg-content-text"
                     >
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                            
-                          <span
-                            class="token keyword"
-                          >
-                            return
-                          </span>
-                           
+                      <span>
+                          
+                        <span
+                          class="token keyword"
+                        >
+                          return
                         </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff css-1u4zuq6-word-added"
-                      >
-                        <span>
-                          a 
-                          <span
-                            class="token operator"
-                          >
-                            +
-                          </span>
-                           b 
-                          <span
-                            class="token operator"
-                          >
-                            +
-                          </span>
-                           c
+                         a 
+                        <span
+                          class="token operator"
+                        >
+                          +
                         </span>
-                      </span>
-                      <span
-                        class="css-cncyp1-word-diff"
-                      >
-                        <span>
-                          <span
-                            class="token punctuation"
-                          >
-                            ;
-                          </span>
+                         b 
+                        <span
+                          class="token operator"
+                        >
+                          +
+                        </span>
+                         c
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
                         </span>
                       </span>
                     </pre>
@@ -1947,30 +1779,30 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       5
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      5
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
@@ -1994,64 +1826,66 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       6
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      6
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker css-10regm7-empty-line"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content css-10regm7-empty-line"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"
-                    />
+                    >
+                      <span />
+                    </pre>
                   </td>
                 </tr>
                 <tr
                   class="css-1n7ec1i-line"
                 >
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-h84nzi-line-number"
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
                     >
                       7
                     </pre>
                   </td>
                   <td
-                    class="css-1ks9aww-gutter"
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
                   >
-                    <pre
-                      class="css-h84nzi-line-number"
-                    >
-                      7
+                    <pre>
+                      +
                     </pre>
                   </td>
                   <td
-                    class="css-17vezug-marker"
-                  >
-                    <pre />
-                  </td>
-                  <td
-                    class="css-vl0irh-content"
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
                       class="css-pa3tg-content-text"

@@ -9,6 +9,7 @@ export default {
   component: ChallengeMaterial,
   title: 'Components/ChallengeMaterial'
 }
+import dummySession from '../../__dummy__/sessionData'
 const mocks = [
   {
     request: {
@@ -63,6 +64,7 @@ export const Basic: React.FC = () => (
     lessonId={5}
     show={false}
     setShow={() => {}}
+    session={dummySession}
   />
 )
 
@@ -130,6 +132,7 @@ export const WithDiff: React.FC = () => (
     lessonId={5}
     show={false}
     setShow={() => {}}
+    session={dummySession}
   />
 )
 
@@ -204,6 +207,7 @@ export const WithComments: React.FC = () => (
     lessonId={5}
     show={false}
     setShow={() => {}}
+    session={dummySession}
   />
 )
 
@@ -216,6 +220,7 @@ export const NoChallenges: React.FC = () => (
     lessonId={5}
     show={false}
     setShow={() => {}}
+    session={dummySession}
   />
 )
 
@@ -291,6 +296,7 @@ export const FinalChallenge: React.FC = () => (
       lessonId={5}
       show={false}
       setShow={() => {}}
+      session={dummySession}
     />
   </MockedProvider>
 )

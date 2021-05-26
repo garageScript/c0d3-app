@@ -915,32 +915,32 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     1
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    1
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -959,68 +959,76 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     2
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    2
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     3
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    3
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1039,89 +1047,19 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter css-rq9a2a-diff-removed"
-                  onClick={[Function]}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    4
-                  </pre>
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   onClick={null}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   />
                 </td>
                 <td
-                  className="css-17vezug-marker css-rq9a2a-diff-removed"
-                >
-                  <pre>
-                    -
-                  </pre>
-                </td>
-                <td
-                  className="css-vl0irh-content css-rq9a2a-diff-removed"
-                >
-                  <pre
-                    className="css-pa3tg-content-text"
-                  >
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-hf3w1f-word-removed"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token number\\">0</span>",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
-                  </pre>
-                </td>
-              </tr>
-              <tr
-                className="css-1n7ec1i-line"
-              >
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
-                  onClick={null}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  />
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     4
                   </pre>
@@ -1140,38 +1078,12 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                     className="css-pa3tg-content-text"
                   >
                     <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  <span class=\\"token keyword\\">return</span> a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c<span class=\\"token punctuation\\">;</span>",
                         }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-1u4zuq6-word-added"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
+                      }
+                    />
                   </pre>
                 </td>
               </tr>
@@ -1179,32 +1091,32 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     5
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    5
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1223,68 +1135,76 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     6
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    6
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     7
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    7
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1425,32 +1345,32 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     1
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    1
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1469,68 +1389,76 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     2
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    2
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     3
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    3
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1549,89 +1477,19 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter css-rq9a2a-diff-removed"
-                  onClick={[Function]}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    4
-                  </pre>
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   onClick={null}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   />
                 </td>
                 <td
-                  className="css-17vezug-marker css-rq9a2a-diff-removed"
-                >
-                  <pre>
-                    -
-                  </pre>
-                </td>
-                <td
-                  className="css-vl0irh-content css-rq9a2a-diff-removed"
-                >
-                  <pre
-                    className="css-pa3tg-content-text"
-                  >
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-hf3w1f-word-removed"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token number\\">0</span>",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
-                  </pre>
-                </td>
-              </tr>
-              <tr
-                className="css-1n7ec1i-line"
-              >
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
-                  onClick={null}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  />
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     4
                   </pre>
@@ -1650,38 +1508,12 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                     className="css-pa3tg-content-text"
                   >
                     <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  <span class=\\"token keyword\\">return</span> a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c<span class=\\"token punctuation\\">;</span>",
                         }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-1u4zuq6-word-added"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
+                      }
+                    />
                   </pre>
                 </td>
               </tr>
@@ -1689,32 +1521,32 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     5
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    5
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1733,68 +1565,76 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     6
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    6
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     7
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    7
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
