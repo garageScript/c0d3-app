@@ -394,9 +394,7 @@ solution(a); // should return 50
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -543,9 +541,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -972,9 +968,7 @@ result = solution(0, "hello") // ""
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -1121,9 +1115,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
