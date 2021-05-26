@@ -8,7 +8,7 @@ export default gql`
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
-    submissions(lessonId: Int!): [Submission]
+    submissions(lessonId: Int!): [Submission!]
     alerts: [Alert!]!
   }
 
@@ -147,7 +147,7 @@ export default gql`
 
   type Session {
     user: User
-    submissions: [Submission]
+    submissions: [Submission!]
     lessonStatus: [UserLesson!]!
   }
 

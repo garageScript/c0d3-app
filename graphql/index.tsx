@@ -218,7 +218,7 @@ export type Query = {
   getLessonMentors?: Maybe<Array<Maybe<User>>>
   userInfo?: Maybe<Session>
   isTokenValid: Scalars['Boolean']
-  submissions?: Maybe<Array<Maybe<Submission>>>
+  submissions?: Maybe<Array<Submission>>
   alerts: Array<Alert>
 }
 
@@ -241,7 +241,7 @@ export type QuerySubmissionsArgs = {
 export type Session = {
   __typename?: 'Session'
   user?: Maybe<User>
-  submissions?: Maybe<Array<Maybe<Submission>>>
+  submissions?: Maybe<Array<Submission>>
   lessonStatus: Array<UserLesson>
 }
 
@@ -515,46 +515,41 @@ export type GetAppQuery = { __typename?: 'Query' } & {
     >
     submissions?: Maybe<
       Array<
-        Maybe<
-          { __typename?: 'Submission' } & Pick<
-            Submission,
-            | 'id'
-            | 'status'
-            | 'mrUrl'
-            | 'diff'
-            | 'viewCount'
-            | 'comment'
-            | 'order'
-            | 'challengeId'
-            | 'lessonId'
-            | 'createdAt'
-            | 'updatedAt'
-          > & {
-              reviewer?: Maybe<
-                { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+        { __typename?: 'Submission' } & Pick<
+          Submission,
+          | 'id'
+          | 'status'
+          | 'mrUrl'
+          | 'diff'
+          | 'viewCount'
+          | 'comment'
+          | 'order'
+          | 'challengeId'
+          | 'lessonId'
+          | 'createdAt'
+          | 'updatedAt'
+        > & {
+            reviewer?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            >
+            comments?: Maybe<
+              Array<
+                { __typename?: 'Comment' } & Pick<
+                  Comment,
+                  | 'content'
+                  | 'submissionId'
+                  | 'createdAt'
+                  | 'authorId'
+                  | 'line'
+                  | 'fileName'
+                > & {
+                    author?: Maybe<
+                      { __typename?: 'User' } & Pick<User, 'username' | 'name'>
+                    >
+                  }
               >
-              comments?: Maybe<
-                Array<
-                  { __typename?: 'Comment' } & Pick<
-                    Comment,
-                    | 'content'
-                    | 'submissionId'
-                    | 'createdAt'
-                    | 'authorId'
-                    | 'line'
-                    | 'fileName'
-                  > & {
-                      author?: Maybe<
-                        { __typename?: 'User' } & Pick<
-                          User,
-                          'username' | 'name'
-                        >
-                      >
-                    }
-                >
-              >
-            }
-        >
+            >
+          }
       >
     >
     lessonStatus: Array<
@@ -596,26 +591,24 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
     >
     submissions?: Maybe<
       Array<
-        Maybe<
-          { __typename?: 'Submission' } & Pick<
-            Submission,
-            | 'id'
-            | 'status'
-            | 'mrUrl'
-            | 'diff'
-            | 'viewCount'
-            | 'comment'
-            | 'order'
-            | 'challengeId'
-            | 'lessonId'
-            | 'createdAt'
-            | 'updatedAt'
-          > & {
-              reviewer?: Maybe<
-                { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-              >
-            }
-        >
+        { __typename?: 'Submission' } & Pick<
+          Submission,
+          | 'id'
+          | 'status'
+          | 'mrUrl'
+          | 'diff'
+          | 'viewCount'
+          | 'comment'
+          | 'order'
+          | 'challengeId'
+          | 'lessonId'
+          | 'createdAt'
+          | 'updatedAt'
+        > & {
+            reviewer?: Maybe<
+              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+            >
+          }
       >
     >
     lessonStatus: Array<
@@ -634,42 +627,40 @@ export type SubmissionsQueryVariables = Exact<{
 export type SubmissionsQuery = { __typename?: 'Query' } & {
   submissions?: Maybe<
     Array<
-      Maybe<
-        { __typename?: 'Submission' } & Pick<
-          Submission,
-          | 'id'
-          | 'status'
-          | 'diff'
-          | 'comment'
-          | 'challengeId'
-          | 'lessonId'
-          | 'createdAt'
-          | 'updatedAt'
-        > & {
-            challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-            user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-            reviewer?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+      { __typename?: 'Submission' } & Pick<
+        Submission,
+        | 'id'
+        | 'status'
+        | 'diff'
+        | 'comment'
+        | 'challengeId'
+        | 'lessonId'
+        | 'createdAt'
+        | 'updatedAt'
+      > & {
+          challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+          user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+          reviewer?: Maybe<
+            { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+          >
+          comments?: Maybe<
+            Array<
+              { __typename?: 'Comment' } & Pick<
+                Comment,
+                | 'content'
+                | 'submissionId'
+                | 'createdAt'
+                | 'authorId'
+                | 'line'
+                | 'fileName'
+              > & {
+                  author?: Maybe<
+                    { __typename?: 'User' } & Pick<User, 'username' | 'name'>
+                  >
+                }
             >
-            comments?: Maybe<
-              Array<
-                { __typename?: 'Comment' } & Pick<
-                  Comment,
-                  | 'content'
-                  | 'submissionId'
-                  | 'createdAt'
-                  | 'authorId'
-                  | 'line'
-                  | 'fileName'
-                > & {
-                    author?: Maybe<
-                      { __typename?: 'User' } & Pick<User, 'username' | 'name'>
-                    >
-                  }
-              >
-            >
-          }
-      >
+          >
+        }
     >
   >
 }
@@ -889,26 +880,24 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
       >
       submissions?: Maybe<
         Array<
-          Maybe<
-            { __typename?: 'Submission' } & Pick<
-              Submission,
-              | 'id'
-              | 'status'
-              | 'mrUrl'
-              | 'diff'
-              | 'viewCount'
-              | 'comment'
-              | 'order'
-              | 'challengeId'
-              | 'lessonId'
-              | 'createdAt'
-              | 'updatedAt'
-            > & {
-                reviewer?: Maybe<
-                  { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-                >
-              }
-          >
+          { __typename?: 'Submission' } & Pick<
+            Submission,
+            | 'id'
+            | 'status'
+            | 'mrUrl'
+            | 'diff'
+            | 'viewCount'
+            | 'comment'
+            | 'order'
+            | 'challengeId'
+            | 'lessonId'
+            | 'createdAt'
+            | 'updatedAt'
+          > & {
+              reviewer?: Maybe<
+                { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+              >
+            }
         >
       >
       lessonStatus: Array<
@@ -1351,7 +1340,7 @@ export type QueryResolvers<
     RequireFields<QueryIsTokenValidArgs, 'cliToken'>
   >
   submissions?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Submission']>>>,
+    Maybe<Array<ResolversTypes['Submission']>>,
     ParentType,
     ContextType,
     RequireFields<QuerySubmissionsArgs, 'lessonId'>
@@ -1365,7 +1354,7 @@ export type SessionResolvers<
 > = {
   user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   submissions?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Submission']>>>,
+    Maybe<Array<ResolversTypes['Submission']>>,
     ParentType,
     ContextType
   >

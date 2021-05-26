@@ -11,6 +11,7 @@ import {
 import { userInfo } from '../helpers/controllers/userInfoController'
 import { addAlert, removeAlert } from '../helpers/controllers/alertController'
 import { reqPwReset, changePw } from '../helpers/controllers/passwordController'
+import { addComment } from './queryResolvers/addComment'
 import {
   createSubmission,
   acceptSubmission,
@@ -57,6 +58,7 @@ export default {
     removeAlert,
     reqPwReset,
     createChallenge,
-    updateChallenge
+    updateChallenge,
+    addComment
   }
 }
