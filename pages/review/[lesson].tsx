@@ -7,7 +7,7 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
-import { GetAppQuery, Submission } from '../../graphql/index'
+import { GetAppQuery, Submission, RequireFields } from '../../graphql/index'
 import Error, { StatusCode } from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
@@ -17,14 +17,20 @@ import { SubmissionStatus } from '../../graphql'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
+  session: RequireFields<GetAppQuery['session'], 'user'>
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
-  submissions
+  submissions,
+  session
 }) => (
   <div className="submissions-container container p-0">
     {submissions.map(submission => (
-      <ReviewCard key={submission.id} submissionData={submission} />
+      <ReviewCard
+        key={submission.id}
+        submissionData={submission}
+        session={session}
+      />
     ))}
   </div>
 )
@@ -74,7 +80,10 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
             isPassed={true}
           />
           {currentLesson && (
-            <SubmissionDisplay submissions={lessonSubmissions} />
+            <SubmissionDisplay
+              submissions={lessonSubmissions}
+              session={session as RequireFields<GetAppQuery['session'], 'user'>}
+            />
           )}
         </div>
       </Layout>

@@ -2,11 +2,12 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
-import ReviewCard, { DiffView } from './ReviewCard'
+import ReviewCard from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
 import _ from 'lodash'
 import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
+import dummySessionData from '../__dummy__/sessionData'
 // correct javascript submission
 const JsDiff =
   'diff --git a/js7/1.js b/js7/1.js\nindex 9c96b34..853bddf 100644\n--- a/js7/1.js\n+++ b/js7/1.js\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
@@ -66,18 +67,10 @@ describe('ReviewCard Component', () => {
   test('Should render submissions in other languages', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
-        <ReviewCard submissionData={{ ...submissionData, diff: NonJsDiff }} />
-      </MockedProvider>
-    )
-    expect(container).toMatchSnapshot()
-  })
-
-  test('Should render no diff input', async () => {
-    const NoDiffSumbisson = _.cloneDeep(submissionData)
-    delete NoDiffSumbisson.diff
-    const { container } = render(
-      <MockedProvider mocks={mocks} addTypeName={false}>
-        <DiffView submissionData={NoDiffSumbisson} />
+        <ReviewCard
+          submissionData={{ ...submissionData, diff: NonJsDiff }}
+          session={dummySessionData}
+        />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -88,6 +81,7 @@ describe('ReviewCard Component', () => {
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
           submissionData={{ ...submissionData, diff: IncorrectDiff }}
+          session={dummySessionData}
         />
       </MockedProvider>
     )
@@ -98,6 +92,7 @@ describe('ReviewCard Component', () => {
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
           submissionData={{ ...submissionData, diff: InCompleteDiff }}
+          session={dummySessionData}
         />
       </MockedProvider>
     )
@@ -108,6 +103,7 @@ describe('ReviewCard Component', () => {
       <MockedProvider mocks={mocks} addTypename={false}>
         <ReviewCard
           submissionData={{ ...submissionData, diff: NoNewPathDiff }}
+          session={dummySessionData}
         />
       </MockedProvider>
     )
@@ -116,7 +112,10 @@ describe('ReviewCard Component', () => {
   test('Should be able to accept submission', async () => {
     const { container, getByRole } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
-        <ReviewCard submissionData={submissionData} />
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
       </MockedProvider>
     )
     userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
@@ -133,6 +132,7 @@ describe('ReviewCard Component', () => {
               name: 'Admin admin'
             }
           }}
+          session={dummySessionData}
         />
       </MockedProvider>
     )
@@ -146,6 +146,7 @@ describe('ReviewCard Component', () => {
             ...submissionData,
             updatedAt: null
           }}
+          session={dummySessionData}
         />
       </MockedProvider>
     )

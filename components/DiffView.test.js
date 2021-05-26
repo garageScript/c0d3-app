@@ -63,6 +63,14 @@ describe('DiffView component', () => {
     userEvent.click(screen.getByText('6'))
     expect(screen.getByText('First Comment')).toBeVisible()
   })
+  test('Should render diff with no comments', () => {
+    render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView diff={diff} name="Noob Newbie" username="newbie" id={1} />
+      </MockedProvider>
+    )
+    expect(screen.getByText('js7/1.js')).toBeVisible()
+  })
   test('Should add comment box', () => {
     const { container } = render(
       <MockedProvider mocks={[]} addTypename={false}>

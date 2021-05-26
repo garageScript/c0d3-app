@@ -9,6 +9,7 @@ import { MockedProvider } from '@apollo/client/testing'
 import ACCEPT_SUBMISSION from '../../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../../graphql/queries/rejectSubmission'
 import { SubmissionStatus } from '../../graphql'
+import dummySession from '../../__dummy__/sessionData'
 const mocks = [
   {
     request: {
@@ -86,7 +87,7 @@ const submissionData = {
 
 export const ActiveCard: React.FC = () => (
   <MockedProvider mocks={mocks}>
-    <ReviewCard submissionData={submissionData} />
+    <ReviewCard submissionData={submissionData} session={dummySession} />
   </MockedProvider>
 )
 export const NoLastName: React.FC = () => (
@@ -102,6 +103,7 @@ export const NoLastName: React.FC = () => (
         },
         updatedAt: ''
       }}
+      session={dummySession}
     />
   </MockedProvider>
 )
@@ -112,6 +114,7 @@ export const WithoutComment: React.FC = () => (
         ...submissionData,
         comment: null
       }}
+      session={dummySession}
     />
   </MockedProvider>
 )
@@ -127,6 +130,7 @@ export const WithoutUsername: React.FC = () => (
           email: 'admin@fakemail.com'
         }
       }}
+      session={dummySession}
     />
   </MockedProvider>
 )
@@ -162,11 +166,15 @@ export const WithLongComment: React.FC = () => (
     if you have questions, don't hesitate to reach out in the chat.
         `
       }}
+      session={dummySession}
     />
   </MockedProvider>
 )
 export const NoDiffCard: React.FC = () => (
   <MockedProvider mocks={mocks}>
-    <ReviewCard submissionData={{ ...submissionData, diff: '' }} />
+    <ReviewCard
+      submissionData={{ ...submissionData, diff: '' }}
+      session={dummySession}
+    />
   </MockedProvider>
 )

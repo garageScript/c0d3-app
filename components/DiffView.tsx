@@ -30,17 +30,17 @@ const DiffView: React.FC<{
   id: number
   name: string
   username: string
-  comments: Comment[]
+  comments?: Comment[] | null
   lessonId?: number
   status?: string
 }> = ({ diff = '', id, name, username, comments, lessonId, status }) => {
   const files = gitDiffParser.parse(diff)
-  type fileComments = Record<string, { lines?: number[]; comments?: Comment[] }>
+  type fileComments = Record<string, { lines: number[]; comments: Comment[] }>
   //every file gets unique index in format of submissionId:fileName
   const [commentsState, setCommentsState] = React.useState<fileComments>({})
 
   useEffect(() => {
-    const commentsMap: fileComments =
+    const commentsMap =
       comments &&
       comments.reduce((acc: fileComments, comment) => {
         const index = `${comment.submissionId}:${comment.fileName}`
@@ -49,11 +49,11 @@ const DiffView: React.FC<{
             lines: [],
             comments: []
           }
-        acc[index].lines?.push(comment.line)
-        acc[index].comments?.push(comment)
+        acc[index].lines.push(comment.line)
+        acc[index].comments.push(comment)
         return acc
       }, {})
-    setCommentsState(commentsMap)
+    setCommentsState(commentsMap || {})
     //rerunning useEffect on id rerenders submission when student clicks on another challenge
   }, [id, comments])
 
@@ -76,7 +76,7 @@ const DiffView: React.FC<{
       return (
         <>
           <span dangerouslySetInnerHTML={{ __html: highlighted }} />
-          {commentsState[`${id}:${newPath}`]?.lines?.includes(n) && (
+          {commentsState[`${id}:${newPath}`]?.lines.includes(n) && (
             <CommentBox
               fileName={newPath}
               line={n}
@@ -109,21 +109,21 @@ const DiffView: React.FC<{
             commentsState[index] = { lines: [], comments: [] }
           //remove CommentBox on click if there are no comments for this line
           if (
-            commentsState[index].lines!.includes(lineNumber) &&
-            !commentsState[index].comments?.filter(
+            commentsState[index].lines.includes(lineNumber) &&
+            !commentsState[index].comments.filter(
               comment => comment.line === lineNumber
             )[0]
           ) {
             const copy = _.cloneDeep(commentsState)
-            copy[index].lines = copy[index].lines?.filter(
+            copy[index].lines = copy[index].lines.filter(
               line => line !== lineNumber
             )
             setCommentsState(copy)
           }
           //add new CommentBox on click
-          if (!commentsState[index].lines!.includes(lineNumber)) {
+          if (!commentsState[index].lines.includes(lineNumber)) {
             const copy = _.cloneDeep(commentsState)
-            copy[index].lines?.push(lineNumber)
+            copy[index].lines.push(lineNumber)
             setCommentsState(copy)
           }
         }}

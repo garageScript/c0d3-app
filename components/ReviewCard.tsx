@@ -1,17 +1,13 @@
 import { useMutation } from '@apollo/client'
 
-import React, { memo, useState } from 'react'
+import React, { useState } from 'react'
 import Markdown from 'markdown-to-jsx'
-import gitDiffParser, { File } from 'gitdiff-parser'
-import ReactDiffViewer from 'c0d3-diff'
-
-import Prism from 'prismjs'
 import dayjs from 'dayjs'
 
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import { Submission } from '../graphql/index'
+import { Submission, GetAppQuery, RequireFields } from '../graphql/index'
 
 import _ from 'lodash'
 
@@ -19,66 +15,30 @@ import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
 import ReviewerProfile from './ReviewerProfile'
+import DiffView from './DiffView'
 
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
   submissionData: Submission
+  session: RequireFields<GetAppQuery['session'], 'user'>
 }
 
-type DiffViewProps = {
-  diff?: string
-}
-
-const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
-
-export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
-  const files = gitDiffParser.parse(diff)
-
-  const renderFile = ({ hunks, newPath }: File) => {
-    const newValue: String[] = []
-    if (!hunks.length || !newPath) return
-    let extension = newPath.split('.').pop() || prismLanguages[0]
-    if (!prismLanguages.includes(extension)) {
-      extension = 'javascript'
-    }
-
-    hunks.forEach(hunk => {
-      hunk.changes.forEach(change => {
-        if (!change.isDelete) newValue.push(change.content)
-      })
-    })
-
-    const syntaxHighlight = (str: string): any => {
-      if (!str) return
-
-      const language = Prism.highlight(
-        str,
-        Prism.languages[extension],
-        extension
-      )
-      return <span dangerouslySetInnerHTML={{ __html: language }} />
-    }
-
-    return (
-      <ReactDiffViewer
-        key={_.uniqueId()}
-        newValue={newValue.join('\n')}
-        renderContent={syntaxHighlight}
-        splitView={false}
-        leftTitle={`${newPath}`}
-      />
-    )
-  }
-
-  return <>{files.map(renderFile)}</>
-}
-
-const MemoDiffView = memo(DiffView)
-
-export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const { id, diff, comment, updatedAt, user, challenge, lessonId, reviewer } =
-    submissionData
+export const ReviewCard: React.FC<ReviewCardProps> = ({
+  submissionData,
+  session
+}) => {
+  const {
+    id,
+    diff,
+    comment,
+    updatedAt,
+    user,
+    challenge,
+    lessonId,
+    reviewer,
+    comments
+  } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
@@ -108,7 +68,14 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <MemoDiffView diff={diff} />
+              <DiffView
+                diff={diff}
+                id={id}
+                name={session.user.name}
+                username={session.user.username}
+                comments={comments}
+                lessonId={lessonId}
+              />
             </div>
           </div>
 
