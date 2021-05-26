@@ -3,7 +3,7 @@ import { gql } from '@apollo/client'
 export default gql`
   type Query {
     lessons: [Lesson!]!
-    session: Session
+    session: Session!
     allUsers: [User]
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
@@ -114,7 +114,7 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String!
-    comments: [Comment]
+    comments: [Comment!]
   }
 
   type Comment {
