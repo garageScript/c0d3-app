@@ -52,7 +52,7 @@ const CommentBox: React.FC<{
         })
       }
     })
-  const [comments, setComments] = useState(commentData)
+  const [comments] = useState(commentData)
   const [hidden, setHidden] = useState(status === 'passed')
   const [input, setInput] = useState('')
   /*
@@ -144,7 +144,6 @@ const CommentBox: React.FC<{
               type="success"
               onClick={() => {
                 if (!input) return
-                setComments([...comments, { name, username, content: input }])
                 addComment({
                   variables: {
                     line,
