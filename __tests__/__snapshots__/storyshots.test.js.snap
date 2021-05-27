@@ -2471,6 +2471,1720 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/DiffView Closed 1`] = `
+<table
+  className="css-1n5o7vh-diff-container"
+>
+  <tbody>
+    <tr>
+      <td
+        className="css-1rwygp7-title-block"
+        colSpan={4}
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          js7/1.js
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          1
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          2
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          3
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          4
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          5
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          6
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          7
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          8
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          9
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          10
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          11
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          12
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token punctuation\\">}</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          13
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          14
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          15
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          16
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          17
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          18
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          19
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/DiffView Default 1`] = `
+<table
+  className="css-1n5o7vh-diff-container"
+>
+  <tbody>
+    <tr>
+      <td
+        className="css-1rwygp7-title-block"
+        colSpan={4}
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          js7/1.js
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          1
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          2
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          3
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          4
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          5
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          6
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          7
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          8
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          9
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          10
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          11
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          12
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token punctuation\\">}</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          13
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          14
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          15
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          16
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          17
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          18
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          19
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
 <div
   className="dropdown"
