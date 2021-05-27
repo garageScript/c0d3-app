@@ -63,13 +63,7 @@ const comments: Comment[] = [
 export const Default: React.FC = () => {
   return (
     <MockedProvider>
-      <DiffView
-        diff={JsDiff}
-        comments={comments}
-        id={1}
-        name="User User"
-        username="user"
-      />
+      <DiffView diff={JsDiff} comments={comments} id={1} />
     </MockedProvider>
   )
 }
@@ -77,14 +71,7 @@ export const Default: React.FC = () => {
 export const Closed: React.FC = () => {
   return (
     <MockedProvider>
-      <DiffView
-        diff={JsDiff}
-        comments={comments}
-        id={1}
-        name="User User"
-        username="user"
-        status="passed"
-      />
+      <DiffView diff={JsDiff} comments={comments} id={1} status="passed" />
     </MockedProvider>
   )
 }

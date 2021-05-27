@@ -9,7 +9,6 @@ import { MockedProvider } from '@apollo/client/testing'
 import ACCEPT_SUBMISSION from '../../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../../graphql/queries/rejectSubmission'
 import { SubmissionStatus } from '../../graphql'
-import dummySession from '../../__dummy__/sessionData'
 const mocks = [
   {
     request: {
@@ -87,7 +86,7 @@ const submissionData = {
 
 export const ActiveCard: React.FC = () => (
   <MockedProvider mocks={mocks}>
-    <ReviewCard submissionData={submissionData} session={dummySession} />
+    <ReviewCard submissionData={submissionData} />
   </MockedProvider>
 )
 export const NoLastName: React.FC = () => (
@@ -103,7 +102,6 @@ export const NoLastName: React.FC = () => (
         },
         updatedAt: ''
       }}
-      session={dummySession}
     />
   </MockedProvider>
 )
@@ -114,7 +112,6 @@ export const WithoutComment: React.FC = () => (
         ...submissionData,
         comment: null
       }}
-      session={dummySession}
     />
   </MockedProvider>
 )
@@ -130,7 +127,6 @@ export const WithoutUsername: React.FC = () => (
           email: 'admin@fakemail.com'
         }
       }}
-      session={dummySession}
     />
   </MockedProvider>
 )
@@ -147,15 +143,11 @@ export const WithLongComment: React.FC = () => (
         },
         comment: `You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.\n\nLet's say we have an array arr [9,7,2,3] and the sum is 10\n\nDoes 10 - arr[0] exist in the map? (No).\n\nUpdate map to { 9: true }\nDoes 10 - arr[1] exist in the map? (No).\n\nUpdate map to { 9: true, 7: true }\n\nDoes 10 - arr[2] exist in the map? (No).\n\nUpdate map to { 9: true, 7: true, 2: true }\n\nDoes 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true\n\nif you have questions, don't hesitate to reach out in the chat.`
       }}
-      session={dummySession}
     />
   </MockedProvider>
 )
 export const NoDiffCard: React.FC = () => (
   <MockedProvider mocks={mocks}>
-    <ReviewCard
-      submissionData={{ ...submissionData, diff: '' }}
-      session={dummySession}
-    />
+    <ReviewCard submissionData={{ ...submissionData, diff: '' }} />
   </MockedProvider>
 )

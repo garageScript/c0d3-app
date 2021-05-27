@@ -42,13 +42,7 @@ const comments = [
 export const Empty: React.FC = () => {
   return (
     <MockedProvider>
-      <CommentBox
-        line={0}
-        fileName="test.js"
-        submissionId={0}
-        name="user"
-        username="User User"
-      />
+      <CommentBox line={0} fileName="test.js" submissionId={0} />
     </MockedProvider>
   )
 }
@@ -60,8 +54,6 @@ export const WithComments: React.FC = () => {
         line={4}
         fileName="test.js"
         submissionId={0}
-        name="user"
-        username="User User"
         commentsData={comments as Comment[]}
       />
     </MockedProvider>

@@ -7,7 +7,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import { Submission, GetAppQuery, RequireFields } from '../graphql/index'
+import { Submission } from '../graphql/index'
 
 import _ from 'lodash'
 
@@ -21,13 +21,9 @@ dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
   submissionData: Submission
-  session: RequireFields<GetAppQuery['session'], 'user'>
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({
-  submissionData,
-  session
-}) => {
+export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const {
     id,
     diff,
@@ -71,8 +67,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
               <DiffView
                 diff={diff}
                 id={id}
-                name={session.user.name}
-                username={session.user.username}
                 comments={comments}
                 lessonId={lessonId}
               />

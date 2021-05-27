@@ -28,12 +28,10 @@ const styles: ReactDiffViewerStylesOverride = {
 const DiffView: React.FC<{
   diff?: string
   id: number
-  name: string
-  username: string
   comments?: Comment[] | null
   lessonId?: number
   status?: string
-}> = ({ diff = '', id, name, username, comments, lessonId, status }) => {
+}> = ({ diff = '', id, comments, lessonId, status }) => {
   const files = gitDiffParser.parse(diff)
   type fileComments = Record<string, { lines: number[]; comments: Comment[] }>
   //every file gets unique index in format of submissionId:fileName
@@ -82,8 +80,6 @@ const DiffView: React.FC<{
               line={n}
               submissionId={id}
               commentsData={commentsState[`${id}:${newPath}`].comments}
-              name={name}
-              username={username}
               lessonId={lessonId}
               status={status}
             />

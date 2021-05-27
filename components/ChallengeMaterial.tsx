@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Challenge,
-  GetAppQuery,
-  Submission,
-  UserLesson
-} from '../graphql/index'
+import { Challenge, Submission, UserLesson } from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
@@ -142,11 +137,9 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 
 type ChallengeQuestionCardProps = {
   currentChallenge: ChallengeSubmissionData
-  session: GetAppQuery['session']
 }
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
-  currentChallenge,
-  session
+  currentChallenge
 }) => {
   const diff = _.get(currentChallenge, 'submission.diff', '')
   const comment = _.get(currentChallenge, 'submission.comment', '')
@@ -183,8 +176,6 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
                 <DiffView
                   diff={diff}
                   id={currentChallenge.submission!.id}
-                  name={session?.user?.name!}
-                  username={session?.user?.username!}
                   comments={currentChallenge.submission?.comments}
                   status={currentChallenge.status}
                 />
@@ -279,7 +270,6 @@ type ChallengeMaterialProps = {
   lessonId: number
   show: boolean
   setShow: React.Dispatch<React.SetStateAction<boolean>>
-  session: GetAppQuery['session']
 }
 
 const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
@@ -289,8 +279,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   chatUrl,
   lessonId,
   show,
-  setShow,
-  session
+  setShow
 }) => {
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
@@ -389,10 +378,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
 
       <div className="col-md-8">
         {currentChallenge.id !== finalChallenge.id && (
-          <ChallengeQuestionCard
-            currentChallenge={currentChallenge}
-            session={session}
-          />
+          <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
         {lessonStatus.isPassed && currentChallenge.id === 0 && (
           <ChallengesCompletedCard

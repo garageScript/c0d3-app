@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ChallengeQuestionCard } from '../../components/ChallengeMaterial'
-import dummySession from '../../__dummy__/sessionData'
 
 export default {
   component: ChallengeQuestionCard,
@@ -18,8 +17,5 @@ const currentChallenge = {
 }
 
 export const Basic: React.FC = () => (
-  <ChallengeQuestionCard
-    currentChallenge={currentChallenge}
-    session={dummySession}
-  />
+  <ChallengeQuestionCard currentChallenge={currentChallenge} />
 )

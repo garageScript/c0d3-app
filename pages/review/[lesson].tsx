@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'
@@ -7,30 +7,25 @@ import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_APP from '../../graphql/queries/getApp'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
-import { GetAppQuery, Submission, RequireFields } from '../../graphql/index'
+import { GetAppQuery, Submission } from '../../graphql/index'
 import Error, { StatusCode } from '../../components/Error'
 import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
 import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
+import { GlobalContext } from '../../helpers/globalContext'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
-  session: RequireFields<GetAppQuery['session'], 'user'>
 }
 
 const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
-  submissions,
-  session
+  submissions
 }) => (
   <div className="submissions-container container p-0">
     {submissions.map(submission => (
-      <ReviewCard
-        key={submission.id}
-        submissionData={submission}
-        session={session}
-      />
+      <ReviewCard key={submission.id} submissionData={submission} />
     ))}
   </div>
 )
@@ -38,7 +33,11 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
 const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
+  const context = useContext(GlobalContext)
   const currentlessonId = Number(router.query.lesson)
+  useEffect(() => {
+    session && context.setContext(session)
+  }, [session])
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentlessonId }
   })
@@ -80,10 +79,7 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
             isPassed={true}
           />
           {currentLesson && (
-            <SubmissionDisplay
-              submissions={lessonSubmissions}
-              session={session as RequireFields<GetAppQuery['session'], 'user'>}
-            />
+            <SubmissionDisplay submissions={lessonSubmissions} />
           )}
         </div>
       </Layout>

@@ -12,6 +12,16 @@ import dummySessionData from '../__dummy__/sessionData'
 import dummyLessonData from '../__dummy__/lessonData'
 import dummyAlertData from '../__dummy__/alertData'
 import { SubmissionStatus } from '../graphql'
+import { ContextProvider } from '../helpers/globalContext'
+
+//jest.spyOn(React, 'useContext').mockImplementation(() => ({
+//session: {
+//user: {
+//username: 'user',
+//name: 'User User'
+//}
+//}
+//}))
 
 describe('CommentBox component', () => {
   const comments = [
@@ -111,18 +121,20 @@ describe('CommentBox component', () => {
       data: { submissions: submissionsData }
     })
     render(
-      <MockedProvider mocks={mocks} addTypename={false} cache={cache}>
-        <CommentBox
-          line={4}
-          fileName="test.js"
-          submissionId={0}
-          authorId={0}
-          name="user"
-          username="User User"
-          commentsData={comments}
-          lessonId={1}
-        />
-      </MockedProvider>
+      <ContextProvider>
+        <MockedProvider mocks={mocks} addTypename={false} cache={cache}>
+          <CommentBox
+            line={4}
+            fileName="test.js"
+            submissionId={0}
+            authorId={0}
+            name="user"
+            username="User User"
+            commentsData={comments}
+            lessonId={1}
+          />
+        </MockedProvider>
+      </ContextProvider>
     )
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     userEvent.click(screen.getByText('Add comment'))
