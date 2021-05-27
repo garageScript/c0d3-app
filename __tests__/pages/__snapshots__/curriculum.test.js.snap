@@ -81,7 +81,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
       src="/assets/curriculum/icons/scroll-right.svg"
     />
     <div
-      class="row overflow-auto flex-nowrap parent-scroll"
+      class="row flex-nowrap parent-scroll"
       data-testid="parent-scroll"
     >
       <div
@@ -985,7 +985,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
       src="/assets/curriculum/icons/scroll-right.svg"
     />
     <div
-      class="row overflow-auto flex-nowrap parent-scroll"
+      class="row flex-nowrap parent-scroll"
       data-testid="parent-scroll"
     >
       <div
@@ -1997,7 +1997,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
       src="/assets/curriculum/icons/scroll-right.svg"
     />
     <div
-      class="row overflow-auto flex-nowrap parent-scroll"
+      class="row flex-nowrap parent-scroll"
       data-testid="parent-scroll"
     >
       <div

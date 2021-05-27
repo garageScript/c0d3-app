@@ -178,7 +178,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
           <ScrollArrow scrolledRight={scrolledRight} />
         )}
       <div
-        className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
+        className={`row flex-nowrap ${styles['parent-scroll']}`}
         ref={scrollContainerRef}
         data-testid="parent-scroll"
       >

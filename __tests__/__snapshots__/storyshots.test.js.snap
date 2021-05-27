@@ -12261,7 +12261,7 @@ Array [
       src="/assets/curriculum/icons/scroll-right.svg"
     />
     <div
-      className="row overflow-auto flex-nowrap parent-scroll"
+      className="row flex-nowrap parent-scroll"
       data-testid="parent-scroll"
     >
       <div
@@ -13190,7 +13190,7 @@ Array [
       src="/assets/curriculum/icons/scroll-right.svg"
     />
     <div
-      className="row overflow-auto flex-nowrap parent-scroll"
+      className="row flex-nowrap parent-scroll"
       data-testid="parent-scroll"
     >
       <div
@@ -14119,7 +14119,7 @@ Array [
       src="/assets/curriculum/icons/scroll-right.svg"
     />
     <div
-      className="row overflow-auto flex-nowrap parent-scroll"
+      className="row flex-nowrap parent-scroll"
       data-testid="parent-scroll"
     >
       <div

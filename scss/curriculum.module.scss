@@ -1,15 +1,16 @@
 .parent-scroll {
-  scroll-snap-type: mandatory;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     display: none;
   }
+  overflow: hidden;
 }
 
 .child-scroll {
   scroll-snap-align: start;
 }
+
 .arrow {
   height: 4em;
   z-index: 1;
