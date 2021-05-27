@@ -33,8 +33,9 @@ const CommentBox: React.FC<{
 }> = ({ line, fileName, submissionId, commentsData, lessonId, status }) => {
   const commentData: CommentData[] = []
   const context = useContext(GlobalContext)
-  const name = context?.session?.user?.name
-  const username = context?.session?.user?.username
+  const name = context.session?.user?.name
+  const username = context.session?.user?.username
+  const showComments = !status || status === 'open'
   commentsData &&
     commentsData.forEach(c => {
       if (c?.line === line) {
@@ -46,7 +47,7 @@ const CommentBox: React.FC<{
       }
     })
   const [comments] = useState(commentData)
-  const [hidden, setHidden] = useState(status === 'passed')
+  const [hidden, setHidden] = useState(!showComments)
   const [input, setInput] = useState('')
   /*
   update function modifies client cache after mutation
@@ -129,7 +130,7 @@ const CommentBox: React.FC<{
               <ReviewerProfile name={c.name} username={c.username} inline />
             </div>
           ))}
-        {status !== 'passed' && (
+        {showComments && (
           <>
             <MdInput onChange={setInput} bgColor="white" />
             <Button

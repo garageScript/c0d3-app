@@ -14,15 +14,6 @@ import dummyAlertData from '../__dummy__/alertData'
 import { SubmissionStatus } from '../graphql'
 import { ContextProvider } from '../helpers/globalContext'
 
-//jest.spyOn(React, 'useContext').mockImplementation(() => ({
-//session: {
-//user: {
-//username: 'user',
-//name: 'User User'
-//}
-//}
-//}))
-
 describe('CommentBox component', () => {
   const comments = [
     {
@@ -128,8 +119,6 @@ describe('CommentBox component', () => {
             fileName="test.js"
             submissionId={0}
             authorId={0}
-            name="user"
-            username="User User"
             commentsData={comments}
             lessonId={1}
           />
@@ -164,8 +153,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
         />
       </MockedProvider>
@@ -202,8 +189,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
           lessonId={2}
         />
@@ -215,14 +200,7 @@ describe('CommentBox component', () => {
   test('Should render empty commentBox', async () => {
     const { container } = render(
       <MockedProvider>
-        <CommentBox
-          line={0}
-          fileName="test.js"
-          submissionId={0}
-          authorId={0}
-          name="user"
-          username="User User"
-        />
+        <CommentBox line={0} fileName="test.js" submissionId={0} authorId={0} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -235,8 +213,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
         />
       </MockedProvider>
@@ -253,8 +229,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
         />
       </MockedProvider>
@@ -262,5 +236,21 @@ describe('CommentBox component', () => {
     expect(screen.queryByText('Show conversation')).toBeFalsy()
     userEvent.click(screen.getByText('Hide conversation'))
     expect(await screen.findByText('Show conversation')).toBeVisible()
+  })
+  test('Should not render input for submissions in progress', async () => {
+    render(
+      <MockedProvider addTypename={false}>
+        <CommentBox
+          line={4}
+          fileName="test.js"
+          submissionId={0}
+          authorId={0}
+          commentsData={comments}
+          status="needMoreWork"
+        />
+      </MockedProvider>
+    )
+    userEvent.click(screen.getByText('Show conversation'))
+    expect(await waitFor(() => screen.queryByText('Add comment'))).toBeFalsy()
   })
 })
