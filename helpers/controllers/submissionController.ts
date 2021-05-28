@@ -45,6 +45,12 @@ export const createSubmission = async (
           challenge: true
         }
       })
+    //clear previous comments on resubmission
+    await prisma.comment.deleteMany({
+      where: {
+        submissionId: submission.id
+      }
+    })
 
     // query nextLesson based off order property of currentLesson
     const nextLesson = await prisma.lesson.findFirst({
