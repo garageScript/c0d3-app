@@ -1,14 +1,7 @@
 import React from 'react'
 import LessonTitleCard from './LessonTitleCard'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
-
-const mockBack = jest.fn()
-
-jest.mock('next/router', () => ({
-  useRouter: () => ({
-    back: mockBack
-  })
-}))
+import { useRouter } from 'next/router'
 
 describe('LessonTitleCard Component', () => {
   const props = {
@@ -20,9 +13,10 @@ describe('LessonTitleCard Component', () => {
   }
 
   test('Go back should call router.back()', async () => {
+    const { back } = useRouter()
     const { container } = render(<LessonTitleCard {...props} />)
     await waitFor(() => fireEvent.click(screen.getByText('Go Back')))
-    expect(mockBack).toHaveBeenCalled()
+    expect(back).toHaveBeenCalled()
     expect(container).toMatchSnapshot()
   })
 })
@@ -61,13 +55,8 @@ describe('LessonTitleCard component on Review Page', () => {
     isPassed: true
   }
 
-  test('Should render default layout for all screens', async () => {
-    global.window.innerWidth = 1080
+  test('Renders default layout', async () => {
     let { container } = render(<LessonTitleCard {...props} />)
-    expect(container).toMatchSnapshot()
-
-    global.window.innerWidth = 500
-    ;({ container } = render(<LessonTitleCard {...props} />))
     expect(container).toMatchSnapshot()
   })
 })
