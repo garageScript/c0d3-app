@@ -46,6 +46,7 @@ describe('Submissions Mutations', () => {
         .fn()
         .mockResolvedValue({ id: 1, ...submissionMock })
       prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
+      prisma.comment.deleteMany = jest.fn()
     })
 
     test('should return submission', () => {
