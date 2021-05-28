@@ -38,21 +38,20 @@ export const createSubmission = async (
           lessonId,
           userId: Number(id)
         },
-        update: submissionData,
+        update: {
+          diff: submissionData.diff,
+          status: submissionData.status,
+          comments: {
+            deleteMany: {}
+          }
+        },
         include: {
           user: true,
           lesson: true,
           challenge: true
         }
       })
-    console.log(submission.id, 'submisisonId')
-    //clear previous comments on resubmission
-    const comments = await prisma.comment.deleteMany({
-      where: {
-        submissionId: submission.id
-      }
-    })
-    console.log(comments, 'count of deleted comments')
+
     // query nextLesson based off order property of currentLesson
     const nextLesson = await prisma.lesson.findFirst({
       where: { order: lesson.order + 1 }
