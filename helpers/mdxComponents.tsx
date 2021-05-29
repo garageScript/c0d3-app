@@ -15,6 +15,7 @@ const MDXcomponents = {
   ),
   code: CodeBlock,
   blockquote: BlockQuote,
+  BlockQuote,
   Image: ModalImage,
   Spoiler: Spoiler,
   twoColumns: TwoColumns,

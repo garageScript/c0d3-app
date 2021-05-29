@@ -25,7 +25,34 @@ const IndexPage: React.FC<{}> = () => {
           <Footer footerType="py-5 bg-white text-muted" />
         </>
       ) : (
-        <div className="bg-white vh-100" />
+        <div className="bg-white vh-100">
+          <noscript>
+            <div className="d-flex justify-content-center">
+              <pre>
+                {`
+        |------------|
+        | TO         |
+        | LEARN      |
+        | JAVASCRIPT |
+        | YOU        |
+        | FIRST      |
+        | NEED       |
+        | TO         |
+        | ENABLE     |
+        | JAVASCRIPT |
+        | IN         |
+        | YOUR       |
+        | BROWSER!   |
+        |------------|
+        (\\__/) ||
+        (•ㅅ•) ||
+        / 　 づ
+          `}
+              </pre>
+            </div>
+            <Footer footerType="py-5 bg-white text-muted" />
+          </noscript>
+        </div>
       )}
     </>
   )

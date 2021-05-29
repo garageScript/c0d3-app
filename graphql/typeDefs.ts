@@ -21,7 +21,7 @@ export default gql`
     setStar(mentorId: Int!, lessonId: Int!, comment: String): SuccessResponse!
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
-    reqPwReset(userOrEmail: String!): TokenResponse
+    reqPwReset(userOrEmail: String!): SuccessResponse!
     changePw(token: String!, password: String!): AuthResponse
     changeAdminRights(id: Int!, status: Boolean!): SuccessResponse
     signup(
@@ -44,8 +44,14 @@ export default gql`
       cliToken: String!
       diff: String!
     ): Submission
-    acceptSubmission(id: Int!, comment: String!): Submission
-    rejectSubmission(id: Int!, comment: String!): Submission
+    acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
+    rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
+    addComment(
+      line: Int!
+      fileName: String!
+      submissionId: Int!
+      content: String!
+    ): Comment
     createLesson(
       description: String!
       docUrl: String
@@ -57,13 +63,13 @@ export default gql`
     ): [Lesson]
     updateLesson(
       id: Int!
-      description: String
+      description: String!
       docUrl: String
       githubUrl: String
       videoUrl: String
-      title: String
+      title: String!
       chatUrl: String
-      order: Int
+      order: Int!
     ): [Lesson]
     createChallenge(
       lessonId: Int!
@@ -108,6 +114,19 @@ export default gql`
     reviewerId: String
     createdAt: String
     updatedAt: String!
+    comments: [Comment]
+  }
+
+  type Comment {
+    id: Int!
+    fileName: String!
+    line: Int!
+    content: String!
+    authorId: Int!
+    submissionId: Int!
+    createdAt: String!
+    author: User
+    submission: Submission
   }
 
   enum SubmissionStatus {
@@ -118,10 +137,10 @@ export default gql`
 
   type User {
     id: Int!
-    username: String
+    username: String!
     userLesson: UserLesson
-    email: String
-    name: String
+    email: String!
+    name: String!
     isAdmin: Boolean!
     cliToken: String
   }

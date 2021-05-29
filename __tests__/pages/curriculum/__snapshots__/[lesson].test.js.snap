@@ -44,21 +44,15 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -399,9 +393,7 @@ solution(a); // should return 50
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -450,21 +442,15 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -554,9 +540,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -605,21 +589,15 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -988,9 +966,7 @@ result = solution(0, "hello") // ""
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -1039,21 +1015,15 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -1143,9 +1113,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

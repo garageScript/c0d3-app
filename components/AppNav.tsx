@@ -31,13 +31,15 @@ const navItems: NavItem[] = [
     external: true
   },
   {
-    path:
-      'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
-    name: 'Journey',
+    path: 'https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2',
+    name: 'Learn',
     external: true
   },
-  { path: 'https://chat.c0d3.com', name: 'Help', external: true },
-  { path: '/contributors', name: 'Contributors' }
+  {
+    path: 'https://discord.gg/c0d3',
+    name: 'Community',
+    external: true
+  }
 ]
 
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {

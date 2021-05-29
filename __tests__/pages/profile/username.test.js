@@ -41,7 +41,8 @@ describe('user profile test', () => {
             username: 'fake reviewer'
           },
           createdAt: '123',
-          updatedAt: '123'
+          updatedAt: '123',
+          comments: null
         },
         {
           id: 2,
@@ -58,7 +59,8 @@ describe('user profile test', () => {
             username: 'fake reviewer'
           },
           createdAt: '123',
-          updatedAt: '123'
+          updatedAt: '123',
+          comments: null
         }
       ],
       lessonStatus: [
@@ -190,7 +192,8 @@ describe('user profile test', () => {
             username: 'fake reviewer'
           },
           createdAt: '123',
-          updatedAt: '123'
+          updatedAt: '123',
+          comments: null
         }
       ],
       lessonStatus: [
@@ -396,7 +399,8 @@ describe('user profile test', () => {
             username: 'fake reviewer'
           },
           createdAt: '123',
-          updatedAt: '123'
+          updatedAt: '123',
+          comments: null
         }
       ]
     }

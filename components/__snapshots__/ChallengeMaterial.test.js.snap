@@ -963,11 +963,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
               <tbody>
                 <tr>
                   <td
-                    class="css-17uc4if-title-block"
+                    class="css-1rwygp7-title-block"
                     colspan="4"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       curriculum/js0/2.js
                     </pre>
@@ -1003,7 +1003,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                          
@@ -1051,7 +1051,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content css-10regm7-empty-line"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     />
                   </td>
                 </tr>
@@ -1085,7 +1085,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                         <span
@@ -1179,7 +1179,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content css-rq9a2a-diff-removed"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span
                         class="css-cncyp1-word-diff"
@@ -1249,7 +1249,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span
                         class="css-cncyp1-word-diff"
@@ -1327,7 +1327,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                         <span
@@ -1374,7 +1374,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content css-10regm7-empty-line"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     />
                   </td>
                 </tr>
@@ -1408,7 +1408,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                         module
@@ -1609,11 +1609,11 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               <tbody>
                 <tr>
                   <td
-                    class="css-17uc4if-title-block"
+                    class="css-1rwygp7-title-block"
                     colspan="4"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       curriculum/js0/2.js
                     </pre>
@@ -1649,7 +1649,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                          
@@ -1697,7 +1697,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content css-10regm7-empty-line"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     />
                   </td>
                 </tr>
@@ -1731,7 +1731,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                         <span
@@ -1825,7 +1825,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content css-rq9a2a-diff-removed"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span
                         class="css-cncyp1-word-diff"
@@ -1895,7 +1895,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content css-cnnxkz-diff-added"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span
                         class="css-cncyp1-word-diff"
@@ -1973,7 +1973,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                         <span
@@ -2020,7 +2020,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content css-10regm7-empty-line"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     />
                   </td>
                 </tr>
@@ -2054,7 +2054,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                     class="css-vl0irh-content"
                   >
                     <pre
-                      class="css-o1u8iu-content-text"
+                      class="css-pa3tg-content-text"
                     >
                       <span>
                         module

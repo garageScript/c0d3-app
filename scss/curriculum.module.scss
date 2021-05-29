@@ -1,0 +1,22 @@
+.parent-scroll {
+  scroll-snap-type: mandatory;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.child-scroll {
+  scroll-snap-align: start;
+}
+.arrow {
+  height: 4em;
+  z-index: 1;
+  top: 50%;
+  opacity: 10%;
+  left: 85%;
+}
+.arrow.right {
+  left: 0%;
+}

@@ -1,7 +1,7 @@
 .inline-code {
   background: #edeceb;
   color: #eb5757;
-  display: inline;
+  display: inline-block;
   padding: 0.1em 0.3em;
   border-radius: 2px;
 }
@@ -16,9 +16,12 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
     Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
-  & > p {
+  p {
     line-height: 24px;
     font-size: 1rem;
+  }
+  ul {
+    list-style-type: disc;
   }
 }
 .arrow {
@@ -37,7 +40,7 @@
 
 .MDX_a {
   color: #4e4e4e;
-  text-decoration-color: #7a7a7a !important;
+  text-decoration-color: #bdbcbc !important;
   text-decoration: underline;
   line-height: 1.5;
   opacity: 0.7;

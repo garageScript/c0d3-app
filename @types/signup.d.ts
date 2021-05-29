@@ -10,8 +10,13 @@ export type SignupFormProps = {
   isLoading?: boolean
   signupErrors?: string[]
   isSuccess?: boolean
+  forgotToken?: string
 }
 
 export type ErrorDisplayProps = {
   signupErrors?: string[]
+}
+
+export type SignupSuccessProps = {
+  forgotToken?: string
 }

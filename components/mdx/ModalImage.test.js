@@ -1,13 +1,13 @@
 import React from 'react'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Image from './ModalImage'
 import userEvent from '@testing-library/user-event'
-jest.unmock('next/image')
 
 describe('Image component test', () => {
-  test('Should render image', async () => {
-    render(
+  test('Modal should open and close when clicking', async () => {
+    // baseElement is needed because modal is rendered outside the container element
+    const { getByTestId, baseElement } = render(
       <Image
         width={313}
         height={360}
@@ -15,9 +15,59 @@ describe('Image component test', () => {
         data-testid="modal-image"
       />
     )
-    expect(screen.getByTestId('modal-image')).not.toBeVisible()
-    userEvent.click(screen.getByRole('presentation', { hidden: true }))
-    await waitFor(() => expect(screen.getByTestId('modal-image')).toBeVisible())
-    userEvent.click(screen.getByTestId('modal-image'))
+    // clicking on image, should open modal
+    userEvent.click(getByTestId('modal-image'))
+    const hidden = baseElement.querySelector('.modal-body > img')
+    await waitFor(() => expect(hidden).toBeVisible())
+
+    // clicking modal should close it
+    userEvent.click(hidden)
+    await waitFor(() => expect(hidden).not.toBeInTheDocument())
+  })
+
+  test('Modal should close when pressing ESC', async () => {
+    const { getByTestId, baseElement } = render(
+      <Image
+        width={313}
+        height={360}
+        src="/assets/landing/header-01.svg"
+        data-testid="modal-image"
+      />
+    )
+    userEvent.click(getByTestId('modal-image'))
+    const hidden = baseElement.querySelector('.modal-body > img')
+    await waitFor(() => expect(hidden).toBeVisible())
+
+    // pressing esc should close it
+    userEvent.type(hidden, 'esc')
+    await waitFor(() => expect(hidden).not.toBeInTheDocument())
+  })
+  test('Should add classname according to props', async () => {
+    const { getByTestId, baseElement } = render(
+      <Image
+        width={313}
+        height={360}
+        src="/assets/landing/header-01.svg"
+        data-testid="modal-image"
+        proportions="tall"
+      />
+    )
+    userEvent.click(getByTestId('modal-image'))
+    const hidden = baseElement.querySelector('.modal-body > img')
+    expect(hidden.className).toEqual('tall')
+  })
+  test('Should add classname according to props', async () => {
+    const { getByTestId, baseElement } = render(
+      <Image
+        width={313}
+        height={360}
+        src="/assets/landing/header-01.svg"
+        data-testid="modal-image"
+        proportions="long"
+      />
+    )
+    userEvent.click(getByTestId('modal-image'))
+    const hidden = baseElement.querySelector('.modal-body > img')
+    expect(hidden.className).toEqual('long')
   })
 })

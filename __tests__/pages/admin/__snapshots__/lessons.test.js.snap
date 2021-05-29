@@ -43,21 +43,15 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -1552,9 +1546,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -1602,21 +1594,15 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -3159,9 +3145,7 @@ Example: Put this tag into an html file to display a picture of the cat.
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

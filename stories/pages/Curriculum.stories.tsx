@@ -25,7 +25,7 @@ export const Basic: React.FC = () => {
     <MockedProvider mocks={mocks} addTypename={false}>
       <Curriculum
         lessons={dummyLessonData as Lesson[]}
-        alerts={(dummyAlertData as unknown) as Alert[]}
+        alerts={dummyAlertData as unknown as Alert[]}
       />
     </MockedProvider>
   )
@@ -49,7 +49,7 @@ export const WithAlerts: React.FC = () => {
     <MockedProvider mocks={mocks} addTypename={false}>
       <Curriculum
         lessons={dummyLessonData as Lesson[]}
-        alerts={(dummyAlertData as unknown) as Alert[]}
+        alerts={dummyAlertData as unknown as Alert[]}
       />
     </MockedProvider>
   )
@@ -61,6 +61,7 @@ export const CompletedLessons: React.FC<{}> = () => {
       id: 1,
       username: 'fakeusername',
       name: 'fake user',
+      email: 'fake@fakemail.com',
       isAdmin: true
     },
     submissions: [],
@@ -109,7 +110,7 @@ export const CompletedLessons: React.FC<{}> = () => {
     <MockedProvider mocks={mocks} addTypename={false}>
       <Curriculum
         lessons={dummyLessonData as Lesson[]}
-        alerts={(dummyAlertData as unknown) as Alert[]}
+        alerts={dummyAlertData as unknown as Alert[]}
       />
     </MockedProvider>
   )

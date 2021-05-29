@@ -43,21 +43,15 @@ exports[`Index Page Should render index page 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -411,9 +405,7 @@ exports[`Index Page Should render index page 1`] = `
   <footer
     class="font-weight-light text-center py-5 bg-white text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

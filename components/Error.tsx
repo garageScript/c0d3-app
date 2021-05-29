@@ -38,6 +38,7 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
               layout="responsive"
               width={1200}
               height={1200}
+              objectFit="contain"
             />
           </div>
         </div>

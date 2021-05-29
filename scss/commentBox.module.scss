@@ -1,0 +1,21 @@
+.commentBox {
+  & * {
+    font-size: inherit;
+  }
+  [wrapper='code_wrapper'] {
+    margin-left: 1em;
+  }
+  [wrapper='code_wrapper'] code,
+  code[wrapper='code_wrapper'],
+  code[data-testid='markdown'],
+  [data-testid='markdown'] code {
+    color: #e83e8c;
+  }
+}
+.showHide {
+  border: 1px solid gainsboro;
+  background-color: #cdffd8;
+  padding-left: 1em;
+  font-weight: bold;
+  color: rgb(105, 105, 105);
+}

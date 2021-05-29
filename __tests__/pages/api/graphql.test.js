@@ -8,7 +8,6 @@ jest.mock('apollo-server-micro')
 jest.mock('next-connect')
 jest.mock('@quixo3/prisma-session-store')
 jest.mock('express-session')
-jest.mock('sequelize')
 jest.mock('mailgun-js')
 import nextConnect from 'next-connect'
 import session from 'express-session'

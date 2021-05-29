@@ -43,21 +43,15 @@ exports[`Alerts page Should remove alert 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -384,9 +378,7 @@ exports[`Alerts page Should remove alert 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -434,21 +426,15 @@ exports[`Alerts page Should remove alert 2`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -728,9 +714,7 @@ exports[`Alerts page Should remove alert 2`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

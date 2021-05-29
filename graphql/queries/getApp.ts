@@ -41,7 +41,20 @@ const GET_APP = gql`
         }
         createdAt
         updatedAt
+        comments {
+          content
+          submissionId
+          createdAt
+          authorId
+          line
+          fileName
+          author {
+            username
+            name
+          }
+        }
       }
+
       lessonStatus {
         lessonId
         isPassed

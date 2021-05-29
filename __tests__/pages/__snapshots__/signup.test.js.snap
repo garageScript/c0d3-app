@@ -43,21 +43,15 @@ exports[`Signup Page Should render errors on fail 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -172,9 +166,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -222,21 +214,15 @@ exports[`Signup Page Should render success component on success 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
           </div>
         </div>
@@ -284,9 +270,12 @@ exports[`Signup Page Should render success component on success 1`] = `
           <p
             class="card-text"
           />
-          <p>
-            You will receive a link to confirm your email address and to set your password.
-          </p>
+          <a
+            class="btn btn-primary"
+            href="/confirm/undefined"
+          >
+            Click here to set your password.
+          </a>
         </div>
       </div>
     </div>
@@ -294,9 +283,7 @@ exports[`Signup Page Should render success component on success 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

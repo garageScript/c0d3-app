@@ -6,10 +6,6 @@ const prismJs = [
 ]
 
 module.exports = {
-  presets: [
-    ['@babel/preset-env', { targets: { node: 'current' } }],
-    '@babel/preset-react',
-    '@babel/preset-typescript'
-  ],
-  plugins: [prismJs, '@babel/syntax-dynamic-import']
+  presets: ['next/babel'],
+  plugins: [prismJs]
 }

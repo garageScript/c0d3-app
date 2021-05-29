@@ -43,21 +43,15 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
               rel="noopener noreferrer"
               target="_blank"
             >
-              Journey
+              Learn
             </a>
             <a
               class="nav-item nav-link"
-              href="https://chat.c0d3.com"
+              href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Help
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/contributors"
-            >
-              Contributors
+              Community
             </a>
             <div
               class="dropdown"
@@ -147,9 +141,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -198,21 +190,15 @@ exports[`Lesson Page Should render empty submissions 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -318,9 +304,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -370,21 +354,15 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Journey
+                Learn
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://chat.c0d3.com"
+                href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Help
-              </a>
-              <a
-                class="nav-item nav-link"
-                href="/contributors"
-              >
-                Contributors
+                Community
               </a>
               <div
                 class="dropdown"
@@ -493,7 +471,8 @@ exports[`Lesson Page Should render new submissions 1`] = `
             >
               <h4>
                 newbie
-                 - 
+                 -
+                 
                 <span
                   class="text-primary"
                 >
@@ -503,7 +482,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               <div
                 style="color: rgb(142, 142, 142); font-size: 0.85rem;"
               >
-                NaN years ago
+                51 years ago
               </div>
             </div>
             <div
@@ -518,11 +497,11 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   <tbody>
                     <tr>
                       <td
-                        class="css-17uc4if-title-block"
+                        class="css-1rwygp7-title-block"
                         colspan="4"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           js7/1.js
                         </pre>
@@ -558,7 +537,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                             <span
@@ -635,7 +614,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               
@@ -700,7 +679,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               
@@ -755,7 +734,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               window
@@ -843,7 +822,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                 
@@ -920,7 +899,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                 allT
@@ -984,7 +963,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                 
@@ -1033,7 +1012,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               
@@ -1081,7 +1060,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               window
@@ -1158,7 +1137,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                 
@@ -1225,7 +1204,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                   
@@ -1304,7 +1283,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                 
@@ -1347,7 +1326,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               
@@ -1395,7 +1374,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               
@@ -1467,7 +1446,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                                 window
@@ -1530,7 +1509,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                               
@@ -1578,7 +1557,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                             <span
@@ -1625,7 +1604,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         />
                       </td>
                     </tr>
@@ -1659,7 +1638,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                         class="css-vl0irh-content css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-o1u8iu-content-text"
+                          class="css-pa3tg-content-text"
                         >
                           <span>
                             module
@@ -1691,9 +1670,30 @@ exports[`Lesson Page Should render new submissions 1`] = `
             <div
               class="card-footer bg-white"
             >
-              <span>
-                TEST 2
-              </span>
+              <div>
+                <span>
+                  TEST 2
+                </span>
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 d-block"
+                    href="/profile/admin"
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                      Admin Admin
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    >
+                       @admin
+                    </div>
+                  </a>
+                </div>
+              </div>
               <div
                 style="background-color: white;"
               >
@@ -1735,9 +1735,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>

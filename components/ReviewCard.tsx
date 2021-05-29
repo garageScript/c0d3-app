@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client'
 import React, { memo, useState } from 'react'
 import Markdown from 'markdown-to-jsx'
 import gitDiffParser, { File } from 'gitdiff-parser'
-import ReactDiffViewer from 'react-diff-viewer'
+import ReactDiffViewer from 'c0d3-diff'
 
 import Prism from 'prismjs'
 import dayjs from 'dayjs'
@@ -18,6 +18,7 @@ import _ from 'lodash'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
+import ReviewerProfile from './ReviewerProfile'
 
 dayjs.extend(relativeTime)
 
@@ -76,15 +77,8 @@ export const DiffView: React.FC<DiffViewProps> = ({ diff = '' }) => {
 const MemoDiffView = memo(DiffView)
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const {
-    id,
-    diff,
-    comment,
-    updatedAt,
-    user: { username },
-    challenge: { title },
-    lessonId
-  } = submissionData
+  const { id, diff, comment, updatedAt, user, challenge, lessonId, reviewer } =
+    submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
@@ -98,17 +92,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       }
     })
   }
-
   return (
     <>
       {diff && (
         <div className="card shadow-sm border-0 mt-3">
           <div className="card-header bg-white">
             <h4>
-              {username} - <span className="text-primary">{title}</span>
+              {user?.username} -{' '}
+              <span className="text-primary">{challenge?.title}</span>
             </h4>
             <Text color="lightgrey" size="sm">
-              {dayjs(parseInt(updatedAt)).fromNow()}
+              {dayjs(parseInt(updatedAt || '0')).fromNow()}
             </Text>
           </div>
 
@@ -119,7 +113,15 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
 
           <div className="card-footer bg-white">
-            {comment && <Markdown>{comment}</Markdown>}
+            {comment && (
+              <div>
+                <Markdown>{comment}</Markdown>
+                <ReviewerProfile
+                  username={reviewer?.username}
+                  name={reviewer?.name}
+                />
+              </div>
+            )}
             <MdInput onChange={setCommentValue} bgColor={'white'} />
             <Button
               m="1"

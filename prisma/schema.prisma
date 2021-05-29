@@ -75,28 +75,43 @@ model Star {
   mentor    User     @relation("starMentor", fields: [mentorId], references: [id])
   student   User     @relation("starStudent", fields: [studentId], references: [id])
 
+  @@unique([studentId, lessonId])
   @@map("stars")
 }
 
 model Submission {
-  id          Int        @id @default(autoincrement())
-  mrUrl       String?    @db.VarChar(255)
+  id          Int       @id @default(autoincrement())
+  mrUrl       String?   @db.VarChar(255)
   diff        String?
   comment     String?
-  status      String     @default("open") @db.VarChar(255)
-  viewCount   Int?       @default(0)
-  createdAt   DateTime   @default(now()) @db.Timestamptz(6)
-  updatedAt   DateTime   @updatedAt @db.Timestamptz(6)
-  userId      Int?
+  status      String    @default("open") @db.VarChar(255)
+  viewCount   Int?      @default(0)
+  createdAt   DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime  @updatedAt @db.Timestamptz(6)
+  userId      Int
   reviewerId  Int?
-  challengeId Int?
-  lessonId    Int?
-  challenge   Challenge? @relation(fields: [challengeId], references: [id])
-  lesson      Lesson?    @relation(fields: [lessonId], references: [id])
-  reviewer    User?      @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
-  user        User?      @relation("userSubmissions", fields: [userId], references: [id])
+  challengeId Int
+  lessonId    Int
+  challenge   Challenge @relation(fields: [challengeId], references: [id])
+  lesson      Lesson    @relation(fields: [lessonId], references: [id])
+  reviewer    User?     @relation("userReviewedSubmissions", fields: [reviewerId], references: [id])
+  user        User      @relation("userSubmissions", fields: [userId], references: [id])
+  comments    Comment[]
 
+  @@unique([userId, lessonId, challengeId])
   @@map("submissions")
+}
+
+model Comment {
+  id           Int        @id @default(autoincrement())
+  fileName     String
+  line         Int
+  content      String
+  authorId     Int
+  author       User       @relation(fields: [authorId], references: [id])
+  submissionId Int
+  submission   Submission @relation(fields: [submissionId], references: [id])
+  createdAt    DateTime   @default(now())
 }
 
 model UserLesson {
@@ -116,10 +131,10 @@ model UserLesson {
 
 model User {
   id                     Int          @id @default(autoincrement())
-  name                   String?      @db.VarChar(255)
-  username               String?      @db.VarChar(255)
+  name                   String       @db.VarChar(255)
+  username               String       @db.VarChar(255)
   password               String?      @db.VarChar(255)
-  email                  String?      @db.VarChar(255)
+  email                  String       @db.VarChar(255)
   gsId                   Int?
   isOnline               Boolean?
   createdAt              DateTime     @default(now()) @db.Timestamptz(6)
@@ -134,6 +149,7 @@ model User {
   submissionsReviewed    Submission[] @relation("userReviewedSubmissions")
   submissions            Submission[] @relation("userSubmissions")
   userLessons            UserLesson[]
+  comments               Comment[]
 
   @@map("users")
 }
