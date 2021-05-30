@@ -6538,10 +6538,8 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
-            className=""
-            href="/curriculum"
+            href="#"
             onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             Go Back
           </a>
@@ -6597,10 +6595,8 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
           className="m-0"
         >
           <a
-            className=""
-            href="/curriculum"
+            href="#"
             onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             Go Back
           </a>
@@ -21320,10 +21316,8 @@ Array [
                 className="m-0"
               >
                 <a
-                  className=""
-                  href="/curriculum"
+                  href="#"
                   onClick={[Function]}
-                  onMouseEnter={[Function]}
                 >
                   Go Back
                 </a>
