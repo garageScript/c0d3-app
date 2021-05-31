@@ -38,7 +38,13 @@ export const createSubmission = async (
           lessonId,
           userId: Number(id)
         },
-        update: submissionData,
+        update: {
+          diff: submissionData.diff,
+          status: submissionData.status,
+          comments: {
+            deleteMany: {}
+          }
+        },
         include: {
           user: true,
           lesson: true,

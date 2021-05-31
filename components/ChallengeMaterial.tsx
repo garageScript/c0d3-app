@@ -2,15 +2,13 @@ import React, { useState } from 'react'
 import { Challenge, Submission, UserLesson } from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
-import gitDiffParser, { File } from 'gitdiff-parser'
-import ReactDiffViewer from 'c0d3-diff'
-import Prism from 'prismjs'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
 import { SubmissionStatus } from '../graphql'
+import DiffView from './DiffView'
 
 dayjs.extend(relativeTime)
 
@@ -151,48 +149,6 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
     'submission.reviewer.username',
     null
   )
-  let files = null
-
-  if (diff) files = gitDiffParser.parse(diff)
-
-  const renderFile = ({ hunks, newPath }: File) => {
-    const oldValue: String[] = []
-    const newValue: String[] = []
-
-    hunks.forEach(hunk => {
-      hunk.changes.forEach(change => {
-        if (change.isDelete) oldValue.push(change.content)
-        else if (change.isInsert) newValue.push(change.content)
-        else {
-          oldValue.push(change.content)
-          newValue.push(change.content)
-        }
-      })
-    })
-
-    const syntaxHighlight = (str: string): any => {
-      if (!str) return
-
-      const language = Prism.highlight(
-        str,
-        Prism.languages.javascript,
-        'javascript'
-      )
-      return <span dangerouslySetInnerHTML={{ __html: language }} />
-    }
-
-    return (
-      <ReactDiffViewer
-        key={_.uniqueId()}
-        oldValue={oldValue.join('\n')}
-        newValue={newValue.join('\n')}
-        renderContent={syntaxHighlight}
-        splitView={false}
-        leftTitle={`${newPath}`}
-      />
-    )
-  }
-
   return (
     <>
       <div className="card shadow-sm border-0">
@@ -216,7 +172,14 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {files && files.map(renderFile)}
+              {
+                <DiffView
+                  diff={diff}
+                  id={currentChallenge.submission!.id}
+                  comments={currentChallenge.submission?.comments}
+                  status={currentChallenge.status}
+                />
+              }
             </div>
           </div>
           <div className="card-footer bg-white">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Markdown from 'markdown-to-jsx'
 import { ApolloCache } from '@apollo/client'
 import ReviewerProfile from './ReviewerProfile'
@@ -17,6 +17,7 @@ import {
   Submission
 } from '../graphql'
 import _ from 'lodash'
+import { GlobalContext } from '../helpers/globalContext'
 type CommentData = Pick<Comment, 'content'> & Pick<User, 'name' | 'username'>
 type RecursivePartial<T> = {
   [P in keyof T]?: RecursivePartial<T[P]>
@@ -27,21 +28,14 @@ const CommentBox: React.FC<{
   fileName: string
   submissionId: number
   commentsData?: Comment[]
-  name: string
-  username: string
   lessonId?: number
   status?: string
-}> = ({
-  line,
-  fileName,
-  submissionId,
-  commentsData,
-  name,
-  username,
-  lessonId,
-  status
-}) => {
+}> = ({ line, fileName, submissionId, commentsData, lessonId, status }) => {
   const commentData: CommentData[] = []
+  const context = useContext(GlobalContext)
+  const name = context.session?.user?.name
+  const username = context.session?.user?.username
+  const showComments = !status || status === 'open'
   commentsData &&
     commentsData.forEach(c => {
       if (c?.line === line) {
@@ -52,8 +46,8 @@ const CommentBox: React.FC<{
         })
       }
     })
-  const [comments, setComments] = useState(commentData)
-  const [hidden, setHidden] = useState(status === 'passed')
+  const [comments] = useState(commentData)
+  const [hidden, setHidden] = useState(!showComments)
   const [input, setInput] = useState('')
   /*
   update function modifies client cache after mutation
@@ -136,7 +130,7 @@ const CommentBox: React.FC<{
               <ReviewerProfile name={c.name} username={c.username} inline />
             </div>
           ))}
-        {status !== 'passed' && (
+        {showComments && (
           <>
             <MdInput onChange={setInput} bgColor="white" />
             <Button
@@ -144,7 +138,6 @@ const CommentBox: React.FC<{
               type="success"
               onClick={() => {
                 if (!input) return
-                setComments([...comments, { name, username, content: input }])
                 addComment({
                   variables: {
                     line,

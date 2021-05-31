@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Error, { StatusCode } from '../../components/Error'
@@ -16,9 +16,14 @@ import withQueryLoader, {
   QueryDataProps
 } from '../../containers/withQueryLoader'
 import _ from 'lodash'
+import { GlobalContext } from '../../helpers/globalContext'
 
 const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session, alerts } = queryData
+  const context = useContext(GlobalContext)
+  useEffect(() => {
+    session && context.setContext(session)
+  }, [session])
   const [show, setShow] = useState(false)
   const router = useRouter()
   const currentlessonId = Number(router.query.lesson)
