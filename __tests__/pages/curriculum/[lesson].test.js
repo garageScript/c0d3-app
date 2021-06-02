@@ -1,5 +1,11 @@
 import React from 'react'
-import { render, waitFor, screen } from '@testing-library/react'
+import {
+  render,
+  waitFor,
+  screen,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
 import Lesson from '../../../pages/curriculum/[lesson]'
@@ -194,5 +200,34 @@ describe('Lesson Page', () => {
     await waitFor(() =>
       screen.getByRole('heading', { name: /Variables & Functions/i })
     )
+  })
+  test('Should return loading spinner if useRouter is not ready', async () => {
+    useRouter.mockImplementation(() => ({
+      isReady: false
+    }))
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            session,
+            lessons: dummyLessonData,
+            alerts: dummyAlertData
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Lesson />
+      </MockedProvider>
+    )
+    //there are two spinners, one frow withQueryLoader, another from useRouter, so we need to wait to test the second one
+    expect(
+      await waitForElementToBeRemoved(() => screen.queryByText('Loading...'), {
+        onTimeout: () => {}
+      })
+    ).toBeNull()
   })
 })
