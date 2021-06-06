@@ -103,7 +103,11 @@ Previously, you learned that URL is made up of the `protocol`, `hostname`,
 
 We can pass data into a request by using the URL's **query parameters**.
 
-![https://www.gilliganondata.com/wp-content/uploads/2012/05/url_anatomy.png](https://www.gilliganondata.com/wp-content/uploads/2012/05/url_anatomy.png)
+<Image
+  src="/assets/curriculum/lessons/js3/urlStructure.png"
+  width="480"
+  height="77"
+/>
 
 - **Protocol** - Specifies how the data is transferred and how to interpret the
   request. When you look at the protocol, you should have a high level idea of
@@ -157,7 +161,13 @@ as you know it.
 
 # Request & Response
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/mermaid-diagram-20200329155919.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/mermaid-diagram-20200329155919.png)
+<br />
+
+<Image
+  src="/assets/curriculum/lessons/js5/browserServer.png"
+  height="76"
+  width="339"
+/>
 
 - MD graph code
 
@@ -182,7 +192,11 @@ as you know it.
 If you send a request using the terminal and run your JavaScript with `node`,
 the process is exactly the same
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/mermaid-diagram-20200329161830.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/mermaid-diagram-20200329161830.png)
+<Image
+  src="/assets/curriculum/lessons/js5/terminalServer.png"
+  height="76"
+  width="339"
+/>
 
 If the response is HTML, the terminal would not do anything automatically with
 the response data since HTML is instructions for the browser only.
@@ -209,7 +223,11 @@ Every request that gets sent over the internet is made up of
 When you visit a webpage, you can view information about a request in the
 _network tab_ from the _developer console_ on your browser.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-11-25_at_5.02.30_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-11-25_at_5.02.30_AM.png)
+<Image
+  src="/assets/curriculum/lessons/js5/networkTab.png"
+  height="546"
+  width="957"
+/>
 
 ### Request Methods
 
@@ -217,7 +235,11 @@ Request methods describes what type of request it is and shows up in the first
 line of the request. The request below is a `GET` request that the browser sends
 out when I type in a url into the browser and hit enter.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_4.41.51_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_4.41.51_PM.png)
+<Image
+  src="/assets/curriculum/lessons/js5/requestMethods.png"
+  height="560"
+  width="786"
+/>
 
 Here's a list of the most commonly used request methods that you need to know.
 The specification for these request methods are simply best practices to follow.
@@ -267,9 +289,9 @@ confuse and annoy other software engineers who takes over your code.
   4. If browser is allowed to send a request, the browser now sends the PUT
      request.
 
-Of all the request methods covered above, GET, DELETE, and OPTIONS request do
-not have body in the request. POST, PATCH, PUT request has a body in the
-request.
+> Of all the request methods covered above, GET, DELETE, and OPTIONS request do
+> not have body in the request. POST, PATCH, PUT request has a body in the
+> request.
 
 Here is a sample code to send a `DELETE` request. Notice we are passing an
 object as the second argument. To send a different request method, simply change
@@ -286,7 +308,11 @@ fetch('https://songz.c0d3.com/api/todos', {
 Every request has a header that describes the request. In this section we will
 go over a few important request headers.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_4.36.43_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_4.36.43_PM.png)
+<Image
+  src="/assets/curriculum/lessons/js5/requestHeaders.png"
+  height="560"
+  width="786"
+/>
 
 In the list below, there are only two headers you would set manually when
 sending a request: Content-Type and Authorization. Although you can set the
@@ -358,7 +384,11 @@ fetch('https://songz.c0d3.com/api/todos/0e750eff-f872-4ac4-a1b0-ec7a877b1d6e', {
   .then(console.log)
 ```
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_7.48.11_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_7.48.11_PM.png)
+<Image
+  src="/assets/curriculum/lessons/js5/options.png"
+  width="1047"
+  height="216"
+/>
 
 If you are on a different domain and running these code on the browser console,
 you should see the browser send an OPTIONS request automatically before each
@@ -381,7 +411,11 @@ sent over the internet is made up of
    could contain are: strings, JSON string, and files like images, videos,
    documents, etc.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_8.36.31_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-03-29_at_8.36.31_PM.png)
+<Image
+  src="/assets/curriculum/lessons/js5/response.png"
+  width="956"
+  height="504"
+/>
 
 In the sections below, make sure you pay attention to how the response status
 codes and headers affect the browser.
@@ -498,36 +532,44 @@ will be no verification needed.
    Identify the different functions and classes and try to understand what they
    do.
 
-   ![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-04_at_10.00.14_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-04_at_10.00.14_AM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/viewPageSource.png"
+     width="579"
+     height="341"
+   />
 
    Note: Nothing will show up on the page. But if you look at the network
    request, you should see that there is no error. To get the code, right click
    on the page and click **View Source**.
 
-<Spoiler>
+  <Spoiler>
 
-1. `Todo` is a class to create a todo element.
-2. `render` displays a title, a input box to create a todo, and a list of todo
-   items
-3. `setupLogin` displays a login page.
-4. `setupSignup` displays a signup page.
-5. `startApp` is a function that runs when the page loads.
+     1. `Todo` is a class to create a todo element.
+     2. `render` displays a title, a input box to create a todo, and a list of
+        todo items
+     3. `setupLogin` displays a login page.
+     4. `setupSignup` displays a signup page.
+     5. `startApp` is a function that runs when the page loads.
 
-Confused by the variable symbol `$`? When you see something confusing, it is all
-the more important to stick to your foundations and evaluate **what you know**
-and make a best guess. In the code, `$` is simply another character in the
-variable name. There is nothing special about it. The author put `$` in the
-variable name to help him quickly understand that the variable stores an HTML
-element.
+  </Spoiler>
 
-</Spoiler>
+   > Confused by the variable symbol `$`? When you see something confusing, it
+   > is all the more important to stick to your foundations and evaluate **what
+   > you know** and make a best guess. In the code, `$` is simply another
+   > character in the variable name. There is nothing special about it. The
+   > author put `$` in the variable name to help him quickly understand that the
+   > variable stores an HTML element.
 
 2. In `startApp` function, send a `GET` request to
    `[https://js5.c0d3.com/auth/api/sessions](https://js5.c0d3.com/auth/api/sessions)`.
    Observe the network request, notice the response status code. The body of the
    response is JSON.
 
-   ![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-03_at_10.30.26_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-03_at_10.30.26_PM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/error.png"
+     width="1125"
+     height="378"
+   />
 
    If the response JSON result has an `error` key, run the `setupLogin` function
    to render the login page and stop the function.
@@ -535,23 +577,23 @@ element.
    **Note:** This exercise is asking you to write the `fetch` request code to
    send the requests.
 
-<Spoiler>
+  <Spoiler>
 
-```jsx
-const startApp = () => {
-  fetch('https://js5.c0d3.com/auth/api/sessions')
-    .then(r => {
-      return r.json()
-    })
-    .then(body => {
-      if (body.error) {
-        return setupLogin()
-      }
-    })
-}
-```
+  ```jsx
+  const startApp = () => {
+    fetch('https://js5.c0d3.com/auth/api/sessions')
+      .then(r => {
+        return r.json()
+      })
+      .then(body => {
+        if (body.error) {
+          return setupLogin()
+        }
+      })
+  }
+  ```
 
-</Spoiler>
+  </Spoiler>
 
 3. We can't login, because we don't have an account. Thankfully there is a
    `Signup` link. If you look at the code, clicking on Signup will run the
@@ -573,7 +615,11 @@ const startApp = () => {
    Notice how the response code is `400` and the response body is a JSON telling
    you what is wrong.
 
-   ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9248c233-6e4f-43e8-8f39-93221ac4fa03/Screen_Shot_2020-04-03_at_11.01.31_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9248c233-6e4f-43e8-8f39-93221ac4fa03/Screen_Shot_2020-04-03_at_11.01.31_PM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/code400.png"
+     width="1263"
+     height="381"
+   />
 
    Send the input fields to your request body and try to get a successful
    response. When sending password, please do not send your password directly.
@@ -601,7 +647,11 @@ const startApp = () => {
    the API. You are sending JSON and the server needs to know that. Is your
    request's `Content-Type` header set to `application/json`?
 
-   ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15999eff-f559-4f29-a447-ccce5b099675/Screen_Shot_2020-04-03_at_11.29.37_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15999eff-f559-4f29-a447-ccce5b099675/Screen_Shot_2020-04-03_at_11.29.37_PM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/contentType.png"
+     width="1296"
+     height="662"
+   />
 
    To do this, pass in a header attribute into the second argument object.
 
@@ -623,7 +673,11 @@ const startApp = () => {
    also see the a `Set-Cookie` response header to tell your browser to set a
    cookie.
 
-   ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/576bfa08-6328-4cf2-a243-f7aa2ad834c8/Screen_Shot_2020-04-03_at_11.32.18_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/576bfa08-6328-4cf2-a243-f7aa2ad834c8/Screen_Shot_2020-04-03_at_11.32.18_PM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/contentType.png"
+     width="1279"
+     height="579"
+   />
 
    <Spoiler>
 
@@ -646,47 +700,50 @@ const startApp = () => {
 
    </Spoiler>
 
-4. To check whether your browser successfully followed the response instruction
-   to set a cookie, go to the API hostname and click on Storage tab. On Chrome
-   it would be Application tab.
+4. To check whether your browser successfully followed the response instruction to set a cookie, go to the API hostname and click on Storage tab. On Chrome it would be Application tab.
 
-   Cookies are set against hostnames. Since you are sending a request to
-   `[https://js5.c0d3.com](https://js5.c0d3.com/auth/api/sessions)`, you must go
-   there first and then look at the cookie.
+    Cookies are set against hostnames. Since you are sending a request to `[https://js5.c0d3.com](https://js5.c0d3.com/auth/api/sessions)`, you must go there first and then look at the cookie.
 
-   ![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-03_at_11.46.59_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-03_at_11.46.59_PM.png)
+    <Image
+     src="/assets/curriculum/lessons/js5/checkCookies.png"
+     width="1200"
+     height="410"
+    />
 
-   No cookie! Usually a cookie is automatically set, but for **cross-origin**
-   requests you must pass in a `credentials: 'include'` property to tell the
-   browser to respect the `set-cookie` response header.
+    No cookie! Usually a cookie is automatically set, but for **cross-origin** requests you must pass in a `credentials: 'include'` property to tell the browser to respect the `set-cookie` response header. 
 
-   <Spoiler>
+    <Spoiler>
 
-   ```jsx
-   $submit.addEventListener('click', () => {
-     fetch('https://js5.c0d3.com/auth/api/users', {
-       method: 'POST',
-       credentials: 'include',
-       headers: {
-         'content-type': 'application/json'
-       },
-       body: JSON.stringify({
-         username: $username.value,
-         email: $email.value,
-         name: $name.value,
-         password: btoa($password.value)
-       })
-     })
-   })
-   ```
+    ```jsx
+    $submit.addEventListener('click', () => {
+      fetch('https://js5.c0d3.com/auth/api/users', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: $username.value,
+          email: $email.value,
+          name: $name.value,
+          password: btoa($password.value)
+        })
+      })
+    })
+    ```
+    </Spoiler>
 
-   </Spoiler>
 
 5. Add `credentials: 'include'` key to the `GET` request in your `startApp`
    function.
 
-   ![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-04_at_12.01.33_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-04_at_12.01.33_AM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/credentials.png"
+     width="1059"
+     height="535"
+   />
 
+   
    Notice how the request now has a `cookie` header. The browser is sending
    cookie to the server. Notice how the server recognized who is sending the
    request so it sends back a `304` or a `200` status code instead of a `403`.
@@ -730,7 +787,11 @@ const startApp = () => {
    To delete your cookie so you can visit any page on the API hostname, go to
    the cookie section, right click and select delete.
 
-   ![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-04_at_12.22.49_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-04_at_12.22.49_AM.png)
+   <Image
+     src="/assets/curriculum/lessons/js5/deleteCookies.png"
+     width="1158"
+     height="421"
+   />
 
    <Spoiler>
 
@@ -790,39 +851,35 @@ const startApp = () => {
 
    </Spoiler>
 
-7. When you type Enter into the input box, create a todo item by sending a
-   `POST` request to:
+7. When you type Enter into the input box, create a todo item by sending a `POST` request to:
 
-   `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)`
+    `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)` 
 
-   Start by sending an empty body, then use the response status code and body
-   from the server to figure out how to create a todo item correctly.
+    Start by sending an empty body, then use the response status code and body from the server to figure out how to create a todo item correctly.
 
-   Once you get a successful response, refresh the page by calling `render`
-   function.
+    Once you get a successful response, refresh the page by calling `render` function.
 
-   <Spoiler>
+    <Spoiler>
 
-   ```jsx
-   if (e.key === 'Enter') {
-     fetch('https://js5.c0d3.com/todolist/api/todos', {
-       credentials: 'include',
-       method: 'POST',
-       headers: {
-         'content-type': 'application/json'
-       },
-       body: JSON.stringify({
-         text: input.value
-       })
-     })
-       .then(r => {
-         return r.json()
-       })
-       .then(render)
-   }
-   ```
+    ```jsx
+    if (e.key==='Enter') {
+      fetch('https://js5.c0d3.com/todolist/api/todos', {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          text: input.value
+        })
+      }).then(r => {
+        return r.json()
+      }).then(render)
+    }
+    ```
 
-   </Spoiler>
+    </Spoiler>
+
 
 8. When `render` is called, get all the todo items by sending a `GET` request
    to:
@@ -930,7 +987,11 @@ request. Notice the response headers from the server. As of December 2019,
 Chrome browser will hide the `OPTIONS` request, so you must use Firefox browser
 if you want to see this request.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/options.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/options.png)
+<Image
+     src="/assets/curriculum/lessons/js5/newAccount.png"
+     width="1456"
+     height="654"
+/>
 
 That was a lot! Please go back to review if you need to.
 [Final product](https://js5.c0d3.com/todo.html). There are a few important
@@ -956,54 +1017,68 @@ A few important concepts are introduced in the example above.
 
 ### REST
 
-In the example above, you may have noticed a pattern in the URL when you get, create, update, and delete todos:
+In the example above, you may have noticed a pattern in the URL when you get,
+create, update, and delete todos:
 
-- POST - `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)`
-- GET - `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)`
-- PATCH - `[https://js5.c0d3.com/todolist/api/todos/:id](https://js5.c0d3.com/todolist/api/todos)`
-- DELETE - `[https://js5.c0d3.com/todolist/api/todos/:id](https://js5.c0d3.com/todolist/api/todos)`
+- POST -
+  `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)`
+- GET -
+  `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)`
+- PATCH -
+  `[https://js5.c0d3.com/todolist/api/todos/:id](https://js5.c0d3.com/todolist/api/todos)`
+- DELETE -
+  `[https://js5.c0d3.com/todolist/api/todos/:id](https://js5.c0d3.com/todolist/api/todos)`
 
-This pattern is an industry pattern called **REST**. When an API follows the REST pattern, developers are able to understand and use the API quickly. Although REST pattern is not required and some companies choose not to follow it, it has become an industry best practice so it is best to practice it.
+This pattern is an industry pattern called **REST**. When an API follows the
+REST pattern, developers are able to understand and use the API quickly.
+Although REST pattern is not required and some companies choose not to follow
+it, it has become an industry best practice so it is best to practice it.
 
-**REST** stands for Representational State Transfer (not important to memorize this) and it is a set of design principles to let you use and modify resources on servers using APIs.
+**REST** stands for Representational State Transfer (not important to memorize
+this) and it is a set of design principles to let you use and modify resources
+on servers using APIs.
 
 Our example only covers a subset of the full REST pattern for **todo resource.**
 
 [Todo Resource](https://www.notion.so/2c295d7619f64eab915a0f8b8afb8a3a)
 
-Our example also showed a create API for the **user resource** when a user signs up.
+Our example also showed a create API for the **user resource** when a user signs
+up.
 
 [Session Resource](https://www.notion.so/10e11e622a6f47a0bc1adcc32cceec4a)
 
 For a given resource, note that the path is always in the plural form.
 
-You must memorize the REST API convention above. The exercises below will help you memorize them.
+You must memorize the REST API convention above. The exercises below will help
+you memorize them.
 
 ### Exercises
 
 1. Write the REST convention for the resource, Store
 
-    <Spoiler>
+   <Spoiler>
 
-    [Store](https://www.notion.so/fc85d14d27dc4eeebb8de759b15e8fe0)
+   [Store](https://www.notion.so/fc85d14d27dc4eeebb8de759b15e8fe0)
 
-    </Spoiler>
+   </Spoiler>
 
 2. Write the REST convention for the resource, Robot
-    
-    <Spoiler>
 
-    [Robot](https://www.notion.so/0bef75b475694db49cde8502a0618827)
+   <Spoiler>
 
-    </Spoiler>
+   [Robot](https://www.notion.so/0bef75b475694db49cde8502a0618827)
+
+   </Spoiler>
 
 3. Write the REST convention for the resource, Relationship
 
-    <Spoiler>
+   <Spoiler>
 
-    [Relationship](https://www.notion.so/2c9250d4c47148148a6e0f6a5ffa5dab)
+   [Relationship](https://www.notion.so/2c9250d4c47148148a6e0f6a5ffa5dab)
 
-    </Spoiler>
+   </Spoiler>
+
+<hr/>
 
 export default ({ children }) => (
   <Layout
@@ -1011,7 +1086,7 @@ export default ({ children }) => (
     title="End To End"
     lessonUrl="/curriculum/lessons/js5/front"
     lessonId="24"
-    subLessons={['First', 'Second', 'Third']}
+    subLessons={['Request and response', 'Server', 'Systems (optional)']}
   >
     {children}
   </Layout>

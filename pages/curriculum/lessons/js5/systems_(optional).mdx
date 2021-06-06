@@ -12,7 +12,11 @@ many requests. To solve this problem, you need a proxy that forwards the
 requests to multiple servers. **A Load Balancer** is a proxy that forwards
 requests to different server to divide the load for each server.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/mermaid-diagram-20200418174641.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/mermaid-diagram-20200418174641.png)
+<Image
+  src="/assets/curriculum/lessons/js5/browserProxy.png"
+  height="233"
+  width="536"
+/>
 
 <Spoiler name="Graph Markdown">
 
@@ -173,17 +177,47 @@ so you have to pass in a function to run when the reading is complete.
 
 Some example of hard drives:
 
-- Cassette tapes: These are specialized data usually for audio recording music
+<twoColumns>
 
-- DVDs: These store data!
+<div>
+Cassette tapes: These are specialized data usually for audio recording music
 
-- Harddrives: Internally, it looks like a bunch of shiny DVDs stacked together.
+<Image
+  src="/assets/curriculum/lessons/js5/cassette.jpeg"
+  width="500"
+  height="334"
+/>
 
-- SSD: These hard drives are FAST. It doesn't have a spinning disk (unlike hard
-  drives) so finding and storing files on these can be up to many times faster
-  than the hard drive.
+</div>
 
-  ![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-12-14_at_4.51.37_PM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-12-14_at_4.51.37_PM.png)
+<div>
+DVDs: These store data!
+
+<Image src="/assets/curriculum/lessons/js5/dvd.jpeg" width="334" height="334" />
+
+</div>
+
+</twoColumns>
+
+<twoColumns>
+
+<div>
+
+Harddrives: Internally, it looks like a bunch of shiny DVDs stacked together.
+
+<Image src="/assets/curriculum/lessons/js5/hdd.jpeg" width="720" height="540" />
+
+</div>
+
+<div >
+SSD: These hard drives are FAST. It doesn't have a spinning disk (unlike hard
+drives) so finding and storing files on these can be up to many times faster
+than the hard drive.
+<Image src="/assets/curriculum/lessons/js5/ssd.png" width="350" height="250" />
+
+</div>
+
+</twoColumns>
 
 Since it takes time to lookup files on hard drives, `fs.readFile` function
 requires you to pass in a function that gets run when the file is found and
@@ -215,7 +249,11 @@ Address**. An IP Address specifies the device's address. Since the router keeps
 track of all devices connected to it via the IP Address, the router helps
 facilitate communication between all devices.
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-11-09_at_7.51.40_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-11-09_at_7.51.40_AM.png)
+<Image
+  src="/assets/curriculum/lessons/js5/router.png"
+  width="983"
+  height="153"
+/>
 
 <Spoiler name= "MermaidJS Markdown (Markdown text to generate the chart above. Not important,
   feel free to ignore)">
@@ -261,7 +299,7 @@ Address.
 
 <Spoiler name = "MacOS">
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-11-09_at_7.55.44_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2019-11-09_at_7.55.44_AM.png)
+<Image src="/assets/curriculum/lessons/js5/mac.png" height="552" width="1165" />
 
 </Spoiler>
 
@@ -423,7 +461,7 @@ User → Company (Facebook)
 
 DNS name resolution
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/IMG_9781.heic](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/IMG_9781.heic)
+<Image src="/assets/curriculum/lessons/js5/dns.jpg" width="1000" height="750" />
 
 # Cookies and Privacy
 
@@ -448,17 +486,39 @@ How to make your websites FAST
 
 # Concepts
 
+<br />
+
 ## HTML
+
+<br />
 
 ### Critical Rendering Path
 
+<br />
+
 ### Header
+
+<br />
 
 ### Accessibility
 
+<br />
+
 ### Mobile Friendly
 
+<br />
+
 # AWS
+
+<br />
+
+# AWS
+
+<br />
+
+# AWS
+
+<br />
 
 ## S3
 
@@ -503,19 +563,32 @@ How much load can one server handle?
 1 server, 1 core, 5M readers a month. That's 160k / day, 7k / hour, around 116 /
 minute.
 
-> From HN admin - It's hard to count active users because you have to define
-> them in order to count them, and we make a point of not tracking people that
-> much. We can count accounts and unique IPs, and that's about it. But it's
-> basically about 5M readers a month, give or take, as far as we can tell. It
-> grows linearly, with large swings. If you step back 10 feet from the graphs
-> and squint, it's basically a straight line for the last 10 years. We like it
-> that way; we wouldn't want to go full Haskell and avoid success at all costs,
-> but we don't want hockey-stick growth either. HN is not a startup!
+_From HN admin - It's hard to count active users because you have to define them
+in order to count them, and we make a point of not tracking people that much. We
+can count accounts and unique IPs, and that's about it. But it's basically about
+5M readers a month, give or take, as far as we can tell. It grows linearly, with
+large swings. If you step back 10 feet from the graphs and squint, it's
+basically a straight line for the last 10 years. We like it that way; we
+wouldn't want to go full Haskell and avoid success at all costs, but we don't
+want hockey-stick growth either. HN is not a startup!_
 
-**It runs on one server. Actually the app server (written in Arc) runs on one
-core. But we have some caching in front of that for logged-out users.**
+**_It runs on one server. Actually the app server (written in Arc) runs on one
+core. But we have some caching in front of that for logged-out users._**
 
-![JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-03_at_5.45.45_AM.png](JS%205%20-%20System%20Design%20&%20Theory%20c5aa4e999d5c4d0eb7ead7eb83f8567f/Screen_Shot_2020-04-03_at_5.45.45_AM.png)
+_Reddit is 100x bigger. It's not just that we aren't in their league...our
+league is not in their league. So the comparison is a little embarrassing. It's
+hard to count active users because you have to define them in order to count
+them, and we make a point of not tracking people that much. We can count
+accounts and unique IPs, and that's about it. But it's basically about 5M
+readers a month, give or take, as far as we can tell. It grows linearly, with
+large swings. If you step back 10 feet from the graphs and squint, it's
+basically a straight line for the last 10 years. We like it that way; we
+wouldn't want to go full Haskell and avoid success at all costs, but we don't
+want hockey-stick growth either. HN is not a startup! It runs on one server.
+Actually the app server (written in Arc) runs on one core. But we have some
+caching in front of that for logged-out users._
+
+<hr/>
 
 export default ({ children }) => (
   <Layout
@@ -523,7 +596,7 @@ export default ({ children }) => (
     title="End to End"
     lessonUrl="/curriculum/lessons/js5/front"
     lessonId="24"
-    subLessons={['First', 'Second', 'Third']}
+    subLessons={['Request and response', 'Server', 'Systems (optional)']}
   >
     {children}
   </Layout>
