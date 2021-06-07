@@ -39,9 +39,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -186,9 +184,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/docs/learn"
               >
                 Learn
               </a>
@@ -350,9 +346,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/docs/learn"
               >
                 Learn
               </a>
