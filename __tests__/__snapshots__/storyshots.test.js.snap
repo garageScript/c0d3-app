@@ -275,9 +275,9 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           </a>
           <a
             className="nav-item nav-link"
-            href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Learn
           </a>
@@ -356,9 +356,9 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           </a>
           <a
             className="nav-item nav-link"
-            href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Learn
           </a>
@@ -4339,9 +4339,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -4493,9 +4493,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -5875,9 +5875,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -6000,9 +6000,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -13573,9 +13573,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -13809,9 +13809,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -14738,9 +14738,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -15667,9 +15667,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -16596,9 +16596,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -17237,9 +17237,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -17554,9 +17554,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -17709,9 +17709,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -18617,9 +18617,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -21138,9 +21138,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -21318,9 +21318,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
