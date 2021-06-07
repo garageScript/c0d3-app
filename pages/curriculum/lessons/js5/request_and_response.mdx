@@ -1040,12 +1040,30 @@ on servers using APIs.
 
 Our example only covers a subset of the full REST pattern for **todo resource.**
 
-[Todo Resource](https://www.notion.so/2c295d7619f64eab915a0f8b8afb8a3a)
+
+| Type   | Path       | Action                                                               | Body |
+| ------ | :--------- | :------------------------------------------------------------------- | :--- |
+| Get    | /todos     | Get a list of all the todo items                                     | No   |
+| GET    | /todos/:id | Get data about a todo with the id, :id                               | No   |
+| POST   | /todos     | Create a new todo                                                    | Yes  |
+| PUT    | /todos/:id | Replace data about an existing todo with the id or create a new todo | Yes  |
+| PATCH  | /todos/:id | Update one attribute about the todo with the id, :id                 | Yes  |
+| DELETE | /todos/:id | Deletes the todo with the id, :id                                    | No   |
+
 
 Our example also showed a create API for the **user resource** when a user signs
 up.
 
-[Session Resource](https://www.notion.so/10e11e622a6f47a0bc1adcc32cceec4a)
+
+| Type   | Path       | Action  |Body|                                                         | Body |
+| ------ | :--------- | :------------------------------------------------------------------- | :--- |
+|GET|/users|Get list of all users|No|
+|GET|/users:id|Get data about a user with the id, :id|No|
+|POST|	/users|	Create a new user|	Yes|
+|PUT |/users/:id|	Replace data about a user with the id, :id|	Yes|
+|PATCH|	/users/:id|	Update one attribute about the user with the id, :id|	Yes|
+|DELETE|	/users/:id|	Deletes the user with the id, :id|	No|
+
 
 For a given resource, note that the path is always in the plural form.
 
@@ -1058,7 +1076,14 @@ you memorize them.
 
    <Spoiler>
 
-   [Store](https://www.notion.so/fc85d14d27dc4eeebb8de759b15e8fe0)
+   |Type|Path|Action| Body|
+   | ------ | :--------- | :------------------------------------------------------------------- | :--- |
+   |GET|	/stores|	Get all stores|	No|
+   |GET	|/stores/:id|	Get info about one specific store|	No|
+   |POST|	/stores|	Create new store|	Yes|
+   |PUT	|/stores/:id|	Replace data of one store|	Yes|
+   |PATCH|	/stores/:id|	Update an attribute about a store|	Yes|
+   |DELETE|	/stores/:id|	Delete a store|	No|
 
    </Spoiler>
 
@@ -1066,15 +1091,31 @@ you memorize them.
 
    <Spoiler>
 
-   [Robot](https://www.notion.so/0bef75b475694db49cde8502a0618827)
-
+   |Type|Path|Action| Body|
+   | ------ | :--------- | :------------------------------------------------------------------- | :--- |
+   |GET|	/robots|	Get all robots|	No|
+   |GET|	/robots/:id|	Get info about one specific robot|	No|
+   |POST|	/robots|	Create new robot|	Yes|
+   |PUT| /robots/:id|	Replace data of one robot|	Yes|
+   |PATCH|	/robots/:id|	Update an attribute about a robot|	Yes|
+   |DELETE|	/robots/:id|	Delete a robot|	No
+  
    </Spoiler>
 
 3. Write the REST convention for the resource, Relationship
 
    <Spoiler>
 
-   [Relationship](https://www.notion.so/2c9250d4c47148148a6e0f6a5ffa5dab)
+   |Type|Path|Action| Body|
+   | ------ | :--------- | :------------------------------------------------------------------- | :--- |
+   |GET	|/relationships|	Get all relationships|	No|
+   |GET	|/relationships/:id |Get info about one specific relationship|	No|
+   |POST|	/relationships|	Create new relationship|	Yes|
+   |PUT	|/relationships/:id|	Replace data of one relationship|	Yes|
+   |PATCH|	/relationships/:id|	Update an attribute about a relationship|	Yes|
+   |DELETE|	/relationships/:id|	Delete a relationship|	No|
+
+   <br/>
 
    </Spoiler>
 
