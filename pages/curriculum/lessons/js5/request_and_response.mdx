@@ -553,12 +553,12 @@ will be no verification needed.
 
   </Spoiler>
 
-   > Confused by the variable symbol `$`? When you see something confusing, it
-   > is all the more important to stick to your foundations and evaluate **what
-   > you know** and make a best guess. In the code, `$` is simply another
-   > character in the variable name. There is nothing special about it. The
-   > author put `$` in the variable name to help him quickly understand that the
-   > variable stores an HTML element.
+> Confused by the variable symbol `$`? When you see something confusing, it is
+> all the more important to stick to your foundations and evaluate **what you
+> know** and make a best guess. In the code, `$` is simply another character in
+> the variable name. There is nothing special about it. The author put `$` in
+> the variable name to help him quickly understand that the variable stores an
+> HTML element.
 
 2. In `startApp` function, send a `GET` request to
    `[https://js5.c0d3.com/auth/api/sessions](https://js5.c0d3.com/auth/api/sessions)`.
@@ -700,39 +700,45 @@ will be no verification needed.
 
    </Spoiler>
 
-4. To check whether your browser successfully followed the response instruction to set a cookie, go to the API hostname and click on Storage tab. On Chrome it would be Application tab.
+4. To check whether your browser successfully followed the response instruction
+   to set a cookie, go to the API hostname and click on Storage tab. On Chrome
+   it would be Application tab.
 
-    Cookies are set against hostnames. Since you are sending a request to `[https://js5.c0d3.com](https://js5.c0d3.com/auth/api/sessions)`, you must go there first and then look at the cookie.
+   Cookies are set against hostnames. Since you are sending a request to
+   `[https://js5.c0d3.com](https://js5.c0d3.com/auth/api/sessions)`, you must go
+   there first and then look at the cookie.
 
-    <Image
+   <Image
      src="/assets/curriculum/lessons/js5/checkCookies.png"
      width="1200"
      height="410"
-    />
+   />
 
-    No cookie! Usually a cookie is automatically set, but for **cross-origin** requests you must pass in a `credentials: 'include'` property to tell the browser to respect the `set-cookie` response header. 
+   No cookie! Usually a cookie is automatically set, but for **cross-origin**
+   requests you must pass in a `credentials: 'include'` property to tell the
+   browser to respect the `set-cookie` response header.
 
-    <Spoiler>
+   <Spoiler>
 
-    ```jsx
-    $submit.addEventListener('click', () => {
-      fetch('https://js5.c0d3.com/auth/api/users', {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: $username.value,
-          email: $email.value,
-          name: $name.value,
-          password: btoa($password.value)
-        })
-      })
-    })
-    ```
-    </Spoiler>
+   ```jsx
+   $submit.addEventListener('click', () => {
+     fetch('https://js5.c0d3.com/auth/api/users', {
+       method: 'POST',
+       credentials: 'include',
+       headers: {
+         'content-type': 'application/json'
+       },
+       body: JSON.stringify({
+         username: $username.value,
+         email: $email.value,
+         name: $name.value,
+         password: btoa($password.value)
+       })
+     })
+   })
+   ```
 
+   </Spoiler>
 
 5. Add `credentials: 'include'` key to the `GET` request in your `startApp`
    function.
@@ -743,7 +749,6 @@ will be no verification needed.
      height="535"
    />
 
-   
    Notice how the request now has a `cookie` header. The browser is sending
    cookie to the server. Notice how the server recognized who is sending the
    request so it sends back a `304` or a `200` status code instead of a `403`.
@@ -851,35 +856,39 @@ will be no verification needed.
 
    </Spoiler>
 
-7. When you type Enter into the input box, create a todo item by sending a `POST` request to:
+7. When you type Enter into the input box, create a todo item by sending a
+   `POST` request to:
 
-    `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)` 
+   `[https://js5.c0d3.com/todolist/api/todos](https://js5.c0d3.com/todolist/api/todos)`
 
-    Start by sending an empty body, then use the response status code and body from the server to figure out how to create a todo item correctly.
+   Start by sending an empty body, then use the response status code and body
+   from the server to figure out how to create a todo item correctly.
 
-    Once you get a successful response, refresh the page by calling `render` function.
+   Once you get a successful response, refresh the page by calling `render`
+   function.
 
-    <Spoiler>
+   <Spoiler>
 
-    ```jsx
-    if (e.key==='Enter') {
-      fetch('https://js5.c0d3.com/todolist/api/todos', {
-        credentials: 'include',
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          text: input.value
-        })
-      }).then(r => {
-        return r.json()
-      }).then(render)
-    }
-    ```
+   ```jsx
+   if (e.key === 'Enter') {
+     fetch('https://js5.c0d3.com/todolist/api/todos', {
+       credentials: 'include',
+       method: 'POST',
+       headers: {
+         'content-type': 'application/json'
+       },
+       body: JSON.stringify({
+         text: input.value
+       })
+     })
+       .then(r => {
+         return r.json()
+       })
+       .then(render)
+   }
+   ```
 
-    </Spoiler>
-
+   </Spoiler>
 
 8. When `render` is called, get all the todo items by sending a `GET` request
    to:
@@ -988,9 +997,9 @@ Chrome browser will hide the `OPTIONS` request, so you must use Firefox browser
 if you want to see this request.
 
 <Image
-     src="/assets/curriculum/lessons/js5/newAccount.png"
-     width="1456"
-     height="654"
+  src="/assets/curriculum/lessons/js5/newAccount.png"
+  width="1456"
+  height="654"
 />
 
 That was a lot! Please go back to review if you need to.
@@ -1040,7 +1049,6 @@ on servers using APIs.
 
 Our example only covers a subset of the full REST pattern for **todo resource.**
 
-
 | Type   | Path       | Action                                                               | Body |
 | ------ | :--------- | :------------------------------------------------------------------- | :--- |
 | Get    | /todos     | Get a list of all the todo items                                     | No   |
@@ -1050,20 +1058,17 @@ Our example only covers a subset of the full REST pattern for **todo resource.**
 | PATCH  | /todos/:id | Update one attribute about the todo with the id, :id                 | Yes  |
 | DELETE | /todos/:id | Deletes the todo with the id, :id                                    | No   |
 
-
 Our example also showed a create API for the **user resource** when a user signs
 up.
 
-
-| Type   | Path       | Action  |Body|                                                         | Body |
-| ------ | :--------- | :------------------------------------------------------------------- | :--- |
-|GET|/users|Get list of all users|No|
-|GET|/users:id|Get data about a user with the id, :id|No|
-|POST|	/users|	Create a new user|	Yes|
-|PUT |/users/:id|	Replace data about a user with the id, :id|	Yes|
-|PATCH|	/users/:id|	Update one attribute about the user with the id, :id|	Yes|
-|DELETE|	/users/:id|	Deletes the user with the id, :id|	No|
-
+| Type   | Path       | Action                                               | Body |     | Body |
+| ------ | :--------- | :--------------------------------------------------- | :--- | --- | ---- |
+| GET    | /users     | Get list of all users                                | No   |
+| GET    | /users:id  | Get data about a user with the id, :id               | No   |
+| POST   | /users     | Create a new user                                    | Yes  |
+| PUT    | /users/:id | Replace data about a user with the id, :id           | Yes  |
+| PATCH  | /users/:id | Update one attribute about the user with the id, :id | Yes  |
+| DELETE | /users/:id | Deletes the user with the id, :id                    | No   |
 
 For a given resource, note that the path is always in the plural form.
 
@@ -1076,14 +1081,14 @@ you memorize them.
 
    <Spoiler>
 
-   |Type|Path|Action| Body|
-   | ------ | :--------- | :------------------------------------------------------------------- | :--- |
-   |GET|	/stores|	Get all stores|	No|
-   |GET	|/stores/:id|	Get info about one specific store|	No|
-   |POST|	/stores|	Create new store|	Yes|
-   |PUT	|/stores/:id|	Replace data of one store|	Yes|
-   |PATCH|	/stores/:id|	Update an attribute about a store|	Yes|
-   |DELETE|	/stores/:id|	Delete a store|	No|
+   | Type   | Path        | Action                            | Body |
+   | ------ | :---------- | :-------------------------------- | :--- |
+   | GET    | /stores     | Get all stores                    | No   |
+   | GET    | /stores/:id | Get info about one specific store | No   |
+   | POST   | /stores     | Create new store                  | Yes  |
+   | PUT    | /stores/:id | Replace data of one store         | Yes  |
+   | PATCH  | /stores/:id | Update an attribute about a store | Yes  |
+   | DELETE | /stores/:id | Delete a store                    | No   |
 
    </Spoiler>
 
@@ -1091,35 +1096,35 @@ you memorize them.
 
    <Spoiler>
 
-   |Type|Path|Action| Body|
-   | ------ | :--------- | :------------------------------------------------------------------- | :--- |
-   |GET|	/robots|	Get all robots|	No|
-   |GET|	/robots/:id|	Get info about one specific robot|	No|
-   |POST|	/robots|	Create new robot|	Yes|
-   |PUT| /robots/:id|	Replace data of one robot|	Yes|
-   |PATCH|	/robots/:id|	Update an attribute about a robot|	Yes|
-   |DELETE|	/robots/:id|	Delete a robot|	No
-  
+   | Type   | Path        | Action                            | Body |
+   | ------ | :---------- | :-------------------------------- | :--- |
+   | GET    | /robots     | Get all robots                    | No   |
+   | GET    | /robots/:id | Get info about one specific robot | No   |
+   | POST   | /robots     | Create new robot                  | Yes  |
+   | PUT    | /robots/:id | Replace data of one robot         | Yes  |
+   | PATCH  | /robots/:id | Update an attribute about a robot | Yes  |
+   | DELETE | /robots/:id | Delete a robot                    | No   |
+
    </Spoiler>
 
 3. Write the REST convention for the resource, Relationship
 
    <Spoiler>
 
-   |Type|Path|Action| Body|
-   | ------ | :--------- | :------------------------------------------------------------------- | :--- |
-   |GET	|/relationships|	Get all relationships|	No|
-   |GET	|/relationships/:id |Get info about one specific relationship|	No|
-   |POST|	/relationships|	Create new relationship|	Yes|
-   |PUT	|/relationships/:id|	Replace data of one relationship|	Yes|
-   |PATCH|	/relationships/:id|	Update an attribute about a relationship|	Yes|
-   |DELETE|	/relationships/:id|	Delete a relationship|	No|
+   | Type   | Path               | Action                                   | Body |
+   | ------ | :----------------- | :--------------------------------------- | :--- |
+   | GET    | /relationships     | Get all relationships                    | No   |
+   | GET    | /relationships/:id | Get info about one specific relationship | No   |
+   | POST   | /relationships     | Create new relationship                  | Yes  |
+   | PUT    | /relationships/:id | Replace data of one relationship         | Yes  |
+   | PATCH  | /relationships/:id | Update an attribute about a relationship | Yes  |
+   | DELETE | /relationships/:id | Delete a relationship                    | No   |
 
-   <br/>
+   <br />
 
    </Spoiler>
 
-<hr/>
+<hr />
 
 export default ({ children }) => (
   <Layout
