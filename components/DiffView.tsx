@@ -47,7 +47,7 @@ const DiffView: React.FC<{
             lines: [],
             comments: []
           }
-        acc[index].lines.push(comment.line)
+        comment.line && acc[index].lines.push(comment.line)
         acc[index].comments.push(comment)
         return acc
       }, {})
