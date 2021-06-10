@@ -2,10 +2,10 @@ import { gql } from '@apollo/client'
 
 const ADD_COMMENT = gql`
   mutation addComment(
-    $line: Int!
+    $line: Int
     $submissionId: Int!
     $content: String!
-    $fileName: String!
+    $fileName: String
   ) {
     addComment(
       line: $line
