@@ -5,7 +5,7 @@ import noop from '../../helpers/noop'
 
 type ButtonProps = {
   border?: boolean
-  type?: 'success' | 'danger' | 'primary'
+  type?: 'success' | 'danger' | 'primary' | 'light'
   color?: ColorTypes
   m?: '1'
   ml?: '2'
