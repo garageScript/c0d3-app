@@ -40,9 +40,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/docs/learn"
               >
                 Learn
               </a>
@@ -438,9 +436,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -585,9 +581,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/docs/learn"
               >
                 Learn
               </a>
@@ -1011,9 +1005,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
