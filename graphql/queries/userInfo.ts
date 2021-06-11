@@ -23,6 +23,7 @@ const USER_INFO = gql`
         id
         username
         name
+        discordRefreshToken
       }
       submissions {
         id

@@ -143,6 +143,7 @@ export default gql`
     name: String!
     isAdmin: Boolean!
     cliToken: String
+    discordRefreshToken: String
   }
 
   type Session {

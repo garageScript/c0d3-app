@@ -1,8 +1,9 @@
+import { prisma } from '../prisma'
 const qs = require('qs')
 const client_id = process.env.DISCORD_KEY
 const client_secret = process.env.DISCORD_SECRET
 
-type DiscordUserInfoResponse = {
+type DiscordUserInfo = {
   discordUsername: string
   discordAvatarUrl: string
   discordRefreshToken: string
@@ -49,19 +50,27 @@ export const getUserInfo = (accessToken: string) => {
   }).then(r => r.json())
 }
 
+export const updateUserRefreshToken = (userId: number, refreshToken: string) =>
+  prisma.user.update({
+    where: {
+      id: userId
+    },
+    data: {
+      discordRefreshToken: refreshToken
+    }
+  })
+
 export const getUserInfoFromRefreshToken = async (
   refreshToken: string
-): Promise<DiscordUserInfoResponse> => {
+): Promise<DiscordUserInfo> => {
   const tokenResponse = await getTokenFromRefreshToken(refreshToken)
   if (!tokenResponse.refresh_token) throw new Error('refresh token invalid')
 
   const { username, avatar } = await getUserInfo(tokenResponse.access_token)
+
   return {
     discordUsername: username,
     discordAvatarUrl: avatar,
     discordRefreshToken: tokenResponse.refresh_token
   }
 }
-
-// in login check for refreshToken and start the auth flow process
-// import getUserInfoFromRefreshToken into getUserInfo and createSubmission resolvers
