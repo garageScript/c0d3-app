@@ -1,5 +1,6 @@
 import { prisma } from '../prisma'
-const qs = require('qs')
+import { URLSearchParams } from 'url'
+
 const client_id = process.env.DISCORD_KEY
 const client_secret = process.env.DISCORD_SECRET
 
@@ -15,7 +16,7 @@ export const getTokenFromAuthCode = (code: string) => {
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
     },
-    body: qs.stringify({
+    body: new URLSearchParams({
       grant_type: 'authorization_code',
       client_id,
       client_secret,
@@ -31,7 +32,7 @@ export const getTokenFromRefreshToken = (refresh_token: string) => {
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
     },
-    body: qs.stringify({
+    body: new URLSearchParams({
       client_id,
       client_secret,
       grant_type: 'refresh_token',
