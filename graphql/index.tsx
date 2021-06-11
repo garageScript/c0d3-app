@@ -877,10 +877,7 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
   userInfo?: Maybe<
     { __typename?: 'Session' } & {
       user?: Maybe<
-        { __typename?: 'User' } & Pick<
-          User,
-          'id' | 'username' | 'name' | 'discordRefreshToken'
-        >
+        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
       >
       submissions?: Maybe<
         Array<
@@ -3667,7 +3664,6 @@ export const UserInfoDocument = gql`
         id
         username
         name
-        discordRefreshToken
       }
       submissions {
         id
