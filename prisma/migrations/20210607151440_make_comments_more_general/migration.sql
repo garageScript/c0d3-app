@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Comment" ALTER COLUMN "fileName" DROP NOT NULL,
+ALTER COLUMN "line" DROP NOT NULL;

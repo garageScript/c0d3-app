@@ -58,8 +58,8 @@ export type Challenge = {
 export type Comment = {
   __typename?: 'Comment'
   id: Scalars['Int']
-  fileName: Scalars['String']
-  line: Scalars['Int']
+  fileName?: Maybe<Scalars['String']>
+  line?: Maybe<Scalars['Int']>
   content: Scalars['String']
   authorId: Scalars['Int']
   submissionId: Scalars['Int']
@@ -168,8 +168,8 @@ export type MutationRejectSubmissionArgs = {
 }
 
 export type MutationAddCommentArgs = {
-  line: Scalars['Int']
-  fileName: Scalars['String']
+  line?: Maybe<Scalars['Int']>
+  fileName?: Maybe<Scalars['String']>
   submissionId: Scalars['Int']
   content: Scalars['String']
 }
@@ -352,10 +352,10 @@ export type AddAlertMutation = { __typename?: 'Mutation' } & {
 }
 
 export type AddCommentMutationVariables = Exact<{
-  line: Scalars['Int']
+  line?: Maybe<Scalars['Int']>
   submissionId: Scalars['Int']
   content: Scalars['String']
-  fileName: Scalars['String']
+  fileName?: Maybe<Scalars['String']>
 }>
 
 export type AddCommentMutation = { __typename?: 'Mutation' } & {
@@ -1148,8 +1148,8 @@ export type CommentResolvers<
   ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
 > = {
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  fileName?: Resolver<ResolversTypes['String'], ParentType, ContextType>
-  line?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  fileName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  line?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   submissionId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1274,10 +1274,7 @@ export type MutationResolvers<
     Maybe<ResolversTypes['Comment']>,
     ParentType,
     ContextType,
-    RequireFields<
-      MutationAddCommentArgs,
-      'line' | 'fileName' | 'submissionId' | 'content'
-    >
+    RequireFields<MutationAddCommentArgs, 'submissionId' | 'content'>
   >
   createLesson?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
@@ -1701,10 +1698,10 @@ export type AddAlertMutationOptions = Apollo.BaseMutationOptions<
 >
 export const AddCommentDocument = gql`
   mutation addComment(
-    $line: Int!
+    $line: Int
     $submissionId: Int!
     $content: String!
-    $fileName: String!
+    $fileName: String
   ) {
     addComment(
       line: $line

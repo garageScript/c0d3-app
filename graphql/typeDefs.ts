@@ -47,8 +47,8 @@ export default gql`
     acceptSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     rejectSubmission(id: Int!, comment: String!, lessonId: Int!): Submission
     addComment(
-      line: Int!
-      fileName: String!
+      line: Int
+      fileName: String
       submissionId: Int!
       content: String!
     ): Comment
@@ -119,8 +119,8 @@ export default gql`
 
   type Comment {
     id: Int!
-    fileName: String!
-    line: Int!
+    fileName: String
+    line: Int
     content: String!
     authorId: Int!
     submissionId: Int!
