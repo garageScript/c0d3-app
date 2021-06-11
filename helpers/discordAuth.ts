@@ -1,8 +1,29 @@
 import { prisma } from '../prisma'
 import { URLSearchParams } from 'url'
+import { User } from '.prisma/client'
 
 const client_id = process.env.DISCORD_KEY
 const client_secret = process.env.DISCORD_SECRET
+
+type AccessTokenResponse = {
+  access_token: string
+  token_type: string
+  expires_in: number
+  refresh_token: string
+  scope: string
+}
+
+type UserInfoResponse = {
+  id: string
+  username: string
+  avatar: string
+  discriminator: string
+  public_flags: number
+  locale: string
+  mfa_enabled: boolean
+  email: string
+  verified: boolean
+}
 
 type DiscordUserInfo = {
   discordUsername: string
@@ -10,7 +31,9 @@ type DiscordUserInfo = {
   discordRefreshToken: string
 }
 
-export const getTokenFromAuthCode = (code: string) => {
+export const getTokenFromAuthCode = (
+  code: string
+): Promise<AccessTokenResponse> => {
   return fetch(`https://discordapp.com/api/oauth2/token`, {
     method: 'POST',
     headers: {
@@ -21,12 +44,15 @@ export const getTokenFromAuthCode = (code: string) => {
       client_id,
       client_secret,
       code,
-      redirect_uri: 'https://c0d3.com/discord/redir'
+      redirect_uri: 'https://c0d3.com/discord/redir',
+      scope: 'email guilds.join gdm.join identify'
     })
   }).then(r => r.json())
 }
 
-export const getTokenFromRefreshToken = (refresh_token: string) => {
+export const getTokenFromRefreshToken = (
+  refresh_token: string
+): Promise<AccessTokenResponse> => {
   return fetch(`https://discordapp.com/api/oauth2/token`, {
     method: 'POST',
     headers: {
@@ -41,7 +67,7 @@ export const getTokenFromRefreshToken = (refresh_token: string) => {
   }).then(r => r.json())
 }
 
-export const getUserInfo = (accessToken: string) => {
+export const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   return fetch(`https://discordapp.com/api/users/@me`, {
     method: 'GET',
     headers: {
@@ -51,8 +77,11 @@ export const getUserInfo = (accessToken: string) => {
   }).then(r => r.json())
 }
 
-export const updateUserRefreshToken = (userId: number, refreshToken: string) =>
-  prisma.user.update({
+export const updateUserRefreshToken = async (
+  userId: number,
+  refreshToken: string
+): Promise<User> => {
+  const updateUser = await prisma.user.update({
     where: {
       id: userId
     },
@@ -60,6 +89,8 @@ export const updateUserRefreshToken = (userId: number, refreshToken: string) =>
       discordRefreshToken: refreshToken
     }
   })
+  return updateUser
+}
 
 export const getUserInfoFromRefreshToken = async (
   refreshToken: string
