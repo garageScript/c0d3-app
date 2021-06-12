@@ -66,7 +66,7 @@
     "yup": "^0.32.8"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.21.4",
+    "@graphql-codegen/cli": "^1.21.5",
     "@graphql-codegen/typescript": "^1.22.1",
     "@graphql-codegen/typescript-operations": "^1.17.16",
     "@graphql-codegen/typescript-react-apollo": "^2.2.5",
@@ -93,7 +93,7 @@
     "@types/node-fetch": "^2.5.10",
     "@types/prismjs": "^1.16.5",
     "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.5",
+    "@types/react-dom": "^17.0.7",
     "@types/styled-jsx": "^2.2.8",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.25.0",
