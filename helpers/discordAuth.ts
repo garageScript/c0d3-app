@@ -2,6 +2,7 @@ import { prisma } from '../prisma'
 import { URLSearchParams } from 'url'
 import { User } from '.prisma/client'
 
+const discordAPI = 'https://discordapp.com/api'
 const client_id = process.env.DISCORD_KEY
 const client_secret = process.env.DISCORD_SECRET
 
@@ -34,7 +35,7 @@ type DiscordUserInfo = {
 export const getTokenFromAuthCode = (
   code: string
 ): Promise<AccessTokenResponse> => {
-  return fetch(`https://discordapp.com/api/oauth2/token`, {
+  return fetch(`${discordAPI}/oauth2/token`, {
     method: 'POST',
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -53,7 +54,7 @@ export const getTokenFromAuthCode = (
 export const getTokenFromRefreshToken = (
   refresh_token: string
 ): Promise<AccessTokenResponse> => {
-  return fetch(`https://discordapp.com/api/oauth2/token`, {
+  return fetch(`${discordAPI}/oauth2/token`, {
     method: 'POST',
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -68,7 +69,7 @@ export const getTokenFromRefreshToken = (
 }
 
 export const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
-  return fetch(`https://discordapp.com/api/users/@me`, {
+  return fetch(`${discordAPI}/users/@me`, {
     method: 'GET',
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
