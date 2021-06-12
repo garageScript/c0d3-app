@@ -40,7 +40,7 @@
     "bcrypt": "5.0.0",
     "bootstrap": "^4.6.0",
     "c0d3-diff": "^0.0.1",
-    "dayjs": "^1.10.4",
+    "dayjs": "^1.10.5",
     "express-session": "^1.17.1",
     "formik": "^2.2.8",
     "gitdiff-parser": "^0.2.2",
