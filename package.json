@@ -54,7 +54,7 @@
     "next": "^10.2.0",
     "next-connect": "^0.10.0",
     "posthog-js": "^1.10.0",
-    "prism-react-renderer": "^1.2.0",
+    "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.1",
