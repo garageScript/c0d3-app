@@ -44,7 +44,18 @@ const submissionData = {
     username: 'fake reviewer'
   },
   createdAt: '123',
-  updatedAt: '123'
+  updatedAt: '123',
+  comments: [
+    {
+      author: {
+        name: 'Admin Admin',
+        username: 'admin'
+      },
+      autorId: 1,
+      submissionId: 1,
+      content: 'A comment under submission'
+    }
+  ]
 }
 const mocks = [
   {
@@ -120,6 +131,19 @@ describe('ReviewCard Component', () => {
     )
     userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
     userEvent.click(getByRole('button', { name: 'Accept' }))
+    expect(container).toMatchSnapshot()
+  })
+  test('Should be able to add comment', async () => {
+    const { container, getByRole } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+    userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
+    userEvent.click(getByRole('button', { name: 'Comment' }))
     expect(container).toMatchSnapshot()
   })
   test('Should render reviewer with name', async () => {

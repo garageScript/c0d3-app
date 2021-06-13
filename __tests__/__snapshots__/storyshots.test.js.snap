@@ -1221,6 +1221,59 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               </tr>
             </tbody>
           </table>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value=""
+            />
+          </div>
+          <button
+            className="btn bg-success m-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#fff",
+              }
+            }
+          >
+            Comment
+          </button>
         </div>
       </div>
       <div
@@ -1651,6 +1704,59 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               </tr>
             </tbody>
           </table>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value=""
+            />
+          </div>
+          <button
+            className="btn bg-success m-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#fff",
+              }
+            }
+          >
+            Comment
+          </button>
         </div>
       </div>
       <div
@@ -9180,6 +9286,17 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       />
     </div>
     <button
+      className="btn bg-light m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#5d656e",
+        }
+      }
+    >
+      Comment
+    </button>
+    <button
       className="btn bg-success m-1"
       onClick={[Function]}
       style={
@@ -10166,6 +10283,17 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         value=""
       />
     </div>
+    <button
+      className="btn bg-light m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#5d656e",
+        }
+      }
+    >
+      Comment
+    </button>
     <button
       className="btn bg-success m-1"
       onClick={[Function]}
@@ -11179,6 +11307,17 @@ Does 10 - arr[1] exist in the map? (No).
       />
     </div>
     <button
+      className="btn bg-light m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#5d656e",
+        }
+      }
+    >
+      Comment
+    </button>
+    <button
       className="btn bg-success m-1"
       onClick={[Function]}
       style={
@@ -12139,6 +12278,17 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         value=""
       />
     </div>
+    <button
+      className="btn bg-light m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#5d656e",
+        }
+      }
+    >
+      Comment
+    </button>
     <button
       className="btn bg-success m-1"
       onClick={[Function]}
@@ -13124,6 +13274,17 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         value=""
       />
     </div>
+    <button
+      className="btn bg-light m-1"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "#5d656e",
+        }
+      }
+    >
+      Comment
+    </button>
     <button
       className="btn bg-success m-1"
       onClick={[Function]}

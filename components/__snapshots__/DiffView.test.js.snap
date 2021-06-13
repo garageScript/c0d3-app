@@ -1711,7 +1711,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                   <span
                     wrapper="code_wrapper"
                   >
-                    Second Comment
+                    Third Comment
                   </span>
                 </div>
                 <div

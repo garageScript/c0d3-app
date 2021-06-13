@@ -98,7 +98,7 @@ const DiffView: React.FC<{
         styles={styles}
         onLineNumberClick={(n: string) => {
           //number is a string in format of L-10, R-4 and etc (left-right split views)
-          if (status === 'passed') return
+          if (status !== 'open') return
           const lineNumber = Number.parseInt(n.split('-')[1])
           const index = `${id}:${newPath}`
           if (!commentsState[index])

@@ -1,14 +1,14 @@
 import { useMutation } from '@apollo/client'
 
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
-
+import { GlobalContext } from '../helpers/globalContext'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
-import { Submission } from '../graphql/index'
-
+import { Submission, useAddCommentMutation } from '../graphql/index'
+import { SubmissionComments } from './SubmissionComments'
 import _ from 'lodash'
 
 import { Button } from './theme/Button'
@@ -16,7 +16,7 @@ import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
 import ReviewerProfile from './ReviewerProfile'
 import DiffView from './DiffView'
-
+import { updateCache } from '../helpers/updateCache'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -33,11 +33,18 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     challenge,
     lessonId,
     reviewer,
-    comments
+    comments,
+    status
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
+  const [addComment] = useAddCommentMutation()
+  const context = useContext(GlobalContext)
+  const name = context.session?.user?.name
+  const username = context.session?.user?.username
+  const update = updateCache(id, commentValue, name!, username!, lessonId)
+  const underComments = comments?.filter(comment => !comment.line)
 
   const reviewSubmission = (review: any) => async () => {
     await review({
@@ -69,6 +76,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                 id={id}
                 comments={comments}
                 lessonId={lessonId}
+                status={status}
               />
             </div>
           </div>
@@ -83,11 +91,29 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                 />
               </div>
             )}
+            {underComments && <SubmissionComments comments={underComments} />}
             <MdInput
               onChange={setCommentValue}
               bgColor={'white'}
               value={commentValue}
             />
+            <Button
+              m="1"
+              type="light"
+              color="darkgrey"
+              onClick={() => {
+                addComment({
+                  variables: {
+                    submissionId: id,
+                    content: commentValue
+                  },
+                  update
+                })
+                setCommentValue('')
+              }}
+            >
+              Comment
+            </Button>
             <Button
               m="1"
               type="success"

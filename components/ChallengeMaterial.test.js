@@ -1,11 +1,19 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import {
+  render,
+  fireEvent,
+  waitFor,
+  screen,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import ChallengeMaterial from './ChallengeMaterial'
+import { MockedProvider } from '@apollo/client/testing'
+import ADD_COMMENT from '../graphql/queries/addComment'
 import SET_STAR from '../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
-import { MockedProvider } from '@apollo/client/testing'
 import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
 
@@ -24,6 +32,22 @@ const mocks = [
     result: {
       data: { getLessonMentors: lessonMentorsData }
     }
+  },
+  {
+    request: {
+      query: ADD_COMMENT,
+      variables: {
+        submissionId: 3502,
+        content: 'A very unique test comment!'
+      }
+    },
+    result: {
+      data: {
+        addComment: {
+          id: 5
+        }
+      }
+    }
   }
 ]
 
@@ -35,7 +59,7 @@ const lessonStatusNoPass = {
 
 const challenges = [
   {
-    id: '105',
+    id: 105,
     description:
       'Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.',
     title: 'Greater than 5',
@@ -43,7 +67,7 @@ const challenges = [
     __typename: 'Challenge'
   },
   {
-    id: '107',
+    id: 107,
     description:
       'Write a function that takes in 2 numbers and returns their sum.',
     title: 'Sum of 2 Numbers',
@@ -54,43 +78,76 @@ const challenges = [
 
 const userSubmissions = [
   {
-    id: '3500',
+    id: 3500,
     status: SubmissionStatus.Open,
     mrUrl: 'github.com/testmrurl',
     diff: 'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
     viewCount: 0,
     comment: null,
-    challengeId: '105',
+    challengeId: 105,
     reviewer: null,
     createdAt: '1586907809223',
-    updatedAt: dayjs().subtract(16, 'day').valueOf()
+    updatedAt: dayjs().subtract(16, 'day').valueOf(),
+    comments: [
+      {
+        author: {
+          name: 'Admin Admin',
+          username: 'admin'
+        },
+        autorId: 1,
+        submissionId: 1,
+        content: 'A comment under submission'
+      }
+    ]
   },
   {
-    id: '3501',
+    id: 3501,
     status: SubmissionStatus.NeedMoreWork,
     mrUrl: 'github.com/testmrurl2',
     diff: 'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
     viewCount: 0,
     comment: 'test comment',
-    challengeId: '107',
+    challengeId: 107,
     reviewer: {
       id: '1',
       username: 'dan'
     },
     createdAt: '1586907809223',
-    updatedAt: dayjs().subtract(16, 'day').valueOf()
+    updatedAt: dayjs().subtract(16, 'day').valueOf(),
+    comments: [
+      {
+        author: {
+          name: 'Admin Admin',
+          username: 'admin'
+        },
+        autorId: 1,
+        submissionId: 1,
+        content: 'A comment under submission'
+      }
+    ]
   },
   {
-    id: '3502',
-    status: null,
+    id: 3502,
+    status: 'open',
     mrUrl: 'github.com/testmrurl',
     diff: 'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
     viewCount: 0,
     comment: null,
-    challengeId: '105',
+    challengeId: 105,
     reviewer: null,
     createdAt: '1586907809223',
-    updatedAt: dayjs().subtract(16, 'day').valueOf()
+    updatedAt: dayjs().subtract(16, 'day').valueOf(),
+    comments: [
+      {
+        author: {
+          name: 'Admin Admin',
+          username: 'admin'
+        },
+        autorId: 1,
+        submissionId: 1,
+        content: 'A comment under submission'
+      }
+    ]
   }
 ]
 
@@ -118,13 +175,19 @@ describe('Curriculum challenge page', () => {
 
   test('Should render first challenge by default when user has no submissions', async () => {
     props.userSubmissions = []
-    const { container } = render(<ChallengeMaterial {...props} />)
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
+    )
     expect(container).toMatchSnapshot()
   })
 
   test('Should render clicked challenge within challenge question', async () => {
     const { getAllByTestId, container } = render(
-      <ChallengeMaterial {...props} />
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
     )
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
     fireEvent.click(challengeTitleCard)
@@ -132,7 +195,11 @@ describe('Curriculum challenge page', () => {
   })
 
   test('Should render first challenge that is not passed when user has submissions', async () => {
-    const { container } = render(<ChallengeMaterial {...props} />)
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
+    )
     expect(container).toMatchSnapshot()
   })
 
@@ -162,7 +229,9 @@ describe('Curriculum challenge page', () => {
   test('Should hide mobile modal on click', async () => {
     global.window.innerWidth = 500
     const { container } = render(
-      <ChallengeMaterial {...{ ...props, show: true }} />
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...{ ...props, show: true }} />
+      </MockedProvider>
     )
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
     expect(container).toMatchSnapshot()
@@ -185,5 +254,29 @@ describe('Curriculum challenge page', () => {
       charCode: 27
     })
     expect(setShow).toBeCalledWith(false)
+  })
+  test('Should be able to add comments', async () => {
+    const { lessonStatus, userSubmissions } = props
+    lessonStatus.isPassed = false
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
+    )
+    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
+    fireEvent.click(screen.getByText('Comment'))
+    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
+  })
+  test('Should use default case if no status is provided', async () => {
+    userSubmissions.forEach(submission => (submission.status = 'foobar'))
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
+    )
+    expect(screen.getByText('A comment under submission')).toBeVisible()
   })
 })
