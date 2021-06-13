@@ -1290,14 +1290,18 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
           Good job!
         </textarea>
       </div>
-      <button
-        class="btn bg-light m-1"
-        style="color: rgb(93, 101, 110);"
+      <div
+        class="mr-5 d-inline"
       >
-        Comment
-      </button>
+        <button
+          class="btn bg-info m-1"
+          style="color: rgb(255, 255, 255);"
+        >
+          Comment
+        </button>
+      </div>
       <button
-        class="btn bg-success m-1"
+        class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
         Accept
@@ -2601,14 +2605,18 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           style="padding: 1rem; width: 100%;"
         />
       </div>
-      <button
-        class="btn bg-light m-1"
-        style="color: rgb(93, 101, 110);"
+      <div
+        class="mr-5 d-inline"
       >
-        Comment
-      </button>
+        <button
+          class="btn bg-info m-1"
+          style="color: rgb(255, 255, 255);"
+        >
+          Comment
+        </button>
+      </div>
       <button
-        class="btn bg-success m-1"
+        class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
         Accept
@@ -3912,14 +3920,18 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           style="padding: 1rem; width: 100%;"
         />
       </div>
-      <button
-        class="btn bg-light m-1"
-        style="color: rgb(93, 101, 110);"
+      <div
+        class="mr-5 d-inline"
       >
-        Comment
-      </button>
+        <button
+          class="btn bg-info m-1"
+          style="color: rgb(255, 255, 255);"
+        >
+          Comment
+        </button>
+      </div>
       <button
-        class="btn bg-success m-1"
+        class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
         Accept
@@ -5223,14 +5235,18 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           style="padding: 1rem; width: 100%;"
         />
       </div>
-      <button
-        class="btn bg-light m-1"
-        style="color: rgb(93, 101, 110);"
+      <div
+        class="mr-5 d-inline"
       >
-        Comment
-      </button>
+        <button
+          class="btn bg-info m-1"
+          style="color: rgb(255, 255, 255);"
+        >
+          Comment
+        </button>
+      </div>
       <button
-        class="btn bg-success m-1"
+        class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
         Accept
@@ -5357,14 +5373,18 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           style="padding: 1rem; width: 100%;"
         />
       </div>
-      <button
-        class="btn bg-light m-1"
-        style="color: rgb(93, 101, 110);"
+      <div
+        class="mr-5 d-inline"
       >
-        Comment
-      </button>
+        <button
+          class="btn bg-info m-1"
+          style="color: rgb(255, 255, 255);"
+        >
+          Comment
+        </button>
+      </div>
       <button
-        class="btn bg-success m-1"
+        class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
         Accept
@@ -6668,14 +6688,18 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           style="padding: 1rem; width: 100%;"
         />
       </div>
-      <button
-        class="btn bg-light m-1"
-        style="color: rgb(93, 101, 110);"
+      <div
+        class="mr-5 d-inline"
       >
-        Comment
-      </button>
+        <button
+          class="btn bg-info m-1"
+          style="color: rgb(255, 255, 255);"
+        >
+          Comment
+        </button>
+      </div>
       <button
-        class="btn bg-success m-1"
+        class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
         Accept

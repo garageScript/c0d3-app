@@ -9285,19 +9285,23 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         value=""
       />
     </div>
-    <button
-      className="btn bg-light m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#5d656e",
-        }
-      }
+    <div
+      className="mr-5 d-inline"
     >
-      Comment
-    </button>
+      <button
+        className="btn bg-info m-1"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Comment
+      </button>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -10283,19 +10287,23 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         value=""
       />
     </div>
-    <button
-      className="btn bg-light m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#5d656e",
-        }
-      }
+    <div
+      className="mr-5 d-inline"
     >
-      Comment
-    </button>
+      <button
+        className="btn bg-info m-1"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Comment
+      </button>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -11306,19 +11314,23 @@ Does 10 - arr[1] exist in the map? (No).
         value=""
       />
     </div>
-    <button
-      className="btn bg-light m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#5d656e",
-        }
-      }
+    <div
+      className="mr-5 d-inline"
     >
-      Comment
-    </button>
+      <button
+        className="btn bg-info m-1"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Comment
+      </button>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -12278,19 +12290,23 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         value=""
       />
     </div>
-    <button
-      className="btn bg-light m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#5d656e",
-        }
-      }
+    <div
+      className="mr-5 d-inline"
     >
-      Comment
-    </button>
+      <button
+        className="btn bg-info m-1"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Comment
+      </button>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -13274,19 +13290,23 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         value=""
       />
     </div>
-    <button
-      className="btn bg-light m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#5d656e",
-        }
-      }
+    <div
+      className="mr-5 d-inline"
     >
-      Comment
-    </button>
+      <button
+        className="btn bg-info m-1"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#fff",
+          }
+        }
+      >
+        Comment
+      </button>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {

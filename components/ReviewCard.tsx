@@ -97,25 +97,26 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               bgColor={'white'}
               value={commentValue}
             />
+            <div className="mr-5 d-inline">
+              <Button
+                m="1"
+                type="info"
+                color="white"
+                onClick={() => {
+                  addComment({
+                    variables: {
+                      submissionId: id,
+                      content: commentValue
+                    },
+                    update
+                  })
+                  setCommentValue('')
+                }}
+              >
+                Comment
+              </Button>
+            </div>
             <Button
-              m="1"
-              type="light"
-              color="darkgrey"
-              onClick={() => {
-                addComment({
-                  variables: {
-                    submissionId: id,
-                    content: commentValue
-                  },
-                  update
-                })
-                setCommentValue('')
-              }}
-            >
-              Comment
-            </Button>
-            <Button
-              m="1"
               type="success"
               color="white"
               onClick={reviewSubmission(accept)}

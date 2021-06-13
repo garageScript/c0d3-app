@@ -1711,14 +1711,18 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   style="padding: 1rem; width: 100%;"
                 />
               </div>
-              <button
-                class="btn bg-light m-1"
-                style="color: rgb(93, 101, 110);"
+              <div
+                class="mr-5 d-inline"
               >
-                Comment
-              </button>
+                <button
+                  class="btn bg-info m-1"
+                  style="color: rgb(255, 255, 255);"
+                >
+                  Comment
+                </button>
+              </div>
               <button
-                class="btn bg-success m-1"
+                class="btn bg-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Accept
