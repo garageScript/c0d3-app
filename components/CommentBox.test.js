@@ -37,7 +37,7 @@ describe('CommentBox component', () => {
       }
     },
     {
-      content: 'Second Comment',
+      content: 'Third comment',
       createdAt: '1620762275096',
       authorId: 3,
       line: 5,
@@ -127,11 +127,7 @@ describe('CommentBox component', () => {
     )
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     userEvent.click(screen.getByText('Add comment'))
-    await waitFor(() =>
-      expect(
-        screen.getAllByText('A very unique test comment!')[0]
-      ).toBeVisible()
-    )
+    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
   })
   test('Should add comment by student', async () => {
     const cache = new InMemoryCache({ addTypename: false })
@@ -159,11 +155,7 @@ describe('CommentBox component', () => {
     )
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     userEvent.click(screen.getByText('Add comment'))
-    await waitFor(() =>
-      expect(
-        screen.getAllByText('A very unique test comment!')[0]
-      ).toBeVisible()
-    )
+    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
   })
   test('Should not add comment if input is empty', async () => {
     const query = jest.fn()

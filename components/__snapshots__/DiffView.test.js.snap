@@ -1526,13 +1526,17 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="commentBox bg-white d-auto"
             >
               <div
-                class="border"
+                class="border border-lightgray"
               >
-                <span
-                  wrapper="code_wrapper"
+                <div
+                  class="ml-3"
                 >
-                  First Comment
-                </span>
+                  <span
+                    wrapper="code_wrapper"
+                  >
+                    First Comment
+                  </span>
+                </div>
                 <div
                   class="wrapper"
                 >
@@ -1554,13 +1558,17 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 </div>
               </div>
               <div
-                class="border"
+                class="border border-lightgray"
               >
-                <span
-                  wrapper="code_wrapper"
+                <div
+                  class="ml-3"
                 >
-                  Second Comment
-                </span>
+                  <span
+                    wrapper="code_wrapper"
+                  >
+                    Second Comment
+                  </span>
+                </div>
                 <div
                   class="wrapper"
                 >
@@ -1695,13 +1703,17 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="commentBox bg-white d-auto"
             >
               <div
-                class="border"
+                class="border border-lightgray"
               >
-                <span
-                  wrapper="code_wrapper"
+                <div
+                  class="ml-3"
                 >
-                  Second Comment
-                </span>
+                  <span
+                    wrapper="code_wrapper"
+                  >
+                    Second Comment
+                  </span>
+                </div>
                 <div
                   class="wrapper"
                 >

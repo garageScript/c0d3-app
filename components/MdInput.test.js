@@ -2,11 +2,15 @@ import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { MdInput } from './MdInput'
 
+const TestComponent = () => {
+  const [testState, setTestState] = React.useState('')
+  return <MdInput onChange={setTestState} value={testState} />
+}
+
 describe('MdInput Component', () => {
   test('Should render text onto textbox when user types', () => {
-    const { container, queryByTestId } = render(<MdInput />)
+    const { container, queryByTestId } = render(<TestComponent />)
     const textbox = queryByTestId('textbox')
-
     fireEvent.change(textbox, {
       target: { value: 'Javascript' }
     })

@@ -30,28 +30,25 @@ export const MdInput: React.FC<MdInputProps> = ({
   value = ''
 }) => {
   const [preview, setPreview] = useState<boolean>(false)
-  const [commentValue, setCommentValue] = useState<string>(value)
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = event.target
-    setCommentValue(value)
     onChange(value)
   }
 
   const displayOption = preview ? (
     <Markdown data-testid="markdown" style={MdStyle}>
-      {commentValue}
+      {value}
     </Markdown>
   ) : (
     <textarea
-      value={commentValue}
+      value={value}
       onChange={handleChange}
       placeholder={placeHolder}
       style={textBoxStyle}
       data-testid="textbox"
     />
   )
-
   const previewBtnColor = preview ? 'black' : 'lightgrey'
   const writeBtnColor = preview ? 'lightgrey' : 'black'
 

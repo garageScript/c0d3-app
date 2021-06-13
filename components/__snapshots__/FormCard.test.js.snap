@@ -145,9 +145,7 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
               data-testid="textbox"
               placeholder="Type something..."
               style="padding: 1rem; width: 100%;"
-            >
-              Javascript
-            </textarea>
+            />
           </div>
         </div>
       </div>
@@ -282,9 +280,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
               data-testid="textbox"
               placeholder="Type something..."
               style="padding: 1rem; width: 100%;"
-            >
-              Javascript
-            </textarea>
+            />
           </div>
         </div>
       </div>
