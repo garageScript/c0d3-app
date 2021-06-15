@@ -30,7 +30,7 @@ const RequestChanges: React.FC<{
   username: string
   name: string
   comment: string
-  date?: string
+  date: string
 }> = ({ name, username, comment, date }) => {
   return (
     <div className={`${styles.changes} px-2 py-1`}>
@@ -38,7 +38,8 @@ const RequestChanges: React.FC<{
         <img src="/assets/requestChanges.svg" className={styles.icon} />
         <ReviewerProfile name={name} username={username} />
         <div className={`${styles.font} ml-2`}>
-          requested changes on {dayjs(date).format('dddd, MMMM D, YYYY')}:
+          requested changes on{' '}
+          {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
         </div>
       </div>
       <hr />

@@ -9251,8 +9251,9 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on 
-          Tuesday, January 29, 2019
+          requested changes on
+           
+          Thursday, January 1, 1970
           :
         </div>
       </div>
@@ -10306,7 +10307,8 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on 
+          requested changes on
+           
           Invalid Date
           :
         </div>
@@ -11359,8 +11361,9 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on 
-          Tuesday, January 29, 2019
+          requested changes on
+           
+          Thursday, January 1, 1970
           :
         </div>
       </div>
@@ -13450,8 +13453,9 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on 
-          Tuesday, January 29, 2019
+          requested changes on
+           
+          Thursday, January 1, 1970
           :
         </div>
       </div>

@@ -1698,7 +1698,8 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   <div
                     class="font ml-2"
                   >
-                    requested changes on 
+                    requested changes on
+                     
                     Invalid Date
                     :
                   </div>
