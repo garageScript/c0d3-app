@@ -38,7 +38,7 @@ const RequestChanges: React.FC<{
         <img src="/assets/requestChanges.svg" className={styles.icon} />
         <ReviewerProfile name={name} username={username} />
         <div className={`${styles.font} ml-2`}>
-          requested these changes on {dayjs(date).format('dddd, MMMM D, YYYY')}:
+          requested changes on {dayjs(date).format('dddd, MMMM D, YYYY')}:
         </div>
       </div>
       <hr />

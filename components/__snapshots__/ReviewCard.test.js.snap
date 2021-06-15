@@ -1243,7 +1243,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
           <div
             class="font ml-2"
           >
-            requested these changes on 
+            requested changes on 
             Friday, January 1, 123
             :
           </div>
@@ -2622,7 +2622,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           <div
             class="font ml-2"
           >
-            requested these changes on 
+            requested changes on 
             Friday, January 1, 123
             :
           </div>
@@ -3999,7 +3999,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           <div
             class="font ml-2"
           >
-            requested these changes on 
+            requested changes on 
             Friday, January 1, 123
             :
           </div>
@@ -5376,7 +5376,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           <div
             class="font ml-2"
           >
-            requested these changes on 
+            requested changes on 
             Friday, January 1, 123
             :
           </div>
@@ -5576,7 +5576,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           <div
             class="font ml-2"
           >
-            requested these changes on 
+            requested changes on 
             Friday, January 1, 123
             :
           </div>
@@ -6953,7 +6953,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           <div
             class="font ml-2"
           >
-            requested these changes on 
+            requested changes on 
             Friday, January 1, 123
             :
           </div>
