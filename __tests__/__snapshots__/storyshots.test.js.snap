@@ -2060,13 +2060,17 @@ Array [
     className="commentBox bg-white d-auto"
   >
     <div
-      className="border"
+      className="border border-lightgray"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="ml-3"
       >
-        First Comment
-      </span>
+        <span
+          wrapper="code_wrapper"
+        >
+          First Comment
+        </span>
+      </div>
       <div
         className="wrapper"
       >
@@ -2088,13 +2092,17 @@ Array [
       </div>
     </div>
     <div
-      className="border"
+      className="border border-lightgray"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="ml-3"
       >
-        Second Comment
-      </span>
+        <span
+          wrapper="code_wrapper"
+        >
+          Second Comment
+        </span>
+      </div>
       <div
         className="wrapper"
       >
@@ -13458,6 +13466,107 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
     </a>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/SubmissionComments With Comments 1`] = `
+Array [
+  <div
+    className="border border-lightgray"
+  >
+    <div
+      className="ml-3"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        First Comment
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="comment_author__inline mt-2 d-block"
+        href="/profile/newbie"
+      >
+        <div
+          className="d-inline"
+        >
+          Noob Newbie
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @newbie
+        </div>
+      </a>
+    </div>
+  </div>,
+  <div
+    className="border border-lightgray"
+  >
+    <div
+      className="ml-3"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        Second Comment
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="comment_author__inline mt-2 d-block"
+        href="/profile/newbie"
+      >
+        <div
+          className="d-inline"
+        >
+          Noob Newbie
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @newbie
+        </div>
+      </a>
+    </div>
+  </div>,
+  <div
+    className="border border-lightgray"
+  >
+    <div
+      className="ml-3"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        Second Comment
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="comment_author__inline mt-2 d-block"
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin Admin
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+  </div>,
+]
 `;
 
 exports[`Storyshots Components/Thanks Basic 1`] = `

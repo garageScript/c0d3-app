@@ -1,27 +1,12 @@
 import React, { useState, useContext } from 'react'
-import Markdown from 'markdown-to-jsx'
-import { ApolloCache } from '@apollo/client'
-import ReviewerProfile from './ReviewerProfile'
 import { MdInput } from './MdInput'
 import { Button } from './theme/Button'
 import styles from '../scss/commentBox.module.scss'
-import GET_APP from '../graphql/queries/getApp'
-import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
-import {
-  useAddCommentMutation,
-  Comment,
-  User,
-  AddCommentMutation,
-  GetAppQuery,
-  SubmissionsQuery,
-  Submission
-} from '../graphql'
+import { useAddCommentMutation, Comment } from '../graphql'
 import _ from 'lodash'
 import { GlobalContext } from '../helpers/globalContext'
-type CommentData = Pick<Comment, 'content'> & Pick<User, 'name' | 'username'>
-type RecursivePartial<T> = {
-  [P in keyof T]?: RecursivePartial<T[P]>
-}
+import { updateCache } from '../helpers/updateCache'
+import { SubmissionComments } from './SubmissionComments'
 
 const CommentBox: React.FC<{
   line: number
@@ -31,84 +16,23 @@ const CommentBox: React.FC<{
   lessonId?: number
   status?: string
 }> = ({ line, fileName, submissionId, commentsData, lessonId, status }) => {
-  const commentData: CommentData[] = []
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
   const showComments = !status || status === 'open'
-  commentsData &&
-    commentsData.forEach(c => {
-      if (c?.line === line) {
-        commentData.push({
-          name: c.author?.name!,
-          username: c.author?.username!,
-          content: c.content
-        })
-      }
-    })
-  const [comments] = useState(commentData)
+  const comments = commentsData?.filter(comment => comment.line === line)
   const [hidden, setHidden] = useState(!showComments)
   const [input, setInput] = useState('')
-  /*
-  update function modifies client cache after mutation
-  lessonId prop is used to differentiate between student and reviewer 
-  student data comes from GetApp query while reviewer uses getSubmission query
-  */
-  const update = (cache: ApolloCache<AddCommentMutation>) => {
-    if (lessonId) {
-      const data = cache.readQuery<SubmissionsQuery>({
-        query: GET_SUBMISSIONS,
-        variables: { lessonId }
-      })
-      const current = data!.submissions?.filter(s => s!.id === submissionId)
-      const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
-      copy[0]!.comments!.push({
-        content: input,
-        fileName,
-        line,
-        submissionId,
-        author: {
-          name,
-          username
-        }
-      })
-      const newData = data!.submissions!.map(s => {
-        if (s!.id === submissionId) return copy[0]
-        return s
-      })
-      cache.writeQuery({
-        query: GET_SUBMISSIONS,
-        variables: { lessonId },
-        data: { ...data, submissions: newData }
-      })
-    } else {
-      const data = cache.readQuery<GetAppQuery>({
-        query: GET_APP
-      })
-      const current = data!.session!.submissions!.filter(
-        s => s!.id === submissionId
-      )
-      const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
-      copy[0]!.comments!.push({
-        content: input,
-        fileName,
-        line,
-        submissionId,
-        author: {
-          name,
-          username
-        }
-      })
-      const newData = {
-        ...data,
-        session: { ...data!.session, submissions: copy }
-      }
-      cache.writeQuery({
-        query: GET_APP,
-        data: newData
-      })
-    }
-  }
+  const update = updateCache(
+    submissionId,
+    input,
+    name!,
+    username!,
+    lessonId,
+    line,
+    fileName
+  )
+
   const [addComment] = useAddCommentMutation()
   return (
     <>
@@ -123,16 +47,10 @@ const CommentBox: React.FC<{
           hidden ? 'none' : 'auto'
         }`}
       >
-        {comments &&
-          comments.map((c, i) => (
-            <div key={`${c.content}${i}`} className="border">
-              <Markdown wrapper="code_wrapper">{c.content}</Markdown>
-              <ReviewerProfile name={c.name} username={c.username} inline />
-            </div>
-          ))}
+        {comments && <SubmissionComments comments={comments} />}
         {showComments && (
           <>
-            <MdInput onChange={setInput} bgColor="white" />
+            <MdInput onChange={setInput} bgColor="white" value={input} />
             <Button
               color="white"
               type="success"
