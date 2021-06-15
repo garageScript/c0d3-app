@@ -1358,7 +1358,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
               </tbody>
             </table>
             <div
-              class="border border-lightgray"
+              class="border border-lightgray rounded my-1"
             >
               <div
                 class="ml-3"
@@ -1373,7 +1373,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 class="wrapper"
               >
                 <a
-                  class="comment_author__inline mt-2 d-block"
+                  class="comment_author__inline mt-2 "
                   href="/profile/admin"
                 >
                   <div
@@ -1958,7 +1958,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               </tbody>
             </table>
             <div
-              class="border border-lightgray"
+              class="border border-lightgray rounded my-1"
             >
               <div
                 class="ml-3"
@@ -1973,7 +1973,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 class="wrapper"
               >
                 <a
-                  class="comment_author__inline mt-2 d-block"
+                  class="comment_author__inline mt-2 "
                   href="/profile/admin"
                 >
                   <div

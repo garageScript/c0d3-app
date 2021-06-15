@@ -9,12 +9,13 @@ import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
 import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
 import { Submission, useAddCommentMutation } from '../graphql/index'
 import { SubmissionComments } from './SubmissionComments'
+import ReviewerProfile from './ReviewerProfile'
 import _ from 'lodash'
+import styles from '../scss/reviewCard.module.scss'
 
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
-import ReviewerProfile from './ReviewerProfile'
 import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
 dayjs.extend(relativeTime)
@@ -24,6 +25,27 @@ type ReviewCardProps = {
 }
 
 type CommentType = 'accept' | 'reject' | 'comment'
+
+const RequestChanges: React.FC<{
+  username: string
+  name: string
+  comment: string
+  date?: string
+}> = ({ name, username, comment, date }) => {
+  return (
+    <div className={`${styles.changes} px-2 py-1`}>
+      <div className="d-flex align-items-center">
+        <img src="/assets/requestChanges.svg" className={styles.icon} />
+        <ReviewerProfile name={name} username={username} />
+        <div className={`${styles.font} ml-2`}>
+          requested these changes on {dayjs(date).format('dddd, MMMM D, YYYY')}:
+        </div>
+      </div>
+      <hr />
+      <Markdown>{comment}</Markdown>
+    </div>
+  )
+}
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const {
@@ -111,15 +133,18 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
           <div className="card-footer bg-white">
             {comment && (
-              <div>
-                <Markdown>{comment}</Markdown>
-                <ReviewerProfile
-                  username={reviewer?.username}
-                  name={reviewer?.name}
-                />
+              <RequestChanges
+                name={reviewer?.name!}
+                username={reviewer?.username!}
+                comment={comment}
+                date={updatedAt}
+              />
+            )}
+            {underComments && (
+              <div className="mt-1">
+                <SubmissionComments comments={underComments} />
               </div>
             )}
-            {underComments && <SubmissionComments comments={underComments} />}
             <MdInput
               onChange={setCommentValue}
               bgColor={'white'}

@@ -6,7 +6,7 @@ exports[`ReviewerProfile test Should render default component 1`] = `
     class=""
   >
     <a
-      class="comment_author mt-2 d-block"
+      class="comment_author mt-2 "
       href="/profile/user"
     >
       <div

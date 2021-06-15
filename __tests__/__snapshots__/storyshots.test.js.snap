@@ -2166,7 +2166,7 @@ Array [
     className="commentBox bg-white d-auto"
   >
     <div
-      className="border border-lightgray"
+      className="border border-lightgray rounded my-1"
     >
       <div
         className="ml-3"
@@ -2181,7 +2181,7 @@ Array [
         className="wrapper"
       >
         <a
-          className="comment_author__inline mt-2 d-block"
+          className="comment_author__inline mt-2 "
           href="/profile/newbie"
         >
           <div
@@ -2198,7 +2198,7 @@ Array [
       </div>
     </div>
     <div
-      className="border border-lightgray"
+      className="border border-lightgray rounded my-1"
     >
       <div
         className="ml-3"
@@ -2213,7 +2213,7 @@ Array [
         className="wrapper"
       >
         <a
-          className="comment_author__inline mt-2 d-block"
+          className="comment_author__inline mt-2 "
           href="/profile/newbie"
         >
           <div
@@ -9219,29 +9219,47 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/fake reviewer"
+          >
+            <div
+              className="d-inline"
+            >
+              fake reviewer
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested these changes on 
+          Tuesday, January 29, 2019
+          :
+        </div>
+      </div>
+      <hr />
       <span>
         Some comment
       </span>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
-        >
-          <div
-            className="d-inline"
-          >
-            fake reviewer
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
-      </div>
     </div>
     <div
       style={
@@ -10256,29 +10274,47 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/admin"
+          >
+            <div
+              className="d-inline"
+            >
+              Admin admin
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @admin
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested these changes on 
+          Invalid Date
+          :
+        </div>
+      </div>
+      <hr />
       <span>
         Some comment
       </span>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/admin"
-        >
-          <div
-            className="d-inline"
-          >
-            Admin admin
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @admin
-          </div>
-        </a>
-      </div>
     </div>
     <div
       style={
@@ -11291,7 +11327,44 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/admin"
+          >
+            <div
+              className="d-inline"
+            >
+              Admin Admin
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @admin
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested these changes on 
+          Tuesday, January 29, 2019
+          :
+        </div>
+      </div>
+      <hr />
       <div>
         <p>
           You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
@@ -11321,25 +11394,6 @@ Does 10 - arr[1] exist in the map? (No).
         <p>
           if you have questions, don't hesitate to reach out in the chat.
         </p>
-      </div>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/admin"
-        >
-          <div
-            className="d-inline"
-          >
-            Admin Admin
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @admin
-          </div>
-        </a>
       </div>
     </div>
     <div
@@ -13364,29 +13418,47 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/admin"
+          >
+            <div
+              className="d-inline"
+            >
+              Admin Admin
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @admin
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested these changes on 
+          Tuesday, January 29, 2019
+          :
+        </div>
+      </div>
+      <hr />
       <span>
         Some comment
       </span>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/admin"
-        >
-          <div
-            className="d-inline"
-          >
-            Admin Admin
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @admin
-          </div>
-        </a>
-      </div>
     </div>
     <div
       style={
@@ -13827,7 +13899,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
 exports[`Storyshots Components/SubmissionComments With Comments 1`] = `
 Array [
   <div
-    className="border border-lightgray"
+    className="border border-lightgray rounded my-1"
   >
     <div
       className="ml-3"
@@ -13842,7 +13914,7 @@ Array [
       className="wrapper"
     >
       <a
-        className="comment_author__inline mt-2 d-block"
+        className="comment_author__inline mt-2 "
         href="/profile/newbie"
       >
         <div
@@ -13859,7 +13931,7 @@ Array [
     </div>
   </div>,
   <div
-    className="border border-lightgray"
+    className="border border-lightgray rounded my-1"
   >
     <div
       className="ml-3"
@@ -13874,7 +13946,7 @@ Array [
       className="wrapper"
     >
       <a
-        className="comment_author__inline mt-2 d-block"
+        className="comment_author__inline mt-2 "
         href="/profile/newbie"
       >
         <div
@@ -13891,7 +13963,7 @@ Array [
     </div>
   </div>,
   <div
-    className="border border-lightgray"
+    className="border border-lightgray rounded my-1"
   >
     <div
       className="ml-3"
@@ -13906,7 +13978,7 @@ Array [
       className="wrapper"
     >
       <a
-        className="comment_author__inline mt-2 d-block"
+        className="comment_author__inline mt-2 "
         href="/profile/admin"
       >
         <div

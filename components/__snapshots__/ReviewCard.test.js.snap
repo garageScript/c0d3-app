@@ -1211,60 +1211,82 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <div>
+      <div
+        class="changes px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+              href="/profile/fake reviewer"
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @fake reviewer
+              </div>
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested these changes on 
+            Friday, January 1, 123
+            :
+          </div>
+        </div>
+        <hr />
         <span>
           Some comment
         </span>
-        <div
-          class=""
-        >
-          <a
-            class="comment_author mt-2 d-block"
-            href="/profile/fake reviewer"
-          >
-            <div
-              class="d-inline"
-            >
-               
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
       </div>
       <div
-        class="border border-lightgray"
+        class="mt-1"
       >
         <div
-          class="ml-3"
+          class="border border-lightgray rounded my-1"
         >
-          <span
-            wrapper="code_wrapper"
+          <div
+            class="ml-3"
           >
-            A comment under submission
-          </span>
-        </div>
-        <div
-          class="wrapper"
-        >
-          <a
-            class="comment_author__inline mt-2 d-block"
-            href="/profile/admin"
+            <span
+              wrapper="code_wrapper"
+            >
+              A comment under submission
+            </span>
+          </div>
+          <div
+            class="wrapper"
           >
-            <div
-              class="d-inline"
+            <a
+              class="comment_author__inline mt-2 "
+              href="/profile/admin"
             >
-              Admin Admin
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
+              <div
+                class="d-inline"
+              >
+                Admin Admin
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @admin
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div
@@ -2568,60 +2590,82 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <div>
+      <div
+        class="changes px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+              href="/profile/fake reviewer"
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @fake reviewer
+              </div>
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested these changes on 
+            Friday, January 1, 123
+            :
+          </div>
+        </div>
+        <hr />
         <span>
           Some comment
         </span>
-        <div
-          class=""
-        >
-          <a
-            class="comment_author mt-2 d-block"
-            href="/profile/fake reviewer"
-          >
-            <div
-              class="d-inline"
-            >
-               
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
       </div>
       <div
-        class="border border-lightgray"
+        class="mt-1"
       >
         <div
-          class="ml-3"
+          class="border border-lightgray rounded my-1"
         >
-          <span
-            wrapper="code_wrapper"
+          <div
+            class="ml-3"
           >
-            A comment under submission
-          </span>
-        </div>
-        <div
-          class="wrapper"
-        >
-          <a
-            class="comment_author__inline mt-2 d-block"
-            href="/profile/admin"
+            <span
+              wrapper="code_wrapper"
+            >
+              A comment under submission
+            </span>
+          </div>
+          <div
+            class="wrapper"
           >
-            <div
-              class="d-inline"
+            <a
+              class="comment_author__inline mt-2 "
+              href="/profile/admin"
             >
-              Admin Admin
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
+              <div
+                class="d-inline"
+              >
+                Admin Admin
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @admin
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div
@@ -3923,60 +3967,82 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <div>
+      <div
+        class="changes px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+              href="/profile/fake reviewer"
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @fake reviewer
+              </div>
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested these changes on 
+            Friday, January 1, 123
+            :
+          </div>
+        </div>
+        <hr />
         <span>
           Some comment
         </span>
-        <div
-          class=""
-        >
-          <a
-            class="comment_author mt-2 d-block"
-            href="/profile/fake reviewer"
-          >
-            <div
-              class="d-inline"
-            >
-               
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
       </div>
       <div
-        class="border border-lightgray"
+        class="mt-1"
       >
         <div
-          class="ml-3"
+          class="border border-lightgray rounded my-1"
         >
-          <span
-            wrapper="code_wrapper"
+          <div
+            class="ml-3"
           >
-            A comment under submission
-          </span>
-        </div>
-        <div
-          class="wrapper"
-        >
-          <a
-            class="comment_author__inline mt-2 d-block"
-            href="/profile/admin"
+            <span
+              wrapper="code_wrapper"
+            >
+              A comment under submission
+            </span>
+          </div>
+          <div
+            class="wrapper"
           >
-            <div
-              class="d-inline"
+            <a
+              class="comment_author__inline mt-2 "
+              href="/profile/admin"
             >
-              Admin Admin
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
+              <div
+                class="d-inline"
+              >
+                Admin Admin
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @admin
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div
@@ -5278,60 +5344,82 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <div>
+      <div
+        class="changes px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+              href="/profile/fake reviewer"
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @fake reviewer
+              </div>
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested these changes on 
+            Friday, January 1, 123
+            :
+          </div>
+        </div>
+        <hr />
         <span>
           Some comment
         </span>
-        <div
-          class=""
-        >
-          <a
-            class="comment_author mt-2 d-block"
-            href="/profile/fake reviewer"
-          >
-            <div
-              class="d-inline"
-            >
-               
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
       </div>
       <div
-        class="border border-lightgray"
+        class="mt-1"
       >
         <div
-          class="ml-3"
+          class="border border-lightgray rounded my-1"
         >
-          <span
-            wrapper="code_wrapper"
+          <div
+            class="ml-3"
           >
-            A comment under submission
-          </span>
-        </div>
-        <div
-          class="wrapper"
-        >
-          <a
-            class="comment_author__inline mt-2 d-block"
-            href="/profile/admin"
+            <span
+              wrapper="code_wrapper"
+            >
+              A comment under submission
+            </span>
+          </div>
+          <div
+            class="wrapper"
           >
-            <div
-              class="d-inline"
+            <a
+              class="comment_author__inline mt-2 "
+              href="/profile/admin"
             >
-              Admin Admin
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
+              <div
+                class="d-inline"
+              >
+                Admin Admin
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @admin
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div
@@ -5456,60 +5544,82 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
     <div
       class="card-footer bg-white"
     >
-      <div>
+      <div
+        class="changes px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+              href="/profile/fake reviewer"
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @fake reviewer
+              </div>
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested these changes on 
+            Friday, January 1, 123
+            :
+          </div>
+        </div>
+        <hr />
         <span>
           Some comment
         </span>
-        <div
-          class=""
-        >
-          <a
-            class="comment_author mt-2 d-block"
-            href="/profile/fake reviewer"
-          >
-            <div
-              class="d-inline"
-            >
-               
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
       </div>
       <div
-        class="border border-lightgray"
+        class="mt-1"
       >
         <div
-          class="ml-3"
+          class="border border-lightgray rounded my-1"
         >
-          <span
-            wrapper="code_wrapper"
+          <div
+            class="ml-3"
           >
-            A comment under submission
-          </span>
-        </div>
-        <div
-          class="wrapper"
-        >
-          <a
-            class="comment_author__inline mt-2 d-block"
-            href="/profile/admin"
+            <span
+              wrapper="code_wrapper"
+            >
+              A comment under submission
+            </span>
+          </div>
+          <div
+            class="wrapper"
           >
-            <div
-              class="d-inline"
+            <a
+              class="comment_author__inline mt-2 "
+              href="/profile/admin"
             >
-              Admin Admin
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
+              <div
+                class="d-inline"
+              >
+                Admin Admin
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @admin
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div
@@ -6811,60 +6921,82 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
     <div
       class="card-footer bg-white"
     >
-      <div>
+      <div
+        class="changes px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+              href="/profile/fake reviewer"
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @fake reviewer
+              </div>
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested these changes on 
+            Friday, January 1, 123
+            :
+          </div>
+        </div>
+        <hr />
         <span>
           Some comment
         </span>
-        <div
-          class=""
-        >
-          <a
-            class="comment_author mt-2 d-block"
-            href="/profile/fake reviewer"
-          >
-            <div
-              class="d-inline"
-            >
-               
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
       </div>
       <div
-        class="border border-lightgray"
+        class="mt-1"
       >
         <div
-          class="ml-3"
+          class="border border-lightgray rounded my-1"
         >
-          <span
-            wrapper="code_wrapper"
+          <div
+            class="ml-3"
           >
-            A comment under submission
-          </span>
-        </div>
-        <div
-          class="wrapper"
-        >
-          <a
-            class="comment_author__inline mt-2 d-block"
-            href="/profile/admin"
+            <span
+              wrapper="code_wrapper"
+            >
+              A comment under submission
+            </span>
+          </div>
+          <div
+            class="wrapper"
           >
-            <div
-              class="d-inline"
+            <a
+              class="comment_author__inline mt-2 "
+              href="/profile/admin"
             >
-              Admin Admin
-            </div>
-            <div
-              class="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
+              <div
+                class="d-inline"
+              >
+                Admin Admin
+              </div>
+              <div
+                class="d-inline text-muted"
+              >
+                 @admin
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div
