@@ -130,8 +130,38 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
-    userEvent.click(getByRole('button', { name: 'Accept' }))
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Accept Submit feedback and approve submission'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Review'
+      })
+    )
     expect(container).toMatchSnapshot()
+  })
+  test('Should be able to reject submission', async () => {
+    const { container, getByRole } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+    userEvent.type(getByRole('textbox', { name: '' }), `This won't work`)
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Reject Request changes and reject submission'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Review'
+      })
+    )
   })
   test('Should be able to add comment', async () => {
     const { container, getByRole } = render(
@@ -143,7 +173,16 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
-    userEvent.click(getByRole('button', { name: 'Comment' }))
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Comment Submit general feedback without explicit approval'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Review'
+      })
+    )
     expect(container).toMatchSnapshot()
   })
   test('Should render reviewer with name', async () => {

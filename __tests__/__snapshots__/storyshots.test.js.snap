@@ -9286,19 +9286,65 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       />
     </div>
     <div
-      className="mr-5 d-inline"
+      className="d-flex justify-content-between px-2 py-1"
     >
-      <button
-        className="btn bg-info m-1"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#fff",
-          }
-        }
-      >
-        Comment
-      </button>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
     </div>
     <button
       className="btn bg-success"
@@ -9309,18 +9355,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Review
     </button>
   </div>
 </div>
@@ -10288,19 +10323,65 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       />
     </div>
     <div
-      className="mr-5 d-inline"
+      className="d-flex justify-content-between px-2 py-1"
     >
-      <button
-        className="btn bg-info m-1"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#fff",
-          }
-        }
-      >
-        Comment
-      </button>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
     </div>
     <button
       className="btn bg-success"
@@ -10311,18 +10392,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Review
     </button>
   </div>
 </div>
@@ -11315,19 +11385,65 @@ Does 10 - arr[1] exist in the map? (No).
       />
     </div>
     <div
-      className="mr-5 d-inline"
+      className="d-flex justify-content-between px-2 py-1"
     >
-      <button
-        className="btn bg-info m-1"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#fff",
-          }
-        }
-      >
-        Comment
-      </button>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
     </div>
     <button
       className="btn bg-success"
@@ -11338,18 +11454,7 @@ Does 10 - arr[1] exist in the map? (No).
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Review
     </button>
   </div>
 </div>
@@ -12291,19 +12396,65 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       />
     </div>
     <div
-      className="mr-5 d-inline"
+      className="d-flex justify-content-between px-2 py-1"
     >
-      <button
-        className="btn bg-info m-1"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#fff",
-          }
-        }
-      >
-        Comment
-      </button>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
     </div>
     <button
       className="btn bg-success"
@@ -12314,18 +12465,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Review
     </button>
   </div>
 </div>
@@ -13291,19 +13431,65 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       />
     </div>
     <div
-      className="mr-5 d-inline"
+      className="d-flex justify-content-between px-2 py-1"
     >
-      <button
-        className="btn bg-info m-1"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#fff",
-          }
-        }
-      >
-        Comment
-      </button>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
     </div>
     <button
       className="btn bg-success"
@@ -13314,18 +13500,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Review
     </button>
   </div>
 </div>

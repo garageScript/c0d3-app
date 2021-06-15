@@ -1291,26 +1291,66 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
         </textarea>
       </div>
       <div
-        class="mr-5 d-inline"
+        class="d-flex justify-content-between px-2 py-1"
       >
-        <button
-          class="btn bg-info m-1"
-          style="color: rgb(255, 255, 255);"
-        >
-          Comment
-        </button>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="accept"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Accept
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit feedback and approve submission
+          </p>
+        </label>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="reject"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Reject
+          </p>
+          <p
+            class="text-muted"
+          >
+            Request changes and reject submission
+          </p>
+        </label>
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
       </div>
       <button
         class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
-        Accept
-      </button>
-      <button
-        class="btn bg-danger m-1"
-        style="color: rgb(255, 255, 255);"
-      >
-        Reject
+        Review
       </button>
     </div>
   </div>
@@ -2606,26 +2646,66 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
         />
       </div>
       <div
-        class="mr-5 d-inline"
+        class="d-flex justify-content-between px-2 py-1"
       >
-        <button
-          class="btn bg-info m-1"
-          style="color: rgb(255, 255, 255);"
-        >
-          Comment
-        </button>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="accept"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Accept
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit feedback and approve submission
+          </p>
+        </label>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="reject"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Reject
+          </p>
+          <p
+            class="text-muted"
+          >
+            Request changes and reject submission
+          </p>
+        </label>
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
       </div>
       <button
         class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
-        Accept
-      </button>
-      <button
-        class="btn bg-danger m-1"
-        style="color: rgb(255, 255, 255);"
-      >
-        Reject
+        Review
       </button>
     </div>
   </div>
@@ -3921,26 +4001,66 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
         />
       </div>
       <div
-        class="mr-5 d-inline"
+        class="d-flex justify-content-between px-2 py-1"
       >
-        <button
-          class="btn bg-info m-1"
-          style="color: rgb(255, 255, 255);"
-        >
-          Comment
-        </button>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="accept"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Accept
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit feedback and approve submission
+          </p>
+        </label>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="reject"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Reject
+          </p>
+          <p
+            class="text-muted"
+          >
+            Request changes and reject submission
+          </p>
+        </label>
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
       </div>
       <button
         class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
-        Accept
-      </button>
-      <button
-        class="btn bg-danger m-1"
-        style="color: rgb(255, 255, 255);"
-      >
-        Reject
+        Review
       </button>
     </div>
   </div>
@@ -5236,26 +5356,66 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
         />
       </div>
       <div
-        class="mr-5 d-inline"
+        class="d-flex justify-content-between px-2 py-1"
       >
-        <button
-          class="btn bg-info m-1"
-          style="color: rgb(255, 255, 255);"
-        >
-          Comment
-        </button>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="accept"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Accept
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit feedback and approve submission
+          </p>
+        </label>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="reject"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Reject
+          </p>
+          <p
+            class="text-muted"
+          >
+            Request changes and reject submission
+          </p>
+        </label>
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
       </div>
       <button
         class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
-        Accept
-      </button>
-      <button
-        class="btn bg-danger m-1"
-        style="color: rgb(255, 255, 255);"
-      >
-        Reject
+        Review
       </button>
     </div>
   </div>
@@ -5374,26 +5534,66 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
         />
       </div>
       <div
-        class="mr-5 d-inline"
+        class="d-flex justify-content-between px-2 py-1"
       >
-        <button
-          class="btn bg-info m-1"
-          style="color: rgb(255, 255, 255);"
-        >
-          Comment
-        </button>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="accept"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Accept
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit feedback and approve submission
+          </p>
+        </label>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="reject"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Reject
+          </p>
+          <p
+            class="text-muted"
+          >
+            Request changes and reject submission
+          </p>
+        </label>
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
       </div>
       <button
         class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
-        Accept
-      </button>
-      <button
-        class="btn bg-danger m-1"
-        style="color: rgb(255, 255, 255);"
-      >
-        Reject
+        Review
       </button>
     </div>
   </div>
@@ -6689,26 +6889,66 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
         />
       </div>
       <div
-        class="mr-5 d-inline"
+        class="d-flex justify-content-between px-2 py-1"
       >
-        <button
-          class="btn bg-info m-1"
-          style="color: rgb(255, 255, 255);"
-        >
-          Comment
-        </button>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="accept"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Accept
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit feedback and approve submission
+          </p>
+        </label>
+        <label>
+          <input
+            class="mr-2"
+            type="radio"
+            value="reject"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Reject
+          </p>
+          <p
+            class="text-muted"
+          >
+            Request changes and reject submission
+          </p>
+        </label>
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
       </div>
       <button
         class="btn bg-success"
         style="color: rgb(255, 255, 255);"
       >
-        Accept
-      </button>
-      <button
-        class="btn bg-danger m-1"
-        style="color: rgb(255, 255, 255);"
-      >
-        Reject
+        Review
       </button>
     </div>
   </div>

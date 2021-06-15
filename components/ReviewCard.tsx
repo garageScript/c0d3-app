@@ -23,6 +23,8 @@ type ReviewCardProps = {
   submissionData: Submission
 }
 
+type CommentType = 'accept' | 'reject' | 'comment'
+
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const {
     id,
@@ -37,6 +39,9 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     status
   } = submissionData
   const [commentValue, setCommentValue] = useState('')
+  const [commentType, setCommentType] = useState<CommentType>('comment')
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setCommentType(e.target.value as CommentType)
   const [accept] = useMutation(ACCEPT_SUBMISSION)
   const [reject] = useMutation(REJECT_SUBMISSION)
   const [addComment] = useAddCommentMutation()
@@ -54,6 +59,29 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
         comment: commentValue
       }
     })
+  }
+
+  const submitReview = () => {
+    switch (commentType) {
+      case 'comment': {
+        addComment({
+          variables: {
+            submissionId: id,
+            content: commentValue
+          },
+          update
+        })
+        setCommentValue('')
+        return
+      }
+      case 'accept': {
+        reviewSubmission(accept)()
+        return
+      }
+      case 'reject': {
+        reviewSubmission(reject)()
+      }
+    }
   }
   return (
     <>
@@ -97,40 +125,49 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               bgColor={'white'}
               value={commentValue}
             />
-            <div className="mr-5 d-inline">
-              <Button
-                m="1"
-                type="info"
-                color="white"
-                onClick={() => {
-                  addComment({
-                    variables: {
-                      submissionId: id,
-                      content: commentValue
-                    },
-                    update
-                  })
-                  setCommentValue('')
-                }}
-              >
-                Comment
-              </Button>
+            <div className="d-flex justify-content-between px-2 py-1">
+              <label>
+                <input
+                  type="radio"
+                  checked={commentType === 'accept'}
+                  value="accept"
+                  onChange={onChange}
+                  className="mr-2"
+                />
+                <p className="font-weight-bold d-inline">Accept</p>
+                <p className="text-muted">
+                  Submit feedback and approve submission
+                </p>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  checked={commentType === 'reject'}
+                  value="reject"
+                  onChange={onChange}
+                  className="mr-2"
+                />
+                <p className="font-weight-bold d-inline">Reject</p>
+                <p className="text-muted">
+                  Request changes and reject submission
+                </p>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  checked={commentType === 'comment'}
+                  value="comment"
+                  onChange={onChange}
+                  className="mr-2"
+                />
+                <p className="font-weight-bold d-inline">Comment</p>
+                <p className="text-muted">
+                  Submit general feedback without explicit approval
+                </p>
+              </label>
             </div>
-            <Button
-              type="success"
-              color="white"
-              onClick={reviewSubmission(accept)}
-            >
-              Accept
-            </Button>
-
-            <Button
-              m="1"
-              type="danger"
-              color="white"
-              onClick={reviewSubmission(reject)}
-            >
-              Reject
+            <Button type="success" color="white" onClick={() => submitReview()}>
+              Review
             </Button>
           </div>
         </div>
