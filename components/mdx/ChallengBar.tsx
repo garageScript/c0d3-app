@@ -13,7 +13,7 @@ const ChallengeBar: React.FC<{
           {title}
         </h1>
         <NavLink
-          path="/docs/setup#solving-challenges"
+          path="/docs/setup#submitting-challenges"
           className="text-white text-center "
           external
         >

@@ -105,6 +105,54 @@ describe('Layout component', () => {
       screen.getByText('Part 1: Primitive data and operators')
     ).toBeVisible()
   })
+  test('Should render previous part link', async () => {
+    jest
+      .spyOn(require('next/router'), 'useRouter')
+      .mockImplementationOnce(() => ({
+        pathname: 'foobar/functions_and_execution_context'
+      }))
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Layout
+          lessonCoverUrl="test"
+          lessonId="1"
+          lessonTitle="Test title"
+          isPassed={true}
+          subLessons={[
+            'Primitive data and operators',
+            'Functions and execution context'
+          ]}
+        />
+      </MockedProvider>
+    )
+    expect(screen.getByText('Previous part:')).toBeVisible()
+  })
+  test('Should render next and previous part links', async () => {
+    jest
+      .spyOn(require('next/router'), 'useRouter')
+      .mockImplementationOnce(() => ({
+        pathname: 'foobar/middle_part'
+      }))
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Layout
+          lessonCoverUrl="test"
+          lessonId="1"
+          lessonTitle="Test title"
+          isPassed={true}
+          subLessons={[
+            'Primitive data and operators',
+            'Middle part',
+            'Functions and execution context'
+          ]}
+        />
+      </MockedProvider>
+    )
+    expect(screen.getByText('Previous part:')).toBeVisible()
+    expect(screen.getByText('Next part:')).toBeVisible()
+  })
   test('Should render "Go back" button on simple documents', async () => {
     const { back } = useRouter()
     render(
