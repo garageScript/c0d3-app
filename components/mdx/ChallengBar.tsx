@@ -17,7 +17,7 @@ const ChallengeBar: React.FC<{
           className="text-white text-center "
           external
         >
-          How to submit your solution?
+          Submitting challenges
         </NavLink>
         <p className="px-2 m-0 text-center font-weight-bold">{description}</p>
 

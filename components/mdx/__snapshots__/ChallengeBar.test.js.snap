@@ -17,7 +17,7 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
         rel="noopener noreferrer"
         target="_blank"
       >
-        How to submit your solution?
+        Submitting challenges
       </a>
       <p
         class="px-2 m-0 text-center font-weight-bold"
