@@ -31,6 +31,19 @@ const LessonLayout: React.FC<LayoutProps> = props => {
   const router = useRouter()
   const location = router.pathname.split('/')
   const current = location[location.length - 1]
+  const urlLessons = props.subLessons?.map(l =>
+    l.replace(',', '').toLowerCase().split(' ').join('_')
+  )
+  const index = urlLessons && urlLessons.indexOf(current)
+  let next
+  let previous
+  if (index && index > 0 && index < urlLessons!.length - 1) {
+    next = props.subLessons && props.subLessons[index + 1]
+    previous = props.subLessons && props.subLessons[index - 1]
+  }
+  if (index === 0) next = props.subLessons && props.subLessons[index + 1]
+  if (urlLessons && index === urlLessons.length - 1)
+    previous = props.subLessons && props.subLessons[index - 1]
   const [scroll, setScroll] = useState(false)
   useEffect(() => {
     const throttled = _.throttle(() => {
@@ -81,6 +94,24 @@ const LessonLayout: React.FC<LayoutProps> = props => {
         <div className={styles.title}>{props.title}</div>
         {lessonParts}
         {props.children}
+        <div className="d-flex">
+          {urlLessons && previous && (
+            <a
+              href={urlLessons[index! - 1]}
+              className={`${styles['lessonLink']} ${styles['previous']}`}
+            >
+              {`Previous part: ${previous}`}
+            </a>
+          )}
+          {urlLessons && next && (
+            <a
+              href={urlLessons[index! + 1]}
+              className={`${styles['lessonLink']} ${styles['next']}`}
+            >
+              {`Next part: ${next}`}
+            </a>
+          )}
+        </div>
       </div>
     </Layout>
   )
