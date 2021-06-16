@@ -100,7 +100,7 @@ const LessonLayout: React.FC<LayoutProps> = props => {
               href={urlLessons[index! - 1]}
               className={`${styles['lessonLink']} ${styles['previous']}`}
             >
-              {`Previous part: ${previous}`}
+              Previous part: <span>{previous}</span>
             </a>
           )}
           {urlLessons && next && (
@@ -108,7 +108,7 @@ const LessonLayout: React.FC<LayoutProps> = props => {
               href={urlLessons[index! + 1]}
               className={`${styles['lessonLink']} ${styles['next']}`}
             >
-              {`Next part: ${next}`}
+              Next part: <span>{next}</span>
             </a>
           )}
         </div>
