@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { MdInput } from './MdInput'
 import { Button } from './theme/Button'
 import styles from '../scss/commentBox.module.scss'
-import { useAddCommentMutation, Comment } from '../graphql'
+import { useAddCommentMutation, Comment, SubmissionStatus } from '../graphql'
 import _ from 'lodash'
 import { GlobalContext } from '../helpers/globalContext'
 import { updateCache } from '../helpers/updateCache'
@@ -19,7 +19,7 @@ const CommentBox: React.FC<{
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
-  const showComments = !status || status === 'open'
+  const showComments = !status || status === SubmissionStatus.Open
   const comments = commentsData?.filter(comment => comment.line === line)
   const [hidden, setHidden] = useState(!showComments)
   const [input, setInput] = useState('')

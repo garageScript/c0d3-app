@@ -198,7 +198,8 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
                 status={currentChallenge.status}
               />
               {comments && <SubmissionComments comments={comments} />}
-              {currentChallenge.submission!.status === 'open' && (
+              {currentChallenge.submission!.status ===
+                SubmissionStatus.Open && (
                 <>
                   <MdInput
                     onChange={setCommentValue}
