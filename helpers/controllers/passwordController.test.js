@@ -1,10 +1,8 @@
 jest.mock('bcrypt')
 jest.mock('nanoid')
 jest.mock('../mail')
-jest.mock('../mattermost')
 import { nanoid } from 'nanoid'
 import { changePw, reqPwReset } from './passwordController'
-import { changeChatPassword } from '../mattermost'
 import { encode } from '../encoding'
 import { prisma } from '../../prisma'
 
@@ -102,7 +100,6 @@ describe('Change Password', () => {
   })
 
   test('It returns success when user id is found', () => {
-    changeChatPassword.mockResolvedValue(true)
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     prisma.user.findUnique = jest.fn().mockResolvedValue({
       id: 3,
@@ -137,22 +134,5 @@ describe('Change Password', () => {
     expect(
       changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('Invalid Token')
-  })
-
-  test('It throws an error when mattermost fails to change password', () => {
-    const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    changeChatPassword.mockRejectedValue(false)
-    prisma.user.findUnique = jest.fn().mockResolvedValue({
-      id: 3,
-      tokenExpiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
-      forgotToken: sampleToken
-    })
-    const testingArgs = {
-      token: sampleToken,
-      password: 'fakepassword101'
-    }
-    return expect(changePw(() => {}, testingArgs, ctx)).rejects.toThrowError(
-      'Mattermost did not set password'
-    )
   })
 })
