@@ -166,7 +166,14 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
       }
     })
 
-    await sendSignupEmail(email, forgotToken)
+    try {
+      await sendSignupEmail(email, forgotToken)
+    } catch (error) {
+      req.error(`
+        Error while sending signup email
+        ${JSON.stringify(error, null, 2)}
+      `)
+    }
 
     return {
       success: true,

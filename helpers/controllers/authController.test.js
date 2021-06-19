@@ -3,6 +3,7 @@ jest.mock('../mail')
 import bcrypt from 'bcrypt'
 import { login, logout, signup, isTokenValid } from './authController'
 import { prisma } from '../../prisma'
+import { sendSignupEmail } from '../mail'
 
 describe('auth controller', () => {
   let userArgs
@@ -155,6 +156,15 @@ describe('auth controller', () => {
       return expect(
         signup({}, userArgs, { req: { session: null } })
       ).rejects.toThrowError('')
+    })
+
+    it('should log error if email is not sent correctly', async () => {
+      sendSignupEmail.mockRejectedValue(Error('email not sent'))
+      const mock = jest.fn()
+      await signup({}, userArgs, {
+        req: { error: mock, session: {} }
+      })
+      expect(mock).toBeCalled()
     })
   })
 
