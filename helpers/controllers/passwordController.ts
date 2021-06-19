@@ -41,7 +41,7 @@ export const reqPwReset = async (
       }
     })
 
-    sendResetEmail(user.email, user.forgotToken!)
+    await sendResetEmail(user.email, user.forgotToken!)
 
     return { success: true }
   } catch (err) {

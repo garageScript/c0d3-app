@@ -166,7 +166,7 @@ export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
       }
     })
 
-    sendSignupEmail(email, forgotToken)
+    await sendSignupEmail(email, forgotToken)
 
     return {
       success: true,
