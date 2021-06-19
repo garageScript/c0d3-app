@@ -1,61 +1,53 @@
-import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses'
 import { getResetTemplate, getSignupTemplate } from './mailTemplate'
+import { createTransport } from 'nodemailer'
 
-const SES_KEY_ID = process.env.SES_KEY_ID ?? ''
-const SES_SECRET_KEY = process.env.SES_SECRET_KEY ?? ''
+const SMTP_HOST = process.env.SMTP_HOST ?? ''
+const SMTP_USER = process.env.SMTP_USER ?? ''
+const SMTP_PASSWORD = process.env.SMTP_PASSWORD ?? ''
 
-// configure AWS SDK
-export const sesClient = new SESClient({
-  region: 'us-east-2',
-  credentials: {
-    accessKeyId: SES_KEY_ID,
-    secretAccessKey: SES_SECRET_KEY
+const transporter = createTransport({
+  pool: true,
+  host: SMTP_HOST,
+  port: 465,
+  secure: true, // use TLS
+  auth: {
+    user: SMTP_USER,
+    pass: SMTP_PASSWORD
   }
 })
 
-interface sendMailArgs {
-  from: string
-  to: string
-  subject: string
-  html: string
-}
-
-export const mailParams = ({ from, to, subject, html }: sendMailArgs) =>
-  new SendEmailCommand({
-    Source: from,
-    Destination: {
-      ToAddresses: [to]
-    },
-    Message: {
-      Subject: {
-        Charset: 'UTF-8',
-        Data: subject
-      },
-      Body: {
-        Html: {
-          Charset: 'UTF-8',
-          Data: html
-        }
-      }
-    }
-  })
-
 export const sendSignupEmail = (email: string, token: string) =>
-  sesClient.send(
-    mailParams({
+  transporter
+    .sendMail({
       from: '<hello@c0d3.com>',
       to: email,
       subject: 'Welcome to c0d3.com',
       html: getSignupTemplate(token)
     })
-  )
+    .then(metadata =>
+      console.log(`Email sent succesfully\n`, JSON.stringify(metadata, null, 2))
+    )
+    .catch(error =>
+      console.log(
+        `Error while sending the email\n`,
+        JSON.stringify(error, null, 2)
+      )
+    )
 
 export const sendResetEmail = (email: string, token: string) =>
-  sesClient.send(
-    mailParams({
+  transporter
+    .sendMail({
       from: `<admin@c0d3.com>`,
       to: email,
       subject: 'Forgot Password',
       html: getResetTemplate(token)
     })
-  )
+    .then(metadata =>
+      console.log(`Email sent succesfully\n`, JSON.stringify(metadata, null, 2))
+    )
+    .catch(error =>
+      console.log(
+        `Error while sending the email\n`,
+        JSON.stringify(error, null, 2)
+      )
+    )

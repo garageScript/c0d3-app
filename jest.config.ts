@@ -15,7 +15,8 @@ const config: Config.InitialOptions = {
     'graphql/index.tsx',
     '__tests__/utils/',
     'prisma/',
-    'scripts/'
+    'scripts/',
+    'helpers/mail.*'
   ],
   coverageThreshold: {
     global: {
@@ -28,7 +29,12 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy'
   },
-  testPathIgnorePatterns: ['__tests__/utils/', 'node_modules/', '.next/'],
+  testPathIgnorePatterns: [
+    '__tests__/utils/',
+    'node_modules/',
+    '.next/',
+    'helpers/mail.*'
+  ],
   transformIgnorePatterns: ['node_modules/']
 }
 
