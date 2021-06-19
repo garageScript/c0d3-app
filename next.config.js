@@ -12,7 +12,6 @@ module.exports = withMDX({
   pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
   env: {
     CHAT_URL: process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4',
-    CLIENT_URL: process.env.CLIENT_URL || 'https://c0d3.devwong.com',
     DB_NAME: process.env.DB_NAME || 'c0d3dev6',
     DB_USER: process.env.DB_USER || 'c0d3db',
     DB_PW: process.env.DB_PW || 'letmein2',
