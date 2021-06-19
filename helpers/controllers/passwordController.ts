@@ -41,7 +41,17 @@ export const reqPwReset = async (
       }
     })
 
-    await sendResetEmail(user.email, user.forgotToken!)
+    try {
+      await sendResetEmail(user.email, user.forgotToken!)
+    } catch (error) {
+      req.error(`
+        Error while sending password recovery email
+        ${JSON.stringify(error, null, 2)}
+      `)
+      throw Error(
+        `Error while sending password recovery email, try again at some later time.`
+      )
+    }
 
     return { success: true }
   } catch (err) {

@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid'
 import { changePw, reqPwReset } from './passwordController'
 import { encode } from '../encoding'
 import { prisma } from '../../prisma'
+import { sendResetEmail } from '../mail'
 
 prisma.user.update = jest.fn(i => i.data)
 
@@ -63,6 +64,16 @@ describe('Request Password Reset', () => {
     ).rejects.toThrowError()
 
     expect(errFunc).toBeCalled()
+  })
+
+  it('should fail if email is not sent correctly', () => {
+    prisma.user.findFirst = jest.fn().mockResolvedValueOnce({ id: 3 })
+    sendResetEmail.mockRejectedValue(Error('email not sent'))
+    return expect(
+      reqPwReset(() => {}, { userOrEmail: 'c0d3r' }, ctx)
+    ).rejects.toThrowError(
+      'Error while sending password recovery email, try again at some later time.'
+    )
   })
 })
 
