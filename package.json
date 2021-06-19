@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
-    "@aws-sdk/client-ses": "^3.16.0",
     "@prisma/client": "^2.24.1",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/browser": "^6.3.6",
