@@ -12,6 +12,7 @@ import dummySessionData from '../__dummy__/sessionData'
 import dummyLessonData from '../__dummy__/lessonData'
 import dummyAlertData from '../__dummy__/alertData'
 import { SubmissionStatus } from '../graphql'
+import { ContextProvider } from '../helpers/globalContext'
 
 describe('CommentBox component', () => {
   const comments = [
@@ -36,7 +37,7 @@ describe('CommentBox component', () => {
       }
     },
     {
-      content: 'Second Comment',
+      content: 'Third comment',
       createdAt: '1620762275096',
       authorId: 3,
       line: 5,
@@ -111,26 +112,22 @@ describe('CommentBox component', () => {
       data: { submissions: submissionsData }
     })
     render(
-      <MockedProvider mocks={mocks} addTypename={false} cache={cache}>
-        <CommentBox
-          line={4}
-          fileName="test.js"
-          submissionId={0}
-          authorId={0}
-          name="user"
-          username="User User"
-          commentsData={comments}
-          lessonId={1}
-        />
-      </MockedProvider>
+      <ContextProvider>
+        <MockedProvider mocks={mocks} addTypename={false} cache={cache}>
+          <CommentBox
+            line={4}
+            fileName="test.js"
+            submissionId={0}
+            authorId={0}
+            commentsData={comments}
+            lessonId={1}
+          />
+        </MockedProvider>
+      </ContextProvider>
     )
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     userEvent.click(screen.getByText('Add comment'))
-    await waitFor(() =>
-      expect(
-        screen.getAllByText('A very unique test comment!')[0]
-      ).toBeVisible()
-    )
+    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
   })
   test('Should add comment by student', async () => {
     const cache = new InMemoryCache({ addTypename: false })
@@ -152,19 +149,13 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
         />
       </MockedProvider>
     )
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     userEvent.click(screen.getByText('Add comment'))
-    await waitFor(() =>
-      expect(
-        screen.getAllByText('A very unique test comment!')[0]
-      ).toBeVisible()
-    )
+    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
   })
   test('Should not add comment if input is empty', async () => {
     const query = jest.fn()
@@ -190,8 +181,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
           lessonId={2}
         />
@@ -203,14 +192,7 @@ describe('CommentBox component', () => {
   test('Should render empty commentBox', async () => {
     const { container } = render(
       <MockedProvider>
-        <CommentBox
-          line={0}
-          fileName="test.js"
-          submissionId={0}
-          authorId={0}
-          name="user"
-          username="User User"
-        />
+        <CommentBox line={0} fileName="test.js" submissionId={0} authorId={0} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -223,8 +205,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
         />
       </MockedProvider>
@@ -241,8 +221,6 @@ describe('CommentBox component', () => {
           fileName="test.js"
           submissionId={0}
           authorId={0}
-          name="user"
-          username="User User"
           commentsData={comments}
         />
       </MockedProvider>
@@ -250,5 +228,21 @@ describe('CommentBox component', () => {
     expect(screen.queryByText('Show conversation')).toBeFalsy()
     userEvent.click(screen.getByText('Hide conversation'))
     expect(await screen.findByText('Show conversation')).toBeVisible()
+  })
+  test('Should not render input for submissions in progress', async () => {
+    render(
+      <MockedProvider addTypename={false}>
+        <CommentBox
+          line={4}
+          fileName="test.js"
+          submissionId={0}
+          authorId={0}
+          commentsData={comments}
+          status="needMoreWork"
+        />
+      </MockedProvider>
+    )
+    userEvent.click(screen.getByText('Show conversation'))
+    expect(await waitFor(() => screen.queryByText('Add comment'))).toBeFalsy()
   })
 })

@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import ReviewCard from '../../components/ReviewCard'
@@ -14,6 +14,7 @@ import withQueryLoader, {
 } from '../../containers/withQueryLoader'
 import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
+import { GlobalContext } from '../../helpers/globalContext'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -32,7 +33,11 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
 const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
+  const context = useContext(GlobalContext)
   const currentlessonId = Number(router.query.lesson)
+  useEffect(() => {
+    session && context.setContext(session)
+  }, [session])
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: currentlessonId }
   })

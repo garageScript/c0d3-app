@@ -39,9 +39,7 @@ exports[`500 Error Page should render 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -125,9 +123,7 @@ exports[`500 Error Page should render 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

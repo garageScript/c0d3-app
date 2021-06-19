@@ -39,9 +39,7 @@ exports[`Alerts page Should remove alert 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -378,9 +376,7 @@ exports[`Alerts page Should remove alert 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -424,9 +420,7 @@ exports[`Alerts page Should remove alert 2`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -716,9 +710,7 @@ exports[`Alerts page Should remove alert 2`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

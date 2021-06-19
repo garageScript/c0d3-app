@@ -275,9 +275,9 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           </a>
           <a
             className="nav-item nav-link"
-            href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Learn
           </a>
@@ -356,9 +356,9 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           </a>
           <a
             className="nav-item nav-link"
-            href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-            rel="noopener noreferrer"
-            target="_blank"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Learn
           </a>
@@ -915,32 +915,32 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     1
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    1
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -959,68 +959,76 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     2
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    2
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     3
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    3
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1039,89 +1047,19 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter css-rq9a2a-diff-removed"
-                  onClick={[Function]}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    4
-                  </pre>
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   onClick={null}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   />
                 </td>
                 <td
-                  className="css-17vezug-marker css-rq9a2a-diff-removed"
-                >
-                  <pre>
-                    -
-                  </pre>
-                </td>
-                <td
-                  className="css-vl0irh-content css-rq9a2a-diff-removed"
-                >
-                  <pre
-                    className="css-pa3tg-content-text"
-                  >
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-hf3w1f-word-removed"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token number\\">0</span>",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
-                  </pre>
-                </td>
-              </tr>
-              <tr
-                className="css-1n7ec1i-line"
-              >
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
-                  onClick={null}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  />
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     4
                   </pre>
@@ -1140,38 +1078,12 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                     className="css-pa3tg-content-text"
                   >
                     <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  <span class=\\"token keyword\\">return</span> a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c<span class=\\"token punctuation\\">;</span>",
                         }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-1u4zuq6-word-added"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
+                      }
+                    />
                   </pre>
                 </td>
               </tr>
@@ -1179,32 +1091,32 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     5
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    5
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1223,68 +1135,76 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     6
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    6
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     7
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    7
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1425,32 +1345,32 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     1
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    1
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1469,68 +1389,76 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     2
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    2
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     3
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    3
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1549,89 +1477,19 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter css-rq9a2a-diff-removed"
-                  onClick={[Function]}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    4
-                  </pre>
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-rq9a2a-diff-removed"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
                   onClick={null}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   />
                 </td>
                 <td
-                  className="css-17vezug-marker css-rq9a2a-diff-removed"
-                >
-                  <pre>
-                    -
-                  </pre>
-                </td>
-                <td
-                  className="css-vl0irh-content css-rq9a2a-diff-removed"
-                >
-                  <pre
-                    className="css-pa3tg-content-text"
-                  >
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-hf3w1f-word-removed"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token number\\">0</span>",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
-                  </pre>
-                </td>
-              </tr>
-              <tr
-                className="css-1n7ec1i-line"
-              >
-                <td
-                  className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
-                  onClick={null}
-                >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  />
-                </td>
-                <td
-                  className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     4
                   </pre>
@@ -1650,38 +1508,12 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                     className="css-pa3tg-content-text"
                   >
                     <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "  <span class=\\"token keyword\\">return</span> ",
-                          }
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "  <span class=\\"token keyword\\">return</span> a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c<span class=\\"token punctuation\\">;</span>",
                         }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff css-1u4zuq6-word-added"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c",
-                          }
-                        }
-                      />
-                    </span>
-                    <span
-                      className="css-cncyp1-word-diff"
-                    >
-                      <span
-                        dangerouslySetInnerHTML={
-                          Object {
-                            "__html": "<span class=\\"token punctuation\\">;</span>",
-                          }
-                        }
-                      />
-                    </span>
+                      }
+                    />
                   </pre>
                 </td>
               </tr>
@@ -1689,32 +1521,32 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     5
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    5
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -1733,68 +1565,76 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     6
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    6
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker css-10regm7-empty-line"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content css-10regm7-empty-line"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
-                  />
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "",
+                        }
+                      }
+                    />
+                  </pre>
                 </td>
               </tr>
               <tr
                 className="css-1n7ec1i-line"
               >
                 <td
-                  className="css-1ks9aww-gutter"
+                  className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  onClick={null}
+                >
+                  <pre
+                    className="css-14p8zw1-line-number"
+                  />
+                </td>
+                <td
+                  className="css-1548r9v-gutter css-cnnxkz-diff-added"
                   onClick={[Function]}
                 >
                   <pre
-                    className="css-h84nzi-line-number"
+                    className="css-14p8zw1-line-number"
                   >
                     7
                   </pre>
                 </td>
                 <td
-                  className="css-1ks9aww-gutter"
-                  onClick={[Function]}
+                  className="css-17vezug-marker css-cnnxkz-diff-added"
                 >
-                  <pre
-                    className="css-h84nzi-line-number"
-                  >
-                    7
+                  <pre>
+                    +
                   </pre>
                 </td>
                 <td
-                  className="css-17vezug-marker"
-                >
-                  <pre />
-                </td>
-                <td
-                  className="css-vl0irh-content"
+                  className="css-vl0irh-content css-cnnxkz-diff-added"
                 >
                   <pre
                     className="css-pa3tg-content-text"
@@ -2220,13 +2060,17 @@ Array [
     className="commentBox bg-white d-auto"
   >
     <div
-      className="border"
+      className="border border-lightgray"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="ml-3"
       >
-        First Comment
-      </span>
+        <span
+          wrapper="code_wrapper"
+        >
+          First Comment
+        </span>
+      </div>
       <div
         className="wrapper"
       >
@@ -2248,13 +2092,17 @@ Array [
       </div>
     </div>
     <div
-      className="border"
+      className="border border-lightgray"
     >
-      <span
-        wrapper="code_wrapper"
+      <div
+        className="ml-3"
       >
-        Second Comment
-      </span>
+        <span
+          wrapper="code_wrapper"
+        >
+          Second Comment
+        </span>
+      </div>
       <div
         className="wrapper"
       >
@@ -2469,6 +2317,1720 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
     </p>
   </div>
 </div>
+`;
+
+exports[`Storyshots Components/DiffView Closed 1`] = `
+<table
+  className="css-1n5o7vh-diff-container"
+>
+  <tbody>
+    <tr>
+      <td
+        className="css-1rwygp7-title-block"
+        colSpan={4}
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          js7/1.js
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          1
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          2
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          3
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          4
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          5
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          6
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          7
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          8
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          9
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          10
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          11
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          12
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token punctuation\\">}</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          13
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          14
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          15
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          16
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          17
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          18
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          19
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/DiffView Default 1`] = `
+<table
+  className="css-1n5o7vh-diff-container"
+>
+  <tbody>
+    <tr>
+      <td
+        className="css-1rwygp7-title-block"
+        colSpan={4}
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          js7/1.js
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          1
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          2
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          3
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          4
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          5
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          6
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          7
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          8
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          9
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          10
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          11
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          12
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    <span class=\\"token punctuation\\">}</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          13
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          14
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          15
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          16
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          17
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          18
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+    <tr
+      className="css-1n7ec1i-line"
+    >
+      <td
+        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+        onClick={null}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        />
+      </td>
+      <td
+        className="css-1548r9v-gutter css-cnnxkz-diff-added"
+        onClick={[Function]}
+      >
+        <pre
+          className="css-14p8zw1-line-number"
+        >
+          19
+        </pre>
+      </td>
+      <td
+        className="css-17vezug-marker css-cnnxkz-diff-added"
+      >
+        <pre>
+          +
+        </pre>
+      </td>
+      <td
+        className="css-vl0irh-content css-cnnxkz-diff-added"
+      >
+        <pre
+          className="css-pa3tg-content-text"
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+              }
+            }
+          />
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
@@ -2785,9 +4347,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -2891,9 +4453,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -2941,9 +4501,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -3047,9 +4607,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -3330,9 +4888,7 @@ exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
   className="mt-5 font-weight-light text-center pb-5 text-muted"
 >
-  © Copyright 2020 GarageScript
-  <br />
-  All Rights Reserved
+  © Copyright 2021 GarageScript
 </footer>
 `;
 
@@ -3340,9 +4896,7 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 <footer
   className="font-weight-light text-center py-5 bg-white text-muted"
 >
-  © Copyright 2020 GarageScript
-  <br />
-  All Rights Reserved
+  © Copyright 2021 GarageScript
 </footer>
 `;
 
@@ -4329,9 +5883,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -4406,9 +5960,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -4456,9 +6008,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -4533,9 +6085,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -4836,10 +6386,8 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
-            className=""
-            href="/curriculum"
+            href="#"
             onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             Go Back
           </a>
@@ -4895,10 +6443,8 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
           className="m-0"
         >
           <a
-            className=""
-            href="/curriculum"
+            href="#"
             onClick={[Function]}
-            onMouseEnter={[Function]}
           >
             Go Back
           </a>
@@ -6728,19 +8274,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 1
               </pre>
@@ -6772,19 +8318,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 2
               </pre>
@@ -6816,19 +8362,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 3
               </pre>
@@ -6860,19 +8406,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 4
               </pre>
@@ -6904,19 +8450,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 5
               </pre>
@@ -6948,19 +8494,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 6
               </pre>
@@ -6992,19 +8538,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 7
               </pre>
@@ -7036,19 +8582,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 8
               </pre>
@@ -7080,19 +8626,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 9
               </pre>
@@ -7124,19 +8670,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 10
               </pre>
@@ -7168,19 +8714,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 11
               </pre>
@@ -7212,19 +8758,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 12
               </pre>
@@ -7256,19 +8802,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 13
               </pre>
@@ -7300,19 +8846,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 14
               </pre>
@@ -7344,19 +8890,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 15
               </pre>
@@ -7388,19 +8934,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 16
               </pre>
@@ -7432,19 +8978,19 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 17
               </pre>
@@ -7476,55 +9022,63 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 18
               </pre>
             </td>
             <td
-              className="css-17vezug-marker css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-17vezug-marker css-cnnxkz-diff-added"
             >
               <pre>
                 +
               </pre>
             </td>
             <td
-              className="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-vl0irh-content css-cnnxkz-diff-added"
             >
               <pre
                 className="css-pa3tg-content-text"
-              />
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "",
+                    }
+                  }
+                />
+              </pre>
             </td>
           </tr>
           <tr
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 19
               </pre>
@@ -7707,19 +9261,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 1
               </pre>
@@ -7751,19 +9305,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 2
               </pre>
@@ -7795,19 +9349,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 3
               </pre>
@@ -7839,19 +9393,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 4
               </pre>
@@ -7883,19 +9437,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 5
               </pre>
@@ -7927,19 +9481,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 6
               </pre>
@@ -7971,19 +9525,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 7
               </pre>
@@ -8015,19 +9569,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 8
               </pre>
@@ -8059,19 +9613,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 9
               </pre>
@@ -8103,19 +9657,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 10
               </pre>
@@ -8147,19 +9701,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 11
               </pre>
@@ -8191,19 +9745,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 12
               </pre>
@@ -8235,19 +9789,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 13
               </pre>
@@ -8279,19 +9833,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 14
               </pre>
@@ -8323,19 +9877,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 15
               </pre>
@@ -8367,19 +9921,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 16
               </pre>
@@ -8411,19 +9965,19 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 17
               </pre>
@@ -8455,55 +10009,63 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 18
               </pre>
             </td>
             <td
-              className="css-17vezug-marker css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-17vezug-marker css-cnnxkz-diff-added"
             >
               <pre>
                 +
               </pre>
             </td>
             <td
-              className="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-vl0irh-content css-cnnxkz-diff-added"
             >
               <pre
                 className="css-pa3tg-content-text"
-              />
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "",
+                    }
+                  }
+                />
+              </pre>
             </td>
           </tr>
           <tr
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 19
               </pre>
@@ -8684,19 +10246,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 1
               </pre>
@@ -8728,19 +10290,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 2
               </pre>
@@ -8772,19 +10334,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 3
               </pre>
@@ -8816,19 +10378,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 4
               </pre>
@@ -8860,19 +10422,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 5
               </pre>
@@ -8904,19 +10466,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 6
               </pre>
@@ -8948,19 +10510,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 7
               </pre>
@@ -8992,19 +10554,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 8
               </pre>
@@ -9036,19 +10598,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 9
               </pre>
@@ -9080,19 +10642,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 10
               </pre>
@@ -9124,19 +10686,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 11
               </pre>
@@ -9168,19 +10730,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 12
               </pre>
@@ -9212,19 +10774,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 13
               </pre>
@@ -9256,19 +10818,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 14
               </pre>
@@ -9300,19 +10862,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 15
               </pre>
@@ -9344,19 +10906,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 16
               </pre>
@@ -9388,19 +10950,19 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 17
               </pre>
@@ -9432,55 +10994,63 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 18
               </pre>
             </td>
             <td
-              className="css-17vezug-marker css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-17vezug-marker css-cnnxkz-diff-added"
             >
               <pre>
                 +
               </pre>
             </td>
             <td
-              className="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-vl0irh-content css-cnnxkz-diff-added"
             >
               <pre
                 className="css-pa3tg-content-text"
-              />
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "",
+                    }
+                  }
+                />
+              </pre>
             </td>
           </tr>
           <tr
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 19
               </pre>
@@ -9520,27 +11090,31 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         <p>
           You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
         </p>
-        <pre>
-          <code>
-            Let's say we have an array arr [9,7,2,3] and the sum is 10
-
-Does 10 - arr[0] exist in the map? (No).
-
-Update map to { 9: true }
-
+        <p>
+          Let's say we have an array arr [9,7,2,3] and the sum is 10
+        </p>
+        <p>
+          Does 10 - arr[0] exist in the map? (No).
+        </p>
+        <p>
+          Update map to { 9: true }
 Does 10 - arr[1] exist in the map? (No).
-
-Update map to { 9: true, 7: true }
-
-Does 10 - arr[2] exist in the map? (No).
-
-Update map to { 9: true, 7: true, 2: true }
-
-Does 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true
-
-if you have questions, don't hesitate to reach out in the chat.
-          </code>
-        </pre>
+        </p>
+        <p>
+          Update map to { 9: true, 7: true }
+        </p>
+        <p>
+          Does 10 - arr[2] exist in the map? (No).
+        </p>
+        <p>
+          Update map to { 9: true, 7: true, 2: true }
+        </p>
+        <p>
+          Does 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true
+        </p>
+        <p>
+          if you have questions, don't hesitate to reach out in the chat.
+        </p>
       </div>
       <div
         className=""
@@ -9684,19 +11258,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 1
               </pre>
@@ -9728,19 +11302,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 2
               </pre>
@@ -9772,19 +11346,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 3
               </pre>
@@ -9816,19 +11390,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 4
               </pre>
@@ -9860,19 +11434,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 5
               </pre>
@@ -9904,19 +11478,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 6
               </pre>
@@ -9948,19 +11522,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 7
               </pre>
@@ -9992,19 +11566,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 8
               </pre>
@@ -10036,19 +11610,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 9
               </pre>
@@ -10080,19 +11654,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 10
               </pre>
@@ -10124,19 +11698,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 11
               </pre>
@@ -10168,19 +11742,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 12
               </pre>
@@ -10212,19 +11786,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 13
               </pre>
@@ -10256,19 +11830,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 14
               </pre>
@@ -10300,19 +11874,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 15
               </pre>
@@ -10344,19 +11918,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 16
               </pre>
@@ -10388,19 +11962,19 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 17
               </pre>
@@ -10432,55 +12006,63 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 18
               </pre>
             </td>
             <td
-              className="css-17vezug-marker css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-17vezug-marker css-cnnxkz-diff-added"
             >
               <pre>
                 +
               </pre>
             </td>
             <td
-              className="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-vl0irh-content css-cnnxkz-diff-added"
             >
               <pre
                 className="css-pa3tg-content-text"
-              />
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "",
+                    }
+                  }
+                />
+              </pre>
             </td>
           </tr>
           <tr
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 19
               </pre>
@@ -10637,19 +12219,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 1
               </pre>
@@ -10681,19 +12263,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 2
               </pre>
@@ -10725,19 +12307,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 3
               </pre>
@@ -10769,19 +12351,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 4
               </pre>
@@ -10813,19 +12395,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 5
               </pre>
@@ -10857,19 +12439,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 6
               </pre>
@@ -10901,19 +12483,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 7
               </pre>
@@ -10945,19 +12527,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 8
               </pre>
@@ -10989,19 +12571,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 9
               </pre>
@@ -11033,19 +12615,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 10
               </pre>
@@ -11077,19 +12659,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 11
               </pre>
@@ -11121,19 +12703,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 12
               </pre>
@@ -11165,19 +12747,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 13
               </pre>
@@ -11209,19 +12791,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 14
               </pre>
@@ -11253,19 +12835,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 15
               </pre>
@@ -11297,19 +12879,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 16
               </pre>
@@ -11341,19 +12923,19 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 17
               </pre>
@@ -11385,55 +12967,63 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 18
               </pre>
             </td>
             <td
-              className="css-17vezug-marker css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-17vezug-marker css-cnnxkz-diff-added"
             >
               <pre>
                 +
               </pre>
             </td>
             <td
-              className="css-vl0irh-content css-10regm7-empty-line css-cnnxkz-diff-added"
+              className="css-vl0irh-content css-cnnxkz-diff-added"
             >
               <pre
                 className="css-pa3tg-content-text"
-              />
+              >
+                <span
+                  dangerouslySetInnerHTML={
+                    Object {
+                      "__html": "",
+                    }
+                  }
+                />
+              </pre>
             </td>
           </tr>
           <tr
             className="css-1n7ec1i-line"
           >
             <td
-              className="css-1ks9aww-gutter css-1klnsbn-empty-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
               onClick={null}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               />
             </td>
             <td
-              className="css-1ks9aww-gutter css-cnnxkz-diff-added"
+              className="css-1548r9v-gutter css-cnnxkz-diff-added"
               onClick={[Function]}
             >
               <pre
-                className="css-h84nzi-line-number"
+                className="css-14p8zw1-line-number"
               >
                 19
               </pre>
@@ -11878,6 +13468,107 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/SubmissionComments With Comments 1`] = `
+Array [
+  <div
+    className="border border-lightgray"
+  >
+    <div
+      className="ml-3"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        First Comment
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="comment_author__inline mt-2 d-block"
+        href="/profile/newbie"
+      >
+        <div
+          className="d-inline"
+        >
+          Noob Newbie
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @newbie
+        </div>
+      </a>
+    </div>
+  </div>,
+  <div
+    className="border border-lightgray"
+  >
+    <div
+      className="ml-3"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        Second Comment
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="comment_author__inline mt-2 d-block"
+        href="/profile/newbie"
+      >
+        <div
+          className="d-inline"
+        >
+          Noob Newbie
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @newbie
+        </div>
+      </a>
+    </div>
+  </div>,
+  <div
+    className="border border-lightgray"
+  >
+    <div
+      className="ml-3"
+    >
+      <span
+        wrapper="code_wrapper"
+      >
+        Second Comment
+      </span>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <a
+        className="comment_author__inline mt-2 d-block"
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin Admin
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots Components/Thanks Basic 1`] = `
 <div
   className="row mt-5 d-flex justify-content-center"
@@ -11991,9 +13682,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -12179,9 +13870,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -12229,9 +13918,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -13110,9 +14799,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -13160,9 +14847,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -14041,9 +15728,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -14091,9 +15776,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -14972,9 +16657,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -15022,9 +16705,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -15119,9 +16802,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -15665,9 +17346,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -15778,9 +17459,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -15984,9 +17663,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -16091,9 +17770,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -16141,9 +17818,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -16274,9 +17951,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -17051,9 +18726,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -17128,9 +18803,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -19574,9 +21247,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -19636,10 +21309,8 @@ Array [
                 className="m-0"
               >
                 <a
-                  className=""
-                  href="/curriculum"
+                  href="#"
                   onClick={[Function]}
-                  onMouseEnter={[Function]}
                 >
                   Go Back
                 </a>
@@ -19708,9 +21379,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -19758,9 +21427,9 @@ Array [
             </a>
             <a
               className="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Learn
             </a>
@@ -19827,9 +21496,7 @@ Array [
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;

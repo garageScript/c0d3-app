@@ -10,6 +10,7 @@ export const useRouter = jest.fn().mockImplementation(() => {
     push,
     replace: async () => true,
     reload: () => null,
-    back
+    back,
+    isReady: true
   }
 })

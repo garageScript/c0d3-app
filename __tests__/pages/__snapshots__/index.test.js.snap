@@ -39,9 +39,7 @@ exports[`Index Page Should render index page 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -405,9 +403,7 @@ exports[`Index Page Should render index page 1`] = `
   <footer
     class="font-weight-light text-center py-5 bg-white text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

@@ -40,9 +40,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/docs/learn"
               >
                 Learn
               </a>
@@ -115,8 +113,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
                     class="m-0"
                   >
                     <a
-                      class=""
-                      href="/curriculum"
+                      href="#"
                     >
                       Go Back
                     </a>
@@ -394,9 +391,7 @@ solution(a); // should return 50
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -441,9 +436,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -543,9 +536,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -590,9 +581,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               </a>
               <a
                 class="nav-item nav-link"
-                href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="/docs/learn"
               >
                 Learn
               </a>
@@ -665,8 +654,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                     class="m-0"
                   >
                     <a
-                      class=""
-                      href="/curriculum"
+                      href="#"
                     >
                       Go Back
                     </a>
@@ -972,9 +960,7 @@ result = solution(0, "hello") // ""
     <footer
       class="mt-5 font-weight-light text-center pb-5 text-muted"
     >
-      © Copyright 2020 GarageScript
-      <br />
-      All Rights Reserved
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -1019,9 +1005,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             </a>
             <a
               class="nav-item nav-link"
-              href="https://www.notion.so/Table-of-Contents-a83980f81560429faca3821a9af8a5e2"
-              rel="noopener noreferrer"
-              target="_blank"
+              href="/docs/learn"
             >
               Learn
             </a>
@@ -1121,9 +1105,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
   <footer
     class="mt-5 font-weight-light text-center pb-5 text-muted"
   >
-    © Copyright 2020 GarageScript
-    <br />
-    All Rights Reserved
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
