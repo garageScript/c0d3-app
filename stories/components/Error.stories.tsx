@@ -8,7 +8,7 @@ import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 //storybook doesn't support nextImage yet
 Object.defineProperty(nextImage, 'default', {
   configurable: true,
-  value: (props: ImageProps) => {
+  value: (props: Omit<ImageProps, 'src'> & { src?: string }) => {
     return <img {...props} className="img-fluid" />
   }
 })

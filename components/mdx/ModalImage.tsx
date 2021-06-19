@@ -20,7 +20,7 @@ const ModalImage: React.FC<ImageProps & { proportions?: Proportions }> =
         >
           <Modal.Body>
             <img
-              src={props.src}
+              src={props.src as string}
               className={`${props.proportions || 'mdx-modal__inner-image'}`}
             />
           </Modal.Body>
