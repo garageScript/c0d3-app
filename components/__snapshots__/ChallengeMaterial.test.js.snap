@@ -897,6 +897,11 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           <div>
             0. Greater than 5
           </div>
+          <img
+            height="25px"
+            src="/assets/curriculum/icons/pending.svg"
+            width="25px"
+          />
         </div>
       </div>
       <div
@@ -1352,6 +1357,38 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 </tr>
               </tbody>
             </table>
+            <div
+              class="border border-lightgray rounded my-1"
+            >
+              <div
+                class="ml-3"
+              >
+                <span
+                  wrapper="code_wrapper"
+                >
+                  A comment under submission
+                </span>
+              </div>
+              <div
+                class="wrapper"
+              >
+                <a
+                  class="comment_author__inline mt-2 "
+                  href="/profile/admin"
+                >
+                  <div
+                    class="d-inline"
+                  >
+                    Admin Admin
+                  </div>
+                  <div
+                    class="d-inline text-muted"
+                  >
+                     @admin
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -1460,6 +1497,11 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           <div>
             0. Greater than 5
           </div>
+          <img
+            height="25px"
+            src="/assets/curriculum/icons/pending.svg"
+            width="25px"
+          />
         </div>
       </div>
       <div
@@ -1915,11 +1957,76 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 </tr>
               </tbody>
             </table>
+            <div
+              class="border border-lightgray rounded my-1"
+            >
+              <div
+                class="ml-3"
+              >
+                <span
+                  wrapper="code_wrapper"
+                >
+                  A comment under submission
+                </span>
+              </div>
+              <div
+                class="wrapper"
+              >
+                <a
+                  class="comment_author__inline mt-2 "
+                  href="/profile/admin"
+                >
+                  <div
+                    class="d-inline"
+                  >
+                    Admin Admin
+                  </div>
+                  <div
+                    class="d-inline text-muted"
+                  >
+                     @admin
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              style="background-color: white;"
+            >
+              <button
+                class="btn"
+                style="color: rgb(41, 41, 41);"
+              >
+                Write
+              </button>
+              <button
+                class="btn"
+                style="color: rgb(142, 142, 142);"
+              >
+                Preview
+              </button>
+              <textarea
+                data-testid="textbox"
+                placeholder="Type something..."
+                style="padding: 1rem; width: 100%;"
+              />
+            </div>
+            <button
+              class="btn bg-success m-1"
+              style="color: rgb(255, 255, 255);"
+            >
+              Comment
+            </button>
           </div>
         </div>
         <div
           class="card-footer bg-white"
-        />
+        >
+          <div
+            class="text-center p-2 my-2 border border-warning text-warning"
+          >
+            Your submission is currently waiting to be reviewed
+          </div>
+        </div>
       </div>
     </div>
   </div>

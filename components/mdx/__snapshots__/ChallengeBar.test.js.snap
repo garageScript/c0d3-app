@@ -3,7 +3,7 @@
 exports[`ChallengeBar component Should created redirect based on input 1`] = `
 <div>
   <div
-    class="d-flex justify-content-center"
+    class="d-flex justify-content-center my-3"
   >
     <div
       class="card shadow-sm bg-primary text-white px-4 py-2 border-0"
@@ -11,8 +11,16 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
       <h1
         class="text-center font-weight-bold align-self-center"
       />
+      <a
+        class="text-white text-center "
+        href="/docs/setup#submitting-challenges"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Submitting challenges
+      </a>
       <p
-        class="px-2 m-0 text-center"
+        class="px-2 m-0 text-center font-weight-bold"
       />
       <div
         class="text-center"

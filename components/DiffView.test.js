@@ -34,7 +34,7 @@ describe('DiffView component', () => {
       }
     },
     {
-      content: 'Second Comment',
+      content: 'Third Comment',
       createdAt: '1620762275096',
       fileName: 'js7/1.js',
       submissionId: 1,
@@ -55,7 +55,7 @@ describe('DiffView component', () => {
     expect(container).toMatchSnapshot()
     userEvent.click(screen.getByText('4'))
     userEvent.click(screen.getByText('6'))
-    expect(screen.getByText('First Comment')).toBeVisible()
+    expect(screen.getByText('Third Comment')).toBeVisible()
   })
   test('Should render diff with no comments', () => {
     render(
@@ -68,7 +68,7 @@ describe('DiffView component', () => {
   test('Should add comment box', () => {
     const { container } = render(
       <MockedProvider mocks={[]} addTypename={false}>
-        <DiffView diff={diff} comments={[]} id={1} />
+        <DiffView diff={diff} comments={[]} id={1} status="open" />
       </MockedProvider>
     )
     userEvent.click(screen.getByText('4'))
@@ -78,13 +78,13 @@ describe('DiffView component', () => {
   test('Should remove comment box with no comments', () => {
     render(
       <MockedProvider mocks={[]} addTypename={false}>
-        <DiffView diff={diff} comments={[]} id={1} />
+        <DiffView diff={diff} comments={comments} id={1} status="open" />
       </MockedProvider>
     )
-    userEvent.click(screen.getByText('4'))
-    expect(screen.getByText('Add comment')).toBeVisible()
-    userEvent.click(screen.getByText('4'))
-    expect(screen.queryByText('Add comment')).toBeFalsy()
+    userEvent.click(screen.getByText('2'))
+    expect(screen.getAllByText('Add comment').length).toEqual(3)
+    userEvent.click(screen.getByText('2'))
+    expect(screen.getAllByText('Add comment').length).toEqual(2)
   })
   test('Should not add comment box if submission was accepted', () => {
     render(

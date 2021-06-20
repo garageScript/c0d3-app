@@ -11,7 +11,7 @@ exports[`CommentBox component Should render commentBox with comments 1`] = `
     class="commentBox bg-white d-auto"
   >
     <div
-      class="border border-lightgray"
+      class="border border-lightgray rounded my-1"
     >
       <div
         class="ml-3"
@@ -26,7 +26,7 @@ exports[`CommentBox component Should render commentBox with comments 1`] = `
         class="wrapper"
       >
         <a
-          class="comment_author__inline mt-2 d-block"
+          class="comment_author__inline mt-2 "
           href="/profile/newbie"
         >
           <div
@@ -43,7 +43,7 @@ exports[`CommentBox component Should render commentBox with comments 1`] = `
       </div>
     </div>
     <div
-      class="border border-lightgray"
+      class="border border-lightgray rounded my-1"
     >
       <div
         class="ml-3"
@@ -58,7 +58,7 @@ exports[`CommentBox component Should render commentBox with comments 1`] = `
         class="wrapper"
       >
         <a
-          class="comment_author__inline mt-2 d-block"
+          class="comment_author__inline mt-2 "
           href="/profile/newbie"
         >
           <div

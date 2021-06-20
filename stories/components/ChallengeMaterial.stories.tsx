@@ -55,156 +55,162 @@ const lessonStatus = {
 }
 
 export const Basic: React.FC = () => (
-  <ChallengeMaterial
-    challenges={challenges}
-    userSubmissions={[]}
-    lessonStatus={lessonStatus}
-    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId={5}
-    show={false}
-    setShow={() => {}}
-  />
+  <MockedProvider>
+    <ChallengeMaterial
+      challenges={challenges}
+      userSubmissions={[]}
+      lessonStatus={lessonStatus}
+      chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+      lessonId={5}
+      show={false}
+      setShow={() => {}}
+    />
+  </MockedProvider>
 )
 
 export const WithDiff: React.FC = () => (
-  <ChallengeMaterial
-    challenges={challenges}
-    userSubmissions={[
-      {
-        status: SubmissionStatus.Open,
-        id: 1,
-        mrUrl: '',
-        diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
-        viewCount: 0,
-        comment: '```test comment```',
-        lessonId: 23,
-        challengeId: 105,
-        challenge: {
+  <MockedProvider>
+    <ChallengeMaterial
+      challenges={challenges}
+      userSubmissions={[
+        {
+          status: SubmissionStatus.Open,
           id: 1,
-          title: 'fake challenge',
-          description: 'fake description',
-          order: 1,
-          lessonId: 23
+          mrUrl: '',
+          diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+          viewCount: 0,
+          comment: '```test comment```',
+          lessonId: 23,
+          challengeId: 105,
+          challenge: {
+            id: 1,
+            title: 'fake challenge',
+            description: 'fake description',
+            order: 1,
+            lessonId: 23
+          },
+          user: {
+            id: 1,
+            username: 'fakeuser',
+            name: 'fake user',
+            email: 'fake@fakemail.com',
+            isAdmin: false
+          },
+          reviewerId: '',
+          createdAt: '',
+          updatedAt: Date.now().toString()
         },
-        user: {
+        {
+          status: SubmissionStatus.Open,
           id: 1,
-          username: 'fakeuser',
-          name: 'fake user',
-          email: 'fake@fakemail.com',
-          isAdmin: false
-        },
-        reviewerId: '',
-        createdAt: '',
-        updatedAt: Date.now().toString()
-      },
-      {
-        status: SubmissionStatus.Open,
-        id: 1,
-        mrUrl: '',
-        diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
-        viewCount: 0,
-        comment: '```test comment```',
-        lessonId: 23,
-        challengeId: 107,
-        challenge: {
-          id: 1,
-          title: 'fake challenge',
-          description: 'fake description',
-          order: 1,
-          lessonId: 23
-        },
-        user: {
-          id: 1,
-          username: 'fakeuser',
-          name: 'fake user',
-          email: 'fake@fakemail.com',
-          isAdmin: false
-        },
-        reviewerId: '',
-        createdAt: '',
-        updatedAt: Date.now().toString()
-      }
-    ]}
-    lessonStatus={lessonStatus}
-    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId={5}
-    show={false}
-    setShow={() => {}}
-  />
+          mrUrl: '',
+          diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+          viewCount: 0,
+          comment: '```test comment```',
+          lessonId: 23,
+          challengeId: 107,
+          challenge: {
+            id: 1,
+            title: 'fake challenge',
+            description: 'fake description',
+            order: 1,
+            lessonId: 23
+          },
+          user: {
+            id: 1,
+            username: 'fakeuser',
+            name: 'fake user',
+            email: 'fake@fakemail.com',
+            isAdmin: false
+          },
+          reviewerId: '',
+          createdAt: '',
+          updatedAt: Date.now().toString()
+        }
+      ]}
+      lessonStatus={lessonStatus}
+      chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+      lessonId={5}
+      show={false}
+      setShow={() => {}}
+    />
+  </MockedProvider>
 )
 
 export const WithComments: React.FC = () => (
-  <ChallengeMaterial
-    challenges={challenges}
-    userSubmissions={[
-      {
-        status: SubmissionStatus.Passed,
-        id: 1,
-        mrUrl: '',
-        diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
-        viewCount: 0,
-        comment: '```Great Job```',
-        lessonId: 23,
-        challengeId: 105,
-        challenge: {
+  <MockedProvider>
+    <ChallengeMaterial
+      challenges={challenges}
+      userSubmissions={[
+        {
+          status: SubmissionStatus.Passed,
           id: 1,
-          title: 'fake challenge',
-          description: 'fake description',
-          order: 1,
-          lessonId: 23
+          mrUrl: '',
+          diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+          viewCount: 0,
+          comment: '```Great Job```',
+          lessonId: 23,
+          challengeId: 105,
+          challenge: {
+            id: 1,
+            title: 'fake challenge',
+            description: 'fake description',
+            order: 1,
+            lessonId: 23
+          },
+          user: {
+            id: 1,
+            username: 'fakeuser',
+            name: 'fake user',
+            email: 'fake@fakemail.com',
+            isAdmin: false
+          },
+          reviewer: {
+            id: 1,
+            username: 'dan',
+            name: 'danny boy',
+            email: 'danny@fakemail.com',
+            isAdmin: false
+          },
+          reviewerId: '1',
+          createdAt: '',
+          updatedAt: Date.now().toString()
         },
-        user: {
+        {
+          status: SubmissionStatus.Open,
           id: 1,
-          username: 'fakeuser',
-          name: 'fake user',
-          email: 'fake@fakemail.com',
-          isAdmin: false
-        },
-        reviewer: {
-          id: 1,
-          username: 'dan',
-          name: 'danny boy',
-          email: 'danny@fakemail.com',
-          isAdmin: false
-        },
-        reviewerId: '1',
-        createdAt: '',
-        updatedAt: Date.now().toString()
-      },
-      {
-        status: SubmissionStatus.Open,
-        id: 1,
-        mrUrl: '',
-        diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
-        viewCount: 0,
-        comment: '```test comment```',
-        lessonId: 23,
-        challengeId: 107,
-        challenge: {
-          id: 1,
-          title: 'fake challenge',
-          description: 'fake description',
-          order: 1,
-          lessonId: 23
-        },
-        user: {
-          id: 1,
-          username: 'fakeuser',
-          name: 'fake user',
-          email: 'fake@fakemail.com',
-          isAdmin: false
-        },
-        reviewerId: '',
-        createdAt: '',
-        updatedAt: Date.now().toString()
-      }
-    ]}
-    lessonStatus={lessonStatus}
-    chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
-    lessonId={5}
-    show={false}
-    setShow={() => {}}
-  />
+          mrUrl: '',
+          diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+          viewCount: 0,
+          comment: '```test comment```',
+          lessonId: 23,
+          challengeId: 107,
+          challenge: {
+            id: 1,
+            title: 'fake challenge',
+            description: 'fake description',
+            order: 1,
+            lessonId: 23
+          },
+          user: {
+            id: 1,
+            username: 'fakeuser',
+            name: 'fake user',
+            email: 'fake@fakemail.com',
+            isAdmin: false
+          },
+          reviewerId: '',
+          createdAt: '',
+          updatedAt: Date.now().toString()
+        }
+      ]}
+      lessonStatus={lessonStatus}
+      chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
+      lessonId={5}
+      show={false}
+      setShow={() => {}}
+    />
+  </MockedProvider>
 )
 
 export const NoChallenges: React.FC = () => (

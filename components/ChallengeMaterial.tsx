@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Challenge, Submission, UserLesson } from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
@@ -7,9 +7,13 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
-import { SubmissionStatus } from '../graphql'
+import { SubmissionStatus, useAddCommentMutation } from '../graphql'
 import DiffView from './DiffView'
-
+import { Button } from './theme/Button'
+import { MdInput } from './MdInput'
+import { updateCache } from '../helpers/updateCache'
+import { GlobalContext } from '../helpers/globalContext'
+import { SubmissionComments } from './SubmissionComments'
 dayjs.extend(relativeTime)
 
 type CurrentChallengeID = number | null
@@ -144,10 +148,25 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   const diff = _.get(currentChallenge, 'submission.diff', '')
   const comment = _.get(currentChallenge, 'submission.comment', '')
   const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
+  const context = useContext(GlobalContext)
+  const name = context.session?.user?.name
+  const username = context.session?.user?.username
   const reviewerUserName = _.get(
     currentChallenge,
     'submission.reviewer.username',
     null
+  )
+  const comments =
+    currentChallenge.submission &&
+    currentChallenge.submission.comments?.filter(comment => !comment.line)
+
+  const [commentValue, setCommentValue] = React.useState('')
+  const [addComment] = useAddCommentMutation()
+  const update = updateCache(
+    currentChallenge.submission?.id!,
+    commentValue,
+    name!,
+    username!
   )
   return (
     <>
@@ -172,14 +191,40 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              {
-                <DiffView
-                  diff={diff}
-                  id={currentChallenge.submission!.id}
-                  comments={currentChallenge.submission?.comments}
-                  status={currentChallenge.status}
-                />
-              }
+              <DiffView
+                diff={diff}
+                id={currentChallenge.submission!.id}
+                comments={currentChallenge.submission?.comments}
+                status={currentChallenge.status}
+              />
+              {comments && <SubmissionComments comments={comments} />}
+              {currentChallenge.submission!.status ===
+                SubmissionStatus.Open && (
+                <>
+                  <MdInput
+                    onChange={setCommentValue}
+                    bgColor={'white'}
+                    value={commentValue}
+                  />
+                  <Button
+                    m="1"
+                    type="success"
+                    color="white"
+                    onClick={() => {
+                      addComment({
+                        variables: {
+                          submissionId: currentChallenge.submission!.id,
+                          content: commentValue
+                        },
+                        update
+                      })
+                      setCommentValue('')
+                    }}
+                  >
+                    Comment
+                  </Button>
+                </>
+              )}
             </div>
           </div>
           <div className="card-footer bg-white">

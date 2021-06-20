@@ -44,7 +44,18 @@ const submissionData = {
     username: 'fake reviewer'
   },
   createdAt: '123',
-  updatedAt: '123'
+  updatedAt: '123',
+  comments: [
+    {
+      author: {
+        name: 'Admin Admin',
+        username: 'admin'
+      },
+      autorId: 1,
+      submissionId: 1,
+      content: 'A comment under submission'
+    }
+  ]
 }
 const mocks = [
   {
@@ -119,7 +130,59 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
-    userEvent.click(getByRole('button', { name: 'Accept' }))
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Accept Submit feedback and approve submission'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
+    expect(container).toMatchSnapshot()
+  })
+  test('Should be able to reject submission', async () => {
+    const { getByRole } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+    userEvent.type(getByRole('textbox', { name: '' }), `This won't work`)
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Reject Request changes and reject submission'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
+  })
+  test('Should be able to add comment', async () => {
+    const { container, getByRole } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+    userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Comment Submit general feedback without explicit approval'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
     expect(container).toMatchSnapshot()
   })
   test('Should render reviewer with name', async () => {

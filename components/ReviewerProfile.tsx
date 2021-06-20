@@ -19,7 +19,7 @@ export const ReviewerProfile: React.FC<ReviewerProfileProps> = ({
       <a
         className={`${
           styles[inline ? 'comment_author__inline' : 'comment_author']
-        } mt-2 d-block`}
+        } mt-2 `}
         href={username ? `/profile/${username}` : undefined}
       >
         <div className="d-inline">{`${firstName} ${lastName}`}</div>
