@@ -27,6 +27,7 @@ type UserInfoResponse = {
 }
 
 type DiscordUserInfo = {
+  discordUserId: string
   discordUsername: string
   discordAvatarUrl: string
   discordRefreshToken: string
@@ -99,9 +100,10 @@ export const getUserInfoFromRefreshToken = async (
   const tokenResponse = await getTokenFromRefreshToken(refreshToken)
   if (!tokenResponse.refresh_token) throw new Error('refresh token invalid')
 
-  const { username, avatar } = await getUserInfo(tokenResponse.access_token)
+  const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
 
   return {
+    discordUserId: id,
     discordUsername: username,
     discordAvatarUrl: avatar,
     discordRefreshToken: tokenResponse.refresh_token
