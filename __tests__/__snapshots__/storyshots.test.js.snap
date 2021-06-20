@@ -9374,7 +9374,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         }
       }
     >
-      Review
+      Submit
     </button>
   </div>
 </div>
@@ -10430,7 +10430,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         }
       }
     >
-      Review
+      Submit
     </button>
   </div>
 </div>
@@ -11511,7 +11511,7 @@ Does 10 - arr[1] exist in the map? (No).
         }
       }
     >
-      Review
+      Submit
     </button>
   </div>
 </div>
@@ -12522,7 +12522,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         }
       }
     >
-      Review
+      Submit
     </button>
   </div>
 </div>
@@ -13576,7 +13576,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         }
       }
     >
-      Review
+      Submit
     </button>
   </div>
 </div>

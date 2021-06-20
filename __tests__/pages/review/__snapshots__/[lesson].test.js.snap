@@ -1790,7 +1790,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 class="btn bg-success"
                 style="color: rgb(255, 255, 255);"
               >
-                Review
+                Submit
               </button>
             </div>
           </div>

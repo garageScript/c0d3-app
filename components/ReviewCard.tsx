@@ -193,7 +193,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               </label>
             </div>
             <Button type="success" color="white" onClick={() => submitReview()}>
-              Review
+              Submit
             </Button>
           </div>
         </div>

@@ -137,13 +137,13 @@ describe('ReviewCard Component', () => {
     )
     userEvent.click(
       getByRole('button', {
-        name: 'Review'
+        name: 'Submit'
       })
     )
     expect(container).toMatchSnapshot()
   })
   test('Should be able to reject submission', async () => {
-    const { container, getByRole } = render(
+    const { getByRole } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
           submissionData={submissionData}
@@ -159,7 +159,7 @@ describe('ReviewCard Component', () => {
     )
     userEvent.click(
       getByRole('button', {
-        name: 'Review'
+        name: 'Submit'
       })
     )
   })
@@ -180,7 +180,7 @@ describe('ReviewCard Component', () => {
     )
     userEvent.click(
       getByRole('button', {
-        name: 'Review'
+        name: 'Submit'
       })
     )
     expect(container).toMatchSnapshot()
