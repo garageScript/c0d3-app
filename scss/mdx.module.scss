@@ -84,3 +84,30 @@
     text-decoration: underline;
   }
 }
+
+.lessonLink {
+  font-size: 1.2rem;
+  color: rgb(66, 66, 66);
+  max-width: max(200px, 20vw);
+  > span {
+    font-weight: bold;
+  }
+  &:hover {
+    color: black;
+  }
+}
+
+.next {
+  margin-left: auto;
+  &::before {
+    content: '\2192';
+    display: block;
+  }
+}
+.previous {
+  margin-right: auto;
+  &::before {
+    content: '\2190';
+    display: block;
+  }
+}

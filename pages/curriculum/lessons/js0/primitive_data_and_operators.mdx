@@ -32,7 +32,7 @@ In this lesson, you will learn the fundamental building blocks of coding:
 - Then, we will cover some simple data (**primitive** **data types**) that
   computers can store into variables.
 - Armed with some knowledge about data, we will talk about a data's **truthy**
-  and **falsey** properties and when these matter.
+  and **falsy** properties and when these matter.
 - Lastly, we will dive into more complex data types like **functions**.
 
 There will be many exercises; be sure to solve each problem by yourself first
@@ -200,7 +200,7 @@ until you get a result smaller than `b`. For example:_
 
 `towel = 18 % 7`: towel is the remainder
 
-18-7 is 11, which is greater than 7, so we subtract again!
+18 - 7 is 11, which is greater than 7, so we subtract again!
 
 11 - 7 is 4, which is smaller than 7, so we have arrived at our answer. `18 % 7`
 is 4.
@@ -279,7 +279,7 @@ c has a value of 5
 message has a value of "helloworld"
 
 so const d = c + message means
-d takes the value of c and join with the value of message
+d takes the value of c joined with the value of message
 Hence, d gets the value of 5 + "helloworld" which is "5helloworld".
 
 What is 5 + "helloworld"?
@@ -383,14 +383,14 @@ review the previous exercise answer for "5helloworld"
 
 </Spoiler>
 
-# Truthy / Falsey
+# Truthy / falsy
 
 Now that you have learned a few data types, you should know that every data in
-JavaScript is either truthy or falsey.
+JavaScript is either truthy or falsy.
 
-> **Every data is either truthy or falsey.**
+> **Every data is either truthy or falsy.**
 
-**Falsey:** There are only **six falsey values** in JavaScript. (For now, just
+**falsy:** There are only **six falsy values** in JavaScript. (For now, just
 remember the first 3. The others you will naturally get used to with
 experience):
 
@@ -400,7 +400,7 @@ experience):
 
 To illustrate, let's go over each data type we've learned:
 
-| Data type | Falsey                | Truthy                                               |
+| Data type | Falsy                 | Truthy                                               |
 | --------- | :-------------------- | :--------------------------------------------------- |
 | Number    | 0, NaN (Not a Number) | Everything else, like -50, 100, 1999999, 0.1, etc.   |
 | String    | "" (empty string)     | Everything else, like "hellofalse", "1234", "hello5" |
@@ -408,19 +408,19 @@ To illustrate, let's go over each data type we've learned:
 
 ## What's the Point?
 
-Truthy and falsey properties are required for the following operators: `!`,
-`||`, and `&&`.
+Truthy and falsy properties are required for the following operators: `!`, `||`,
+and `&&`.
 
 ## Not Operator: !
 
-This operator looks at the value's truthy/falsey property and then returns the
+This operator looks at the value's truthy/falsy property and then returns the
 opposite boolean.
 
 ```jsx
-const josh = !0 // Since 0 is falsey, the opposite boolean is true
+const josh = !0 // Since 0 is falsy, the opposite boolean is true
 // Therefore, josh takes the value of true
 
-const hannah = 0 // Keep in mind that 0 is a falsey value
+const hannah = 0 // Keep in mind that 0 is a falsy value
 const sirius = !hannah // sirius is a boolean, with value true
 const charity = !'' // what is the value of charity?
 const funny = !!'' // What is the value of funny?
@@ -451,12 +451,12 @@ const semi = zach === !tricks // true
 ## And Operator: &&
 
 The 'and' logical operator `&&` evaluates the left and right side's truthy and
-falsey values in the following order:
+falsy values in the following order:
 
-1. If the left side is falsey, return that value.
+1. If the left side is falsy, return that value.
 
    ```jsx
-   const c = '' && 'hello' // c will be "" because the left side is falsey
+   const c = '' && 'hello' // c will be "" because the left side is falsy
    ```
 
 2. If the left side is truthy, return the value on the right side.
@@ -489,7 +489,7 @@ c = 0 && 'hello' // 0
 (In case you cannot find the `|` symbol, it usually shares the same key as `\`
 and is located above the return key.)
 
-The 'or' operator `||` evaluates the left and right side's truthy and falsey
+The 'or' operator `||` evaluates the left and right side's truthy and falsy
 values in the following order:
 
 1. If the left side is truthy, return that value.
@@ -498,7 +498,7 @@ values in the following order:
    const c = 'happy' || 'day' // c will be "happy" because the left side is truthy
    ```
 
-2. If the left side is falsey, return the value on the right side.
+2. If the left side is falsy, return the value on the right side.
 
    ```jsx
    const c = '' || 'hello' // c will be "hello"
@@ -570,7 +570,7 @@ if (*condition*) {
 }
 ```
 
-Since everything in JavaScript is either truthy or falsey, you can put anything
+Since everything in JavaScript is either truthy or falsy, you can put anything
 inside the parentheses.
 
 The code inside the curly brackets will execute if the value inside the
@@ -579,7 +579,7 @@ parentheses is truthy. Below are a few examples:
 ```jsx
 let a = 100 // a takes the value of 100
 if (a % 2) {
-  // a % 2 is 0, which is falsey,
+  // a % 2 is 0, which is falsy,
   a = 90 // so everything inside { } will not be executed
 }
 const b = a + 1 // b takes the value of 101
@@ -630,6 +630,10 @@ pay attention to your code review feedback from people reviewing your code.
 > This section (Objects) is moved here from JS3. If this section is too
 > complicated, please ask for help in the chatroom
 
+The last data type you will need to know is **Objects** and in the next section
+we will start with the most important object: the `Function` Object. Other
+objects will be covered in JS2-3.
+
 Objects in JavaScript can be compared to objects in real life. The concept of
 objects in JavaScript can be understood with real life, tangible objects like
 cars, house, and people.
@@ -647,10 +651,6 @@ and boolean. These are called primitive data types because their values contain
 only one single thing like a string, number, Boolean, or null. In contrast,
 objects are used to store collections of data and more complex entities, and as
 such, the object data type is classified as a complex data type.
-
-The last data type you will need to know is **Objects** and in this section we
-will start with the most important object: the `Function` Object. Other objects
-will be covered in JS2-3.
 
 To create an object, you use the `new` keyword. Here's an example:
 

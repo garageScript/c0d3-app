@@ -27,6 +27,17 @@ describe('Layout component', () => {
     global.window = window
     jest.clearAllMocks()
   })
+  test('Should render "Go back" button on simple documents', async () => {
+    const { back } = useRouter()
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Layout />
+      </MockedProvider>
+    )
+    expect(screen.getByText('Go Back')).toBeVisible()
+    fireEvent.click(screen.getByText('Go Back'))
+    expect(back).toBeCalled()
+  })
   test('Should render lesson component in lesson title is provided', () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -105,15 +116,74 @@ describe('Layout component', () => {
       screen.getByText('Part 1: Primitive data and operators')
     ).toBeVisible()
   })
-  test('Should render "Go back" button on simple documents', async () => {
-    const { back } = useRouter()
+  test('Should render previous part link', async () => {
+    jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => ({
+      pathname: 'foobar/functions_and_execution_context',
+      asPath: ''
+    }))
+
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <Layout />
+        <Layout
+          lessonCoverUrl="test"
+          lessonId="1"
+          lessonTitle="Test title"
+          isPassed={true}
+          subLessons={[
+            'Primitive data and operators',
+            'Functions and execution context'
+          ]}
+        />
       </MockedProvider>
     )
-    expect(screen.getByText('Go Back')).toBeVisible()
-    fireEvent.click(screen.getByText('Go Back'))
-    expect(back).toBeCalled()
+    expect(screen.getByText('Previous part:')).toBeVisible()
+    expect(screen.queryByText('Next part:')).toBeNull()
+  })
+  test('Should render next part link', async () => {
+    jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => ({
+      pathname: 'foobar/primitive_data_and_operators',
+      asPath: ''
+    }))
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Layout
+          lessonCoverUrl="test"
+          lessonId="1"
+          lessonTitle="Test title"
+          isPassed={true}
+          subLessons={[
+            'Primitive data and operators',
+            'Functions and execution context'
+          ]}
+        />
+      </MockedProvider>
+    )
+    expect(screen.getByText('Next part:')).toBeVisible()
+    expect(screen.queryByText('Previous part:')).toBeNull()
+  })
+  test('Should render next and previous part links', async () => {
+    jest.spyOn(require('next/router'), 'useRouter').mockImplementation(() => ({
+      pathname: 'foobar/middle_part',
+      asPath: ''
+    }))
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Layout
+          lessonCoverUrl="test"
+          lessonId="1"
+          lessonTitle="Test title"
+          isPassed={true}
+          subLessons={[
+            'Primitive data and operators',
+            'Middle part',
+            'Functions and execution context'
+          ]}
+        />
+      </MockedProvider>
+    )
+    expect(screen.getByText('Previous part:')).toBeVisible()
+    expect(screen.getByText('Next part:')).toBeVisible()
   })
 })
