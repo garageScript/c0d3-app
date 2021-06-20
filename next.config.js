@@ -24,11 +24,6 @@ module.exports = withMDX({
       'https://e95626afb0454145b569bc69116f838c@o385150.ingest.sentry.io/5221680',
     POSTHOG_API_KEY: process.env.POSTHOG_API_KEY,
     SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
-    SERVER_URL: process.env.SERVER_URL || '/api/graphql',
-    SES_KEY_ID: process.env.SES_KEY_ID,
-    SES_SECRET_KEY: process.env.SES_SECRET_KEY
-  },
-  future: {
-    webpack5: true
+    SERVER_URL: process.env.SERVER_URL || '/api/graphql'
   }
 })

@@ -2746,14 +2746,16 @@ export type LoginMutationFn = Apollo.MutationFunction<
   LoginMutation,
   LoginMutationVariables
 >
-export type LoginProps<TChildProps = {}, TDataName extends string = 'mutate'> =
-  {
-    [key in TDataName]: Apollo.MutationFunction<
-      LoginMutation,
-      LoginMutationVariables
-    >
-  } &
-    TChildProps
+export type LoginProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    LoginMutation,
+    LoginMutationVariables
+  >
+} &
+  TChildProps
 export function withLogin<
   TProps,
   TChildProps = {},
@@ -2826,14 +2828,16 @@ export type LogoutMutationFn = Apollo.MutationFunction<
   LogoutMutation,
   LogoutMutationVariables
 >
-export type LogoutProps<TChildProps = {}, TDataName extends string = 'mutate'> =
-  {
-    [key in TDataName]: Apollo.MutationFunction<
-      LogoutMutation,
-      LogoutMutationVariables
-    >
-  } &
-    TChildProps
+export type LogoutProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    LogoutMutation,
+    LogoutMutationVariables
+  >
+} &
+  TChildProps
 export function withLogout<
   TProps,
   TChildProps = {},
@@ -3253,14 +3257,16 @@ export type SignupMutationFn = Apollo.MutationFunction<
   SignupMutation,
   SignupMutationVariables
 >
-export type SignupProps<TChildProps = {}, TDataName extends string = 'mutate'> =
-  {
-    [key in TDataName]: Apollo.MutationFunction<
-      SignupMutation,
-      SignupMutationVariables
-    >
-  } &
-    TChildProps
+export type SignupProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    SignupMutation,
+    SignupMutationVariables
+  >
+} &
+  TChildProps
 export function withSignup<
   TProps,
   TChildProps = {},
@@ -3697,14 +3703,16 @@ export const UserInfoDocument = gql`
     }
   }
 `
-export type UserInfoProps<TChildProps = {}, TDataName extends string = 'data'> =
-  {
-    [key in TDataName]: ApolloReactHoc.DataValue<
-      UserInfoQuery,
-      UserInfoQueryVariables
-    >
-  } &
-    TChildProps
+export type UserInfoProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    UserInfoQuery,
+    UserInfoQueryVariables
+  >
+} &
+  TChildProps
 export function withUserInfo<
   TProps,
   TChildProps = {},
