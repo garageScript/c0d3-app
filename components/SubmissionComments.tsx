@@ -8,7 +8,10 @@ export const SubmissionComments: React.FC<{
   return (
     <>
       {comments.map((c, i) => (
-        <div key={`${c.content}${i}`} className="border border-lightgray">
+        <div
+          key={`${c.content}${i}`}
+          className="border border-lightgray rounded my-1"
+        >
           <div className="ml-3">
             <Markdown wrapper="code_wrapper">{c.content}</Markdown>
           </div>

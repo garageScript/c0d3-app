@@ -1221,6 +1221,59 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               </tr>
             </tbody>
           </table>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value=""
+            />
+          </div>
+          <button
+            className="btn bg-success m-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#fff",
+              }
+            }
+          >
+            Comment
+          </button>
         </div>
       </div>
       <div
@@ -1651,6 +1704,59 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               </tr>
             </tbody>
           </table>
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+              }
+            }
+          >
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#292929",
+                }
+              }
+            >
+              Write
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "color": "#8e8e8e",
+                }
+              }
+            >
+              Preview
+            </button>
+            <textarea
+              data-testid="textbox"
+              onChange={[Function]}
+              placeholder="Type something..."
+              style={
+                Object {
+                  "padding": "1rem",
+                  "width": "100%",
+                }
+              }
+              value=""
+            />
+          </div>
+          <button
+            className="btn bg-success m-1"
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#fff",
+              }
+            }
+          >
+            Comment
+          </button>
         </div>
       </div>
       <div
@@ -2060,7 +2166,7 @@ Array [
     className="commentBox bg-white d-auto"
   >
     <div
-      className="border border-lightgray"
+      className="border border-lightgray rounded my-1"
     >
       <div
         className="ml-3"
@@ -2075,7 +2181,7 @@ Array [
         className="wrapper"
       >
         <a
-          className="comment_author__inline mt-2 d-block"
+          className="comment_author__inline mt-2 "
           href="/profile/newbie"
         >
           <div
@@ -2092,7 +2198,7 @@ Array [
       </div>
     </div>
     <div
-      className="border border-lightgray"
+      className="border border-lightgray rounded my-1"
     >
       <div
         className="ml-3"
@@ -2107,7 +2213,7 @@ Array [
         className="wrapper"
       >
         <a
-          className="comment_author__inline mt-2 d-block"
+          className="comment_author__inline mt-2 "
           href="/profile/newbie"
         >
           <div
@@ -9113,29 +9219,48 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/fake reviewer"
+          >
+            <div
+              className="d-inline"
+            >
+              fake reviewer
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @fake reviewer
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested changes on
+           
+          Thursday, January 1, 1970
+          :
+        </div>
+      </div>
+      <hr />
       <span>
         Some comment
       </span>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/fake reviewer"
-        >
-          <div
-            className="d-inline"
-          >
-            fake reviewer
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @fake reviewer
-          </div>
-        </a>
-      </div>
     </div>
     <div
       style={
@@ -9179,8 +9304,69 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         value=""
       />
     </div>
+    <div
+      className="d-flex justify-content-between px-2 py-1"
+    >
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -9188,18 +9374,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Submit
     </button>
   </div>
 </div>
@@ -10100,29 +10275,48 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/admin"
+          >
+            <div
+              className="d-inline"
+            >
+              Admin admin
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @admin
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested changes on
+           
+          Invalid Date
+          :
+        </div>
+      </div>
+      <hr />
       <span>
         Some comment
       </span>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/admin"
-        >
-          <div
-            className="d-inline"
-          >
-            Admin admin
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @admin
-          </div>
-        </a>
-      </div>
     </div>
     <div
       style={
@@ -10166,8 +10360,69 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         value=""
       />
     </div>
+    <div
+      className="d-flex justify-content-between px-2 py-1"
+    >
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -10175,18 +10430,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Submit
     </button>
   </div>
 </div>
@@ -11085,7 +11329,45 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/admin"
+          >
+            <div
+              className="d-inline"
+            >
+              Admin Admin
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @admin
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested changes on
+           
+          Thursday, January 1, 1970
+          :
+        </div>
+      </div>
+      <hr />
       <div>
         <p>
           You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
@@ -11115,25 +11397,6 @@ Does 10 - arr[1] exist in the map? (No).
         <p>
           if you have questions, don't hesitate to reach out in the chat.
         </p>
-      </div>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/admin"
-        >
-          <div
-            className="d-inline"
-          >
-            Admin Admin
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @admin
-          </div>
-        </a>
       </div>
     </div>
     <div
@@ -11178,8 +11441,69 @@ Does 10 - arr[1] exist in the map? (No).
         value=""
       />
     </div>
+    <div
+      className="d-flex justify-content-between px-2 py-1"
+    >
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -11187,18 +11511,7 @@ Does 10 - arr[1] exist in the map? (No).
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Submit
     </button>
   </div>
 </div>
@@ -12139,8 +12452,69 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         value=""
       />
     </div>
+    <div
+      className="d-flex justify-content-between px-2 py-1"
+    >
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -12148,18 +12522,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Submit
     </button>
   </div>
 </div>
@@ -13058,29 +13421,48 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div>
+    <div
+      className="changes px-2 py-1"
+    >
+      <div
+        className="d-flex align-items-center"
+      >
+        <img
+          className="icon"
+          src="/assets/requestChanges.svg"
+        />
+        <div
+          className=""
+        >
+          <a
+            className="comment_author mt-2 "
+            href="/profile/admin"
+          >
+            <div
+              className="d-inline"
+            >
+              Admin Admin
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @admin
+            </div>
+          </a>
+        </div>
+        <div
+          className="font ml-2"
+        >
+          requested changes on
+           
+          Thursday, January 1, 1970
+          :
+        </div>
+      </div>
+      <hr />
       <span>
         Some comment
       </span>
-      <div
-        className=""
-      >
-        <a
-          className="comment_author mt-2 d-block"
-          href="/profile/admin"
-        >
-          <div
-            className="d-inline"
-          >
-            Admin Admin
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @admin
-          </div>
-        </a>
-      </div>
     </div>
     <div
       style={
@@ -13124,8 +13506,69 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         value=""
       />
     </div>
+    <div
+      className="d-flex justify-content-between px-2 py-1"
+    >
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="accept"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Accept
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit feedback and approve submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={false}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="reject"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Reject
+        </p>
+        <p
+          className="text-muted"
+        >
+          Request changes and reject submission
+        </p>
+      </label>
+      <label>
+        <input
+          checked={true}
+          className="mr-2"
+          onChange={[Function]}
+          type="radio"
+          value="comment"
+        />
+        <p
+          className="font-weight-bold d-inline"
+        >
+          Comment
+        </p>
+        <p
+          className="text-muted"
+        >
+          Submit general feedback without explicit approval
+        </p>
+      </label>
+    </div>
     <button
-      className="btn bg-success m-1"
+      className="btn bg-success"
       onClick={[Function]}
       style={
         Object {
@@ -13133,18 +13576,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         }
       }
     >
-      Accept
-    </button>
-    <button
-      className="btn bg-danger m-1"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Reject
+      Submit
     </button>
   </div>
 </div>
@@ -13471,7 +13903,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
 exports[`Storyshots Components/SubmissionComments With Comments 1`] = `
 Array [
   <div
-    className="border border-lightgray"
+    className="border border-lightgray rounded my-1"
   >
     <div
       className="ml-3"
@@ -13486,7 +13918,7 @@ Array [
       className="wrapper"
     >
       <a
-        className="comment_author__inline mt-2 d-block"
+        className="comment_author__inline mt-2 "
         href="/profile/newbie"
       >
         <div
@@ -13503,7 +13935,7 @@ Array [
     </div>
   </div>,
   <div
-    className="border border-lightgray"
+    className="border border-lightgray rounded my-1"
   >
     <div
       className="ml-3"
@@ -13518,7 +13950,7 @@ Array [
       className="wrapper"
     >
       <a
-        className="comment_author__inline mt-2 d-block"
+        className="comment_author__inline mt-2 "
         href="/profile/newbie"
       >
         <div
@@ -13535,7 +13967,7 @@ Array [
     </div>
   </div>,
   <div
-    className="border border-lightgray"
+    className="border border-lightgray rounded my-1"
   >
     <div
       className="ml-3"
@@ -13550,7 +13982,7 @@ Array [
       className="wrapper"
     >
       <a
-        className="comment_author__inline mt-2 d-block"
+        className="comment_author__inline mt-2 "
         href="/profile/admin"
       >
         <div

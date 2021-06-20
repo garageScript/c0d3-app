@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { ChallengeQuestionCard } from '../../components/ChallengeMaterial'
+import { MockedProvider } from '@apollo/client/testing'
 
 export default {
   component: ChallengeQuestionCard,
@@ -17,5 +18,7 @@ const currentChallenge = {
 }
 
 export const Basic: React.FC = () => (
-  <ChallengeQuestionCard currentChallenge={currentChallenge} />
+  <MockedProvider>
+    <ChallengeQuestionCard currentChallenge={currentChallenge} />
+  </MockedProvider>
 )
