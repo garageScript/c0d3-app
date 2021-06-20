@@ -117,7 +117,7 @@
     "remark-toc": "^7.2.0",
     "sass-loader": "^10.0.1",
     "svgo": "^2.3.0",
-    "ts-node": "^9.1.1",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
   }
 }
