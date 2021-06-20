@@ -18810,7 +18810,7 @@ Array [
 
 exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
 <div
-  className="d-flex justify-content-center"
+  className="d-flex justify-content-center my-3"
 >
   <div
     className="card shadow-sm bg-primary text-white px-4 py-2 border-0"
@@ -18820,8 +18820,16 @@ exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
     >
       Master your skill by solving challenges
     </h1>
+    <a
+      className="text-white text-center "
+      href="/docs/setup#submitting-challenges"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Submitting challenges
+    </a>
     <p
-      className="px-2 m-0 text-center"
+      className="px-2 m-0 text-center font-weight-bold"
     >
       Complete the first seven of JS0 challenges
     </p>
@@ -18829,10 +18837,10 @@ exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
       className="text-center"
     >
       <a
-        className="btn btn-light mt-2 text-primary"
+        className="btn btn-light mt-2 text-primary "
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         View Challenges
       </a>
@@ -21374,6 +21382,9 @@ Array [
       <p>
         Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
       </p>
+      <div
+        className="d-flex"
+      />
     </div>
   </div>,
   <footer

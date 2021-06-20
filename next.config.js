@@ -12,14 +12,11 @@ module.exports = withMDX({
   pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
   env: {
     CHAT_URL: process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4',
-    CLIENT_URL: process.env.CLIENT_URL || 'https://c0d3.devwong.com',
     DB_NAME: process.env.DB_NAME || 'c0d3dev6',
     DB_USER: process.env.DB_USER || 'c0d3db',
     DB_PW: process.env.DB_PW || 'letmein2',
     DB_PORT: process.env.DB_PORT || '5432',
     DB_HOST: process.env.DB_HOST || 'freedomains.dev',
-    MAILGUN_API_KEY: process.env.MAILGUN_API_KEY,
-    MAILGUN_DOMAIN: process.env.MAILGUN_DOMAIN,
     MATTERMOST_ACCESS_TOKEN:
       process.env.MATTERMOST_ACCESS_TOKEN || 'nzk11f9s6jfpbpim8xpbdb9nea',
     SENTRY_DSN:

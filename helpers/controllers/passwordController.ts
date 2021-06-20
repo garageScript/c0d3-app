@@ -1,14 +1,13 @@
+import { AuthenticationError, UserInputError } from 'apollo-server-micro'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
-import { UserInputError, AuthenticationError } from 'apollo-server-micro'
-import { changeChatPassword } from '../mattermost'
 import { Context } from '../../@types/helpers'
-import { sendResetEmail } from '../mail'
-import { decode, encode } from '../encoding'
-import { passwordValidation } from '../formValidation'
-import findUser from '../findUser'
-import { prisma } from '../../prisma'
 import { ReqPwResetMutation, ReqPwResetMutationVariables } from '../../graphql'
+import { prisma } from '../../prisma'
+import { decode, encode } from '../encoding'
+import findUser from '../findUser'
+import { passwordValidation } from '../formValidation'
+import { sendResetEmail } from '../mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
@@ -42,7 +41,17 @@ export const reqPwReset = async (
       }
     })
 
-    sendResetEmail(user.email, user.forgotToken!)
+    try {
+      await sendResetEmail(user.email, user.forgotToken!)
+    } catch (error) {
+      req.error(`
+        Error while sending password recovery email
+        ${JSON.stringify(error, null, 2)}
+      `)
+      throw Error(
+        `Error while sending password recovery email, try again at some later time.`
+      )
+    }
 
     return { success: true }
   } catch (err) {
@@ -88,11 +97,6 @@ export const changePw = async (
       throw new AuthenticationError('Invalid Token')
     }
     const hash = await bcrypt.hash(password, 10)
-    try {
-      await changeChatPassword(user.email!, password)
-    } catch {
-      throw new Error('Mattermost did not set password')
-    }
     user = await prisma.user.update({
       where: { id: user.id },
       data: {

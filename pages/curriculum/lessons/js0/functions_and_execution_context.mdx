@@ -49,7 +49,7 @@ Let's break down the above example.
 - **Parameters**: Variables to hold the data when function run.
 - **Run**: Running a function means to execute it by adding a `()` to the end.
 - **Arguments**: Data you pass into the function when you run a function. Goes
-  inbetween `()`
+  in between `()`
 - **Function body**: Code that runs when a function is run. Notice how the
   function body is a string. After the Function Object is created, the string is
   converted into JavaScript code. In the example above, the code looks like the
@@ -94,7 +94,7 @@ const result = fn() // what is result
 
 ```jsx
 const fn = new Function('return 10')
-const result = fn() // result has 10 since return 10 is executed
+const result = fn() // result is 10 since return 10 is executed
 ```
 
 </Spoiler>
@@ -332,8 +332,8 @@ on your computer. Just write the statements to run the functions.
 
 `app.get()`
 
-You can makeup any functions you want. Assume someone made up `app.get`
-function, all you have to do is put `()` behind the function to run it.
+You can make up any functions you want. Assume someone made up `app.get`
+function - all you have to do is put `()` behind the function to run it.
 
 </Spoiler>
 
@@ -414,7 +414,7 @@ Be careful: Every time igor is executed, the value of points get updated.
 </Spoiler>
 
 If a function does not return anything, `undefined` is returned. `undefined` is
-a JavaScript primitive data type. Note that `undefined` is falsey.
+a JavaScript primitive data type. Note that `undefined` is falsy.
 
 ```jsx
 const carrotCakeRecipe = () => {}
@@ -427,7 +427,7 @@ snitch = !carrotCakeRecipe() // what is snitch?
 ```jsx
 const carrotCakeRecipe = () => {}
 let snitch = carrotCakeRecipe() // undefined, because carrotCakeRecipe returns nothing
-snitch = !carrotCakeRecipe() // true, because undefined is falsey
+snitch = !carrotCakeRecipe() // true, because undefined is falsy
 ```
 
 </Spoiler>
@@ -687,7 +687,7 @@ grindlewald = wald(() => {
 ```
 
 In this example, we will call the JavaScript setTimeout method. The setTimeout
-method calls a function or executes some codes once after a specified delay (in
+method calls a function or executes some code once after a specified delay (in
 milliseconds).
 
 The syntax is : **setTimeout**(_function_, _milliseconds_ ).
@@ -819,7 +819,7 @@ if (<condition>)
    {instructions to run}
 ```
 
-A truthy or falsey value goes inside the parentheses.
+A truthy or falsy value goes inside the parentheses.
 
 The code inside the curly brackets will execute if the value inside the
 parentheses is truthy. Below are a few examples with functions:
@@ -951,7 +951,7 @@ const charlie = (arthur, percy) => {
 const hedwig = charlie(4, 5) || charlie(9, 2) // 5
 // First the computer will run charlie(4,5), which returns 0
 // and points is updated to 4.
-// Since 0 is falsey, the computer runs the right side of ||
+// Since 0 is falsy, the computer runs the right side of ||
 // hedwig takes the return value of charlie(9,2), which is 5
 
 const nick = charlie(9, 2) // nick is 6, because charlie(9,2) returns 6
@@ -962,7 +962,7 @@ const nick = charlie(9, 2) // nick is 6, because charlie(9,2) returns 6
 ### Exercises
 
 1. Write an arrow function named massiveOrSmall that adds 2 numbers and returns
-   "massive" if the sum is over 100 otherwise returns "small".
+   "massive" if the sum is over 100; otherwise returns "small".
 
 <Spoiler>
 
@@ -1232,7 +1232,7 @@ const mal2 = draco(3, 2, 1) // line 7
 
 </twoColumns>
 
-Done! Before the execution of the codes ends, the global execution context has
+Done! Before the execution of the code ends, the global execution context has
 the following global variables:
 
 ```jsx
@@ -1252,7 +1252,7 @@ Words you must know by heart:
 Concepts you must know:
 
 - How to create a variable (using `const` and `let`)
-- When **truthy / falsey** properties are important
+- When **truthy / falsy** properties are important
 - What it means to write a function and what it means to run a function
 - What `return` does
 
