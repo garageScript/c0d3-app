@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import * as adminHelpers from './adminHelpers'
 import {
   getPropertyArr,

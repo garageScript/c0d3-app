@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { alerts } from './alerts'
 import { prisma } from '../../prisma'
 

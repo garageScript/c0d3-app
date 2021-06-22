@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { prisma } from '../../prisma'
 import userMiddleware from './user'
 

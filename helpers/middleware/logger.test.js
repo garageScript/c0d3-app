@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import util from 'util'
 import { nanoid } from 'nanoid'
 import winston from 'winston'

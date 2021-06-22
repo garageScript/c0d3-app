@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
 jest.mock('../mattermost')

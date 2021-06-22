@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { splitWithSearchTerm } from './splitWithSearchTerm'
 
 describe('splitWithSearchTerm helper function', () => {

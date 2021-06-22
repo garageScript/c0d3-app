@@ -1,6 +1,5 @@
-import mdxComponents from './mdxComponents'
-import { render } from '@testing-library/react'
 import React from 'react'
+import mdxComponents from './mdxComponents'
 
 describe('mdxComponents', () => {
   test('Should add mdx classnames', () => {

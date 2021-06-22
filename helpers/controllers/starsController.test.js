@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../../helpers/validateLessonId')
 jest.mock('../mattermost')
 import { setStar } from './starsController'

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('node-fetch')
 import fetch from 'node-fetch'
 import {

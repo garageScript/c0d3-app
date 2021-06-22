@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { updateCache } from './updateCache'
 import { InMemoryCache } from '@apollo/client'
 import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
