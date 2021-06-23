@@ -175,7 +175,7 @@ re-run the tests (or leave them running with `--watch`).
 
 ## Exercises
 
-1. Write a function named less3Diff that determines whether two strings have
+1. Write a function named `less3Diff` that determines whether two strings have
    fewer than 3 different characters. Both arguments will have the same length.
 
    ```jsx
@@ -244,7 +244,7 @@ re-run the tests (or leave them running with `--watch`).
 
 </Spoiler>
 
-2. Write a function named reverso that takes in a string, and returns a new
+2. Write a function named `reverso` that takes in a string, and returns a new
    string with the input string reversed.
 
    ```jsx
@@ -306,8 +306,8 @@ re-run the tests (or leave them running with `--watch`).
 
 </Spoiler>
 
-3. Write a function named delayAndCall that takes in 2 parameters, a number and
-   a function, and returns a function
+3. Write a function named `delayAndCall` that takes in 2 parameters, a number
+   and a function, and returns a function
 
    When the returned function is called, the input function will execute after
    the input number of milliseconds.
@@ -377,7 +377,7 @@ re-run the tests (or leave them running with `--watch`).
 
 </Spoiler>
 
-4. Write a function named primeMachine that takes in a number and returns a
+4. Write a function named `primeMachine` that takes in a number and returns a
    function.
 
    - Each time the returned function is called, return the next prime number
@@ -545,15 +545,15 @@ answer toggle for this problem.
    - In the `primeMachine` function,
      - Pass in the result from running the `getNextPrime` function as a
        parameter.
-     - We name the result from running the `getNextPrime` function to `start` to
+     - We name the result from running the `getNextPrime` function on `start` to
        be passed in as a parameter.
      - When the value of `start` is less than 2,
        - change to value of `start` to 1.
    - When `start` is prime,
      - increment `start` by 1.
    - Inside the return function,
-     - We need additional variable (let's say `result`) that stores the result
-       of running `getNextPrime` function.
+     - We need an additional variable (let's say `result`) that stores the
+       result of running `getNextPrime` function.
      - Pass in `start` as argument inside this `getNextPrime` function.
      - Now `start` equals `result` plus 1.
      - return `result`
@@ -629,10 +629,10 @@ new .html file and view/open it in your browser.
 
 ## div tag
 
-The `<div>` tag is one of the most important HTML tag in modern web design. This
-very simple tag `<div>` defines a container or section that is used to group
-other elements together inside it. All HTML elements inside the section are
-called **child** elements of the `<div>`. For example:
+The `<div>` tag is one of the most important HTML tags in modern web design.
+This very simple tag `<div>` defines a container or section that is used to
+group other elements together inside it. All HTML elements inside the section
+are called **child** elements of the `<div>`. For example:
 
 ```html
 <div>
@@ -673,10 +673,10 @@ as follows:
 In the example above, we are using JavaScript to dynamically add three HTML tags
 inside the `div` tag. The 3 lines of HTML after `box.innerHTML =` might look a
 little out of place, but they're actually one long string! Recall from JS0 how
-we can use `"`, `'`, or `to create a string. We chose` here because it allows us
-to easily include line breaks inside the string, and because the HTML is already
-using quotation marks. If we had used `"` to begin the string, the first
-attribute would have ended it and broken our code.
+we can use `"`, `'`, or `` ` `` to create a string. We chose `` ` `` here
+because it allows us to easily include line breaks inside the string, and
+because the HTML is already using quotation marks. If we had used `"` to begin
+the string, the first attribute would have ended it and broken our code.
 
 If you want to get a reference of an element that is inserted by JavaScript, pay
 attention and make sure you write the document.querySelector to search the
@@ -737,9 +737,9 @@ button.onclick = () => {
 Elements lose their properties when they're being replaced by other elements. In
 the example below, we bind an **onclick** function to the showButton button.
 When the showButton button is clicked, the element inside the `<div>` tag is
-totally replaced with a `<h1>` tag and a new button element. The original button
-element has been replaced although the new button has exactly the same class
-name and text. It's technically a brand-new element. Replace the current
+totally replaced with an `<h1>` tag and a new button element. The original
+button element has been replaced although the new button has exactly the same
+class name and text. It's technically a brand new element. Replace the current
 contents of your page with the below code to see what happens:
 
 ```html
@@ -841,9 +841,9 @@ the browser's console.
 
 </twoColumns>
 
-> For each of the problem below, if you are struggling through the answers,
-> please walk through each step with your mentor (in person) or in chatroom to
-> make sure you have each step in the answer written correctly.
+> For each of the problems below, if you are struggling through the answers,
+> please walk through each step with your mentor (in person) or in the chatroom
+> to make sure you have each step in the answer written correctly.
 
 1. [Create an h1 element that says](https://songz.c0d3.com/js1/1.html)
    `Change Me`, an input box, and a submit button. When the submit button is
@@ -1284,8 +1284,8 @@ Below are more exercises that you can do for more practice:
 
 2. Add a `h1` tag (for the title), `div` tag (to hold the input and button
    tags), and `h1` tag (for displaying result) and select them.
-3. Add a variable called `filterFunction` , we need this to store the result
-   from `createFilter`
+3. Add a variable called `filterFunction`. We need this to store the result from
+   `createFilter`
 4. Create a function called `startApp` that:
    - sets the `div` element's innerHTML with `input` tag and a `button` tag.
    - select the input and button element inside the `div`
@@ -1298,7 +1298,7 @@ Below are more exercises that you can do for more practice:
      - Select the elements
      - Set the **GoBack** button's onclick property to run `startApp` function
      - Set **Filter** button's onlick function to do this:
-       - Run `filterFunction`, store the result in result `h1` element's
+       - Run `filterFunction`, and store the result in result `h1` element's
          `innerText` property.
        - Set `input` element's value to `""` to clear it
 5. Run `startApp` function
@@ -1337,7 +1337,7 @@ Below are more exercises that you can do for more practice:
 
 <ChallengeBar
   href="/curriculum/1"
-  description="Complete HTML and testing challenges (which are none currently)"
+  description="Complete HTML and testing challenges (TO-DO add these challenges)"
   title="Master your skill by solving challenges"
 />
 

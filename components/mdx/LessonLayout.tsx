@@ -91,6 +91,17 @@ const SubLessonLinks: React.FC<{ subLessons: string[] }> = ({ subLessons }) => {
     </>
   )
 }
+const EditPage: React.FC = () => {
+  const router = useRouter()
+  return (
+    <a
+      href={`https://github.com/garageScript/c0d3-app/edit/master/pages/${router.pathname}.mdx`}
+      className={`${styles['MDX_a']} ${styles['edit']}`}
+    >
+      Edit this page
+    </a>
+  )
+}
 const LessonLayout: React.FC<LayoutProps> = props => {
   const router = useRouter()
   const [scroll, setScroll] = useState(false)
@@ -128,6 +139,7 @@ const LessonLayout: React.FC<LayoutProps> = props => {
         <div className={styles.title}>{props.title}</div>
         {props.subLessons && <SubLessonLinks subLessons={props.subLessons} />}
         {props.children}
+        <EditPage />
         {props.subLessons && (
           <NextPreviousLessons subLessons={props.subLessons} />
         )}

@@ -111,3 +111,17 @@
     display: block;
   }
 }
+
+.edit {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  &::before {
+    content: '\270E';
+    transform: rotate(90deg);
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
