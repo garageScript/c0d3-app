@@ -52,7 +52,7 @@ export const getTokenFromAuthCode = (
   }).then(r => r.json())
 }
 
-export const getTokenFromRefreshToken = (
+const getTokenFromRefreshToken = (
   refresh_token: string
 ): Promise<AccessTokenResponse> => {
   return fetch(`${discordAPI}/oauth2/token`, {
@@ -69,7 +69,7 @@ export const getTokenFromRefreshToken = (
   }).then(r => r.json())
 }
 
-export const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
+const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   return fetch(`${discordAPI}/users/@me`, {
     method: 'GET',
     headers: {

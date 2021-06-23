@@ -301,7 +301,6 @@ export type User = {
   name: Scalars['String']
   isAdmin: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
-  discordRefreshToken?: Maybe<Scalars['String']>
 }
 
 export type UserLesson = {
@@ -1440,11 +1439,6 @@ export type UserResolvers<
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  discordRefreshToken?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
