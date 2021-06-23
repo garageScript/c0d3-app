@@ -27,10 +27,10 @@ type UserInfoResponse = {
 }
 
 type DiscordUserInfo = {
-  discordUserId: string
-  discordUsername: string
-  discordAvatarUrl: string
-  discordRefreshToken: string
+  userId: string
+  username: string
+  avatarUrl: string
+  refreshToken: string
 }
 
 export const getTokenFromAuthCode = (
@@ -107,9 +107,9 @@ export const getUserInfoFromRefreshToken = async (
   const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
 
   return {
-    discordUserId: id,
-    discordUsername: username,
-    discordAvatarUrl: avatar,
-    discordRefreshToken: updatedRefreshToken
+    userId: id,
+    username,
+    avatarUrl: avatar,
+    refreshToken: updatedRefreshToken
   }
 }
