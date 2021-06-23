@@ -99,13 +99,10 @@ export const getUserInfoFromRefreshToken = async (
   refreshToken: string
 ): Promise<DiscordUserInfo> => {
   const tokenResponse = await getTokenFromRefreshToken(refreshToken)
-  const updatedRefreshToken = tokenResponse.refresh_token
-  if (!updatedRefreshToken) {
-    updateUserRefreshToken(userId, '') // discordRefreshToken given a falsy value
-    throw new Error('refresh token invalid')
-  }
-
+  const updatedRefreshToken = tokenResponse.refresh_token || ''
   updateUserRefreshToken(userId, updatedRefreshToken)
+
+  if (!updatedRefreshToken) throw new Error('refresh token invalid')
 
   const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
 
