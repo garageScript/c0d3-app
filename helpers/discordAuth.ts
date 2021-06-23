@@ -79,11 +79,11 @@ const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   }).then(r => r.json())
 }
 
-export const updateUserRefreshToken = async (
+const updateUserRefreshToken = async (
   userId: number,
   refreshToken: string
 ): Promise<User> => {
-  const updateUser = await prisma.user.update({
+  const updatedUser = await prisma.user.update({
     where: {
       id: userId
     },
@@ -91,14 +91,21 @@ export const updateUserRefreshToken = async (
       discordRefreshToken: refreshToken
     }
   })
-  return updateUser
+  return updatedUser
 }
 
 export const getUserInfoFromRefreshToken = async (
+  userId: number,
   refreshToken: string
 ): Promise<DiscordUserInfo> => {
   const tokenResponse = await getTokenFromRefreshToken(refreshToken)
-  if (!tokenResponse.refresh_token) throw new Error('refresh token invalid')
+  const updatedRefreshToken = tokenResponse.refresh_token
+  if (!updatedRefreshToken) {
+    updateUserRefreshToken(userId, '') // discordRefreshToken given a falsy value
+    throw new Error('refresh token invalid')
+  }
+
+  updateUserRefreshToken(userId, updatedRefreshToken)
 
   const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
 
@@ -106,6 +113,6 @@ export const getUserInfoFromRefreshToken = async (
     discordUserId: id,
     discordUsername: username,
     discordAvatarUrl: avatar,
-    discordRefreshToken: tokenResponse.refresh_token
+    discordRefreshToken: updatedRefreshToken
   }
 }
