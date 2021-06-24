@@ -2043,6 +2043,11 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@next-auth/prisma-adapter@^0.4.4-canary.64":
+  version "0.4.4-canary.64"
+  resolved "https://registry.yarnpkg.com/@next-auth/prisma-adapter/-/prisma-adapter-0.4.4-canary.64.tgz#fff0be32537aca5317b668eae420f1ed22d1fc74"
+  integrity sha512-N7NohoLVxwjCwYFEtuTwrqdvYj5880y45y02tWtoesYIjEkWQXrp+TM2ZcEs9VJZYY5gg3x1ie5DXYJ8GWp/QQ==
+
 "@next/env@11.0.0":
   version "11.0.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-11.0.0.tgz#bdd306a45e88ba3e4e7a36aa91806f6486bb61d0"
