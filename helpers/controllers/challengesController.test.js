@@ -1,4 +1,3 @@
-jest.mock('../mattermost')
 jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
 import { createChallenge, updateChallenge } from './challengesController'

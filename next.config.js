@@ -11,14 +11,11 @@ const withMDX = require('@next/mdx')({
 module.exports = withMDX({
   pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
   env: {
-    CHAT_URL: process.env.CHAT_URL || 'https://mattermost.devwong.com/api/v4',
     DB_NAME: process.env.DB_NAME || 'c0d3dev6',
     DB_USER: process.env.DB_USER || 'c0d3db',
     DB_PW: process.env.DB_PW || 'letmein2',
     DB_PORT: process.env.DB_PORT || '5432',
     DB_HOST: process.env.DB_HOST || 'freedomains.dev',
-    MATTERMOST_ACCESS_TOKEN:
-      process.env.MATTERMOST_ACCESS_TOKEN || 'nzk11f9s6jfpbpim8xpbdb9nea',
     SENTRY_DSN:
       process.env.SENTRY_DSN ||
       'https://e95626afb0454145b569bc69116f838c@o385150.ingest.sentry.io/5221680',
