@@ -29,6 +29,7 @@ import {
   createLesson,
   updateLesson
 } from '../helpers/controllers/lessonsController'
+import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
 
 export default {
   Query: {
@@ -39,7 +40,8 @@ export default {
     userInfo,
     lessons,
     session,
-    alerts
+    alerts,
+    getPreviousSubmissions
   },
 
   Mutation: {

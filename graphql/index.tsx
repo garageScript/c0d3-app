@@ -220,6 +220,7 @@ export type Query = {
   isTokenValid: Scalars['Boolean']
   submissions?: Maybe<Array<Submission>>
   alerts: Array<Alert>
+  getPreviousSubmissions?: Maybe<Array<Submission>>
 }
 
 export type QueryGetLessonMentorsArgs = {
@@ -236,6 +237,12 @@ export type QueryIsTokenValidArgs = {
 
 export type QuerySubmissionsArgs = {
   lessonId: Scalars['Int']
+}
+
+export type QueryGetPreviousSubmissionsArgs = {
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
+  userId: Scalars['Int']
 }
 
 export type Session = {
@@ -276,6 +283,7 @@ export type Submission = {
 }
 
 export enum SubmissionStatus {
+  Overwritten = 'overwritten',
   NeedMoreWork = 'needMoreWork',
   Open = 'open',
   Passed = 'passed'
@@ -575,6 +583,53 @@ export type LessonMentorsQuery = { __typename?: 'Query' } & {
   getLessonMentors?: Maybe<
     Array<
       Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name' | 'id'>>
+    >
+  >
+}
+
+export type GetPreviousSubmissionsQueryVariables = Exact<{
+  lessonId: Scalars['Int']
+  challengeId: Scalars['Int']
+  userId: Scalars['Int']
+}>
+
+export type GetPreviousSubmissionsQuery = { __typename?: 'Query' } & {
+  getPreviousSubmissions?: Maybe<
+    Array<
+      { __typename?: 'Submission' } & Pick<
+        Submission,
+        | 'id'
+        | 'status'
+        | 'diff'
+        | 'comment'
+        | 'challengeId'
+        | 'lessonId'
+        | 'createdAt'
+        | 'updatedAt'
+      > & {
+          challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
+          user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
+          reviewer?: Maybe<
+            { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
+          >
+          comments?: Maybe<
+            Array<
+              { __typename?: 'Comment' } & Pick<
+                Comment,
+                | 'content'
+                | 'submissionId'
+                | 'createdAt'
+                | 'authorId'
+                | 'line'
+                | 'fileName'
+              > & {
+                  author?: Maybe<
+                    { __typename?: 'User' } & Pick<User, 'username' | 'name'>
+                  >
+                }
+            >
+          >
+        }
     >
   >
 }
@@ -1343,6 +1398,15 @@ export type QueryResolvers<
     RequireFields<QuerySubmissionsArgs, 'lessonId'>
   >
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
+  getPreviousSubmissions?: Resolver<
+    Maybe<Array<ResolversTypes['Submission']>>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      QueryGetPreviousSubmissionsArgs,
+      'lessonId' | 'challengeId' | 'userId'
+    >
+  >
 }
 
 export type SessionResolvers<
@@ -2496,6 +2560,137 @@ export type LessonMentorsLazyQueryHookResult = ReturnType<
 export type LessonMentorsQueryResult = Apollo.QueryResult<
   LessonMentorsQuery,
   LessonMentorsQueryVariables
+>
+export const GetPreviousSubmissionsDocument = gql`
+  query getPreviousSubmissions(
+    $lessonId: Int!
+    $challengeId: Int!
+    $userId: Int!
+  ) {
+    getPreviousSubmissions(
+      lessonId: $lessonId
+      challengeId: $challengeId
+      userId: $userId
+    ) {
+      id
+      status
+      diff
+      comment
+      challenge {
+        title
+      }
+      challengeId
+      lessonId
+      user {
+        id
+        username
+      }
+      reviewer {
+        id
+        username
+        name
+      }
+      comments {
+        content
+        submissionId
+        createdAt
+        authorId
+        line
+        fileName
+        author {
+          username
+          name
+        }
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`
+export type GetPreviousSubmissionsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables
+  >
+} &
+  TChildProps
+export function withGetPreviousSubmissions<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables,
+    GetPreviousSubmissionsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables,
+    GetPreviousSubmissionsProps<TChildProps, TDataName>
+  >(GetPreviousSubmissionsDocument, {
+    alias: 'getPreviousSubmissions',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetPreviousSubmissionsQuery__
+ *
+ * To run a query within a React component, call `useGetPreviousSubmissionsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPreviousSubmissionsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPreviousSubmissionsQuery({
+ *   variables: {
+ *      lessonId: // value for 'lessonId'
+ *      challengeId: // value for 'challengeId'
+ *      userId: // value for 'userId'
+ *   },
+ * });
+ */
+export function useGetPreviousSubmissionsQuery(
+  baseOptions: Apollo.QueryHookOptions<
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables
+  >(GetPreviousSubmissionsDocument, options)
+}
+export function useGetPreviousSubmissionsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<
+    GetPreviousSubmissionsQuery,
+    GetPreviousSubmissionsQueryVariables
+  >(GetPreviousSubmissionsDocument, options)
+}
+export type GetPreviousSubmissionsQueryHookResult = ReturnType<
+  typeof useGetPreviousSubmissionsQuery
+>
+export type GetPreviousSubmissionsLazyQueryHookResult = ReturnType<
+  typeof useGetPreviousSubmissionsLazyQuery
+>
+export type GetPreviousSubmissionsQueryResult = Apollo.QueryResult<
+  GetPreviousSubmissionsQuery,
+  GetPreviousSubmissionsQueryVariables
 >
 export const GetSessionDocument = gql`
   query getSession {
