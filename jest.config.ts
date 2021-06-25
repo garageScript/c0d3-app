@@ -15,7 +15,8 @@ const config: Config.InitialOptions = {
     'graphql/index.tsx',
     '__tests__/utils/',
     'prisma/',
-    'scripts/'
+    'scripts/',
+    '[...nextauth].ts'
   ],
   coverageThreshold: {
     global: {
