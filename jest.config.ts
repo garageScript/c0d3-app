@@ -15,8 +15,7 @@ const config: Config.InitialOptions = {
     'graphql/index.tsx',
     '__tests__/utils/',
     'prisma/',
-    'scripts/',
-    'discordAuth.ts'
+    'scripts/'
   ],
   coverageThreshold: {
     global: {

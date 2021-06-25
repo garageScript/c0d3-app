@@ -109,7 +109,7 @@ export const getUserInfoFromRefreshToken = async (
   return {
     userId: id,
     username,
-    avatarUrl: avatar,
+    avatarUrl: `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`,
     refreshToken: updatedRefreshToken
   }
 }
