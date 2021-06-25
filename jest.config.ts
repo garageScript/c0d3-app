@@ -16,7 +16,7 @@ const config: Config.InitialOptions = {
     '__tests__/utils/',
     'prisma/',
     'scripts/',
-    '[...nextauth].ts'
+    'api/auth/'
   ],
   coverageThreshold: {
     global: {
