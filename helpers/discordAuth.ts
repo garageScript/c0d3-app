@@ -1,6 +1,7 @@
 import { prisma } from '../prisma'
 import { URLSearchParams } from 'url'
 import { User } from '.prisma/client'
+import fetch from 'node-fetch'
 
 const discordAPI = 'https://discordapp.com/api'
 const client_id = process.env.DISCORD_KEY
