@@ -80,7 +80,7 @@ const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   }).then(r => r.json())
 }
 
-export const updateUserRefreshToken = async (
+const updateUserRefreshToken = async (
   userId: number,
   refreshToken: string
 ): Promise<User> => {

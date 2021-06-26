@@ -1,9 +1,5 @@
 import { getUserInfoFromRefreshToken } from './discordAuth'
-
-const updateUserRefreshToken = jest.spyOn(
-  require('./discordAuth'),
-  'updateUserRefreshToken'
-)
+import { prisma } from '../prisma'
 
 const mockTokenResponse = {
   access_token: '6qrZcUqja7812RVdnEKjpzOL4CvHBFG',
@@ -37,22 +33,24 @@ describe('getUserInfoFromRefreshToken function', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
-
+  const userUpdateFn = (prisma.user.update = jest.fn())
   it('should update refresh token in database if refresh token invalid', async () => {
-    expect(
-      await getUserInfoFromRefreshToken(1, 'mockRefreshToken')
+    await expect(
+      getUserInfoFromRefreshToken(1, 'mockRefreshToken')
     ).rejects.toThrow('refresh token invalid')
-    expect(updateUserRefreshToken).toBeCalledWith(1, '')
+    expect(userUpdateFn).toBeCalled()
   })
 
   it('should return user info if refresh token valid', async () => {
-    getTokenFromRefreshToken.mockResolvedValue(mockUserInfoResponse)
-    expect(
-      await getUserInfoFromRefreshToken(1, 'mockRefreshToken')
+    jest.mock('node-fetch')
+    const fetch = require('node-fetch')
+    fetch
+      .mockReturnValueOnce(mockTokenResponse)
+      .mockReturnValueOnce(mockUserInfoResponse)
+    await expect(
+      getUserInfoFromRefreshToken(1, 'mockRefreshToken')
     ).resolves.toEqual(mockUserInfo)
-    expect(updateUserRefreshToken).toBeCalledWith(
-      1,
-      mockTokenResponse.refresh_token
-    )
+    expect(userUpdateFn).toBeCalled()
+    expect(fetch.mock.calls.length).toBe(2)
   })
 })
