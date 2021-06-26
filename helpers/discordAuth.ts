@@ -80,7 +80,7 @@ const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   }).then(r => r.json())
 }
 
-const updateUserRefreshToken = async (
+export const updateUserRefreshToken = async (
   userId: number,
   refreshToken: string
 ): Promise<User> => {
@@ -101,7 +101,7 @@ export const getUserInfoFromRefreshToken = async (
 ): Promise<DiscordUserInfo> => {
   const tokenResponse = await getTokenFromRefreshToken(refreshToken)
   const updatedRefreshToken = tokenResponse.refresh_token || ''
-  updateUserRefreshToken(userId, updatedRefreshToken)
+  await updateUserRefreshToken(userId, updatedRefreshToken)
 
   if (!updatedRefreshToken) throw new Error('refresh token invalid')
 
