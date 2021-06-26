@@ -10,11 +10,7 @@ export default gql`
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: Int!): [Submission!]
     alerts: [Alert!]!
-    getPreviousSubmissions(
-      lessonId: Int!
-      challengeId: Int!
-      userId: Int!
-    ): [Submission!]
+    getPreviousSubmissions(challengeId: Int!, userId: Int!): [Submission!]
   }
 
   type TokenResponse {

@@ -1,16 +1,8 @@
 import { gql } from '@apollo/client'
 
 const GET_PREVIOUS_SUBMISSIONS = gql`
-  query getPreviousSubmissions(
-    $lessonId: Int!
-    $challengeId: Int!
-    $userId: Int!
-  ) {
-    getPreviousSubmissions(
-      lessonId: $lessonId
-      challengeId: $challengeId
-      userId: $userId
-    ) {
+  query getPreviousSubmissions($challengeId: Int!, $userId: Int!) {
+    getPreviousSubmissions(challengeId: $challengeId, userId: $userId) {
       id
       status
       diff

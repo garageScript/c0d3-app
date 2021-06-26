@@ -240,7 +240,6 @@ export type QuerySubmissionsArgs = {
 }
 
 export type QueryGetPreviousSubmissionsArgs = {
-  lessonId: Scalars['Int']
   challengeId: Scalars['Int']
   userId: Scalars['Int']
 }
@@ -588,7 +587,6 @@ export type LessonMentorsQuery = { __typename?: 'Query' } & {
 }
 
 export type GetPreviousSubmissionsQueryVariables = Exact<{
-  lessonId: Scalars['Int']
   challengeId: Scalars['Int']
   userId: Scalars['Int']
 }>
@@ -1402,10 +1400,7 @@ export type QueryResolvers<
     Maybe<Array<ResolversTypes['Submission']>>,
     ParentType,
     ContextType,
-    RequireFields<
-      QueryGetPreviousSubmissionsArgs,
-      'lessonId' | 'challengeId' | 'userId'
-    >
+    RequireFields<QueryGetPreviousSubmissionsArgs, 'challengeId' | 'userId'>
   >
 }
 
@@ -2562,16 +2557,8 @@ export type LessonMentorsQueryResult = Apollo.QueryResult<
   LessonMentorsQueryVariables
 >
 export const GetPreviousSubmissionsDocument = gql`
-  query getPreviousSubmissions(
-    $lessonId: Int!
-    $challengeId: Int!
-    $userId: Int!
-  ) {
-    getPreviousSubmissions(
-      lessonId: $lessonId
-      challengeId: $challengeId
-      userId: $userId
-    ) {
+  query getPreviousSubmissions($challengeId: Int!, $userId: Int!) {
+    getPreviousSubmissions(challengeId: $challengeId, userId: $userId) {
       id
       status
       diff
@@ -2652,7 +2639,6 @@ export function withGetPreviousSubmissions<
  * @example
  * const { data, loading, error } = useGetPreviousSubmissionsQuery({
  *   variables: {
- *      lessonId: // value for 'lessonId'
  *      challengeId: // value for 'challengeId'
  *      userId: // value for 'userId'
  *   },

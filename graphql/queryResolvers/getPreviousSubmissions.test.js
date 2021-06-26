@@ -2,29 +2,16 @@ import { prisma } from '../../prisma'
 import { getPreviousSubmissions } from './getPreviousSubmissions'
 
 describe('getPreviousSubmissions test', () => {
-  test('Should await prisma query', async () => {
-    prisma.submission.findMany = jest.fn().mockResolvedValue([
+  test('Should invoke prisma query', async () => {
+    const query = (prisma.submission.findMany = jest.fn())
+    await getPreviousSubmissions(
+      {},
       {
-        title: 'testSubmissionA'
+        challengeId: 1,
+        userId: 1
       },
-      { title: 'testSubmissionB' }
-    ])
-    expect(
-      await getPreviousSubmissions(
-        {},
-        {
-          lessonId: 1,
-          challengeId: 1,
-          userId: 1
-        },
-
-        { req: { user: { id: 1 } } }
-      )
-    ).toEqual([
-      {
-        title: 'testSubmissionA'
-      },
-      { title: 'testSubmissionB' }
-    ])
+      {}
+    )
+    expect(query).toBeCalled()
   })
 })

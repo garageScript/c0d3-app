@@ -7,10 +7,9 @@ export const getPreviousSubmissions = async (
   arg: QueryGetPreviousSubmissionsArgs,
   _ctx: Context
 ) => {
-  const { lessonId, challengeId, userId } = arg
-  const submissions = await prisma.submission.findMany({
+  const { challengeId, userId } = arg
+  return prisma.submission.findMany({
     where: {
-      lessonId,
       challengeId,
       user: {
         id: userId
@@ -27,5 +26,4 @@ export const getPreviousSubmissions = async (
       }
     }
   })
-  return submissions
 }
