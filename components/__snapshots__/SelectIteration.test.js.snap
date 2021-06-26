@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectIteration component It should render error state 1`] = `
+<div>
+  <div
+    class="card p-1 selection__card"
+  >
+    <p
+      class="selection__title"
+    >
+      Select submission
+    </p>
+    <p>
+      Error while fetching previous submissions:
+    </p>
+    <p>
+      Oops! Something went wrong.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SelectIteration component It should render loading state 1`] = `
+<div>
+  <div
+    class="card p-1 selection__card"
+  >
+    <p
+      class="selection__title"
+    >
+      Loading previous submissions...
+    </p>
+    <p
+      class="text-muted mb-0"
+    >
+      Iteration n of N total
+    </p>
+    <div
+      class="iteration bg-light m-3 text-muted"
+    >
+      <div
+        class="iteration__number font-weight-bold"
+      >
+        0
+      </div>
+      <div
+        class="iteration__comment-count d-inline"
+      >
+        0
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectIteration component Should be able to select submissions 1`] = `
+<div>
+  <div
+    class="card p-1 selection__card"
+  >
+    <p
+      class="selection__title"
+    >
+      Select submission
+    </p>
+    <p
+      class="text-muted mb-0"
+    >
+      Iteration 2 of 3
+    </p>
+    <div>
+      <div
+        class="d-inline"
+        data-testid="iteration 0"
+      >
+        <div
+          class="iteration bg-success m-3 text-white false"
+        >
+          <div
+            class="iteration__number font-weight-bold"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 1"
+      >
+        <div
+          class="iteration bg-success m-3 text-white active"
+        >
+          <div
+            class="iteration__number font-weight-bold"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 2"
+      >
+        <div
+          class="iteration bg-success m-3 text-white false"
+        >
+          <div
+            class="iteration__number font-weight-bold"
+          >
+            3
+          </div>
+          <div
+            class="iteration__comment-count d-inline"
+          >
+            2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectIteration component Should treat negative index as last iteration 1`] = `
+<div>
+  <div
+    class="card p-1 selection__card"
+  >
+    <p
+      class="selection__title"
+    >
+      Select submission
+    </p>
+    <p
+      class="text-muted mb-0"
+    >
+      Iteration 3 of 3
+    </p>
+    <div>
+      <div
+        class="d-inline"
+        data-testid="iteration 0"
+      >
+        <div
+          class="iteration bg-success m-3 text-white false"
+        >
+          <div
+            class="iteration__number font-weight-bold"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 1"
+      >
+        <div
+          class="iteration bg-success m-3 text-white active"
+        >
+          <div
+            class="iteration__number font-weight-bold"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 2"
+      >
+        <div
+          class="iteration bg-success m-3 text-white false"
+        >
+          <div
+            class="iteration__number font-weight-bold"
+          >
+            3
+          </div>
+          <div
+            class="iteration__comment-count d-inline"
+          >
+            2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

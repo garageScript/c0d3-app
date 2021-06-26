@@ -1,0 +1,36 @@
+.selection__title {
+  font-size: 1.2rem;
+  margin: unset;
+}
+
+.selection__card {
+  min-height: 150px;
+}
+
+.iteration {
+  max-height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  max-width: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 1em;
+  &.active {
+    background-color: cadetblue !important;
+  }
+}
+
+.iteration__number {
+  font-size: 1.2rem;
+}
+
+.iteration__comment-count {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  padding: 2px;
+  color: black !important;
+  border: 1px solid black;
+  background-color: white !important;
+}

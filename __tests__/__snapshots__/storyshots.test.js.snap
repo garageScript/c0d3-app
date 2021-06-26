@@ -13622,6 +13622,124 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/SelectIteration Active 1`] = `
+<div
+  className="card p-1 selection__card"
+>
+  <p
+    className="selection__title"
+  >
+    Select submission
+  </p>
+  <p
+    className="text-muted mb-0"
+  >
+    Iteration 2 of 3
+  </p>
+  <div>
+    <div
+      className="d-inline"
+      data-testid="iteration 0"
+      onClick={[Function]}
+    >
+      <div
+        className="iteration bg-success m-3 text-white false"
+      >
+        <div
+          className="iteration__number font-weight-bold"
+        >
+          1
+        </div>
+      </div>
+    </div>
+    <div
+      className="d-inline"
+      data-testid="iteration 1"
+      onClick={[Function]}
+    >
+      <div
+        className="iteration bg-success m-3 text-white active"
+      >
+        <div
+          className="iteration__number font-weight-bold"
+        >
+          2
+        </div>
+      </div>
+    </div>
+    <div
+      className="d-inline"
+      data-testid="iteration 2"
+      onClick={[Function]}
+    >
+      <div
+        className="iteration bg-success m-3 text-white false"
+      >
+        <div
+          className="iteration__number font-weight-bold"
+        >
+          3
+        </div>
+        <div
+          className="iteration__comment-count d-inline"
+        >
+          2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/SelectIteration Error 1`] = `
+<div
+  className="card p-1 selection__card"
+>
+  <p
+    className="selection__title"
+  >
+    Select submission
+  </p>
+  <p>
+    Error while fetching previous submissions:
+  </p>
+  <p>
+    Oops! Something went wrong.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/SelectIteration Loading 1`] = `
+<div
+  className="card p-1 selection__card"
+>
+  <p
+    className="selection__title"
+  >
+    Loading previous submissions...
+  </p>
+  <p
+    className="text-muted mb-0"
+  >
+    Iteration n of N total
+  </p>
+  <div
+    className="iteration bg-light m-3 text-muted"
+  >
+    <div
+      className="iteration__number font-weight-bold"
+    >
+      0
+    </div>
+    <div
+      className="iteration__comment-count d-inline"
+    >
+      0
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
 <div
   className="card-group"
