@@ -1,4 +1,7 @@
-import { getUserInfoFromRefreshToken } from './discordAuth'
+import {
+  getTokenFromAuthCode,
+  getUserInfoFromRefreshToken
+} from './discordAuth'
 import { prisma } from '../prisma'
 
 const mockTokenResponse = {
@@ -28,6 +31,15 @@ const mockUserInfo = {
   avatarUrl: `https://cdn.discordapp.com/avatars/756944741073027119/ea8f5f59aff14450e892321ba128745d.png`,
   refreshToken: 'D43f5y0ahjqew82jZ4NViEr2YafMKhue'
 }
+
+describe('getTokenFromAuthCode function', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+  jest.mock('node-fetch')
+  const fetch = require('node-fetch')
+  expect(fetch.mock.calls.length).toBe(1)
+})
 
 describe('getUserInfoFromRefreshToken function', () => {
   beforeEach(() => {
