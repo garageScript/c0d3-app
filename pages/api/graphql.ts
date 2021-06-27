@@ -27,7 +27,7 @@ handler
   .use(loggingMiddleware)
   .use(
     session({
-      secret: process.env.SESSION_SECRET || '',
+      secret: process.env.SESSION_SECRET as string,
       store: new PrismaSessionStore(prisma, {
         dbRecordIdIsSessionId: true,
         dbRecordIdFunction: undefined,
