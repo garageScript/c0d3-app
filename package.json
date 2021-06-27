@@ -82,7 +82,7 @@
     "@storybook/addon-viewport": "^6.3.0",
     "@storybook/react": "^6.3.0",
     "@testing-library/jest-dom": "^5.13.0",
-    "@testing-library/react": "^11.2.7",
+    "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^12.7.0",
     "@types/bcrypt": "^5.0.0",
     "@types/express-session": "^1.17.3",
@@ -116,7 +116,7 @@
     "remark-slug": "^6.0.0",
     "remark-toc": "^7.2.0",
     "sass-loader": "^10.0.1",
-    "svgo": "^2.3.0",
+    "svgo": "^2.3.1",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
   }

@@ -3175,10 +3175,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@^7.28.1":
-  version "7.31.2"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.31.2.tgz#df361db38f5212b88555068ab8119f5d841a8c4a"
-  integrity sha512-3UqjCpey6HiTZT92vODYLPxTBWlM8ZOOjr3LX5F37/VRipW2M1kX6I/Cm4VXzteZqfGfagg8yXywpcOgQBlNsQ==
+"@testing-library/dom@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.0.0.tgz#2bb994393c566aae021db86dd263ba06e8b71b38"
+  integrity sha512-Ym375MTOpfszlagRnTMO+FOfTt6gRrWiDOWmEnWLu9OvwCPOWtK6i5pBHmZ07wUJiQ7wWz0t8+ZBK2wFo2tlew==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/runtime" "^7.12.5"
@@ -3187,7 +3187,7 @@
     chalk "^4.1.0"
     dom-accessibility-api "^0.5.6"
     lz-string "^1.4.4"
-    pretty-format "^26.6.2"
+    pretty-format "^27.0.2"
 
 "@testing-library/jest-dom@^5.13.0":
   version "5.14.1"
@@ -3204,13 +3204,13 @@
     lodash "^4.17.15"
     redent "^3.0.0"
 
-"@testing-library/react@^11.2.7":
-  version "11.2.7"
-  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-11.2.7.tgz#b29e2e95c6765c815786c0bc1d5aed9cb2bf7818"
-  integrity sha512-tzRNp7pzd5QmbtXNG/mhdcl7Awfu/Iz1RaVHY75zTdOkmHCuzMhRL83gWHSgOAcjS3CCbyfwUHMZgRJb4kAfpA==
+"@testing-library/react@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-12.0.0.tgz#9aeb2264521522ab9b68f519eaf15136148f164a"
+  integrity sha512-sh3jhFgEshFyJ/0IxGltRhwZv2kFKfJ3fN1vTZ6hhMXzz9ZbbcTgmDYM4e+zJv+oiVKKEWZPyqPAh4MQBI65gA==
   dependencies:
     "@babel/runtime" "^7.12.5"
-    "@testing-library/dom" "^7.28.1"
+    "@testing-library/dom" "^8.0.0"
 
 "@testing-library/user-event@^12.7.0":
   version "12.8.3"
@@ -4288,6 +4288,11 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   integrity sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==
   dependencies:
     color-convert "^2.0.1"
+
+ansi-styles@^5.0.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
+  integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
 ansi-to-html@^0.6.11:
   version "0.6.15"
@@ -6270,17 +6275,6 @@ css-loader@^3.6.0:
     schema-utils "^2.7.0"
     semver "^6.3.0"
 
-css-select@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/css-select/-/css-select-3.1.2.tgz#d52cbdc6fee379fba97fb0d3925abbd18af2d9d8"
-  integrity sha512-qmss1EihSuBNWNNhHjxzxSfJoFBM/lERB/Q4EnsJQQC62R2evJDW481091oAdOr9uh46/0n4nrg0It5cAnj1RA==
-  dependencies:
-    boolbase "^1.0.0"
-    css-what "^4.0.0"
-    domhandler "^4.0.0"
-    domutils "^2.4.3"
-    nth-check "^2.0.0"
-
 css-select@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-4.1.3.tgz#a70440f70317f2669118ad74ff105e65849c7067"
@@ -6299,11 +6293,6 @@ css-tree@^1.1.2:
   dependencies:
     mdn-data "2.0.14"
     source-map "^0.6.1"
-
-css-what@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/css-what/-/css-what-4.0.0.tgz#35e73761cab2eeb3d3661126b23d7aa0e8432233"
-  integrity sha512-teijzG7kwYfNVsUh2H/YN62xW3KK9YhXEgSlbxMlcyjPNvdKJqFx5lrwlJgoFP1ZHlB89iGDlo/JyshKeRhv5A==
 
 css-what@^5.0.0:
   version "5.0.1"
@@ -6751,7 +6740,7 @@ domhandler@^4.0.0, domhandler@^4.2.0:
   dependencies:
     domelementtype "^2.2.0"
 
-domutils@^2.4.3, domutils@^2.5.2, domutils@^2.6.0:
+domutils@^2.5.2, domutils@^2.6.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/domutils/-/domutils-2.7.0.tgz#8ebaf0c41ebafcf55b0b72ec31c56323712c5442"
   integrity sha512-8eaHa17IwJUPAiB+SoTYBo5mCdeMgdcAoXJ59m6DT1vw+5iLS3gNoqYaRowaBKtGVrOF1Jz4yDTgYKLK2kvfJg==
@@ -12398,6 +12387,16 @@ pretty-format@^26.0.0, pretty-format@^26.6.2:
     ansi-styles "^4.0.0"
     react-is "^17.0.1"
 
+pretty-format@^27.0.2:
+  version "27.0.2"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.0.2.tgz#9283ff8c4f581b186b2d4da461617143dca478a4"
+  integrity sha512-mXKbbBPnYTG7Yra9qFBtqj+IXcsvxsvOBco3QHxtxTl+hHKq6QdzMZ+q0CtL4ORHZgwGImRr2XZUX2EWzORxig==
+  dependencies:
+    "@jest/types" "^27.0.2"
+    ansi-regex "^5.0.0"
+    ansi-styles "^5.0.0"
+    react-is "^17.0.1"
+
 pretty-format@^3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
@@ -14436,15 +14435,15 @@ supports-hyperlinks@^2.0.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svgo@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.3.0.tgz#6b3af81d0cbd1e19c83f5f63cec2cb98c70b5373"
-  integrity sha512-fz4IKjNO6HDPgIQxu4IxwtubtbSfGEAJUq/IXyTPIkGhWck/faiiwfkvsB8LnBkKLvSoyNNIY6d13lZprJMc9Q==
+svgo@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.3.1.tgz#603a69ce50311c0e36791528f549644ec1b3f4bc"
+  integrity sha512-riDDIQgXpEnn0BEl9Gvhh1LNLIyiusSpt64IR8upJu7MwxnzetmF/Y57pXQD2NMX2lVyMRzXt5f2M5rO4wG7Dw==
   dependencies:
     "@trysound/sax" "0.1.1"
     chalk "^4.1.0"
     commander "^7.1.0"
-    css-select "^3.1.2"
+    css-select "^4.1.3"
     css-tree "^1.1.2"
     csso "^4.2.0"
     stable "^0.1.8"
