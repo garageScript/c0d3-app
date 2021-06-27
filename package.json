@@ -108,7 +108,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.5",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.2",
     "prisma": "^2.25.0",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^1.0.0",
