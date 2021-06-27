@@ -1,7 +1,6 @@
 import type { LoggedRequest } from '../../@types/helpers'
 import type { SetStarMutation, SetStarMutationVariables } from '../../graphql'
 import { prisma } from '../../prisma'
-import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { validateLessonId } from '../validateLessonId'
 import { validateStudentId } from '../validation/validateStudentId'
 
@@ -21,7 +20,7 @@ export const setStar = async (
     await validateLessonId(lessonId)
     const starData = { studentId, ...arg }
 
-    const { lesson, mentor } = await prisma.star.upsert({
+    await prisma.star.upsert({
       where: {
         studentId_lessonId: {
           studentId,
@@ -43,12 +42,6 @@ export const setStar = async (
         }
       }
     })
-
-    if (lesson.chatUrl && mentor.email) {
-      const channelName = lesson.chatUrl.split('/').pop()!
-      const { username } = await getUserByEmail(mentor.email)
-      publicChannelMessage(channelName, `@${username} received a star!`)
-    }
 
     return { success: true }
   } catch (err) {

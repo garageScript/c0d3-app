@@ -11,7 +11,6 @@ import {
 import { prisma } from '../../prisma'
 import { decode } from '../encoding'
 import { hasPassedLesson } from '../hasPassedLesson'
-import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission } from '../updateSubmission'
 
 export const createSubmission = async (
@@ -39,8 +38,7 @@ export const createSubmission = async (
           userId: Number(id)
         },
         update: {
-          diff: submissionData.diff,
-          status: submissionData.status,
+          ...submissionData,
           comments: {
             deleteMany: {}
           }
@@ -51,19 +49,6 @@ export const createSubmission = async (
           challenge: true
         }
       })
-
-    // query nextLesson based off order property of currentLesson
-    const nextLesson = await prisma.lesson.findFirst({
-      where: { order: lesson.order + 1 }
-    })
-
-    // if no Lesson was found nextLesson is null
-    if (nextLesson?.chatUrl) {
-      const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()!
-      const { username } = await getUserByEmail(user.email)
-      const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${lessonId}>) to review the code.`
-      publicChannelMessage(nextLessonChannelName, message)
-    }
 
     return submission
   } catch (error) {
