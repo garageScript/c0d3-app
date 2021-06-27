@@ -13622,6 +13622,124 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/SelectIteration Active 1`] = `
+<div
+  className="card p-1 selection__card"
+>
+  <p
+    className="selection__title"
+  >
+    Select submission
+  </p>
+  <p
+    className="text-muted mb-0"
+  >
+    Iteration 2 of 3
+  </p>
+  <div>
+    <div
+      className="d-inline"
+      data-testid="iteration 0"
+      onClick={[Function]}
+    >
+      <button
+        className="button m-3 btn btn-success"
+        disabled={false}
+        type="button"
+      >
+        1
+        <span
+          className="sr-only"
+        >
+          comment count
+        </span>
+      </button>
+    </div>
+    <div
+      className="d-inline"
+      data-testid="iteration 1"
+      onClick={[Function]}
+    >
+      <button
+        className="button m-3 btn btn-info"
+        disabled={false}
+        type="button"
+      >
+        2
+        <span
+          className="sr-only"
+        >
+          comment count
+        </span>
+      </button>
+    </div>
+    <div
+      className="d-inline"
+      data-testid="iteration 2"
+      onClick={[Function]}
+    >
+      <button
+        className="button m-3 btn btn-success"
+        disabled={false}
+        type="button"
+      >
+        3
+        <span
+          className="badge badge badge-light"
+        >
+          2
+        </span>
+        <span
+          className="sr-only"
+        >
+          comment count
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/SelectIteration Error 1`] = `
+<div
+  className="card p-1 selection__card"
+>
+  <p
+    className="selection__title"
+  >
+    Select submission
+  </p>
+  <p>
+    Error while fetching previous submissions:
+  </p>
+  <p>
+    Oops! Something went wrong.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/SelectIteration Loading 1`] = `
+<div
+  className="card p-1 selection__card"
+>
+  <p
+    className="selection__title"
+  >
+    Loading previous submissions...
+  </p>
+  <p
+    className="text-muted mb-0"
+  >
+    Iteration n of N total
+  </p>
+  <button
+    className="button m-3 loading btn btn-light"
+    disabled={false}
+    type="button"
+  />
+</div>
+`;
+
 exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
 <div
   className="card-group"
