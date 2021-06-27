@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../scss/selectIteration.module.scss'
 import { ApolloError } from '@apollo/client'
 import { Submission, GetPreviousSubmissionsQuery } from '../graphql'
+import { Badge, Button } from 'react-bootstrap'
 
 type IterationLink = {
   iteration: number
@@ -24,31 +25,25 @@ const IterationLink: React.FC<IterationLink | { loading: boolean }> = props => {
   if (!props.hasOwnProperty('loading')) {
     props = props as IterationLink
     return (
-      <div
-        className={`${styles['iteration']} bg-success m-3 text-white ${
-          props.current === props.id && styles['active']
-        }`}
+      <Button
+        variant={props.current === props.id ? 'info' : 'success'}
+        className={`${styles['button']} m-3`}
       >
-        <div className={`${styles['iteration__number']} font-weight-bold`}>
-          {props.iteration}
-        </div>
+        {props.iteration}
         {props.comments !== 0 && (
-          <div className={`${styles['iteration__comment-count']} d-inline`}>
+          <Badge variant="light" className={styles['badge']}>
             {props.comments}
-          </div>
+          </Badge>
         )}
-      </div>
+        <span className="sr-only">comment count</span>
+      </Button>
     )
   } else
     return (
-      <div className={`${styles['iteration']} bg-light m-3 text-muted`}>
-        <div className={`${styles['iteration__number']} font-weight-bold`}>
-          {0}
-        </div>
-        <div className={`${styles['iteration__comment-count']} d-inline`}>
-          {0}
-        </div>
-      </div>
+      <Button
+        variant="light"
+        className={`${styles['button']} m-3 ${styles['loading']}`}
+      />
     )
 }
 

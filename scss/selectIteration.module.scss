@@ -3,34 +3,25 @@
   margin: unset;
 }
 
-.selection__card {
-  min-height: 150px;
-}
-
-.iteration {
-  max-height: 50px;
-  min-height: 50px;
-  min-width: 50px;
-  max-width: 50px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5em 1em;
-  &.active {
-    background-color: cadetblue !important;
+.button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  min-width: 3rem;
+  max-width: max-content;
+  & .badge {
+    color: rgb(122, 126, 120);
+    position: absolute;
+    top: -0.75em;
+    right: -0.75em;
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+  }
+  &.loading {
+    min-height: 3rem;
   }
 }
 
-.iteration__number {
-  font-size: 1.2rem;
-}
-
-.iteration__comment-count {
-  position: relative;
-  top: 10px;
-  left: 20px;
-  padding: 2px;
-  color: black !important;
-  border: 1px solid black;
-  background-color: white !important;
+.selection__card {
+  min-height: 150px;
 }

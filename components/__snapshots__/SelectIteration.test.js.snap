@@ -35,20 +35,10 @@ exports[`SelectIteration component It should render loading state 1`] = `
     >
       Iteration n of N total
     </p>
-    <div
-      class="iteration bg-light m-3 text-muted"
-    >
-      <div
-        class="iteration__number font-weight-bold"
-      >
-        0
-      </div>
-      <div
-        class="iteration__comment-count d-inline"
-      >
-        0
-      </div>
-    </div>
+    <button
+      class="button m-3 loading btn btn-light"
+      type="button"
+    />
   </div>
 </div>
 `;
@@ -73,48 +63,54 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         class="d-inline"
         data-testid="iteration 0"
       >
-        <div
-          class="iteration bg-success m-3 text-white false"
+        <button
+          class="button m-3 btn btn-success"
+          type="button"
         >
-          <div
-            class="iteration__number font-weight-bold"
+          1
+          <span
+            class="sr-only"
           >
-            1
-          </div>
-        </div>
+            comment count
+          </span>
+        </button>
       </div>
       <div
         class="d-inline"
         data-testid="iteration 1"
       >
-        <div
-          class="iteration bg-success m-3 text-white active"
+        <button
+          class="button m-3 btn btn-info"
+          type="button"
         >
-          <div
-            class="iteration__number font-weight-bold"
+          2
+          <span
+            class="sr-only"
           >
-            2
-          </div>
-        </div>
+            comment count
+          </span>
+        </button>
       </div>
       <div
         class="d-inline"
         data-testid="iteration 2"
       >
-        <div
-          class="iteration bg-success m-3 text-white false"
+        <button
+          class="button m-3 btn btn-success"
+          type="button"
         >
-          <div
-            class="iteration__number font-weight-bold"
-          >
-            3
-          </div>
-          <div
-            class="iteration__comment-count d-inline"
+          3
+          <span
+            class="badge badge badge-light"
           >
             2
-          </div>
-        </div>
+          </span>
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
       </div>
     </div>
   </div>
@@ -141,48 +137,54 @@ exports[`SelectIteration component Should treat negative index as last iteration
         class="d-inline"
         data-testid="iteration 0"
       >
-        <div
-          class="iteration bg-success m-3 text-white false"
+        <button
+          class="button m-3 btn btn-success"
+          type="button"
         >
-          <div
-            class="iteration__number font-weight-bold"
+          1
+          <span
+            class="sr-only"
           >
-            1
-          </div>
-        </div>
+            comment count
+          </span>
+        </button>
       </div>
       <div
         class="d-inline"
         data-testid="iteration 1"
       >
-        <div
-          class="iteration bg-success m-3 text-white active"
+        <button
+          class="button m-3 btn btn-info"
+          type="button"
         >
-          <div
-            class="iteration__number font-weight-bold"
+          2
+          <span
+            class="sr-only"
           >
-            2
-          </div>
-        </div>
+            comment count
+          </span>
+        </button>
       </div>
       <div
         class="d-inline"
         data-testid="iteration 2"
       >
-        <div
-          class="iteration bg-success m-3 text-white false"
+        <button
+          class="button m-3 btn btn-success"
+          type="button"
         >
-          <div
-            class="iteration__number font-weight-bold"
-          >
-            3
-          </div>
-          <div
-            class="iteration__comment-count d-inline"
+          3
+          <span
+            class="badge badge badge-light"
           >
             2
-          </div>
-        </div>
+          </span>
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
       </div>
     </div>
   </div>

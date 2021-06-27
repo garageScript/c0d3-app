@@ -13642,50 +13642,59 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       data-testid="iteration 0"
       onClick={[Function]}
     >
-      <div
-        className="iteration bg-success m-3 text-white false"
+      <button
+        className="button m-3 btn btn-success"
+        disabled={false}
+        type="button"
       >
-        <div
-          className="iteration__number font-weight-bold"
+        1
+        <span
+          className="sr-only"
         >
-          1
-        </div>
-      </div>
+          comment count
+        </span>
+      </button>
     </div>
     <div
       className="d-inline"
       data-testid="iteration 1"
       onClick={[Function]}
     >
-      <div
-        className="iteration bg-success m-3 text-white active"
+      <button
+        className="button m-3 btn btn-info"
+        disabled={false}
+        type="button"
       >
-        <div
-          className="iteration__number font-weight-bold"
+        2
+        <span
+          className="sr-only"
         >
-          2
-        </div>
-      </div>
+          comment count
+        </span>
+      </button>
     </div>
     <div
       className="d-inline"
       data-testid="iteration 2"
       onClick={[Function]}
     >
-      <div
-        className="iteration bg-success m-3 text-white false"
+      <button
+        className="button m-3 btn btn-success"
+        disabled={false}
+        type="button"
       >
-        <div
-          className="iteration__number font-weight-bold"
-        >
-          3
-        </div>
-        <div
-          className="iteration__comment-count d-inline"
+        3
+        <span
+          className="badge badge badge-light"
         >
           2
-        </div>
-      </div>
+        </span>
+        <span
+          className="sr-only"
+        >
+          comment count
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -13723,20 +13732,11 @@ exports[`Storyshots Components/SelectIteration Loading 1`] = `
   >
     Iteration n of N total
   </p>
-  <div
-    className="iteration bg-light m-3 text-muted"
-  >
-    <div
-      className="iteration__number font-weight-bold"
-    >
-      0
-    </div>
-    <div
-      className="iteration__comment-count d-inline"
-    >
-      0
-    </div>
-  </div>
+  <button
+    className="button m-3 loading btn btn-light"
+    disabled={false}
+    type="button"
+  />
 </div>
 `;
 
