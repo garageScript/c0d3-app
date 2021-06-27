@@ -1,4 +1,5 @@
 jest.mock('bcrypt')
+jest.mock('nodemailer')
 jest.mock('../mail')
 import bcrypt from 'bcrypt'
 import { login, logout, signup, isTokenValid } from './authController'

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../../graphql/queryResolvers/alerts')
 import { alerts } from '../../graphql/queryResolvers/alerts'
 import { prisma } from '../../prisma'

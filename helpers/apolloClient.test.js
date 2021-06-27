@@ -17,6 +17,8 @@ jest.mock('@apollo/client', () => ({
     cache: { restore: jest.fn() }
   }))
 }))
+jest.mock('nodemailer')
+
 describe('apolloClient', () => {
   global.fetch = jest.fn()
   const window = global.window

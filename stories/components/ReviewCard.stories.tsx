@@ -80,8 +80,8 @@ const submissionData = {
     email: 'fake@fakemail.com',
     isAdmin: false
   },
-  createdAt: '2019-01-25',
-  updatedAt: '2019-01-29'
+  createdAt: '1524401718267',
+  updatedAt: '1524401718267'
 }
 
 export const ActiveCard: React.FC = () => (

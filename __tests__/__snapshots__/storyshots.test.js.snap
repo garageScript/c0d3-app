@@ -8351,7 +8351,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         }
       }
     >
-      51 years ago
+      3 years ago
     </div>
   </div>
   <div
@@ -9253,7 +9253,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         >
           requested changes on
            
-          Thursday, January 1, 1970
+          Sunday, April 22, 2018
           :
         </div>
       </div>
@@ -10461,7 +10461,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         }
       }
     >
-      51 years ago
+      3 years ago
     </div>
   </div>
   <div
@@ -11363,7 +11363,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         >
           requested changes on
            
-          Thursday, January 1, 1970
+          Sunday, April 22, 2018
           :
         </div>
       </div>
@@ -11542,7 +11542,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         }
       }
     >
-      51 years ago
+      3 years ago
     </div>
   </div>
   <div
@@ -12553,7 +12553,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         }
       }
     >
-      51 years ago
+      3 years ago
     </div>
   </div>
   <div
@@ -13455,7 +13455,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         >
           requested changes on
            
-          Thursday, January 1, 1970
+          Sunday, April 22, 2018
           :
         </div>
       </div>

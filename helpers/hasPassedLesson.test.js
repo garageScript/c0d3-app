@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 const { prisma } = require('../prisma')
 const { hasPassedLesson } = require('./hasPassedLesson')
 

@@ -21,7 +21,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
       <div
         style="color: rgb(142, 142, 142); font-size: 0.85rem;"
       >
-        51 years ago
+        3 years ago
       </div>
     </div>
     <div
@@ -1245,7 +1245,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
           >
             requested changes on
              
-            Thursday, January 1, 1970
+            Sunday, April 22, 2018
             :
           </div>
         </div>
@@ -1401,7 +1401,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       <div
         style="color: rgb(142, 142, 142); font-size: 0.85rem;"
       >
-        51 years ago
+        3 years ago
       </div>
     </div>
     <div
@@ -2625,7 +2625,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           >
             requested changes on
              
-            Thursday, January 1, 1970
+            Sunday, April 22, 2018
             :
           </div>
         </div>
@@ -2779,7 +2779,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
       <div
         style="color: rgb(142, 142, 142); font-size: 0.85rem;"
       >
-        51 years ago
+        3 years ago
       </div>
     </div>
     <div
@@ -4003,7 +4003,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           >
             requested changes on
              
-            Thursday, January 1, 1970
+            Sunday, April 22, 2018
             :
           </div>
         </div>
@@ -4157,7 +4157,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
       <div
         style="color: rgb(142, 142, 142); font-size: 0.85rem;"
       >
-        51 years ago
+        3 years ago
       </div>
     </div>
     <div
@@ -5381,7 +5381,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           >
             requested changes on
              
-            Thursday, January 1, 1970
+            Sunday, April 22, 2018
             :
           </div>
         </div>
@@ -5535,7 +5535,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       <div
         style="color: rgb(142, 142, 142); font-size: 0.85rem;"
       >
-        51 years ago
+        3 years ago
       </div>
     </div>
     <div
@@ -5582,7 +5582,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           >
             requested changes on
              
-            Thursday, January 1, 1970
+            Sunday, April 22, 2018
             :
           </div>
         </div>
@@ -5736,7 +5736,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       <div
         style="color: rgb(142, 142, 142); font-size: 0.85rem;"
       >
-        51 years ago
+        3 years ago
       </div>
     </div>
     <div
@@ -6960,7 +6960,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           >
             requested changes on
              
-            Thursday, January 1, 1970
+            Sunday, April 22, 2018
             :
           </div>
         </div>

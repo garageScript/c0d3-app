@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
 import { createChallenge, updateChallenge } from './challengesController'

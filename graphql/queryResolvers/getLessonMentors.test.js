@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../../helpers/validateLessonId')
 import { getLessonMentors } from './getLessonMentors'
 import { validateLessonId } from '../../helpers/validateLessonId'

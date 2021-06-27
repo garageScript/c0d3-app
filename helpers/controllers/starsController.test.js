@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../../helpers/validateLessonId')
 import { prisma } from '../../prisma'
 import { validateLessonId } from '../validateLessonId'

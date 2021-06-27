@@ -43,8 +43,8 @@ const submissionData = {
     id: '1',
     username: 'fake reviewer'
   },
-  createdAt: '123',
-  updatedAt: '123',
+  createdAt: '1524401718267',
+  updatedAt: '1524401718267',
   comments: [
     {
       author: {

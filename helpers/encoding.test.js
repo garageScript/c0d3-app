@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { encode, decode } from './encoding'
 
 describe('Encoding and Decoding should work as expected', () => {

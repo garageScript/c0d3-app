@@ -1,3 +1,6 @@
+/**
+ * @jest-environment node
+ */
 import { prisma } from '../../prisma'
 import { changeAdminRights } from './adminController'
 

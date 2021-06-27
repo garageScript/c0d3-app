@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { SubmissionStatus } from '../../graphql'
 import { prisma } from '../../prisma'
 import { userInfo } from './userInfoController'
