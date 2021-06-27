@@ -1,8 +1,6 @@
 /**
  * @jest-environment node
  */
-
-jest.mock('../mattermost')
 import { prisma } from '../../prisma'
 import { changeAdminRights } from './adminController'
 

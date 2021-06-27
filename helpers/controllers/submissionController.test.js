@@ -4,18 +4,16 @@
 
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
-jest.mock('../mattermost')
 import { SubmissionStatus } from '../../graphql'
 import { prisma } from '../../prisma'
 import { hasPassedLesson } from '../hasPassedLesson'
-import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission } from '../updateSubmission'
 import {
   acceptSubmission,
   createSubmission,
+  getReviewer,
   rejectSubmission,
-  submissions,
-  getReviewer
+  submissions
 } from './submissionController'
 
 describe('Submissions Mutations', () => {
@@ -52,32 +50,25 @@ describe('Submissions Mutations', () => {
       prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
     })
 
-    test('should return submission', () => {
-      return expect(createSubmission(null, args)).resolves.toEqual({
+    test('should save and return submission', async () => {
+      await expect(createSubmission(null, args)).resolves.toEqual({
         id: 1,
         diff: 'fakeDiff'
       })
-    })
-
-    test('should notify next lesson channel when there is a next lesson', async () => {
-      const username = 'fake user'
-      const channelName = 'js2-arrays'
-      prisma.lesson.findFirst = jest.fn().mockResolvedValue({
-        chatUrl: `https://fake/url/channels/${channelName}`,
-        order: 2
-      })
-      getUserByEmail.mockReturnValue({ username })
-
-      await createSubmission(null, args)
-      expect(publicChannelMessage).toHaveBeenCalledWith(
-        channelName,
-        `@${username} has submitted a solution **_${submissionMock.challenge.title}_**. Click [here](<https://www.c0d3.com/review/1>) to review the code.`
+      expect(prisma.submission.upsert).toHaveBeenCalledWith(
+        expect.objectContaining({
+          create: expect.objectContaining({
+            diff: args.diff,
+            status: SubmissionStatus.Open,
+            challengeId: args.challengeId,
+            lessonId: args.lessonId
+          }),
+          update: expect.objectContaining({
+            diff: args.diff,
+            status: SubmissionStatus.Open
+          })
+        })
       )
-    })
-
-    test('should not notify any channel when there is no next lesson', async () => {
-      await createSubmission(null, args)
-      expect(publicChannelMessage).not.toHaveBeenCalled()
     })
 
     test('should throw error Invalid args', () => {
