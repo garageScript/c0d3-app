@@ -21,7 +21,6 @@ export const createSubmission = async (
     if (!args) throw new Error('Invalid args')
     const { challengeId, cliToken, diff, lessonId } = args
     const { id } = decode(cliToken)
-    const submissionData = { diff, status: SubmissionStatus.Open }
     const previousSubmission = await prisma.submission.findFirst({
       where: {
         challengeId,
@@ -42,20 +41,15 @@ export const createSubmission = async (
         }
       })
     }
-    const submission = await prisma.submission.create({
+    return prisma.submission.create({
       data: {
-        ...submissionData,
         challengeId,
         lessonId,
-        userId: Number(id)
-      },
-      include: {
-        user: true,
-        lesson: true,
-        challenge: true
+        userId: id,
+        diff,
+        status: SubmissionStatus.Open
       }
     })
-    return submission
   } catch (error) {
     throw new Error(error)
   }
