@@ -12,15 +12,8 @@ import { MDXProvider } from '@mdx-js/react'
 import Head from 'next/head'
 import '../scss/index.scss'
 import MDXcomponents from '../helpers/mdxComponents'
-import * as Sentry from '@sentry/browser'
 import { useApollo } from '../helpers/apolloClient'
 import { ContextProvider } from '../helpers/globalContext'
-const SENTRY_DSN = process.env.SENTRY_DSN
-
-Sentry.init({
-  dsn: SENTRY_DSN
-})
-
 interface IProps extends AppProps {
   err: any
   apollo: ApolloClient<NormalizedCacheObject>
