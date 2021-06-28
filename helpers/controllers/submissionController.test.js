@@ -4,7 +4,6 @@
 
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
-import exp from 'constants'
 import { SubmissionStatus } from '../../graphql'
 import { prisma } from '../../prisma'
 import { hasPassedLesson } from '../hasPassedLesson'
