@@ -59,6 +59,12 @@ export const winstonLogger = (sessionId: string) => {
 export default (req: LoggedRequest, res: NextApiResponse, next: () => void) => {
   const uid = nanoid()
   const logger = winstonLogger(uid)
+  // Test ServerSide Logging
+  logger.log({
+    level: 'error',
+    message: 'Server Side Mock Error'
+  })
+
   req.info = (val: any) => {
     logger.info(processArgs(val))
   }

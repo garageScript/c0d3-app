@@ -80,6 +80,14 @@ function MyApp({ Component, pageProps, err }: IProps) {
               content="https://www.c0d3.com/assets/c0d3-meta.svg"
             />
           </Head>
+          <button
+            type="button"
+            onClick={() => {
+              throw new Error('Sentry Frontend Error')
+            }}
+          >
+            Throw error
+          </button>
           <Component {...pageProps} err={err} />
         </ContextProvider>
       </MDXProvider>
