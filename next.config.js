@@ -9,7 +9,7 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
   }
 })
-module.exports = withMDX({
+const moduleExports = withMDX({
   pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
   env: {
     DB_NAME: process.env.DB_NAME,
