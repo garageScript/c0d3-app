@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import DiffView from './DiffView'
+import { SubmissionStatus } from '../graphql'
 import { MockedProvider } from '@apollo/client/testing'
 import getPreviousSubmissions from '../__dummy__/getPreviousSubmissionsData'
 
@@ -11,12 +12,13 @@ describe('DiffView component', () => {
   test('Should render diff with comments', async () => {
     const { container } = render(
       <MockedProvider mocks={[]} addTypename={false}>
-        <DiffView submission={dummySumissions[2]} />
+        <DiffView
+          submission={dummySumissions[2]}
+          generalStatus={SubmissionStatus.Open}
+        />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
-    //userEvent.click(screen.getByText('4'))
-    //userEvent.click(screen.getByText('6'))
     expect(await screen.findByText('second line comment')).toBeVisible()
   })
   test('Should render diff with no comments', () => {
@@ -30,7 +32,10 @@ describe('DiffView component', () => {
   test('Should add comment box', () => {
     const { container } = render(
       <MockedProvider mocks={[]} addTypename={false}>
-        <DiffView submission={dummySumissions[0]} />
+        <DiffView
+          submission={dummySumissions[0]}
+          generalStatus={SubmissionStatus.Open}
+        />
       </MockedProvider>
     )
     userEvent.click(screen.getByText('4'))
@@ -40,7 +45,10 @@ describe('DiffView component', () => {
   test('Should remove comment box with no comments', async () => {
     render(
       <MockedProvider mocks={[]} addTypename={false}>
-        <DiffView submission={dummySumissions[2]} />
+        <DiffView
+          submission={dummySumissions[2]}
+          generalStatus={SubmissionStatus.Open}
+        />
       </MockedProvider>
     )
     //select fourth line of second file
@@ -49,21 +57,19 @@ describe('DiffView component', () => {
     userEvent.click(screen.getAllByText('4')[1])
     expect((await screen.findAllByText('Add comment')).length).toBe(2)
   })
-  //  test('Should not add comment box if submission was accepted', () => {
-  //const {container} = render(
-  //<MockedProvider mocks={[]} addTypename={false}>
-  //<DiffView
-  //diff={diff}
-  //comments={[]}
-  //id={1}
-  //status="passed"
-  //submission={dummySumissions[0]}
-  ///>
-  //</MockedProvider>
-  //)
-  //userEvent.click(screen.getByText('4'))
-  //expect(screen.queryByText('Add comment')).toBeFalsy()
-  //})
+  test('Should not add comment is generalStatus is not open', () => {
+    render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView
+          submission={dummySumissions[0]}
+          generalStatus={SubmissionStatus.Passed}
+        />
+      </MockedProvider>
+    )
+    userEvent.click(screen.getByText('4'))
+    expect(screen.queryByText('Add comment')).toBeNull()
+  })
+
   test('Should render empty div if no diff is provided', () => {
     const noDiffSubmission = { ...dummySumissions[0], diff: null }
     const { container } = render(<DiffView submission={noDiffSubmission} />)
@@ -75,6 +81,7 @@ describe('DiffView component', () => {
     render(
       <DiffView
         submission={{ ...dummySumissions[0], diff: cDiff, comments: undefined }}
+        generalStatus={SubmissionStatus.Open}
       />
     )
     expect(screen.getByText('js7/1.c')).toBeVisible()

@@ -167,7 +167,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     challenge,
     lessonId,
     reviewer,
-    challengeId
+    challengeId,
+    status
   } = submissionData
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
@@ -236,7 +237,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
-              <DiffView submission={submissionState} />
+              <DiffView submission={submissionState} generalStatus={status} />
             </div>
           </div>
           <div className="card-footer bg-white">

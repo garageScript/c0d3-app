@@ -215,7 +215,10 @@ const ChallengeQuestionCardDisplay: React.FC<{
         />
         <div className="card-body">
           <div className="rounded-lg overflow-hidden">
-            <DiffView submission={submission} />
+            <DiffView
+              submission={submission}
+              generalStatus={currentChallenge.submission?.status}
+            />
             {comments && <SubmissionComments comments={comments} />}
             {currentChallenge?.submission?.status === SubmissionStatus.Open && (
               <>

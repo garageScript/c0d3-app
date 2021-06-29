@@ -23,13 +23,13 @@ const CommentBox: React.FC<{
   submissionId,
   commentsData,
   lessonId,
+  status,
   challengeId,
   userId
 }) => {
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
-  const showComments = true
   const comments = commentsData?.filter(comment => comment.line === line)
   const [hidden, setHidden] = useState(false)
   const [input, setInput] = useState('')
@@ -60,7 +60,7 @@ const CommentBox: React.FC<{
         }`}
       >
         {comments && <SubmissionComments comments={comments} />}
-        {showComments && (
+        {status === SubmissionStatus.Open && (
           <>
             <MdInput onChange={setInput} bgColor="white" value={input} />
             <Button

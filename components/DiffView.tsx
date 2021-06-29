@@ -4,7 +4,7 @@ import Prism from 'prismjs'
 import ReactDiffViewer, { ReactDiffViewerStylesOverride } from 'c0d3-diff'
 import _ from 'lodash'
 import CommentBox from './CommentBox'
-import { Comment, Submission } from '../graphql'
+import { Comment, Submission, SubmissionStatus } from '../graphql'
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 
@@ -27,7 +27,8 @@ const styles: ReactDiffViewerStylesOverride = {
 
 const DiffView: React.FC<{
   submission: Submission
-}> = ({ submission }) => {
+  generalStatus: SubmissionStatus | undefined
+}> = ({ submission, generalStatus }) => {
   const { diff, id, comments, lessonId, status } = submission
   if (!diff) return <></>
   const files = gitDiffParser.parse(diff)
@@ -79,7 +80,7 @@ const DiffView: React.FC<{
               submissionId={id}
               commentsData={commentsState[`${id}:${newPath}`].comments}
               lessonId={lessonId}
-              status={status}
+              status={generalStatus}
               challengeId={submission.challengeId}
               userId={submission.user.id}
             />
@@ -97,6 +98,7 @@ const DiffView: React.FC<{
         leftTitle={`${newPath}`}
         styles={styles}
         onLineNumberClick={(n: string) => {
+          if (generalStatus !== SubmissionStatus.Open) return
           //number is a string in format of L-10, R-4 and etc (left-right split views)
           const lineNumber = Number.parseInt(n.split('-')[1])
           const index = `${id}:${newPath}`

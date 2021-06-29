@@ -1,21 +1,18 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import {
-  render,
-  fireEvent,
-  waitFor,
-  screen,
-  waitForElementToBeRemoved
-} from '@testing-library/react'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ChallengeMaterial from './ChallengeMaterial'
 import { MockedProvider } from '@apollo/client/testing'
 import ADD_COMMENT from '../graphql/queries/addComment'
 import SET_STAR from '../graphql/queries/setStar'
+import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
 import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
+import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
+import _ from 'lodash'
 
 const mocks = [
   {
@@ -46,6 +43,28 @@ const mocks = [
         addComment: {
           id: 5
         }
+      }
+    }
+  },
+  {
+    request: {
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { challengeId: 105, userId: 1 }
+    },
+    result: {
+      data: getPreviousSubmissionsData
+    }
+  },
+  {
+    request: {
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { challengeId: 107, userId: 1 }
+    },
+    result: {
+      data: {
+        getPreviousSubmissions: [
+          getPreviousSubmissionsData.getPreviousSubmissions[0]
+        ]
       }
     }
   }
@@ -98,7 +117,10 @@ const userSubmissions = [
         submissionId: 1,
         content: 'A comment under submission'
       }
-    ]
+    ],
+    user: {
+      id: 3
+    }
   },
   {
     id: 3501,
@@ -124,7 +146,10 @@ const userSubmissions = [
         submissionId: 1,
         content: 'A comment under submission'
       }
-    ]
+    ],
+    user: {
+      id: 3
+    }
   },
   {
     id: 3502,
@@ -147,7 +172,10 @@ const userSubmissions = [
         submissionId: 1,
         content: 'A comment under submission'
       }
-    ]
+    ],
+    user: {
+      id: 3
+    }
   }
 ]
 
@@ -165,7 +193,40 @@ describe('Curriculum challenge page', () => {
       setShow
     }
   })
-
+  test('Should select previous iterations', async () => {
+    const copyProps = _.cloneDeep(props)
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    expect(await screen.findByText('Iteration 3 of 3')).toBeVisible()
+    userEvent.click(screen.getByTestId('iteration 1'))
+    expect(await screen.findByText('Iteration 2 of 3')).toBeVisible()
+    expect(container).toMatchSnapshot()
+  })
+  test('Should be able to select another challenge', async () => {
+    const copyProps = _.cloneDeep(props)
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    expect(await screen.findByText('Iteration 3 of 3')).toBeVisible()
+    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    expect(await screen.findByText('Iteration 1 of 1')).toBeVisible()
+    expect(container).toMatchSnapshot()
+  })
   test('Should render appropriately when no challenges are passed to component', async () => {
     props.challenges = []
     props.userSubmissions = []
@@ -278,5 +339,14 @@ describe('Curriculum challenge page', () => {
       </MockedProvider>
     )
     expect(screen.getByText('A comment under submission')).toBeVisible()
+  })
+  test('Should render empty div if there is no submission data', () => {
+    props.userSubmissions = []
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
+    )
+    expect(container).toMatchSnapshot()
   })
 })
