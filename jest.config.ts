@@ -15,7 +15,8 @@ const config: Config.InitialOptions = {
     'graphql/index.tsx',
     '__tests__/utils/',
     'prisma/',
-    'scripts/'
+    'scripts/',
+    'pages/*' //THIS IS ONLY A TESTING/DEBUGING BUILD AND SHOULD NEVER HIT PRODUCTION
   ],
   coverageThreshold: {
     global: {

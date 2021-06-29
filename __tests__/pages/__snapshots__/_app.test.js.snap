@@ -2,6 +2,11 @@
 
 exports[`MyApp component should render Login component passed in as prop 1`] = `
 <div>
+  <button
+    type="button"
+  >
+    Throw error
+  </button>
   <nav
     class="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
   >
