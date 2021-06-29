@@ -114,7 +114,7 @@ describe('ReviewCard Component', () => {
     )
 
     expect(
-      screen.getByText('Error while getting context information')
+      screen.getByText('Error while retrieving userinfo from context')
     ).toBeVisible()
   })
   test('Should return error component if there is no name in context', async () => {
@@ -145,7 +145,7 @@ describe('ReviewCard Component', () => {
     )
 
     expect(
-      screen.getByText('Error while getting context information')
+      screen.getByText('Error while retrieving userinfo from context')
     ).toBeVisible()
   })
 

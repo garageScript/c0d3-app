@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import dayjs from 'dayjs'
 import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -12,6 +12,8 @@ import lessonMentorsData from '../__dummy__/getLessonMentorsData'
 import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
 import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
+import dummySessionData from '../__dummy__/sessionData'
+import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import _ from 'lodash'
 
 const mocks = [
@@ -348,5 +350,33 @@ describe('Curriculum challenge page', () => {
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
+  })
+  test('Should return error component if there is no name in context', async () => {
+    const Wrapper = ({ children }) => {
+      const context = useContext(GlobalContext)
+      const incorrectUserData = {
+        id: 1,
+        name: 'fake user',
+        email: 'fake@fakemail.com',
+        isAdmin: true
+      }
+      useEffect(() => {
+        context.setContext({ ...dummySessionData, user: incorrectUserData })
+      }, [])
+      return <>{children}</>
+    }
+    render(
+      <ContextProvider>
+        <MockedProvider mocks={mocks} addTypeName={false}>
+          <Wrapper>
+            <ChallengeMaterial {...props} />
+          </Wrapper>
+        </MockedProvider>
+      </ContextProvider>
+    )
+
+    expect(
+      screen.getByText('Error while retrieving userinfo from context')
+    ).toBeVisible()
   })
 })

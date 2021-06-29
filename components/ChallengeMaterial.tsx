@@ -21,6 +21,7 @@ import { GlobalContext } from '../helpers/globalContext'
 import { SubmissionComments } from './SubmissionComments'
 import { useEffect } from 'react'
 import { SelectIteration } from './SelectIteration'
+import Error, { StatusCode } from './Error'
 dayjs.extend(relativeTime)
 
 type CurrentChallengeID = number | null
@@ -155,6 +156,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
   const name = context.session?.user?.name
   const username = context.session?.user?.username
   const userId = context.session?.user?.id
+
   const [index, setIndex] = useState(-1)
 
   const [submission, setSubmission] = useState(currentChallenge.submission)
@@ -169,7 +171,8 @@ const ChallengeQuestionCardDisplay: React.FC<{
     variables: {
       challengeId: currentChallenge.submission?.challengeId!,
       userId: userId!
-    }
+    },
+    skip: userId === undefined || currentChallenge.submission === undefined
   })
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
@@ -187,12 +190,19 @@ const ChallengeQuestionCardDisplay: React.FC<{
     setIndex(-1)
   }, [currentChallenge.submission?.challengeId])
   if (submission && Object.keys(submission).length) {
-    //if there is a diff present then it submission is of valid Submission type (enforced by Prisma)
+    if (!name || !username || !userId)
+      return (
+        <Error
+          code={StatusCode.INTERNAL_SERVER_ERROR}
+          message="Error while retrieving userinfo from context"
+        />
+      )
+
     const update = updateCache(
       submission.id,
       commentValue,
-      name!,
-      username!,
+      name,
+      username,
       submission.lessonId,
       undefined,
       undefined,

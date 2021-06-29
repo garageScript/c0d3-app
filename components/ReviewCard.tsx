@@ -25,7 +25,7 @@ import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
 import { useEffect } from 'react'
 import { SelectIteration } from './SelectIteration'
-import Error from './Error'
+import Error, { StatusCode } from './Error'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -175,7 +175,10 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const username = context.session?.user?.username
   if (!name || !username) {
     return (
-      <Error code={500} message={'Error while getting context information'} />
+      <Error
+        code={StatusCode.INTERNAL_SERVER_ERROR}
+        message={'Error while retrieving userinfo from context'}
+      />
     )
   }
   const [index, setIndex] = useState(-1)
