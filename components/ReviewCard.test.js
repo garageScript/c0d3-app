@@ -1,16 +1,17 @@
-import React from 'react'
-import { render, screen } from '@testing-library/react'
+import React, { useContext, useEffect } from 'react'
+import { fireEvent, render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
+import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
+import ADD_COMMENT from '../graphql/queries/addComment'
 import ReviewCard from './ReviewCard'
 import { MockedProvider } from '@apollo/client/testing'
-import _ from 'lodash'
-import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
+import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import dummySessionData from '../__dummy__/sessionData'
-// correct javascript submission
-const JsDiff =
-  'diff --git a/js7/1.js b/js7/1.js\nindex 9c96b34..853bddf 100644\n--- a/js7/1.js\n+++ b/js7/1.js\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
+import previosSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
+
 // a/js7/1.c b/js7/1.c instead of a/js7/1.js b/js7/1.js
 const NonJsDiff =
   'diff --git a/js7/1.c b/js7/1.c\nindex 9c96b34..853bddf 100644\n--- a/js7/1.c\n+++ b/js7/1.c\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
@@ -24,38 +25,16 @@ const InCompleteDiff =
 const NoNewPathDiff =
   'diff --git a/js7/1.c b/js7/1.c\nindex 9c96b34..853bddf 100644\n--- a/js7/1.c\n+++ b/\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
 
-const submissionData = {
-  id: '1',
-  status: 'active',
-  mrUrl: '',
-  diff: JsDiff,
-  viewCount: 0,
-  comment: 'Some comment',
-  order: 0,
-  challengeId: '146',
-  lessonId: '2',
-  user: {
-    username: 'fake user',
-    id: '1'
+const submissionData = previosSubmissionsData.getPreviousSubmissions[0]
+
+const getPreviousSubmissionsMock = {
+  request: {
+    query: GET_PREVIOUS_SUBMISSIONS,
+    variables: { challengeId: 9, userId: 3 }
   },
-  challenge: { title: 'fake challenge' },
-  reviewer: {
-    id: '1',
-    username: 'fake reviewer'
-  },
-  createdAt: '1524401718267',
-  updatedAt: '1524401718267',
-  comments: [
-    {
-      author: {
-        name: 'Admin Admin',
-        username: 'admin'
-      },
-      autorId: 1,
-      submissionId: 1,
-      content: 'A comment under submission'
-    }
-  ]
+  result: {
+    data: previosSubmissionsData
+  }
 }
 const mocks = [
   {
@@ -72,9 +51,45 @@ const mocks = [
         }
       }
     }
-  }
+  },
+  {
+    request: {
+      query: ADD_COMMENT,
+      variables: {
+        submissionId: 107,
+        content: 'A very unique test comment!'
+      }
+    },
+    result: {
+      data: {
+        addComment: {
+          id: 5
+        }
+      }
+    }
+  },
+  //graphql reuires passing the same mock for every rerender
+  getPreviousSubmissionsMock,
+  getPreviousSubmissionsMock,
+  getPreviousSubmissionsMock
 ]
 describe('ReviewCard Component', () => {
+  test('Should render previous submissions ', async () => {
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{ ...submissionData, diff: NonJsDiff }}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+    expect(await screen.findByText('Iteration 3 of 3')).toBeVisible()
+    userEvent.click(screen.getByTestId('iteration 1'))
+    expect(await screen.findByText('Iteration 2 of 3')).toBeVisible()
+    userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
+    fireEvent.click(screen.getByText('Submit'))
+    expect(container).toMatchSnapshot()
+  })
   test('Should render submissions in other languages', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
@@ -85,6 +100,53 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
+  })
+  test('Should return error component if there is no username in context', async () => {
+    render(
+      <ContextProvider>
+        <MockedProvider mocks={mocks} addTypeName={false}>
+          <ReviewCard
+            submissionData={{ ...submissionData, diff: NonJsDiff }}
+            session={dummySessionData}
+          />
+        </MockedProvider>
+      </ContextProvider>
+    )
+
+    expect(
+      screen.getByText('Error while getting context information')
+    ).toBeVisible()
+  })
+  test('Should return error component if there is no name in context', async () => {
+    const Wrapper = ({ children }) => {
+      const context = useContext(GlobalContext)
+      const incorrectUserData = {
+        id: 1,
+        name: 'fake user',
+        email: 'fake@fakemail.com',
+        isAdmin: true
+      }
+      useEffect(() => {
+        context.setContext({ ...dummySessionData, user: incorrectUserData })
+      }, [])
+      return <>{children}</>
+    }
+    render(
+      <ContextProvider>
+        <MockedProvider mocks={mocks} addTypeName={false}>
+          <Wrapper>
+            <ReviewCard
+              submissionData={{ ...submissionData, diff: NonJsDiff }}
+              session={dummySessionData}
+            />
+          </Wrapper>
+        </MockedProvider>
+      </ContextProvider>
+    )
+
+    expect(
+      screen.getByText('Error while getting context information')
+    ).toBeVisible()
   })
 
   test('Should render incorrect diff', async () => {

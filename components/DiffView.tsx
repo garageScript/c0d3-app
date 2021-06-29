@@ -4,7 +4,7 @@ import Prism from 'prismjs'
 import ReactDiffViewer, { ReactDiffViewerStylesOverride } from 'c0d3-diff'
 import _ from 'lodash'
 import CommentBox from './CommentBox'
-import { Comment } from '../graphql'
+import { Comment, Submission } from '../graphql'
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 
@@ -26,12 +26,10 @@ const styles: ReactDiffViewerStylesOverride = {
 }
 
 const DiffView: React.FC<{
-  diff?: string
-  id: number
-  comments?: Comment[] | null
-  lessonId?: number
-  status?: string
-}> = ({ diff = '', id, comments, lessonId, status }) => {
+  submission: Submission
+}> = ({ submission }) => {
+  const { diff, id, comments, lessonId, status } = submission
+  if (!diff) return <></>
   const files = gitDiffParser.parse(diff)
   type fileComments = Record<string, { lines: number[]; comments: Comment[] }>
   //every file gets unique index in format of submissionId:fileName
@@ -82,6 +80,8 @@ const DiffView: React.FC<{
               commentsData={commentsState[`${id}:${newPath}`].comments}
               lessonId={lessonId}
               status={status}
+              challengeId={submission.challengeId}
+              userId={submission.user.id}
             />
           )}
         </>
@@ -98,7 +98,6 @@ const DiffView: React.FC<{
         styles={styles}
         onLineNumberClick={(n: string) => {
           //number is a string in format of L-10, R-4 and etc (left-right split views)
-          if (status !== 'open') return
           const lineNumber = Number.parseInt(n.split('-')[1])
           const index = `${id}:${newPath}`
           if (!commentsState[index])

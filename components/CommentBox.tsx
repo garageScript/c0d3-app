@@ -15,13 +15,23 @@ const CommentBox: React.FC<{
   commentsData?: Comment[]
   lessonId?: number
   status?: string
-}> = ({ line, fileName, submissionId, commentsData, lessonId, status }) => {
+  challengeId?: number
+  userId?: number
+}> = ({
+  line,
+  fileName,
+  submissionId,
+  commentsData,
+  lessonId,
+  challengeId,
+  userId
+}) => {
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
-  const showComments = !status || status === SubmissionStatus.Open
+  const showComments = true
   const comments = commentsData?.filter(comment => comment.line === line)
-  const [hidden, setHidden] = useState(!showComments)
+  const [hidden, setHidden] = useState(false)
   const [input, setInput] = useState('')
   const update = updateCache(
     submissionId,
@@ -30,7 +40,9 @@ const CommentBox: React.FC<{
     username!,
     lessonId,
     line,
-    fileName
+    fileName,
+    challengeId,
+    userId
   )
 
   const [addComment] = useAddCommentMutation()

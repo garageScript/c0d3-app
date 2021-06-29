@@ -39,6 +39,9 @@ const GET_APP = gql`
           id
           username
         }
+        user {
+          id
+        }
         createdAt
         updatedAt
         comments {
