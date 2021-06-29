@@ -29,7 +29,7 @@ const DiffView: React.FC<{
   submission: Submission
   generalStatus: SubmissionStatus | undefined
 }> = ({ submission, generalStatus }) => {
-  const { diff, id, comments, lessonId, status } = submission
+  const { diff, id, comments, lessonId } = submission
   if (!diff) return <></>
   const files = gitDiffParser.parse(diff)
   type fileComments = Record<string, { lines: number[]; comments: Comment[] }>
