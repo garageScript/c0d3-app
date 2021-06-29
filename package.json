@@ -54,7 +54,7 @@
     "nodemailer": "^6.6.2",
     "posthog-js": "^1.10.0",
     "prism-react-renderer": "^1.2.1",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
