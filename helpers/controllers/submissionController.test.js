@@ -44,31 +44,32 @@ describe('Submissions Mutations', () => {
     }
 
     beforeEach(() => {
-      prisma.submission.upsert = jest
+      prisma.submission.create = jest
         .fn()
         .mockResolvedValue({ id: 1, ...submissionMock })
       prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
+      prisma.submission.findFirst = jest.fn()
     })
 
     test('should save and return submission', async () => {
       await expect(createSubmission(null, args)).resolves.toEqual({
         id: 1,
-        diff: 'fakeDiff'
+        diff: 'fakeDiff',
+        lesson: {
+          order: 1,
+          title: 'Fake lesson',
+          chatUrl: 'https://fake.com/lesson-chat'
+        },
+        challenge: { title: 'Fake challenge' },
+        user: { email: 'fake@email.com' }
       })
-      expect(prisma.submission.upsert).toHaveBeenCalledWith(
-        expect.objectContaining({
-          create: expect.objectContaining({
-            diff: args.diff,
-            status: SubmissionStatus.Open,
-            challengeId: args.challengeId,
-            lessonId: args.lessonId
-          }),
-          update: expect.objectContaining({
-            diff: args.diff,
-            status: SubmissionStatus.Open
-          })
-        })
-      )
+    })
+
+    test('should overwrite previous submission status if it exists', async () => {
+      prisma.submission.findFirst = jest.fn().mockResolvedValue({ id: 1 })
+      prisma.submission.update = jest.fn()
+      await createSubmission(null, args)
+      expect(prisma.submission.update).toBeCalled()
     })
 
     test('should throw error Invalid args', () => {

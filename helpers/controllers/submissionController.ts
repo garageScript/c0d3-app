@@ -21,36 +21,35 @@ export const createSubmission = async (
     if (!args) throw new Error('Invalid args')
     const { challengeId, cliToken, diff, lessonId } = args
     const { id } = decode(cliToken)
-    const submissionData = { diff, status: SubmissionStatus.Open }
-    const { lesson, challenge, user, ...submission } =
-      await prisma.submission.upsert({
+    const previousSubmission = await prisma.submission.findFirst({
+      where: {
+        challengeId,
+        lessonId,
+        user: {
+          id
+        },
+        status: SubmissionStatus.Open
+      }
+    })
+    if (previousSubmission) {
+      await prisma.submission.update({
         where: {
-          userId_lessonId_challengeId: {
-            userId: Number(id),
-            lessonId,
-            challengeId
-          }
+          id: previousSubmission.id
         },
-        create: {
-          ...submissionData,
-          challengeId,
-          lessonId,
-          userId: Number(id)
-        },
-        update: {
-          ...submissionData,
-          comments: {
-            deleteMany: {}
-          }
-        },
-        include: {
-          user: true,
-          lesson: true,
-          challenge: true
+        data: {
+          status: SubmissionStatus.Overwritten
         }
       })
-
-    return submission
+    }
+    return prisma.submission.create({
+      data: {
+        challengeId,
+        lessonId,
+        userId: id,
+        diff,
+        status: SubmissionStatus.Open
+      }
+    })
   } catch (error) {
     throw new Error(error)
   }

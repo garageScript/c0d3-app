@@ -98,7 +98,6 @@ model Submission {
   user        User      @relation("userSubmissions", fields: [userId], references: [id])
   comments    Comment[]
 
-  @@unique([userId, lessonId, challengeId])
   @@map("submissions")
 }
 
