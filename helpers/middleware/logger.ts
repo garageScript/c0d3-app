@@ -6,7 +6,7 @@ import { TransformableInfo } from 'logform' // Types for Winston
 import { LoggedRequest } from '../../@types/helpers'
 import { NextApiResponse } from 'next'
 
-const SENTRY_DSN = process.env.SENTRY_DSN
+const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN
 
 export const processArgs = (inputArr: any) => {
   if (Array.isArray(inputArr)) {
@@ -59,11 +59,6 @@ export const winstonLogger = (sessionId: string) => {
 export default (req: LoggedRequest, res: NextApiResponse, next: () => void) => {
   const uid = nanoid()
   const logger = winstonLogger(uid)
-  // Test ServerSide Logging
-  logger.log({
-    level: 'error',
-    message: 'Server Side Mock Error'
-  })
 
   req.info = (val: any) => {
     logger.info(processArgs(val))
