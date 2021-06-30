@@ -24,6 +24,9 @@ export const getPreviousSubmissions = async (
           author: true
         }
       }
+    },
+    orderBy: {
+      createdAt: 'asc'
     }
   })
 }
