@@ -10,7 +10,7 @@ import { MockedProvider } from '@apollo/client/testing'
 import { SubmissionStatus } from '../graphql'
 import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import dummySessionData from '../__dummy__/sessionData'
-import previosSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
+import previousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 
 // a/js7/1.c b/js7/1.c instead of a/js7/1.js b/js7/1.js
 const NonJsDiff =
@@ -25,7 +25,7 @@ const InCompleteDiff =
 const NoNewPathDiff =
   'diff --git a/js7/1.c b/js7/1.c\nindex 9c96b34..853bddf 100644\n--- a/js7/1.c\n+++ b/\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
 
-const submissionData = previosSubmissionsData.getPreviousSubmissions[0]
+const submissionData = previousSubmissionsData.getPreviousSubmissions[0]
 
 const getPreviousSubmissionsMock = {
   request: {
@@ -33,7 +33,7 @@ const getPreviousSubmissionsMock = {
     variables: { challengeId: 9, userId: 3 }
   },
   result: {
-    data: previosSubmissionsData
+    data: previousSubmissionsData
   }
 }
 const mocks = [
