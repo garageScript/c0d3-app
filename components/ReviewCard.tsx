@@ -10,7 +10,8 @@ import {
   Submission,
   useAddCommentMutation,
   useGetPreviousSubmissionsQuery,
-  AddCommentMutation
+  AddCommentMutation,
+  SubmissionStatus
 } from '../graphql/index'
 import { SubmissionComments } from './SubmissionComments'
 import ReviewerProfile from './ReviewerProfile'
@@ -36,14 +37,28 @@ const RequestChanges: React.FC<{
   name: string
   comment: string
   date: string
-}> = ({ name, username, comment, date }) => {
+  status: SubmissionStatus
+}> = ({ name, username, comment, date, status }) => {
   return (
-    <div className={`${styles.changes} px-2 py-1`}>
+    <div
+      className={`${
+        status === SubmissionStatus.Passed ? styles.passed : styles.rejected
+      } px-2 py-1`}
+    >
       <div className="d-flex align-items-center">
-        <img src="/assets/requestChanges.svg" className={styles.icon} />
+        <img
+          src="/assets/requestChanges.svg"
+          className={
+            status === SubmissionStatus.Passed
+              ? styles.icon__accepted
+              : styles.icon__rejected
+          }
+        />
         <ReviewerProfile name={name} username={username} />
         <div className={`${styles.font} ml-2`}>
-          requested changes on{' '}
+          {status === SubmissionStatus.Passed
+            ? 'accepted submission on '
+            : 'requested changes on '}
           {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
         </div>
       </div>
@@ -245,6 +260,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                 username={submissionState.reviewer?.username || ''}
                 comment={submissionState.comment}
                 date={updatedAt}
+                status={submissionState.status}
               />
             )}
             {underComments && (

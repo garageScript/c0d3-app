@@ -277,4 +277,21 @@ describe('ReviewCard Component', () => {
     )
     expect(screen.getByText('51 years ago')).toBeVisible()
   })
+  test('Should render acceptance message', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{
+            ...submissionData,
+            status: SubmissionStatus.Passed
+          }}
+        />
+      </MockedProvider>
+    )
+    expect(
+      screen.getByText((content, _element) =>
+        content.startsWith('accepted submission on')
+      )
+    ).toBeVisible()
+  })
 })

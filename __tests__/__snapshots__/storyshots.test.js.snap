@@ -8110,13 +8110,13 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
     className="card-footer bg-white"
   >
     <div
-      className="changes px-2 py-1"
+      className="rejected px-2 py-1"
     >
       <div
         className="d-flex align-items-center"
       >
         <img
-          className="icon"
+          className="icon__rejected"
           src="/assets/requestChanges.svg"
         />
         <div
@@ -8141,8 +8141,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on
-           
+          requested changes on 
           Sunday, April 22, 2018
           :
         </div>
@@ -9185,13 +9184,13 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
     className="card-footer bg-white"
   >
     <div
-      className="changes px-2 py-1"
+      className="rejected px-2 py-1"
     >
       <div
         className="d-flex align-items-center"
       >
         <img
-          className="icon"
+          className="icon__rejected"
           src="/assets/requestChanges.svg"
         />
         <div
@@ -9216,8 +9215,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on
-           
+          requested changes on 
           Invalid Date
           :
         </div>
@@ -10258,13 +10256,13 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
     className="card-footer bg-white"
   >
     <div
-      className="changes px-2 py-1"
+      className="rejected px-2 py-1"
     >
       <div
         className="d-flex align-items-center"
       >
         <img
-          className="icon"
+          className="icon__rejected"
           src="/assets/requestChanges.svg"
         />
         <div
@@ -10289,8 +10287,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on
-           
+          requested changes on 
           Sunday, April 22, 2018
           :
         </div>
@@ -12388,13 +12385,13 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
     className="card-footer bg-white"
   >
     <div
-      className="changes px-2 py-1"
+      className="rejected px-2 py-1"
     >
       <div
         className="d-flex align-items-center"
       >
         <img
-          className="icon"
+          className="icon__rejected"
           src="/assets/requestChanges.svg"
         />
         <div
@@ -12419,8 +12416,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         <div
           className="font ml-2"
         >
-          requested changes on
-           
+          requested changes on 
           Sunday, April 22, 2018
           :
         </div>

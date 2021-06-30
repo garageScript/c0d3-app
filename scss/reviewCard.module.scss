@@ -1,13 +1,27 @@
-.icon {
+.icon__rejected {
   filter: invert(49%) sepia(91%) saturate(5924%) hue-rotate(336deg)
     brightness(92%) contrast(87%);
   padding: 0.5em 1em;
   display: inline;
 }
 
-.changes {
+.icon__accepted {
+  filter: invert(48%) sepia(68%) saturate(415%) hue-rotate(90deg)
+    brightness(99%) contrast(84%);
+  padding: 0.5em 1em;
+  display: inline;
+}
+
+.rejected {
   border: 2px solid rgb(246, 182, 182);
   border-radius: 5px;
+  background: rgb(255, 249, 249);
+}
+
+.passed {
+  border: 2px solid rgb(93, 207, 137);
+  border-radius: 5px;
+  background: rgb(241, 251, 245);
 }
 
 .font {

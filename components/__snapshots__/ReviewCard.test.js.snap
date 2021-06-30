@@ -429,13 +429,13 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
+        class="rejected px-2 py-1"
       >
         <div
           class="d-flex align-items-center"
         >
           <img
-            class="icon"
+            class="icon__rejected"
             src="/assets/requestChanges.svg"
           />
           <div
@@ -457,8 +457,7 @@ exports[`ReviewCard Component Should be able to accept submission 1`] = `
           <div
             class="font ml-2"
           >
-            requested changes on
-             
+            requested changes on 
             Tuesday, June 22, 2021
             :
           </div>
@@ -990,13 +989,13 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
+        class="rejected px-2 py-1"
       >
         <div
           class="d-flex align-items-center"
         >
           <img
-            class="icon"
+            class="icon__rejected"
             src="/assets/requestChanges.svg"
           />
           <div
@@ -1018,8 +1017,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           <div
             class="font ml-2"
           >
-            requested changes on
-             
+            requested changes on 
             Tuesday, June 22, 2021
             :
           </div>
@@ -2350,13 +2348,13 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
+        class="rejected px-2 py-1"
       >
         <div
           class="d-flex align-items-center"
         >
           <img
-            class="icon"
+            class="icon__rejected"
             src="/assets/requestChanges.svg"
           />
           <div
@@ -2378,8 +2376,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           <div
             class="font ml-2"
           >
-            requested changes on
-             
+            requested changes on 
             Tuesday, June 22, 2021
             :
           </div>
@@ -3710,13 +3707,13 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
+        class="rejected px-2 py-1"
       >
         <div
           class="d-flex align-items-center"
         >
           <img
-            class="icon"
+            class="icon__rejected"
             src="/assets/requestChanges.svg"
           />
           <div
@@ -3738,8 +3735,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           <div
             class="font ml-2"
           >
-            requested changes on
-             
+            requested changes on 
             Tuesday, June 22, 2021
             :
           </div>
@@ -8883,13 +8879,13 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
+        class="rejected px-2 py-1"
       >
         <div
           class="d-flex align-items-center"
         >
           <img
-            class="icon"
+            class="icon__rejected"
             src="/assets/requestChanges.svg"
           />
           <div
@@ -8911,8 +8907,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           <div
             class="font ml-2"
           >
-            requested changes on
-             
+            requested changes on 
             Tuesday, June 22, 2021
             :
           </div>
@@ -10243,13 +10238,13 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
+        class="rejected px-2 py-1"
       >
         <div
           class="d-flex align-items-center"
         >
           <img
-            class="icon"
+            class="icon__rejected"
             src="/assets/requestChanges.svg"
           />
           <div
@@ -10271,8 +10266,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           <div
             class="font ml-2"
           >
-            requested changes on
-             
+            requested changes on 
             Tuesday, June 22, 2021
             :
           </div>
