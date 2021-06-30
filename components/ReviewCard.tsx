@@ -161,7 +161,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const {
     id,
     diff,
-    comment,
     updatedAt,
     user,
     challenge,
@@ -215,7 +214,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
         )
       else setSubmission(data.getPreviousSubmissions[index] as Submission)
     }
-  }, [submissionData, data])
+  }, [data])
   return (
     <>
       {diff && (
@@ -244,11 +243,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-footer bg-white">
-            {comment && (
+            {submissionState.comment && (
               <RequestChanges
                 name={reviewer?.name!}
                 username={reviewer?.username!}
-                comment={comment}
+                comment={submissionState.comment}
                 date={updatedAt}
               />
             )}

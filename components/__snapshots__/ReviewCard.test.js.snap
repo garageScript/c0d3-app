@@ -8740,46 +8740,6 @@ exports[`ReviewCard Component Should render previous submissions  1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="changes px-2 py-1"
-      >
-        <div
-          class="d-flex align-items-center"
-        >
-          <img
-            class="icon"
-            src="/assets/requestChanges.svg"
-          />
-          <div
-            class=""
-          >
-            <a
-              class="comment_author mt-2 "
-            >
-              <div
-                class="d-inline"
-              >
-                 
-              </div>
-              <div
-                class="d-inline text-muted"
-              />
-            </a>
-          </div>
-          <div
-            class="font ml-2"
-          >
-            requested changes on
-             
-            Tuesday, June 22, 2021
-            :
-          </div>
-        </div>
-        <hr />
-        <span>
-          Previous submission wasn't good enough
-        </span>
-      </div>
-      <div
         class="mt-1"
       />
       <div
