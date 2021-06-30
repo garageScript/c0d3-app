@@ -1,6 +1,5 @@
 import { useMutation, ApolloCache } from '@apollo/client'
-
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import { GlobalContext } from '../helpers/globalContext'
@@ -17,13 +16,11 @@ import { SubmissionComments } from './SubmissionComments'
 import ReviewerProfile from './ReviewerProfile'
 import _ from 'lodash'
 import styles from '../scss/reviewCard.module.scss'
-
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
 import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
-import { useEffect } from 'react'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
 dayjs.extend(relativeTime)
@@ -165,7 +162,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     user,
     challenge,
     lessonId,
-    reviewer,
     challengeId,
     status
   } = submissionData
@@ -245,8 +241,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           <div className="card-footer bg-white">
             {submissionState.comment && (
               <RequestChanges
-                name={reviewer?.name!}
-                username={reviewer?.username!}
+                name={submissionState.reviewer?.name || ''}
+                username={submissionState.reviewer?.username || ''}
                 comment={submissionState.comment}
                 date={updatedAt}
               />

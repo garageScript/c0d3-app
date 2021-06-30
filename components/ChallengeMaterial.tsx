@@ -1,4 +1,10 @@
-import React, { useState, useContext, Dispatch, SetStateAction } from 'react'
+import React, {
+  useState,
+  useContext,
+  Dispatch,
+  SetStateAction,
+  useEffect
+} from 'react'
 import {
   Challenge,
   Submission,
@@ -19,7 +25,6 @@ import { MdInput } from './MdInput'
 import { updateCache } from '../helpers/updateCache'
 import { GlobalContext } from '../helpers/globalContext'
 import { SubmissionComments } from './SubmissionComments'
-import { useEffect } from 'react'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
 dayjs.extend(relativeTime)
@@ -161,8 +166,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
 
   const [submission, setSubmission] = useState(currentChallenge.submission)
   const reviewerUserName = submission?.reviewer?.username || null
-  const comments =
-    submission && submission.comments?.filter(comment => !comment.line)
+  const comments = submission?.comments?.filter(comment => !comment.line)
 
   const [commentValue, setCommentValue] = React.useState('')
   const [addComment] = useAddCommentMutation()
@@ -178,12 +182,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
     if (data?.getPreviousSubmissions) {
       if (data.getPreviousSubmissions[index])
         setSubmission(data.getPreviousSubmissions[index] as Submission)
-      else
-        setSubmission(
-          data.getPreviousSubmissions[
-            data.getPreviousSubmissions.length - 1
-          ] as Submission
-        )
+      else setSubmission(_.last(data.getPreviousSubmissions) as Submission)
     }
   }, [data, index])
   useEffect(() => {
