@@ -1,3 +1,4 @@
+import { withSentry } from '@sentry/nextjs'
 import { ApolloServer } from 'apollo-server-micro'
 import session from 'express-session'
 import nextConnect from 'next-connect'
@@ -52,4 +53,4 @@ export const config = {
   }
 }
 
-export default handler
+export default withSentry(handler)
