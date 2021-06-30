@@ -463,87 +463,88 @@ exports[`Lesson Page Should render new submissions 1`] = `
             <div
               class="card-header bg-white"
             >
-              <h4>
-                newbie
-                 -
-                 
-                <span
-                  class="text-primary"
-                >
-                  Sum of 1 Numbers
-                </span>
-              </h4>
               <div
-                style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+                class="d-flex justify-content-between"
               >
-                51 years ago
-              </div>
-              <div
-                class="card p-1 selection__card"
-              >
-                <p
-                  class="selection__title"
-                >
-                  Select submission
-                </p>
-                <p
-                  class="text-muted mb-0"
-                >
-                  Iteration 3 of 3
-                </p>
                 <div>
-                  <div
-                    class="d-inline"
-                    data-testid="iteration 0"
-                  >
-                    <button
-                      class="button m-3 btn btn-success"
-                      type="button"
+                  <h4>
+                    newbie
+                     -
+                     
+                    <span
+                      class="text-primary"
                     >
-                      1
-                      <span
-                        class="sr-only"
-                      >
-                        comment count
-                      </span>
-                    </button>
+                      Sum of 1 Numbers
+                    </span>
+                  </h4>
+                  <div
+                    style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+                  >
+                    51 years ago
                   </div>
-                  <div
-                    class="d-inline"
-                    data-testid="iteration 1"
+                </div>
+                <div
+                  class="selection__card"
+                >
+                  <p
+                    class="selection__title text-muted mx-2"
                   >
-                    <button
-                      class="button m-3 btn btn-success"
-                      type="button"
+                    Select submission
+                  </p>
+                  <div>
+                    <div
+                      class="d-inline"
+                      data-testid="iteration 0"
                     >
-                      2
-                      <span
-                        class="sr-only"
+                      <button
+                        class="button m-2 btn btn-success"
+                        type="button"
                       >
-                        comment count
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="d-inline"
-                    data-testid="iteration 2"
-                  >
-                    <button
-                      class="button m-3 btn btn-info"
-                      type="button"
+                        1
+                        <span
+                          class="sr-only"
+                        >
+                          comment count
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="d-inline"
+                      data-testid="iteration 1"
                     >
-                      3
-                      <span
-                        class="badge badge badge-light"
+                      <button
+                        class="button m-2 btn btn-success"
+                        type="button"
                       >
                         2
-                      </span>
-                      <span
-                        class="sr-only"
+                        <span
+                          class="sr-only"
+                        >
+                          comment count
+                        </span>
+                      </button>
+                    </div>
+                    <div
+                      class="d-inline"
+                      data-testid="iteration 2"
+                    >
+                      <button
+                        class="button m-2 btn btn-info"
+                        type="button"
                       >
-                        comment count
-                      </span>
-                    </button>
+                        3
+                        <span
+                          class="badge badge badge-light"
+                        >
+                          2
+                        </span>
+                        <span
+                          class="sr-only"
+                        >
+                          comment count
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

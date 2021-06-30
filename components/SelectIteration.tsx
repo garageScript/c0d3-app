@@ -27,7 +27,7 @@ const IterationLink: React.FC<IterationLink | { loading: boolean }> = props => {
     return (
       <Button
         variant={props.current === props.id ? 'info' : 'success'}
-        className={`${styles['button']} m-3`}
+        className={`${styles['button']} m-2`}
       >
         {props.iteration}
         {props.comments !== 0 && (
@@ -42,26 +42,9 @@ const IterationLink: React.FC<IterationLink | { loading: boolean }> = props => {
     return (
       <Button
         variant="light"
-        className={`${styles['button']} m-3 ${styles['loading']}`}
+        className={`${styles['button']} ${styles['loading']}`}
       />
     )
-}
-
-const SelectCounter: React.FC<
-  Pick<SelectIteration, 'data' | 'loading' | 'currentIndex'>
-> = ({ data, loading, currentIndex }) => {
-  if (loading) return <p className="text-muted mb-0">Iteration n of N total</p>
-  if (data)
-    return (
-      <p className="text-muted mb-0">{`Iteration ${
-        currentIndex < 0
-          ? data?.getPreviousSubmissions?.length
-          : currentIndex + 1
-      } of ${
-        data?.getPreviousSubmissions && data.getPreviousSubmissions?.length
-      }`}</p>
-    )
-  else return <></>
 }
 
 const SelectDisplay: React.FC<Omit<SelectIteration, 'error'>> = ({
@@ -110,15 +93,10 @@ export const SelectIteration: React.FC<SelectIteration> = ({
   currentIndex
 }) => {
   return (
-    <div className={`card p-1 ${styles['selection__card']}`}>
-      <p className={`${styles['selection__title']}`}>
+    <div className={`${styles['selection__card']}`}>
+      <p className={`${styles['selection__title']} text-muted mx-2`}>
         {loading ? 'Loading previous submissions...' : 'Select submission'}
       </p>
-      <SelectCounter
-        data={data}
-        loading={loading}
-        currentIndex={currentIndex}
-      />
       {error && (
         <>
           <p>{`Error while fetching previous submissions:`}</p>

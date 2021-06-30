@@ -1,13 +1,13 @@
 .selection__title {
-  font-size: 1.2rem;
   margin: unset;
 }
 
 .button {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   position: relative;
-  min-width: 3rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
   max-width: max-content;
   & .badge {
     color: rgb(122, 126, 120);
@@ -23,5 +23,6 @@
 }
 
 .selection__card {
-  min-height: 150px;
+  flex-grow: 1;
+  text-align: right;
 }

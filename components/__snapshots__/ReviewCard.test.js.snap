@@ -1,565 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReviewCard Component Should be able to accept submission 1`] = `
-<div>
-  <div
-    class="card shadow-sm border-0 mt-3"
-  >
-    <div
-      class="card-header bg-white"
-    >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
-      <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
-      >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
-        >
-          Loading previous submissions...
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
-        <button
-          class="button m-3 loading btn btn-light"
-          type="button"
-        />
-      </div>
-    </div>
-    <div
-      class="card-body"
-    >
-      <div
-        class="rounded-lg overflow-hidden"
-      >
-        <table
-          class="css-1n5o7vh-diff-container"
-        >
-          <tbody>
-            <tr>
-              <td
-                class="css-1rwygp7-title-block"
-                colspan="4"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  js0/1.js
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  1
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      *
-                    </span>
-                     @returns 
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                    number
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  2
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      *
-                    </span>
-                    <span
-                      class="token operator"
-                    >
-                      /
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  3
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span />
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  4
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     
-                    <span
-                      class="token function-variable function"
-                    >
-                      solution
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token parameter"
-                    >
-                      num1
-                      <span
-                        class="token punctuation"
-                      >
-                        ,
-                      </span>
-                       num2
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     num1 
-                    <span
-                      class="token operator"
-                    >
-                      +
-                    </span>
-                     num2
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  5
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span />
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  6
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    module
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    exports 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  7
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      solution
-                  </span>
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div
-      class="card-footer bg-white"
-    >
-      <div
-        class="rejected px-2 py-1"
-      >
-        <div
-          class="d-flex align-items-center"
-        >
-          <img
-            class="icon__rejected"
-            src="/assets/requestChanges.svg"
-          />
-          <div
-            class=""
-          >
-            <a
-              class="comment_author mt-2 "
-            >
-              <div
-                class="d-inline"
-              >
-                 
-              </div>
-              <div
-                class="d-inline text-muted"
-              />
-            </a>
-          </div>
-          <div
-            class="font ml-2"
-          >
-            requested changes on 
-            Tuesday, June 22, 2021
-            :
-          </div>
-        </div>
-        <hr />
-        <span>
-          Previous submission wasn't good enough
-        </span>
-      </div>
-      <div
-        class="mt-1"
-      />
-      <div
-        style="background-color: white;"
-      >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
-        >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
-        >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        >
-          Good job!
-        </textarea>
-      </div>
-      <div
-        class="d-flex justify-content-between px-2 py-1"
-      >
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="accept"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Accept
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit feedback and approve submission
-          </p>
-        </label>
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="reject"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Reject
-          </p>
-          <p
-            class="text-muted"
-          >
-            Request changes and reject submission
-          </p>
-        </label>
-        <label>
-          <input
-            checked=""
-            class="mr-2"
-            type="radio"
-            value="comment"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Comment
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit general feedback without explicit approval
-          </p>
-        </label>
-      </div>
-      <button
-        class="btn bg-success"
-        style="color: rgb(255, 255, 255);"
-      >
-        Submit
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`ReviewCard Component Should be able to add comment 1`] = `
 <div>
   <div
@@ -568,38 +8,39 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
     <div
       class="card-header bg-white"
     >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
       <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+        class="d-flex justify-content-between"
       >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
+        <div>
+          <h4>
+            newbie
+             -
+             
+            <span
+              class="text-primary"
+            >
+              Functional 3 Sum
+            </span>
+          </h4>
+          <div
+            style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+          >
+            8 days ago
+          </div>
+        </div>
+        <div
+          class="selection__card"
         >
-          Loading previous submissions...
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
-        <button
-          class="button m-3 loading btn btn-light"
-          type="button"
-        />
+          <p
+            class="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            class="button loading btn btn-light"
+            type="button"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -1056,40 +497,6 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       >
         <label>
           <input
-            class="mr-2"
-            type="radio"
-            value="accept"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Accept
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit feedback and approve submission
-          </p>
-        </label>
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="reject"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Reject
-          </p>
-          <p
-            class="text-muted"
-          >
-            Request changes and reject submission
-          </p>
-        </label>
-        <label>
-          <input
             checked=""
             class="mr-2"
             type="radio"
@@ -1118,7 +525,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
 </div>
 `;
 
-exports[`ReviewCard Component Should render incomplete diff 1`] = `
+exports[`ReviewCard Component Should be able to select previous submissions 1`] = `
 <div>
   <div
     class="card shadow-sm border-0 mt-3"
@@ -1126,2805 +533,88 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
     <div
       class="card-header bg-white"
     >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
       <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+        class="d-flex justify-content-between"
       >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
-        >
-          Loading previous submissions...
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
-        <button
-          class="button m-3 loading btn btn-light"
-          type="button"
-        />
-      </div>
-    </div>
-    <div
-      class="card-body"
-    >
-      <div
-        class="rounded-lg overflow-hidden"
-      >
-        <table
-          class="css-1n5o7vh-diff-container"
-        >
-          <tbody>
-            <tr>
-              <td
-                class="css-1rwygp7-title-block"
-                colspan="4"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  .
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  1
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     
-                    <span
-                      class="token function-variable function"
-                    >
-                      solution
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  2
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     allT 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      [
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ]
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  3
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     old 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     setTimeout
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  4
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      window
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function-variable function"
-                    >
-                      setTimeout
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token parameter"
-                    >
-                      func
-                      <span
-                        class="token punctuation"
-                      >
-                        ,
-                      </span>
-                       delay
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  5
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     realTimeout 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token function"
-                    >
-                      old
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    func
-                    <span
-                      class="token punctuation"
-                    >
-                      ,
-                    </span>
-                     delay
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  6
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        allT
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function"
-                    >
-                      push
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    realTimeout
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  7
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token keyword"
-                    >
-                      return
-                    </span>
-                     realTimeout
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  8
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  9
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      window
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function-variable function"
-                    >
-                      clearAllTimouts
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  10
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token keyword"
-                    >
-                      while
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    allT
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    length
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  11
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                          
-                    <span
-                      class="token function"
-                    >
-                      clearTimeout
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    allT
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function"
-                    >
-                      pop
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  12
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  13
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  14
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token function-variable function"
-                    >
-                      cat
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  15
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        window
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function"
-                    >
-                      clearAllTimouts
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  16
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  17
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  18
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span />
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  19
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    module
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    exports 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     solution
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div
-      class="card-footer bg-white"
-    >
-      <div
-        class="rejected px-2 py-1"
-      >
-        <div
-          class="d-flex align-items-center"
-        >
-          <img
-            class="icon__rejected"
-            src="/assets/requestChanges.svg"
-          />
-          <div
-            class=""
-          >
-            <a
-              class="comment_author mt-2 "
-            >
-              <div
-                class="d-inline"
-              >
-                 
-              </div>
-              <div
-                class="d-inline text-muted"
-              />
-            </a>
-          </div>
-          <div
-            class="font ml-2"
-          >
-            requested changes on 
-            Tuesday, June 22, 2021
-            :
-          </div>
-        </div>
-        <hr />
-        <span>
-          Previous submission wasn't good enough
-        </span>
-      </div>
-      <div
-        class="mt-1"
-      />
-      <div
-        style="background-color: white;"
-      >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
-        >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
-        >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-between px-2 py-1"
-      >
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="accept"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Accept
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit feedback and approve submission
-          </p>
-        </label>
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="reject"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Reject
-          </p>
-          <p
-            class="text-muted"
-          >
-            Request changes and reject submission
-          </p>
-        </label>
-        <label>
-          <input
-            checked=""
-            class="mr-2"
-            type="radio"
-            value="comment"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Comment
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit general feedback without explicit approval
-          </p>
-        </label>
-      </div>
-      <button
-        class="btn bg-success"
-        style="color: rgb(255, 255, 255);"
-      >
-        Submit
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ReviewCard Component Should render incorrect diff 1`] = `
-<div>
-  <div
-    class="card shadow-sm border-0 mt-3"
-  >
-    <div
-      class="card-header bg-white"
-    >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
-      <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
-      >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
-        >
-          Loading previous submissions...
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
-        <button
-          class="button m-3 loading btn btn-light"
-          type="button"
-        />
-      </div>
-    </div>
-    <div
-      class="card-body"
-    >
-      <div
-        class="rounded-lg overflow-hidden"
-      >
-        <table
-          class="css-1n5o7vh-diff-container"
-        >
-          <tbody>
-            <tr>
-              <td
-                class="css-1rwygp7-title-block"
-                colspan="4"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  js7/1
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  1
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     
-                    <span
-                      class="token function-variable function"
-                    >
-                      solution
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  2
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     allT 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      [
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ]
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  3
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     old 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     setTimeout
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  4
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      window
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function-variable function"
-                    >
-                      setTimeout
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token parameter"
-                    >
-                      func
-                      <span
-                        class="token punctuation"
-                      >
-                        ,
-                      </span>
-                       delay
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  5
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token keyword"
-                    >
-                      const
-                    </span>
-                     realTimeout 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token function"
-                    >
-                      old
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    func
-                    <span
-                      class="token punctuation"
-                    >
-                      ,
-                    </span>
-                     delay
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  6
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        allT
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function"
-                    >
-                      push
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    realTimeout
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  7
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token keyword"
-                    >
-                      return
-                    </span>
-                     realTimeout
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  8
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  9
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      window
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function-variable function"
-                    >
-                      clearAllTimouts
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  10
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token keyword"
-                    >
-                      while
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    allT
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    length
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  11
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                          
-                    <span
-                      class="token function"
-                    >
-                      clearTimeout
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    allT
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function"
-                    >
-                      pop
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  12
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  13
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  14
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token function-variable function"
-                    >
-                      cat
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                     
-                    <span
-                      class="token operator"
-                    >
-                      =&gt;
-                    </span>
-                     
-                    <span
-                      class="token punctuation"
-                    >
-                      {
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  15
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                        window
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    <span
-                      class="token function"
-                    >
-                      clearAllTimouts
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      (
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      )
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  16
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                      
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  17
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    <span
-                      class="token punctuation"
-                    >
-                      }
-                    </span>
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  18
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span />
-                </pre>
-              </td>
-            </tr>
-            <tr
-              class="css-1n7ec1i-line"
-            >
-              <td
-                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                />
-              </td>
-              <td
-                class="css-1548r9v-gutter css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-14p8zw1-line-number"
-                >
-                  19
-                </pre>
-              </td>
-              <td
-                class="css-17vezug-marker css-cnnxkz-diff-added"
-              >
-                <pre>
-                  +
-                </pre>
-              </td>
-              <td
-                class="css-vl0irh-content css-cnnxkz-diff-added"
-              >
-                <pre
-                  class="css-pa3tg-content-text"
-                >
-                  <span>
-                    module
-                    <span
-                      class="token punctuation"
-                    >
-                      .
-                    </span>
-                    exports 
-                    <span
-                      class="token operator"
-                    >
-                      =
-                    </span>
-                     solution
-                    <span
-                      class="token punctuation"
-                    >
-                      ;
-                    </span>
-                  </span>
-                </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div
-      class="card-footer bg-white"
-    >
-      <div
-        class="rejected px-2 py-1"
-      >
-        <div
-          class="d-flex align-items-center"
-        >
-          <img
-            class="icon__rejected"
-            src="/assets/requestChanges.svg"
-          />
-          <div
-            class=""
-          >
-            <a
-              class="comment_author mt-2 "
-            >
-              <div
-                class="d-inline"
-              >
-                 
-              </div>
-              <div
-                class="d-inline text-muted"
-              />
-            </a>
-          </div>
-          <div
-            class="font ml-2"
-          >
-            requested changes on 
-            Tuesday, June 22, 2021
-            :
-          </div>
-        </div>
-        <hr />
-        <span>
-          Previous submission wasn't good enough
-        </span>
-      </div>
-      <div
-        class="mt-1"
-      />
-      <div
-        style="background-color: white;"
-      >
-        <button
-          class="btn"
-          style="color: rgb(41, 41, 41);"
-        >
-          Write
-        </button>
-        <button
-          class="btn"
-          style="color: rgb(142, 142, 142);"
-        >
-          Preview
-        </button>
-        <textarea
-          data-testid="textbox"
-          placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
-        />
-      </div>
-      <div
-        class="d-flex justify-content-between px-2 py-1"
-      >
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="accept"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Accept
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit feedback and approve submission
-          </p>
-        </label>
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="reject"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Reject
-          </p>
-          <p
-            class="text-muted"
-          >
-            Request changes and reject submission
-          </p>
-        </label>
-        <label>
-          <input
-            checked=""
-            class="mr-2"
-            type="radio"
-            value="comment"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Comment
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit general feedback without explicit approval
-          </p>
-        </label>
-      </div>
-      <button
-        class="btn bg-success"
-        style="color: rgb(255, 255, 255);"
-      >
-        Submit
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`ReviewCard Component Should render previous submissions  1`] = `
-<div>
-  <div
-    class="card shadow-sm border-0 mt-3"
-  >
-    <div
-      class="card-header bg-white"
-    >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
-      <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
-      >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
-        >
-          Select submission
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration 2 of 3
-        </p>
         <div>
-          <div
-            class="d-inline"
-            data-testid="iteration 0"
-          >
-            <button
-              class="button m-3 btn btn-success"
-              type="button"
+          <h4>
+            newbie
+             -
+             
+            <span
+              class="text-primary"
             >
-              1
-              <span
-                class="sr-only"
-              >
-                comment count
-              </span>
-            </button>
+              Functional 3 Sum
+            </span>
+          </h4>
+          <div
+            style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+          >
+            8 days ago
           </div>
-          <div
-            class="d-inline"
-            data-testid="iteration 1"
+        </div>
+        <div
+          class="selection__card"
+        >
+          <p
+            class="selection__title text-muted mx-2"
           >
-            <button
-              class="button m-3 btn btn-info"
-              type="button"
+            Select submission
+          </p>
+          <div>
+            <div
+              class="d-inline"
+              data-testid="iteration 0"
             >
-              2
-              <span
-                class="sr-only"
+              <button
+                class="button m-2 btn btn-success"
+                type="button"
               >
-                comment count
-              </span>
-            </button>
-          </div>
-          <div
-            class="d-inline"
-            data-testid="iteration 2"
-          >
-            <button
-              class="button m-3 btn btn-success"
-              type="button"
+                1
+                <span
+                  class="sr-only"
+                >
+                  comment count
+                </span>
+              </button>
+            </div>
+            <div
+              class="d-inline"
+              data-testid="iteration 1"
             >
-              3
-              <span
-                class="badge badge badge-light"
+              <button
+                class="button m-2 btn btn-info"
+                type="button"
               >
                 2
-              </span>
-              <span
-                class="sr-only"
+                <span
+                  class="sr-only"
+                >
+                  comment count
+                </span>
+              </button>
+            </div>
+            <div
+              class="d-inline"
+              data-testid="iteration 2"
+            >
+              <button
+                class="button m-2 btn btn-success"
+                type="button"
               >
-                comment count
-              </span>
-            </button>
+                3
+                <span
+                  class="badge badge badge-light"
+                >
+                  2
+                </span>
+                <span
+                  class="sr-only"
+                >
+                  comment count
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -8826,6 +5516,2658 @@ exports[`ReviewCard Component Should render previous submissions  1`] = `
 </div>
 `;
 
+exports[`ReviewCard Component Should render incomplete diff 1`] = `
+<div>
+  <div
+    class="card shadow-sm border-0 mt-3"
+  >
+    <div
+      class="card-header bg-white"
+    >
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <h4>
+            newbie
+             -
+             
+            <span
+              class="text-primary"
+            >
+              Functional 3 Sum
+            </span>
+          </h4>
+          <div
+            style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+          >
+            8 days ago
+          </div>
+        </div>
+        <div
+          class="selection__card"
+        >
+          <p
+            class="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            class="button loading btn btn-light"
+            type="button"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="card-body"
+    >
+      <div
+        class="rounded-lg overflow-hidden"
+      >
+        <table
+          class="css-1n5o7vh-diff-container"
+        >
+          <tbody>
+            <tr>
+              <td
+                class="css-1rwygp7-title-block"
+                colspan="4"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  .
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  1
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     
+                    <span
+                      class="token function-variable function"
+                    >
+                      solution
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  2
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     allT 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      [
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ]
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  3
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     old 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     setTimeout
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  4
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      window
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function-variable function"
+                    >
+                      setTimeout
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token parameter"
+                    >
+                      func
+                      <span
+                        class="token punctuation"
+                      >
+                        ,
+                      </span>
+                       delay
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  5
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     realTimeout 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token function"
+                    >
+                      old
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    func
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                     delay
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  6
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        allT
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function"
+                    >
+                      push
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    realTimeout
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  7
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token keyword"
+                    >
+                      return
+                    </span>
+                     realTimeout
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  8
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  9
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      window
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function-variable function"
+                    >
+                      clearAllTimouts
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  10
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token keyword"
+                    >
+                      while
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    allT
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    length
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  11
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                          
+                    <span
+                      class="token function"
+                    >
+                      clearTimeout
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    allT
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function"
+                    >
+                      pop
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  12
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  13
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  14
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token function-variable function"
+                    >
+                      cat
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  15
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        window
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function"
+                    >
+                      clearAllTimouts
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  16
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  17
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  18
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span />
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  19
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                    module
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    exports 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     solution
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="card-footer bg-white"
+    >
+      <div
+        class="rejected px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon__rejected"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              />
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested changes on 
+            Tuesday, June 22, 2021
+            :
+          </div>
+        </div>
+        <hr />
+        <span>
+          Previous submission wasn't good enough
+        </span>
+      </div>
+      <div
+        class="mt-1"
+      />
+      <div
+        style="background-color: white;"
+      >
+        <button
+          class="btn"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </button>
+        <button
+          class="btn"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </button>
+        <textarea
+          data-testid="textbox"
+          placeholder="Type something..."
+          style="padding: 1rem; width: 100%;"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-between px-2 py-1"
+      >
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
+      </div>
+      <button
+        class="btn bg-success"
+        style="color: rgb(255, 255, 255);"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ReviewCard Component Should render incorrect diff 1`] = `
+<div>
+  <div
+    class="card shadow-sm border-0 mt-3"
+  >
+    <div
+      class="card-header bg-white"
+    >
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <h4>
+            newbie
+             -
+             
+            <span
+              class="text-primary"
+            >
+              Functional 3 Sum
+            </span>
+          </h4>
+          <div
+            style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+          >
+            8 days ago
+          </div>
+        </div>
+        <div
+          class="selection__card"
+        >
+          <p
+            class="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            class="button loading btn btn-light"
+            type="button"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="card-body"
+    >
+      <div
+        class="rounded-lg overflow-hidden"
+      >
+        <table
+          class="css-1n5o7vh-diff-container"
+        >
+          <tbody>
+            <tr>
+              <td
+                class="css-1rwygp7-title-block"
+                colspan="4"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  js7/1
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  1
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     
+                    <span
+                      class="token function-variable function"
+                    >
+                      solution
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  2
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     allT 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      [
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ]
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  3
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     old 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     setTimeout
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  4
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      window
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function-variable function"
+                    >
+                      setTimeout
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token parameter"
+                    >
+                      func
+                      <span
+                        class="token punctuation"
+                      >
+                        ,
+                      </span>
+                       delay
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  5
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token keyword"
+                    >
+                      const
+                    </span>
+                     realTimeout 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token function"
+                    >
+                      old
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    func
+                    <span
+                      class="token punctuation"
+                    >
+                      ,
+                    </span>
+                     delay
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  6
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        allT
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function"
+                    >
+                      push
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    realTimeout
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  7
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token keyword"
+                    >
+                      return
+                    </span>
+                     realTimeout
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  8
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  9
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      window
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function-variable function"
+                    >
+                      clearAllTimouts
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  10
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token keyword"
+                    >
+                      while
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    allT
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    length
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  11
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                          
+                    <span
+                      class="token function"
+                    >
+                      clearTimeout
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    allT
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function"
+                    >
+                      pop
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  12
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  13
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  14
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token function-variable function"
+                    >
+                      cat
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                     
+                    <span
+                      class="token operator"
+                    >
+                      =&gt;
+                    </span>
+                     
+                    <span
+                      class="token punctuation"
+                    >
+                      {
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  15
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                        window
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    <span
+                      class="token function"
+                    >
+                      clearAllTimouts
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      (
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      )
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  16
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                      
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  17
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                    <span
+                      class="token punctuation"
+                    >
+                      }
+                    </span>
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  18
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span />
+                </pre>
+              </td>
+            </tr>
+            <tr
+              class="css-1n7ec1i-line"
+            >
+              <td
+                class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                />
+              </td>
+              <td
+                class="css-1548r9v-gutter css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-14p8zw1-line-number"
+                >
+                  19
+                </pre>
+              </td>
+              <td
+                class="css-17vezug-marker css-cnnxkz-diff-added"
+              >
+                <pre>
+                  +
+                </pre>
+              </td>
+              <td
+                class="css-vl0irh-content css-cnnxkz-diff-added"
+              >
+                <pre
+                  class="css-pa3tg-content-text"
+                >
+                  <span>
+                    module
+                    <span
+                      class="token punctuation"
+                    >
+                      .
+                    </span>
+                    exports 
+                    <span
+                      class="token operator"
+                    >
+                      =
+                    </span>
+                     solution
+                    <span
+                      class="token punctuation"
+                    >
+                      ;
+                    </span>
+                  </span>
+                </pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="card-footer bg-white"
+    >
+      <div
+        class="rejected px-2 py-1"
+      >
+        <div
+          class="d-flex align-items-center"
+        >
+          <img
+            class="icon__rejected"
+            src="/assets/requestChanges.svg"
+          />
+          <div
+            class=""
+          >
+            <a
+              class="comment_author mt-2 "
+            >
+              <div
+                class="d-inline"
+              >
+                 
+              </div>
+              <div
+                class="d-inline text-muted"
+              />
+            </a>
+          </div>
+          <div
+            class="font ml-2"
+          >
+            requested changes on 
+            Tuesday, June 22, 2021
+            :
+          </div>
+        </div>
+        <hr />
+        <span>
+          Previous submission wasn't good enough
+        </span>
+      </div>
+      <div
+        class="mt-1"
+      />
+      <div
+        style="background-color: white;"
+      >
+        <button
+          class="btn"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </button>
+        <button
+          class="btn"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </button>
+        <textarea
+          data-testid="textbox"
+          placeholder="Type something..."
+          style="padding: 1rem; width: 100%;"
+        />
+      </div>
+      <div
+        class="d-flex justify-content-between px-2 py-1"
+      >
+        <label>
+          <input
+            checked=""
+            class="mr-2"
+            type="radio"
+            value="comment"
+          />
+          <p
+            class="font-weight-bold d-inline"
+          >
+            Comment
+          </p>
+          <p
+            class="text-muted"
+          >
+            Submit general feedback without explicit approval
+          </p>
+        </label>
+      </div>
+      <button
+        class="btn bg-success"
+        style="color: rgb(255, 255, 255);"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ReviewCard Component Should render single path submission 1`] = `
 <div>
   <div
@@ -8834,38 +8176,39 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
     <div
       class="card-header bg-white"
     >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
       <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+        class="d-flex justify-content-between"
       >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
+        <div>
+          <h4>
+            newbie
+             -
+             
+            <span
+              class="text-primary"
+            >
+              Functional 3 Sum
+            </span>
+          </h4>
+          <div
+            style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+          >
+            8 days ago
+          </div>
+        </div>
+        <div
+          class="selection__card"
         >
-          Loading previous submissions...
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
-        <button
-          class="button m-3 loading btn btn-light"
-          type="button"
-        />
+          <p
+            class="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            class="button loading btn btn-light"
+            type="button"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -8946,40 +8289,6 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       >
         <label>
           <input
-            class="mr-2"
-            type="radio"
-            value="accept"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Accept
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit feedback and approve submission
-          </p>
-        </label>
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="reject"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Reject
-          </p>
-          <p
-            class="text-muted"
-          >
-            Request changes and reject submission
-          </p>
-        </label>
-        <label>
-          <input
             checked=""
             class="mr-2"
             type="radio"
@@ -9016,38 +8325,39 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
     <div
       class="card-header bg-white"
     >
-      <h4>
-        newbie
-         -
-         
-        <span
-          class="text-primary"
-        >
-          Functional 3 Sum
-        </span>
-      </h4>
       <div
-        style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+        class="d-flex justify-content-between"
       >
-        8 days ago
-      </div>
-      <div
-        class="card p-1 selection__card"
-      >
-        <p
-          class="selection__title"
+        <div>
+          <h4>
+            newbie
+             -
+             
+            <span
+              class="text-primary"
+            >
+              Functional 3 Sum
+            </span>
+          </h4>
+          <div
+            style="color: rgb(142, 142, 142); font-size: 0.85rem;"
+          >
+            8 days ago
+          </div>
+        </div>
+        <div
+          class="selection__card"
         >
-          Loading previous submissions...
-        </p>
-        <p
-          class="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
-        <button
-          class="button m-3 loading btn btn-light"
-          type="button"
-        />
+          <p
+            class="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            class="button loading btn btn-light"
+            type="button"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -10303,40 +9613,6 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       <div
         class="d-flex justify-content-between px-2 py-1"
       >
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="accept"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Accept
-          </p>
-          <p
-            class="text-muted"
-          >
-            Submit feedback and approve submission
-          </p>
-        </label>
-        <label>
-          <input
-            class="mr-2"
-            type="radio"
-            value="reject"
-          />
-          <p
-            class="font-weight-bold d-inline"
-          >
-            Reject
-          </p>
-          <p
-            class="text-muted"
-          >
-            Request changes and reject submission
-          </p>
-        </label>
         <label>
           <input
             checked=""

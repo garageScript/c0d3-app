@@ -207,9 +207,13 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
-    expect(await screen.findByText('Iteration 3 of 3')).toBeVisible()
+    expect(
+      await screen.findByRole('button', { name: '3 2 comment count' })
+    ).toHaveClass('btn-info')
     userEvent.click(screen.getByTestId('iteration 1'))
-    expect(await screen.findByText('Iteration 2 of 3')).toBeVisible()
+    expect(
+      await screen.findByRole('button', { name: '3 2 comment count' })
+    ).not.toHaveClass('btn-info')
     expect(container).toMatchSnapshot()
   })
   test('Should be able to select another challenge', async () => {
@@ -224,9 +228,13 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
-    expect(await screen.findByText('Iteration 3 of 3')).toBeVisible()
+    expect(
+      await screen.findByRole('button', { name: '3 2 comment count' })
+    ).toHaveClass('btn-info')
     userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
-    expect(await screen.findByText('Iteration 1 of 1')).toBeVisible()
+    expect(
+      await screen.findByRole('button', { name: '1 comment count' })
+    ).toHaveClass('btn-info')
     expect(container).toMatchSnapshot()
   })
   test('Should render appropriately when no challenges are passed to component', async () => {

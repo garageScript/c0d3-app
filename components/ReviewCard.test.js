@@ -1,5 +1,12 @@
 import React, { useContext, useEffect } from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
+import {
+  findByRole,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
@@ -54,6 +61,22 @@ const mocks = [
   },
   {
     request: {
+      query: ACCEPT_SUBMISSION,
+      variables: { submissionId: 104, lessonId: 1, comment: 'Good job!' }
+    },
+    result: {
+      data: {
+        acceptSubmission: {
+          id: 1,
+          comment: 'Good job!',
+          status: SubmissionStatus.Passed
+        }
+      }
+    }
+  },
+
+  {
+    request: {
       query: ADD_COMMENT,
       variables: {
         submissionId: 107,
@@ -74,7 +97,7 @@ const mocks = [
   getPreviousSubmissionsMock
 ]
 describe('ReviewCard Component', () => {
-  test('Should render previous submissions ', async () => {
+  test('Should be able to select previous submissions', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
@@ -83,9 +106,8 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    expect(await screen.findByText('Iteration 3 of 3')).toBeVisible()
+    expect(await screen.findByTestId('iteration 1')).toBeVisible()
     userEvent.click(screen.getByTestId('iteration 1'))
-    expect(await screen.findByText('Iteration 2 of 3')).toBeVisible()
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     fireEvent.click(screen.getByText('Submit'))
     expect(container).toMatchSnapshot()
@@ -183,7 +205,7 @@ describe('ReviewCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should be able to accept submission', async () => {
-    const { container, getByRole } = render(
+    render(
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
           submissionData={submissionData}
@@ -191,18 +213,19 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), 'Good job!')
+    userEvent.type(screen.getByRole('textbox', { name: '' }), 'Good job!')
+    expect(await screen.findByTestId('iteration 2')).toBeVisible()
     userEvent.click(
-      getByRole('radio', {
+      screen.getByRole('radio', {
         name: 'Accept Submit feedback and approve submission'
       })
     )
     userEvent.click(
-      getByRole('button', {
+      screen.getByRole('button', {
         name: 'Submit'
       })
     )
-    expect(container).toMatchSnapshot()
+    await waitFor(() => expect(screen.firstChild).toBeNull)
   })
   test('Should be able to reject submission', async () => {
     const { getByRole } = render(
@@ -214,6 +237,7 @@ describe('ReviewCard Component', () => {
       </MockedProvider>
     )
     userEvent.type(getByRole('textbox', { name: '' }), `This won't work`)
+    expect(await screen.findByTestId('iteration 2')).toBeVisible()
     userEvent.click(
       getByRole('radio', {
         name: 'Reject Request changes and reject submission'
@@ -294,4 +318,25 @@ describe('ReviewCard Component', () => {
       )
     ).toBeVisible()
   })
+  // test('Should not render reject/accept buttons in previous submissions', async () => {
+  //render(
+  //<MockedProvider mocks={mocks} addTypeName={false}>
+  //<ReviewCard
+  //submissionData={{ ...submissionData, diff: NonJsDiff }}
+  //session={dummySessionData}
+  ///>
+  //</MockedProvider>
+  //)
+  //expect(
+  //await screen.findByRole('radio', {
+  //name: 'Accept Submit feedback and approve submission'
+  //})
+  //).toBeVisible()
+  //userEvent.click(screen.getByTestId('iteration 1'))
+  //waitForElementToBeRemoved(
+  //screen.queryByRole('radio', {
+  //name: 'Accept Submit feedback and approve submission'
+  //})
+  //)
+  //})
 })

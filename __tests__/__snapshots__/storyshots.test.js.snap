@@ -889,20 +889,15 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         a few seconds ago
       </div>
       <div
-        className="card p-1 selection__card"
+        className="selection__card"
       >
         <p
-          className="selection__title"
+          className="selection__title text-muted mx-2"
         >
           Loading previous submissions...
         </p>
-        <p
-          className="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
         <button
-          className="button m-3 loading btn btn-light"
+          className="button loading btn btn-light"
           disabled={false}
           type="button"
         />
@@ -1391,20 +1386,15 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
         a few seconds ago
       </div>
       <div
-        className="card p-1 selection__card"
+        className="selection__card"
       >
         <p
-          className="selection__title"
+          className="selection__title text-muted mx-2"
         >
           Loading previous submissions...
         </p>
-        <p
-          className="text-muted mb-0"
-        >
-          Iteration n of N total
-        </p>
         <button
-          className="button m-3 loading btn btn-light"
+          className="button loading btn btn-light"
           disabled={false}
           type="button"
         />
@@ -7204,44 +7194,45 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
-    </div>
-    <div
-      className="card p-1 selection__card"
-    >
-      <p
-        className="selection__title"
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          3 years ago
+        </div>
+      </div>
+      <div
+        className="selection__card"
       >
-        Loading previous submissions...
-      </p>
-      <p
-        className="text-muted mb-0"
-      >
-        Iteration n of N total
-      </p>
-      <button
-        className="button m-3 loading btn btn-light"
-        disabled={false}
-        type="button"
-      />
+        <p
+          className="selection__title text-muted mx-2"
+        >
+          Loading previous submissions...
+        </p>
+        <button
+          className="button loading btn btn-light"
+          disabled={false}
+          type="button"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -8278,44 +8269,45 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      51 years ago
-    </div>
-    <div
-      className="card p-1 selection__card"
-    >
-      <p
-        className="selection__title"
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          51 years ago
+        </div>
+      </div>
+      <div
+        className="selection__card"
       >
-        Loading previous submissions...
-      </p>
-      <p
-        className="text-muted mb-0"
-      >
-        Iteration n of N total
-      </p>
-      <button
-        className="button m-3 loading btn btn-light"
-        disabled={false}
-        type="button"
-      />
+        <p
+          className="selection__title text-muted mx-2"
+        >
+          Loading previous submissions...
+        </p>
+        <button
+          className="button loading btn btn-light"
+          disabled={false}
+          type="button"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -9350,44 +9342,45 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
-    </div>
-    <div
-      className="card p-1 selection__card"
-    >
-      <p
-        className="selection__title"
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          3 years ago
+        </div>
+      </div>
+      <div
+        className="selection__card"
       >
-        Loading previous submissions...
-      </p>
-      <p
-        className="text-muted mb-0"
-      >
-        Iteration n of N total
-      </p>
-      <button
-        className="button m-3 loading btn btn-light"
-        disabled={false}
-        type="button"
-      />
+        <p
+          className="selection__title text-muted mx-2"
+        >
+          Loading previous submissions...
+        </p>
+        <button
+          className="button loading btn btn-light"
+          disabled={false}
+          type="button"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -10449,44 +10442,45 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
-    </div>
-    <div
-      className="card p-1 selection__card"
-    >
-      <p
-        className="selection__title"
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          3 years ago
+        </div>
+      </div>
+      <div
+        className="selection__card"
       >
-        Loading previous submissions...
-      </p>
-      <p
-        className="text-muted mb-0"
-      >
-        Iteration n of N total
-      </p>
-      <button
-        className="button m-3 loading btn btn-light"
-        disabled={false}
-        type="button"
-      />
+        <p
+          className="selection__title text-muted mx-2"
+        >
+          Loading previous submissions...
+        </p>
+        <button
+          className="button loading btn btn-light"
+          disabled={false}
+          type="button"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -11479,44 +11473,45 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
-    </div>
-    <div
-      className="card p-1 selection__card"
-    >
-      <p
-        className="selection__title"
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          3 years ago
+        </div>
+      </div>
+      <div
+        className="selection__card"
       >
-        Loading previous submissions...
-      </p>
-      <p
-        className="text-muted mb-0"
-      >
-        Iteration n of N total
-      </p>
-      <button
-        className="button m-3 loading btn btn-light"
-        disabled={false}
-        type="button"
-      />
+        <p
+          className="selection__title text-muted mx-2"
+        >
+          Loading previous submissions...
+        </p>
+        <button
+          className="button loading btn btn-light"
+          disabled={false}
+          type="button"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -12586,17 +12581,12 @@ exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
 
 exports[`Storyshots Components/SelectIteration Active 1`] = `
 <div
-  className="card p-1 selection__card"
+  className="selection__card"
 >
   <p
-    className="selection__title"
+    className="selection__title text-muted mx-2"
   >
     Select submission
-  </p>
-  <p
-    className="text-muted mb-0"
-  >
-    Iteration 2 of 3
   </p>
   <div>
     <div
@@ -12605,7 +12595,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-3 btn btn-success"
+        className="button m-2 btn btn-success"
         disabled={false}
         type="button"
       >
@@ -12623,7 +12613,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-3 btn btn-info"
+        className="button m-2 btn btn-info"
         disabled={false}
         type="button"
       >
@@ -12641,7 +12631,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-3 btn btn-success"
+        className="button m-2 btn btn-success"
         disabled={false}
         type="button"
       >
@@ -12664,10 +12654,10 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
 
 exports[`Storyshots Components/SelectIteration Error 1`] = `
 <div
-  className="card p-1 selection__card"
+  className="selection__card"
 >
   <p
-    className="selection__title"
+    className="selection__title text-muted mx-2"
   >
     Select submission
   </p>
@@ -12682,20 +12672,15 @@ exports[`Storyshots Components/SelectIteration Error 1`] = `
 
 exports[`Storyshots Components/SelectIteration Loading 1`] = `
 <div
-  className="card p-1 selection__card"
+  className="selection__card"
 >
   <p
-    className="selection__title"
+    className="selection__title text-muted mx-2"
   >
     Loading previous submissions...
   </p>
-  <p
-    className="text-muted mb-0"
-  >
-    Iteration n of N total
-  </p>
   <button
-    className="button m-3 loading btn btn-light"
+    className="button loading btn btn-light"
     disabled={false}
     type="button"
   />

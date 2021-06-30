@@ -77,6 +77,7 @@ const ReviewButtons: React.FC<{
   setCommentValue: React.Dispatch<React.SetStateAction<string>>
   submissionId: number
   lessonId: number
+  status: SubmissionStatus
 }> = ({
   commentType,
   setCommentType,
@@ -85,7 +86,8 @@ const ReviewButtons: React.FC<{
   commentValue,
   setCommentValue,
   lessonId,
-  submissionId
+  submissionId,
+  status
 }) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setCommentType(e.target.value as CommentType)
@@ -123,31 +125,41 @@ const ReviewButtons: React.FC<{
       }
     }
   }
+
+  const acceptRejectButtons = (status: SubmissionStatus) => {
+    if (status === SubmissionStatus.Open)
+      return (
+        <>
+          <label>
+            <input
+              type="radio"
+              checked={commentType === 'accept'}
+              value="accept"
+              onChange={onChange}
+              className="mr-2"
+            />
+            <p className="font-weight-bold d-inline">Accept</p>
+            <p className="text-muted">Submit feedback and approve submission</p>
+          </label>
+          <label>
+            <input
+              type="radio"
+              checked={commentType === 'reject'}
+              value="reject"
+              onChange={onChange}
+              className="mr-2"
+            />
+            <p className="font-weight-bold d-inline">Reject</p>
+            <p className="text-muted">Request changes and reject submission</p>
+          </label>
+        </>
+      )
+    return <></>
+  }
   return (
     <>
       <div className="d-flex justify-content-between px-2 py-1">
-        <label>
-          <input
-            type="radio"
-            checked={commentType === 'accept'}
-            value="accept"
-            onChange={onChange}
-            className="mr-2"
-          />
-          <p className="font-weight-bold d-inline">Accept</p>
-          <p className="text-muted">Submit feedback and approve submission</p>
-        </label>
-        <label>
-          <input
-            type="radio"
-            checked={commentType === 'reject'}
-            value="reject"
-            onChange={onChange}
-            className="mr-2"
-          />
-          <p className="font-weight-bold d-inline">Reject</p>
-          <p className="text-muted">Request changes and reject submission</p>
-        </label>
+        {acceptRejectButtons(status)}
         <label>
           <input
             type="radio"
@@ -231,22 +243,26 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       {diff && (
         <div className="card shadow-sm border-0 mt-3">
           <div className="card-header bg-white">
-            <h4>
-              {user?.username} -{' '}
-              <span className="text-primary">{challenge?.title}</span>
-            </h4>
-            <Text color="lightgrey" size="sm">
-              {dayjs(parseInt(updatedAt || '0')).fromNow()}
-            </Text>
-            <SelectIteration
-              data={previousSubmissions}
-              loading={loading}
-              error={error}
-              setSubmission={setSubmission}
-              currentId={submissionState.id}
-              setIndex={setIndex}
-              currentIndex={index}
-            />
+            <div className="d-flex justify-content-between">
+              <div>
+                <h4>
+                  {user?.username} -{' '}
+                  <span className="text-primary">{challenge?.title}</span>
+                </h4>
+                <Text color="lightgrey" size="sm">
+                  {dayjs(parseInt(updatedAt || '0')).fromNow()}
+                </Text>
+              </div>
+              <SelectIteration
+                data={previousSubmissions}
+                loading={loading}
+                error={error}
+                setSubmission={setSubmission}
+                currentId={submissionState.id}
+                setIndex={setIndex}
+                currentIndex={index}
+              />
+            </div>
           </div>
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
@@ -282,6 +298,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
               setCommentValue={setCommentValue}
               lessonId={lessonId}
               submissionId={id}
+              status={submissionState.status}
             />
           </div>
         </div>
