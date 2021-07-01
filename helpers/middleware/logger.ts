@@ -34,8 +34,7 @@ export const winstonLogger = (sessionId: string) => {
       winston.format.colorize(),
       winston.format.printf(printFunc)
     ),
-    transports: [new winston.transports.Console()],
-    exceptionHandlers: [new winston.transports.Console()]
+    transports: [new winston.transports.Console()]
   })
 }
 
