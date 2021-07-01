@@ -228,7 +228,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
       setPreviousSubmissions(data)
-      /*istanbul ignore else*/
       if (index === -1)
         setSubmission(
           data.getPreviousSubmissions[
