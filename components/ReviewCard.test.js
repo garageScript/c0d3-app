@@ -213,6 +213,6 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    expect(screen.getByText('51 years ago')).toBeVisible()
+    expect(screen.getByText('52 years ago')).toBeVisible()
   })
 })
