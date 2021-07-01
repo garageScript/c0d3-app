@@ -2278,17 +2278,6 @@
     progress "^2.0.3"
     proxy-from-env "^1.1.0"
 
-"@sentry/core@6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.7.1.tgz#c3aaa6415d06bec65ac446b13b84f073805633e3"
-  integrity sha512-VAv8OR/7INn2JfiLcuop4hfDcyC7mfL9fdPndQEhlacjmw8gRrgXjR7qyhnCTgzFLkHI7V5bcdIzA83TRPYQpA==
-  dependencies:
-    "@sentry/hub" "6.7.1"
-    "@sentry/minimal" "6.7.1"
-    "@sentry/types" "6.7.1"
-    "@sentry/utils" "6.7.1"
-    tslib "^1.9.3"
-
 "@sentry/core@6.8.0":
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.8.0.tgz#bfac76844deee9126460c18dc6166015992efdc3"
@@ -2298,15 +2287,6 @@
     "@sentry/minimal" "6.8.0"
     "@sentry/types" "6.8.0"
     "@sentry/utils" "6.8.0"
-    tslib "^1.9.3"
-
-"@sentry/hub@6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.7.1.tgz#d46d24deec67f0731a808ca16796e6765b371bc1"
-  integrity sha512-eVCTWvvcp6xa0A5GGNHMQEWslmKPlisE5rGmsV/kjvSUv3zSrI0eIDfb51ikdnCiBjHpK2NBWP8Vy8cZOEJegg==
-  dependencies:
-    "@sentry/types" "6.7.1"
-    "@sentry/utils" "6.7.1"
     tslib "^1.9.3"
 
 "@sentry/hub@6.8.0":
@@ -2326,15 +2306,6 @@
     "@sentry/types" "6.8.0"
     "@sentry/utils" "6.8.0"
     localforage "^1.8.1"
-    tslib "^1.9.3"
-
-"@sentry/minimal@6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.7.1.tgz#babf85ee2f167e9dcf150d750d7a0b250c98449c"
-  integrity sha512-HDDPEnQRD6hC0qaHdqqKDStcdE1KhkFh0RCtJNMCDn0zpav8Dj9AteF70x6kLSlliAJ/JFwi6AmQrLz+FxPexw==
-  dependencies:
-    "@sentry/hub" "6.7.1"
-    "@sentry/types" "6.7.1"
     tslib "^1.9.3"
 
 "@sentry/minimal@6.8.0":
@@ -2375,21 +2346,6 @@
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/node@^6.1.0":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-6.7.1.tgz#b09e2eca8e187168feba7bd865a23935bf0f5cc0"
-  integrity sha512-rtZo1O8ROv4lZwuljQz3iFZW89oXSlgXCG2VqkxQyRspPWu89abROpxLjYzsWwQ8djnur1XjFv51kOLDUTS6Qw==
-  dependencies:
-    "@sentry/core" "6.7.1"
-    "@sentry/hub" "6.7.1"
-    "@sentry/tracing" "6.7.1"
-    "@sentry/types" "6.7.1"
-    "@sentry/utils" "6.7.1"
-    cookie "^0.4.1"
-    https-proxy-agent "^5.0.0"
-    lru_map "^0.3.3"
-    tslib "^1.9.3"
-
 "@sentry/react@6.8.0":
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/@sentry/react/-/react-6.8.0.tgz#3cf4a2e1ef042ee227836e268e702e9cb3b67e41"
@@ -2400,17 +2356,6 @@
     "@sentry/types" "6.8.0"
     "@sentry/utils" "6.8.0"
     hoist-non-react-statics "^3.3.2"
-    tslib "^1.9.3"
-
-"@sentry/tracing@6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-6.7.1.tgz#b11f0c17a6c5dc14ef44733e5436afb686683268"
-  integrity sha512-wyS3nWNl5mzaC1qZ2AIp1hjXnfO9EERjMIJjCihs2LWBz1r3efxrHxJHs8wXlNWvrT3KLhq/7vvF5CdU82uPeQ==
-  dependencies:
-    "@sentry/hub" "6.7.1"
-    "@sentry/minimal" "6.7.1"
-    "@sentry/types" "6.7.1"
-    "@sentry/utils" "6.7.1"
     tslib "^1.9.3"
 
 "@sentry/tracing@6.8.0":
@@ -2424,23 +2369,10 @@
     "@sentry/utils" "6.8.0"
     tslib "^1.9.3"
 
-"@sentry/types@6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.7.1.tgz#c8263e1886df5e815570c4668eb40a1cfaa1c88b"
-  integrity sha512-9AO7HKoip2MBMNQJEd6+AKtjj2+q9Ze4ooWUdEvdOVSt5drg7BGpK221/p9JEOyJAZwEPEXdcMd3VAIMiOb4MA==
-
 "@sentry/types@6.8.0":
   version "6.8.0"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.8.0.tgz#97fd531a0ed1e75e65b4a24b26509fb7c15eb7b8"
   integrity sha512-PbSxqlh6Fd5thNU5f8EVYBVvX+G7XdPA+ThNb2QvSK8yv3rIf0McHTyF6sIebgJ38OYN7ZFK7vvhC/RgSAfYTA==
-
-"@sentry/utils@6.7.1":
-  version "6.7.1"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.7.1.tgz#909184ad580f0f6375e1e4d4a6ffd33dfe64a4d1"
-  integrity sha512-Tq2otdbWlHAkctD+EWTYKkEx6BL1Qn3Z/imkO06/PvzpWvVhJWQ5qHAzz5XnwwqNHyV03KVzYB6znq1Bea9HuA==
-  dependencies:
-    "@sentry/types" "6.7.1"
-    tslib "^1.9.3"
 
 "@sentry/utils@6.8.0":
   version "6.8.0"
@@ -15831,16 +15763,6 @@ widest-line@^3.1.0:
   integrity sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
   dependencies:
     string-width "^4.0.0"
-
-winston-transport-sentry-node@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/winston-transport-sentry-node/-/winston-transport-sentry-node-1.0.2.tgz#e3e47ea1e82bad1634e2670f5e648ef6b7c398bb"
-  integrity sha512-rmeLUeIHMwDrZbwxe0gg5rjWD2Ikp/rDjOxrGvP5PqJ3wNL0m1yVfQdL+VcPFbD3A3jkM3XznS1zFpv/mVQd8w==
-  dependencies:
-    "@sentry/node" "^6.1.0"
-    triple-beam "^1.3.0"
-    winston "^3.3.3"
-    winston-transport "^4.4.0"
 
 winston-transport@^4.4.0:
   version "4.4.0"
