@@ -108,12 +108,11 @@ describe('ReviewCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('Should be able to add comment to previous submissions', async () => {
-    /* Comments type doesn't have an id, so grapql has troubles merging it in tests
-    this custom merge function returns hardcoded comment "foobar foobar" with new date
+    /* Comments type doesn't have an id in our query, so grapql has troubles merging it in tests.
+    This custom merge function returns hardcoded comment "foobar foobar" with new date
      on every cache update
     */
 
-    //new Date().getUTCMilliseconds().toString()
     const foobar = {
       __typename: 'Comment',
       content: 'foobar foobar',
@@ -377,25 +376,23 @@ describe('ReviewCard Component', () => {
       )
     ).toBeVisible()
   })
-  // test('Should not render reject/accept buttons in previous submissions', async () => {
-  //render(
-  //<MockedProvider mocks={mocks} addTypeName={false}>
-  //<ReviewCard
-  //submissionData={{ ...submissionData, diff: NonJsDiff }}
-  //session={dummySessionData}
-  ///>
-  //</MockedProvider>
-  //)
-  //expect(
-  //await screen.findByRole('radio', {
-  //name: 'Accept Submit feedback and approve submission'
-  //})
-  //).toBeVisible()
-  //userEvent.click(screen.getByTestId('iteration 1'))
-  //waitForElementToBeRemoved(
-  //screen.queryByRole('radio', {
-  //name: 'Accept Submit feedback and approve submission'
-  //})
-  //)
-  //})
+  test('Should render acceptance message with no comment', async () => {
+    render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={{
+            ...submissionData,
+            status: SubmissionStatus.Passed,
+            comment: null,
+            comments: null
+          }}
+        />
+      </MockedProvider>
+    )
+    expect(
+      screen.getByText((content, _element) =>
+        content.startsWith('accepted submission on')
+      )
+    ).toBeVisible()
+  })
 })

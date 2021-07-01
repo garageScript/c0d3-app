@@ -11,7 +11,8 @@ import {
   useAddCommentMutation,
   useGetPreviousSubmissionsQuery,
   AddCommentMutation,
-  SubmissionStatus
+  SubmissionStatus,
+  Comment
 } from '../graphql/index'
 import { SubmissionComments } from './SubmissionComments'
 import ReviewerProfile from './ReviewerProfile'
@@ -43,7 +44,7 @@ const RequestChanges: React.FC<{
     <div
       className={`${
         status === SubmissionStatus.Passed ? styles.passed : styles.rejected
-      } px-2 py-1`}
+      } px-2 py-1 my-3`}
     >
       <div className="d-flex align-items-center">
         <img
@@ -222,9 +223,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     challengeId,
     user.id
   )
-  const underComments = submissionState.comments?.filter(
-    comment => !comment.line
-  )
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
       setPreviousSubmissions(data)
@@ -237,6 +235,32 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       else setSubmission(data.getPreviousSubmissions[index] as Submission)
     }
   }, [data])
+
+  const reviewerMessage = (status: SubmissionStatus) => {
+    if (
+      status === SubmissionStatus.NeedMoreWork ||
+      status === SubmissionStatus.Passed
+    )
+      return (
+        <RequestChanges
+          name={submissionState.reviewer?.name || ''}
+          username={submissionState.reviewer?.username || ''}
+          comment={submissionState.comment || ''}
+          date={updatedAt}
+          status={submissionState.status}
+        />
+      )
+  }
+  const submissionComments = (comments: Comment[] | undefined | null) => {
+    const underComments = comments?.filter(comment => !comment.line)
+    if (underComments) {
+      return (
+        <div className="mt-1">
+          <SubmissionComments comments={underComments} />
+        </div>
+      )
+    }
+  }
   return (
     <>
       {diff && (
@@ -252,15 +276,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                   {dayjs(parseInt(updatedAt || '0')).fromNow()}
                 </Text>
               </div>
-              <SelectIteration
-                data={previousSubmissions}
-                loading={loading}
-                error={error}
-                setSubmission={setSubmission}
-                currentId={submissionState.id}
-                setIndex={setIndex}
-                currentIndex={index}
-              />
+              <div className="text-right">
+                <SelectIteration
+                  data={previousSubmissions}
+                  loading={loading}
+                  error={error}
+                  setSubmission={setSubmission}
+                  currentId={submissionState.id}
+                  setIndex={setIndex}
+                  currentIndex={index}
+                />
+              </div>
             </div>
           </div>
           <div className="card-body">
@@ -269,20 +295,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-footer bg-white">
-            {submissionState.comment && (
-              <RequestChanges
-                name={submissionState.reviewer?.name || ''}
-                username={submissionState.reviewer?.username || ''}
-                comment={submissionState.comment}
-                date={updatedAt}
-                status={submissionState.status}
-              />
-            )}
-            {underComments && (
-              <div className="mt-1">
-                <SubmissionComments comments={underComments} />
-              </div>
-            )}
+            {reviewerMessage(submissionState.status)}
+            {submissionComments(submissionState?.comments)}
             <MdInput
               onChange={setCommentValue}
               bgColor={'white'}

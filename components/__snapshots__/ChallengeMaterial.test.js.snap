@@ -78,29 +78,33 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
           16 days ago
         </div>
         <div
-          class="selection__card"
+          class="text-left ml-2"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Select submission
-          </p>
-          <div>
-            <div
-              class="d-inline"
-              data-testid="iteration 0"
+            <p
+              class="selection__title text-muted mx-2"
             >
-              <button
-                class="button m-2 btn btn-info"
-                type="button"
+              Select submission
+            </p>
+            <div>
+              <div
+                class="d-inline"
+                data-testid="iteration 0"
               >
-                1
-                <span
-                  class="sr-only"
+                <button
+                  class="button m-2 btn btn-info"
+                  type="button"
                 >
-                  comment count
-                </span>
-              </button>
+                  1
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1489,17 +1493,21 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           16 days ago
         </div>
         <div
-          class="selection__card"
+          class="text-left ml-2"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
         <div
           class="card-body"
@@ -2134,17 +2142,21 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           16 days ago
         </div>
         <div
-          class="selection__card"
+          class="text-left ml-2"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
         <div
           class="card-body"
@@ -2701,66 +2713,70 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
           16 days ago
         </div>
         <div
-          class="selection__card"
+          class="text-left ml-2"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Select submission
-          </p>
-          <div>
-            <div
-              class="d-inline"
-              data-testid="iteration 0"
+            <p
+              class="selection__title text-muted mx-2"
             >
-              <button
-                class="button m-2 btn btn-success"
-                type="button"
+              Select submission
+            </p>
+            <div>
+              <div
+                class="d-inline"
+                data-testid="iteration 0"
               >
-                1
-                <span
-                  class="sr-only"
+                <button
+                  class="button m-2 btn btn-success"
+                  type="button"
                 >
-                  comment count
-                </span>
-              </button>
-            </div>
-            <div
-              class="d-inline"
-              data-testid="iteration 1"
-            >
-              <button
-                class="button m-2 btn btn-info"
-                type="button"
+                  1
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+              <div
+                class="d-inline"
+                data-testid="iteration 1"
               >
-                2
-                <span
-                  class="sr-only"
-                >
-                  comment count
-                </span>
-              </button>
-            </div>
-            <div
-              class="d-inline"
-              data-testid="iteration 2"
-            >
-              <button
-                class="button m-2 btn btn-success"
-                type="button"
-              >
-                3
-                <span
-                  class="badge badge badge-light"
+                <button
+                  class="button m-2 btn btn-info"
+                  type="button"
                 >
                   2
-                </span>
-                <span
-                  class="sr-only"
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+              <div
+                class="d-inline"
+                data-testid="iteration 2"
+              >
+                <button
+                  class="button m-2 btn btn-success"
+                  type="button"
                 >
-                  comment count
-                </span>
-              </button>
+                  3
+                  <span
+                    class="badge badge badge-light"
+                  >
+                    2
+                  </span>
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

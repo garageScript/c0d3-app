@@ -29,17 +29,21 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           </div>
         </div>
         <div
-          class="selection__card"
+          class="text-right"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -430,7 +434,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="rejected px-2 py-1"
+        class="rejected px-2 py-1 my-3"
       >
         <div
           class="d-flex align-items-center"
@@ -554,66 +558,70 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
           </div>
         </div>
         <div
-          class="selection__card"
+          class="text-right"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Select submission
-          </p>
-          <div>
-            <div
-              class="d-inline"
-              data-testid="iteration 0"
+            <p
+              class="selection__title text-muted mx-2"
             >
-              <button
-                class="button m-2 btn btn-info"
-                type="button"
+              Select submission
+            </p>
+            <div>
+              <div
+                class="d-inline"
+                data-testid="iteration 0"
               >
-                1
-                <span
-                  class="sr-only"
+                <button
+                  class="button m-2 btn btn-info"
+                  type="button"
                 >
-                  comment count
-                </span>
-              </button>
-            </div>
-            <div
-              class="d-inline"
-              data-testid="iteration 1"
-            >
-              <button
-                class="button m-2 btn btn-success"
-                type="button"
+                  1
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+              <div
+                class="d-inline"
+                data-testid="iteration 1"
               >
-                2
-                <span
-                  class="sr-only"
-                >
-                  comment count
-                </span>
-              </button>
-            </div>
-            <div
-              class="d-inline"
-              data-testid="iteration 2"
-            >
-              <button
-                class="button m-2 btn btn-success"
-                type="button"
-              >
-                3
-                <span
-                  class="badge badge badge-light"
+                <button
+                  class="button m-2 btn btn-success"
+                  type="button"
                 >
                   2
-                </span>
-                <span
-                  class="sr-only"
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+              <div
+                class="d-inline"
+                data-testid="iteration 2"
+              >
+                <button
+                  class="button m-2 btn btn-success"
+                  type="button"
                 >
-                  comment count
-                </span>
-              </button>
+                  3
+                  <span
+                    class="badge badge badge-light"
+                  >
+                    2
+                  </span>
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1006,7 +1014,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
       class="card-footer bg-white"
     >
       <div
-        class="rejected px-2 py-1"
+        class="rejected px-2 py-1 my-3"
       >
         <div
           class="d-flex align-items-center"
@@ -1130,17 +1138,21 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           </div>
         </div>
         <div
-          class="selection__card"
+          class="text-right"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -2332,7 +2344,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="rejected px-2 py-1"
+        class="rejected px-2 py-1 my-3"
       >
         <div
           class="d-flex align-items-center"
@@ -2456,17 +2468,21 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           </div>
         </div>
         <div
-          class="selection__card"
+          class="text-right"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -3658,7 +3674,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="rejected px-2 py-1"
+        class="rejected px-2 py-1 my-3"
       >
         <div
           class="d-flex align-items-center"
@@ -3782,17 +3798,21 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           </div>
         </div>
         <div
-          class="selection__card"
+          class="text-right"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -3807,7 +3827,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       class="card-footer bg-white"
     >
       <div
-        class="rejected px-2 py-1"
+        class="rejected px-2 py-1 my-3"
       >
         <div
           class="d-flex align-items-center"
@@ -3931,17 +3951,21 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           </div>
         </div>
         <div
-          class="selection__card"
+          class="text-right"
         >
-          <p
-            class="selection__title text-muted mx-2"
+          <div
+            class="selection__card"
           >
-            Loading previous submissions...
-          </p>
-          <button
-            class="button loading btn btn-light"
-            type="button"
-          />
+            <p
+              class="selection__title text-muted mx-2"
+            >
+              Loading previous submissions...
+            </p>
+            <button
+              class="button loading btn btn-light"
+              type="button"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -5133,7 +5157,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       class="card-footer bg-white"
     >
       <div
-        class="rejected px-2 py-1"
+        class="rejected px-2 py-1 my-3"
       >
         <div
           class="d-flex align-items-center"

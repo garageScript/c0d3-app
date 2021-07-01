@@ -213,15 +213,19 @@ const ChallengeQuestionCardDisplay: React.FC<{
         <div className="card-header bg-white">
           Submitted {dayjs(parseInt(updatedAt)).fromNow()}
         </div>
-        <SelectIteration
-          data={data}
-          loading={loading}
-          error={error}
-          setIndex={setIndex}
-          setSubmission={setSubmission as Dispatch<SetStateAction<Submission>>}
-          currentIndex={index}
-          currentId={submission.id}
-        />
+        <div className="text-left ml-2">
+          <SelectIteration
+            data={data}
+            loading={loading}
+            error={error}
+            setIndex={setIndex}
+            setSubmission={
+              setSubmission as Dispatch<SetStateAction<Submission>>
+            }
+            currentIndex={index}
+            currentId={submission.id}
+          />
+        </div>
         <div className="card-body">
           <div className="rounded-lg overflow-hidden">
             <DiffView
