@@ -15,7 +15,8 @@ const config: Config.InitialOptions = {
     'graphql/index.tsx',
     '__tests__/utils/',
     'prisma/',
-    'scripts/'
+    'scripts/',
+    'pages/api/graphql.ts' // DO NOT GO LIVE! Temp testing untested apollo plugin
   ],
   coverageThreshold: {
     global: {
