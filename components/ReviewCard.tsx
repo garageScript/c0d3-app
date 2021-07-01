@@ -246,7 +246,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           name={submissionState.reviewer?.name || ''}
           username={submissionState.reviewer?.username || ''}
           comment={submissionState.comment || ''}
-          date={updatedAt}
+          date={submissionState.updatedAt}
           status={submissionState.status}
         />
       )
