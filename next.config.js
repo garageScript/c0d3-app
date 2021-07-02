@@ -10,7 +10,8 @@ const withMDX = require('@next/mdx')({
   }
 })
 const moduleExports = withMDX({
-  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
+  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
+  target: 'experimental-serverless-trace'
 })
 
 const SentryWebpackPluginOptions = {
