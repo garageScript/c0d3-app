@@ -6248,7 +6248,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4"
+      className="lesson-card__description pl-4 d-flex flex-column d-md-block"
     >
       <div>
         <h4
@@ -6286,6 +6286,9 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
       </div>
+      <div
+        className="align-self-end"
+      />
     </div>
   </div>
 </div>
@@ -6307,10 +6310,10 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4"
+      className="lesson-card__description pl-4 d-flex flex-column d-md-block"
     >
       <span
-        className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+        className="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
       >
         <svg
           fill="none"
@@ -6377,17 +6380,21 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
       </div>
-      <a
-        className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-        href="https://c0d3.com/teacher/5"
+      <div
+        className="align-self-end"
       >
-        Review 
-        <div
-          className="spinner-border spinner-border-sm mx-1"
-          role="status"
-        />
-         Submissions
-      </a>
+        <a
+          className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          href="https://c0d3.com/teacher/5"
+        >
+          Review 
+          <div
+            className="spinner-border spinner-border-sm mx-1"
+            role="status"
+          />
+           Submissions
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -6409,7 +6416,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4"
+      className="lesson-card__description pl-4 d-flex flex-column d-md-block"
     >
       <div>
         <h4
@@ -6447,6 +6454,9 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
         </p>
       </div>
+      <div
+        className="align-self-end"
+      />
     </div>
   </div>
   <div
@@ -9407,7 +9417,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         }
       }
     >
-      51 years ago
+      52 years ago
     </div>
   </div>
   <div
@@ -14577,7 +14587,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14615,6 +14625,9 @@ Array [
                   A super simple introduction to help you get started!
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14633,7 +14646,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14671,6 +14684,9 @@ Array [
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14689,7 +14705,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14727,6 +14743,9 @@ Array [
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14745,7 +14764,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14783,6 +14802,9 @@ Array [
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14801,7 +14823,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14839,6 +14861,9 @@ Array [
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14857,7 +14882,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14895,6 +14920,9 @@ Array [
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14913,7 +14941,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -14951,6 +14979,9 @@ Array [
                   React and GraphQL Lessons
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -14969,7 +15000,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15007,6 +15038,9 @@ Array [
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15025,7 +15059,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15063,6 +15097,9 @@ Array [
                   Tree problems with high difficulty
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15081,7 +15118,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15119,6 +15156,9 @@ Array [
                   General Algorithm from interviews
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15506,7 +15546,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15544,6 +15584,9 @@ Array [
                   A super simple introduction to help you get started!
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15562,7 +15605,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15600,6 +15643,9 @@ Array [
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15618,7 +15664,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15656,6 +15702,9 @@ Array [
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15674,7 +15723,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15712,6 +15761,9 @@ Array [
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15730,7 +15782,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15768,6 +15820,9 @@ Array [
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15786,7 +15841,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15824,6 +15879,9 @@ Array [
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15842,7 +15900,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15880,6 +15938,9 @@ Array [
                   React and GraphQL Lessons
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15898,7 +15959,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15936,6 +15997,9 @@ Array [
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -15954,7 +16018,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -15992,6 +16056,9 @@ Array [
                   Tree problems with high difficulty
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16010,7 +16077,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16048,6 +16115,9 @@ Array [
                   General Algorithm from interviews
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16435,7 +16505,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16473,6 +16543,9 @@ Array [
                   A super simple introduction to help you get started!
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16491,7 +16564,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16529,6 +16602,9 @@ Array [
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16547,7 +16623,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16585,6 +16661,9 @@ Array [
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16603,7 +16682,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16641,6 +16720,9 @@ Array [
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16659,7 +16741,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16697,6 +16779,9 @@ Array [
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16715,7 +16800,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16753,6 +16838,9 @@ Array [
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16771,7 +16859,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16809,6 +16897,9 @@ Array [
                   React and GraphQL Lessons
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16827,7 +16918,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16865,6 +16956,9 @@ Array [
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16883,7 +16977,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16921,6 +17015,9 @@ Array [
                   Tree problems with high difficulty
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -16939,7 +17036,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -16977,6 +17074,9 @@ Array [
                   General Algorithm from interviews
                 </p>
               </div>
+              <div
+                className="align-self-end"
+              />
             </div>
           </div>
         </div>

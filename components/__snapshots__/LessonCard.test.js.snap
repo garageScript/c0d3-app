@@ -15,10 +15,10 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <span
-          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+          class="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -74,16 +74,20 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             class="mt-2"
           />
         </div>
-        <a
-          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+        <div
+          class="align-self-end"
         >
-          Review 
-          <div
-            class="spinner-border spinner-border-sm mx-1"
-            role="status"
-          />
-           Submissions
-        </a>
+          <a
+            class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          >
+            Review 
+            <div
+              class="spinner-border spinner-border-sm mx-1"
+              role="status"
+            />
+             Submissions
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -105,10 +109,10 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <span
-          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+          class="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -164,15 +168,19 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             class="mt-2"
           />
         </div>
-        <a
-          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+        <div
+          class="align-self-end"
         >
-          Review 
-          <span>
-            0
-          </span>
-           Submissions
-        </a>
+          <a
+            class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          >
+            Review 
+            <span>
+              0
+            </span>
+             Submissions
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -194,10 +202,10 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <span
-          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+          class="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -253,15 +261,19 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             class="mt-2"
           />
         </div>
-        <a
-          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+        <div
+          class="align-self-end"
         >
-          Review 
-          <span>
-            2
-          </span>
-           Submissions
-        </a>
+          <a
+            class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          >
+            Review 
+            <span>
+              2
+            </span>
+             Submissions
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -283,7 +295,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <div>
           <h4
@@ -314,6 +326,9 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
             class="mt-2"
           />
         </div>
+        <div
+          class="align-self-end"
+        />
       </div>
     </div>
   </div>
@@ -335,7 +350,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <div>
           <h4
@@ -366,6 +381,9 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
             class="mt-2"
           />
         </div>
+        <div
+          class="align-self-end"
+        />
       </div>
     </div>
     <div
@@ -390,7 +408,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <div>
           <h4
@@ -421,6 +439,9 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
             class="mt-2"
           />
         </div>
+        <div
+          class="align-self-end"
+        />
       </div>
     </div>
   </div>
@@ -442,7 +463,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <div>
           <h4
@@ -473,6 +494,9 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
             class="mt-2"
           />
         </div>
+        <div
+          class="align-self-end"
+        />
       </div>
     </div>
   </div>
@@ -494,7 +518,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-flex flex-column d-md-block"
       >
         <div>
           <h4
@@ -525,6 +549,9 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
             class="mt-2"
           />
         </div>
+        <div
+          class="align-self-end"
+        />
       </div>
     </div>
   </div>

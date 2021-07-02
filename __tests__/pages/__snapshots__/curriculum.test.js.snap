@@ -142,7 +142,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -178,6 +178,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   A super simple introduction to help you get started!
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -195,7 +198,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -231,6 +234,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -248,7 +254,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -284,6 +290,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -301,7 +310,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -337,6 +346,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -354,7 +366,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -390,6 +402,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -407,7 +422,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -443,6 +458,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -460,7 +478,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -496,6 +514,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   React and GraphQL Lessons
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -513,7 +534,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -549,6 +570,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -566,7 +590,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -602,6 +626,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   Tree problems with high difficulty
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -619,7 +646,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -655,6 +682,9 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   General Algorithm from interviews
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1089,7 +1119,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1125,6 +1155,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   A super simple introduction to help you get started!
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
           <div
@@ -1160,7 +1193,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1196,6 +1229,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1213,7 +1249,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1249,6 +1285,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1266,7 +1305,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1302,6 +1341,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1319,7 +1361,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1355,6 +1397,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1372,7 +1417,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1408,6 +1453,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1425,7 +1473,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1461,6 +1509,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   React and GraphQL Lessons
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1478,7 +1529,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1514,6 +1565,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1531,7 +1585,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1567,6 +1621,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   Tree problems with high difficulty
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -1584,7 +1641,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -1620,6 +1677,9 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   General Algorithm from interviews
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -2099,10 +2159,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <span
-                class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+                class="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
               >
                 <svg
                   fill="none"
@@ -2163,16 +2223,20 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   A super simple introduction to help you get started!
                 </p>
               </div>
-              <a
-                class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-                href="/review/5"
+              <div
+                class="align-self-end"
               >
-                Review 
-                <span>
-                  0
-                </span>
-                 Submissions
-              </a>
+                <a
+                  class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+                  href="/review/5"
+                >
+                  Review 
+                  <span>
+                    0
+                  </span>
+                   Submissions
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -2190,10 +2254,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <span
-                class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+                class="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
               >
                 <svg
                   fill="none"
@@ -2254,16 +2318,20 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   Learn how to solve simple algorithm problems recursively with the following exercises. 
                 </p>
               </div>
-              <a
-                class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-                href="/review/2"
+              <div
+                class="align-self-end"
               >
-                Review 
-                <span>
-                  0
-                </span>
-                 Submissions
-              </a>
+                <a
+                  class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+                  href="/review/2"
+                >
+                  Review 
+                  <span>
+                    0
+                  </span>
+                   Submissions
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -2281,10 +2349,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <span
-                class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+                class="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center"
               >
                 <svg
                   fill="none"
@@ -2345,16 +2413,20 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
                 </p>
               </div>
-              <a
-                class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-                href="/review/1"
+              <div
+                class="align-self-end"
               >
-                Review 
-                <span>
-                  0
-                </span>
-                 Submissions
-              </a>
+                <a
+                  class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+                  href="/review/1"
+                >
+                  Review 
+                  <span>
+                    0
+                  </span>
+                   Submissions
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -2372,7 +2444,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2408,6 +2480,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   These exercises will test your understanding of objects, which includes linked lists and trees
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
           <div
@@ -2443,7 +2518,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2479,6 +2554,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -2496,7 +2574,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2532,6 +2610,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   These exercises will help you build a strong understanding of how the web works.
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -2549,7 +2630,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2585,6 +2666,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   React and GraphQL Lessons
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -2602,7 +2686,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2638,6 +2722,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   Problems that are commonly asked to test your JavaScript knowledge
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -2655,7 +2742,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2691,6 +2778,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   Tree problems with high difficulty
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
@@ -2708,7 +2798,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-flex flex-column d-md-block"
             >
               <div>
                 <h4
@@ -2744,6 +2834,9 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   General Algorithm from interviews
                 </p>
               </div>
+              <div
+                class="align-self-end"
+              />
             </div>
           </div>
         </div>
