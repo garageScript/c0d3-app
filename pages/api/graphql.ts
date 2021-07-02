@@ -12,6 +12,18 @@ import { prisma } from '../../prisma'
 const ONE_DAY = 1000 * 60 * 60 * 24
 const ONE_WEEK = ONE_DAY * 7
 
+// Test to see if we can manually run Sentry.init (since @sentry/nextjs isnt doing its job)
+// Hacky solution until @sentry/nextjs issue is handled
+//
+const client = Sentry.getCurrentHub().getClient()
+if (!client) {
+  // If no client detected run init and then log again
+  console.log('No client attempting to reinitialize')
+  Sentry.init({ dsn: process.env.NEXT_PUBLIC_SENTRY_DSN })
+  console.log('Did we get a client?', Sentry.getCurrentHub().getClient())
+} else {
+  console.log('We have a client!!!!', client)
+}
 // This helper is needed catch a failed flush which
 // rejects and stops graphql from responding to user
 // const sentryTryFlush: any = async () => {
