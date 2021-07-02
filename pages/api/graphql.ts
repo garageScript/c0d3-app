@@ -14,23 +14,22 @@ const ONE_WEEK = ONE_DAY * 7
 
 // This helper is needed catch a failed flush which
 // rejects and stops graphql from responding to user
-/* istanbul ignore next */
-const sentryTryFlush: any = async () => {
-  try {
-    /* Ideally we could provide the timeout parameter to the flush() call to
-        ensure response time is reasonable but there appears to be a bug. 
-        Providing a 2000 timeout breaks the function even though my tested responses 
-        were only taking 200-300 ms to respond.
+// const sentryTryFlush: any = async () => {
+//   try {
+//     /* Ideally we could provide the timeout parameter to the flush() call to
+//         ensure response time is reasonable but there appears to be a bug.
+//         Providing a 2000 timeout breaks the function even though my tested responses
+//         were only taking 200-300 ms to respond.
 
-        Check on this issue for future improvements: 
-        https://github.com/getsentry/sentry-javascript/issues/3643
-        */
-    await Sentry.flush()
-    console.log('Flush Success')
-  } catch (error) {
-    console.log('Flush failed')
-  }
-}
+//         Check on this issue for future improvements:
+//         https://github.com/getsentry/sentry-javascript/issues/3643
+//         */
+//     await Sentry.flush()
+//     console.log('Flush Success')
+//   } catch (error) {
+//     console.log('Flush failed')
+//   }
+// }
 
 const handler: any = nextConnect() // For session middleware. TODO: Need to define types for Session
 const apolloServer = new ApolloServer({
@@ -92,7 +91,7 @@ const apolloServer = new ApolloServer({
         to user. This delay is required to ensure errors are forwarded to
         sentry.io before serverless functions shut down */
             console.log('Flush attempt:', ctx?.errors)
-            return sentryTryFlush()
+            return Sentry.flush()
           }
         }
       }
