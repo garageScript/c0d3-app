@@ -69,6 +69,24 @@ const mocks = [
         ]
       }
     }
+  },
+  {
+    request: {
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { challengeId: 9, userId: 1 }
+    },
+    result: {
+      data: getPreviousSubmissionsData
+    }
+  },
+  {
+    request: {
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { challengeId: 9, userId: 1 }
+    },
+    result: {
+      data: getPreviousSubmissionsData
+    }
   }
 ]
 
@@ -207,6 +225,7 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+    await screen.findByText('Select submission')
     expect(
       await screen.findByRole('button', { name: '3 2 comment count' })
     ).toHaveClass('btn-info')
@@ -228,13 +247,8 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
-    expect(
-      await screen.findByRole('button', { name: '3 2 comment count' })
-    ).toHaveClass('btn-info')
+    await screen.findByText('Select submission')
     userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
-    expect(
-      await screen.findByRole('button', { name: '1 comment count' })
-    ).toHaveClass('btn-info')
     expect(container).toMatchSnapshot()
   })
   test('Should render appropriately when no challenges are passed to component', async () => {
