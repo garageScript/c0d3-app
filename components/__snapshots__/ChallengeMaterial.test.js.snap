@@ -647,6 +647,74 @@ exports[`Curriculum challenge page Should hide mobile modal on click 1`] = `
 </div>
 `;
 
+exports[`Curriculum challenge page Should not render diff if submission was not send 1`] = `
+<div>
+  <div
+    class="row challenge-display mt-3"
+  >
+    <div
+      class="challenge-display_challenges undefined col-md-4"
+    >
+      <div
+        class="card mb-2 challenge-title-card shadow-sm border-0"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body d-flex justify-content-between"
+        >
+          <div>
+            0. Greater than 5
+          </div>
+          <img
+            height="25px"
+            src="/assets/curriculum/icons/pending.svg"
+            width="25px"
+          />
+        </div>
+      </div>
+      <div
+        class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+        data-testid="challenge-title"
+      >
+        <div
+          class="card-body d-flex justify-content-between"
+        >
+          <div>
+            1. Sum of 2 Numbers
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-8"
+    >
+      <div
+        class="card shadow-sm border-0"
+      >
+        <div
+          class="card-body challenge-question"
+        >
+          <h1
+            class="card-title"
+            data-testid="challenge-question-title"
+          >
+            Sum of 2 Numbers
+          </h1>
+          <div
+            class="bg-light p-3 mt-3"
+            data-testid="challenge-question-description"
+          >
+            <span>
+              Write a function that takes in 2 numbers and returns their sum.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Curriculum challenge page Should render appropriately when no challenges are passed to component 1`] = `
 <div>
   <h1>
