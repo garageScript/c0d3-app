@@ -95,7 +95,7 @@
     "@types/react-dom": "^17.0.8",
     "@types/styled-jsx": "^2.2.8",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "@typescript-eslint/parser": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.1",
     "babel-jest": "^27.0.5",
     "babel-plugin-prismjs": "^2.0.1",
     "eslint": "^7.28.0",
