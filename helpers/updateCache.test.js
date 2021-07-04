@@ -1,11 +1,8 @@
-/**
- * @jest-environment node
- */
-
 import { updateCache } from './updateCache'
 import { InMemoryCache } from '@apollo/client'
 import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
 import GET_APP from '../graphql/queries/getApp'
+import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import dummySessionData from '../__dummy__/sessionData'
 import dummyLessonData from '../__dummy__/lessonData'
 import dummyAlertData from '../__dummy__/alertData'
@@ -48,28 +45,60 @@ const submission = {
 }
 const submissionsData = [submission, { ...submission, id: 1 }]
 describe('updateCache helper', () => {
-  it('should update Get_APP cache', () => {
+  it('should update previous submissions in cache', () => {
     const cache = new InMemoryCache({ addTypename: false })
     cache.writeQuery({
-      query: GET_APP,
-      data: {
-        lessons: dummyLessonData,
-        alerts: dummyAlertData,
-        session: {
-          ...dummySessionData,
-          submissions: submissionsData
-        }
-      }
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 1, challengeId: 23 },
+      data: { getPreviousSubmissions: submissionsData }
     })
-    updateCache(0, 'Test comment!', 'Test User', 'testuser')(cache)
+    updateCache(
+      0,
+      'Test comment!',
+      'Test User',
+      'testuser',
+      2,
+      undefined,
+      undefined,
+      23,
+      1
+    )(cache)
   })
-  it('should update Get_Submissions cache', () => {
+  it('should throw an error if there is no cache to update', () => {
+    const cache = new InMemoryCache({ addTypename: false })
+    expect(() => {
+      updateCache(
+        0,
+        'Test comment!',
+        'Test User',
+        'testuser',
+        2,
+        undefined,
+        undefined,
+        23,
+        1
+      )(cache)
+    }).toThrow('No cache to update')
+  })
+  it('should throw if no submission is found', () => {
     const cache = new InMemoryCache({ addTypename: false })
     cache.writeQuery({
-      query: GET_SUBMISSIONS,
-      variables: { lessonId: 2 },
-      data: { submissions: submissionsData }
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 1, challengeId: 23 },
+      data: { getPreviousSubmissions: submissionsData }
     })
-    updateCache(0, 'Test comment!', 'Test User', 'testuser', 2)(cache)
+    expect(() =>
+      updateCache(
+        11,
+        'Test comment!',
+        'Test User',
+        'testuser',
+        2,
+        undefined,
+        undefined,
+        23,
+        1
+      )(cache)
+    ).toThrow('Incorrect submission id (no submission was found)')
   })
 })

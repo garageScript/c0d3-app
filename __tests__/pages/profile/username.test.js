@@ -42,7 +42,10 @@ describe('user profile test', () => {
           },
           createdAt: '123',
           updatedAt: '123',
-          comments: null
+          comments: null,
+          user: {
+            id: 1
+          }
         },
         {
           id: 2,
@@ -60,7 +63,10 @@ describe('user profile test', () => {
           },
           createdAt: '123',
           updatedAt: '123',
-          comments: null
+          comments: null,
+          user: {
+            id: 1
+          }
         }
       ],
       lessonStatus: [
@@ -193,7 +199,10 @@ describe('user profile test', () => {
           },
           createdAt: '123',
           updatedAt: '123',
-          comments: null
+          comments: null,
+          user: {
+            id: 1
+          }
         }
       ],
       lessonStatus: [

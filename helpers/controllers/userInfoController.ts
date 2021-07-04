@@ -42,6 +42,11 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
           include: {
             author: true
           }
+        },
+        user: {
+          select: {
+            id: true
+          }
         }
       }
     }),

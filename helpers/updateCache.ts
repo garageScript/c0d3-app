@@ -1,21 +1,17 @@
 import { ApolloCache } from '@apollo/client'
-import GET_APP from '../graphql/queries/getApp'
-import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
+import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import {
   AddCommentMutation,
-  GetAppQuery,
-  SubmissionsQuery,
-  Submission
+  Submission,
+  GetPreviousSubmissionsQuery
 } from '../graphql'
 
 import { RecursivePartial } from '../@types/recursivePartial'
 import _ from 'lodash'
 /*
   update function modifies client cache after mutation
-  lessonId prop is used to differentiate between student and reviewer 
-  student data comes from GetApp query while reviewer uses getSubmission query
-  closure is used because apollo requires it to pass additional arguments 
-  (update function has only two arguments - cache and result of query)
+  closure is used because it's the only way to pass additional arguments to update function 
+  (update has only two arguments - cache and result of query)
 */
 export const updateCache = (
   submissionId: number,
@@ -24,61 +20,44 @@ export const updateCache = (
   username: string,
   lessonId?: number,
   line?: number,
-  fileName?: string
+  fileName?: string,
+  challengeId?: number,
+  userId?: number
 ) => {
   return (cache: ApolloCache<AddCommentMutation>) => {
-    if (lessonId) {
-      const data = cache.readQuery<SubmissionsQuery>({
-        query: GET_SUBMISSIONS,
-        variables: { lessonId }
-      })
-      const current = data!.submissions?.filter(s => s!.id === submissionId)
-      const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
-      copy[0]!.comments!.push({
-        content,
-        fileName,
-        line,
-        submissionId,
-        author: {
-          name,
-          username
-        }
-      })
-      const newData = data!.submissions!.map(s => {
-        if (s!.id === submissionId) return copy[0]
-        return s
-      })
-      cache.writeQuery({
-        query: GET_SUBMISSIONS,
-        variables: { lessonId },
-        data: { ...data, submissions: newData }
-      })
-    } else {
-      const data = cache.readQuery<GetAppQuery>({
-        query: GET_APP
-      })
-      const current = data!.session!.submissions!.filter(
-        s => s!.id === submissionId
-      )
-      const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
-      copy[0]!.comments!.push({
-        content,
-        fileName,
-        line,
-        submissionId,
-        author: {
-          name,
-          username
-        }
-      })
-      const newData = {
-        ...data,
-        session: { ...data!.session, submissions: copy }
+    const data = cache.readQuery<GetPreviousSubmissionsQuery>({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: {
+        lessonId,
+        challengeId,
+        userId
       }
-      cache.writeQuery({
-        query: GET_APP,
-        data: newData
-      })
-    }
+    })
+    if (!data) throw new Error('No cache to update')
+    const current = data.getPreviousSubmissions?.filter(
+      s => s.id === submissionId
+    )
+    const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
+    if (!copy.length)
+      throw new Error('Incorrect submission id (no submission was found)')
+    copy[0].comments!.push({
+      content,
+      fileName,
+      line,
+      submissionId,
+      author: {
+        name,
+        username
+      }
+    })
+    const newData = data?.getPreviousSubmissions?.map(s => {
+      if (s.id === submissionId) return copy[0]
+      return s
+    })
+    cache.writeQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { lessonId, challengeId, userId },
+      data: { ...data, getPreviousSubmissions: newData }
+    })
   }
 }
