@@ -63,7 +63,7 @@ const LessonCard: React.FC<Props> = props => {
 
   return (
     <div className={`card shadow-sm mt-3 ${containerClass}`}>
-      <div className="d-flex p-2">
+      <div className={`${styles['lesson-card__wrapper']} d-flex p-2`}>
         <Image
           src={`/assets/curriculum/${props.coverImg}`}
           alt={props.coverImg}
@@ -73,16 +73,8 @@ const LessonCard: React.FC<Props> = props => {
           objectFit="contain"
         />
 
-        <div
-          className={`${styles['lesson-card__description']} pl-4 d-flex flex-column d-md-block`}
-        >
-          {props.currentState === 'completed' && (
-            <span className="badge badge-pill badge-success float-right align-self-end mt-2 mr-2 p-2 d-flex align-items-center">
-              <CheckCircle style={{ height: '15px' }} />
-              <span className="mx-1">COMPLETED</span>
-            </span>
-          )}
-          <div>
+        <div className={`${styles['lesson-card__description']} pl-4`}>
+          <div className="d-flex">
             <h4
               className={`${styles['lesson-card__title']} font-weight-bold mt-3`}
             >
@@ -93,6 +85,16 @@ const LessonCard: React.FC<Props> = props => {
                 {props.title}
               </NavLink>
             </h4>
+            {props.currentState === 'completed' && (
+              <span
+                className={`${styles['lesson-card__badge']} badge badge-pill badge-success mt-2 mr-2 ml-auto p-2 d-flex align-items-center`}
+              >
+                <CheckCircle size="16" />
+                <span className="mx-1 d-none d-md-block">COMPLETED</span>
+              </span>
+            )}
+          </div>
+          <div>
             <div>
               <div className="d-inline-block mr-4">
                 <img
@@ -107,13 +109,11 @@ const LessonCard: React.FC<Props> = props => {
             </div>
             <p className="mt-2">{props.description}</p>
           </div>
-          <div className="align-self-end">
-            <ReviewButton
-              isCompleted={props.currentState === 'completed'}
-              reviewUrl={props.reviewUrl}
-              lessonId={props.lessonId}
-            />
-          </div>
+          <ReviewButton
+            isCompleted={props.currentState === 'completed'}
+            reviewUrl={props.reviewUrl}
+            lessonId={props.lessonId}
+          />
         </div>
       </div>
 
