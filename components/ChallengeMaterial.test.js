@@ -1,21 +1,30 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import dayjs from 'dayjs'
-import {
-  render,
-  fireEvent,
-  waitFor,
-  screen,
-  waitForElementToBeRemoved
-} from '@testing-library/react'
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ChallengeMaterial from './ChallengeMaterial'
 import { MockedProvider } from '@apollo/client/testing'
 import ADD_COMMENT from '../graphql/queries/addComment'
 import SET_STAR from '../graphql/queries/setStar'
+import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import GET_LESSON_MENTORS from '../graphql/queries/getLessonMentors'
 import lessonMentorsData from '../__dummy__/getLessonMentorsData'
 import '@testing-library/jest-dom'
 import { SubmissionStatus } from '../graphql'
+import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
+import dummySessionData from '../__dummy__/sessionData'
+import { ContextProvider, GlobalContext } from '../helpers/globalContext'
+import _ from 'lodash'
+
+const getPreviousSubmissionsMock = {
+  request: {
+    query: GET_PREVIOUS_SUBMISSIONS,
+    variables: { challengeId: 9, userId: 1 }
+  },
+  result: {
+    data: getPreviousSubmissionsData
+  }
+}
 
 const mocks = [
   {
@@ -48,7 +57,29 @@ const mocks = [
         }
       }
     }
-  }
+  },
+  {
+    ...getPreviousSubmissionsMock,
+    request: {
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { challengeId: 105, userId: 1 }
+    }
+  },
+  {
+    request: {
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { challengeId: 107, userId: 1 }
+    },
+    result: {
+      data: {
+        getPreviousSubmissions: [
+          getPreviousSubmissionsData.getPreviousSubmissions[0]
+        ]
+      }
+    }
+  },
+  getPreviousSubmissionsMock,
+  getPreviousSubmissionsMock
 ]
 
 const lessonStatusNoPass = {
@@ -98,7 +129,10 @@ const userSubmissions = [
         submissionId: 1,
         content: 'A comment under submission'
       }
-    ]
+    ],
+    user: {
+      id: 3
+    }
   },
   {
     id: 3501,
@@ -124,7 +158,10 @@ const userSubmissions = [
         submissionId: 1,
         content: 'A comment under submission'
       }
-    ]
+    ],
+    user: {
+      id: 3
+    }
   },
   {
     id: 3502,
@@ -147,7 +184,10 @@ const userSubmissions = [
         submissionId: 1,
         content: 'A comment under submission'
       }
-    ]
+    ],
+    user: {
+      id: 3
+    }
   }
 ]
 
@@ -165,7 +205,62 @@ describe('Curriculum challenge page', () => {
       setShow
     }
   })
-
+  test('Should select previous iterations', async () => {
+    const copyProps = _.cloneDeep(props)
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    await screen.findByText('Select submission')
+    expect(
+      await screen.findByRole('button', { name: '3 2 comment count' })
+    ).toHaveClass('btn-info')
+    userEvent.click(screen.getByTestId('iteration 1'))
+    expect(
+      await screen.findByRole('button', { name: '3 2 comment count' })
+    ).not.toHaveClass('btn-info')
+    expect(container).toMatchSnapshot()
+  })
+  test('Should be able to select another challenge', async () => {
+    const copyProps = _.cloneDeep(props)
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    await screen.findByText('Select submission')
+    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    await screen.findByText('Select submission')
+    expect(container).toMatchSnapshot()
+  })
+  test('Should not render diff if submission was not send', async () => {
+    const copyProps = _.cloneDeep(props)
+    copyProps.userSubmissions = [userSubmissions[0]]
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    await screen.findByText('Select submission')
+    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    expect(
+      screen.queryByText((_content, node) =>
+        node.textContent.includes('Submitted a ')
+      )
+    ).toBeNull()
+    expect(container).toMatchSnapshot()
+  })
   test('Should render appropriately when no challenges are passed to component', async () => {
     props.challenges = []
     props.userSubmissions = []
@@ -278,5 +373,42 @@ describe('Curriculum challenge page', () => {
       </MockedProvider>
     )
     expect(screen.getByText('A comment under submission')).toBeVisible()
+  })
+  test('Should render empty div if there is no submission data', () => {
+    props.userSubmissions = []
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...props} />
+      </MockedProvider>
+    )
+    expect(container).toMatchSnapshot()
+  })
+  test('Should return error component if there is no name in context', async () => {
+    const Wrapper = ({ children }) => {
+      const context = useContext(GlobalContext)
+      const incorrectUserData = {
+        id: 1,
+        name: 'fake user',
+        email: 'fake@fakemail.com',
+        isAdmin: true
+      }
+      useEffect(() => {
+        context.setContext({ ...dummySessionData, user: incorrectUserData })
+      }, [])
+      return <>{children}</>
+    }
+    render(
+      <ContextProvider>
+        <MockedProvider mocks={mocks} addTypeName={false}>
+          <Wrapper>
+            <ChallengeMaterial {...props} />
+          </Wrapper>
+        </MockedProvider>
+      </ContextProvider>
+    )
+
+    expect(
+      screen.getByText('Error while retrieving userinfo from context')
+    ).toBeVisible()
   })
 })

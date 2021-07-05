@@ -3,10 +3,10 @@
 exports[`SelectIteration component It should render error state 1`] = `
 <div>
   <div
-    class="card p-1 selection__card"
+    class="selection__card"
   >
     <p
-      class="selection__title"
+      class="selection__title text-muted mx-2"
     >
       Select submission
     </p>
@@ -23,20 +23,15 @@ exports[`SelectIteration component It should render error state 1`] = `
 exports[`SelectIteration component It should render loading state 1`] = `
 <div>
   <div
-    class="card p-1 selection__card"
+    class="selection__card"
   >
     <p
-      class="selection__title"
+      class="selection__title text-muted mx-2"
     >
       Loading previous submissions...
     </p>
-    <p
-      class="text-muted mb-0"
-    >
-      Iteration n of N total
-    </p>
     <button
-      class="button m-3 loading btn btn-light"
+      class="button loading btn btn-light"
       type="button"
     />
   </div>
@@ -46,17 +41,12 @@ exports[`SelectIteration component It should render loading state 1`] = `
 exports[`SelectIteration component Should be able to select submissions 1`] = `
 <div>
   <div
-    class="card p-1 selection__card"
+    class="selection__card"
   >
     <p
-      class="selection__title"
+      class="selection__title text-muted mx-2"
     >
       Select submission
-    </p>
-    <p
-      class="text-muted mb-0"
-    >
-      Iteration 2 of 3
     </p>
     <div>
       <div
@@ -64,7 +54,7 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         data-testid="iteration 0"
       >
         <button
-          class="button m-3 btn btn-success"
+          class="button m-2 btn btn-success"
           type="button"
         >
           1
@@ -80,7 +70,7 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         data-testid="iteration 1"
       >
         <button
-          class="button m-3 btn btn-info"
+          class="button m-2 btn btn-info"
           type="button"
         >
           2
@@ -96,7 +86,7 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         data-testid="iteration 2"
       >
         <button
-          class="button m-3 btn btn-success"
+          class="button m-2 btn btn-success"
           type="button"
         >
           3
@@ -120,17 +110,12 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
 exports[`SelectIteration component Should treat negative index as last iteration 1`] = `
 <div>
   <div
-    class="card p-1 selection__card"
+    class="selection__card"
   >
     <p
-      class="selection__title"
+      class="selection__title text-muted mx-2"
     >
       Select submission
-    </p>
-    <p
-      class="text-muted mb-0"
-    >
-      Iteration 3 of 3
     </p>
     <div>
       <div
@@ -138,7 +123,7 @@ exports[`SelectIteration component Should treat negative index as last iteration
         data-testid="iteration 0"
       >
         <button
-          class="button m-3 btn btn-success"
+          class="button m-2 btn btn-success"
           type="button"
         >
           1
@@ -154,7 +139,7 @@ exports[`SelectIteration component Should treat negative index as last iteration
         data-testid="iteration 1"
       >
         <button
-          class="button m-3 btn btn-info"
+          class="button m-2 btn btn-info"
           type="button"
         >
           2
@@ -170,7 +155,7 @@ exports[`SelectIteration component Should treat negative index as last iteration
         data-testid="iteration 2"
       >
         <button
-          class="button m-3 btn btn-success"
+          class="button m-2 btn btn-success"
           type="button"
         >
           3
