@@ -19,8 +19,8 @@ export default {
       },
       reviewer: null,
       comments: [],
-      createdAt: '1623327769302',
-      updatedAt: '1624356277645'
+      createdAt: '1',
+      updatedAt: '1'
     },
     {
       __typename: 'Submission',
@@ -41,8 +41,8 @@ export default {
       },
       reviewer: null,
       comments: [],
-      createdAt: '1624355888876',
-      updatedAt: '1624355888876'
+      createdAt: '1',
+      updatedAt: '1'
     },
     {
       __typename: 'Submission',
@@ -92,8 +92,8 @@ export default {
           }
         }
       ],
-      createdAt: '1624356277655',
-      updatedAt: '1624356277655'
+      createdAt: '1',
+      updatedAt: '1'
     }
   ]
 }

@@ -86,12 +86,63 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
             <p
               class="selection__title text-muted mx-2"
             >
-              Loading previous submissions...
+              Select submission
             </p>
-            <button
-              class="button loading btn btn-light"
-              type="button"
-            />
+            <div>
+              <div
+                class="d-inline"
+                data-testid="iteration 0"
+              >
+                <button
+                  class="button m-2 btn btn-success"
+                  type="button"
+                >
+                  1
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+              <div
+                class="d-inline"
+                data-testid="iteration 1"
+              >
+                <button
+                  class="button m-2 btn btn-success"
+                  type="button"
+                >
+                  2
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+              <div
+                class="d-inline"
+                data-testid="iteration 2"
+              >
+                <button
+                  class="button m-2 btn btn-info"
+                  type="button"
+                >
+                  3
+                  <span
+                    class="badge badge badge-light"
+                  >
+                    2
+                  </span>
+                  <span
+                    class="sr-only"
+                  >
+                    comment count
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -112,7 +163,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                     <pre
                       class="css-pa3tg-content-text"
                     >
-                      curriculum/js0/2.js
+                      foobar.js
                     </pre>
                   </td>
                 </tr>
@@ -149,16 +200,10 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                       class="css-pa3tg-content-text"
                     >
                       <span>
-                         
                         <span
-                          class="token operator"
+                          class="token comment"
                         >
-                          *
-                        </span>
-                        <span
-                          class="token operator"
-                        >
-                          /
+                          /*
                         </span>
                       </span>
                     </pre>
@@ -196,7 +241,19 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                     <pre
                       class="css-pa3tg-content-text"
                     >
-                      <span />
+                      <span>
+                        <span
+                          class="token constant"
+                        >
+                          SUBMISSION
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          B
+                        </span>
+                      </span>
                     </pre>
                   </td>
                 </tr>
@@ -234,6 +291,2055 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                     >
                       <span>
                         <span
+                          class="token constant"
+                        >
+                          THIS
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          IS
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          A
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          MOCK
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          SUBMISSION
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          TO
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          TEST
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          COMMENTS
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      4
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span />
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      5
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token constant"
+                        >
+                          DO
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          NOT
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          CLOSE
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          IT
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         
+                        <span
+                          class="token constant"
+                        >
+                          PLEASE
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      6
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token operator"
+                        >
+                          *
+                        </span>
+                        <span
+                          class="token operator"
+                        >
+                          /
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      7
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span />
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      8
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token keyword"
+                        >
+                          const
+                        </span>
+                         fetch 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          require
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token string"
+                        >
+                          "node-fetch"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      9
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span />
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      10
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token keyword"
+                        >
+                          const
+                        </span>
+                         fs 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          require
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token string"
+                        >
+                          "fs"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      11
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span />
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      12
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                        <span
+                          class="token function"
+                        >
+                          fetch
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token string"
+                        >
+                          "https://pokeapi.co/api/v2/pokemon/"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      13
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          then
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          data
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      14
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         data
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          json
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      15
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      16
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          then
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          data
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      17
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          const
+                        </span>
+                         fetchPromises 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         data
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        results
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          map
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          e
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      18
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          fetch
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        e
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        url
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          then
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          info
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      19
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         info
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          json
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      20
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      21
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      22
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span />
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      23
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            Promise
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          all
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        fetchPromises
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      24
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          then
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          result
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      25
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         result
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          reduce
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          acc
+                          <span
+                            class="token punctuation"
+                          >
+                            ,
+                          </span>
+                           pokeInfo
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      26
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                  
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         
+                        <span
+                          class="token template-string"
+                        >
+                          <span
+                            class="token template-punctuation string"
+                          >
+                            \`
+                          </span>
+                          <span
+                            class="token interpolation"
+                          >
+                            <span
+                              class="token interpolation-punctuation punctuation"
+                            >
+                              \${
+                            </span>
+                            acc
+                            <span
+                              class="token interpolation-punctuation punctuation"
+                            >
+                              }
+                            </span>
+                          </span>
+                          <span
+                            class="token string"
+                          >
+                            &lt;p&gt;
+                          </span>
+                          <span
+                            class="token interpolation"
+                          >
+                            <span
+                              class="token interpolation-punctuation punctuation"
+                            >
+                              \${
+                            </span>
+                            pokeInfo
+                            <span
+                              class="token punctuation"
+                            >
+                              .
+                            </span>
+                            name
+                            <span
+                              class="token interpolation-punctuation punctuation"
+                            >
+                              }
+                            </span>
+                          </span>
+                          <span
+                            class="token string"
+                          >
+                            &lt;/p&gt;&lt;img src="
+                          </span>
+                          <span
+                            class="token interpolation"
+                          >
+                            <span
+                              class="token interpolation-punctuation punctuation"
+                            >
+                              \${
+                            </span>
+                            pokeInfo
+                            <span
+                              class="token punctuation"
+                            >
+                              .
+                            </span>
+                            sprites
+                            <span
+                              class="token punctuation"
+                            >
+                              .
+                            </span>
+                            front_default
+                            <span
+                              class="token interpolation-punctuation punctuation"
+                            >
+                              }
+                            </span>
+                          </span>
+                          <span
+                            class="token string"
+                          >
+                            "/&gt;
+                          </span>
+                          <span
+                            class="token template-punctuation string"
+                          >
+                            \`
+                          </span>
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      27
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         
+                        <span
+                          class="token template-string"
+                        >
+                          <span
+                            class="token template-punctuation string"
+                          >
+                            \`
+                          </span>
+                          <span
+                            class="token template-punctuation string"
+                          >
+                            \`
+                          </span>
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      28
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      29
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          then
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          htmlStr
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      30
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                fs
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          writeFile
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token string"
+                        >
+                          "9.html"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         htmlStr
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      31
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      32
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              class="css-1n5o7vh-diff-container"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="css-1rwygp7-title-block"
+                    colspan="4"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      js7/10.js
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      1
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                        <span
                           class="token keyword"
                         >
                           const
@@ -242,7 +2348,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                         <span
                           class="token function-variable function"
                         >
-                          solution
+                          parse
                         </span>
                          
                         <span
@@ -259,19 +2365,263 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                         <span
                           class="token parameter"
                         >
-                          a
-                          <span
-                            class="token punctuation"
+                          str
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =&gt;
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                      <div
+                        class="showHide"
+                      >
+                        Hide conversation
+                      </div>
+                      <div
+                        class="commentBox bg-white d-auto"
+                      >
+                        <div
+                          class="border border-lightgray rounded my-1"
+                        >
+                          <div
+                            class="ml-3"
                           >
-                            ,
-                          </span>
-                           b
-                          <span
-                            class="token punctuation"
+                            <span
+                              wrapper="code_wrapper"
+                            >
+                              second line comment
+                            </span>
+                          </div>
+                          <div
+                            class="wrapper"
                           >
-                            ,
-                          </span>
-                           c
+                            <a
+                              class="comment_author__inline mt-2 "
+                              href="/profile/admin"
+                            >
+                              <div
+                                class="d-inline"
+                              >
+                                Admin Administrator
+                              </div>
+                              <div
+                                class="d-inline text-muted"
+                              >
+                                 @admin
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div
+                          style="background-color: white;"
+                        >
+                          <button
+                            class="btn"
+                            style="color: rgb(41, 41, 41);"
+                          >
+                            Write
+                          </button>
+                          <button
+                            class="btn"
+                            style="color: rgb(142, 142, 142);"
+                          >
+                            Preview
+                          </button>
+                          <textarea
+                            data-testid="textbox"
+                            placeholder="Type something..."
+                            style="padding: 1rem; width: 100%;"
+                          />
+                        </div>
+                        <button
+                          class="btn bg-success"
+                          style="color: rgb(255, 255, 255);"
+                        >
+                          Add comment
+                        </button>
+                      </div>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      2
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token comment"
+                        >
+                          //assume that str is always valid json string
+                        </span>
+                      </span>
+                      <div
+                        class="showHide"
+                      >
+                        Hide conversation
+                      </div>
+                      <div
+                        class="commentBox bg-white d-auto"
+                      >
+                        <div
+                          class="border border-lightgray rounded my-1"
+                        >
+                          <div
+                            class="ml-3"
+                          >
+                            <span
+                              wrapper="code_wrapper"
+                            >
+                              first line comment
+                            </span>
+                          </div>
+                          <div
+                            class="wrapper"
+                          >
+                            <a
+                              class="comment_author__inline mt-2 "
+                              href="/profile/admin"
+                            >
+                              <div
+                                class="d-inline"
+                              >
+                                Admin Administrator
+                              </div>
+                              <div
+                                class="d-inline text-muted"
+                              >
+                                 @admin
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                        <div
+                          style="background-color: white;"
+                        >
+                          <button
+                            class="btn"
+                            style="color: rgb(41, 41, 41);"
+                          >
+                            Write
+                          </button>
+                          <button
+                            class="btn"
+                            style="color: rgb(142, 142, 142);"
+                          >
+                            Preview
+                          </button>
+                          <textarea
+                            data-testid="textbox"
+                            placeholder="Type something..."
+                            style="padding: 1rem; width: 100%;"
+                          />
+                        </div>
+                        <button
+                          class="btn bg-success"
+                          style="color: rgb(255, 255, 255);"
+                        >
+                          Add comment
+                        </button>
+                      </div>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      3
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token function-variable function"
+                        >
+                          parseObj
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token parameter"
+                        >
+                          str
                         </span>
                         <span
                           class="token punctuation"
@@ -327,25 +2677,29 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                       class="css-pa3tg-content-text"
                     >
                       <span>
-                          
+                            
                         <span
                           class="token keyword"
                         >
-                          return
+                          const
                         </span>
-                         a 
+                         output 
                         <span
                           class="token operator"
                         >
-                          +
+                          =
                         </span>
-                         b 
+                         
                         <span
-                          class="token operator"
+                          class="token punctuation"
                         >
-                          +
+                          {
                         </span>
-                         c
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
                         <span
                           class="token punctuation"
                         >
@@ -372,6 +2726,2239 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                       class="css-14p8zw1-line-number"
                     >
                       5
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length 
+                        <span
+                          class="token operator"
+                        >
+                          &lt;
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          3
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         output
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      6
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          const
+                        </span>
+                         valueStr 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          slice
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length 
+                        <span
+                          class="token operator"
+                        >
+                          -
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      7
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          let
+                        </span>
+                         start 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      8
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          let
+                        </span>
+                         key
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      9
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          let
+                        </span>
+                         val
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      10
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          for
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token keyword"
+                        >
+                          let
+                        </span>
+                         i 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                         i 
+                        <span
+                          class="token operator"
+                        >
+                          &lt;=
+                        </span>
+                         valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                         i
+                        <span
+                          class="token operator"
+                        >
+                          ++
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      11
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        stack
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        stack
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length 
+                        <span
+                          class="token operator"
+                        >
+                          -
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        i
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      12
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                stack
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          pop
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      13
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      14
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        i
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          "{"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      15
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                stack
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          push
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token string"
+                        >
+                          "}"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      16
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      17
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token operator"
+                        >
+                          !
+                        </span>
+                        stack
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      18
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        i
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          ":"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      19
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                  key 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          parse
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          slice
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        start
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         i
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      20
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                  start 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         i 
+                        <span
+                          class="token operator"
+                        >
+                          +
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      21
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      22
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        i
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          ","
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ||
+                        </span>
+                         i 
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          {
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      23
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                  val 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          parse
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        valueStr
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          slice
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        start
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         i
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      24
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                  start 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         i 
+                        <span
+                          class="token operator"
+                        >
+                          +
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      25
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                  output
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        key
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         val
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      26
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                                
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      27
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                              
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      28
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      29
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                            
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         output
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      30
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token punctuation"
+                        >
+                          }
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      31
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token keyword"
+                        >
+                          const
+                        </span>
+                         stack 
+                        <span
+                          class="token operator"
+                        >
+                          =
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      32
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        str
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        <span
+                          class="token number"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          '"'
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          slice
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ,
+                        </span>
+                         str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        length 
+                        <span
+                          class="token operator"
+                        >
+                          -
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          1
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      33
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          charCodeAt
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token number"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          &gt;=
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          48
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          &&
+                        </span>
+                         str
+                        <span
+                          class="token punctuation"
+                        >
+                          .
+                        </span>
+                        <span
+                          class="token function"
+                        >
+                          charCodeAt
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        <span
+                          class="token number"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          &lt;=
+                        </span>
+                         
+                        <span
+                          class="token number"
+                        >
+                          57
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          Number
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        str
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      34
+                    </pre>
+                  </td>
+                  <td
+                    class="css-17vezug-marker css-cnnxkz-diff-added"
+                  >
+                    <pre>
+                      +
+                    </pre>
+                  </td>
+                  <td
+                    class="css-vl0irh-content css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-pa3tg-content-text"
+                    >
+                      <span>
+                          
+                        <span
+                          class="token keyword"
+                        >
+                          if
+                        </span>
+                         
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        str
+                        <span
+                          class="token punctuation"
+                        >
+                          [
+                        </span>
+                        <span
+                          class="token number"
+                        >
+                          0
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ]
+                        </span>
+                         
+                        <span
+                          class="token operator"
+                        >
+                          ===
+                        </span>
+                         
+                        <span
+                          class="token string"
+                        >
+                          "{"
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                         
+                        <span
+                          class="token keyword"
+                        >
+                          return
+                        </span>
+                         
+                        <span
+                          class="token function"
+                        >
+                          parseObj
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          (
+                        </span>
+                        str
+                        <span
+                          class="token punctuation"
+                        >
+                          )
+                        </span>
+                        <span
+                          class="token punctuation"
+                        >
+                          ;
+                        </span>
+                      </span>
+                    </pre>
+                  </td>
+                </tr>
+                <tr
+                  class="css-1n7ec1i-line"
+                >
+                  <td
+                    class="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    />
+                  </td>
+                  <td
+                    class="css-1548r9v-gutter css-cnnxkz-diff-added"
+                  >
+                    <pre
+                      class="css-14p8zw1-line-number"
+                    >
+                      35
                     </pre>
                   </td>
                   <td
@@ -418,7 +5005,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                     <pre
                       class="css-14p8zw1-line-number"
                     >
-                      6
+                      36
                     </pre>
                   </td>
                   <td
@@ -454,7 +5041,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                     <pre
                       class="css-14p8zw1-line-number"
                     >
-                      7
+                      37
                     </pre>
                   </td>
                   <td
@@ -483,11 +5070,11 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                         >
                           =
                         </span>
-                         
+                         parse
                         <span
                           class="token punctuation"
                         >
-                          {
+                          ;
                         </span>
                       </span>
                     </pre>
@@ -495,38 +5082,6 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                 </tr>
               </tbody>
             </table>
-            <div
-              class="border border-lightgray rounded my-1"
-            >
-              <div
-                class="ml-3"
-              >
-                <span
-                  wrapper="code_wrapper"
-                >
-                  A comment under submission
-                </span>
-              </div>
-              <div
-                class="wrapper"
-              >
-                <a
-                  class="comment_author__inline mt-2 "
-                  href="/profile/admin"
-                >
-                  <div
-                    class="d-inline"
-                  >
-                    Admin Admin
-                  </div>
-                  <div
-                    class="d-inline text-muted"
-                  >
-                     @admin
-                  </div>
-                </a>
-              </div>
-            </div>
             <div
               style="background-color: white;"
             >

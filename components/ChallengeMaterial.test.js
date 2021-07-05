@@ -241,6 +241,7 @@ describe('Curriculum challenge page', () => {
     )
     await screen.findByText('Select submission')
     userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    await screen.findByText('Select submission')
     expect(container).toMatchSnapshot()
   })
   test('Should not render diff if submission was not send', async () => {
