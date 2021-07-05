@@ -1,3 +1,5 @@
+import dayjs from 'dayjs'
+
 export default {
   getPreviousSubmissions: [
     {
@@ -19,8 +21,8 @@ export default {
       },
       reviewer: null,
       comments: [],
-      createdAt: '1',
-      updatedAt: '1'
+      createdAt: dayjs().subtract(16, 'day').valueOf(),
+      updatedAt: dayjs().subtract(16, 'day').valueOf()
     },
     {
       __typename: 'Submission',
@@ -41,8 +43,8 @@ export default {
       },
       reviewer: null,
       comments: [],
-      createdAt: '1',
-      updatedAt: '1'
+      createdAt: dayjs().subtract(16, 'day').valueOf(),
+      updatedAt: dayjs().subtract(16, 'day').valueOf()
     },
     {
       __typename: 'Submission',
@@ -92,8 +94,8 @@ export default {
           }
         }
       ],
-      createdAt: '1',
-      updatedAt: '1'
+      createdAt: dayjs().subtract(16, 'day').valueOf(),
+      updatedAt: dayjs().subtract(16, 'day').valueOf()
     }
   ]
 }
