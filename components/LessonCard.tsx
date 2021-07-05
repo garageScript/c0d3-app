@@ -87,7 +87,7 @@ const LessonCard: React.FC<Props> = props => {
             </h4>
             {props.currentState === 'completed' && (
               <span
-                className={`${styles['lesson-card__badge']} badge badge-pill badge-success mt-2 mr-2 ml-auto p-2 d-flex align-items-center`}
+                className={`${styles['lesson-card__badge']} badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center`}
               >
                 <CheckCircle size="15" />
                 <span className="mx-1 d-none d-md-block">COMPLETED</span>

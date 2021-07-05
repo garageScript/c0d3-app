@@ -5198,7 +5198,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           </a>
         </h4>
         <span
-          className="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto p-2 d-flex align-items-center"
+          className="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
         >
           <svg
             fill="none"
