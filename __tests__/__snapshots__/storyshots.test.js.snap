@@ -5202,13 +5202,13 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         >
           <svg
             fill="none"
-            height="16"
+            height="15"
             stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
             viewBox="0 0 24 24"
-            width="16"
+            width="15"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
