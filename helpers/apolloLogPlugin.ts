@@ -15,8 +15,6 @@ import * as Sentry from '@sentry/nextjs'
  */
 const sentryTryFlush: any = async (timeout?: number) => {
   try {
-    // Check on this issue for future improvements:
-    // https://github.com/getsentry/sentry-javascript/issues/3643
     await Sentry.flush(timeout)
   } catch (error) {
     console.error('Flush failed: ', error)
@@ -24,59 +22,45 @@ const sentryTryFlush: any = async (timeout?: number) => {
 }
 
 /**
- * Plugin to capture apollo errors and send a copy to sentry/logflare
+ * Plugin to capture errors during apollo transaction and send a copy to sentry/logflare
  */
 export const apolloLogPlugin: ApolloServerPlugin = {
   requestDidStart<TContext>(
     _: GraphQLRequestContext<TContext>
   ): GraphQLRequestListener<TContext> {
-    /* Within this returned object, define functions that respond
-           to request-specific lifecycle events. */
     return {
-      didEncounterErrors(ctx: any) {
-        // If we couldn't parse the operation, only
-        // log to console / logflare
-        if (!ctx.operation) {
-          console.error(ctx)
-          return
-        }
-
+      didEncounterErrors(ctx) {
         for (const err of ctx.errors) {
-          if (err instanceof ApolloError) {
-            Sentry.captureException(err)
-            /* ApolloErrors should be user-facing just report plain error
-            without attaching any additional information */
-            continue
+          /* Only add extra scope to errors with apollo operation 
+             type (query/mutation/subscription) and are also not 
+             already handled by an ApolloError. All  ApolloErrors 
+             should be user-facing and already handled by the client
+          */
+          if (ctx.operation && !(err instanceof ApolloError)) {
+            Sentry.withScope(scope => {
+              scope.setTag('kind', ctx.operation?.operation)
+              scope.setExtra('query', ctx.request.query)
+              scope.setExtra('variables', ctx.request.variables)
+
+              if (err.path) {
+                scope.addBreadcrumb({
+                  category: 'query-path',
+                  message: err.path.join(' > '),
+                  level: Sentry.Severity.Debug
+                })
+              }
+
+              const transactionId =
+                ctx.request.http?.headers.get('x-transaction-id')
+              if (transactionId) {
+                scope.setTransactionName(transactionId)
+              }
+            })
           }
-
-          // Add scoped report details and send to Sentry
-          Sentry.withScope(scope => {
-            // Annotate whether failing operation was query/mutation/subscription
-            scope.setTag('kind', ctx.operation?.operation)
-
-            // Log query and variables as extras (make sure to strip out sensitive data!)
-            scope.setExtra('query', ctx.request.query)
-            scope.setExtra('variables', ctx.request.variables)
-
-            if (err.path) {
-              scope.addBreadcrumb({
-                category: 'query-path',
-                message: err.path.join(' > '),
-                level: Sentry.Severity.Debug
-              })
-            }
-
-            const transactionId =
-              ctx.request.http.headers.get('x-transaction-id')
-            if (transactionId) {
-              scope.setTransactionName(transactionId)
-            }
-
-            Sentry.captureException(err)
-          })
+          // Log error so logflare can also receive a copy of the error
+          console.error(err)
+          Sentry.captureException(err)
         }
-        // Log error so logflare can also receive a copy of the error
-        console.error(ctx?.errors)
 
         /* returning promise causes apollo to wait for resolve before responding
         to user. This delay is required to ensure errors are forwarded to
