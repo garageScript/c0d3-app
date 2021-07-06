@@ -25,7 +25,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           <div
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
-            9 days ago
+            14 days ago
           </div>
         </div>
         <div
@@ -460,7 +460,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             </a>
           </div>
           <div
-            class="font ml-2"
+            class="ml-2"
           >
             requested changes on 
             Tuesday, June 22, 2021
@@ -554,7 +554,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
           <div
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
-            9 days ago
+            14 days ago
           </div>
         </div>
         <div
@@ -1040,7 +1040,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             </a>
           </div>
           <div
-            class="font ml-2"
+            class="ml-2"
           >
             requested changes on 
             Tuesday, June 22, 2021
@@ -1134,7 +1134,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           <div
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
-            9 days ago
+            14 days ago
           </div>
         </div>
         <div
@@ -2370,7 +2370,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             </a>
           </div>
           <div
-            class="font ml-2"
+            class="ml-2"
           >
             requested changes on 
             Tuesday, June 22, 2021
@@ -2464,7 +2464,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           <div
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
-            9 days ago
+            14 days ago
           </div>
         </div>
         <div
@@ -3700,7 +3700,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             </a>
           </div>
           <div
-            class="font ml-2"
+            class="ml-2"
           >
             requested changes on 
             Tuesday, June 22, 2021
@@ -3794,7 +3794,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           <div
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
-            9 days ago
+            14 days ago
           </div>
         </div>
         <div
@@ -3853,7 +3853,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             </a>
           </div>
           <div
-            class="font ml-2"
+            class="ml-2"
           >
             requested changes on 
             Tuesday, June 22, 2021
@@ -3947,7 +3947,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           <div
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
-            9 days ago
+            14 days ago
           </div>
         </div>
         <div
@@ -5183,7 +5183,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             </a>
           </div>
           <div
-            class="font ml-2"
+            class="ml-2"
           >
             requested changes on 
             Tuesday, June 22, 2021

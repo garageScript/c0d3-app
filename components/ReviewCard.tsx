@@ -1,6 +1,5 @@
 import { useMutation, ApolloCache } from '@apollo/client'
 import React, { useState, useContext, useEffect } from 'react'
-import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import { GlobalContext } from '../helpers/globalContext'
 import relativeTime from 'dayjs/plugin/relativeTime'
@@ -15,9 +14,7 @@ import {
   Comment
 } from '../graphql/index'
 import { SubmissionComments } from './SubmissionComments'
-import ReviewerProfile from './ReviewerProfile'
 import _ from 'lodash'
-import styles from '../scss/reviewCard.module.scss'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
@@ -25,6 +22,7 @@ import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
+import { ReviewerComment } from './ReviewerComment'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -32,42 +30,6 @@ type ReviewCardProps = {
 }
 
 type CommentType = 'accept' | 'reject' | 'comment'
-
-const RequestChanges: React.FC<{
-  username: string
-  name: string
-  comment: string
-  date: string
-  status: SubmissionStatus
-}> = ({ name, username, comment, date, status }) => {
-  return (
-    <div
-      className={`${
-        status === SubmissionStatus.Passed ? styles.passed : styles.rejected
-      } px-2 py-1 my-3`}
-    >
-      <div className="d-flex align-items-center">
-        <img
-          src="/assets/requestChanges.svg"
-          className={
-            status === SubmissionStatus.Passed
-              ? styles.icon__accepted
-              : styles.icon__rejected
-          }
-        />
-        <ReviewerProfile name={name} username={username} />
-        <div className={`${styles.font} ml-2`}>
-          {status === SubmissionStatus.Passed
-            ? 'accepted submission on '
-            : 'requested changes on '}
-          {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
-        </div>
-      </div>
-      <hr />
-      <Markdown>{comment}</Markdown>
-    </div>
-  )
-}
 
 const ReviewButtons: React.FC<{
   commentType: CommentType
@@ -242,7 +204,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       status === SubmissionStatus.Passed
     )
       return (
-        <RequestChanges
+        <ReviewerComment
           name={submissionState.reviewer?.name || ''}
           username={submissionState.reviewer?.username || ''}
           comment={submissionState.comment || ''}
