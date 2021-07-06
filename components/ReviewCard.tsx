@@ -200,8 +200,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
 
   const reviewerMessage = (status: SubmissionStatus) => {
     if (
-      status === SubmissionStatus.NeedMoreWork ||
-      status === SubmissionStatus.Passed
+      [
+        SubmissionStatus.NeedMoreWork,
+        SubmissionStatus.Overwritten,
+        SubmissionStatus.Passed
+      ].includes(status)
     )
       return (
         <ReviewerComment

@@ -14,26 +14,33 @@ export const ReviewerComment: React.FC<{
   date: string
   status: SubmissionStatus
 }> = ({ name, username, comment, date, status }) => {
+  let message
+  switch (status) {
+    case SubmissionStatus.Passed:
+      message = 'accepted submission on '
+      break
+    case SubmissionStatus.NeedMoreWork:
+      message = 'requested changes on '
+      break
+    case SubmissionStatus.Overwritten:
+      message = 'Overwritten on '
+      break
+    default:
+      message = 'error'
+      break
+  }
   return (
     <div
-      className={`${
-        status === SubmissionStatus.Passed ? styles.passed : styles.rejected
-      } px-2 py-1 my-3`}
+      className={`${styles[status]} ${styles['status__border']} px-2 py-1 my-3`}
     >
       <div className="d-flex align-items-center">
         <img
           src="/assets/requestChanges.svg"
-          className={
-            status === SubmissionStatus.Passed
-              ? styles.icon__accepted
-              : styles.icon__rejected
-          }
+          className={`${styles[`icon__${status}`]} ${styles['icon']}`}
         />
         <ReviewerProfile name={name} username={username} />
         <div className={`ml-2`}>
-          {status === SubmissionStatus.Passed
-            ? 'accepted submission on '
-            : 'requested changes on '}
+          {message}
           {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
         </div>
       </div>

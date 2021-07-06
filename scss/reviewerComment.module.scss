@@ -1,25 +1,45 @@
-.icon__rejected {
+.icon__needMoreWork {
   filter: invert(49%) sepia(91%) saturate(5924%) hue-rotate(336deg)
     brightness(92%) contrast(87%);
-  padding: 0.5em 1em;
-  display: inline;
 }
 
-.icon__accepted {
+.icon__passed {
   filter: invert(48%) sepia(68%) saturate(415%) hue-rotate(90deg)
     brightness(99%) contrast(84%);
+}
+
+.icon {
   padding: 0.5em 1em;
   display: inline;
 }
 
-.rejected {
-  border: 2px solid rgb(246, 182, 182);
+.icon__overwritten {
+  filter: invert(84%) sepia(54%) saturate(2813%) hue-rotate(178deg)
+    brightness(91%) contrast(86%);
+}
+
+.status__border {
   border-radius: 5px;
+}
+
+.overwritten {
+  border: 2px solid rgb(116, 167, 190);
+  color: rgb(81, 116, 133);
+  background: rgb(249, 252, 255);
+}
+
+.needMoreWork {
+  border: 2px solid rgb(246, 182, 182);
+  & * {
+    color: rgb(124, 81, 81) !important;
+  }
   background: rgb(255, 249, 249);
 }
 
 .passed {
   border: 2px solid rgb(93, 207, 137);
-  border-radius: 5px;
+  & * {
+    color: rgba(56, 128, 84) !important;
+  }
   background: rgb(241, 251, 245);
 }
