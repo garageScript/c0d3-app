@@ -73,6 +73,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
       >
         <div
           class="card-header bg-white"
+          title="Monday, November 6, 2000 3:00 AM"
         >
           Submitted 
           16 days ago
@@ -5144,18 +5145,6 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
             </button>
           </div>
         </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <span>
-            test comment
-          </span>
-          <div
-            class="text-center p-2 my-2 border border-warning text-warning"
-          >
-            Your submission is currently waiting to be reviewed
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -6182,9 +6171,10 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       >
         <div
           class="card-header bg-white"
+          title="Wednesday, April 15, 2020 2:43 AM"
         >
           Submitted 
-          a year ago
+          in 19 years
         </div>
         <div
           class="text-left ml-2"
@@ -6668,7 +6658,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 <div
                   class="ml-1"
                 >
-                   requested changes on Monday, June 21, 2021.
+                   requested changes on November 6, 2000 3:00 AM.
                 </div>
               </div>
               <hr />
@@ -6676,24 +6666,6 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 test comment
               </span>
             </div>
-          </div>
-        </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <span>
-            test comment
-          </span>
-          <div
-            class="text-center p-2 my-2 border border-danger text-danger"
-          >
-            Your solution was reviewed and rejected by 
-            <a
-              class="text-reset"
-              href="/profile/dan"
-            >
-              dan
-            </a>
           </div>
         </div>
       </div>
@@ -6873,9 +6845,10 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
       >
         <div
           class="card-header bg-white"
+          title="Wednesday, April 15, 2020 2:43 AM"
         >
           Submitted 
-          a year ago
+          in 19 years
         </div>
         <div
           class="text-left ml-2"
@@ -7389,15 +7362,6 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
             </button>
           </div>
         </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <div
-            class="text-center p-2 my-2 border border-warning text-warning"
-          >
-            Your submission is currently waiting to be reviewed
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -7477,6 +7441,7 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
       >
         <div
           class="card-header bg-white"
+          title="Monday, November 6, 2000 3:00 AM"
         >
           Submitted 
           16 days ago
@@ -12410,15 +12375,6 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
             >
               Comment
             </button>
-          </div>
-        </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <div
-            class="text-center p-2 my-2 border border-warning text-warning"
-          >
-            Your submission is currently waiting to be reviewed
           </div>
         </div>
       </div>

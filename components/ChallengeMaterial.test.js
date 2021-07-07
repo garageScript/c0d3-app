@@ -15,6 +15,8 @@ import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 import dummySessionData from '../__dummy__/sessionData'
 import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import _ from 'lodash'
+import MockDate from 'mockdate'
+MockDate.set(new Date('2000-11-22'))
 
 const getPreviousSubmissionsMock = {
   request: {

@@ -15,6 +15,7 @@ import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
@@ -29,13 +30,9 @@ import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
 import { ReviewerComment } from './ReviewerComment'
 dayjs.extend(relativeTime)
+dayjs.extend(LocalizedFormat)
 
 type CurrentChallengeID = number | null
-
-type ReviewStatusProps = {
-  status: string
-  reviewerUserName: string | null
-}
 
 type ChallengeSubmissionData = Challenge & {
   status: string
@@ -44,50 +41,6 @@ type ChallengeSubmissionData = Challenge & {
 
 type UserSubmissionsObject = {
   [submissionId: number]: Submission
-}
-
-export const ReviewStatus: React.FC<ReviewStatusProps> = ({
-  status,
-  reviewerUserName
-}) => {
-  let reviewStatusComment
-  let statusClassName
-  const profileLink = (
-    <NavLink
-      className="text-reset"
-      path="/profile/[username]"
-      as={`/profile/${reviewerUserName}`}
-    >
-      {reviewerUserName}
-    </NavLink>
-  )
-  switch (status) {
-    case SubmissionStatus.Passed:
-      reviewStatusComment = (
-        <>Your solution was reviewed and accepted by {profileLink}</>
-      )
-      statusClassName = 'border border-success text-success'
-      break
-    case SubmissionStatus.NeedMoreWork:
-      reviewStatusComment = (
-        <>Your solution was reviewed and rejected by {profileLink}</>
-      )
-      statusClassName = 'border border-danger text-danger'
-      break
-    case SubmissionStatus.Open:
-      reviewStatusComment = (
-        <>Your submission is currently waiting to be reviewed</>
-      )
-      statusClassName = 'border border-warning text-warning'
-      break
-    default:
-      return null
-  }
-  return (
-    <div className={`text-center p-2 my-2 ${statusClassName}`}>
-      {reviewStatusComment}
-    </div>
-  )
 }
 
 type StatusIconProps = {
@@ -156,8 +109,6 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
 const ChallengeQuestionCardDisplay: React.FC<{
   currentChallenge: ChallengeSubmissionData
 }> = ({ currentChallenge }) => {
-  const comment = currentChallenge.submission?.comment
-  const updatedAt = currentChallenge.submission?.updatedAt || ''
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
@@ -166,7 +117,6 @@ const ChallengeQuestionCardDisplay: React.FC<{
   const [index, setIndex] = useState(-1)
 
   const [submission, setSubmission] = useState(currentChallenge.submission)
-  const reviewerUserName = submission?.reviewer?.username || null
   const comments = submission?.comments?.filter(comment => !comment.line)
 
   const [commentValue, setCommentValue] = React.useState('')
@@ -212,7 +162,10 @@ const ChallengeQuestionCardDisplay: React.FC<{
     return (
       <div className="card shadow-sm border-0 mt-3">
         {submission.createdAt && (
-          <div className="card-header bg-white">
+          <div
+            className="card-header bg-white"
+            title={dayjs(Number.parseInt(submission.createdAt)).format('LLLL')}
+          >
             Submitted {dayjs(parseInt(submission.createdAt)).fromNow()}
           </div>
         )}
@@ -271,13 +224,6 @@ const ChallengeQuestionCardDisplay: React.FC<{
               </>
             )}
           </div>
-        </div>
-        <div className="card-footer bg-white">
-          {comment && <Markdown>{comment}</Markdown>}
-          <ReviewStatus
-            status={currentChallenge.status}
-            reviewerUserName={reviewerUserName}
-          />
         </div>
       </div>
     )

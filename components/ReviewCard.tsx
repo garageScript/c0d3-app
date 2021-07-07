@@ -145,16 +145,8 @@ const ReviewButtons: React.FC<{
 }
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const {
-    id,
-    diff,
-    updatedAt,
-    user,
-    challenge,
-    lessonId,
-    challengeId,
-    status
-  } = submissionData
+  const { id, diff, user, challenge, lessonId, challengeId, status } =
+    submissionData
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
@@ -188,6 +180,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
       setPreviousSubmissions(data)
+      /* istanbul ignore else */
       if (index === -1)
         setSubmission(
           data.getPreviousSubmissions[
@@ -219,9 +212,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                   {user?.username} -{' '}
                   <span className="text-primary">{challenge?.title}</span>
                 </h4>
-                <Text color="lightgrey" size="sm">
-                  {dayjs(parseInt(submissionState.createdAt || '0')).fromNow()}
-                </Text>
+                {submissionState.createdAt && (
+                  <Text color="lightgrey" size="sm">
+                    <div
+                      title={dayjs(parseInt(submissionState.createdAt)).format(
+                        'LLL'
+                      )}
+                    >
+                      {dayjs(parseInt(submissionState.createdAt)).fromNow()}
+                    </div>
+                  </Text>
+                )}
               </div>
               <div className="text-right">
                 <SelectIteration

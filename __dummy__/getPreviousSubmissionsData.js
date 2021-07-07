@@ -1,4 +1,6 @@
 import dayjs from 'dayjs'
+import MockDate from 'mockdate'
+MockDate.set(new Date('2000-11-22'))
 
 export default {
   getPreviousSubmissions: [

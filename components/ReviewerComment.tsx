@@ -1,11 +1,11 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { SubmissionStatus } from '../graphql/index'
 import styles from '../scss/reviewerComment.module.scss'
 import ReviewerProfile from './ReviewerProfile'
 import Markdown from 'markdown-to-jsx'
-dayjs.extend(relativeTime)
+dayjs.extend(LocalizedFormat)
 
 export const ReviewerComment: React.FC<{
   username?: string
@@ -18,7 +18,7 @@ export const ReviewerComment: React.FC<{
   //don't show comments for open submissions on review page
   if (status === SubmissionStatus.Open && !viewedByStudent) return <></>
   let message
-  const parsedDate = dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')
+  const parsedDate = dayjs(Number.parseInt(date)).format('LLL')
   switch (status) {
     case SubmissionStatus.Passed:
       message = ` accepted submission on ${parsedDate}.`

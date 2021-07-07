@@ -13,6 +13,8 @@ import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import dummySessionData from '../__dummy__/sessionData'
 import previousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 import _ from 'lodash'
+import MockDate from 'mockdate'
+MockDate.set(new Date('2000-11-22'))
 
 // a/js7/1.c b/js7/1.c instead of a/js7/1.js b/js7/1.js
 const NonJsDiff =
@@ -106,69 +108,6 @@ describe('ReviewCard Component', () => {
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     fireEvent.click(screen.getByText('Submit'))
     expect(container).toMatchSnapshot()
-  })
-  test('Should be able to add comment to previous submissions', async () => {
-    /* Comments type doesn't have an id in our query, so grapql has troubles merging it in tests.
-    This custom merge function returns hardcoded comment "foobar foobar" with new date
-     on every cache update
-    */
-
-    const foobar = {
-      __typename: 'Comment',
-      content: 'foobar foobar',
-      submissionId: 107,
-      createdAt: '1624433720838',
-      authorId: 1,
-      line: 1,
-      fileName: 'foobar.js',
-      author: {
-        __typename: 'User',
-        username: 'admin',
-        name: 'Admin Administrator'
-      }
-    }
-    const cache = new InMemoryCache({
-      typePolicies: {
-        Submission: {
-          fields: {
-            comments: {
-              merge(_existing, _incoming) {
-                return [
-                  {
-                    ...foobar,
-                    createdAt: new Date().getUTCMilliseconds().toString()
-                  }
-                ]
-              }
-            }
-          }
-        }
-      }
-    })
-    //add initial comment to first submission and set its status to Open
-    const data = _.cloneDeep(previousSubmissionsData)
-    const submission = _.cloneDeep(submissionData)
-    submission.status = SubmissionStatus.Open
-    data.getPreviousSubmissions[1].comments = [foobar]
-    cache.writeQuery({
-      query: GET_PREVIOUS_SUBMISSIONS,
-      variables: { challengeId: 9, userId: 3 },
-      data
-    })
-    render(
-      <MockedProvider mocks={mocks} addTypeName={false} cache={cache}>
-        <ReviewCard submissionData={{ ...submission }} />
-      </MockedProvider>
-    )
-    expect(await screen.findByTestId('iteration 1')).toBeVisible()
-    userEvent.click(screen.getByTestId('iteration 1'))
-    expect(await screen.findByText('Add comment')).toBeVisible()
-    userEvent.type(
-      screen.getAllByRole('textbox', { name: '' })[0],
-      'Test line comment'
-    )
-    userEvent.click(screen.getByText('Add comment'))
-    expect(await screen.findByText('foobar foobar')).toBeTruthy()
   })
   test('Should render submissions in other languages', async () => {
     const { container } = render(
