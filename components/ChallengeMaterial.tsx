@@ -171,13 +171,12 @@ const ChallengeQuestionCardDisplay: React.FC<{
 
   const [commentValue, setCommentValue] = React.useState('')
   const [addComment] = useAddCommentMutation()
-
   const { data, loading, error } = useGetPreviousSubmissionsQuery({
     variables: {
-      challengeId: currentChallenge.submission?.challengeId!,
+      challengeId: submission?.challengeId!,
       userId: userId!
     },
-    skip: userId === undefined || currentChallenge.submission === undefined
+    skip: userId === undefined || submission?.challengeId === undefined
   })
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
@@ -188,6 +187,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
   }, [data, index])
   useEffect(() => {
     setIndex(-1)
+    setSubmission(currentChallenge.submission)
   }, [currentChallenge.submission?.challengeId])
   if (submission && Object.keys(submission).length) {
     if (!name || !username || !userId)

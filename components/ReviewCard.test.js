@@ -357,7 +357,7 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    expect(screen.getByText('52 years ago')).toBeVisible()
+    expect(screen.getByText('16 days ago')).toBeVisible()
   })
   test('Should render acceptance message', async () => {
     render(

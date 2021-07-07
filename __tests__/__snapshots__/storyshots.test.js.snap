@@ -5106,7 +5106,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
   className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="d-flex p-2"
+    className="lesson-card__wrapper d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -5119,7 +5119,9 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
     <div
       className="lesson-card__description pl-4"
     >
-      <div>
+      <div
+        className="d-flex"
+      >
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -5132,6 +5134,8 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             HTML, CSS, JavaScript
           </a>
         </h4>
+      </div>
+      <div>
         <div>
           <div
             className="d-inline-block mr-4"
@@ -5165,7 +5169,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
   className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="d-flex p-2"
+    className="lesson-card__wrapper d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -5178,39 +5182,9 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     <div
       className="lesson-card__description pl-4"
     >
-      <span
-        className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+      <div
+        className="d-flex"
       >
-        <svg
-          fill="none"
-          height={24}
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          style={
-            Object {
-              "height": "15px",
-            }
-          }
-          viewBox="0 0 24 24"
-          width={24}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-          />
-          <polyline
-            points="22 4 12 14.01 9 11.01"
-          />
-        </svg>
-        <span
-          className="mx-1"
-        >
-          COMPLETED
-        </span>
-      </span>
-      <div>
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -5223,6 +5197,35 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             HTML, CSS, JavaScript
           </a>
         </h4>
+        <span
+          className="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+        >
+          <svg
+            fill="none"
+            height="15"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <span
+            className="mx-1 d-none d-md-block"
+          >
+            COMPLETED
+          </span>
+        </span>
+      </div>
+      <div>
         <div>
           <div
             className="d-inline-block mr-4"
@@ -5267,7 +5270,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
 >
   <div
-    className="d-flex p-2"
+    className="lesson-card__wrapper d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -5280,7 +5283,9 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     <div
       className="lesson-card__description pl-4"
     >
-      <div>
+      <div
+        className="d-flex"
+      >
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -5293,6 +5298,8 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             HTML, CSS, JavaScript
           </a>
         </h4>
+      </div>
+      <div>
         <div>
           <div
             className="d-inline-block mr-4"
@@ -13346,7 +13353,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -13359,7 +13366,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13372,6 +13381,8 @@ Array [
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13402,7 +13413,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -13415,7 +13426,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13428,6 +13441,8 @@ Array [
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13458,7 +13473,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -13471,7 +13486,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13484,6 +13501,8 @@ Array [
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13514,7 +13533,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -13527,7 +13546,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13540,6 +13561,8 @@ Array [
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13570,7 +13593,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -13583,7 +13606,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13596,6 +13621,8 @@ Array [
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13626,7 +13653,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -13639,7 +13666,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13652,6 +13681,8 @@ Array [
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13682,7 +13713,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -13695,7 +13726,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13708,6 +13741,8 @@ Array [
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13738,7 +13773,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -13751,7 +13786,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13764,6 +13801,8 @@ Array [
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13794,7 +13833,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -13807,7 +13846,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13820,6 +13861,8 @@ Array [
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -13850,7 +13893,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -13863,7 +13906,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -13876,6 +13921,8 @@ Array [
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14275,7 +14322,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -14288,7 +14335,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14301,6 +14350,8 @@ Array [
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14331,7 +14382,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -14344,7 +14395,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14357,6 +14410,8 @@ Array [
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14387,7 +14442,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -14400,7 +14455,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14413,6 +14470,8 @@ Array [
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14443,7 +14502,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -14456,7 +14515,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14469,6 +14530,8 @@ Array [
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14499,7 +14562,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -14512,7 +14575,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14525,6 +14590,8 @@ Array [
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14555,7 +14622,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -14568,7 +14635,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14581,6 +14650,8 @@ Array [
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14611,7 +14682,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -14624,7 +14695,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14637,6 +14710,8 @@ Array [
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14667,7 +14742,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -14680,7 +14755,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14693,6 +14770,8 @@ Array [
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14723,7 +14802,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -14736,7 +14815,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14749,6 +14830,8 @@ Array [
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14779,7 +14862,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -14792,7 +14875,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14805,6 +14890,8 @@ Array [
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15204,7 +15291,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -15217,7 +15304,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15230,6 +15319,8 @@ Array [
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15260,7 +15351,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -15273,7 +15364,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15286,6 +15379,8 @@ Array [
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15316,7 +15411,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -15329,7 +15424,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15342,6 +15439,8 @@ Array [
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15372,7 +15471,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -15385,7 +15484,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15398,6 +15499,8 @@ Array [
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15428,7 +15531,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -15441,7 +15544,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15454,6 +15559,8 @@ Array [
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15484,7 +15591,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -15497,7 +15604,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15510,6 +15619,8 @@ Array [
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15540,7 +15651,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -15553,7 +15664,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15566,6 +15679,8 @@ Array [
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15596,7 +15711,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -15609,7 +15724,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15622,6 +15739,8 @@ Array [
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15652,7 +15771,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -15665,7 +15784,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15678,6 +15799,8 @@ Array [
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15708,7 +15831,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -15721,7 +15844,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15734,6 +15859,8 @@ Array [
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"

@@ -16,6 +16,16 @@ import dummySessionData from '../__dummy__/sessionData'
 import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import _ from 'lodash'
 
+const getPreviousSubmissionsMock = {
+  request: {
+    query: GET_PREVIOUS_SUBMISSIONS,
+    variables: { challengeId: 9, userId: 1 }
+  },
+  result: {
+    data: getPreviousSubmissionsData
+  }
+}
+
 const mocks = [
   {
     request: {
@@ -49,12 +59,10 @@ const mocks = [
     }
   },
   {
+    ...getPreviousSubmissionsMock,
     request: {
       query: GET_PREVIOUS_SUBMISSIONS,
       variables: { challengeId: 105, userId: 1 }
-    },
-    result: {
-      data: getPreviousSubmissionsData
     }
   },
   {
@@ -69,7 +77,9 @@ const mocks = [
         ]
       }
     }
-  }
+  },
+  getPreviousSubmissionsMock,
+  getPreviousSubmissionsMock
 ]
 
 const lessonStatusNoPass = {
@@ -207,6 +217,7 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+    await screen.findByText('Select submission')
     expect(
       await screen.findByRole('button', { name: '3 2 comment count' })
     ).toHaveClass('btn-info')
@@ -228,13 +239,26 @@ describe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
-    expect(
-      await screen.findByRole('button', { name: '3 2 comment count' })
-    ).toHaveClass('btn-info')
+    await screen.findByText('Select submission')
+    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    await screen.findByText('Select submission')
+    expect(container).toMatchSnapshot()
+  })
+  test('Should not render diff if submission was not send', async () => {
+    const copyProps = _.cloneDeep(props)
+    copyProps.userSubmissions = [userSubmissions[0]]
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    await screen.findByText('Select submission')
     userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
     expect(
-      await screen.findByRole('button', { name: '1 comment count' })
-    ).toHaveClass('btn-info')
+      screen.queryByText((_content, node) =>
+        node.textContent.includes('Submitted a ')
+      )
+    ).toBeNull()
     expect(container).toMatchSnapshot()
   })
   test('Should render appropriately when no challenges are passed to component', async () => {
