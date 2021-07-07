@@ -33,14 +33,17 @@ export const Rejected: React.FC = () => {
   )
 }
 
-export const Overwritten: React.FC = () => {
-  return (
-    <ReviewerComment
-      username=""
-      name=""
-      date="0"
-      comment=""
-      status={SubmissionStatus.Overwritten}
-    />
-  )
+export const OverwrittenReviewer: React.FC = () => {
+  return <ReviewerComment date="0" status={SubmissionStatus.Overwritten} />
+}
+export const OverwrittenStudent: React.FC = () => {
+  return <ReviewerComment date="0" status={SubmissionStatus.Overwritten} />
+}
+
+export const OpenReviewer: React.FC = () => {
+  return <ReviewerComment date="0" status={SubmissionStatus.Open} />
+}
+
+export const OpenForStudent: React.FC = () => {
+  return <ReviewerComment date="0" status={SubmissionStatus.Open} />
 }

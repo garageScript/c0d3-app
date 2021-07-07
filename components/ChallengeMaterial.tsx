@@ -212,7 +212,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
     return (
       <div className="card shadow-sm border-0 mt-3">
         <div className="card-header bg-white">
-          Submitted {dayjs(parseInt(updatedAt)).fromNow()}
+          Submitted {dayjs(parseInt(submission.createdAt || '')).fromNow()}
         </div>
         <div className="text-left ml-2">
           <SelectIteration
@@ -240,6 +240,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
               date={submission.updatedAt}
               comment={submission.comment}
               status={submission.status}
+              viewedByStudent
             />
             {currentChallenge?.submission?.status === SubmissionStatus.Open && (
               <>

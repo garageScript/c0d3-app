@@ -13,30 +13,31 @@ export const ReviewerComment: React.FC<{
   comment?: string | null
   date: string
   status: SubmissionStatus
-}> = ({ name, username, comment, date, status }) => {
-  if (
-    ![
-      SubmissionStatus.NeedMoreWork,
-      SubmissionStatus.Overwritten,
-      SubmissionStatus.Passed
-    ].includes(status)
-  ) {
-    console.log('foobar')
-    return <></>
-  }
+  viewedByStudent?: boolean
+}> = ({ name, username, comment, date, status, viewedByStudent }) => {
+  //reviewer don't comment for open submission
+  if (status === SubmissionStatus.Open && !viewedByStudent) return <></>
   let message
+  const parsedDate = dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')
   switch (status) {
     case SubmissionStatus.Passed:
-      message = ' accepted submission on '
+      message = ` accepted submission on ${parsedDate}.`
       break
     case SubmissionStatus.NeedMoreWork:
-      message = ' requested changes on '
+      message = ` requested changes on ${parsedDate}.`
       break
     case SubmissionStatus.Overwritten:
-      message = 'Overwritten on '
+      message = `${
+        viewedByStudent
+          ? `You have overwritten this submission on ${parsedDate}.`
+          : `Student has overwirtten this submission on ${parsedDate}.`
+      }`
+      break
+    case SubmissionStatus.Open:
+      message = 'Your submission is currently waiting to be reviewed.'
       break
     default:
-      message = 'error'
+      message = 'Incorrect status'
       break
   }
   return (
@@ -49,13 +50,14 @@ export const ReviewerComment: React.FC<{
           className={`${styles[`icon__${status}`]} ${styles['icon']}`}
         />
         <ReviewerProfile name={name} username={username} />
-        <div className="ml-1">
-          {message}
-          {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
-        </div>
+        <div className="ml-1">{message}</div>
       </div>
-      <hr />
-      <Markdown>{comment || ''}</Markdown>
+      {comment && (
+        <>
+          <hr />
+          <Markdown>{comment}</Markdown>
+        </>
+      )}
     </div>
   )
 }

@@ -220,7 +220,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                   <span className="text-primary">{challenge?.title}</span>
                 </h4>
                 <Text color="lightgrey" size="sm">
-                  {dayjs(parseInt(updatedAt || '0')).fromNow()}
+                  {dayjs(parseInt(submissionState.createdAt || '0')).fromNow()}
                 </Text>
               </div>
               <div className="text-right">

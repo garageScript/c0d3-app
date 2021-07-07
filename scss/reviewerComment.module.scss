@@ -18,6 +18,11 @@
     brightness(91%) contrast(86%);
 }
 
+.icon__open {
+  filter: invert(84%) sepia(22%) saturate(4441%) hue-rotate(336deg)
+    brightness(100%) contrast(101%);
+}
+
 .status__border {
   border-radius: 5px;
 }
@@ -48,4 +53,12 @@
     }
   }
   background: rgb(241, 251, 245);
+}
+
+.open {
+  border: 2px solid rgb(255, 174, 40);
+  & * {
+    color: rgb(133, 93, 29) !important;
+  }
+  background: rgb(255, 251, 244);
 }
