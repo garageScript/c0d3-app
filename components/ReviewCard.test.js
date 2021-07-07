@@ -92,6 +92,10 @@ const mocks = [
   }
 ]
 describe('ReviewCard Component', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+    jest.setSystemTime(new Date('2021-7-5'))
+  })
   test('Should be able to select previous submissions', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
