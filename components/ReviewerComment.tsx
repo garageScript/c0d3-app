@@ -8,12 +8,22 @@ import Markdown from 'markdown-to-jsx'
 dayjs.extend(relativeTime)
 
 export const ReviewerComment: React.FC<{
-  username: string
-  name: string
-  comment: string
+  username?: string
+  name?: string
+  comment?: string | null
   date: string
   status: SubmissionStatus
 }> = ({ name, username, comment, date, status }) => {
+  if (
+    ![
+      SubmissionStatus.NeedMoreWork,
+      SubmissionStatus.Overwritten,
+      SubmissionStatus.Passed
+    ].includes(status)
+  ) {
+    console.log('foobar')
+    return <></>
+  }
   let message
   switch (status) {
     case SubmissionStatus.Passed:
@@ -45,7 +55,7 @@ export const ReviewerComment: React.FC<{
         </div>
       </div>
       <hr />
-      <Markdown>{comment}</Markdown>
+      <Markdown>{comment || ''}</Markdown>
     </div>
   )
 }

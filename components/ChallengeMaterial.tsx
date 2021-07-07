@@ -27,6 +27,7 @@ import { GlobalContext } from '../helpers/globalContext'
 import { SubmissionComments } from './SubmissionComments'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
+import { ReviewerComment } from './ReviewerComment'
 dayjs.extend(relativeTime)
 
 type CurrentChallengeID = number | null
@@ -233,6 +234,13 @@ const ChallengeQuestionCardDisplay: React.FC<{
               generalStatus={currentChallenge.submission?.status}
             />
             {comments && <SubmissionComments comments={comments} />}
+            <ReviewerComment
+              name={submission.reviewer?.name}
+              username={submission.reviewer?.username}
+              date={submission.updatedAt}
+              comment={submission.comment}
+              status={submission.status}
+            />
             {currentChallenge?.submission?.status === SubmissionStatus.Open && (
               <>
                 <MdInput

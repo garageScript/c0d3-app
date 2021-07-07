@@ -198,24 +198,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     }
   }, [data])
 
-  const reviewerMessage = (status: SubmissionStatus) => {
-    if (
-      [
-        SubmissionStatus.NeedMoreWork,
-        SubmissionStatus.Overwritten,
-        SubmissionStatus.Passed
-      ].includes(status)
-    )
-      return (
-        <ReviewerComment
-          name={submissionState.reviewer?.name || ''}
-          username={submissionState.reviewer?.username || ''}
-          comment={submissionState.comment || ''}
-          date={submissionState.updatedAt}
-          status={submissionState.status}
-        />
-      )
-  }
   const submissionComments = (comments: Comment[] | undefined | null) => {
     const underComments = comments?.filter(comment => !comment.line)
     if (underComments) {
@@ -260,8 +242,14 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-footer bg-white">
-            {reviewerMessage(submissionState.status)}
             {submissionComments(submissionState?.comments)}
+            <ReviewerComment
+              name={submissionState.reviewer?.name}
+              username={submissionState.reviewer?.username}
+              comment={submissionState.comment}
+              date={submissionState.updatedAt}
+              status={submissionState.status}
+            />
             <MdInput
               onChange={setCommentValue}
               bgColor={'white'}
