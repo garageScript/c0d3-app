@@ -211,9 +211,11 @@ const ChallengeQuestionCardDisplay: React.FC<{
     )
     return (
       <div className="card shadow-sm border-0 mt-3">
-        <div className="card-header bg-white">
-          Submitted {dayjs(parseInt(submission.createdAt || '')).fromNow()}
-        </div>
+        {submission.createdAt && (
+          <div className="card-header bg-white">
+            Submitted {dayjs(parseInt(submission.createdAt)).fromNow()}
+          </div>
+        )}
         <div className="text-left ml-2">
           <SelectIteration
             data={data}

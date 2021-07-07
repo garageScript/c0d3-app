@@ -15,7 +15,7 @@ export const ReviewerComment: React.FC<{
   status: SubmissionStatus
   viewedByStudent?: boolean
 }> = ({ name, username, comment, date, status, viewedByStudent }) => {
-  //reviewer don't comment for open submission
+  //don't show comments for open submissions on review page
   if (status === SubmissionStatus.Open && !viewedByStudent) return <></>
   let message
   const parsedDate = dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')
@@ -37,8 +37,7 @@ export const ReviewerComment: React.FC<{
       message = 'Your submission is currently waiting to be reviewed.'
       break
     default:
-      message = 'Incorrect status'
-      break
+      throw new TypeError('Incorrect status')
   }
   return (
     <div

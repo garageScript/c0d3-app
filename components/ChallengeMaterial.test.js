@@ -365,15 +365,6 @@ describe('Curriculum challenge page', () => {
     fireEvent.click(screen.getByText('Comment'))
     expect(screen.findByText('A very unique test comment!')).toBeTruthy()
   })
-  test('Should use default case if no status is provided', async () => {
-    userSubmissions.forEach(submission => (submission.status = 'foobar'))
-    render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...props} />
-      </MockedProvider>
-    )
-    expect(screen.getByText('A comment under submission')).toBeVisible()
-  })
   test('Should render empty div if there is no submission data', () => {
     props.userSubmissions = []
     const { container } = render(

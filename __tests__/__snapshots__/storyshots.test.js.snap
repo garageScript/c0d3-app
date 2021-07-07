@@ -882,12 +882,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
     <div
       className="card shadow-sm border-0 mt-3"
     >
-      <div
-        className="card-header bg-white"
-      >
-        Submitted 
-        a few seconds ago
-      </div>
+      
       <div
         className="text-left ml-2"
       >
@@ -1239,6 +1234,45 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             </tbody>
           </table>
           <div
+            className="open status__border px-2 py-1 my-3"
+          >
+            <div
+              className="d-flex align-items-center"
+            >
+              <img
+                className="icon__open icon"
+                src="/assets/requestChanges.svg"
+              />
+              <div
+                className=""
+              >
+                <a
+                  className="comment_author mt-2 "
+                >
+                  <div
+                    className="d-inline"
+                  >
+                     
+                  </div>
+                  <div
+                    className="d-inline text-muted"
+                  >
+                    
+                  </div>
+                </a>
+              </div>
+              <div
+                className="ml-1"
+              >
+                Your submission is currently waiting to be reviewed.
+              </div>
+            </div>
+            <hr />
+            <code>
+              test comment
+            </code>
+          </div>
+          <div
             style={
               Object {
                 "backgroundColor": "white",
@@ -1383,12 +1417,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
     <div
       className="card shadow-sm border-0 mt-3"
     >
-      <div
-        className="card-header bg-white"
-      >
-        Submitted 
-        a few seconds ago
-      </div>
+      
       <div
         className="text-left ml-2"
       >
@@ -1739,6 +1768,45 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               </tr>
             </tbody>
           </table>
+          <div
+            className="open status__border px-2 py-1 my-3"
+          >
+            <div
+              className="d-flex align-items-center"
+            >
+              <img
+                className="icon__open icon"
+                src="/assets/requestChanges.svg"
+              />
+              <div
+                className=""
+              >
+                <a
+                  className="comment_author mt-2 "
+                >
+                  <div
+                    className="d-inline"
+                  >
+                     
+                  </div>
+                  <div
+                    className="d-inline text-muted"
+                  >
+                    
+                  </div>
+                </a>
+              </div>
+              <div
+                className="ml-1"
+              >
+                Your submission is currently waiting to be reviewed.
+              </div>
+            </div>
+            <hr />
+            <code>
+              test comment
+            </code>
+          </div>
           <div
             style={
               Object {
@@ -8268,7 +8336,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             }
           }
         >
-          52 years ago
+          3 years ago
         </div>
       </div>
       <div
@@ -12376,6 +12444,172 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       Submit
     </button>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewComment Accepted 1`] = `
+<div
+  className="passed status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__passed icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin 
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+       accepted submission on Thursday, January 1, 1970.
+    </div>
+  </div>
+  <hr />
+  <span>
+    Good job!
+  </span>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewComment Open For Student 1`] = `null`;
+
+exports[`Storyshots Components/ReviewComment Open Reviewer 1`] = `null`;
+
+exports[`Storyshots Components/ReviewComment Overwritten Reviewer 1`] = `
+<div
+  className="overwritten status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__overwritten icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+      >
+        <div
+          className="d-inline"
+        >
+           
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+      Student has overwirtten this submission on Thursday, January 1, 1970.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewComment Overwritten Student 1`] = `
+<div
+  className="overwritten status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__overwritten icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+      >
+        <div
+          className="d-inline"
+        >
+           
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+      Student has overwirtten this submission on Thursday, January 1, 1970.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewComment Rejected 1`] = `
+<div
+  className="needMoreWork status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__needMoreWork icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin 
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+       requested changes on Thursday, January 1, 1970.
+    </div>
+  </div>
+  <hr />
+  <span>
+    Error on line 3
+  </span>
 </div>
 `;
 

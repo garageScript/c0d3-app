@@ -5083,6 +5083,39 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
               </tbody>
             </table>
             <div
+              class="open status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__open icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                  Your submission is currently waiting to be reviewed.
+                </div>
+              </div>
+            </div>
+            <div
               style="background-color: white;"
             >
               <button
@@ -6151,7 +6184,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
           class="card-header bg-white"
         >
           Submitted 
-          16 days ago
+          a year ago
         </div>
         <div
           class="text-left ml-2"
@@ -6603,6 +6636,46 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 </a>
               </div>
             </div>
+            <div
+              class="needMoreWork status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__needMoreWork icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                    href="/profile/dan"
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    >
+                       @dan
+                    </div>
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                   requested changes on Monday, June 21, 2021.
+                </div>
+              </div>
+              <hr />
+              <span>
+                test comment
+              </span>
+            </div>
           </div>
         </div>
         <div
@@ -6802,7 +6875,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           class="card-header bg-white"
         >
           Submitted 
-          16 days ago
+          a year ago
         </div>
         <div
           class="text-left ml-2"
@@ -7252,6 +7325,39 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                      @admin
                   </div>
                 </a>
+              </div>
+            </div>
+            <div
+              class="open status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__open icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                  Your submission is currently waiting to be reviewed.
+                </div>
               </div>
             </div>
             <div
@@ -12244,6 +12350,39 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
                 </tr>
               </tbody>
             </table>
+            <div
+              class="open status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__open icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                  Your submission is currently waiting to be reviewed.
+                </div>
+              </div>
+            </div>
             <div
               style="background-color: white;"
             >
