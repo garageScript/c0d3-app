@@ -7,7 +7,7 @@ import ReviewerProfile from './ReviewerProfile'
 import Markdown from 'markdown-to-jsx'
 dayjs.extend(LocalizedFormat)
 
-export const ReviewerComment: React.FC<{
+export const ReviewStatus: React.FC<{
   username?: string
   name?: string
   comment?: string | null

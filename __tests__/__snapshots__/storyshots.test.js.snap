@@ -12443,7 +12443,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/ReviewComment Accepted 1`] = `
+exports[`Storyshots Components/ReviewStatus Accepted 1`] = `
 <div
   className="passed status__border px-2 py-1 my-3"
 >
@@ -12486,11 +12486,84 @@ exports[`Storyshots Components/ReviewComment Accepted 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/ReviewComment Open For Student 1`] = `null`;
+exports[`Storyshots Components/ReviewStatus Accepted Without Comment 1`] = `
+<div
+  className="passed status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__passed icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin 
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+       accepted submission on January 1, 1970 3:00 AM.
+    </div>
+  </div>
+</div>
+`;
 
-exports[`Storyshots Components/ReviewComment Open Reviewer 1`] = `null`;
+exports[`Storyshots Components/ReviewStatus Open For Student 1`] = `
+<div
+  className="open status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__open icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+      >
+        <div
+          className="d-inline"
+        >
+           
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+      Your submission is currently waiting to be reviewed.
+    </div>
+  </div>
+</div>
+`;
 
-exports[`Storyshots Components/ReviewComment Overwritten Reviewer 1`] = `
+exports[`Storyshots Components/ReviewStatus Overwritten Reviewer 1`] = `
 <div
   className="overwritten status__border px-2 py-1 my-3"
 >
@@ -12528,7 +12601,7 @@ exports[`Storyshots Components/ReviewComment Overwritten Reviewer 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/ReviewComment Overwritten Student 1`] = `
+exports[`Storyshots Components/ReviewStatus Overwritten Student 1`] = `
 <div
   className="overwritten status__border px-2 py-1 my-3"
 >
@@ -12560,13 +12633,13 @@ exports[`Storyshots Components/ReviewComment Overwritten Student 1`] = `
     <div
       className="ml-1"
     >
-      Student has overwirtten this submission on January 1, 1970 3:00 AM.
+      You have overwritten this submission on January 1, 1970 3:00 AM.
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Components/ReviewComment Rejected 1`] = `
+exports[`Storyshots Components/ReviewStatus Rejected 1`] = `
 <div
   className="needMoreWork status__border px-2 py-1 my-3"
 >

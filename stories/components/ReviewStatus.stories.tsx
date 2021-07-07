@@ -1,10 +1,10 @@
 import React from 'react'
-import { ReviewerComment } from '../../components/ReviewerComment'
+import { ReviewStatus } from '../../components/ReviewStatus'
 import { SubmissionStatus } from '../../graphql'
 
 export default {
-  component: ReviewerComment,
-  title: 'Components/ReviewComment'
+  component: ReviewStatus,
+  title: 'Components/ReviewStatus'
 }
 
 const data = {
@@ -15,17 +15,20 @@ const data = {
 
 export const Accepted: React.FC = () => {
   return (
-    <ReviewerComment
+    <ReviewStatus
       {...data}
       comment="Good job!"
       status={SubmissionStatus.Passed}
     />
   )
 }
+export const AcceptedWithoutComment: React.FC = () => {
+  return <ReviewStatus {...data} status={SubmissionStatus.Passed} />
+}
 
 export const Rejected: React.FC = () => {
   return (
-    <ReviewerComment
+    <ReviewStatus
       {...data}
       comment="Error on line 3"
       status={SubmissionStatus.NeedMoreWork}
@@ -34,16 +37,20 @@ export const Rejected: React.FC = () => {
 }
 
 export const OverwrittenReviewer: React.FC = () => {
-  return <ReviewerComment date="0" status={SubmissionStatus.Overwritten} />
+  return <ReviewStatus date="0" status={SubmissionStatus.Overwritten} />
 }
 export const OverwrittenStudent: React.FC = () => {
-  return <ReviewerComment date="0" status={SubmissionStatus.Overwritten} />
-}
-
-export const OpenReviewer: React.FC = () => {
-  return <ReviewerComment date="0" status={SubmissionStatus.Open} />
+  return (
+    <ReviewStatus
+      date="0"
+      status={SubmissionStatus.Overwritten}
+      viewedByStudent
+    />
+  )
 }
 
 export const OpenForStudent: React.FC = () => {
-  return <ReviewerComment date="0" status={SubmissionStatus.Open} />
+  return (
+    <ReviewStatus date="0" status={SubmissionStatus.Open} viewedByStudent />
+  )
 }

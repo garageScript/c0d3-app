@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { ReviewerComment } from './ReviewerComment'
+import { ReviewStatus } from './ReviewStatus'
 import { SubmissionStatus } from '../graphql'
 
 describe('ReviewComment component', () => {
@@ -11,12 +11,12 @@ describe('ReviewComment component', () => {
     date: '0'
   }
   it('Should not render message in open submissions for reviewer', () => {
-    render(<ReviewerComment date="0" status={SubmissionStatus.Open} />)
+    render(<ReviewStatus date="0" status={SubmissionStatus.Open} />)
     expect(screen.firstChild).toBeUndefined()
   })
   it('Should use "You" for student overwritten message', () => {
     render(
-      <ReviewerComment
+      <ReviewStatus
         date="0"
         status={SubmissionStatus.Overwritten}
         viewedByStudent
@@ -30,7 +30,7 @@ describe('ReviewComment component', () => {
   })
   it('Should render accepted message', () => {
     render(
-      <ReviewerComment
+      <ReviewStatus
         {...data}
         comment="Good job!"
         status={SubmissionStatus.Passed}
@@ -44,7 +44,7 @@ describe('ReviewComment component', () => {
   })
   it('Should render rejected message', () => {
     render(
-      <ReviewerComment
+      <ReviewStatus
         {...data}
         comment="Error on line 3"
         status={SubmissionStatus.NeedMoreWork}
@@ -57,7 +57,7 @@ describe('ReviewComment component', () => {
     ).toBeVisible()
   })
   it('Should render overwritten message for reviewer', () => {
-    render(<ReviewerComment date="0" status={SubmissionStatus.Overwritten} />)
+    render(<ReviewStatus date="0" status={SubmissionStatus.Overwritten} />)
     expect(
       screen.getByText((content, _node) =>
         content.includes('Student has overwirtten this submission on')
@@ -66,7 +66,7 @@ describe('ReviewComment component', () => {
   })
   it('Should render waiting message', () => {
     render(
-      <ReviewerComment
+      <ReviewStatus
         date="0"
         {...data}
         status={SubmissionStatus.Open}
@@ -80,6 +80,6 @@ describe('ReviewComment component', () => {
   it('Should throw if status is incorrect', () => {
     //supress console.log error message in tests
     jest.spyOn(console, 'error').mockImplementation(() => {})
-    expect(() => render(<ReviewerComment date="0" />)).toThrow()
+    expect(() => render(<ReviewStatus date="0" />)).toThrow()
   })
 })

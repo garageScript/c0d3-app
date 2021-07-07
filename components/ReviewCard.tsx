@@ -22,7 +22,7 @@ import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
-import { ReviewerComment } from './ReviewerComment'
+import { ReviewStatus } from './ReviewStatus'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -244,7 +244,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
           <div className="card-footer bg-white">
             {submissionComments(submissionState?.comments)}
-            <ReviewerComment
+            <ReviewStatus
               name={submissionState.reviewer?.name}
               username={submissionState.reviewer?.username}
               comment={submissionState.comment}
