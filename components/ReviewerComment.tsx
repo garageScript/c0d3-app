@@ -17,10 +17,10 @@ export const ReviewerComment: React.FC<{
   let message
   switch (status) {
     case SubmissionStatus.Passed:
-      message = 'accepted submission on '
+      message = ' accepted submission on '
       break
     case SubmissionStatus.NeedMoreWork:
-      message = 'requested changes on '
+      message = ' requested changes on '
       break
     case SubmissionStatus.Overwritten:
       message = 'Overwritten on '
@@ -39,7 +39,7 @@ export const ReviewerComment: React.FC<{
           className={`${styles[`icon__${status}`]} ${styles['icon']}`}
         />
         <ReviewerProfile name={name} username={username} />
-        <div className={`ml-2`}>
+        <div className="ml-1">
           {message}
           {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
         </div>
