@@ -33,26 +33,6 @@ describe('apolloLogPlugin', () => {
     )
   })
 
-  it('should not call Sentry.withScope if operation is undefined', () => {
-    const ctx = { errors: ['theError'] }
-
-    apolloLogPlugin.requestDidStart().didEncounterErrors(ctx)
-
-    expect(Sentry.withScope).not.toHaveBeenCalled()
-  })
-
-  it('should captureException and not call Sentry.withScope for ApolloErrors', () => {
-    const apolloError = new ApolloError('hello')
-    const ctx = {
-      operation: 'query',
-      errors: [apolloError]
-    }
-
-    apolloLogPlugin.requestDidStart().didEncounterErrors(ctx)
-    expect(Sentry.withScope).not.toHaveBeenCalled()
-    expect(Sentry.captureException).toHaveBeenCalledWith(apolloError)
-  })
-
   it('should add context to all other Errors', async () => {
     const someError = new Error('other')
 

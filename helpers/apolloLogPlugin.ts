@@ -3,7 +3,6 @@ import {
   GraphQLRequestListener,
   GraphQLRequestContext
 } from 'apollo-server-plugin-base'
-import { ApolloError } from 'apollo-server-micro'
 
 import * as Sentry from '@sentry/nextjs'
 
@@ -31,35 +30,28 @@ export const apolloLogPlugin: ApolloServerPlugin = {
     return {
       didEncounterErrors(ctx) {
         for (const err of ctx.errors) {
-          /* Only add extra scope to errors with apollo operation 
-             type (query/mutation/subscription) and are also not 
-             already handled by an ApolloError. All  ApolloErrors 
-             should be user-facing and already handled by the client
-          */
-          if (ctx.operation && !(err instanceof ApolloError)) {
-            Sentry.withScope(scope => {
-              scope.setTag('kind', ctx.operation?.operation)
-              scope.setExtra('query', ctx.request.query)
-              scope.setExtra('variables', ctx.request.variables)
+          Sentry.withScope(scope => {
+            scope.setTag('kind', ctx.operation?.operation)
+            scope.setExtra('query', ctx.request.query)
+            scope.setExtra('variables', ctx.request.variables)
 
-              if (err.path) {
-                scope.addBreadcrumb({
-                  category: 'query-path',
-                  message: err.path.join(' > '),
-                  level: Sentry.Severity.Debug
-                })
-              }
+            if (err.path) {
+              scope.addBreadcrumb({
+                category: 'query-path',
+                message: err.path.join(' > '),
+                level: Sentry.Severity.Debug
+              })
+            }
 
-              const transactionId =
-                ctx.request.http?.headers.get('x-transaction-id')
-              if (transactionId) {
-                scope.setTransactionName(transactionId)
-              }
-            })
-          }
+            const transactionId =
+              ctx.request.http?.headers.get('x-transaction-id')
+            if (transactionId) {
+              scope.setTransactionName(transactionId)
+            }
+            Sentry.captureException(err)
+          })
           // Log error so logflare can also receive a copy of the error
           console.error(err)
-          Sentry.captureException(err)
         }
 
         /* returning promise causes apollo to wait for resolve before responding
