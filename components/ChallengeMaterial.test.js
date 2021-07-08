@@ -217,6 +217,26 @@ describe('Curriculum challenge page', () => {
     jest.useRealTimers()
   })
 
+  // TODO: Determine why this test conflicts with test #2 (it wont work if test 2 runs first)
+  test('Should be able to select another challenge', async () => {
+    jest.useFakeTimers()
+    jest.setSystemTime(new Date('2021-7-5'))
+    const copyProps = _.cloneDeep(props)
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+    const { container } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+    await screen.findByText('Select submission')
+    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+    await screen.findByText('Select submission')
+    expect(container).toMatchSnapshot()
+  })
   test('Should select previous iterations', async () => {
     jest.useFakeTimers()
     jest.setSystemTime(new Date('2021-7-5'))
@@ -239,27 +259,6 @@ describe('Curriculum challenge page', () => {
     expect(
       await screen.findByRole('button', { name: '3 2 comment count' })
     ).not.toHaveClass('btn-info')
-    expect(container).toMatchSnapshot()
-  })
-
-  // TODO: Determine why this test conflicts with test #1 (it works without the first test but not with)
-  test('Should be able to select another challenge', async () => {
-    jest.useFakeTimers()
-    jest.setSystemTime(new Date('2021-7-5'))
-    const copyProps = _.cloneDeep(props)
-    const { lessonStatus, userSubmissions } = copyProps
-    lessonStatus.isPassed = false
-    userSubmissions.forEach(
-      submission => (submission.status = SubmissionStatus.Open)
-    )
-    const { container } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...copyProps} />
-      </MockedProvider>
-    )
-    await screen.findByText('Select submission')
-    userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
-    await screen.findByText('Select submission')
     expect(container).toMatchSnapshot()
   })
   test('Should not render diff if submission was not send', async () => {
@@ -322,14 +321,16 @@ describe('Curriculum challenge page', () => {
 
   // TODO: fix this leaky side effect (some tests after this test are dependant on the prop mutation)
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
-    const { lessonStatus, userSubmissions } = props // TODO: this should be a cloned prop
+    const copyProps = _.cloneDeep(props)
+
+    const { lessonStatus, userSubmissions } = copyProps // TODO: this should be a cloned prop
     lessonStatus.isPassed = 'cmon bruh ive passed already'
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Passed)
     )
     const { container, getByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...props} />
+        <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -345,10 +346,18 @@ describe('Curriculum challenge page', () => {
     expect(document.body).toMatchSnapshot()
   })
   test('Should hide mobile modal on click', async () => {
+    // ADDED TO NOT MESS UP SCREEN SHOT
+    const copyProps = _.cloneDeep(props)
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = 'cmon bruh ive passed already'
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Passed)
+    )
+    // COULD REMOVE IF UPDATE SCREEN SHOT??
     global.window.innerWidth = 500
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...{ ...props, show: true }} />
+        <ChallengeMaterial {...{ ...copyProps, show: true }} />
       </MockedProvider>
     )
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
