@@ -26,7 +26,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
             <div
-              title="November 6, 2000 3:00 AM"
+              title="November 6, 2000 12:00 AM"
             >
               16 days ago
             </div>
@@ -469,7 +469,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           <div
             class="ml-1"
           >
-             requested changes on November 6, 2000 3:00 AM.
+             requested changes on November 6, 2000 12:00 AM.
           </div>
         </div>
         <hr />
@@ -557,7 +557,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
             <div
-              title="November 6, 2000 3:00 AM"
+              title="November 6, 2000 12:00 AM"
             >
               16 days ago
             </div>
@@ -1051,7 +1051,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
           <div
             class="ml-1"
           >
-             requested changes on November 6, 2000 3:00 AM.
+             requested changes on November 6, 2000 12:00 AM.
           </div>
         </div>
         <hr />
@@ -1139,7 +1139,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
             <div
-              title="November 6, 2000 3:00 AM"
+              title="November 6, 2000 12:00 AM"
             >
               16 days ago
             </div>
@@ -2383,7 +2383,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           <div
             class="ml-1"
           >
-             requested changes on November 6, 2000 3:00 AM.
+             requested changes on November 6, 2000 12:00 AM.
           </div>
         </div>
         <hr />
@@ -2471,7 +2471,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
             <div
-              title="November 6, 2000 3:00 AM"
+              title="November 6, 2000 12:00 AM"
             >
               16 days ago
             </div>
@@ -3715,7 +3715,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           <div
             class="ml-1"
           >
-             requested changes on November 6, 2000 3:00 AM.
+             requested changes on November 6, 2000 12:00 AM.
           </div>
         </div>
         <hr />
@@ -3803,7 +3803,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
             <div
-              title="November 6, 2000 3:00 AM"
+              title="November 6, 2000 12:00 AM"
             >
               16 days ago
             </div>
@@ -3870,7 +3870,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           <div
             class="ml-1"
           >
-             requested changes on November 6, 2000 3:00 AM.
+             requested changes on November 6, 2000 12:00 AM.
           </div>
         </div>
         <hr />
@@ -3958,7 +3958,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             style="color: rgb(142, 142, 142); font-size: 0.85rem;"
           >
             <div
-              title="November 6, 2000 3:00 AM"
+              title="November 6, 2000 12:00 AM"
             >
               16 days ago
             </div>
@@ -5202,7 +5202,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           <div
             class="ml-1"
           >
-             requested changes on November 6, 2000 3:00 AM.
+             requested changes on November 6, 2000 12:00 AM.
           </div>
         </div>
         <hr />

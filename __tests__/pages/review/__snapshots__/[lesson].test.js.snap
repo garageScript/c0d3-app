@@ -481,7 +481,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     style="color: rgb(142, 142, 142); font-size: 0.85rem;"
                   >
                     <div
-                      title="November 6, 2000 3:00 AM"
+                      title="November 6, 2000 12:00 AM"
                     >
                       16 days ago
                     </div>

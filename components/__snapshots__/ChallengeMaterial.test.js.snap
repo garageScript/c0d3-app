@@ -73,7 +73,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
       >
         <div
           class="card-header bg-white"
-          title="Monday, November 6, 2000 3:00 AM"
+          title="Monday, November 6, 2000 12:00 AM"
         >
           Submitted 
           16 days ago
@@ -6171,7 +6171,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       >
         <div
           class="card-header bg-white"
-          title="Wednesday, April 15, 2020 2:43 AM"
+          title="Tuesday, April 14, 2020 11:43 PM"
         >
           Submitted 
           in 19 years
@@ -6658,7 +6658,7 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 <div
                   class="ml-1"
                 >
-                   requested changes on November 6, 2000 3:00 AM.
+                   requested changes on November 6, 2000 12:00 AM.
                 </div>
               </div>
               <hr />
@@ -6845,7 +6845,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
       >
         <div
           class="card-header bg-white"
-          title="Wednesday, April 15, 2020 2:43 AM"
+          title="Tuesday, April 14, 2020 11:43 PM"
         >
           Submitted 
           in 19 years
@@ -7441,7 +7441,7 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
       >
         <div
           class="card-header bg-white"
-          title="Monday, November 6, 2000 3:00 AM"
+          title="Monday, November 6, 2000 12:00 AM"
         >
           Submitted 
           16 days ago

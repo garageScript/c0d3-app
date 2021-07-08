@@ -7276,7 +7276,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           }
         >
           <div
-            title="April 22, 2018 3:55 PM"
+            title="April 22, 2018 12:55 PM"
           >
             3 years ago
           </div>
@@ -8317,7 +8317,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           }
         >
           <div
-            title="April 22, 2018 3:55 PM"
+            title="April 22, 2018 12:55 PM"
           >
             3 years ago
           </div>
@@ -9356,7 +9356,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           }
         >
           <div
-            title="April 22, 2018 3:55 PM"
+            title="April 22, 2018 12:55 PM"
           >
             3 years ago
           </div>
@@ -10395,7 +10395,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           }
         >
           <div
-            title="April 22, 2018 3:55 PM"
+            title="April 22, 2018 12:55 PM"
           >
             3 years ago
           </div>
@@ -11434,7 +11434,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           }
         >
           <div
-            title="April 22, 2018 3:55 PM"
+            title="April 22, 2018 12:55 PM"
           >
             3 years ago
           </div>
@@ -12476,7 +12476,7 @@ exports[`Storyshots Components/ReviewStatus Accepted 1`] = `
     <div
       className="ml-1"
     >
-       accepted submission on January 1, 1970 3:00 AM.
+       accepted submission on January 1, 1970 12:00 AM.
     </div>
   </div>
   <hr />
@@ -12519,7 +12519,7 @@ exports[`Storyshots Components/ReviewStatus Accepted Without Comment 1`] = `
     <div
       className="ml-1"
     >
-       accepted submission on January 1, 1970 3:00 AM.
+       accepted submission on January 1, 1970 12:00 AM.
     </div>
   </div>
 </div>
@@ -12595,7 +12595,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Reviewer 1`] = `
     <div
       className="ml-1"
     >
-      Student has overwirtten this submission on January 1, 1970 3:00 AM.
+      Student has overwirtten this submission on January 1, 1970 12:00 AM.
     </div>
   </div>
 </div>
@@ -12633,7 +12633,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Student 1`] = `
     <div
       className="ml-1"
     >
-      You have overwritten this submission on January 1, 1970 3:00 AM.
+      You have overwritten this submission on January 1, 1970 12:00 AM.
     </div>
   </div>
 </div>
@@ -12672,7 +12672,7 @@ exports[`Storyshots Components/ReviewStatus Rejected 1`] = `
     <div
       className="ml-1"
     >
-       requested changes on January 1, 1970 3:00 AM.
+       requested changes on January 1, 1970 12:00 AM.
     </div>
   </div>
   <hr />
