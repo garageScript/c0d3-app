@@ -1,6 +1,11 @@
 import React, { useContext, useEffect } from 'react'
-import dayjs from 'dayjs'
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import {
+  render,
+  fireEvent,
+  waitFor,
+  waitForElementToBeRemoved,
+  screen
+} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ChallengeMaterial from './ChallengeMaterial'
 import { MockedProvider } from '@apollo/client/testing'
@@ -112,20 +117,20 @@ const userSubmissions = [
     id: 3500,
     status: SubmissionStatus.Open,
     mrUrl: 'github.com/testmrurl',
-    diff: 'diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n',
+    diff: null,
     viewCount: 0,
     comment: null,
     challengeId: 105,
     reviewer: null,
     createdAt: '1586907809223',
-    updatedAt: dayjs().subtract(16, 'day').valueOf(),
+    updatedAt: '1624086000000',
     comments: [
       {
         author: {
           name: 'Admin Admin',
           username: 'admin'
         },
-        autorId: 1,
+        authorId: 1,
         submissionId: 1,
         content: 'A comment under submission'
       }
@@ -147,14 +152,14 @@ const userSubmissions = [
       username: 'dan'
     },
     createdAt: '1586907809223',
-    updatedAt: dayjs().subtract(16, 'day').valueOf(),
+    updatedAt: '1624086000000',
     comments: [
       {
         author: {
           name: 'Admin Admin',
           username: 'admin'
         },
-        autorId: 1,
+        authorId: 1,
         submissionId: 1,
         content: 'A comment under submission'
       }
@@ -171,16 +176,19 @@ const userSubmissions = [
     viewCount: 0,
     comment: null,
     challengeId: 105,
-    reviewer: null,
+    reviewer: {
+      id: '1',
+      username: 'dan'
+    },
     createdAt: '1586907809223',
-    updatedAt: dayjs().subtract(16, 'day').valueOf(),
+    updatedAt: '1624125892130',
     comments: [
       {
         author: {
           name: 'Admin Admin',
           username: 'admin'
         },
-        autorId: 1,
+        authorId: 1,
         submissionId: 1,
         content: 'A comment under submission'
       }
@@ -205,7 +213,13 @@ describe('Curriculum challenge page', () => {
       setShow
     }
   })
+  afterEach(() => {
+    jest.useRealTimers()
+  })
+
   test('Should select previous iterations', async () => {
+    jest.useFakeTimers()
+    jest.setSystemTime(new Date('2021-7-5'))
     const copyProps = _.cloneDeep(props)
     const { lessonStatus, userSubmissions } = copyProps
     lessonStatus.isPassed = false
@@ -227,7 +241,11 @@ describe('Curriculum challenge page', () => {
     ).not.toHaveClass('btn-info')
     expect(container).toMatchSnapshot()
   })
+
+  // TODO: Determine why this test conflicts with test #1 (it works without the first test but not with)
   test('Should be able to select another challenge', async () => {
+    jest.useFakeTimers()
+    jest.setSystemTime(new Date('2021-7-5'))
     const copyProps = _.cloneDeep(props)
     const { lessonStatus, userSubmissions } = copyProps
     lessonStatus.isPassed = false
@@ -279,6 +297,8 @@ describe('Curriculum challenge page', () => {
   })
 
   test('Should render clicked challenge within challenge question', async () => {
+    jest.useFakeTimers()
+    jest.setSystemTime(new Date('2021-7-5'))
     const { getAllByTestId, container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
@@ -290,6 +310,8 @@ describe('Curriculum challenge page', () => {
   })
 
   test('Should render first challenge that is not passed when user has submissions', async () => {
+    jest.useFakeTimers()
+    jest.setSystemTime(new Date('2021-7-5'))
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
@@ -298,8 +320,9 @@ describe('Curriculum challenge page', () => {
     expect(container).toMatchSnapshot()
   })
 
+  // TODO: fix this leaky side effect (some tests after this test are dependant on the prop mutation)
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
-    const { lessonStatus, userSubmissions } = props
+    const { lessonStatus, userSubmissions } = props // TODO: this should be a cloned prop
     lessonStatus.isPassed = 'cmon bruh ive passed already'
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Passed)
@@ -339,7 +362,9 @@ describe('Curriculum challenge page', () => {
   test('Should hide mobile modal by clicking on the background', async () => {
     global.window.innerWidth = 500
     const { container } = render(
-      <ChallengeMaterial {...{ ...props, show: true }} />
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...{ ...props, show: true }} />
+      </MockedProvider>
     )
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
     fireEvent.keyDown(container, {
