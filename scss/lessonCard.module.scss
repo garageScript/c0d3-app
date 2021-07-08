@@ -7,7 +7,7 @@
   margin-bottom: 0.75rem;
 }
 .lesson-card__wrapper {
-  @media (max-width: 400px) {
+  @media (max-width: 576px) {
     //need to style third party component
     & > div:first-child {
       display: none !important;

@@ -63,6 +63,57 @@ const LessonCard: React.FC<Props> = props => {
 
   return (
     <div className={`card shadow-sm mt-3 ${containerClass}`}>
+      <div className="d-flex flex-column d-sm-none px-3">
+        <h4
+          className={`${styles['lesson-card__title']} font-weight-bold mt-3 `}
+        >
+          <div className="d-flex justify-content-center">
+            <div className="align-self-center">
+              <NavLink
+                as={`/curriculum/${props.lessonId}`}
+                path="/curriculum/[lesson]"
+              >
+                {props.title}
+              </NavLink>
+            </div>
+            {props.currentState === 'completed' && (
+              <span
+                className={`${styles['lesson-card__badge']} badge badge-pill badge-success p-0`}
+              >
+                <CheckCircle size="15" />
+                <span className="mx-1 d-none d-md-block">COMPLETED</span>
+              </span>
+            )}
+          </div>
+        </h4>
+        <Image
+          src={`/assets/curriculum/${props.coverImg}`}
+          alt={props.coverImg}
+          className="rounded"
+          objectFit="cover"
+          layout="intrinsic"
+          width="116"
+          height="165"
+        />
+        <div>
+          <div className="d-inline-block mt-3">
+            <img
+              className="mr-2"
+              src="/assets/curriculum/icons/icon-challenge.svg"
+              alt="icon-challenge"
+            />
+            <span className={`${styles['lesson-card__icon-text']}`}>
+              {props.challengeCount} CHALLENGES
+            </span>
+          </div>
+        </div>
+        <p className="mt-2">{props.description}</p>
+        <ReviewButton
+          isCompleted={props.currentState === 'completed'}
+          reviewUrl={props.reviewUrl}
+          lessonId={props.lessonId}
+        />
+      </div>
       <div className={`${styles['lesson-card__wrapper']} d-flex p-2`}>
         <Image
           src={`/assets/curriculum/${props.coverImg}`}
@@ -73,7 +124,9 @@ const LessonCard: React.FC<Props> = props => {
           objectFit="contain"
         />
 
-        <div className={`${styles['lesson-card__description']} pl-4`}>
+        <div
+          className={`${styles['lesson-card__description']} pl-4 d-none d-sm-block`}
+        >
           <div className="d-flex">
             <h4
               className={`${styles['lesson-card__title']} font-weight-bold mt-3`}
