@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { InMemoryCache } from '@apollo/client'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import ACCEPT_SUBMISSION from '../graphql/queries/acceptSubmission'
@@ -13,8 +12,7 @@ import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import dummySessionData from '../__dummy__/sessionData'
 import previousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 import _ from 'lodash'
-import MockDate from 'mockdate'
-MockDate.set(new Date('2000-11-22'))
+jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 
 // a/js7/1.c b/js7/1.c instead of a/js7/1.js b/js7/1.js
 const NonJsDiff =
