@@ -463,7 +463,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             class="font ml-2"
           >
             requested changes on 
-            Saturday, June 19, 2021
+            Tuesday, June 22, 2021
             :
           </div>
         </div>
@@ -1043,7 +1043,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             class="font ml-2"
           >
             requested changes on 
-            Saturday, June 19, 2021
+            Tuesday, June 22, 2021
             :
           </div>
         </div>
@@ -2373,7 +2373,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             class="font ml-2"
           >
             requested changes on 
-            Saturday, June 19, 2021
+            Tuesday, June 22, 2021
             :
           </div>
         </div>
@@ -3703,7 +3703,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             class="font ml-2"
           >
             requested changes on 
-            Saturday, June 19, 2021
+            Tuesday, June 22, 2021
             :
           </div>
         </div>
@@ -3856,7 +3856,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             class="font ml-2"
           >
             requested changes on 
-            Saturday, June 19, 2021
+            Tuesday, June 22, 2021
             :
           </div>
         </div>
@@ -5186,7 +5186,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             class="font ml-2"
           >
             requested changes on 
-            Saturday, June 19, 2021
+            Tuesday, June 22, 2021
             :
           </div>
         </div>

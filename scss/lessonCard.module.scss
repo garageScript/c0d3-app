@@ -6,14 +6,7 @@
   line-height: 1.3;
   margin-bottom: 0.75rem;
 }
-.lesson-card__wrapper {
-  @media (max-width: 576px) {
-    //need to style third party component
-    & > div:first-child {
-      display: none !important;
-    }
-  }
-}
+
 .lesson-card__badge {
   align-self: flex-start;
   padding-left: 1em;

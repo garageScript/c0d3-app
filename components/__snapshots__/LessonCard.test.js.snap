@@ -6,7 +6,90 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+          <span
+            class="lesson-card__badge badge badge-pill badge-success p-0"
+          >
+            <svg
+              fill="none"
+              height="15"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+              />
+              <polyline
+                points="22 4 12 14.01 9 11.01"
+              />
+            </svg>
+            <span
+              class="mx-1 d-none d-md-block"
+            >
+              COMPLETED
+            </span>
+          </span>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+      <a
+        class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+      >
+        Review 
+        <div
+          class="spinner-border spinner-border-sm mx-1"
+          role="status"
+        />
+         Submissions
+      </a>
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -15,7 +98,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -99,7 +182,89 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+          <span
+            class="lesson-card__badge badge badge-pill badge-success p-0"
+          >
+            <svg
+              fill="none"
+              height="15"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+              />
+              <polyline
+                points="22 4 12 14.01 9 11.01"
+              />
+            </svg>
+            <span
+              class="mx-1 d-none d-md-block"
+            >
+              COMPLETED
+            </span>
+          </span>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+      <a
+        class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+      >
+        Review 
+        <span>
+          0
+        </span>
+         Submissions
+      </a>
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -108,7 +273,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -191,7 +356,89 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+          <span
+            class="lesson-card__badge badge badge-pill badge-success p-0"
+          >
+            <svg
+              fill="none"
+              height="15"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+              />
+              <polyline
+                points="22 4 12 14.01 9 11.01"
+              />
+            </svg>
+            <span
+              class="mx-1 d-none d-md-block"
+            >
+              COMPLETED
+            </span>
+          </span>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+      <a
+        class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+      >
+        Review 
+        <span>
+          2
+        </span>
+         Submissions
+      </a>
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -200,7 +447,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -283,7 +530,53 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -292,7 +585,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -339,7 +632,53 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
     class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -348,7 +687,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -398,7 +737,53 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/4"
+            />
+          </div>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -407,7 +792,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -454,7 +839,53 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -463,7 +894,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
@@ -510,7 +941,53 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="lesson-card__wrapper d-flex p-2"
+      class="d-flex d-sm-none flex-column px-3"
+    >
+      <h4
+        class="lesson-card__title font-weight-bold mt-3 "
+      >
+        <div
+          class="d-flex justify-content-center"
+        >
+          <div
+            class="align-self-center"
+          >
+            <a
+              class=""
+              href="/curriculum/undefined"
+            />
+          </div>
+        </div>
+      </h4>
+      <img
+        class="rounded"
+        height="165"
+        layout="intrinsic"
+        src="/assets/curriculum/undefined"
+        width="116"
+      />
+      <div>
+        <div
+          class="d-inline-block mt-3"
+        >
+          <img
+            alt="icon-challenge"
+            class="mr-2"
+            src="/assets/curriculum/icons/icon-challenge.svg"
+          />
+          <span
+            class="lesson-card__icon-text"
+          >
+             CHALLENGES
+          </span>
+        </div>
+      </div>
+      <p
+        class="mt-2"
+      />
+    </div>
+    <div
+      class="d-none d-sm-flex p-2"
     >
       <img
         class="align-self-center"
@@ -519,7 +996,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4"
+        class="lesson-card__description pl-4 d-none d-sm-block"
       >
         <div
           class="d-flex"

@@ -5106,7 +5106,62 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
   className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="lesson-card__wrapper d-flex p-2"
+    className="d-flex d-sm-none flex-column px-3"
+  >
+    <h4
+      className="lesson-card__title font-weight-bold mt-3 "
+    >
+      <div
+        className="d-flex justify-content-center"
+      >
+        <div
+          className="align-self-center"
+        >
+          <a
+            className=""
+            href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            HTML, CSS, JavaScript
+          </a>
+        </div>
+      </div>
+    </h4>
+    <img
+      alt="js-4-cover.svg"
+      className="img-fluid"
+      height="165"
+      layout="intrinsic"
+      objectFit="cover"
+      src="/assets/curriculum/js-4-cover.svg"
+      width="116"
+    />
+    <div>
+      <div
+        className="d-inline-block mt-3"
+      >
+        <img
+          alt="icon-challenge"
+          className="mr-2"
+          src="/assets/curriculum/icons/icon-challenge.svg"
+        />
+        <span
+          className="lesson-card__icon-text"
+        >
+          7
+           CHALLENGES
+        </span>
+      </div>
+    </div>
+    <p
+      className="mt-2"
+    >
+      Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+    </p>
+  </div>
+  <div
+    className="d-none d-sm-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -5117,7 +5172,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4"
+      className="lesson-card__description pl-4 d-none d-sm-block"
     >
       <div
         className="d-flex"
@@ -5169,7 +5224,100 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
   className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="lesson-card__wrapper d-flex p-2"
+    className="d-flex d-sm-none flex-column px-3"
+  >
+    <h4
+      className="lesson-card__title font-weight-bold mt-3 "
+    >
+      <div
+        className="d-flex justify-content-center"
+      >
+        <div
+          className="align-self-center"
+        >
+          <a
+            className=""
+            href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            HTML, CSS, JavaScript
+          </a>
+        </div>
+        <span
+          className="lesson-card__badge badge badge-pill badge-success p-0"
+        >
+          <svg
+            fill="none"
+            height="15"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <span
+            className="mx-1 d-none d-md-block"
+          >
+            COMPLETED
+          </span>
+        </span>
+      </div>
+    </h4>
+    <img
+      alt="js-4-cover.svg"
+      className="img-fluid"
+      height="165"
+      layout="intrinsic"
+      objectFit="cover"
+      src="/assets/curriculum/js-4-cover.svg"
+      width="116"
+    />
+    <div>
+      <div
+        className="d-inline-block mt-3"
+      >
+        <img
+          alt="icon-challenge"
+          className="mr-2"
+          src="/assets/curriculum/icons/icon-challenge.svg"
+        />
+        <span
+          className="lesson-card__icon-text"
+        >
+          7
+           CHALLENGES
+        </span>
+      </div>
+    </div>
+    <p
+      className="mt-2"
+    >
+      Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+    </p>
+    <a
+      className="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+      href="https://c0d3.com/teacher/5"
+    >
+      Review 
+      <div
+        className="spinner-border spinner-border-sm mx-1"
+        role="status"
+      />
+       Submissions
+    </a>
+  </div>
+  <div
+    className="d-none d-sm-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -5180,7 +5328,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4"
+      className="lesson-card__description pl-4 d-none d-sm-block"
     >
       <div
         className="d-flex"
@@ -5270,7 +5418,62 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
 >
   <div
-    className="lesson-card__wrapper d-flex p-2"
+    className="d-flex d-sm-none flex-column px-3"
+  >
+    <h4
+      className="lesson-card__title font-weight-bold mt-3 "
+    >
+      <div
+        className="d-flex justify-content-center"
+      >
+        <div
+          className="align-self-center"
+        >
+          <a
+            className=""
+            href="/curriculum/4"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            HTML, CSS, JavaScript
+          </a>
+        </div>
+      </div>
+    </h4>
+    <img
+      alt="js-4-cover.svg"
+      className="img-fluid"
+      height="165"
+      layout="intrinsic"
+      objectFit="cover"
+      src="/assets/curriculum/js-4-cover.svg"
+      width="116"
+    />
+    <div>
+      <div
+        className="d-inline-block mt-3"
+      >
+        <img
+          alt="icon-challenge"
+          className="mr-2"
+          src="/assets/curriculum/icons/icon-challenge.svg"
+        />
+        <span
+          className="lesson-card__icon-text"
+        >
+          7
+           CHALLENGES
+        </span>
+      </div>
+    </div>
+    <p
+      className="mt-2"
+    >
+      Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
+    </p>
+  </div>
+  <div
+    className="d-none d-sm-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -5281,7 +5484,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4"
+      className="lesson-card__description pl-4 d-none d-sm-block"
     >
       <div
         className="d-flex"
@@ -13353,7 +13556,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-0-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-0-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              A super simple introduction to help you get started!
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -13364,7 +13622,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13413,7 +13671,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Variables & Functions
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-1-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-1-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Learn how to solve simple algorithm problems recursively with the following exercises. 
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -13424,7 +13737,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13473,7 +13786,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Arrays
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-2-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-2-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -13484,7 +13852,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13533,7 +13901,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Objects
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-3-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-3-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will test your understanding of objects, which includes linked lists and trees
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -13544,7 +13967,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13593,7 +14016,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/24"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Front End Engineering
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-4-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-4-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  7
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -13604,7 +14082,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13653,7 +14131,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    End To End
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-5-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-5-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  9
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will help you build a strong understanding of how the web works.
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -13664,7 +14197,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13713,7 +14246,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/29"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-6-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-6-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  8
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              React and GraphQL Lessons
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -13724,7 +14312,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13773,7 +14361,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/28"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-7-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-7-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Problems that are commonly asked to test your JavaScript knowledge
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -13784,7 +14427,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13833,7 +14476,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/25"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Trees
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-8-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-8-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Tree problems with high difficulty
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -13844,7 +14542,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -13893,7 +14591,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/27"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    General Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-9-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-9-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  5
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              General Algorithm from interviews
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -13904,7 +14657,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14322,7 +15075,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-0-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-0-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              A super simple introduction to help you get started!
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -14333,7 +15141,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14382,7 +15190,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Variables & Functions
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-1-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-1-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Learn how to solve simple algorithm problems recursively with the following exercises. 
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -14393,7 +15256,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14442,7 +15305,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Arrays
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-2-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-2-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -14453,7 +15371,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14502,7 +15420,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Objects
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-3-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-3-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will test your understanding of objects, which includes linked lists and trees
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -14513,7 +15486,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14562,7 +15535,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/24"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Front End Engineering
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-4-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-4-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  7
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -14573,7 +15601,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14622,7 +15650,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    End To End
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-5-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-5-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  9
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will help you build a strong understanding of how the web works.
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -14633,7 +15716,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14682,7 +15765,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/29"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-6-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-6-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  8
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              React and GraphQL Lessons
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -14693,7 +15831,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14742,7 +15880,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/28"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-7-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-7-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Problems that are commonly asked to test your JavaScript knowledge
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -14753,7 +15946,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14802,7 +15995,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/25"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Trees
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-8-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-8-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Tree problems with high difficulty
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -14813,7 +16061,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -14862,7 +16110,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/27"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    General Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-9-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-9-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  5
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              General Algorithm from interviews
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -14873,7 +16176,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15291,7 +16594,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/5"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-0-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-0-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              A super simple introduction to help you get started!
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -15302,7 +16660,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15351,7 +16709,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/2"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Variables & Functions
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-1-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-1-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Learn how to solve simple algorithm problems recursively with the following exercises. 
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -15362,7 +16775,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15411,7 +16824,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/1"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Arrays
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-2-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-2-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -15422,7 +16890,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15471,7 +16939,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/4"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Objects
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-3-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-3-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will test your understanding of objects, which includes linked lists and trees
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -15482,7 +17005,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15531,7 +17054,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/24"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Front End Engineering
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-4-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-4-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  7
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -15542,7 +17120,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15591,7 +17169,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/3"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    End To End
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-5-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-5-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  9
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              These exercises will help you build a strong understanding of how the web works.
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -15602,7 +17235,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15651,7 +17284,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/29"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-6-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-6-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  8
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              React and GraphQL Lessons
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -15662,7 +17350,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15711,7 +17399,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/28"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-7-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-7-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Problems that are commonly asked to test your JavaScript knowledge
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -15722,7 +17465,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15771,7 +17514,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/25"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Trees
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-8-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-8-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              Tree problems with high difficulty
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -15782,7 +17580,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
@@ -15831,7 +17629,62 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="lesson-card__wrapper d-flex p-2"
+            className="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              className="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                className="d-flex justify-content-center"
+              >
+                <div
+                  className="align-self-center"
+                >
+                  <a
+                    className=""
+                    href="/curriculum/27"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    General Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-9-cover.svg"
+              className="img-fluid"
+              height="165"
+              layout="intrinsic"
+              objectFit="cover"
+              src="/assets/curriculum/js-9-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                className="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  className="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  className="lesson-card__icon-text"
+                >
+                  5
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              className="mt-2"
+            >
+              General Algorithm from interviews
+            </p>
+          </div>
+          <div
+            className="d-none d-sm-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -15842,7 +17695,7 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4"
+              className="lesson-card__description pl-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
