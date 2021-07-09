@@ -1,6 +1,5 @@
 import { useMutation, ApolloCache } from '@apollo/client'
 import React, { useState, useContext, useEffect } from 'react'
-import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import { GlobalContext } from '../helpers/globalContext'
 import relativeTime from 'dayjs/plugin/relativeTime'
@@ -15,9 +14,7 @@ import {
   Comment
 } from '../graphql/index'
 import { SubmissionComments } from './SubmissionComments'
-import ReviewerProfile from './ReviewerProfile'
 import _ from 'lodash'
-import styles from '../scss/reviewCard.module.scss'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
 import { MdInput } from './MdInput'
@@ -25,6 +22,7 @@ import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
+import { ReviewStatus } from './ReviewStatus'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -32,42 +30,6 @@ type ReviewCardProps = {
 }
 
 type CommentType = 'accept' | 'reject' | 'comment'
-
-const RequestChanges: React.FC<{
-  username: string
-  name: string
-  comment: string
-  date: string
-  status: SubmissionStatus
-}> = ({ name, username, comment, date, status }) => {
-  return (
-    <div
-      className={`${
-        status === SubmissionStatus.Passed ? styles.passed : styles.rejected
-      } px-2 py-1 my-3`}
-    >
-      <div className="d-flex align-items-center">
-        <img
-          src="/assets/requestChanges.svg"
-          className={
-            status === SubmissionStatus.Passed
-              ? styles.icon__accepted
-              : styles.icon__rejected
-          }
-        />
-        <ReviewerProfile name={name} username={username} />
-        <div className={`${styles.font} ml-2`}>
-          {status === SubmissionStatus.Passed
-            ? 'accepted submission on '
-            : 'requested changes on '}
-          {dayjs(Number.parseInt(date)).format('dddd, MMMM D, YYYY')}:
-        </div>
-      </div>
-      <hr />
-      <Markdown>{comment}</Markdown>
-    </div>
-  )
-}
 
 const ReviewButtons: React.FC<{
   commentType: CommentType
@@ -183,16 +145,8 @@ const ReviewButtons: React.FC<{
 }
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
-  const {
-    id,
-    diff,
-    updatedAt,
-    user,
-    challenge,
-    lessonId,
-    challengeId,
-    status
-  } = submissionData
+  const { id, diff, user, challenge, lessonId, challengeId, status } =
+    submissionData
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
   const username = context.session?.user?.username
@@ -226,6 +180,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
       setPreviousSubmissions(data)
+      /* istanbul ignore else */
       if (index === -1)
         setSubmission(
           data.getPreviousSubmissions[
@@ -236,21 +191,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     }
   }, [data])
 
-  const reviewerMessage = (status: SubmissionStatus) => {
-    if (
-      status === SubmissionStatus.NeedMoreWork ||
-      status === SubmissionStatus.Passed
-    )
-      return (
-        <RequestChanges
-          name={submissionState.reviewer?.name || ''}
-          username={submissionState.reviewer?.username || ''}
-          comment={submissionState.comment || ''}
-          date={submissionState.updatedAt}
-          status={submissionState.status}
-        />
-      )
-  }
   const submissionComments = (comments: Comment[] | undefined | null) => {
     const underComments = comments?.filter(comment => !comment.line)
     if (underComments) {
@@ -272,9 +212,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                   {user?.username} -{' '}
                   <span className="text-primary">{challenge?.title}</span>
                 </h4>
-                <Text color="lightgrey" size="sm">
-                  {dayjs(parseInt(updatedAt || '0')).fromNow()}
-                </Text>
+                {submissionState.createdAt && (
+                  <Text color="lightgrey" size="sm">
+                    <div
+                      title={dayjs(parseInt(submissionState.createdAt)).format(
+                        'LLL'
+                      )}
+                    >
+                      {dayjs(parseInt(submissionState.createdAt)).fromNow()}
+                    </div>
+                  </Text>
+                )}
               </div>
               <div className="text-right">
                 <SelectIteration
@@ -295,8 +243,14 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-footer bg-white">
-            {reviewerMessage(submissionState.status)}
             {submissionComments(submissionState?.comments)}
+            <ReviewStatus
+              name={submissionState.reviewer?.name}
+              username={submissionState.reviewer?.username}
+              comment={submissionState.comment}
+              date={submissionState.updatedAt}
+              status={submissionState.status}
+            />
             <MdInput
               onChange={setCommentValue}
               bgColor={'white'}

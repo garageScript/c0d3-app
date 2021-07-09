@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 
 export default {
   getPreviousSubmissions: [

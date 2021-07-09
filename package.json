@@ -16,7 +16,7 @@
     "autofix": "yarn lint:fix && svgo --folder=public --recursive && svgo --folder=assets --recursive",
     "storybook": "start-storybook -p $STORY_PORT -c .storybook -s ./public",
     "build-storybook": "build-storybook -c .storybook -s ./public",
-    "test": "jest --coverage",
+    "test": "TZ=UTC jest --coverage",
     "ts-node": "ts-node --compiler-options {\\\"module\\\":\\\"CommonJS\\\"}",
     "type-check": "tsc",
     "generate": "graphql-codegen --config codegen.yml",
