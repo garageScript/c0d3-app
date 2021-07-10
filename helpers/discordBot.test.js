@@ -112,6 +112,7 @@ describe('sendSubmissionNotification', () => {
         body: JSON.stringify({
           idType,
           id: userName,
+          notificationLessonId: notificationLessonId.toString(),
           lessonId: lessonId.toString(),
           challengeTitle
         })
