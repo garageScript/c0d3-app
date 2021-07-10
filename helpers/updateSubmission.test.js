@@ -1,6 +1,8 @@
+jest.mock('./discordBot')
 import { SubmissionStatus } from '../graphql'
 import { prisma } from '../prisma'
 import { updateSubmission } from './updateSubmission'
+import { sendLessonChannelMessage } from './discordBot'
 
 const lessonMock = {
   id: 1,
@@ -11,6 +13,7 @@ const lessonMock = {
 
 const userMock = {
   id: 1,
+  username: 'fakeusername',
   email: 'fake@email.com'
 }
 const submission = {
@@ -55,19 +58,45 @@ describe('updateSubmission', () => {
     await expect(updateSubmission(submission)).resolves.toEqual(submissionMock)
   })
 
-  it('should update user lesson if student has completed it', async () => {
+  it('should update user lesson if student has completed it and notify on discord', async () => {
     prisma.userLesson.upsert = jest.fn().mockResolvedValue({
       isPassed: null
     })
 
     // mock next lesson
-    prisma.lesson.findFirst = jest
-      .fn()
-      .mockResolvedValue({ order: 2, chatUrl: 'fakeurl/js1-nextfake' })
+    const nextLesson = { order: 2, id: 2 }
+    prisma.lesson.findFirst = jest.fn().mockResolvedValue(nextLesson)
 
     await expect(updateSubmission(submission)).resolves.toEqual(submissionMock)
     expect(prisma.userLesson.update).toHaveBeenCalledWith(
       expect.objectContaining({ data: { isPassed: expect.any(String) } })
+    )
+
+    expect(sendLessonChannelMessage).toHaveBeenCalledTimes(2)
+    expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+      submissionMock.lessonId,
+      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_**! **fakeusername** is now a guardian angel for the students in this channel.'
+    )
+    expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+      nextLesson.id,
+      'We have a new student joining us! **fakeusername** just completed **_Fake Lesson Title_**!'
+    )
+  })
+
+  it('should not notify next lesson if does not exist', async () => {
+    prisma.userLesson.upsert = jest.fn().mockResolvedValue({
+      isPassed: null
+    })
+
+    // mock next lesson
+    prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
+
+    await updateSubmission(submission)
+
+    expect(sendLessonChannelMessage).toHaveBeenCalledTimes(1)
+    expect(sendLessonChannelMessage).toHaveBeenCalledWith(
+      submissionMock.lessonId,
+      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_**! **fakeusername** is now a guardian angel for the students in this channel.'
     )
   })
 
