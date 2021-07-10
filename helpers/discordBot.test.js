@@ -29,6 +29,7 @@ const channelId = '1234'
 const message = 'hello'
 const embed = { description: 'an embed' }
 const lessonId = 1
+const notificationLessonId = 2
 const idType = IdType.C0D3
 const userName = 'test_user'
 const discordUserId = '9898'
@@ -98,6 +99,7 @@ describe('sendSubmissionNotification', () => {
     const response = await sendSubmissionNotification(
       idType,
       userName,
+      notificationLessonId,
       lessonId,
       challengeTitle
     )

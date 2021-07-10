@@ -70,6 +70,7 @@ export const createSubmission = async (
       IdType.C0D3,
       user.username,
       nextLesson?.id ?? lessonId,
+      lessonId,
       challenge.title
     )
 

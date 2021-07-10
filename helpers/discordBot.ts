@@ -69,6 +69,7 @@ export const sendDirectMessage: SendDirectMessage = async (
 export const sendSubmissionNotification: SendSubmissionNotification = async (
   idType,
   userId,
+  notificationLessonId,
   lessonId,
   challengeTitle
 ) =>
@@ -78,6 +79,7 @@ export const sendSubmissionNotification: SendSubmissionNotification = async (
     body: JSON.stringify({
       idType,
       id: userId,
+      notificationLessonId: notificationLessonId.toString(),
       lessonId: lessonId.toString(),
       challengeTitle
     })

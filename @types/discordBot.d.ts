@@ -64,6 +64,7 @@ export type SendDirectMessage = (
 export type SendSubmissionNotification = (
   idType: IdType,
   userId: snowflake | string,
+  notificationLessonId: number | string,
   lessonId: number | string,
   challengeTitle: string
 ) => Promise<MessageResponse>
