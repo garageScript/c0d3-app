@@ -1,6 +1,12 @@
 import React, { useContext, useEffect } from 'react'
 import dayjs from 'dayjs'
-import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import {
+  render,
+  fireEvent,
+  waitFor,
+  screen,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ChallengeMaterial from './ChallengeMaterial'
 import { MockedProvider } from '@apollo/client/testing'
@@ -15,6 +21,7 @@ import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 import dummySessionData from '../__dummy__/sessionData'
 import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import _ from 'lodash'
+jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 
 const getPreviousSubmissionsMock = {
   request: {
@@ -315,6 +322,7 @@ describe('Curriculum challenge page', () => {
       fireEvent.click(getByRole('button', { name: 'Give Star' }))
     )
     await waitFor(() => queryByText('Who helped you the most?'))
+    await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
     expect(document.body).toMatchSnapshot()
 
     // click exit button of GiveStarCard
@@ -364,15 +372,6 @@ describe('Curriculum challenge page', () => {
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     fireEvent.click(screen.getByText('Comment'))
     expect(screen.findByText('A very unique test comment!')).toBeTruthy()
-  })
-  test('Should use default case if no status is provided', async () => {
-    userSubmissions.forEach(submission => (submission.status = 'foobar'))
-    render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...props} />
-      </MockedProvider>
-    )
-    expect(screen.getByText('A comment under submission')).toBeVisible()
   })
   test('Should render empty div if there is no submission data', () => {
     props.userSubmissions = []

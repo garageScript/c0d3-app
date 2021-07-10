@@ -73,6 +73,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
       >
         <div
           class="card-header bg-white"
+          title="Monday, November 6, 2000 12:00 AM"
         >
           Submitted 
           16 days ago
@@ -5083,6 +5084,39 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
               </tbody>
             </table>
             <div
+              class="open status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__open icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                  Your submission is currently waiting to be reviewed.
+                </div>
+              </div>
+            </div>
+            <div
               style="background-color: white;"
             >
               <button
@@ -5109,18 +5143,6 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
             >
               Comment
             </button>
-          </div>
-        </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <span>
-            test comment
-          </span>
-          <div
-            class="text-center p-2 my-2 border border-warning text-warning"
-          >
-            Your submission is currently waiting to be reviewed
           </div>
         </div>
       </div>
@@ -6149,9 +6171,10 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
       >
         <div
           class="card-header bg-white"
+          title="Tuesday, April 14, 2020 11:43 PM"
         >
           Submitted 
-          16 days ago
+          in 19 years
         </div>
         <div
           class="text-left ml-2"
@@ -6603,24 +6626,46 @@ exports[`Curriculum challenge page Should render clicked challenge within challe
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <span>
-            test comment
-          </span>
-          <div
-            class="text-center p-2 my-2 border border-danger text-danger"
-          >
-            Your solution was reviewed and rejected by 
-            <a
-              class="text-reset"
-              href="/profile/dan"
+            <div
+              class="needMoreWork status__border px-2 py-1 my-3"
             >
-              dan
-            </a>
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__needMoreWork icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                    href="/profile/dan"
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    >
+                       @dan
+                    </div>
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                   requested changes on November 6, 2000 12:00 AM.
+                </div>
+              </div>
+              <hr />
+              <span>
+                test comment
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -6800,9 +6845,10 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
       >
         <div
           class="card-header bg-white"
+          title="Tuesday, April 14, 2020 11:43 PM"
         >
           Submitted 
-          16 days ago
+          in 19 years
         </div>
         <div
           class="text-left ml-2"
@@ -7255,6 +7301,39 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               </div>
             </div>
             <div
+              class="open status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__open icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                  Your submission is currently waiting to be reviewed.
+                </div>
+              </div>
+            </div>
+            <div
               style="background-color: white;"
             >
               <button
@@ -7281,15 +7360,6 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
             >
               Comment
             </button>
-          </div>
-        </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <div
-            class="text-center p-2 my-2 border border-warning text-warning"
-          >
-            Your submission is currently waiting to be reviewed
           </div>
         </div>
       </div>
@@ -7371,6 +7441,7 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
       >
         <div
           class="card-header bg-white"
+          title="Monday, November 6, 2000 12:00 AM"
         >
           Submitted 
           16 days ago
@@ -12245,6 +12316,39 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
               </tbody>
             </table>
             <div
+              class="open status__border px-2 py-1 my-3"
+            >
+              <div
+                class="d-flex align-items-center"
+              >
+                <img
+                  class="icon__open icon"
+                  src="/assets/requestChanges.svg"
+                />
+                <div
+                  class=""
+                >
+                  <a
+                    class="comment_author mt-2 "
+                  >
+                    <div
+                      class="d-inline"
+                    >
+                       
+                    </div>
+                    <div
+                      class="d-inline text-muted"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="ml-1"
+                >
+                  Your submission is currently waiting to be reviewed.
+                </div>
+              </div>
+            </div>
+            <div
               style="background-color: white;"
             >
               <button
@@ -12271,15 +12375,6 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
             >
               Comment
             </button>
-          </div>
-        </div>
-        <div
-          class="card-footer bg-white"
-        >
-          <div
-            class="text-center p-2 my-2 border border-warning text-warning"
-          >
-            Your submission is currently waiting to be reviewed
           </div>
         </div>
       </div>
