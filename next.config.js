@@ -19,8 +19,18 @@ const SentryWebpackPluginOptions = {
   // recommended:
   //   release, url, org, project, authToken, configFile, stripPrefix,
   //   urlPrefix, include, ignore
-  debug: false,
-  silent: true // Suppresses all logs
+
+  // Force dry run when no sentry environnement variable is set or in dev mode.
+  // This allows developers to make production builds locally without needing
+  // to setting up all the other sentry environment variables
+  dryRun:
+    process.env.NODE_ENV === 'development' ||
+    !process.env.NEXT_PUBLIC_SENTRY_DSN,
+
+  // This plugin is used to send source map files to sentry.io during build time.
+  // Silencing the log hides all the information about each individual file being
+  // sent keeping the build logs cleaner and still logging any error that occurs.
+  silent: true
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 }
