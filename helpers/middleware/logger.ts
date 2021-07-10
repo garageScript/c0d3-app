@@ -43,7 +43,6 @@ export default (req: LoggedRequest, res: NextApiResponse, next: () => void) => {
   const logger = winstonLogger(uid)
 
   req.info = (val: any) => {
-    console.log('capture info')
     logger.info(processArgs(val))
   }
   req.warn = (val: any) => {
