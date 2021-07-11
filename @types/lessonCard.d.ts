@@ -14,7 +14,7 @@ export type ReviewButtonProps = {
   isCompleted: boolean
   reviewUrl: string
   lessonId: number
-  style?: string
+  className?: string
 }
 
 export type ReviewCountProps = {

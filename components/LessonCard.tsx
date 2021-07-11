@@ -43,7 +43,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
   let style = 'btn btn-sm bg-primary text-white float-right mb-2 mr-2'
-  if (props.style) style += props.style
+  if (props.className) style += props.className
   if (!props.isCompleted) {
     return null
   }
@@ -107,7 +107,7 @@ const LessonCard: React.FC<Props> = props => {
         isCompleted={props.currentState === 'completed'}
         reviewUrl={props.reviewUrl}
         lessonId={props.lessonId}
-        style="mr-0"
+        className="mr-0"
       />
     </>
   )
