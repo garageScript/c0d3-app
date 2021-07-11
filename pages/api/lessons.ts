@@ -1,8 +1,8 @@
+import { withSentry } from '@sentry/nextjs'
 import { lessons } from '../../graphql/queryResolvers/lessons'
-import { LoggedRequest } from '../../@types/helpers'
-import { NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async (_: LoggedRequest, res: NextApiResponse) => {
+const handler = async (_: NextApiRequest, res: NextApiResponse) => {
   try {
     const allLessons = await lessons()
     res.setHeader('Access-Control-Allow-Origin', '*')
@@ -11,3 +11,5 @@ export default async (_: LoggedRequest, res: NextApiResponse) => {
     res.status(500).json('Error occured 😮')
   }
 }
+
+export default withSentry(handler)

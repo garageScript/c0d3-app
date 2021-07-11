@@ -1,3 +1,4 @@
+const { withSentryConfig } = require('@sentry/nextjs')
 const slug = require('remark-slug')
 const toc = require('remark-toc')
 const gfm = require('remark-gfm')
@@ -8,19 +9,32 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
   }
 })
-module.exports = withMDX({
-  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
-  env: {
-    DB_NAME: process.env.DB_NAME || 'c0d3dev6',
-    DB_USER: process.env.DB_USER || 'c0d3db',
-    DB_PW: process.env.DB_PW || 'letmein2',
-    DB_PORT: process.env.DB_PORT || '5432',
-    DB_HOST: process.env.DB_HOST || 'freedomains.dev',
-    SENTRY_DSN:
-      process.env.SENTRY_DSN ||
-      'https://e95626afb0454145b569bc69116f838c@o385150.ingest.sentry.io/5221680',
-    POSTHOG_API_KEY: process.env.POSTHOG_API_KEY,
-    SESSION_SECRET: process.env.SESSION_SECRET || 'c0d3hard3r',
-    SERVER_URL: process.env.SERVER_URL || '/api/graphql'
-  }
+const moduleExports = withMDX({
+  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
 })
+
+const SentryWebpackPluginOptions = {
+  // Additional config options for the Sentry Webpack plugin. Keep in mind that
+  // the following options are set automatically, and overriding them is not
+  // recommended:
+  //   release, url, org, project, authToken, configFile, stripPrefix,
+  //   urlPrefix, include, ignore
+
+  // Force dry run when no sentry environnement variable is set or in dev mode.
+  // This allows developers to make production builds locally without needing
+  // to setting up all the other sentry environment variables
+  dryRun:
+    process.env.NODE_ENV === 'development' ||
+    !process.env.NEXT_PUBLIC_SENTRY_DSN,
+
+  // This plugin is used to send source map files to sentry.io during build time.
+  // Silencing the log hides all the information about each individual file being
+  // sent keeping the build logs cleaner and still logging any error that occurs.
+  silent: true
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options.
+}
+
+// Make sure adding Sentry options is the last code to run before exporting, to
+// ensure that your source maps include changes from all other Webpack plugins
+module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions)
