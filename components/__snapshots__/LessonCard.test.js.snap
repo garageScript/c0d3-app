@@ -6,7 +6,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -17,35 +17,9 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       <div
         class="lesson-card__description pl-4"
       >
-        <span
-          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+        <div
+          class="d-flex"
         >
-          <svg
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            style="height: 15px;"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-            />
-            <polyline
-              points="22 4 12 14.01 9 11.01"
-            />
-          </svg>
-          <span
-            class="mx-1"
-          >
-            COMPLETED
-          </span>
-        </span>
-        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -54,6 +28,35 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
               href="/curriculum/undefined"
             />
           </h4>
+          <span
+            class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+          >
+            <svg
+              fill="none"
+              height="15"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+              />
+              <polyline
+                points="22 4 12 14.01 9 11.01"
+              />
+            </svg>
+            <span
+              class="mx-1 d-none d-md-block"
+            >
+              COMPLETED
+            </span>
+          </span>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -96,7 +99,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -107,35 +110,9 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       <div
         class="lesson-card__description pl-4"
       >
-        <span
-          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+        <div
+          class="d-flex"
         >
-          <svg
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            style="height: 15px;"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-            />
-            <polyline
-              points="22 4 12 14.01 9 11.01"
-            />
-          </svg>
-          <span
-            class="mx-1"
-          >
-            COMPLETED
-          </span>
-        </span>
-        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -144,6 +121,35 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
               href="/curriculum/undefined"
             />
           </h4>
+          <span
+            class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+          >
+            <svg
+              fill="none"
+              height="15"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+              />
+              <polyline
+                points="22 4 12 14.01 9 11.01"
+              />
+            </svg>
+            <span
+              class="mx-1 d-none d-md-block"
+            >
+              COMPLETED
+            </span>
+          </span>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -185,7 +191,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -196,35 +202,9 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
       <div
         class="lesson-card__description pl-4"
       >
-        <span
-          class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+        <div
+          class="d-flex"
         >
-          <svg
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            style="height: 15px;"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-            />
-            <polyline
-              points="22 4 12 14.01 9 11.01"
-            />
-          </svg>
-          <span
-            class="mx-1"
-          >
-            COMPLETED
-          </span>
-        </span>
-        <div>
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -233,6 +213,35 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
               href="/curriculum/undefined"
             />
           </h4>
+          <span
+            class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+          >
+            <svg
+              fill="none"
+              height="15"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+              />
+              <polyline
+                points="22 4 12 14.01 9 11.01"
+              />
+            </svg>
+            <span
+              class="mx-1 d-none d-md-block"
+            >
+              COMPLETED
+            </span>
+          </span>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -274,7 +283,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -285,7 +294,9 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
       <div
         class="lesson-card__description pl-4"
       >
-        <div>
+        <div
+          class="d-flex"
+        >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -294,6 +305,8 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
               href="/curriculum/undefined"
             />
           </h4>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -326,7 +339,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
     class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -337,7 +350,9 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       <div
         class="lesson-card__description pl-4"
       >
-        <div>
+        <div
+          class="d-flex"
+        >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -346,6 +361,8 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
               href="/curriculum/undefined"
             />
           </h4>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -381,7 +398,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -392,7 +409,9 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
       <div
         class="lesson-card__description pl-4"
       >
-        <div>
+        <div
+          class="d-flex"
+        >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -401,6 +420,8 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
               href="/curriculum/4"
             />
           </h4>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -433,7 +454,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -444,7 +465,9 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
       <div
         class="lesson-card__description pl-4"
       >
-        <div>
+        <div
+          class="d-flex"
+        >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -453,6 +476,8 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
               href="/curriculum/undefined"
             />
           </h4>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"
@@ -485,7 +510,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
     class="card shadow-sm mt-3 border-0"
   >
     <div
-      class="d-flex p-2"
+      class="lesson-card__wrapper d-flex p-2"
     >
       <img
         class="align-self-center"
@@ -496,7 +521,9 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
       <div
         class="lesson-card__description pl-4"
       >
-        <div>
+        <div
+          class="d-flex"
+        >
           <h4
             class="lesson-card__title font-weight-bold mt-3"
           >
@@ -505,6 +532,8 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
               href="/curriculum/undefined"
             />
           </h4>
+        </div>
+        <div>
           <div>
             <div
               class="d-inline-block mr-4"

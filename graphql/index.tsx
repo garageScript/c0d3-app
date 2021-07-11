@@ -539,6 +539,7 @@ export type GetAppQuery = { __typename?: 'Query' } & {
             reviewer?: Maybe<
               { __typename?: 'User' } & Pick<User, 'id' | 'username'>
             >
+            user: { __typename?: 'User' } & Pick<User, 'id'>
             comments?: Maybe<
               Array<
                 { __typename?: 'Comment' } & Pick<
@@ -2362,6 +2363,9 @@ export const GetAppDocument = gql`
         reviewer {
           id
           username
+        }
+        user {
+          id
         }
         createdAt
         updatedAt

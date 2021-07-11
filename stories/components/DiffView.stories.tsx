@@ -1,6 +1,6 @@
 import React from 'react'
 import DiffView from '../../components/DiffView'
-import { Comment } from '../../graphql/'
+import { SubmissionStatus } from '../../graphql/'
 import { MockedProvider } from '@apollo/client/testing'
 
 export default {
@@ -8,62 +8,38 @@ export default {
   title: 'Components/DiffView'
 }
 
-const JsDiff =
-  'diff --git a/js7/1.js b/js7/1.js\nindex 9c96b34..853bddf 100644\n--- a/js7/1.js\n+++ b/js7/1.js\n@@ -1,8 +1,19 @@\n-// write your code here!\n const solution = () => {\n-  // global clear all timeout:\n+  const allT = [];\n+  const old = setTimeout;\n+  window.setTimeout = (func, delay) => {\n+    const realTimeout = old(func, delay);\n+    allT.push(realTimeout);\n+    return realTimeout;\n+  };\n+  window.clearAllTimouts = () => {\n+    while (allT.length) {\n+      clearTimeout(allT.pop());\n+    }\n+  };\n   cat = () => {\n-  }\n+    window.clearAllTimouts();\n+  };\n };\n \n module.exports = solution;'
-const comments: Comment[] = [
-  {
-    content: 'First Comment',
-    createdAt: '1620762267819',
-    authorId: 3,
-    line: 4,
-    author: {
-      username: 'newbie',
-      name: 'Noob Newbie',
-      id: 1,
-      email: '',
-      isAdmin: false
-    },
+const submission = {
+  status: SubmissionStatus.Open,
+  id: 1,
+  mrUrl: '',
+  diff: `diff --git a/curriculum/js0/2.js b/curriculum/js0/2.js\nindex 647ca32..ac44196 100644\n--- a/curriculum/js0/2.js\n+++ b/curriculum/js0/2.js\n@@ -7,7 +7,7 @@\n  */\n \n const solution = (a, b, c) => {\n-  return 0;\n+  return a + b + c;\n };\n \n module.exports = {\n`,
+  viewCount: 0,
+  comment: '```test comment```',
+  lessonId: 23,
+  challengeId: 105,
+  challenge: {
     id: 1,
-    fileName: 'js7/1.js',
-    submissionId: 1
+    title: 'fake challenge',
+    description: 'fake description',
+    order: 1,
+    lessonId: 23
   },
-  {
-    content: 'Second Comment',
-    createdAt: '1620762275096',
-    authorId: 3,
-    line: 4,
-    author: {
-      username: 'newbie',
-      name: 'Noob Newbie',
-      id: 1,
-      email: '',
-      isAdmin: false
-    },
-    id: 2,
-    fileName: 'js7/1.js',
-    submissionId: 1
+  user: {
+    id: 1,
+    username: 'fakeuser',
+    name: 'fake user',
+    email: 'fake@fakemail.com',
+    isAdmin: false
   },
-  {
-    content: 'Third Comment',
-    createdAt: '1620762275096',
-    authorId: 3,
-    line: 5,
-    author: {
-      username: 'admin',
-      name: 'Admin Admin',
-      id: 2,
-      email: '',
-      isAdmin: true
-    },
-    id: 3,
-    fileName: 'js7/1.js',
-    submissionId: 1
-  }
-]
+  reviewerId: '',
+  createdAt: '',
+  updatedAt: Date.now().toString()
+}
+
 export const Default: React.FC = () => {
   return (
     <MockedProvider>
-      <DiffView diff={JsDiff} comments={comments} id={1} />
+      <DiffView submission={submission} generalStatus={SubmissionStatus.Open} />
     </MockedProvider>
   )
 }
@@ -71,7 +47,10 @@ export const Default: React.FC = () => {
 export const Closed: React.FC = () => {
   return (
     <MockedProvider>
-      <DiffView diff={JsDiff} comments={comments} id={1} status="passed" />
+      <DiffView
+        submission={{ ...submission, status: SubmissionStatus.Passed }}
+        generalStatus={SubmissionStatus.Open}
+      />
     </MockedProvider>
   )
 }

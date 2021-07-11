@@ -1,9 +1,21 @@
-import React, { useState, useContext } from 'react'
-import { Challenge, Submission, UserLesson } from '../graphql/index'
+import React, {
+  useState,
+  useContext,
+  Dispatch,
+  SetStateAction,
+  useEffect
+} from 'react'
+import {
+  Challenge,
+  Submission,
+  UserLesson,
+  useGetPreviousSubmissionsQuery
+} from '../graphql/index'
 import NavLink from './NavLink'
 import Markdown from 'markdown-to-jsx'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { GiveStarCard } from '../components/GiveStarCard'
 import _ from 'lodash'
 import Modal from 'react-bootstrap/Modal'
@@ -14,14 +26,13 @@ import { MdInput } from './MdInput'
 import { updateCache } from '../helpers/updateCache'
 import { GlobalContext } from '../helpers/globalContext'
 import { SubmissionComments } from './SubmissionComments'
+import { SelectIteration } from './SelectIteration'
+import Error, { StatusCode } from './Error'
+import { ReviewStatus } from './ReviewStatus'
 dayjs.extend(relativeTime)
+dayjs.extend(LocalizedFormat)
 
 type CurrentChallengeID = number | null
-
-type ReviewStatusProps = {
-  status: string
-  reviewerUserName: string | null
-}
 
 type ChallengeSubmissionData = Challenge & {
   status: string
@@ -30,50 +41,6 @@ type ChallengeSubmissionData = Challenge & {
 
 type UserSubmissionsObject = {
   [submissionId: number]: Submission
-}
-
-export const ReviewStatus: React.FC<ReviewStatusProps> = ({
-  status,
-  reviewerUserName
-}) => {
-  let reviewStatusComment
-  let statusClassName
-  const profileLink = (
-    <NavLink
-      className="text-reset"
-      path="/profile/[username]"
-      as={`/profile/${reviewerUserName}`}
-    >
-      {reviewerUserName}
-    </NavLink>
-  )
-  switch (status) {
-    case SubmissionStatus.Passed:
-      reviewStatusComment = (
-        <>Your solution was reviewed and accepted by {profileLink}</>
-      )
-      statusClassName = 'border border-success text-success'
-      break
-    case SubmissionStatus.NeedMoreWork:
-      reviewStatusComment = (
-        <>Your solution was reviewed and rejected by {profileLink}</>
-      )
-      statusClassName = 'border border-danger text-danger'
-      break
-    case SubmissionStatus.Open:
-      reviewStatusComment = (
-        <>Your submission is currently waiting to be reviewed</>
-      )
-      statusClassName = 'border border-warning text-warning'
-      break
-    default:
-      return null
-  }
-  return (
-    <div className={`text-center p-2 my-2 ${statusClassName}`}>
-      {reviewStatusComment}
-    </div>
-  )
 }
 
 type StatusIconProps = {
@@ -139,35 +106,138 @@ export const ChallengeTitleCard: React.FC<ChallengeTitleCardProps> = ({
   )
 }
 
+const ChallengeQuestionCardDisplay: React.FC<{
+  currentChallenge: ChallengeSubmissionData
+}> = ({ currentChallenge }) => {
+  const context = useContext(GlobalContext)
+  const name = context.session?.user?.name
+  const username = context.session?.user?.username
+  const userId = context.session?.user?.id
+
+  const [index, setIndex] = useState(-1)
+
+  const [submission, setSubmission] = useState(currentChallenge.submission)
+  const comments = submission?.comments?.filter(comment => !comment.line)
+
+  const [commentValue, setCommentValue] = React.useState('')
+  const [addComment] = useAddCommentMutation()
+  const { data, loading, error } = useGetPreviousSubmissionsQuery({
+    variables: {
+      challengeId: submission?.challengeId!,
+      userId: userId!
+    },
+    skip: userId === undefined || submission?.challengeId === undefined
+  })
+  useEffect(() => {
+    if (data?.getPreviousSubmissions) {
+      if (data.getPreviousSubmissions[index])
+        setSubmission(data.getPreviousSubmissions[index] as Submission)
+      else setSubmission(_.last(data.getPreviousSubmissions) as Submission)
+    }
+  }, [data, index])
+  useEffect(() => {
+    setIndex(-1)
+    setSubmission(currentChallenge.submission)
+  }, [currentChallenge.submission?.challengeId])
+  if (submission && Object.keys(submission).length) {
+    if (!name || !username || !userId)
+      return (
+        <Error
+          code={StatusCode.INTERNAL_SERVER_ERROR}
+          message="Error while retrieving userinfo from context"
+        />
+      )
+
+    const update = updateCache(
+      submission.id,
+      commentValue,
+      name,
+      username,
+      submission.lessonId,
+      undefined,
+      undefined,
+      submission.challengeId,
+      submission.user.id
+    )
+    return (
+      <div className="card shadow-sm border-0 mt-3">
+        {submission.createdAt && (
+          <div
+            className="card-header bg-white"
+            title={dayjs(Number.parseInt(submission.createdAt)).format('LLLL')}
+          >
+            Submitted {dayjs(parseInt(submission.createdAt)).fromNow()}
+          </div>
+        )}
+        <div className="text-left ml-2">
+          <SelectIteration
+            data={data}
+            loading={loading}
+            error={error}
+            setIndex={setIndex}
+            setSubmission={
+              setSubmission as Dispatch<SetStateAction<Submission>>
+            }
+            currentIndex={index}
+            currentId={submission.id}
+          />
+        </div>
+        <div className="card-body">
+          <div className="rounded-lg overflow-hidden">
+            <DiffView
+              submission={submission}
+              generalStatus={currentChallenge.submission?.status}
+            />
+            {comments && <SubmissionComments comments={comments} />}
+            <ReviewStatus
+              name={submission.reviewer?.name}
+              username={submission.reviewer?.username}
+              date={submission.updatedAt}
+              comment={submission.comment}
+              status={submission.status}
+              viewedByStudent
+            />
+            {currentChallenge?.submission?.status === SubmissionStatus.Open && (
+              <>
+                <MdInput
+                  onChange={setCommentValue}
+                  bgColor={'white'}
+                  value={commentValue}
+                />
+                <Button
+                  m="1"
+                  type="success"
+                  color="white"
+                  onClick={() => {
+                    addComment({
+                      variables: {
+                        submissionId: submission!.id,
+                        content: commentValue
+                      },
+                      update
+                    })
+                    setCommentValue('')
+                  }}
+                >
+                  Comment
+                </Button>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return <></>
+}
+
 type ChallengeQuestionCardProps = {
   currentChallenge: ChallengeSubmissionData
 }
 export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
   currentChallenge
 }) => {
-  const diff = _.get(currentChallenge, 'submission.diff', '')
-  const comment = _.get(currentChallenge, 'submission.comment', '')
-  const updatedAt = _.get(currentChallenge, 'submission.updatedAt', Date.now())
-  const context = useContext(GlobalContext)
-  const name = context.session?.user?.name
-  const username = context.session?.user?.username
-  const reviewerUserName = _.get(
-    currentChallenge,
-    'submission.reviewer.username',
-    null
-  )
-  const comments =
-    currentChallenge.submission &&
-    currentChallenge.submission.comments?.filter(comment => !comment.line)
-
-  const [commentValue, setCommentValue] = React.useState('')
-  const [addComment] = useAddCommentMutation()
-  const update = updateCache(
-    currentChallenge.submission?.id!,
-    commentValue,
-    name!,
-    username!
-  )
   return (
     <>
       <div className="card shadow-sm border-0">
@@ -184,58 +254,7 @@ export const ChallengeQuestionCard: React.FC<ChallengeQuestionCardProps> = ({
         </div>
       </div>
 
-      {diff && (
-        <div className="card shadow-sm border-0 mt-3">
-          <div className="card-header bg-white">
-            Submitted {dayjs(parseInt(updatedAt)).fromNow()}
-          </div>
-          <div className="card-body">
-            <div className="rounded-lg overflow-hidden">
-              <DiffView
-                diff={diff}
-                id={currentChallenge.submission!.id}
-                comments={currentChallenge.submission?.comments}
-                status={currentChallenge.status}
-              />
-              {comments && <SubmissionComments comments={comments} />}
-              {currentChallenge.submission!.status ===
-                SubmissionStatus.Open && (
-                <>
-                  <MdInput
-                    onChange={setCommentValue}
-                    bgColor={'white'}
-                    value={commentValue}
-                  />
-                  <Button
-                    m="1"
-                    type="success"
-                    color="white"
-                    onClick={() => {
-                      addComment({
-                        variables: {
-                          submissionId: currentChallenge.submission!.id,
-                          content: commentValue
-                        },
-                        update
-                      })
-                      setCommentValue('')
-                    }}
-                  >
-                    Comment
-                  </Button>
-                </>
-              )}
-            </div>
-          </div>
-          <div className="card-footer bg-white">
-            {comment && <Markdown>{comment}</Markdown>}
-            <ReviewStatus
-              status={currentChallenge.status}
-              reviewerUserName={reviewerUserName}
-            />
-          </div>
-        </div>
-      )}
+      <ChallengeQuestionCardDisplay currentChallenge={currentChallenge} />
     </>
   )
 }

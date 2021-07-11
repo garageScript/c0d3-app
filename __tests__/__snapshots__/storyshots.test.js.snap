@@ -670,7 +670,6 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
         </div>
       </div>
     </div>
-    
   </div>
 </div>
 `;
@@ -883,11 +882,24 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
     <div
       className="card shadow-sm border-0 mt-3"
     >
+      
       <div
-        className="card-header bg-white"
+        className="text-left ml-2"
       >
-        Submitted 
-        a few seconds ago
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
       </div>
       <div
         className="card-body"
@@ -1222,6 +1234,45 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             </tbody>
           </table>
           <div
+            className="open status__border px-2 py-1 my-3"
+          >
+            <div
+              className="d-flex align-items-center"
+            >
+              <img
+                className="icon__open icon"
+                src="/assets/requestChanges.svg"
+              />
+              <div
+                className=""
+              >
+                <a
+                  className="comment_author mt-2 "
+                >
+                  <div
+                    className="d-inline"
+                  >
+                     
+                  </div>
+                  <div
+                    className="d-inline text-muted"
+                  >
+                    
+                  </div>
+                </a>
+              </div>
+              <div
+                className="ml-1"
+              >
+                Your submission is currently waiting to be reviewed.
+              </div>
+            </div>
+            <hr />
+            <code>
+              test comment
+            </code>
+          </div>
+          <div
             style={
               Object {
                 "backgroundColor": "white",
@@ -1274,18 +1325,6 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
           >
             Comment
           </button>
-        </div>
-      </div>
-      <div
-        className="card-footer bg-white"
-      >
-        <code>
-          test comment
-        </code>
-        <div
-          className="text-center p-2 my-2 border border-warning text-warning"
-        >
-          Your submission is currently waiting to be reviewed
         </div>
       </div>
     </div>
@@ -1366,11 +1405,24 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
     <div
       className="card shadow-sm border-0 mt-3"
     >
+      
       <div
-        className="card-header bg-white"
+        className="text-left ml-2"
       >
-        Submitted 
-        a few seconds ago
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
       </div>
       <div
         className="card-body"
@@ -1705,6 +1757,45 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             </tbody>
           </table>
           <div
+            className="open status__border px-2 py-1 my-3"
+          >
+            <div
+              className="d-flex align-items-center"
+            >
+              <img
+                className="icon__open icon"
+                src="/assets/requestChanges.svg"
+              />
+              <div
+                className=""
+              >
+                <a
+                  className="comment_author mt-2 "
+                >
+                  <div
+                    className="d-inline"
+                  >
+                     
+                  </div>
+                  <div
+                    className="d-inline text-muted"
+                  >
+                    
+                  </div>
+                </a>
+              </div>
+              <div
+                className="ml-1"
+              >
+                Your submission is currently waiting to be reviewed.
+              </div>
+            </div>
+            <hr />
+            <code>
+              test comment
+            </code>
+          </div>
+          <div
             style={
               Object {
                 "backgroundColor": "white",
@@ -1759,49 +1850,34 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
           </button>
         </div>
       </div>
-      <div
-        className="card-footer bg-white"
-      >
-        <code>
-          test comment
-        </code>
-        <div
-          className="text-center p-2 my-2 border border-warning text-warning"
-        >
-          Your submission is currently waiting to be reviewed
-        </div>
-      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots Components/ChallengeQuestionCard Basic 1`] = `
-Array [
+<div
+  className="card shadow-sm border-0"
+>
   <div
-    className="card shadow-sm border-0"
+    className="card-body challenge-question"
   >
-    <div
-      className="card-body challenge-question"
+    <h1
+      className="card-title"
+      data-testid="challenge-question-title"
     >
-      <h1
-        className="card-title"
-        data-testid="challenge-question-title"
-      >
-        Greater than 5
-      </h1>
-      <div
-        className="bg-light p-3 mt-3"
-        data-testid="challenge-question-description"
-      >
-        <span>
-          Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
-        </span>
-      </div>
+      Greater than 5
+    </h1>
+    <div
+      className="bg-light p-3 mt-3"
+      data-testid="challenge-question-description"
+    >
+      <span>
+        Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
+      </span>
     </div>
-  </div>,
-  "",
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Components/ChallengeTitleCard Active 1`] = `
@@ -2096,61 +2172,7 @@ Array [
   </div>,
   <div
     className="commentBox bg-white d-auto"
-  >
-    <div
-      style={
-        Object {
-          "backgroundColor": "white",
-        }
-      }
-    >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
-      >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
-      <textarea
-        data-testid="textbox"
-        onChange={[Function]}
-        placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
-        value=""
-      />
-    </div>
-    <button
-      className="btn bg-success"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Add comment
-    </button>
-  </div>,
+  />,
 ]
 `;
 
@@ -2229,59 +2251,6 @@ Array [
         </a>
       </div>
     </div>
-    <div
-      style={
-        Object {
-          "backgroundColor": "white",
-        }
-      }
-    >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
-      >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
-      <textarea
-        data-testid="textbox"
-        onChange={[Function]}
-        placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
-        value=""
-      />
-    </div>
-    <button
-      className="btn bg-success"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#fff",
-        }
-      }
-    >
-      Add comment
-    </button>
   </div>,
 ]
 `;
@@ -2438,7 +2407,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
         <pre
           className="css-pa3tg-content-text"
         >
-          js7/1.js
+          curriculum/js0/2.js
         </pre>
       </td>
     </tr>
@@ -2479,7 +2448,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                "__html": " <span class=\\"token operator\\">*</span><span class=\\"token operator\\">/</span>",
               }
             }
           />
@@ -2523,7 +2492,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+                "__html": "",
               }
             }
           />
@@ -2567,7 +2536,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">a<span class=\\"token punctuation\\">,</span> b<span class=\\"token punctuation\\">,</span> c</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
               }
             }
           />
@@ -2611,7 +2580,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                "__html": "  <span class=\\"token keyword\\">return</span> a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c<span class=\\"token punctuation\\">;</span>",
               }
             }
           />
@@ -2655,7 +2624,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
               }
             }
           />
@@ -2699,7 +2668,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                "__html": "",
               }
             }
           />
@@ -2743,535 +2712,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          8
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          9
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          10
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          11
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          12
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "    <span class=\\"token punctuation\\">}</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          13
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          14
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          15
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          16
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          17
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          18
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          19
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span>",
               }
             }
           />
@@ -3295,7 +2736,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
         <pre
           className="css-pa3tg-content-text"
         >
-          js7/1.js
+          curriculum/js0/2.js
         </pre>
       </td>
     </tr>
@@ -3336,7 +2777,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                "__html": " <span class=\\"token operator\\">*</span><span class=\\"token operator\\">/</span>",
               }
             }
           />
@@ -3380,7 +2821,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "  <span class=\\"token keyword\\">const</span> allT <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">;</span>",
+                "__html": "",
               }
             }
           />
@@ -3424,7 +2865,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "  <span class=\\"token keyword\\">const</span> old <span class=\\"token operator\\">=</span> setTimeout<span class=\\"token punctuation\\">;</span>",
+                "__html": "<span class=\\"token keyword\\">const</span> <span class=\\"token function-variable function\\">solution</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">a<span class=\\"token punctuation\\">,</span> b<span class=\\"token punctuation\\">,</span> c</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
               }
             }
           />
@@ -3468,7 +2909,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">setTimeout</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token parameter\\">func<span class=\\"token punctuation\\">,</span> delay</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
+                "__html": "  <span class=\\"token keyword\\">return</span> a <span class=\\"token operator\\">+</span> b <span class=\\"token operator\\">+</span> c<span class=\\"token punctuation\\">;</span>",
               }
             }
           />
@@ -3512,7 +2953,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "    <span class=\\"token keyword\\">const</span> realTimeout <span class=\\"token operator\\">=</span> <span class=\\"token function\\">old</span><span class=\\"token punctuation\\">(</span>func<span class=\\"token punctuation\\">,</span> delay<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
               }
             }
           />
@@ -3556,7 +2997,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "    allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">push</span><span class=\\"token punctuation\\">(</span>realTimeout<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
+                "__html": "",
               }
             }
           />
@@ -3600,535 +3041,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
           <span
             dangerouslySetInnerHTML={
               Object {
-                "__html": "    <span class=\\"token keyword\\">return</span> realTimeout<span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          8
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          9
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  window<span class=\\"token punctuation\\">.</span><span class=\\"token function-variable function\\">clearAllTimouts</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          10
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "    <span class=\\"token keyword\\">while</span> <span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          11
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "      <span class=\\"token function\\">clearTimeout</span><span class=\\"token punctuation\\">(</span>allT<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">pop</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          12
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "    <span class=\\"token punctuation\\">}</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          13
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          14
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token function-variable function\\">cat</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">{</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          15
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "    window<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">clearAllTimouts</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          16
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "  <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          17
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          18
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "",
-              }
-            }
-          />
-        </pre>
-      </td>
-    </tr>
-    <tr
-      className="css-1n7ec1i-line"
-    >
-      <td
-        className="css-1548r9v-gutter css-kvqxl6-empty-gutter css-cnnxkz-diff-added"
-        onClick={null}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        />
-      </td>
-      <td
-        className="css-1548r9v-gutter css-cnnxkz-diff-added"
-        onClick={[Function]}
-      >
-        <pre
-          className="css-14p8zw1-line-number"
-        >
-          19
-        </pre>
-      </td>
-      <td
-        className="css-17vezug-marker css-cnnxkz-diff-added"
-      >
-        <pre>
-          +
-        </pre>
-      </td>
-      <td
-        className="css-vl0irh-content css-cnnxkz-diff-added"
-      >
-        <pre
-          className="css-pa3tg-content-text"
-        >
-          <span
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> solution<span class=\\"token punctuation\\">;</span>",
+                "__html": "module<span class=\\"token punctuation\\">.</span>exports <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span>",
               }
             }
           />
@@ -6237,7 +5150,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
   className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="d-flex p-2"
+    className="lesson-card__wrapper d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -6250,7 +5163,9 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
     <div
       className="lesson-card__description pl-4"
     >
-      <div>
+      <div
+        className="d-flex"
+      >
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -6263,6 +5178,8 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
             HTML, CSS, JavaScript
           </a>
         </h4>
+      </div>
+      <div>
         <div>
           <div
             className="d-inline-block mr-4"
@@ -6296,7 +5213,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
   className="card shadow-sm mt-3 border-0"
 >
   <div
-    className="d-flex p-2"
+    className="lesson-card__wrapper d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -6309,39 +5226,9 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     <div
       className="lesson-card__description pl-4"
     >
-      <span
-        className="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+      <div
+        className="d-flex"
       >
-        <svg
-          fill="none"
-          height={24}
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          style={
-            Object {
-              "height": "15px",
-            }
-          }
-          viewBox="0 0 24 24"
-          width={24}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-          />
-          <polyline
-            points="22 4 12 14.01 9 11.01"
-          />
-        </svg>
-        <span
-          className="mx-1"
-        >
-          COMPLETED
-        </span>
-      </span>
-      <div>
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -6354,6 +5241,35 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
             HTML, CSS, JavaScript
           </a>
         </h4>
+        <span
+          className="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+        >
+          <svg
+            fill="none"
+            height="15"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <span
+            className="mx-1 d-none d-md-block"
+          >
+            COMPLETED
+          </span>
+        </span>
+      </div>
+      <div>
         <div>
           <div
             className="d-inline-block mr-4"
@@ -6398,7 +5314,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
   className="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
 >
   <div
-    className="d-flex p-2"
+    className="lesson-card__wrapper d-flex p-2"
   >
     <img
       alt="js-4-cover.svg"
@@ -6411,7 +5327,9 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     <div
       className="lesson-card__description pl-4"
     >
-      <div>
+      <div
+        className="d-flex"
+      >
         <h4
           className="lesson-card__title font-weight-bold mt-3"
         >
@@ -6424,6 +5342,8 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
             HTML, CSS, JavaScript
           </a>
         </h4>
+      </div>
+      <div>
         <div>
           <div
             className="d-inline-block mr-4"
@@ -8333,25 +7253,53 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          <div
+            title="April 22, 2018 12:55 PM"
+          >
+            3 years ago
+          </div>
+        </div>
+      </div>
+      <div
+        className="text-right"
+      >
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -9219,49 +8167,6 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div
-      className="changes px-2 py-1"
-    >
-      <div
-        className="d-flex align-items-center"
-      >
-        <img
-          className="icon"
-          src="/assets/requestChanges.svg"
-        />
-        <div
-          className=""
-        >
-          <a
-            className="comment_author mt-2 "
-            href="/profile/fake reviewer"
-          >
-            <div
-              className="d-inline"
-            >
-              fake reviewer
-            </div>
-            <div
-              className="d-inline text-muted"
-            >
-               @fake reviewer
-            </div>
-          </a>
-        </div>
-        <div
-          className="font ml-2"
-        >
-          requested changes on
-           
-          Sunday, April 22, 2018
-          :
-        </div>
-      </div>
-      <hr />
-      <span>
-        Some comment
-      </span>
-    </div>
     <div
       style={
         Object {
@@ -9389,25 +8294,53 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      52 years ago
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          <div
+            title="April 22, 2018 12:55 PM"
+          >
+            3 years ago
+          </div>
+        </div>
+      </div>
+      <div
+        className="text-right"
+      >
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -10275,49 +9208,6 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
   <div
     className="card-footer bg-white"
   >
-    <div
-      className="changes px-2 py-1"
-    >
-      <div
-        className="d-flex align-items-center"
-      >
-        <img
-          className="icon"
-          src="/assets/requestChanges.svg"
-        />
-        <div
-          className=""
-        >
-          <a
-            className="comment_author mt-2 "
-            href="/profile/admin"
-          >
-            <div
-              className="d-inline"
-            >
-              Admin admin
-            </div>
-            <div
-              className="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
-        </div>
-        <div
-          className="font ml-2"
-        >
-          requested changes on
-           
-          Invalid Date
-          :
-        </div>
-      </div>
-      <hr />
-      <span>
-        Some comment
-      </span>
-    </div>
     <div
       style={
         Object {
@@ -10443,25 +9333,53 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          <div
+            title="April 22, 2018 12:55 PM"
+          >
+            3 years ago
+          </div>
+        </div>
+      </div>
+      <div
+        className="text-right"
+      >
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -11330,76 +10248,6 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
     className="card-footer bg-white"
   >
     <div
-      className="changes px-2 py-1"
-    >
-      <div
-        className="d-flex align-items-center"
-      >
-        <img
-          className="icon"
-          src="/assets/requestChanges.svg"
-        />
-        <div
-          className=""
-        >
-          <a
-            className="comment_author mt-2 "
-            href="/profile/admin"
-          >
-            <div
-              className="d-inline"
-            >
-              Admin Admin
-            </div>
-            <div
-              className="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
-        </div>
-        <div
-          className="font ml-2"
-        >
-          requested changes on
-           
-          Sunday, April 22, 2018
-          :
-        </div>
-      </div>
-      <hr />
-      <div>
-        <p>
-          You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.
-        </p>
-        <p>
-          Let's say we have an array arr [9,7,2,3] and the sum is 10
-        </p>
-        <p>
-          Does 10 - arr[0] exist in the map? (No).
-        </p>
-        <p>
-          Update map to { 9: true }
-Does 10 - arr[1] exist in the map? (No).
-        </p>
-        <p>
-          Update map to { 9: true, 7: true }
-        </p>
-        <p>
-          Does 10 - arr[2] exist in the map? (No).
-        </p>
-        <p>
-          Update map to { 9: true, 7: true, 2: true }
-        </p>
-        <p>
-          Does 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true
-        </p>
-        <p>
-          if you have questions, don't hesitate to reach out in the chat.
-        </p>
-      </div>
-    </div>
-    <div
       style={
         Object {
           "backgroundColor": "white",
@@ -11524,25 +10372,53 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          <div
+            title="April 22, 2018 12:55 PM"
+          >
+            3 years ago
+          </div>
+        </div>
+      </div>
+      <div
+        className="text-right"
+      >
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -12535,25 +11411,53 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
   <div
     className="card-header bg-white"
   >
-    <h4>
-      fake user
-       -
-       
-      <span
-        className="text-primary"
-      >
-        fake challenge
-      </span>
-    </h4>
     <div
-      style={
-        Object {
-          "color": "#8e8e8e",
-          "fontSize": "0.85rem",
-        }
-      }
+      className="d-flex justify-content-between"
     >
-      3 years ago
+      <div>
+        <h4>
+          fake user
+           -
+           
+          <span
+            className="text-primary"
+          >
+            fake challenge
+          </span>
+        </h4>
+        <div
+          style={
+            Object {
+              "color": "#8e8e8e",
+              "fontSize": "0.85rem",
+            }
+          }
+        >
+          <div
+            title="April 22, 2018 12:55 PM"
+          >
+            3 years ago
+          </div>
+        </div>
+      </div>
+      <div
+        className="text-right"
+      >
+        <div
+          className="selection__card"
+        >
+          <p
+            className="selection__title text-muted mx-2"
+          >
+            Loading previous submissions...
+          </p>
+          <button
+            className="button loading btn btn-light"
+            disabled={false}
+            type="button"
+          />
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -13422,49 +12326,6 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
     className="card-footer bg-white"
   >
     <div
-      className="changes px-2 py-1"
-    >
-      <div
-        className="d-flex align-items-center"
-      >
-        <img
-          className="icon"
-          src="/assets/requestChanges.svg"
-        />
-        <div
-          className=""
-        >
-          <a
-            className="comment_author mt-2 "
-            href="/profile/admin"
-          >
-            <div
-              className="d-inline"
-            >
-              Admin Admin
-            </div>
-            <div
-              className="d-inline text-muted"
-            >
-               @admin
-            </div>
-          </a>
-        </div>
-        <div
-          className="font ml-2"
-        >
-          requested changes on
-           
-          Sunday, April 22, 2018
-          :
-        </div>
-      </div>
-      <hr />
-      <span>
-        Some comment
-      </span>
-    </div>
-    <div
       style={
         Object {
           "backgroundColor": "white",
@@ -13582,59 +12443,253 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/ReviewStatus Need More Work Status 1`] = `
+exports[`Storyshots Components/ReviewStatus Accepted 1`] = `
 <div
-  className="text-center p-2 my-2 border border-danger text-danger"
+  className="passed status__border px-2 py-1 my-3"
 >
-  Your solution was reviewed and rejected by 
-  <a
-    className="text-reset"
-    href="/profile/dan"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+  <div
+    className="d-flex align-items-center"
   >
-    dan
-  </a>
+    <img
+      className="icon__passed icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin 
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+       accepted submission on January 1, 1970 12:00 AM.
+    </div>
+  </div>
+  <hr />
+  <span>
+    Good job!
+  </span>
 </div>
 `;
 
-exports[`Storyshots Components/ReviewStatus Open Status 1`] = `
+exports[`Storyshots Components/ReviewStatus Accepted Without Comment 1`] = `
 <div
-  className="text-center p-2 my-2 border border-warning text-warning"
+  className="passed status__border px-2 py-1 my-3"
 >
-  Your submission is currently waiting to be reviewed
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__passed icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin 
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+       accepted submission on January 1, 1970 12:00 AM.
+    </div>
+  </div>
 </div>
 `;
 
-exports[`Storyshots Components/ReviewStatus Passed Status 1`] = `
+exports[`Storyshots Components/ReviewStatus Open For Student 1`] = `
 <div
-  className="text-center p-2 my-2 border border-success text-success"
+  className="open status__border px-2 py-1 my-3"
 >
-  Your solution was reviewed and accepted by 
-  <a
-    className="text-reset"
-    href="/profile/dan"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+  <div
+    className="d-flex align-items-center"
   >
-    dan
-  </a>
+    <img
+      className="icon__open icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+      >
+        <div
+          className="d-inline"
+        >
+           
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+      Your submission is currently waiting to be reviewed.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewStatus Overwritten Reviewer 1`] = `
+<div
+  className="overwritten status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__overwritten icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+      >
+        <div
+          className="d-inline"
+        >
+           
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+      Student has overwirtten this submission on January 1, 1970 12:00 AM.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewStatus Overwritten Student 1`] = `
+<div
+  className="overwritten status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__overwritten icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+      >
+        <div
+          className="d-inline"
+        >
+           
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+          
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+      You have overwritten this submission on January 1, 1970 12:00 AM.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReviewStatus Rejected 1`] = `
+<div
+  className="needMoreWork status__border px-2 py-1 my-3"
+>
+  <div
+    className="d-flex align-items-center"
+  >
+    <img
+      className="icon__needMoreWork icon"
+      src="/assets/requestChanges.svg"
+    />
+    <div
+      className=""
+    >
+      <a
+        className="comment_author mt-2 "
+        href="/profile/admin"
+      >
+        <div
+          className="d-inline"
+        >
+          Admin 
+        </div>
+        <div
+          className="d-inline text-muted"
+        >
+           @admin
+        </div>
+      </a>
+    </div>
+    <div
+      className="ml-1"
+    >
+       requested changes on January 1, 1970 12:00 AM.
+    </div>
+  </div>
+  <hr />
+  <span>
+    Error on line 3
+  </span>
 </div>
 `;
 
 exports[`Storyshots Components/SelectIteration Active 1`] = `
 <div
-  className="card p-1 selection__card"
+  className="selection__card"
 >
   <p
-    className="selection__title"
+    className="selection__title text-muted mx-2"
   >
     Select submission
-  </p>
-  <p
-    className="text-muted mb-0"
-  >
-    Iteration 2 of 3
   </p>
   <div>
     <div
@@ -13643,7 +12698,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-3 btn btn-success"
+        className="button m-2 btn btn-success"
         disabled={false}
         type="button"
       >
@@ -13661,7 +12716,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-3 btn btn-info"
+        className="button m-2 btn btn-info"
         disabled={false}
         type="button"
       >
@@ -13679,7 +12734,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-3 btn btn-success"
+        className="button m-2 btn btn-success"
         disabled={false}
         type="button"
       >
@@ -13702,10 +12757,10 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
 
 exports[`Storyshots Components/SelectIteration Error 1`] = `
 <div
-  className="card p-1 selection__card"
+  className="selection__card"
 >
   <p
-    className="selection__title"
+    className="selection__title text-muted mx-2"
   >
     Select submission
   </p>
@@ -13720,20 +12775,15 @@ exports[`Storyshots Components/SelectIteration Error 1`] = `
 
 exports[`Storyshots Components/SelectIteration Loading 1`] = `
 <div
-  className="card p-1 selection__card"
+  className="selection__card"
 >
   <p
-    className="selection__title"
+    className="selection__title text-muted mx-2"
   >
     Loading previous submissions...
   </p>
-  <p
-    className="text-muted mb-0"
-  >
-    Iteration n of N total
-  </p>
   <button
-    className="button m-3 loading btn btn-light"
+    className="button loading btn btn-light"
     disabled={false}
     type="button"
   />
@@ -14566,7 +13616,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -14579,7 +13629,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14592,6 +13644,8 @@ Array [
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14622,7 +13676,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -14635,7 +13689,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14648,6 +13704,8 @@ Array [
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14678,7 +13736,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -14691,7 +13749,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14704,6 +13764,8 @@ Array [
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14734,7 +13796,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -14747,7 +13809,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14760,6 +13824,8 @@ Array [
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14790,7 +13856,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -14803,7 +13869,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14816,6 +13884,8 @@ Array [
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14846,7 +13916,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -14859,7 +13929,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14872,6 +13944,8 @@ Array [
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14902,7 +13976,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -14915,7 +13989,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14928,6 +14004,8 @@ Array [
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -14958,7 +14036,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -14971,7 +14049,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -14984,6 +14064,8 @@ Array [
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15014,7 +14096,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -15027,7 +14109,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15040,6 +14124,8 @@ Array [
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15070,7 +14156,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -15083,7 +14169,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15096,6 +14184,8 @@ Array [
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15495,7 +14585,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -15508,7 +14598,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15521,6 +14613,8 @@ Array [
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15551,7 +14645,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -15564,7 +14658,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15577,6 +14673,8 @@ Array [
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15607,7 +14705,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -15620,7 +14718,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15633,6 +14733,8 @@ Array [
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15663,7 +14765,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -15676,7 +14778,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15689,6 +14793,8 @@ Array [
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15719,7 +14825,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -15732,7 +14838,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15745,6 +14853,8 @@ Array [
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15775,7 +14885,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -15788,7 +14898,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15801,6 +14913,8 @@ Array [
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15831,7 +14945,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -15844,7 +14958,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15857,6 +14973,8 @@ Array [
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15887,7 +15005,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -15900,7 +15018,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15913,6 +15033,8 @@ Array [
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15943,7 +15065,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -15956,7 +15078,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -15969,6 +15093,8 @@ Array [
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -15999,7 +15125,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -16012,7 +15138,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16025,6 +15153,8 @@ Array [
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16424,7 +15554,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -16437,7 +15567,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16450,6 +15582,8 @@ Array [
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16480,7 +15614,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -16493,7 +15627,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16506,6 +15642,8 @@ Array [
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16536,7 +15674,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -16549,7 +15687,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16562,6 +15702,8 @@ Array [
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16592,7 +15734,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -16605,7 +15747,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16618,6 +15762,8 @@ Array [
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16648,7 +15794,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -16661,7 +15807,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16674,6 +15822,8 @@ Array [
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16704,7 +15854,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -16717,7 +15867,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16730,6 +15882,8 @@ Array [
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16760,7 +15914,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -16773,7 +15927,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16786,6 +15942,8 @@ Array [
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16816,7 +15974,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -16829,7 +15987,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16842,6 +16002,8 @@ Array [
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16872,7 +16034,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -16885,7 +16047,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16898,6 +16062,8 @@ Array [
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"
@@ -16928,7 +16094,7 @@ Array [
           className="card shadow-sm mt-3 border-0"
         >
           <div
-            className="d-flex p-2"
+            className="lesson-card__wrapper d-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -16941,7 +16107,9 @@ Array [
             <div
               className="lesson-card__description pl-4"
             >
-              <div>
+              <div
+                className="d-flex"
+              >
                 <h4
                   className="lesson-card__title font-weight-bold mt-3"
                 >
@@ -16954,6 +16122,8 @@ Array [
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     className="d-inline-block mr-4"

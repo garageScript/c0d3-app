@@ -119,7 +119,6 @@ describe('SelectIteration component', () => {
         currentIndex={1}
       />
     )
-    expect(screen.getByText('Iteration 2 of 3')).toBeVisible()
     userEvent.click(screen.getByTestId('iteration 1'))
     expect(setIndex).toBeCalled()
     expect(setSubmission).toBeCalled()
@@ -137,7 +136,9 @@ describe('SelectIteration component', () => {
         currentIndex={-1}
       />
     )
-    expect(screen.getByText('Iteration 3 of 3')).toBeVisible()
+    expect(
+      screen.getByRole('button', { name: '3 2 comment count' })
+    ).toBeVisible()
     expect(container).toMatchSnapshot()
   })
   test('It should render loading state', () => {
