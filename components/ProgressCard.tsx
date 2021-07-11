@@ -10,6 +10,27 @@ type SVGProps = {
   progressCount: number
 }
 
+const ProgressBar: React.FC<{ progressCount: number }> = ({
+  progressCount
+}) => {
+  return (
+    <div className="bg-white my-3 rounded">
+      <div
+        className={`${styles['progress-card__horizontal']} bg-info d-flex ${
+          progressCount >= 100 ? 'rounded' : 'rounded-left'
+        }`}
+        style={{
+          width: progressCount <= 0 ? 'min-content' : `${progressCount}%`
+        }}
+      >
+        <div className="align-self-center px-1 ml-auto font-weight-bold">
+          {progressCount}%
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const ProgressSVG: React.FC<SVGProps> = ({ progressCount }) => {
   let x = 15
   if (progressCount === 100) x = 9
@@ -69,46 +90,63 @@ const setHeaderFromProgress = (progressCount: number) => {
 }
 
 const ProgressCard: React.FC<CardProps> = ({ progressCount, loggedIn }) => {
+  const mobile = (
+    <div className="text-center">
+      {loggedIn ? (
+        <>
+          <h4 className={`${styles['progress-card__title']} mt-3 `}>
+            {setHeaderFromProgress(progressCount)}
+          </h4>
+        </>
+      ) : (
+        <h4 className={`${styles['progress-card__title']} mt-3`}>
+          Join C0D3 now and start your software engineering journey!
+        </h4>
+      )}
+      <ProgressBar progressCount={90} />
+    </div>
+  )
+  const tabletAndDesktop = (
+    <>
+      {loggedIn ? (
+        <>
+          <ProgressSVG progressCount={progressCount} />
+          <h4 className={`${styles['progress-card__title']} mt-3`}>
+            {setHeaderFromProgress(progressCount)}
+          </h4>
+        </>
+      ) : (
+        <h4 className={`${styles['progress-card__title']} mt-3`}>
+          Join C0D3 now and start your software engineering journey!
+        </h4>
+      )}
+    </>
+  )
   return (
     <div
-      className={`${styles['progress-card__container']} d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0`}
+      className={`${styles['progress-card__container']} d-flex card shadow-sm mt-3 bg-primary text-white px-3 py-2 border-0`}
     >
-      <div className="card-body">
-        {loggedIn ? (
-          <>
-            <ProgressSVG progressCount={progressCount} />
-            <h4 className={`${styles['progress-card__title']} mt-3`}>
-              {setHeaderFromProgress(progressCount)}
-            </h4>
-          </>
-        ) : (
-          <h4 className={`${styles['progress-card__title']} mt-3`}>
-            Join C0D3 now and start your software engineering journey!
-          </h4>
-        )}
+      <div className="d-block d-xl-none">{mobile}</div>
+      <div className="d-none d-xl-block">{tabletAndDesktop}</div>
 
-        <div className="mt-3">
-          Join us on
-          <NavLink
-            className={`${styles['progress-newuser__chatlink']} text-white`}
-            path="https://discord.gg/c0d3"
-            external
-          >
-            Discord
-          </NavLink>
-          to ask your questions.
-          <p>
-            Start by setting up your development environment and then follow the
-            lessons in the course.
-          </p>
-        </div>
+      <div className="mt-3">
+        Join us on
         <NavLink
-          path="/docs/setup"
-          className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
+          className={`${styles['progress-newuser__chatlink']} text-white`}
+          path="https://discord.gg/c0d3"
+          external
         >
-          Setup Development Environment
+          <p className="font-weight-bold d-inline">Discord</p>
         </NavLink>
+        to ask your questions. Start by setting up your development environment
+        and then follow the lessons in the course.
       </div>
+      <NavLink
+        path="/docs/setup"
+        className={`btn btn-light ${styles['progress-card__button']} mt-2 text-primary`}
+      >
+        Setup Development Environment
+      </NavLink>
     </div>
   )
 }
