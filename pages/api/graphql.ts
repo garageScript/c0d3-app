@@ -1,3 +1,4 @@
+import { withSentry } from '@sentry/nextjs'
 import { ApolloServer } from 'apollo-server-micro'
 import session from 'express-session'
 import nextConnect from 'next-connect'
@@ -7,6 +8,11 @@ import typeDefs from '../../graphql/typeDefs'
 import resolvers from '../../graphql/resolvers'
 import { PrismaSessionStore } from '@quixo3/prisma-session-store'
 import { prisma } from '../../prisma'
+import { apolloLogPlugin } from '../../helpers/apolloLogPlugin'
+
+// TODO: remove this temporary fix when sentry package is fixed
+import sentryInitializer from '../../helpers/sentryInitializer'
+sentryInitializer()
 
 const ONE_DAY = 1000 * 60 * 60 * 24
 const ONE_WEEK = ONE_DAY * 7
@@ -18,7 +24,8 @@ const apolloServer = new ApolloServer({
   context: ({ req, res }) => ({ req, res }), // This lets GraphQL have access to sessions
   /* Syncs server schema (used for server static generation) and api route server settings. 
   By default apolloServer accepts uploads, while schema-generated server does not.*/
-  uploads: false
+  uploads: false,
+  plugins: [apolloLogPlugin]
 })
 
 const graphQLHandler = apolloServer.createHandler({ path: '/api/graphql' })
@@ -27,7 +34,7 @@ handler
   .use(loggingMiddleware)
   .use(
     session({
-      secret: process.env.SESSION_SECRET || '',
+      secret: process.env.SESSION_SECRET as string,
       store: new PrismaSessionStore(prisma, {
         dbRecordIdIsSessionId: true,
         dbRecordIdFunction: undefined,
@@ -52,4 +59,4 @@ export const config = {
   }
 }
 
-export default handler
+export default withSentry(handler)
