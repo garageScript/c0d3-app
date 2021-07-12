@@ -1,9 +1,12 @@
 import {
+  PostBot,
   SendChannelMessage,
   SendDirectMessage,
   SendLessonChannelMessage,
   SendSubmissionNotification
 } from '../@types/discordBot'
+
+// Documentation for c0d3r api: https://github.com/garageScript/c0d3r/wiki/C0D3R-Api-Documentation
 
 export enum IdType {
   C0D3 = 'C0D3',
@@ -24,63 +27,64 @@ const headers = {
   'Content-Type': 'application/json'
 }
 
+export const postBot: PostBot = async (endpoint, body) =>
+  fetch(endpoint, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(body)
+  })
+    .then(r => r.json())
+    .catch(console.error)
+
 export const sendChannelMessage: SendChannelMessage = async (
   channelId,
   message,
-  embed
+  embed,
+  includeDetails
 ) =>
-  fetch(`${messagesEndpoint}/channel/${channelId}`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      message,
-      embed
-    })
-  }).then(r => r.json())
+  postBot(`${messagesEndpoint}/channel/${channelId}`, {
+    message,
+    embed,
+    includeDetails
+  })
 
 export const sendLessonChannelMessage: SendLessonChannelMessage = async (
   lessonId,
   message,
-  embed
+  embed,
+  includeDetails
 ) =>
-  fetch(`${messagesEndpoint}/lessonChannel/${lessonId}`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      message,
-      embed
-    })
-  }).then(r => r.json())
+  postBot(`${messagesEndpoint}/lessonChannel/${lessonId}`, {
+    message,
+    embed,
+    includeDetails
+  })
 
 export const sendDirectMessage: SendDirectMessage = async (
   userId,
   message,
-  embed
+  embed,
+  includeDetails
 ) =>
-  fetch(`${messagesEndpoint}/direct/${userId}`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      message,
-      embed
-    })
-  }).then(r => r.json())
+  postBot(`${messagesEndpoint}/direct/${userId}`, {
+    message,
+    embed,
+    includeDetails
+  })
 
 export const sendSubmissionNotification: SendSubmissionNotification = async (
   idType,
   userId,
   notificationLessonId,
   lessonId,
-  challengeTitle
+  challengeTitle,
+  includeDetails
 ) =>
-  await fetch(`${apiEndpoint}/submissions/notifications`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      idType,
-      id: userId,
-      notificationLessonId: notificationLessonId.toString(),
-      lessonId: lessonId.toString(),
-      challengeTitle
-    })
-  }).then(r => r.json())
+  postBot(`${apiEndpoint}/submissions/notifications`, {
+    idType,
+    id: userId,
+    notificationLessonId: notificationLessonId.toString(),
+    lessonId: lessonId.toString(),
+    challengeTitle,
+    includeDetails
+  })

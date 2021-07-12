@@ -1,6 +1,11 @@
 import { BotErrorType, IdType } from '../helpers/discordBot'
 
-export type snowflake = string
+// snowflake: type alias for string, to make clear the string of this type
+// should be in the snowflake format and not an arbitrary string
+// https://en.wikipedia.org/wiki/Snowflake_ID
+// MessageEmbedOptions: interface for the object that can be sent as a discord
+// message embed
+import { snowflake, MessageEmbedOptions } from 'discord.js'
 
 interface BotErrorBase {
   type: BotErrorType
@@ -22,43 +27,29 @@ export interface BotApiError extends BotErrorBase {
 
 export type BotError = BotAuthError | BotValidationError | BotApiError
 
-export type MessageResponse =
-  | {
-      id: snowflake
-    }
-  | BotError
+export type MessageResponse = { snowflake } | BotError
 
-export interface MessageEmbed {
-  title?: string
-  description?: string
-  url?: string
-  timestamp?: number
-  color?: any
-  fields?: any[]
-  files?: any[]
-  author?: any
-  thumbnail?: any
-  image?: any
-  video?: any
-  footer?: any
-}
+export type PostBot = (endpoint: string, body: object) => Promise
 
 export type SendChannelMessage = (
   channelId: snowflake,
   message: string,
-  embed?: MessageEmbed
+  embed?: MessageEmbedOptions,
+  includeDetails?: boolean
 ) => Promise<MessageResponse>
 
 export type SendLessonChannelMessage = (
   lessonId: number | string,
   message: string,
-  embed?: MessageEmbed
+  embed?: MessageEmbedOptions,
+  includeDetails?: boolean
 ) => Promise<MessageResponse>
 
 export type SendDirectMessage = (
   userId: snowflake,
   message: string,
-  embed?: MessageEmbed
+  embed?: MessageEmbedOptions,
+  includeDetails?: boolean
 ) => Promise<MessageResponse>
 
 export type SendSubmissionNotification = (
@@ -66,5 +57,6 @@ export type SendSubmissionNotification = (
   userId: snowflake | string,
   notificationLessonId: number | string,
   lessonId: number | string,
-  challengeTitle: string
+  challengeTitle: string,
+  includeDetails?: boolean
 ) => Promise<MessageResponse>
