@@ -41,7 +41,10 @@ export const setStar = async (
 
     // TODO: Add support for discord ids when oauth implementation is complete
 
-    sendLessonChannelMessage(lessonId, `${mentor.username} received a star!`)
+    await sendLessonChannelMessage(
+      lessonId,
+      `${mentor.username} received a star!`
+    )
 
     return { success: true }
   } catch (err) {

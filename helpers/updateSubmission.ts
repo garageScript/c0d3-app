@@ -74,19 +74,26 @@ export const updateSubmission = async (
       where: { order: lesson.order + 1 }
     })
 
+    const discordPromises = []
     // Message in lesson channel on discord
-    sendLessonChannelMessage(
-      lesson.id,
-      `Congratulations to **${user.username}** for passing and completing **_${lesson.title}_**! **${user.username}** is now a guardian angel for the students in this channel.`
+    discordPromises.push(
+      sendLessonChannelMessage(
+        lesson.id,
+        `Congratulations to **${user.username}** for passing and completing **_${lesson.title}_**! **${user.username}** is now a guardian angel for the students in this channel.`
+      )
     )
 
     // Message in lesson channel on discord if next lesson exists
     if (nextLesson?.id != null) {
-      sendLessonChannelMessage(
-        nextLesson.id,
-        `We have a new student joining us! **${user.username}** just completed **_${lesson.title}_**!`
+      discordPromises.push(
+        await sendLessonChannelMessage(
+          nextLesson.id,
+          `We have a new student joining us! **${user.username}** just completed **_${lesson.title}_**!`
+        )
       )
     }
+
+    await Promise.all(discordPromises)
 
     // update and save user lesson data
     await prisma.userLesson.update({

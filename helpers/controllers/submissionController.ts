@@ -66,7 +66,7 @@ export const createSubmission = async (
       where: { order: lesson.order + 1 }
     })
 
-    sendSubmissionNotification(
+    await sendSubmissionNotification(
       IdType.C0D3,
       user.username,
       nextLesson?.id ?? lessonId,
