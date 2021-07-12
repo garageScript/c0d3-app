@@ -5,6 +5,16 @@
 .progress-card__horizontal {
   min-height: 3rem;
   min-width: 10px;
+  animation: scroll 100s linear infinite;
+  background: url('/assets/curriculum/zigZag.svg');
+  background-size: contain;
+  border: 1px solid #2649b0;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 3000px 0px;
+  }
 }
 
 .progress-card__spinner {
@@ -17,11 +27,11 @@
   min-height: 65px;
 }
 .progress-card__title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
 .progress-newuser__chatlink {
-  padding: 3px;
+  padding: 0.3em;
   text-decoration: underline;
 }
