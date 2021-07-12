@@ -27,7 +27,10 @@ export interface BotApiError extends BotErrorBase {
 
 export type BotError = BotAuthError | BotValidationError | BotApiError
 
-export type MessageResponse = { snowflake } | BotError
+export type MessageResponse =
+  | { status: 'sending' }
+  | { id: snowflake }
+  | BotError
 
 export type PostBot = (endpoint: string, body: object) => Promise
 
