@@ -4,6 +4,8 @@ import { Button } from './theme/Button'
 import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
 import { useLogoutMutation, useGetAppQuery, GetAppQuery } from '../graphql'
+import Navbar from 'react-bootstrap/Navbar'
+import { Container, Nav } from 'react-bootstrap'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 
@@ -45,9 +47,8 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const router = useRouter()
   const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
   const location = '/' + router.asPath.split('/')[1]
-
   return (
-    <div className="navbar-nav collapse navbar-collapse">
+    <>
       {navItems.map(button => (
         <NavLink
           {...button}
@@ -59,7 +60,7 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
         </NavLink>
       ))}
       {isAdmin && <DropdownMenu title="Admin" items={dropdownMenuItems} />}
-    </div>
+    </>
   )
 }
 
@@ -82,11 +83,11 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
     }
   })
   return (
-    <div className="d-flex">
+    <div className={`${styles['nav-buttons']}`}>
       <NavLink
         path="/profile/[username]"
         as={`/profile/${username}`}
-        className="btn btn-secondary border overflow-hidden p-2 text-truncate"
+        className="btn btn-secondary border overflow-hidden text-truncate"
       >
         {`${initial} ${username}`}
       </NavLink>
@@ -99,11 +100,11 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
 }
 
 const UnAuthButton = () => (
-  <div>
-    <NavLink path="/login" className="btn btn-secondary border mr-3">
+  <div className={`${styles['nav-buttons']}`}>
+    <NavLink path="/login" className="btn btn-secondary border m-2 mr-lg-3">
       Login
     </NavLink>
-    <NavLink path="/signup" className="btn btn-secondary border mr-3">
+    <NavLink path="/signup" className="btn btn-secondary border m-2 mr-lg-3">
       Signup
     </NavLink>
   </div>
@@ -132,22 +133,25 @@ const AppNav: React.FC<{}> = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light justify-content-between bg-white">
-      <div className="container">
-        <NavLink
-          path="/"
-          className={`${styles['navbar-brand']} text-primary font-weight-bold`}
-        >
-          C0D3
-        </NavLink>
-        <div id="navbarNav">
-          <div className="navbar-nav collapse navbar-collapse">
+    <Navbar expand="lg" bg="white">
+      <Container>
+        <Navbar.Brand href="#home">
+          <NavLink
+            path="/"
+            className={`${styles['navbar-brand']} text-primary font-weight-bold`}
+          >
+            C0D3
+          </NavLink>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="text-center">
+          <Nav className="m-auto">
             <NavBar session={session} />
-          </div>
-        </div>
-        {renderButtons()}
-      </div>
-    </nav>
+          </Nav>
+          {renderButtons()}
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 
