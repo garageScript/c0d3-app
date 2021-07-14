@@ -24,6 +24,7 @@ type DropDownMenuProps = {
     | 'warning'
     | 'danger'
     | 'none'
+  bsPrefix?: string
 }
 
 export const DropdownMenu: React.FC<DropDownMenuProps> = ({
@@ -31,7 +32,8 @@ export const DropdownMenu: React.FC<DropDownMenuProps> = ({
   variant = 'none',
   title,
   size,
-  items
+  items,
+  bsPrefix
 }) => {
   const menuItems = items.map((item: Item, itemsIndex: number) =>
     !item ? (
@@ -43,7 +45,7 @@ export const DropdownMenu: React.FC<DropDownMenuProps> = ({
           key={itemsIndex}
           href={item.path}
           onClick={() => item.onClick && item.onClick(item.title)}
-          bsPrefix={styles.item}
+          bsPrefix={bsPrefix}
         >
           {item.title}
         </Dropdown.Item>

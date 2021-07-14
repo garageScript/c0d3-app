@@ -59,12 +59,18 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
           {button.name}
         </NavLink>
       ))}
-      {isAdmin && <DropdownMenu title="Admin" items={dropdownMenuItems} />}
+      {isAdmin && (
+        <DropdownMenu
+          title="Admin"
+          items={dropdownMenuItems}
+          bsPrefix={styles['dropdown-item']}
+        />
+      )}
     </>
   )
 }
 
-const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
+const AuthButton: React.FC<{ username: string }> = ({ username }) => {
   const router = useRouter()
   const [logoutUser] = useLogoutMutation({
     update(cache) {
@@ -82,17 +88,20 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
       router.push('/')
     }
   })
+
+  const capitalized = username.charAt(0).toUpperCase() + username.slice(1)
+
   return (
     <div className={`${styles['nav-buttons']}`}>
       <NavLink
         path="/profile/[username]"
         as={`/profile/${username}`}
-        className="btn btn-secondary border overflow-hidden text-truncate"
+        className="btn btn-secondary border overflow-hidden text-truncate bg-light"
       >
-        {`${initial} ${username}`}
+        {capitalized}
       </NavLink>
 
-      <Button border ml="2" onClick={logoutUser}>
+      <Button border ml="2" type="light" onClick={logoutUser}>
         Logout
       </Button>
     </div>
@@ -101,10 +110,16 @@ const AuthButton: React.FC<AuthButtonProps> = ({ initial, username }) => {
 
 const UnAuthButton = () => (
   <div className={`${styles['nav-buttons']}`}>
-    <NavLink path="/login" className="btn btn-secondary border m-2 mr-lg-3">
+    <NavLink
+      path="/login"
+      className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+    >
       Login
     </NavLink>
-    <NavLink path="/signup" className="btn btn-secondary border m-2 mr-lg-3">
+    <NavLink
+      path="/signup"
+      className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+    >
       Signup
     </NavLink>
   </div>
@@ -125,11 +140,10 @@ const AppNav: React.FC<{}> = () => {
       return <UnAuthButton />
     }
 
-    const initial = ''
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <AuthButton username={username} initial={initial} />
+    return <AuthButton username={username} />
   }
 
   return (
