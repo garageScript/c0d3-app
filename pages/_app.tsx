@@ -20,6 +20,7 @@ interface IProps extends AppProps {
 }
 
 function MyApp({ Component, pageProps, err }: IProps) {
+  const getLayout = Component.getLayout || (page => page)
   const apolloClient = useApollo(pageProps)
   useEffect(() => {
     if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
@@ -73,7 +74,7 @@ function MyApp({ Component, pageProps, err }: IProps) {
               content="https://www.c0d3.com/assets/c0d3-meta.svg"
             />
           </Head>
-          <Component {...pageProps} err={err} />
+          {getLayout(<Component {...pageProps} err={err} />, pageProps)}
         </ContextProvider>
       </MDXProvider>
     </ApolloProvider>
