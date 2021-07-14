@@ -25,15 +25,17 @@ const headers = {
   'Content-Type': 'application/json'
 }
 
-const channelId = '1234'
-const message = 'hello'
-const embed = { description: 'an embed' }
-const lessonId = 1
-const notificationLessonId = 2
-const idType = IdType.C0D3
-const userName = 'test_user'
-const discordUserId = '9898'
-const challengeTitle = 'test challenge'
+const mockData = {
+  channelId: '1234',
+  message: 'hello',
+  embed: { description: 'an embed' },
+  lessonId: 1,
+  notificationLessonId: 2,
+  idType: IdType.C0D3,
+  userName: 'test_user',
+  discordUserId: '9898',
+  challengeTitle: 'test challenge'
+}
 
 const fetchOptions = {
   method: 'POST',
@@ -42,16 +44,20 @@ const fetchOptions = {
 
 describe('sendChannelMessage', () => {
   it('should call fetch with the correct options', async () => {
-    const response = await sendChannelMessage(channelId, message, embed)
+    const response = await sendChannelMessage(
+      mockData.channelId,
+      mockData.message,
+      mockData.embed
+    )
 
     expect(response).toEqual(messageResponse)
     expect(fetch).toHaveBeenCalledWith(
-      `${messagesEndpoint}/channel/${channelId}`,
+      `${messagesEndpoint}/channel/${mockData.channelId}`,
       {
         ...fetchOptions,
         body: JSON.stringify({
-          message,
-          embed
+          message: mockData.message,
+          embed: mockData.embed
         })
       }
     )
@@ -60,16 +66,20 @@ describe('sendChannelMessage', () => {
 
 describe('sendLessonChannelMessage', () => {
   it('should call fetch with the correct options', async () => {
-    const response = await sendLessonChannelMessage(lessonId, message, embed)
+    const response = await sendLessonChannelMessage(
+      mockData.lessonId,
+      mockData.message,
+      mockData.embed
+    )
 
     expect(response).toEqual(messageResponse)
     expect(fetch).toHaveBeenCalledWith(
-      `${messagesEndpoint}/lessonChannel/${lessonId}`,
+      `${messagesEndpoint}/lessonChannel/${mockData.lessonId}`,
       {
         ...fetchOptions,
         body: JSON.stringify({
-          message,
-          embed
+          message: mockData.message,
+          embed: mockData.embed
         })
       }
     )
@@ -78,16 +88,20 @@ describe('sendLessonChannelMessage', () => {
 
 describe('sendDirectMessage', () => {
   it('should call fetch with the correct options', async () => {
-    const response = await sendDirectMessage(discordUserId, message, embed)
+    const response = await sendDirectMessage(
+      mockData.discordUserId,
+      mockData.message,
+      mockData.embed
+    )
 
     expect(response).toEqual(messageResponse)
     expect(fetch).toHaveBeenCalledWith(
-      `${messagesEndpoint}/direct/${discordUserId}`,
+      `${messagesEndpoint}/direct/${mockData.discordUserId}`,
       {
         ...fetchOptions,
         body: JSON.stringify({
-          message,
-          embed
+          message: mockData.message,
+          embed: mockData.embed
         })
       }
     )
@@ -97,11 +111,11 @@ describe('sendDirectMessage', () => {
 describe('sendSubmissionNotification', () => {
   it('should call fetch with the correct options', async () => {
     const response = await sendSubmissionNotification(
-      idType,
-      userName,
-      notificationLessonId,
-      lessonId,
-      challengeTitle
+      mockData.idType,
+      mockData.userName,
+      mockData.notificationLessonId,
+      mockData.lessonId,
+      mockData.challengeTitle
     )
 
     expect(response).toEqual(messageResponse)
@@ -110,11 +124,11 @@ describe('sendSubmissionNotification', () => {
       {
         ...fetchOptions,
         body: JSON.stringify({
-          idType,
-          id: userName,
-          notificationLessonId: notificationLessonId.toString(),
-          lessonId: lessonId.toString(),
-          challengeTitle
+          idType: mockData.idType,
+          id: mockData.userName,
+          notificationLessonId: mockData.notificationLessonId.toString(),
+          lessonId: mockData.lessonId.toString(),
+          challengeTitle: mockData.challengeTitle
         })
       }
     )
