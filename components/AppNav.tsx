@@ -9,11 +9,6 @@ import { Container, Nav } from 'react-bootstrap'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 
-type AuthButtonProps = {
-  initial: string
-  username: string
-}
-
 type AuthLinkProps = {
   session: any
 }
@@ -46,7 +41,7 @@ const navItems: NavItem[] = [
 const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   const router = useRouter()
   const isAdmin = _.get(session, 'user.isAdmin', false) as boolean
-  const location = '/' + router.asPath.split('/')[1]
+  const location = router.asPath
   return (
     <>
       {navItems.map(button => (
@@ -149,13 +144,12 @@ const AppNav: React.FC<{}> = () => {
   return (
     <Navbar expand="lg" bg="white">
       <Container>
-        <Navbar.Brand href="#home">
-          <NavLink
-            path="/"
+        <Navbar.Brand href="/">
+          <div
             className={`${styles['navbar-brand']} text-primary font-weight-bold`}
           >
             C0D3
-          </NavLink>
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="text-center">

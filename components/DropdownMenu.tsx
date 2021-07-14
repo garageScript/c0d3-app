@@ -39,7 +39,7 @@ export const DropdownMenu: React.FC<DropDownMenuProps> = ({
     !item ? (
       <Dropdown.Divider key={itemsIndex} />
     ) : (
-      <div className="text-center text-xl-left py-2 px-4">
+      <div className="text-center text-xl-left py-2 px-4" key={item.title}>
         <Dropdown.Item
           as={item.as || 'a'}
           key={itemsIndex}
