@@ -75,11 +75,11 @@ describe('updateSubmission', () => {
     expect(sendLessonChannelMessage).toHaveBeenCalledTimes(2)
     expect(sendLessonChannelMessage).toHaveBeenCalledWith(
       submissionMock.lessonId,
-      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_**! **fakeusername** is now a guardian angel for the students in this channel.'
+      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_** ! **fakeusername** is now a guardian angel for the students in this channel.'
     )
     expect(sendLessonChannelMessage).toHaveBeenCalledWith(
       nextLesson.id,
-      'We have a new student joining us! **fakeusername** just completed **_Fake Lesson Title_**!'
+      'We have a new student joining us! **fakeusername** just completed **_Fake Lesson Title_** !'
     )
   })
 
@@ -96,7 +96,7 @@ describe('updateSubmission', () => {
     expect(sendLessonChannelMessage).toHaveBeenCalledTimes(1)
     expect(sendLessonChannelMessage).toHaveBeenCalledWith(
       submissionMock.lessonId,
-      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_**! **fakeusername** is now a guardian angel for the students in this channel.'
+      'Congratulations to **fakeusername** for passing and completing **_Fake Lesson Title_** ! **fakeusername** is now a guardian angel for the students in this channel.'
     )
   })
 
