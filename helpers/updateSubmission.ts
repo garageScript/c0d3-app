@@ -79,7 +79,7 @@ export const updateSubmission = async (
     discordPromises.push(
       sendLessonChannelMessage(
         lesson.id,
-        `Congratulations to **${user.username}** for passing and completing **_${lesson.title}_**! **${user.username}** is now a guardian angel for the students in this channel.`
+        `Congratulations to **${user.username}** for passing and completing **_${lesson.title}_** ! **${user.username}** is now a guardian angel for the students in this channel.`
       )
     )
 
@@ -88,7 +88,7 @@ export const updateSubmission = async (
       discordPromises.push(
         await sendLessonChannelMessage(
           nextLesson.id,
-          `We have a new student joining us! **${user.username}** just completed **_${lesson.title}_**!`
+          `We have a new student joining us! **${user.username}** just completed **_${lesson.title}_** !`
         )
       )
     }

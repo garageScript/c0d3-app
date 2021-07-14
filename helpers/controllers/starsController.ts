@@ -43,7 +43,7 @@ export const setStar = async (
 
     await sendLessonChannelMessage(
       lessonId,
-      `${mentor.username} received a star!`
+      `**${mentor.username}** received a star!`
     )
 
     return { success: true }
