@@ -1,4 +1,7 @@
-import Layout from '../../../../components/mdx/LessonLayout'
+---
+title: Map, reduce, and filter functions
+order: 3
+---
 
 # Table of Contents
 
@@ -1392,8 +1395,7 @@ Here are the steps to add your own customized function for arrays:
 
 1. Define your function using `function( ... parameters ...) { ... code ...}`.
    - The difference between `function` and `() => {}` is described thoroughly in
-     the
-     [next lesson](/curriculum/lessons/js3/promises#function-vs-fat-arrow).
+     the [next lesson](/curriculum/lessons/js3/promises#function-vs-fat-arrow).
 2. Assign your function to `Array.prototype`.
 3. Access array properties using the `this` keyword.
    - Note that `this` is a system keyword. **Do not** name your variables
@@ -2022,19 +2024,3 @@ const friends = ['Tony Stark', 'Vision', 'Ultron'].reduce((a, b) => {
   description="Complete the rest of JS2 challenges"
   title="Master your skill by solving challenges"
 />
-
-export default ({ children }) => (
-  <Layout
-    lessonCoverUrl={`js-2-cover.svg`}
-    title="Arrays"
-    lessonUrl="/curriculum/lessons/js2/introduction_to_testing_inner_properties"
-    lessonId="1"
-    subLessons={[
-      'Introduction to testing, inner properties',
-      'Basic array functions',
-      'Map, reduce and filter functions'
-    ]}
-  >
-    {children}
-  </Layout>
-)

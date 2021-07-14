@@ -1,6 +1,7 @@
-import Layout from '../../../../components/mdx/LessonLayout'
-
-<hr />
+---
+title:Request and response
+order: 1
+---
 
 # Table of Contents
 
@@ -579,19 +580,19 @@ will be no verification needed.
 
   <Spoiler>
 
-  ```jsx
-  const startApp = () => {
-    fetch('https://js5.c0d3.com/auth/api/sessions')
-      .then(r => {
-        return r.json()
-      })
-      .then(body => {
-        if (body.error) {
-          return setupLogin()
-        }
-      })
-  }
-  ```
+```jsx
+const startApp = () => {
+  fetch('https://js5.c0d3.com/auth/api/sessions')
+    .then(r => {
+      return r.json()
+    })
+    .then(body => {
+      if (body.error) {
+        return setupLogin()
+      }
+    })
+}
+```
 
   </Spoiler>
 
@@ -1123,17 +1124,3 @@ you memorize them.
    <br />
 
    </Spoiler>
-
-<hr />
-
-export default ({ children }) => (
-  <Layout
-    lessonCoverUrl={`js-5-cover.svg`}
-    title="End To End"
-    lessonUrl="/curriculum/lessons/js5/front"
-    lessonId="24"
-    subLessons={['Request and response', 'Server', 'Systems (optional)']}
-  >
-    {children}
-  </Layout>
-)
