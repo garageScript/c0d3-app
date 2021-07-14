@@ -14,9 +14,11 @@ import '../scss/index.scss'
 import MDXcomponents from '../helpers/mdxComponents'
 import { useApollo } from '../helpers/apolloClient'
 import { ContextProvider } from '../helpers/globalContext'
+import type { Page } from '../@types/page'
 interface IProps extends AppProps {
   err: any
   apollo: ApolloClient<NormalizedCacheObject>
+  Component: Page
 }
 
 function MyApp({ Component, pageProps, err }: IProps) {
