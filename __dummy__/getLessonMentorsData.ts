@@ -1,5 +1,5 @@
 import { LessonMentorsQuery } from '../graphql'
-const dummyMentorData: LessonMentorsQuery['getLessonMentors'] = [
+const dummyMentorsData: LessonMentorsQuery['getLessonMentors'] = [
   {
     username:
       'MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM',
@@ -22,4 +22,4 @@ const dummyMentorData: LessonMentorsQuery['getLessonMentors'] = [
   { username: '16bitsMin', name: 'signed int', id: 4 }
 ]
 
-export default dummyMentorData
+export default dummyMentorsData

@@ -265,3 +265,4 @@ const dummyStarData: Star[] = [
       'You have revealed the truth, and the truth has set me free. I bestow this star upon thee, o kind sir. Actually just testing how long comments look on the UI.'
   }
 ]
+export default dummyStarData

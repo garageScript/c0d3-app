@@ -3,7 +3,7 @@ jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 import { GetPreviousSubmissionsQuery } from '../graphql'
 import { SubmissionStatus } from '../graphql'
 
-const dummyPreviousSubmissions: GetPreviousSubmissionsQuery = {
+const dummyPreviousSubmissionsData: GetPreviousSubmissionsQuery = {
   getPreviousSubmissions: [
     {
       __typename: 'Submission',
@@ -103,4 +103,4 @@ const dummyPreviousSubmissions: GetPreviousSubmissionsQuery = {
   ]
 }
 
-export default dummyPreviousSubmissions
+export default dummyPreviousSubmissionsData
