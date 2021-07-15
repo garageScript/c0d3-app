@@ -1,44 +1,56 @@
 import React from 'react'
-import Layout from '../../../components/Layout'
-import LessonLayout from '../../../components/LessonLayout'
+import Link from 'next/link'
+import { getLayout } from '../../../components/LessonLayout'
 
 import { getAllLessonPaths } from '../../../helpers/static/getAllLessonPaths'
-import { getLessonMDXSource } from '../../../helpers/static/getLessonMDXSource'
 import { getLessonMetaData } from '../../../helpers/static/getLessonMetaData'
+import { getSubLessonMDXSource } from '../../../helpers/static/getSubLessonMDXSource'
 
-const Lesson = () => {
-  return <div>What to show here??</div>
-}
+const Index = ({ subLessons, lesson_slug }) => {
+  const orderedSublessons = subLessons.sort((a, b) => {
+    return a.frontMatter.order - b.frontMatter.order
+  })
 
-Lesson.getLayout = (page, pageProps) => {
-  const { source, metaData } = pageProps
   return (
-    <Layout title={source?.scope?.title}>
-      <LessonLayout metaData={metaData} isPassed={true}>
-        {page}
-      </LessonLayout>
-    </Layout>
+    <>
+      <h1>sublessons</h1>
+      <ul>
+        {orderedSublessons.map(
+          ({ sublesson_slug, frontMatter: { title, order } }) => (
+            <li key={order}>
+              <Link
+                as={`/lesson/${lesson_slug}/${sublesson_slug}`}
+                href={`/lesson/[lesson_slug]/[sublesson_slug]`}
+              >
+                <a>{title}</a>
+              </Link>
+            </li>
+          )
+        )}
+      </ul>
+    </>
   )
 }
 
-export default Lesson
+Index.getLayout = getLayout
+
+export default Index
 
 export async function getStaticPaths() {
-  const paths = getAllLessonPaths()
-
   return {
-    paths,
+    paths: await getAllLessonPaths(),
     fallback: false
   }
 }
 
 export async function getStaticProps({ params: { lesson_slug } }) {
-  const source = await getLessonMDXSource(lesson_slug)
   const metaData = await getLessonMetaData(lesson_slug)
+  const subLessons = await getSubLessonMDXSource({ lesson_slug })
   return {
     props: {
       lesson_slug,
-      metaData
+      subLessons,
+      metaData // Consumed by LessonLayout
     }
   }
 }

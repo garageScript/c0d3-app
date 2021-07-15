@@ -1,6 +1,7 @@
 import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 export type LessonTitleProps = {
@@ -13,12 +14,16 @@ export type LessonTitleProps = {
   show?: boolean
 }
 
-const LessonTitleCard: React.FC<LessonTitleProps> = ({
-  metaData,
-  isPassed
-}) => {
+const LessonTitleCard: React.FC<any> = ({ metaData, isPassed }) => {
   const router = useRouter()
+  const { pathname, query } = router
   const { lesson_slug } = router.query
+
+  // Has to be a better solution for this up one directory
+  const backonePath = pathname.slice(0, pathname.lastIndexOf('/'))
+  const backonePathQuery = Object.fromEntries(
+    Object.entries(query).filter(([key]) => backonePath.includes(key))
+  )
 
   return (
     <div className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0">
@@ -31,17 +36,14 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
           />
           <div>
             <p className="m-0">
-              <a
-                href="#"
-                onClick={e => {
-                  // Link does not get correct styles without the href
-                  // Prevent scroll to top before going back
-                  e.preventDefault()
-                  router.back()
+              <Link
+                href={{
+                  pathname: backonePath,
+                  query: backonePathQuery
                 }}
               >
-                Go Back
-              </a>
+                <a>Go Back</a>
+              </Link>
             </p>
             <h1 className={`${styles['lessonTitleCard__lesson-title']}`}>
               {metaData.title}
@@ -50,7 +52,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
         </div>
         <div className="card-footer bg-white p-0">
           <NavLink
-            path={`/lesson/${lesson_slug}/lesson`}
+            path={`/lesson/${lesson_slug}`}
             className="btn border-right rounded-0 px-4 py-3"
           >
             LESSON
