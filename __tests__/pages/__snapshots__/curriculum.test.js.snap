@@ -132,7 +132,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/5"
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-0-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-0-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              A super simple introduction to help you get started!
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -142,9 +194,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -155,6 +209,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -185,7 +241,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/2"
+                  >
+                    Variables & Functions
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-1-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-1-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Learn how to solve simple algorithm problems recursively with the following exercises. 
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -195,9 +303,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -208,6 +318,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -238,7 +350,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/1"
+                  >
+                    Arrays
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-2-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-2-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -248,9 +412,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -261,6 +427,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -291,7 +459,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/4"
+                  >
+                    Objects
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-3-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-3-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will test your understanding of objects, which includes linked lists and trees
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -301,9 +521,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -314,6 +536,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -344,7 +568,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/24"
+                  >
+                    Front End Engineering
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-4-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-4-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  7
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -354,9 +630,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -367,6 +645,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -397,7 +677,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/3"
+                  >
+                    End To End
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-5-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-5-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  9
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will help you build a strong understanding of how the web works.
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -407,9 +739,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -420,6 +754,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -450,7 +786,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/29"
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-6-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-6-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  8
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              React and GraphQL Lessons
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -460,9 +848,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -473,6 +863,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -503,7 +895,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/28"
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-7-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-7-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Problems that are commonly asked to test your JavaScript knowledge
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -513,9 +957,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -526,6 +972,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -556,7 +1004,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/25"
+                  >
+                    Trees
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-8-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-8-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Tree problems with high difficulty
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -566,9 +1066,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -579,6 +1081,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -609,7 +1113,59 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/27"
+                  >
+                    General Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-9-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-9-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  5
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              General Algorithm from interviews
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -619,9 +1175,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -632,6 +1190,8 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1079,7 +1639,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/5"
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-0-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-0-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              A super simple introduction to help you get started!
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -1089,9 +1701,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1102,6 +1716,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     Foundations of JavaScript
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1150,7 +1766,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/2"
+                  >
+                    Variables & Functions
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-1-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-1-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Learn how to solve simple algorithm problems recursively with the following exercises. 
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -1160,9 +1828,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1173,6 +1843,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     Variables & Functions
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1203,7 +1875,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/1"
+                  >
+                    Arrays
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-2-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-2-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -1213,9 +1937,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1226,6 +1952,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     Arrays
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1256,7 +1984,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/4"
+                  >
+                    Objects
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-3-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-3-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will test your understanding of objects, which includes linked lists and trees
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -1266,9 +2046,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1279,6 +2061,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1309,7 +2093,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/24"
+                  >
+                    Front End Engineering
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-4-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-4-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  7
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -1319,9 +2155,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1332,6 +2170,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1362,7 +2202,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/3"
+                  >
+                    End To End
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-5-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-5-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  9
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will help you build a strong understanding of how the web works.
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -1372,9 +2264,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1385,6 +2279,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1415,7 +2311,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/29"
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-6-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-6-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  8
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              React and GraphQL Lessons
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -1425,9 +2373,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1438,6 +2388,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1468,7 +2420,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/28"
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-7-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-7-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Problems that are commonly asked to test your JavaScript knowledge
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -1478,9 +2482,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1491,6 +2497,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1521,7 +2529,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/25"
+                  >
+                    Trees
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-8-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-8-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Tree problems with high difficulty
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -1531,9 +2591,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1544,6 +2606,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -1574,7 +2638,59 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/27"
+                  >
+                    General Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-9-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-9-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  5
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              General Algorithm from interviews
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -1584,9 +2700,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -1597,6 +2715,8 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2089,7 +3209,96 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/5"
+                  >
+                    Foundations of JavaScript
+                  </a>
+                </div>
+                <span
+                  class="lesson-card__badge badge badge-pill badge-success p-0"
+                >
+                  <svg
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                    />
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    />
+                  </svg>
+                  <span
+                    class="mx-1 d-none d-md-block"
+                  >
+                    COMPLETED
+                  </span>
+                </span>
+              </div>
+            </h4>
+            <img
+              alt="js-0-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-0-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              A super simple introduction to help you get started!
+            </p>
+            <a
+              class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+              href="/review/5"
+            >
+              Review 
+              <span>
+                0
+              </span>
+               Submissions
+            </a>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-0-cover.svg"
@@ -2099,37 +3308,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <span
-                class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+              <div
+                class="d-flex"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  style="height: 15px;"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-                  />
-                  <polyline
-                    points="22 4 12 14.01 9 11.01"
-                  />
-                </svg>
-                <span
-                  class="mx-1"
-                >
-                  COMPLETED
-                </span>
-              </span>
-              <div>
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2140,6 +3323,35 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     Foundations of JavaScript
                   </a>
                 </h4>
+                <span
+                  class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+                >
+                  <svg
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                    />
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    />
+                  </svg>
+                  <span
+                    class="mx-1 d-none d-md-block"
+                  >
+                    COMPLETED
+                  </span>
+                </span>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2180,7 +3392,96 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/2"
+                  >
+                    Variables & Functions
+                  </a>
+                </div>
+                <span
+                  class="lesson-card__badge badge badge-pill badge-success p-0"
+                >
+                  <svg
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                    />
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    />
+                  </svg>
+                  <span
+                    class="mx-1 d-none d-md-block"
+                  >
+                    COMPLETED
+                  </span>
+                </span>
+              </div>
+            </h4>
+            <img
+              alt="js-1-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-1-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Learn how to solve simple algorithm problems recursively with the following exercises. 
+            </p>
+            <a
+              class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+              href="/review/2"
+            >
+              Review 
+              <span>
+                0
+              </span>
+               Submissions
+            </a>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-1-cover.svg"
@@ -2190,37 +3491,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <span
-                class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+              <div
+                class="d-flex"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  style="height: 15px;"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-                  />
-                  <polyline
-                    points="22 4 12 14.01 9 11.01"
-                  />
-                </svg>
-                <span
-                  class="mx-1"
-                >
-                  COMPLETED
-                </span>
-              </span>
-              <div>
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2231,6 +3506,35 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     Variables & Functions
                   </a>
                 </h4>
+                <span
+                  class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+                >
+                  <svg
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                    />
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    />
+                  </svg>
+                  <span
+                    class="mx-1 d-none d-md-block"
+                  >
+                    COMPLETED
+                  </span>
+                </span>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2271,7 +3575,96 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/1"
+                  >
+                    Arrays
+                  </a>
+                </div>
+                <span
+                  class="lesson-card__badge badge badge-pill badge-success p-0"
+                >
+                  <svg
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                    />
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    />
+                  </svg>
+                  <span
+                    class="mx-1 d-none d-md-block"
+                  >
+                    COMPLETED
+                  </span>
+                </span>
+              </div>
+            </h4>
+            <img
+              alt="js-2-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-2-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
+            </p>
+            <a
+              class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+              href="/review/1"
+            >
+              Review 
+              <span>
+                0
+              </span>
+               Submissions
+            </a>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-2-cover.svg"
@@ -2281,37 +3674,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <span
-                class="badge badge-pill badge-success float-right mt-2 mr-2 p-2 d-flex align-items-center"
+              <div
+                class="d-flex"
               >
-                <svg
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  style="height: 15px;"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-                  />
-                  <polyline
-                    points="22 4 12 14.01 9 11.01"
-                  />
-                </svg>
-                <span
-                  class="mx-1"
-                >
-                  COMPLETED
-                </span>
-              </span>
-              <div>
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2322,6 +3689,35 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     Arrays
                   </a>
                 </h4>
+                <span
+                  class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+                >
+                  <svg
+                    fill="none"
+                    height="15"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="15"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+                    />
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    />
+                  </svg>
+                  <span
+                    class="mx-1 d-none d-md-block"
+                  >
+                    COMPLETED
+                  </span>
+                </span>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2362,7 +3758,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 lesson-card__container_inprogress border-primary"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/4"
+                  >
+                    Objects
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-3-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-3-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  10
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will test your understanding of objects, which includes linked lists and trees
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-3-cover.svg"
@@ -2372,9 +3820,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2385,6 +3835,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     Objects
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2433,7 +3885,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/24"
+                  >
+                    Front End Engineering
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-4-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-4-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  7
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-4-cover.svg"
@@ -2443,9 +3947,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2456,6 +3962,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     Front End Engineering
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2486,7 +3994,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/3"
+                  >
+                    End To End
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-5-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-5-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  9
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              These exercises will help you build a strong understanding of how the web works.
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-5-cover.svg"
@@ -2496,9 +4056,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2509,6 +4071,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     End To End
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2539,7 +4103,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/29"
+                  >
+                    React, GraphQL, SocketIO
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-6-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-6-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  8
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              React and GraphQL Lessons
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-6-cover.svg"
@@ -2549,9 +4165,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2562,6 +4180,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     React, GraphQL, SocketIO
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2592,7 +4212,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/28"
+                  >
+                    JavaScript Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-7-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-7-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  11
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Problems that are commonly asked to test your JavaScript knowledge
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-7-cover.svg"
@@ -2602,9 +4274,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2615,6 +4289,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     JavaScript Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2645,7 +4321,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/25"
+                  >
+                    Trees
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-8-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-8-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  12
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              Tree problems with high difficulty
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-8-cover.svg"
@@ -2655,9 +4383,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2668,6 +4398,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     Trees
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"
@@ -2698,7 +4430,59 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="card shadow-sm mt-3 border-0"
         >
           <div
-            class="d-flex p-2"
+            class="d-flex d-sm-none flex-column px-3"
+          >
+            <h4
+              class="lesson-card__title font-weight-bold mt-3 "
+            >
+              <div
+                class="d-flex justify-content-center"
+              >
+                <div
+                  class="align-self-center"
+                >
+                  <a
+                    class=""
+                    href="/curriculum/27"
+                  >
+                    General Algorithms
+                  </a>
+                </div>
+              </div>
+            </h4>
+            <img
+              alt="js-9-cover.svg"
+              class="rounded"
+              height="165"
+              layout="intrinsic"
+              src="/assets/curriculum/js-9-cover.svg"
+              width="116"
+            />
+            <div>
+              <div
+                class="d-inline-block mt-3"
+              >
+                <img
+                  alt="icon-challenge"
+                  class="mr-2"
+                  src="/assets/curriculum/icons/icon-challenge.svg"
+                />
+                <span
+                  class="lesson-card__icon-text"
+                >
+                  5
+                   CHALLENGES
+                </span>
+              </div>
+            </div>
+            <p
+              class="mt-2"
+            >
+              General Algorithm from interviews
+            </p>
+          </div>
+          <div
+            class="d-none d-sm-flex p-2"
           >
             <img
               alt="js-9-cover.svg"
@@ -2708,9 +4492,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4"
+              class="lesson-card__description pl-4 d-none d-sm-block"
             >
-              <div>
+              <div
+                class="d-flex"
+              >
                 <h4
                   class="lesson-card__title font-weight-bold mt-3"
                 >
@@ -2721,6 +4507,8 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                     General Algorithms
                   </a>
                 </h4>
+              </div>
+              <div>
                 <div>
                   <div
                     class="d-inline-block mr-4"

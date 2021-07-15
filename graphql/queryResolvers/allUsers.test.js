@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { allUsers } from './allUsers'
 import { prisma } from '../../prisma'
 

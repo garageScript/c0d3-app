@@ -1,0 +1,28 @@
+.selection__title {
+  margin: unset;
+}
+
+.button {
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  max-width: max-content;
+  & .badge {
+    color: rgb(122, 126, 120);
+    position: absolute;
+    top: -0.75em;
+    right: -0.75em;
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+  }
+  &.loading {
+    min-height: 3rem;
+  }
+}
+
+.selection__card {
+  flex-grow: 1;
+  text-align: inherit;
+}

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('./admin/adminHelpers')
 import { errorCheckSingleField } from './admin/adminHelpers'
 import { formChange } from './formChange'

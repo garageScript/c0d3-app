@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectIteration component It should render error state 1`] = `
+<div>
+  <div
+    class="selection__card"
+  >
+    <p
+      class="selection__title text-muted mx-2"
+    >
+      Select submission
+    </p>
+    <p>
+      Error while fetching previous submissions:
+    </p>
+    <p>
+      Oops! Something went wrong.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SelectIteration component It should render loading state 1`] = `
+<div>
+  <div
+    class="selection__card"
+  >
+    <p
+      class="selection__title text-muted mx-2"
+    >
+      Loading previous submissions...
+    </p>
+    <button
+      class="button loading btn btn-light"
+      type="button"
+    />
+  </div>
+</div>
+`;
+
+exports[`SelectIteration component Should be able to select submissions 1`] = `
+<div>
+  <div
+    class="selection__card"
+  >
+    <p
+      class="selection__title text-muted mx-2"
+    >
+      Select submission
+    </p>
+    <div>
+      <div
+        class="d-inline"
+        data-testid="iteration 0"
+      >
+        <button
+          class="button m-2 btn btn-success"
+          type="button"
+        >
+          1
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 1"
+      >
+        <button
+          class="button m-2 btn btn-info"
+          type="button"
+        >
+          2
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 2"
+      >
+        <button
+          class="button m-2 btn btn-success"
+          type="button"
+        >
+          3
+          <span
+            class="badge badge badge-light"
+          >
+            2
+          </span>
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectIteration component Should treat negative index as last iteration 1`] = `
+<div>
+  <div
+    class="selection__card"
+  >
+    <p
+      class="selection__title text-muted mx-2"
+    >
+      Select submission
+    </p>
+    <div>
+      <div
+        class="d-inline"
+        data-testid="iteration 0"
+      >
+        <button
+          class="button m-2 btn btn-success"
+          type="button"
+        >
+          1
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 1"
+      >
+        <button
+          class="button m-2 btn btn-info"
+          type="button"
+        >
+          2
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
+      </div>
+      <div
+        class="d-inline"
+        data-testid="iteration 2"
+      >
+        <button
+          class="button m-2 btn btn-success"
+          type="button"
+        >
+          3
+          <span
+            class="badge badge badge-light"
+          >
+            2
+          </span>
+          <span
+            class="sr-only"
+          >
+            comment count
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

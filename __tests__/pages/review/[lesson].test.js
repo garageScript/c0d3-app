@@ -15,6 +15,8 @@ import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
 import { useRouter } from 'next/router'
 import expectLoading from '../../utils/expectLoading'
+import getPreviousSubmissions from '../../../__dummy__/getPreviousSubmissionsData'
+import GET_PREVIOUS_SUBMISSIONS from '../../../graphql/queries/getPreviousSubmissions'
 
 const getAppMock = {
   request: { query: GET_APP },
@@ -69,7 +71,17 @@ const getSubmissionsMock = {
     }
   }
 }
-const mocks = [getAppMock, getSubmissionsMock]
+
+const getPreviousSubmissionsMock = {
+  request: {
+    query: GET_PREVIOUS_SUBMISSIONS,
+    variables: { challengeId: 107, userId: '6' }
+  },
+  result: {
+    data: getPreviousSubmissions
+  }
+}
+const mocks = [getAppMock, getSubmissionsMock, getPreviousSubmissionsMock]
 describe('Lesson Page', () => {
   const { query, push } = useRouter()
   query['lesson'] = '2'
@@ -84,6 +96,7 @@ describe('Lesson Page', () => {
         screen.getByRole('heading', { name: 'newbie - Sum of 1 Numbers' })
       ).toBeTruthy()
     )
+    expect(await screen.findByTestId('iteration 1')).toBeVisible()
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should return loading spinner when loading', () => {

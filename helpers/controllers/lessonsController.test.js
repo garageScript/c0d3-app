@@ -1,4 +1,7 @@
-jest.mock('../mattermost')
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../validateLessonId')
 jest.mock('../../graphql/queryResolvers/lessons')
 import { lessons } from '../../graphql/queryResolvers/lessons'

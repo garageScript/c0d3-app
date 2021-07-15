@@ -34,7 +34,10 @@ const session = {
       },
       createdAt: '123',
       updatedAt: '123',
-      comments: null
+      comments: null,
+      user: {
+        id: 1
+      }
     },
     {
       id: 1,
@@ -52,7 +55,10 @@ const session = {
       },
       createdAt: '123',
       updatedAt: '123',
-      comments: null
+      comments: null,
+      user: {
+        id: 1
+      }
     }
   ],
   lessonStatus: [

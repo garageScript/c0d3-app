@@ -11,7 +11,6 @@ import {
 import { prisma } from '../../prisma'
 import { decode } from '../encoding'
 import { hasPassedLesson } from '../hasPassedLesson'
-import { getUserByEmail, publicChannelMessage } from '../mattermost'
 import { updateSubmission } from '../updateSubmission'
 
 export const createSubmission = async (
@@ -22,50 +21,35 @@ export const createSubmission = async (
     if (!args) throw new Error('Invalid args')
     const { challengeId, cliToken, diff, lessonId } = args
     const { id } = decode(cliToken)
-    const submissionData = { diff, status: SubmissionStatus.Open }
-    const { lesson, challenge, user, ...submission } =
-      await prisma.submission.upsert({
+    const previousSubmission = await prisma.submission.findFirst({
+      where: {
+        challengeId,
+        lessonId,
+        user: {
+          id
+        },
+        status: SubmissionStatus.Open
+      }
+    })
+    if (previousSubmission) {
+      await prisma.submission.update({
         where: {
-          userId_lessonId_challengeId: {
-            userId: Number(id),
-            lessonId,
-            challengeId
-          }
+          id: previousSubmission.id
         },
-        create: {
-          ...submissionData,
-          challengeId,
-          lessonId,
-          userId: Number(id)
-        },
-        update: {
-          diff: submissionData.diff,
-          status: submissionData.status,
-          comments: {
-            deleteMany: {}
-          }
-        },
-        include: {
-          user: true,
-          lesson: true,
-          challenge: true
+        data: {
+          status: SubmissionStatus.Overwritten
         }
       })
-
-    // query nextLesson based off order property of currentLesson
-    const nextLesson = await prisma.lesson.findFirst({
-      where: { order: lesson.order + 1 }
-    })
-
-    // if no Lesson was found nextLesson is null
-    if (nextLesson?.chatUrl) {
-      const nextLessonChannelName = nextLesson.chatUrl.split('/').pop()!
-      const { username } = await getUserByEmail(user.email)
-      const message = `@${username} has submitted a solution **_${challenge.title}_**. Click [here](<https://www.c0d3.com/review/${lessonId}>) to review the code.`
-      publicChannelMessage(nextLessonChannelName, message)
     }
-
-    return submission
+    return prisma.submission.create({
+      data: {
+        challengeId,
+        lessonId,
+        userId: id,
+        diff,
+        status: SubmissionStatus.Open
+      }
+    })
   } catch (error) {
     throw new Error(error)
   }

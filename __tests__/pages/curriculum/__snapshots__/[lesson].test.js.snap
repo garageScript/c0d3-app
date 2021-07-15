@@ -382,7 +382,6 @@ solution(a); // should return 50
                   </div>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -951,7 +950,6 @@ result = solution(0, "hello") // ""
                   </div>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>

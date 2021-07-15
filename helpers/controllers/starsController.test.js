@@ -1,11 +1,11 @@
-jest.mock('../../helpers/validateLessonId')
-jest.mock('../mattermost')
-import { setStar } from './starsController'
-import { validateLessonId } from '../validateLessonId'
-import { getUserByEmail } from '../mattermost'
-import { prisma } from '../../prisma'
+/**
+ * @jest-environment node
+ */
 
-getUserByEmail.mockReturnValue({ username: 'flam' })
+jest.mock('../../helpers/validateLessonId')
+import { prisma } from '../../prisma'
+import { validateLessonId } from '../validateLessonId'
+import { setStar } from './starsController'
 
 describe('setStar resolver', () => {
   let ctx
@@ -61,14 +61,5 @@ describe('setStar resolver', () => {
       setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
     ).rejects.toThrowError()
     expect(prisma.star.upsert).not.toBeCalled()
-  })
-
-  test('should not send chat message if chatUrl or mentor email are null', async () => {
-    prisma.star.upsert = jest.fn().mockResolvedValue({
-      lesson: { chatUrl: null },
-      mentor: { email: null }
-    })
-    await setStar(null, { lessonId: 52226, mentorId: 815 }, ctx)
-    expect(getUserByEmail).not.toBeCalled()
   })
 })

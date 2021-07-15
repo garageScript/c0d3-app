@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('../../helpers/controllers/userInfoController')
 import { userInfo } from '../../helpers/controllers/userInfoController'
 import { session } from './session'

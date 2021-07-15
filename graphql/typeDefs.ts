@@ -10,6 +10,7 @@ export default gql`
     isTokenValid(cliToken: String!): Boolean!
     submissions(lessonId: Int!): [Submission!]
     alerts: [Alert!]!
+    getPreviousSubmissions(challengeId: Int!, userId: Int!): [Submission!]
   }
 
   type TokenResponse {
@@ -130,6 +131,7 @@ export default gql`
   }
 
   enum SubmissionStatus {
+    overwritten
     needMoreWork
     open
     passed

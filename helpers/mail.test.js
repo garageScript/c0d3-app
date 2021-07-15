@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import { getResetTemplate, getSignupTemplate } from './mailTemplate'
 import { sendResetEmail, sendSignupEmail } from './mail'
 import nodemailer from 'nodemailer'
