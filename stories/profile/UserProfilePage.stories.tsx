@@ -9,6 +9,7 @@ import dummyStarsData from '../../__dummy__/starsData'
 import { withTestRouter } from '../../__tests__/utils/withTestRouter'
 import { Session } from '../../graphql'
 import { Star } from '../../graphql/index'
+import { useRouter } from 'next/router'
 
 export default {
   component: UserProfile,
@@ -77,7 +78,8 @@ const mocks = [
     }
   }
 ]
-
+const { query } = useRouter()
+query['username'] = 'fakeusername'
 export const _UserProfileZeroComments: React.FC = () => {
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>

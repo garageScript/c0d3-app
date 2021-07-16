@@ -12,6 +12,7 @@ import { prisma } from '../../prisma'
 import { decode } from '../encoding'
 import { hasPassedLesson } from '../hasPassedLesson'
 import { updateSubmission } from '../updateSubmission'
+import { sendSubmissionNotification, IdType } from '../discordBot'
 
 export const createSubmission = async (
   _parent: void,
@@ -41,15 +42,39 @@ export const createSubmission = async (
         }
       })
     }
-    return prisma.submission.create({
+    const submission = await prisma.submission.create({
       data: {
         challengeId,
         lessonId,
         userId: id,
         diff,
         status: SubmissionStatus.Open
+      },
+      include: {
+        challenge: true,
+        user: true,
+        lesson: true
       }
     })
+
+    const { challenge, user, lesson } = submission
+
+    // TODO: Add support for discord ids when oauth implementation is complete
+
+    // Get next lesson
+    const nextLesson = await prisma.lesson.findFirst({
+      where: { order: lesson.order + 1 }
+    })
+
+    await sendSubmissionNotification(
+      IdType.C0D3,
+      user.username,
+      nextLesson?.id ?? lessonId,
+      lessonId,
+      challenge.title
+    )
+
+    return submission
   } catch (error) {
     throw new Error(error)
   }

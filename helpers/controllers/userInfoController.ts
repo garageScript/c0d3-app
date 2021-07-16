@@ -48,6 +48,9 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
             id: true
           }
         }
+      },
+      orderBy: {
+        id: 'asc'
       }
     }),
     prisma.star.findMany({
