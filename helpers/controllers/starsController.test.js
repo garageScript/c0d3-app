@@ -3,6 +3,7 @@
  */
 
 jest.mock('../../helpers/validateLessonId')
+jest.mock('../discordBot')
 import { prisma } from '../../prisma'
 import { validateLessonId } from '../validateLessonId'
 import { setStar } from './starsController'

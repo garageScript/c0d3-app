@@ -2,6 +2,7 @@
  * @jest-environment node
  */
 
+jest.mock('../discordBot.ts')
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
 import { SubmissionStatus } from '../../graphql'
