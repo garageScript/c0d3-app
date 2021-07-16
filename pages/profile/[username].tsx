@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import {
   Challenge,
   UserLesson,
-  Submission,
   Star,
   SubmissionStatus
 } from '../../graphql/index'
@@ -33,7 +32,8 @@ const UserProfile: React.FC = () => {
   const router = useRouter()
   const username = router.query.username as string
   const { loading, error, data } = useUserInfoQuery({
-    variables: { username }
+    variables: { username },
+    skip: !username
   })
   if (loading) {
     return <LoadingSpinner />
@@ -56,12 +56,19 @@ const UserProfile: React.FC = () => {
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' '
   }
-  const userSubmissions: Submission[] = _.get(data, 'userInfo.submissions', [])
+  //data is frozen so it can't be modified (reversed)
+  //we need to reverse it before deduplication to keep only the latest submission
+  const userSubmissions = _.clone(data?.userInfo?.submissions) || []
+  _.reverse(userSubmissions)
+  const uniqueSubmisisons = _.uniqBy(
+    userSubmissions,
+    submission => submission.challengeId
+  )
   const profileLessons = (lessons || []).map(lessonInfo => {
     const lesson = lessonInfo || {}
     const { challenges } = lesson
     const challengeList = challenges || []
-    const passedLessonSubmissions = userSubmissions.filter(
+    const passedLessonSubmissions = uniqueSubmisisons.filter(
       ({ status, lessonId }) => {
         return status === SubmissionStatus.Passed && lessonId === lesson.id
       }
@@ -82,8 +89,8 @@ const UserProfile: React.FC = () => {
     const challengeList = lesson.challenges || []
     const challengesStatus = challengeList.map(challengeInfo => {
       const challenge = challengeInfo || ({} as Challenge)
-      const challengeSubmission = userSubmissions.find(
-        submission => challenge.id === Number(submission.challengeId)
+      const challengeSubmission = uniqueSubmisisons.find(
+        submission => challenge.id === submission.challengeId
       )
 
       return {
