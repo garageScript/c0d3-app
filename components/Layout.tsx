@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { ReactElement, ReactNode } from 'react'
 import AppNav from './AppNav'
 import Footer from './Footer'
-import Head from 'next/head'
-const Layout: React.FC<{ title?: string }> = ({ children, title }) => (
+
+const Layout: React.FC = ({ children }) => (
   <>
-    <Head>
-      <title key="title">{title ? `${title} — C0D3` : 'C0D3'}</title>
-    </Head>
     <AppNav />
     <div className="container-md">{children}</div>
     <Footer />
   </>
 )
 
+export const getLayout = (page: ReactElement): ReactNode => (
+  <Layout>{page}</Layout>
+)
 export default Layout
