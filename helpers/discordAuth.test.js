@@ -3,6 +3,7 @@ import {
   getUserInfoFromRefreshToken
 } from './discordAuth'
 import { prisma } from '../prisma'
+import fetch, {Response} from 'node-fetch'
 
 const mockTokenResponse = {
   access_token: '6qrZcUqja7812RVdnEKjpzOL4CvHBFG',
@@ -32,16 +33,10 @@ const mockUserInfo = {
   refreshToken: 'D43f5y0ahjqew82jZ4NViEr2YafMKhue'
 }
 
-describe('getTokenFromAuthCode function', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
+describe('getUserInfoFromRefreshToken function', () => {
   jest.mock('node-fetch')
   const fetch = require('node-fetch')
-  expect(fetch.mock.calls.length).toBe(1)
-})
-
-describe('getUserInfoFromRefreshToken function', () => {
+  const { Response } = jest.requireActual('node-fetch')
   beforeEach(() => {
     jest.clearAllMocks()
   })
@@ -54,11 +49,9 @@ describe('getUserInfoFromRefreshToken function', () => {
   })
 
   it('should return user info if refresh token valid', async () => {
-    jest.mock('node-fetch')
-    const fetch = require('node-fetch')
     fetch
-      .mockReturnValueOnce(mockTokenResponse)
-      .mockReturnValueOnce(mockUserInfoResponse)
+      .mockReturnValueOnce(Promise.resolve(new Response(mockTokenResponse)))
+      .mockReturnValueOnce(Promise.resolve(new Response(mockUserInfoResponse)))
     await expect(
       getUserInfoFromRefreshToken(1, 'mockRefreshToken')
     ).resolves.toEqual(mockUserInfo)
