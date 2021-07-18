@@ -24,6 +24,8 @@ type DropDownMenuProps = {
     | 'warning'
     | 'danger'
     | 'none'
+  //changes the underlying component CSS base class name
+  //https://react-bootstrap.github.io/components/dropdowns/#api
   bsPrefix?: string
 }
 

@@ -1,19 +1,21 @@
+@import 'colors.module.scss';
+
 .item {
-  color: #838383;
+  color: $gray;
   &:hover {
-    color: #4c4c4c;
+    color: $darkGray;
     text-decoration: none;
   }
 }
 
 .title {
-  color: #838383;
+  color: $gray;
   background: transparent;
   border: none;
   padding: 0.5em;
   margin: 0 2em;
   &:hover {
-    color: #4c4c4c;
+    color: $darkGray;
     text-decoration: none;
   }
 }
