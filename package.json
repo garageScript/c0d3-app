@@ -2,7 +2,7 @@
   "name": "c0d3",
   "private": "true",
   "version": "1.0.0",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "db:init": "prisma migrate reset",
     "db:seed": "prisma db seed --preview-feature",
