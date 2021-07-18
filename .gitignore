@@ -119,3 +119,6 @@ package-lock.json
 
 #sentry local environment
 .env.local
+
+# Jetbrains ide config files
+.idea

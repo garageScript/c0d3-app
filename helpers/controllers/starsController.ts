@@ -3,6 +3,7 @@ import type { SetStarMutation, SetStarMutationVariables } from '../../graphql'
 import { prisma } from '../../prisma'
 import { validateLessonId } from '../validateLessonId'
 import { validateStudentId } from '../validation/validateStudentId'
+import { sendLessonChannelMessage } from '../discordBot'
 
 export const setStar = async (
   _parent: void,
@@ -20,7 +21,7 @@ export const setStar = async (
     await validateLessonId(lessonId)
     const starData = { studentId, ...arg }
 
-    await prisma.star.upsert({
+    const { mentor } = await prisma.star.upsert({
       where: {
         studentId_lessonId: {
           studentId,
@@ -30,18 +31,20 @@ export const setStar = async (
       create: starData,
       update: starData,
       select: {
-        lesson: {
-          select: {
-            chatUrl: true
-          }
-        },
         mentor: {
           select: {
-            email: true
+            username: true
           }
         }
       }
     })
+
+    // TODO: Add support for discord ids when oauth implementation is complete
+
+    await sendLessonChannelMessage(
+      lessonId,
+      `**${mentor.username}** received a star!`
+    )
 
     return { success: true }
   } catch (err) {

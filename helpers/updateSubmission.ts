@@ -1,10 +1,11 @@
-import type { Challenge, Submission, User } from '.prisma/client'
+import type { Submission } from '.prisma/client'
 import {
   MutationAcceptSubmissionArgs,
   MutationRejectSubmissionArgs,
   SubmissionStatus
 } from '../graphql'
 import { prisma } from '../prisma'
+import { sendLessonChannelMessage } from './discordBot'
 
 type ArgsUpdateSubmission = (
   | MutationAcceptSubmissionArgs
@@ -12,12 +13,6 @@ type ArgsUpdateSubmission = (
 ) & {
   reviewerId: number
   status: SubmissionStatus
-}
-
-export type ArgsChatNotification = {
-  submission: Submission & { challenge: Challenge; reviewer: User | null }
-  userChatId: string
-  reviewerId: number
 }
 
 export const updateSubmission = async (
@@ -71,6 +66,34 @@ export const updateSubmission = async (
     ) {
       return submission
     }
+
+    // TODO: Add support for discord ids when oauth implementation is complete
+
+    // Get next lesson
+    const nextLesson = await prisma.lesson.findFirst({
+      where: { order: lesson.order + 1 }
+    })
+
+    const discordPromises = []
+    // Message in lesson channel on discord
+    discordPromises.push(
+      sendLessonChannelMessage(
+        lesson.id,
+        `Congratulations to **${user.username}** for passing and completing **_${lesson.title}_** ! **${user.username}** is now a guardian angel for the students in this channel.`
+      )
+    )
+
+    // Message in lesson channel on discord if next lesson exists
+    if (nextLesson?.id != null) {
+      discordPromises.push(
+        await sendLessonChannelMessage(
+          nextLesson.id,
+          `We have a new student joining us! **${user.username}** just completed **_${lesson.title}_** !`
+        )
+      )
+    }
+
+    await Promise.all(discordPromises)
 
     // update and save user lesson data
     await prisma.userLesson.update({

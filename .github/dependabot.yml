@@ -9,3 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    ignore:
+      # Ignore updates for sass-loader 11.x and 12.x since it breaks storybook
+      - dependency-name: "sass-loader"
+        versions: ["11.x", "12.x"]
