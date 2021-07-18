@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
-import Layout from '../components/Layout'
+import { getLayout } from '../components/Layout'
+import Title from '../components/Title'
+import { WithLayout } from '../@types/page'
 import Error, { StatusCode } from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
@@ -100,7 +102,11 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
     />
   )
 }
-export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
+
+export const Curriculum: React.FC<Props> & WithLayout = ({
+  lessons,
+  alerts
+}) => {
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data, loading } = useGetSessionQuery({
     fetchPolicy: 'cache-and-network'
@@ -136,6 +142,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [])
   useEffect(() => {
     if (data && data.session) {
+      console.count('Curriculum Effect')
       setState({
         session: data.session,
         progress: calculateProgress(data.session, lessons),
@@ -174,7 +181,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     )
   })
   return (
-    <Layout title="Curriculum">
+    <>
+      <Title title="Curriculum" />
       {typeof window !== 'undefined' &&
         !window.localStorage.getItem('horizontalScrollUsed') && (
           <ScrollArrow scrolledRight={scrolledRight} />
@@ -208,7 +216,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
           <AdditionalResources />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 const FIVE_MINUTES = 5 * 60
@@ -227,4 +235,6 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: FIVE_MINUTES
   }
 }
+
+Curriculum.getLayout = getLayout
 export default Curriculum

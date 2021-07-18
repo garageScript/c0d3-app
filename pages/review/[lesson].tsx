@@ -1,7 +1,9 @@
 import { useQuery } from '@apollo/client'
 import React, { useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Layout from '../../components/Layout'
+import Title from '../../components/Layout'
+import { getLayout } from '../../components/getLayout'
+
 import ReviewCard from '../../components/ReviewCard'
 import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
@@ -15,6 +17,7 @@ import withQueryLoader, {
 import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 import { GlobalContext } from '../../helpers/globalContext'
+import Title from '../../components/Title'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -68,22 +71,19 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
       )
     : []
   return (
-    <div>
-      <Layout title={`Review - ${currentLesson.title}`}>
-        <div className="row mt-4">
-          <LessonTitleCard
-            lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
-            lessonUrl={currentLesson.docUrl!}
-            lessonTitle={currentLesson.title!}
-            lessonId={currentlessonId}
-            isPassed={true}
-          />
-          {currentLesson && (
-            <SubmissionDisplay submissions={lessonSubmissions} />
-          )}
-        </div>
-      </Layout>
-    </div>
+    <>
+      <Title title={`Review - ${currentLesson.title}`} />
+      <div className="row mt-4">
+        <LessonTitleCard
+          lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
+          lessonUrl={currentLesson.docUrl!}
+          lessonTitle={currentLesson.title!}
+          lessonId={currentlessonId}
+          isPassed={true}
+        />
+        {currentLesson && <SubmissionDisplay submissions={lessonSubmissions} />}
+      </div>
+    </>
   )
 }
 
