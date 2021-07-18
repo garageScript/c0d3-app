@@ -3,7 +3,11 @@ import {
   getUserInfoFromRefreshToken
 } from './discordAuth'
 import { prisma } from '../prisma'
-import { tokenResponse, userInfoResponse, userInfo } from '../__dummy__/discordOAuthData'
+import {
+  tokenResponse,
+  userInfoResponse,
+  userInfo
+} from '../__dummy__/discordOAuthData'
 
 describe('getUserInfoFromRefreshToken function', () => {
   beforeEach(() => {
@@ -20,7 +24,10 @@ describe('getUserInfoFromRefreshToken function', () => {
   it('should return user info if refresh token valid', async () => {
     const getTokenFromRefreshToken = jest.fn().mockResolvedValue(tokenResponse)
     const getUserInfo = jest.fn().mockResolvedValue(userInfoResponse)
-    const mockUserInfo = await getUserInfoFromRefreshToken(1, 'mockRefreshToken')
+    const mockUserInfo = await getUserInfoFromRefreshToken(
+      1,
+      'mockRefreshToken'
+    )
     expect(mockUserInfo).toBe(userInfo)
     expect(getTokenFromRefreshToken).toBeCalled()
     expect(getUserInfo).toBeCalled()
