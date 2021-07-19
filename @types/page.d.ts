@@ -1,10 +1,11 @@
 import { NextPage } from 'next'
 import { ReactElement, ReactNode } from 'react'
 
+export type layoutGetter = (page: ReactElement, pageProps?: {}) => ReactNode
 export interface WithLayout {
-  getLayout: (page: ReactElement, pageProps?: {}) => ReactNode
+  getLayout: layoutGetter
 }
 
 export type Page<P = {}> = NextPage<P> & {
-  getLayout?: WithLayout
+  getLayout?: layoutGetter
 }
