@@ -39,8 +39,12 @@ export const updateSubmission = async (
     const [lessonChallengeCount, passedLessonSubmissions, userLesson] =
       await Promise.all([
         prisma.challenge.count({ where: { lessonId } }),
-        prisma.submission.count({
-          where: { lessonId, userId: user.id, status: SubmissionStatus.Passed }
+        prisma.submission.findMany({
+          where: { lessonId, userId: user.id, status: SubmissionStatus.Passed },
+          distinct: ['challengeId'],
+          select: {
+            challengeId: true
+          }
         }),
         prisma.userLesson.upsert({
           where: {
@@ -62,7 +66,7 @@ export const updateSubmission = async (
     // immediately return and do not proceed
     if (
       userLesson.isPassed ||
-      lessonChallengeCount !== passedLessonSubmissions
+      lessonChallengeCount !== passedLessonSubmissions.length
     ) {
       return submission
     }
