@@ -48,7 +48,9 @@ describe('updateSubmission', () => {
       user: userMock
     })
     prisma.challenge.count = jest.fn().mockResolvedValue(1)
-    prisma.submission.count = jest.fn().mockResolvedValue(1)
+    prisma.submission.findMany = jest
+      .fn()
+      .mockResolvedValue([{ challengeId: 1 }])
     prisma.userLesson.upsert = jest.fn().mockResolvedValue({
       isPassed: '1619821939579'
     })
