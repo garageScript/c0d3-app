@@ -87,6 +87,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
               type="email"
               data-testid="email"
               as={Input}
+              autoFocus
             />
 
             <Field

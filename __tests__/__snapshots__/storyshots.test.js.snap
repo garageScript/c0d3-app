@@ -19175,6 +19175,7 @@ Array [
               className="form-group"
             >
               <input
+                autoFocus={true}
                 className="form-control form-control-lg font-weight-light mb-3 "
                 data-testid="userOrEmail"
                 name="userOrEmail"
@@ -19828,6 +19829,7 @@ Array [
                 className="mt-3"
               >
                 <input
+                  autoFocus={true}
                   className="form-control form-control-lg font-weight-light mb-3 "
                   data-testid="username"
                   name="username"
@@ -19907,6 +19909,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
             className="mt-3"
           >
             <input
+              autoFocus={true}
               className="form-control form-control-lg font-weight-light mb-3 "
               data-testid="username"
               name="username"
@@ -19991,6 +19994,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
             className="mt-3"
           >
             <input
+              autoFocus={true}
               className="form-control form-control-lg font-weight-light mb-3 "
               data-testid="username"
               name="username"
@@ -20161,6 +20165,7 @@ Array [
               className="form-group"
             >
               <input
+                autoFocus={true}
                 className="form-control form-control-lg font-weight-light mb-3 "
                 data-testid="password"
                 name="password"
@@ -20325,6 +20330,7 @@ Array [
               className="form-group "
             >
               <input
+                autoFocus={true}
                 className="form-control form-control-lg font-weight-light mb-3 "
                 data-testid="email"
                 name="email"
@@ -20424,6 +20430,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
           className="form-group "
         >
           <input
+            autoFocus={true}
             className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="email"
             name="email"
@@ -20526,6 +20533,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
           className="form-group "
         >
           <input
+            autoFocus={true}
             className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="email"
             name="email"
@@ -20628,6 +20636,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
           className="form-group "
         >
           <input
+            autoFocus={true}
             className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="email"
             name="email"

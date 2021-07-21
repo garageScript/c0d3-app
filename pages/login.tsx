@@ -53,6 +53,7 @@ export const Login: React.FC<LoginFormProps> = ({
                 placeholder="Username"
                 data-testid="username"
                 as={Input}
+                autoFocus
               />
 
               <Field
