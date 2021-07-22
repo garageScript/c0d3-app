@@ -72,6 +72,9 @@ function MyApp({ Component, pageProps, err }: IProps) {
               property="twitter:image"
               content="https://www.c0d3.com/assets/c0d3-meta.svg"
             />
+
+            {/* <!-- Safari Web Content --> */}
+            <meta name="apple-mobile-web-app-title" content="C0d3" />
           </Head>
           <Component {...pageProps} err={err} />
         </ContextProvider>
