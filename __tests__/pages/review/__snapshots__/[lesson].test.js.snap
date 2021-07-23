@@ -195,211 +195,69 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
 
 exports[`Lesson Page Should render empty submissions 1`] = `
 <div>
-  <div>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white"
-    >
-      <div
-        class="container"
-      >
-        <a
-          class="navbar-brand"
-          href="/"
-        >
-          <div
-            class="navbar-brand text-primary font-weight-bold"
-          >
-            C0D3
-          </div>
-        </a>
-        <button
-          aria-controls="basic-navbar-nav"
-          aria-label="Toggle navigation"
-          class="navbar-toggler collapsed"
-          type="button"
-        >
-          <span
-            class="navbar-toggler-icon"
-          />
-        </button>
-        <div
-          class="text-center navbar-collapse collapse"
-          id="basic-navbar-nav"
-        >
-          <div
-            class="m-auto navbar-nav"
-          >
-            <a
-              class="nav-item nav-link"
-              href="/curriculum"
-            >
-              Curriculum
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/docs/learn"
-            >
-              Learn
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-            <div
-              class="d-none d-lg-block"
-            >
-              <div
-                class="dropdown"
-              >
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  class="dropdown-toggle title title-none"
-                  type="button"
-                >
-                  Admin
-                </button>
-              </div>
-            </div>
-            <div
-              class="d-lg-none"
-            >
-              <div
-                class="text-center text-xl-left py-2 px-4"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/lessons"
-                >
-                  Lessons
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-left py-2 px-4"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-left py-2 px-4"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="nav-buttons"
-          >
-            <a
-              class="btn btn-secondary border overflow-hidden text-truncate bg-light"
-              href="/profile/fakeusername"
-            >
-              Fakeusername
-            </a>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <div
+    class="row mt-4"
+  >
     <div
-      class="container-md"
+      class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
     >
       <div
-        class="row mt-4"
+        class="card-body p-0"
       >
         <div
-          class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+          class="d-flex mb-3 px-3"
         >
-          <div
-            class="card-body p-0"
-          >
-            <div
-              class="d-flex mb-3 px-3"
-            >
-              <img
-                alt="lesson-cover"
-                class="lessonTitleCard__lesson-cover mr-3"
-                src="/assets/curriculum/js-1-cover.svg"
-              />
-              <div>
-                <p
-                  class="m-0"
-                >
-                  <a
-                    href="#"
-                  >
-                    Go Back
-                  </a>
-                </p>
-                <h1
-                  class="lessonTitleCard__lesson-title"
-                >
-                  Variables & Functions
-                </h1>
-              </div>
-            </div>
-            <div
-              class="card-footer bg-white p-0"
+          <img
+            alt="lesson-cover"
+            class="lessonTitleCard__lesson-cover mr-3"
+            src="/assets/curriculum/js-1-cover.svg"
+          />
+          <div>
+            <p
+              class="m-0"
             >
               <a
-                class="btn border-right rounded-0 px-4 py-3"
-                href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="#"
               >
-                LESSON
+                Go Back
               </a>
-              <a
-                class="btn border-right rounded-0 px-4 py-3"
-                href="/curriculum/2"
-              >
-                CHALLENGES
-              </a>
-              <a
-                class="btn border-right rounded-0 px-4 py-3"
-                href="/review/2"
-              >
-                REVIEW
-              </a>
-            </div>
+            </p>
+            <h1
+              class="lessonTitleCard__lesson-title"
+            >
+              Variables & Functions
+            </h1>
           </div>
         </div>
         <div
-          class="submissions-container container p-0"
-        />
+          class="card-footer bg-white p-0"
+        >
+          <a
+            class="btn border-right rounded-0 px-4 py-3"
+            href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            LESSON
+          </a>
+          <a
+            class="btn border-right rounded-0 px-4 py-3"
+            href="/curriculum/2"
+          >
+            CHALLENGES
+          </a>
+          <a
+            class="btn border-right rounded-0 px-4 py-3"
+            href="/review/2"
+          >
+            REVIEW
+          </a>
+        </div>
       </div>
     </div>
-    <footer
-      class="mt-5 font-weight-light text-center pb-5 text-muted"
-    >
-      © Copyright 2021 GarageScript
-    </footer>
+    <div
+      class="submissions-container container p-0"
+    />
   </div>
 </div>
 `;

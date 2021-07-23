@@ -47,7 +47,7 @@ const Review: React.FC & WithLayout = () => {
     variables: { lessonId: currentlessonId }
   })
   if (appLoading || loading) {
-    return null
+    return <LoadingSpinner />
   }
   if (error) {
     return (
