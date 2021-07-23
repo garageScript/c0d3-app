@@ -14568,11 +14568,6 @@ Array [
   <div
     className="container-md"
   >
-    <img
-      className="arrow false position-fixed d-xl-none"
-      data-testid="arrow"
-      src="/assets/curriculum/icons/scroll-right.svg"
-    />
     <div
       className="row overflow-auto flex-nowrap parent-scroll"
       data-testid="parent-scroll"
@@ -16093,11 +16088,6 @@ Array [
   <div
     className="container-md"
   >
-    <img
-      className="arrow false position-fixed d-xl-none"
-      data-testid="arrow"
-      src="/assets/curriculum/icons/scroll-right.svg"
-    />
     <div
       className="row overflow-auto flex-nowrap parent-scroll"
       data-testid="parent-scroll"
@@ -17618,11 +17608,6 @@ Array [
   <div
     className="container-md"
   >
-    <img
-      className="arrow false position-fixed d-xl-none"
-      data-testid="arrow"
-      src="/assets/curriculum/icons/scroll-right.svg"
-    />
     <div
       className="row overflow-auto flex-nowrap parent-scroll"
       data-testid="parent-scroll"
