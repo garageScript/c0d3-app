@@ -2,433 +2,296 @@
 
 exports[`Lesson Page Should correctly render challenges page for students who hadn't passed previous lessons 1`] = `
 <div>
-  <div>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white"
+  <div
+    class="row mt-4"
+  >
+    <div
+      class="challenges-container"
     >
       <div
-        class="container"
+        class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
       >
-        <a
-          class="navbar-brand"
-          href="/"
-        >
-          <div
-            class="navbar-brand text-primary font-weight-bold"
-          >
-            C0D3
-          </div>
-        </a>
-        <button
-          aria-controls="basic-navbar-nav"
-          aria-label="Toggle navigation"
-          class="navbar-toggler collapsed"
-          type="button"
-        >
-          <span
-            class="navbar-toggler-icon"
-          />
-        </button>
         <div
-          class="text-center navbar-collapse collapse"
-          id="basic-navbar-nav"
+          class="card-body p-0"
         >
           <div
-            class="m-auto navbar-nav"
+            class="d-flex mb-3 px-3"
           >
-            <a
-              class="nav-item nav-link"
-              href="/curriculum"
-            >
-              Curriculum
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/docs/learn"
-            >
-              Learn
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-            <div
-              class="d-none d-lg-block"
-            >
-              <div
-                class="dropdown"
-              >
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  class="dropdown-toggle title title-none"
-                  type="button"
-                >
-                  Admin
-                </button>
-              </div>
-            </div>
-            <div
-              class="d-lg-none"
-            >
-              <div
-                class="text-center text-xl-left py-2 px-4"
+            <img
+              alt="lesson-cover"
+              class="lessonTitleCard__lesson-cover mr-3"
+              src="/assets/curriculum/js-8-cover.svg"
+            />
+            <div>
+              <p
+                class="m-0"
               >
                 <a
-                  class="dropdown-item"
-                  href="/admin/lessons"
+                  href="#"
                 >
-                  Lessons
+                  Go Back
                 </a>
-              </div>
-              <div
-                class="text-center text-xl-left py-2 px-4"
+              </p>
+              <h1
+                class="lessonTitleCard__lesson-title"
               >
-                <a
-                  class="dropdown-item"
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-left py-2 px-4"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+                Trees
+              </h1>
             </div>
           </div>
           <div
-            class="nav-buttons"
+            class="card-footer bg-white p-0"
           >
             <a
-              class="btn btn-secondary border overflow-hidden text-truncate bg-light"
-              href="/profile/fakeusername"
+              class="btn border-right rounded-0 px-4 py-3"
+              href="/curriculum/25"
             >
-              Fakeusername
+              CHALLENGES
             </a>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
-            >
-              Logout
-            </button>
           </div>
         </div>
       </div>
-    </nav>
-    <div
-      class="container-md"
-    >
       <div
-        class="row mt-4"
+        class="alerts-container  p-0"
       >
         <div
-          class="challenges-container"
+          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/assets/curriculum/icons/icon-tip.svg"
+            />
+            Set up your computer to submit challenges. 
+            <a
+              class="text-white"
+              href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Instructions
+            </a>
+          </div>
+          <button
+            class="alert-dismiss"
+            data-testid="dismiss-info"
+            role="dismiss"
+          >
+            <img
+              src="/assets/curriculum/icons/dismiss-info.svg"
+            />
+          </button>
+        </div>
+        <div
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/assets/curriculum/icons/exclamation.svg"
+            />
+            Please upgrade your CLI client by running npm update c0d3. 
+            
+          </div>
+          <button
+            class="alert-dismiss"
+            data-testid="dismiss-urgent"
+            role="dismiss"
+          >
+            <img
+              src="/assets/curriculum/icons/dismiss-urgent.svg"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row challenge-display mt-3"
+      >
+        <div
+          class="challenge-display_challenges false col-md-4"
         >
           <div
-            class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+            class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+            data-testid="challenge-title"
           >
             <div
-              class="card-body p-0"
+              class="card-body d-flex justify-content-between"
             >
-              <div
-                class="d-flex mb-3 px-3"
+              <div>
+                1. Given a binary tree, find the largest value
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                2. Given a binary tree, find the maximum depth
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                3. Given a binary tree, return the maximum distance between any 2 nodes
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                4. Biggest subtree value
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                5. Given a binary tree and a node, find the distance to that node.
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                6. Max Fun
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                7. Edit distance
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                8. Maximum Loot
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                9. Longest Increasing Non-Consecutive Sequence
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                10. Minimum Coins for Change
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                11. Maximum Weight to Carry
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                12. Subarray Sum Equals K
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-8"
+        >
+          <div
+            class="card shadow-sm border-0"
+          >
+            <div
+              class="card-body challenge-question"
+            >
+              <h1
+                class="card-title"
+                data-testid="challenge-question-title"
               >
-                <img
-                  alt="lesson-cover"
-                  class="lessonTitleCard__lesson-cover mr-3"
-                  src="/assets/curriculum/js-8-cover.svg"
-                />
+                Given a binary tree, find the largest value
+              </h1>
+              <div
+                class="bg-light p-3 mt-3"
+                data-testid="challenge-question-description"
+              >
                 <div>
-                  <p
-                    class="m-0"
-                  >
-                    <a
-                      href="#"
-                    >
-                      Go Back
-                    </a>
+                  <p>
+                    Example:
                   </p>
-                  <h1
-                    class="lessonTitleCard__lesson-title"
-                  >
-                    Trees
-                  </h1>
-                </div>
-              </div>
-              <div
-                class="card-footer bg-white p-0"
-              >
-                <a
-                  class="btn border-right rounded-0 px-4 py-3"
-                  href="/curriculum/25"
-                >
-                  CHALLENGES
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="alerts-container  p-0"
-          >
-            <div
-              class="alert d-flex justify-content-between mt-3 bg-primary text-white"
-              role="alert"
-            >
-              <div>
-                <img
-                  class="mr-3 alert-icon"
-                  src="/assets/curriculum/icons/icon-tip.svg"
-                />
-                Set up your computer to submit challenges. 
-                <a
-                  class="text-white"
-                  href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  View Instructions
-                </a>
-              </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-info"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-info.svg"
-                />
-              </button>
-            </div>
-            <div
-              class="alert d-flex justify-content-between mt-3 alert-danger"
-              role="alert"
-            >
-              <div>
-                <img
-                  class="mr-3 alert-icon"
-                  src="/assets/curriculum/icons/exclamation.svg"
-                />
-                Please upgrade your CLI client by running npm update c0d3. 
-                
-              </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-urgent"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-urgent.svg"
-                />
-              </button>
-            </div>
-          </div>
-          <div
-            class="row challenge-display mt-3"
-          >
-            <div
-              class="challenge-display_challenges false col-md-4"
-            >
-              <div
-                class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    1. Given a binary tree, find the largest value
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    2. Given a binary tree, find the maximum depth
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    3. Given a binary tree, return the maximum distance between any 2 nodes
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    4. Biggest subtree value
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    5. Given a binary tree and a node, find the distance to that node.
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    6. Max Fun
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    7. Edit distance
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    8. Maximum Loot
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    9. Longest Increasing Non-Consecutive Sequence
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    10. Minimum Coins for Change
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    11. Maximum Weight to Carry
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    12. Subarray Sum Equals K
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-md-8"
-            >
-              <div
-                class="card shadow-sm border-0"
-              >
-                <div
-                  class="card-body challenge-question"
-                >
-                  <h1
-                    class="card-title"
-                    data-testid="challenge-question-title"
-                  >
-                    Given a binary tree, find the largest value
-                  </h1>
-                  <div
-                    class="bg-light p-3 mt-3"
-                    data-testid="challenge-question-description"
-                  >
-                    <div>
-                      <p>
-                        Example:
-                      </p>
-                      <p>
-                        <img
-                          alt="tree"
-                          src="https://c0d3.com/apis/draw?tree={%22v%22:30,%22children%22:[{%22v%22:50},{%22v%22:40}]}"
-                        />
-                      </p>
-                      <pre>
-                        <code>
-                          const a = {val: 30, right: {val: 40}, left: {val: 50}};
+                  <p>
+                    <img
+                      alt="tree"
+                      src="https://c0d3.com/apis/draw?tree={%22v%22:30,%22children%22:[{%22v%22:50},{%22v%22:40}]}"
+                    />
+                  </p>
+                  <pre>
+                    <code>
+                      const a = {val: 30, right: {val: 40}, left: {val: 50}};
 solution(a); // should return 50
-                        </code>
-                      </pre>
-                    </div>
-                  </div>
+                    </code>
+                  </pre>
                 </div>
               </div>
             </div>
@@ -436,11 +299,6 @@ solution(a); // should return 50
         </div>
       </div>
     </div>
-    <footer
-      class="mt-5 font-weight-light text-center pb-5 text-muted"
-    >
-      © Copyright 2021 GarageScript
-    </footer>
   </div>
 </div>
 `;
@@ -640,461 +498,324 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
 
 exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
 <div>
-  <div>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white"
+  <div
+    class="row mt-4"
+  >
+    <div
+      class="challenges-container"
     >
       <div
-        class="container"
+        class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
       >
-        <a
-          class="navbar-brand"
-          href="/"
-        >
-          <div
-            class="navbar-brand text-primary font-weight-bold"
-          >
-            C0D3
-          </div>
-        </a>
-        <button
-          aria-controls="basic-navbar-nav"
-          aria-label="Toggle navigation"
-          class="navbar-toggler collapsed"
-          type="button"
-        >
-          <span
-            class="navbar-toggler-icon"
-          />
-        </button>
         <div
-          class="text-center navbar-collapse collapse"
-          id="basic-navbar-nav"
+          class="card-body p-0"
         >
           <div
-            class="m-auto navbar-nav"
+            class="d-flex mb-3 px-3"
           >
-            <a
-              class="nav-item nav-link"
-              href="/curriculum"
-            >
-              Curriculum
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="/docs/learn"
-            >
-              Learn
-            </a>
-            <a
-              class="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-            <div
-              class="d-none d-lg-block"
-            >
-              <div
-                class="dropdown"
-              >
-                <button
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  class="dropdown-toggle title title-none"
-                  type="button"
-                >
-                  Admin
-                </button>
-              </div>
-            </div>
-            <div
-              class="d-lg-none"
-            >
-              <div
-                class="text-center text-xl-left py-2 px-4"
+            <img
+              alt="lesson-cover"
+              class="lessonTitleCard__lesson-cover mr-3"
+              src="/assets/curriculum/js-1-cover.svg"
+            />
+            <div>
+              <p
+                class="m-0"
               >
                 <a
-                  class="dropdown-item"
-                  href="/admin/lessons"
+                  href="#"
                 >
-                  Lessons
+                  Go Back
                 </a>
-              </div>
-              <div
-                class="text-center text-xl-left py-2 px-4"
+              </p>
+              <h1
+                class="lessonTitleCard__lesson-title"
               >
-                <a
-                  class="dropdown-item"
-                  href="/admin/users"
-                >
-                  Users
-                </a>
-              </div>
-              <div
-                class="text-center text-xl-left py-2 px-4"
-              >
-                <a
-                  class="dropdown-item"
-                  href="/admin/alerts"
-                >
-                  Alerts
-                </a>
-              </div>
+                Variables & Functions
+              </h1>
             </div>
           </div>
           <div
-            class="nav-buttons"
+            class="card-footer bg-white p-0"
           >
             <a
-              class="btn btn-secondary border overflow-hidden text-truncate bg-light"
-              href="/profile/fakeusername"
+              class="btn border-right rounded-0 px-4 py-3"
+              href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              Fakeusername
+              LESSON
             </a>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <a
+              class="btn border-right rounded-0 px-4 py-3"
+              href="/curriculum/2"
             >
-              Logout
-            </button>
+              CHALLENGES
+            </a>
           </div>
         </div>
       </div>
-    </nav>
-    <div
-      class="container-md"
-    >
       <div
-        class="row mt-4"
+        class="alerts-container  p-0"
       >
         <div
-          class="challenges-container"
+          class="alert d-flex justify-content-between mt-3 bg-primary text-white"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/assets/curriculum/icons/icon-tip.svg"
+            />
+            Set up your computer to submit challenges. 
+            <a
+              class="text-white"
+              href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Instructions
+            </a>
+          </div>
+          <button
+            class="alert-dismiss"
+            data-testid="dismiss-info"
+            role="dismiss"
+          >
+            <img
+              src="/assets/curriculum/icons/dismiss-info.svg"
+            />
+          </button>
+        </div>
+        <div
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
+        >
+          <div>
+            <img
+              class="mr-3 alert-icon"
+              src="/assets/curriculum/icons/exclamation.svg"
+            />
+            Please upgrade your CLI client by running npm update c0d3. 
+            
+          </div>
+          <button
+            class="alert-dismiss"
+            data-testid="dismiss-urgent"
+            role="dismiss"
+          >
+            <img
+              src="/assets/curriculum/icons/dismiss-urgent.svg"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        class="row challenge-display mt-3"
+      >
+        <div
+          class="challenge-display_challenges false col-md-4"
         >
           <div
-            class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+            class="card mb-2 challenge-title-card challenge-title-card--done"
+            data-testid="challenge-title"
           >
             <div
-              class="card-body p-0"
+              class="card-body d-flex justify-content-between"
             >
-              <div
-                class="d-flex mb-3 px-3"
+              <div>
+                1. Incremental Closure
+              </div>
+              <img
+                height="25px"
+                src="/assets/curriculum/icons/checkmark.svg"
+                width="25px"
+              />
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card challenge-title-card--done"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                2. Closure x times
+              </div>
+              <img
+                height="25px"
+                src="/assets/curriculum/icons/checkmark.svg"
+                width="25px"
+              />
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                3. Repeated String
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                4. Calling input function
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                5. Call function X Times
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                6. isPrime
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                7. Letter Find
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                8. Letter Count
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                9. Letter Map
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                10. Letter Loop
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                11. Delayed Closure
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mb-2 challenge-title-card shadow-sm border-0"
+            data-testid="challenge-title"
+          >
+            <div
+              class="card-body d-flex justify-content-between"
+            >
+              <div>
+                12. Delay 1 and 2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-md-8"
+        >
+          <div
+            class="card shadow-sm border-0"
+          >
+            <div
+              class="card-body challenge-question"
+            >
+              <h1
+                class="card-title"
+                data-testid="challenge-question-title"
               >
-                <img
-                  alt="lesson-cover"
-                  class="lessonTitleCard__lesson-cover mr-3"
-                  src="/assets/curriculum/js-1-cover.svg"
-                />
+                Repeated String
+              </h1>
+              <div
+                class="bg-light p-3 mt-3"
+                data-testid="challenge-question-description"
+              >
                 <div>
-                  <p
-                    class="m-0"
-                  >
+                  <p>
+                    Write a function called solution that takes in 2 parameters, a number and string and returns the string repeated input parameter number of times
+                  </p>
+                  <pre>
+                    <code>
+                      result = solution(3, "abc") // "abcabcabc"
+result = solution(0, "hello") // ""
+                    </code>
+                  </pre>
+                  <p>
+                    Reminder for students with prior experience: you are not allowed to use 
+                    <code>
+                      for
+                    </code>
+                     and 
+                    <code>
+                      while
+                    </code>
+                     loops. 
                     <a
-                      href="#"
+                      href="https://www.notion.so/garagescript/Recursion-973993e8ed144d8a87cb5695fd1ea8b1"
                     >
-                      Go Back
+                      Reason
                     </a>
                   </p>
-                  <h1
-                    class="lessonTitleCard__lesson-title"
-                  >
-                    Variables & Functions
-                  </h1>
-                </div>
-              </div>
-              <div
-                class="card-footer bg-white p-0"
-              >
-                <a
-                  class="btn border-right rounded-0 px-4 py-3"
-                  href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  LESSON
-                </a>
-                <a
-                  class="btn border-right rounded-0 px-4 py-3"
-                  href="/curriculum/2"
-                >
-                  CHALLENGES
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="alerts-container  p-0"
-          >
-            <div
-              class="alert d-flex justify-content-between mt-3 bg-primary text-white"
-              role="alert"
-            >
-              <div>
-                <img
-                  class="mr-3 alert-icon"
-                  src="/assets/curriculum/icons/icon-tip.svg"
-                />
-                Set up your computer to submit challenges. 
-                <a
-                  class="text-white"
-                  href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  View Instructions
-                </a>
-              </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-info"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-info.svg"
-                />
-              </button>
-            </div>
-            <div
-              class="alert d-flex justify-content-between mt-3 alert-danger"
-              role="alert"
-            >
-              <div>
-                <img
-                  class="mr-3 alert-icon"
-                  src="/assets/curriculum/icons/exclamation.svg"
-                />
-                Please upgrade your CLI client by running npm update c0d3. 
-                
-              </div>
-              <button
-                class="alert-dismiss"
-                data-testid="dismiss-urgent"
-                role="dismiss"
-              >
-                <img
-                  src="/assets/curriculum/icons/dismiss-urgent.svg"
-                />
-              </button>
-            </div>
-          </div>
-          <div
-            class="row challenge-display mt-3"
-          >
-            <div
-              class="challenge-display_challenges false col-md-4"
-            >
-              <div
-                class="card mb-2 challenge-title-card challenge-title-card--done"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    1. Incremental Closure
-                  </div>
-                  <img
-                    height="25px"
-                    src="/assets/curriculum/icons/checkmark.svg"
-                    width="25px"
-                  />
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card challenge-title-card--done"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    2. Closure x times
-                  </div>
-                  <img
-                    height="25px"
-                    src="/assets/curriculum/icons/checkmark.svg"
-                    width="25px"
-                  />
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    3. Repeated String
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    4. Calling input function
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    5. Call function X Times
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    6. isPrime
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    7. Letter Find
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    8. Letter Count
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    9. Letter Map
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    10. Letter Loop
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    11. Delayed Closure
-                  </div>
-                </div>
-              </div>
-              <div
-                class="card mb-2 challenge-title-card shadow-sm border-0"
-                data-testid="challenge-title"
-              >
-                <div
-                  class="card-body d-flex justify-content-between"
-                >
-                  <div>
-                    12. Delay 1 and 2
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-md-8"
-            >
-              <div
-                class="card shadow-sm border-0"
-              >
-                <div
-                  class="card-body challenge-question"
-                >
-                  <h1
-                    class="card-title"
-                    data-testid="challenge-question-title"
-                  >
-                    Repeated String
-                  </h1>
-                  <div
-                    class="bg-light p-3 mt-3"
-                    data-testid="challenge-question-description"
-                  >
-                    <div>
-                      <p>
-                        Write a function called solution that takes in 2 parameters, a number and string and returns the string repeated input parameter number of times
-                      </p>
-                      <pre>
-                        <code>
-                          result = solution(3, "abc") // "abcabcabc"
-result = solution(0, "hello") // ""
-                        </code>
-                      </pre>
-                      <p>
-                        Reminder for students with prior experience: you are not allowed to use 
-                        <code>
-                          for
-                        </code>
-                         and 
-                        <code>
-                          while
-                        </code>
-                         loops. 
-                        <a
-                          href="https://www.notion.so/garagescript/Recursion-973993e8ed144d8a87cb5695fd1ea8b1"
-                        >
-                          Reason
-                        </a>
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1102,11 +823,6 @@ result = solution(0, "hello") // ""
         </div>
       </div>
     </div>
-    <footer
-      class="mt-5 font-weight-light text-center pb-5 text-muted"
-    >
-      © Copyright 2021 GarageScript
-    </footer>
   </div>
 </div>
 `;
