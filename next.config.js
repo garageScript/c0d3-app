@@ -10,6 +10,15 @@ const withMDX = require('@next/mdx')({
   }
 })
 const moduleExports = withMDX({
+  async redirects() {
+    return [
+      {
+        source: '/book',
+        destination: '/docs/learn',
+        permanent: true
+      }
+    ]
+  },
   pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
 })
 
