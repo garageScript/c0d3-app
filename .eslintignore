@@ -3,3 +3,4 @@ docker/volumes/
 #TO-DO fix eslint and mdx integration (imports and ">", "<" signs)
 pages/docs/
 pages/curriculum/lessons/
+content/
