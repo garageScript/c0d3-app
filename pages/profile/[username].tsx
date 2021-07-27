@@ -1,6 +1,7 @@
 import * as React from 'react'
 import _ from 'lodash'
-import Layout from '../../components/Layout'
+import { getLayout } from '../../components/Layout'
+import Title from '../../components/Title'
 import { useRouter } from 'next/router'
 import {
   Challenge,
@@ -17,6 +18,7 @@ import ProfileSubmissions, {
 import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import Error, { StatusCode } from '../../components/Error'
+import { WithLayout } from '../../@types/page'
 
 export type UserInfo = {
   username: string
@@ -28,9 +30,10 @@ type LessonStatusMap = {
   [id: string]: UserLesson
 }
 
-const UserProfile: React.FC = () => {
+const UserProfile: React.FC & WithLayout = () => {
   const router = useRouter()
   const username = router.query.username as string
+  console.log({ username })
   const { loading, error, data } = useUserInfoQuery({
     variables: { username },
     skip: !username
@@ -133,7 +136,8 @@ const UserProfile: React.FC = () => {
   )
 
   return (
-    <Layout title={userInfo.username}>
+    <>
+      <Title title={userInfo.username} />
       <div className="row mt-4">
         <div className="mb-3 mb-md-0 col-md-4">
           <ProfileImageInfo user={userInfo} />
@@ -146,8 +150,9 @@ const UserProfile: React.FC = () => {
           <ProfileSubmissions lessons={profileSubmissions} />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 
+UserProfile.getLayout = getLayout
 export default UserProfile

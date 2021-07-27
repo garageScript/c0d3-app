@@ -6,7 +6,9 @@ import _ from 'lodash'
 
 //import components
 import Card from '../components/Card'
-import Layout from '../components/Layout'
+import { getLayout } from '../components/Layout'
+import Title from '../components/Title'
+import { WithLayout } from '../@types/page'
 import Input from '../components/Input'
 import NavLink from '../components/NavLink'
 
@@ -131,7 +133,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const SignUpPage: React.FC = () => {
+const SignUpPage: React.FC & WithLayout = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -162,7 +164,8 @@ const SignUpPage: React.FC = () => {
     setIsSubmitting(false)
   }
   return (
-    <Layout title="Sign up">
+    <>
+      <Title title="Sign up" />
       <Signup
         handleSubmit={handleSubmit}
         isLoading={isSubmitting}
@@ -170,7 +173,7 @@ const SignUpPage: React.FC = () => {
         forgotToken={forgotToken}
         signupErrors={signupErrors}
       />
-    </Layout>
+    </>
   )
 }
 
@@ -196,4 +199,5 @@ export const Signup: React.FC<SignupFormProps> = ({
   )
 }
 
+SignUpPage.getLayout = getLayout
 export default SignUpPage
