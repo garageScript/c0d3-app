@@ -77,7 +77,7 @@ export type Lesson = {
   videoUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
   title: Scalars['String']
-  challenges?: Maybe<Array<Maybe<Challenge>>>
+  challenges: Array<Challenge>
   users?: Maybe<Array<Maybe<User>>>
   currentUser?: Maybe<User>
   chatUrl?: Maybe<Scalars['String']>
@@ -416,14 +416,10 @@ export type CreateChallengeMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
+            challenges: Array<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'description' | 'lessonId' | 'title' | 'order'
               >
             >
           }
@@ -457,14 +453,10 @@ export type CreateLessonMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
+            challenges: Array<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'description' | 'lessonId' | 'title' | 'order'
               >
             >
           }
@@ -501,14 +493,10 @@ export type GetAppQuery = { __typename?: 'Query' } & {
       | 'order'
       | 'chatUrl'
     > & {
-        challenges?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'title' | 'description' | 'order'
-              >
-            >
+        challenges: Array<
+          { __typename?: 'Challenge' } & Pick<
+            Challenge,
+            'id' | 'title' | 'description' | 'order'
           >
         >
       }
@@ -829,14 +817,10 @@ export type UpdateChallengeMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
+            challenges: Array<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'description' | 'lessonId' | 'title' | 'order'
               >
             >
           }
@@ -871,14 +855,10 @@ export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
+            challenges: Array<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'description' | 'lessonId' | 'title' | 'order'
               >
             >
           }
@@ -915,14 +895,10 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
       | 'order'
       | 'chatUrl'
     > & {
-        challenges?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'title' | 'description' | 'order'
-              >
-            >
+        challenges: Array<
+          { __typename?: 'Challenge' } & Pick<
+            Challenge,
+            'id' | 'title' | 'description' | 'order'
           >
         >
       }
@@ -1225,7 +1201,7 @@ export type LessonResolvers<
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
+    Array<ResolversTypes['Challenge']>,
     ParentType,
     ContextType
   >

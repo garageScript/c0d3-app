@@ -172,7 +172,7 @@ export default gql`
     videoUrl: String
     order: Int!
     title: String!
-    challenges: [Challenge]
+    challenges: [Challenge!]!
     users: [User]
     currentUser: User
     chatUrl: String
