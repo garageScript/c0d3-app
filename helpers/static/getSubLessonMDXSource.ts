@@ -57,7 +57,7 @@ export async function getSubLessonMDXSource({
     })
   )
 
-  return sublesson_slug
-    ? subLessonsSourceAndFrontMatter[0]
-    : subLessonsSourceAndFrontMatter
+  return subLessonsSourceAndFrontMatter.sort(
+    (a, b) => a.frontMatter.order - b.frontMatter.order
+  )
 }
