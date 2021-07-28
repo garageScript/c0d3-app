@@ -1,8 +1,10 @@
 import React from 'react'
-import Layout from './Layout'
+import { getLayout } from './Layout'
+import Title from './Title'
 import NavLink from './NavLink'
 import { Text } from './theme/Text'
 import Image from 'next/image'
+import { WithLayout } from '../@types/page'
 export enum StatusCode {
   NOT_FOUND = 404,
   INTERNAL_SERVER_ERROR = 500
@@ -16,9 +18,10 @@ const errorTitle: Readonly<{ [key in StatusCode]: string }> = {
   [StatusCode.INTERNAL_SERVER_ERROR]: 'Internal server error'
 }
 
-const Error: React.FC<ErrorProps> = ({ code, message }) => {
+const Error: React.FC<ErrorProps> & WithLayout = ({ code, message }) => {
   return (
-    <Layout title={errorTitle[code]}>
+    <>
+      <Title title={errorTitle[code]} />
       <div className="container">
         <div className="row">
           <div className="d-flex col-sm-3 align-items-center justify-content-center">
@@ -43,7 +46,9 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
+
+Error.getLayout = getLayout
 export default Error
