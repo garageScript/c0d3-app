@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../../components/mdx/LessonLayout'
+import LessonLayout from '../../../components/LessonLayout'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
 import dummyLessonData from '../../../__dummy__/lessonData'
@@ -20,14 +20,14 @@ const mocks = [
 ]
 
 export default {
-  component: Layout,
-  title: 'mdx/Layout'
+  component: LessonLayout,
+  title: 'LessonLayout'
 }
 
 export const WithText: React.FC = () => {
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Layout>
+      <LessonLayout metaData={dummyLessonData[0]}>
         <p>
           Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde
           commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam
@@ -36,23 +36,14 @@ export const WithText: React.FC = () => {
           quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro
           quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
         </p>
-      </Layout>
+      </LessonLayout>
     </MockedProvider>
   )
 }
 export const WithLesson: React.FC = () => {
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Layout
-        lessonCoverUrl={`js-0-cover.svg`}
-        title="Foundations of JavaScript"
-        lessonUrl="/curriculum/lessons/js0/primitive_data_and_operators"
-        lessonId={1}
-        subLessons={[
-          'Primitive data and operators',
-          'Functions and execution context'
-        ]}
-      >
+      <LessonLayout metaData={dummyLessonData[2]}>
         <p>
           Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde
           commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam
@@ -61,7 +52,7 @@ export const WithLesson: React.FC = () => {
           quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro
           quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
         </p>
-      </Layout>
+      </LessonLayout>
     </MockedProvider>,
     {
       pathname: 'foobar/primitive_data_and_operators'

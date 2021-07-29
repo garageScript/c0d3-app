@@ -1,6 +1,6 @@
 import React from 'react'
 import BlockQuote from '../../../components/mdx/BlockQuote'
-import Layout from '../../../components/mdx/LessonLayout'
+import Layout from '../../../components/Layout'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
 import dummyLessonData from '../../../__dummy__/lessonData'
