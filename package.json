@@ -22,7 +22,8 @@
     "generate": "graphql-codegen --config codegen.yml",
     "postinstall": "node scripts/prismaUtils.js setup && prisma generate",
     "prepare": "husky install",
-    "vercel-build": "node scripts/prismaUtils.js baseline migrate && next build"
+    "vercel-build": "node scripts/prismaUtils.js baseline migrate && next build",
+    "analyze": "ANALYZE=true yarn build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": "eslint --fix",
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
+    "@next/bundle-analyzer": "^11.0.1",
     "@prisma/client": "^2.25.0",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/nextjs": "^6.8.0",

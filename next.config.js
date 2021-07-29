@@ -9,9 +9,15 @@ const withMDX = require('@next/mdx')({
     remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
   }
 })
-const moduleExports = withMDX({
-  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
 })
+
+const moduleExports = withBundleAnalyzer(
+  withMDX({
+    pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
+  })
+)
 
 const SentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
