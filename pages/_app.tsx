@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-// TODO: type the posthog library
-// @ts-ignore
-import posthog from 'posthog-js'
 import {
   ApolloProvider,
   ApolloClient,
@@ -21,15 +18,20 @@ interface IProps extends AppProps {
   Component: Page
 }
 
+const startPostHog = async () => {
+  if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
+    const posthog = (await import('posthog-js')).default
+    posthog.init(process.env.POSTHOG_API_KEY, {
+      api_host: 'https://app.posthog.com'
+    })
+  }
+}
+
 function MyApp({ Component, pageProps, err }: IProps) {
   const getLayout = Component.getLayout || (page => page)
   const apolloClient = useApollo(pageProps)
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
-      posthog.init(process.env.POSTHOG_API_KEY, {
-        api_host: 'https://app.posthog.com'
-      })
-    }
+    startPostHog()
   }, [])
   return (
     <ApolloProvider client={apolloClient}>
