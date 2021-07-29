@@ -6,10 +6,10 @@ import _ from 'lodash'
 
 type Props = {
   alerts?: AlertType[]
-  page?: string
+  fullWidth?: boolean
 }
 
-const AlertsDisplay: React.FC<Props> = ({ alerts = [], page }) => {
+const AlertsDisplay: React.FC<Props> = ({ alerts = [], fullWidth = false }) => {
   const [dismissedAlerts, onDismiss] = useState<DismissedAlerts>({})
   const [loading, setLoading] = useState<boolean>(true)
 
@@ -34,7 +34,7 @@ const AlertsDisplay: React.FC<Props> = ({ alerts = [], page }) => {
 
   if (loading) return null
 
-  const widthClass = page === 'curriculum' ? 'col-12' : ''
+  const widthClass = fullWidth ? 'col-12' : ''
   return (
     <div className={`alerts-container ${widthClass} p-0`}>
       {alerts

@@ -478,6 +478,17 @@ export type CreateSubmissionMutation = { __typename?: 'Mutation' } & {
   >
 }
 
+export type GetAlertsQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetAlertsQuery = { __typename?: 'Query' } & {
+  alerts: Array<
+    { __typename?: 'Alert' } & Pick<
+      Alert,
+      'id' | 'text' | 'type' | 'url' | 'urlCaption'
+    >
+  >
+}
+
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetAppQuery = { __typename?: 'Query' } & {
@@ -2300,6 +2311,94 @@ export type CreateSubmissionMutationResult =
 export type CreateSubmissionMutationOptions = Apollo.BaseMutationOptions<
   CreateSubmissionMutation,
   CreateSubmissionMutationVariables
+>
+export const GetAlertsDocument = gql`
+  query getAlerts {
+    alerts {
+      id
+      text
+      type
+      url
+      urlCaption
+    }
+  }
+`
+export type GetAlertsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetAlertsQuery,
+    GetAlertsQueryVariables
+  >
+} &
+  TChildProps
+export function withGetAlerts<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetAlertsQuery,
+    GetAlertsQueryVariables,
+    GetAlertsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetAlertsQuery,
+    GetAlertsQueryVariables,
+    GetAlertsProps<TChildProps, TDataName>
+  >(GetAlertsDocument, {
+    alias: 'getAlerts',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetAlertsQuery__
+ *
+ * To run a query within a React component, call `useGetAlertsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAlertsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAlertsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAlertsQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetAlertsQuery, GetAlertsQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetAlertsQuery, GetAlertsQueryVariables>(
+    GetAlertsDocument,
+    options
+  )
+}
+export function useGetAlertsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetAlertsQuery,
+    GetAlertsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetAlertsQuery, GetAlertsQueryVariables>(
+    GetAlertsDocument,
+    options
+  )
+}
+export type GetAlertsQueryHookResult = ReturnType<typeof useGetAlertsQuery>
+export type GetAlertsLazyQueryHookResult = ReturnType<
+  typeof useGetAlertsLazyQuery
+>
+export type GetAlertsQueryResult = Apollo.QueryResult<
+  GetAlertsQuery,
+  GetAlertsQueryVariables
 >
 export const GetAppDocument = gql`
   query getApp {

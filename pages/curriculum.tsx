@@ -2,25 +2,23 @@ import React, { useEffect, useState, useRef } from 'react'
 import { getLayout } from '../components/Layout'
 import Title from '../components/Title'
 import { WithLayout } from '../@types/page'
-import Error, { StatusCode } from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import AnnouncementCard from '../components/AnnouncementCard'
 import AdditionalResources from '../components/AdditionalResources'
 import AlertsDisplay from '../components/AlertsDisplay'
 import {
-  GetAppQuery,
-  GetAppDocument,
   Lesson,
-  Alert,
   UserLesson,
   useGetSessionQuery,
-  GetSessionQuery
+  GetSessionQuery,
+  useGetAlertsQuery
 } from '../graphql/'
 import DiscordBar from '../components/DiscordBar'
 import _ from 'lodash'
-import { initializeApollo } from '../helpers/apolloClient'
-import { GetStaticProps } from 'next'
+import { getAllLessonPaths } from '../helpers/static/getAllLessonPaths'
+import { getLessonMetaData } from '../helpers/static/getLessonMetaData'
+
 import styles from '../scss/curriculum.module.scss'
 
 const announcements = [
@@ -31,7 +29,6 @@ const announcements = [
 ]
 type Props = {
   lessons: Lesson[]
-  alerts: Alert[]
 }
 
 interface State {
@@ -103,22 +100,22 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
   )
 }
 
-export const Curriculum: React.FC<Props> & WithLayout = ({
-  lessons,
-  alerts
-}) => {
+export const Curriculum: React.FC<Props> & WithLayout = ({ lessons }) => {
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data, loading } = useGetSessionQuery({
-    fetchPolicy: 'cache-and-network'
+    fetchPolicy: 'cache-and-network',
+    ssr: false
   })
+  const { data: { alerts } = {} } = useGetAlertsQuery({
+    pollInterval: 10 * 60 * 60 // Check for new alerts every ten minutes
+  })
+
   const [state, setState] = useState<State>({
     session: { lessonStatus: [] },
     progress: -1,
     current: -1
   })
-  if (!lessons || !alerts) {
-    return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
-  }
+
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [scrolledRight, setScrolledRight] = useState(false)
 
@@ -193,7 +190,7 @@ export const Curriculum: React.FC<Props> & WithLayout = ({
         data-testid="parent-scroll"
       >
         <div className={`col-12 col-xl-8 ${styles['child-scroll']}`}>
-          <AlertsDisplay alerts={alerts} page="curriculum" />
+          {alerts && <AlertsDisplay alerts={alerts} fullWidth={true} />}
           <div className="d-xl-none">
             <ProgressCard
               progressCount={state.progress}
@@ -219,21 +216,20 @@ export const Curriculum: React.FC<Props> & WithLayout = ({
     </>
   )
 }
-const FIVE_MINUTES = 5 * 60
+export async function getStaticProps() {
+  const lessons = await Promise.all(
+    (
+      await getAllLessonPaths()
+    ).map(async ({ params: { lesson_slug } }) => {
+      const metaData = await getLessonMetaData(lesson_slug)
+      return {
+        lesson_slug,
+        ...metaData
+      }
+    })
+  )
 
-export const getStaticProps: GetStaticProps = async () => {
-  const apolloClient = initializeApollo()
-  const query = await apolloClient.query<GetAppQuery>({
-    query: GetAppDocument
-  })
-
-  return {
-    props: {
-      lessons: query.data.lessons,
-      alerts: query.data.alerts
-    },
-    revalidate: FIVE_MINUTES
-  }
+  return { props: { lessons } }
 }
 
 Curriculum.getLayout = getLayout
