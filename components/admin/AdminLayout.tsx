@@ -5,6 +5,7 @@ import _ from 'lodash'
 import { GetAppProps } from '../../graphql'
 import Error, { StatusCode } from '../../components/Error'
 import { useRouter } from 'next/router'
+import Title from '../Title'
 export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
   data,
   children,
@@ -27,7 +28,8 @@ export const AdminLayout: React.FC<GetAppProps & { title?: string }> = ({
 
   if (!isAdmin) {
     return (
-      <Layout title={title}>
+      <Layout>
+        <Title title={title} />
         <h1>You must be admin to access this page</h1>
       </Layout>
     )
