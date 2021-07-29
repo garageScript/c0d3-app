@@ -4,8 +4,10 @@ import { Formik, Form, Field } from 'formik'
 import RESET_PASSWORD from '../graphql/queries/resetPassword'
 import { resetPasswordValidation } from '../helpers/formValidation'
 import Input from '../components/Input'
-import Layout from '../components/Layout'
+import { getLayout } from '../components/Layout'
 import Card from '../components/Card'
+import Title from '../components/Title'
+import { WithLayout } from '../@types/page'
 
 const initialValues = {
   userOrEmail: ''
@@ -78,10 +80,13 @@ export const ResetPassword: React.FC = () => {
   )
 }
 
-export const ResetPasswordContainer = () => (
-  <Layout title="Reset password">
+export const ResetPasswordContainer: React.FC & WithLayout = () => (
+  <>
+    <Title title="Reset password" />
     <ResetPassword />
-  </Layout>
+  </>
 )
+
+ResetPasswordContainer.getLayout = getLayout
 
 export default ResetPasswordContainer

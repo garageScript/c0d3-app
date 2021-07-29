@@ -33,7 +33,6 @@ type LessonStatusMap = {
 const UserProfile: React.FC & WithLayout = () => {
   const router = useRouter()
   const username = router.query.username as string
-  console.log({ username })
   const { loading, error, data } = useUserInfoQuery({
     variables: { username },
     skip: !username

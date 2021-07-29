@@ -6,8 +6,10 @@ import UPDATE_PASSWORD from '../../graphql/queries/updatePassword'
 import NavLink from '../../components/NavLink'
 import Input from '../../components/Input'
 import { confirmPasswordValidation } from '../../helpers/formValidation'
-import Layout from '../../components/Layout'
+import { getLayout } from '../../components/Layout'
 import Card from '../../components/Card'
+import Title from '../../components/Title'
+import { WithLayout } from '../../@types/page'
 
 const initialValues = {
   password: '',
@@ -92,10 +94,13 @@ export const ResetPassword: React.FC = () => {
   )
 }
 
-export const ResetPasswordContainer = () => (
-  <Layout title="Confirm">
+export const ResetPasswordContainer: React.FC & WithLayout = () => (
+  <>
+    <Title title="Confirm" />
     <ResetPassword />
-  </Layout>
+  </>
 )
+
+ResetPasswordContainer.getLayout = getLayout
 
 export default ResetPasswordContainer
