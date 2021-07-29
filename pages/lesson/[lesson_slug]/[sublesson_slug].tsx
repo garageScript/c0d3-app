@@ -14,6 +14,7 @@ import styles from '../../../scss/mdx.module.scss'
 import { WithLayout } from '../../../@types/page'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'querystring'
+import MDXcomponents from '../../../helpers/mdxComponents'
 
 export type SubLessonMeta = {
   frontMatter: SubLessonFrontMatter
@@ -52,7 +53,7 @@ const Lesson: React.FC<Props> & WithLayout = ({
         />
       )}
 
-      <MDXRemote {...selectedSubLesson.source}></MDXRemote>
+      <MDXRemote {...selectedSubLesson.source} components={MDXcomponents} />
 
       {hasMultipleSubLessons && (
         <NextPreviousLessons

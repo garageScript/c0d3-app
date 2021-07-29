@@ -9,6 +9,7 @@ import { ParsedUrlQuery } from 'querystring'
 import Title from '../../components/Title'
 import { getDocSlugs, getDocContent } from '../../helpers/static/docs'
 import { parseMDX } from '../../helpers/static/parseMDX'
+import MDXcomponents from '../../helpers/mdxComponents'
 
 interface Props {
   source: MDXRemoteSerializeResult
@@ -21,7 +22,7 @@ const Lesson: React.FC<Props> & WithLayout = ({ source, frontMatter }) => {
       className={`${styles['lesson-wrapper']} card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white`}
     >
       <Title title={`C0D3 | ${frontMatter?.title ?? 'Docs'}`} />
-      <MDXRemote {...source}></MDXRemote>
+      <MDXRemote {...source} components={MDXcomponents}></MDXRemote>
     </div>
   )
 }

@@ -3,21 +3,11 @@ const slug = require('remark-slug')
 const toc = require('remark-toc')
 const gfm = require('remark-gfm')
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
-  }
-})
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true'
 })
 
-const moduleExports = withBundleAnalyzer(
-  withMDX({
-    pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
-  })
-)
+const moduleExports = withBundleAnalyzer({})
 
 const SentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
