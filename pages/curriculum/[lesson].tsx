@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { getLayout } from '../../components/Layout'
 import Title from '../../components/Title'
 import Error, { StatusCode } from '../../components/Error'
-import LessonTitleCard from '../../components/LessonTitleCard'
+// import LessonTitleCard from '../../components/LessonTitleCard'
 import AlertsDisplay from '../../components/AlertsDisplay'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import LoadingSpinner from '../../components/LoadingSpinner'
@@ -62,14 +62,14 @@ const Challenges: React.FC & WithLayout = () => {
       isTeaching: null,
       lessonId: currentlessonId
     } as UserLesson)
-  const isPassed = !!currentLessonStatus.isTeaching
+  // const isPassed = !!currentLessonStatus.isTeaching
   return (
     <>
       <Title title={`${currentLesson.title}`} />
       <div className="row mt-4">
         {currentLesson && (
           <div className="challenges-container">
-            <LessonTitleCard
+            {/* <LessonTitleCard
               lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
               lessonUrl={currentLesson.docUrl!}
               lessonTitle={currentLesson.title!}
@@ -77,7 +77,7 @@ const Challenges: React.FC & WithLayout = () => {
               isPassed={isPassed}
               setShow={setShow}
               show={show}
-            />
+            /> */}
             {/* Casting alerts as any until type is migrated */}
             {alerts && <AlertsDisplay alerts={alerts as any} />}
             <ChallengeMaterial

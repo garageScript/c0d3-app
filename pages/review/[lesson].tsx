@@ -5,7 +5,7 @@ import Title from '../../components/Title'
 import { getLayout } from '../../components/Layout'
 
 import ReviewCard from '../../components/ReviewCard'
-import LessonTitleCard from '../../components/LessonTitleCard'
+// import LessonTitleCard from '../../components/LessonTitleCard'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import GET_SUBMISSIONS from '../../graphql/queries/getSubmissions'
 import { useGetAppQuery, Submission } from '../../graphql/index'
@@ -81,13 +81,13 @@ const Review: React.FC & WithLayout = () => {
     <>
       <Title title={`Review - ${currentLesson.title}`} />
       <div className="row mt-4">
-        <LessonTitleCard
+        {/* <LessonTitleCard
           lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
           lessonUrl={currentLesson.docUrl!}
           lessonTitle={currentLesson.title!}
           lessonId={currentlessonId}
           isPassed={true}
-        />
+        /> */}
         {currentLesson && <SubmissionDisplay submissions={lessonSubmissions} />}
       </div>
     </>
