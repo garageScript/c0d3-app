@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
   const metaData = await getLessonMetaData(lesson_slug)
 
   const challenges = query.data.lessons.find(
-    lesson => lesson.id - 1 == metaData.order
+    lesson => lesson.order == metaData.order
   )?.challenges
 
   if (!challenges)

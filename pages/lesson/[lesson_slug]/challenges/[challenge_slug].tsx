@@ -127,7 +127,7 @@ export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
     throw new Error('graphQL Query: GetAppDocument failed to return lessons ')
 
   const challenges = lessons.find(
-    lesson => lesson.id - 1 == metaData.order
+    lesson => lesson.order == metaData.order
   )?.challenges
 
   if (!challenges)
