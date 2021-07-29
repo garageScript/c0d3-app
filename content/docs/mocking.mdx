@@ -1,20 +1,24 @@
-import LessonLayout from '../../components/mdx/LessonLayout'
+---
+title: Mocking
+---
 
 # Prerequisites
 
-Before we go into mocking, you must first accept that `functions` are in fact a special type of object. Since functions are actually objects, they also have properties like a regular object.
+Before we go into mocking, you must first accept that `functions` are in fact a
+special type of object. Since functions are actually objects, they also have
+properties like a regular object.
 
 ```jsx
 const a = () => {
   a.count = (a.count || 0) + 1
-  console.log( `count is currently ${a.count}` )
+  console.log(`count is currently ${a.count}`)
 }
 a() // will log 1
 a() // will log 2
 a() // will log 3
 a() // will log 4
 
-console.log( a.count ) // will log 4
+console.log(a.count) // will log 4
 
 // You can directly set properties to a function
 a.count = 99
@@ -23,29 +27,32 @@ a() // will log 100
 
 # Mock function
 
-A mock function is a fake function that doesn't do anything but keep track of how many times it called. It also keeps track of the arguments that it is being called with. You can create a mock function by calling `jest.fn` function.
+A mock function is a fake function that doesn't do anything but keep track of
+how many times it called. It also keeps track of the arguments that it is being
+called with. You can create a mock function by calling `jest.fn` function.
 
-The mocked function contains an array of all the times the function has been called. You can access this array like this:
+The mocked function contains an array of all the times the function has been
+called. You can access this array like this:
 
 ```jsx
-// a is a mock function. 
+// a is a mock function.
 const a = jest.fn()
 
 a() // a is run without any arguments.
-console.log( a.mock.calls.length ) // a.mock.calls is an array of length 1
+console.log(a.mock.calls.length) // a.mock.calls is an array of length 1
 
 a('hello', 'world') // a is run with 2 arguments.
-console.log( a.mock.calls.length ) // a.mock.calls is an array of length 2
+console.log(a.mock.calls.length) // a.mock.calls is an array of length 2
 
 a('test', 1, 9, 100) // a is run with 4 arguments.
-console.log( a.mock.calls.length ) // a.mock.calls is an array of length 3
+console.log(a.mock.calls.length) // a.mock.calls is an array of length 3
 
-a( () => {
+a(() => {
   console.log('hello')
-} ) // a is run with 1 argument
-console.log( a.mock.calls.length ) // a.mock.calls is an array of length 4
+}) // a is run with 1 argument
+console.log(a.mock.calls.length) // a.mock.calls is an array of length 4
 
-console.log( a.mock.calls )
+console.log(a.mock.calls)
 /*
 [
   [],
@@ -65,16 +72,18 @@ a.mock.calls[3][0]() // prints out 'hello'
 
 ## Mock Return
 
-If you want a more complicated mock function that can return something, you can pass in a function. In the example below, nothing changes except your mocked function now returns a value! It can actually do something now.
+If you want a more complicated mock function that can return something, you can
+pass in a function. In the example below, nothing changes except your mocked
+function now returns a value! It can actually do something now.
 
 ```jsx
-const a = jest.fn( (a, b) => {
+const a = jest.fn((a, b) => {
   return a + b
 })
 
-console.log( a(6,7) ) // prints out 13
+console.log(a(6, 7)) // prints out 13
 
-console.log( a.mock.calls )
+console.log(a.mock.calls)
 /*
 [
   [6,7]
@@ -84,14 +93,15 @@ console.log( a.mock.calls )
 
 ## Example - console.log
 
-We are testing a function that takes in a number and prints out "hello" that many times.
+We are testing a function that takes in a number and prints out "hello" that
+many times.
 
 ```jsx
 // solution.js
-const logHello = (i) => {
+const logHello = i => {
   if (i <= 0) return
   console.log('hello')
-  return logHello(i-1)
+  return logHello(i - 1)
 }
 
 module.exports = logHello
@@ -103,7 +113,8 @@ To test if the above function is working, I need to make sure that
 2. `logHello(0)` - `console.log` is called 0 times.
 3. `logHello(40)` - `console.log` is called 40 times.
 
-I want to observe how many times `console.log` is being called, so instead of the original function, I should replace it with a mock function.
+I want to observe how many times `console.log` is being called, so instead of
+the original function, I should replace it with a mock function.
 
 ```jsx
 // solution.test.js
@@ -137,9 +148,13 @@ describe('logHello', () => {
 
 # Mock modules
 
-Sometimes, the functions you are testing will depend on external modules that you have no control over. To mock an entire module, you run `jest.mock('module-name')`
+Sometimes, the functions you are testing will depend on external modules that
+you have no control over. To mock an entire module, you run
+`jest.mock('module-name')`
 
-In the example below, the function first sends a request to an API to get an array of objects. It will console.log the title for each title property of the object in the array.
+In the example below, the function first sends a request to an API to get an
+array of objects. It will console.log the title for each title property of the
+object in the array.
 
 ```jsx
 // solution.js
@@ -148,7 +163,7 @@ const request = require('request')
 const logTitles = () => {
   request('https://c0d3.com/api/lessons', (err, response, body) => {
     const arr = JSON.parse(body)
-    arr.forEach( (lesson) => {
+    arr.forEach(lesson => {
       console.log(lesson.title)
     })
   })
@@ -159,12 +174,16 @@ module.exports = logTitles
 
 To test if the above function is working, I need to make sure that
 
-1. if `request` to the API sends back an array string of 0 elements, `console.log` is called 0 times.
-2. if `request` to the API sends back an array string of 2 elements, `console.log` is called 2 times.
+1. if `request` to the API sends back an array string of 0 elements,
+   `console.log` is called 0 times.
+2. if `request` to the API sends back an array string of 2 elements,
+   `console.log` is called 2 times.
 
-Unlike the previous example, this one involves a library that we have no control over, the `request` library. 
+Unlike the previous example, this one involves a library that we have no control
+over, the `request` library.
 
-We need to overwrite the response so that we can simulate how many elements the API sends back.
+We need to overwrite the response so that we can simulate how many elements the
+API sends back.
 
 ```jsx
 // solution.test.js
@@ -195,7 +214,7 @@ describe('logHello', () => {
     console.log = jest.fn()
     const fakeResponse = JSON.stringify([])
     logTitles()
-    
+
     // request is called 1 time with 2 arguments.
     // The second argument is a function. Let's run that function
     request.mock.calls[0][1](null, null, fakeResponse)
@@ -206,13 +225,16 @@ describe('logHello', () => {
 
     // we need to stringify it because request callback expects a string
     console.log = jest.fn()
-    const fakeResponse = JSON.stringify([{
-      title: 'hello',
-    }, {
-      title: 'world'
-    }])
+    const fakeResponse = JSON.stringify([
+      {
+        title: 'hello'
+      },
+      {
+        title: 'world'
+      }
+    ])
     logTitles()
-    
+
     // request is called 1 time with 2 arguments.
     // The second argument is a function. Let's run that function
     request.mock.calls[0][1](null, null, fakeResponse)
@@ -223,8 +245,3 @@ describe('logHello', () => {
   })
 })
 ```
-
-export default ({ children }) => (
-  <LessonLayout title="Mocking">{children}</LessonLayout>
-)
-
