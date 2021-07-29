@@ -74,14 +74,13 @@ export const getStaticPaths: GetStaticPaths<Slugs> = async () => {
   const lessons = query?.data?.lessons
   if (!lessons)
     throw new Error('graphQL Query: GetAppDocument failed to return lessons ')
-
   const lessonAndChallengePaths = (
     await Promise.all(
       lessonSlugs.map(async lesson_slug => {
         const lessonOrder = (await getLessonMetaData(lesson_slug)).order
 
         const challengeIds = lessons
-          .find(lesson => (lesson?.id || 0) - 1 == lessonOrder)
+          .find(lesson => lesson?.order == lessonOrder)
           ?.challenges?.map(challenge => challenge?.order)
         if (lesson_slug === 'js5') console.log({ challengeIds })
         if (!challengeIds) {
