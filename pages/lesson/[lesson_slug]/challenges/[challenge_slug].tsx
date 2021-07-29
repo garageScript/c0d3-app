@@ -83,11 +83,15 @@ export const getStaticPaths: GetStaticPaths<Slugs> = async () => {
         const challengeIds = lessons
           .find(lesson => (lesson?.id || 0) - 1 == lessonOrder)
           ?.challenges?.map(challenge => challenge?.order)
-
-        if (!challengeIds)
+        if (lesson_slug === 'js5') console.log({ challengeIds })
+        if (!challengeIds) {
+          console.log({ lessons })
+          console.log({ lessonOrder })
+          console.log({ challengeIds })
           throw new Error(
             `Could not find challengeIds with: "lesson_slug: ${lesson_slug}" & "lessonOrder: ${lessonOrder}"`
           )
+        }
         const lessonAndChallengeSlugs = challengeIds?.map(challenge_slug => ({
           params: { lesson_slug, challenge_slug: String(challenge_slug) }
         }))
