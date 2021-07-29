@@ -2,13 +2,14 @@ import fs from 'fs'
 import path from 'path'
 import { LESSONS_PATH } from './CONSTANTS'
 
+// TODO: Make type stricter (remove optional and or nulls)
 export interface LessonMetaData {
   id: number
   title: string
   description: string
-  docUrl: string
-  githubUrl: string
-  viedoUrl: string
+  docUrl?: string | null
+  githubUrl?: string | null
+  videoUrl?: string | null
   order: number
 }
 

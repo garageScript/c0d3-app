@@ -3,7 +3,7 @@ import path from 'path'
 import { LESSONS_PATH } from './CONSTANTS'
 import { getAllLessonPaths } from './getAllLessonPaths'
 
-export async function getAllSubLessonPaths(lesson_slug: string) {
+export async function getAllSubLessonPaths(lesson_slug?: string) {
   const lessonPaths = lesson_slug
     ? [{ params: { lesson_slug } }]
     : await getAllLessonPaths()

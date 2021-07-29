@@ -1,7 +1,6 @@
 import styles from '../scss/mdx.module.scss'
 import React from 'react'
 import Link from 'next/link'
-import { SubLessonFrontMatter } from '../helpers/static/getSubLessonMDXSource'
 import { SubLessonMeta } from '../pages/lesson/[lesson_slug]/[sublesson_slug]'
 
 type Slugs = {
