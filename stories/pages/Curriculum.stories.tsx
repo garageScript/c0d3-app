@@ -7,7 +7,7 @@ import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 import { withTestRouter } from '../../__tests__/utils/withTestRouter'
-import { Session, Lesson, Alert } from '../../graphql/index'
+import { Session, Lesson } from '../../graphql/index'
 export default {
   component: Curriculum,
   title: 'Pages/Curriculum'
@@ -23,10 +23,7 @@ export const Basic: React.FC = () => {
 
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Curriculum
-        lessons={dummyLessonData as Lesson[]}
-        alerts={dummyAlertData as unknown as Alert[]}
-      />
+      <Curriculum lessons={dummyLessonData as Lesson[]} />
     </MockedProvider>
   )
 }
@@ -47,10 +44,7 @@ export const WithAlerts: React.FC = () => {
 
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Curriculum
-        lessons={dummyLessonData as Lesson[]}
-        alerts={dummyAlertData as unknown as Alert[]}
-      />
+      <Curriculum lessons={dummyLessonData as Lesson[]} />
     </MockedProvider>
   )
 }
@@ -108,10 +102,7 @@ export const CompletedLessons: React.FC<{}> = () => {
 
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <Curriculum
-        lessons={dummyLessonData as Lesson[]}
-        alerts={dummyAlertData as unknown as Alert[]}
-      />
+      <Curriculum lessons={dummyLessonData as Lesson[]} />
     </MockedProvider>
   )
 }
