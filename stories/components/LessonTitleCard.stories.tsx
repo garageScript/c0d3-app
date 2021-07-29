@@ -1,5 +1,6 @@
 import * as React from 'react'
 import LessonTitleCard from '../../components/LessonTitleCard'
+import dummyLessonsData from '../../__dummy__/lessonData'
 
 export default {
   component: LessonTitleCard,
@@ -7,21 +8,9 @@ export default {
 }
 
 export const Basic: React.FC = () => (
-  <LessonTitleCard
-    lessonCoverUrl="js-0-cover.svg"
-    lessonUrl="#"
-    lessonTitle="Foundations"
-    isPassed={false}
-    lessonId={5}
-  />
+  <LessonTitleCard metaData={dummyLessonsData[0]} isPassed={false} />
 )
 
 export const PassedLesson: React.FC = () => (
-  <LessonTitleCard
-    lessonCoverUrl="js-0-cover.svg"
-    lessonUrl="#"
-    lessonTitle="Foundations"
-    isPassed={true}
-    lessonId={5}
-  />
+  <LessonTitleCard metaData={dummyLessonsData[0]} isPassed={true} />
 )
