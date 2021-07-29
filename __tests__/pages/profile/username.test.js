@@ -171,7 +171,7 @@ describe('user profile test', () => {
     ]
     const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
@@ -251,7 +251,7 @@ describe('user profile test', () => {
     ]
     const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
@@ -295,7 +295,7 @@ describe('user profile test', () => {
     ]
     const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
@@ -330,7 +330,7 @@ describe('user profile test', () => {
     ]
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
@@ -382,7 +382,7 @@ describe('user profile test', () => {
     ]
     const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
@@ -440,7 +440,7 @@ describe('user profile test', () => {
     ]
     const { container, findByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
@@ -457,7 +457,7 @@ describe('user profile test', () => {
 
     const { findByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <UserProfile />
+        {UserProfile.getLayout(<UserProfile />)}
       </MockedProvider>
     )
 

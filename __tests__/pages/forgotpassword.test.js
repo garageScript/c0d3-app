@@ -40,7 +40,7 @@ describe('ForgotPassword Page', () => {
 
     const { container, getByTestId, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ForgotPassword />
+        {ForgotPassword.getLayout(<ForgotPassword />)}
       </MockedProvider>
     )
 
@@ -91,7 +91,7 @@ describe('ForgotPassword Page', () => {
 
     const { container, getByTestId, getByRole } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ForgotPassword />
+        {ForgotPassword.getLayout(<ForgotPassword />)}
       </MockedProvider>
     )
 

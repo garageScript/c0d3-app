@@ -9,11 +9,13 @@ describe('_error page', () => {
   test('Should return Error 500 component', async () => {
     const { container } = render(
       <MockedProvider addTypename={false}>
-        <MyError
-          code={500}
-          hasGetInitialPropsRun={true}
-          err={new Error('test error')}
-        />
+        {MyError.getLayout(
+          <MyError
+            code={500}
+            hasGetInitialPropsRun={true}
+            err={new Error('test error')}
+          />
+        )}
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
@@ -22,11 +24,13 @@ describe('_error page', () => {
   test('Should capture error when component is loading', async () => {
     const { container } = render(
       <MockedProvider addTypename={false}>
-        <MyError
-          code={505}
-          hasGetInitialPropsRun={false}
-          err={new Error('test error')}
-        />
+        {MyError.getLayout(
+          <MyError
+            code={505}
+            hasGetInitialPropsRun={false}
+            err={new Error('test error')}
+          />
+        )}
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()

@@ -69,7 +69,7 @@ describe('Login Page', () => {
 
     const { getByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <LoginPage />
+        {LoginPage.getLayout(<LoginPage />)}
       </MockedProvider>
     )
 
@@ -109,7 +109,7 @@ describe('Login Page', () => {
 
     const { container, getByTestId, findByTestId, findByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <LoginPage />
+        {LoginPage.getLayout(<LoginPage />)}
       </MockedProvider>
     )
 

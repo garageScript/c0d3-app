@@ -7,7 +7,7 @@ describe('500 Error Page', () => {
   it('should render', async () => {
     const { container } = render(
       <MockedProvider>
-        <InternalServerError />
+        {InternalServerError.getLayout(<InternalServerError />)}
       </MockedProvider>
     )
     await waitFor(() => expect(container).toMatchSnapshot())

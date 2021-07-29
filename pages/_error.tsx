@@ -3,6 +3,7 @@ import React from 'react'
 import * as Sentry from '@sentry/browser'
 import { NextPageContext } from 'next'
 import ErrorComponent, { StatusCode } from '../components/Error'
+import { getLayout } from '../components/Layout'
 
 interface MyErrorContext extends NextPageContext {
   code: number
@@ -68,4 +69,5 @@ MyError.getInitialProps = async ({ res, err, asPath }: MyErrorContext) => {
   return errorInitialProps
 }
 
+MyError.getLayout = getLayout
 export default MyError

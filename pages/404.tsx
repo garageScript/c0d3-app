@@ -1,5 +1,12 @@
 import React from 'react'
+import { WithLayout } from '../@types/page'
 import Error, { StatusCode } from '../components/Error'
-export default function NotFound() {
-  return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
-}
+import { getLayout } from '../components/Layout'
+
+const NotFound: React.FC & WithLayout = () => (
+  <Error code={StatusCode.NOT_FOUND} message="Page not found" />
+)
+
+NotFound.getLayout = getLayout
+
+export default NotFound

@@ -61,7 +61,7 @@ describe('ResetPassword Page', () => {
 
     const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ResetPassword />
+        {ResetPassword.getLayout(<ResetPassword />)}
       </MockedProvider>
     )
 
@@ -105,7 +105,7 @@ describe('ResetPassword Page', () => {
 
     const { container, getByTestId, getByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ResetPassword />
+        {ResetPassword.getLayout(<ResetPassword />)}
       </MockedProvider>
     )
 
