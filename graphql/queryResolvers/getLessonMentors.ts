@@ -23,7 +23,7 @@ export const getLessonMentors = async (
         userLessons: {
           some: {
             lessonId,
-            isPassed: { not: null }
+            passedAt: { not: null }
           }
         }
       },

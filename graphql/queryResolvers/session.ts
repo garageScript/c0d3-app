@@ -36,12 +36,10 @@ export const session = async (_parent: void, _args: void, context: Context) => {
     })
   ])
 
-  const submissions = _.get(session, 'submissions', [])
-  const userLessons = _.get(session, 'lessonStatus', [])
+  const { submissions, lessonStatus: userLessons } = session
 
-  const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
-    const mentorUsername = _.get(starGiven, 'mentor.username', '')
-    map[starGiven.lessonId] = mentorUsername
+  const lessonMentorMap = starsGiven.reduce((map, { lessonId, mentor }) => {
+    map[lessonId] = mentor.username
     return map
   }, {} as lessonMentorMapType)
 
