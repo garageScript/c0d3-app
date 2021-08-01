@@ -7,20 +7,6 @@ import {
 import * as Sentry from '@sentry/nextjs'
 
 /**
- * Temporary solution to handle Sentry.flush() possibly rejecting with 'false'.
- * TODO: Remove when issue is resolved with sentry package
- * @see https://github.com/getsentry/sentry-javascript/issues/3643
- * @param timeout — Maximum time in ms the client should wait.
- */
-const sentryTryFlush: any = async (timeout?: number) => {
-  try {
-    await Sentry.flush(timeout)
-  } catch (error) {
-    console.error('Flush failed: ', error)
-  }
-}
-
-/**
  * Plugin to capture errors during apollo transaction and send a copy to sentry/logflare
  */
 export const apolloLogPlugin: ApolloServerPlugin = {
@@ -53,11 +39,6 @@ export const apolloLogPlugin: ApolloServerPlugin = {
           // Log error so logflare can also receive a copy of the error
           console.error(err)
         }
-
-        /* returning promise causes apollo to wait for resolve before responding
-        to user. This delay is required to ensure errors are forwarded to
-        sentry.io before serverless functions shut down */
-        return sentryTryFlush(2000)
       }
     }
   }

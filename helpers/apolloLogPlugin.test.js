@@ -2,7 +2,6 @@
  * @jest-environment node
  */
 import { apolloLogPlugin } from './apolloLogPlugin'
-import { ApolloError } from 'apollo-server-micro'
 import * as Sentry from '@sentry/nextjs'
 
 jest.spyOn(Sentry, 'withScope').mockImplementation(fn => fn(fakeScope))
@@ -60,16 +59,5 @@ describe('apolloLogPlugin', () => {
     expect(Sentry.withScope).toHaveBeenCalled()
     expect(Sentry.captureException).toHaveBeenCalledWith(ctx.errors[0])
     expect(fakeScope.setTransactionName).toHaveBeenCalledWith('fakeId')
-  })
-
-  it('should call Sentry.flush ', () => {
-    const ctx = {
-      operation: 'query',
-      request: {},
-      errors: [{}]
-    }
-
-    apolloLogPlugin.requestDidStart().didEncounterErrors(ctx)
-    expect(Sentry.flush).toHaveBeenCalled()
   })
 })
