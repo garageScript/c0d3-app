@@ -4,7 +4,7 @@
 
 jest.mock('../../graphql/queryResolvers/alerts')
 import { alerts } from '../../graphql/queryResolvers/alerts'
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { addAlert, removeAlert } from './alertController'
 
 const mockAlerts = ['excuse me sir', 'did u just', 'turn into a potato?']
@@ -19,8 +19,8 @@ const context = {
 }
 
 alerts.mockResolvedValue(mockAlerts)
-prisma.alert.create = jest.fn().mockImplementation(a => Promise.resolve(a))
-prisma.alert.delete = jest.fn().mockImplementation(a => Promise.resolve(a))
+prismaMock.alert.create.mockResolvedValue(mockAlerts[0])
+prismaMock.alert.delete.mockResolvedValue(mockAlerts[0])
 
 describe('Alert controller tests', () => {
   let ctx
@@ -53,9 +53,7 @@ describe('Alert controller tests', () => {
     expect(removeAlert({}, { id: 5 }, ctx)).resolves.toEqual({ success: true })
   })
   test('Should throw error if no id provided when removing alert', async () => {
-    prisma.alert.delete = jest
-      .fn()
-      .mockRejectedValueOnce('No alert id provided')
+    prismaMock.alert.delete.mockRejectedValueOnce('No alert id provided')
     expect(removeAlert({}, {}, ctx)).rejects.toThrowError(
       'No alert id provided'
     )
