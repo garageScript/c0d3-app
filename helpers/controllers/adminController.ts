@@ -2,7 +2,7 @@ import { Context } from '../../@types/helpers'
 import _ from 'lodash'
 import { isAdmin } from '../isAdmin'
 import { ChangeAdminRightsMutationVariables } from '../../graphql'
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 
 export const changeAdminRights = async (
   _parent: void,
