@@ -52,7 +52,7 @@ describe('updateSubmission', () => {
       .fn()
       .mockResolvedValue([{ challengeId: 1 }])
     prisma.userLesson.upsert = jest.fn().mockResolvedValue({
-      isPassed: '1619821939579'
+      passedAt: new Date(1619821939579)
     })
   })
 
@@ -62,7 +62,7 @@ describe('updateSubmission', () => {
 
   it('should update user lesson if student has completed it and notify on discord', async () => {
     prisma.userLesson.upsert = jest.fn().mockResolvedValue({
-      isPassed: null
+      passedAt: null
     })
 
     // mock next lesson
@@ -71,7 +71,7 @@ describe('updateSubmission', () => {
 
     await expect(updateSubmission(submission)).resolves.toEqual(submissionMock)
     expect(prisma.userLesson.update).toHaveBeenCalledWith(
-      expect.objectContaining({ data: { isPassed: expect.any(String) } })
+      expect.objectContaining({ data: { passedAt: expect.any(Date) } })
     )
 
     expect(sendLessonChannelMessage).toHaveBeenCalledTimes(2)
@@ -87,7 +87,7 @@ describe('updateSubmission', () => {
 
   it('should not notify next lesson if does not exist', async () => {
     prisma.userLesson.upsert = jest.fn().mockResolvedValue({
-      isPassed: null
+      passedAt: null
     })
 
     // mock next lesson
