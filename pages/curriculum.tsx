@@ -20,6 +20,7 @@ import {
 } from '../graphql/'
 import { initializeApollo } from '../helpers/apolloClient'
 import styles from '../scss/curriculum.module.scss'
+import useHasMounted from '../helpers/useHasMounted'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -92,9 +93,11 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
   )
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
+  const hasMounted = useHasMounted()
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data, loading } = useGetSessionQuery({
-    fetchPolicy: 'cache-and-network'
+    fetchPolicy: 'cache-and-network',
+    ssr: false
   })
   const [state, setState] = useState<State>({
     session: { lessonStatus: [] },
@@ -160,7 +163,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   })
   return (
     <Layout title="Curriculum">
-      {typeof window !== 'undefined' &&
+      {hasMounted &&
+        typeof window !== 'undefined' &&
         !window.localStorage.getItem('horizontalScrollUsed') && (
           <ScrollArrow scrolledRight={scrolledRight} />
         )}
