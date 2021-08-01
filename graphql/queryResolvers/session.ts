@@ -7,8 +7,8 @@ interface lessonMentorMapType {
   [lessonId: number]: string
 }
 
-export const session = async (_parent: void, _args: void, { req }: Context) => {
-  const user = req.user
+export const session = async (_parent: void, _args: void, context: Context) => {
+  const user = context?.req?.user
   if (!user) return { lessonStatus: [] }
 
   // FYI: The reason we are querying with parallelized promises:
