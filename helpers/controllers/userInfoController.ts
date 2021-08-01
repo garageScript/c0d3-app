@@ -1,5 +1,4 @@
 import type { Star } from '.prisma/client'
-import _ from 'lodash'
 import { UserInfoQueryVariables } from '../../graphql'
 import prisma from '../../prisma'
 

@@ -2,8 +2,8 @@
  * @jest-environment node
  */
 
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { allUsers } from './allUsers'
-import { prisma } from '../../prisma'
 
 const mockUsers = [
   {
@@ -23,8 +23,8 @@ const ctx = {
 }
 
 describe('allUsers resolver', () => {
-  test('Should return list of users', async () => {
-    prisma.user.findMany = jest.fn().mockReturnValue(mockUsers)
-    expect(allUsers(null, null, ctx)).toEqual(mockUsers)
+  test('Should return list of users', () => {
+    prismaMock.user.findMany.mockResolvedValue(mockUsers)
+    return expect(allUsers(null, null, ctx)).resolves.toEqual(mockUsers)
   })
 })

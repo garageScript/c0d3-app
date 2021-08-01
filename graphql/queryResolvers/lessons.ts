@@ -1,4 +1,4 @@
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 
 export const lessons = () => {
   return prisma.lesson.findMany({

@@ -2,17 +2,17 @@
  * @jest-environment node
  */
 
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { alerts } from './alerts'
-import { prisma } from '../../prisma'
 
 describe('Alerts resolver', () => {
-  test('should return empty array if no alerts', async () => {
-    prisma.alert.findMany = jest.fn().mockReturnValue([])
-    expect(alerts()).toEqual([])
+  test('should return empty array if no alerts', () => {
+    prismaMock.alert.findMany.mockResolvedValue([])
+    return expect(alerts()).resolves.toEqual([])
   })
 
-  test('should return list of alerts', async () => {
-    prisma.alert.findMany = jest.fn().mockReturnValue([
+  test('should return list of alerts', () => {
+    prismaMock.alert.findMany = jest.fn().mockResolvedValue([
       {
         id: 0,
         text: 'Set up your computer to submit challenges.',
@@ -24,7 +24,7 @@ describe('Alerts resolver', () => {
         text: 'Please upgrade your CLI client by running npm update c0d3'
       }
     ])
-    expect(alerts()).toEqual([
+    return expect(alerts()).resolves.toEqual([
       {
         id: 0,
         text: 'Set up your computer to submit challenges.',
