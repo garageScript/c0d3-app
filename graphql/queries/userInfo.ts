@@ -43,9 +43,7 @@ const USER_INFO = gql`
       }
       lessonStatus {
         lessonId
-        isPassed
-        isTeaching
-        isEnrolled
+        passedAt
         starsReceived {
           lessonId
           comment
