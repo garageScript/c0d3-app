@@ -15,7 +15,7 @@ const prismaOptions = {
 
 // Avoid instantiating too many instances of Prisma in development
 // https://www.prisma.io/docs/support/help-articles/nextjs-prisma-client-dev-practices#problem
-export let prisma: PrismaClient
+let prisma: PrismaClient
 
 // check to use this workaround only in development and not in production
 if (process.env.NODE_ENV === 'production') {
