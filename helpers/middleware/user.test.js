@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import userMiddleware from './user'
 
 const mockUserInfo = {
@@ -15,8 +15,6 @@ const mockUserInfo = {
   cliToken: 'KfizzIlWp111fizzDbuzzr'
 }
 
-prisma.user.findUnique = jest.fn().mockReturnValue(mockUserInfo)
-
 const res = {}
 const next = () => {}
 
@@ -26,6 +24,9 @@ const next = () => {}
  userMiddleware is finished running.
 */
 describe('User Middleware', () => {
+  beforeEach(() => {
+    prismaMock.user.findUnique.mockResolvedValue(mockUserInfo)
+  })
   test('Should return null when userId property of req.session is not there', async () => {
     const req = { session: '' }
     await userMiddleware(req, res, next)

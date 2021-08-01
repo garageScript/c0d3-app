@@ -6,7 +6,7 @@ import type {
   UpdateLessonMutationVariables
 } from '../../graphql'
 import { lessons } from '../../graphql/queryResolvers/lessons'
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 import { checkIsAdmin } from '../isAdmin'
 import { validateLessonId } from '../validateLessonId'
 
