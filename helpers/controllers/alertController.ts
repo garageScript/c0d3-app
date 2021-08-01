@@ -6,7 +6,7 @@ import {
 } from '../../graphql'
 import { alerts } from '../../graphql/queryResolvers/alerts'
 import prisma from '../../prisma'
-import { isAdmin } from '../isAdmin'
+import { checkIsAdmin } from '../isAdmin'
 
 export const addAlert = async (
   _parent: void,
@@ -46,11 +46,5 @@ export const removeAlert = async (
   } catch (err) {
     req.warn(['Error deleting alert', arg])
     throw new Error(err)
-  }
-}
-
-const checkIsAdmin = (req: LoggedRequest): void => {
-  if (!isAdmin(req)) {
-    throw new Error('User is not an admin')
   }
 }

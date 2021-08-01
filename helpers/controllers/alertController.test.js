@@ -58,16 +58,4 @@ describe('Alert controller tests', () => {
       'No alert id provided'
     )
   })
-  test('Should throw Error when user is not an admin when adding Alert', async () => {
-    ctx.req.user.isAdmin = false
-    expect(
-      addAlert({}, { url: 'https://google.com' }, ctx)
-    ).rejects.toThrowError('User is not an admin')
-  })
-  test('Should throw Error when user is not an admin when removing Alert', async () => {
-    ctx.req.user.isAdmin = false
-    expect(
-      removeAlert({}, { url: 'https://google.com' }, ctx)
-    ).rejects.toThrowError('User is not an admin')
-  })
 })

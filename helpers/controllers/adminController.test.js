@@ -20,11 +20,4 @@ describe('Admin controller tests', () => {
       success: true
     })
   })
-
-  test('Should throw error when user is not an admin', async () => {
-    ctx.req.user.isAdmin = false
-    expect(changeAdminRights(null, mockUser, ctx)).rejects.toThrowError(
-      'User is not an admin'
-    )
-  })
 })
