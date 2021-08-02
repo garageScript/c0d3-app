@@ -6,8 +6,10 @@ type StarMap = {
   [lessonId: number]: Star[]
 }
 
-export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
-  const username = args.username
+export const userInfo = async (
+  _parent: void,
+  { username }: UserInfoQueryVariables
+) => {
   if (!username) {
     throw new Error('Invalid username')
   }
