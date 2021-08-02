@@ -6,12 +6,6 @@ import { getResetTemplate, getSignupTemplate } from './mailTemplate'
 import { sendResetEmail, sendSignupEmail } from './mail'
 import nodemailer from 'nodemailer'
 
-jest.mock('nodemailer', () => ({
-  createTransport: jest.fn().mockReturnValue({
-    sendMail: jest.fn().mockReturnValue((mailoptions, callback) => {})
-  })
-}))
-
 describe('Mail templates', () => {
   const token = 'faketoken123'
   const matcher = new RegExp(`<a href=".+/confirm/${token}">`)

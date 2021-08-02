@@ -1,11 +1,11 @@
-import { PrismaClient } from '@prisma/client'
+import { Prisma, PrismaClient } from '@prisma/client'
 
 declare global {
   // eslint-disable-next-line no-var
   var prismag: PrismaClient
 }
 
-const prismaOptions = {
+const prismaOptions: Prisma.PrismaClientOptions = {
   datasources: {
     db: {
       url: `postgresql://${process.env.DB_USER}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?connection_limit=1`

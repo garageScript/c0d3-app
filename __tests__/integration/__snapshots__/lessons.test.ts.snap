@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lessons query resolver should fetch lessons succesfully 1`] = `
+Object {
+  "lessons": Array [
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 1,
+          "order": 1,
+          "title": "Sum of 2 Numbers",
+        },
+        Object {
+          "id": 2,
+          "order": 2,
+          "title": "Sum of 3 Numbers",
+        },
+        Object {
+          "id": 3,
+          "order": 3,
+          "title": "Greater than 5",
+        },
+        Object {
+          "id": 4,
+          "order": 4,
+          "title": "Biggest Num out of 2",
+        },
+        Object {
+          "id": 5,
+          "order": 5,
+          "title": "Biggest Num Out of 3",
+        },
+        Object {
+          "id": 6,
+          "order": 6,
+          "title": "Is First Num Bigger",
+        },
+        Object {
+          "id": 7,
+          "order": 7,
+          "title": "Is Sum > 10",
+        },
+        Object {
+          "id": 8,
+          "order": 8,
+          "title": "Functional Sum",
+        },
+        Object {
+          "id": 9,
+          "order": 9,
+          "title": "Functional 3 Sum",
+        },
+        Object {
+          "id": 10,
+          "order": 10,
+          "title": "Functional Sums",
+        },
+      ],
+      "id": 1,
+      "order": 0,
+      "title": "Foundations of JavaScript",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 11,
+          "order": 1,
+          "title": "Incremental Closure",
+        },
+        Object {
+          "id": 12,
+          "order": 2,
+          "title": "Closure x times",
+        },
+        Object {
+          "id": 13,
+          "order": 3,
+          "title": "Repeated String",
+        },
+        Object {
+          "id": 14,
+          "order": 4,
+          "title": "Calling input function",
+        },
+        Object {
+          "id": 15,
+          "order": 5,
+          "title": "Call function X Times",
+        },
+        Object {
+          "id": 16,
+          "order": 6,
+          "title": "isPrime",
+        },
+        Object {
+          "id": 17,
+          "order": 7,
+          "title": "Letter Find",
+        },
+        Object {
+          "id": 18,
+          "order": 8,
+          "title": "Letter Count",
+        },
+        Object {
+          "id": 19,
+          "order": 9,
+          "title": "Letter Map",
+        },
+        Object {
+          "id": 20,
+          "order": 10,
+          "title": "Letter Loop",
+        },
+        Object {
+          "id": 21,
+          "order": 11,
+          "title": "Delayed Closure",
+        },
+        Object {
+          "id": 22,
+          "order": 12,
+          "title": "Delay 1 and 2",
+        },
+      ],
+      "id": 2,
+      "order": 1,
+      "title": "Variables & Functions",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 23,
+          "order": 1,
+          "title": "Array Generator",
+        },
+        Object {
+          "id": 24,
+          "order": 2,
+          "title": "Array Callback Generator",
+        },
+        Object {
+          "id": 25,
+          "order": 3,
+          "title": "2D Array Generator",
+        },
+        Object {
+          "id": 26,
+          "order": 4,
+          "title": "Closure iterator",
+        },
+        Object {
+          "id": 27,
+          "order": 5,
+          "title": "Delayed function calls",
+        },
+        Object {
+          "id": 28,
+          "order": 6,
+          "title": "Sequential delayed function calls",
+        },
+        Object {
+          "id": 29,
+          "order": 7,
+          "title": "cForEach",
+        },
+        Object {
+          "id": 30,
+          "order": 8,
+          "title": "cMap",
+        },
+        Object {
+          "id": 31,
+          "order": 9,
+          "title": "cReduce",
+        },
+        Object {
+          "id": 32,
+          "order": 10,
+          "title": "cFilter",
+        },
+        Object {
+          "id": 33,
+          "order": 11,
+          "title": "cFind",
+        },
+      ],
+      "id": 3,
+      "order": 2,
+      "title": "Arrays",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 34,
+          "order": 1,
+          "title": "Return array of values",
+        },
+        Object {
+          "id": 35,
+          "order": 2,
+          "title": "Create 2d Array of Objects",
+        },
+        Object {
+          "id": 36,
+          "order": 3,
+          "title": "Return function from array of strings",
+        },
+        Object {
+          "id": 37,
+          "order": 4,
+          "title": "2 sum",
+        },
+        Object {
+          "id": 38,
+          "order": 5,
+          "title": "Function call between Objects",
+        },
+        Object {
+          "id": 39,
+          "order": 6,
+          "title": "Duplicate Numbers",
+        },
+        Object {
+          "id": 40,
+          "order": 7,
+          "title": "Map Objects",
+        },
+        Object {
+          "id": 41,
+          "order": 8,
+          "title": "Call function values of an Object",
+        },
+        Object {
+          "id": 42,
+          "order": 9,
+          "title": "Send a request",
+        },
+        Object {
+          "id": 43,
+          "order": 10,
+          "title": "Build this Pokemon Viewer",
+        },
+      ],
+      "id": 4,
+      "order": 3,
+      "title": "Objects",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 44,
+          "order": 1,
+          "title": "Smart Watch UI",
+        },
+        Object {
+          "id": 45,
+          "order": 2,
+          "title": "Stars UI",
+        },
+        Object {
+          "id": 46,
+          "order": 3,
+          "title": "Google Fair",
+        },
+        Object {
+          "id": 47,
+          "order": 4,
+          "title": "Lights Off",
+        },
+        Object {
+          "id": 48,
+          "order": 5,
+          "title": "Kanban Board",
+        },
+        Object {
+          "id": 49,
+          "order": 6,
+          "title": "Select or Snake",
+        },
+        Object {
+          "id": 50,
+          "order": 7,
+          "title": "MineSweeper",
+        },
+      ],
+      "id": 5,
+      "order": 4,
+      "title": "Front End Engineering",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 51,
+          "order": 1,
+          "title": "IP Geolocation",
+        },
+        Object {
+          "id": 52,
+          "order": 2,
+          "title": "Commands",
+        },
+        Object {
+          "id": 53,
+          "order": 3,
+          "title": "Meme Gen",
+        },
+        Object {
+          "id": 54,
+          "order": 4,
+          "title": "Asset Creation",
+        },
+        Object {
+          "id": 55,
+          "order": 5,
+          "title": "Chatroom using JWT Auth",
+        },
+        Object {
+          "id": 56,
+          "order": 6,
+          "title": "Authentication",
+        },
+        Object {
+          "id": 57,
+          "order": 7,
+          "title": "Image Text Extraction",
+        },
+        Object {
+          "id": 58,
+          "order": 8,
+          "title": "Selfie Queen",
+        },
+        Object {
+          "id": 59,
+          "order": 9,
+          "title": "Create a MemeChat",
+        },
+      ],
+      "id": 6,
+      "order": 5,
+      "title": "End To End",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 60,
+          "order": 1,
+          "title": "GraphQL Intro",
+        },
+        Object {
+          "id": 61,
+          "order": 2,
+          "title": "GraphQL 2",
+        },
+        Object {
+          "id": 62,
+          "order": 3,
+          "title": "React - Stars and Kanban",
+        },
+        Object {
+          "id": 63,
+          "order": 4,
+          "title": "Webpack + Pokemon Classes",
+        },
+        Object {
+          "id": 64,
+          "order": 5,
+          "title": "React Native Selfie Queen",
+        },
+        Object {
+          "id": 65,
+          "order": 6,
+          "title": "Star Lesson",
+        },
+        Object {
+          "id": 66,
+          "order": 7,
+          "title": "Apollo",
+        },
+        Object {
+          "id": 67,
+          "order": 8,
+          "title": "SocketIo",
+        },
+      ],
+      "id": 7,
+      "order": 6,
+      "title": "React, GraphQL, SocketIO",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 68,
+          "order": 1,
+          "title": "ClearAllTimeouts",
+        },
+        Object {
+          "id": 69,
+          "order": 2,
+          "title": "Debounce",
+        },
+        Object {
+          "id": 70,
+          "order": 3,
+          "title": "Throttle",
+        },
+        Object {
+          "id": 71,
+          "order": 4,
+          "title": "Serialize",
+        },
+        Object {
+          "id": 72,
+          "order": 5,
+          "title": "Curry",
+        },
+        Object {
+          "id": 73,
+          "order": 6,
+          "title": "Next Prime",
+        },
+        Object {
+          "id": 74,
+          "order": 7,
+          "title": "sleep sort",
+        },
+        Object {
+          "id": 75,
+          "order": 8,
+          "title": "Promised sleep sort",
+        },
+        Object {
+          "id": 76,
+          "order": 9,
+          "title": "Promise all",
+        },
+        Object {
+          "id": 77,
+          "order": 10,
+          "title": "parseJSON",
+        },
+        Object {
+          "id": 78,
+          "order": 11,
+          "title": "Async Reduce",
+        },
+      ],
+      "id": 8,
+      "order": 7,
+      "title": "JavaScript Algorithms",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 79,
+          "order": 1,
+          "title": "Given a binary tree, find the largest value",
+        },
+        Object {
+          "id": 80,
+          "order": 2,
+          "title": "Given a binary tree, find the maximum depth",
+        },
+        Object {
+          "id": 81,
+          "order": 3,
+          "title": "Given a binary tree, return the maximum distance between any 2 nodes",
+        },
+        Object {
+          "id": 82,
+          "order": 4,
+          "title": "Biggest subtree value",
+        },
+        Object {
+          "id": 83,
+          "order": 5,
+          "title": "Given a binary tree and a node, find the distance to that node.",
+        },
+        Object {
+          "id": 84,
+          "order": 6,
+          "title": "Max Fun",
+        },
+        Object {
+          "id": 85,
+          "order": 7,
+          "title": "Edit distance",
+        },
+        Object {
+          "id": 86,
+          "order": 8,
+          "title": "Maximum Loot",
+        },
+        Object {
+          "id": 87,
+          "order": 9,
+          "title": "Longest Increasing Non-Consecutive Sequence",
+        },
+        Object {
+          "id": 88,
+          "order": 10,
+          "title": "Minimum Coins for Change",
+        },
+        Object {
+          "id": 89,
+          "order": 11,
+          "title": "Maximum Weight to Carry",
+        },
+        Object {
+          "id": 90,
+          "order": 12,
+          "title": "Subarray Sum Equals K",
+        },
+      ],
+      "id": 9,
+      "order": 8,
+      "title": "Trees",
+    },
+    Object {
+      "challenges": Array [
+        Object {
+          "id": 91,
+          "order": 1,
+          "title": "2 sum continuous",
+        },
+        Object {
+          "id": 92,
+          "order": 2,
+          "title": "Count Islands",
+        },
+        Object {
+          "id": 93,
+          "order": 3,
+          "title": "Except Product",
+        },
+        Object {
+          "id": 94,
+          "order": 4,
+          "title": "Backwards 0",
+        },
+        Object {
+          "id": 95,
+          "order": 5,
+          "title": "Task Distribution",
+        },
+      ],
+      "id": 10,
+      "order": 9,
+      "title": "General Algorithms",
+    },
+  ],
+}
+`;
