@@ -60,9 +60,9 @@ describe('getLessonMentors resolver', () => {
   })
 
   test('should include userId in the query if session exists', async () => {
-    prismaMock.user.findMany = jest
-      .fn()
-      .mockResolvedValue([{ username: 'user1', name: 'lol', id: 2 }])
+    prismaMock.user.findMany.mockResolvedValue([
+      { username: 'user1', name: 'lol', id: 2 }
+    ])
     const res = await getLessonMentors(
       null,
       { lessonId: 3 },

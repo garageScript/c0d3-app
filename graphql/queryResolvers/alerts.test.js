@@ -12,7 +12,7 @@ describe('Alerts resolver', () => {
   })
 
   test('should return list of alerts', () => {
-    prismaMock.alert.findMany = jest.fn().mockResolvedValue([
+    prismaMock.alert.findMany.mockResolvedValue([
       {
         id: 0,
         text: 'Set up your computer to submit challenges.',
