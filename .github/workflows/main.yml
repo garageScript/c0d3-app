@@ -19,8 +19,12 @@ jobs:
       - name: Check Lint and Tests
         run: |
           yarn lint 
-          yarn test
           yarn type-check
+          yarn test
+      
+      - name: Integration tests
+        run: |
+          yarn test:integration-run
 
       - name: Code Quality ( Codecov )
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}

@@ -14,6 +14,7 @@ const config: Config.InitialOptions = {
     'stories/',
     'graphql/index.tsx',
     '__tests__/utils/',
+    '__tests__/integration/',
     'prisma/',
     'scripts/'
   ],
@@ -29,7 +30,12 @@ const config: Config.InitialOptions = {
     '\\.(css|scss)$': 'identity-obj-proxy'
   },
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['__tests__/utils/', 'node_modules/', '.next/'],
+  testPathIgnorePatterns: [
+    '__tests__/utils/',
+    '__tests__/integration/',
+    'node_modules/',
+    '.next/'
+  ],
   transformIgnorePatterns: ['node_modules/']
 }
 
