@@ -4,7 +4,6 @@
 
 jest.mock('bcrypt')
 jest.mock('nanoid')
-jest.mock('nodemailer')
 jest.mock('../mail')
 import { nanoid } from 'nanoid'
 import { changePw, reqPwReset } from './passwordController'
