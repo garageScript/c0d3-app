@@ -31,7 +31,7 @@
     "prisma/schema.prisma": "npx prisma format"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.19",
+    "@apollo/client": "^3.4.3",
     "@prisma/client": "^2.27.0",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/nextjs": "^6.10.0",
@@ -112,7 +112,7 @@
     "prisma": "^2.27.0",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^1.0.0",
-    "remark-slug": "^6.0.0",
+    "remark-slug": "^6.1.0",
     "remark-toc": "^7.2.0",
     "sass-loader": "^10.0.1",
     "svgo": "^2.3.1",
