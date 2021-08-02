@@ -6,7 +6,7 @@ import {
 } from '../../graphql'
 import { alerts } from '../../graphql/queryResolvers/alerts'
 import prisma from '../../prisma'
-import { checkIsAdmin } from '../isAdmin'
+import { isAdminOrThrow } from '../isAdmin'
 
 export const addAlert = async (
   _parent: void,
@@ -15,7 +15,7 @@ export const addAlert = async (
 ): Promise<Alert[]> => {
   const { req } = ctx
   try {
-    checkIsAdmin(req)
+    isAdminOrThrow(req)
     const { text, type, url, urlCaption } = arg
     if (!text || !type) {
       throw new Error('Missing alert parameters')
@@ -37,7 +37,7 @@ export const removeAlert = async (
 ) => {
   const { req } = ctx
   try {
-    checkIsAdmin(req)
+    isAdminOrThrow(req)
     const { id } = arg
     await prisma.alert.delete({ where: { id } })
     return {

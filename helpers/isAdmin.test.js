@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { checkIsAdmin, isAdmin } from './isAdmin'
+import { isAdminOrThrow, isAdmin } from './isAdmin'
 
 const adminReq = { user: { isAdmin: true } }
 const nonAdminReq = { user: { isAdmin: false } }
@@ -20,13 +20,13 @@ describe('isAdmin helper', () => {
 
   describe('checkIsAdmin()', () => {
     test('should not throw if user is admin', () => {
-      expect(() => checkIsAdmin(adminReq)).not.toThrowError()
+      expect(() => isAdminOrThrow(adminReq)).not.toThrowError()
     })
 
     test.each([nonAdminReq, noSessionReq])(
       'should throw error for req = %o',
       req => {
-        expect(() => checkIsAdmin(req)).toThrowError()
+        expect(() => isAdminOrThrow(req)).toThrowError()
       }
     )
   })

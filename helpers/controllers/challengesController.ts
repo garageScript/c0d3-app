@@ -5,7 +5,7 @@ import type {
 } from '../../graphql'
 import { lessons } from '../../graphql/queryResolvers/lessons'
 import prisma from '../../prisma'
-import { checkIsAdmin } from '../isAdmin'
+import { isAdminOrThrow } from '../isAdmin'
 import { validateLessonId } from '../validateLessonId'
 
 export const createChallenge = async (
@@ -15,7 +15,7 @@ export const createChallenge = async (
 ) => {
   const { req } = ctx
   try {
-    checkIsAdmin(req)
+    isAdminOrThrow(req)
     await validateLessonId(arg.lessonId)
     await prisma.challenge.create({ data: arg })
     return lessons()
@@ -31,7 +31,7 @@ export const updateChallenge = async (
 ) => {
   const { req } = ctx
   try {
-    checkIsAdmin(req)
+    isAdminOrThrow(req)
     const { id, lessonId, ...data } = arg
     await validateLessonId(lessonId)
     await prisma.challenge.update({
