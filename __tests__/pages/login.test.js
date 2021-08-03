@@ -7,6 +7,7 @@ import GET_APP from '../../graphql/queries/getApp'
 import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
 import { useRouter } from 'next/router'
+import { getLayout } from '../../components/Layout'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -24,6 +25,10 @@ describe('Login Page', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
+  test('Should use Layout component getLayout ', async () => {
+    expect(LoginPage.getLayout === getLayout).toBe(true)
+  })
+
   test('Should redirect to /curriculum on success', async () => {
     const mocks = [
       {

@@ -2,168 +2,78 @@
 
 exports[`Login Page Should set alert visible on invalid credentials 1`] = `
 <div>
-  <nav
-    class="navbar navbar-expand-lg navbar-light bg-white"
-  >
-    <div
-      class="container"
-    >
-      <a
-        class="navbar-brand"
-        href="/"
-      >
-        <div
-          class="navbar-brand text-primary font-weight-bold"
-        >
-          C0D3
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        class="navbar-toggler collapsed"
-        type="button"
-      >
-        <span
-          class="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        class="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          class="m-auto navbar-nav"
-        >
-          <a
-            class="nav-item nav-link"
-            href="/curriculum"
-          >
-            Curriculum
-          </a>
-          <a
-            class="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            class="nav-item nav-link"
-            href="/docs/learn"
-          >
-            Learn
-          </a>
-          <a
-            class="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/login"
-          >
-            Login
-          </a>
-          <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/signup"
-          >
-            Signup
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
   <div
-    class="container-md"
+    class="row mt-5"
   >
     <div
-      class="row mt-5"
+      class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
     >
       <div
-        class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+        class="card-body text-center pt-5 pb-5"
       >
-        <div
-          class="card-body text-center pt-5 pb-5"
+        <h1
+          class="card-title h2 font-weight-bold mb-5"
         >
-          <h1
-            class="card-title h2 font-weight-bold mb-5"
-          >
-            Login
-          </h1>
-          <p
-            class="card-text"
-          />
-          <form
-            action="#"
-            data-testid="form"
+          Login
+        </h1>
+        <p
+          class="card-text"
+        />
+        <form
+          action="#"
+          data-testid="form"
+        >
+          <div
+            class="form-group"
           >
             <div
-              class="form-group"
+              class="alert d-flex justify-content-between mt-3 alert-danger"
+              role="alert"
             >
-              <div
-                class="alert d-flex justify-content-between mt-3 alert-danger"
-                role="alert"
-              >
-                <div>
-                  <img
-                    class="mr-3 alert-icon"
-                    src="/assets/curriculum/icons/exclamation.svg"
-                  />
-                   User does not exist! 
-                </div>
-              </div>
-              <div
-                class="mt-3"
-              >
-                <input
-                  class="form-control form-control-lg font-weight-light mb-3 "
-                  data-testid="username"
-                  name="username"
-                  placeholder="Username"
-                  value="fake username"
+              <div>
+                <img
+                  class="mr-3 alert-icon"
+                  src="/assets/curriculum/icons/exclamation.svg"
                 />
-                <input
-                  class="form-control form-control-lg font-weight-light mb-3 "
-                  data-testid="password"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  value="fake password"
-                />
-                <button
-                  class="btn btn-primary btn-lg btn-block mb-3"
-                  data-testid="submit"
-                  type="submit"
-                >
-                  Login to Your Account
-                </button>
+                 User does not exist! 
               </div>
             </div>
-          </form>
-          <a
-            class=""
-            href="/forgotpassword"
-          >
-            Forgot your password?
-          </a>
-        </div>
+            <div
+              class="mt-3"
+            >
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="username"
+                name="username"
+                placeholder="Username"
+                value="fake username"
+              />
+              <input
+                class="form-control form-control-lg font-weight-light mb-3 "
+                data-testid="password"
+                name="password"
+                placeholder="Password"
+                type="password"
+                value="fake password"
+              />
+              <button
+                class="btn btn-primary btn-lg btn-block mb-3"
+                data-testid="submit"
+                type="submit"
+              >
+                Login to Your Account
+              </button>
+            </div>
+          </div>
+        </form>
+        <a
+          class=""
+          href="/forgotpassword"
+        >
+          Forgot your password?
+        </a>
       </div>
     </div>
   </div>
-  <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>
 </div>
 `;
