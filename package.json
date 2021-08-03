@@ -31,7 +31,7 @@
     "prisma/schema.prisma": "npx prisma format"
   },
   "dependencies": {
-    "@apollo/client": "^3.3.19",
+    "@apollo/client": "^3.4.4",
     "@prisma/client": "^2.27.0",
     "@quixo3/prisma-session-store": "^3.0.1",
     "@sentry/nextjs": "^6.10.0",
