@@ -1,5 +1,5 @@
 import { SubmissionStatus } from '../../graphql'
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { userInfo } from './userInfoController'
 
 const user = {
@@ -29,18 +29,15 @@ describe('userInfo controller tests', () => {
     expect(userInfo({}, {})).rejects.toThrow('Invalid username')
   })
   test('should return error if prisma.user.findFirst returns invalid user object', () => {
-    prisma.user.findFirst = jest.fn()
     expect(userInfo({}, { username: 'testing2020' })).rejects.toThrow(
       'Invalid user object'
     )
   })
   test('should return correct submissions and user lesson', async () => {
-    prisma.user.findFirst = jest.fn().mockReturnValue(user)
-    prisma.userLesson.findMany = jest.fn().mockReturnValue([userLesson])
-    prisma.submission.findMany = jest.fn().mockReturnValue([submission])
-    prisma.star.findMany = jest
-      .fn()
-      .mockReturnValue([star, { id: 1 /* test empty lessonId case */ }])
+    prismaMock.user.findFirst.mockResolvedValue(user)
+    prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
+    prismaMock.submission.findMany.mockResolvedValue([submission])
+    prismaMock.star.findMany.mockResolvedValue([star])
     const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
       user,
@@ -54,10 +51,10 @@ describe('userInfo controller tests', () => {
     })
   })
   test('Should return empty Stars array if no Stars are given', async () => {
-    prisma.user.findFirst = jest.fn().mockReturnValue(user)
-    prisma.userLesson.findMany = jest.fn().mockReturnValue([userLesson])
-    prisma.submission.findMany = jest.fn().mockReturnValue([submission])
-    prisma.star.findMany = jest.fn().mockReturnValue([])
+    prismaMock.user.findFirst.mockResolvedValue(user)
+    prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
+    prismaMock.submission.findMany.mockResolvedValue([submission])
+    prismaMock.star.findMany.mockResolvedValue([])
     const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
       user,

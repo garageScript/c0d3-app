@@ -4,7 +4,7 @@
 
 jest.mock('../../helpers/validateLessonId')
 jest.mock('../discordBot')
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { validateLessonId } from '../validateLessonId'
 import { setStar } from './starsController'
 
@@ -18,7 +18,7 @@ describe('setStar resolver', () => {
         user: { id: 1337 }
       }
     }
-    prisma.star.upsert = jest.fn().mockResolvedValue({
+    prismaMock.star.upsert.mockResolvedValue({
       lesson: { chatUrl: 'jim/flam' },
       mentor: { email: 'potatoLove@potatus.com' }
     })
@@ -29,22 +29,22 @@ describe('setStar resolver', () => {
     await expect(
       setStar(null, { lessonId: 52226, mentorId: 1337 }, ctx)
     ).rejects.toThrowError('Unable to give star to yourself')
-    expect(prisma.star.upsert).not.toBeCalled()
+    expect(prismaMock.star.upsert).not.toBeCalled()
     expect(ctx.req.error).toHaveBeenCalledTimes(1)
   })
 
   test('should return success object if no errors are thrown, and Star.create is called', async () => {
     const res = await setStar(null, { lessonId: 52226, mentorId: 815 }, ctx)
-    expect(prisma.star.upsert).toBeCalled()
+    expect(prismaMock.star.upsert).toBeCalled()
     expect(res).toEqual({ success: true })
   })
 
   test('should jump to catch block and call req.error when calling Star.create creates an error', async () => {
-    prisma.star.upsert = jest.fn().mockRejectedValueOnce(new Error())
+    prismaMock.star.upsert.mockRejectedValueOnce(new Error())
     await expect(
       setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
     ).rejects.toThrowError()
-    expect(prisma.star.upsert).toBeCalled()
+    expect(prismaMock.star.upsert).toBeCalled()
     expect(ctx.req.error).toHaveBeenCalledTimes(1)
   })
 
@@ -53,7 +53,7 @@ describe('setStar resolver', () => {
     await expect(
       setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
     ).rejects.toThrowError()
-    expect(prisma.star.upsert).not.toBeCalled()
+    expect(prismaMock.star.upsert).not.toBeCalled()
   })
 
   test('should throw error if user is not logged in', async () => {
@@ -61,6 +61,6 @@ describe('setStar resolver', () => {
     await expect(
       setStar(null, { lessonId: 5, mentorId: 815 }, ctx)
     ).rejects.toThrowError()
-    expect(prisma.star.upsert).not.toBeCalled()
+    expect(prismaMock.star.upsert).not.toBeCalled()
   })
 })

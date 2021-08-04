@@ -1,7 +1,6 @@
-import winston from 'winston'
-import { Session } from 'express-session'
+import type { User } from '.prisma/client'
+import type { Session } from 'express-session'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { User } from '.prisma/client'
 
 export interface LoggedRequest extends NextApiRequest {
   info: (obj: any) => void

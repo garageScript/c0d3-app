@@ -1,14 +1,15 @@
 import type { Star } from '.prisma/client'
-import _ from 'lodash'
 import { UserInfoQueryVariables } from '../../graphql'
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 
 type StarMap = {
   [lessonId: number]: Star[]
 }
 
-export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
-  const username = _.get(args, 'username')
+export const userInfo = async (
+  _parent: void,
+  { username }: UserInfoQueryVariables
+) => {
   if (!username) {
     throw new Error('Invalid username')
   }
@@ -21,7 +22,7 @@ export const userInfo = async (_parent: void, args: UserInfoQueryVariables) => {
   if (!user) {
     throw new Error('Invalid user object')
   }
-  const [userLessons, submissions, stars] = await Promise.all([
+  const [userLessons, submissions, stars] = await prisma.$transaction([
     prisma.userLesson.findMany({
       where: {
         userId: user.id

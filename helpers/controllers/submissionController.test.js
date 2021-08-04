@@ -6,7 +6,7 @@ jest.mock('../discordBot.ts')
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
 import { SubmissionStatus } from '../../graphql'
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { hasPassedLesson } from '../hasPassedLesson'
 import { updateSubmission } from '../updateSubmission'
 import {
@@ -45,11 +45,11 @@ describe('Submissions Mutations', () => {
     }
 
     beforeEach(() => {
-      prisma.submission.create = jest
-        .fn()
-        .mockResolvedValue({ id: 1, ...submissionMock })
-      prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
-      prisma.submission.findFirst = jest.fn()
+      prismaMock.submission.create.mockResolvedValue({
+        id: 1,
+        ...submissionMock
+      })
+      prismaMock.lesson.findFirst.mockResolvedValue(null)
     })
 
     test('should save and return submission', async () => {
@@ -67,10 +67,9 @@ describe('Submissions Mutations', () => {
     })
 
     test('should overwrite previous submission status if it exists', async () => {
-      prisma.submission.findFirst = jest.fn().mockResolvedValue({ id: 1 })
-      prisma.submission.update = jest.fn()
+      prismaMock.submission.findFirst.mockResolvedValue({ id: 1 })
       await createSubmission(null, args)
-      expect(prisma.submission.update).toBeCalled()
+      expect(prismaMock.submission.update).toBeCalled()
     })
 
     test('should throw error Invalid args', () => {
@@ -137,7 +136,7 @@ describe('Submissions Queries', () => {
   hasPassedLesson.mockResolvedValue(true)
 
   it('should return no submissions if there are none open', async () => {
-    prisma.submission.findMany = jest.fn().mockReturnValue([])
+    prismaMock.submission.findMany.mockReturnValue([])
     const result = await submissions(
       null,
       { lessonId: '2' },
@@ -156,9 +155,7 @@ describe('Submissions Queries', () => {
       createdAt: '1586386486986',
       challengeId: '200'
     }
-    prisma.submission.findMany = jest
-      .fn()
-      .mockResolvedValue([submissionResults])
+    prismaMock.submission.findMany.mockResolvedValue([submissionResults])
     const result = await submissions(
       null,
       { lessonId: '2' },

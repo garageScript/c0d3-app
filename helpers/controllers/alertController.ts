@@ -1,23 +1,21 @@
+import type { Alert } from '@prisma/client'
 import { LoggedRequest } from '../../@types/helpers'
-import _ from 'lodash'
-import { isAdmin } from '../isAdmin'
-import { alerts } from '../../graphql/queryResolvers/alerts'
-import { prisma } from '../../prisma'
 import {
   AddAlertMutationVariables,
   RemoveAlertMutationVariables
 } from '../../graphql'
+import { alerts } from '../../graphql/queryResolvers/alerts'
+import prisma from '../../prisma'
+import { isAdminOrThrow } from '../isAdmin'
 
 export const addAlert = async (
   _parent: void,
   arg: AddAlertMutationVariables,
   ctx: { req: LoggedRequest }
-) => {
+): Promise<Alert[]> => {
   const { req } = ctx
   try {
-    if (!isAdmin(req)) {
-      throw new Error('User is not an admin')
-    }
+    isAdminOrThrow(req)
     const { text, type, url, urlCaption } = arg
     if (!text || !type) {
       throw new Error('Missing alert parameters')
@@ -25,8 +23,7 @@ export const addAlert = async (
     await prisma.alert.create({
       data: { text, type, url, urlCaption }
     })
-    const updatedAlerts = await alerts()
-    return updatedAlerts
+    return alerts()
   } catch (err) {
     req.error(['Invalid data for alert creation', arg])
     throw new Error(err)
@@ -40,9 +37,7 @@ export const removeAlert = async (
 ) => {
   const { req } = ctx
   try {
-    if (!isAdmin(req)) {
-      throw new Error('User is not an admin')
-    }
+    isAdminOrThrow(req)
     const { id } = arg
     await prisma.alert.delete({ where: { id } })
     return {

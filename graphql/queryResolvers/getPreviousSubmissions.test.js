@@ -1,9 +1,12 @@
-import { prisma } from '../../prisma'
+/**
+ * @jest-environment node
+ */
+
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { getPreviousSubmissions } from './getPreviousSubmissions'
 
 describe('getPreviousSubmissions test', () => {
-  test('Should invoke prisma query', async () => {
-    const query = (prisma.submission.findMany = jest.fn())
+  test('Should invoke prismaMock query with correct values', async () => {
     await getPreviousSubmissions(
       {},
       {
@@ -12,6 +15,15 @@ describe('getPreviousSubmissions test', () => {
       },
       {}
     )
-    expect(query).toBeCalled()
+    expect(prismaMock.submission.findMany).toBeCalledWith(
+      expect.objectContaining({
+        where: {
+          challengeId: 1,
+          user: {
+            id: 1
+          }
+        }
+      })
+    )
   })
 })

@@ -1,6 +1,6 @@
 import { LoggedRequest } from '../../@types/helpers'
 import { NextApiResponse } from 'next'
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 
 export default async (
   req: LoggedRequest,
@@ -9,7 +9,7 @@ export default async (
 ) => {
   req.user = null
   const { session } = req
-  if (session && session.userId) {
+  if (session?.userId) {
     const { userId: id } = session
     const user = await prisma.user.findUnique({ where: { id } })
     req.user = user

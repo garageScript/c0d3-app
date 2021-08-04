@@ -1,17 +1,15 @@
-import _ from 'lodash'
-import { userInfo } from '../../helpers/controllers/userInfoController'
-import { Context } from '../../@types/helpers'
-import { prisma } from '../../prisma'
 import type { UserLesson } from '.prisma/client'
+import { Context } from '../../@types/helpers'
+import { userInfo } from '../../helpers/controllers/userInfoController'
+import prisma from '../../prisma'
 
 interface lessonMentorMapType {
-  [lessonId: string]: string
+  [lessonId: number]: string
 }
 
 export const session = async (_parent: void, _args: void, context: Context) => {
-  const user = _.get(context, 'req.user', {})
-  const userId = _.get(user, 'id', null)
-  if (!user || !userId) return { lessonStatus: [] }
+  const user = context?.req?.user
+  if (!user) return { lessonStatus: [] }
 
   // FYI: The reason we are querying with parallelized promises:
   // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
@@ -36,12 +34,10 @@ export const session = async (_parent: void, _args: void, context: Context) => {
     })
   ])
 
-  const submissions = _.get(session, 'submissions', [])
-  const userLessons = _.get(session, 'lessonStatus', [])
+  const { submissions, lessonStatus: userLessons } = session
 
-  const lessonMentorMap = starsGiven.reduce((map, starGiven) => {
-    const mentorUsername = _.get(starGiven, 'mentor.username', '')
-    map[starGiven.lessonId] = mentorUsername
+  const lessonMentorMap = starsGiven.reduce((map, { lessonId, mentor }) => {
+    map[lessonId] = mentor.username
     return map
   }, {} as lessonMentorMapType)
 
