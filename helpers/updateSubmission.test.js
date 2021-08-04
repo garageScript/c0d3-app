@@ -1,8 +1,12 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('./discordBot')
 import { SubmissionStatus } from '../graphql'
-import { prisma } from '../prisma'
-import { updateSubmission } from './updateSubmission'
+import prismaMock from '../__tests__/utils/prismaMock'
 import { sendLessonChannelMessage } from './discordBot'
+import { updateSubmission } from './updateSubmission'
 
 const lessonMock = {
   id: 1,
@@ -38,21 +42,20 @@ const submissionMock = {
 }
 
 describe('updateSubmission', () => {
-  prisma.userLesson.update = jest.fn()
-
   beforeEach(() => {
     jest.clearAllMocks()
-    prisma.submission.update = jest.fn().mockResolvedValue({
-      ...submissionMock,
-      lesson: lessonMock,
-      user: userMock
-    })
-    prisma.challenge.count = jest.fn().mockResolvedValue(1)
-    prisma.submission.findMany = jest
-      .fn()
-      .mockResolvedValue([{ challengeId: 1 }])
-    prisma.userLesson.upsert = jest.fn().mockResolvedValue({
-      passedAt: new Date(1619821939579)
+    prismaMock.submission.update.mockImplementation(args =>
+      Promise.resolve({
+        ...submissionMock,
+        lesson: lessonMock,
+        user: userMock,
+        ...args.data
+      })
+    )
+    prismaMock.challenge.count.mockResolvedValue(1)
+    prismaMock.submission.findMany.mockResolvedValue([{ challengeId: 1 }])
+    prismaMock.userLesson.upsert.mockResolvedValue({
+      passedAt: new Date()
     })
   })
 
@@ -61,16 +64,16 @@ describe('updateSubmission', () => {
   })
 
   it('should update user lesson if student has completed it and notify on discord', async () => {
-    prisma.userLesson.upsert = jest.fn().mockResolvedValue({
+    prismaMock.userLesson.upsert.mockResolvedValue({
       passedAt: null
     })
 
     // mock next lesson
     const nextLesson = { order: 2, id: 2 }
-    prisma.lesson.findFirst = jest.fn().mockResolvedValue(nextLesson)
+    prismaMock.lesson.findFirst.mockResolvedValue(nextLesson)
 
     await expect(updateSubmission(submission)).resolves.toEqual(submissionMock)
-    expect(prisma.userLesson.update).toHaveBeenCalledWith(
+    expect(prismaMock.userLesson.update).toHaveBeenCalledWith(
       expect.objectContaining({ data: { passedAt: expect.any(Date) } })
     )
 
@@ -86,12 +89,12 @@ describe('updateSubmission', () => {
   })
 
   it('should not notify next lesson if does not exist', async () => {
-    prisma.userLesson.upsert = jest.fn().mockResolvedValue({
+    prismaMock.userLesson.upsert.mockResolvedValue({
       passedAt: null
     })
 
     // mock next lesson
-    prisma.lesson.findFirst = jest.fn().mockResolvedValue(null)
+    prismaMock.lesson.findFirst.mockResolvedValue(null)
 
     await updateSubmission(submission)
 

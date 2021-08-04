@@ -7,12 +7,8 @@ import loggingMiddleware from '../../helpers/middleware/logger'
 import typeDefs from '../../graphql/typeDefs'
 import resolvers from '../../graphql/resolvers'
 import { PrismaSessionStore } from '@quixo3/prisma-session-store'
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 import { apolloLogPlugin } from '../../helpers/apolloLogPlugin'
-
-// TODO: remove this temporary fix when sentry package is fixed
-import sentryInitializer from '../../helpers/sentryInitializer'
-sentryInitializer()
 
 const ONE_DAY = 1000 * 60 * 60 * 24
 const ONE_WEEK = ONE_DAY * 7

@@ -1,10 +1,14 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock('bcrypt')
 jest.mock('nodemailer')
 jest.mock('../mail')
 import bcrypt from 'bcrypt'
-import { login, logout, signup, isTokenValid } from './authController'
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { sendSignupEmail } from '../mail'
+import { isTokenValid, login, logout, signup } from './authController'
 
 describe('auth controller', () => {
   let userArgs
@@ -29,22 +33,22 @@ describe('auth controller', () => {
     })
 
     test('should throw error if user cannot be found', () => {
-      prisma.user.findFirst = jest.fn().mockReturnValue(null)
+      prismaMock.user.findFirst.mockResolvedValue(null)
       return expect(
-        login({}, userArgs, { req: { session: {} } })
+        login({}, userArgs, { req: { session: {}, error: () => {} } })
       ).rejects.toThrowError('User does not exist')
     })
 
     test('should throw error if password is invalid', () => {
-      prisma.user.findFirst = jest.fn().mockReturnValue({})
+      prismaMock.user.findFirst.mockResolvedValue({})
       bcrypt.compare = jest.fn().mockReturnValue(false)
       return expect(
-        login({}, userArgs, { req: { session: {} } })
+        login({}, userArgs, { req: { session: {}, error: () => {} } })
       ).rejects.toThrowError('Password is invalid')
     })
 
     test('should return success true if successful login', () => {
-      prisma.user.findFirst = jest.fn().mockReturnValue({
+      prismaMock.user.findFirst.mockResolvedValue({
         username: 'testuser',
         password: 'fakepassword',
         cliToken: 'fakeCliToken'
@@ -59,10 +63,15 @@ describe('auth controller', () => {
     })
 
     test('should return user with a new CLI token', () => {
-      prisma.user.findFirst = jest
-        .fn()
-        .mockReturnValue({ username: 'fakeUser', password: 'fakePassword' })
-      prisma.user.update = obj => jest.fn().mockReturnThis(obj)
+      const user = {
+        username: 'fakeUser',
+        password: 'fakePassword'
+      }
+      prismaMock.user.findFirst.mockResolvedValue(user)
+      prismaMock.user.update.mockResolvedValue({
+        ...user,
+        cliToken: 'clitoken'
+      })
       bcrypt.compare = jest.fn().mockReturnValue(true)
       const result = login({}, userArgs, { req: { session: {} } })
       expect(result).resolves.toHaveProperty('cliToken')
@@ -110,6 +119,13 @@ describe('auth controller', () => {
   })
 
   describe('Signup', () => {
+    const user = {
+      id: 1234,
+      username: 'test',
+      name: 'Test Testington',
+      email: 'test@fake.com'
+    }
+
     test('should reject if user information is incomplete', () => {
       return expect(
         signup({}, {}, { req: { session: {} } })
@@ -117,40 +133,38 @@ describe('auth controller', () => {
     })
 
     test('should reject if user already exists', () => {
-      prisma.user.findFirst = jest
-        .fn()
-        .mockReturnValue({ username: 'c0d3user' })
+      prismaMock.user.findFirst.mockResolvedValue({ username: 'c0d3user' })
       return expect(
         signup({}, userArgs, { req: { session: {} } })
       ).rejects.toThrowError('User already exists')
     })
 
     test('should reject on second findOne. The first request checks for username, second request checks for email', () => {
-      prisma.user.findFirst = jest
-        .fn()
-        .mockReturnValueOnce(null)
-        .mockReturnValue({ username: 'c0d3user' }) // Second call for User.findOne checks for email
+      prismaMock.user.findFirst
+        .mockResolvedValueOnce(null)
+        .mockResolvedValueOnce({ username: 'c0d3user' }) // Second call for User.findOne checks for email
       return expect(
         signup({}, userArgs, { req: { session: {} } })
       ).rejects.toThrowError('Email already exists')
     })
 
     test('should resolve with success true if signup successful ', async () => {
-      prisma.user.findFirst = jest.fn().mockReturnValue(null)
-      prisma.user.create = jest.fn().mockReturnValue({
-        username: 'user',
-        id: 1234
+      prismaMock.user.findFirst.mockResolvedValue(null)
+      prismaMock.user.create.mockResolvedValue(user)
+      prismaMock.user.update.mockResolvedValue({
+        ...user,
+        forgotToken: 'forgotToken',
+        tokenExpiration: new Date()
       })
-      prisma.user.update = jest.fn().mockReturnValue({ username: 'user' })
       const result = await signup({}, userArgs, {
         req: { error: jest.fn(), session: {} }
       })
       expect(result).toEqual({
-        username: 'user',
+        username: user.username,
         success: true,
-        cliToken: result.cliToken
+        cliToken: expect.any(String)
       })
-      expect(prisma.user.update).toBeCalled()
+      expect(prismaMock.user.update).toBeCalled()
     })
 
     test('should throw error when session is null', () => {
@@ -160,6 +174,8 @@ describe('auth controller', () => {
     })
 
     it('should log error if email is not sent correctly', async () => {
+      prismaMock.user.create.mockResolvedValue(user)
+      prismaMock.user.update.mockResolvedValue(user)
       sendSignupEmail.mockRejectedValue(Error('email not sent'))
       const mock = jest.fn()
       await signup({}, userArgs, {
@@ -171,20 +187,24 @@ describe('auth controller', () => {
 
   describe('isTokenValid', () => {
     test('should return true', () => {
-      prisma.user.findUnique = jest
-        .fn()
-        .mockResolvedValue({ cliToken: '1txkbwq0v1kHhzyGZaf53' })
-      expect(isTokenValid(null, userArgs)).resolves.toBe(true)
+      prismaMock.user.findUnique.mockResolvedValue({
+        cliToken: '1txkbwq0v1kHhzyGZaf53'
+      })
+      return expect(isTokenValid(null, userArgs)).resolves.toBe(true)
     })
 
-    test('should return false', () => {
-      prisma.user.findUnique = jest.fn().mockResolvedValue(null)
-      expect(isTokenValid(null, userArgs)).resolves.toBe(false)
+    test('should return false if user is null', () => {
+      prismaMock.user.findUnique.mockResolvedValue(null)
+      return expect(isTokenValid(null, userArgs)).resolves.toBe(false)
     })
 
+    test('should return false if token is not equal', () => {
+      prismaMock.user.findUnique.mockResolvedValue({ cliToken: '' })
+      return expect(isTokenValid(null, userArgs)).resolves.toBe(false)
+    })
     test('should throw error', () => {
-      prisma.user.findUnique = jest.fn().mockRejectedValue()
-      expect(isTokenValid(null, userArgs)).rejects.toThrowError()
+      prismaMock.user.findUnique.mockRejectedValue()
+      return expect(isTokenValid(null, userArgs)).rejects.toThrowError()
     })
   })
 })
