@@ -66,9 +66,10 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
+                style="height: 2px;"
               >
                 New challenge description
               </textarea>
@@ -173,9 +174,10 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
+                style="height: 2px;"
               >
                 New challenge description
               </textarea>
@@ -282,9 +284,10 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
+                style="height: 2px;"
               >
                 New description
               </textarea>
@@ -386,9 +389,9 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               >
                 Write a function that takes in 3 numbers and returns their sum.
 
@@ -475,9 +478,9 @@ exports[`AdminLessonChallenges component Should render a challenge without title
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               >
                 Write a function that takes in 2 numbers and returns their sum.
 
@@ -590,9 +593,9 @@ exports[`AdminLessonChallenges component Should update challenge 1`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               >
                 Write a function that takes in 2 numbers and returns their sum.
 
@@ -696,9 +699,9 @@ solution(4,1) // Should return 5
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               >
                 Write a function that takes in 3 numbers and returns their sum.
 
@@ -807,9 +810,10 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
+                style="height: 2px;"
               >
                 New description
               </textarea>
@@ -906,9 +910,9 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               >
                 Write a function that takes in 3 numbers and returns their sum.
 

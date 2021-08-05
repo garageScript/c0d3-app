@@ -3000,9 +3000,9 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 Preview
                               </button>
                               <textarea
+                                class="textarea"
                                 data-testid="textbox"
                                 placeholder="Type something..."
-                                style="padding: 1rem; width: 100%;"
                               />
                             </div>
                             <button
@@ -3111,9 +3111,9 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 Preview
                               </button>
                               <textarea
+                                class="textarea"
                                 data-testid="textbox"
                                 placeholder="Type something..."
-                                style="padding: 1rem; width: 100%;"
                               />
                             </div>
                             <button
@@ -5665,9 +5665,9 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 />
               </div>
               <div

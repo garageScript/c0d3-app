@@ -1330,15 +1330,12 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
+              onBlur={[Function]}
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value=""
             />
           </div>
@@ -1853,15 +1850,12 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
+              onBlur={[Function]}
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value=""
             />
           </div>
@@ -4648,15 +4642,12 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
+              onBlur={[Function]}
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -4868,15 +4859,12 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
+              onBlur={[Function]}
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -5018,15 +5006,12 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
+              onBlur={[Function]}
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -5168,15 +5153,12 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
+              onBlur={[Function]}
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -6478,15 +6460,12 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
     Preview
   </button>
   <textarea
+    className="textarea"
     data-testid="textbox"
+    onBlur={[Function]}
     onChange={[Function]}
+    onMouseDown={[Function]}
     placeholder="Type something..."
-    style={
-      Object {
-        "padding": "1rem",
-        "width": "100%",
-      }
-    }
     value=""
   />
 </div>
@@ -6523,15 +6502,12 @@ exports[`Storyshots Components/MdInput White 1`] = `
     Preview
   </button>
   <textarea
+    className="textarea"
     data-testid="textbox"
+    onBlur={[Function]}
     onChange={[Function]}
+    onMouseDown={[Function]}
     placeholder="Type something..."
-    style={
-      Object {
-        "padding": "1rem",
-        "width": "100%",
-      }
-    }
     value=""
   />
 </div>
@@ -6568,15 +6544,12 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
     Preview
   </button>
   <textarea
+    className="textarea"
     data-testid="textbox"
+    onBlur={[Function]}
     onChange={[Function]}
+    onMouseDown={[Function]}
     placeholder="Type something..."
-    style={
-      Object {
-        "padding": "1rem",
-        "width": "100%",
-      }
-    }
     value="HinGa DIngA dUrgEN"
   />
 </div>
@@ -6614,15 +6587,12 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
       Preview
     </button>
     <textarea
+      className="textarea"
       data-testid="textbox"
+      onBlur={[Function]}
       onChange={[Function]}
+      onMouseDown={[Function]}
       placeholder="Type something..."
-      style={
-        Object {
-          "padding": "1rem",
-          "width": "100%",
-        }
-      }
       value=""
     />
   </div>
@@ -9179,15 +9149,12 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
+        onBlur={[Function]}
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -10220,15 +10187,12 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
+        onBlur={[Function]}
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -11259,15 +11223,12 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
+        onBlur={[Function]}
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -12298,15 +12259,12 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
+        onBlur={[Function]}
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -13337,15 +13295,12 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
+        onBlur={[Function]}
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
