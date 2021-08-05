@@ -1332,7 +1332,6 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             <textarea
               className="textarea"
               data-testid="textbox"
-              onBlur={[Function]}
               onChange={[Function]}
               onMouseDown={[Function]}
               placeholder="Type something..."
@@ -1852,7 +1851,6 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             <textarea
               className="textarea"
               data-testid="textbox"
-              onBlur={[Function]}
               onChange={[Function]}
               onMouseDown={[Function]}
               placeholder="Type something..."
@@ -4644,7 +4642,6 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             <textarea
               className="textarea"
               data-testid="textbox"
-              onBlur={[Function]}
               onChange={[Function]}
               onMouseDown={[Function]}
               placeholder="Type something..."
@@ -4861,7 +4858,6 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
             <textarea
               className="textarea"
               data-testid="textbox"
-              onBlur={[Function]}
               onChange={[Function]}
               onMouseDown={[Function]}
               placeholder="Type something..."
@@ -5008,7 +5004,6 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
             <textarea
               className="textarea"
               data-testid="textbox"
-              onBlur={[Function]}
               onChange={[Function]}
               onMouseDown={[Function]}
               placeholder="Type something..."
@@ -5155,7 +5150,6 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
             <textarea
               className="textarea"
               data-testid="textbox"
-              onBlur={[Function]}
               onChange={[Function]}
               onMouseDown={[Function]}
               placeholder="Type something..."
@@ -6462,7 +6456,6 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
   <textarea
     className="textarea"
     data-testid="textbox"
-    onBlur={[Function]}
     onChange={[Function]}
     onMouseDown={[Function]}
     placeholder="Type something..."
@@ -6504,7 +6497,6 @@ exports[`Storyshots Components/MdInput White 1`] = `
   <textarea
     className="textarea"
     data-testid="textbox"
-    onBlur={[Function]}
     onChange={[Function]}
     onMouseDown={[Function]}
     placeholder="Type something..."
@@ -6546,7 +6538,6 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
   <textarea
     className="textarea"
     data-testid="textbox"
-    onBlur={[Function]}
     onChange={[Function]}
     onMouseDown={[Function]}
     placeholder="Type something..."
@@ -6589,7 +6580,6 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
     <textarea
       className="textarea"
       data-testid="textbox"
-      onBlur={[Function]}
       onChange={[Function]}
       onMouseDown={[Function]}
       placeholder="Type something..."
@@ -9151,7 +9141,6 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       <textarea
         className="textarea"
         data-testid="textbox"
-        onBlur={[Function]}
         onChange={[Function]}
         onMouseDown={[Function]}
         placeholder="Type something..."
@@ -10189,7 +10178,6 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       <textarea
         className="textarea"
         data-testid="textbox"
-        onBlur={[Function]}
         onChange={[Function]}
         onMouseDown={[Function]}
         placeholder="Type something..."
@@ -11225,7 +11213,6 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       <textarea
         className="textarea"
         data-testid="textbox"
-        onBlur={[Function]}
         onChange={[Function]}
         onMouseDown={[Function]}
         placeholder="Type something..."
@@ -12261,7 +12248,6 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       <textarea
         className="textarea"
         data-testid="textbox"
-        onBlur={[Function]}
         onChange={[Function]}
         onMouseDown={[Function]}
         placeholder="Type something..."
@@ -13297,7 +13283,6 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       <textarea
         className="textarea"
         data-testid="textbox"
-        onBlur={[Function]}
         onChange={[Function]}
         onMouseDown={[Function]}
         placeholder="Type something..."
