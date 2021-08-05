@@ -1,0 +1,15 @@
+.textarea {
+  padding: 0.5rem;
+  width: 100%;
+  resize: vertical;
+  min-height: 100px;
+  max-height: 500px;
+}
+
+.preview {
+  padding: 0.5rem;
+  width: 100%;
+  display: block;
+  width: inherit;
+  height: auto;
+}
