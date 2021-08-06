@@ -19628,179 +19628,76 @@ exports[`Storyshots Pages/Lesson With Alerts 1`] = `
 `;
 
 exports[`Storyshots Pages/Login Login 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
-  >
-    <div
-      className="container"
-    >
-      <a
-        className="navbar-brand"
-        href="/"
-      >
-        <div
-          className="navbar-brand text-primary font-weight-bold"
-        >
-          C0D3
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        className="navbar-toggler collapsed"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        aria-expanded={null}
-        className="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          className="m-auto navbar-nav"
-          onKeyDown={[Function]}
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>,
+<div
+  className="row mt-5"
+>
   <div
-    className="container-md"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
-      className="row mt-5"
+      className="card-body text-center pt-5 pb-5"
     >
-      <div
-        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Login
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
       >
         <div
-          className="card-body text-center pt-5 pb-5"
+          className="form-group"
         >
-          <h1
-            className="card-title h2 font-weight-bold mb-5"
+          <div
+            className="mt-3"
           >
-            Login
-          </h1>
-          <p
-            className="card-text"
-          />
-          <form
-            action="#"
-            data-testid="form"
-            onReset={[Function]}
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-group"
+            <input
+              autoFocus={true}
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              value=""
+            />
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              data-testid="submit"
+              type="submit"
             >
-              <div
-                className="mt-3"
-              >
-                <input
-                  autoFocus={true}
-                  className="form-control form-control-lg font-weight-light mb-3 "
-                  data-testid="username"
-                  name="username"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  placeholder="Username"
-                  value=""
-                />
-                <input
-                  className="form-control form-control-lg font-weight-light mb-3 "
-                  data-testid="password"
-                  name="password"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  placeholder="Password"
-                  type="password"
-                  value=""
-                />
-                <button
-                  className="btn btn-primary btn-lg btn-block mb-3"
-                  data-testid="submit"
-                  type="submit"
-                >
-                  Login to Your Account
-                </button>
-              </div>
-            </div>
-          </form>
-          <a
-            className=""
-            href="/forgotpassword"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Forgot your password?
-          </a>
+              Login to Your Account
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
+      <a
+        className=""
+        href="/forgotpassword"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Forgot your password?
+      </a>
     </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Pages/Login Login Basic 1`] = `
@@ -20132,199 +20029,96 @@ Array [
 `;
 
 exports[`Storyshots Pages/Signup Signup 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
-  >
-    <div
-      className="container"
-    >
-      <a
-        className="navbar-brand"
-        href="/"
-      >
-        <div
-          className="navbar-brand text-primary font-weight-bold"
-        >
-          C0D3
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        className="navbar-toggler collapsed"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        aria-expanded={null}
-        className="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          className="m-auto navbar-nav"
-          onKeyDown={[Function]}
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>,
+<div
+  className="row mt-5"
+>
   <div
-    className="container-md"
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
-      className="row mt-5"
+      className="card-body text-center pt-5 pb-5"
     >
-      <div
-        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Create Account
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
       >
         <div
-          className="card-body text-center pt-5 pb-5"
+          className="form-group "
         >
-          <h1
-            className="card-title h2 font-weight-bold mb-5"
+          <input
+            autoFocus={true}
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email address"
+            type="email"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="firstName"
+            name="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="First name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="lastName"
+            name="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Last name"
+            value=""
+          />
+          <button
+            className="btn btn-primary btn-lg btn-block mb-3"
+            data-testid="submit"
+            type="submit"
           >
             Create Account
-          </h1>
-          <p
-            className="card-text"
-          />
-          <form
-            action="#"
-            data-testid="form"
-            onReset={[Function]}
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-group "
-            >
-              <input
-                autoFocus={true}
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="email"
-                name="email"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Email address"
-                type="email"
-                value=""
-              />
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="username"
-                name="username"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Username"
-                value=""
-              />
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="firstName"
-                name="firstName"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="First name"
-                value=""
-              />
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="lastName"
-                name="lastName"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Last name"
-                value=""
-              />
-              <button
-                className="btn btn-primary btn-lg btn-block mb-3"
-                data-testid="submit"
-                type="submit"
-              >
-                Create Account
-              </button>
-            </div>
-          </form>
-          <p
-            className="text-black-50"
-          >
-            Already have an account?
-             
-            <a
-              className="text-primary"
-              href="/login"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Login
-            </a>
-          </p>
+          </button>
         </div>
-      </div>
+      </form>
+      <p
+        className="text-black-50"
+      >
+        Already have an account?
+         
+        <a
+          className="text-primary"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+      </p>
     </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Pages/Signup Signup Basic 1`] = `

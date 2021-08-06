@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Formik, Form, Field } from 'formik'
 import Input from '../components/Input'
 import { loginValidation } from '../helpers/formValidation'
-import Layout from '../components/Layout'
+import { getLayout } from '../components/Layout'
 import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
@@ -12,6 +12,8 @@ import { Values, LoginFormProps, ErrorDisplayProps } from '../@types/login'
 import _ from 'lodash'
 import { useRouter } from 'next/router'
 import GET_APP from '../graphql/queries/getApp'
+import { WithLayout } from '../@types/page'
+import Title from '../components/Title'
 
 const initialValues = {
   username: '',
@@ -80,7 +82,7 @@ export const Login: React.FC<LoginFormProps> = ({
   )
 }
 
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC & WithLayout = () => {
   const router = useRouter()
   const [loginErrors, setLoginErrors] = useState<string[]>([])
   const [loginUser, { data, error }] = useMutation(LOGIN_USER, {
@@ -112,10 +114,12 @@ const LoginPage: React.FC = () => {
     } catch {} // catch error that's thrown by default from mutation
   }
   return (
-    <Layout title="Login">
+    <>
+      <Title title="Login" />
       <Login handleSubmit={handleSubmit} loginErrors={loginErrors} />
-    </Layout>
+    </>
   )
 }
 
+LoginPage.getLayout = getLayout
 export default LoginPage
