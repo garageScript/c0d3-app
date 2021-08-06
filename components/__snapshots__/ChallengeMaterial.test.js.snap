@@ -2442,9 +2442,9 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                             Preview
                           </button>
                           <textarea
+                            class="textarea"
                             data-testid="textbox"
                             placeholder="Type something..."
-                            style="padding: 1rem; width: 100%;"
                           />
                         </div>
                         <button
@@ -2553,9 +2553,9 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                             Preview
                           </button>
                           <textarea
+                            class="textarea"
                             data-testid="textbox"
                             placeholder="Type something..."
-                            style="padding: 1rem; width: 100%;"
                           />
                         </div>
                         <button
@@ -5132,9 +5132,9 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               />
             </div>
             <button
@@ -7349,9 +7349,9 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               />
             </div>
             <button
@@ -12364,9 +12364,9 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               />
             </div>
             <button

@@ -66,9 +66,9 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               />
             </div>
           </div>
@@ -235,9 +235,10 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
+                style="height: 2px;"
               >
                 New description
               </textarea>
@@ -411,9 +412,9 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   A super simple introduction to help you get started!
                 </textarea>
@@ -578,9 +579,9 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 />
               </div>
             </div>
@@ -681,9 +682,9 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and returns their sum.
 
@@ -787,9 +788,9 @@ solution(4,1) // Should return 5
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 3 numbers and returns their sum.
 
@@ -893,9 +894,9 @@ solution(4,1,9) // Should return 14
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
 
@@ -999,9 +1000,9 @@ solution(4) // Should return false
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and return the largest out of them.
 
@@ -1105,9 +1106,9 @@ solution(4,1) // Should return 4
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 3 numbers and return the largest out of them.
 
@@ -1212,9 +1213,9 @@ solution(4,5,1) // Should return 5
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and returns true if the first number is greater than the second, false otherwise.
 
@@ -1318,9 +1319,9 @@ solution(4,1) // Should return true
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and returns true if their sum is greater than 10.
 
@@ -1424,9 +1425,9 @@ solution(4,1) // Should return false
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Takes in 2 numbers, return a function that returns the sum when the function is called 
 
@@ -1529,9 +1530,9 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers, return a function that takes in a number that returns the sum of all 3 numbers when called. 
 Example:
@@ -1636,9 +1637,9 @@ const a = solution(1,2); // a is a function
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 functions and returns the sum of the result of the 2 functions
 Example:
@@ -1751,9 +1752,9 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
                 Preview
               </button>
               <textarea
+                class="textarea"
                 data-testid="textbox"
                 placeholder="Type something..."
-                style="padding: 1rem; width: 100%;"
               />
             </div>
           </div>
@@ -1925,9 +1926,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
+                  style="height: 2px;"
                 >
                   New description
                 </textarea>
@@ -2092,9 +2094,9 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 />
               </div>
             </div>
@@ -2195,9 +2197,9 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and returns their sum.
 
@@ -2301,9 +2303,9 @@ solution(4,1) // Should return 5
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 3 numbers and returns their sum.
 
@@ -2407,9 +2409,9 @@ solution(4,1,9) // Should return 14
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in a number and returns true if that number is greater than 5. Otherwise, return false.
 
@@ -2513,9 +2515,9 @@ solution(4) // Should return false
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and return the largest out of them.
 
@@ -2619,9 +2621,9 @@ solution(4,1) // Should return 4
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 3 numbers and return the largest out of them.
 
@@ -2726,9 +2728,9 @@ solution(4,5,1) // Should return 5
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and returns true if the first number is greater than the second, false otherwise.
 
@@ -2832,9 +2834,9 @@ solution(4,1) // Should return true
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers and returns true if their sum is greater than 10.
 
@@ -2938,9 +2940,9 @@ solution(4,1) // Should return false
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Takes in 2 numbers, return a function that returns the sum when the function is called 
 
@@ -3043,9 +3045,9 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 numbers, return a function that takes in a number that returns the sum of all 3 numbers when called. 
 Example:
@@ -3150,9 +3152,9 @@ const a = solution(1,2); // a is a function
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 >
                   Write a function that takes in 2 functions and returns the sum of the result of the 2 functions
 Example:

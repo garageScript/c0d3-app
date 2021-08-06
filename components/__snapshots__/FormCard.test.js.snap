@@ -38,9 +38,9 @@ exports[`FormCard Component Should call function with updated array as parameter
               Preview
             </button>
             <textarea
+              class="textarea"
               data-testid="textbox"
               placeholder="Type something..."
-              style="padding: 1rem; width: 100%;"
             />
           </div>
         </div>
@@ -142,9 +142,10 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
               Preview
             </button>
             <textarea
+              class="textarea"
               data-testid="textbox"
               placeholder="Type something..."
-              style="padding: 1rem; width: 100%;"
+              style="height: 2px;"
             />
           </div>
         </div>
@@ -277,9 +278,10 @@ exports[`FormCard Component Should update testing onChange variable when person 
               Preview
             </button>
             <textarea
+              class="textarea"
               data-testid="textbox"
               placeholder="Type something..."
-              style="padding: 1rem; width: 100%;"
+              style="height: 2px;"
             />
           </div>
         </div>
