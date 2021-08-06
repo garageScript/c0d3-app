@@ -1,6 +1,7 @@
 import React from 'react'
-import { render, fireEvent, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom'
 import { MdInput } from './MdInput'
 
 const TestComponent = () => {
@@ -10,64 +11,53 @@ const TestComponent = () => {
 
 describe('MdInput Component', () => {
   test('Should render text onto textbox when user types', () => {
-    const { container, queryByTestId } = render(<TestComponent />)
-    const textbox = queryByTestId('textbox')
-    fireEvent.change(textbox, {
-      target: { value: 'Javascript' }
-    })
+    const { container } = render(<TestComponent />)
 
-    expect(textbox.value).toContain('Javascript')
+    userEvent.type(screen.getByRole('textbox'), 'Javascript')
+    expect(screen.getByRole('textbox')).toHaveValue('Javascript')
     expect(container).toMatchSnapshot()
   })
 
   test('Should switch to Write mode when user clicks Write button', () => {
-    const { container, getByRole, queryByTestId } = render(<MdInput />)
-    const writeButton = getByRole('button', { name: 'Write' })
+    const { container } = render(<MdInput />)
 
-    fireEvent.click(writeButton)
+    userEvent.click(screen.getByRole('button', { name: 'Write' }))
 
-    const textbox = queryByTestId('textbox')
-    const markdown = queryByTestId('markdown')
-    expect(markdown).toBeNull()
-    expect(textbox).toBeTruthy()
+    expect(screen.queryByTestId('markdown')).not.toBeInTheDocument()
+    expect(screen.getByRole('textbox')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
   })
 
   test('Should switch to Preview mode when user clicks Preview button', () => {
-    const { container, getByRole, queryByTestId } = render(<MdInput />)
-    const previewButton = getByRole('button', { name: 'Preview' })
+    const { container } = render(<MdInput />)
 
-    fireEvent.click(previewButton)
+    userEvent.click(screen.getByRole('button', { name: 'Preview' }))
 
-    const textbox = queryByTestId('textbox')
-    const markdown = queryByTestId('markdown')
-    expect(textbox.classList.contains('d-none')).toBe(true)
-    expect(markdown).toBeTruthy()
+    expect(screen.getByRole('textbox')).toHaveClass('d-none')
+    expect(screen.queryByTestId('markdown')).toBeInTheDocument()
     expect(container).toMatchSnapshot()
   })
 
   test('Should save cursor state going to and back from preview', () => {
     render(<TestComponent />)
-    const previewButton = screen.getByRole('button', { name: 'Preview' })
-    const writeButton = screen.getByRole('button', { name: 'Write' })
     const textbox = screen.getByRole('textbox')
 
     userEvent.click(textbox)
     userEvent.type(textbox, 'Hello,{enter}World!')
-    expect(textbox.value).toBe('Hello,\nWorld!')
+    expect(textbox).toHaveValue('Hello,\nWorld!')
 
     textbox.setSelectionRange(7, 13)
-    userEvent.click(previewButton)
-    expect(textbox.classList.contains('d-none')).toBe(true)
+    userEvent.click(screen.getByRole('button', { name: 'Preview' }))
+    expect(textbox).toHaveClass('d-none')
 
-    userEvent.click(writeButton)
+    userEvent.click(screen.getByRole('button', { name: 'Write' }))
     userEvent.type(textbox, '{backspace}Tom!')
-    expect(textbox.value).toBe('Hello,\nTom!')
+    expect(textbox).toHaveValue('Hello,\nTom!')
   })
   test('Should automatically resize to fit content', () => {
     render(<TestComponent />)
     const textbox = screen.getByRole('textbox')
-    expect(textbox.style.height).toBe('')
+    expect(textbox).not.toHaveStyle('height: 2px')
     userEvent.type(
       textbox,
       'Hello,{enter}{enter}{enter}{enter}{enter}{enter}Tom!'
@@ -75,7 +65,7 @@ describe('MdInput Component', () => {
 
     // Only picks up '+2px' additional padding as JSDOM doesnt properly mock styles
     // but this proves the code was exercised and is good enough for unit test
-    expect(textbox.style.height).not.toBe('')
+    expect(textbox).toHaveStyle('height: 2px')
   })
   test('Show not auto resize after user sets height', () => {
     render(<TestComponent />)
@@ -86,16 +76,16 @@ describe('MdInput Component', () => {
       .mockImplementation(() => 200)
       .mockImplementationOnce(() => 100)
 
-    expect(textbox.style.height).toBe('')
+    expect(textbox).not.toHaveStyle('height: 200px')
     userEvent.click(textbox)
-    expect(textbox.style.height).toBe('200px')
+    expect(textbox).toHaveStyle('height: 200px')
 
     userEvent.click(textbox)
-    expect(textbox.style.height).toBe('200px')
+    expect(textbox).toHaveStyle('height: 200px')
     userEvent.type(
       textbox,
       'Lots{enter}{enter}{enter}{enter}o{enter}{enter}{enter}{enter}{enter}lines'
     )
-    expect(textbox.style.height).toBe('200px')
+    expect(textbox).toHaveStyle('height: 200px')
   })
 })
