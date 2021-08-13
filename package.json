@@ -22,7 +22,7 @@
     "generate": "graphql-codegen --config codegen.yml",
     "postinstall": "node scripts/prismaUtils.js setup && prisma generate",
     "prepare": "husky install",
-    "vercel-build": "node scripts/prismaUtils.js rollback migrate && next build"
+    "vercel-build": "node scripts/prismaUtils.js migrate && next build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mdx}": "eslint --fix",

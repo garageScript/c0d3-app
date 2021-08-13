@@ -72,9 +72,7 @@ describe('user profile test', () => {
       lessonStatus: [
         {
           lessonId: 5,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: [
             {
@@ -96,9 +94,7 @@ describe('user profile test', () => {
         },
         {
           lessonId: 2,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: [
             {
@@ -120,9 +116,7 @@ describe('user profile test', () => {
         },
         {
           lessonId: 1,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: [
             {
@@ -208,17 +202,13 @@ describe('user profile test', () => {
       lessonStatus: [
         {
           lessonId: 5,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: null
         },
         {
           lessonId: 2,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: null
         }

@@ -64,7 +64,7 @@ export const updateSubmission = async (
   // or user has not passed all challenges in lesson
   // immediately return and do not proceed
   if (
-    userLesson.isPassed ||
+    userLesson.passedAt ||
     lessonChallengeCount !== passedLessonSubmissions.length
   ) {
     return submission
@@ -107,7 +107,7 @@ export const updateSubmission = async (
       }
     },
     data: {
-      isPassed: Date.now().toString()
+      passedAt: new Date()
     }
   })
 
