@@ -34,7 +34,7 @@ describe('getLessonMentors resolver', () => {
         userLessons: {
           some: {
             lessonId: 3,
-            passedAt: { not: null }
+            isPassed: { not: null }
           }
         }
       },
@@ -80,7 +80,7 @@ describe('getLessonMentors resolver', () => {
         userLessons: {
           some: {
             lessonId: 3,
-            passedAt: { not: null }
+            isPassed: { not: null }
           }
         }
       },

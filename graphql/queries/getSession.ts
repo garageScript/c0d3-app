@@ -28,7 +28,9 @@ const GET_SESSION = gql`
       }
       lessonStatus {
         lessonId
-        passedAt
+        isPassed
+        isTeaching
+        isEnrolled
         starGiven
       }
     }

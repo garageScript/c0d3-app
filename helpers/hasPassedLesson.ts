@@ -4,13 +4,11 @@ export const hasPassedLesson = async (
   reviewerId: number,
   lessonId: number
 ): Promise<Boolean> => {
-  const userLesson = await prisma.userLesson.findUnique({
+  const userLesson = await prisma.userLesson.findFirst({
     where: {
-      lessonId_userId: {
-        lessonId,
-        userId: reviewerId
-      }
+      lessonId: lessonId,
+      userId: reviewerId
     }
   })
-  return Boolean(userLesson?.passedAt)
+  return userLesson ? Boolean(userLesson.isPassed) : false
 }

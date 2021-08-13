@@ -53,9 +53,9 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
   }
   if (
-    !session.lessonStatus.find(
-      status => status.lessonId === currentLesson.id && status.passedAt
-    )
+    !session.lessonStatus.find(status => {
+      return status.lessonId === currentLesson.id && status.isPassed
+    })
   ) {
     router.push('/curriculum')
     return <LoadingSpinner />

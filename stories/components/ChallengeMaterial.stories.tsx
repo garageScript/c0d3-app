@@ -49,7 +49,9 @@ const challenges = [
 
 const lessonStatus = {
   id: 1,
-  lessonId: 5
+  lessonId: 5,
+  isEnrolled: '213423534',
+  isTeaching: null
 }
 
 export const Basic: React.FC = () => (
@@ -290,7 +292,7 @@ export const FinalChallenge: React.FC = () => (
           updatedAt: Date.now().toString()
         }
       ]}
-      lessonStatus={{ ...lessonStatus, passedAt: 'aef' }}
+      lessonStatus={{ ...lessonStatus, isPassed: 'aef' }}
       chatUrl="https://chat.c0d3.com/c0d3/channels/js0-foundations"
       lessonId={5}
       show={false}

@@ -14,8 +14,7 @@ const dummyStarData: Star[] = [
       title: 'Foundations of JavaScript',
       order: 0,
       id: 5,
-      description: 'A super simple introduction to help you get started!',
-      challenges: []
+      description: 'A super simple introduction to help you get started!'
     },
     comment: "You're the best!!"
   },
@@ -34,8 +33,7 @@ const dummyStarData: Star[] = [
       order: 1,
       id: 2,
       description:
-        'Learn how to solve simple algorithm problems recursively with the following exercises. ',
-      challenges: []
+        'Learn how to solve simple algorithm problems recursively with the following exercises. '
     },
     comment: "You're the best!!"
   },
@@ -54,8 +52,7 @@ const dummyStarData: Star[] = [
       order: 2,
       id: 1,
       description:
-        'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
-      challenges: []
+        'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.'
     },
     comment: "You're the best!!"
   },
@@ -74,8 +71,7 @@ const dummyStarData: Star[] = [
       order: 3,
       id: 4,
       description:
-        'These exercises will test your understanding of objects, which includes linked lists and trees',
-      challenges: []
+        'These exercises will test your understanding of objects, which includes linked lists and trees'
     },
     comment: "You're the best!!"
   },
@@ -94,8 +90,7 @@ const dummyStarData: Star[] = [
       order: 4,
       id: 24,
       description:
-        'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)',
-      challenges: []
+        'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)'
     },
     comment: "You're the swellest!!"
   },
@@ -114,8 +109,7 @@ const dummyStarData: Star[] = [
       order: 5,
       id: 3,
       description:
-        'These exercises will help you build a strong understanding of how the web works.',
-      challenges: []
+        'These exercises will help you build a strong understanding of how the web works.'
     },
     comment: "You're the best!!"
   },
@@ -133,8 +127,7 @@ const dummyStarData: Star[] = [
       title: 'React, GraphQL, SocketIO',
       order: 6,
       id: 29,
-      description: 'React and GraphQL Lessons',
-      challenges: []
+      description: 'React and GraphQL Lessons'
     },
     comment: "You're the best!!"
   },
@@ -152,8 +145,7 @@ const dummyStarData: Star[] = [
       title: 'Foundations of JavaScript',
       order: 0,
       id: 5,
-      description: 'A super simple introduction to help you get started!',
-      challenges: []
+      description: 'A super simple introduction to help you get started!'
     },
     comment:
       'You have revealed the truth, and the truth has set me free. Hence my comment shall be superfluous and my praise excessive. I bestow this star upon thee, o kind sir. Actually just testing how long comments look on the UI. Should be okay.'
@@ -173,8 +165,7 @@ const dummyStarData: Star[] = [
       order: 1,
       id: 2,
       description:
-        'Learn how to solve simple algorithm problems recursively with the following exercises. ',
-      challenges: []
+        'Learn how to solve simple algorithm problems recursively with the following exercises. '
     },
     comment: "You're the best!!"
   },
@@ -193,8 +184,7 @@ const dummyStarData: Star[] = [
       order: 2,
       id: 1,
       description:
-        'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
-      challenges: []
+        'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.'
     },
     comment: "You're the best!!"
   },
@@ -213,8 +203,7 @@ const dummyStarData: Star[] = [
       order: 3,
       id: 4,
       description:
-        'These exercises will test your understanding of objects, which includes linked lists and trees',
-      challenges: []
+        'These exercises will test your understanding of objects, which includes linked lists and trees'
     },
     comment: "You're the best!!"
   },
@@ -233,8 +222,7 @@ const dummyStarData: Star[] = [
       order: 4,
       id: 24,
       description:
-        'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)',
-      challenges: []
+        'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)'
     },
     comment: "You're the best!!"
   },
@@ -253,8 +241,7 @@ const dummyStarData: Star[] = [
       order: 5,
       id: 3,
       description:
-        'These exercises will help you build a strong understanding of how the web works.',
-      challenges: []
+        'These exercises will help you build a strong understanding of how the web works.'
     },
     comment: "You're the best!!"
   },
@@ -272,8 +259,7 @@ const dummyStarData: Star[] = [
       title: 'React, GraphQL, SocketIO',
       order: 6,
       id: 29,
-      description: 'React and GraphQL Lessons',
-      challenges: []
+      description: 'React and GraphQL Lessons'
     },
     comment:
       'You have revealed the truth, and the truth has set me free. I bestow this star upon thee, o kind sir. Actually just testing how long comments look on the UI.'

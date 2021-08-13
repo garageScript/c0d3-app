@@ -70,17 +70,23 @@ describe('Curriculum Page', () => {
       lessonStatus: [
         {
           lessonId: '5',
-          passedAt: new Date(),
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
           starGiven: null
         },
         {
           lessonId: '2',
-          passedAt: new Date(),
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
           starGiven: null
         },
         {
           lessonId: '1',
-          passedAt: new Date(),
+          isPassed: true,
+          isTeaching: true,
+          isEnrolled: false,
           starGiven: null
         }
       ]

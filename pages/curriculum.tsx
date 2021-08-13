@@ -1,24 +1,24 @@
-import _ from 'lodash'
-import { GetStaticProps } from 'next'
-import React, { useEffect, useRef, useState } from 'react'
-import { ArrayElement } from '../@types/utils'
-import AdditionalResources from '../components/AdditionalResources'
-import AlertsDisplay from '../components/AlertsDisplay'
-import AnnouncementCard from '../components/AnnouncementCard'
-import DiscordBar from '../components/DiscordBar'
-import Error, { StatusCode } from '../components/Error'
+import React, { useEffect, useState, useRef } from 'react'
 import Layout from '../components/Layout'
+import Error, { StatusCode } from '../components/Error'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
+import AnnouncementCard from '../components/AnnouncementCard'
+import AdditionalResources from '../components/AdditionalResources'
+import AlertsDisplay from '../components/AlertsDisplay'
 import {
-  Alert,
-  GetAppDocument,
   GetAppQuery,
-  GetSessionQuery,
+  GetAppDocument,
   Lesson,
-  useGetSessionQuery
+  Alert,
+  UserLesson,
+  useGetSessionQuery,
+  GetSessionQuery
 } from '../graphql/'
+import DiscordBar from '../components/DiscordBar'
+import _ from 'lodash'
 import { initializeApollo } from '../helpers/apolloClient'
+import { GetStaticProps } from 'next'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
 
@@ -41,40 +41,49 @@ interface State {
 
 const generateMap = (
   session: GetSessionQuery['session']
-): { [id: string]: ArrayElement<typeof session.lessonStatus> } => {
-  return session.lessonStatus.reduce((map, userLesson) => {
-    map[userLesson.lessonId] = userLesson
-    return map
-  }, {} as ReturnType<typeof generateMap>)
+): { [id: string]: UserLesson } => {
+  const lessonStatusMap: { [id: string]: UserLesson } = {}
+  const { lessonStatus } = session!
+  for (const status of lessonStatus) {
+    const lessonId = _.get(status, 'lessonId', '-1') as string
+    lessonStatusMap[lessonId] = status as UserLesson
+  }
+  return lessonStatusMap
 }
-
-// Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
-const TOTAL_LESSONS = 7
-
 const calculateProgress = (
   session: GetSessionQuery['session'],
   lessons: Lesson[]
 ): number => {
-  const lessonInProgressIdx = calculateCurrent(session, lessons)
+  const lessonStatusMap = generateMap(session)
+  const lessonInProgressIdx = _.cond([
+    [_.isEqual.bind(null, -1), _.constant(0)],
+    [_.constant(true), (output: number) => output]
+  ])(
+    lessons.findIndex(lesson => {
+      const lessonId = _.get(lesson, 'id', '-1') as string
+      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
+      return !passed
+    })
+  )
+  // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
+  const TOTAL_LESSONS = 7
   return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
 }
-
-/**
- * Finds the index of the first uncompleted lesson
- * @param session
- * @param lessons
- * @returns current lesson index
- */
 const calculateCurrent = (
   session: GetSessionQuery['session'],
   lessons: Lesson[]
 ): number => {
   const lessonStatusMap = generateMap(session)
-  const lessonIndex = lessons.findIndex(
-    ({ id }) => Boolean(lessonStatusMap[id]?.passedAt) === false
+  return _.cond([
+    [_.isEqual.bind(null, -1), _.constant(0)],
+    [_.constant(true), (output: number) => output]
+  ])(
+    lessons.findIndex(lesson => {
+      const lessonId = _.get(lesson, 'id', '-1') as string
+      const passed = _.get(lessonStatusMap[lessonId], 'isPassed', false)
+      return !passed
+    })
   )
-  // findIndex returns -1 if an element is not found
-  return Math.max(0, lessonIndex)
 }
 
 const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
@@ -139,25 +148,31 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [data])
   const lessonStatusMap = generateMap(state.session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
-    const { id, title, description, challenges, docUrl } = lesson
+    const id = _.get(lesson, 'id', idx) as number
     const status = lessonStatusMap[id]
-    const passed = Boolean(status?.passedAt)
     let lessonState = ''
-    if (idx === state.current) lessonState = 'inProgress'
-    if (passed) lessonState = 'completed'
-
+    if (idx === state.current) {
+      lessonState = 'inProgress'
+    }
+    const passed = _.get(status, 'isPassed', false)
+    if (passed) {
+      lessonState = 'completed'
+    }
+    const title = _.get(lesson, 'title', '') as string
+    const challengeCount = _.get(lesson, 'challenges.length', 0) as number
+    const description = _.get(lesson, 'description', '') as string
     return (
       <LessonCard
         key={id}
         lessonId={id}
         coverImg={`js-${idx}-cover.svg`}
         title={title}
-        challengeCount={challenges.length}
+        challengeCount={challengeCount}
         description={description}
         currentState={lessonState}
         reviewUrl={`/review/${id}`}
         challengesUrl={`/curriculum/${id}`}
-        docUrl={docUrl ?? ''}
+        docUrl={_.get(lesson, 'docUrl', '') as string}
       />
     )
   })
