@@ -60,9 +60,7 @@ const GET_APP = gql`
 
       lessonStatus {
         lessonId
-        isPassed
-        isTeaching
-        isEnrolled
+        passedAt
         starGiven
       }
     }

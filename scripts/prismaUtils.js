@@ -7,11 +7,8 @@ const path = require('path')
 const ARGS = {
   BASELINE: 'baseline',
   MIGRATE: 'migrate',
-  ROLLBACK: 'rollback',
   SETUP: 'setup'
 }
-
-const migrationsToRollback = ['20210724143149_is_passed_to_datetime']
 
 ;(function main() {
   const args = process.argv.slice(2)
@@ -22,13 +19,6 @@ const migrationsToRollback = ['20210724143149_is_passed_to_datetime']
         break
       case ARGS.MIGRATE:
         if (isProd()) run(`yarn prisma migrate deploy`)
-        break
-      case ARGS.ROLLBACK:
-        if (isProd()) {
-          migrationsToRollback.forEach(migration => {
-            run(`yarn prisma migrate resolve --rolled-back ${migration}`)
-          })
-        }
         break
       case ARGS.SETUP:
         setupPrisma()

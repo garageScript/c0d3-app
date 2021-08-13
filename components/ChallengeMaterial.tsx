@@ -409,7 +409,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
       }}
     >
       {challengeTitleCards}
-      {lessonStatus.isPassed && (
+      {lessonStatus.passedAt && (
         <ChallengeTitleCard
           key={finalChallenge.id}
           id={finalChallenge.id}
@@ -444,7 +444,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         {currentChallenge.id !== finalChallenge.id && (
           <ChallengeQuestionCard currentChallenge={currentChallenge} />
         )}
-        {lessonStatus.isPassed && currentChallenge.id === 0 && (
+        {lessonStatus.passedAt && currentChallenge.id === 0 && (
           <ChallengesCompletedCard
             lessonId={lessonId}
             starGiven={lessonStatus.starGiven || ''}

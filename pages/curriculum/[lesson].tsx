@@ -45,16 +45,12 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     []
   ) as UserLesson[]
 
-  const currentLessonStatus: UserLesson =
-    lessonStatus.find(
-      lessonStatus => lessonStatus.lessonId! === currentlessonId
-    ) ||
+  const currentLessonStatus =
+    lessonStatus.find(userLesson => userLesson.lessonId === currentlessonId) ||
     ({
-      isEnrolled: null,
-      isTeaching: null,
+      passedAt: null,
       lessonId: currentlessonId
     } as UserLesson)
-  const isPassed = !!currentLessonStatus.isTeaching
   return (
     <div>
       <Layout title={`${currentLesson.title}`}>
@@ -64,9 +60,9 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
               <LessonTitleCard
                 lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
                 lessonUrl={currentLesson.docUrl!}
-                lessonTitle={currentLesson.title!}
+                lessonTitle={currentLesson.title}
                 lessonId={currentlessonId}
-                isPassed={isPassed}
+                isPassed={Boolean(currentLessonStatus.passedAt)}
                 setShow={setShow}
                 show={show}
               />
