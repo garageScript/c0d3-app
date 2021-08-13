@@ -10,4 +10,7 @@ RENAME COLUMN "isPassed" TO "passedAt";
 -- Change passedAt column type to TIMESTAMPTZ, converting existing values
 ALTER TABLE "userLessons"
 ALTER COLUMN "passedAt" TYPE TIMESTAMPTZ(6)
-USING to_timestamp(cast("passedAt" AS bigint) / 1000);
+USING CASE WHEN "passedAt" IS NULL OR "passedAt" = ''
+	THEN NULL
+	ELSE to_timestamp(cast("passedAt" AS bigint) / 1000)
+END;
