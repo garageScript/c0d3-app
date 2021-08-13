@@ -64,16 +64,12 @@ const session = {
   lessonStatus: [
     {
       lessonId: 5,
-      isPassed: true,
-      isTeaching: true,
-      isEnrolled: false,
+      passedAt: new Date(),
       starGiven: null
     },
     {
       lessonId: 2,
-      isPassed: false,
-      isTeaching: false,
-      isEnrolled: true,
+      passedAt: null,
       starGiven: null
     }
   ]

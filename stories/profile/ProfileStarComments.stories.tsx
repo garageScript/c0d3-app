@@ -22,7 +22,8 @@ const stars: StarType[] = [
       id: 4,
       title: 'Objects',
       description: 'Objects description',
-      order: 3
+      order: 3,
+      challenges: []
     },
     comment:
       "Thanks. I was once lost but now I'm found. Was blind but now I see."
@@ -41,7 +42,8 @@ const stars: StarType[] = [
       id: 3,
       title: 'End to End',
       description: 'End to End description',
-      order: 5
+      order: 5,
+      challenges: []
     },
     comment: "Objects ain't easy, but thanks to you, they're now lemon squeezy."
   }

@@ -14,11 +14,8 @@ import {
 const prisma = new PrismaClient()
 
 async function main() {
-  await seedLessons()
+  const lessons = await seedLessons()
   const [admin, leet, noob] = await seedUsers()
-  const lessons = await prisma.lesson.findMany({
-    include: { challenges: true }
-  })
   await seedUserLessons(admin, lessons)
   await seedUserLessons(leet, lessons)
   await seedSubmissions(leet, admin, lessons, SubmissionStatus.Passed)
@@ -27,20 +24,23 @@ async function main() {
 }
 
 async function seedLessons() {
-  for (const lessonData of lessonsData) {
-    await prisma.lesson.create({ data: lessonData })
-  }
+  return prisma.$transaction(
+    lessonsData.map(data =>
+      prisma.lesson.create({ data, include: { challenges: true } })
+    )
+  )
 }
 
 async function seedUsers() {
-  const admin = await prisma.user.create({ data: adminData })
-  const leet = await prisma.user.create({ data: leetData })
-  const noob = await prisma.user.create({ data: noobData })
-  return [admin, leet, noob]
+  return prisma.$transaction([
+    prisma.user.create({ data: adminData }),
+    prisma.user.create({ data: leetData }),
+    prisma.user.create({ data: noobData })
+  ])
 }
 
 async function seedUserLessons(user: User, lessons: Lesson[]) {
-  await prisma.userLesson.createMany({
+  return prisma.userLesson.createMany({
     data: lessons.map(({ id }) => userLessonData(id, user.id))
   })
 }
@@ -51,7 +51,7 @@ async function seedSubmissions(
   lessons: (Lesson & { challenges: Challenge[] })[],
   status?: SubmissionStatus
 ) {
-  await prisma.submission.createMany({
+  return prisma.submission.createMany({
     data: lessons.reduce(
       (acc, { challenges }) => [
         ...acc,
@@ -65,7 +65,7 @@ async function seedSubmissions(
 }
 
 async function seedStars(user: User, mentor: User, lessons: Lesson[]) {
-  await prisma.star.createMany({
+  return prisma.star.createMany({
     data: lessons.map(({ id }) => starData(id, user.id, mentor.id))
   })
 }

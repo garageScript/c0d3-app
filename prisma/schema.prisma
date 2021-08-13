@@ -114,15 +114,13 @@ model Comment {
 }
 
 model UserLesson {
-  isPassed   String?  @db.VarChar(255)
-  isTeaching String?  @db.VarChar(255)
-  isEnrolled String?  @db.VarChar(255)
-  createdAt  DateTime @default(now()) @db.Timestamptz(6)
-  updatedAt  DateTime @updatedAt @db.Timestamptz(6)
-  lessonId   Int
-  userId     Int
-  lesson     Lesson   @relation(fields: [lessonId], references: [id])
-  user       User     @relation(fields: [userId], references: [id])
+  passedAt  DateTime? @db.Timestamptz(6)
+  createdAt DateTime  @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime  @updatedAt @db.Timestamptz(6)
+  lessonId  Int
+  userId    Int
+  lesson    Lesson    @relation(fields: [lessonId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
 
   @@id([lessonId, userId])
   @@map("userLessons")
