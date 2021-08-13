@@ -6,7 +6,7 @@ import {
   GetPreviousSubmissionsQuery
 } from '../graphql'
 
-import { RecursivePartial } from '../@types/utils'
+import { RecursivePartial } from '../@types/recursivePartial'
 import _ from 'lodash'
 /*
   update function modifies client cache after mutation

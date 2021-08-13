@@ -157,7 +157,9 @@ export default gql`
     id: Int!
     userId: String
     lessonId: Int!
-    passedAt: String
+    isPassed: String
+    isTeaching: String
+    isEnrolled: String
     starsReceived: [Star]
     starGiven: String
   }
@@ -170,7 +172,7 @@ export default gql`
     videoUrl: String
     order: Int!
     title: String!
-    challenges: [Challenge!]!
+    challenges: [Challenge]
     users: [User]
     currentUser: User
     chatUrl: String

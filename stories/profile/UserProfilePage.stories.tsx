@@ -23,7 +23,9 @@ const session: Session = {
       id: 1,
       userId: '1',
       lessonId: 5,
-      passedAt: `'true'`,
+      isPassed: 'true',
+      isTeaching: 'true',
+      isEnrolled: 'false',
       starGiven: null,
       starsReceived: [dummyStarsData[0] as Star]
     },
@@ -31,7 +33,9 @@ const session: Session = {
       id: 2,
       userId: '1',
       lessonId: 2,
-      passedAt: Date.now().toString(),
+      isPassed: 'true',
+      isTeaching: 'true',
+      isEnrolled: 'false',
       starGiven: null,
       starsReceived: [dummyStarsData[1] as Star]
     },
@@ -39,7 +43,9 @@ const session: Session = {
       id: 3,
       userId: '1',
       lessonId: 1,
-      passedAt: Date.now().toString(),
+      isPassed: 'true',
+      isTeaching: 'true',
+      isEnrolled: 'false',
       starGiven: null,
       starsReceived: [dummyStarsData[2] as Star, dummyStarsData[9] as Star]
     }

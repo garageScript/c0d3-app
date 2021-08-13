@@ -854,7 +854,7 @@ const dummyLessonsData: Lesson[] = [
     id: 27,
     title: 'General Algorithms',
     description: 'General Algorithm from interviews',
-    docUrl: null,
+    docUrl: '',
     githubUrl: '',
     videoUrl: '',
     order: 9,

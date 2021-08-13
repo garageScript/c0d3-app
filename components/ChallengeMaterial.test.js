@@ -90,7 +90,9 @@ const mocks = [
 ]
 
 const lessonStatusNoPass = {
-  passedAt: null
+  isEnrolled: '213423534',
+  isTeaching: null,
+  starGiven: ''
 }
 
 const challenges = [
@@ -213,6 +215,7 @@ describe('Curriculum challenge page', () => {
   test('Should select previous iterations', async () => {
     const copyProps = _.cloneDeep(props)
     const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Open)
     )
@@ -234,6 +237,7 @@ describe('Curriculum challenge page', () => {
   test('Should be able to select another challenge', async () => {
     const copyProps = _.cloneDeep(props)
     const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.isPassed = false
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Open)
     )
@@ -264,14 +268,14 @@ describe('Curriculum challenge page', () => {
     ).toBeNull()
     expect(container).toMatchSnapshot()
   })
-  test('Should render appropriately when no challenges are passed to component', () => {
+  test('Should render appropriately when no challenges are passed to component', async () => {
     props.challenges = []
     props.userSubmissions = []
     const { container } = render(<ChallengeMaterial {...props} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('Should render first challenge by default when user has no submissions', () => {
+  test('Should render first challenge by default when user has no submissions', async () => {
     props.userSubmissions = []
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -281,18 +285,18 @@ describe('Curriculum challenge page', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Should render clicked challenge within challenge question', () => {
+  test('Should render clicked challenge within challenge question', async () => {
     const { getAllByTestId, container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
       </MockedProvider>
     )
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
-    userEvent.click(challengeTitleCard)
+    fireEvent.click(challengeTitleCard)
     expect(container).toMatchSnapshot()
   })
 
-  test('Should render first challenge that is not passed when user has submissions', () => {
+  test('Should render first challenge that is not passed when user has submissions', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...props} />
@@ -303,7 +307,7 @@ describe('Curriculum challenge page', () => {
 
   test('Should render challenge material page differently when user has passed all their challenges', async () => {
     const { lessonStatus, userSubmissions } = props
-    lessonStatus.passedAt = new Date()
+    lessonStatus.isPassed = 'cmon bruh ive passed already'
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Passed)
     )
@@ -325,7 +329,7 @@ describe('Curriculum challenge page', () => {
     fireEvent.click(getByRole('img'))
     expect(document.body).toMatchSnapshot()
   })
-  test('Should hide mobile modal on click', () => {
+  test('Should hide mobile modal on click', async () => {
     global.window.innerWidth = 500
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -340,7 +344,7 @@ describe('Curriculum challenge page', () => {
     })
     expect(setShow).toBeCalledWith(false)
   })
-  test('Should hide mobile modal by clicking on the background', () => {
+  test('Should hide mobile modal by clicking on the background', async () => {
     global.window.innerWidth = 500
     const { container } = render(
       <ChallengeMaterial {...{ ...props, show: true }} />
@@ -354,9 +358,9 @@ describe('Curriculum challenge page', () => {
     })
     expect(setShow).toBeCalledWith(false)
   })
-  test('Should be able to add comments', () => {
+  test('Should be able to add comments', async () => {
     const { lessonStatus, userSubmissions } = props
-    lessonStatus.passedAt = null
+    lessonStatus.isPassed = false
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Open)
     )
@@ -378,7 +382,7 @@ describe('Curriculum challenge page', () => {
     )
     expect(container).toMatchSnapshot()
   })
-  test('Should return error component if there is no name in context', () => {
+  test('Should return error component if there is no name in context', async () => {
     const Wrapper = ({ children }) => {
       const context = useContext(GlobalContext)
       const incorrectUserData = {

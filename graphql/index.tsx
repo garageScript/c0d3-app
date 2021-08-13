@@ -77,7 +77,7 @@ export type Lesson = {
   videoUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
   title: Scalars['String']
-  challenges: Array<Challenge>
+  challenges?: Maybe<Array<Maybe<Challenge>>>
   users?: Maybe<Array<Maybe<User>>>
   currentUser?: Maybe<User>
   chatUrl?: Maybe<Scalars['String']>
@@ -315,7 +315,9 @@ export type UserLesson = {
   id: Scalars['Int']
   userId?: Maybe<Scalars['String']>
   lessonId: Scalars['Int']
-  passedAt?: Maybe<Scalars['String']>
+  isPassed?: Maybe<Scalars['String']>
+  isTeaching?: Maybe<Scalars['String']>
+  isEnrolled?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
   starGiven?: Maybe<Scalars['String']>
 }
@@ -414,10 +416,14 @@ export type CreateChallengeMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges: Array<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'description' | 'lessonId' | 'title' | 'order'
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
               >
             >
           }
@@ -451,10 +457,14 @@ export type CreateLessonMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges: Array<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'description' | 'lessonId' | 'title' | 'order'
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
               >
             >
           }
@@ -491,10 +501,14 @@ export type GetAppQuery = { __typename?: 'Query' } & {
       | 'order'
       | 'chatUrl'
     > & {
-        challenges: Array<
-          { __typename?: 'Challenge' } & Pick<
-            Challenge,
-            'id' | 'title' | 'description' | 'order'
+        challenges?: Maybe<
+          Array<
+            Maybe<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'title' | 'description' | 'order'
+              >
+            >
           >
         >
       }
@@ -549,7 +563,7 @@ export type GetAppQuery = { __typename?: 'Query' } & {
     lessonStatus: Array<
       { __typename?: 'UserLesson' } & Pick<
         UserLesson,
-        'lessonId' | 'passedAt' | 'starGiven'
+        'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
       >
     >
   }
@@ -654,7 +668,7 @@ export type GetSessionQuery = { __typename?: 'Query' } & {
     lessonStatus: Array<
       { __typename?: 'UserLesson' } & Pick<
         UserLesson,
-        'lessonId' | 'passedAt' | 'starGiven'
+        'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
       >
     >
   }
@@ -815,10 +829,14 @@ export type UpdateChallengeMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges: Array<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'description' | 'lessonId' | 'title' | 'order'
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
               >
             >
           }
@@ -853,10 +871,14 @@ export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
           | 'description'
           | 'title'
         > & {
-            challenges: Array<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'description' | 'lessonId' | 'title' | 'order'
+            challenges?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'Challenge' } & Pick<
+                    Challenge,
+                    'id' | 'description' | 'lessonId' | 'title' | 'order'
+                  >
+                >
               >
             >
           }
@@ -893,10 +915,14 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
       | 'order'
       | 'chatUrl'
     > & {
-        challenges: Array<
-          { __typename?: 'Challenge' } & Pick<
-            Challenge,
-            'id' | 'title' | 'description' | 'order'
+        challenges?: Maybe<
+          Array<
+            Maybe<
+              { __typename?: 'Challenge' } & Pick<
+                Challenge,
+                'id' | 'title' | 'description' | 'order'
+              >
+            >
           >
         >
       }
@@ -931,7 +957,7 @@ export type UserInfoQuery = { __typename?: 'Query' } & {
       lessonStatus: Array<
         { __typename?: 'UserLesson' } & Pick<
           UserLesson,
-          'lessonId' | 'passedAt'
+          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
         > & {
             starsReceived?: Maybe<
               Array<
@@ -1199,7 +1225,7 @@ export type LessonResolvers<
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
-    Array<ResolversTypes['Challenge']>,
+    Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
     ParentType,
     ContextType
   >
@@ -1483,7 +1509,17 @@ export type UserLessonResolvers<
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  passedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  isPassed?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  isTeaching?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
+  isEnrolled?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
   starsReceived?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Star']>>>,
     ParentType,
@@ -2348,7 +2384,9 @@ export const GetAppDocument = gql`
       }
       lessonStatus {
         lessonId
-        passedAt
+        isPassed
+        isTeaching
+        isEnrolled
         starGiven
       }
     }
@@ -2672,7 +2710,9 @@ export const GetSessionDocument = gql`
       }
       lessonStatus {
         lessonId
-        passedAt
+        isPassed
+        isTeaching
+        isEnrolled
         starGiven
       }
     }
@@ -3829,7 +3869,9 @@ export const UserInfoDocument = gql`
       }
       lessonStatus {
         lessonId
-        passedAt
+        isPassed
+        isTeaching
+        isEnrolled
         starsReceived {
           lessonId
           comment

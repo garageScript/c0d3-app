@@ -55,7 +55,7 @@ describe('updateSubmission', () => {
     prismaMock.challenge.count.mockResolvedValue(1)
     prismaMock.submission.findMany.mockResolvedValue([{ challengeId: 1 }])
     prismaMock.userLesson.upsert.mockResolvedValue({
-      passedAt: new Date()
+      isPassed: '1619821939579'
     })
   })
 
@@ -65,7 +65,7 @@ describe('updateSubmission', () => {
 
   it('should update user lesson if student has completed it and notify on discord', async () => {
     prismaMock.userLesson.upsert.mockResolvedValue({
-      passedAt: null
+      isPassed: null
     })
 
     // mock next lesson
@@ -74,7 +74,7 @@ describe('updateSubmission', () => {
 
     await expect(updateSubmission(submission)).resolves.toEqual(submissionMock)
     expect(prismaMock.userLesson.update).toHaveBeenCalledWith(
-      expect.objectContaining({ data: { passedAt: expect.any(Date) } })
+      expect.objectContaining({ data: { isPassed: expect.any(String) } })
     )
 
     expect(sendLessonChannelMessage).toHaveBeenCalledTimes(2)
@@ -90,7 +90,7 @@ describe('updateSubmission', () => {
 
   it('should not notify next lesson if does not exist', async () => {
     prismaMock.userLesson.upsert.mockResolvedValue({
-      passedAt: null
+      isPassed: null
     })
 
     // mock next lesson

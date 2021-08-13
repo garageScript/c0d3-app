@@ -737,7 +737,7 @@ export const userLessonData = (lessonId: number, userId: number) =>
   Prisma.validator<Prisma.UserLessonCreateManyInput>()({
     lessonId,
     userId,
-    passedAt: new Date()
+    isPassed: Date.now().toString()
   })
 
 export const submissionData = (

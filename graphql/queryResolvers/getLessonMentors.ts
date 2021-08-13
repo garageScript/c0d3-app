@@ -21,7 +21,7 @@ export const getLessonMentors = async (
       userLessons: {
         some: {
           lessonId,
-          passedAt: { not: null }
+          isPassed: { not: null }
         }
       }
     },

@@ -69,19 +69,25 @@ export const CompletedLessons: React.FC<{}> = () => {
       {
         id: 1,
         lessonId: 5,
-        passedAt: Date.now().toString(),
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
         starGiven: null
       },
       {
         id: 2,
         lessonId: 2,
-        passedAt: Date.now().toString(),
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
         starGiven: null
       },
       {
         id: 3,
         lessonId: 1,
-        passedAt: Date.now().toString(),
+        isPassed: 'true',
+        isTeaching: 'true',
+        isEnrolled: 'false',
         starGiven: null
       }
     ]
