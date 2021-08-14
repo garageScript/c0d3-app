@@ -224,11 +224,11 @@ describe('Curriculum challenge page', () => {
     await screen.findByText('Select submission')
     expect(
       await screen.findByRole('button', { name: '3 2 comment count' })
-    ).toHaveClass('btn-info')
+    ).toHaveClass('active')
     userEvent.click(screen.getByTestId('iteration 1'))
     expect(
       await screen.findByRole('button', { name: '3 2 comment count' })
-    ).not.toHaveClass('btn-info')
+    ).not.toHaveClass('active')
     expect(container).toMatchSnapshot()
   })
   test('Should be able to select another challenge', async () => {
