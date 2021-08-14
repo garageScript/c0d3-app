@@ -9,6 +9,12 @@
   min-width: 2.5rem;
   min-height: 2.5rem;
   max-width: max-content;
+
+  &.active, &:hover {
+    // Warning variant button has non-white color
+    color: white !important;
+  }
+
   & .badge {
     color: rgb(122, 126, 120);
     position: absolute;
@@ -17,6 +23,7 @@
     border: 1px solid gainsboro;
     border-radius: 50%;
   }
+
   &.loading {
     min-height: 3rem;
   }

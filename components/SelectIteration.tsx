@@ -1,7 +1,11 @@
 import React from 'react'
 import styles from '../scss/selectIteration.module.scss'
 import { ApolloError } from '@apollo/client'
-import { Submission, GetPreviousSubmissionsQuery } from '../graphql'
+import {
+  Submission,
+  GetPreviousSubmissionsQuery,
+  SubmissionStatus
+} from '../graphql'
 import { Badge, Button } from 'react-bootstrap'
 
 type IterationLink = {
@@ -9,6 +13,8 @@ type IterationLink = {
   current: number
   id: number
   comments: number | undefined
+  status: SubmissionStatus
+  loading?: boolean
 }
 
 type SelectIteration = {
@@ -21,30 +27,41 @@ type SelectIteration = {
   currentIndex: number
 }
 
+const statusToBtnVariant = {
+  [SubmissionStatus.Overwritten]: 'info',
+  [SubmissionStatus.Open]: 'warning',
+  [SubmissionStatus.NeedMoreWork]: 'danger',
+  [SubmissionStatus.Passed]: 'success'
+}
+
 const IterationLink: React.FC<IterationLink | { loading: boolean }> = props => {
-  if (!props.hasOwnProperty('loading')) {
-    props = props as IterationLink
-    return (
-      <Button
-        variant={props.current === props.id ? 'info' : 'success'}
-        className={`${styles['button']} m-2`}
-      >
-        {props.iteration}
-        {props.comments !== 0 && (
-          <Badge variant="light" className={styles['badge']}>
-            {props.comments}
-          </Badge>
-        )}
-        <span className="sr-only">comment count</span>
-      </Button>
-    )
-  } else
+  if (props.loading)
     return (
       <Button
         variant="light"
         className={`${styles['button']} ${styles['loading']}`}
       />
     )
+
+  props = props as IterationLink
+  const isSelected = props.current === props.id
+  return (
+    <Button
+      variant={`outline-${statusToBtnVariant[props.status]}`}
+      className={`${styles['button']} ${
+        isSelected ? styles['active'] : ''
+      } m-2`}
+      active={isSelected}
+    >
+      {props.iteration}
+      {props.comments !== 0 && (
+        <Badge variant="light" className={styles['badge']}>
+          {props.comments}
+        </Badge>
+      )}
+      <span className="sr-only">comment count</span>
+    </Button>
+  )
 }
 
 const SelectDisplay: React.FC<Omit<SelectIteration, 'error'>> = ({
@@ -54,7 +71,7 @@ const SelectDisplay: React.FC<Omit<SelectIteration, 'error'>> = ({
   setSubmission,
   currentId
 }) => {
-  if (loading) return <IterationLink loading={true} />
+  if (loading) return <IterationLink loading />
   if (data?.getPreviousSubmissions)
     return (
       <div>
@@ -74,6 +91,7 @@ const SelectDisplay: React.FC<Omit<SelectIteration, 'error'>> = ({
                 current={currentId}
                 id={submission.id}
                 comments={submission.comments?.length}
+                status={submission.status}
               />
             </div>
           )
