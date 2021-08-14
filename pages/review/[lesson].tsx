@@ -44,8 +44,11 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   if (loading) {
     return <LoadingSpinner />
   }
-  if (!session) {
-    router.push('/login')
+  if (!session?.user) {
+    router.push({
+      pathname: '/login',
+      query: { next: router.asPath }
+    })
     return <LoadingSpinner />
   }
   const currentLesson = lessons.find(lesson => lesson.id === currentlessonId)
