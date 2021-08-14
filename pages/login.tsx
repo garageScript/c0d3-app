@@ -95,7 +95,8 @@ const LoginPage: React.FC & WithLayout = () => {
     const { success } = _.get(data, 'login', false)
     if (success) {
       window.localStorage.setItem('loggedIn', 'true')
-      router.push('/curriculum')
+      const { next } = router.query
+      router.push(next ? (next as string) : '/curriculum')
     }
     if (error) {
       const graphQLErrors: any = _.get(error, 'graphQLErrors', [])
