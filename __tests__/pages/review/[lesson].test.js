@@ -69,7 +69,6 @@ const getSubmissionsMock = {
     }
   }
 }
-
 const getPreviousSubmissionsMock = {
   request: {
     query: GET_PREVIOUS_SUBMISSIONS,
@@ -79,9 +78,10 @@ const getPreviousSubmissionsMock = {
     data: getPreviousSubmissions
   }
 }
+
 const mocks = [getAppMock, getSubmissionsMock, getPreviousSubmissionsMock]
 describe('Lesson Page', () => {
-  const { query, push } = useRouter()
+  const { query, push, asPath } = useRouter()
   query['lesson'] = '2'
   test('Should render new submissions', async () => {
     const { container } = render(
@@ -100,7 +100,7 @@ describe('Lesson Page', () => {
   test('Should return loading spinner when loading', () => {
     expectLoading(<Review />)
   })
-  test('Should redirect to login if no session', async () => {
+  test('Should redirect to login if no user is logged in', async () => {
     const noSessionMock = {
       request: { query: GET_APP },
       result: {
@@ -120,7 +120,12 @@ describe('Lesson Page', () => {
       </MockedProvider>
     )
 
-    await waitFor(() => expect(push).toBeCalledWith('/login'))
+    await waitFor(() =>
+      expect(push).toBeCalledWith({
+        pathname: '/login',
+        query: { next: asPath }
+      })
+    )
   })
   test("Should redirect to curriculum if user hasn't completed lesson yet", async () => {
     const noSessionMock = {
