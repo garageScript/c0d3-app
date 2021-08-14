@@ -95,7 +95,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                 data-testid="iteration 0"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-danger"
                   type="button"
                 >
                   1
@@ -111,7 +111,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                 data-testid="iteration 1"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-warning"
                   type="button"
                 >
                   2
@@ -127,7 +127,7 @@ exports[`Curriculum challenge page Should be able to select another challenge 1`
                 data-testid="iteration 2"
               >
                 <button
-                  class="button m-2 btn btn-info"
+                  class="button active m-2 btn active btn-outline-warning"
                   type="button"
                 >
                   3
@@ -7463,7 +7463,7 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
                 data-testid="iteration 0"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-danger"
                   type="button"
                 >
                   1
@@ -7479,7 +7479,7 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
                 data-testid="iteration 1"
               >
                 <button
-                  class="button m-2 btn btn-info"
+                  class="button active m-2 btn active btn-outline-warning"
                   type="button"
                 >
                   2
@@ -7495,7 +7495,7 @@ exports[`Curriculum challenge page Should select previous iterations 1`] = `
                 data-testid="iteration 2"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-warning"
                   type="button"
                 >
                   3

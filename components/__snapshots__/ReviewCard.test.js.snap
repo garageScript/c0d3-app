@@ -581,7 +581,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 data-testid="iteration 0"
               >
                 <button
-                  class="button m-2 btn btn-info"
+                  class="button active m-2 btn active btn-outline-danger"
                   type="button"
                 >
                   1
@@ -597,7 +597,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 data-testid="iteration 1"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-warning"
                   type="button"
                 >
                   2
@@ -613,7 +613,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 data-testid="iteration 2"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-warning"
                   type="button"
                 >
                   3
