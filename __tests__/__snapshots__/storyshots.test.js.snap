@@ -13620,7 +13620,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-2 btn btn-success"
+        className="button  m-2 btn btn-outline-danger"
         disabled={false}
         type="button"
       >
@@ -13638,7 +13638,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-2 btn btn-info"
+        className="button active m-2 btn active btn-outline-warning"
         disabled={false}
         type="button"
       >
@@ -13656,7 +13656,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-2 btn btn-success"
+        className="button  m-2 btn btn-outline-warning"
         disabled={false}
         type="button"
       >
