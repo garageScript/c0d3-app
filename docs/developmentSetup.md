@@ -33,8 +33,6 @@ To begin we will need to set up the code base on your own machine. To do this we
  **Do not commit MAILGUN_API_KEY or share it outside c0d3.**
 ```
    MAILGUN_API_KEY=123abc #ask for valid key in chat
-   MATTERMOST_ACCESS_TOKEN=123abc #you will generate it yourself
-   CHAT_URL=http://localhost:8000/api/v4 #mattermost api 
    CLIENT_URL=http://localhost:4000 #used in registration email
    #postgres user, database name, password, host and port
    DB_USER=c0d3_admin
@@ -43,22 +41,11 @@ To begin we will need to set up the code base on your own machine. To do this we
    DB_HOST=localhost
    DB_PORT=7000
 ```
-7. Build docker images. Go to docker directory and type `docker-compose build`. It will take some time for docker to pull and install everything. In the end you will have one container with a postgres database and one container for mattermost. 
+7. Build docker images. Go to docker directory and type `docker-compose build`. It will take some time for docker to pull and install everything. In the end you will have one container with a postgres database. 
 
-8. Prepare volume directories. Volumes are mappings from containers to your local machine.
-```
-mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-sudo chown -R 2000:2000 ./volumes/app/mattermost/
-```
-9. Now you can start docker `docker-compose up` (add -d flag to start in detached mode). To stop all containers `docker-compose down`.
+8. Now you can start docker `docker-compose up` (add -d flag to start in detached mode). To stop all containers `docker-compose down`.
 
-10. Configure your local mattermost server. When you open [http://localhost:8080](http://localhost:8000), you will be greeted with the mattermost login page. Enter any email (this setup won't have an SMTP server, so no actual mails will be sent). First user automatically becomes the server admin. Create new team and enable use of personal access tokens *System Console > Integrations > Custom Integrations*.
-
-11. Generate a personal access token. Close system console, go to team chat (town square) and click on three horizontal bars near your name *Account settings > Security* , then `generate personal access token`. This value will be used as MATTERMOST_ACCESS_TOKEN.
-
-12. Allow new users to join your team. As mattermost admin go to *Team settings/Allow any user with an account on this server to join this team*. 
-
-13. Start c0d3 app `PORT=4000 yarn dev`. If everything went right you will see the landing page. There are two premade users: `admin:password` (admin, passed all lessons, can review submissions) and `newbie:password` (new user). And you can always register new ones if you want to.  
+9. Start c0d3 app `PORT=4000 yarn dev`. If everything went right you will see the landing page. There are two premade users: `admin:password` (admin, passed all lessons, can review submissions) and `newbie:password` (new user). And you can always register new ones if you want to.  
 
 
 To submit challenges:
