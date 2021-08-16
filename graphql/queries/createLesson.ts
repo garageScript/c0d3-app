@@ -7,6 +7,7 @@ const CREATE_LESSON = gql`
     $videoUrl: String
     $chatUrl: String
     $order: Int!
+    $slug: String!
     $description: String!
     $title: String!
   ) {
@@ -16,6 +17,7 @@ const CREATE_LESSON = gql`
       videoUrl: $videoUrl
       chatUrl: $chatUrl
       order: $order
+      slug: $slug
       description: $description
       title: $title
     ) {
@@ -25,6 +27,7 @@ const CREATE_LESSON = gql`
       videoUrl
       chatUrl
       order
+      slug
       description
       title
       challenges {

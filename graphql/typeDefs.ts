@@ -61,6 +61,7 @@ export default gql`
       title: String!
       chatUrl: String
       order: Int!
+      slug: String!
     ): [Lesson]
     updateLesson(
       id: Int!
@@ -71,6 +72,7 @@ export default gql`
       title: String!
       chatUrl: String
       order: Int!
+      slug: String!
     ): [Lesson]
     createChallenge(
       lessonId: Int!
@@ -169,6 +171,7 @@ export default gql`
     githubUrl: String
     videoUrl: String
     order: Int!
+    slug: String!
     title: String!
     challenges: [Challenge!]!
     users: [User]

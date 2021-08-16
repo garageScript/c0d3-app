@@ -8,6 +8,7 @@ const UPDATE_LESSON = gql`
     $videoUrl: String
     $chatUrl: String
     $order: Int!
+    $slug: String!
     $description: String!
     $title: String!
   ) {
@@ -18,6 +19,7 @@ const UPDATE_LESSON = gql`
       chatUrl: $chatUrl
       id: $id
       order: $order
+      slug: $slug
       description: $description
       title: $title
     ) {
@@ -27,6 +29,7 @@ const UPDATE_LESSON = gql`
       videoUrl
       chatUrl
       order
+      slug
       description
       title
       challenges {
