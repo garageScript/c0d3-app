@@ -46,6 +46,7 @@ model Challenge {
 
 model Lesson {
   id          Int          @id @default(autoincrement())
+  slug        String       @unique @db.VarChar(50)
   description String
   docUrl      String?      @db.VarChar(255)
   githubUrl   String?      @db.VarChar(255)
