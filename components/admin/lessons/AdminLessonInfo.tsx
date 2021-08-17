@@ -90,6 +90,7 @@ const newLessonAttributes = {
   githubUrl: '',
   videoUrl: '',
   order: '',
+  slug: '',
   chatUrl: ''
 }
 

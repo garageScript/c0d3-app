@@ -15,11 +15,16 @@ const alertValidation = Yup.object({
 const lessonSchema = Yup.object({
   title: Yup.string().required('Required').strict(true),
   description: Yup.string().required('Required').strict(true),
+  docUrl: Yup.string(),
+  githubUrl: Yup.string(),
+  videoUrl: Yup.string(),
   order: Yup.number()
     .required('Required')
     .typeError('Numbers only')
     .min(0, 'Positive numbers only')
-    .strict(true)
+    .strict(true),
+  slug: Yup.string().required('Required').strict(true),
+  chatUrl: Yup.string()
 })
 
 const signupValidation = Yup.object({
