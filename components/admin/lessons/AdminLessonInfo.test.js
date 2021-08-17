@@ -39,6 +39,7 @@ const createLessonMock = {
       githubUrl: '',
       videoUrl: '',
       order: 12,
+      slug: 'js12',
       chatUrl: ''
     }
   },
@@ -79,6 +80,8 @@ describe('AdminLessonsInfo component', () => {
     )
     //new lesson order
     await userEvent.type(screen.getByTestId('input5'), '12', { delay: 1 })
+    //new lesson slug
+    await userEvent.type(screen.getByTestId('input6'), 'js12', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Create Lesson' }))
     )
@@ -185,6 +188,7 @@ describe('AdminLessonsInfo component', () => {
       { delay: 1 }
     )
     await userEvent.type(screen.getByTestId('input5'), '12', { delay: 1 })
+    await userEvent.type(screen.getByTestId('input6'), 'js12', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Create Lesson' }))
     )
