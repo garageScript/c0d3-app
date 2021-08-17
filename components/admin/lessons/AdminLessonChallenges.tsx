@@ -10,7 +10,7 @@ import {
   makeGraphqlVariable,
   errorCheckAllFields
 } from '../../../helpers/admin/adminHelpers'
-import { lessonSchema } from '../../../helpers/formValidation'
+import { challengeSchema } from '../../../helpers/formValidation'
 import { formChange } from '../../../helpers/formChange'
 
 const challengeAttributes = {
@@ -51,7 +51,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   // alter gets called when someone clicks button to create a lesson
   const alter = async () => {
     const newProperties = [...challengeProperties]
-    const valid = await errorCheckAllFields(newProperties, lessonSchema)
+    const valid = await errorCheckAllFields(newProperties, challengeSchema)
     if (!valid) {
       setChallengeProperties(newProperties)
       return
@@ -74,7 +74,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
       propertyIndex,
       challengeProperties,
       setChallengeProperties,
-      lessonSchema
+      challengeSchema
     )
   }
 
@@ -109,7 +109,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
       propertyIndex,
       challengeProperties,
       setChallengeProperties,
-      lessonSchema
+      challengeSchema
     )
   }
 
@@ -117,7 +117,7 @@ const LessonChallenge: React.FC<LessonChallengeProps> = ({
     title: 'Update Challenge',
     onClick: async () => {
       const newProperties = [...challengeProperties]
-      const valid = await errorCheckAllFields(newProperties, lessonSchema)
+      const valid = await errorCheckAllFields(newProperties, challengeSchema)
       if (!valid) {
         setChallengeProperties(newProperties)
         return

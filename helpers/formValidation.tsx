@@ -12,6 +12,16 @@ const alertValidation = Yup.object({
   urlCaption: Yup.string()
 })
 
+const challengeSchema = Yup.object({
+  title: Yup.string().required('Required').strict(true),
+  description: Yup.string().required('Required').strict(true),
+  order: Yup.number()
+    .required('Required')
+    .typeError('Numbers only')
+    .min(0, 'Positive numbers only')
+    .strict(true)
+})
+
 const lessonSchema = Yup.object({
   title: Yup.string().required('Required').strict(true),
   description: Yup.string().required('Required').strict(true),
@@ -93,6 +103,7 @@ const resetPasswordValidation = Yup.object({
 
 export {
   alertValidation,
+  challengeSchema,
   lessonSchema,
   signupValidation,
   loginValidation,
