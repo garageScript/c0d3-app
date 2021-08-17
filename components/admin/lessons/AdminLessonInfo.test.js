@@ -22,6 +22,7 @@ const updateLessonMock = {
       videoUrl:
         'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
       order: 10,
+      slug: 'js0',
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js1-variablesfunction'
     }
   },

@@ -13,6 +13,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Foundations of JavaScript',
       order: 0,
+      slug: 'js0',
       id: 5,
       description: 'A super simple introduction to help you get started!',
       challenges: []
@@ -32,6 +33,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Variables & Functions',
       order: 1,
+      slug: 'js1',
       id: 2,
       description:
         'Learn how to solve simple algorithm problems recursively with the following exercises. ',
@@ -52,6 +54,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Arrays',
       order: 2,
+      slug: 'js2',
       id: 1,
       description:
         'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
@@ -72,6 +75,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Objects',
       order: 3,
+      slug: 'js3',
       id: 4,
       description:
         'These exercises will test your understanding of objects, which includes linked lists and trees',
@@ -92,6 +96,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Front End Engineering',
       order: 4,
+      slug: 'js4',
       id: 24,
       description:
         'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)',
@@ -112,6 +117,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'End To End',
       order: 5,
+      slug: 'js5',
       id: 3,
       description:
         'These exercises will help you build a strong understanding of how the web works.',
@@ -132,6 +138,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'React, GraphQL, SocketIO',
       order: 6,
+      slug: 'js6',
       id: 29,
       description: 'React and GraphQL Lessons',
       challenges: []
@@ -151,6 +158,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Foundations of JavaScript',
       order: 0,
+      slug: 'js0',
       id: 5,
       description: 'A super simple introduction to help you get started!',
       challenges: []
@@ -171,6 +179,8 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Variables & Functions',
       order: 1,
+      slug: 'js1',
+
       id: 2,
       description:
         'Learn how to solve simple algorithm problems recursively with the following exercises. ',
@@ -191,6 +201,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Arrays',
       order: 2,
+      slug: 'js2',
       id: 1,
       description:
         'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
@@ -211,6 +222,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Objects',
       order: 3,
+      slug: 'js3',
       id: 4,
       description:
         'These exercises will test your understanding of objects, which includes linked lists and trees',
@@ -231,6 +243,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'Front End Engineering',
       order: 4,
+      slug: 'js4',
       id: 24,
       description:
         'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)',
@@ -251,6 +264,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'End To End',
       order: 5,
+      slug: 'js5',
       id: 3,
       description:
         'These exercises will help you build a strong understanding of how the web works.',
@@ -271,6 +285,7 @@ const dummyStarData: Star[] = [
     lesson: {
       title: 'React, GraphQL, SocketIO',
       order: 6,
+      slug: 'js6',
       id: 29,
       description: 'React and GraphQL Lessons',
       challenges: []

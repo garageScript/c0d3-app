@@ -23,6 +23,7 @@ const stars: StarType[] = [
       title: 'Objects',
       description: 'Objects description',
       order: 3,
+      slug: 'js3',
       challenges: []
     },
     comment:
@@ -43,6 +44,7 @@ const stars: StarType[] = [
       title: 'End to End',
       description: 'End to End description',
       order: 5,
+      slug: 'js5',
       challenges: []
     },
     comment: "Objects ain't easy, but thanks to you, they're now lemon squeezy."

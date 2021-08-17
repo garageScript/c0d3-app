@@ -21,6 +21,7 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
       title: 'Create New Lesson',
       description: '',
       order: -1,
+      slug: '',
       challenges: []
     })
   }
@@ -33,6 +34,7 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
       title: 'Create New Lesson',
       description: '',
       order: -1,
+      slug: '',
       challenges: []
     })
   }
