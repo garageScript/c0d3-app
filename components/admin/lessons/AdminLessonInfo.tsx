@@ -32,7 +32,7 @@ type NewLessonProps = {
 
 // Creates card for a lessons's information to update
 const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
-  const [alterLesson, { loading, data }] = useMutation(updateLesson)
+  const [alterLesson, { loading, data, error }] = useMutation(updateLesson)
   const [lessonProperties, setLessonProperties] = useState(
     getPropertyArr(lesson, ['challenges', '__typename'])
   )
@@ -75,6 +75,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
         <FormCard
           onChange={handleChange}
           values={lessonProperties}
+          submitError={error?.message}
           onSubmit={{ title: 'Update Lesson', onClick: alter }}
           title={lesson && lesson.title + ''}
         />
@@ -96,7 +97,7 @@ const newLessonAttributes = {
 
 // Renders when someone clicks on `create new button` on the sidebar
 const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
-  const [createLesson, { loading, data }] = useMutation(createNewLesson)
+  const [createLesson, { loading, data, error }] = useMutation(createNewLesson)
   const [lessonProperties, setLessonProperties] = useState(
     getPropertyArr(newLessonAttributes)
   )
@@ -142,6 +143,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       <FormCard
         onChange={handleChange}
         values={lessonProperties}
+        submitError={error?.message}
         onSubmit={{ title: 'Create Lesson', onClick: alter }}
       />
     </div>

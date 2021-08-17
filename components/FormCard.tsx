@@ -26,6 +26,7 @@ type Btn = {
 type FormCardProps = {
   values: Option[]
   onSubmit: Btn
+  submitError?: string
   capitalizeTitle?: boolean
   onChange: Function
   title?: string
@@ -95,6 +96,7 @@ const OptionInfo: React.FC<OptionInfoProps> = ({
 export const FormCard: React.FC<FormCardProps> = ({
   values,
   onSubmit,
+  submitError,
   capitalizeTitle = true,
   title,
   onChange,
@@ -121,6 +123,7 @@ export const FormCard: React.FC<FormCardProps> = ({
           )}
         </div>
         <div className="text-left">{optionsList}</div>
+        {submitError && <h6 className="text-danger">{submitError}</h6>}
         <div className="text-center mb-4">
           <Button onClick={btnOnClick} type="primary" color="white">
             {onSubmit.title}
