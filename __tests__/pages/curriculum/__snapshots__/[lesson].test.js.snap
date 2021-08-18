@@ -179,7 +179,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               >
                 <a
                   class="btn border-right rounded-0 px-4 py-3"
-                  href="/curriculum/25"
+                  href="/curriculum/js8"
                 >
                   CHALLENGES
                 </a>
@@ -825,7 +825,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 </a>
                 <a
                   class="btn border-right rounded-0 px-4 py-3"
-                  href="/curriculum/2"
+                  href="/curriculum/js1"
                 >
                   CHALLENGES
                 </a>

@@ -82,7 +82,7 @@ const getPreviousSubmissionsMock = {
 const mocks = [getAppMock, getSubmissionsMock, getPreviousSubmissionsMock]
 describe('Lesson Page', () => {
   const { query, push, asPath } = useRouter()
-  query['lesson'] = '2'
+  query['lesson'] = 'js1'
   test('Should render new submissions', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
