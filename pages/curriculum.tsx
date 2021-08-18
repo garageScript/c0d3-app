@@ -139,7 +139,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [data])
   const lessonStatusMap = generateMap(state.session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
-    const { id, title, description, challenges, docUrl } = lesson
+    const { id, title, description, challenges, docUrl, slug } = lesson
     const status = lessonStatusMap[id]
     const passed = Boolean(status?.passedAt)
     let lessonState = ''
@@ -155,8 +155,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
         challengeCount={challenges.length}
         description={description}
         currentState={lessonState}
-        reviewUrl={`/review/${id}`}
-        challengesUrl={`/curriculum/${id}`}
+        reviewUrl={`/review/${slug}`}
+        challengesUrl={`/curriculum/${slug}`}
         docUrl={docUrl ?? ''}
       />
     )
