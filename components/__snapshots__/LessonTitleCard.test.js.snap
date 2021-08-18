@@ -62,7 +62,7 @@ exports[`LessonTitleCard Component Renders default layout 1`] = `
 </div>
 `;
 
-exports[`LessonTitleCard Component should display "challenges" button on wider screens with "setShow" prop 1`] = `
+exports[`LessonTitleCard Component should display "challenges" button on wider screens 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
@@ -124,7 +124,7 @@ exports[`LessonTitleCard Component should display "challenges" button on wider s
 </div>
 `;
 
-exports[`LessonTitleCard Component should display "show challenges" button on small screens with "setShow" prop 1`] = `
+exports[`LessonTitleCard Component should display "show challenges" button on small screens and call "setShow" when clicked 1`] = `
 <div>
   <div
     class="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
