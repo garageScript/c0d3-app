@@ -29,11 +29,11 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const router = useRouter()
   if (!router.isReady) return <LoadingSpinner />
 
-  const currentlessonId = Number(router.query.lesson)
+  const slug = router.query.lesson as string
   if (!lessons || !alerts)
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
 
-  const currentLesson = lessons.find(lesson => lesson.id === currentlessonId)
+  const currentLesson = lessons.find(lesson => lesson.slug === slug)
   if (!currentLesson)
     return <Error code={StatusCode.NOT_FOUND} message="Lesson not found" />
 
@@ -46,10 +46,10 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   ) as UserLesson[]
 
   const currentLessonStatus =
-    lessonStatus.find(userLesson => userLesson.lessonId === currentlessonId) ||
+    lessonStatus.find(userLesson => userLesson.lessonId === currentLesson.id) ||
     ({
       passedAt: null,
-      lessonId: currentlessonId
+      lessonId: currentLesson.id
     } as UserLesson)
   return (
     <div>
@@ -61,7 +61,8 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
                 lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
                 lessonUrl={currentLesson.docUrl!}
                 lessonTitle={currentLesson.title}
-                lessonId={currentlessonId}
+                lessonId={currentLesson.id}
+                lessonSlug={slug}
                 isPassed={Boolean(currentLessonStatus.passedAt)}
                 setShow={setShow}
                 show={show}
