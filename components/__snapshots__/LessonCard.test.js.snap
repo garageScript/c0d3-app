@@ -19,7 +19,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
           <span
@@ -79,6 +79,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       />
       <a
         class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+        href="/reviewUrl"
       >
         Review 
         <div
@@ -108,7 +109,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
           <span
@@ -162,6 +163,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         </div>
         <a
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          href="/reviewUrl"
         >
           Review 
           <div
@@ -195,7 +197,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
           <span
@@ -255,6 +257,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       />
       <a
         class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+        href="/reviewUrl"
       >
         Review 
         <span>
@@ -283,7 +286,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
           <span
@@ -337,6 +340,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         </div>
         <a
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          href="/reviewUrl"
         >
           Review 
           <span>
@@ -369,7 +373,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
           <span
@@ -429,6 +433,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
       />
       <a
         class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+        href="/reviewUrl"
       >
         Review 
         <span>
@@ -457,7 +462,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
           <span
@@ -511,6 +516,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         </div>
         <a
           class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          href="/reviewUrl"
         >
           Review 
           <span>
@@ -543,7 +549,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
         </div>
@@ -595,7 +601,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
         </div>
@@ -645,7 +651,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
         </div>
@@ -697,7 +703,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
         </div>
@@ -726,7 +732,14 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
     </div>
     <div
       class="p-2 bg-primary"
-    />
+    >
+      <a
+        class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+        href="/challengeUrl"
+      >
+        View Challenges
+      </a>
+    </div>
   </div>
 </div>
 `;
@@ -750,7 +763,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
           >
             <a
               class=""
-              href="/curriculum/4"
+              href="/challengeUrl"
             />
           </div>
         </div>
@@ -802,7 +815,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
           >
             <a
               class=""
-              href="/curriculum/4"
+              href="/challengeUrl"
             />
           </h4>
         </div>
@@ -852,7 +865,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
         </div>
@@ -904,7 +917,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
         </div>
@@ -954,7 +967,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </div>
         </div>
@@ -1006,7 +1019,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
           >
             <a
               class=""
-              href="/curriculum/undefined"
+              href="/challengeUrl"
             />
           </h4>
         </div>

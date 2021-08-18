@@ -6,12 +6,18 @@ import { render } from '@testing-library/react'
 import { SubmissionStatus } from '../graphql'
 
 describe('Lesson Card Complete State', () => {
+  const props = {
+    challengesUrl: 'challengeUrl',
+    reviewUrl: 'reviewUrl'
+  }
   test('Should render lessonCard with null if no data', async () => {
     useQuery.mockReturnValue({
       data: null
     })
 
-    const { container } = render(<LessonCard currentState="completed" />)
+    const { container } = render(
+      <LessonCard {...props} currentState="completed" />
+    )
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with loading...', async () => {
@@ -19,7 +25,9 @@ describe('Lesson Card Complete State', () => {
       loading: true
     })
 
-    const { container } = render(<LessonCard currentState="completed" />)
+    const { container } = render(
+      <LessonCard {...props} currentState="completed" />
+    )
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with submission count', async () => {
@@ -39,18 +47,24 @@ describe('Lesson Card Complete State', () => {
       }
     })
 
-    const { container } = render(<LessonCard currentState="completed" />)
+    const { container } = render(
+      <LessonCard {...props} currentState="completed" />
+    )
     expect(container).toMatchSnapshot()
   })
 })
 
 describe('Lesson Card', () => {
+  const props = {
+    challengesUrl: 'challengeUrl',
+    reviewUrl: 'reviewUrl'
+  }
   test('Should render loading card when loading', async () => {
     useQuery.mockReturnValue({
       loading: true
     })
 
-    const { container } = render(<LessonCard />)
+    const { container } = render(<LessonCard {...props} />)
     expect(container).toMatchSnapshot()
   })
   test('Should render ellpsis when no data is present', async () => {
@@ -58,7 +72,7 @@ describe('Lesson Card', () => {
       loading: false
     })
 
-    const { container } = render(<LessonCard />)
+    const { container } = render(<LessonCard {...props} />)
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with no submission count', async () => {
@@ -68,15 +82,17 @@ describe('Lesson Card', () => {
       }
     })
 
-    const { container } = render(<LessonCard />)
+    const { container } = render(<LessonCard {...props} />)
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with inProgress currentState prop', async () => {
-    const { container } = render(<LessonCard currentState="inProgress" />)
+    const { container } = render(
+      <LessonCard {...props} currentState="inProgress" />
+    )
     expect(container).toMatchSnapshot()
   })
   test('Should render lessonCard with lessonId prop', async () => {
-    const { container } = render(<LessonCard lessonId={4} />)
+    const { container } = render(<LessonCard {...props} lessonId={4} />)
     expect(container).toMatchSnapshot()
   })
 })
