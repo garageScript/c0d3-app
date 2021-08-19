@@ -99,8 +99,8 @@ export type Mutation = {
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
   addComment?: Maybe<Comment>
-  createLesson?: Maybe<Array<Maybe<Lesson>>>
-  updateLesson?: Maybe<Array<Maybe<Lesson>>>
+  createLesson: Array<Lesson>
+  updateLesson: Array<Lesson>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
 }
@@ -453,30 +453,26 @@ export type CreateLessonMutationVariables = Exact<{
 
 export type CreateLessonMutation = {
   __typename?: 'Mutation'
-  createLesson?: Maybe<
-    Array<
-      Maybe<{
-        __typename?: 'Lesson'
-        id: number
-        docUrl?: Maybe<string>
-        githubUrl?: Maybe<string>
-        videoUrl?: Maybe<string>
-        chatUrl?: Maybe<string>
-        order: number
-        slug: string
-        description: string
-        title: string
-        challenges: Array<{
-          __typename?: 'Challenge'
-          id: number
-          description: string
-          lessonId: number
-          title: string
-          order: number
-        }>
-      }>
-    >
-  >
+  createLesson: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    chatUrl?: Maybe<string>
+    order: number
+    slug: string
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  }>
 }
 
 export type CreateSubmissionMutationVariables = Exact<{
@@ -864,30 +860,26 @@ export type UpdateLessonMutationVariables = Exact<{
 
 export type UpdateLessonMutation = {
   __typename?: 'Mutation'
-  updateLesson?: Maybe<
-    Array<
-      Maybe<{
-        __typename?: 'Lesson'
-        id: number
-        docUrl?: Maybe<string>
-        githubUrl?: Maybe<string>
-        videoUrl?: Maybe<string>
-        chatUrl?: Maybe<string>
-        order: number
-        slug: string
-        description: string
-        title: string
-        challenges: Array<{
-          __typename?: 'Challenge'
-          id: number
-          description: string
-          lessonId: number
-          title: string
-          order: number
-        }>
-      }>
-    >
-  >
+  updateLesson: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    chatUrl?: Maybe<string>
+    order: number
+    slug: string
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  }>
 }
 
 export type ChangePwMutationVariables = Exact<{
@@ -1303,7 +1295,7 @@ export type MutationResolvers<
     RequireFields<MutationAddCommentArgs, 'submissionId' | 'content'>
   >
   createLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
+    Array<ResolversTypes['Lesson']>,
     ParentType,
     ContextType,
     RequireFields<
@@ -1312,7 +1304,7 @@ export type MutationResolvers<
     >
   >
   updateLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
+    Array<ResolversTypes['Lesson']>,
     ParentType,
     ContextType,
     RequireFields<

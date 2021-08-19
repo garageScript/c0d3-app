@@ -62,7 +62,7 @@ export default gql`
       chatUrl: String
       order: Int!
       slug: String!
-    ): [Lesson]
+    ): [Lesson!]!
     updateLesson(
       id: Int!
       description: String!
@@ -73,7 +73,7 @@ export default gql`
       chatUrl: String
       order: Int!
       slug: String!
-    ): [Lesson]
+    ): [Lesson!]!
     createChallenge(
       lessonId: Int!
       order: Int!
