@@ -22,6 +22,7 @@ const updateLessonMock = {
       videoUrl:
         'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
       order: 10,
+      slug: 'js0',
       chatUrl: 'https://chat.c0d3.com/c0d3/channels/js1-variablesfunction'
     }
   },
@@ -39,6 +40,7 @@ const createLessonMock = {
       githubUrl: '',
       videoUrl: '',
       order: 12,
+      slug: 'js12',
       chatUrl: ''
     }
   },
@@ -79,6 +81,8 @@ describe('AdminLessonsInfo component', () => {
     )
     //new lesson order
     await userEvent.type(screen.getByTestId('input5'), '12', { delay: 1 })
+    //new lesson slug
+    await userEvent.type(screen.getByTestId('input6'), 'js12', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Create Lesson' }))
     )
@@ -185,6 +189,7 @@ describe('AdminLessonsInfo component', () => {
       { delay: 1 }
     )
     await userEvent.type(screen.getByTestId('input5'), '12', { delay: 1 })
+    await userEvent.type(screen.getByTestId('input6'), 'js12', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Create Lesson' }))
     )

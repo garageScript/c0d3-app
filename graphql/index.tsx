@@ -76,6 +76,7 @@ export type Lesson = {
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
   title: Scalars['String']
   challenges: Array<Challenge>
   users?: Maybe<Array<Maybe<User>>>
@@ -98,8 +99,8 @@ export type Mutation = {
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
   addComment?: Maybe<Comment>
-  createLesson?: Maybe<Array<Maybe<Lesson>>>
-  updateLesson?: Maybe<Array<Maybe<Lesson>>>
+  createLesson: Array<Lesson>
+  updateLesson: Array<Lesson>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
 }
@@ -182,6 +183,7 @@ export type MutationCreateLessonArgs = {
   title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
 }
 
 export type MutationUpdateLessonArgs = {
@@ -193,6 +195,7 @@ export type MutationUpdateLessonArgs = {
   title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
 }
 
 export type MutationCreateChallengeArgs = {
@@ -443,35 +446,33 @@ export type CreateLessonMutationVariables = Exact<{
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
   description: Scalars['String']
   title: Scalars['String']
 }>
 
 export type CreateLessonMutation = {
   __typename?: 'Mutation'
-  createLesson?: Maybe<
-    Array<
-      Maybe<{
-        __typename?: 'Lesson'
-        id: number
-        docUrl?: Maybe<string>
-        githubUrl?: Maybe<string>
-        videoUrl?: Maybe<string>
-        chatUrl?: Maybe<string>
-        order: number
-        description: string
-        title: string
-        challenges: Array<{
-          __typename?: 'Challenge'
-          id: number
-          description: string
-          lessonId: number
-          title: string
-          order: number
-        }>
-      }>
-    >
-  >
+  createLesson: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    chatUrl?: Maybe<string>
+    order: number
+    slug: string
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  }>
 }
 
 export type CreateSubmissionMutationVariables = Exact<{
@@ -503,6 +504,7 @@ export type GetAppQuery = {
     githubUrl?: Maybe<string>
     videoUrl?: Maybe<string>
     order: number
+    slug: string
     chatUrl?: Maybe<string>
     challenges: Array<{
       __typename?: 'Challenge'
@@ -851,35 +853,33 @@ export type UpdateLessonMutationVariables = Exact<{
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
   description: Scalars['String']
   title: Scalars['String']
 }>
 
 export type UpdateLessonMutation = {
   __typename?: 'Mutation'
-  updateLesson?: Maybe<
-    Array<
-      Maybe<{
-        __typename?: 'Lesson'
-        id: number
-        docUrl?: Maybe<string>
-        githubUrl?: Maybe<string>
-        videoUrl?: Maybe<string>
-        chatUrl?: Maybe<string>
-        order: number
-        description: string
-        title: string
-        challenges: Array<{
-          __typename?: 'Challenge'
-          id: number
-          description: string
-          lessonId: number
-          title: string
-          order: number
-        }>
-      }>
-    >
-  >
+  updateLesson: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    chatUrl?: Maybe<string>
+    order: number
+    slug: string
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  }>
 }
 
 export type ChangePwMutationVariables = Exact<{
@@ -1190,6 +1190,7 @@ export type LessonResolvers<
   githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
     Array<ResolversTypes['Challenge']>,
@@ -1294,18 +1295,21 @@ export type MutationResolvers<
     RequireFields<MutationAddCommentArgs, 'submissionId' | 'content'>
   >
   createLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
+    Array<ResolversTypes['Lesson']>,
     ParentType,
     ContextType,
-    RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
+    RequireFields<
+      MutationCreateLessonArgs,
+      'description' | 'title' | 'order' | 'slug'
+    >
   >
   updateLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
+    Array<ResolversTypes['Lesson']>,
     ParentType,
     ContextType,
     RequireFields<
       MutationUpdateLessonArgs,
-      'id' | 'description' | 'title' | 'order'
+      'id' | 'description' | 'title' | 'order' | 'slug'
     >
   >
   createChallenge?: Resolver<
@@ -2063,6 +2067,7 @@ export const CreateLessonDocument = gql`
     $videoUrl: String
     $chatUrl: String
     $order: Int!
+    $slug: String!
     $description: String!
     $title: String!
   ) {
@@ -2072,6 +2077,7 @@ export const CreateLessonDocument = gql`
       videoUrl: $videoUrl
       chatUrl: $chatUrl
       order: $order
+      slug: $slug
       description: $description
       title: $title
     ) {
@@ -2081,6 +2087,7 @@ export const CreateLessonDocument = gql`
       videoUrl
       chatUrl
       order
+      slug
       description
       title
       challenges {
@@ -2148,6 +2155,7 @@ export function withCreateLesson<
  *      videoUrl: // value for 'videoUrl'
  *      chatUrl: // value for 'chatUrl'
  *      order: // value for 'order'
+ *      slug: // value for 'slug'
  *      description: // value for 'description'
  *      title: // value for 'title'
  *   },
@@ -2280,6 +2288,7 @@ export const GetAppDocument = gql`
       githubUrl
       videoUrl
       order
+      slug
       challenges {
         id
         title
@@ -3574,6 +3583,7 @@ export const UpdateLessonDocument = gql`
     $videoUrl: String
     $chatUrl: String
     $order: Int!
+    $slug: String!
     $description: String!
     $title: String!
   ) {
@@ -3584,6 +3594,7 @@ export const UpdateLessonDocument = gql`
       chatUrl: $chatUrl
       id: $id
       order: $order
+      slug: $slug
       description: $description
       title: $title
     ) {
@@ -3593,6 +3604,7 @@ export const UpdateLessonDocument = gql`
       videoUrl
       chatUrl
       order
+      slug
       description
       title
       challenges {
@@ -3661,6 +3673,7 @@ export function withUpdateLesson<
  *      videoUrl: // value for 'videoUrl'
  *      chatUrl: // value for 'chatUrl'
  *      order: // value for 'order'
+ *      slug: // value for 'slug'
  *      description: // value for 'description'
  *      title: // value for 'title'
  *   },

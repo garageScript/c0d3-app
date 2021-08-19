@@ -88,6 +88,19 @@ describe('FormCard Component', () => {
     expect(container).toMatchSnapshot()
   })
 
+  test('Should display submit error message', () => {
+    const mockError = 'Helpful Error Message Here :)'
+    const { queryByText } = render(
+      <FormCard
+        onChange={() => {}}
+        values={[{ title: '' }]}
+        submitError={mockError}
+        onSubmit={mockBtn}
+      />
+    )
+    expect(queryByText(mockError)).toBeTruthy()
+  })
+
   test('Should render nothing if id is a title', () => {
     mockValues = [{ title: 'id' }]
     const { container } = render(

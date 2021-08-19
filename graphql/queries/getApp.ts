@@ -10,6 +10,7 @@ const GET_APP = gql`
       githubUrl
       videoUrl
       order
+      slug
       challenges {
         id
         title

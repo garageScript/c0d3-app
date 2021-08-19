@@ -393,13 +393,29 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
                   class="d-flex flex-column ml-3 mr-3 mb-4"
                 >
                   <h5
-                    data-testid="h5chatUrl7"
+                    data-testid="h5slug7"
+                  >
+                    Slug
+                  </h5>
+                  <input
+                    class="form-control"
+                    data-testid="input7"
+                    placeholder=""
+                    type="text"
+                    value="js0"
+                  />
+                </div>
+                <div
+                  class="d-flex flex-column ml-3 mr-3 mb-4"
+                >
+                  <h5
+                    data-testid="h5chatUrl8"
                   >
                     Chaturl
                   </h5>
                   <input
                     class="form-control"
-                    data-testid="input7"
+                    data-testid="input8"
                     placeholder=""
                     type="text"
                     value="https://chat.c0d3.com/c0d3/channels/js1-variablesfunction"
@@ -1991,13 +2007,29 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
                   class="d-flex flex-column ml-3 mr-3 mb-4"
                 >
                   <h5
-                    data-testid="h5chatUrl7"
+                    data-testid="h5slug7"
+                  >
+                    Slug
+                  </h5>
+                  <input
+                    class="form-control"
+                    data-testid="input7"
+                    placeholder=""
+                    type="text"
+                    value="js3"
+                  />
+                </div>
+                <div
+                  class="d-flex flex-column ml-3 mr-3 mb-4"
+                >
+                  <h5
+                    data-testid="h5chatUrl8"
                   >
                     Chaturl
                   </h5>
                   <input
                     class="form-control"
-                    data-testid="input7"
+                    data-testid="input8"
                     placeholder=""
                     type="text"
                     value="https://chat.c0d3.com/c0d3/channels/js5-htmlcssjs"
