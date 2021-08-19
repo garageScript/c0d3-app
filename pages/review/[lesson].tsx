@@ -34,16 +34,22 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const { lessons, session } = queryData
   const router = useRouter()
   const context = useContext(GlobalContext)
-  const currentlessonId = Number(router.query.lesson)
+  const slug = router.query.lesson as string
+  const currentLesson = lessons.find(lesson => lesson.slug === slug)
   useEffect(() => {
     session && context.setContext(session)
   }, [session])
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
-    variables: { lessonId: currentlessonId }
+    variables: { lessonId: currentLesson?.id },
+    skip: !currentLesson
   })
   if (loading) {
     return <LoadingSpinner />
   }
+  if (!currentLesson) {
+    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
+  }
+
   if (!session?.user) {
     router.push({
       pathname: '/login',
@@ -51,10 +57,7 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     })
     return <LoadingSpinner />
   }
-  const currentLesson = lessons.find(lesson => lesson.id === currentlessonId)
-  if (!currentLesson) {
-    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
-  }
+
   if (
     !session.lessonStatus.find(
       status => status.lessonId === currentLesson.id && status.passedAt
@@ -78,7 +81,8 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
             lessonCoverUrl={`js-${currentLesson.order}-cover.svg`}
             lessonUrl={currentLesson.docUrl!}
             lessonTitle={currentLesson.title!}
-            lessonId={currentlessonId}
+            lessonId={currentLesson.id}
+            lessonSlug={slug}
             isPassed={true}
           />
           {currentLesson && (
@@ -92,7 +96,8 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
 
 export default withQueryLoader<GetAppQuery>(
   {
-    query: GET_APP
+    query: GET_APP,
+    getParams: () => ({ ssr: false })
   },
   Review
 )

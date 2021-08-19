@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { FormCard } from './FormCard'
-
+import '@testing-library/jest-dom'
 let testBtnOnClick = ''
 
 const mockBtn = {
@@ -98,7 +98,7 @@ describe('FormCard Component', () => {
         onSubmit={mockBtn}
       />
     )
-    expect(queryByText(mockError)).toBeTruthy()
+    expect(queryByText(mockError)).toBeVisible()
   })
 
   test('Should render nothing if id is a title', () => {

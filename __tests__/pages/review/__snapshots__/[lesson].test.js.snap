@@ -377,13 +377,13 @@ exports[`Lesson Page Should render empty submissions 1`] = `
               </a>
               <a
                 class="btn border-right rounded-0 px-4 py-3"
-                href="/curriculum/2"
+                href="/curriculum/js1"
               >
                 CHALLENGES
               </a>
               <a
                 class="btn border-right rounded-0 px-4 py-3"
-                href="/review/2"
+                href="/review/js1"
               >
                 REVIEW
               </a>
@@ -588,13 +588,13 @@ exports[`Lesson Page Should render new submissions 1`] = `
               </a>
               <a
                 class="btn border-right rounded-0 px-4 py-3"
-                href="/curriculum/2"
+                href="/curriculum/js1"
               >
                 CHALLENGES
               </a>
               <a
                 class="btn border-right rounded-0 px-4 py-3"
-                href="/review/2"
+                href="/review/js1"
               >
                 REVIEW
               </a>

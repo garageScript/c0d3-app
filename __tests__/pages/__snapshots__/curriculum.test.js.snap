@@ -159,7 +159,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
@@ -218,7 +218,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
@@ -268,7 +268,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
@@ -327,7 +327,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
@@ -377,7 +377,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                   >
                     Arrays
                   </a>
@@ -436,7 +436,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                   >
                     Arrays
                   </a>
@@ -486,7 +486,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                   >
                     Objects
                   </a>
@@ -545,7 +545,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                   >
                     Objects
                   </a>
@@ -595,7 +595,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                   >
                     Front End Engineering
                   </a>
@@ -654,7 +654,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                   >
                     Front End Engineering
                   </a>
@@ -704,7 +704,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                   >
                     End To End
                   </a>
@@ -763,7 +763,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                   >
                     End To End
                   </a>
@@ -813,7 +813,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -872,7 +872,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -922,7 +922,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                   >
                     JavaScript Algorithms
                   </a>
@@ -981,7 +981,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                   >
                     JavaScript Algorithms
                   </a>
@@ -1031,7 +1031,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                   >
                     Trees
                   </a>
@@ -1090,7 +1090,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                   >
                     Trees
                   </a>
@@ -1140,7 +1140,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                   >
                     General Algorithms
                   </a>
@@ -1199,7 +1199,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                   >
                     General Algorithms
                   </a>
@@ -1739,7 +1739,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
@@ -1798,7 +1798,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
@@ -1843,7 +1843,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             </a>
             <a
               class="lesson-card__button btn bg-primary my-1 text-white border border-white"
-              href="/curriculum/5"
+              href="/curriculum/js0"
             >
               View Challenges
             </a>
@@ -1866,7 +1866,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
@@ -1925,7 +1925,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
@@ -1975,7 +1975,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                   >
                     Arrays
                   </a>
@@ -2034,7 +2034,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                   >
                     Arrays
                   </a>
@@ -2084,7 +2084,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                   >
                     Objects
                   </a>
@@ -2143,7 +2143,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                   >
                     Objects
                   </a>
@@ -2193,7 +2193,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                   >
                     Front End Engineering
                   </a>
@@ -2252,7 +2252,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                   >
                     Front End Engineering
                   </a>
@@ -2302,7 +2302,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                   >
                     End To End
                   </a>
@@ -2361,7 +2361,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                   >
                     End To End
                   </a>
@@ -2411,7 +2411,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -2470,7 +2470,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -2520,7 +2520,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                   >
                     JavaScript Algorithms
                   </a>
@@ -2579,7 +2579,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                   >
                     JavaScript Algorithms
                   </a>
@@ -2629,7 +2629,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                   >
                     Trees
                   </a>
@@ -2688,7 +2688,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                   >
                     Trees
                   </a>
@@ -2738,7 +2738,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                   >
                     General Algorithms
                   </a>
@@ -2797,7 +2797,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                   >
                     General Algorithms
                   </a>
@@ -3405,7 +3405,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
@@ -3471,7 +3471,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </p>
             <a
               class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
-              href="/review/5"
+              href="/review/js0"
             >
               Review 
               <span>
@@ -3501,7 +3501,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
@@ -3560,7 +3560,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
               <a
                 class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-                href="/review/5"
+                href="/review/js0"
               >
                 Review 
                 <span>
@@ -3588,7 +3588,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
@@ -3654,7 +3654,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </p>
             <a
               class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
-              href="/review/2"
+              href="/review/js1"
             >
               Review 
               <span>
@@ -3684,7 +3684,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
@@ -3743,7 +3743,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
               <a
                 class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-                href="/review/2"
+                href="/review/js1"
               >
                 Review 
                 <span>
@@ -3771,7 +3771,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                   >
                     Arrays
                   </a>
@@ -3837,7 +3837,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </p>
             <a
               class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
-              href="/review/1"
+              href="/review/js2"
             >
               Review 
               <span>
@@ -3867,7 +3867,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                   >
                     Arrays
                   </a>
@@ -3926,7 +3926,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </div>
               <a
                 class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-                href="/review/1"
+                href="/review/js2"
               >
                 Review 
                 <span>
@@ -3954,7 +3954,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                   >
                     Objects
                   </a>
@@ -4013,7 +4013,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                   >
                     Objects
                   </a>
@@ -4058,7 +4058,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             </a>
             <a
               class="lesson-card__button btn bg-primary my-1 text-white border border-white"
-              href="/curriculum/4"
+              href="/curriculum/js3"
             >
               View Challenges
             </a>
@@ -4081,7 +4081,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                   >
                     Front End Engineering
                   </a>
@@ -4140,7 +4140,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                   >
                     Front End Engineering
                   </a>
@@ -4190,7 +4190,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                   >
                     End To End
                   </a>
@@ -4249,7 +4249,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                   >
                     End To End
                   </a>
@@ -4299,7 +4299,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -4358,7 +4358,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
                   </a>
@@ -4408,7 +4408,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                   >
                     JavaScript Algorithms
                   </a>
@@ -4467,7 +4467,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                   >
                     JavaScript Algorithms
                   </a>
@@ -4517,7 +4517,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                   >
                     Trees
                   </a>
@@ -4576,7 +4576,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                   >
                     Trees
                   </a>
@@ -4626,7 +4626,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                   >
                     General Algorithms
                   </a>
@@ -4685,7 +4685,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 >
                   <a
                     class=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                   >
                     General Algorithms
                   </a>
