@@ -43,12 +43,13 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
     variables: { lessonId: currentLesson?.id },
     skip: !currentLesson
   })
-  if (!currentLesson) {
-    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
-  }
   if (loading) {
     return <LoadingSpinner />
   }
+  if (!currentLesson) {
+    return <Error code={StatusCode.NOT_FOUND} message="Page not found" />
+  }
+
   if (!session?.user) {
     router.push({
       pathname: '/login',
@@ -95,7 +96,8 @@ const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
 
 export default withQueryLoader<GetAppQuery>(
   {
-    query: GET_APP
+    query: GET_APP,
+    getParams: () => ({ ssr: false })
   },
   Review
 )
