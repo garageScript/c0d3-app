@@ -30,6 +30,7 @@ const mockData = {
   message: 'hello',
   embed: { description: 'an embed' },
   lessonId: 1,
+  lessonSlug: 'js1',
   notificationLessonId: 2,
   idType: IdType.C0D3,
   userName: 'test_user',
@@ -114,7 +115,7 @@ describe('sendSubmissionNotification', () => {
       mockData.idType,
       mockData.userName,
       mockData.notificationLessonId,
-      mockData.lessonId,
+      mockData.lessonSlug,
       mockData.challengeTitle
     )
 
@@ -127,7 +128,7 @@ describe('sendSubmissionNotification', () => {
           idType: mockData.idType,
           id: mockData.userName,
           notificationLessonId: mockData.notificationLessonId.toString(),
-          lessonId: mockData.lessonId.toString(),
+          lessonSlug: mockData.lessonSlug,
           challengeTitle: mockData.challengeTitle
         })
       }
