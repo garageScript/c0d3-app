@@ -2337,12 +2337,13 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@quixo3/prisma-session-store@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.0.1.tgz#ea8c07256b79df61d7f5a0cec686148c4d137e1f"
-  integrity sha512-YBVm/mPF3b0xL8OOH4xkhHE6J0T6EW5zN/S0PvWHoVwRXxdD+HJRz00qRir8DAGZNWzBvKbfHuXnoR9gksisUA==
+"@quixo3/prisma-session-store@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@quixo3/prisma-session-store/-/prisma-session-store-3.1.0.tgz#92cf4f36de4a3d951cbb0d2c6c1b4c9477794ba0"
+  integrity sha512-8Rfo/kx4jwK5rNN13oI3kXPx0MIU21qJjpJrtcUhvglaYVdY0O0+aGT2W6+COt9/X1+yd/vwz5fV/2RUvqeJyQ==
   dependencies:
     cuid "^2.1.8"
+    prisma "^2.29.1"
     ts-dedent "^2.0.0"
     type-fest "^0.20.2"
 
