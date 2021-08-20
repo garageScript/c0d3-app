@@ -2,10 +2,10 @@
  * @jest-environment node
  */
 
-jest.mock('../../helpers/validateLessonId')
+jest.mock('../../helpers/validation/validateLessonId')
 jest.mock('../discordBot')
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { validateLessonId } from '../validateLessonId'
+import { validateLessonId } from '../validation/validateLessonId'
 import { setStar } from './starsController'
 
 describe('setStar resolver', () => {
