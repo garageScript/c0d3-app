@@ -1,5 +1,4 @@
 import fs from 'fs'
-import path from 'path'
 import {
   getLessonSlugs,
   getSubLessonSlugs,
@@ -7,7 +6,6 @@ import {
   getSubLessonContent
 } from './lessons'
 jest.mock('fs')
-// jest.mock('path')
 
 describe('Static Lessons Helpers', () => {
   beforeEach(() => {
@@ -73,25 +71,34 @@ describe('Static Lessons Helpers', () => {
     })
   })
 
-  test('getSubLessonGithubFilePath returns file path including mdx extension', () => {
-    expect(
-      getSubLessonGithubFilePath({
-        lesson_slug: 'js0',
-        sublesson_slug: 'some_title'
-      })
-    ).toEqual(expect.stringMatching(/js0\/.*some_title\.mdx$/))
+  describe('getSubLessonGithubFilePath', () => {
+    test('should return path from project root including mdx extension', () => {
+      expect(
+        getSubLessonGithubFilePath({
+          lesson_slug: 'js30',
+          sublesson_slug: 'some_other_title'
+        })
+      ).toBe('content/lessons/js30/sublesson/some_other_title.mdx')
+    })
   })
+  describe('getSubLessonContent', () => {
+    test('should return sublesson file contents buffer', () => {
+      const fakeFileContent = Buffer.from(
+        'fake lesson file blah blah blah',
+        'utf-8'
+      )
+      const filePath = 'content/lessons/js0/sublesson/some_title.mdx'
 
-  test('getSubLessonContent returns raw sublesson file contents', () => {
-    const fakeFileContent = 'fake lesson file blah blah blah'
-    const filePath = 'content/lessons/js0/sublesson/some_title.mdx'
+      fs.readFileSync.mockReturnValue(fakeFileContent)
 
-    fs.readFileSync.mockReturnValue(fakeFileContent)
+      expect(
+        getSubLessonContent({
+          lesson_slug: 'js0',
+          sublesson_slug: 'some_title'
+        })
+      ).toEqual(fakeFileContent)
 
-    expect(
-      getSubLessonContent({ lesson_slug: 'js0', sublesson_slug: 'some_title' })
-    ).toEqual(fakeFileContent)
-
-    expect(fs.readFileSync).toBeCalledWith(expect.stringContaining(filePath))
+      expect(fs.readFileSync).toBeCalledWith(expect.stringContaining(filePath))
+    })
   })
 })
