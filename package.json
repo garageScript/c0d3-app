@@ -33,7 +33,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.19",
     "@prisma/client": "^2.29.1",
-    "@quixo3/prisma-session-store": "^3.0.1",
+    "@quixo3/prisma-session-store": "^3.1.0",
     "@sentry/nextjs": "^6.11.0",
     "apollo-server-micro": "^2.25.2",
     "apollo3-cache-persist": "^0.12.1",
@@ -94,7 +94,7 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.2",
     "babel-jest": "^27.0.6",
     "babel-plugin-prismjs": "^2.1.0",
     "eslint": "^7.32.0",
