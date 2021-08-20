@@ -1,8 +1,18 @@
 import fs from 'fs'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import path from 'path'
 
 const LESSONS_GITHUB_PATH = 'content/lessons'
 const LESSONS_PATH = path.join(process.cwd(), LESSONS_GITHUB_PATH)
+
+export type SubLesson = {
+  frontMatter: {
+    title: string
+    order: number
+  }
+  source?: MDXRemoteSerializeResult
+  sublesson_slug: string
+}
 
 export const getLessonSlugs = () =>
   fs.readdirSync(LESSONS_PATH).map(folder => {
