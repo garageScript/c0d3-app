@@ -76,7 +76,7 @@ export const sendSubmissionNotification: SendSubmissionNotification = async (
   idType,
   userId,
   notificationLessonId,
-  lessonId,
+  lessonSlug,
   challengeTitle,
   includeDetails
 ) =>
@@ -84,7 +84,7 @@ export const sendSubmissionNotification: SendSubmissionNotification = async (
     idType,
     id: userId,
     notificationLessonId: notificationLessonId.toString(),
-    lessonId: lessonId.toString(),
+    lessonSlug,
     challengeTitle,
     includeDetails
   })

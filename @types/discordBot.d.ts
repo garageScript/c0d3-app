@@ -59,7 +59,7 @@ export type SendSubmissionNotification = (
   idType: IdType,
   userId: snowflake | string,
   notificationLessonId: number | string,
-  lessonId: number | string,
+  lessonSlug: string,
   challengeTitle: string,
   includeDetails?: boolean
 ) => Promise<MessageResponse>
