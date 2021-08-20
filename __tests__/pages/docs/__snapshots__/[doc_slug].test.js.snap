@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[doc_slug] Page should display default document title and not render page title without frontMatter.title 1`] = `
+<div>
+  <div
+    class="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
+  >
+    <button
+      class="btn btn-link text-primary p-0"
+    >
+      Go Back
+    </button>
+    <h1
+      class="MDX_h1"
+      id="markdown"
+    >
+      markdown
+    </h1>
+    <details>
+      <summary>
+        what am i?
+      </summary>
+       mdx to jsx :)
+    </details>
+    <a
+      class="MDX_a edit"
+      href="https://github.com/garageScript/c0d3-app/edit/master/some/fake/path"
+      title="Edit this page on Github"
+    >
+      Edit this page
+    </a>
+  </div>
+</div>
+`;
+
+exports[`[doc_slug] Page should render functioning MDX content 1`] = `
+<div>
+  <div
+    class="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
+  >
+    <button
+      class="btn btn-link text-primary p-0"
+    >
+      Go Back
+    </button>
+    <div
+      class="title"
+    >
+      fake doc
+    </div>
+    <h1
+      class="MDX_h1"
+      id="markdown"
+    >
+      markdown
+    </h1>
+    <details
+      open=""
+    >
+      <summary>
+        what am i?
+      </summary>
+       mdx to jsx :)
+    </details>
+    <a
+      class="MDX_a edit"
+      href="https://github.com/garageScript/c0d3-app/edit/master/some/fake/path"
+      title="Edit this page on Github"
+    >
+      Edit this page
+    </a>
+  </div>
+</div>
+`;
