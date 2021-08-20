@@ -2,8 +2,8 @@
  * @jest-environment node
  */
 
-jest.mock('../../helpers/validateLessonId')
-import { validateLessonId } from '../../helpers/validateLessonId'
+jest.mock('../../helpers/validation/validateLessonId')
+import { validateLessonId } from '../../helpers/validation/validateLessonId'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { getLessonMentors } from './getLessonMentors'
 describe('getLessonMentors resolver', () => {
