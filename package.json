@@ -53,7 +53,7 @@
     "next": "^11.1.0",
     "next-connect": "^0.10.2",
     "nodemailer": "^6.6.3",
-    "posthog-js": "^1.12.3",
+    "posthog-js": "^1.12.6",
     "prism-react-renderer": "^1.2.1",
     "prismjs": "^1.24.1",
     "react": "^17.0.2",
