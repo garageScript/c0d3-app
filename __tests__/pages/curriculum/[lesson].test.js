@@ -64,23 +64,19 @@ const session = {
   lessonStatus: [
     {
       lessonId: 5,
-      isPassed: true,
-      isTeaching: true,
-      isEnrolled: false,
+      passedAt: new Date(),
       starGiven: null
     },
     {
       lessonId: 2,
-      isPassed: false,
-      isTeaching: false,
-      isEnrolled: true,
+      passedAt: null,
       starGiven: null
     }
   ]
 }
 describe('Lesson Page', () => {
   const { query } = useRouter()
-  query['lesson'] = 2
+  query['lesson'] = 'js1'
   test('Should render correctly with valid lesson route', async () => {
     const mocks = [
       {
@@ -109,7 +105,7 @@ describe('Lesson Page', () => {
   })
 
   test('Should render correctly with invalid lesson route', async () => {
-    query['lesson'] = 100
+    query['lesson'] = 'js100'
     const mocks = [
       {
         request: { query: GET_APP },
@@ -133,7 +129,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
-    query['lesson'] = 25
+    query['lesson'] = 'js8'
     const mocks = [
       {
         request: { query: GET_APP },
@@ -183,7 +179,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render with nulled submissions', async () => {
-    query['lesson'] = 2
+    query['lesson'] = 'js1'
     const mocks = [
       {
         request: { query: GET_APP },

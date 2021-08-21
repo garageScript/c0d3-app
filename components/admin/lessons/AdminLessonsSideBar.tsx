@@ -20,7 +20,9 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
       id: 0,
       title: 'Create New Lesson',
       description: '',
-      order: -1
+      order: -1,
+      slug: '',
+      challenges: []
     })
   }
   //check if create new lesson has already been pushed to the lessons array
@@ -31,7 +33,9 @@ export const AdminLessonsSideBar: React.FC<SideBarLessonProps> = ({
       id: 0,
       title: 'Create New Lesson',
       description: '',
-      order: -1
+      order: -1,
+      slug: '',
+      challenges: []
     })
   }
 

@@ -72,9 +72,7 @@ describe('user profile test', () => {
       lessonStatus: [
         {
           lessonId: 5,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: [
             {
@@ -96,9 +94,7 @@ describe('user profile test', () => {
         },
         {
           lessonId: 2,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: [
             {
@@ -120,9 +116,7 @@ describe('user profile test', () => {
         },
         {
           lessonId: 1,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: [
             {
@@ -208,17 +202,13 @@ describe('user profile test', () => {
       lessonStatus: [
         {
           lessonId: 5,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: null
         },
         {
           lessonId: 2,
-          isPassed: true,
-          isTeaching: true,
-          isEnrolled: false,
+          passedAt: new Date(),
           starGiven: null,
           starsReceived: null
         }
@@ -350,6 +340,7 @@ describe('user profile test', () => {
         videoUrl:
           'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
         order: null,
+        slug: null,
         challenges: [null, null, null],
         chatUrl: 'https://chat.c0d3.com/c0d3/channels/js1-variablesfunction'
       }

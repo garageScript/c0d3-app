@@ -493,9 +493,10 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           Preview
         </button>
         <textarea
+          class="textarea"
           data-testid="textbox"
           placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
+          style="height: 2px;"
         />
       </div>
       <div
@@ -580,7 +581,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 data-testid="iteration 0"
               >
                 <button
-                  class="button m-2 btn btn-info"
+                  class="button active m-2 btn active btn-outline-danger"
                   type="button"
                 >
                   1
@@ -596,7 +597,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 data-testid="iteration 1"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-warning"
                   type="button"
                 >
                   2
@@ -612,7 +613,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 data-testid="iteration 2"
               >
                 <button
-                  class="button m-2 btn btn-success"
+                  class="button  m-2 btn btn-outline-warning"
                   type="button"
                 >
                   3
@@ -1075,9 +1076,10 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
           Preview
         </button>
         <textarea
+          class="textarea"
           data-testid="textbox"
           placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
+          style="height: 2px;"
         />
       </div>
       <div
@@ -2407,9 +2409,9 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           Preview
         </button>
         <textarea
+          class="textarea"
           data-testid="textbox"
           placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
         />
       </div>
       <div
@@ -3739,9 +3741,9 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           Preview
         </button>
         <textarea
+          class="textarea"
           data-testid="textbox"
           placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
         />
       </div>
       <div
@@ -3894,9 +3896,9 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           Preview
         </button>
         <textarea
+          class="textarea"
           data-testid="textbox"
           placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
         />
       </div>
       <div
@@ -5226,9 +5228,9 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           Preview
         </button>
         <textarea
+          class="textarea"
           data-testid="textbox"
           placeholder="Type something..."
-          style="padding: 1rem; width: 100%;"
         />
       </div>
       <div

@@ -235,80 +235,94 @@ exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
 
 exports[`Storyshots Components/AppNav Logged In 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  className="navbar navbar-expand-lg navbar-light bg-white"
 >
   <div
     className="container"
   >
     <a
-      className="navbar-brand text-primary font-weight-bold"
+      className="navbar-brand"
       href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      C0D3
-    </a>
-    <div
-      id="navbarNav"
     >
       <div
-        className="navbar-nav collapse navbar-collapse"
+        className="navbar-brand text-primary font-weight-bold"
       >
-        <div
-          className="navbar-nav collapse navbar-collapse"
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
+        C0D3
       </div>
-    </div>
-    <div>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/login"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="text-center navbar-collapse collapse"
+      id="basic-navbar-nav"
+    >
+      <div
+        className="m-auto navbar-nav"
+        onKeyDown={[Function]}
       >
-        Login
-      </a>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/signup"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+        <a
+          className="nav-item nav-link"
+          href="/curriculum"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Curriculum
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="https://github.com/garageScript/c0d3-app"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Repo
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="/docs/learn"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Learn
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="https://discord.gg/c0d3"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Community
+        </a>
+      </div>
+      <div
+        className="nav-buttons"
       >
-        Signup
-      </a>
+        <a
+          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
     </div>
   </div>
 </nav>
@@ -316,80 +330,94 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
 
 exports[`Storyshots Components/AppNav Logged Out 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+  className="navbar navbar-expand-lg navbar-light bg-white"
 >
   <div
     className="container"
   >
     <a
-      className="navbar-brand text-primary font-weight-bold"
+      className="navbar-brand"
       href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      C0D3
-    </a>
-    <div
-      id="navbarNav"
     >
       <div
-        className="navbar-nav collapse navbar-collapse"
+        className="navbar-brand text-primary font-weight-bold"
       >
-        <div
-          className="navbar-nav collapse navbar-collapse"
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
+        C0D3
       </div>
-    </div>
-    <div>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/login"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="text-center navbar-collapse collapse"
+      id="basic-navbar-nav"
+    >
+      <div
+        className="m-auto navbar-nav"
+        onKeyDown={[Function]}
       >
-        Login
-      </a>
-      <a
-        className="btn btn-secondary border mr-3"
-        href="/signup"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+        <a
+          className="nav-item nav-link"
+          href="/curriculum"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Curriculum
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="https://github.com/garageScript/c0d3-app"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Repo
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="/docs/learn"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Learn
+        </a>
+        <a
+          className="nav-item nav-link"
+          href="https://discord.gg/c0d3"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Community
+        </a>
+      </div>
+      <div
+        className="nav-buttons"
       >
-        Signup
-      </a>
+        <a
+          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Login
+        </a>
+        <a
+          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          href="/signup"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Signup
+        </a>
+      </div>
     </div>
   </div>
 </nav>
@@ -1302,15 +1330,11 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value=""
             />
           </div>
@@ -1825,15 +1849,11 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value=""
             />
           </div>
@@ -3053,20 +3073,66 @@ exports[`Storyshots Components/DiffView Default 1`] = `
 `;
 
 exports[`Storyshots Components/DropdownMenu Basic 1`] = `
-<div
-  className="dropdown"
->
-  <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    className="dropdown-toggle btn btn-none"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+Array [
+  <div
+    className="d-none d-lg-block"
   >
-    Admin
-  </button>
-</div>
+    <div
+      className="dropdown"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle title title-none"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Admin
+      </button>
+    </div>
+  </div>,
+  <div
+    className="d-lg-none"
+  >
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/lessons"
+        onClick={[Function]}
+      >
+        Lessons
+      </a>
+    </div>
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/users"
+        onClick={[Function]}
+      >
+        Users
+      </a>
+    </div>
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/alerts"
+        onClick={[Function]}
+      >
+        Alerts0
+      </a>
+    </div>
+  </div>,
+]
 `;
 
 exports[`Storyshots Components/DropdownMenu Colors 1`] = `
@@ -3079,18 +3145,62 @@ Array [
     }
   >
     <div
-      className="dropdown"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-primary"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropdown"
       >
-        Primary
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Primary
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -3101,18 +3211,62 @@ Array [
     }
   >
     <div
-      className="dropdown"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-success"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropdown"
       >
-        Success
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-success"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Success
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -3123,18 +3277,62 @@ Array [
     }
   >
     <div
-      className="dropdown"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-danger"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropdown"
       >
-        Danger
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-danger"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Danger
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -3145,18 +3343,62 @@ Array [
     }
   >
     <div
-      className="dropdown"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-info"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropdown"
       >
-        Info
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-info"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Info
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -3167,18 +3409,62 @@ Array [
     }
   >
     <div
-      className="dropdown"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-warning"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropdown"
       >
-        Warning
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-warning"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Warning
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -3189,18 +3475,62 @@ Array [
     }
   >
     <div
-      className="dropdown"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-none"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropdown"
       >
-        None
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-none"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          None
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>,
 ]
@@ -3223,18 +3553,62 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
     }
   >
     <div
-      className="dropleft"
+      className="d-none d-lg-block"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-primary"
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+      <div
+        className="dropleft"
       >
-        Left
-      </button>
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Left
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
     </div>
   </div>
   <div
@@ -3243,6 +3617,205 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         "display": "inline-block",
       }
     }
+  >
+    <div
+      className="d-none d-lg-block"
+    >
+      <div
+        className="dropdown"
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-success"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Down
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="d-none d-lg-block"
+    >
+      <div
+        className="dropup"
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-danger"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Up
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+    <div
+      className="d-none d-lg-block"
+    >
+      <div
+        className="dropright"
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle title title-info"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Right
+        </button>
+      </div>
+    </div>
+    <div
+      className="d-lg-none"
+    >
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/lessons"
+          onClick={[Function]}
+        >
+          Lessons
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/users"
+          onClick={[Function]}
+        >
+          Users
+        </a>
+      </div>
+      <div
+        className="text-center text-xl-left py-2 px-4"
+      >
+        <a
+          className="dropdown-item"
+          disabled={false}
+          href="/admin/alerts"
+          onClick={[Function]}
+        >
+          Alerts0
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
+Array [
+  <div
+    className="d-none d-lg-block"
   >
     <div
       className="dropdown"
@@ -3250,156 +3823,197 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={true}
-        className="dropdown-toggle btn btn-success"
+        className="dropdown-toggle title title-none"
         disabled={false}
         onClick={[Function]}
         type="button"
       >
-        Down
+        Admin
       </button>
     </div>
-  </div>
+  </div>,
   <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
+    className="d-lg-none"
   >
     <div
-      className="dropup"
+      className="text-center text-xl-left py-2 px-4"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-danger"
+      <a
+        className="dropdown-item"
         disabled={false}
+        href="/admin/lessons"
         onClick={[Function]}
-        type="button"
       >
-        Up
-      </button>
+        Lessons
+      </a>
     </div>
-  </div>
-  <div
-    style={
-      Object {
-        "display": "inline-block",
-      }
-    }
-  >
     <div
-      className="dropright"
+      className="dropdown-divider"
+      role="separator"
+    />
+    <div
+      className="text-center text-xl-left py-2 px-4"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup={true}
-        className="dropdown-toggle btn btn-info"
+      <a
+        className="dropdown-item"
         disabled={false}
+        href="/admin/users"
         onClick={[Function]}
-        type="button"
       >
-        Right
-      </button>
+        Users
+      </a>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/DropdownMenu With Separators 1`] = `
-<div
-  className="dropdown"
->
-  <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    className="dropdown-toggle btn btn-none"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    Admin
-  </button>
-</div>
+    <div
+      className="dropdown-divider"
+      role="separator"
+    />
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/alerts"
+        onClick={[Function]}
+      >
+        Alerts1
+      </a>
+    </div>
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/alerts"
+        onClick={[Function]}
+      >
+        Alerts2
+      </a>
+    </div>
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/alerts"
+        onClick={[Function]}
+      >
+        Alerts3
+      </a>
+    </div>
+    <div
+      className="dropdown-divider"
+      role="separator"
+    />
+    <div
+      className="text-center text-xl-left py-2 px-4"
+    >
+      <a
+        className="dropdown-item"
+        disabled={false}
+        href="/admin/alerts"
+        onClick={[Function]}
+      >
+        Alerts4
+      </a>
+    </div>
+  </div>,
+]
 `;
 
 exports[`Storyshots Components/Error Internal 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -3480,80 +4094,94 @@ Array [
 exports[`Storyshots Components/Error Not Found 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -4012,15 +4640,11 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -4051,18 +4675,48 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             Swiggity swag
           </h5>
           <div
-            className="dropdown"
+            className="d-none d-lg-block"
           >
-            <button
-              aria-expanded={false}
-              aria-haspopup={true}
-              className="dropdown-toggle btn btn-none"
-              disabled={false}
-              onClick={[Function]}
-              type="button"
+            <div
+              className="dropdown"
             >
-              Lolzz
-            </button>
+              <button
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle title title-none"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Lolzz
+              </button>
+            </div>
+          </div>
+          <div
+            className="d-lg-none"
+          >
+            <div
+              className="text-center text-xl-left py-2 px-4"
+            >
+              <button
+                className="dropdown-item"
+                disabled={false}
+                onClick={[Function]}
+              >
+                Lolzz
+              </button>
+            </div>
+            <div
+              className="text-center text-xl-left py-2 px-4"
+            >
+              <button
+                className="dropdown-item"
+                disabled={false}
+                onClick={[Function]}
+              >
+                pineApple bananozna
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -4202,15 +4856,11 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -4352,15 +5002,11 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -4502,15 +5148,11 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
               Preview
             </button>
             <textarea
+              className="textarea"
               data-testid="textbox"
               onChange={[Function]}
+              onMouseDown={[Function]}
               placeholder="Type something..."
-              style={
-                Object {
-                  "padding": "1rem",
-                  "width": "100%",
-                }
-              }
               value="oheuhehe"
             />
           </div>
@@ -4862,80 +5504,94 @@ exports[`Storyshots Components/InputGroup Size Small 1`] = `
 exports[`Storyshots Components/Layout Logged In 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -4987,80 +5643,94 @@ Array [
 exports[`Storyshots Components/Layout Logged Out 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -5163,7 +5833,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         >
           <a
             className=""
-            href="/curriculum/4"
+            href="https://c0d3.com/student/24"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5226,7 +5896,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         >
           <a
             className=""
-            href="/curriculum/4"
+            href="https://c0d3.com/student/24"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5281,7 +5951,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         >
           <a
             className=""
-            href="/curriculum/4"
+            href="https://c0d3.com/student/24"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5351,6 +6021,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     <a
       className="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
       href="https://c0d3.com/teacher/5"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       Review 
       <div
@@ -5382,7 +6054,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         >
           <a
             className=""
-            href="/curriculum/4"
+            href="https://c0d3.com/student/24"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5444,6 +6116,8 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       <a
         className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
         href="https://c0d3.com/teacher/5"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
       >
         Review 
         <div
@@ -5475,7 +6149,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         >
           <a
             className=""
-            href="/curriculum/4"
+            href="https://c0d3.com/student/24"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5538,7 +6212,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         >
           <a
             className=""
-            href="/curriculum/4"
+            href="https://c0d3.com/student/24"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5641,7 +6315,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
-        href="/curriculum/5"
+        href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -5698,7 +6372,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
-        href="/curriculum/5"
+        href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -5706,7 +6380,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       </a>
       <a
         className="btn border-right rounded-0 px-4 py-3"
-        href="/review/5"
+        href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -5784,15 +6458,11 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
     Preview
   </button>
   <textarea
+    className="textarea"
     data-testid="textbox"
     onChange={[Function]}
+    onMouseDown={[Function]}
     placeholder="Type something..."
-    style={
-      Object {
-        "padding": "1rem",
-        "width": "100%",
-      }
-    }
     value=""
   />
 </div>
@@ -5829,15 +6499,11 @@ exports[`Storyshots Components/MdInput White 1`] = `
     Preview
   </button>
   <textarea
+    className="textarea"
     data-testid="textbox"
     onChange={[Function]}
+    onMouseDown={[Function]}
     placeholder="Type something..."
-    style={
-      Object {
-        "padding": "1rem",
-        "width": "100%",
-      }
-    }
     value=""
   />
 </div>
@@ -5874,15 +6540,11 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
     Preview
   </button>
   <textarea
+    className="textarea"
     data-testid="textbox"
     onChange={[Function]}
+    onMouseDown={[Function]}
     placeholder="Type something..."
-    style={
-      Object {
-        "padding": "1rem",
-        "width": "100%",
-      }
-    }
     value="HinGa DIngA dUrgEN"
   />
 </div>
@@ -5920,15 +6582,11 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
       Preview
     </button>
     <textarea
+      className="textarea"
       data-testid="textbox"
       onChange={[Function]}
+      onMouseDown={[Function]}
       placeholder="Type something..."
-      style={
-        Object {
-          "padding": "1rem",
-          "width": "100%",
-        }
-      }
       value=""
     />
   </div>
@@ -7140,10 +7798,38 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
 
 exports[`Storyshots Components/ProgressCard Basic 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
 >
+  <h4
+    className="progress-card__title mt-3 text-center"
+  >
+    You're off to a great start!
+  </h4>
   <div
-    className="card-body"
+    className="d-block d-xl-none"
+  >
+    <div
+      className="bg-white my-3 rounded"
+    >
+      <div
+        className="progress-card__horizontal bg-primary d-flex rounded-left"
+        style={
+          Object {
+            "width": "min-content",
+          }
+        }
+      >
+        <div
+          className="align-self-center px-1 ml-auto font-weight-bold"
+        >
+          0
+          %
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="d-none d-xl-flex justify-content-center"
   >
     <div
       className="progress-card__wrapper d-flex align-items-center"
@@ -7194,28 +7880,28 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
         </g>
       </svg>
     </div>
-    <h4
-      className="progress-card__title mt-3"
+  </div>
+  <div
+    className="mt-3"
+  >
+    Join us on
+    <a
+      className="progress-newuser__chatlink text-white"
+      href="https://discord.gg/c0d3"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      You're off to a great start!
-    </h4>
-    <div
-      className="mt-3"
-    >
-      Join us on
-      <a
-        className="progress-newuser__chatlink text-white"
-        href="https://discord.gg/c0d3"
-        rel="noopener noreferrer"
-        target="_blank"
+      <p
+        className="font-weight-bold d-inline"
       >
         Discord
-      </a>
-      to ask your questions.
-      <p>
-        Start by setting up your development environment and then follow the lessons in the course.
       </p>
-    </div>
+    </a>
+    to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+  </div>
+  <div
+    className="mt-4 d-flex flex-column"
+  >
     <a
       className="btn btn-light progress-card__button mt-2 text-primary"
       href="/docs/setup"
@@ -7230,10 +7916,38 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
 
 exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
 >
+  <h4
+    className="progress-card__title mt-3 text-center"
+  >
+    Congratulations! You've finished the course!
+  </h4>
   <div
-    className="card-body"
+    className="d-block d-xl-none"
+  >
+    <div
+      className="bg-white my-3 rounded"
+    >
+      <div
+        className="progress-card__horizontal bg-primary d-flex rounded"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="align-self-center px-1 ml-auto font-weight-bold"
+        >
+          100
+          %
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="d-none d-xl-flex justify-content-center"
   >
     <div
       className="progress-card__wrapper d-flex align-items-center"
@@ -7284,28 +7998,28 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
         </g>
       </svg>
     </div>
-    <h4
-      className="progress-card__title mt-3"
+  </div>
+  <div
+    className="mt-3"
+  >
+    Join us on
+    <a
+      className="progress-newuser__chatlink text-white"
+      href="https://discord.gg/c0d3"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      Congratulations! You've finished the course!
-    </h4>
-    <div
-      className="mt-3"
-    >
-      Join us on
-      <a
-        className="progress-newuser__chatlink text-white"
-        href="https://discord.gg/c0d3"
-        rel="noopener noreferrer"
-        target="_blank"
+      <p
+        className="font-weight-bold d-inline"
       >
         Discord
-      </a>
-      to ask your questions.
-      <p>
-        Start by setting up your development environment and then follow the lessons in the course.
       </p>
-    </div>
+    </a>
+    to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+  </div>
+  <div
+    className="mt-4 d-flex flex-column"
+  >
     <a
       className="btn btn-light progress-card__button mt-2 text-primary"
       href="/docs/setup"
@@ -7320,33 +8034,34 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
 
 exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
 >
-  <div
-    className="card-body"
+  <h4
+    className="progress-card__title mt-4 text-center "
   >
-    <h4
-      className="progress-card__title mt-3"
+    Join C0D3 now and start your software engineering journey!
+  </h4>
+  <div
+    className="mt-3"
+  >
+    Join us on
+    <a
+      className="progress-newuser__chatlink text-white"
+      href="https://discord.gg/c0d3"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      Join C0D3 now and start your software engineering journey!
-    </h4>
-    <div
-      className="mt-3"
-    >
-      Join us on
-      <a
-        className="progress-newuser__chatlink text-white"
-        href="https://discord.gg/c0d3"
-        rel="noopener noreferrer"
-        target="_blank"
+      <p
+        className="font-weight-bold d-inline"
       >
         Discord
-      </a>
-      to ask your questions.
-      <p>
-        Start by setting up your development environment and then follow the lessons in the course.
       </p>
-    </div>
+    </a>
+    to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+  </div>
+  <div
+    className="mt-4 d-flex flex-column"
+  >
     <a
       className="btn btn-light progress-card__button mt-2 text-primary"
       href="/docs/setup"
@@ -7361,10 +8076,38 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
 
 exports[`Storyshots Components/ProgressCard Progress 1`] = `
 <div
-  className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+  className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
 >
+  <h4
+    className="progress-card__title mt-3 text-center"
+  >
+    Keep up the great work!
+  </h4>
   <div
-    className="card-body"
+    className="d-block d-xl-none"
+  >
+    <div
+      className="bg-white my-3 rounded"
+    >
+      <div
+        className="progress-card__horizontal bg-primary d-flex rounded-left"
+        style={
+          Object {
+            "width": "40%",
+          }
+        }
+      >
+        <div
+          className="align-self-center px-1 ml-auto font-weight-bold"
+        >
+          40
+          %
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="d-none d-xl-flex justify-content-center"
   >
     <div
       className="progress-card__wrapper d-flex align-items-center"
@@ -7415,28 +8158,28 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
         </g>
       </svg>
     </div>
-    <h4
-      className="progress-card__title mt-3"
+  </div>
+  <div
+    className="mt-3"
+  >
+    Join us on
+    <a
+      className="progress-newuser__chatlink text-white"
+      href="https://discord.gg/c0d3"
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      Keep up the great work!
-    </h4>
-    <div
-      className="mt-3"
-    >
-      Join us on
-      <a
-        className="progress-newuser__chatlink text-white"
-        href="https://discord.gg/c0d3"
-        rel="noopener noreferrer"
-        target="_blank"
+      <p
+        className="font-weight-bold d-inline"
       >
         Discord
-      </a>
-      to ask your questions.
-      <p>
-        Start by setting up your development environment and then follow the lessons in the course.
       </p>
-    </div>
+    </a>
+    to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+  </div>
+  <div
+    className="mt-4 d-flex flex-column"
+  >
     <a
       className="btn btn-light progress-card__button mt-2 text-primary"
       href="/docs/setup"
@@ -8400,15 +9143,11 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -9441,15 +10180,11 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -10480,15 +11215,11 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -11519,15 +12250,11 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -12558,15 +13285,11 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         Preview
       </button>
       <textarea
+        className="textarea"
         data-testid="textbox"
         onChange={[Function]}
+        onMouseDown={[Function]}
         placeholder="Type something..."
-        style={
-          Object {
-            "padding": "1rem",
-            "width": "100%",
-          }
-        }
         value=""
       />
     </div>
@@ -12901,7 +13624,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-2 btn btn-success"
+        className="button  m-2 btn btn-outline-danger"
         disabled={false}
         type="button"
       >
@@ -12919,7 +13642,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-2 btn btn-info"
+        className="button active m-2 btn active btn-outline-warning"
         disabled={false}
         type="button"
       >
@@ -12937,7 +13660,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       onClick={[Function]}
     >
       <button
-        className="button m-2 btn btn-success"
+        className="button  m-2 btn btn-outline-warning"
         disabled={false}
         type="button"
       >
@@ -13445,80 +14168,94 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
 exports[`Storyshots Pages/Contributors Contributors 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -13681,91 +14418,100 @@ Array [
 exports[`Storyshots Pages/Curriculum Basic 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
   <div
     className="container-md"
   >
-    <img
-      className="arrow false position-fixed d-xl-none"
-      data-testid="arrow"
-      src="/assets/curriculum/icons/scroll-right.svg"
-    />
     <div
       className="row overflow-auto flex-nowrap parent-scroll"
       data-testid="parent-scroll"
@@ -13777,33 +14523,29 @@ Array [
           className="d-xl-none"
         >
           <div
-            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
           >
             <div
-              className="card-body"
+              className="mt-3"
             >
-              <h4
-                className="progress-card__title mt-3"
+              Join us on
+              <a
+                className="progress-newuser__chatlink text-white"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Join C0D3 now and start your software engineering journey!
-              </h4>
-              <div
-                className="mt-3"
-              >
-                Join us on
-                <a
-                  className="progress-newuser__chatlink text-white"
-                  href="https://discord.gg/c0d3"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <p
+                  className="font-weight-bold d-inline"
                 >
                   Discord
-                </a>
-                to ask your questions.
-                <p>
-                  Start by setting up your development environment and then follow the lessons in the course.
                 </p>
-              </div>
+              </a>
+              to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+            </div>
+            <div
+              className="mt-4 d-flex flex-column"
+            >
               <a
                 className="btn btn-light progress-card__button mt-2 text-primary"
                 href="/docs/setup"
@@ -13832,7 +14574,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -13895,7 +14637,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -13947,7 +14689,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14010,7 +14752,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14062,7 +14804,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14125,7 +14867,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14177,7 +14919,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14240,7 +14982,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14292,7 +15034,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14355,7 +15097,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14407,7 +15149,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14470,7 +15212,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14522,7 +15264,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14585,7 +15327,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14637,7 +15379,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14700,7 +15442,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14752,7 +15494,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14815,7 +15557,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14867,7 +15609,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -14930,7 +15672,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15017,33 +15759,29 @@ Array [
           className="d-none d-xl-block"
         >
           <div
-            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
           >
             <div
-              className="card-body"
+              className="mt-3"
             >
-              <h4
-                className="progress-card__title mt-3"
+              Join us on
+              <a
+                className="progress-newuser__chatlink text-white"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Join C0D3 now and start your software engineering journey!
-              </h4>
-              <div
-                className="mt-3"
-              >
-                Join us on
-                <a
-                  className="progress-newuser__chatlink text-white"
-                  href="https://discord.gg/c0d3"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <p
+                  className="font-weight-bold d-inline"
                 >
                   Discord
-                </a>
-                to ask your questions.
-                <p>
-                  Start by setting up your development environment and then follow the lessons in the course.
                 </p>
-              </div>
+              </a>
+              to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+            </div>
+            <div
+              className="mt-4 d-flex flex-column"
+            >
               <a
                 className="btn btn-light progress-card__button mt-2 text-primary"
                 href="/docs/setup"
@@ -15200,91 +15938,100 @@ Array [
 exports[`Storyshots Pages/Curriculum Completed Lessons 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
   <div
     className="container-md"
   >
-    <img
-      className="arrow false position-fixed d-xl-none"
-      data-testid="arrow"
-      src="/assets/curriculum/icons/scroll-right.svg"
-    />
     <div
       className="row overflow-auto flex-nowrap parent-scroll"
       data-testid="parent-scroll"
@@ -15296,33 +16043,29 @@ Array [
           className="d-xl-none"
         >
           <div
-            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
           >
             <div
-              className="card-body"
+              className="mt-3"
             >
-              <h4
-                className="progress-card__title mt-3"
+              Join us on
+              <a
+                className="progress-newuser__chatlink text-white"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Join C0D3 now and start your software engineering journey!
-              </h4>
-              <div
-                className="mt-3"
-              >
-                Join us on
-                <a
-                  className="progress-newuser__chatlink text-white"
-                  href="https://discord.gg/c0d3"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <p
+                  className="font-weight-bold d-inline"
                 >
                   Discord
-                </a>
-                to ask your questions.
-                <p>
-                  Start by setting up your development environment and then follow the lessons in the course.
                 </p>
-              </div>
+              </a>
+              to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+            </div>
+            <div
+              className="mt-4 d-flex flex-column"
+            >
               <a
                 className="btn btn-light progress-card__button mt-2 text-primary"
                 href="/docs/setup"
@@ -15351,7 +16094,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15414,7 +16157,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15466,7 +16209,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15529,7 +16272,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15581,7 +16324,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15644,7 +16387,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15696,7 +16439,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15759,7 +16502,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15811,7 +16554,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15874,7 +16617,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15926,7 +16669,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -15989,7 +16732,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16041,7 +16784,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16104,7 +16847,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16156,7 +16899,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16219,7 +16962,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16271,7 +17014,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16334,7 +17077,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16386,7 +17129,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16449,7 +17192,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16536,33 +17279,29 @@ Array [
           className="d-none d-xl-block"
         >
           <div
-            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
           >
             <div
-              className="card-body"
+              className="mt-3"
             >
-              <h4
-                className="progress-card__title mt-3"
+              Join us on
+              <a
+                className="progress-newuser__chatlink text-white"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Join C0D3 now and start your software engineering journey!
-              </h4>
-              <div
-                className="mt-3"
-              >
-                Join us on
-                <a
-                  className="progress-newuser__chatlink text-white"
-                  href="https://discord.gg/c0d3"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <p
+                  className="font-weight-bold d-inline"
                 >
                   Discord
-                </a>
-                to ask your questions.
-                <p>
-                  Start by setting up your development environment and then follow the lessons in the course.
                 </p>
-              </div>
+              </a>
+              to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+            </div>
+            <div
+              className="mt-4 d-flex flex-column"
+            >
               <a
                 className="btn btn-light progress-card__button mt-2 text-primary"
                 href="/docs/setup"
@@ -16719,91 +17458,100 @@ Array [
 exports[`Storyshots Pages/Curriculum With Alerts 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
   <div
     className="container-md"
   >
-    <img
-      className="arrow false position-fixed d-xl-none"
-      data-testid="arrow"
-      src="/assets/curriculum/icons/scroll-right.svg"
-    />
     <div
       className="row overflow-auto flex-nowrap parent-scroll"
       data-testid="parent-scroll"
@@ -16815,33 +17563,29 @@ Array [
           className="d-xl-none"
         >
           <div
-            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
           >
             <div
-              className="card-body"
+              className="mt-3"
             >
-              <h4
-                className="progress-card__title mt-3"
+              Join us on
+              <a
+                className="progress-newuser__chatlink text-white"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Join C0D3 now and start your software engineering journey!
-              </h4>
-              <div
-                className="mt-3"
-              >
-                Join us on
-                <a
-                  className="progress-newuser__chatlink text-white"
-                  href="https://discord.gg/c0d3"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <p
+                  className="font-weight-bold d-inline"
                 >
                   Discord
-                </a>
-                to ask your questions.
-                <p>
-                  Start by setting up your development environment and then follow the lessons in the course.
                 </p>
-              </div>
+              </a>
+              to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+            </div>
+            <div
+              className="mt-4 d-flex flex-column"
+            >
               <a
                 className="btn btn-light progress-card__button mt-2 text-primary"
                 href="/docs/setup"
@@ -16870,7 +17614,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16933,7 +17677,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/5"
+                    href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -16985,7 +17729,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17048,7 +17792,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/2"
+                    href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17100,7 +17844,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17163,7 +17907,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/1"
+                    href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17215,7 +17959,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17278,7 +18022,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/4"
+                    href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17330,7 +18074,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17393,7 +18137,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/24"
+                    href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17445,7 +18189,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17508,7 +18252,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/3"
+                    href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17560,7 +18304,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17623,7 +18367,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/29"
+                    href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17675,7 +18419,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17738,7 +18482,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/28"
+                    href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17790,7 +18534,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17853,7 +18597,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/25"
+                    href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17905,7 +18649,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -17968,7 +18712,7 @@ Array [
                 >
                   <a
                     className=""
-                    href="/curriculum/27"
+                    href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -18055,33 +18799,29 @@ Array [
           className="d-none d-xl-block"
         >
           <div
-            className="progress-card__container d-flex card shadow-sm mt-3 bg-primary text-white p-2 border-0"
+            className="progress-card__container card shadow-sm mt-3 bg-primary text-white px-3 px-xl-4 py-2 border-0"
           >
             <div
-              className="card-body"
+              className="mt-3"
             >
-              <h4
-                className="progress-card__title mt-3"
+              Join us on
+              <a
+                className="progress-newuser__chatlink text-white"
+                href="https://discord.gg/c0d3"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Join C0D3 now and start your software engineering journey!
-              </h4>
-              <div
-                className="mt-3"
-              >
-                Join us on
-                <a
-                  className="progress-newuser__chatlink text-white"
-                  href="https://discord.gg/c0d3"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <p
+                  className="font-weight-bold d-inline"
                 >
                   Discord
-                </a>
-                to ask your questions.
-                <p>
-                  Start by setting up your development environment and then follow the lessons in the course.
                 </p>
-              </div>
+              </a>
+              to ask your questions. Start by setting up your development environment and then follow the lessons in the course.
+            </div>
+            <div
+              className="mt-4 d-flex flex-column"
+            >
               <a
                 className="btn btn-light progress-card__button mt-2 text-primary"
                 href="/docs/setup"
@@ -18238,80 +18978,94 @@ Array [
 exports[`Storyshots Pages/ForgotPassword Forgot Password 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -18350,6 +19104,7 @@ Array [
               className="form-group"
             >
               <input
+                autoFocus={true}
                 className="form-control form-control-lg font-weight-light mb-3 "
                 data-testid="userOrEmail"
                 name="userOrEmail"
@@ -18877,164 +19632,76 @@ exports[`Storyshots Pages/Lesson With Alerts 1`] = `
 `;
 
 exports[`Storyshots Pages/Login Login 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
-      className="container"
+      className="card-body text-center pt-5 pb-5"
     >
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
+      >
+        Login
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <div
+          className="form-group"
+        >
+          <div
+            className="mt-3"
+          >
+            <input
+              autoFocus={true}
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="username"
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              value=""
+            />
+            <input
+              className="form-control form-control-lg font-weight-light mb-3 "
+              data-testid="password"
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+            <button
+              className="btn btn-primary btn-lg btn-block mb-3"
+              data-testid="submit"
+              type="submit"
+            >
+              Login to Your Account
+            </button>
+          </div>
+        </div>
+      </form>
       <a
-        className="navbar-brand text-primary font-weight-bold"
-        href="/"
+        className=""
+        href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        C0D3
+        Forgot your password?
       </a>
-      <div
-        id="navbarNav"
-      >
-        <div
-          className="navbar-nav collapse navbar-collapse"
-        >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
-        </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Signup
-        </a>
-      </div>
     </div>
-  </nav>,
-  <div
-    className="container-md"
-  >
-    <div
-      className="row mt-5"
-    >
-      <div
-        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-      >
-        <div
-          className="card-body text-center pt-5 pb-5"
-        >
-          <h1
-            className="card-title h2 font-weight-bold mb-5"
-          >
-            Login
-          </h1>
-          <p
-            className="card-text"
-          />
-          <form
-            action="#"
-            data-testid="form"
-            onReset={[Function]}
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-group"
-            >
-              <div
-                className="mt-3"
-              >
-                <input
-                  className="form-control form-control-lg font-weight-light mb-3 "
-                  data-testid="username"
-                  name="username"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  placeholder="Username"
-                  value=""
-                />
-                <input
-                  className="form-control form-control-lg font-weight-light mb-3 "
-                  data-testid="password"
-                  name="password"
-                  onBlur={[Function]}
-                  onChange={[Function]}
-                  placeholder="Password"
-                  type="password"
-                  value=""
-                />
-                <button
-                  className="btn btn-primary btn-lg btn-block mb-3"
-                  data-testid="submit"
-                  type="submit"
-                >
-                  Login to Your Account
-                </button>
-              </div>
-            </div>
-          </form>
-          <a
-            className=""
-            href="/forgotpassword"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Forgot your password?
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Pages/Login Login Basic 1`] = `
@@ -19068,6 +19735,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
             className="mt-3"
           >
             <input
+              autoFocus={true}
               className="form-control form-control-lg font-weight-light mb-3 "
               data-testid="username"
               name="username"
@@ -19152,6 +19820,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
             className="mt-3"
           >
             <input
+              autoFocus={true}
               className="form-control form-control-lg font-weight-light mb-3 "
               data-testid="username"
               name="username"
@@ -19196,80 +19865,94 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
 exports[`Storyshots Pages/ResetPassword Reset Password 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -19308,6 +19991,7 @@ Array [
               className="form-group"
             >
               <input
+                autoFocus={true}
                 className="form-control form-control-lg font-weight-light mb-3 "
                 data-testid="password"
                 name="password"
@@ -19349,184 +20033,96 @@ Array [
 `;
 
 exports[`Storyshots Pages/Signup Signup 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+<div
+  className="row mt-5"
+>
+  <div
+    className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
   >
     <div
-      className="container"
+      className="card-body text-center pt-5 pb-5"
     >
-      <a
-        className="navbar-brand text-primary font-weight-bold"
-        href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
+      <h1
+        className="card-title h2 font-weight-bold mb-5"
       >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
+        Create Account
+      </h1>
+      <p
+        className="card-text"
+      />
+      <form
+        action="#"
+        data-testid="form"
+        onReset={[Function]}
+        onSubmit={[Function]}
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="form-group "
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
+          <input
+            autoFocus={true}
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="email"
+            name="email"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Email address"
+            type="email"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Username"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="firstName"
+            name="firstName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="First name"
+            value=""
+          />
+          <input
+            className="form-control form-control-lg font-weight-light mb-3 "
+            data-testid="lastName"
+            name="lastName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Last name"
+            value=""
+          />
+          <button
+            className="btn btn-primary btn-lg btn-block mb-3"
+            data-testid="submit"
+            type="submit"
           >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+            Create Account
+          </button>
         </div>
-      </div>
-      <div>
+      </form>
+      <p
+        className="text-black-50"
+      >
+        Already have an account?
+         
         <a
-          className="btn btn-secondary border mr-3"
+          className="text-primary"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           Login
         </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Signup
-        </a>
-      </div>
+      </p>
     </div>
-  </nav>,
-  <div
-    className="container-md"
-  >
-    <div
-      className="row mt-5"
-    >
-      <div
-        className="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
-      >
-        <div
-          className="card-body text-center pt-5 pb-5"
-        >
-          <h1
-            className="card-title h2 font-weight-bold mb-5"
-          >
-            Create Account
-          </h1>
-          <p
-            className="card-text"
-          />
-          <form
-            action="#"
-            data-testid="form"
-            onReset={[Function]}
-            onSubmit={[Function]}
-          >
-            <div
-              className="form-group "
-            >
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="email"
-                name="email"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Email address"
-                type="email"
-                value=""
-              />
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="username"
-                name="username"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Username"
-                value=""
-              />
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="firstName"
-                name="firstName"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="First name"
-                value=""
-              />
-              <input
-                className="form-control form-control-lg font-weight-light mb-3 "
-                data-testid="lastName"
-                name="lastName"
-                onBlur={[Function]}
-                onChange={[Function]}
-                placeholder="Last name"
-                value=""
-              />
-              <button
-                className="btn btn-primary btn-lg btn-block mb-3"
-                data-testid="submit"
-                type="submit"
-              >
-                Create Account
-              </button>
-            </div>
-          </form>
-          <p
-            className="text-black-50"
-          >
-            Already have an account?
-             
-            <a
-              className="text-primary"
-              href="/login"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Login
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
+  </div>
+</div>
 `;
 
 exports[`Storyshots Pages/Signup Signup Basic 1`] = `
@@ -19557,6 +20153,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
           className="form-group "
         >
           <input
+            autoFocus={true}
             className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="email"
             name="email"
@@ -19659,6 +20256,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
           className="form-group "
         >
           <input
+            autoFocus={true}
             className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="email"
             name="email"
@@ -19761,6 +20359,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
           className="form-group "
         >
           <input
+            autoFocus={true}
             className="form-control form-control-lg font-weight-light mb-3 "
             data-testid="email"
             name="email"
@@ -20259,80 +20858,94 @@ Array [
 exports[`Storyshots mdx/BlockQuote Quote 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -22794,80 +23407,94 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
 exports[`Storyshots mdx/Layout With Lesson 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,
@@ -22922,7 +23549,7 @@ Array [
             </a>
             <a
               className="btn border-right rounded-0 px-4 py-3"
-              href="/curriculum/1"
+              href="/curriculum/undefined"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
@@ -22983,80 +23610,94 @@ Array [
 exports[`Storyshots mdx/Layout With Text 1`] = `
 Array [
   <nav
-    className="navbar navbar-expand-lg navbar-light justify-content-between bg-white"
+    className="navbar navbar-expand-lg navbar-light bg-white"
   >
     <div
       className="container"
     >
       <a
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        C0D3
-      </a>
-      <div
-        id="navbarNav"
       >
         <div
-          className="navbar-nav collapse navbar-collapse"
+          className="navbar-brand text-primary font-weight-bold"
         >
-          <div
-            className="navbar-nav collapse navbar-collapse"
-          >
-            <a
-              className="nav-item nav-link"
-              href="/curriculum"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Curriculum
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://github.com/garageScript/c0d3-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Repo
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="/docs/learn"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              Learn
-            </a>
-            <a
-              className="nav-item nav-link"
-              href="https://discord.gg/c0d3"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Community
-            </a>
-          </div>
+          C0D3
         </div>
-      </div>
-      <div>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
         >
-          Login
-        </a>
-        <a
-          className="btn btn-secondary border mr-3"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
         >
-          Signup
-        </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
       </div>
     </div>
   </nav>,

@@ -76,8 +76,9 @@ export type Lesson = {
   githubUrl?: Maybe<Scalars['String']>
   videoUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
   title: Scalars['String']
-  challenges?: Maybe<Array<Maybe<Challenge>>>
+  challenges: Array<Challenge>
   users?: Maybe<Array<Maybe<User>>>
   currentUser?: Maybe<User>
   chatUrl?: Maybe<Scalars['String']>
@@ -98,8 +99,8 @@ export type Mutation = {
   acceptSubmission?: Maybe<Submission>
   rejectSubmission?: Maybe<Submission>
   addComment?: Maybe<Comment>
-  createLesson?: Maybe<Array<Maybe<Lesson>>>
-  updateLesson?: Maybe<Array<Maybe<Lesson>>>
+  createLesson: Array<Lesson>
+  updateLesson: Array<Lesson>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
 }
@@ -182,6 +183,7 @@ export type MutationCreateLessonArgs = {
   title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
 }
 
 export type MutationUpdateLessonArgs = {
@@ -193,6 +195,7 @@ export type MutationUpdateLessonArgs = {
   title: Scalars['String']
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
 }
 
 export type MutationCreateChallengeArgs = {
@@ -315,9 +318,7 @@ export type UserLesson = {
   id: Scalars['Int']
   userId?: Maybe<Scalars['String']>
   lessonId: Scalars['Int']
-  isPassed?: Maybe<Scalars['String']>
-  isTeaching?: Maybe<Scalars['String']>
-  isEnrolled?: Maybe<Scalars['String']>
+  passedAt?: Maybe<Scalars['String']>
   starsReceived?: Maybe<Array<Maybe<Star>>>
   starGiven?: Maybe<Scalars['String']>
 }
@@ -328,13 +329,14 @@ export type AcceptSubmissionMutationVariables = Exact<{
   lessonId: Scalars['Int']
 }>
 
-export type AcceptSubmissionMutation = { __typename?: 'Mutation' } & {
-  acceptSubmission?: Maybe<
-    { __typename?: 'Submission' } & Pick<
-      Submission,
-      'id' | 'comment' | 'status'
-    >
-  >
+export type AcceptSubmissionMutation = {
+  __typename?: 'Mutation'
+  acceptSubmission?: Maybe<{
+    __typename?: 'Submission'
+    id: number
+    comment?: Maybe<string>
+    status: SubmissionStatus
+  }>
 }
 
 export type AddAlertMutationVariables = Exact<{
@@ -344,15 +346,18 @@ export type AddAlertMutationVariables = Exact<{
   urlCaption?: Maybe<Scalars['String']>
 }>
 
-export type AddAlertMutation = { __typename?: 'Mutation' } & {
+export type AddAlertMutation = {
+  __typename?: 'Mutation'
   addAlert?: Maybe<
     Array<
-      Maybe<
-        { __typename?: 'Alert' } & Pick<
-          Alert,
-          'id' | 'text' | 'type' | 'url' | 'urlCaption'
-        >
-      >
+      Maybe<{
+        __typename?: 'Alert'
+        id: number
+        text?: Maybe<string>
+        type?: Maybe<string>
+        url?: Maybe<string>
+        urlCaption?: Maybe<string>
+      }>
     >
   >
 }
@@ -364,21 +369,26 @@ export type AddCommentMutationVariables = Exact<{
   fileName?: Maybe<Scalars['String']>
 }>
 
-export type AddCommentMutation = { __typename?: 'Mutation' } & {
-  addComment?: Maybe<{ __typename?: 'Comment' } & Pick<Comment, 'id'>>
+export type AddCommentMutation = {
+  __typename?: 'Mutation'
+  addComment?: Maybe<{ __typename?: 'Comment'; id: number }>
 }
 
 export type UsersQueryVariables = Exact<{ [key: string]: never }>
 
-export type UsersQuery = { __typename?: 'Query' } & {
+export type UsersQuery = {
+  __typename?: 'Query'
   allUsers?: Maybe<
     Array<
-      Maybe<
-        { __typename?: 'User' } & Pick<
-          User,
-          'id' | 'username' | 'name' | 'isAdmin' | 'email' | 'cliToken'
-        >
-      >
+      Maybe<{
+        __typename?: 'User'
+        id: number
+        username: string
+        name: string
+        isAdmin: boolean
+        email: string
+        cliToken?: Maybe<string>
+      }>
     >
   >
 }
@@ -388,10 +398,12 @@ export type ChangeAdminRightsMutationVariables = Exact<{
   status: Scalars['Boolean']
 }>
 
-export type ChangeAdminRightsMutation = { __typename?: 'Mutation' } & {
-  changeAdminRights?: Maybe<
-    { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
-  >
+export type ChangeAdminRightsMutation = {
+  __typename?: 'Mutation'
+  changeAdminRights?: Maybe<{
+    __typename?: 'SuccessResponse'
+    success?: Maybe<boolean>
+  }>
 }
 
 export type CreateChallengeMutationVariables = Exact<{
@@ -401,33 +413,29 @@ export type CreateChallengeMutationVariables = Exact<{
   title: Scalars['String']
 }>
 
-export type CreateChallengeMutation = { __typename?: 'Mutation' } & {
+export type CreateChallengeMutation = {
+  __typename?: 'Mutation'
   createChallenge?: Maybe<
     Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
+      Maybe<{
+        __typename?: 'Lesson'
+        id: number
+        docUrl?: Maybe<string>
+        githubUrl?: Maybe<string>
+        videoUrl?: Maybe<string>
+        chatUrl?: Maybe<string>
+        order: number
+        description: string
+        title: string
+        challenges: Array<{
+          __typename?: 'Challenge'
+          id: number
+          description: string
+          lessonId: number
+          title: string
+          order: number
+        }>
+      }>
     >
   >
 }
@@ -438,39 +446,33 @@ export type CreateLessonMutationVariables = Exact<{
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
   description: Scalars['String']
   title: Scalars['String']
 }>
 
-export type CreateLessonMutation = { __typename?: 'Mutation' } & {
-  createLesson?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
-    >
-  >
+export type CreateLessonMutation = {
+  __typename?: 'Mutation'
+  createLesson: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    chatUrl?: Maybe<string>
+    order: number
+    slug: string
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  }>
 }
 
 export type CreateSubmissionMutationVariables = Exact<{
@@ -480,109 +482,107 @@ export type CreateSubmissionMutationVariables = Exact<{
   diff: Scalars['String']
 }>
 
-export type CreateSubmissionMutation = { __typename?: 'Mutation' } & {
-  createSubmission?: Maybe<
-    { __typename?: 'Submission' } & Pick<Submission, 'id' | 'diff'>
-  >
+export type CreateSubmissionMutation = {
+  __typename?: 'Mutation'
+  createSubmission?: Maybe<{
+    __typename?: 'Submission'
+    id: number
+    diff?: Maybe<string>
+  }>
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
-export type GetAppQuery = { __typename?: 'Query' } & {
-  lessons: Array<
-    { __typename?: 'Lesson' } & Pick<
-      Lesson,
-      | 'id'
-      | 'title'
-      | 'description'
-      | 'docUrl'
-      | 'githubUrl'
-      | 'videoUrl'
-      | 'order'
-      | 'chatUrl'
-    > & {
-        challenges?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'title' | 'description' | 'order'
-              >
-            >
-          >
-        >
-      }
-  >
-  session: { __typename?: 'Session' } & {
-    user?: Maybe<
-      { __typename?: 'User' } & Pick<
-        User,
-        'id' | 'username' | 'name' | 'isAdmin'
-      >
-    >
+export type GetAppQuery = {
+  __typename?: 'Query'
+  lessons: Array<{
+    __typename?: 'Lesson'
+    id: number
+    title: string
+    description: string
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    order: number
+    slug: string
+    chatUrl?: Maybe<string>
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      title: string
+      description: string
+      order: number
+    }>
+  }>
+  session: {
+    __typename?: 'Session'
+    user?: Maybe<{
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+      isAdmin: boolean
+    }>
     submissions?: Maybe<
-      Array<
-        { __typename?: 'Submission' } & Pick<
-          Submission,
-          | 'id'
-          | 'status'
-          | 'mrUrl'
-          | 'diff'
-          | 'viewCount'
-          | 'comment'
-          | 'order'
-          | 'challengeId'
-          | 'lessonId'
-          | 'createdAt'
-          | 'updatedAt'
-        > & {
-            reviewer?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-            >
-            user: { __typename?: 'User' } & Pick<User, 'id'>
-            comments?: Maybe<
-              Array<
-                { __typename?: 'Comment' } & Pick<
-                  Comment,
-                  | 'content'
-                  | 'submissionId'
-                  | 'createdAt'
-                  | 'authorId'
-                  | 'line'
-                  | 'fileName'
-                > & {
-                    author?: Maybe<
-                      { __typename?: 'User' } & Pick<User, 'username' | 'name'>
-                    >
-                  }
-              >
-            >
-          }
-      >
+      Array<{
+        __typename?: 'Submission'
+        id: number
+        status: SubmissionStatus
+        mrUrl?: Maybe<string>
+        diff?: Maybe<string>
+        viewCount?: Maybe<number>
+        comment?: Maybe<string>
+        order?: Maybe<number>
+        challengeId: number
+        lessonId: number
+        createdAt?: Maybe<string>
+        updatedAt: string
+        reviewer?: Maybe<{ __typename?: 'User'; id: number; username: string }>
+        user: { __typename?: 'User'; id: number }
+        comments?: Maybe<
+          Array<{
+            __typename?: 'Comment'
+            content: string
+            submissionId: number
+            createdAt: string
+            authorId: number
+            line?: Maybe<number>
+            fileName?: Maybe<string>
+            author?: Maybe<{
+              __typename?: 'User'
+              username: string
+              name: string
+            }>
+          }>
+        >
+      }>
     >
-    lessonStatus: Array<
-      { __typename?: 'UserLesson' } & Pick<
-        UserLesson,
-        'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
-      >
-    >
+    lessonStatus: Array<{
+      __typename?: 'UserLesson'
+      lessonId: number
+      passedAt?: Maybe<string>
+      starGiven?: Maybe<string>
+    }>
   }
-  alerts: Array<
-    { __typename?: 'Alert' } & Pick<
-      Alert,
-      'id' | 'text' | 'type' | 'url' | 'urlCaption'
-    >
-  >
+  alerts: Array<{
+    __typename?: 'Alert'
+    id: number
+    text?: Maybe<string>
+    type?: Maybe<string>
+    url?: Maybe<string>
+    urlCaption?: Maybe<string>
+  }>
 }
 
 export type LessonMentorsQueryVariables = Exact<{
   lessonId: Scalars['Int']
 }>
 
-export type LessonMentorsQuery = { __typename?: 'Query' } & {
+export type LessonMentorsQuery = {
+  __typename?: 'Query'
   getLessonMentors?: Maybe<
     Array<
-      Maybe<{ __typename?: 'User' } & Pick<User, 'username' | 'name' | 'id'>>
+      Maybe<{ __typename?: 'User'; username: string; name: string; id: number }>
     >
   >
 }
@@ -592,85 +592,83 @@ export type GetPreviousSubmissionsQueryVariables = Exact<{
   userId: Scalars['Int']
 }>
 
-export type GetPreviousSubmissionsQuery = { __typename?: 'Query' } & {
+export type GetPreviousSubmissionsQuery = {
+  __typename?: 'Query'
   getPreviousSubmissions?: Maybe<
-    Array<
-      { __typename?: 'Submission' } & Pick<
-        Submission,
-        | 'id'
-        | 'status'
-        | 'diff'
-        | 'comment'
-        | 'challengeId'
-        | 'lessonId'
-        | 'createdAt'
-        | 'updatedAt'
-      > & {
-          challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-          user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-          reviewer?: Maybe<
-            { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
-          >
-          comments?: Maybe<
-            Array<
-              { __typename?: 'Comment' } & Pick<
-                Comment,
-                | 'content'
-                | 'submissionId'
-                | 'createdAt'
-                | 'authorId'
-                | 'line'
-                | 'fileName'
-              > & {
-                  author?: Maybe<
-                    { __typename?: 'User' } & Pick<User, 'username' | 'name'>
-                  >
-                }
-            >
-          >
-        }
-    >
+    Array<{
+      __typename?: 'Submission'
+      id: number
+      status: SubmissionStatus
+      diff?: Maybe<string>
+      comment?: Maybe<string>
+      challengeId: number
+      lessonId: number
+      createdAt?: Maybe<string>
+      updatedAt: string
+      challenge: { __typename?: 'Challenge'; title: string }
+      user: { __typename?: 'User'; id: number; username: string }
+      reviewer?: Maybe<{
+        __typename?: 'User'
+        id: number
+        username: string
+        name: string
+      }>
+      comments?: Maybe<
+        Array<{
+          __typename?: 'Comment'
+          content: string
+          submissionId: number
+          createdAt: string
+          authorId: number
+          line?: Maybe<number>
+          fileName?: Maybe<string>
+          author?: Maybe<{
+            __typename?: 'User'
+            username: string
+            name: string
+          }>
+        }>
+      >
+    }>
   >
 }
 
 export type GetSessionQueryVariables = Exact<{ [key: string]: never }>
 
-export type GetSessionQuery = { __typename?: 'Query' } & {
-  session: { __typename?: 'Session' } & {
-    user?: Maybe<
-      { __typename?: 'User' } & Pick<
-        User,
-        'id' | 'username' | 'name' | 'isAdmin'
-      >
-    >
+export type GetSessionQuery = {
+  __typename?: 'Query'
+  session: {
+    __typename?: 'Session'
+    user?: Maybe<{
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+      isAdmin: boolean
+    }>
     submissions?: Maybe<
-      Array<
-        { __typename?: 'Submission' } & Pick<
-          Submission,
-          | 'id'
-          | 'status'
-          | 'mrUrl'
-          | 'diff'
-          | 'viewCount'
-          | 'comment'
-          | 'order'
-          | 'challengeId'
-          | 'lessonId'
-          | 'createdAt'
-          | 'updatedAt'
-        > & {
-            reviewer?: Maybe<
-              { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-            >
-          }
-      >
+      Array<{
+        __typename?: 'Submission'
+        id: number
+        status: SubmissionStatus
+        mrUrl?: Maybe<string>
+        diff?: Maybe<string>
+        viewCount?: Maybe<number>
+        comment?: Maybe<string>
+        order?: Maybe<number>
+        challengeId: number
+        lessonId: number
+        createdAt?: Maybe<string>
+        updatedAt: string
+        reviewer?: Maybe<{ __typename?: 'User'; id: number; username: string }>
+      }>
     >
-    lessonStatus: Array<
-      { __typename?: 'UserLesson' } & Pick<
-        UserLesson,
-        'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled' | 'starGiven'
-      >
-    >
+    lessonStatus: Array<{
+      __typename?: 'UserLesson'
+      lessonId: number
+      passedAt?: Maybe<string>
+      starGiven?: Maybe<string>
+    }>
   }
 }
 
@@ -678,44 +676,44 @@ export type SubmissionsQueryVariables = Exact<{
   lessonId: Scalars['Int']
 }>
 
-export type SubmissionsQuery = { __typename?: 'Query' } & {
+export type SubmissionsQuery = {
+  __typename?: 'Query'
   submissions?: Maybe<
-    Array<
-      { __typename?: 'Submission' } & Pick<
-        Submission,
-        | 'id'
-        | 'status'
-        | 'diff'
-        | 'comment'
-        | 'challengeId'
-        | 'lessonId'
-        | 'createdAt'
-        | 'updatedAt'
-      > & {
-          challenge: { __typename?: 'Challenge' } & Pick<Challenge, 'title'>
-          user: { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-          reviewer?: Maybe<
-            { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
-          >
-          comments?: Maybe<
-            Array<
-              { __typename?: 'Comment' } & Pick<
-                Comment,
-                | 'content'
-                | 'submissionId'
-                | 'createdAt'
-                | 'authorId'
-                | 'line'
-                | 'fileName'
-              > & {
-                  author?: Maybe<
-                    { __typename?: 'User' } & Pick<User, 'username' | 'name'>
-                  >
-                }
-            >
-          >
-        }
-    >
+    Array<{
+      __typename?: 'Submission'
+      id: number
+      status: SubmissionStatus
+      diff?: Maybe<string>
+      comment?: Maybe<string>
+      challengeId: number
+      lessonId: number
+      createdAt?: Maybe<string>
+      updatedAt: string
+      challenge: { __typename?: 'Challenge'; title: string }
+      user: { __typename?: 'User'; id: number; username: string }
+      reviewer?: Maybe<{
+        __typename?: 'User'
+        id: number
+        username: string
+        name: string
+      }>
+      comments?: Maybe<
+        Array<{
+          __typename?: 'Comment'
+          content: string
+          submissionId: number
+          createdAt: string
+          authorId: number
+          line?: Maybe<number>
+          fileName?: Maybe<string>
+          author?: Maybe<{
+            __typename?: 'User'
+            username: string
+            name: string
+          }>
+        }>
+      >
+    }>
   >
 }
 
@@ -724,24 +722,27 @@ export type LoginMutationVariables = Exact<{
   password: Scalars['String']
 }>
 
-export type LoginMutation = { __typename?: 'Mutation' } & {
-  login?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<
-      AuthResponse,
-      'success' | 'username' | 'cliToken' | 'error'
-    >
-  >
+export type LoginMutation = {
+  __typename?: 'Mutation'
+  login?: Maybe<{
+    __typename?: 'AuthResponse'
+    success?: Maybe<boolean>
+    username?: Maybe<string>
+    cliToken?: Maybe<string>
+    error?: Maybe<string>
+  }>
 }
 
 export type LogoutMutationVariables = Exact<{ [key: string]: never }>
 
-export type LogoutMutation = { __typename?: 'Mutation' } & {
-  logout?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<
-      AuthResponse,
-      'success' | 'username' | 'error'
-    >
-  >
+export type LogoutMutation = {
+  __typename?: 'Mutation'
+  logout?: Maybe<{
+    __typename?: 'AuthResponse'
+    success?: Maybe<boolean>
+    username?: Maybe<string>
+    error?: Maybe<string>
+  }>
 }
 
 export type RejectSubmissionMutationVariables = Exact<{
@@ -750,34 +751,35 @@ export type RejectSubmissionMutationVariables = Exact<{
   lessonId: Scalars['Int']
 }>
 
-export type RejectSubmissionMutation = { __typename?: 'Mutation' } & {
-  rejectSubmission?: Maybe<
-    { __typename?: 'Submission' } & Pick<
-      Submission,
-      'id' | 'comment' | 'status'
-    >
-  >
+export type RejectSubmissionMutation = {
+  __typename?: 'Mutation'
+  rejectSubmission?: Maybe<{
+    __typename?: 'Submission'
+    id: number
+    comment?: Maybe<string>
+    status: SubmissionStatus
+  }>
 }
 
 export type RemoveAlertMutationVariables = Exact<{
   id: Scalars['Int']
 }>
 
-export type RemoveAlertMutation = { __typename?: 'Mutation' } & {
-  removeAlert?: Maybe<
-    { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
-  >
+export type RemoveAlertMutation = {
+  __typename?: 'Mutation'
+  removeAlert?: Maybe<{
+    __typename?: 'SuccessResponse'
+    success?: Maybe<boolean>
+  }>
 }
 
 export type ReqPwResetMutationVariables = Exact<{
   userOrEmail: Scalars['String']
 }>
 
-export type ReqPwResetMutation = { __typename?: 'Mutation' } & {
-  reqPwReset: { __typename?: 'SuccessResponse' } & Pick<
-    SuccessResponse,
-    'success'
-  >
+export type ReqPwResetMutation = {
+  __typename?: 'Mutation'
+  reqPwReset: { __typename?: 'SuccessResponse'; success?: Maybe<boolean> }
 }
 
 export type SetStarMutationVariables = Exact<{
@@ -786,8 +788,9 @@ export type SetStarMutationVariables = Exact<{
   comment?: Maybe<Scalars['String']>
 }>
 
-export type SetStarMutation = { __typename?: 'Mutation' } & {
-  setStar: { __typename?: 'SuccessResponse' } & Pick<SuccessResponse, 'success'>
+export type SetStarMutation = {
+  __typename?: 'Mutation'
+  setStar: { __typename?: 'SuccessResponse'; success?: Maybe<boolean> }
 }
 
 export type SignupMutationVariables = Exact<{
@@ -797,13 +800,15 @@ export type SignupMutationVariables = Exact<{
   username: Scalars['String']
 }>
 
-export type SignupMutation = { __typename?: 'Mutation' } & {
-  signup?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<
-      AuthResponse,
-      'success' | 'username' | 'error' | 'cliToken'
-    >
-  >
+export type SignupMutation = {
+  __typename?: 'Mutation'
+  signup?: Maybe<{
+    __typename?: 'AuthResponse'
+    success?: Maybe<boolean>
+    username?: Maybe<string>
+    error?: Maybe<string>
+    cliToken?: Maybe<string>
+  }>
 }
 
 export type UpdateChallengeMutationVariables = Exact<{
@@ -814,33 +819,29 @@ export type UpdateChallengeMutationVariables = Exact<{
   id: Scalars['Int']
 }>
 
-export type UpdateChallengeMutation = { __typename?: 'Mutation' } & {
+export type UpdateChallengeMutation = {
+  __typename?: 'Mutation'
   updateChallenge?: Maybe<
     Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
+      Maybe<{
+        __typename?: 'Lesson'
+        id: number
+        docUrl?: Maybe<string>
+        githubUrl?: Maybe<string>
+        videoUrl?: Maybe<string>
+        chatUrl?: Maybe<string>
+        order: number
+        description: string
+        title: string
+        challenges: Array<{
+          __typename?: 'Challenge'
+          id: number
+          description: string
+          lessonId: number
+          title: string
+          order: number
+        }>
+      }>
     >
   >
 }
@@ -852,39 +853,33 @@ export type UpdateLessonMutationVariables = Exact<{
   videoUrl?: Maybe<Scalars['String']>
   chatUrl?: Maybe<Scalars['String']>
   order: Scalars['Int']
+  slug: Scalars['String']
   description: Scalars['String']
   title: Scalars['String']
 }>
 
-export type UpdateLessonMutation = { __typename?: 'Mutation' } & {
-  updateLesson?: Maybe<
-    Array<
-      Maybe<
-        { __typename?: 'Lesson' } & Pick<
-          Lesson,
-          | 'id'
-          | 'docUrl'
-          | 'githubUrl'
-          | 'videoUrl'
-          | 'chatUrl'
-          | 'order'
-          | 'description'
-          | 'title'
-        > & {
-            challenges?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Challenge' } & Pick<
-                    Challenge,
-                    'id' | 'description' | 'lessonId' | 'title' | 'order'
-                  >
-                >
-              >
-            >
-          }
-      >
-    >
-  >
+export type UpdateLessonMutation = {
+  __typename?: 'Mutation'
+  updateLesson: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    chatUrl?: Maybe<string>
+    order: number
+    slug: string
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  }>
 }
 
 export type ChangePwMutationVariables = Exact<{
@@ -892,115 +887,87 @@ export type ChangePwMutationVariables = Exact<{
   password: Scalars['String']
 }>
 
-export type ChangePwMutation = { __typename?: 'Mutation' } & {
-  changePw?: Maybe<
-    { __typename?: 'AuthResponse' } & Pick<AuthResponse, 'success'>
-  >
+export type ChangePwMutation = {
+  __typename?: 'Mutation'
+  changePw?: Maybe<{ __typename?: 'AuthResponse'; success?: Maybe<boolean> }>
 }
 
 export type UserInfoQueryVariables = Exact<{
   username: Scalars['String']
 }>
 
-export type UserInfoQuery = { __typename?: 'Query' } & {
-  lessons: Array<
-    { __typename?: 'Lesson' } & Pick<
-      Lesson,
-      | 'id'
-      | 'title'
-      | 'description'
-      | 'docUrl'
-      | 'githubUrl'
-      | 'videoUrl'
-      | 'order'
-      | 'chatUrl'
-    > & {
-        challenges?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'Challenge' } & Pick<
-                Challenge,
-                'id' | 'title' | 'description' | 'order'
-              >
-            >
-          >
-        >
-      }
-  >
-  userInfo?: Maybe<
-    { __typename?: 'Session' } & {
-      user?: Maybe<
-        { __typename?: 'User' } & Pick<User, 'id' | 'username' | 'name'>
-      >
-      submissions?: Maybe<
+export type UserInfoQuery = {
+  __typename?: 'Query'
+  lessons: Array<{
+    __typename?: 'Lesson'
+    id: number
+    title: string
+    description: string
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    order: number
+    chatUrl?: Maybe<string>
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      title: string
+      description: string
+      order: number
+    }>
+  }>
+  userInfo?: Maybe<{
+    __typename?: 'Session'
+    user?: Maybe<{
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+    }>
+    submissions?: Maybe<
+      Array<{
+        __typename?: 'Submission'
+        id: number
+        status: SubmissionStatus
+        mrUrl?: Maybe<string>
+        diff?: Maybe<string>
+        viewCount?: Maybe<number>
+        comment?: Maybe<string>
+        order?: Maybe<number>
+        challengeId: number
+        lessonId: number
+        createdAt?: Maybe<string>
+        updatedAt: string
+        reviewer?: Maybe<{ __typename?: 'User'; id: number; username: string }>
+      }>
+    >
+    lessonStatus: Array<{
+      __typename?: 'UserLesson'
+      lessonId: number
+      passedAt?: Maybe<string>
+      starsReceived?: Maybe<
         Array<
-          { __typename?: 'Submission' } & Pick<
-            Submission,
-            | 'id'
-            | 'status'
-            | 'mrUrl'
-            | 'diff'
-            | 'viewCount'
-            | 'comment'
-            | 'order'
-            | 'challengeId'
-            | 'lessonId'
-            | 'createdAt'
-            | 'updatedAt'
-          > & {
-              reviewer?: Maybe<
-                { __typename?: 'User' } & Pick<User, 'id' | 'username'>
-              >
-            }
+          Maybe<{
+            __typename?: 'Star'
+            lessonId: number
+            comment?: Maybe<string>
+            student: { __typename?: 'User'; username: string; name: string }
+            lesson: { __typename?: 'Lesson'; title: string; order: number }
+          }>
         >
       >
-      lessonStatus: Array<
-        { __typename?: 'UserLesson' } & Pick<
-          UserLesson,
-          'lessonId' | 'isPassed' | 'isTeaching' | 'isEnrolled'
-        > & {
-            starsReceived?: Maybe<
-              Array<
-                Maybe<
-                  { __typename?: 'Star' } & Pick<
-                    Star,
-                    'lessonId' | 'comment'
-                  > & {
-                      student: { __typename?: 'User' } & Pick<
-                        User,
-                        'username' | 'name'
-                      >
-                      lesson: { __typename?: 'Lesson' } & Pick<
-                        Lesson,
-                        'title' | 'order'
-                      >
-                    }
-                >
-              >
-            >
-          }
-      >
-    }
-  >
+    }>
+  }>
 }
 
 export type ResolverTypeWrapper<T> = Promise<T> | T
 
-export type LegacyStitchingResolver<TResult, TParent, TContext, TArgs> = {
-  fragment: string
+export type ResolverWithResolve<TResult, TParent, TContext, TArgs> = {
   resolve: ResolverFn<TResult, TParent, TContext, TArgs>
 }
-
-export type NewStitchingResolver<TResult, TParent, TContext, TArgs> = {
-  selectionSet: string
-  resolve: ResolverFn<TResult, TParent, TContext, TArgs>
-}
-export type StitchingResolver<TResult, TParent, TContext, TArgs> =
-  | LegacyStitchingResolver<TResult, TParent, TContext, TArgs>
-  | NewStitchingResolver<TResult, TParent, TContext, TArgs>
 export type Resolver<TResult, TParent = {}, TContext = {}, TArgs = {}> =
   | ResolverFn<TResult, TParent, TContext, TArgs>
-  | StitchingResolver<TResult, TParent, TContext, TArgs>
+  | ResolverWithResolve<TResult, TParent, TContext, TArgs>
 
 export type ResolverFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
@@ -1223,9 +1190,10 @@ export type LessonResolvers<
   githubUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   videoUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   challenges?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Challenge']>>>,
+    Array<ResolversTypes['Challenge']>,
     ParentType,
     ContextType
   >
@@ -1327,18 +1295,21 @@ export type MutationResolvers<
     RequireFields<MutationAddCommentArgs, 'submissionId' | 'content'>
   >
   createLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
+    Array<ResolversTypes['Lesson']>,
     ParentType,
     ContextType,
-    RequireFields<MutationCreateLessonArgs, 'description' | 'title' | 'order'>
+    RequireFields<
+      MutationCreateLessonArgs,
+      'description' | 'title' | 'order' | 'slug'
+    >
   >
   updateLesson?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes['Lesson']>>>,
+    Array<ResolversTypes['Lesson']>,
     ParentType,
     ContextType,
     RequireFields<
       MutationUpdateLessonArgs,
-      'id' | 'description' | 'title' | 'order'
+      'id' | 'description' | 'title' | 'order' | 'slug'
     >
   >
   createChallenge?: Resolver<
@@ -1509,17 +1480,7 @@ export type UserLessonResolvers<
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
-  isPassed?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  isTeaching?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
-  isEnrolled?: Resolver<
-    Maybe<ResolversTypes['String']>,
-    ParentType,
-    ContextType
-  >
+  passedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   starsReceived?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['Star']>>>,
     ParentType,
@@ -1546,21 +1507,9 @@ export type Resolvers<ContextType = any> = {
   UserLesson?: UserLessonResolvers<ContextType>
 }
 
-/**
- * @deprecated
- * Use "Resolvers" root object instead. If you wish to get "IResolvers", add "typesPrefix: I" to your config.
- */
-export type IResolvers<ContextType = any> = Resolvers<ContextType>
 export type DirectiveResolvers<ContextType = any> = {
   cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>
 }
-
-/**
- * @deprecated
- * Use "DirectiveResolvers" root object instead. If you wish to get "IDirectiveResolvers", add "typesPrefix: I" to your config.
- */
-export type IDirectiveResolvers<ContextType = any> =
-  DirectiveResolvers<ContextType>
 
 export const AcceptSubmissionDocument = gql`
   mutation acceptSubmission(
@@ -2118,6 +2067,7 @@ export const CreateLessonDocument = gql`
     $videoUrl: String
     $chatUrl: String
     $order: Int!
+    $slug: String!
     $description: String!
     $title: String!
   ) {
@@ -2127,6 +2077,7 @@ export const CreateLessonDocument = gql`
       videoUrl: $videoUrl
       chatUrl: $chatUrl
       order: $order
+      slug: $slug
       description: $description
       title: $title
     ) {
@@ -2136,6 +2087,7 @@ export const CreateLessonDocument = gql`
       videoUrl
       chatUrl
       order
+      slug
       description
       title
       challenges {
@@ -2203,6 +2155,7 @@ export function withCreateLesson<
  *      videoUrl: // value for 'videoUrl'
  *      chatUrl: // value for 'chatUrl'
  *      order: // value for 'order'
+ *      slug: // value for 'slug'
  *      description: // value for 'description'
  *      title: // value for 'title'
  *   },
@@ -2335,6 +2288,7 @@ export const GetAppDocument = gql`
       githubUrl
       videoUrl
       order
+      slug
       challenges {
         id
         title
@@ -2384,9 +2338,7 @@ export const GetAppDocument = gql`
       }
       lessonStatus {
         lessonId
-        isPassed
-        isTeaching
-        isEnrolled
+        passedAt
         starGiven
       }
     }
@@ -2710,9 +2662,7 @@ export const GetSessionDocument = gql`
       }
       lessonStatus {
         lessonId
-        isPassed
-        isTeaching
-        isEnrolled
+        passedAt
         starGiven
       }
     }
@@ -3633,6 +3583,7 @@ export const UpdateLessonDocument = gql`
     $videoUrl: String
     $chatUrl: String
     $order: Int!
+    $slug: String!
     $description: String!
     $title: String!
   ) {
@@ -3643,6 +3594,7 @@ export const UpdateLessonDocument = gql`
       chatUrl: $chatUrl
       id: $id
       order: $order
+      slug: $slug
       description: $description
       title: $title
     ) {
@@ -3652,6 +3604,7 @@ export const UpdateLessonDocument = gql`
       videoUrl
       chatUrl
       order
+      slug
       description
       title
       challenges {
@@ -3720,6 +3673,7 @@ export function withUpdateLesson<
  *      videoUrl: // value for 'videoUrl'
  *      chatUrl: // value for 'chatUrl'
  *      order: // value for 'order'
+ *      slug: // value for 'slug'
  *      description: // value for 'description'
  *      title: // value for 'title'
  *   },
@@ -3869,9 +3823,7 @@ export const UserInfoDocument = gql`
       }
       lessonStatus {
         lessonId
-        isPassed
-        isTeaching
-        isEnrolled
+        passedAt
         starsReceived {
           lessonId
           comment

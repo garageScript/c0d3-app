@@ -5,6 +5,7 @@ import GET_APP from '../../graphql/queries/getApp'
 import SIGNUP_USER from '../../graphql/queries/signupUser'
 import SignupPage from '../../pages/signup'
 import userEvent from '@testing-library/user-event'
+import { getLayout } from '../../components/Layout'
 
 describe('Signup Page', () => {
   const fakeEmail = 'fake@email.com'
@@ -25,6 +26,9 @@ describe('Signup Page', () => {
     await userEvent.type(lastNameField, fakeLastName, { delay: 1 })
   }
 
+  test('Should use Layout component getLayout ', async () => {
+    expect(SignupPage.getLayout === getLayout).toBe(true)
+  })
   test('Should render success component on success', async () => {
     const mocks = [
       {

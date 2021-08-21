@@ -1,4 +1,4 @@
-import { prisma } from '../../prisma'
+import prisma from '../../prisma'
 import { QueryGetPreviousSubmissionsArgs } from '../../graphql'
 import { Context } from '../../@types/helpers'
 

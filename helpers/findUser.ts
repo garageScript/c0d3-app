@@ -1,4 +1,4 @@
-import { prisma } from '../prisma'
+import prisma from '../prisma'
 
 export default async (userOrEmail: string) => {
   if (userOrEmail.indexOf('@') !== -1) {

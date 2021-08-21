@@ -14,6 +14,7 @@ import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import dummyAlertData from '../../__dummy__/alertData'
 import posthog from 'posthog-js'
+import { getLayout } from '../../components/Layout'
 
 jest.mock('posthog-js')
 jest.spyOn(Sentry, 'captureException')
@@ -41,7 +42,22 @@ describe('MyApp component', () => {
   afterEach(() => {
     process.env = OLD_ENV
   })
-
+  test('should call layout getter if present', async () => {
+    const getLayout = jest.fn(page => <>{page}</>)
+    const ComponentWithLayout = () => <></>
+    ComponentWithLayout.getLayout = getLayout
+    render(<MyApp Component={ComponentWithLayout} pageProps={{}} />)
+    expect(getLayout).toHaveBeenCalled()
+  })
+  test('should render components without layout getter', async () => {
+    const SimpleComponent = () => <h1>No Layout Here</h1>
+    render(<MyApp Component={SimpleComponent} pageProps={{}} />)
+    await waitFor(() =>
+      expect(
+        screen.getByRole('heading', { name: 'No Layout Here' })
+      ).toBeTruthy()
+    )
+  })
   test('posthog init function should not be called if not in production environment', async () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>

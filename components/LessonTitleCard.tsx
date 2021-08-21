@@ -2,10 +2,12 @@ import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
 import { useRouter } from 'next/router'
+import useHasMounted from '../helpers/useHasMounted'
 
 export type LessonTitleProps = {
   lessonCoverUrl: string
   lessonUrl: string
+  lessonSlug: string
   lessonTitle: string
   lessonId: number
   isPassed: boolean
@@ -14,6 +16,7 @@ export type LessonTitleProps = {
 }
 
 const LessonTitleCard: React.FC<LessonTitleProps> = props => {
+  const hasMounted = useHasMounted()
   const router = useRouter()
 
   return (
@@ -53,9 +56,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
             LESSON
           </NavLink>
           {/* 768 px is md bootstrap breakpoint */}
-          {typeof window !== 'undefined' &&
-          window.innerWidth <= 768 &&
-          props.setShow ? (
+          {hasMounted && window.innerWidth <= 768 && props.setShow ? (
             <div
               onClick={() => props.setShow!(!props.show)}
               className="btn border-right rounded-0 px-4 py-3"
@@ -64,7 +65,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
             </div>
           ) : (
             <NavLink
-              path={`/curriculum/${props.lessonId}`}
+              path={`/curriculum/${props.lessonSlug}`}
               className="btn border-right rounded-0 px-4 py-3"
             >
               CHALLENGES
@@ -72,7 +73,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
           )}
           {props.isPassed && (
             <NavLink
-              path={`/review/${props.lessonId}`}
+              path={`/review/${props.lessonSlug}`}
               className="btn border-right rounded-0 px-4 py-3"
             >
               REVIEW

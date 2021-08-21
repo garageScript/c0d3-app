@@ -6,7 +6,7 @@ import _ from 'lodash'
 
 //import components
 import Card from '../components/Card'
-import Layout from '../components/Layout'
+import { getLayout } from '../components/Layout'
 import Input from '../components/Input'
 import NavLink from '../components/NavLink'
 
@@ -21,6 +21,8 @@ import {
   ErrorDisplayProps,
   SignupSuccessProps
 } from '../@types/signup'
+import { WithLayout } from '../@types/page'
+import Title from '../components/Title'
 
 const initialValues: Values = {
   email: '',
@@ -87,6 +89,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
               type="email"
               data-testid="email"
               as={Input}
+              autoFocus
             />
 
             <Field
@@ -130,7 +133,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
   )
 }
 
-const SignUpPage: React.FC = () => {
+const SignUpPage: React.FC & WithLayout = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -161,7 +164,8 @@ const SignUpPage: React.FC = () => {
     setIsSubmitting(false)
   }
   return (
-    <Layout title="Sign up">
+    <>
+      <Title title="Sign up" />
       <Signup
         handleSubmit={handleSubmit}
         isLoading={isSubmitting}
@@ -169,7 +173,7 @@ const SignUpPage: React.FC = () => {
         forgotToken={forgotToken}
         signupErrors={signupErrors}
       />
-    </Layout>
+    </>
   )
 }
 
@@ -195,4 +199,5 @@ export const Signup: React.FC<SignupFormProps> = ({
   )
 }
 
+SignUpPage.getLayout = getLayout
 export default SignUpPage

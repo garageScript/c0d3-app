@@ -2,12 +2,12 @@
  * @jest-environment node
  */
 
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { addComment } from './addComment'
 
 describe('Add comment resolver', () => {
-  test('should invoke prisma create', async () => {
-    prisma.comment.create = jest.fn().mockReturnValue({
+  test('should invoke prismaMock create', async () => {
+    prismaMock.comment.create.mockResolvedValue({
       authorId: 1,
       content: 'testing',
       createdAt: '2021-05-11T18:04:47.698Z',

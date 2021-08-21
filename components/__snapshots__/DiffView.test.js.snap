@@ -267,9 +267,9 @@ exports[`DiffView component Should add comment box 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 />
               </div>
               <button
@@ -2708,9 +2708,9 @@ exports[`DiffView component Should render diff with comments 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 />
               </div>
               <button
@@ -2819,9 +2819,9 @@ exports[`DiffView component Should render diff with comments 1`] = `
                   Preview
                 </button>
                 <textarea
+                  class="textarea"
                   data-testid="textbox"
                   placeholder="Type something..."
-                  style="padding: 1rem; width: 100%;"
                 />
               </div>
               <button

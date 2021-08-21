@@ -11,6 +11,7 @@ export const Basic: React.FC = () => (
     lessonCoverUrl="js-0-cover.svg"
     lessonUrl="#"
     lessonTitle="Foundations"
+    lessonSlug="js0"
     isPassed={false}
     lessonId={5}
   />
@@ -21,6 +22,7 @@ export const PassedLesson: React.FC = () => (
     lessonCoverUrl="js-0-cover.svg"
     lessonUrl="#"
     lessonTitle="Foundations"
+    lessonSlug="js0"
     isPassed={true}
     lessonId={5}
   />
