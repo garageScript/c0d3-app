@@ -65,11 +65,11 @@
     "yup": "^0.32.8"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.0.1",
+    "@graphql-codegen/cli": "^2.1.1",
     "@graphql-codegen/typescript": "^2.0.0",
     "@graphql-codegen/typescript-operations": "^2.1.0",
-    "@graphql-codegen/typescript-react-apollo": "^3.0.0",
-    "@graphql-codegen/typescript-resolvers": "^2.0.0",
+    "@graphql-codegen/typescript-react-apollo": "^3.1.0",
+    "@graphql-codegen/typescript-resolvers": "^2.1.0",
     "@jest/types": "^27.0.2",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
