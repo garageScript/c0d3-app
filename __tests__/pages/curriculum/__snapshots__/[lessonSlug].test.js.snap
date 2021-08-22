@@ -177,6 +177,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               <div
                 class="card-footer bg-white p-0"
               >
+                
                 <a
                   class="btn border-right rounded-0 px-4 py-3"
                   href="/curriculum/js8"

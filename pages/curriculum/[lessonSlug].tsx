@@ -29,7 +29,7 @@ const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
   const router = useRouter()
   if (!router.isReady) return <LoadingSpinner />
 
-  const slug = router.query.lesson as string
+  const slug = router.query.lessonSlug as string
   if (!lessons || !alerts)
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
 

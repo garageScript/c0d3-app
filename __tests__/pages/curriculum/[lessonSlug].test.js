@@ -8,7 +8,7 @@ import {
 import '@testing-library/jest-dom'
 import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../../graphql/queries/getApp'
-import Lesson from '../../../pages/curriculum/[lesson]'
+import Lesson from '../../../pages/curriculum/[lessonSlug]'
 import dummyLessonData from '../../../__dummy__/lessonData'
 import dummySessionData from '../../../__dummy__/sessionData'
 import dummyAlertData from '../../../__dummy__/alertData'
@@ -76,7 +76,7 @@ const session = {
 }
 describe('Lesson Page', () => {
   const { query } = useRouter()
-  query['lesson'] = 'js1'
+  query['lessonSlug'] = 'js1'
   test('Should render correctly with valid lesson route', async () => {
     const mocks = [
       {
@@ -105,7 +105,7 @@ describe('Lesson Page', () => {
   })
 
   test('Should render correctly with invalid lesson route', async () => {
-    query['lesson'] = 'js100'
+    query['lessonSlug'] = 'js100'
     const mocks = [
       {
         request: { query: GET_APP },
@@ -129,7 +129,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test("Should correctly render challenges page for students who hadn't passed previous lessons", async () => {
-    query['lesson'] = 'js8'
+    query['lessonSlug'] = 'js8'
     const mocks = [
       {
         request: { query: GET_APP },
@@ -179,7 +179,7 @@ describe('Lesson Page', () => {
     await waitFor(() => expect(container).toMatchSnapshot())
   })
   test('Should render with nulled submissions', async () => {
-    query['lesson'] = 'js1'
+    query['lessonSlug'] = 'js1'
     const mocks = [
       {
         request: { query: GET_APP },
