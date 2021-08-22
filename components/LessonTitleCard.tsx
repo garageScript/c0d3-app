@@ -48,13 +48,14 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
           </div>
         </div>
         <div className="card-footer bg-white p-0">
-          <NavLink
-            path={props.lessonUrl}
-            className="btn border-right rounded-0 px-4 py-3"
-            external
-          >
-            LESSON
-          </NavLink>
+          {props.lessonUrl && (
+            <NavLink
+              path={props.lessonUrl}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              LESSON
+            </NavLink>
+          )}
           {/* 768 px is md bootstrap breakpoint */}
           {hasMounted && window.innerWidth <= 768 && props.setShow ? (
             <div
