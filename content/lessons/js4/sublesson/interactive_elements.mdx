@@ -1,6 +1,7 @@
-import Layout from '../../../../components/mdx/LessonLayout'
-
-<hr />
+---
+title: Interactive Elements
+order: 1
+---
 
 # Table of Contents
 
@@ -1949,8 +1950,11 @@ inline elements are `input`, `a`, `img`, `button`, and `select`.
 <button>Button3</button>
 ```
 
-
-<Image src = '/assets/curriculum/lessons/js4/inline.png' height = '162' width = '515'/>
+<Image
+  src="/assets/curriculum/lessons/js4/inline.png"
+  height="162"
+  width="515"
+/>
 
 </twoColumns>
 
@@ -2002,11 +2006,13 @@ elements are `div`, all headings (`h1`, `h2`, etc.) and `p`.
 </div>
 ```
 
-
-<Image src = '/assets/curriculum/lessons/js4/block.png' height = '389' width = '508'/>
+<Image
+  src="/assets/curriculum/lessons/js4/block.png"
+  height="389"
+  width="508"
+/>
 
 </twoColumns>
-
 
 Notice how the block elements all take up 100% of the width and stack on each
 other vertically.
@@ -2049,15 +2055,3 @@ styles to elements based on their class(es)
   description="Add a few testing challenges?"
   title="Master your skill by solving challenges"
 />
-
-export default ({ children }) => (
-  <Layout
-    lessonCoverUrl={`js-4-cover.svg`}
-    title="Front End Engineering"
-    lessonUrl="/curriculum/lessons/js4/front"
-    lessonId="24"
-    subLessons={['Interactive Elements', 'CSS', 'Classes']}
-  >
-    {children}
-  </Layout>
-)

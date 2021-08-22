@@ -1,6 +1,7 @@
-import Layout from '../../../../components/mdx/LessonLayout'
-
-<hr />
+---
+title: HyperText Markup Language
+order: 1
+---
 
 # Table of Contents
 
@@ -401,9 +402,9 @@ below?
 
 At this point, you should know that there are 2 ways to run JavaScript:
 
-* Run the JavaScript in the browser using (`<script>` tag).
+- Run the JavaScript in the browser using (`<script>` tag).
 
-* Or run the JavaScript directly on your computer using `node`.
+- Or run the JavaScript directly on your computer using `node`.
 
 </div>
 
@@ -636,8 +637,8 @@ on the page, and select `View Source or view page source`
 **Debugging** - If your page is not doing what you want it to do, you can look
 at the `console`. This is where the browser will try to tell you where and what
 the error is if you've written your code in a way it can't understand.
-[Read this](/docs/setup#running-html-codes-on-the-browser)
-to learn how to open the browser's console.
+[Read this](/docs/setup#running-html-codes-on-the-browser) to learn how to open
+the browser's console.
 
 To solve this - First write down the steps. Compare your steps with the answer.
 Then write the code.
@@ -796,15 +797,3 @@ const a = solution(1, 2) // a is a function
   description="Complete HTML challenges (TO-DO add HTML challenges)"
   title="Master your skill by solving challenges"
 />
-
-export default ({ children }) => (
-  <Layout
-    lessonCoverUrl={`js-1-cover.svg`}
-    title="HTML & Functions"
-    lessonUrl="/curriculum/lessons/js1/variables"
-    lessonId="2"
-    subLessons={['HyperText Markup Language', 'Recursion, closure and async']}
-  >
-    {children}
-  </Layout>
-)

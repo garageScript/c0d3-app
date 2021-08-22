@@ -1,6 +1,7 @@
-import Layout from '../../../../components/mdx/LessonLayout'
-
-<hr />
+---
+title: Recursion, closure and async
+order: 2
+---
 
 # Table of Contents
 
@@ -449,25 +450,25 @@ interview problems: examples, function shape, think, code, test.
    The **returned** function takes in a function as its parameter and invokes it
    with the number as argument.
 
-  > If the above description sounds like a mouthful, don't worry. Nobody will (or
-  > should) talk to you like that. Rather, you will be given examples (like below)
-  > and you will need to figure out what the function `callWith` does before
-  > solving it.
+> If the above description sounds like a mouthful, don't worry. Nobody will (or
+> should) talk to you like that. Rather, you will be given examples (like below)
+> and you will need to figure out what the function `callWith` does before
+> solving it.
 
-  ```jsx
-  const fun = callWith(10)
-  let b = fun(num => {
-    return num + 5
-  }) // b is 15
+```jsx
+const fun = callWith(10)
+let b = fun(num => {
+  return num + 5
+}) // b is 15
 
-  b = fun(num => {
-    return num + 'hello'
-  }) // b is "10hello"
+b = fun(num => {
+  return num + 'hello'
+}) // b is "10hello"
 
-  b = fun(num => {
-    return 500 % num
-  }) // b is 0
-  ```
+b = fun(num => {
+  return 500 % num
+}) // b is 0
+```
 
 <Spoiler>
 
@@ -621,8 +622,8 @@ helped you through the problem.
 
 </Spoiler>
 
-You may have noticed that some of the exercises and challenges in JS0 are actually
-closure examples.
+You may have noticed that some of the exercises and challenges in JS0 are
+actually closure examples.
 
 ## Real Life Use Case
 
@@ -630,10 +631,10 @@ closure examples.
 > How much later? Just keep coming back over and over again until you get it.
 
 Sometimes when you run a function you want to write an HTML `console.log()`
-method to display or print out what is going on in the console. Instead of writing
-`console.log()` into every function, you can create a function called `addLog`.
-When you want to write a function, you pass your function into `addLog` like
-this:
+method to display or print out what is going on in the console. Instead of
+writing `console.log()` into every function, you can create a function called
+`addLog`. When you want to write a function, you pass your function into
+`addLog` like this:
 
 ```jsx
 // Let's say you want to write a function that adds 2 numbers
@@ -758,12 +759,12 @@ const addTo3 = (counter = 1, result = 0) => {
 let res = addTo3 // function
 
 res = addTo3(2) // 5
-/* 
+/*
  * return fun1(3, 2)
  *   return fun1(4, 5)
  *     return 5
  */
-res = addTo3() // 6 
+res = addTo3() // 6
 ```
 
 </Spoiler>
@@ -866,8 +867,8 @@ problem.
 
 1. **Explanation**: There are no parameters and no return values, so we don't
    need to provide any examples
-2. **Function Shape:** `love` does not take in any parameters and does not return
-   anything
+2. **Function Shape:** `love` does not take in any parameters and does not
+   return anything
 
    ```jsx
    const love = () => {}
@@ -947,7 +948,7 @@ the result!
    - We need a variable (let's say `i`) that starts at 0 and keeps track of
      which number we are on.
    - When `i` is greater than 98, return
-   - Console.log `i` 
+   - Console.log `i`
    - Continue
 4. **Code**
 
@@ -1144,8 +1145,8 @@ the result!
    ```
 
 <Spoiler name="Hint">
-  This exercise is very similar to `moreHello` (Closure, exercise 2). Instead of a
-  variable outside the function, here you'll use a default parameter to keep
+  This exercise is very similar to `moreHello` (Closure, exercise 2). Instead of
+  a variable outside the function, here you'll use a default parameter to keep
   track of the text that will be returned.
 </Spoiler>
 
@@ -1260,9 +1261,9 @@ the result!
 
 </Spoiler>
 
-7. Write a function named `tryNumRange` that takes in a number and a function and
-   calls the function with every number from 1 to the input number. If any of
-   these return true, return true; if they all return false, return false.
+7. Write a function named `tryNumRange` that takes in a number and a function
+   and calls the function with every number from 1 to the input number. If any
+   of these return true, return true; if they all return false, return false.
 
    ```jsx
    let res = tryNumRange(15, e => {
@@ -1476,8 +1477,8 @@ Not too bad, right? Ready to try some on your own?
 
 ## Exercises
 
-1. Write a function named `logNonMatching` that `console.log`s every character in
-   a word, except for one given character.
+1. Write a function named `logNonMatching` that `console.log`s every character
+   in a word, except for one given character.
 
    ```jsx
    logNonMatching('banana', 'a')
@@ -1543,18 +1544,16 @@ Not too bad, right? Ready to try some on your own?
 
    ```jsx
    const logNonMatching = (str, character, i = 0) => {
-     if (i === str.length) 
-       return
-     if (str[i] !== character) 
-       console.log(str[i])
+     if (i === str.length) return
+     if (str[i] !== character) console.log(str[i])
      return logNonMatching(str, character, i + 1)
    }
    ```
 
 </Spoiler>
 
-2. Write a function named `logFirstX` that logs a given number of characters from
-   the _beginning_ of a string.
+2. Write a function named `logFirstX` that logs a given number of characters
+   from the _beginning_ of a string.
 
    ```jsx
    logFirstX('Winterfell', 3)
@@ -1676,8 +1675,8 @@ Not too bad, right? Ready to try some on your own?
 
 </Spoiler>
 
-4. Write a function named `logOddOnly` that prints out only the characters at odd
-   indices (remember, index starts at 0) from a string.
+4. Write a function named `logOddOnly` that prints out only the characters at
+   odd indices (remember, index starts at 0) from a string.
 
    ```jsx
    logOddOnly('catelyn')
@@ -1742,9 +1741,8 @@ Not too bad, right? Ready to try some on your own?
 
    ```jsx
    const logOddOnly = (str, i = 0) => {
-     if (i === str.length)
-       return
-     if (i % 2 !== 0) 
+     if (i === str.length) return
+     if (i % 2 !== 0)
        // A quicker way is to simply do i % 2
        console.log(str[i])
      return logOddOnly(str, i + 1)
@@ -1876,9 +1874,10 @@ differentiates it from other languages. To understand it, let's explore a
 hypothetical scenario:
 
 If you are baking pizza and you put the pizza into the oven, do you wait until
-the pizza is done before doing something else? Probably not. You will probably do
-other things and and come back to it after the oven finishes cooking the pizza.
-Usually, the oven will let you know when it is done (like emitting a beep).
+the pizza is done before doing something else? Probably not. You will probably
+do other things and and come back to it after the oven finishes cooking the
+pizza. Usually, the oven will let you know when it is done (like emitting a
+beep).
 
 JavaScript works the same way. In the following example, `setTimeout` (you might
 remember this function from Preflight) takes in 2 arguments, a function and a
@@ -2104,15 +2103,3 @@ you feel the need to use `for` or `while`, then please use recursion instead.
   description="Complete recursion and closure challenges"
   title="Master your skill by solving challenges"
 />
-
-export default ({ children }) => (
-  <Layout
-    lessonCoverUrl={`js-1-cover.svg`}
-    title="HTML & Functions"
-    lessonUrl="/curriculum/lessons/js1/variables"
-    lessonId="2"
-    subLessons={['HyperText Markup Language', 'Recursion, closure and async']}
-  >
-    {children}
-  </Layout>
-)

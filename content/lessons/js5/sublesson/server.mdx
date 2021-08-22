@@ -1,6 +1,7 @@
-import Layout from '../../../../components/mdx/LessonLayout'
-
-<hr />
+---
+title: Server
+order: 2
+---
 
 # Table of Contents
 
@@ -1319,15 +1320,3 @@ your application with the world!
   description="Complete End to End challenges"
   title="Master your skill by solving challenges"
 />
-
-export default ({ children }) => (
-  <Layout
-    lessonCoverUrl={`js-5-cover.svg`}
-    title="End to End"
-    lessonUrl="/curriculum/lessons/js5/front"
-    lessonId="24"
-    subLessons={['Request and response', 'Server', 'Systems (optional)']}
-  >
-    {children}
-  </Layout>
-)
