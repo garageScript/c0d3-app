@@ -6367,60 +6367,64 @@ Array [
     className="container-md"
   >
     <div
-      className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+      className="row mt-4"
     >
       <div
-        className="card-body p-0"
+        className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
       >
         <div
-          className="d-flex mb-3 px-3"
+          className="card-body p-0"
         >
-          <img
-            alt="lesson-cover"
-            className="lessonTitleCard__lesson-cover mr-3"
-            src="/assets/curriculum/js-0-cover.svg"
-          />
-          <div>
-            <p
-              className="m-0"
-            >
-              <a
-                href="#"
-                onClick={[Function]}
+          <div
+            className="d-flex mb-3 px-3"
+          >
+            <img
+              alt="lesson-cover"
+              className="lessonTitleCard__lesson-cover mr-3"
+              src="/assets/curriculum/js-0-cover.svg"
+            />
+            <div>
+              <p
+                className="m-0"
               >
-                Go Back
-              </a>
-            </p>
-            <h1
-              className="lessonTitleCard__lesson-title"
+                <a
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Go Back
+                </a>
+              </p>
+              <h1
+                className="lessonTitleCard__lesson-title"
+              >
+                Foundations of JavaScript
+              </h1>
+            </div>
+          </div>
+          <div
+            className="card-footer bg-white p-0"
+          >
+            <a
+              className="btn border-right rounded-0 px-4 py-3"
+              href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              Foundations of JavaScript
-            </h1>
+              LESSON
+            </a>
+            <a
+              className="btn border-right rounded-0 px-4 py-3"
+              href="/curriculum/js0"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              CHALLENGES
+            </a>
           </div>
         </div>
-        <div
-          className="card-footer bg-white p-0"
-        >
-          <a
-            className="btn border-right rounded-0 px-4 py-3"
-            href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            LESSON
-          </a>
-          <a
-            className="btn border-right rounded-0 px-4 py-3"
-            href="/curriculum/js0"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            CHALLENGES
-          </a>
-        </div>
       </div>
+      Page
     </div>
-    Page
   </div>,
   <footer
     className="mt-5 font-weight-light text-center pb-5 text-muted"
@@ -6432,63 +6436,8 @@ Array [
 
 exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
 <div
-  className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+  className="row mt-4"
 >
-  <div
-    className="card-body p-0"
-  >
-    <div
-      className="d-flex mb-3 px-3"
-    >
-      <img
-        alt="lesson-cover"
-        className="lessonTitleCard__lesson-cover mr-3"
-        src="/assets/curriculum/js-0-cover.svg"
-      />
-      <div>
-        <p
-          className="m-0"
-        >
-          <a
-            href="#"
-            onClick={[Function]}
-          >
-            Go Back
-          </a>
-        </p>
-        <h1
-          className="lessonTitleCard__lesson-title"
-        >
-          Foundations of JavaScript
-        </h1>
-      </div>
-    </div>
-    <div
-      className="card-footer bg-white p-0"
-    >
-      <a
-        className="btn border-right rounded-0 px-4 py-3"
-        href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        LESSON
-      </a>
-      <a
-        className="btn border-right rounded-0 px-4 py-3"
-        href="/curriculum/js0"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-      >
-        CHALLENGES
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Components/LessonLayout With Text 1`] = `
-Array [
   <div
     className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
   >
@@ -6542,11 +6491,72 @@ Array [
         </a>
       </div>
     </div>
-  </div>,
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LessonLayout With Text 1`] = `
+<div
+  className="row mt-4"
+>
+  <div
+    className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+  >
+    <div
+      className="card-body p-0"
+    >
+      <div
+        className="d-flex mb-3 px-3"
+      >
+        <img
+          alt="lesson-cover"
+          className="lessonTitleCard__lesson-cover mr-3"
+          src="/assets/curriculum/js-0-cover.svg"
+        />
+        <div>
+          <p
+            className="m-0"
+          >
+            <a
+              href="#"
+              onClick={[Function]}
+            >
+              Go Back
+            </a>
+          </p>
+          <h1
+            className="lessonTitleCard__lesson-title"
+          >
+            Foundations of JavaScript
+          </h1>
+        </div>
+      </div>
+      <div
+        className="card-footer bg-white p-0"
+      >
+        <a
+          className="btn border-right rounded-0 px-4 py-3"
+          href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          LESSON
+        </a>
+        <a
+          className="btn border-right rounded-0 px-4 py-3"
+          href="/curriculum/js0"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          CHALLENGES
+        </a>
+      </div>
+    </div>
+  </div>
   <p>
     Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
-  </p>,
-]
+  </p>
+</div>
 `;
 
 exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
