@@ -5,17 +5,17 @@ import { SubLesson } from '../helpers/static/lessons'
 
 type Props = {
   subLessons: SubLesson[]
-  sublesson_slug: string
-  lesson_slug: string
+  subLessonSlug: string
+  lessonSlug: string
 }
 
 const NextPreviousLessons: React.FC<Props> = ({
   subLessons,
-  lesson_slug,
-  sublesson_slug
+  lessonSlug,
+  subLessonSlug
 }) => {
   const cur = subLessons.findIndex(
-    subLesson => subLesson.sublesson_slug === sublesson_slug
+    subLesson => subLesson.subLessonSlug === subLessonSlug
   )
 
   const previous = subLessons[cur - 1]
@@ -23,14 +23,14 @@ const NextPreviousLessons: React.FC<Props> = ({
   return (
     <div className="d-flex">
       {previous && (
-        <Link href={`/curriculum/${lesson_slug}/${previous.sublesson_slug}`}>
+        <Link href={`/curriculum/${lessonSlug}/${previous.subLessonSlug}`}>
           <a className={`${styles['lessonLink']} ${styles['previous']}`}>
             Previous part: <span>{previous.frontMatter.title}</span>
           </a>
         </Link>
       )}
       {next && (
-        <Link href={`/curriculum/${lesson_slug}/${next.sublesson_slug}`}>
+        <Link href={`/curriculum/${lessonSlug}/${next.subLessonSlug}`}>
           <a className={`${styles['lessonLink']} ${styles['next']}`}>
             Next part: <span>{next.frontMatter.title}</span>
           </a>

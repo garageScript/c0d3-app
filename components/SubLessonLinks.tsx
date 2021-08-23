@@ -4,24 +4,24 @@ import Link from 'next/link'
 import { SubLesson } from '../helpers/static/lessons'
 
 type Slugs = {
-  lesson_slug: string
-  sublesson_slug: string
+  lessonSlug: string
+  subLessonSlug: string
 }
 type Props = {
   subLessons: SubLesson[]
 } & Slugs
 const SubLessonLinks: React.FC<Props> = ({
   subLessons,
-  lesson_slug,
-  sublesson_slug
+  lessonSlug,
+  subLessonSlug
 }) => (
   <nav aria-label="Sub-lesson Links">
     {subLessons.map(subLesson => {
-      const isSelected = subLesson.sublesson_slug === sublesson_slug
+      const isSelected = subLesson.subLessonSlug === subLessonSlug
       return (
         <Link
-          key={subLesson.sublesson_slug}
-          href={`/curriculum/${lesson_slug}/${subLesson.sublesson_slug}`}
+          key={subLesson.subLessonSlug}
+          href={`/curriculum/${lessonSlug}/${subLesson.subLessonSlug}`}
         >
           <a
             className={`${styles['subtitle']} ${

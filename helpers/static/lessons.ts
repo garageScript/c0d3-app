@@ -11,7 +11,7 @@ export type SubLesson = {
     order: number
   }
   source?: MDXRemoteSerializeResult
-  sublesson_slug: string
+  subLessonSlug: string
 }
 
 export const getLessonSlugs = () =>
@@ -21,31 +21,31 @@ export const getLessonSlugs = () =>
         `Invalid lesson folder name: "${folder}", must be URI encoded characters`
       )
     return {
-      lesson_slug: folder
+      lessonSlug: folder
     }
   })
 
-export const getSubLessonSlugs = (lesson_slug?: string) => {
-  if (lesson_slug && lesson_slug !== encodeURI(lesson_slug))
-    throw Error(`lesson_slug: "${lesson_slug}", must be URI encoded: `)
+export const getSubLessonSlugs = (lessonSlug?: string) => {
+  if (lessonSlug && lessonSlug !== encodeURI(lessonSlug))
+    throw Error(`lessonSlug: "${lessonSlug}", must be URI encoded: `)
 
-  const lessonSlugs = lesson_slug ? [{ lesson_slug }] : getLessonSlugs()
+  const lessonSlugs = lessonSlug ? [{ lessonSlug }] : getLessonSlugs()
 
-  const subLessonSlugs = lessonSlugs.flatMap(({ lesson_slug }) => {
-    const subLessonPath = path.join(LESSONS_PATH, lesson_slug, 'sublesson')
+  const subLessonSlugs = lessonSlugs.flatMap(({ lessonSlug }) => {
+    const subLessonPath = path.join(LESSONS_PATH, lessonSlug, 'sublesson')
     const fileNames = fs.readdirSync(subLessonPath)
 
     return fileNames.map(file => {
-      const sublesson_slug = file.replace(/\.mdx$/, '')
+      const subLessonSlug = file.replace(/\.mdx$/, '')
 
-      if (sublesson_slug !== encodeURI(sublesson_slug))
+      if (subLessonSlug !== encodeURI(subLessonSlug))
         throw Error(
-          `Invalid sublesson filename: "${sublesson_slug}", must be URI encoded characters`
+          `Invalid sublesson filename: "${subLessonSlug}", must be URI encoded characters`
         )
 
       return {
-        lesson_slug,
-        sublesson_slug
+        lessonSlug,
+        subLessonSlug
       }
     })
   })
@@ -54,22 +54,22 @@ export const getSubLessonSlugs = (lesson_slug?: string) => {
 }
 
 type Slugs = {
-  lesson_slug: string
-  sublesson_slug: string
+  lessonSlug: string
+  subLessonSlug: string
 }
 
 export const getSubLessonGithubFilePath = ({
-  lesson_slug,
-  sublesson_slug
+  lessonSlug,
+  subLessonSlug
 }: Slugs) =>
   path.join(
     LESSONS_GITHUB_PATH,
-    lesson_slug,
+    lessonSlug,
     'sublesson',
-    `${sublesson_slug}.mdx`
+    `${subLessonSlug}.mdx`
   )
 
-export const getSubLessonContent = ({ lesson_slug, sublesson_slug }: Slugs) =>
+export const getSubLessonContent = ({ lessonSlug, subLessonSlug }: Slugs) =>
   fs.readFileSync(
-    path.join(LESSONS_PATH, lesson_slug, 'sublesson', `${sublesson_slug}.mdx`)
+    path.join(LESSONS_PATH, lessonSlug, 'sublesson', `${subLessonSlug}.mdx`)
   )

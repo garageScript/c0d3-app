@@ -8,25 +8,25 @@ describe('SubLessonLinks component', () => {
   const subLessons = [
     {
       frontMatter: { title: 'first lesson', order: 0 },
-      sublesson_slug: 'first_lesson'
+      subLessonSlug: 'first_lesson'
     },
     {
       frontMatter: { title: 'second lesson', order: 1 },
-      sublesson_slug: 'second_lesson'
+      subLessonSlug: 'second_lesson'
     },
     {
       frontMatter: { title: 'third lesson', order: 2 },
-      sublesson_slug: 'third_lesson'
+      subLessonSlug: 'third_lesson'
     }
   ]
 
-  test('should render links to all sublessons', () => {
-    const lesson_slug = 'js0'
+  test('should render links to all subLessons', () => {
+    const lessonSlug = 'js0'
     render(
       <SubLessonLinks
         subLessons={subLessons}
-        sublesson_slug={'first_lesson'}
-        lesson_slug={lesson_slug}
+        subLessonSlug={'first_lesson'}
+        lessonSlug={lessonSlug}
       />
     )
     subLessons.forEach(cur => {
@@ -37,17 +37,17 @@ describe('SubLessonLinks component', () => {
       expect(link).toBeInTheDocument
       expect(link).toHaveAttribute(
         'href',
-        `/curriculum/${lesson_slug}/${cur.sublesson_slug}`
+        `/curriculum/${lessonSlug}/${cur.subLessonSlug}`
       )
     })
   })
 
-  test('should render aria-current page on selected sublesson link', () => {
+  test('should render aria-current page on selected subLesson link', () => {
     render(
       <SubLessonLinks
         subLessons={subLessons}
-        sublesson_slug={'second_lesson'}
-        lesson_slug={'js0'}
+        subLessonSlug={'second_lesson'}
+        lessonSlug={'js0'}
       />
     )
 

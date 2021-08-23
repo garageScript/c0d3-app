@@ -16,8 +16,8 @@ describe('Static Lessons Helpers', () => {
     test('should return lesson slugs', () => {
       fs.readdirSync.mockReturnValue(['js0', 'js1'])
       expect(getLessonSlugs()).toEqual([
-        { lesson_slug: 'js0' },
-        { lesson_slug: 'js1' }
+        { lessonSlug: 'js0' },
+        { lessonSlug: 'js1' }
       ])
       expect(fs.readdirSync).toHaveBeenCalled()
     })
@@ -30,13 +30,13 @@ describe('Static Lessons Helpers', () => {
   })
 
   describe('getSubLessonSlugs', () => {
-    test('should throw if lesson_slug is not URI encoded', () => {
+    test('should throw if lessonSlug is not URI encoded', () => {
       expect(() => {
         getSubLessonSlugs('still f#@&ed')
       }).toThrowError(/still f#@&ed/)
     })
 
-    test('should throw if sublesson filenames is not URI encoded', () => {
+    test('should throw if subLesson filenames is not URI encoded', () => {
       fs.readdirSync.mockReturnValue([
         'some_good_title.mdx',
         'some bad title.mdx'
@@ -48,25 +48,25 @@ describe('Static Lessons Helpers', () => {
       expect(fs.readdirSync).toHaveBeenCalled()
     })
 
-    test('called without lesson_slug returns all lesson_slug / sublesson_slugs', () => {
+    test('called without lessonSlug returns all { lessonSlug, subLessonSlug } pairs', () => {
       fs.readdirSync
         .mockReturnValue(['lesson_title.mdx', 'title_two.mdx'])
         .mockReturnValueOnce(['js0', 'js1'])
 
       expect(getSubLessonSlugs()).toEqual([
-        { lesson_slug: 'js0', sublesson_slug: 'lesson_title' },
-        { lesson_slug: 'js0', sublesson_slug: 'title_two' },
-        { lesson_slug: 'js1', sublesson_slug: 'lesson_title' },
-        { lesson_slug: 'js1', sublesson_slug: 'title_two' }
+        { lessonSlug: 'js0', subLessonSlug: 'lesson_title' },
+        { lessonSlug: 'js0', subLessonSlug: 'title_two' },
+        { lessonSlug: 'js1', subLessonSlug: 'lesson_title' },
+        { lessonSlug: 'js1', subLessonSlug: 'title_two' }
       ])
     })
 
-    test('called with lesson_slug returns only slugs that match that lesson_slug', () => {
+    test('called with lessonSlug returns only slugs that match that lessonSlug', () => {
       fs.readdirSync.mockReturnValue(['lesson_title.mdx', 'title_two.mdx'])
 
       expect(getSubLessonSlugs('js0')).toEqual([
-        { lesson_slug: 'js0', sublesson_slug: 'lesson_title' },
-        { lesson_slug: 'js0', sublesson_slug: 'title_two' }
+        { lessonSlug: 'js0', subLessonSlug: 'lesson_title' },
+        { lessonSlug: 'js0', subLessonSlug: 'title_two' }
       ])
     })
   })
@@ -75,8 +75,8 @@ describe('Static Lessons Helpers', () => {
     test('should return path from project root including mdx extension', () => {
       expect(
         getSubLessonGithubFilePath({
-          lesson_slug: 'js30',
-          sublesson_slug: 'some_other_title'
+          lessonSlug: 'js30',
+          subLessonSlug: 'some_other_title'
         })
       ).toBe('content/lessons/js30/sublesson/some_other_title.mdx')
     })
@@ -93,8 +93,8 @@ describe('Static Lessons Helpers', () => {
 
       expect(
         getSubLessonContent({
-          lesson_slug: 'js0',
-          sublesson_slug: 'some_title'
+          lessonSlug: 'js0',
+          subLessonSlug: 'some_title'
         })
       ).toEqual(fakeFileContent)
 
