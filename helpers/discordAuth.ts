@@ -1,4 +1,4 @@
-import { prisma } from '../prisma'
+import prisma from '../prisma'
 import { URLSearchParams } from 'url'
 import { User } from '.prisma/client'
 import fetch from 'node-fetch'
@@ -80,11 +80,11 @@ const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   }).then(r => r.json())
 }
 
-const updateUserRefreshToken = async (
+const updateUserRefreshToken = (
   userId: number,
   refreshToken: string
 ): Promise<User> => {
-  const updatedUser = await prisma.user.update({
+  return prisma.user.update({
     where: {
       id: userId
     },
@@ -92,7 +92,6 @@ const updateUserRefreshToken = async (
       discordRefreshToken: refreshToken
     }
   })
-  return updatedUser
 }
 
 export const getUserInfoFromRefreshToken = async (
@@ -101,6 +100,7 @@ export const getUserInfoFromRefreshToken = async (
 ): Promise<DiscordUserInfo> => {
   const tokenResponse = await getTokenFromRefreshToken(refreshToken)
   const updatedRefreshToken = tokenResponse.refresh_token || ''
+  // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid refresh tokens
   await updateUserRefreshToken(userId, updatedRefreshToken)
 
   if (!updatedRefreshToken) throw new Error('refresh token invalid')
