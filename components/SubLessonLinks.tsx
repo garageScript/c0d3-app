@@ -1,4 +1,4 @@
-import styles from '../scss/mdx.module.scss'
+import styles from '../scss/SubLessonLinks.module.scss'
 import React from 'react'
 import Link from 'next/link'
 import { SubLesson } from '../helpers/static/lessons'
