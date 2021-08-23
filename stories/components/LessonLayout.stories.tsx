@@ -6,6 +6,7 @@ import GET_SESSION from '../../graphql/queries/getSession'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
 import { withTestRouter } from '../../__tests__/utils/withTestRouter'
+import { Lesson } from '../../graphql'
 
 export default {
   component: LessonLayout,
@@ -56,7 +57,7 @@ export const WithText: React.FC = () => {
 }
 export const GetLayout: React.FC = () => {
   const pageProps = { lesson: dummyLessonData[0] }
-  const Page = () => <>Page</>
+  const Page: React.FC<{ lesson: Lesson }> = () => <>Page</>
   return withTestRouter(
     <MockedProvider mocks={mocks} addTypename={false}>
       {getLayout(<Page {...pageProps} />, pageProps)}

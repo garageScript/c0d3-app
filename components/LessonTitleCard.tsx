@@ -20,7 +20,6 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
   lessonUrl,
   lessonSlug,
   lessonTitle,
-  lessonId,
   isPassed,
   setShow,
   show
