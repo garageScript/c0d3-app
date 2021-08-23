@@ -23,7 +23,7 @@ const LessonLayout: React.FC<Props> = ({ children, lesson }) => {
     setIsPassed(newState)
   }, [session, lesson.id])
   return (
-    <>
+    <div className="row mt-4">
       <LessonTitleCard
         lessonCoverUrl={`js-${lesson.order}-cover.svg`}
         lessonUrl={lesson.docUrl}
@@ -33,7 +33,7 @@ const LessonLayout: React.FC<Props> = ({ children, lesson }) => {
         isPassed={isPassed}
       />
       {children}
-    </>
+    </div>
   )
 }
 
