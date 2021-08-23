@@ -11,11 +11,13 @@ import NavLink from './NavLink'
 import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
 import { SubmissionStatus } from '../graphql'
+import Link from 'next/link'
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
     variables: { lessonId: props.lessonId },
-    fetchPolicy: 'network-only'
+    fetchPolicy: 'network-only',
+    nextFetchPolicy: 'cache-first'
   })
 
   if (loading) {
@@ -47,10 +49,13 @@ const ReviewButton: React.FC<ReviewButtonProps> = props => {
   if (!props.isCompleted) {
     return null
   }
+
   return (
-    <a href={props.reviewUrl} className={style}>
-      Review <ReviewCount lessonId={props.lessonId} /> Submissions
-    </a>
+    <Link href={props.reviewUrl}>
+      <a className={style}>
+        Review <ReviewCount lessonId={props.lessonId} /> Submissions
+      </a>
+    </Link>
   )
 }
 
@@ -64,12 +69,7 @@ const LessonCard: React.FC<Props> = props => {
       <h4 className={`${styles['lesson-card__title']} font-weight-bold mt-3 `}>
         <div className="d-flex justify-content-center">
           <div className="align-self-center">
-            <NavLink
-              as={`/curriculum/${props.lessonId}`}
-              path="/curriculum/[lesson]"
-            >
-              {props.title}
-            </NavLink>
+            <NavLink path={props.challengesUrl}>{props.title}</NavLink>
           </div>
           {props.currentState === 'completed' && (
             <span
@@ -130,12 +130,7 @@ const LessonCard: React.FC<Props> = props => {
           <h4
             className={`${styles['lesson-card__title']} font-weight-bold mt-3`}
           >
-            <NavLink
-              as={`/curriculum/${props.lessonId}`}
-              path="/curriculum/[lesson]"
-            >
-              {props.title}
-            </NavLink>
+            <NavLink path={props.challengesUrl}>{props.title}</NavLink>
           </h4>
           {props.currentState === 'completed' && (
             <span

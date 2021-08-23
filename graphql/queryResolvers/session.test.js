@@ -4,13 +4,14 @@
 
 jest.mock('../../helpers/controllers/userInfoController')
 import { userInfo } from '../../helpers/controllers/userInfoController'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { session } from './session'
-import { prisma } from '../../prisma'
 
 describe('Session resolver', () => {
-  test('should return empty session if req.user does not exist', async () => {
-    const req = {}
-    expect(await session({}, {}, { req })).toEqual({ lessonStatus: [] })
+  test('should return empty session if req.user does not exist', () => {
+    return expect(session({}, {}, { req: {} })).resolves.toEqual({
+      lessonStatus: []
+    })
   })
 
   test('should return user including submissions and lessonStatus', async () => {
@@ -29,15 +30,14 @@ describe('Session resolver', () => {
         { id: 2, lessonId: 666, starGiven: '' }
       ]
     }
-    const req = { user: userInfoData.user }
-    userInfo.mockReturnValue(userInfoData)
-    prisma.star.findMany = jest
-      .fn()
-      .mockReturnValue([{ mentor: { username: 'superReviewer' }, lessonId: 4 }])
+    userInfo.mockResolvedValue(userInfoData)
+    prismaMock.star.findMany.mockResolvedValue([
+      { mentor: { username: 'superReviewer' }, lessonId: 4 }
+    ])
     const sessionReturnValue = await session(
       {},
       {},
-      { req: { user: { id: 815, username: 'test' } } }
+      { req: { user: userInfoData.user } }
     )
 
     expect(sessionReturnValue).toEqual(sessionData)

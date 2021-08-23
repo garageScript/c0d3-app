@@ -10,7 +10,7 @@ describe('lessonsAPI', () => {
 
   // needed to mock chaining status and json methods. Ex: res.status(201).json('lol')
   res.status.mockReturnValue(res)
-  const req = null
+  const req = {}
 
   test('should respond with data from lessons query resolver when there is no \
   error', async () => {
@@ -27,7 +27,6 @@ describe('lessonsAPI', () => {
     getLessons.lessons = jest.fn().mockImplementation(() => {
       throw new Error()
     })
-
     await lessonsAPI(req, res)
     expect(res.status).toBeCalledWith(500)
     expect(res.json).toBeCalledWith('Error occured 😮')

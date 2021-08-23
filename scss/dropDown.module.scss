@@ -1,0 +1,21 @@
+@import 'colors.module.scss';
+
+.item {
+  color: $gray;
+  &:hover {
+    color: $darkGray;
+    text-decoration: none;
+  }
+}
+
+.title {
+  color: $gray;
+  background: transparent;
+  border: none;
+  padding: 0.5em;
+  margin: 0 2em;
+  &:hover {
+    color: $darkGray;
+    text-decoration: none;
+  }
+}

@@ -2,13 +2,13 @@
  * @jest-environment node
  */
 
-jest.mock('../../helpers/validateLessonId')
+jest.mock('../../helpers/validation/validateLessonId')
+import { validateLessonId } from '../../helpers/validation/validateLessonId'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { getLessonMentors } from './getLessonMentors'
-import { validateLessonId } from '../../helpers/validateLessonId'
-import { prisma } from '../../prisma'
 describe('getLessonMentors resolver', () => {
   beforeEach(() => {
-    validateLessonId.mockReturnValue(true)
+    validateLessonId.mockResolvedValue(true)
   })
 
   test('should return an array of User objects', async () => {
@@ -20,10 +20,10 @@ describe('getLessonMentors resolver', () => {
         id: 240
       }
     ]
-    prisma.user.findMany = jest.fn().mockReturnValue(users)
-    const res = await getLessonMentors(null, { lessonId: 3 })
+    prismaMock.user.findMany.mockResolvedValue(users)
+    const res = await getLessonMentors(null, { lessonId: 3 }, { req: {} })
     expect(res).toEqual(users)
-    expect(prisma.user.findMany).toHaveBeenCalledWith({
+    expect(prismaMock.user.findMany).toHaveBeenCalledWith({
       select: {
         username: true,
         name: true,
@@ -34,7 +34,7 @@ describe('getLessonMentors resolver', () => {
         userLessons: {
           some: {
             lessonId: 3,
-            isPassed: { not: null }
+            passedAt: { not: null }
           }
         }
       },
@@ -46,32 +46,30 @@ describe('getLessonMentors resolver', () => {
 
   test('Should throw error if lessonId does not exist \
   in database when updating lesson', () => {
-    validateLessonId.mockImplementation(() => {
-      throw new Error()
-    })
-    expect(getLessonMentors(null, { lessonId: 3 })).rejects.toThrowError()
+    validateLessonId.mockRejectedValue(new Error())
+    return expect(
+      getLessonMentors(null, { lessonId: 3 }, { req: {} })
+    ).rejects.toThrowError()
   })
 
   test('should throw an error', () => {
-    prisma.user.findMany = jest.fn().mockImplementation(() => {
-      throw new Error()
-    })
-    //rejects: checks for promise rejection
-    //which would be the case if an error was thrown in a Promise
-    expect(getLessonMentors(null, { lessonId: '3' })).rejects.toThrow()
+    prismaMock.user.findMany.mockRejectedValue(new Error())
+    return expect(
+      getLessonMentors(null, { lessonId: 3 }, { req: {} })
+    ).rejects.toThrow()
   })
 
   test('should include userId in the query if session exists', async () => {
-    prisma.user.findMany = jest
-      .fn()
-      .mockReturnValue([{ username: 'user1', name: 'lol', id: 2 }])
+    prismaMock.user.findMany.mockResolvedValue([
+      { username: 'user1', name: 'lol', id: 2 }
+    ])
     const res = await getLessonMentors(
       null,
       { lessonId: 3 },
       { req: { user: { id: 1 } } }
     )
     expect(res).toEqual([{ username: 'user1', name: 'lol', id: 2 }])
-    expect(prisma.user.findMany).toHaveBeenCalledWith({
+    expect(prismaMock.user.findMany).toHaveBeenCalledWith({
       select: {
         username: true,
         name: true,
@@ -82,7 +80,7 @@ describe('getLessonMentors resolver', () => {
         userLessons: {
           some: {
             lessonId: 3,
-            isPassed: { not: null }
+            passedAt: { not: null }
           }
         }
       },

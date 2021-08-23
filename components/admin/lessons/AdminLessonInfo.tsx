@@ -1,7 +1,4 @@
-import { useMutation } from '@apollo/client'
 import React, { useEffect, useState } from 'react'
-import createNewLesson from '../../../graphql/queries/createLesson'
-import updateLesson from '../../../graphql/queries/updateLesson'
 import * as Sentry from '@sentry/browser'
 import { FormCard } from '../../FormCard'
 import _ from 'lodash'
@@ -10,7 +7,11 @@ import {
   makeGraphqlVariable,
   errorCheckAllFields
 } from '../../../helpers/admin/adminHelpers'
-import { Lesson } from '../../../graphql/index'
+import {
+  Lesson,
+  useCreateLessonMutation,
+  useUpdateLessonMutation
+} from '../../../graphql/index'
 import { AdminLessonChallenges, NewChallenge } from './AdminLessonChallenges'
 import { lessonSchema } from '../../../helpers/formValidation'
 import { formChange } from '../../../helpers/formChange'
@@ -32,13 +33,13 @@ type NewLessonProps = {
 
 // Creates card for a lessons's information to update
 const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
-  const [alterLesson, { loading, data }] = useMutation(updateLesson)
+  const [alterLesson, { loading, data, error }] = useUpdateLessonMutation()
   const [lessonProperties, setLessonProperties] = useState(
     getPropertyArr(lesson, ['challenges', '__typename'])
   )
   // when data is fully loaded after sending mutation request, update front-end lessons info
   useEffect(() => {
-    !loading && data && setLessons(data.updateLessons)
+    !loading && data && setLessons(data.updateLesson)
   }, [data])
 
   // alter gets called when someone clicks button to update a lesson
@@ -75,6 +76,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
         <FormCard
           onChange={handleChange}
           values={lessonProperties}
+          submitError={error?.message}
           onSubmit={{ title: 'Update Lesson', onClick: alter }}
           title={lesson && lesson.title + ''}
         />
@@ -90,12 +92,13 @@ const newLessonAttributes = {
   githubUrl: '',
   videoUrl: '',
   order: '',
+  slug: '',
   chatUrl: ''
 }
 
 // Renders when someone clicks on `create new button` on the sidebar
 const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
-  const [createLesson, { loading, data }] = useMutation(createNewLesson)
+  const [createLesson, { loading, data, error }] = useCreateLessonMutation()
   const [lessonProperties, setLessonProperties] = useState(
     getPropertyArr(newLessonAttributes)
   )
@@ -141,6 +144,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
       <FormCard
         onChange={handleChange}
         values={lessonProperties}
+        submitError={error?.message}
         onSubmit={{ title: 'Create Lesson', onClick: alter }}
       />
     </div>

@@ -61,6 +61,7 @@ export const ResetPassword: React.FC = () => {
               data-testid="userOrEmail"
               type="text"
               as={Input}
+              autoFocus
             />
 
             <button

@@ -1,4 +1,6 @@
-export default [
+import { Lesson } from '../graphql'
+
+const dummyLessonsData: Lesson[] = [
   {
     id: 5,
     title: 'Foundations of JavaScript',
@@ -9,6 +11,7 @@ export default [
     videoUrl:
       'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
     order: 0,
+    slug: 'js0',
     challenges: [
       {
         id: 107,
@@ -104,6 +107,7 @@ export default [
     videoUrl:
       'https://www.youtube.com/watch?v=H-eqRQo8KoI&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7&index=1',
     order: 1,
+    slug: 'js1',
     challenges: [
       {
         id: 146,
@@ -216,6 +220,7 @@ export default [
     videoUrl:
       'https://www.youtube.com/watch?v=rem796-hPY8&index=3&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7',
     order: 2,
+    slug: 'js2',
     challenges: [
       {
         id: 84,
@@ -320,6 +325,7 @@ export default [
     videoUrl:
       'https://www.youtube.com/watch?v=Npn275pNXYw&index=4&list=PLKmS5c0UNZmewGBWlz0l9GZwh3bV8Rlc7',
     order: 3,
+    slug: 'js3',
     challenges: [
       {
         id: 91,
@@ -414,6 +420,7 @@ export default [
     githubUrl: '',
     videoUrl: '',
     order: 4,
+    slug: 'js4',
     challenges: [
       {
         id: 177,
@@ -484,6 +491,7 @@ export default [
     githubUrl: '',
     videoUrl: '',
     order: 5,
+    slug: 'js5',
     challenges: [
       {
         id: 73,
@@ -568,6 +576,7 @@ export default [
     githubUrl: '',
     videoUrl: '',
     order: 6,
+    slug: 'js6',
     challenges: [
       {
         id: 192,
@@ -646,6 +655,7 @@ export default [
     githubUrl: '',
     videoUrl: '',
     order: 7,
+    slug: 'js7',
     challenges: [
       {
         id: 180,
@@ -746,6 +756,7 @@ export default [
     githubUrl: '',
     videoUrl: '',
     order: 8,
+    slug: 'js8',
     challenges: [
       {
         id: 160,
@@ -852,10 +863,11 @@ export default [
     id: 27,
     title: 'General Algorithms',
     description: 'General Algorithm from interviews',
-    docUrl: '',
+    docUrl: null,
     githubUrl: '',
     videoUrl: '',
     order: 9,
+    slug: 'js9',
     challenges: [
       {
         id: 167,
@@ -901,3 +913,5 @@ export default [
     chatUrl: null
   }
 ]
+
+export default dummyLessonsData

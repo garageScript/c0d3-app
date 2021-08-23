@@ -12,7 +12,7 @@ const alertValidation = Yup.object({
   urlCaption: Yup.string()
 })
 
-const lessonSchema = Yup.object({
+const challengeSchema = Yup.object({
   title: Yup.string().required('Required').strict(true),
   description: Yup.string().required('Required').strict(true),
   order: Yup.number()
@@ -20,6 +20,21 @@ const lessonSchema = Yup.object({
     .typeError('Numbers only')
     .min(0, 'Positive numbers only')
     .strict(true)
+})
+
+const lessonSchema = Yup.object({
+  title: Yup.string().required('Required').strict(true),
+  description: Yup.string().required('Required').strict(true),
+  docUrl: Yup.string(),
+  githubUrl: Yup.string(),
+  videoUrl: Yup.string(),
+  order: Yup.number()
+    .required('Required')
+    .typeError('Numbers only')
+    .min(0, 'Positive numbers only')
+    .strict(true),
+  slug: Yup.string().required('Required').strict(true),
+  chatUrl: Yup.string()
 })
 
 const signupValidation = Yup.object({
@@ -88,6 +103,7 @@ const resetPasswordValidation = Yup.object({
 
 export {
   alertValidation,
+  challengeSchema,
   lessonSchema,
   signupValidation,
   loginValidation,

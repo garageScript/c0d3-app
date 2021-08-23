@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import { FormCard } from './FormCard'
-
+import '@testing-library/jest-dom'
 let testBtnOnClick = ''
 
 const mockBtn = {
@@ -86,6 +86,19 @@ describe('FormCard Component', () => {
     const input = getByTestId('h50')
     expect(input.value).toBeFalsy
     expect(container).toMatchSnapshot()
+  })
+
+  test('Should display submit error message', () => {
+    const mockError = 'Helpful Error Message Here :)'
+    const { queryByText } = render(
+      <FormCard
+        onChange={() => {}}
+        values={[{ title: '' }]}
+        submitError={mockError}
+        onSubmit={mockBtn}
+      />
+    )
+    expect(queryByText(mockError)).toBeVisible()
   })
 
   test('Should render nothing if id is a title', () => {

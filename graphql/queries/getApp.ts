@@ -10,6 +10,7 @@ const GET_APP = gql`
       githubUrl
       videoUrl
       order
+      slug
       challenges {
         id
         title
@@ -60,9 +61,7 @@ const GET_APP = gql`
 
       lessonStatus {
         lessonId
-        isPassed
-        isTeaching
-        isEnrolled
+        passedAt
         starGiven
       }
     }

@@ -2,6 +2,7 @@ import React from 'react'
 import AppNav from './AppNav'
 import Footer from './Footer'
 import Head from 'next/head'
+import type { LayoutGetter } from '../@types/page'
 const Layout: React.FC<{ title?: string }> = ({ children, title }) => (
   <>
     <Head>
@@ -13,4 +14,5 @@ const Layout: React.FC<{ title?: string }> = ({ children, title }) => (
   </>
 )
 
+export const getLayout: LayoutGetter = page => <Layout>{page}</Layout>
 export default Layout

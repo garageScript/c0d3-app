@@ -1,28 +1,23 @@
+import { AuthenticationError, UserInputError } from 'apollo-server-micro'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
-import { UserInputError, AuthenticationError } from 'apollo-server-micro'
+import type { Context } from '../../@types/helpers'
+import type {
+  LoginMutationVariables,
+  SignupMutationVariables
+} from '../../graphql'
+import prisma from '../../prisma'
+import { decode, encode } from '../encoding'
 import { signupValidation } from '../formValidation'
-import { Context } from '../../@types/helpers'
-import { encode, decode } from '../encoding'
 import { sendSignupEmail } from '../mail'
-import { prisma } from '../../prisma'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
-type Login = {
-  username: string
-  password: string
-}
-
-type SignUp = {
-  firstName: string
-  lastName: string
-  username: string
-  password: string
-  email: string
-}
-
-export const login = async (_parent: void, arg: Login, ctx: Context) => {
+export const login = async (
+  _parent: void,
+  arg: LoginMutationVariables,
+  ctx: Context
+) => {
   const { req } = ctx
   try {
     const { session } = req
@@ -32,7 +27,7 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
       throw new Error('Session Error')
     }
 
-    const user = await prisma.user.findFirst({ where: { username } })
+    let user = await prisma.user.findFirst({ where: { username } })
     // TODO change username column to be unique
     // const user = await prisma.user.findUnique({ where: { username } })
     if (!user) {
@@ -47,7 +42,7 @@ export const login = async (_parent: void, arg: Login, ctx: Context) => {
     }
 
     if (!user.cliToken) {
-      await prisma.user.update({
+      user = await prisma.user.update({
         where: {
           id: user.id
         },
@@ -97,7 +92,11 @@ export const logout = async (_parent: void, _: void, ctx: Context) => {
   })
 }
 
-export const signup = async (_parent: void, arg: SignUp, ctx: Context) => {
+export const signup = async (
+  _parent: void,
+  arg: SignupMutationVariables,
+  ctx: Context
+) => {
   const { req } = ctx
   try {
     const { session } = req
@@ -195,7 +194,7 @@ export const isTokenValid = async (
   try {
     const { id, cliToken } = decode(arg.cliToken)
     const user = await prisma.user.findUnique({ where: { id } })
-    return user ? user.cliToken === cliToken : false
+    return user?.cliToken === cliToken || false
   } catch (err) {
     throw new Error(err)
   }

@@ -2,12 +2,12 @@
  * @jest-environment node
  */
 
-import { prisma } from '../../prisma'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { lessons } from './lessons'
 
 describe('Lessons resolver', () => {
   test('lessons should return an empty array', async () => {
-    prisma.lesson.findMany = jest.fn().mockReturnValue([])
-    expect(lessons()).toEqual([])
+    prismaMock.lesson.findMany.mockResolvedValue([])
+    return expect(lessons()).resolves.toEqual([])
   })
 })

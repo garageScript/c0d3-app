@@ -4,9 +4,9 @@ import type {
   UpdateChallengeMutationVariables
 } from '../../graphql'
 import { lessons } from '../../graphql/queryResolvers/lessons'
-import { prisma } from '../../prisma'
-import { isAdmin } from '../isAdmin'
-import { validateLessonId } from '../validateLessonId'
+import prisma from '../../prisma'
+import { isAdminOrThrow } from '../isAdmin'
+import { validateLessonId } from '../validation/validateLessonId'
 
 export const createChallenge = async (
   _parent: void,
@@ -15,9 +15,7 @@ export const createChallenge = async (
 ) => {
   const { req } = ctx
   try {
-    if (!isAdmin(req)) {
-      throw new Error('User is not an admin')
-    }
+    isAdminOrThrow(req)
     await validateLessonId(arg.lessonId)
     await prisma.challenge.create({ data: arg })
     return lessons()
@@ -33,9 +31,7 @@ export const updateChallenge = async (
 ) => {
   const { req } = ctx
   try {
-    if (!isAdmin(req)) {
-      throw new Error('User is not an admin')
-    }
+    isAdminOrThrow(req)
     const { id, lessonId, ...data } = arg
     await validateLessonId(lessonId)
     await prisma.challenge.update({

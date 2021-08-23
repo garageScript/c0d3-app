@@ -7,6 +7,8 @@ import GET_APP from '../../graphql/queries/getApp'
 import LOGIN_USER from '../../graphql/queries/loginUser'
 import LoginPage from '../../pages/login'
 import { useRouter } from 'next/router'
+import { getLayout } from '../../components/Layout'
+import { cloneDeep } from 'lodash'
 
 describe('Login Page', () => {
   const fakeUsername = 'fake username'
@@ -20,55 +22,62 @@ describe('Login Page', () => {
     await userEvent.type(usernameField, fakeUsername, { delay: 1 })
     await userEvent.type(passwordField, fakePassword, { delay: 1 })
   }
-  const { push } = useRouter()
+  const { push, query } = useRouter()
   beforeEach(() => {
     jest.clearAllMocks()
   })
-  test('Should redirect to /curriculum on success', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: [],
-            alerts: []
-          }
+  test('Should use Layout component getLayout ', async () => {
+    expect(LoginPage.getLayout === getLayout).toBe(true)
+  })
+
+  const successfulLoginMocks = [
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          session: null,
+          lessons: [],
+          alerts: []
+        }
+      }
+    },
+    {
+      request: { query: GET_APP },
+      result: {
+        data: {
+          session: null,
+          lessons: [],
+          alerts: []
+        }
+      }
+    },
+    {
+      request: {
+        query: LOGIN_USER,
+        variables: {
+          username: fakeUsername,
+          password: fakePassword
         }
       },
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            session: null,
-            lessons: [],
-            alerts: []
-          }
-        }
-      },
-      {
-        request: {
-          query: LOGIN_USER,
-          variables: {
+      result: {
+        data: {
+          login: {
+            success: true,
             username: fakeUsername,
-            password: fakePassword
-          }
-        },
-        result: {
-          data: {
-            login: {
-              success: true,
-              username: fakeUsername,
-              cliToken: 'fake token',
-              error: null
-            }
+            cliToken: 'fake token',
+            error: null
           }
         }
       }
-    ]
+    }
+  ]
 
+  test('Should redirect to /curriculum on success', async () => {
     const { getByTestId } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider
+        mocks={cloneDeep(successfulLoginMocks)}
+        addTypename={false}
+      >
         <LoginPage />
       </MockedProvider>
     )
@@ -79,6 +88,26 @@ describe('Login Page', () => {
     fireEvent.click(submitButton)
 
     await waitFor(() => expect(push).toBeCalledWith('/curriculum'))
+  })
+
+  test('Should redirect to the path in `next` on success', async () => {
+    query.next = 'url-to-go-to-post-login'
+
+    const { getByTestId } = render(
+      <MockedProvider
+        mocks={cloneDeep(successfulLoginMocks)}
+        addTypename={false}
+      >
+        <LoginPage />
+      </MockedProvider>
+    )
+
+    const submitButton = getByTestId('submit')
+
+    await fillOutLoginForm(getByTestId)
+    fireEvent.click(submitButton)
+
+    await waitFor(() => expect(push).toBeCalledWith(query.next))
   })
 
   test('Should set alert visible on invalid credentials', async () => {

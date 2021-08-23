@@ -7,58 +7,64 @@ jest.mock('nanoid')
 jest.mock('nodemailer')
 jest.mock('../mail')
 import { nanoid } from 'nanoid'
-import { changePw, reqPwReset } from './passwordController'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { encode } from '../encoding'
-import { prisma } from '../../prisma'
 import { sendResetEmail } from '../mail'
+import { changePw, reqPwReset } from './passwordController'
 
-prisma.user.update = jest.fn(i => i.data)
+const user = {
+  id: 1,
+  username: 'c0d3r',
+  email: 'c0d3r@c0d3.com'
+}
 
 describe('Request Password Reset', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    prismaMock.user.update.mockImplementation(args =>
+      Promise.resolve({
+        ...user,
+        ...args.data
+      })
+    )
   })
   const ctx = { req: { error: jest.fn() } }
 
   test('It should find a user with username if it is provided', async () => {
     nanoid.mockReturnValue('fake123')
-    prisma.user.findFirst = jest.fn().mockResolvedValueOnce({
-      id: 3
-    })
+    prismaMock.user.findFirst.mockResolvedValueOnce(user)
     await expect(
-      reqPwReset(() => {}, { userOrEmail: 'c0d3r' }, ctx)
+      reqPwReset(() => {}, { userOrEmail: user.username }, ctx)
     ).resolves.toEqual({
       success: true
     })
-    expect(prisma.user.findFirst).toBeCalledWith({
-      where: { username: 'c0d3r' }
+    expect(prismaMock.user.findFirst).toBeCalledWith({
+      where: { username: user.username }
     })
-    expect(prisma.user.update).toBeCalled()
+    expect(prismaMock.user.update).toBeCalled()
   })
 
   test('It should find a user with email if it is provided', async () => {
     nanoid.mockReturnValue('fake123')
-    prisma.user.findFirst = jest.fn().mockResolvedValueOnce({
-      id: 3
-    })
+    prismaMock.user.findFirst.mockResolvedValueOnce(user)
     await expect(
-      reqPwReset(() => {}, { userOrEmail: 'c0d3r@c0d3.com' }, ctx)
+      reqPwReset(() => {}, { userOrEmail: user.email }, ctx)
     ).resolves.toEqual({
       success: true
     })
-    expect(prisma.user.findFirst).toBeCalledWith({
-      where: { email: 'c0d3r@c0d3.com' }
+    expect(prismaMock.user.findFirst).toBeCalledWith({
+      where: { email: user.email }
     })
-    expect(prisma.user.update).toBeCalled()
+    expect(prismaMock.user.update).toBeCalled()
   })
   test('It should throw an error if user is not found', () => {
-    prisma.user.findFirst = jest.fn().mockResolvedValueOnce(null)
-    expect(
+    prismaMock.user.findFirst.mockResolvedValueOnce(null)
+    return expect(
       reqPwReset(() => {}, { userOrEmail: 'badc0d3r' }, ctx)
     ).rejects.toThrowError('User does not exist')
   })
   test('It should log the error if an internal function fails', async () => {
-    prisma.user.findFirst = jest.fn().mockRejectedValue(new Error())
+    prismaMock.user.findFirst.mockRejectedValue(new Error())
     const errFunc = jest.fn()
     await expect(
       reqPwReset(
@@ -72,7 +78,7 @@ describe('Request Password Reset', () => {
   })
 
   it('should fail if email is not sent correctly', () => {
-    prisma.user.findFirst = jest.fn().mockResolvedValueOnce({ id: 3 })
+    prismaMock.user.findFirst.mockResolvedValueOnce({ id: 3 })
     sendResetEmail.mockRejectedValue(Error('email not sent'))
     return expect(
       reqPwReset(() => {}, { userOrEmail: 'c0d3r' }, ctx)
@@ -85,13 +91,19 @@ describe('Request Password Reset', () => {
 describe('Change Password', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    prismaMock.user.update.mockImplementation(args =>
+      Promise.resolve({
+        ...user,
+        ...args.data
+      })
+    )
   })
   const ctx = { req: { error: jest.fn(), session: {} } }
 
   test('It throws an error when session does not exist', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    prisma.user.findUnique = jest.fn().mockResolvedValue(null)
-    expect(
+    prismaMock.user.findUnique.mockResolvedValue(null)
+    return expect(
       changePw(
         () => {},
         { password: 'newpassword', token: sampleToken },
@@ -102,27 +114,27 @@ describe('Change Password', () => {
 
   test('It throws an error if user is not found from token', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    prisma.user.findUnique = jest.fn().mockResolvedValue(null)
-    expect(
+    prismaMock.user.findUnique.mockResolvedValue(null)
+    return expect(
       changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('User does not exist')
   })
 
   test('It throws an error if password does not match validation', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    expect(
+    return expect(
       changePw(() => {}, { password: 'abc', token: sampleToken }, ctx)
     ).rejects.toThrowError('Password does not meet criteria')
   })
 
   test('It returns success when user id is found', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    prisma.user.findUnique = jest.fn().mockResolvedValue({
-      id: 3,
+    prismaMock.user.findUnique.mockResolvedValue({
+      ...user,
       tokenExpiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
       forgotToken: sampleToken
     })
-    expect(
+    return expect(
       changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).resolves.toEqual({ success: true })
   })
@@ -130,24 +142,24 @@ describe('Change Password', () => {
   test('It detects invalid forgotToken when it does not match', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
     const sampleToken2 = encode({ userId: 3, userToken: 'abc211' })
-    prisma.user.findUnique = jest.fn().mockResolvedValue({
-      id: 3,
+    prismaMock.user.findUnique.mockResolvedValue({
+      ...user,
       tokenExpiration: new Date(Date.now() + 1000 * 60 * 60 * 24),
       forgotToken: sampleToken2
     })
-    expect(
+    return expect(
       changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('Invalid Token')
   })
 
   test('It detects invalid forgotToken when token is expired', () => {
     const sampleToken = encode({ userId: 3, userToken: 'abc123456' })
-    prisma.user.findUnique = jest.fn().mockResolvedValue({
-      id: 3,
+    prismaMock.user.findUnique.mockResolvedValue({
+      ...user,
       tokenExpiration: new Date(Date.now() - 1000 * 60 * 60 * 24),
       forgotToken: sampleToken
     })
-    expect(
+    return expect(
       changePw(() => {}, { password: 'newpassword', token: sampleToken }, ctx)
     ).rejects.toThrowError('Invalid Token')
   })
