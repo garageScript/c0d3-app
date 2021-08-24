@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import Docs, {
   getStaticProps,
   getStaticPaths
-} from '../../../pages/docs/[doc_slug]'
+} from '../../../pages/docs/[docSlug]'
 import { getLayout } from '../../../components/Layout'
 import {
   getDocSlugs,
@@ -34,7 +34,7 @@ title: fake doc
   'utf-8'
 )
 let frontMatter, source
-describe('[doc_slug] Page', () => {
+describe('[docSlug] Page', () => {
   beforeAll(async () => {
     // Get real mdx to test proper mdx rendering
     const mdx = await parseMDX(fakeDocContent)
@@ -47,14 +47,14 @@ describe('[doc_slug] Page', () => {
   describe('getStaticPaths', () => {
     test('should call getDocsSlugs helper function and return paths w/ fallback false', async () => {
       getDocSlugs.mockImplementation(() => [
-        { doc_slug: 'some_doc' },
-        { doc_slug: 'some_doc_two' }
+        { docSlug: 'some_doc' },
+        { docSlug: 'some_doc_two' }
       ])
 
       expect(await getStaticPaths()).toEqual({
         paths: [
-          { params: { doc_slug: 'some_doc' } },
-          { params: { doc_slug: 'some_doc_two' } }
+          { params: { docSlug: 'some_doc' } },
+          { params: { docSlug: 'some_doc_two' } }
         ],
         fallback: false
       })
@@ -71,16 +71,16 @@ describe('[doc_slug] Page', () => {
       expect(getDocGithubFilePath).not.toHaveBeenCalled()
       expect(getDocContent).not.toHaveBeenCalled()
 
-      const doc_slug = 'some_doc'
-      expect(await getStaticProps({ params: { doc_slug } })).toEqual({
+      const docSlug = 'some_doc'
+      expect(await getStaticProps({ params: { docSlug } })).toEqual({
         props: {
           source,
           frontMatter,
           docFilePath: fakeGithubPath
         }
       })
-      expect(getDocGithubFilePath).toHaveBeenCalledWith(doc_slug)
-      expect(getDocContent).toHaveBeenCalledWith(doc_slug)
+      expect(getDocGithubFilePath).toHaveBeenCalledWith(docSlug)
+      expect(getDocContent).toHaveBeenCalledWith(docSlug)
     })
   })
 

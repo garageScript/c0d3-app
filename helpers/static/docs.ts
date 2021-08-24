@@ -6,20 +6,20 @@ export const DOCS_PATH = path.join(process.cwd(), DOCS_GITHUB_PATH)
 
 export const getDocSlugs = () =>
   fs.readdirSync(DOCS_PATH).map(file => {
-    const doc_slug = file.replace(/\.mdx$/, '')
+    const docSlug = file.replace(/\.mdx$/, '')
 
-    if (doc_slug !== encodeURI(doc_slug))
+    if (docSlug !== encodeURI(docSlug))
       throw Error(
-        `Invalid document filename: "${doc_slug}", must be URI encoded characters`
+        `Invalid document filename: "${docSlug}", must be URI encoded characters`
       )
 
-    return { doc_slug }
+    return { docSlug }
   })
 
-export const getDocGithubFilePath = (doc_slug: string) =>
-  path.join(DOCS_GITHUB_PATH, doc_slug + '.mdx')
+export const getDocGithubFilePath = (docSlug: string) =>
+  path.join(DOCS_GITHUB_PATH, docSlug + '.mdx')
 
-export const getDocContent = (doc_slug: string) => {
-  const filePath = path.join(DOCS_PATH, doc_slug + '.mdx')
+export const getDocContent = (docSlug: string) => {
+  const filePath = path.join(DOCS_PATH, docSlug + '.mdx')
   return fs.readFileSync(filePath)
 }

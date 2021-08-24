@@ -20,7 +20,7 @@ import SubLessonLinks from '../../../components/SubLessonLinks'
 import EditPage from '../../../components/EditPage'
 import MDXcomponents from '../../../helpers/mdxComponents'
 
-import styles from '../../../scss/[subLessonSlug].module.scss'
+import styles from '../../../scss/mdx.module.scss'
 import ScrollTopArrow from '../../../components/ScrollTopArrow'
 import Title from '../../../components/Title'
 

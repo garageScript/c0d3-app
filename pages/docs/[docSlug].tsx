@@ -14,7 +14,7 @@ import {
 import { parseMDX } from '../../helpers/static/parseMDX'
 import MDXcomponents from '../../helpers/mdxComponents'
 import { useRouter } from 'next/router'
-import styles from '../../scss/doc_slug.module.scss'
+import styles from '../../scss/mdx.module.scss'
 import EditPage from '../../components/EditPage'
 interface Props {
   source: MDXRemoteSerializeResult
@@ -56,10 +56,10 @@ Docs.getLayout = getLayout
 export default Docs
 
 interface Slugs extends ParsedUrlQuery {
-  doc_slug: string
+  docSlug: string
 }
 
-export const getStaticPaths: GetStaticPaths<Slugs> = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const slugs = getDocSlugs()
 
   return {
@@ -69,11 +69,11 @@ export const getStaticPaths: GetStaticPaths<Slugs> = async () => {
 }
 
 export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
-  const { doc_slug } = context.params ?? {}
+  const { docSlug } = context.params!
 
-  if (!doc_slug) throw new Error(`Missing Slug: "doc_slug: ${doc_slug}"`)
-  const docFilePath = getDocGithubFilePath(doc_slug)
-  const docContents = getDocContent(doc_slug)
+  if (!docSlug) throw new Error(`Missing Slug: "docSlug: ${docSlug}"`)
+  const docFilePath = getDocGithubFilePath(docSlug)
+  const docContents = getDocContent(docSlug)
 
   const { source, frontMatter } = await parseMDX(docContents)
   return {
