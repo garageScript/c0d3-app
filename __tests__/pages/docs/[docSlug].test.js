@@ -2,6 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { dummyDocFileContent, dummyParsedDocMdx } from '../../../__dummy__/mdx'
 import Docs, {
   getStaticProps,
   getStaticPaths
@@ -12,35 +13,19 @@ import {
   getDocGithubFilePath,
   getDocContent
 } from '../../../helpers/static/docs'
+jest.mock('../../../helpers/static/docs')
 import { parseMDX } from '../../../helpers/static/parseMDX'
+jest.mock('../../../helpers/static/parseMDX')
 import Title from '../../../components/Title'
-
 jest.mock('../../../components/Title', () => {
   return jest.fn(() => null)
 })
 
 import { useRouter } from 'next/router' // Auto mocked
-jest.mock('../../../helpers/static/docs')
 
-const fakeGithubPath = 'some/fake/path'
-const fakeDocContent = Buffer.from(
-  `---
-title: fake doc
----
+describe('[docSlug]', () => {
+  const fakeGithubPath = 'some/fake/path'
 
-# markdown
-<Spoiler name="what am i?"> mdx to jsx :)</Spoiler>
-`,
-  'utf-8'
-)
-let frontMatter, source
-describe('[docSlug] Page', () => {
-  beforeAll(async () => {
-    // Get real mdx to test proper mdx rendering
-    const mdx = await parseMDX(fakeDocContent)
-    frontMatter = mdx.frontMatter
-    source = mdx.source
-  })
   beforeEach(() => {
     jest.clearAllMocks()
   })
@@ -62,20 +47,20 @@ describe('[docSlug] Page', () => {
   })
   describe('getStaticProps', () => {
     test('should throw when called with no slug', async () => {
-      await expect(getStaticProps({})).rejects.toThrowError()
+      await expect(() => getStaticProps({ params: {} })).rejects.toThrowError(
+        /Missing Slug/
+      )
     })
 
-    test('should call getDocGithubFilePath, getDocContent and return props', async () => {
+    test('should return correct props', async () => {
       getDocGithubFilePath.mockReturnValue(fakeGithubPath)
-      getDocContent.mockReturnValue(fakeDocContent)
-      expect(getDocGithubFilePath).not.toHaveBeenCalled()
-      expect(getDocContent).not.toHaveBeenCalled()
+      getDocContent.mockReturnValue(dummyDocFileContent)
+      parseMDX.mockResolvedValue(dummyParsedDocMdx)
 
       const docSlug = 'some_doc'
       expect(await getStaticProps({ params: { docSlug } })).toEqual({
         props: {
-          source,
-          frontMatter,
+          ...dummyParsedDocMdx,
           docFilePath: fakeGithubPath
         }
       })
@@ -84,86 +69,67 @@ describe('[docSlug] Page', () => {
     })
   })
 
-  test('Should use getLayout from Layout component', async () => {
-    expect(Docs.getLayout).toBe(getLayout)
-  })
+  describe('Page', () => {
+    test('Should use getLayout from Layout component', () => {
+      expect(Docs.getLayout).toBe(getLayout)
+    })
 
-  test('should render functioning "Go Back" button', () => {
-    const { back } = useRouter()
-    render(
-      <Docs
-        frontMatter={frontMatter}
-        source={source}
-        docFilePath={fakeGithubPath}
-      />
-    )
+    test('should render functioning "Go Back" button', () => {
+      const { back } = useRouter()
+      render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
 
-    expect(back).not.toHaveBeenCalled()
-    userEvent.click(screen.getByRole('button', { name: 'Go Back' }))
-    expect(back).toHaveBeenCalled()
-  })
+      expect(back).not.toHaveBeenCalled()
+      userEvent.click(screen.getByRole('button', { name: 'Go Back' }))
+      expect(back).toHaveBeenCalled()
+    })
 
-  test('should render EditPage component with link to docFilePath', () => {
-    render(
-      <Docs
-        frontMatter={frontMatter}
-        source={source}
-        docFilePath={fakeGithubPath}
-      />
-    )
-    expect(screen.getByRole('link')).toHaveAttribute(
-      'href',
-      expect.stringContaining(fakeGithubPath)
-    )
-  })
+    test('should render EditPage component with link to docFilePath', () => {
+      render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
+      expect(screen.getByRole('link')).toHaveAttribute(
+        'href',
+        expect.stringContaining(fakeGithubPath)
+      )
+    })
 
-  test('should display default document title and not render page title without frontMatter.title', () => {
-    const { container } = render(
-      <Docs frontMatter={{}} source={source} docFilePath={fakeGithubPath} />
-    )
+    test('should display default document title when no frontMatter.title is provided', () => {
+      render(
+        <Docs
+          frontMatter={{}}
+          source={dummyParsedDocMdx.source}
+          docFilePath={fakeGithubPath}
+        />
+      )
 
-    expect(Title).toHaveBeenCalledWith(
-      {
-        title: 'C0D3 | Docs'
-      },
-      {}
-    )
-    expect(container).toMatchSnapshot()
-  })
+      expect(Title).toHaveBeenCalledWith({ title: 'C0D3 | Docs' }, {})
+    })
 
-  test('should render Title component with frontMatter.title', () => {
-    render(
-      <Docs
-        frontMatter={frontMatter}
-        source={source}
-        docFilePath={fakeGithubPath}
-      />
-    )
+    test('should render Title component with frontMatter.title', () => {
+      render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
 
-    expect(Title).toHaveBeenCalledWith(
-      {
-        title: expect.stringContaining(frontMatter.title)
-      },
-      {}
-    )
-  })
+      expect(Title).toHaveBeenCalledWith(
+        {
+          title: expect.stringContaining(dummyParsedDocMdx.frontMatter.title)
+        },
+        {}
+      )
+    })
 
-  test('should render functioning MDX content', async () => {
-    const { container } = render(
-      <Docs
-        frontMatter={frontMatter}
-        source={source}
-        docFilePath={fakeGithubPath}
-      />
-    )
+    test('should render functioning MDX content', () => {
+      render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
 
-    // Spoiler component renders into details / summary html elements
-    const detailsElement = screen.getByRole('group')
+      // Spoiler component renders into details / summary html elements
+      const detailsElement = screen.getByRole('group')
 
-    expect(detailsElement).not.toHaveAttribute('open')
-    userEvent.click(screen.getByText('what am i?'))
-    expect(detailsElement).toHaveAttribute('open')
+      expect(detailsElement).not.toHaveAttribute('open')
+      userEvent.click(screen.getByText('what am i?'))
+      expect(detailsElement).toHaveAttribute('open')
+    })
+    test('should match screenshot', () => {
+      const { container } = render(
+        <Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />
+      )
 
-    expect(container).toMatchSnapshot()
+      expect(container).toMatchSnapshot()
+    })
   })
 })

@@ -1,3 +1,23 @@
+export const dummyDocFileContent = Buffer.from(
+  `---
+title: fake doc
+---
+
+# markdown
+<Spoiler name="what am i?"> mdx to jsx :)</Spoiler>
+`,
+  'utf-8'
+)
+// Generated with parseMdx utility (with file content from above)
+export const dummyParsedDocMdx = {
+  frontMatter: { title: 'fake doc' },
+  source: {
+    compiledSource:
+      'var c=Object.defineProperty,u=Object.defineProperties;var l=Object.getOwnPropertyDescriptors;var a=Object.getOwnPropertySymbols;var p=Object.prototype.hasOwnProperty,d=Object.prototype.propertyIsEnumerable;var i=(o,e,t)=>e in o?c(o,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):o[e]=t,r=(o,e)=>{for(var t in e||(e={}))p.call(e,t)&&i(o,t,e[t]);if(a)for(var t of a(e))d.call(e,t)&&i(o,t,e[t]);return o},m=(o,e)=>u(o,l(e));var s=(o,e)=>{var t={};for(var n in o)p.call(o,n)&&e.indexOf(n)<0&&(t[n]=o[n]);if(o!=null&&a)for(var n of a(o))e.indexOf(n)<0&&d.call(o,n)&&(t[n]=o[n]);return t};const makeShortcode=o=>function(t){return console.warn("Component "+o+" was not imported, exported, or provided by MDXProvider as global scope"),mdx("div",r({},t))},Spoiler=makeShortcode("Spoiler"),layoutProps={},MDXLayout="wrapper";function MDXContent(t){var n=t,{components:o}=n,e=s(n,["components"]);return mdx(MDXLayout,m(r(r({},layoutProps),e),{components:o,mdxType:"MDXLayout"}),mdx("h1",r({},{id:"markdown"}),"markdown"),mdx(Spoiler,{name:"what am i?",mdxType:"Spoiler"}," mdx to jsx :)"))}MDXContent.isMDXComponent=!0;\n',
+    scope: {}
+  }
+}
+
 export const dummySubLessonFileContent = [
   Buffer.from(
     `---
