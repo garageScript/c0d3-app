@@ -8,8 +8,8 @@ describe('Static Docs Helpers', () => {
       fs.readdirSync.mockReturnValue(['doc_1.mdx', 'some_other_doc.mdx'])
 
       expect(getDocSlugs()).toEqual([
-        { doc_slug: 'doc_1' },
-        { doc_slug: 'some_other_doc' }
+        { docSlug: 'doc_1' },
+        { docSlug: 'some_other_doc' }
       ])
       expect(fs.readdirSync).toHaveBeenCalled()
     })
