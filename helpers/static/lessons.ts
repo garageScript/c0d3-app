@@ -1,4 +1,4 @@
-import fs from 'fs'
+import { promises as fs } from 'fs'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import path from 'path'
 
@@ -14,34 +14,36 @@ export type SubLesson = {
   subLessonSlug: string
 }
 
-export const getLessonSlugs = () =>
-  fs.readdirSync(LESSONS_PATH).map(folder => {
-    if (folder !== encodeURI(folder))
-      throw Error(
-        `Invalid lesson folder name: "${folder}", must be URI encoded characters`
-      )
+const isURIEncodedOrThrow = (errorPrefix: string, slug: string) => {
+  if (slug !== encodeURI(slug))
+    throw Error(`${errorPrefix}: "${slug}", must be URI encoded: `)
+  return true
+}
+
+export const getLessonSlugs = async () => {
+  const folderNames = await fs.readdir(LESSONS_PATH)
+
+  return folderNames.map(folder => {
+    isURIEncodedOrThrow('Invalid lesson folder name', folder)
+
     return {
       lessonSlug: folder
     }
   })
+}
 
-export const getSubLessonSlugs = (lessonSlug?: string) => {
-  if (lessonSlug && lessonSlug !== encodeURI(lessonSlug))
-    throw Error(`lessonSlug: "${lessonSlug}", must be URI encoded: `)
+export const getSubLessonSlugs = async (lessonSlug?: string) => {
+  lessonSlug && isURIEncodedOrThrow('Invalid lessonSlug', lessonSlug)
 
-  const lessonSlugs = lessonSlug ? [{ lessonSlug }] : getLessonSlugs()
+  const lessonSlugs = lessonSlug ? [{ lessonSlug }] : await getLessonSlugs()
 
-  const subLessonSlugs = lessonSlugs.flatMap(({ lessonSlug }) => {
+  const subLessonSlugsPromises = lessonSlugs.map(async ({ lessonSlug }) => {
     const subLessonPath = path.join(LESSONS_PATH, lessonSlug, 'sublesson')
-    const fileNames = fs.readdirSync(subLessonPath)
+    const fileNames = await fs.readdir(subLessonPath)
 
     return fileNames.map(file => {
       const subLessonSlug = file.replace(/\.mdx$/, '')
-
-      if (subLessonSlug !== encodeURI(subLessonSlug))
-        throw Error(
-          `Invalid sublesson filename: "${subLessonSlug}", must be URI encoded characters`
-        )
+      isURIEncodedOrThrow('Invalid subLesson filename', subLessonSlug)
 
       return {
         lessonSlug,
@@ -50,7 +52,7 @@ export const getSubLessonSlugs = (lessonSlug?: string) => {
     })
   })
 
-  return subLessonSlugs
+  return (await Promise.all(subLessonSlugsPromises)).flat()
 }
 
 type Slugs = {
@@ -70,6 +72,6 @@ export const getSubLessonGithubFilePath = ({
   )
 
 export const getSubLessonContent = ({ lessonSlug, subLessonSlug }: Slugs) =>
-  fs.readFileSync(
+  fs.readFile(
     path.join(LESSONS_PATH, lessonSlug, 'sublesson', `${subLessonSlug}.mdx`)
   )

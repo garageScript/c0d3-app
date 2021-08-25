@@ -1,24 +1,30 @@
-import fs from 'fs'
+import { promises as fs } from 'fs'
 import { getDocSlugs, getDocGithubFilePath, getDocContent } from './docs'
-jest.mock('fs')
-
+jest.mock('fs', () => {
+  return {
+    promises: {
+      readdir: jest.fn(),
+      readFile: jest.fn()
+    }
+  }
+})
 describe('Static Docs Helpers', () => {
   describe('getDocSlugs', () => {
     test('should return docs slugs', () => {
-      fs.readdirSync.mockReturnValue(['doc_1.mdx', 'some_other_doc.mdx'])
+      fs.readdir.mockResolvedValue(['doc_1.mdx', 'some_other_doc.mdx'])
 
-      expect(getDocSlugs()).toEqual([
+      expect(getDocSlugs()).resolves.toEqual([
         { docSlug: 'doc_1' },
         { docSlug: 'some_other_doc' }
       ])
-      expect(fs.readdirSync).toHaveBeenCalled()
+      expect(fs.readdir).toHaveBeenCalled()
     })
 
     test('should throw error on non URI character file names', () => {
-      fs.readdirSync.mockReturnValue(['no funny #!#&', 'js1'])
+      fs.readdir.mockResolvedValue(['no funny #!#&', 'js1'])
 
-      expect(getDocSlugs).toThrowError(/no funny #!#&/)
-      expect(fs.readdirSync).toHaveBeenCalled()
+      expect(getDocSlugs()).rejects.toThrowError(/no funny #!#&/)
+      expect(fs.readdir).toHaveBeenCalled()
     })
   })
   describe('getDocContent', () => {
@@ -30,10 +36,10 @@ describe('Static Docs Helpers', () => {
       const slug = 'some_doc'
       const filePath = `content/docs/${slug}.mdx`
 
-      fs.readFileSync.mockReturnValue(fakeFileContent)
+      fs.readFile.mockResolvedValue(fakeFileContent)
 
-      expect(getDocContent(slug)).toEqual(fakeFileContent)
-      expect(fs.readFileSync).toBeCalledWith(expect.stringContaining(filePath))
+      expect(getDocContent(slug)).resolves.toEqual(fakeFileContent)
+      expect(fs.readFile).toBeCalledWith(expect.stringContaining(filePath))
     })
   })
   describe('getDocGithubFilePath', () => {

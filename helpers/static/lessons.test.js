@@ -1,4 +1,12 @@
-import fs from 'fs'
+import { promises as fs } from 'fs'
+jest.mock('fs', () => {
+  return {
+    promises: {
+      readdir: jest.fn(),
+      readFile: jest.fn()
+    }
+  }
+})
 import {
   getLessonSlugs,
   getSubLessonSlugs,
@@ -14,46 +22,44 @@ describe('Static Lessons Helpers', () => {
 
   describe('getLessonSlugs', () => {
     test('should return lesson slugs', () => {
-      fs.readdirSync.mockReturnValue(['js0', 'js1'])
-      expect(getLessonSlugs()).toEqual([
+      fs.readdir.mockResolvedValue(['js0', 'js1'])
+      expect(getLessonSlugs()).resolves.toEqual([
         { lessonSlug: 'js0' },
         { lessonSlug: 'js1' }
       ])
-      expect(fs.readdirSync).toHaveBeenCalled()
+      expect(fs.readdir).toHaveBeenCalled()
     })
 
     test('should throw error on non URI character file names', () => {
-      fs.readdirSync.mockReturnValue(['no funny #!#&', 'js1'])
-      expect(getLessonSlugs).toThrowError(/no funny #!#&/)
-      expect(fs.readdirSync).toHaveBeenCalled()
+      fs.readdir.mockResolvedValue(['no funny #!#&', 'js1'])
+      expect(getLessonSlugs()).rejects.toThrowError(/no funny #!#&/)
+      expect(fs.readdir).toHaveBeenCalled()
     })
   })
 
   describe('getSubLessonSlugs', () => {
     test('should throw if lessonSlug is not URI encoded', () => {
-      expect(() => {
-        getSubLessonSlugs('still f#@&ed')
-      }).toThrowError(/still f#@&ed/)
+      expect(getSubLessonSlugs('still f#@&ed')).rejects.toThrowError(
+        /still f#@&ed/
+      )
     })
 
     test('should throw if subLesson filenames is not URI encoded', () => {
-      fs.readdirSync.mockReturnValue([
+      fs.readdir.mockResolvedValue([
         'some_good_title.mdx',
         'some bad title.mdx'
       ])
 
-      expect(() => {
-        getSubLessonSlugs('js0')
-      }).toThrowError(/some bad title/)
-      expect(fs.readdirSync).toHaveBeenCalled()
+      expect(getSubLessonSlugs('js0')).rejects.toThrowError(/some bad title/)
+      expect(fs.readdir).toHaveBeenCalled()
     })
 
     test('called without lessonSlug returns all { lessonSlug, subLessonSlug } pairs', () => {
-      fs.readdirSync
-        .mockReturnValue(['lesson_title.mdx', 'title_two.mdx'])
-        .mockReturnValueOnce(['js0', 'js1'])
+      fs.readdir
+        .mockResolvedValue(['lesson_title.mdx', 'title_two.mdx'])
+        .mockResolvedValueOnce(['js0', 'js1'])
 
-      expect(getSubLessonSlugs()).toEqual([
+      expect(getSubLessonSlugs()).resolves.toEqual([
         { lessonSlug: 'js0', subLessonSlug: 'lesson_title' },
         { lessonSlug: 'js0', subLessonSlug: 'title_two' },
         { lessonSlug: 'js1', subLessonSlug: 'lesson_title' },
@@ -62,9 +68,9 @@ describe('Static Lessons Helpers', () => {
     })
 
     test('called with lessonSlug returns only slugs that match that lessonSlug', () => {
-      fs.readdirSync.mockReturnValue(['lesson_title.mdx', 'title_two.mdx'])
+      fs.readdir.mockResolvedValue(['lesson_title.mdx', 'title_two.mdx'])
 
-      expect(getSubLessonSlugs('js0')).toEqual([
+      expect(getSubLessonSlugs('js0')).resolves.toEqual([
         { lessonSlug: 'js0', subLessonSlug: 'lesson_title' },
         { lessonSlug: 'js0', subLessonSlug: 'title_two' }
       ])
@@ -89,16 +95,16 @@ describe('Static Lessons Helpers', () => {
       )
       const filePath = 'content/lessons/js0/sublesson/some_title.mdx'
 
-      fs.readFileSync.mockReturnValue(fakeFileContent)
+      fs.readFile.mockResolvedValue(fakeFileContent)
 
       expect(
         getSubLessonContent({
           lessonSlug: 'js0',
           subLessonSlug: 'some_title'
         })
-      ).toEqual(fakeFileContent)
+      ).resolves.toEqual(fakeFileContent)
 
-      expect(fs.readFileSync).toBeCalledWith(expect.stringContaining(filePath))
+      expect(fs.readFile).toBeCalledWith(expect.stringContaining(filePath))
     })
   })
 })

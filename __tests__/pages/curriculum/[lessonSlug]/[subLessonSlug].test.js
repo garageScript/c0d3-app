@@ -71,10 +71,10 @@ describe('[subLessonSlug]', () => {
   })
 
   describe('getStaticPaths', () => {
-    test('should return paths w/ fallback false', async () => {
-      getSubLessonSlugs.mockImplementation(() => mockSlugs)
+    test('should return paths w/ fallback false', () => {
+      getSubLessonSlugs.mockResolvedValue(mockSlugs)
 
-      expect(await getStaticPaths()).toEqual({
+      expect(getStaticPaths()).resolves.toEqual({
         paths: [
           { params: mockSlugs[0] },
           { params: mockSlugs[1] },
@@ -84,48 +84,49 @@ describe('[subLessonSlug]', () => {
       })
     })
 
-    test('should throw if invalid slug names are retrieved', async () => {
-      getSubLessonSlugs.mockImplementation(() => [
+    test('should throw if invalid slug names are retrieved', () => {
+      getSubLessonSlugs.mockResolvedValue([
         { old_slug_name: 'js0', another_bad_name: 'first_sub_lesson' }
       ])
-      expect(getStaticPaths).rejects.toThrowError()
+      expect(getStaticPaths()).rejects.toThrowError()
     })
   })
 
   describe('getStaticProps', () => {
-    test('should throw when called with no slug', async () => {
-      expect(() => getStaticProps({ params: {} })).rejects.toThrowError(
+    test('should throw when called with no slug', () => {
+      expect(getStaticProps({ params: {} })).rejects.toThrowError(
         /Missing Slug/
       )
     })
-    test('should throw if it can not find matching lesson', async () => {
+
+    test('should throw if it can not find matching lesson', () => {
       const mockQuery = jest.fn().mockResolvedValue({ data: { lessons: [] } })
       initializeApollo.mockReturnValue({ query: mockQuery })
-      expect(() =>
+      expect(
         getStaticProps({
           params: { lessonSlug: 'js100', subLessonSlug: 'no_way' }
         })
       ).rejects.toThrowError(/Could not find lesson/)
     })
 
-    test('should return correct props', async () => {
+    test('should return correct props', () => {
       const mockQuery = jest
         .fn()
         .mockResolvedValue({ data: { lessons: dummyLessonsData } })
       initializeApollo.mockReturnValue({ query: mockQuery })
       getSubLessonGithubFilePath.mockReturnValue(fakeGithubPath)
-      getSubLessonSlugs.mockReturnValueOnce(mockSlugs)
+      getSubLessonSlugs.mockResolvedValueOnce(mockSlugs)
       getSubLessonContent
-        .mockReturnValueOnce(dummySubLessonFileContent[0])
-        .mockReturnValueOnce(dummySubLessonFileContent[1])
-        .mockReturnValueOnce(dummySubLessonFileContent[2])
+        .mockResolvedValueOnce(dummySubLessonFileContent[0])
+        .mockResolvedValueOnce(dummySubLessonFileContent[1])
+        .mockResolvedValueOnce(dummySubLessonFileContent[2])
 
       parseMDX
         .mockResolvedValueOnce(dummyParsedSubLessonMdx[0])
         .mockResolvedValueOnce(dummyOneFrontMatterOnly)
         .mockResolvedValueOnce(dummyTwoFrontMatterOnly)
 
-      expect(await getStaticProps({ params: mockSlugs[0] })).toEqual({
+      expect(getStaticProps({ params: mockSlugs[0] })).resolves.toEqual({
         props,
         revalidate: 300 // Five Minutes
       })

@@ -82,7 +82,7 @@ interface Slugs extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getSubLessonSlugs().map(slugs => {
+  const paths = (await getSubLessonSlugs()).map(slugs => {
     if (!slugs.lessonSlug || !slugs.subLessonSlug)
       throw Error(
         `Retrieved invalid Slug names
@@ -125,14 +125,14 @@ export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
     throw new Error(`Could not find lesson with lessonSlug ${lessonSlug}`)
   const { challenges, ...lessonNoChallenges } = lesson
 
-  const slugs = getSubLessonSlugs(lessonSlug)
+  const slugs = await getSubLessonSlugs(lessonSlug)
 
   const subLessons = (
     await Promise.all(
       slugs.map(async slug => {
         // Only include source data on selected subLesson
         const sourceAndFrontMatter = await parseMDX(
-          getSubLessonContent(slug),
+          await getSubLessonContent(slug),
           slug.subLessonSlug !== subLessonSlug
         )
 

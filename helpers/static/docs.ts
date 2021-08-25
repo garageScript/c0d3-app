@@ -1,11 +1,11 @@
-import fs from 'fs'
+import { promises as fs } from 'fs'
 import path from 'path'
 
 const DOCS_GITHUB_PATH = 'content/docs'
 export const DOCS_PATH = path.join(process.cwd(), DOCS_GITHUB_PATH)
 
-export const getDocSlugs = () =>
-  fs.readdirSync(DOCS_PATH).map(file => {
+export const getDocSlugs = async () =>
+  (await fs.readdir(DOCS_PATH)).map(file => {
     const docSlug = file.replace(/\.mdx$/, '')
 
     if (docSlug !== encodeURI(docSlug))
@@ -21,5 +21,5 @@ export const getDocGithubFilePath = (docSlug: string) =>
 
 export const getDocContent = (docSlug: string) => {
   const filePath = path.join(DOCS_PATH, docSlug + '.mdx')
-  return fs.readFileSync(filePath)
+  return fs.readFile(filePath)
 }

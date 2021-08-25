@@ -60,7 +60,7 @@ interface Slugs extends ParsedUrlQuery {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = getDocSlugs()
+  const slugs = await getDocSlugs()
 
   return {
     paths: slugs.map(slug => ({ params: slug })),
@@ -73,7 +73,7 @@ export const getStaticProps: GetStaticProps<any, Slugs> = async context => {
 
   if (!docSlug) throw new Error(`Missing Slug: "docSlug: ${docSlug}"`)
   const docFilePath = getDocGithubFilePath(docSlug)
-  const docContents = getDocContent(docSlug)
+  const docContents = await getDocContent(docSlug)
 
   const { source, frontMatter } = await parseMDX(docContents)
   return {
