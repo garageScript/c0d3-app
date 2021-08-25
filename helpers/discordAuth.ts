@@ -103,7 +103,7 @@ export const getUserInfoFromRefreshToken = async (
   // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid refresh tokens
   await updateUserRefreshToken(userId, updatedRefreshToken)
 
-  if (!updatedRefreshToken) throw new Error('refresh token invalid')
+  if (!updatedRefreshToken) throw new Error(`refresh token invalid for userId ${userId}`)
 
   const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
 

@@ -115,7 +115,7 @@ describe('getUserInfoFromRefreshToken function', () => {
       )
       expect(false).toEqual(true) // force test to fail
     } catch (error) {
-      expect(error.message).toBe('refresh token invalid')
+      expect(error.message).toBe('refresh token invalid for userId 123')
     }
 
     expect(fetch.mock.calls.length).toBe(1)
