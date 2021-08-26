@@ -1,4 +1,4 @@
-import prismaMock from '../__tests__/utils/prismaMock'
+import prismaMock from '../../__tests__/utils/prismaMock'
 import { validateLessonId } from './validateLessonId'
 
 describe('validateLessonId helper function', () => {

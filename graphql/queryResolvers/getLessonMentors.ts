@@ -1,6 +1,6 @@
 import { LessonMentorsQuery, LessonMentorsQueryVariables } from '..'
 import { Context } from '../../@types/helpers'
-import { validateLessonId } from '../../helpers/validateLessonId'
+import { validateLessonId } from '../../helpers/validation/validateLessonId'
 import prisma from '../../prisma'
 
 export const getLessonMentors = async (

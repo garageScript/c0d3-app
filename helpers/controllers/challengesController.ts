@@ -6,7 +6,7 @@ import type {
 import { lessons } from '../../graphql/queryResolvers/lessons'
 import prisma from '../../prisma'
 import { isAdminOrThrow } from '../isAdmin'
-import { validateLessonId } from '../validateLessonId'
+import { validateLessonId } from '../validation/validateLessonId'
 
 export const createChallenge = async (
   _parent: void,

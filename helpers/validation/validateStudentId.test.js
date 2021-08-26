@@ -1,4 +1,4 @@
-import { validateLessonId } from '../validateLessonId'
+import { validateLessonId } from './validateLessonId'
 import { validateStudentId } from './validateStudentId'
 
 describe('validateStudentId helper function', () => {

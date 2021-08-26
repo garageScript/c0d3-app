@@ -2,7 +2,7 @@ import type { LoggedRequest } from '../../@types/helpers'
 import type { SetStarMutation, SetStarMutationVariables } from '../../graphql'
 import prisma from '../../prisma'
 import { sendLessonChannelMessage } from '../discordBot'
-import { validateLessonId } from '../validateLessonId'
+import { validateLessonId } from '../validation/validateLessonId'
 import { validateStudentId } from '../validation/validateStudentId'
 
 export const setStar = async (
