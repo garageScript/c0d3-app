@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import { GetStaticProps } from 'next'
 import React, { useEffect, useRef, useState } from 'react'
-import { ArrayElement } from '../@types/utils'
 import AdditionalResources from '../components/AdditionalResources'
 import AlertsDisplay from '../components/AlertsDisplay'
 import AnnouncementCard from '../components/AnnouncementCard'
@@ -21,6 +20,12 @@ import {
 import { initializeApollo } from '../helpers/apolloClient'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
+
+/**
+ * Returns the type of the elements inside the array
+ */
+export type ArrayElement<ArrayType extends readonly unknown[]> =
+  ArrayType extends readonly (infer ElementType)[] ? ElementType : never
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
