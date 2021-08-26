@@ -40,7 +40,7 @@ export default function useBreakpoint(
       setMatches(true)
       if (process.env.NODE_ENV !== 'production')
         console.warn(
-          'Unnecessary useBreakpoint(${breakpoint},${condition}), this condition will always return true!'
+          `Unnecessary useBreakpoint(${breakpoint},${condition}), this condition will always return true!`
         )
 
       return
