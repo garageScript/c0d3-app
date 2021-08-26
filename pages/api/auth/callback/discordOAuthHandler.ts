@@ -11,13 +11,13 @@ const handler = nextConnect()
 
 const discordOAuthHandler = async (req: LoggedRequest, res: NextApiResponse)=> {
   const { code } = req.query
-  const { refresh_token } = await getTokenFromAuthCode(code as string)
 
   try {
+    const { refresh_token } = await getTokenFromAuthCode(code as string)
     const userInfo = await getUserInfoFromRefreshToken(req.user!.id, refresh_token)
     return res.json(userInfo)
   } catch(error) {
-    throw new Error(error)
+    res.status(400).json(error)
   }
 }
 
