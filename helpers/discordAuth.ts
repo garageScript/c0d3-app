@@ -6,6 +6,7 @@ import fetch from 'node-fetch'
 const discordAPI = 'https://discordapp.com/api'
 const client_id = process.env.DISCORD_KEY
 const client_secret = process.env.DISCORD_SECRET
+const redirect_uri = process.env.DISCORD_REDIRECT_URI // {baseurl}/api/auth/callback/discord
 
 type AccessTokenResponse = {
   access_token: string
@@ -47,7 +48,7 @@ export const getTokenFromAuthCode = (
       client_id,
       client_secret,
       code,
-      redirect_uri: 'https://c0d3.com/discord/redir',
+      redirect_uri,
       scope: 'email guilds.join gdm.join identify'
     })
   }).then(r => r.json())
