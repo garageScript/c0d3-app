@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Alert from './Alert'
-import { DismissedAlerts } from '../@types/alerts'
 import { Alert as AlertType } from '../graphql/'
 import _ from 'lodash'
 
 type Props = {
   alerts?: AlertType[]
   page?: string
+}
+
+type DismissedAlerts = {
+  [id: string]: boolean
 }
 
 const AlertsDisplay: React.FC<Props> = ({ alerts = [], page }) => {

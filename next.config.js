@@ -1,15 +1,6 @@
 const { withSentryConfig } = require('@sentry/nextjs')
-const slug = require('remark-slug')
-const toc = require('remark-toc')
-const gfm = require('remark-gfm')
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
-  }
-})
-const moduleExports = withMDX({
+const moduleExports = {
   async redirects() {
     return [
       {
@@ -20,7 +11,7 @@ const moduleExports = withMDX({
     ]
   },
   pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
-})
+}
 
 const SentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that

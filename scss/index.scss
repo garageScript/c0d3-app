@@ -29,6 +29,14 @@ body {
   font-optical-sizing: none;
 }
 
+html {
+  scroll-behavior: smooth;
+  // Global accessibility feature allowing users to turn off smooth scroll
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
 .outline-danger {
   border: 1px solid rgba(220, 53, 69, 1);
   &:focus {

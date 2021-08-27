@@ -7,8 +7,8 @@ import { SubmissionStatus } from '../graphql'
 
 describe('Lesson Card Complete State', () => {
   const props = {
-    challengesUrl: 'challengeUrl',
-    reviewUrl: 'reviewUrl'
+    challengesUrl: '/challengeUrl',
+    reviewUrl: '/reviewUrl'
   }
   test('Should render lessonCard with null if no data', async () => {
     useQuery.mockReturnValue({
@@ -56,8 +56,8 @@ describe('Lesson Card Complete State', () => {
 
 describe('Lesson Card', () => {
   const props = {
-    challengesUrl: 'challengeUrl',
-    reviewUrl: 'reviewUrl'
+    challengesUrl: '/challengeUrl',
+    reviewUrl: '/reviewUrl'
   }
   test('Should render loading card when loading', async () => {
     useQuery.mockReturnValue({
