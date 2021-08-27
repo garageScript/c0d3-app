@@ -16,7 +16,9 @@ const discordOAuthHandler = async (
   req: LoggedRequest,
   res: NextApiResponse
 ) => {
-  if (!req.user) return res.status(403).json({ error: 'user not logged in' })
+  if (!req.user) {
+    return res.status(403).json({ error: 'user not logged in' })
+  }
 
   const { code } = req.query
 
