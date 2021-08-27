@@ -47,7 +47,7 @@ describe('LessonTitleCard Component', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('should display "challenges" button on wider screens', async () => {
+  test('should display "challenges" button on wider screens', () => {
     mockUseBreakpoint.mockReturnValue(false)
     const { container } = render(
       <LessonTitleCard {...props} setShow={setShow} show={false} />
