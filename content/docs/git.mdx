@@ -1,0 +1,115 @@
+---
+title: Common Git commands
+---
+
+## Git Overview
+
+Git is a version control system. Imagine working on a codebase with 3 engineers,
+(A,B,C)
+
+3:00pm → A updates code with new feature
+
+3:15pm → B updates code with new feature
+
+3:16pm → A updates code with new feature
+
+4:20pm → C updates code with new feature
+
+5:00pm → You notice that your users are complaining about bugs in your app.
+
+With git or other version control systems, upon noticing the bug you can revert
+the code to 4:20pm, 3:16pm, 3:15pm, or anytime in history to find a place where
+there is no bugs. Problem solved!
+
+(This example is overly simplified)
+
+## Codebase
+
+Treat the curriculum like you have joined a new company and working on a new
+codebase. The first thing you should do is to download it onto your machine. To
+do this, you need to run `git clone url-to-codebase`. For C0D3 curriculum, the
+url is
+[https://github.com/garageScript/curriculum](https://github.com/garageScript/curriculum)
+
+After downloading the codebase, you should run `git status` to see which branch
+you are on, which will be `master`. `Master` branch will be where your most
+perfect code live (after getting reviewed), so you do not want to make any code
+changes on this branch. Instead, you should create a new branch.
+
+## Branches
+
+Treat each problem like a new feature in the codebase. To start problem one, you
+want to create a new branch called `p1` (which stands for problem 1). To do
+this, run `git checkout -b p1` . After this, run `git status` to make sure you
+are indeed on p1 branch.
+
+## Commits
+
+After solving problem 1 and passing all the tests, you should feel confident to
+save your code changes. To do this, there are 2 steps:
+
+`git add filename` → Add all the files that you want to commit (aka save
+changes). If you are unsure of the files you have changed, run `git status` .
+
+`git commit -m 'your message here'` → When you save your changes, it is
+necessary to describe what your changes are. This way, in the future you can
+read the history of commit messages to understand at a high level all the
+changes that happened.
+
+`git log` → This commands display the history of commit messages. In this mode,
+use the arrow keys to scroll up and down and press `q` to return to the command
+prompt.
+
+If a typo is discovered in your latest commit, use `git commit --amend` to
+correct the typo.
+
+## Starting a new feature / problem
+
+After submitting a problem, you might be tempted to immediately start working on
+the next feature. This is not good. It is bad practice to submit 2 features
+together. Here is the correct way to start a new problem / feature:
+
+1. Go back to master branch (which does not have your solution to problem 1)
+   1. `git checkout master`
+2. From master branch, create a new branch (ie: p2)
+   1. `git checkout -b p2`
+
+## Summary:
+
+- `git clone url` to download a codebase
+- `git checkout -b branchname` to create a new branch
+- `git checkout branchname` to switch to existing branch
+- `git status` to view your current branch and the files that are changed
+- `git log` to view commit message history
+- `git commit --amend` to edit the latest commit message
+- Commit!
+  - `git add filename` to add the file you want to save
+  - `git commit -m 'message here'` to save your changes and write a meaning
+    message to describe your change
+
+<br />
+
+# Common submission issues
+
+<br />
+
+## Multiple solutions in a branch?
+
+First, figure out which branch is the culprit. `git checkout p1` to switch
+branches
+
+Run `git diff master` to see what will be submitted. This compares the changes
+between the current branch and master. If everything looks good (only changes in
+one file), switch to a different branch and run the diff command again.
+
+Once you have found the bad branch, the easiest solution is to delete the branch
+and submit again (if you've done it before, you can do it again!). To delete the
+branch, first go to master: `git checkout master`, then delete the offending
+branch: `git branch -D your_offending_branch_name`.
+
+Now, from master, you can create a new branch
+`git checkout -b whateverBranchItWas` and then continue normally.
+
+Check
+[The Missing Semester](https://missing.csail.mit.edu/2020/version-control/) if
+you want to learn more about git and other useful tools.

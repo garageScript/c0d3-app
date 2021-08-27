@@ -587,6 +587,31 @@ export type LessonMentorsQuery = {
   >
 }
 
+export type GetLessonsQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetLessonsQuery = {
+  __typename?: 'Query'
+  lessons: Array<{
+    __typename?: 'Lesson'
+    id: number
+    title: string
+    slug: string
+    description: string
+    docUrl?: Maybe<string>
+    githubUrl?: Maybe<string>
+    videoUrl?: Maybe<string>
+    order: number
+    chatUrl?: Maybe<string>
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      title: string
+      order: number
+    }>
+  }>
+}
+
 export type GetPreviousSubmissionsQueryVariables = Exact<{
   challengeId: Scalars['Int']
   userId: Scalars['Int']
@@ -2511,6 +2536,107 @@ export type LessonMentorsLazyQueryHookResult = ReturnType<
 export type LessonMentorsQueryResult = Apollo.QueryResult<
   LessonMentorsQuery,
   LessonMentorsQueryVariables
+>
+export const GetLessonsDocument = gql`
+  query getLessons {
+    lessons {
+      id
+      title
+      slug
+      description
+      docUrl
+      githubUrl
+      videoUrl
+      order
+      challenges {
+        id
+        description
+        title
+        order
+      }
+      chatUrl
+    }
+  }
+`
+export type GetLessonsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetLessonsQuery,
+    GetLessonsQueryVariables
+  >
+} &
+  TChildProps
+export function withGetLessons<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetLessonsQuery,
+    GetLessonsQueryVariables,
+    GetLessonsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetLessonsQuery,
+    GetLessonsQueryVariables,
+    GetLessonsProps<TChildProps, TDataName>
+  >(GetLessonsDocument, {
+    alias: 'getLessons',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetLessonsQuery__
+ *
+ * To run a query within a React component, call `useGetLessonsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetLessonsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetLessonsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetLessonsQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetLessonsQuery,
+    GetLessonsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetLessonsQuery, GetLessonsQueryVariables>(
+    GetLessonsDocument,
+    options
+  )
+}
+export function useGetLessonsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetLessonsQuery,
+    GetLessonsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetLessonsQuery, GetLessonsQueryVariables>(
+    GetLessonsDocument,
+    options
+  )
+}
+export type GetLessonsQueryHookResult = ReturnType<typeof useGetLessonsQuery>
+export type GetLessonsLazyQueryHookResult = ReturnType<
+  typeof useGetLessonsLazyQuery
+>
+export type GetLessonsQueryResult = Apollo.QueryResult<
+  GetLessonsQuery,
+  GetLessonsQueryVariables
 >
 export const GetPreviousSubmissionsDocument = gql`
   query getPreviousSubmissions($challengeId: Int!, $userId: Int!) {
