@@ -1,0 +1,40 @@
+// import React from 'react'
+import { getTokenFromAuthCode, getUserInfoFromRefreshToken } from '../../helpers/discordAuth'
+import { NextApiResponse } from 'next'
+import { LoggedRequest } from '../../@types/helpers'
+import nextConnect from 'next-connect'
+import { withSentry } from '@sentry/nextjs'
+import userMiddleware from '../../helpers/middleware/user'
+import loggingMiddleware from '../../helpers/middleware/logger'
+import sessionMiddleware from '../../helpers/middleware/session'
+
+const handler = nextConnect()
+
+// const discordSuccess = userInfo => {
+//   return <>
+//     <div>You are now connected to Discord!</div>
+//   </>
+// }
+
+const discordOAuthHandler = async (req: LoggedRequest, res: NextApiResponse)=> {
+  if (!req.user) return res.status(403).json({ error: 'user not logged in' })
+
+  const { code } = req.query
+
+  try {
+    const { refresh_token } = await getTokenFromAuthCode(code as string)
+    const userInfo = await getUserInfoFromRefreshToken(req.user.id, refresh_token)
+    return res.json(userInfo)
+  } catch(error) {
+    res.status(400).json('invalid auth code')
+  }
+}
+
+handler
+  .use(loggingMiddleware)
+  .use(sessionMiddleware())
+  .use(userMiddleware)
+  .get('/discord/redirect', discordOAuthHandler)
+
+export default withSentry(handler)
+

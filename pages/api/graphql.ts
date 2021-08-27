@@ -23,7 +23,7 @@ const graphQLHandler = apolloServer.createHandler({ path: '/api/graphql' })
 
 handler
   .use(loggingMiddleware)
-  .use(sessionMiddleware)
+  .use(sessionMiddleware())
   .use(userMiddleware)
   .get('/api/graphql', graphQLHandler)
   .post('/api/graphql', graphQLHandler)
