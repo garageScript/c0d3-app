@@ -1,3 +1,4 @@
+import { mockUseBreakpoint } from '../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import LessonTitleCard from './LessonTitleCard'
 import { render, screen } from '@testing-library/react'
@@ -36,21 +37,22 @@ describe('LessonTitleCard Component', () => {
   })
 
   test('should display "show challenges" button on small screens and call "setShow" when clicked', () => {
-    global.window.innerWidth = 500
+    mockUseBreakpoint.mockReturnValue(true)
     const { container } = render(
       <LessonTitleCard {...props} setShow={setShow} show={false} />
     )
-
+    expect(mockUseBreakpoint).toBeCalledWith('sm', 'down')
     userEvent.click(screen.getByText('SHOW CHALLENGES'))
     expect(setShow).toBeCalledWith(true)
     expect(container).toMatchSnapshot()
   })
 
   test('should display "challenges" button on wider screens', () => {
-    global.window.innerWidth = 1080
+    mockUseBreakpoint.mockReturnValue(false)
     const { container } = render(
       <LessonTitleCard {...props} setShow={setShow} show={false} />
     )
+    expect(mockUseBreakpoint).toBeCalledWith('sm', 'down')
     expect(container).toMatchSnapshot()
   })
 

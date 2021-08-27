@@ -1,4 +1,5 @@
 import * as React from 'react'
+import '../../__mocks__/useBreakpoint.mock'
 import ChallengeMaterial from '../../components/ChallengeMaterial'
 import SET_STAR from '../../graphql/queries/setStar'
 import GET_LESSON_MENTORS from '../../graphql/queries/getLessonMentors'

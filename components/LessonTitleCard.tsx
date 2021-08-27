@@ -2,7 +2,7 @@ import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
 import { useRouter } from 'next/router'
-import useHasMounted from '../helpers/useHasMounted'
+import useBreakpoint from '../helpers/useBreakpoint'
 
 export type LessonTitleProps = {
   lessonCoverUrl: string
@@ -24,7 +24,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
   setShow,
   show
 }) => {
-  const hasMounted = useHasMounted()
+  const isSmallDownBreakpoint = useBreakpoint('sm', 'down')
   const router = useRouter()
 
   return (
@@ -64,8 +64,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
               LESSON
             </NavLink>
           )}
-          {/* 768 px is md bootstrap breakpoint */}
-          {hasMounted && window.innerWidth <= 768 && setShow ? (
+          {isSmallDownBreakpoint && setShow ? (
             <div
               onClick={() => setShow!(!show)}
               className="btn border-right rounded-0 px-4 py-3"

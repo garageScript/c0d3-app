@@ -8,6 +8,7 @@ import {
   waitForElementToBeRemoved
 } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { mockUseBreakpoint } from '../__mocks__/useBreakpoint.mock'
 import ChallengeMaterial from './ChallengeMaterial'
 import { MockedProvider } from '@apollo/client/testing'
 import ADD_COMMENT from '../graphql/queries/addComment'
@@ -326,7 +327,7 @@ describe('Curriculum challenge page', () => {
     expect(document.body).toMatchSnapshot()
   })
   test('Should hide mobile modal on click', () => {
-    global.window.innerWidth = 500
+    mockUseBreakpoint.mockReturnValue(true)
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...{ ...props, show: true }} />
@@ -341,7 +342,7 @@ describe('Curriculum challenge page', () => {
     expect(setShow).toBeCalledWith(false)
   })
   test('Should hide mobile modal by clicking on the background', () => {
-    global.window.innerWidth = 500
+    mockUseBreakpoint.mockReturnValue(true)
     const { container } = render(
       <ChallengeMaterial {...{ ...props, show: true }} />
     )

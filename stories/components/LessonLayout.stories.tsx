@@ -1,3 +1,4 @@
+import '../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import LessonLayout, { getLayout } from '../../components/LessonLayout'
 import { MockedProvider } from '@apollo/client/testing'
