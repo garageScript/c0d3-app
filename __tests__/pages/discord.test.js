@@ -44,13 +44,11 @@ describe('discord redirect with auth code query parameter', () => {
   })
 
   it('should throw error if user not logged in', async () => {
-
-    await getHandler[1](
-      {},
-      mockErrorResponse
-    )
+    await getHandler[1]({}, mockErrorResponse)
     expect(mockErrorResponse.status).toHaveBeenCalledWith(403)
-    expect(mockErrorResponse.json).toHaveBeenCalledWith({ error: 'user not logged in' })
+    expect(mockErrorResponse.json).toHaveBeenCalledWith({
+      error: 'user not logged in'
+    })
   })
 
   it('return discord user info if valid refresh token', async () => {
@@ -77,6 +75,8 @@ describe('discord redirect with auth code query parameter', () => {
     )
 
     expect(mockErrorResponse.status).toHaveBeenCalledWith(400)
-    expect(mockErrorResponse.json).toHaveBeenCalledWith({ error: 'invalid auth code' })
+    expect(mockErrorResponse.json).toHaveBeenCalledWith({
+      error: 'invalid auth code'
+    })
   })
 })
