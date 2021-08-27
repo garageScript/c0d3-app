@@ -17,7 +17,7 @@ export const getDocSlugs = async () =>
   })
 
 export const getDocGithubFilePath = (docSlug: string) =>
-  path.join(DOCS_GITHUB_PATH, docSlug + '.mdx')
+  `${DOCS_GITHUB_PATH}/${docSlug}.mdx`
 
 export const getDocContent = (docSlug: string) => {
   const filePath = path.join(DOCS_PATH, docSlug + '.mdx')
