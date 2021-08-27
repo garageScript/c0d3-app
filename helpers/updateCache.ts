@@ -6,17 +6,13 @@ import {
   GetPreviousSubmissionsQuery
 } from '../graphql'
 
+import { RecursivePartial } from '../@types/utils'
 import _ from 'lodash'
 /*
   update function modifies client cache after mutation
   closure is used because it's the only way to pass additional arguments to update function 
   (update has only two arguments - cache and result of query)
 */
-
-export type RecursivePartial<T> = {
-  [P in keyof T]?: RecursivePartial<T[P]>
-}
-
 export const updateCache = (
   submissionId: number,
   content: string,

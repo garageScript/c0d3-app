@@ -2,7 +2,6 @@ import React from 'react'
 import UserInfoImage from './UserInfoImage'
 import { UserInfo } from '../@types/user'
 import styles from '../scss/profileImageInfo.module.scss'
-
 type ProfileImageInfoProps = {
   user: UserInfo
 }
