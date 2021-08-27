@@ -2,16 +2,34 @@ import { useQuery } from '@apollo/client'
 import React from 'react'
 import { CheckCircle } from 'react-feather'
 import GET_SUBMISSIONS from '../graphql/queries/getSubmissions'
-import {
-  Props,
-  ReviewButtonProps,
-  ReviewCountProps
-} from '../@types/lessonCard'
 import NavLink from './NavLink'
 import Image from 'next/image'
 import styles from '../scss/lessonCard.module.scss'
 import { SubmissionStatus } from '../graphql'
 import Link from 'next/link'
+
+type Props = {
+  lessonId: number
+  coverImg: string
+  title: string
+  challengeCount: number
+  description: string
+  currentState?: string
+  reviewUrl: string
+  challengesUrl: string
+  docUrl: string
+}
+
+type ReviewButtonProps = {
+  isCompleted: boolean
+  reviewUrl: string
+  lessonId: number
+  className?: string
+}
+
+type ReviewCountProps = {
+  lessonId: number
+}
 
 const ReviewCount: React.FC<ReviewCountProps> = props => {
   const { loading, data } = useQuery(GET_SUBMISSIONS, {
