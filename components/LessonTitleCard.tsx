@@ -24,7 +24,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
   setShow,
   show
 }) => {
-  const isMediumDownBreakpoint = useBreakpoint('md', 'down')
+  const isSmallDownBreakpoint = useBreakpoint('sm', 'down')
   const router = useRouter()
 
   return (
@@ -64,7 +64,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
               LESSON
             </NavLink>
           )}
-          {isMediumDownBreakpoint && setShow ? (
+          {isSmallDownBreakpoint && setShow ? (
             <div
               onClick={() => setShow!(!show)}
               className="btn border-right rounded-0 px-4 py-3"

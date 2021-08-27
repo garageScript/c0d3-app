@@ -246,7 +246,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="row challenge-display mt-3"
           >
             <div
-              class="challenge-display_challenges false col-md-4"
+              class="challenge-display_challenges col-md-4"
             >
               <div
                 class="card mb-2 challenge-title-card challenge-title-card--active shadow-sm border-0"
@@ -892,7 +892,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="row challenge-display mt-3"
           >
             <div
-              class="challenge-display_challenges false col-md-4"
+              class="challenge-display_challenges col-md-4"
             >
               <div
                 class="card mb-2 challenge-title-card challenge-title-card--done"

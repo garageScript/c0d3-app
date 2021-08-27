@@ -41,7 +41,7 @@ describe('LessonTitleCard Component', () => {
     const { container } = render(
       <LessonTitleCard {...props} setShow={setShow} show={false} />
     )
-    expect(mockUseBreakpoint).toBeCalledWith('md', 'down')
+    expect(mockUseBreakpoint).toBeCalledWith('sm', 'down')
     userEvent.click(screen.getByText('SHOW CHALLENGES'))
     expect(setShow).toBeCalledWith(true)
     expect(container).toMatchSnapshot()
@@ -52,7 +52,7 @@ describe('LessonTitleCard Component', () => {
     const { container } = render(
       <LessonTitleCard {...props} setShow={setShow} show={false} />
     )
-    expect(mockUseBreakpoint).toBeCalledWith('md', 'down')
+    expect(mockUseBreakpoint).toBeCalledWith('sm', 'down')
     expect(container).toMatchSnapshot()
   })
 

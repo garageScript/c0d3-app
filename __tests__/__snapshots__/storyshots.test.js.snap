@@ -643,7 +643,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -707,7 +707,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -842,7 +842,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -1361,7 +1361,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
