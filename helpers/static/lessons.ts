@@ -64,12 +64,7 @@ export const getSubLessonGithubFilePath = ({
   lessonSlug,
   subLessonSlug
 }: Slugs) =>
-  path.join(
-    LESSONS_GITHUB_PATH,
-    lessonSlug,
-    'sublesson',
-    `${subLessonSlug}.mdx`
-  )
+  `${LESSONS_GITHUB_PATH}/${lessonSlug}/sublesson/${subLessonSlug}.mdx`
 
 export const getSubLessonContent = ({ lessonSlug, subLessonSlug }: Slugs) =>
   fs.readFile(
