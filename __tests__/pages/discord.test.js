@@ -29,28 +29,28 @@ const returnHandler = () => {
 
 describe('discord redirect with auth code query parameter', () => {
   let getHandler
+  let mockErrorResponse = {
+    status: jest.fn().mockReturnThis(),
+    json: jest.fn()
+  }
   beforeAll(() => {
     nextConnect.mockImplementation(returnHandler)
-    require('../../pages/discord/redirect')
+    require('../../pages/api/auth/callback/discord')
     getHandler = getFn.mock.calls[0]
   })
 
   it('should put request handler to the correct url', () => {
-    expect(getHandler[0]).toEqual('/discord/redirect')
+    expect(getHandler[0]).toEqual('/api/auth/callback/discord')
   })
 
   it('should throw error if user not logged in', async () => {
+
     await getHandler[1](
       {},
-      {
-        status: statusCode => {
-          expect(statusCode).toBe(403)
-        },
-        json: err => {
-          expect(err).toBe({ error: 'user not logged in' })
-        }
-      }
+      mockErrorResponse
     )
+    expect(mockErrorResponse.status).toHaveBeenCalledWith(403)
+    expect(mockErrorResponse.json).toHaveBeenCalledWith({ error: 'user not logged in' })
   })
 
   it('return discord user info if valid refresh token', async () => {
@@ -73,14 +73,10 @@ describe('discord redirect with auth code query parameter', () => {
     getTokenFromAuthCode.mockRejectedValue({})
     await getHandler[1](
       { query: { code: 'fakeAuthCode' }, user: { userId: '123' } },
-      {
-        status: statusCode => {
-          expect(statusCode).toBe(400)
-        },
-        json: err => {
-          expect(err).toBe('invalid auth code')
-        }
-      }
+      mockErrorResponse
     )
+
+    expect(mockErrorResponse.status).toHaveBeenCalledWith(400)
+    expect(mockErrorResponse.json).toHaveBeenCalledWith({ error: 'invalid auth code' })
   })
 })
