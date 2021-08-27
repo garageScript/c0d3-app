@@ -1,5 +1,7 @@
 import { promises as fs } from 'fs'
 import { getDocSlugs, getDocGithubFilePath, getDocContent } from './docs'
+import path from 'path'
+
 jest.mock('fs', () => {
   return {
     promises: {
@@ -39,7 +41,7 @@ describe('Static Docs Helpers', () => {
       fs.readFile.mockResolvedValue(fakeFileContent)
 
       expect(getDocContent(slug)).resolves.toEqual(fakeFileContent)
-      expect(fs.readFile).toBeCalledWith(expect.stringContaining(filePath))
+      expect(fs.readFile).toBeCalledWith(path.join(process.cwd(), filePath))
     })
   })
   describe('getDocGithubFilePath', () => {
