@@ -1,7 +1,14 @@
 import { GraphQLResolveInfo } from 'graphql'
+import { Context } from '../@types/helpers'
 import { gql } from '@apollo/client'
 import * as Apollo from '@apollo/client'
 import * as ApolloReactHoc from '@apollo/client/react/hoc'
+import {
+  FieldPolicy,
+  FieldReadFunction,
+  TypePolicies,
+  TypePolicy
+} from '@apollo/client/cache'
 export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
@@ -39,11 +46,6 @@ export type AuthResponse = {
   username?: Maybe<Scalars['String']>
   error?: Maybe<Scalars['String']>
   cliToken?: Maybe<Scalars['String']>
-}
-
-export enum CacheControlScope {
-  Public = 'PUBLIC',
-  Private = 'PRIVATE'
 }
 
 export type Challenge = {
@@ -991,6 +993,9 @@ export type UserInfoQuery = {
   }>
 }
 
+export type WithIndex<TObject> = TObject & Record<string, any>
+export type ResolversObject<TObject> = WithIndex<TObject>
+
 export type ResolverTypeWrapper<T> = Promise<T> | T
 
 export type ResolverWithResolve<TResult, TParent, TContext, TArgs> = {
@@ -1097,13 +1102,12 @@ export type DirectiveResolverFn<
 ) => TResult | Promise<TResult>
 
 /** Mapping between all available schema types and the resolvers types */
-export type ResolversTypes = {
+export type ResolversTypes = ResolversObject<{
   Alert: ResolverTypeWrapper<Alert>
   Int: ResolverTypeWrapper<Scalars['Int']>
   String: ResolverTypeWrapper<Scalars['String']>
   AuthResponse: ResolverTypeWrapper<AuthResponse>
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
-  CacheControlScope: CacheControlScope
   Challenge: ResolverTypeWrapper<Challenge>
   Comment: ResolverTypeWrapper<Comment>
   Lesson: ResolverTypeWrapper<Lesson>
@@ -1117,10 +1121,10 @@ export type ResolversTypes = {
   TokenResponse: ResolverTypeWrapper<TokenResponse>
   User: ResolverTypeWrapper<User>
   UserLesson: ResolverTypeWrapper<UserLesson>
-}
+}>
 
 /** Mapping between all available schema types and the resolvers parents */
-export type ResolversParentTypes = {
+export type ResolversParentTypes = ResolversObject<{
   Alert: Alert
   Int: Scalars['Int']
   String: Scalars['String']
@@ -1138,24 +1142,12 @@ export type ResolversParentTypes = {
   TokenResponse: TokenResponse
   User: User
   UserLesson: UserLesson
-}
-
-export type CacheControlDirectiveArgs = {
-  maxAge?: Maybe<Scalars['Int']>
-  scope?: Maybe<CacheControlScope>
-}
-
-export type CacheControlDirectiveResolver<
-  Result,
-  Parent,
-  ContextType = any,
-  Args = CacheControlDirectiveArgs
-> = DirectiveResolverFn<Result, Parent, ContextType, Args>
+}>
 
 export type AlertResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Alert'] = ResolversParentTypes['Alert']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   text?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1166,35 +1158,35 @@ export type AlertResolvers<
     ContextType
   >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type AuthResponseResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['AuthResponse'] = ResolversParentTypes['AuthResponse']
-> = {
+> = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   error?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type ChallengeResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Challenge'] = ResolversParentTypes['Challenge']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   order?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type CommentResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Comment'] = ResolversParentTypes['Comment']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   fileName?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   line?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>
@@ -1209,12 +1201,12 @@ export type CommentResolvers<
     ContextType
   >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type LessonResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   docUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1236,12 +1228,12 @@ export type LessonResolvers<
   currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   chatUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type MutationResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
-> = {
+> = ResolversObject<{
   setStar?: Resolver<
     ResolversTypes['SuccessResponse'],
     ParentType,
@@ -1361,12 +1353,12 @@ export type MutationResolvers<
       'lessonId' | 'order' | 'description' | 'title' | 'id'
     >
   >
-}
+}>
 
 export type QueryResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
-> = {
+> = ResolversObject<{
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
   session?: Resolver<ResolversTypes['Session'], ParentType, ContextType>
   allUsers?: Resolver<
@@ -1405,12 +1397,12 @@ export type QueryResolvers<
     ContextType,
     RequireFields<QueryGetPreviousSubmissionsArgs, 'challengeId' | 'userId'>
   >
-}
+}>
 
 export type SessionResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Session'] = ResolversParentTypes['Session']
-> = {
+> = ResolversObject<{
   user?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>
   submissions?: Resolver<
     Maybe<Array<ResolversTypes['Submission']>>,
@@ -1423,24 +1415,24 @@ export type SessionResolvers<
     ContextType
   >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type StarResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Star'] = ResolversParentTypes['Star']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   comment?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   student?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type SubmissionResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['Submission'] = ResolversParentTypes['Submission']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   status?: Resolver<ResolversTypes['SubmissionStatus'], ParentType, ContextType>
   mrUrl?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
@@ -1467,29 +1459,29 @@ export type SubmissionResolvers<
     ContextType
   >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type SuccessResponseResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['SuccessResponse'] = ResolversParentTypes['SuccessResponse']
-> = {
+> = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type TokenResponseResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['TokenResponse'] = ResolversParentTypes['TokenResponse']
-> = {
+> = ResolversObject<{
   success?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>
   token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type UserResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   username?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   userLesson?: Resolver<
@@ -1505,12 +1497,12 @@ export type UserResolvers<
   discordUsername?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   discordAvatarUrl?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
 export type UserLessonResolvers<
-  ContextType = any,
+  ContextType = Context,
   ParentType extends ResolversParentTypes['UserLesson'] = ResolversParentTypes['UserLesson']
-> = {
+> = ResolversObject<{
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   userId?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
@@ -1522,9 +1514,9 @@ export type UserLessonResolvers<
   >
   starGiven?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
-}
+}>
 
-export type Resolvers<ContextType = any> = {
+export type Resolvers<ContextType = Context> = ResolversObject<{
   Alert?: AlertResolvers<ContextType>
   AuthResponse?: AuthResponseResolvers<ContextType>
   Challenge?: ChallengeResolvers<ContextType>
@@ -1539,11 +1531,7 @@ export type Resolvers<ContextType = any> = {
   TokenResponse?: TokenResponseResolvers<ContextType>
   User?: UserResolvers<ContextType>
   UserLesson?: UserLessonResolvers<ContextType>
-}
-
-export type DirectiveResolvers<ContextType = any> = {
-  cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>
-}
+}>
 
 export const AcceptSubmissionDocument = gql`
   mutation acceptSubmission(
@@ -4056,3 +4044,372 @@ export type UserInfoQueryResult = Apollo.QueryResult<
   UserInfoQuery,
   UserInfoQueryVariables
 >
+export type AlertKeySpecifier = (
+  | 'id'
+  | 'text'
+  | 'type'
+  | 'url'
+  | 'urlCaption'
+  | AlertKeySpecifier
+)[]
+export type AlertFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  text?: FieldPolicy<any> | FieldReadFunction<any>
+  type?: FieldPolicy<any> | FieldReadFunction<any>
+  url?: FieldPolicy<any> | FieldReadFunction<any>
+  urlCaption?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type AuthResponseKeySpecifier = (
+  | 'success'
+  | 'username'
+  | 'error'
+  | 'cliToken'
+  | AuthResponseKeySpecifier
+)[]
+export type AuthResponseFieldPolicy = {
+  success?: FieldPolicy<any> | FieldReadFunction<any>
+  username?: FieldPolicy<any> | FieldReadFunction<any>
+  error?: FieldPolicy<any> | FieldReadFunction<any>
+  cliToken?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type ChallengeKeySpecifier = (
+  | 'id'
+  | 'description'
+  | 'lessonId'
+  | 'title'
+  | 'order'
+  | ChallengeKeySpecifier
+)[]
+export type ChallengeFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  description?: FieldPolicy<any> | FieldReadFunction<any>
+  lessonId?: FieldPolicy<any> | FieldReadFunction<any>
+  title?: FieldPolicy<any> | FieldReadFunction<any>
+  order?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type CommentKeySpecifier = (
+  | 'id'
+  | 'fileName'
+  | 'line'
+  | 'content'
+  | 'authorId'
+  | 'submissionId'
+  | 'createdAt'
+  | 'author'
+  | 'submission'
+  | CommentKeySpecifier
+)[]
+export type CommentFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  fileName?: FieldPolicy<any> | FieldReadFunction<any>
+  line?: FieldPolicy<any> | FieldReadFunction<any>
+  content?: FieldPolicy<any> | FieldReadFunction<any>
+  authorId?: FieldPolicy<any> | FieldReadFunction<any>
+  submissionId?: FieldPolicy<any> | FieldReadFunction<any>
+  createdAt?: FieldPolicy<any> | FieldReadFunction<any>
+  author?: FieldPolicy<any> | FieldReadFunction<any>
+  submission?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type LessonKeySpecifier = (
+  | 'id'
+  | 'description'
+  | 'docUrl'
+  | 'githubUrl'
+  | 'videoUrl'
+  | 'order'
+  | 'slug'
+  | 'title'
+  | 'challenges'
+  | 'users'
+  | 'currentUser'
+  | 'chatUrl'
+  | LessonKeySpecifier
+)[]
+export type LessonFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  description?: FieldPolicy<any> | FieldReadFunction<any>
+  docUrl?: FieldPolicy<any> | FieldReadFunction<any>
+  githubUrl?: FieldPolicy<any> | FieldReadFunction<any>
+  videoUrl?: FieldPolicy<any> | FieldReadFunction<any>
+  order?: FieldPolicy<any> | FieldReadFunction<any>
+  slug?: FieldPolicy<any> | FieldReadFunction<any>
+  title?: FieldPolicy<any> | FieldReadFunction<any>
+  challenges?: FieldPolicy<any> | FieldReadFunction<any>
+  users?: FieldPolicy<any> | FieldReadFunction<any>
+  currentUser?: FieldPolicy<any> | FieldReadFunction<any>
+  chatUrl?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type MutationKeySpecifier = (
+  | 'setStar'
+  | 'login'
+  | 'logout'
+  | 'reqPwReset'
+  | 'changePw'
+  | 'changeAdminRights'
+  | 'signup'
+  | 'addAlert'
+  | 'removeAlert'
+  | 'createSubmission'
+  | 'acceptSubmission'
+  | 'rejectSubmission'
+  | 'addComment'
+  | 'createLesson'
+  | 'updateLesson'
+  | 'createChallenge'
+  | 'updateChallenge'
+  | MutationKeySpecifier
+)[]
+export type MutationFieldPolicy = {
+  setStar?: FieldPolicy<any> | FieldReadFunction<any>
+  login?: FieldPolicy<any> | FieldReadFunction<any>
+  logout?: FieldPolicy<any> | FieldReadFunction<any>
+  reqPwReset?: FieldPolicy<any> | FieldReadFunction<any>
+  changePw?: FieldPolicy<any> | FieldReadFunction<any>
+  changeAdminRights?: FieldPolicy<any> | FieldReadFunction<any>
+  signup?: FieldPolicy<any> | FieldReadFunction<any>
+  addAlert?: FieldPolicy<any> | FieldReadFunction<any>
+  removeAlert?: FieldPolicy<any> | FieldReadFunction<any>
+  createSubmission?: FieldPolicy<any> | FieldReadFunction<any>
+  acceptSubmission?: FieldPolicy<any> | FieldReadFunction<any>
+  rejectSubmission?: FieldPolicy<any> | FieldReadFunction<any>
+  addComment?: FieldPolicy<any> | FieldReadFunction<any>
+  createLesson?: FieldPolicy<any> | FieldReadFunction<any>
+  updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
+  createChallenge?: FieldPolicy<any> | FieldReadFunction<any>
+  updateChallenge?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type QueryKeySpecifier = (
+  | 'lessons'
+  | 'session'
+  | 'allUsers'
+  | 'getLessonMentors'
+  | 'userInfo'
+  | 'isTokenValid'
+  | 'submissions'
+  | 'alerts'
+  | 'getPreviousSubmissions'
+  | QueryKeySpecifier
+)[]
+export type QueryFieldPolicy = {
+  lessons?: FieldPolicy<any> | FieldReadFunction<any>
+  session?: FieldPolicy<any> | FieldReadFunction<any>
+  allUsers?: FieldPolicy<any> | FieldReadFunction<any>
+  getLessonMentors?: FieldPolicy<any> | FieldReadFunction<any>
+  userInfo?: FieldPolicy<any> | FieldReadFunction<any>
+  isTokenValid?: FieldPolicy<any> | FieldReadFunction<any>
+  submissions?: FieldPolicy<any> | FieldReadFunction<any>
+  alerts?: FieldPolicy<any> | FieldReadFunction<any>
+  getPreviousSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type SessionKeySpecifier = (
+  | 'user'
+  | 'submissions'
+  | 'lessonStatus'
+  | SessionKeySpecifier
+)[]
+export type SessionFieldPolicy = {
+  user?: FieldPolicy<any> | FieldReadFunction<any>
+  submissions?: FieldPolicy<any> | FieldReadFunction<any>
+  lessonStatus?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type StarKeySpecifier = (
+  | 'id'
+  | 'lessonId'
+  | 'comment'
+  | 'student'
+  | 'lesson'
+  | StarKeySpecifier
+)[]
+export type StarFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  lessonId?: FieldPolicy<any> | FieldReadFunction<any>
+  comment?: FieldPolicy<any> | FieldReadFunction<any>
+  student?: FieldPolicy<any> | FieldReadFunction<any>
+  lesson?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type SubmissionKeySpecifier = (
+  | 'id'
+  | 'status'
+  | 'mrUrl'
+  | 'diff'
+  | 'viewCount'
+  | 'comment'
+  | 'userId'
+  | 'order'
+  | 'lessonId'
+  | 'challengeId'
+  | 'challenge'
+  | 'reviewer'
+  | 'user'
+  | 'reviewerId'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'comments'
+  | SubmissionKeySpecifier
+)[]
+export type SubmissionFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  status?: FieldPolicy<any> | FieldReadFunction<any>
+  mrUrl?: FieldPolicy<any> | FieldReadFunction<any>
+  diff?: FieldPolicy<any> | FieldReadFunction<any>
+  viewCount?: FieldPolicy<any> | FieldReadFunction<any>
+  comment?: FieldPolicy<any> | FieldReadFunction<any>
+  userId?: FieldPolicy<any> | FieldReadFunction<any>
+  order?: FieldPolicy<any> | FieldReadFunction<any>
+  lessonId?: FieldPolicy<any> | FieldReadFunction<any>
+  challengeId?: FieldPolicy<any> | FieldReadFunction<any>
+  challenge?: FieldPolicy<any> | FieldReadFunction<any>
+  reviewer?: FieldPolicy<any> | FieldReadFunction<any>
+  user?: FieldPolicy<any> | FieldReadFunction<any>
+  reviewerId?: FieldPolicy<any> | FieldReadFunction<any>
+  createdAt?: FieldPolicy<any> | FieldReadFunction<any>
+  updatedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  comments?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type SuccessResponseKeySpecifier = (
+  | 'success'
+  | SuccessResponseKeySpecifier
+)[]
+export type SuccessResponseFieldPolicy = {
+  success?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type TokenResponseKeySpecifier = (
+  | 'success'
+  | 'token'
+  | TokenResponseKeySpecifier
+)[]
+export type TokenResponseFieldPolicy = {
+  success?: FieldPolicy<any> | FieldReadFunction<any>
+  token?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type UserKeySpecifier = (
+  | 'id'
+  | 'username'
+  | 'userLesson'
+  | 'email'
+  | 'name'
+  | 'isAdmin'
+  | 'cliToken'
+  | UserKeySpecifier
+)[]
+export type UserFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  username?: FieldPolicy<any> | FieldReadFunction<any>
+  userLesson?: FieldPolicy<any> | FieldReadFunction<any>
+  email?: FieldPolicy<any> | FieldReadFunction<any>
+  name?: FieldPolicy<any> | FieldReadFunction<any>
+  isAdmin?: FieldPolicy<any> | FieldReadFunction<any>
+  cliToken?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type UserLessonKeySpecifier = (
+  | 'id'
+  | 'userId'
+  | 'lessonId'
+  | 'passedAt'
+  | 'starsReceived'
+  | 'starGiven'
+  | UserLessonKeySpecifier
+)[]
+export type UserLessonFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  userId?: FieldPolicy<any> | FieldReadFunction<any>
+  lessonId?: FieldPolicy<any> | FieldReadFunction<any>
+  passedAt?: FieldPolicy<any> | FieldReadFunction<any>
+  starsReceived?: FieldPolicy<any> | FieldReadFunction<any>
+  starGiven?: FieldPolicy<any> | FieldReadFunction<any>
+}
+export type StrictTypedTypePolicies = {
+  Alert?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | AlertKeySpecifier
+      | (() => undefined | AlertKeySpecifier)
+    fields?: AlertFieldPolicy
+  }
+  AuthResponse?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | AuthResponseKeySpecifier
+      | (() => undefined | AuthResponseKeySpecifier)
+    fields?: AuthResponseFieldPolicy
+  }
+  Challenge?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | ChallengeKeySpecifier
+      | (() => undefined | ChallengeKeySpecifier)
+    fields?: ChallengeFieldPolicy
+  }
+  Comment?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | CommentKeySpecifier
+      | (() => undefined | CommentKeySpecifier)
+    fields?: CommentFieldPolicy
+  }
+  Lesson?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | LessonKeySpecifier
+      | (() => undefined | LessonKeySpecifier)
+    fields?: LessonFieldPolicy
+  }
+  Mutation?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | MutationKeySpecifier
+      | (() => undefined | MutationKeySpecifier)
+    fields?: MutationFieldPolicy
+  }
+  Query?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | QueryKeySpecifier
+      | (() => undefined | QueryKeySpecifier)
+    fields?: QueryFieldPolicy
+  }
+  Session?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | SessionKeySpecifier
+      | (() => undefined | SessionKeySpecifier)
+    fields?: SessionFieldPolicy
+  }
+  Star?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?: false | StarKeySpecifier | (() => undefined | StarKeySpecifier)
+    fields?: StarFieldPolicy
+  }
+  Submission?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | SubmissionKeySpecifier
+      | (() => undefined | SubmissionKeySpecifier)
+    fields?: SubmissionFieldPolicy
+  }
+  SuccessResponse?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | SuccessResponseKeySpecifier
+      | (() => undefined | SuccessResponseKeySpecifier)
+    fields?: SuccessResponseFieldPolicy
+  }
+  TokenResponse?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | TokenResponseKeySpecifier
+      | (() => undefined | TokenResponseKeySpecifier)
+    fields?: TokenResponseFieldPolicy
+  }
+  User?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?: false | UserKeySpecifier | (() => undefined | UserKeySpecifier)
+    fields?: UserFieldPolicy
+  }
+  UserLesson?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | UserLessonKeySpecifier
+      | (() => undefined | UserLessonKeySpecifier)
+    fields?: UserLessonFieldPolicy
+  }
+}
+export type TypedTypePolicies = StrictTypedTypePolicies & TypePolicies
