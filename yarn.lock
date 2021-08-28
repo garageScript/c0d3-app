@@ -1494,6 +1494,17 @@
     lodash "~4.17.0"
     tslib "~2.3.0"
 
+"@graphql-codegen/typescript-apollo-client-helpers@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-apollo-client-helpers/-/typescript-apollo-client-helpers-2.1.2.tgz#0491421641e0245ab120a40ef84c4a499cd93ee9"
+  integrity sha512-UI1R7Rhc2zRkna/nnMHxIFVfX15rce5zjmrR9EGhm1g19maHK5ZZt1XHAE737kLlCUNSV5sIToJnQ4Gz9TfOwA==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.1.1"
+    "@graphql-codegen/visitor-plugin-common" "2.1.2"
+    auto-bind "~4.0.0"
+    change-case-all "1.0.14"
+    tslib "~2.3.0"
+
 "@graphql-codegen/typescript-operations@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.1.2.tgz#fe93ec2e1fe6c036f6d60210d8259a24b2e9434d"
