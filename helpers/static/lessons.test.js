@@ -1,4 +1,5 @@
 import { promises as fs } from 'fs'
+
 jest.mock('fs', () => {
   return {
     promises: {
@@ -13,6 +14,8 @@ import {
   getSubLessonGithubFilePath,
   getSubLessonContent
 } from './lessons'
+import path from 'path'
+
 jest.mock('fs')
 
 describe('Static Lessons Helpers', () => {
@@ -104,7 +107,7 @@ describe('Static Lessons Helpers', () => {
         })
       ).resolves.toEqual(fakeFileContent)
 
-      expect(fs.readFile).toBeCalledWith(expect.stringContaining(filePath))
+      expect(fs.readFile).toBeCalledWith(path.join(process.cwd(), filePath))
     })
   })
 })
