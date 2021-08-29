@@ -643,7 +643,7 @@ exports[`Storyshots Components/ChallengeMaterial Basic 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -707,7 +707,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -842,7 +842,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -1361,7 +1361,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
   className="row challenge-display mt-3"
 >
   <div
-    className="challenge-display_challenges false col-md-4"
+    className="challenge-display_challenges col-md-4"
     onClick={[Function]}
   >
     <div
@@ -5833,7 +5833,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         >
           <a
             className=""
-            href="https://c0d3.com/student/24"
+            href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5896,7 +5896,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
         >
           <a
             className=""
-            href="https://c0d3.com/student/24"
+            href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -5951,7 +5951,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         >
           <a
             className=""
-            href="https://c0d3.com/student/24"
+            href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -6020,7 +6020,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     </p>
     <a
       className="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
-      href="https://c0d3.com/teacher/5"
+      href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
@@ -6054,7 +6054,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         >
           <a
             className=""
-            href="https://c0d3.com/student/24"
+            href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -6115,7 +6115,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       </div>
       <a
         className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
-        href="https://c0d3.com/teacher/5"
+        href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
@@ -6149,7 +6149,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         >
           <a
             className=""
-            href="https://c0d3.com/student/24"
+            href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -6212,7 +6212,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
         >
           <a
             className=""
-            href="https://c0d3.com/student/24"
+            href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -6259,13 +6259,303 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     </a>
     <a
       className="lesson-card__button btn bg-primary my-1 text-white border border-white"
-      href="https://c0d3.com/student/24"
+      href="/curriculum/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
       View Challenges
     </a>
   </div>
+</div>
+`;
+
+exports[`Storyshots Components/LessonLayout Get Layout 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-white"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+      >
+        <div
+          className="navbar-brand text-primary font-weight-bold"
+        >
+          C0D3
+        </div>
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        className="navbar-toggler collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        aria-expanded={null}
+        className="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="m-auto navbar-nav"
+          onKeyDown={[Function]}
+        >
+          <a
+            className="nav-item nav-link"
+            href="/curriculum"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Curriculum
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="/docs/learn"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Learn
+          </a>
+          <a
+            className="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+        </div>
+        <div
+          className="nav-buttons"
+        >
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/login"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Login
+          </a>
+          <a
+            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Signup
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="container-md"
+  >
+    <div
+      className="row mt-4"
+    >
+      <div
+        className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+      >
+        <div
+          className="card-body p-0"
+        >
+          <div
+            className="d-flex mb-3 px-3"
+          >
+            <img
+              alt="lesson-cover"
+              className="lessonTitleCard__lesson-cover mr-3"
+              src="/assets/curriculum/js-0-cover.svg"
+            />
+            <div>
+              <p
+                className="m-0"
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Go Back
+                </a>
+              </p>
+              <h1
+                className="lessonTitleCard__lesson-title"
+              >
+                Foundations of JavaScript
+              </h1>
+            </div>
+          </div>
+          <div
+            className="card-footer bg-white p-0"
+          >
+            <a
+              className="btn border-right rounded-0 px-4 py-3"
+              href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LESSON
+            </a>
+            <a
+              className="btn border-right rounded-0 px-4 py-3"
+              href="/curriculum/js0"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              CHALLENGES
+            </a>
+          </div>
+        </div>
+      </div>
+      Page
+    </div>
+  </div>,
+  <footer
+    className="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2021 GarageScript
+  </footer>,
+]
+`;
+
+exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
+<div
+  className="row mt-4"
+>
+  <div
+    className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+  >
+    <div
+      className="card-body p-0"
+    >
+      <div
+        className="d-flex mb-3 px-3"
+      >
+        <img
+          alt="lesson-cover"
+          className="lessonTitleCard__lesson-cover mr-3"
+          src="/assets/curriculum/js-0-cover.svg"
+        />
+        <div>
+          <p
+            className="m-0"
+          >
+            <a
+              href="#"
+              onClick={[Function]}
+            >
+              Go Back
+            </a>
+          </p>
+          <h1
+            className="lessonTitleCard__lesson-title"
+          >
+            Foundations of JavaScript
+          </h1>
+        </div>
+      </div>
+      <div
+        className="card-footer bg-white p-0"
+      >
+        <a
+          className="btn border-right rounded-0 px-4 py-3"
+          href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          LESSON
+        </a>
+        <a
+          className="btn border-right rounded-0 px-4 py-3"
+          href="/curriculum/js0"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          CHALLENGES
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/LessonLayout With Text 1`] = `
+<div
+  className="row mt-4"
+>
+  <div
+    className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
+  >
+    <div
+      className="card-body p-0"
+    >
+      <div
+        className="d-flex mb-3 px-3"
+      >
+        <img
+          alt="lesson-cover"
+          className="lessonTitleCard__lesson-cover mr-3"
+          src="/assets/curriculum/js-0-cover.svg"
+        />
+        <div>
+          <p
+            className="m-0"
+          >
+            <a
+              href="#"
+              onClick={[Function]}
+            >
+              Go Back
+            </a>
+          </p>
+          <h1
+            className="lessonTitleCard__lesson-title"
+          >
+            Foundations of JavaScript
+          </h1>
+        </div>
+      </div>
+      <div
+        className="card-footer bg-white p-0"
+      >
+        <a
+          className="btn border-right rounded-0 px-4 py-3"
+          href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          LESSON
+        </a>
+        <a
+          className="btn border-right rounded-0 px-4 py-3"
+          href="/curriculum/js0"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          CHALLENGES
+        </a>
+      </div>
+    </div>
+  </div>
+  <p>
+    Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
+  </p>
 </div>
 `;
 
@@ -20856,148 +21146,17 @@ Array [
 `;
 
 exports[`Storyshots mdx/BlockQuote Quote 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
-  >
-    <div
-      className="container"
-    >
-      <a
-        className="navbar-brand"
-        href="/"
-      >
-        <div
-          className="navbar-brand text-primary font-weight-bold"
-        >
-          C0D3
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        className="navbar-toggler collapsed"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        aria-expanded={null}
-        className="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          className="m-auto navbar-nav"
-          onKeyDown={[Function]}
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>,
-  <div
-    className="container-md"
-  >
-    <div
-      className="mt-4"
-    />
-    <div
-      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
-    >
-      <button
-        className="btn btn-link text-primary p-0"
-        onClick={[Function]}
-      >
-        Go Back
-      </button>
-      <img
-        className="d-none position-fixed arrow"
-        data-testid="arrow"
-        onClick={[Function]}
-        src="/assets/mdx/topArrow.svg"
-      />
-      <div
-        className="title"
-      />
-      <div
-        className="blockQuote d-flex flex-column flex-md-row"
-      >
-        <img
-          className="blockQuote__bulb mr-3"
-          src="/assets/mdx/lightBulb.svg"
-        />
-        <p>
-          Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
-        </p>
-      </div>
-      <a
-        className="MDX_a edit"
-        href="https://github.com/garageScript/c0d3-app/edit/master/pages//.mdx"
-      >
-        Edit this page
-      </a>
-    </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
+<div
+  className="blockQuote d-flex flex-column flex-md-row"
+>
+  <img
+    className="blockQuote__bulb mr-3"
+    src="/assets/mdx/lightBulb.svg"
+  />
+  <p>
+    Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
+  </p>
+</div>
 `;
 
 exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
@@ -23402,346 +23561,6 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     </span>
   </div>
 </pre>
-`;
-
-exports[`Storyshots mdx/Layout With Lesson 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
-  >
-    <div
-      className="container"
-    >
-      <a
-        className="navbar-brand"
-        href="/"
-      >
-        <div
-          className="navbar-brand text-primary font-weight-bold"
-        >
-          C0D3
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        className="navbar-toggler collapsed"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        aria-expanded={null}
-        className="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          className="m-auto navbar-nav"
-          onKeyDown={[Function]}
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>,
-  <div
-    className="container-md"
-  >
-    <div
-      className="mt-4"
-    >
-      <div
-        className="card shadow-sm mt-3 col-12 px-0 pt-3 border-0"
-      >
-        <div
-          className="card-body p-0"
-        >
-          <div
-            className="d-flex mb-3 px-3"
-          >
-            <img
-              alt="lesson-cover"
-              className="lessonTitleCard__lesson-cover mr-3"
-              src="/assets/curriculum/js-0-cover.svg"
-            />
-            <div>
-              <p
-                className="m-0"
-              >
-                <a
-                  href="#"
-                  onClick={[Function]}
-                >
-                  Go Back
-                </a>
-              </p>
-              <h1
-                className="lessonTitleCard__lesson-title"
-              >
-                Foundations of JavaScript
-              </h1>
-            </div>
-          </div>
-          <div
-            className="card-footer bg-white p-0"
-          >
-            <a
-              className="btn border-right rounded-0 px-4 py-3"
-              href="/curriculum/lessons/js0/primitive_data_and_operators"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              LESSON
-            </a>
-            <a
-              className="btn border-right rounded-0 px-4 py-3"
-              href="/curriculum/undefined"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-            >
-              CHALLENGES
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
-    >
-      <img
-        className="d-none position-fixed arrow"
-        data-testid="arrow"
-        onClick={[Function]}
-        src="/assets/mdx/topArrow.svg"
-      />
-      <div
-        className="title"
-      >
-        Foundations of JavaScript
-      </div>
-      <a
-        className="subtitle text-muted d-block"
-        href="primitive_data_and_operators"
-      >
-        Part 1: Primitive data and operators
-      </a>
-      <a
-        className="subtitle text-muted d-block"
-        href="functions_and_execution_context"
-      >
-        Part 2: Functions and execution context
-      </a>
-      <p>
-        Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
-      </p>
-      <a
-        className="MDX_a edit"
-        href="https://github.com/garageScript/c0d3-app/edit/master/pages//.mdx"
-      >
-        Edit this page
-      </a>
-      <div
-        className="d-flex"
-      />
-    </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
-`;
-
-exports[`Storyshots mdx/Layout With Text 1`] = `
-Array [
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-white"
-  >
-    <div
-      className="container"
-    >
-      <a
-        className="navbar-brand"
-        href="/"
-      >
-        <div
-          className="navbar-brand text-primary font-weight-bold"
-        >
-          C0D3
-        </div>
-      </a>
-      <button
-        aria-controls="basic-navbar-nav"
-        aria-label="Toggle navigation"
-        className="navbar-toggler collapsed"
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="navbar-toggler-icon"
-        />
-      </button>
-      <div
-        aria-expanded={null}
-        className="text-center navbar-collapse collapse"
-        id="basic-navbar-nav"
-      >
-        <div
-          className="m-auto navbar-nav"
-          onKeyDown={[Function]}
-        >
-          <a
-            className="nav-item nav-link"
-            href="/curriculum"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Curriculum
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://github.com/garageScript/c0d3-app"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Repo
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="/docs/learn"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Learn
-          </a>
-          <a
-            className="nav-item nav-link"
-            href="https://discord.gg/c0d3"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>,
-  <div
-    className="container-md"
-  >
-    <div
-      className="mt-4"
-    />
-    <div
-      className="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
-    >
-      <button
-        className="btn btn-link text-primary p-0"
-        onClick={[Function]}
-      >
-        Go Back
-      </button>
-      <img
-        className="d-none position-fixed arrow"
-        data-testid="arrow"
-        onClick={[Function]}
-        src="/assets/mdx/topArrow.svg"
-      />
-      <div
-        className="title"
-      />
-      <p>
-        Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde commodi aspernatur enim, consectetur. Cumque deleniti temporibus ipsam atque a dolores quisquam quisquam adipisci possimus laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia reiciendis porro quo magni incidunt dolore amet atque facilis ipsum deleniti rem!
-      </p>
-      <a
-        className="MDX_a edit"
-        href="https://github.com/garageScript/c0d3-app/edit/master/pages//.mdx"
-      >
-        Edit this page
-      </a>
-    </div>
-  </div>,
-  <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
-  >
-    © Copyright 2021 GarageScript
-  </footer>,
-]
 `;
 
 exports[`Storyshots mdx/Spoiler Default 1`] = `

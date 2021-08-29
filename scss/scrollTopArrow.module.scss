@@ -1,0 +1,12 @@
+.arrow {
+  position: fixed;
+  height: 3em;
+  width: 3em;
+  @media (max-width: 768px) {
+    height: 2em;
+    width: 2em;
+  }
+  z-index: 1;
+  top: 90%;
+  left: 90%;
+}

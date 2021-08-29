@@ -5,6 +5,9 @@ import prisma from '../prisma'
 import { URLSearchParams } from 'url'
 
 import {
+  client_id,
+  client_secret,
+  redirect_uri,
   getTokenFromAuthCode,
   getUserInfoFromRefreshToken
 } from './discordAuth'
@@ -24,10 +27,10 @@ describe('getTokenFromAuthCode function', () => {
       },
       body: new URLSearchParams({
         grant_type: 'authorization_code',
-        client_id: undefined,
-        client_secret: undefined,
+        client_id,
+        client_secret,
         code: '123',
-        redirect_uri: 'https://c0d3.com/discord/redir',
+        redirect_uri,
         scope: 'email guilds.join gdm.join identify'
       })
     })
@@ -67,8 +70,8 @@ describe('getUserInfoFromRefreshToken function', () => {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       body: new URLSearchParams({
-        client_id: undefined,
-        client_secret: undefined,
+        client_id,
+        client_secret,
         grant_type: 'refresh_token',
         refresh_token: 'mockRefreshToken'
       })
@@ -115,7 +118,7 @@ describe('getUserInfoFromRefreshToken function', () => {
       )
       expect(false).toEqual(true) // force test to fail
     } catch (error) {
-      expect(error.message).toBe('refresh token invalid')
+      expect(error.message).toBe('refresh token invalid for userId 123')
     }
 
     expect(fetch.mock.calls.length).toBe(1)

@@ -8,12 +8,25 @@ import Card from '../components/Card'
 import NavLink from '../components/NavLink'
 import Alert from '../components/Alert'
 import LOGIN_USER from '../graphql/queries/loginUser'
-import { Values, LoginFormProps, ErrorDisplayProps } from '../@types/login'
 import _ from 'lodash'
 import { useRouter } from 'next/router'
 import GET_APP from '../graphql/queries/getApp'
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
+
+type Values = {
+  username: string
+  password: string
+}
+
+type LoginFormProps = {
+  handleSubmit: (values: Values) => void
+  loginErrors?: string[]
+}
+
+type ErrorDisplayProps = {
+  loginErrors?: string[]
+}
 
 const initialValues = {
   username: '',

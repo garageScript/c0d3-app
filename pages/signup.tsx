@@ -14,15 +14,31 @@ import NavLink from '../components/NavLink'
 import { signupValidation } from '../helpers/formValidation'
 import SIGNUP_USER from '../graphql/queries/signupUser'
 
-//import types
-import {
-  SignupFormProps,
-  Values,
-  ErrorDisplayProps,
-  SignupSuccessProps
-} from '../@types/signup'
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
+
+type Values = {
+  email: string
+  username: string
+  firstName: string
+  lastName: string
+}
+
+type SignupFormProps = {
+  handleSubmit: (values: Values) => void
+  isLoading?: boolean
+  signupErrors?: string[]
+  isSuccess?: boolean
+  forgotToken?: string
+}
+
+type ErrorDisplayProps = {
+  signupErrors?: string[]
+}
+
+type SignupSuccessProps = {
+  forgotToken?: string
+}
 
 const initialValues: Values = {
   email: '',

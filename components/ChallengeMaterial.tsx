@@ -29,6 +29,7 @@ import { SubmissionComments } from './SubmissionComments'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
 import { ReviewStatus } from './ReviewStatus'
+import useBreakpoint from '../helpers/useBreakpoint'
 dayjs.extend(relativeTime)
 dayjs.extend(LocalizedFormat)
 
@@ -345,6 +346,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   show,
   setShow
 }) => {
+  const isSmallDownBreakpoint = useBreakpoint('sm', 'down')
   if (!challenges.length) {
     return <h1>No Challenges for this lesson</h1>
   }
@@ -403,7 +405,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
     })
   const challengeList = (
     <div
-      className={`challenge-display_challenges ${show && 'show'} col-md-4`}
+      className={`challenge-display_challenges col-md-4`}
       onClick={() => {
         setShow(!show)
       }}
@@ -424,9 +426,7 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
   )
   return (
     <div className="row challenge-display mt-3">
-      {window.innerWidth > 768 ? (
-        challengeList
-      ) : (
+      {isSmallDownBreakpoint ? (
         <Modal
           show={show}
           onHide={() => {
@@ -438,6 +438,8 @@ const ChallengeMaterial: React.FC<ChallengeMaterialProps> = ({
         >
           <Modal.Body>{challengeList}</Modal.Body>
         </Modal>
+      ) : (
+        challengeList
       )}
 
       <div className="col-md-8">

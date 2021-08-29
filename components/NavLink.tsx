@@ -19,7 +19,7 @@ const NavLink: React.FC<NavLinkProps> = ({
 }) => {
   if (!path) return null
   if (activePath) className += ' active'
-  if (external) {
+  if (external || path[0] !== '/') {
     return (
       <a
         rel="noopener noreferrer"

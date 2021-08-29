@@ -2,11 +2,11 @@ import React from 'react'
 import NavLink from './NavLink'
 import styles from '../scss/lessonTitleCard.module.scss'
 import { useRouter } from 'next/router'
-import useHasMounted from '../helpers/useHasMounted'
+import useBreakpoint from '../helpers/useBreakpoint'
 
 export type LessonTitleProps = {
   lessonCoverUrl: string
-  lessonUrl: string
+  lessonUrl?: string | null
   lessonSlug: string
   lessonTitle: string
   lessonId: number
@@ -15,8 +15,16 @@ export type LessonTitleProps = {
   show?: boolean
 }
 
-const LessonTitleCard: React.FC<LessonTitleProps> = props => {
-  const hasMounted = useHasMounted()
+const LessonTitleCard: React.FC<LessonTitleProps> = ({
+  lessonCoverUrl,
+  lessonUrl,
+  lessonSlug,
+  lessonTitle,
+  isPassed,
+  setShow,
+  show
+}) => {
+  const isSmallDownBreakpoint = useBreakpoint('sm', 'down')
   const router = useRouter()
 
   return (
@@ -25,7 +33,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
         <div className="d-flex mb-3 px-3">
           <img
             className={`${styles['lessonTitleCard__lesson-cover']} mr-3`}
-            src={`/assets/curriculum/${props.lessonCoverUrl}`}
+            src={`/assets/curriculum/${lessonCoverUrl}`}
             alt="lesson-cover"
           />
           <div>
@@ -43,37 +51,37 @@ const LessonTitleCard: React.FC<LessonTitleProps> = props => {
               </a>
             </p>
             <h1 className={`${styles['lessonTitleCard__lesson-title']}`}>
-              {props.lessonTitle}
+              {lessonTitle}
             </h1>
           </div>
         </div>
         <div className="card-footer bg-white p-0">
-          <NavLink
-            path={props.lessonUrl}
-            className="btn border-right rounded-0 px-4 py-3"
-            external
-          >
-            LESSON
-          </NavLink>
-          {/* 768 px is md bootstrap breakpoint */}
-          {hasMounted && window.innerWidth <= 768 && props.setShow ? (
+          {lessonUrl && (
+            <NavLink
+              path={lessonUrl}
+              className="btn border-right rounded-0 px-4 py-3"
+            >
+              LESSON
+            </NavLink>
+          )}
+          {isSmallDownBreakpoint && setShow ? (
             <div
-              onClick={() => props.setShow!(!props.show)}
+              onClick={() => setShow!(!show)}
               className="btn border-right rounded-0 px-4 py-3"
             >
               SHOW CHALLENGES
             </div>
           ) : (
             <NavLink
-              path={`/curriculum/${props.lessonSlug}`}
+              path={`/curriculum/${lessonSlug}`}
               className="btn border-right rounded-0 px-4 py-3"
             >
               CHALLENGES
             </NavLink>
           )}
-          {props.isPassed && (
+          {isPassed && (
             <NavLink
-              path={`/review/${props.lessonSlug}`}
+              path={`/review/${lessonSlug}`}
               className="btn border-right rounded-0 px-4 py-3"
             >
               REVIEW

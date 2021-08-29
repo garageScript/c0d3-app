@@ -4,8 +4,9 @@ import { User } from '.prisma/client'
 import fetch from 'node-fetch'
 
 const discordAPI = 'https://discordapp.com/api'
-const client_id = process.env.DISCORD_KEY
-const client_secret = process.env.DISCORD_SECRET
+export const client_id = process.env.DISCORD_KEY
+export const client_secret = process.env.DISCORD_SECRET
+export const redirect_uri = process.env.DISCORD_REDIRECT_URI // {baseurl}/api/auth/callback/discord
 
 type AccessTokenResponse = {
   access_token: string
@@ -47,7 +48,7 @@ export const getTokenFromAuthCode = (
       client_id,
       client_secret,
       code,
-      redirect_uri: 'https://c0d3.com/discord/redir',
+      redirect_uri,
       scope: 'email guilds.join gdm.join identify'
     })
   }).then(r => r.json())
@@ -103,7 +104,8 @@ export const getUserInfoFromRefreshToken = async (
   // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid refresh tokens
   await updateUserRefreshToken(userId, updatedRefreshToken)
 
-  if (!updatedRefreshToken) throw new Error('refresh token invalid')
+  if (!updatedRefreshToken)
+    throw new Error(`refresh token invalid for userId ${userId}`)
 
   const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
 
