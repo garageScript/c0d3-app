@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.19",
-    "@prisma/client": "^2.29.1",
+    "@prisma/client": "^2.30.0",
     "@quixo3/prisma-session-store": "^3.1.0",
     "@sentry/nextjs": "^6.11.0",
     "apollo-server-micro": "^2.25.2",
@@ -103,7 +103,7 @@
     "eslint-plugin-mdx": "^1.15.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.24.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.1.0",
     "jest-mock-extended": "^2.0.1",
