@@ -25,10 +25,11 @@ export const userInfo = async (
     throw new Error('Invalid user object')
   }
 
+  let discordUsername, discordAvatarUrl
   if (user.discordRefreshToken) {
-    const userInfo = await getUserInfoFromRefreshToken(user.id, user.discordRefreshToken)
-    user.discordUsername = _.get(userInfo, 'username', '')
-    user.discordAvatarUrl = _.get(userInfo, 'avatarUrl', '')
+    const discordUserInfo = await getUserInfoFromRefreshToken(user.id, user.discordRefreshToken)
+    discordUsername = _.get(discordUserInfo, 'username', '')
+    discordAvatarUrl = _.get(discordUserInfo, 'avatarUrl', '')
   }
 
   const [userLessons, submissions, stars] = await prisma.$transaction([
@@ -96,7 +97,7 @@ export const userInfo = async (
   }))
 
   return {
-    user,
+    user: { ...user, discordUsername, discordAvatarUrl },
     lessonStatus,
     submissions
   }
