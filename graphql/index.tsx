@@ -311,6 +311,8 @@ export type User = {
   name: Scalars['String']
   isAdmin: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
+  discordUsername?: Maybe<Scalars['String']>
+  discordAvatarUrl?: Maybe<Scalars['String']>
 }
 
 export type UserLesson = {
@@ -948,6 +950,8 @@ export type UserInfoQuery = {
       id: number
       username: string
       name: string
+      discordUsername?: Maybe<string>
+      discordAvatarUrl?: Maybe<string>
     }>
     submissions?: Maybe<
       Array<{
@@ -1495,6 +1499,16 @@ export type UserResolvers<
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  discordUsername?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
+  discordAvatarUrl?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
 
@@ -3929,6 +3943,8 @@ export const UserInfoDocument = gql`
         id
         username
         name
+        discordUsername
+        discordAvatarUrl
       }
       submissions {
         id

@@ -1,6 +1,8 @@
 import type { Star } from '.prisma/client'
 import { UserInfoQueryVariables } from '../../graphql'
 import prisma from '../../prisma'
+import { getUserInfoFromRefreshToken } from '../../helpers/discordAuth'
+import _ from 'lodash'
 
 type StarMap = {
   [lessonId: number]: Star[]
@@ -22,6 +24,13 @@ export const userInfo = async (
   if (!user) {
     throw new Error('Invalid user object')
   }
+
+  if (user.discordRefreshToken) {
+    const userInfo = await getUserInfoFromRefreshToken(user.id, user.discordRefreshToken)
+    user.discordUsername = _.get(userInfo, 'username', '')
+    user.discordAvatarUrl = _.get(userInfo, 'avatarUrl', '')
+  }
+
   const [userLessons, submissions, stars] = await prisma.$transaction([
     prisma.userLesson.findMany({
       where: {

@@ -23,6 +23,8 @@ const USER_INFO = gql`
         id
         username
         name
+        discordUsername
+        discordAvatarUrl
       }
       submissions {
         id

@@ -2,6 +2,8 @@ import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { userInfo } from './userInfoController'
 
+const getUserInfoFromRefreshToken = jest.fn()
+
 const user = {
   id: '10',
   username: 'noob222',
@@ -33,14 +35,33 @@ describe('userInfo controller tests', () => {
       'Invalid user object'
     )
   })
+  test('should not call getUserInfoFromRefreshToken if user has no refresh token', async () => {
+    prismaMock.user.findFirst.mockResolvedValue(user)
+    prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
+    prismaMock.submission.findMany.mockResolvedValue([submission])
+    prismaMock.star.findMany.mockResolvedValue([star])
+    await userInfo({}, { username: 'testing2020' })
+    expect(getUserInfoFromRefreshToken.mock.calls.length).toBe(0)
+  })
   test('should return correct submissions and user lesson', async () => {
     prismaMock.user.findFirst.mockResolvedValue(user)
     prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
     prismaMock.submission.findMany.mockResolvedValue([submission])
     prismaMock.star.findMany.mockResolvedValue([star])
-    const returnValue = await userInfo({}, { username: user.username })
+    getUserInfoFromRefreshToken.mockReturnValueOnce({
+      username: 'fakeDiscordUser',
+      avatarUrl: 'fakeUrl'
+    })
+    const returnValue = await userInfo(
+      {},
+      { username: user.username, discordRefreshToken: 'validToken' }
+    )
     expect(returnValue).toEqual({
-      user,
+      user: {
+        ...user,
+        discordUsername: 'fakeDiscordUser',
+        discordAvatarUrl: 'fakeUrl'
+      },
       lessonStatus: [
         {
           ...userLesson,
@@ -55,9 +76,40 @@ describe('userInfo controller tests', () => {
     prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
     prismaMock.submission.findMany.mockResolvedValue([submission])
     prismaMock.star.findMany.mockResolvedValue([])
+    const returnValue = await userInfo(
+      {},
+      { username: user.username, discordRefreshToken: 'validToken' }
+    )
+    expect(returnValue).toEqual({
+      user: {
+        ...user,
+        discordUsername: 'fakeDiscordUser',
+        discordAvatarUrl: 'fakeUrl'
+      },
+      lessonStatus: [
+        {
+          ...userLesson,
+          starsReceived: []
+        }
+      ],
+      submissions: [submission]
+    })
+  })
+  test('should return empty values for discord username and avatar url if refresh token invalid', async () => {
+    prismaMock.user.findFirst.mockResolvedValue(user)
+    prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
+    prismaMock.submission.findMany.mockResolvedValue([submission])
+    prismaMock.star.findMany.mockResolvedValue([])
+    getUserInfoFromRefreshToken.mockImplementation(() => {
+      throw new Error('refresh token invalid for userId 123')
+    })
     const returnValue = await userInfo({}, { username: user.username })
     expect(returnValue).toEqual({
-      user,
+      user: {
+        ...user,
+        discordUsername: '',
+        discordAvatarUrl: ''
+      },
       lessonStatus: [
         {
           ...userLesson,
