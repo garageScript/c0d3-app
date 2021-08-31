@@ -1,5 +1,6 @@
 import type { Star } from '.prisma/client'
 import { UserInfoQueryVariables } from '../../graphql'
+import { Context } from '../../@types/helpers'
 import prisma from '../../prisma'
 import { getUserInfoFromRefreshToken } from '../../helpers/discordAuth'
 import _ from 'lodash'
@@ -10,7 +11,8 @@ type StarMap = {
 
 export const userInfo = async (
   _parent: void,
-  { username }: UserInfoQueryVariables
+  { username }: UserInfoQueryVariables,
+  { req }: Context
 ) => {
   if (!username) {
     throw new Error('Invalid username')
@@ -25,14 +27,20 @@ export const userInfo = async (
     throw new Error('Invalid user object')
   }
 
-  let discordUsername, discordAvatarUrl
+  let discordUsername = '',
+    discordAvatarUrl = ''
   if (user.discordRefreshToken) {
-    const discordUserInfo = await getUserInfoFromRefreshToken(
-      user.id,
-      user.discordRefreshToken
-    )
-    discordUsername = _.get(discordUserInfo, 'username', '')
-    discordAvatarUrl = _.get(discordUserInfo, 'avatarUrl', '')
+    try {
+      const discordUserInfo = await getUserInfoFromRefreshToken(
+        user.id,
+        user.discordRefreshToken
+      )
+
+      discordUsername = _.get(discordUserInfo, 'username', '')
+      discordAvatarUrl = _.get(discordUserInfo, 'avatarUrl', '')
+    } catch (error) {
+      req.error(error)
+    }
   }
 
   const [userLessons, submissions, stars] = await prisma.$transaction([
