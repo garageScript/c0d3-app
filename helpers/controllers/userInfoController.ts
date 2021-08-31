@@ -27,7 +27,10 @@ export const userInfo = async (
 
   let discordUsername, discordAvatarUrl
   if (user.discordRefreshToken) {
-    const discordUserInfo = await getUserInfoFromRefreshToken(user.id, user.discordRefreshToken)
+    const discordUserInfo = await getUserInfoFromRefreshToken(
+      user.id,
+      user.discordRefreshToken
+    )
     discordUsername = _.get(discordUserInfo, 'username', '')
     discordAvatarUrl = _.get(discordUserInfo, 'avatarUrl', '')
   }
