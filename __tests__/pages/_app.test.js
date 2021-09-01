@@ -74,16 +74,19 @@ describe('MyApp component', () => {
     process.env = {
       ...process.env,
       NODE_ENV: 'production',
-      POSTHOG_API_KEY: 'fake-posthog-api-key'
+      NEXT_PUBLIC_POSTHOG_API_KEY: 'fake-posthog-api-key'
     }
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <MyApp Component={Login} pageProps={{}} />
       </MockedProvider>
     )
-    expect(posthog.init).toHaveBeenCalledWith(process.env.POSTHOG_API_KEY, {
-      api_host: 'https://app.posthog.com'
-    })
+    expect(posthog.init).toHaveBeenCalledWith(
+      process.env.NEXT_PUBLIC_POSTHOG_API_KEY,
+      {
+        api_host: 'https://app.posthog.com'
+      }
+    )
     await waitFor(() =>
       expect(screen.getByRole('heading', { name: /login/i })).toBeTruthy()
     )
