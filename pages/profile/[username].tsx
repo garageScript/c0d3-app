@@ -11,6 +11,7 @@ import {
 import { useUserInfoQuery } from '../../graphql/index'
 import ProfileLessons from '../../components/ProfileLessons'
 import ProfileImageInfo from '../../components/ProfileImageInfo'
+import ProfileDiscordInfo from '../../components/ProfileDiscordInfo'
 import ProfileSubmissions, {
   LessonChallenge
 } from '../../components/ProfileSubmissions'
@@ -22,6 +23,11 @@ export type UserInfo = {
   username: string
   firstName: string
   lastName: string
+}
+
+export type DiscordInfo = {
+  discordUsername: string
+  discordAvatarUrl: string
 }
 
 type LessonStatusMap = {
@@ -56,6 +62,10 @@ const UserProfile: React.FC = () => {
     firstName: fullname.split(' ')[0] || 'A',
     lastName: fullname.split(' ')[1] || ' '
   }
+
+  const discordUsername = _.get(data, 'userInfo.user.discordUsername', '')
+  const discordAvatarUrl = _.get(data, 'userInfo.user.discordAvatarUrl', '')
+
   //data is frozen so it can't be modified (reversed)
   //we need to reverse it before deduplication to keep only the latest submission
   const userSubmissions = _.clone(data?.userInfo?.submissions) || []
@@ -137,6 +147,12 @@ const UserProfile: React.FC = () => {
       <div className="row mt-4">
         <div className="mb-3 mb-md-0 col-md-4">
           <ProfileImageInfo user={userInfo} />
+          {discordUsername ? (
+            <ProfileDiscordInfo
+              username={discordUsername}
+              avatar={discordAvatarUrl}
+            />
+          ) : null}
           {profileStars.length === 0 ? null : (
             <ProfileStarComments stars={profileStars} />
           )}
