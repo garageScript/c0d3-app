@@ -13,6 +13,7 @@ const ProfileDiscordInfo: React.FC<ProfileDiscordInfoProps> = ({
 }) => {
   return (
     <div className="card shadow-sm">
+      <h3>Discord</h3>
       <div
         className={`ml-auto mr-auto mt-4 ${styles['profile_image_container']}`}
       >
