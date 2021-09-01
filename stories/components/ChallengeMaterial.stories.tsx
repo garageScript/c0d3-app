@@ -93,7 +93,9 @@ export const WithDiff: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewerId: '',
           createdAt: '',
@@ -120,7 +122,9 @@ export const WithDiff: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewerId: '',
           createdAt: '',
@@ -162,14 +166,18 @@ export const WithComments: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewer: {
             id: 1,
             username: 'dan',
             name: 'danny boy',
             email: 'danny@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewerId: '1',
           createdAt: '',
@@ -196,7 +204,9 @@ export const WithComments: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewerId: '',
           createdAt: '',
@@ -250,14 +260,18 @@ export const FinalChallenge: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewer: {
             id: 1,
             username: 'dan',
             name: 'danny boy',
             email: 'danny@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewerId: '1',
           createdAt: '',
@@ -284,7 +298,9 @@ export const FinalChallenge: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
-            isAdmin: false
+            isAdmin: false,
+            discordUsername: '',
+            discordAvatarUrl: ''
           },
           reviewerId: '',
           createdAt: '',

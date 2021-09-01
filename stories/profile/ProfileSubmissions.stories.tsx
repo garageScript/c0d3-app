@@ -14,7 +14,9 @@ const student = {
   username: 'fakeusername',
   name: 'fake user',
   email: 'student@fakemail.com',
-  isAdmin: false
+  isAdmin: false,
+  discordUsername: '',
+  discordAvatarUrl: ''
 }
 
 const mentor = {
@@ -22,7 +24,9 @@ const mentor = {
   username: 'admin',
   name: 'Admin Admin',
   email: 'mentor@fakemail.com',
-  isAdmin: true
+  isAdmin: true,
+  discordUsername: '',
+  discordAvatarUrl: ''
 }
 
 const completedChallenges = [
