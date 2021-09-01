@@ -27,7 +27,7 @@ exports[`connect to Discord page should render page 1`] = `
              
             <a
               class="button"
-              href="https://discord.com/api/oauth2/authorize?client_id=845470281283665970&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fauth%2Fcallback%2Fdiscord&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
+              href="https://discord.com/api/oauth2/authorize?client_id=845470281283665970&redirect_uri=https%3A%2F%2Fc0d3.com%2Fapi%2Fauth%2Fcallback%2Fdiscord&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
             >
               connect your Discord account
             </a>
@@ -42,6 +42,7 @@ exports[`connect to Discord page should render page 1`] = `
         </div>
         <button
           class="btn btn-primary btn-lg btn-block mb-3"
+          href="https://discord.com/api/oauth2/authorize?client_id=845470281283665970&redirect_uri=https%3A%2F%2Fc0d3.com%2Fapi%2Fauth%2Fcallback%2Fdiscord&response_type=code&scope=identify%20email%20guilds.join%20gdm.join"
           type="button"
         >
           Connect Now
@@ -50,7 +51,8 @@ exports[`connect to Discord page should render page 1`] = `
           class=""
           href="/curriculum"
         >
-          No thanks, I'll study on my own. 
+          No thanks, I'll study on my own.
+           
         </a>
       </div>
     </div>
