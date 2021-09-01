@@ -37,7 +37,10 @@ const ConnectToDiscordPage: React.FC & WithLayout = () => {
           </p>
         </div>
         <Link href={discordConnectPage}>
-          <button type="button" className="btn btn-primary btn-lg btn-block mb-3">
+          <button
+            type="button"
+            className="btn btn-primary btn-lg btn-block mb-3"
+          >
             Connect Now
           </button>
         </Link>

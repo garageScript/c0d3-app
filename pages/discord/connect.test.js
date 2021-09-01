@@ -1,15 +1,10 @@
 import React from 'react'
 import ConnectToDiscordPage from './connect'
-import {
-  render
-} from '@testing-library/react'
+import { render } from '@testing-library/react'
 
 describe('connect to Discord page', () => {
   it('should render page', () => {
-    const { container } = render(
-        <ConnectToDiscordPage />
-    )
+    const { container } = render(<ConnectToDiscordPage />)
     expect(container).toMatchSnapshot()
   })
-
 })
