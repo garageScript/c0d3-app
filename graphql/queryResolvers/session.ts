@@ -14,7 +14,7 @@ export const session = async (_parent: void, _args: void, context: Context) => {
   // FYI: The reason we are querying with parallelized promises:
   // https://github.com/garageScript/c0d3-app/wiki/Sequelize-Query-Performance
   const [session, starsGiven] = await Promise.all([
-    userInfo(_parent, { username: user.username }),
+    userInfo(_parent, { username: user.username }, context),
     prisma.star.findMany({
       where: {
         studentId: user.id

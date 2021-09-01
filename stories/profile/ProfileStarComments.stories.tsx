@@ -15,7 +15,9 @@ const stars: StarType[] = [
       name: 'Alexandra',
       username: 'ale',
       email: 'ale@fakemail.com',
-      isAdmin: false
+      isAdmin: false,
+      discordUsername: '',
+      discordAvatarUrl: ''
     },
     lessonId: 23,
     lesson: {
@@ -36,7 +38,9 @@ const stars: StarType[] = [
       name: 'Charles',
       username: 'cko',
       email: 'cko@fakemail.com',
-      isAdmin: false
+      isAdmin: false,
+      discordUsername: '',
+      discordAvatarUrl: ''
     },
     lessonId: 33,
     lesson: {
