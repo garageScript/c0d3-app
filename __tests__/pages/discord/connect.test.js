@@ -1,5 +1,5 @@
 import React from 'react'
-import ConnectToDiscordPage from './connect'
+import ConnectToDiscordPage from '../../../pages/discord/connect'
 import { render } from '@testing-library/react'
 
 describe('connect to Discord page', () => {
