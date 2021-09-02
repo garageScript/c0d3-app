@@ -8,6 +8,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -30,6 +31,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -53,6 +55,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -76,6 +79,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -99,6 +103,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -122,6 +127,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -145,6 +151,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -167,6 +174,7 @@ const dummyStarData: Star[] = [
       name: 'newbie newbie',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -190,6 +198,7 @@ const dummyStarData: Star[] = [
       name: 'hello nub',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -214,6 +223,7 @@ const dummyStarData: Star[] = [
       name: 'hello nub',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -237,6 +247,7 @@ const dummyStarData: Star[] = [
       name: 'hello nub',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -260,6 +271,7 @@ const dummyStarData: Star[] = [
       name: 'hello nub',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -283,6 +295,7 @@ const dummyStarData: Star[] = [
       name: 'hello nub',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },
@@ -306,6 +319,7 @@ const dummyStarData: Star[] = [
       name: 'hello nub',
       isAdmin: false,
       email: 'newbie@mail.com',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },

@@ -23,8 +23,11 @@ function MyApp({ Component, pageProps, err }: IProps) {
   const getLayout = Component.getLayout || (page => page)
   const apolloClient = useApollo(pageProps)
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production' && process.env.POSTHOG_API_KEY) {
-      posthog.init(process.env.POSTHOG_API_KEY, {
+    if (
+      process.env.NODE_ENV === 'production' &&
+      process.env.NEXT_PUBLIC_POSTHOG_API_KEY
+    ) {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_API_KEY, {
         api_host: 'https://app.posthog.com'
       })
     }

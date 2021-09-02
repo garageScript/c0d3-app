@@ -3,7 +3,6 @@ import { UserInfoQueryVariables } from '../../graphql'
 import { Context } from '../../@types/helpers'
 import prisma from '../../prisma'
 import { getUserInfoFromRefreshToken } from '../../helpers/discordAuth'
-import _ from 'lodash'
 
 type StarMap = {
   [lessonId: number]: Star[]
@@ -27,17 +26,18 @@ export const userInfo = async (
     throw new Error('Invalid user object')
   }
 
-  let discordUsername = '',
+  let discordUserId = '',
+    discordUsername = '',
     discordAvatarUrl = ''
   if (user.discordRefreshToken) {
     try {
-      const discordUserInfo = await getUserInfoFromRefreshToken(
+      const { userId, username, avatarUrl } = await getUserInfoFromRefreshToken(
         user.id,
         user.discordRefreshToken
       )
-
-      discordUsername = _.get(discordUserInfo, 'username', '')
-      discordAvatarUrl = _.get(discordUserInfo, 'avatarUrl', '')
+      discordUserId = userId
+      discordUsername = username
+      discordAvatarUrl = avatarUrl
     } catch (error) {
       req.error(error)
     }
@@ -108,7 +108,7 @@ export const userInfo = async (
   }))
 
   return {
-    user: { ...user, discordUsername, discordAvatarUrl },
+    user: { ...user, discordUserId, discordUsername, discordAvatarUrl },
     lessonStatus,
     submissions
   }

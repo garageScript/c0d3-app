@@ -94,6 +94,7 @@ export const WithDiff: React.FC = () => (
             name: 'fake user',
             email: 'fake@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },
@@ -122,6 +123,7 @@ export const WithDiff: React.FC = () => (
             username: 'fakeuser',
             name: 'fake user',
             email: 'fake@fakemail.com',
+            discordUserId: '',
             isAdmin: false,
             discordUsername: '',
             discordAvatarUrl: ''
@@ -167,6 +169,7 @@ export const WithComments: React.FC = () => (
             name: 'fake user',
             email: 'fake@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },
@@ -176,6 +179,7 @@ export const WithComments: React.FC = () => (
             name: 'danny boy',
             email: 'danny@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },
@@ -205,6 +209,7 @@ export const WithComments: React.FC = () => (
             name: 'fake user',
             email: 'fake@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },
@@ -261,6 +266,7 @@ export const FinalChallenge: React.FC = () => (
             name: 'fake user',
             email: 'fake@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },
@@ -270,6 +276,7 @@ export const FinalChallenge: React.FC = () => (
             name: 'danny boy',
             email: 'danny@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },
@@ -299,6 +306,7 @@ export const FinalChallenge: React.FC = () => (
             name: 'fake user',
             email: 'fake@fakemail.com',
             isAdmin: false,
+            discordUserId: '',
             discordUsername: '',
             discordAvatarUrl: ''
           },

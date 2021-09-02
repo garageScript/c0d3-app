@@ -54,6 +54,7 @@ describe('userInfo controller tests', () => {
     prismaMock.submission.findMany.mockResolvedValue([submission])
     prismaMock.star.findMany.mockResolvedValue([star])
     getUserInfoFromRefreshToken.mockResolvedValue({
+      userId: 'fakeId',
       username: 'fakeDiscordUser',
       avatarUrl: 'fakeUrl'
     })
@@ -62,6 +63,7 @@ describe('userInfo controller tests', () => {
       user: {
         ...user,
         discordRefreshToken: 'validToken',
+        discordUserId: 'fakeId',
         discordUsername: 'fakeDiscordUser',
         discordAvatarUrl: 'fakeUrl'
       },
@@ -91,6 +93,7 @@ describe('userInfo controller tests', () => {
       user: {
         ...user,
         discordRefreshToken: 'validToken',
+        discordUserId: 'fakeId',
         discordUsername: 'fakeDiscordUser',
         discordAvatarUrl: 'fakeUrl'
       },
@@ -119,6 +122,7 @@ describe('userInfo controller tests', () => {
       user: {
         ...user,
         discordRefreshToken: 'invalidToken',
+        discordUserId: '',
         discordUsername: '',
         discordAvatarUrl: ''
       },
