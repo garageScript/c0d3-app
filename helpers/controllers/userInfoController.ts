@@ -31,14 +31,13 @@ export const userInfo = async (
     discordAvatarUrl = ''
   if (user.discordRefreshToken) {
     try {
-      const discordUserInfo = await getUserInfoFromRefreshToken(
+      const { userId, username, avatarUrl } = await getUserInfoFromRefreshToken(
         user.id,
         user.discordRefreshToken
       )
-
-      discordUserId = discordUserInfo?.userId ?? ''
-      discordUsername = discordUserInfo?.username ?? ''
-      discordAvatarUrl = discordUserInfo?.avatarUrl ?? ''
+      discordUserId = userId
+      discordUsername = username
+      discordAvatarUrl = avatarUrl
     } catch (error) {
       req.error(error)
     }
