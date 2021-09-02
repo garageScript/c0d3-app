@@ -6,6 +6,7 @@ const dummySessionData: Session = {
     name: 'fake user',
     email: 'fake@fakemail.com',
     isAdmin: true,
+    discordUserId: '',
     discordUsername: '',
     discordAvatarUrl: ''
   },

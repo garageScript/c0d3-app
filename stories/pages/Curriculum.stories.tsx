@@ -63,6 +63,7 @@ export const CompletedLessons: React.FC<{}> = () => {
       name: 'fake user',
       email: 'fake@fakemail.com',
       isAdmin: true,
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     },

@@ -65,6 +65,7 @@ const submissionData = {
     email: 'fake@fakemail.com',
     id: 1,
     isAdmin: false,
+    discordUserId: '',
     discordUsername: '',
     discordAvatarUrl: ''
   },
@@ -81,6 +82,7 @@ const submissionData = {
     name: 'fake reviewer',
     email: 'fake@fakemail.com',
     isAdmin: false,
+    discordUserId: '',
     discordUsername: '',
     discordAvatarUrl: ''
   },
@@ -103,6 +105,7 @@ export const NoLastName: React.FC = () => (
           name: 'Admin admin',
           username: 'admin',
           email: 'admin@fakemail.com',
+          discordUserId: '',
           discordUsername: '',
           discordAvatarUrl: ''
         },
@@ -131,6 +134,7 @@ export const WithoutUsername: React.FC = () => (
           username: 'admin',
           name: 'Admin Admin',
           email: 'admin@fakemail.com',
+          discordUserId: '',
           discordUsername: '',
           discordAvatarUrl: ''
         }
@@ -148,6 +152,7 @@ export const WithLongComment: React.FC = () => (
           name: 'Admin Admin',
           username: 'admin',
           email: 'admin@fakemail.com',
+          discordUserId: '',
           discordUsername: '',
           discordAvatarUrl: ''
         },

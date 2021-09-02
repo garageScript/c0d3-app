@@ -15,6 +15,7 @@ const student = {
   name: 'fake user',
   email: 'student@fakemail.com',
   isAdmin: false,
+  discordUserId: '',
   discordUsername: '',
   discordAvatarUrl: ''
 }

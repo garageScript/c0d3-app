@@ -19,6 +19,7 @@ const comments = [
       isAdmin: false,
       username: 'newbie',
       name: 'Noob Newbie',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     }
@@ -36,6 +37,7 @@ const comments = [
       isAdmin: false,
       username: 'newbie',
       name: 'Noob Newbie',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     }
@@ -53,6 +55,7 @@ const comments = [
       isAdmin: true,
       username: 'admin',
       name: 'Admin Admin',
+      discordUserId: '',
       discordUsername: '',
       discordAvatarUrl: ''
     }

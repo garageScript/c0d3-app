@@ -256,6 +256,7 @@ describe('user profile test', () => {
         username: 'fake user',
         name: '',
         isAdmin: true,
+        discordUserId: '',
         discordUsername: '',
         discordAvatarUrl: ''
       }
