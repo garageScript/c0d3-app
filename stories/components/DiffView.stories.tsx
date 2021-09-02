@@ -29,7 +29,10 @@ const submission = {
     username: 'fakeuser',
     name: 'fake user',
     email: 'fake@fakemail.com',
-    isAdmin: false
+    isAdmin: false,
+    discordUserId: '',
+    discordUsername: '',
+    discordAvatarUrl: ''
   },
   reviewerId: '',
   createdAt: '',

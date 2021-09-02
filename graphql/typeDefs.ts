@@ -147,6 +147,9 @@ export default gql`
     name: String!
     isAdmin: Boolean!
     cliToken: String
+    discordUserId: String!
+    discordUsername: String!
+    discordAvatarUrl: String!
   }
 
   type Session {

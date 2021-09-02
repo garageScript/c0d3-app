@@ -255,7 +255,10 @@ describe('user profile test', () => {
         id: 1,
         username: 'fake user',
         name: '',
-        isAdmin: true
+        isAdmin: true,
+        discordUserId: '',
+        discordUsername: '',
+        discordAvatarUrl: ''
       }
     }
     const mocks = [

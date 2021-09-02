@@ -18,7 +18,10 @@ const comments = [
       email: 'somemail@.com',
       isAdmin: false,
       username: 'newbie',
-      name: 'Noob Newbie'
+      name: 'Noob Newbie',
+      discordUserId: '',
+      discordUsername: '',
+      discordAvatarUrl: ''
     }
   },
   {
@@ -33,7 +36,10 @@ const comments = [
       email: 'somemail@.com',
       isAdmin: false,
       username: 'newbie',
-      name: 'Noob Newbie'
+      name: 'Noob Newbie',
+      discordUserId: '',
+      discordUsername: '',
+      discordAvatarUrl: ''
     }
   },
   {
@@ -48,7 +54,10 @@ const comments = [
       email: 'somemail@.com',
       isAdmin: true,
       username: 'admin',
-      name: 'Admin Admin'
+      name: 'Admin Admin',
+      discordUserId: '',
+      discordUsername: '',
+      discordAvatarUrl: ''
     }
   }
 ]
