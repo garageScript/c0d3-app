@@ -1,20 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MdInput Component Should display markdown preview text when switch to Preview mode with input 1`] = `
+<div>
+  <div>
+    <div
+      class="nav nav-tabs"
+    >
+      <div
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+          data-rb-event-key="Write"
+          href="#"
+          role="button"
+          style="color: rgb(142, 142, 142);"
+        >
+          Write
+        </a>
+      </div>
+      <div
+        class="nav-item"
+      >
+        <a
+          class="nav-link active"
+          data-rb-event-key="Preview"
+          href="#"
+          role="button"
+          style="color: rgb(41, 41, 41);"
+        >
+          Preview
+        </a>
+      </div>
+    </div>
+    <span
+      class="preview"
+      data-testid="markdown"
+      style="min-height: 500px;"
+    >
+      Some 
+      <strong>
+        Text
+      </strong>
+    </span>
+    <hr />
+    <textarea
+      class="textarea d-none"
+      data-testid="textbox"
+      placeholder="Type something..."
+      style="height: 2px;"
+    >
+      Some **Text**
+    </textarea>
+  </div>
+</div>
+`;
+
 exports[`MdInput Component Should render text onto textbox when user types 1`] = `
 <div>
   <div>
-    <button
-      class="btn"
-      style="color: rgb(41, 41, 41);"
+    <div
+      class="nav nav-tabs"
     >
-      Write
-    </button>
-    <button
-      class="btn"
-      style="color: rgb(142, 142, 142);"
-    >
-      Preview
-    </button>
+      <div
+        class="nav-item"
+      >
+        <a
+          class="nav-link active"
+          data-rb-event-key="Write"
+          href="#"
+          role="button"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </a>
+      </div>
+      <div
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+          data-rb-event-key="Preview"
+          href="#"
+          role="button"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </a>
+      </div>
+    </div>
     <textarea
       class="textarea"
       data-testid="textbox"
@@ -27,49 +101,39 @@ exports[`MdInput Component Should render text onto textbox when user types 1`] =
 </div>
 `;
 
-exports[`MdInput Component Should switch to Preview mode when user clicks Preview button 1`] = `
-<div>
-  <div>
-    <button
-      class="btn"
-      style="color: rgb(142, 142, 142);"
-    >
-      Write
-    </button>
-    <button
-      class="btn"
-      style="color: rgb(41, 41, 41);"
-    >
-      Preview
-    </button>
-    <span
-      class="preview"
-      data-testid="markdown"
-    />
-    <textarea
-      class="textarea d-none"
-      data-testid="textbox"
-      placeholder="Type something..."
-    />
-  </div>
-</div>
-`;
-
 exports[`MdInput Component Should switch to Write mode when user clicks Write button 1`] = `
 <div>
   <div>
-    <button
-      class="btn"
-      style="color: rgb(41, 41, 41);"
+    <div
+      class="nav nav-tabs"
     >
-      Write
-    </button>
-    <button
-      class="btn"
-      style="color: rgb(142, 142, 142);"
-    >
-      Preview
-    </button>
+      <div
+        class="nav-item"
+      >
+        <a
+          class="nav-link active"
+          data-rb-event-key="Write"
+          href="#"
+          role="button"
+          style="color: rgb(41, 41, 41);"
+        >
+          Write
+        </a>
+      </div>
+      <div
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+          data-rb-event-key="Preview"
+          href="#"
+          role="button"
+          style="color: rgb(142, 142, 142);"
+        >
+          Preview
+        </a>
+      </div>
+    </div>
     <textarea
       class="textarea"
       data-testid="textbox"

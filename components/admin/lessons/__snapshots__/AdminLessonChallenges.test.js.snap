@@ -53,18 +53,36 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -161,18 +179,36 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -271,18 +307,36 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -376,18 +430,36 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -465,18 +537,36 @@ exports[`AdminLessonChallenges component Should render a challenge without title
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -580,18 +670,36 @@ exports[`AdminLessonChallenges component Should update challenge 1`] = `
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -686,18 +794,36 @@ solution(4,1) // Should return 5
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -797,18 +923,36 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
@@ -897,18 +1041,36 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
             <div
               style="background-color: white;"
             >
-              <button
-                class="btn"
-                style="color: rgb(41, 41, 41);"
+              <div
+                class="nav nav-tabs"
               >
-                Write
-              </button>
-              <button
-                class="btn"
-                style="color: rgb(142, 142, 142);"
-              >
-                Preview
-              </button>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link active"
+                    data-rb-event-key="Write"
+                    href="#"
+                    role="button"
+                    style="color: rgb(41, 41, 41);"
+                  >
+                    Write
+                  </a>
+                </div>
+                <div
+                  class="nav-item"
+                >
+                  <a
+                    class="nav-link"
+                    data-rb-event-key="Preview"
+                    href="#"
+                    role="button"
+                    style="color: rgb(142, 142, 142);"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </div>
               <textarea
                 class="textarea"
                 data-testid="textbox"
