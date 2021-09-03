@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Markdown from 'markdown-to-jsx'
-import { Button } from './theme/Button'
+import { colors } from './theme/colors'
+import { Nav } from 'react-bootstrap'
 import noop from '../helpers/noop'
 import styles from '../scss/mdInput.module.scss'
 
@@ -63,16 +64,46 @@ export const MdInput: React.FC<MdInputProps> = ({
 
   return (
     <div style={{ backgroundColor: bgColor }}>
-      <Button color={writeBtnColor} onClick={() => setPreview(false)}>
-        Write
-      </Button>
-      <Button color={previewBtnColor} onClick={() => setPreview(true)}>
-        Preview
-      </Button>
+      <Nav
+        variant="tabs"
+        defaultActiveKey="Write"
+        activeKey={preview ? 'Preview' : 'Write'}
+        onSelect={selectedKey => setPreview(selectedKey === 'Preview')}
+      >
+        <Nav.Item>
+          <Nav.Link style={{ color: colors[writeBtnColor] }} eventKey="Write">
+            Write
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            style={{ color: colors[previewBtnColor] }}
+            eventKey="Preview"
+          >
+            Preview
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
       {preview && (
-        <Markdown data-testid="markdown" className={`${styles['preview']}`}>
-          {value}
-        </Markdown>
+        <>
+          {value ? (
+            <Markdown
+              data-testid="markdown"
+              style={{
+                minHeight:
+                  Math.min(textareaRef.current?.clientHeight || Infinity, 500) +
+                  'px'
+              }}
+              className={`${styles['preview']}`}
+            >
+              {value}
+            </Markdown>
+          ) : (
+            // Using textArea class so minHeight stays in sync
+            <div className={styles['textarea']}>Nothing to preview</div>
+          )}
+          <hr />
+        </>
       )}
       <textarea
         onMouseDown={() => {
