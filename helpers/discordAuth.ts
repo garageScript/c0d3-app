@@ -103,6 +103,12 @@ export const getUserInfoFromRefreshToken = async (
   const updatedRefreshToken = tokenResponse.refresh_token || ''
   // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid refresh tokens
   await updateUserRefreshToken(userId, updatedRefreshToken)
+  console.table({
+    label: 'call to getUserInfoFromRefreshToken',
+    starting_refresh_token: refreshToken,
+    token_response: tokenResponse.refresh_token,
+    token_stored_in_db: updatedRefreshToken
+  })
 
   if (!updatedRefreshToken)
     throw new Error(`refresh token invalid for userId ${userId}`)
