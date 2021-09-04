@@ -28,8 +28,21 @@ describe('MdInput Component', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Should switch to Preview mode when user clicks Preview button', () => {
+  test("Should display 'Nothing to preview' when switching to Preview mode with no input", () => {
     const { container } = render(<MdInput />)
+
+    userEvent.click(screen.getByRole('button', { name: 'Preview' }))
+
+    expect(screen.getByRole('textbox')).toHaveClass('d-none')
+    expect(screen.getByText('Nothing to preview')).toBeInTheDocument()
+  })
+
+  test('Should display markdown preview text when switch to Preview mode with input', () => {
+    const { container } = render(<TestComponent />)
+
+    const textbox = screen.getByRole('textbox')
+    userEvent.click(textbox)
+    userEvent.type(textbox, 'Some **Text**')
 
     userEvent.click(screen.getByRole('button', { name: 'Preview' }))
 

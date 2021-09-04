@@ -1307,28 +1307,49 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               }
             }
           >
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#292929",
-                }
-              }
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
             >
-              Write
-            </button>
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#8e8e8e",
-                }
-              }
-            >
-              Preview
-            </button>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               className="textarea"
               data-testid="textbox"
@@ -1826,28 +1847,49 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               }
             }
           >
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#292929",
-                }
-              }
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
             >
-              Write
-            </button>
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#8e8e8e",
-                }
-              }
-            >
-              Preview
-            </button>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               className="textarea"
               data-testid="textbox"
@@ -4617,28 +4659,49 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
               }
             }
           >
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#292929",
-                }
-              }
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
             >
-              Write
-            </button>
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#8e8e8e",
-                }
-              }
-            >
-              Preview
-            </button>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               className="textarea"
               data-testid="textbox"
@@ -4833,28 +4896,49 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
               }
             }
           >
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#292929",
-                }
-              }
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
             >
-              Write
-            </button>
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#8e8e8e",
-                }
-              }
-            >
-              Preview
-            </button>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               className="textarea"
               data-testid="textbox"
@@ -4979,28 +5063,49 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
               }
             }
           >
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#292929",
-                }
-              }
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
             >
-              Write
-            </button>
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#8e8e8e",
-                }
-              }
-            >
-              Preview
-            </button>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               className="textarea"
               data-testid="textbox"
@@ -5125,28 +5230,49 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
               }
             }
           >
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#292929",
-                }
-              }
+            <div
+              className="nav nav-tabs"
+              onKeyDown={[Function]}
             >
-              Write
-            </button>
-            <button
-              className="btn"
-              onClick={[Function]}
-              style={
-                Object {
-                  "color": "#8e8e8e",
-                }
-              }
-            >
-              Preview
-            </button>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#292929",
+                    }
+                  }
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                className="nav-item"
+              >
+                <a
+                  className="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  style={
+                    Object {
+                      "color": "#8e8e8e",
+                    }
+                  }
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               className="textarea"
               data-testid="textbox"
@@ -6725,28 +6851,49 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
     }
   }
 >
-  <button
-    className="btn"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#292929",
-      }
-    }
+  <div
+    className="nav nav-tabs"
+    onKeyDown={[Function]}
   >
-    Write
-  </button>
-  <button
-    className="btn"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#8e8e8e",
-      }
-    }
-  >
-    Preview
-  </button>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link active"
+        data-rb-event-key="Write"
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </a>
+    </div>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="Preview"
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </a>
+    </div>
+  </div>
   <textarea
     className="textarea"
     data-testid="textbox"
@@ -6766,28 +6913,49 @@ exports[`Storyshots Components/MdInput White 1`] = `
     }
   }
 >
-  <button
-    className="btn"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#292929",
-      }
-    }
+  <div
+    className="nav nav-tabs"
+    onKeyDown={[Function]}
   >
-    Write
-  </button>
-  <button
-    className="btn"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#8e8e8e",
-      }
-    }
-  >
-    Preview
-  </button>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link active"
+        data-rb-event-key="Write"
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </a>
+    </div>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="Preview"
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </a>
+    </div>
+  </div>
   <textarea
     className="textarea"
     data-testid="textbox"
@@ -6807,28 +6975,49 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
     }
   }
 >
-  <button
-    className="btn"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#292929",
-      }
-    }
+  <div
+    className="nav nav-tabs"
+    onKeyDown={[Function]}
   >
-    Write
-  </button>
-  <button
-    className="btn"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#8e8e8e",
-      }
-    }
-  >
-    Preview
-  </button>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link active"
+        data-rb-event-key="Write"
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#292929",
+          }
+        }
+      >
+        Write
+      </a>
+    </div>
+    <div
+      className="nav-item"
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="Preview"
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#8e8e8e",
+          }
+        }
+      >
+        Preview
+      </a>
+    </div>
+  </div>
   <textarea
     className="textarea"
     data-testid="textbox"
@@ -6849,28 +7038,49 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
       }
     }
   >
-    <button
-      className="btn"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#292929",
-        }
-      }
+    <div
+      className="nav nav-tabs"
+      onKeyDown={[Function]}
     >
-      Write
-    </button>
-    <button
-      className="btn"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "#8e8e8e",
-        }
-      }
-    >
-      Preview
-    </button>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link active"
+          data-rb-event-key="Write"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          style={
+            Object {
+              "color": "#292929",
+            }
+          }
+        >
+          Write
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="Preview"
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          style={
+            Object {
+              "color": "#8e8e8e",
+            }
+          }
+        >
+          Preview
+        </a>
+      </div>
+    </div>
     <textarea
       className="textarea"
       data-testid="textbox"
@@ -9410,28 +9620,49 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="nav nav-tabs"
+        onKeyDown={[Function]}
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link active"
+            data-rb-event-key="Write"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#292929",
+              }
+            }
+          >
+            Write
+          </a>
+        </div>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            data-rb-event-key="Preview"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#8e8e8e",
+              }
+            }
+          >
+            Preview
+          </a>
+        </div>
+      </div>
       <textarea
         className="textarea"
         data-testid="textbox"
@@ -10447,28 +10678,49 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="nav nav-tabs"
+        onKeyDown={[Function]}
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link active"
+            data-rb-event-key="Write"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#292929",
+              }
+            }
+          >
+            Write
+          </a>
+        </div>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            data-rb-event-key="Preview"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#8e8e8e",
+              }
+            }
+          >
+            Preview
+          </a>
+        </div>
+      </div>
       <textarea
         className="textarea"
         data-testid="textbox"
@@ -11482,28 +11734,49 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="nav nav-tabs"
+        onKeyDown={[Function]}
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link active"
+            data-rb-event-key="Write"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#292929",
+              }
+            }
+          >
+            Write
+          </a>
+        </div>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            data-rb-event-key="Preview"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#8e8e8e",
+              }
+            }
+          >
+            Preview
+          </a>
+        </div>
+      </div>
       <textarea
         className="textarea"
         data-testid="textbox"
@@ -12517,28 +12790,49 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="nav nav-tabs"
+        onKeyDown={[Function]}
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link active"
+            data-rb-event-key="Write"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#292929",
+              }
+            }
+          >
+            Write
+          </a>
+        </div>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            data-rb-event-key="Preview"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#8e8e8e",
+              }
+            }
+          >
+            Preview
+          </a>
+        </div>
+      </div>
       <textarea
         className="textarea"
         data-testid="textbox"
@@ -13552,28 +13846,49 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         }
       }
     >
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#292929",
-          }
-        }
+      <div
+        className="nav nav-tabs"
+        onKeyDown={[Function]}
       >
-        Write
-      </button>
-      <button
-        className="btn"
-        onClick={[Function]}
-        style={
-          Object {
-            "color": "#8e8e8e",
-          }
-        }
-      >
-        Preview
-      </button>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link active"
+            data-rb-event-key="Write"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#292929",
+              }
+            }
+          >
+            Write
+          </a>
+        </div>
+        <div
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            data-rb-event-key="Preview"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            style={
+              Object {
+                "color": "#8e8e8e",
+              }
+            }
+          >
+            Preview
+          </a>
+        </div>
+      </div>
       <textarea
         className="textarea"
         data-testid="textbox"

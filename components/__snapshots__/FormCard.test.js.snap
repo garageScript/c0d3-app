@@ -25,18 +25,36 @@ exports[`FormCard Component Should call function with updated array as parameter
           <div
             style="background-color: white;"
           >
-            <button
-              class="btn"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="nav nav-tabs"
             >
-              Write
-            </button>
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Preview
-            </button>
+              <div
+                class="nav-item"
+              >
+                <a
+                  class="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  role="button"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                class="nav-item"
+              >
+                <a
+                  class="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  role="button"
+                  style="color: rgb(142, 142, 142);"
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               class="textarea"
               data-testid="textbox"
@@ -129,18 +147,36 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
           <div
             style="background-color: white;"
           >
-            <button
-              class="btn"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="nav nav-tabs"
             >
-              Write
-            </button>
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Preview
-            </button>
+              <div
+                class="nav-item"
+              >
+                <a
+                  class="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  role="button"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                class="nav-item"
+              >
+                <a
+                  class="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  role="button"
+                  style="color: rgb(142, 142, 142);"
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               class="textarea"
               data-testid="textbox"
@@ -265,18 +301,36 @@ exports[`FormCard Component Should update testing onChange variable when person 
           <div
             style="background-color: white;"
           >
-            <button
-              class="btn"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="nav nav-tabs"
             >
-              Write
-            </button>
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Preview
-            </button>
+              <div
+                class="nav-item"
+              >
+                <a
+                  class="nav-link active"
+                  data-rb-event-key="Write"
+                  href="#"
+                  role="button"
+                  style="color: rgb(41, 41, 41);"
+                >
+                  Write
+                </a>
+              </div>
+              <div
+                class="nav-item"
+              >
+                <a
+                  class="nav-link"
+                  data-rb-event-key="Preview"
+                  href="#"
+                  role="button"
+                  style="color: rgb(142, 142, 142);"
+                >
+                  Preview
+                </a>
+              </div>
+            </div>
             <textarea
               class="textarea"
               data-testid="textbox"
