@@ -22,14 +22,16 @@ export const userInfo = async (
     }
   })
 
+  console.log('user', user)
+
   if (!user) {
     throw new Error('Invalid user object')
   }
-
   let discordUserId = '',
     discordUsername = '',
     discordAvatarUrl = ''
   if (user.discordRefreshToken) {
+    console.log('refresh token', user.discordRefreshToken)
     try {
       const { userId, username, avatarUrl } = await getUserInfoFromRefreshToken(
         user.id,
