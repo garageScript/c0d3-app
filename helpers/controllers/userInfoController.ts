@@ -22,8 +22,6 @@ export const userInfo = async (
     }
   })
 
-  // console.log('userInfoController db query user', user)
-
   if (!user) {
     throw new Error('Invalid user object')
   }
@@ -32,13 +30,13 @@ export const userInfo = async (
     discordAvatarUrl = ''
   if (user.discordRefreshToken) {
     try {
-      const { userId, username, avatarUrl } = await getUserInfoFromRefreshToken(
+      const userInfo = await getUserInfoFromRefreshToken(
         user.id,
         user.discordRefreshToken
       )
-      discordUserId = userId
-      discordUsername = username
-      discordAvatarUrl = avatarUrl
+      discordUserId = userInfo.userId
+      discordUsername = userInfo.username
+      discordAvatarUrl = userInfo.avatarUrl
     } catch (error) {
       req.error(error)
     }
