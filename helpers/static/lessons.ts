@@ -3,7 +3,16 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import path from 'path'
 
 const LESSONS_GITHUB_PATH = 'content/lessons'
-const LESSONS_PATH = path.join(process.cwd(), LESSONS_GITHUB_PATH)
+
+// This is the solution to make the content files available
+// on the lambda serverless functions that handle the ISR rebuilds.
+// The webpack copy plugin found in the next.config.js file copies the
+// content folder to the .next/Server/chunks directory
+const LESSONS_PATH =
+  process.env.NODE_ENV === 'production'
+    ? /* istanbul ignore next */
+      path.join(process.cwd(), '.next/server/chunks', LESSONS_GITHUB_PATH)
+    : path.join(process.cwd(), LESSONS_GITHUB_PATH)
 
 export type SubLesson = {
   frontMatter: {
