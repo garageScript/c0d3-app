@@ -285,6 +285,25 @@ module.exports = [1, 2, 3] // module.exports is an array: [1,2,3]
 
 </Spoiler>
 
+<br>
+
+>Depending on which version of nodeJS you have installed you may have to use `import` instead of `require`.
+Using `import`  may need you to add `"type" : "module"`  into  the package.json file in your directory. `{
+"type":"module",... `
+ 
+>*To import modules :*
+ ```jsx
+import function from 'moduleName';
+const function = require('moduleName');
+```
+>*To import files:* :
+  ```jsx
+import function from './relativePath';```
+const function = require('./relativePath');
+```
+<br>
+
+
 ## Examples
 
 1. Export: Any file that exports something can be called a **library**. Here
