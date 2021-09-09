@@ -44,6 +44,12 @@ function MyApp({ Component, pageProps, err }: IProps) {
           />
           <link rel="shortcut icon" href="/favicon.ico" />
 
+          {/* <!-- Google Search Console --> */}
+          <meta
+            name="google-site-verification"
+            content="g3XwtRaZPgo2DxVzw7ujpH5L0I0jqAmD-D5ojAS3bag"
+          />
+
           {/* <!-- Open Graph / Facebook --> */}
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://www.c0d3.com/" />
