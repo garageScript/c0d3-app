@@ -69,7 +69,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^2.1.1",
     "@graphql-codegen/typescript": "^2.1.2",
-    "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.2",
+    "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.4",
     "@graphql-codegen/typescript-operations": "^2.1.2",
     "@graphql-codegen/typescript-react-apollo": "^3.1.2",
     "@graphql-codegen/typescript-resolvers": "^2.1.2",
@@ -95,7 +95,7 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.29.3",
+    "@typescript-eslint/parser": "^4.31.0",
     "babel-jest": "^27.1.0",
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^9.0.1",
