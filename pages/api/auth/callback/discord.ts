@@ -1,6 +1,6 @@
 import {
-  getTokenFromAuthCode,
-  getUserInfoFromRefreshToken
+  setTokenFromAuthCode,
+  getDiscordUserInfo
 } from '../../../../helpers/discordAuth'
 import { NextApiResponse } from 'next'
 import { LoggedRequest } from '../../../../@types/helpers'
@@ -23,14 +23,11 @@ const discordOAuthHandler = async (
   const { code } = req.query
 
   try {
-    const { refresh_token } = await getTokenFromAuthCode(code as string)
-    const userInfo = await getUserInfoFromRefreshToken(
-      req.user.id,
-      refresh_token
-    )
+    const user = await setTokenFromAuthCode(req.user.id, code as string)
+    const userInfo = await getDiscordUserInfo(user)
     return res.json(userInfo)
   } catch (error) {
-    res.status(400).json({ error: 'invalid auth code' })
+    res.status(400).json({ error })
   }
 }
 

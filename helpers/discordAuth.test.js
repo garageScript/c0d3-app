@@ -42,11 +42,15 @@ describe('getUserInfoFromRefreshToken function', () => {
     jest.clearAllMocks()
     prisma.user.update = jest.fn()
   })
+
+  global.Date.now = jest.fn(() => 200)
+
   it('should call the correct functions and update refresh token in database and return the correct object if refresh token valid', async () => {
     fetch.mockResolvedValueOnce({
       json: () => ({
         refresh_token: 'fakeRefreshToken',
-        access_token: 'fakeAccessToken'
+        access_token: 'fakeAccessToken',
+        expires_in: 10
       })
     })
     fetch.mockResolvedValueOnce({
@@ -56,6 +60,7 @@ describe('getUserInfoFromRefreshToken function', () => {
         avatar: 'ea8f5f59aff14450e892321ba128745d'
       })
     })
+
     const result = await getUserInfoFromRefreshToken(123, 'mockRefreshToken')
 
     expect(fetch.mock.calls.length).toBe(2)
@@ -94,7 +99,9 @@ describe('getUserInfoFromRefreshToken function', () => {
         id: 123
       },
       data: {
-        discordRefreshToken: 'fakeRefreshToken'
+        discordRefreshToken: 'fakeRefreshToken',
+        discordAccessToken: 'fakeAccessToken',
+        discordAccessTokenExpires: new Date(200 + 10 * 1000)
       }
     })
 
@@ -128,7 +135,9 @@ describe('getUserInfoFromRefreshToken function', () => {
         id: 123
       },
       data: {
-        discordRefreshToken: ''
+        discordRefreshToken: '',
+        discordAccessToken: '',
+        discordAccessTokenExpires: new Date(200)
       }
     })
   })

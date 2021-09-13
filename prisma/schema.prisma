@@ -128,27 +128,29 @@ model UserLesson {
 }
 
 model User {
-  id                     Int          @id @default(autoincrement())
-  name                   String       @db.VarChar(255)
-  username               String       @db.VarChar(255)
-  password               String?      @db.VarChar(255)
-  email                  String       @db.VarChar(255)
-  gsId                   Int?
-  isOnline               Boolean?
-  createdAt              DateTime     @default(now()) @db.Timestamptz(6)
-  updatedAt              DateTime     @updatedAt @db.Timestamptz(6)
-  isAdmin                Boolean      @default(false)
-  forgotToken            String?      @db.VarChar(255)
-  cliToken               String?      @db.VarChar(255)
-  emailVerificationToken String?      @db.VarChar(255)
-  tokenExpiration        DateTime?    @db.Timestamptz(6)
-  discordRefreshToken    String?      @db.VarChar(255)
-  starsMentor            Star[]       @relation("starMentor")
-  starsGiven             Star[]       @relation("starStudent")
-  submissionsReviewed    Submission[] @relation("userReviewedSubmissions")
-  submissions            Submission[] @relation("userSubmissions")
-  userLessons            UserLesson[]
-  comments               Comment[]
+  id                        Int          @id @default(autoincrement())
+  name                      String       @db.VarChar(255)
+  username                  String       @db.VarChar(255)
+  password                  String?      @db.VarChar(255)
+  email                     String       @db.VarChar(255)
+  gsId                      Int?
+  isOnline                  Boolean?
+  createdAt                 DateTime     @default(now()) @db.Timestamptz(6)
+  updatedAt                 DateTime     @updatedAt @db.Timestamptz(6)
+  isAdmin                   Boolean      @default(false)
+  forgotToken               String?      @db.VarChar(255)
+  cliToken                  String?      @db.VarChar(255)
+  emailVerificationToken    String?      @db.VarChar(255)
+  tokenExpiration           DateTime?    @db.Timestamptz(6)
+  discordRefreshToken       String?      @db.VarChar(255)
+  discordAccessToken        String?      @db.VarChar(255)
+  discordAccessTokenExpires DateTime?    @db.Timestamptz(6)
+  starsMentor               Star[]       @relation("starMentor")
+  starsGiven                Star[]       @relation("starStudent")
+  submissionsReviewed       Submission[] @relation("userReviewedSubmissions")
+  submissions               Submission[] @relation("userSubmissions")
+  userLessons               UserLesson[]
+  comments                  Comment[]
 
   @@map("users")
 }
