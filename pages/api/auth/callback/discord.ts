@@ -22,13 +22,9 @@ const discordOAuthHandler = async (
 
   const { code } = req.query
 
-  try {
-    const user = await setTokenFromAuthCode(req.user.id, code as string)
-    const userInfo = await getDiscordUserInfo(user)
-    return res.json(userInfo)
-  } catch (error) {
-    res.status(400).json({ error })
-  }
+  const user = await setTokenFromAuthCode(req.user.id, code as string)
+  const userInfo = await getDiscordUserInfo(user)
+  return res.json(userInfo)
 }
 
 handler
