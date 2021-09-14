@@ -53,7 +53,10 @@ const updateRefreshandAccessTokens = (
   })
 }
 
-export const setTokenFromAuthCode = (userId: number, code: string) => {
+export const setTokenFromAuthCode = (
+  userId: number,
+  code: string
+): Promise<User> => {
   return fetch(`${discordAPI}/oauth2/token`, {
     method: 'POST',
     headers: {
@@ -70,12 +73,6 @@ export const setTokenFromAuthCode = (userId: number, code: string) => {
   })
     .then(r => r.json())
     .then(({ refresh_token, access_token, expires_in }) => {
-      console.log(
-        'fetched tokens for userId',
-        userId,
-        refresh_token,
-        access_token
-      )
       const accessTokenExpiresAt = new Date(
         Date.now() + (expires_in * 1000 || 0)
       )
@@ -88,7 +85,6 @@ export const setTokenFromAuthCode = (userId: number, code: string) => {
     })
 }
 
-// if access token is expired
 const getTokenFromRefreshToken = (
   refresh_token: string
 ): Promise<AccessTokenResponse> => {
@@ -143,13 +139,12 @@ export const getDiscordUserInfo = async (
       }
 
     if (!discordAccessToken || Number(discordAccessTokenExpires) < Date.now()) {
-      // get access token and refresh token & save
       const tokenResponse = await getTokenFromRefreshToken(refreshToken)
       refreshToken = tokenResponse.refresh_token || ''
       accessToken = tokenResponse.access_token || ''
       const accessTokenExpiresAt = new Date(
         Date.now() + (tokenResponse.expires_in * 1000 || 0)
-      ) // expires_in converted from seconds to milliseconds
+      )
 
       // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid tokens
       await updateRefreshandAccessTokens(
@@ -161,7 +156,7 @@ export const getDiscordUserInfo = async (
     }
 
     if (!accessToken)
-      throw new Error(`refresh token invalid for userId ${userId}`)
+      throw new Error(`refresh token invalid for userId ${user.id}`)
 
     const userInfo = await getUserInfoFromAccessToken(accessToken)
 
@@ -169,7 +164,7 @@ export const getDiscordUserInfo = async (
     username = userInfo.username
     avatarUrl = `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}.png`
 
-    if (!userId) throw new Error(`access token invalid for userId ${userId}`)
+    if (!userId) throw new Error(`access token invalid for userId ${user.id}`)
 
     return {
       userId,
@@ -178,7 +173,6 @@ export const getDiscordUserInfo = async (
       refreshToken
     }
   } catch (error) {
-    console.log('get discord Info', error)
     return {
       userId: '',
       username: '',

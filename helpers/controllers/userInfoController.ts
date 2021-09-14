@@ -1,6 +1,5 @@
 import type { Star } from '.prisma/client'
 import { UserInfoQueryVariables } from '../../graphql'
-import { Context } from '../../@types/helpers'
 import prisma from '../../prisma'
 import { getDiscordUserInfo } from '../../helpers/discordAuth'
 
