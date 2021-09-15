@@ -6,8 +6,8 @@ jest.mock('../../helpers/middleware/logger')
 
 import nextConnect from 'next-connect'
 import {
-  getTokenFromAuthCode,
-  getUserInfoFromRefreshToken
+  getDiscordUserInfo,
+  setTokenFromAuthCode
 } from '../../helpers/discordAuth'
 
 const mockDiscordUserInfo = {
@@ -52,31 +52,18 @@ describe('discord redirect with auth code query parameter', () => {
   })
 
   it('return discord user info if valid refresh token', async () => {
-    getTokenFromAuthCode.mockResolvedValue({
-      refresh_token: 'fakeRefreshToken'
+    setTokenFromAuthCode.mockResolvedValue({
+      id: 123
     })
-    getUserInfoFromRefreshToken.mockResolvedValue(mockDiscordUserInfo)
+    getDiscordUserInfo.mockResolvedValue(mockDiscordUserInfo)
     await getHandler[1](
-      { query: { code: 'fakeAuthCode' }, user: { userId: '123' } },
+      { query: { code: 'fakeAuthCode' }, user: { id: 123 } },
       {
         json: userInfo => {
           expect(userInfo).toBe(mockDiscordUserInfo)
         }
       }
     )
-    expect(getTokenFromAuthCode).toBeCalledWith('fakeAuthCode')
-  })
-
-  it('should throw error if auth token invalid', async () => {
-    getTokenFromAuthCode.mockRejectedValue({})
-    await getHandler[1](
-      { query: { code: 'fakeAuthCode' }, user: { userId: '123' } },
-      mockErrorResponse
-    )
-
-    expect(mockErrorResponse.status).toHaveBeenCalledWith(400)
-    expect(mockErrorResponse.json).toHaveBeenCalledWith({
-      error: 'invalid auth code'
-    })
+    expect(setTokenFromAuthCode).toBeCalledWith(123, 'fakeAuthCode')
   })
 })
