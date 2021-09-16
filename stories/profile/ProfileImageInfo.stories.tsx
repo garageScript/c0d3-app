@@ -10,9 +10,9 @@ const user = {
   firstName: 'Rahul',
   lastName: 'Kalra',
   username: 'noob101',
-  discordUserId: '',
-  discordUsername: '',
-  discordAvatarUrl: ''
+  discordUserId: 'fakeDiscordId',
+  discordUsername: 'fakeDiscordUsername',
+  discordAvatarUrl: 'https://placeimg.com/60/60/any'
 }
 
 export const _ProfileImageInfo: React.FC = () => (

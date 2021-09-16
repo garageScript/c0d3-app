@@ -24,7 +24,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
         <h4 className="text-muted">{'@' + user.username}</h4>
       </div>
       <div className="d-flex justify-content-center mb-4">
-        {user.discordUsername ? (
+        {user.discordUserId ? (
           <>
             <Image src="/assets/discordClydeLogo.svg" height={30} width={30} />
             <h4>

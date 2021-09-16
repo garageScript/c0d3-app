@@ -7235,9 +7235,14 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     className="ml-auto mr-auto mt-4 profile_image_container"
   >
     <div
-      className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+      className="jsx-3123111835 ml-auto mr-auto mt-4"
     >
-      RK
+      <img
+        className="img-fluid"
+        height={60}
+        src="https://placeimg.com/60/60/any"
+        width={60}
+      />
     </div>
   </div>
   <h2
@@ -7245,7 +7250,9 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   >
     Rahul Kalra
   </h2>
-  <div>
+  <div
+    className="d-flex justify-content-center"
+  >
     <img
       className="img-fluid"
       height={30}
@@ -7254,18 +7261,29 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       width={30}
     />
     <h4
-      className="text-center text-muted mb-4"
+      className="text-muted"
     >
       @noob101
     </h4>
   </div>
-  <div>
+  <div
+    className="d-flex justify-content-center mb-4"
+  >
     <img
       className="img-fluid"
       height={30}
       src="/assets/discordClydeLogo.svg"
       width={30}
     />
+    <h4>
+      <a
+        href="https://discordapp.com/users/fakeDiscordId/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        @fakeDiscordUsername
+      </a>
+    </h4>
   </div>
 </div>
 `;
@@ -14785,7 +14803,6 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
     <img
       className="img-fluid"
       height={60}
-      loader={[Function]}
       src="avatarUrl"
       width={60}
     />

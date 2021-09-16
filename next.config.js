@@ -27,7 +27,10 @@ const moduleExports = {
       }
     ]
   },
-  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts']
+  pageExtensions: ['tsx', 'js', 'jsx', 'mdx', 'ts'],
+  images: {
+    domains: ['cdn.discordapp.com']
+  }
 }
 
 const SentryWebpackPluginOptions = {

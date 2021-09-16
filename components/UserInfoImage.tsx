@@ -12,7 +12,6 @@ const DiscordAvatar: React.FC<UserProps> = ({ user }) => {
       <div className="ml-auto mr-auto mt-4">
         <Image
           className="avatar"
-          loader={() => user.discordAvatarUrl}
           src={user.discordAvatarUrl}
           width={60}
           height={60}
@@ -32,7 +31,7 @@ const DiscordAvatar: React.FC<UserProps> = ({ user }) => {
 const UserInfoImage: React.FC<UserProps> = ({ user }) => {
   return (
     <>
-      {user.discordAvatarUrl ? (
+      {user.discordUserId ? (
         <DiscordAvatar user={user} />
       ) : (
         <div
