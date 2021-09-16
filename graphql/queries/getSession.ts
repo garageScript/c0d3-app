@@ -8,6 +8,7 @@ const GET_SESSION = gql`
         username
         name
         isAdmin
+        isConnectedToDiscord
       }
       submissions {
         id
