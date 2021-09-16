@@ -35,9 +35,28 @@ type DiscordUserInfo = {
   refreshToken: string
 }
 
-export const getTokenFromAuthCode = (
+const updateRefreshandAccessTokens = (
+  userId: number,
+  refreshToken: string,
+  accessToken: string,
+  accessTokenExpiresAt: Date
+): Promise<User> => {
+  return prisma.user.update({
+    where: {
+      id: userId
+    },
+    data: {
+      discordRefreshToken: refreshToken,
+      discordAccessToken: accessToken,
+      discordAccessTokenExpires: accessTokenExpiresAt
+    }
+  })
+}
+
+export const setTokenFromAuthCode = (
+  userId: number,
   code: string
-): Promise<AccessTokenResponse> => {
+): Promise<User> => {
   return fetch(`${discordAPI}/oauth2/token`, {
     method: 'POST',
     headers: {
@@ -51,7 +70,19 @@ export const getTokenFromAuthCode = (
       redirect_uri,
       scope: 'email guilds.join gdm.join identify'
     })
-  }).then(r => r.json())
+  })
+    .then(r => r.json())
+    .then(({ refresh_token, access_token, expires_in }) => {
+      const accessTokenExpiresAt = new Date(
+        Date.now() + (expires_in * 1000 || 0)
+      )
+      return updateRefreshandAccessTokens(
+        userId,
+        refresh_token,
+        access_token,
+        accessTokenExpiresAt
+      )
+    })
 }
 
 const getTokenFromRefreshToken = (
@@ -71,7 +102,9 @@ const getTokenFromRefreshToken = (
   }).then(r => r.json())
 }
 
-const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
+const getUserInfoFromAccessToken = (
+  accessToken: string
+): Promise<UserInfoResponse> => {
   return fetch(`${discordAPI}/users/@me`, {
     method: 'GET',
     headers: {
@@ -81,44 +114,70 @@ const getUserInfo = (accessToken: string): Promise<UserInfoResponse> => {
   }).then(r => r.json())
 }
 
-const updateUserRefreshToken = (
-  userId: number,
-  refreshToken: string
-): Promise<User> => {
-  return prisma.user.update({
-    where: {
-      id: userId
-    },
-    data: {
-      discordRefreshToken: refreshToken
-    }
-  })
-}
-
-export const getUserInfoFromRefreshToken = async (
-  userId: number,
-  refreshToken: string
+export const getDiscordUserInfo = async (
+  user: User
 ): Promise<DiscordUserInfo> => {
-  const tokenResponse = await getTokenFromRefreshToken(refreshToken)
-  const updatedRefreshToken = tokenResponse.refresh_token || ''
-  // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid refresh tokens
-  await updateUserRefreshToken(userId, updatedRefreshToken)
-  console.table({
-    label: 'call to getUserInfoFromRefreshToken',
-    starting_refresh_token: refreshToken,
-    token_response: tokenResponse.refresh_token,
-    token_stored_in_db: updatedRefreshToken
-  })
+  try {
+    const {
+      discordRefreshToken,
+      discordAccessToken,
+      discordAccessTokenExpires
+    } = user
 
-  if (!updatedRefreshToken)
-    throw new Error(`refresh token invalid for userId ${userId}`)
+    let userId = '',
+      username = '',
+      avatarUrl = '',
+      refreshToken = discordRefreshToken || '',
+      accessToken = discordAccessToken || ''
 
-  const { id, username, avatar } = await getUserInfo(tokenResponse.access_token)
+    if (!discordRefreshToken)
+      return {
+        userId,
+        username,
+        avatarUrl,
+        refreshToken
+      }
 
-  return {
-    userId: id,
-    username,
-    avatarUrl: `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`,
-    refreshToken: updatedRefreshToken
+    if (!discordAccessToken || Number(discordAccessTokenExpires) < Date.now()) {
+      const tokenResponse = await getTokenFromRefreshToken(refreshToken)
+      refreshToken = tokenResponse.refresh_token || ''
+      accessToken = tokenResponse.access_token || ''
+      const accessTokenExpiresAt = new Date(
+        Date.now() + (tokenResponse.expires_in * 1000 || 0)
+      )
+
+      // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid tokens
+      await updateRefreshandAccessTokens(
+        user.id,
+        refreshToken,
+        accessToken,
+        accessTokenExpiresAt
+      )
+    }
+
+    if (!accessToken)
+      throw new Error(`refresh token invalid for userId ${user.id}`)
+
+    const userInfo = await getUserInfoFromAccessToken(accessToken)
+
+    userId = userInfo.id
+    username = userInfo.username
+    avatarUrl = `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}.png`
+
+    if (!userId) throw new Error(`access token invalid for userId ${user.id}`)
+
+    return {
+      userId,
+      username,
+      avatarUrl,
+      refreshToken
+    }
+  } catch (error) {
+    return {
+      userId: '',
+      username: '',
+      avatarUrl: '',
+      refreshToken: ''
+    }
   }
 }

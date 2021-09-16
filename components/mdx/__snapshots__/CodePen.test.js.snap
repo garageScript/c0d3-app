@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodePen component should match screenshot 1`] = `
+<div>
+  <iframe
+    allowfullscreen=""
+    frameborder="no"
+    height="3001"
+    loading="lazy"
+    scrolling="no"
+    src="https://codepen.io/c0d3codepen/embed/SOME_OTHER_TEST?theme-id=light&default-tab=css%2Cresult"
+    style="max-width: 700px;"
+  />
+</div>
+`;

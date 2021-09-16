@@ -2,7 +2,7 @@ jest.mock('../discordAuth')
 import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { userInfo } from './userInfoController'
-import { getUserInfoFromRefreshToken } from '../discordAuth'
+import { getDiscordUserInfo } from '../discordAuth'
 
 const user = {
   id: '10',
@@ -37,14 +37,6 @@ describe('userInfo controller tests', () => {
       'Invalid user object'
     )
   })
-  test('should not call getUserInfoFromRefreshToken if user has no refresh token', async () => {
-    prismaMock.user.findFirst.mockResolvedValue(user)
-    prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
-    prismaMock.submission.findMany.mockResolvedValue([submission])
-    prismaMock.star.findMany.mockResolvedValue([star])
-    await userInfo({}, { username: 'testing2020' }, mockCtx)
-    expect(getUserInfoFromRefreshToken.mock.calls.length).toBe(0)
-  })
   test('should return correct user info, submissions and user lesson', async () => {
     prismaMock.user.findFirst.mockResolvedValue({
       ...user,
@@ -53,7 +45,7 @@ describe('userInfo controller tests', () => {
     prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
     prismaMock.submission.findMany.mockResolvedValue([submission])
     prismaMock.star.findMany.mockResolvedValue([star])
-    getUserInfoFromRefreshToken.mockResolvedValue({
+    getDiscordUserInfo.mockResolvedValue({
       userId: 'fakeId',
       username: 'fakeDiscordUser',
       avatarUrl: 'fakeUrl'
@@ -96,35 +88,6 @@ describe('userInfo controller tests', () => {
         discordUserId: 'fakeId',
         discordUsername: 'fakeDiscordUser',
         discordAvatarUrl: 'fakeUrl'
-      },
-      lessonStatus: [
-        {
-          ...userLesson,
-          starsReceived: []
-        }
-      ],
-      submissions: [submission]
-    })
-  })
-  test('should return empty values for discord username and avatar url if refresh token invalid', async () => {
-    prismaMock.user.findFirst.mockResolvedValue({
-      ...user,
-      discordRefreshToken: 'invalidToken'
-    })
-    prismaMock.userLesson.findMany.mockResolvedValue([userLesson])
-    prismaMock.submission.findMany.mockResolvedValue([submission])
-    prismaMock.star.findMany.mockResolvedValue([])
-    getUserInfoFromRefreshToken.mockImplementation(() => {
-      throw new Error('refresh token invalid for userId 123')
-    })
-    const returnValue = await userInfo({}, { username: user.username }, mockCtx)
-    expect(returnValue).toEqual({
-      user: {
-        ...user,
-        discordRefreshToken: 'invalidToken',
-        discordUserId: '',
-        discordUsername: '',
-        discordAvatarUrl: ''
       },
       lessonStatus: [
         {

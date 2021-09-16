@@ -47,7 +47,7 @@ const SubLessonPage: React.FC<Props> & WithLayout = ({
       className={`${styles['lesson-wrapper']} card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white`}
     >
       <Title
-        title={`${selectedSubLesson.frontMatter.title} | ${subLessonSlug} | C0D3`}
+        title={`${selectedSubLesson.frontMatter.title} | ${lessonSlug} | C0D3`}
       />
       <ScrollTopArrow />
       {hasMultipleSubLessons && (
