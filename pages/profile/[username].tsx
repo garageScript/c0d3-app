@@ -17,15 +17,7 @@ import ProfileSubmissions, {
 import ProfileStarComments from '../../components/ProfileStarComments'
 import LoadingSpinner from '../../components/LoadingSpinner'
 import Error, { StatusCode } from '../../components/Error'
-
-export type UserInfo = {
-  username: string
-  firstName: string
-  lastName: string
-  discordUserId: string
-  discordUsername: string
-  discordAvatarUrl: string
-}
+import { UserInfo } from '../../@types/user'
 
 type LessonStatusMap = {
   [id: string]: UserLesson

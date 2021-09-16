@@ -10,7 +10,10 @@ export default {
 const user: UserInfo = {
   username: '',
   firstName: 'Rahul',
-  lastName: 'Kalra'
+  lastName: 'Kalra',
+  discordUserId: '123',
+  discordUsername: 'discordUser',
+  discordAvatarUrl: 'avatarUrl'
 }
 
 export const _UserInfoImage: React.FC = () => {

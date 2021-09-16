@@ -1,5 +1,5 @@
 import React from 'react'
-import { UserInfo } from '../pages/profile/[username]'
+import { UserInfo } from '../@types/user'
 import Image from 'next/image'
 import styles from '../scss/userInfoImage.module.scss'
 type UserProps = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import UserInfoImage from './UserInfoImage'
-import { UserInfo } from '../pages/profile/[username]'
+import { UserInfo } from '../@types/user'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../scss/profileImageInfo.module.scss'
