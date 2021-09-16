@@ -7245,11 +7245,28 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   >
     Rahul Kalra
   </h2>
-  <h4
-    className="text-center text-muted mb-4"
-  >
-    @noob101
-  </h4>
+  <div>
+    <img
+      className="img-fluid"
+      height={30}
+      layout="fixed"
+      src="/assets/icon.svg"
+      width={30}
+    />
+    <h4
+      className="text-center text-muted mb-4"
+    >
+      @noob101
+    </h4>
+  </div>
+  <div>
+    <img
+      className="img-fluid"
+      height={30}
+      src="/assets/discordClydeLogo.svg"
+      width={30}
+    />
+  </div>
 </div>
 `;
 
@@ -14763,9 +14780,15 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
   }
 >
   <div
-    className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+    className="jsx-3123111835 ml-auto mr-auto mt-4"
   >
-    RK
+    <img
+      className="img-fluid"
+      height={60}
+      loader={[Function]}
+      src="avatarUrl"
+      width={60}
+    />
   </div>
 </div>
 `;

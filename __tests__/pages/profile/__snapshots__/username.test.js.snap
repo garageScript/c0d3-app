@@ -159,11 +159,26 @@ exports[`user profile test Should render anonymous users 1`] = `
           >
             A  
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
-          >
-            @fake user
-          </h4>
+          <div>
+            <img
+              height="30"
+              layout="fixed"
+              src="/assets/icon.svg"
+              width="30"
+            />
+            <h4
+              class="text-center text-muted mb-4"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div>
+            <img
+              height="30"
+              src="/assets/discordClydeLogo.svg"
+              width="30"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -992,11 +1007,26 @@ exports[`user profile test Should render if no stars received 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
-          >
-            @fake user
-          </h4>
+          <div>
+            <img
+              height="30"
+              layout="fixed"
+              src="/assets/icon.svg"
+              width="30"
+            />
+            <h4
+              class="text-center text-muted mb-4"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div>
+            <img
+              height="30"
+              src="/assets/discordClydeLogo.svg"
+              width="30"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -1830,11 +1860,26 @@ exports[`user profile test Should render nulled challenges 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
-          >
-            @fake user
-          </h4>
+          <div>
+            <img
+              height="30"
+              layout="fixed"
+              src="/assets/icon.svg"
+              width="30"
+            />
+            <h4
+              class="text-center text-muted mb-4"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div>
+            <img
+              height="30"
+              src="/assets/discordClydeLogo.svg"
+              width="30"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -2704,11 +2749,26 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
-          >
-            @fake user
-          </h4>
+          <div>
+            <img
+              height="30"
+              layout="fixed"
+              src="/assets/icon.svg"
+              width="30"
+            />
+            <h4
+              class="text-center text-muted mb-4"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div>
+            <img
+              height="30"
+              src="/assets/discordClydeLogo.svg"
+              width="30"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -3537,11 +3597,26 @@ exports[`user profile test Should render profile 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
-          >
-            @fake user
-          </h4>
+          <div>
+            <img
+              height="30"
+              layout="fixed"
+              src="/assets/icon.svg"
+              width="30"
+            />
+            <h4
+              class="text-center text-muted mb-4"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div>
+            <img
+              height="30"
+              src="/assets/discordClydeLogo.svg"
+              width="30"
+            />
+          </div>
         </div>
         <div
           class="profile-comments"
