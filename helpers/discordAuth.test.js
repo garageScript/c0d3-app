@@ -180,7 +180,8 @@ describe('getDiscordUserInfo function', () => {
       json: () => ({
         id: 'discord123',
         username: 'discord-fakeuser',
-        avatar: 'ea8f5f59aff14450e892321ba128745d'
+        avatar: 'ea8f5f59aff14450e892321ba128745d',
+        discriminator: '1234'
       })
     })
     const result = await getDiscordUserInfo(mockUser)
@@ -198,7 +199,7 @@ describe('getDiscordUserInfo function', () => {
 
     expect(result).toEqual({
       userId: 'discord123',
-      username: 'discord-fakeuser',
+      username: 'discord-fakeuser#1234',
       avatarUrl:
         'https://cdn.discordapp.com/avatars/discord123/ea8f5f59aff14450e892321ba128745d.png',
       refreshToken: 'validRefreshToken'

@@ -7253,13 +7253,6 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   <div
     className="d-flex justify-content-center"
   >
-    <img
-      className="img-fluid"
-      height={30}
-      layout="fixed"
-      src="/assets/icon.svg"
-      width={30}
-    />
     <h4
       className="text-muted"
     >
@@ -7267,23 +7260,25 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     </h4>
   </div>
   <div
-    className="d-flex justify-content-center mb-4"
+    className="d-flex ml-auto mr-auto mb-4"
   >
     <img
       className="img-fluid"
-      height={30}
+      height={20}
       src="/assets/discordClydeLogo.svg"
-      width={30}
+      width={20}
     />
-    <h4>
+    <h5
+      className="ml-2"
+    >
       <a
         href="https://discordapp.com/users/fakeDiscordId/"
         onClick={[Function]}
         onMouseEnter={[Function]}
       >
-        @fakeDiscordUsername
+        fakeDiscordUsername
       </a>
-    </h4>
+    </h5>
   </div>
 </div>
 `;

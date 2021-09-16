@@ -329,7 +329,7 @@ describe('user profile test', () => {
       </MockedProvider>
     )
     await waitForElementToBeRemoved(() => queryByText('Loading...'))
-    await findByRole('heading', { name: /@fakeDiscordUser/i })
+    await findByRole('heading', { name: /fakeDiscordUser/i })
     expect(container).toMatchSnapshot()
   })
 

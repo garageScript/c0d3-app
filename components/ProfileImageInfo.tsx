@@ -20,20 +20,19 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
         {`${user.firstName} ${user.lastName}`}
       </h2>
       <div className="d-flex justify-content-center">
-        <Image src="/assets/icon.svg" height={30} width={30} layout="fixed" />
         <h4 className="text-muted">{'@' + user.username}</h4>
       </div>
-      <div className="d-flex justify-content-center mb-4">
+      <div className="d-flex ml-auto mr-auto mb-4">
         {user.discordUserId ? (
           <>
-            <Image src="/assets/discordClydeLogo.svg" height={30} width={30} />
-            <h4>
+            <Image src="/assets/discordClydeLogo.svg" height={20} width={20} />
+            <h5 className="ml-2">
               <Link
                 href={`https://discordapp.com/users/${user.discordUserId}/`}
               >
-                {'@' + user.discordUsername}
+                {user.discordUsername}
               </Link>
-            </h4>
+            </h5>
           </>
         ) : null}
       </div>
