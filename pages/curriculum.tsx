@@ -21,6 +21,7 @@ import {
 import { initializeApollo } from '../helpers/apolloClient'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
+import { useRouter } from 'next/router'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -94,6 +95,7 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   const hasMounted = useHasMounted()
+  const router = useRouter()
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data, loading } = useGetSessionQuery({
     fetchPolicy: 'cache-and-network',
@@ -130,6 +132,9 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [])
   useEffect(() => {
     if (data && data.session) {
+      if (!data.session.user?.isConnectedToDiscord) {
+        router.push('/discord/connect')
+      }
       setState({
         session: data.session,
         progress: calculateProgress(data.session, lessons),

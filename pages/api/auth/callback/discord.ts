@@ -17,14 +17,14 @@ const discordOAuthHandler = async (
   res: NextApiResponse
 ) => {
   if (!req.user) {
-    return res.status(403).json({ error: 'user not logged in' })
+    return res.writeHead(403, { Location: '/login' }).end()
   }
 
   const { code } = req.query
 
   const user = await setTokenFromAuthCode(req.user.id, code as string)
-  const userInfo = await getDiscordUserInfo(user)
-  return res.json(userInfo)
+  await getDiscordUserInfo(user)
+  return res.writeHead(301, { Location: '/discord/success' }).end()
 }
 
 handler
