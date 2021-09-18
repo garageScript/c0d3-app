@@ -221,4 +221,5 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: FIVE_MINUTES
   }
 }
+
 export default Curriculum

@@ -5,7 +5,7 @@ import Title from '../../components/Title'
 import Card from '../../components/Card'
 import Link from 'next/link'
 
-const ConnectToDiscordPage: React.FC & WithLayout = () => {
+const ConnectToDiscordSuccess: React.FC & WithLayout = () => {
   return (
     <>
       <Title title="Success!" />
@@ -26,6 +26,6 @@ const ConnectToDiscordPage: React.FC & WithLayout = () => {
   )
 }
 
-ConnectToDiscordPage.getLayout = getLayout
+ConnectToDiscordSuccess.getLayout = getLayout
 
-export default ConnectToDiscordPage
+export default ConnectToDiscordSuccess
