@@ -159,11 +159,18 @@ exports[`user profile test Should render anonymous users 1`] = `
           >
             A  
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
+          <div
+            class="d-flex justify-content-center"
           >
-            @fake user
-          </h4>
+            <h4
+              class="text-muted"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div
+            class="d-flex ml-auto mr-auto mb-4"
+          />
         </div>
       </div>
       <div
@@ -992,11 +999,18 @@ exports[`user profile test Should render if no stars received 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
+          <div
+            class="d-flex justify-content-center"
           >
-            @fake user
-          </h4>
+            <h4
+              class="text-muted"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div
+            class="d-flex ml-auto mr-auto mb-4"
+          />
         </div>
       </div>
       <div
@@ -1830,11 +1844,18 @@ exports[`user profile test Should render nulled challenges 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
+          <div
+            class="d-flex justify-content-center"
           >
-            @fake user
-          </h4>
+            <h4
+              class="text-muted"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div
+            class="d-flex ml-auto mr-auto mb-4"
+          />
         </div>
       </div>
       <div
@@ -2704,11 +2725,18 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
+          <div
+            class="d-flex justify-content-center"
           >
-            @fake user
-          </h4>
+            <h4
+              class="text-muted"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div
+            class="d-flex ml-auto mr-auto mb-4"
+          />
         </div>
       </div>
       <div
@@ -3537,11 +3565,1131 @@ exports[`user profile test Should render profile 1`] = `
           >
             fake user
           </h2>
-          <h4
-            class="text-center text-muted mb-4"
+          <div
+            class="d-flex justify-content-center"
           >
-            @fake user
-          </h4>
+            <h4
+              class="text-muted"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div
+            class="d-flex ml-auto mr-auto mb-4"
+          />
+        </div>
+        <div
+          class="profile-comments"
+        >
+          <div
+            class="d-flex card mt-4 shadow-sm"
+          >
+            <div
+              class="d-flex card-body"
+            >
+              <h3>
+                Stars
+              </h3>
+            </div>
+            <div
+              class="card-body text-center"
+            >
+              <div>
+                <div
+                  class="mb-3 py-3 bg-white rounded shadow-sm"
+                >
+                  <div
+                    class="mx-2 d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="d-flex mt-1 align-items-center"
+                    >
+                      <h6
+                        class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
+                      >
+                        nn
+                      </h6>
+                      <div>
+                        <h6
+                          class="text-md-left text-muted font-weight-bold mb-0"
+                        >
+                          @newbie
+                        </h6>
+                        <h6
+                          class="comment-lesson-title text-muted text-left"
+                        >
+                          Foundations of JavaScript
+                        </h6>
+                      </div>
+                    </div>
+                    <svg
+                      class="mx-3"
+                      fill="yellow"
+                      height="15"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      viewBox="0 0 24 24"
+                      width="15"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      />
+                    </svg>
+                  </div>
+                  <hr />
+                  <div
+                    class="flex-auto"
+                  >
+                    <p
+                      class="comment-text pt-2 px-3 text-md"
+                    >
+                      Thanks for your halp!
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="mb-3 py-3 bg-white rounded shadow-sm"
+                >
+                  <div
+                    class="mx-2 d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="d-flex mt-1 align-items-center"
+                    >
+                      <h6
+                        class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
+                      >
+                        nn
+                      </h6>
+                      <div>
+                        <h6
+                          class="text-md-left text-muted font-weight-bold mb-0"
+                        >
+                          @newbie
+                        </h6>
+                        <h6
+                          class="comment-lesson-title text-muted text-left"
+                        >
+                          Variables & Functions
+                        </h6>
+                      </div>
+                    </div>
+                    <svg
+                      class="mx-3"
+                      fill="yellow"
+                      height="15"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      viewBox="0 0 24 24"
+                      width="15"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      />
+                    </svg>
+                  </div>
+                  <hr />
+                  <div
+                    class="flex-auto"
+                  >
+                    <p
+                      class="comment-text pt-2 px-3 text-md"
+                    >
+                      Thanks for your halp!
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="mb-3 py-3 bg-white rounded shadow-sm"
+                >
+                  <div
+                    class="mx-2 d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="d-flex mt-1 align-items-center"
+                    >
+                      <h6
+                        class="comment-student-initials mx-3 justify-content-center align-items-center d-flex text-uppercase bg-primary rounded-circle text-light"
+                      >
+                        A 
+                      </h6>
+                      <div>
+                        <h6
+                          class="text-md-left text-muted font-weight-bold mb-0"
+                        >
+                          @anonymous
+                        </h6>
+                        <h6
+                          class="comment-lesson-title text-muted text-left"
+                        >
+                          Variables & Functions
+                        </h6>
+                      </div>
+                    </div>
+                    <svg
+                      class="mx-3"
+                      fill="yellow"
+                      height="15"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                      viewBox="0 0 24 24"
+                      width="15"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-8"
+      >
+        <div
+          class="card shadow-sm"
+        >
+          <div
+            class="card-body"
+          >
+            <h3
+              class="profilelessons_title"
+            >
+              Lessons
+            </h3>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-0-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_container"
+            >
+              <p
+                class="lessonimage_progressbadge badge badge-pill badge-primary"
+              >
+                16%
+              </p>
+              <img
+                src="/assets/curriculum/js-1-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-2-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-3-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-4-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-5-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-6-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-7-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-8-cover.svg"
+              />
+            </div>
+            <div
+              class="lessonimage_opacity_container"
+            >
+              <img
+                src="/assets/curriculum/js-9-cover.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="card shadow-sm profile-submissions mt-3"
+        >
+          <div
+            class="card-body"
+          >
+            <h3>
+              Challenges
+            </h3>
+            <div
+              class="display_lessons"
+            >
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <p
+                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                  >
+                    1
+                    <span
+                      class="ml-1"
+                    >
+                      <svg
+                        fill="yellow"
+                        height="15"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="15"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon
+                          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                  <img
+                    src="/assets/curriculum/js-0-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Foundations of JavaScript
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 10  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <p
+                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                  >
+                    1
+                    <span
+                      class="ml-1"
+                    >
+                      <svg
+                        fill="yellow"
+                        height="15"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="15"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon
+                          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                  <img
+                    src="/assets/curriculum/js-1-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Variables & Functions
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    2 of 12  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-success"
+                    />
+                    <span
+                      class="challenge_status bg-success"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <p
+                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                  >
+                    1
+                    <span
+                      class="ml-1"
+                    >
+                      <svg
+                        fill="yellow"
+                        height="15"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="15"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <polygon
+                          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                  <img
+                    src="/assets/curriculum/js-2-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Arrays
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 11  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-3-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Objects
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 10  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-4-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Front End Engineering
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 7  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-5-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    End To End
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 9  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-6-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    React, GraphQL, SocketIO
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 8  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-7-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    JavaScript Algorithms
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 11  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-8-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    Trees
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 12  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="lesson_challenges d-flex align-items-center align-items-md-stretch"
+              >
+                <div
+                  class="lesson_image_container"
+                >
+                  <img
+                    src="/assets/curriculum/js-9-cover.svg"
+                  />
+                </div>
+                <div
+                  class="lesson_title_container"
+                >
+                  <h6
+                    class="lesson_title"
+                  >
+                    General Algorithms
+                  </h6>
+                  <h6
+                    class="challenges_stats"
+                  >
+                    0 of 5  Challenges completed
+                  </h6>
+                  <div>
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                    <span
+                      class="challenge_status bg-gray"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="mt-5 font-weight-light text-center pb-5 text-muted"
+  >
+    © Copyright 2021 GarageScript
+  </footer>
+</div>
+`;
+
+exports[`user profile test should render discord avatar and username if user connected to discord 1`] = `
+<div>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-white"
+  >
+    <div
+      class="container"
+    >
+      <a
+        class="navbar-brand"
+        href="/"
+      >
+        <div
+          class="navbar-brand text-primary font-weight-bold"
+        >
+          C0D3
+        </div>
+      </a>
+      <button
+        aria-controls="basic-navbar-nav"
+        aria-label="Toggle navigation"
+        class="navbar-toggler collapsed"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="text-center navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          class="m-auto navbar-nav"
+        >
+          <a
+            class="nav-item nav-link"
+            href="/curriculum"
+          >
+            Curriculum
+          </a>
+          <a
+            class="nav-item nav-link"
+            href="https://github.com/garageScript/c0d3-app"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Repo
+          </a>
+          <a
+            class="nav-item nav-link"
+            href="/docs/learn"
+          >
+            Learn
+          </a>
+          <a
+            class="nav-item nav-link"
+            href="https://discord.gg/c0d3"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Community
+          </a>
+          <div
+            class="d-none d-lg-block"
+          >
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle title title-none"
+                type="button"
+              >
+                Admin
+              </button>
+            </div>
+          </div>
+          <div
+            class="d-lg-none"
+          >
+            <div
+              class="text-center text-xl-left py-2 px-4"
+            >
+              <a
+                class="dropdown-item"
+                href="/admin/lessons"
+              >
+                Lessons
+              </a>
+            </div>
+            <div
+              class="text-center text-xl-left py-2 px-4"
+            >
+              <a
+                class="dropdown-item"
+                href="/admin/users"
+              >
+                Users
+              </a>
+            </div>
+            <div
+              class="text-center text-xl-left py-2 px-4"
+            >
+              <a
+                class="dropdown-item"
+                href="/admin/alerts"
+              >
+                Alerts
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="nav-buttons"
+        >
+          <a
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            href="/profile/fakeusername"
+          >
+            Fakeusername
+          </a>
+          <button
+            class="btn border bg-light ml-2"
+            style="color: rgb(41, 41, 41);"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="container-md"
+  >
+    <div
+      class="row mt-4"
+    >
+      <div
+        class="mb-3 mb-md-0 col-md-4"
+      >
+        <div
+          class="card shadow-sm"
+        >
+          <div
+            class="ml-auto mr-auto mt-4 profile_image_container"
+          >
+            <div
+              class="jsx-3123111835 ml-auto mr-auto mt-4"
+            >
+              <img
+                class="avatar"
+                height="60"
+                src="https://placeimg.com/640/480/any"
+                width="60"
+              />
+            </div>
+          </div>
+          <h2
+            class="text-center mt-4"
+          >
+            fake user
+          </h2>
+          <div
+            class="d-flex justify-content-center"
+          >
+            <h4
+              class="text-muted"
+            >
+              @fake user
+            </h4>
+          </div>
+          <div
+            class="d-flex ml-auto mr-auto mb-4"
+          >
+            <img
+              height="20"
+              src="/assets/discordClydeLogo.svg"
+              width="20"
+            />
+            <h5
+              class="ml-2"
+            >
+              <a
+                href="https://discordapp.com/users/fakeDiscordId/"
+              >
+                fakeDiscordUser
+              </a>
+            </h5>
+          </div>
         </div>
         <div
           class="profile-comments"

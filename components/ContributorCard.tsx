@@ -12,6 +12,9 @@ type ContributorCardProps = {
     githubPRsUrl: string
     codeSample: string
     resume: string
+    discordUserId: string
+    discordUsername: string
+    discordAvatarUrl: string
   }
 }
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import UserInfoImage from './UserInfoImage'
 import { UserInfo } from '../@types/user'
+import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../scss/profileImageInfo.module.scss'
 type ProfileImageInfoProps = {
   user: UserInfo
@@ -17,7 +19,23 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       <h2 className="text-center mt-4">
         {`${user.firstName} ${user.lastName}`}
       </h2>
-      <h4 className="text-center text-muted mb-4">{'@' + user.username}</h4>
+      <div className="d-flex justify-content-center">
+        <h4 className="text-muted">{'@' + user.username}</h4>
+      </div>
+      <div className="d-flex ml-auto mr-auto mb-4">
+        {user.discordUserId ? (
+          <>
+            <Image src="/assets/discordClydeLogo.svg" height={20} width={20} />
+            <h5 className="ml-2">
+              <Link
+                href={`https://discordapp.com/users/${user.discordUserId}/`}
+              >
+                {user.discordUsername}
+              </Link>
+            </h5>
+          </>
+        ) : null}
+      </div>
     </div>
   )
 }

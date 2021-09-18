@@ -7235,9 +7235,14 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     className="ml-auto mr-auto mt-4 profile_image_container"
   >
     <div
-      className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+      className="jsx-3123111835 ml-auto mr-auto mt-4"
     >
-      RK
+      <img
+        className="img-fluid"
+        height={60}
+        src="https://placeimg.com/60/60/any"
+        width={60}
+      />
     </div>
   </div>
   <h2
@@ -7245,11 +7250,36 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   >
     Rahul Kalra
   </h2>
-  <h4
-    className="text-center text-muted mb-4"
+  <div
+    className="d-flex justify-content-center"
   >
-    @noob101
-  </h4>
+    <h4
+      className="text-muted"
+    >
+      @noob101
+    </h4>
+  </div>
+  <div
+    className="d-flex ml-auto mr-auto mb-4"
+  >
+    <img
+      className="img-fluid"
+      height={20}
+      src="/assets/discordClydeLogo.svg"
+      width={20}
+    />
+    <h5
+      className="ml-2"
+    >
+      <a
+        href="https://discordapp.com/users/fakeDiscordId/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        fakeDiscordUsername
+      </a>
+    </h5>
+  </div>
 </div>
 `;
 
@@ -14763,9 +14793,14 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
   }
 >
   <div
-    className="text-uppercase bg-primary rounded-circle text-light user_info_image"
+    className="jsx-3123111835 ml-auto mr-auto mt-4"
   >
-    RK
+    <img
+      className="img-fluid"
+      height={60}
+      src="avatarUrl"
+      width={60}
+    />
   </div>
 </div>
 `;
