@@ -60,7 +60,7 @@ describe('ReviewComment component', () => {
     render(<ReviewStatus date="0" status={SubmissionStatus.Overwritten} />)
     expect(
       screen.getByText((content, _node) =>
-        content.includes('Student has overwirtten this submission on')
+        content.includes('Student has overwritten this submission on')
       )
     ).toBeVisible()
   })

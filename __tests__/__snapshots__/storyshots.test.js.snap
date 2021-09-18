@@ -14126,7 +14126,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Reviewer 1`] = `
     <div
       className="ml-1"
     >
-      Student has overwirtten this submission on January 1, 1970 12:00 AM.
+      Student has overwritten this submission on January 1, 1970 12:00 AM.
     </div>
   </div>
 </div>
