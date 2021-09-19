@@ -161,7 +161,7 @@ export const getDiscordUserInfo = async (
     const userInfo = await getUserInfoFromAccessToken(accessToken)
 
     userId = userInfo.id
-    username = userInfo.username
+    username = `${userInfo.username}#${userInfo.discriminator}`
     avatarUrl = `https://cdn.discordapp.com/avatars/${userInfo.id}/${userInfo.avatar}.png`
 
     if (!userId) throw new Error(`access token invalid for userId ${user.id}`)

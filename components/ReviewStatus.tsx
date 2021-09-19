@@ -30,7 +30,7 @@ export const ReviewStatus: React.FC<{
       message = `${
         viewedByStudent
           ? `You have overwritten this submission on ${parsedDate}.`
-          : `Student has overwirtten this submission on ${parsedDate}.`
+          : `Student has overwritten this submission on ${parsedDate}.`
       }`
       break
     case SubmissionStatus.Open:
