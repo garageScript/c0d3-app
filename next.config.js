@@ -24,6 +24,11 @@ const moduleExports = {
         source: '/book',
         destination: '/docs/learn',
         permanent: true
+      },
+      {
+        source: '/api/auth/callback/discord',
+        destination: '/discord/success',
+        permanent: true
       }
     ]
   },
