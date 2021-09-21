@@ -1,15 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import Markdown from 'markdown-to-jsx'
 import { colors } from './theme/colors'
 import { Nav } from 'react-bootstrap'
 import noop from '../helpers/noop'
 import styles from '../scss/mdInput.module.scss'
+import { getHotkeyListener } from '../helpers/hotkeyListener'
 
 type MdInputProps = {
   onChange?: Function
   placeHolder?: string
   value?: string
   bgColor?: 'white' | 'none'
+  handleUndo?: () => void
+  handleRedo?: () => void
 }
 
 const autoSize = (el: HTMLTextAreaElement) => {
@@ -23,7 +26,9 @@ export const MdInput: React.FC<MdInputProps> = ({
   bgColor = 'none',
   onChange = noop,
   placeHolder = 'Type something...',
-  value = ''
+  value = '',
+  handleUndo,
+  handleRedo
 }) => {
   const [preview, setPreview] = useState<boolean>(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -58,6 +63,19 @@ export const MdInput: React.FC<MdInputProps> = ({
 
     return () => window.removeEventListener('mouseup', updateHeight, false)
   }, [])
+
+  // Currently registering both linux/windows and mac hotkeys for everyone
+  const hotkeyMap = useMemo(
+    () => ({
+      ...(handleUndo && { 'ctrl+z': handleUndo, 'cmd+z': handleUndo }),
+      ...(handleRedo && { 'ctrl+y': handleRedo, 'shift+cmd+z': handleRedo })
+    }),
+    [handleUndo, handleRedo]
+  )
+  const hotkeyListener = useMemo(
+    () => getHotkeyListener(hotkeyMap),
+    [hotkeyMap]
+  )
 
   const previewBtnColor = preview ? 'black' : 'lightgrey'
   const writeBtnColor = preview ? 'lightgrey' : 'black'
@@ -106,6 +124,7 @@ export const MdInput: React.FC<MdInputProps> = ({
         </>
       )}
       <textarea
+        onKeyDown={hotkeyListener}
         onMouseDown={() => {
           mouseDownHeightRef.current = textareaRef.current!.clientHeight
         }}
