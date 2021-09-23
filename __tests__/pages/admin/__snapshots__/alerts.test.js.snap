@@ -123,12 +123,14 @@ exports[`Alerts page Should remove alert 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -579,12 +581,14 @@ exports[`Alerts page Should remove alert 2`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>

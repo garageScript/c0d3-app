@@ -47,13 +47,13 @@ exports[`connect to Discord page should render page 1`] = `
         >
           Connect Now
         </button>
-        <a
-          class=""
-          href="/curriculum"
-        >
-          No thanks, I'll study on my own.
-           
-        </a>
+        <span>
+          <a
+            href="#"
+          >
+            No thanks, I'll study on my own.
+          </a>
+        </span>
       </div>
     </div>
   </div>

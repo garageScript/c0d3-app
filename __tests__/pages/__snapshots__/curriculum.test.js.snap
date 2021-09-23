@@ -1586,12 +1586,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -3251,12 +3253,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
