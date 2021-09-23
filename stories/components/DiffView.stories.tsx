@@ -32,7 +32,8 @@ const submission = {
     isAdmin: false,
     discordUserId: '',
     discordUsername: '',
-    discordAvatarUrl: ''
+    discordAvatarUrl: '',
+    isConnectedToDiscord: false
   },
   reviewerId: '',
   createdAt: '',

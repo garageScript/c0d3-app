@@ -96,7 +96,8 @@ export const WithDiff: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewerId: '',
           createdAt: '',
@@ -126,7 +127,8 @@ export const WithDiff: React.FC = () => (
             discordUserId: '',
             isAdmin: false,
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewerId: '',
           createdAt: '',
@@ -171,7 +173,8 @@ export const WithComments: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewer: {
             id: 1,
@@ -181,7 +184,8 @@ export const WithComments: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewerId: '1',
           createdAt: '',
@@ -211,7 +215,8 @@ export const WithComments: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewerId: '',
           createdAt: '',
@@ -268,7 +273,8 @@ export const FinalChallenge: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewer: {
             id: 1,
@@ -278,7 +284,8 @@ export const FinalChallenge: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewerId: '1',
           createdAt: '',
@@ -308,7 +315,8 @@ export const FinalChallenge: React.FC = () => (
             isAdmin: false,
             discordUserId: '',
             discordUsername: '',
-            discordAvatarUrl: ''
+            discordAvatarUrl: '',
+            isConnectedToDiscord: false
           },
           reviewerId: '',
           createdAt: '',

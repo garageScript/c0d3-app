@@ -21,7 +21,8 @@ const comments = [
       name: 'Noob Newbie',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     }
   },
   {
@@ -39,7 +40,8 @@ const comments = [
       name: 'Noob Newbie',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     }
   },
   {
@@ -57,7 +59,8 @@ const comments = [
       name: 'Admin Admin',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     }
   }
 ]

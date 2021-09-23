@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`connect to Discord success page should render page 1`] = `
+<div>
+  <div
+    class="row mt-5"
+  >
+    <div
+      class="card shadow-sm col-sm-8 col-md-7 col-lg-6 col-xl-6 m-auto px-md-5 border-0"
+    >
+      <div
+        class="card-body text-center pt-5 pb-5"
+      >
+        <h1
+          class="card-title h2 font-weight-bold mb-5"
+        >
+          Success!
+        </h1>
+        <p
+          class="card-text"
+        />
+        <div
+          class="mt-3"
+        >
+          <p>
+            You are now connected to Discord!
+          </p>
+        </div>
+        <button
+          class="btn btn-primary btn-lg btn-block mb-3"
+          href="/curriculum"
+          type="button"
+        >
+          Continue to Curriculum
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

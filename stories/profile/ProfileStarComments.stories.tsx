@@ -18,7 +18,8 @@ const stars: StarType[] = [
       isAdmin: false,
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 23,
     lesson: {
@@ -42,7 +43,8 @@ const stars: StarType[] = [
       isAdmin: false,
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 33,
     lesson: {

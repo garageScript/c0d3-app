@@ -6,6 +6,8 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+import { useRouter } from 'next/router'
+
 //mock for server side generation
 jest.mock('@apollo/client', () => ({
   ...jest.requireActual('@apollo/client'),
@@ -16,6 +18,7 @@ jest.mock('@apollo/client', () => ({
   }))
 }))
 describe('Curriculum Page', () => {
+  const { push } = useRouter()
   test('Should render Bad Data when no lessons', async () => {
     const mocks = [
       {
