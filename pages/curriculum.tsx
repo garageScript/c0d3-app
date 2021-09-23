@@ -132,7 +132,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [])
   useEffect(() => {
     if (data && data.session) {
-      if (data.session.user && data.session.user.isConnectedToDiscord) {
+      if (data.session.user && !data.session.user.isConnectedToDiscord) {
         router.push('/discord/connect')
       }
       setState({

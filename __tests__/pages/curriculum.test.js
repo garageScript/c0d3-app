@@ -178,4 +178,34 @@ describe('Curriculum Page', () => {
     )
     expect(arrow.className.includes('left'))
   })
+
+  test.only('Should redirect to /discord/connect if user not connected to discord', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: {
+              ...dummySessionData,
+              user: { ...dummySessionData.user, isConnectedToDiscord: false }
+            },
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    console.log(mocks[0].result.data.session.user)
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
+      </MockedProvider>
+    )
+
+    await waitFor(() => {
+      expect(push).toBeCalledWith('/discord/connect')
+    })
+  })
 })

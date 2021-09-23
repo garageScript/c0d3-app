@@ -45,9 +45,7 @@ const ConnectToDiscordPage: React.FC & WithLayout = () => {
             Connect Now
           </button>
         </Link>
-        <NavLink path="/curriculum">
-          No thanks, I&apos;ll study on my own.{' '}
-        </NavLink>
+        <NavLink path="/logout">No thanks, I&apos;ll study on my own. </NavLink>
       </Card>
     </>
   )
