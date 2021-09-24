@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import NavLink, { NavLinkProps } from './NavLink'
-import { Button } from './theme/Button'
 import { useRouter } from 'next/router'
 import { DropdownMenu } from './DropdownMenu'
-import { useLogoutMutation, useGetAppQuery, GetAppQuery } from '../graphql'
+import { useGetAppQuery, GetAppQuery } from '../graphql'
 import Navbar from 'react-bootstrap/Navbar'
 import { Container, Nav } from 'react-bootstrap'
 import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
+import { Button } from './theme/Button'
+import LogoutContainer from './LogoutContainer'
 
 type AuthLinkProps = {
   session: any
@@ -65,25 +66,7 @@ const NavBar: React.FC<AuthLinkProps> = ({ session }) => {
   )
 }
 
-const AuthButton: React.FC<{ username: string }> = ({ username }) => {
-  const router = useRouter()
-  const [logoutUser] = useLogoutMutation({
-    update(cache) {
-      cache.modify({
-        fields: {
-          session() {
-            return { lessonStatus: [] }
-          }
-        },
-        broadcast: false
-      })
-    },
-    onCompleted: () => {
-      window.localStorage.removeItem('loggedIn')
-      router.push('/')
-    }
-  })
-
+const LoggedInAuthNav: React.FC<{ username: string }> = ({ username }) => {
   const capitalized = username.charAt(0).toUpperCase() + username.slice(1)
 
   return (
@@ -96,14 +79,16 @@ const AuthButton: React.FC<{ username: string }> = ({ username }) => {
         {capitalized}
       </NavLink>
 
-      <Button border ml="2" type="light" onClick={logoutUser}>
-        Logout
-      </Button>
+      <LogoutContainer>
+        <Button border ml="2" type="light">
+          Logout
+        </Button>
+      </LogoutContainer>
     </div>
   )
 }
 
-const UnAuthButton = () => (
+const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
     <NavLink
       path="/login"
@@ -132,13 +117,13 @@ const AppNav: React.FC<{}> = () => {
   }, [data])
   const renderButtons = () => {
     if (!session || _.get(session, 'user.username', null) === null) {
-      return <UnAuthButton />
+      return <NotLoggedInAuthNav />
     }
 
     // TODO: replace with typing
     const username = _.get(session, 'user.username', '')
 
-    return <AuthButton username={username} />
+    return <LoggedInAuthNav username={username} />
   }
 
   return (

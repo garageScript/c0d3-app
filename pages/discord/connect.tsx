@@ -3,8 +3,8 @@ import { WithLayout } from '../../@types/page'
 import { getLayout } from '../../components/Layout'
 import Title from '../../components/Title'
 import Card from '../../components/Card'
-import NavLink from '../../components/NavLink'
 import Link from 'next/link'
+import LogoutContainer from '../../components/LogoutContainer'
 
 const discordConnectPage =
   'https://discord.com/api/oauth2/authorize?client_id=845470281283665970&redirect_uri=https%3A%2F%2Fc0d3.com%2Fapi%2Fauth%2Fcallback%2Fdiscord&response_type=code&scope=identify%20email%20guilds.join%20gdm.join'
@@ -45,7 +45,9 @@ const ConnectToDiscordPage: React.FC & WithLayout = () => {
             Connect Now
           </button>
         </Link>
-        <NavLink path="/logout">No thanks, I&apos;ll study on my own. </NavLink>
+        <LogoutContainer>
+          <a href="#">No thanks, I&apos;ll study on my own.</a>
+        </LogoutContainer>
       </Card>
     </>
   )
