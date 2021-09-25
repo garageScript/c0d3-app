@@ -123,12 +123,14 @@ exports[`user profile test Should render anonymous users 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -963,12 +965,14 @@ exports[`user profile test Should render if no stars received 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -1808,12 +1812,14 @@ exports[`user profile test Should render nulled challenges 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -2689,12 +2695,14 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -3529,12 +3537,14 @@ exports[`user profile test Should render profile 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -4622,12 +4632,14 @@ exports[`user profile test should render discord avatar and username if user con
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>

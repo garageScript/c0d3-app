@@ -123,12 +123,14 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 1`] 
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -1953,12 +1955,14 @@ exports[`Users test should switch to selected lesson in AdminLessonsSidebar 2`] 
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>

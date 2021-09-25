@@ -124,12 +124,14 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             >
               Fakeusername
             </a>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
-            >
-              Logout
-            </button>
+            <span>
+              <button
+                class="btn border bg-light ml-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </span>
           </div>
         </div>
       </div>
@@ -569,12 +571,14 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -763,12 +767,14 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             >
               Fakeusername
             </a>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
-            >
-              Logout
-            </button>
+            <span>
+              <button
+                class="btn border bg-light ml-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </span>
           </div>
         </div>
       </div>
@@ -1235,12 +1241,14 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           >
             Fakeusername
           </a>
-          <button
-            class="btn border bg-light ml-2"
-            style="color: rgb(41, 41, 41);"
-          >
-            Logout
-          </button>
+          <span>
+            <button
+              class="btn border bg-light ml-2"
+              style="color: rgb(41, 41, 41);"
+            >
+              Logout
+            </button>
+          </span>
         </div>
       </div>
     </div>
