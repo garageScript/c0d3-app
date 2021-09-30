@@ -7,6 +7,12 @@ import styles from '../scss/mdInput.module.scss'
 import { getHotkeyListener } from '../helpers/hotkeyListener'
 import useUndo from 'use-undo'
 
+type TextAreaState = {
+  value: string
+  selectionStart: number
+  selectionEnd: number
+}
+
 type MdInputProps = {
   onChange?: Function
   placeHolder?: string
@@ -38,7 +44,7 @@ export const MdInput: React.FC<MdInputProps> = ({
   const [
     { present: internalState, past, future },
     { set: setInternalState, undo, redo, reset }
-  ] = useUndo({
+  ] = useUndo<TextAreaState>({
     value,
     selectionStart: value.length,
     selectionEnd: value.length
@@ -61,13 +67,17 @@ export const MdInput: React.FC<MdInputProps> = ({
     )
   }, [value, internalState, reset])
 
-  const updateState = ({ value, selectionStart, selectionEnd }) => {
+  const updateState = ({
+    value,
+    selectionStart,
+    selectionEnd
+  }: TextAreaState) => {
     setInternalState({ value, selectionStart, selectionEnd })
     onChange(value)
     textareaRef.current?.focus()
   }
 
-  const handleChange = e => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value, selectionStart, selectionEnd } = e.target
 
     updateState({ value, selectionStart, selectionEnd })
