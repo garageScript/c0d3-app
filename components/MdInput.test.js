@@ -101,4 +101,80 @@ describe('MdInput Component', () => {
     )
     expect(textbox).toHaveStyle('height: 200px')
   })
+  test('Undo should restore previous text', () => {
+    render(<TestComponent />)
+    const textbox = screen.getByRole('textbox')
+
+    userEvent.click(textbox)
+    userEvent.type(textbox, 'Hello,{enter}Tom!!')
+
+    expect(textbox).toHaveValue('Hello,\nTom!!')
+    userEvent.type(textbox, '{ctrl}zz')
+    expect(textbox).toHaveValue('Hello,\nTom')
+  })
+  test('Undo should stop if there is no text to undo', () => {
+    render(<TestComponent />)
+    const textbox = screen.getByRole('textbox')
+
+    userEvent.click(textbox)
+    userEvent.type(textbox, 'Tom')
+
+    expect(textbox).toHaveValue('Tom')
+    userEvent.type(textbox, '{ctrl}zzzzzzz')
+    expect(textbox).toHaveValue('')
+  })
+  test('Redo should restore previous text from undo', () => {
+    render(<TestComponent />)
+    const textbox = screen.getByRole('textbox')
+
+    userEvent.click(textbox)
+    userEvent.type(textbox, 'Hello,{enter}Tom!!')
+
+    expect(textbox).toHaveValue('Hello,\nTom!!')
+    userEvent.type(textbox, '{ctrl}zz')
+    expect(textbox).toHaveValue('Hello,\nTom')
+    userEvent.type(textbox, '{ctrl}yy')
+    expect(textbox).toHaveValue('Hello,\nTom!!')
+  })
+  test('Redo should stop if there is no text to redo', () => {
+    render(<TestComponent />)
+    const textbox = screen.getByRole('textbox')
+
+    userEvent.click(textbox)
+    userEvent.type(textbox, 'Tom')
+
+    expect(textbox).toHaveValue('Tom')
+    userEvent.type(textbox, '{ctrl}zzzzzzz')
+    expect(textbox).toHaveValue('')
+    userEvent.type(textbox, '{ctrl}yyyyyyy')
+    expect(textbox).toHaveValue('Tom')
+  })
+  test('Undo/Redo history should be reset if state is updated outside of component', () => {
+    const TestRig = () => {
+      const [value, setValue] = React.useState('')
+      return (
+        <div>
+          <button onClick={() => setValue('Reset')}>Reset</button>
+          <MdInput value={value} onChange={setValue} />
+        </div>
+      )
+    }
+    render(<TestRig />)
+
+    const textbox = screen.getByRole('textbox')
+
+    userEvent.click(textbox)
+    userEvent.type(textbox, 'Tom')
+
+    expect(textbox).toHaveValue('Tom')
+    userEvent.type(textbox, '{ctrl}z')
+    expect(textbox).toHaveValue('To')
+    userEvent.click(screen.getByRole('button', { name: 'Reset' }))
+
+    expect(textbox).toHaveValue('Reset')
+    userEvent.type(textbox, '{ctrl}z')
+    expect(textbox).toHaveValue('Reset')
+    userEvent.type(textbox, '{ctrl}y')
+    expect(textbox).toHaveValue('Reset')
+  })
 })
