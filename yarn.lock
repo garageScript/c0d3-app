@@ -15880,6 +15880,11 @@ use-subscription@1.5.1:
   dependencies:
     object-assign "^4.1.1"
 
+use-undo@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/use-undo/-/use-undo-1.0.5.tgz#4f193d74164a4fe5fcd61f7278aa02fa1dbd7d8e"
+  integrity sha512-rLlwvcrioEqZ0t/M4hpgCsrCMgCpbodUXMRskK98g3ftdGFi7wr9DzxPY93vKHK17mMgxBY2ar7bgZ5cNFSiNQ==
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"

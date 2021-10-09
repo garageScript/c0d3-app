@@ -4,6 +4,14 @@ import { colors } from './theme/colors'
 import { Nav } from 'react-bootstrap'
 import noop from '../helpers/noop'
 import styles from '../scss/mdInput.module.scss'
+import { getHotkeyListener } from '../helpers/hotkeyListener'
+import useUndo from 'use-undo'
+
+type TextAreaState = {
+  value: string
+  selectionStart: number
+  selectionEnd: number
+}
 
 type MdInputProps = {
   onChange?: Function
@@ -30,6 +38,67 @@ export const MdInput: React.FC<MdInputProps> = ({
   const mouseDownHeightRef = useRef<number | null>(null)
   const isMountedRef = useRef(false)
   const [height, setHeight] = useState<number | null>(null)
+
+  // Undo/Redo state must be stored internally to allow custom manipulation of input text.
+  // This is because any call besides 'onChange' events from the input wipe out the native undo/redo functionality.
+  const [
+    { present: internalState, past, future },
+    { set: setInternalState, undo, redo, reset }
+  ] = useUndo<TextAreaState>({
+    value,
+    selectionStart: value.length,
+    selectionEnd: value.length
+  })
+
+  useEffect(() => {
+    if (internalState.value !== value) {
+      // Value was updated externally, reset component history
+      reset({
+        value,
+        selectionStart: value.length,
+        selectionEnd: value.length
+      })
+      return
+    }
+    // restore cursor position
+    textareaRef.current?.setSelectionRange(
+      internalState.selectionStart,
+      internalState.selectionEnd
+    )
+  }, [value, internalState, reset])
+
+  const updateState = ({
+    value,
+    selectionStart,
+    selectionEnd
+  }: TextAreaState) => {
+    setInternalState({ value, selectionStart, selectionEnd })
+    onChange(value)
+    textareaRef.current?.focus()
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { value, selectionStart, selectionEnd } = e.target
+
+    updateState({ value, selectionStart, selectionEnd })
+  }
+
+  const handleUndo = () => {
+    if (!past.length) return
+
+    const nextState = past[past.length - 1]
+    undo()
+    onChange(nextState.value)
+    textareaRef.current?.focus()
+  }
+  const handleRedo = () => {
+    if (!future.length) return
+
+    const nextState = future[0]
+    redo()
+    onChange(nextState.value)
+    textareaRef.current?.focus()
+  }
 
   useEffect(() => {
     // Focus when returning from preview mode after component has mounted
@@ -58,6 +127,16 @@ export const MdInput: React.FC<MdInputProps> = ({
 
     return () => window.removeEventListener('mouseup', updateHeight, false)
   }, [])
+
+  // Currently registering both linux/windows and mac hotkeys for everyone
+  const hotkeyMap = {
+    'ctrl+z': handleUndo,
+    'cmd+z': handleUndo,
+    'ctrl+y': handleRedo,
+    'shift+cmd+z': handleRedo
+  }
+
+  const hotkeyListener = getHotkeyListener(hotkeyMap)
 
   const previewBtnColor = preview ? 'black' : 'lightgrey'
   const writeBtnColor = preview ? 'lightgrey' : 'black'
@@ -106,6 +185,7 @@ export const MdInput: React.FC<MdInputProps> = ({
         </>
       )}
       <textarea
+        onKeyDown={hotkeyListener}
         onMouseDown={() => {
           mouseDownHeightRef.current = textareaRef.current!.clientHeight
         }}
@@ -114,7 +194,7 @@ export const MdInput: React.FC<MdInputProps> = ({
         className={`${styles['textarea']}${preview ? ' d-none' : ''}`}
         onChange={e => {
           if (!height && textareaRef.current) autoSize(textareaRef.current)
-          onChange(e.target.value)
+          handleChange(e)
         }}
         placeholder={placeHolder}
         style={height ? { height: height + 'px' } : undefined}
