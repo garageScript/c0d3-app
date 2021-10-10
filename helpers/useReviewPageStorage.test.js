@@ -36,7 +36,7 @@ describe('Review Page Storage', () => {
   it('Should create new entry in store', () => {
     const result = useReviewPageStorage(42, 42, {
       isHidden: false,
-      content: 'This is another test'
+      reviewText: 'This is another test'
     })
     expect(result).toEqual({
       isHidden: false,
