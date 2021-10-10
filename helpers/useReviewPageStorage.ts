@@ -1,12 +1,12 @@
 interface ReviewPageStorage {
-  content?: string
+  reviewText?: string
   isHidden?: boolean
 }
 
 export default function useReviewPageStorage(
   submissionId: number,
   line: number,
-  updateStorage: ReviewPageStorage
+  content: ReviewPageStorage
 ) {
   const storedData = JSON.parse(
     localStorage.getItem('reviewPageStorage') || '{}'
@@ -14,7 +14,7 @@ export default function useReviewPageStorage(
   if (!storedData[submissionId]) storedData[submissionId] = {}
   storedData[submissionId][line] = {
     ...storedData[submissionId][line],
-    ...updateStorage
+    ...content
   }
 
   localStorage.setItem('reviewPageStorage', JSON.stringify(storedData))

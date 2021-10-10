@@ -27,8 +27,10 @@ describe('Review Page Storage', () => {
   })
 
   it('Should return an object with content of "This is a test!" and isHidden of true', () => {
-    const result = useReviewPageStorage(99, 99, { content: 'This is a test!' })
-    expect(result).toEqual({ isHidden: true, content: 'This is a test!' })
+    const result = useReviewPageStorage(99, 99, {
+      reviewText: 'This is a test!'
+    })
+    expect(result).toEqual({ isHidden: true, reviewText: 'This is a test!' })
   })
 
   it('Should create new entry in store', () => {
@@ -36,6 +38,9 @@ describe('Review Page Storage', () => {
       isHidden: false,
       content: 'This is another test'
     })
-    expect(result).toEqual({ isHidden: false, content: 'This is another test' })
+    expect(result).toEqual({
+      isHidden: false,
+      reviewText: 'This is another test'
+    })
   })
 })
