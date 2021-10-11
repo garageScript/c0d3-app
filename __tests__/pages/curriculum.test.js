@@ -6,7 +6,6 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
-import { useRouter } from 'next/router'
 
 //mock for server side generation
 jest.mock('@apollo/client', () => ({
@@ -18,7 +17,6 @@ jest.mock('@apollo/client', () => ({
   }))
 }))
 describe('Curriculum Page', () => {
-  const { push } = useRouter()
   test('Should render Bad Data when no lessons', async () => {
     const mocks = [
       {
@@ -70,6 +68,10 @@ describe('Curriculum Page', () => {
   test('Should render with lessonStatus data', async () => {
     const session = {
       ...dummySessionData,
+      user: {
+        ...dummySessionData.user,
+        isConnectedToDiscord: true
+      },
       lessonStatus: [
         {
           lessonId: '5',
@@ -179,7 +181,7 @@ describe('Curriculum Page', () => {
     expect(arrow.className.includes('left'))
   })
 
-  test.only('Should redirect to /discord/connect if user not connected to discord', async () => {
+  test('Should load Connect to Discord modal if user not connected to discord', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -196,16 +198,12 @@ describe('Curriculum Page', () => {
       }
     ]
 
-    console.log(mocks[0].result.data.session.user)
-
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <Curriculum lessons={dummyLessonData} alerts={[]} />
       </MockedProvider>
     )
 
-    await waitFor(() => {
-      expect(push).toBeCalledWith('/discord/connect')
-    })
+    expect(screen.getByText('connect to Discord')).toBeVisible()
   })
 })

@@ -1,17 +1,22 @@
 import React from 'react'
-import { WithLayout } from '../../@types/page'
-import { getLayout } from '../../components/Layout'
-import Title from '../../components/Title'
-import Card from '../../components/Card'
+import { WithLayout } from '../@types/page'
+import { getLayout } from './Layout'
+import Title from './Title'
+import Card from './Card'
+import Modal from 'react-bootstrap/Modal'
+import { ModalCardProps } from './ModalCard'
 import Link from 'next/link'
-import LogoutContainer from '../../components/LogoutContainer'
+import LogoutContainer from './LogoutContainer'
 
 const discordConnectPage =
   'https://discord.com/api/oauth2/authorize?client_id=845470281283665970&redirect_uri=https%3A%2F%2Fc0d3.com%2Fapi%2Fauth%2Fcallback%2Fdiscord&response_type=code&scope=identify%20email%20guilds.join%20gdm.join'
 
-const ConnectToDiscordPage: React.FC & WithLayout = () => {
+const ConnectToDiscordCard: React.FC<ModalCardProps> & WithLayout = ({
+  close,
+  show
+}) => {
   return (
-    <>
+    <Modal size="lg" onHide={() => {}} close={() => close()} show={show}>
       <Title title="Connect to Discord" />
       <Card title="Connect to Discord">
         <div className="mt-3">
@@ -49,10 +54,10 @@ const ConnectToDiscordPage: React.FC & WithLayout = () => {
           <a href="#">No thanks, I&apos;ll study on my own.</a>
         </LogoutContainer>
       </Card>
-    </>
+    </Modal>
   )
 }
 
-ConnectToDiscordPage.getLayout = getLayout
+ConnectToDiscordCard.getLayout = getLayout
 
-export default ConnectToDiscordPage
+export default ConnectToDiscordCard

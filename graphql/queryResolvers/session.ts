@@ -13,7 +13,7 @@ export const session = async (_parent: void, _args: void, context: Context) => {
 
   const userWithDiscordStatus = {
     ...user,
-    isConnectedToDiscord: !!user.discordAccessTokenExpires
+    isConnectedToDiscord: !!user.discordRefreshToken
   }
 
   // FYI: The reason we are querying with parallelized promises:

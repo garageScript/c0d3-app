@@ -10,6 +10,7 @@ import Error, { StatusCode } from '../components/Error'
 import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
+import ConnectToDiscordCard from '../components/ConnectToDiscordCard'
 import {
   Alert,
   GetAppDocument,
@@ -21,7 +22,6 @@ import {
 import { initializeApollo } from '../helpers/apolloClient'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
-import { useRouter } from 'next/router'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -95,7 +95,6 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   const hasMounted = useHasMounted()
-  const router = useRouter()
   //fallback in case if localStorage (which is used by persistent cache) is disabled
   const { data, loading } = useGetSessionQuery({
     fetchPolicy: 'cache-and-network',
@@ -106,6 +105,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     progress: -1,
     current: -1
   })
+  const [showConnectToDiscordModal, setShowConnectToDiscordModal] =
+    useState<boolean>(false)
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
@@ -133,7 +134,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   useEffect(() => {
     if (data && data.session) {
       if (data.session.user && !data.session.user.isConnectedToDiscord) {
-        router.push('/discord/connect')
+        setShowConnectToDiscordModal(true)
       }
       setState({
         session: data.session,
@@ -168,42 +169,49 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     )
   })
   return (
-    <Layout title="Curriculum">
-      {hasMounted &&
-        typeof window !== 'undefined' &&
-        !window.localStorage.getItem('horizontalScrollUsed') && (
-          <ScrollArrow scrolledRight={scrolledRight} />
-        )}
-      <div
-        className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
-        ref={scrollContainerRef}
-        data-testid="parent-scroll"
-      >
-        <div className={`col-12 col-xl-8 ${styles['child-scroll']}`}>
-          <AlertsDisplay alerts={alerts} page="curriculum" />
-          <div className="d-xl-none">
-            <ProgressCard
-              progressCount={state.progress}
-              loggedIn={!!state.session?.user}
-              loading={loading}
-            />
+    <>
+      <ConnectToDiscordCard
+        close={() => setShowConnectToDiscordModal(false)}
+        show={showConnectToDiscordModal}
+        data-testid="modal-discord-connect"
+      />
+      <Layout title="Curriculum">
+        {hasMounted &&
+          typeof window !== 'undefined' &&
+          !window.localStorage.getItem('horizontalScrollUsed') && (
+            <ScrollArrow scrolledRight={scrolledRight} />
+          )}
+        <div
+          className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
+          ref={scrollContainerRef}
+          data-testid="parent-scroll"
+        >
+          <div className={`col-12 col-xl-8 ${styles['child-scroll']}`}>
+            <AlertsDisplay alerts={alerts} page="curriculum" />
+            <div className="d-xl-none">
+              <ProgressCard
+                progressCount={state.progress}
+                loggedIn={!!state.session?.user}
+                loading={loading}
+              />
+            </div>
+            {lessonsToRender}
           </div>
-          {lessonsToRender}
-        </div>
-        <div className={`col-12 col-xl-4 ${styles['child-scroll']}`}>
-          <DiscordBar />
-          <div className="d-none d-xl-block">
-            <ProgressCard
-              progressCount={state.progress}
-              loggedIn={!!state.session?.user}
-              loading={loading}
-            />
+          <div className={`col-12 col-xl-4 ${styles['child-scroll']}`}>
+            <DiscordBar />
+            <div className="d-none d-xl-block">
+              <ProgressCard
+                progressCount={state.progress}
+                loggedIn={!!state.session?.user}
+                loading={loading}
+              />
+            </div>
+            <AnnouncementCard announcements={announcements} />
+            <AdditionalResources />
           </div>
-          <AnnouncementCard announcements={announcements} />
-          <AdditionalResources />
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 const FIVE_MINUTES = 5 * 60

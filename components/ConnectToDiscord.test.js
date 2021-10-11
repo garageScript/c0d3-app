@@ -1,11 +1,11 @@
 import React from 'react'
-import ConnectToDiscordPage from '../../../pages/discord/connect'
+import ConnectToDiscordCard from './ConnectToDiscordCard'
 import { render } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
-import LOGOUT_USER from '../../../graphql/queries/logoutUser'
+import LOGOUT_USER from '../graphql/queries/logoutUser'
 
-describe('connect to Discord page', () => {
-  it('should render page', () => {
+describe('connect to Discord card', () => {
+  it('should render card modal', () => {
     const mocks = [
       {
         request: {
@@ -24,7 +24,7 @@ describe('connect to Discord page', () => {
     ]
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
-        <ConnectToDiscordPage />
+        <ConnectToDiscordCard />
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()

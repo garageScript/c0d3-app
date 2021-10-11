@@ -9,7 +9,7 @@ const dummySessionData: Session = {
     discordUserId: '',
     discordUsername: '',
     discordAvatarUrl: '',
-    isConnectedToDiscord: false
+    isConnectedToDiscord: true
   },
   submissions: [],
   lessonStatus: []
