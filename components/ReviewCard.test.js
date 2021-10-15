@@ -1,3 +1,5 @@
+import '../__mocks__/useIsMac.mock'
+import '../__mocks__/useBreakpoint.mock'
 import React, { useContext, useEffect } from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'

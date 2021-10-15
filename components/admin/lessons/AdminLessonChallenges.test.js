@@ -1,3 +1,5 @@
+import '../../../__mocks__/useIsMac.mock'
+import '../../../__mocks__/useBreakpoint.mock'
 import * as React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'

@@ -1,3 +1,5 @@
+import '../../../__mocks__/useIsMac.mock'
+import '../../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import {
   render,
