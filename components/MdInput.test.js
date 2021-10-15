@@ -1,3 +1,5 @@
+import { mockUseIsMac } from '../__mocks__/useIsMac.mock'
+import '../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -69,16 +71,10 @@ describe('MdInput Component', () => {
   })
   test('Should automatically resize to fit content', () => {
     render(<TestComponent />)
-    const textbox = screen.getByRole('textbox')
-    expect(textbox).not.toHaveStyle('height: 2px')
-    userEvent.type(
-      textbox,
-      'Hello,{enter}{enter}{enter}{enter}{enter}{enter}Tom!'
-    )
-
+    // autoSize function runs on first render with useEffect.
     // Only picks up '+2px' additional padding as JSDOM doesnt properly mock styles
     // but this proves the code was exercised and is good enough for unit test
-    expect(textbox).toHaveStyle('height: 2px')
+    expect(screen.getByRole('textbox')).toHaveStyle('height: 2px')
   })
   test('Show not auto resize after user sets height', () => {
     render(<TestComponent />)
@@ -176,5 +172,18 @@ describe('MdInput Component', () => {
     expect(textbox).toHaveValue('Reset')
     userEvent.type(textbox, '{ctrl}y')
     expect(textbox).toHaveValue('Reset')
+  })
+  test('Should exercise handleMarkdown and insert bold markdown style ', () => {
+    render(<TestComponent />)
+    const textbox = screen.getByRole('textbox')
+    userEvent.type(textbox, '{ctrl}b')
+    expect(textbox).toHaveValue('****')
+  })
+  test('Should exercise handleMarkdown and insert bold markdown style with mac hotkey ', () => {
+    mockUseIsMac.mockImplementationOnce(() => true)
+    render(<TestComponent />)
+    const textbox = screen.getByRole('textbox')
+    userEvent.type(textbox, '{meta}b')
+    expect(textbox).toHaveValue('****')
   })
 })
