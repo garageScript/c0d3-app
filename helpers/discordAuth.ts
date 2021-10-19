@@ -28,7 +28,7 @@ type UserInfoResponse = {
   verified: boolean
 }
 
-type DiscordUserInfo = {
+export type DiscordUserInfo = {
   userId: string
   username: string
   avatarUrl: string
@@ -73,6 +73,7 @@ export const setTokenFromAuthCode = (
   })
     .then(r => r.json())
     .then(({ refresh_token, access_token, expires_in }) => {
+      console.log('refresh_token', refresh_token)
       const accessTokenExpiresAt = new Date(
         Date.now() + (expires_in * 1000 || 0)
       )
