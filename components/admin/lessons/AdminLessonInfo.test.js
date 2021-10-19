@@ -1,3 +1,5 @@
+import '../../../__mocks__/useIsMac.mock'
+import '../../../__mocks__/useBreakpoint.mock'
 import * as React from 'react'
 import * as Sentry from '@sentry/browser'
 import { render, waitFor, screen } from '@testing-library/react'

@@ -1,3 +1,5 @@
+import '../../../__mocks__/useIsMac.mock'
+import '../../../__mocks__/useBreakpoint.mock'
 import React from 'react'
 import Lessons from '../../../pages/admin/lessons'
 import dummyLessonData from '../../../__dummy__/lessonData'
