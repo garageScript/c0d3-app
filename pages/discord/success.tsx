@@ -32,8 +32,8 @@ type Error = {
   message: string
 }
 
-const USER_NOT_LOGGED_IN = 1
-const DISCORD_ERROR = 2
+export const USER_NOT_LOGGED_IN = 1
+export const DISCORD_ERROR = 2
 const DISCORD_BUGS_FEEDBACK_URL =
   'https://discord.com/channels/828783458469675019/836343487531712512'
 
@@ -169,7 +169,7 @@ export const getServerSideProps = ({
               return resolve({
                 props: {
                   error: '',
-                  errorCode: DISCORD_ERROR, // auth code expired
+                  errorCode: DISCORD_ERROR,
                   username: req.user.username
                 }
               })
