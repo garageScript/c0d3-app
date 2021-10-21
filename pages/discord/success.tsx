@@ -10,7 +10,6 @@ import loggingMiddleware from '../../helpers/middleware/logger'
 import sessionMiddleware from '../../helpers/middleware/session'
 import userMiddleware from '../../helpers/middleware/user'
 import { LoggedRequest } from '../../@types/helpers'
-
 import {
   DiscordUserInfo,
   setTokenFromAuthCode,
@@ -36,10 +35,6 @@ type Error = {
 type Query = {
   code: string
 }
-
-type LoggedExpressRequest = LoggedRequest & Request
-
-type NextExpressResponse = NextApiResponse & Response
 
 export const USER_NOT_LOGGED_IN = 1
 export const DISCORD_ERROR = 2
@@ -152,53 +147,45 @@ export const getServerSideProps = ({
   res,
   query
 }: {
-  // request is initially of type NextApiRequest until it goes through all the middlewares
-  req: LoggedRequest
-  res: NextApiResponse
+  // NextJS request and response types are extended with Express request and response types
+  // request type is initially NextApiRequest until it goes through all the middlewares
+  req: LoggedRequest & Request
+  res: NextApiResponse & Response
   query?: Query
 }) => {
   return new Promise(resolve => {
     loggingMiddleware(req, res, () => {
-      // request type we are using (which is based on NextJS request)
-      // is different from request type that express-session is using
-      sessionMiddleware()(
-        req as LoggedExpressRequest,
-        res as NextExpressResponse,
-        () => {
-          userMiddleware(req, res, async () => {
-            if (!req.user?.id) {
-              return resolve({ props: { errorCode: USER_NOT_LOGGED_IN } })
-            }
-            try {
-              const { code } = query || {}
-              const user = await setTokenFromAuthCode(
-                req.user.id,
-                code as string
-              )
-              const userInfo = await getDiscordUserInfo(user)
-              if (!userInfo.username) {
-                return resolve({
-                  props: {
-                    error: '',
-                    errorCode: DISCORD_ERROR,
-                    username: req.user.username
-                  }
-                })
-              }
-              resolve({ props: { userInfo, username: req.user.username } })
-            } catch (error) {
-              const errorMessage = (error as Error).message
-              resolve({
+      sessionMiddleware()(req, res, () => {
+        userMiddleware(req, res, async () => {
+          if (!req.user?.id) {
+            return resolve({ props: { errorCode: USER_NOT_LOGGED_IN } })
+          }
+          try {
+            const { code } = query || {}
+            const user = await setTokenFromAuthCode(req.user.id, code as string)
+            const userInfo = await getDiscordUserInfo(user)
+            if (!userInfo.username) {
+              return resolve({
                 props: {
-                  error: errorMessage,
-                  errorCode: DISCORD_ERROR, // auth code expired
+                  error: '',
+                  errorCode: DISCORD_ERROR,
                   username: req.user.username
                 }
               })
             }
-          })
-        }
-      )
+            resolve({ props: { userInfo, username: req.user.username } })
+          } catch (error) {
+            const errorMessage = (error as Error).message
+            resolve({
+              props: {
+                error: errorMessage,
+                errorCode: DISCORD_ERROR, // auth code expired
+                username: req.user.username
+              }
+            })
+          }
+        })
+      })
     })
   })
 }
