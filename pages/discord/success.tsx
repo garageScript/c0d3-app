@@ -175,10 +175,11 @@ export const getServerSideProps = ({
               })
             }
             resolve({ props: { userInfo, username: req.user.username } })
-          } catch (error: any) {
+          } catch (error) {
+            const errorMessage = (error as Error).message
             resolve({
               props: {
-                error: error.message,
+                error: errorMessage,
                 errorCode: DISCORD_ERROR, // auth code expired
                 username: req.user.username
               }
