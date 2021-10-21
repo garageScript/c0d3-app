@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 jest.mock('next-connect')
 jest.mock('../../helpers/discordAuth')
 jest.mock('../../helpers/middleware/user')
@@ -11,7 +11,11 @@ import {
   setTokenFromAuthCode
 } from '../../../helpers/discordAuth'
 
-import { USER_NOT_LOGGED_IN, DISCORD_ERROR, ConnectToDiscordSuccess } from '../../pages/discord/success'
+import {
+  USER_NOT_LOGGED_IN,
+  DISCORD_ERROR,
+  ConnectToDiscordSuccess
+} from '../../pages/discord/success'
 
 const mockDiscordUserInfo = {
   userId: 'discord123',
@@ -37,16 +41,40 @@ const successfulAuthFlowProps = {
 }
 
 describe('getServerSideProps', () => {
-  it('should return error if user not logged in', (() => {
-
+  it('should return error if user not logged in', () => {
+    const response = await getServerSideProps({
+      req: {},
+      query: 'validQueryString'
+    })
+    expect(response).toEqual(userNotLoggedInErrorProps)
   })
 
   it('should return error if userInfo could not be retrieved', () => {
-
+    setTokenFromAuthCode.mockResolvedValue({
+      id: 123
+    })
+    getDiscordUserInfo.mockResolvedValue({})
+    const response = await getServerSideProps({
+      req: {
+        user: {
+          id: 'fakeUser'
+        }
+      },
+      query: 'validQueryString'
+    })
+    expect(response).toEqual(discordErrorProps)
   })
 
-  it('should return error if auth code is invalid', () => {
-    
+  it('should return error if auth code is empty or invalid', () => {
+    const response = await getServerSideProps({
+      req: {
+        user: {
+          id: 'fakeUser'
+        }
+      },
+      query: ''
+    })
+    expect(response).toEqual(discordErrorProps)
   })
 
   it('should return username and userInfo if auth code is valid and userInfo is successfully retrieved', () => {
@@ -63,21 +91,38 @@ describe('getServerSideProps', () => {
       query: 'validQueryString'
     })
     expect(setTokenFromAuthCode).toBeCalledWith(123, 'fakeAuthCode')
-
+    expect(response).toEqual(successfulAuthFlowProps)
   })
 })
 
 describe('connect to Discord success page', () => {
   it('should render success page if auth flow succeeded', () => {
-    const { container } = render(<ConnectToDiscordSuccess />)
-    expect(container).toMatchSnapshot()
+    const { container } = render(
+      <ConnectToDiscordSuccess props={successfulAuthFlowProps} />
+    )
+    // expect(container).toMatchSnapshot()
+    await waitFor(() =>
+      expect(screen.getByTitle('title', { name: /Success/i })).toBeTruthy()
+    )
   })
 
   it('should render user not logged in page if user not logged in', async () => {
-    const { container } = render(<ConnectToDiscordSuccess />)
+    const { container } = render(
+      <ConnectToDiscordSuccess props={userNotLoggedInErrorProps} />
+    )
+    // expect(container).toMatchSnapshot()
+    await waitFor(() =>
+      expect(screen.getByRole('title', { name: /Error/i })).toBeTruthy()
+    )
   })
 
   it('should render discord error page if auth code is invalid or no userInfo is returned', async () => {
-    const { container } = render(<ConnectToDiscordSuccess />)
+    const { container } = render(
+      <ConnectToDiscordSuccess props={discordErrorProps} />
+    )
+    // expect(container).toMatchSnapshot()
+    await waitFor(() =>
+      expect(screen.getByRole('title', { name: /Error/i })).toBeTruthy()
+    )
   })
 })
