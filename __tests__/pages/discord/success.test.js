@@ -78,8 +78,7 @@ describe('getServerSideProps function', () => {
     })
     getDiscordUserInfo.mockResolvedValue({})
     const response = await getServerSideProps({
-      req: {},
-      query: { code: 'fakeAuthCode' }
+      req: {}
     })
     expect(response).toEqual(discordErrorProps)
   })
@@ -97,6 +96,29 @@ describe('getServerSideProps function', () => {
       query: { code: '' }
     })
     expect(response).toEqual(discordErrorProps)
+  })
+
+  it('should return error if setTokenFromAuthCode function throws error', async () => {
+    userMiddleware.mockImplementation((req, _res, next) => {
+      req.user = {
+        id: 123,
+        username: 'fakeUser'
+      }
+      next()
+    })
+    setTokenFromAuthCode.mockRejectedValue(
+      new Error('failed to get user from auth code')
+    )
+    const response = await getServerSideProps({
+      req: {},
+      query: { code: 'badAuthCode' }
+    })
+    expect(response).toEqual({
+      props: {
+        ...discordErrorProps.props,
+        error: 'failed to get user from auth code'
+      }
+    })
   })
 
   it('should return username and userInfo if auth code is valid and userInfo is successfully retrieved', async () => {
@@ -122,32 +144,71 @@ describe('getServerSideProps function', () => {
 
 describe('connect to Discord success page', () => {
   it('should render success page if auth flow succeeded', async () => {
-    const { container } = render(
-      <ConnectToDiscordSuccess props={successfulAuthFlowProps} />
+    render(
+      <ConnectToDiscordSuccess
+        username="fakeUser"
+        userInfo={mockDiscordUserInfo}
+      />
     )
-    // expect(container).toMatchSnapshot()
     await waitFor(() =>
-      expect(screen.getByTitle('title', { name: /Success/i })).toBeTruthy()
+      expect(
+        screen.getByText('fakeUser, You are now connected to Discord!', {
+          exact: true
+        })
+      ).toBeTruthy()
     )
   })
 
   it('should render user not logged in page if user not logged in', async () => {
-    const { container } = render(
-      <ConnectToDiscordSuccess props={userNotLoggedInErrorProps} />
-    )
-    // expect(container).toMatchSnapshot()
+    render(<ConnectToDiscordSuccess errorCode={USER_NOT_LOGGED_IN} />)
     await waitFor(() =>
-      expect(screen.getByRole('title', { name: /Error/i })).toBeTruthy()
+      expect(
+        screen.getByText('You need to be logged in to connect to Discord.', {
+          exact: true
+        })
+      ).toBeTruthy()
     )
   })
 
   it('should render discord error page if auth code is invalid or no userInfo is returned', async () => {
-    const { container } = render(
-      <ConnectToDiscordSuccess props={discordErrorProps} />
+    render(
+      <ConnectToDiscordSuccess
+        username="fakeUser"
+        errorCode={DISCORD_ERROR}
+        error={{ message: 'errorMessage' }}
+      />
     )
-    // expect(container).toMatchSnapshot()
-    await waitFor(() =>
-      expect(screen.getByRole('title', { name: /Error/i })).toBeTruthy()
+    await waitFor(() => {
+      expect(
+        screen.getByText(
+          'Dear fakeUser, we had trouble connecting to Discord, please try again.',
+          {
+            exact: true
+          }
+        )
+      ).toBeTruthy()
+      expect(screen.getByText('{ "message": "errorMessage" }')).toBeTruthy()
+    })
+  })
+
+  it('should render discord error page if auth code is invalid or no userInfo is returned and no error message is provided', async () => {
+    render(
+      <ConnectToDiscordSuccess
+        username="fakeUser"
+        errorCode={DISCORD_ERROR}
+        error={{ message: '' }}
+      />
     )
+    await waitFor(() => {
+      expect(
+        screen.getByText(
+          'Dear fakeUser, we had trouble connecting to Discord, please try again.',
+          {
+            exact: true
+          }
+        )
+      ).toBeTruthy()
+      expect(screen.queryByText('Error log')).toBeNull()
+    })
   })
 })

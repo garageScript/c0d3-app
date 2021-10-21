@@ -126,7 +126,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
       <Title title="Success!" />
       <Card title="Success!">
         <div className="mt-3">
-          <p>{JSON.stringify(username)}, You are now connected to Discord!</p>
+          <p>{username}, You are now connected to Discord!</p>
           <p>{JSON.stringify(userInfo)}</p>
         </div>
         <NavLink path="/curriculum">
