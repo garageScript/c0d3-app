@@ -116,7 +116,7 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
   )
 }
 
-const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
+export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   WithLayout = ({ errorCode, username, userInfo, error }) => {
   if (errorCode === DISCORD_ERROR)
     return <DiscordErrorPage username={username} error={error} />
