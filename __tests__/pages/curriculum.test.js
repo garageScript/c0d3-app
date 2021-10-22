@@ -60,6 +60,8 @@ describe('Curriculum Page', () => {
       </MockedProvider>
     )
 
+    debug()
+
     await screen.findByText('Fakeusername')
     await waitFor(() => screen.getAllByText(`You're off to a great start!`))
     await waitFor(() => expect(container).toMatchSnapshot())

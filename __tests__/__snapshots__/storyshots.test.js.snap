@@ -11374,7 +11374,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           <div
             title="April 22, 2018 12:55 PM"
           >
-            3 years ago
+            4 years ago
           </div>
         </div>
       </div>
@@ -12694,7 +12694,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           <div
             title="April 22, 2018 12:55 PM"
           >
-            3 years ago
+            4 years ago
           </div>
         </div>
       </div>
@@ -14012,7 +14012,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           <div
             title="April 22, 2018 12:55 PM"
           >
-            3 years ago
+            4 years ago
           </div>
         </div>
       </div>
@@ -15330,7 +15330,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           <div
             title="April 22, 2018 12:55 PM"
           >
-            3 years ago
+            4 years ago
           </div>
         </div>
       </div>
@@ -16648,7 +16648,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           <div
             title="April 22, 2018 12:55 PM"
           >
-            3 years ago
+            4 years ago
           </div>
         </div>
       </div>

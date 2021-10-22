@@ -22,6 +22,7 @@ import {
 import { initializeApollo } from '../helpers/apolloClient'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
+import dummySessionData from '../__dummy__/sessionData'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -105,8 +106,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     progress: -1,
     current: -1
   })
-  const [showConnectToDiscordModal, setShowConnectToDiscordModal] =
-    useState<boolean>(false)
+
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
@@ -133,10 +133,6 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [])
   useEffect(() => {
     if (data && data.session) {
-      if (data.session.user && !data.session.user.isConnectedToDiscord) {
-        console.log(data.session.user, 'user not connected to Discord!!!!')
-        setShowConnectToDiscordModal(true)
-      }
       setState({
         session: data.session,
         progress: calculateProgress(data.session, lessons),

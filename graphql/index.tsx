@@ -528,6 +528,7 @@ export type GetAppQuery = {
       username: string
       name: string
       isAdmin: boolean
+      isConnectedToDiscord: boolean
     }>
     submissions?: Maybe<
       Array<{
@@ -2332,6 +2333,7 @@ export const GetAppDocument = gql`
         username
         name
         isAdmin
+        isConnectedToDiscord
       }
       submissions {
         id

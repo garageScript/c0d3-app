@@ -25,6 +25,7 @@ const GET_APP = gql`
         username
         name
         isAdmin
+        isConnectedToDiscord
       }
       submissions {
         id
