@@ -10707,10 +10707,10 @@ jest-message-util@^27.1.0:
     slash "^3.0.0"
     stack-utils "^2.0.3"
 
-jest-mock-extended@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/jest-mock-extended/-/jest-mock-extended-2.0.1.tgz#5cc5085c2a3a83e301fd0eeba9ac82af4b3dc389"
-  integrity sha512-fOfes4i6a5991ZFzj9Un8nlFsSm2lpnJ9jRm6eT3kdtW8Bq9jdQiPYiCE2MHDiU5ySIbjzN4UkhCLAJ1jVtkaQ==
+jest-mock-extended@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/jest-mock-extended/-/jest-mock-extended-2.0.4.tgz#2bb430ba0adb9e10ea6a68d08731f2129330c8fe"
+  integrity sha512-MgL3B3GjURQFjjPGqbCANydA5BFNPygv0mYp4Tjfxohh9MWwxxX8Eq2p6ncCt/Vt+RAnaLlDaI7gwrDRD7Pt9A==
   dependencies:
     ts-essentials "^7.0.3"
 
