@@ -180,30 +180,4 @@ describe('Curriculum Page', () => {
     )
     expect(arrow.className.includes('left'))
   })
-
-  test('Should load Connect to Discord modal if user not connected to discord', async () => {
-    const mocks = [
-      {
-        request: { query: GET_APP },
-        result: {
-          data: {
-            lessons: dummyLessonData,
-            session: {
-              ...dummySessionData,
-              user: { ...dummySessionData.user, isConnectedToDiscord: false }
-            },
-            alerts: []
-          }
-        }
-      }
-    ]
-
-    render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <Curriculum lessons={dummyLessonData} alerts={[]} />
-      </MockedProvider>
-    )
-
-    expect(screen.getByText('connect to Discord')).toBeVisible()
-  })
 })
