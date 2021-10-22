@@ -31,6 +31,8 @@ import {
 } from '../helpers/controllers/lessonsController'
 import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
 
+import { winstonDebug } from '../helpers/controllers/winstonDebug'
+
 export default {
   Query: {
     submissions,
@@ -45,6 +47,7 @@ export default {
   },
 
   Mutation: {
+    winstonDebug,
     setStar,
     changePw,
     changeAdminRights,

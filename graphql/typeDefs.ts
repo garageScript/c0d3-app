@@ -19,6 +19,7 @@ export default gql`
   }
 
   type Mutation {
+    winstonDebug(msg: String!): DebugMsg
     setStar(mentorId: Int!, lessonId: Int!, comment: String): SuccessResponse!
     login(username: String!, password: String!): AuthResponse
     logout: AuthResponse
@@ -139,6 +140,9 @@ export default gql`
     passed
   }
 
+  type DebugMsg {
+    msg: String!
+  }
   type User {
     id: Int!
     username: String!
