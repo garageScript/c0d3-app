@@ -10,6 +10,8 @@ import loggingMiddleware from '../../helpers/middleware/logger'
 import sessionMiddleware from '../../helpers/middleware/session'
 import userMiddleware from '../../helpers/middleware/user'
 import { LoggedRequest } from '../../@types/helpers'
+import Link from 'next/link'
+import Image from 'next/image'
 import {
   DiscordUserInfo,
   setTokenFromAuthCode,
@@ -125,10 +127,27 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
     <>
       <Title title="Success!" />
       <Card title="Success!">
-        <div className="mt-3">
-          <p>{username}, You are now connected to Discord!</p>
-          <p>{JSON.stringify(userInfo)}</p>
-        </div>
+        <>
+          <div className="ml-auto mr-auto">
+            <Image
+              className="avatar"
+              src={userInfo.avatarUrl}
+              width={120}
+              height={120}
+            />
+          </div>
+          <h5 className="mb-4">
+            <Link href={`https://discordapp.com/users/${userInfo.userId}/`}>
+              {userInfo.username}
+            </Link>
+          </h5>
+          <style jsx global>{`
+            .avatar {
+              border-radius: 50%;
+            }
+          `}</style>
+        </>
+        <p>{username}, you are now connected to Discord!</p>
         <NavLink path="/curriculum">
           <button
             type="button"

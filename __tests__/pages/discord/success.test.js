@@ -152,7 +152,7 @@ describe('connect to Discord success page', () => {
     )
     await waitFor(() =>
       expect(
-        screen.getByText('fakeUser, You are now connected to Discord!', {
+        screen.getByText('fakeUser, you are now connected to Discord!', {
           exact: true
         })
       ).toBeTruthy()

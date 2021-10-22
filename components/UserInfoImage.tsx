@@ -6,7 +6,7 @@ type UserProps = {
   user: UserInfo
 }
 
-const DiscordAvatar: React.FC<UserProps> = ({ user }) => {
+export const DiscordAvatar: React.FC<UserProps> = ({ user }) => {
   return (
     <>
       <div className="ml-auto mr-auto mt-4">
