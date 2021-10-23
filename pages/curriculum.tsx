@@ -10,7 +10,6 @@ import Error, { StatusCode } from '../components/Error'
 import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
-import ConnectToDiscordCard from '../components/ConnectToDiscordCard'
 import {
   Alert,
   GetAppDocument,
@@ -22,7 +21,6 @@ import {
 import { initializeApollo } from '../helpers/apolloClient'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
-import dummySessionData from '../__dummy__/sessionData'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
