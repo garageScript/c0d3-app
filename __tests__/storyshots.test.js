@@ -1,6 +1,8 @@
 import initStoryshots from '@storybook/addon-storyshots'
 
-/*	
+jest.useFakeTimers('modern').setSystemTime(new Date('2021-10-21').getTime())
+
+/* 
 	This mock is necessary because there is currently a problem
 	with taking storyshots of Modals. See here for more info:
 	https://github.com/storybookjs/storybook/issues/2822
