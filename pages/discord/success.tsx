@@ -40,8 +40,11 @@ type Query = {
   code: string
 }
 
-export const USER_NOT_LOGGED_IN = 1
-export const DISCORD_ERROR = 2
+export enum ErrorCode {
+  USER_NOT_LOGGED_IN = 1,
+  DISCORD_ERROR = 2
+}
+
 const DISCORD_BUGS_FEEDBACK_URL =
   'https://discord.com/channels/828783458469675019/836343487531712512'
 
@@ -109,7 +112,7 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
 
 export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   WithLayout = ({ errorCode, username, userInfo, error }) => {
-  if (errorCode === DISCORD_ERROR)
+  if (errorCode === ErrorCode.DISCORD_ERROR)
     return (
       <DiscordErrorPage
         username={username}
@@ -118,7 +121,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
         navText="Try Again"
       />
     )
-  if (errorCode === USER_NOT_LOGGED_IN)
+  if (errorCode === ErrorCode.USER_NOT_LOGGED_IN)
     return (
       <DiscordErrorPage
         username=""
@@ -183,7 +186,7 @@ export const getServerSideProps = async ({
           if (!req.user?.id) {
             return resolve({
               props: {
-                errorCode: USER_NOT_LOGGED_IN
+                errorCode: ErrorCode.USER_NOT_LOGGED_IN
               }
             })
           }
@@ -195,7 +198,7 @@ export const getServerSideProps = async ({
               return resolve({
                 props: {
                   error: '',
-                  errorCode: DISCORD_ERROR,
+                  errorCode: ErrorCode.DISCORD_ERROR,
                   username: req.user.username
                 }
               })
@@ -206,7 +209,7 @@ export const getServerSideProps = async ({
             resolve({
               props: {
                 error: errorMessage,
-                errorCode: DISCORD_ERROR, // auth code expired
+                errorCode: ErrorCode.DISCORD_ERROR, // auth code expired
                 username: req.user.username
               }
             })

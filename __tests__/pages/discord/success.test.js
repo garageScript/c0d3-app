@@ -15,8 +15,7 @@ import {
 } from '../../../helpers/discordAuth'
 
 import {
-  USER_NOT_LOGGED_IN,
-  DISCORD_ERROR,
+  ErrorCode,
   ConnectToDiscordSuccess,
   getServerSideProps
 } from '../../../pages/discord/success'
@@ -36,14 +35,14 @@ const mockDiscordUserInfo = {
 
 const userNotLoggedInErrorProps = {
   props: {
-    errorCode: USER_NOT_LOGGED_IN
+    errorCode: ErrorCode.USER_NOT_LOGGED_IN
   }
 }
 
 const discordErrorProps = {
   props: {
     error: '',
-    errorCode: DISCORD_ERROR,
+    errorCode: ErrorCode.DISCORD_ERROR,
     username: 'fakeUser'
   }
 }
@@ -160,7 +159,7 @@ describe('connect to Discord success page', () => {
   })
 
   it('should render user not logged in page if user not logged in', async () => {
-    render(<ConnectToDiscordSuccess errorCode={USER_NOT_LOGGED_IN} />)
+    render(<ConnectToDiscordSuccess errorCode={ErrorCode.USER_NOT_LOGGED_IN} />)
     await waitFor(() =>
       expect(
         screen.getByText('You need to be logged in to connect to Discord.', {
@@ -174,7 +173,7 @@ describe('connect to Discord success page', () => {
     render(
       <ConnectToDiscordSuccess
         username="fakeUser"
-        errorCode={DISCORD_ERROR}
+        errorCode={ErrorCode.DISCORD_ERROR}
         error={{ message: 'errorMessage' }}
       />
     )
@@ -195,7 +194,7 @@ describe('connect to Discord success page', () => {
     render(
       <ConnectToDiscordSuccess
         username="fakeUser"
-        errorCode={DISCORD_ERROR}
+        errorCode={ErrorCode.DISCORD_ERROR}
         error={{ message: '' }}
       />
     )
