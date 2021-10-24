@@ -28,6 +28,8 @@ type ConnectToDiscordSuccessProps = {
 type DiscordErrorPageProps = {
   error: Error
   username: string
+  navPath: string
+  navText: string
 }
 
 type Error = {
@@ -43,44 +45,36 @@ export const DISCORD_ERROR = 2
 const DISCORD_BUGS_FEEDBACK_URL =
   'https://discord.com/channels/828783458469675019/836343487531712512'
 
-const UserNotLoggedInErrorPage = () => {
-  return (
-    <>
-      <Title title="Error" />
-      <Card title="Error">
-        <div className="mt-3">
-          <p>You need to be logged in to connect to Discord.</p>
-          <p>
-            If this problem persists, please ask for help in our{' '}
-            <NavLink path={DISCORD_BUGS_FEEDBACK_URL} external>
-              Discord channel.
-            </NavLink>
-          </p>
-        </div>
-        <NavLink path="/login">
-          <button
-            type="button"
-            className="btn btn-primary btn-lg btn-block mb-3"
-          >
-            Log In Here
-          </button>
-        </NavLink>
+const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
+  username,
+  error,
+  navPath,
+  navText
+}) => {
+  let errorMessage = <></>,
+    errorLog = <></>
+  if (!username) {
+    errorMessage = (
+      <>
+        <p>You need to be logged in to connect to Discord.</p>
         <p>
           or go straight <NavLink path="/curriculum">to the curriculum</NavLink>{' '}
           without an account
         </p>
-      </Card>
-    </>
-  )
-}
-
-const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
-  username,
-  error
-}) => {
-  let errorSection = <></>
-  if (error.message) {
-    errorSection = (
+      </>
+    )
+  } else {
+    errorMessage = (
+      <>
+        <p>
+          Dear {username}, we had trouble connecting to Discord, please try
+          again.
+        </p>
+      </>
+    )
+  }
+  if (error?.message) {
+    errorLog = (
       <>
         <hr />
         <p>Error log</p>
@@ -92,27 +86,22 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
     <>
       <Title title="Error" />
       <Card title="Error">
-        <div className="mt-3">
-          <p>
-            Dear {username}, we had trouble connecting to Discord, please try
-            again.
-          </p>
-          <p>
-            If this problem persists, please ask for help in our{' '}
-            <NavLink path={DISCORD_BUGS_FEEDBACK_URL} external>
-              Discord channel.
-            </NavLink>
-          </p>
-        </div>
-        <NavLink path="/curriculum">
+        <div className="mt-3">{errorMessage}</div>
+        <p>
+          If this problem persists, please ask for help in our{' '}
+          <NavLink path={DISCORD_BUGS_FEEDBACK_URL} external>
+            Discord channel.
+          </NavLink>
+        </p>
+        <NavLink path={navPath}>
           <button
             type="button"
             className="btn btn-primary btn-lg btn-block mb-3"
           >
-            Try Again
+            {navText}
           </button>
         </NavLink>
-        {errorSection}
+        {errorLog}
       </Card>
     </>
   )
@@ -121,8 +110,23 @@ const DiscordErrorPage: React.FC<DiscordErrorPageProps> = ({
 export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   WithLayout = ({ errorCode, username, userInfo, error }) => {
   if (errorCode === DISCORD_ERROR)
-    return <DiscordErrorPage username={username} error={error} />
-  if (errorCode === USER_NOT_LOGGED_IN) return <UserNotLoggedInErrorPage />
+    return (
+      <DiscordErrorPage
+        username={username}
+        error={error}
+        navPath="/curriculum"
+        navText="Try Again"
+      />
+    )
+  if (errorCode === USER_NOT_LOGGED_IN)
+    return (
+      <DiscordErrorPage
+        username=""
+        error={error}
+        navPath="/login"
+        navText="Log In Here"
+      />
+    )
   return (
     <>
       <Title title="Success!" />
@@ -161,7 +165,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   )
 }
 
-export const getServerSideProps = ({
+export const getServerSideProps = async ({
   req,
   res,
   query
@@ -177,7 +181,11 @@ export const getServerSideProps = ({
       sessionMiddleware()(req, res, () => {
         userMiddleware(req, res, async () => {
           if (!req.user?.id) {
-            return resolve({ props: { errorCode: USER_NOT_LOGGED_IN } })
+            return resolve({
+              props: {
+                errorCode: USER_NOT_LOGGED_IN
+              }
+            })
           }
           try {
             const { code } = query || {}
