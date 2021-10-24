@@ -180,9 +180,27 @@ export const getServerSideProps = async ({
   query?: Query
 }) => {
   return new Promise(resolve => {
-    loggingMiddleware(req, res, () => {
-      sessionMiddleware()(req, res, () => {
-        userMiddleware(req, res, async () => {
+    const middlewares: Array<
+      (
+        req: LoggedRequest & Request,
+        res: NextApiResponse & Response,
+        next: () => void
+      ) => void
+    > = [loggingMiddleware, sessionMiddleware(), userMiddleware]
+
+    // this function runs through each of the middlewares, one after another
+    // this function was created to eliminate nested callbacks
+    // to see the nested callback implementation, please refer to this link
+    // https://github.com/garageScript/c0d3-app/pull/1158/commits/7293d722ad6440be4c2d2e636104c96cd009a2cf
+
+    const requestHandler = () => {
+      const middleware = middlewares.shift()
+      if (middleware && middlewares.length) {
+        return middleware(req, res, requestHandler)
+      }
+      return (
+        middleware &&
+        middleware(req, res, async () => {
           if (!req.user?.id) {
             return resolve({
               props: {
@@ -215,8 +233,9 @@ export const getServerSideProps = async ({
             })
           }
         })
-      })
-    })
+      )
+    }
+    requestHandler()
   })
 }
 
