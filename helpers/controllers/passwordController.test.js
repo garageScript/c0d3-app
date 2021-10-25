@@ -63,7 +63,7 @@ describe('Request Password Reset', () => {
       reqPwReset(() => {}, { userOrEmail: 'badc0d3r' }, ctx)
     ).rejects.toThrowError('User does not exist')
   })
-  test('It should log the error if an internal function fails', async () => {
+  test('It should throw an error if an internal function fails', async () => {
     prismaMock.user.findFirst.mockRejectedValue(new Error())
     const errFunc = jest.fn()
     await expect(
@@ -73,8 +73,6 @@ describe('Request Password Reset', () => {
         { req: { error: errFunc } }
       )
     ).rejects.toThrowError()
-
-    expect(errFunc).toBeCalled()
   })
 
   it('should fail if email is not sent correctly', () => {
