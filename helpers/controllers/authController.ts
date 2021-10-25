@@ -19,50 +19,43 @@ export const login = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  try {
-    const { session } = req
-    const { username, password } = arg
+  const { session } = req
+  const { username, password } = arg
 
-    if (!session) {
-      throw new Error('Session Error')
-    }
+  if (!session) {
+    throw new Error('Session Error')
+  }
 
-    let user = await prisma.user.findFirst({ where: { username } })
-    // TODO change username column to be unique
-    // const user = await prisma.user.findUnique({ where: { username } })
-    if (!user) {
-      throw new UserInputError('User does not exist')
-    }
+  let user = await prisma.user.findFirst({ where: { username } })
+  // TODO change username column to be unique
+  // const user = await prisma.user.findUnique({ where: { username } })
+  if (!user) {
+    throw new UserInputError('User does not exist')
+  }
 
-    const validLogin = user.password
-      ? await bcrypt.compare(password, user.password)
-      : false
-    if (!validLogin) {
-      throw new AuthenticationError('Password is invalid')
-    }
+  const validLogin = user.password
+    ? await bcrypt.compare(password, user.password)
+    : false
+  if (!validLogin) {
+    throw new AuthenticationError('Password is invalid')
+  }
 
-    if (!user.cliToken) {
-      user = await prisma.user.update({
-        where: {
-          id: user.id
-        },
-        data: { cliToken: nanoid() }
-      })
-    }
+  if (!user.cliToken) {
+    user = await prisma.user.update({
+      where: {
+        id: user.id
+      },
+      data: { cliToken: nanoid() }
+    })
+  }
 
-    const cliToken = { id: user.id, cliToken: user.cliToken }
+  const cliToken = { id: user.id, cliToken: user.cliToken }
 
-    session.userId = user.id
-    return {
-      success: true,
-      username: user.username,
-      cliToken: encode(cliToken)
-    }
-  } catch (err) {
-    if (!err.extensions) {
-      req.error(err)
-    }
-    throw new Error(err)
+  session.userId = user.id
+  return {
+    success: true,
+    username: user.username,
+    cliToken: encode(cliToken)
   }
 }
 
@@ -98,92 +91,86 @@ export const signup = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  try {
-    const { session } = req
-    const { firstName, lastName, username, email } = arg
 
-    if (!session) {
-      throw new Error('Session Error')
+  const { session } = req
+  const { firstName, lastName, username, email } = arg
+
+  if (!session) {
+    throw new Error('Session Error')
+  }
+
+  const validEntry = await signupValidation.isValid({
+    firstName,
+    lastName,
+    username,
+    email
+  })
+
+  if (!validEntry) {
+    throw new UserInputError('Register form is not completely filled out')
+  }
+
+  // Check for existing user or email
+  const existingUser = await prisma.user.findFirst({
+    where: {
+      username
     }
+  })
 
-    const validEntry = await signupValidation.isValid({
-      firstName,
-      lastName,
+  if (existingUser) {
+    throw new UserInputError('User already exists')
+  }
+
+  const existingEmail = await prisma.user.findFirst({
+    where: {
+      email
+    }
+  })
+
+  if (existingEmail) {
+    throw new UserInputError('Email already exists')
+  }
+
+  const name = `${firstName} ${lastName}`
+
+  let newUser = await prisma.user.create({
+    data: {
+      name,
       username,
       email
-    })
-
-    if (!validEntry) {
-      throw new UserInputError('Register form is not completely filled out')
     }
+  })
 
-    // Check for existing user or email
-    const existingUser = await prisma.user.findFirst({
-      where: {
-        username
-      }
-    })
+  const forgotToken = encode({
+    userId: newUser.id,
+    userToken: nanoid()
+  })
 
-    if (existingUser) {
-      throw new UserInputError('User already exists')
+  const tokenExpiration = new Date(Date.now() + THREE_DAYS)
+
+  newUser = await prisma.user.update({
+    where: {
+      id: newUser.id
+    },
+    data: {
+      forgotToken,
+      tokenExpiration
     }
+  })
 
-    const existingEmail = await prisma.user.findFirst({
-      where: {
-        email
-      }
-    })
-
-    if (existingEmail) {
-      throw new UserInputError('Email already exists')
-    }
-
-    const name = `${firstName} ${lastName}`
-
-    let newUser = await prisma.user.create({
-      data: {
-        name,
-        username,
-        email
-      }
-    })
-
-    const forgotToken = encode({
-      userId: newUser.id,
-      userToken: nanoid()
-    })
-
-    const tokenExpiration = new Date(Date.now() + THREE_DAYS)
-
-    newUser = await prisma.user.update({
-      where: {
-        id: newUser.id
-      },
-      data: {
-        forgotToken,
-        tokenExpiration
-      }
-    })
-
-    try {
-      await sendSignupEmail(email, forgotToken)
-    } catch (error) {
-      req.error(`
+  try {
+    await sendSignupEmail(email, forgotToken)
+  } catch (error) {
+    req.error(`
         Error while sending signup email
         ${JSON.stringify(error, null, 2)}
       `)
-    }
+  }
 
-    return {
-      success: true,
-      username: newUser.username,
-      cliToken: forgotToken
-    }
-  } catch (err) {
-    if (!err.extensions) {
-      req.error(err)
-    }
-    throw new Error(err)
+  return {
+    success: true,
+    username: newUser.username,
+    cliToken: forgotToken
   }
 }
 
@@ -191,11 +178,7 @@ export const isTokenValid = async (
   _parent: void,
   arg: { cliToken: string }
 ) => {
-  try {
-    const { id, cliToken } = decode(arg.cliToken)
-    const user = await prisma.user.findUnique({ where: { id } })
-    return user?.cliToken === cliToken || false
-  } catch (err) {
-    throw new Error(err)
-  }
+  const { id, cliToken } = decode(arg.cliToken)
+  const user = await prisma.user.findUnique({ where: { id } })
+  return user?.cliToken === cliToken || false
 }
