@@ -2,6 +2,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import matter from 'gray-matter'
 
+const autolink = require('rehype-autolink-headings')
 const slug = require('remark-slug')
 const toc = require('remark-toc')
 const gfm = require('remark-gfm')
@@ -16,7 +17,8 @@ type ParsedMDX = {
 const getSource = (content: string) =>
   serialize(content, {
     mdxOptions: {
-      remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm]
+      remarkPlugins: [slug, [toc, { maxDepth: 2 }], gfm],
+      rehypePlugins: [autolink]
     }
   })
 
