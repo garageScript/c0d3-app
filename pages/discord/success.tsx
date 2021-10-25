@@ -10,6 +10,7 @@ import loggingMiddleware from '../../helpers/middleware/logger'
 import sessionMiddleware from '../../helpers/middleware/session'
 import userMiddleware from '../../helpers/middleware/user'
 import { LoggedRequest } from '../../@types/helpers'
+import runMiddlewares from '../../helpers/runMiddlewares'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -180,62 +181,41 @@ export const getServerSideProps = async ({
   query?: Query
 }) => {
   return new Promise(resolve => {
-    const middlewares: Array<
-      (
-        req: LoggedRequest & Request,
-        res: NextApiResponse & Response,
-        next: () => void
-      ) => void
-    > = [loggingMiddleware, sessionMiddleware(), userMiddleware]
+    const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
 
-    // this function runs through each of the middlewares, one after another
-    // this function was created to eliminate nested callbacks
-    // to see the nested callback implementation, please refer to this link
-    // https://github.com/garageScript/c0d3-app/pull/1158/commits/7293d722ad6440be4c2d2e636104c96cd009a2cf
-
-    const requestHandler = () => {
-      const middleware = middlewares.shift()
-      if (middleware && middlewares.length) {
-        return middleware(req, res, requestHandler)
-      }
-      return (
-        middleware &&
-        middleware(req, res, async () => {
-          if (!req.user?.id) {
-            return resolve({
-              props: {
-                errorCode: ErrorCode.USER_NOT_LOGGED_IN
-              }
-            })
-          }
-          try {
-            const { code } = query || {}
-            const user = await setTokenFromAuthCode(req.user.id, code as string)
-            const userInfo = await getDiscordUserInfo(user)
-            if (!userInfo.username) {
-              return resolve({
-                props: {
-                  error: '',
-                  errorCode: ErrorCode.DISCORD_ERROR,
-                  username: req.user.username
-                }
-              })
-            }
-            resolve({ props: { userInfo, username: req.user.username } })
-          } catch (error) {
-            const errorMessage = (error as Error).message
-            resolve({
-              props: {
-                error: errorMessage,
-                errorCode: ErrorCode.DISCORD_ERROR, // auth code expired
-                username: req.user.username
-              }
-            })
+    runMiddlewares(middlewares, req, res, async () => {
+      if (!req.user?.id) {
+        return resolve({
+          props: {
+            errorCode: ErrorCode.USER_NOT_LOGGED_IN
           }
         })
-      )
-    }
-    requestHandler()
+      }
+      try {
+        const { code } = query || {}
+        const user = await setTokenFromAuthCode(req.user.id, code as string)
+        const userInfo = await getDiscordUserInfo(user)
+        if (!userInfo.username) {
+          return resolve({
+            props: {
+              error: '',
+              errorCode: ErrorCode.DISCORD_ERROR,
+              username: req.user.username
+            }
+          })
+        }
+        resolve({ props: { userInfo, username: req.user.username } })
+      } catch (error) {
+        const errorMessage = (error as Error).message
+        resolve({
+          props: {
+            error: errorMessage,
+            errorCode: ErrorCode.DISCORD_ERROR, // auth code expired
+            username: req.user.username
+          }
+        })
+      }
+    })
   })
 }
 
