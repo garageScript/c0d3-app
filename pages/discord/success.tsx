@@ -10,7 +10,7 @@ import loggingMiddleware from '../../helpers/middleware/logger'
 import sessionMiddleware from '../../helpers/middleware/session'
 import userMiddleware from '../../helpers/middleware/user'
 import { LoggedRequest } from '../../@types/helpers'
-import { runMiddlewares } from '../../helpers/runMiddlewares'
+import runMiddlewares from '../../helpers/runMiddlewares'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
