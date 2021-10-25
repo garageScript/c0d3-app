@@ -72,3 +72,28 @@ p.codepen {
   margin: 1em 0;
   padding: 1em;
 }
+
+// Used to style rehype-autolink-headings
+h1 .icon-link,
+h2 .icon-link,
+h3 .icon-link,
+h4 .icon-link,
+h5 .icon-link,
+h6 .icon-link {
+  visibility: hidden;
+}
+h1:hover .icon-link,
+h2:hover .icon-link,
+h3:hover .icon-link,
+h4:hover .icon-link,
+h5:hover .icon-link,
+h6:hover .icon-link {
+  visibility: visible;
+}
+.icon-link {
+  float: right;
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+  background: url(../public/assets/link.svg);
+}
