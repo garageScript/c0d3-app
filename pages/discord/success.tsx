@@ -169,6 +169,10 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
   )
 }
 
+// getServerSideProps to get query param (authCode) using /success route as callback
+// instead of a middleware-modified query resolver at /api/auth/discord/callback
+// because NextJS throws an error when trying to res.redirect from that path
+
 export const getServerSideProps = async ({
   req,
   res,
