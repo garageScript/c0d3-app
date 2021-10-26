@@ -10,22 +10,31 @@ export enum ModalSize {
 export interface ModalCardProps {
   show: boolean
   close: Function
+  hideable: boolean
   size?: ModalSize
 }
 
 export const ModalCard: React.FC<ModalCardProps> = ({
   show,
   close,
+  hideable = true,
   size = 'medium',
   children
 }) => {
+  let closeModalIcon = (
+    <img
+      className="btn position-absolute exitBtn"
+      src={'/assets/curriculum/icons/exit.svg'}
+      onClick={() => close()}
+    />
+  )
+  if (!hideable) {
+    closeModalIcon = <></>
+    close = () => {}
+  }
   return (
     <Modal show={show} onHide={close} dialogClassName={size}>
-      <img
-        className=".img-fluid btn position-absolute exitBtn"
-        src={'/assets/curriculum/icons/exit.svg'}
-        onClick={() => close()}
-      />
+      {closeModalIcon}
       {children}
     </Modal>
   )

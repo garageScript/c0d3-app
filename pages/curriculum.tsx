@@ -10,6 +10,7 @@ import Error, { StatusCode } from '../components/Error'
 import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
+import ConnectToDiscordCard from '../components/ConnectToDiscordCard'
 import {
   Alert,
   GetAppDocument,
@@ -104,6 +105,8 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     progress: -1,
     current: -1
   })
+  const [showConnectToDiscordModal, setShowConnectToDiscordModal] =
+    useState<boolean>(false)
 
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
@@ -131,6 +134,9 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   }, [])
   useEffect(() => {
     if (data && data.session) {
+      if (data.session.user && !data.session.user.isConnectedToDiscord) {
+        setShowConnectToDiscordModal(true)
+      }
       setState({
         session: data.session,
         progress: calculateProgress(data.session, lessons),
@@ -165,6 +171,10 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   })
   return (
     <>
+      <ConnectToDiscordCard
+        close={() => setShowConnectToDiscordModal(false)}
+        show={showConnectToDiscordModal}
+      />
       <Layout title="Curriculum">
         {hasMounted &&
           typeof window !== 'undefined' &&
