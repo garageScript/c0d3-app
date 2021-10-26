@@ -14,14 +14,11 @@ export const createChallenge = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  try {
-    isAdminOrThrow(req)
-    await validateLessonId(arg.lessonId)
-    await prisma.challenge.create({ data: arg })
-    return lessons()
-  } catch (err) {
-    throw new Error(err)
-  }
+
+  isAdminOrThrow(req)
+  await validateLessonId(arg.lessonId)
+  await prisma.challenge.create({ data: arg })
+  return lessons()
 }
 
 export const updateChallenge = async (
@@ -30,16 +27,13 @@ export const updateChallenge = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  try {
-    isAdminOrThrow(req)
-    const { id, lessonId, ...data } = arg
-    await validateLessonId(lessonId)
-    await prisma.challenge.update({
-      where: { id },
-      data
-    })
-    return lessons()
-  } catch (err) {
-    throw new Error(err)
-  }
+
+  isAdminOrThrow(req)
+  const { id, lessonId, ...data } = arg
+  await validateLessonId(lessonId)
+  await prisma.challenge.update({
+    where: { id },
+    data
+  })
+  return lessons()
 }

@@ -1,8 +1,8 @@
-import { reach } from 'yup'
+import { reach, ValidationError } from 'yup'
 import _ from 'lodash'
 import { DROP_DOWN, TEXT_AREA, MD_INPUT } from '../../components/FormCard'
 
-// creates usuable array from graphql data to use as a prop when using FormCard component
+// creates useable array from graphql data to use as a prop when using FormCard component
 export const getPropertyArr = (
   options: any,
   deleteProps?: string[],
@@ -84,7 +84,7 @@ export const errorCheckSingleField = async (
     await reach(schema, title, null, null).validate(data[title])
   } catch (err) {
     valid = false
-    properties[propertyIndex].error = err.message
+    properties[propertyIndex].error = (err as Error).message
   }
 
   // remove error message(if present) if field is valid
@@ -107,9 +107,9 @@ export const errorCheckAllFields = async (properties: any, schema: any) => {
   } catch (err) {
     // errors is an array of error messages
     // inner is an array of objects containing more error information
-    const { errors, inner } = err
+    const { errors, inner } = err as ValidationError
 
-    inner.forEach((innerObj: any, errorIndex: number) => {
+    inner.forEach((innerObj, errorIndex) => {
       // get index of property with title equal to value of innerObj.path
       const titleIndex = properties.findIndex(
         (property: any) => property.title === innerObj.path

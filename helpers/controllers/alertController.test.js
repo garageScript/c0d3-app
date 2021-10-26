@@ -53,9 +53,7 @@ describe('Alert controller tests', () => {
     expect(removeAlert({}, { id: 5 }, ctx)).resolves.toEqual({ success: true })
   })
   test('Should throw error if no id provided when removing alert', async () => {
-    prismaMock.alert.delete.mockRejectedValueOnce('No alert id provided')
-    expect(removeAlert({}, {}, ctx)).rejects.toThrowError(
-      'No alert id provided'
-    )
+    prismaMock.alert.delete.mockRejectedValueOnce(new Error('Some Error')) // Actually is a prisma RecordNotFound Error
+    expect(removeAlert({}, {}, ctx)).rejects.toThrowError()
   })
 })

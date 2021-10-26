@@ -203,7 +203,7 @@ describe('auth controller', () => {
       return expect(isTokenValid(null, userArgs)).resolves.toBe(false)
     })
     test('should throw error', () => {
-      prismaMock.user.findUnique.mockRejectedValue()
+      prismaMock.user.findUnique.mockRejectedValue(new Error('Some Error'))
       return expect(isTokenValid(null, userArgs)).rejects.toThrowError()
     })
   })

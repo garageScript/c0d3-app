@@ -17,49 +17,42 @@ export const reqPwReset = async (
   ctx: Context
 ): Promise<ReqPwResetMutation['reqPwReset']> => {
   const { req } = ctx
-  try {
-    const { userOrEmail } = arg
+  const { userOrEmail } = arg
 
-    let user = await findUser(userOrEmail)
-    if (!user) {
-      throw new UserInputError('User does not exist')
+  let user = await findUser(userOrEmail)
+  if (!user) {
+    throw new UserInputError('User does not exist')
+  }
+
+  const forgotToken = encode({
+    userId: user.id,
+    userToken: nanoid()
+  })
+  const tokenExpiration = new Date(Date.now() + THREE_DAYS)
+
+  user = await prisma.user.update({
+    where: {
+      id: user.id
+    },
+    data: {
+      forgotToken,
+      tokenExpiration
     }
+  })
 
-    const forgotToken = encode({
-      userId: user.id,
-      userToken: nanoid()
-    })
-    const tokenExpiration = new Date(Date.now() + THREE_DAYS)
-
-    user = await prisma.user.update({
-      where: {
-        id: user.id
-      },
-      data: {
-        forgotToken,
-        tokenExpiration
-      }
-    })
-
-    try {
-      await sendResetEmail(user.email, user.forgotToken!)
-    } catch (error) {
-      req.error(`
+  try {
+    await sendResetEmail(user.email, user.forgotToken!)
+  } catch (error) {
+    req.error(`
         Error while sending password recovery email
         ${JSON.stringify(error, null, 2)}
       `)
-      throw Error(
-        `Error while sending password recovery email, try again at some later time.`
-      )
-    }
-
-    return { success: true }
-  } catch (err) {
-    if (!err.extensions) {
-      req.error(err)
-    }
-    throw new Error(err)
+    throw Error(
+      `Error while sending password recovery email, try again at some later time.`
+    )
   }
+
+  return { success: true }
 }
 
 export const changePw = async (
@@ -71,49 +64,42 @@ export const changePw = async (
   ctx: Context
 ) => {
   const { req } = ctx
-  try {
-    if (!req.session) {
-      throw new Error('Session does not exist')
-    }
+  if (!req.session) {
+    throw new Error('Session does not exist')
+  }
 
-    const { password, token } = args
-    const { userId } = decode(token)
+  const { password, token } = args
+  const { userId } = decode(token)
 
-    const validPw = await passwordValidation.isValid({ password })
+  const validPw = await passwordValidation.isValid({ password })
 
-    if (!validPw) {
-      throw new UserInputError('Password does not meet criteria')
-    }
+  if (!validPw) {
+    throw new UserInputError('Password does not meet criteria')
+  }
 
-    let user = await prisma.user.findUnique({ where: { id: userId } })
-    if (!user) {
-      throw new AuthenticationError('User does not exist')
+  let user = await prisma.user.findUnique({ where: { id: userId } })
+  if (!user) {
+    throw new AuthenticationError('User does not exist')
+  }
+  if (
+    token !== user.forgotToken ||
+    !user.tokenExpiration ||
+    user.tokenExpiration < new Date()
+  ) {
+    throw new AuthenticationError('Invalid Token')
+  }
+  const hash = await bcrypt.hash(password, 10)
+  user = await prisma.user.update({
+    where: { id: user.id },
+    data: {
+      tokenExpiration: null,
+      forgotToken: null,
+      password: hash
     }
-    if (
-      token !== user.forgotToken ||
-      !user.tokenExpiration ||
-      user.tokenExpiration < new Date()
-    ) {
-      throw new AuthenticationError('Invalid Token')
-    }
-    const hash = await bcrypt.hash(password, 10)
-    user = await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        tokenExpiration: null,
-        forgotToken: null,
-        password: hash
-      }
-    })
+  })
 
-    req.session.userId = user.id
-    return {
-      success: true
-    }
-  } catch (err) {
-    if (!err.extensions) {
-      req.error(err)
-    }
-    throw new Error(err)
+  req.session.userId = user.id
+  return {
+    success: true
   }
 }
