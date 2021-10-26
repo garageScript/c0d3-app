@@ -5320,10 +5320,10 @@ apollo-utilities@^1.0.1, apollo-utilities@^1.3.0:
     ts-invariant "^0.4.0"
     tslib "^1.10.0"
 
-apollo3-cache-persist@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/apollo3-cache-persist/-/apollo3-cache-persist-0.12.1.tgz#6641e398cb3285dbc8c6cbdd9ecea3e25bff79c7"
-  integrity sha512-bYh/OzhzR70URRRf0OkzkpTLB7+fwx1Ftiw8/MWW8NhEgF+K9u3FO786DSUcE6X2NqSObYKF0+CpM9K8vrJNxw==
+apollo3-cache-persist@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/apollo3-cache-persist/-/apollo3-cache-persist-0.13.0.tgz#64712f2a3e288326bf3bf657a6be19552e6f1c0c"
+  integrity sha512-3+npt3tyUvONliiZuO7dWhYd5JoxiKOzLfDzPJoIA/Tjexk19WCi9sgfjvhvvJVDyPNHiids5zS6xzW47gfJEA==
 
 app-root-dir@^1.0.2:
   version "1.0.2"
@@ -7244,10 +7244,10 @@ date-fns@^1.27.2:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-dayjs@^1.10.6:
-  version "1.10.6"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.6.tgz#288b2aa82f2d8418a6c9d4df5898c0737ad02a63"
-  integrity sha512-AztC/IOW4L1Q41A86phW5Thhcrco3xuAA+YX/BLpLWWjRcTj5TOt/QImBLmCKlrF7u7k47arTnOyL6GnbG8Hvw==
+dayjs@^1.10.7:
+  version "1.10.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+  integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
 
 debounce@^1.2.0:
   version "1.2.1"
