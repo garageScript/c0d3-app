@@ -10,7 +10,7 @@ export enum ModalSize {
 export interface ModalCardProps {
   show: boolean
   close: Function
-  hideable: boolean
+  hideable?: boolean
   size?: ModalSize
 }
 
