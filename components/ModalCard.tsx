@@ -30,6 +30,7 @@ export const ModalCard: React.FC<ModalCardProps> = ({
   )
   if (!hideable) {
     closeModalIcon = <></>
+    close = () => {}
   }
   return (
     <Modal show={show} onHide={close} dialogClassName={size}>
