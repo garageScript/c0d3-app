@@ -49,6 +49,6 @@ export const setStar = async (
     return { success: true }
   } catch (err) {
     req.error(`Failed to add Star into Database: ${err}`)
-    throw new Error(err)
+    throw err
   }
 }

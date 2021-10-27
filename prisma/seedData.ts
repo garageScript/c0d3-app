@@ -7,8 +7,7 @@ export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
     description: 'A super simple introduction to help you get started!',
     order: 0,
     slug: 'js0',
-    docUrl:
-      'https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672',
+    docUrl: '/curriculum/js0/primitive_data_and_operators',
     challenges: {
       createMany: {
         data: [
@@ -82,8 +81,7 @@ export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
       'Learn how to solve simple algorithm problems recursively with the following exercises',
     order: 1,
     slug: 'js1',
-    docUrl:
-      'https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184',
+    docUrl: '/curriculum/js1/hypertext_markup_language',
     challenges: {
       createMany: {
         data: [
@@ -169,8 +167,7 @@ export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
       'These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.',
     order: 2,
     slug: 'js2',
-    docUrl:
-      'https://www.notion.so/garagescript/JS-2-Arrays-8601f89c64164f188286df7b1e6d0ad9',
+    docUrl: '/curriculum/js2/introduction_to_testing_inner_properties',
     challenges: {
       createMany: {
         data: [
@@ -250,8 +247,7 @@ export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
       'These exercises will test your understanding of objects, which includes linked lists and trees',
     order: 3,
     slug: 'js3',
-    docUrl:
-      'https://www.notion.so/garagescript/JS-3-Objects-3df846eaf0404fe6b012208773063a04',
+    docUrl: '/curriculum/js3/preflight',
     challenges: {
       createMany: {
         data: [
@@ -325,8 +321,7 @@ export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
       'Create challenging front-end mini-projects and build an understanding of Web Development. Covers the last fundamental JavaScript concept: (Complex Objects)',
     order: 4,
     slug: 'js4',
-    docUrl:
-      'https://www.notion.so/garagescript/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52',
+    docUrl: '/curriculum/js4/interactive_elements',
     challenges: {
       createMany: {
         data: [
@@ -382,8 +377,7 @@ export const lessonsData = Prisma.validator<Prisma.LessonCreateInput[]>()([
       'These exercises will help you build a strong understanding of how the web works.',
     order: 5,
     slug: 'js5',
-    docUrl:
-      'https://www.notion.so/JS-5-System-Design-Theory-67e7ee647a1c429d8e60e82f13a8d286',
+    docUrl: '/curriculum/js5/request_and_response',
     challenges: {
       createMany: {
         data: [
