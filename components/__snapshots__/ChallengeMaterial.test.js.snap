@@ -6109,9 +6109,6 @@ exports[`Curriculum challenge page Should render challenge material page differe
     </div>
   </div>
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
