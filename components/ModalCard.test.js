@@ -14,7 +14,7 @@ describe('ModalCard Component', () => {
     expect(res).toEqual(expectedResult)
     expect(container).toMatchSnapshot()
   })
-  test('should not allow user to exit modal if hideable attribute is false', async () => {
+  test('should not show close modal image icon if hideable attribute is false', () => {
     const { queryByRole } = render(
       <ModalCard show={true} hideable={false} close={() => {}} />
     )

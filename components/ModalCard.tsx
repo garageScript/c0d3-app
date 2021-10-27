@@ -14,6 +14,9 @@ export interface ModalCardProps {
   size?: ModalSize
 }
 
+// https://react-bootstrap.github.io/components/modal/#static-backdrop
+const STATIC = 'static'
+
 export const ModalCard: React.FC<ModalCardProps> = ({
   show,
   close,
@@ -36,7 +39,7 @@ export const ModalCard: React.FC<ModalCardProps> = ({
       show={show}
       onHide={close}
       dialogClassName={size}
-      backdrop={!hideable && 'static'}
+      backdrop={!hideable && STATIC}
       keyboard={hideable}
     >
       {closeModalIcon}
