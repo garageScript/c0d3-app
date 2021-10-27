@@ -6125,7 +6125,7 @@ exports[`Curriculum challenge page Should render challenge material page differe
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
