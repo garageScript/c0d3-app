@@ -28,7 +28,7 @@ type UserInfoResponse = {
   verified: boolean
 }
 
-type DiscordUserInfo = {
+export type DiscordUserInfo = {
   userId: string
   username: string
   avatarUrl: string

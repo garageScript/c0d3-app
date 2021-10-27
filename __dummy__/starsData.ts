@@ -10,7 +10,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 1,
     lesson: {
@@ -33,7 +34,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 1,
     lesson: {
@@ -57,7 +59,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 1,
     lesson: {
@@ -81,7 +84,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 4,
     lesson: {
@@ -105,7 +109,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 24,
     lesson: {
@@ -129,7 +134,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 3,
     lesson: {
@@ -153,7 +159,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 29,
     lesson: {
@@ -176,7 +183,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 5,
     lesson: {
@@ -200,7 +208,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 2,
     lesson: {
@@ -225,7 +234,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 1,
     lesson: {
@@ -249,7 +259,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 4,
     lesson: {
@@ -273,7 +284,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 24,
     lesson: {
@@ -297,7 +309,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 3,
     lesson: {
@@ -321,7 +334,8 @@ const dummyStarData: Star[] = [
       email: 'newbie@mail.com',
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     lessonId: 29,
     lesson: {

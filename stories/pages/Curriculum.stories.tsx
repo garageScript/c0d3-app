@@ -65,7 +65,8 @@ export const CompletedLessons: React.FC<{}> = () => {
       isAdmin: true,
       discordUserId: '',
       discordUsername: '',
-      discordAvatarUrl: ''
+      discordAvatarUrl: '',
+      isConnectedToDiscord: false
     },
     submissions: [],
     lessonStatus: [

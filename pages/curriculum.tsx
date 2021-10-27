@@ -104,6 +104,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     progress: -1,
     current: -1
   })
+
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />
   }
@@ -137,6 +138,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
       })
     }
   }, [data])
+
   const lessonStatusMap = generateMap(state.session)
   const lessonsToRender: React.ReactElement[] = lessons.map((lesson, idx) => {
     const { id, title, description, challenges, docUrl, slug } = lesson
@@ -162,42 +164,44 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     )
   })
   return (
-    <Layout title="Curriculum">
-      {hasMounted &&
-        typeof window !== 'undefined' &&
-        !window.localStorage.getItem('horizontalScrollUsed') && (
-          <ScrollArrow scrolledRight={scrolledRight} />
-        )}
-      <div
-        className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
-        ref={scrollContainerRef}
-        data-testid="parent-scroll"
-      >
-        <div className={`col-12 col-xl-8 ${styles['child-scroll']}`}>
-          <AlertsDisplay alerts={alerts} page="curriculum" />
-          <div className="d-xl-none">
-            <ProgressCard
-              progressCount={state.progress}
-              loggedIn={!!state.session?.user}
-              loading={loading}
-            />
+    <>
+      <Layout title="Curriculum">
+        {hasMounted &&
+          typeof window !== 'undefined' &&
+          !window.localStorage.getItem('horizontalScrollUsed') && (
+            <ScrollArrow scrolledRight={scrolledRight} />
+          )}
+        <div
+          className={`row overflow-auto flex-nowrap ${styles['parent-scroll']}`}
+          ref={scrollContainerRef}
+          data-testid="parent-scroll"
+        >
+          <div className={`col-12 col-xl-8 ${styles['child-scroll']}`}>
+            <AlertsDisplay alerts={alerts} page="curriculum" />
+            <div className="d-xl-none">
+              <ProgressCard
+                progressCount={state.progress}
+                loggedIn={!!state.session?.user}
+                loading={loading}
+              />
+            </div>
+            {lessonsToRender}
           </div>
-          {lessonsToRender}
-        </div>
-        <div className={`col-12 col-xl-4 ${styles['child-scroll']}`}>
-          <DiscordBar />
-          <div className="d-none d-xl-block">
-            <ProgressCard
-              progressCount={state.progress}
-              loggedIn={!!state.session?.user}
-              loading={loading}
-            />
+          <div className={`col-12 col-xl-4 ${styles['child-scroll']}`}>
+            <DiscordBar />
+            <div className="d-none d-xl-block">
+              <ProgressCard
+                progressCount={state.progress}
+                loggedIn={!!state.session?.user}
+                loading={loading}
+              />
+            </div>
+            <AnnouncementCard announcements={announcements} />
+            <AdditionalResources />
           </div>
-          <AnnouncementCard announcements={announcements} />
-          <AdditionalResources />
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 const FIVE_MINUTES = 5 * 60
@@ -216,4 +220,5 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: FIVE_MINUTES
   }
 }
+
 export default Curriculum

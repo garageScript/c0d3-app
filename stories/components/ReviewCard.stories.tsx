@@ -67,7 +67,8 @@ const submissionData = {
     isAdmin: false,
     discordUserId: '',
     discordUsername: '',
-    discordAvatarUrl: ''
+    discordAvatarUrl: '',
+    isConnectedToDiscord: false
   },
   challenge: {
     id: 23,
@@ -84,7 +85,8 @@ const submissionData = {
     isAdmin: false,
     discordUserId: '',
     discordUsername: '',
-    discordAvatarUrl: ''
+    discordAvatarUrl: '',
+    isConnectedToDiscord: false
   },
   createdAt: '1524401718267',
   updatedAt: '1524401718267'
@@ -107,7 +109,8 @@ export const NoLastName: React.FC = () => (
           email: 'admin@fakemail.com',
           discordUserId: '',
           discordUsername: '',
-          discordAvatarUrl: ''
+          discordAvatarUrl: '',
+          isConnectedToDiscord: false
         },
         updatedAt: ''
       }}
@@ -136,7 +139,8 @@ export const WithoutUsername: React.FC = () => (
           email: 'admin@fakemail.com',
           discordUserId: '',
           discordUsername: '',
-          discordAvatarUrl: ''
+          discordAvatarUrl: '',
+          isConnectedToDiscord: false
         }
       }}
     />
@@ -154,7 +158,8 @@ export const WithLongComment: React.FC = () => (
           email: 'admin@fakemail.com',
           discordUserId: '',
           discordUsername: '',
-          discordAvatarUrl: ''
+          discordAvatarUrl: '',
+          isConnectedToDiscord: false
         },
         comment: `You almost got it! Using reduce inside a foreach loop isn't necessary and will make your solution run slower, what you can do here is make a map that will keep track of the numbers that you've already seen while updating the map.\n\nLet's say we have an array arr [9,7,2,3] and the sum is 10\n\nDoes 10 - arr[0] exist in the map? (No).\n\nUpdate map to { 9: true }\nDoes 10 - arr[1] exist in the map? (No).\n\nUpdate map to { 9: true, 7: true }\n\nDoes 10 - arr[2] exist in the map? (No).\n\nUpdate map to { 9: true, 7: true, 2: true }\n\nDoes 10 - arr[3] exist in the map? (Yes! 7 exist in the map). Return true\n\nif you have questions, don't hesitate to reach out in the chat.`
       }}

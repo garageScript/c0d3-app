@@ -6,6 +6,7 @@ import { MockedProvider } from '@apollo/client/testing'
 import GET_APP from '../../graphql/queries/getApp'
 import dummyLessonData from '../../__dummy__/lessonData'
 import dummySessionData from '../../__dummy__/sessionData'
+
 //mock for server side generation
 jest.mock('@apollo/client', () => ({
   ...jest.requireActual('@apollo/client'),
@@ -67,6 +68,10 @@ describe('Curriculum Page', () => {
   test('Should render with lessonStatus data', async () => {
     const session = {
       ...dummySessionData,
+      user: {
+        ...dummySessionData.user,
+        isConnectedToDiscord: true
+      },
       lessonStatus: [
         {
           lessonId: '5',

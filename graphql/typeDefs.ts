@@ -146,6 +146,7 @@ export default gql`
     email: String!
     name: String!
     isAdmin: Boolean!
+    isConnectedToDiscord: Boolean!
     cliToken: String
     discordUserId: String!
     discordUsername: String!

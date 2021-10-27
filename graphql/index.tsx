@@ -312,6 +312,7 @@ export type User = {
   email: Scalars['String']
   name: Scalars['String']
   isAdmin: Scalars['Boolean']
+  isConnectedToDiscord: Scalars['Boolean']
   cliToken?: Maybe<Scalars['String']>
   discordUserId: Scalars['String']
   discordUsername: Scalars['String']
@@ -527,6 +528,7 @@ export type GetAppQuery = {
       username: string
       name: string
       isAdmin: boolean
+      isConnectedToDiscord: boolean
     }>
     submissions?: Maybe<
       Array<{
@@ -675,6 +677,7 @@ export type GetSessionQuery = {
       username: string
       name: string
       isAdmin: boolean
+      isConnectedToDiscord: boolean
     }>
     submissions?: Maybe<
       Array<{
@@ -1492,6 +1495,11 @@ export type UserResolvers<
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   isAdmin?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
+  isConnectedToDiscord?: Resolver<
+    ResolversTypes['Boolean'],
+    ParentType,
+    ContextType
+  >
   cliToken?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   discordUserId?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   discordUsername?: Resolver<ResolversTypes['String'], ParentType, ContextType>
@@ -2325,6 +2333,7 @@ export const GetAppDocument = gql`
         username
         name
         isAdmin
+        isConnectedToDiscord
       }
       submissions {
         id
@@ -2765,6 +2774,7 @@ export const GetSessionDocument = gql`
         username
         name
         isAdmin
+        isConnectedToDiscord
       }
       submissions {
         id
@@ -4289,7 +4299,11 @@ export type UserKeySpecifier = (
   | 'email'
   | 'name'
   | 'isAdmin'
+  | 'isConnectedToDiscord'
   | 'cliToken'
+  | 'discordUserId'
+  | 'discordUsername'
+  | 'discordAvatarUrl'
   | UserKeySpecifier
 )[]
 export type UserFieldPolicy = {
@@ -4299,7 +4313,11 @@ export type UserFieldPolicy = {
   email?: FieldPolicy<any> | FieldReadFunction<any>
   name?: FieldPolicy<any> | FieldReadFunction<any>
   isAdmin?: FieldPolicy<any> | FieldReadFunction<any>
+  isConnectedToDiscord?: FieldPolicy<any> | FieldReadFunction<any>
   cliToken?: FieldPolicy<any> | FieldReadFunction<any>
+  discordUserId?: FieldPolicy<any> | FieldReadFunction<any>
+  discordUsername?: FieldPolicy<any> | FieldReadFunction<any>
+  discordAvatarUrl?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type UserLessonKeySpecifier = (
   | 'id'
