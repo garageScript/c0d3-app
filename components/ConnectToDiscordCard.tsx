@@ -5,21 +5,18 @@ import { ModalCard, ModalCardProps, ModalSize } from './ModalCard'
 import NavLink from './NavLink'
 import LogoutContainer from './LogoutContainer'
 
-type ConnectToDiscordCardProps = Pick<
-  ModalCardProps,
-  'show' | 'close' | 'hideable'
->
+type ConnectToDiscordCardProps = Pick<ModalCardProps, 'show' | 'hideable'>
 
 const discordConnectPage =
   'https://discord.com/api/oauth2/authorize?client_id=845470281283665970&redirect_uri=https%3A%2F%2Fc0d3.com%2Fapi%2Fauth%2Fcallback%2Fdiscord&response_type=code&scope=identify%20email%20guilds.join%20gdm.join'
 
 const ConnectToDiscordCard: React.FC<ConnectToDiscordCardProps> & WithLayout =
-  ({ close, show }) => {
+  ({ show }) => {
     return (
       <ModalCard
         hideable={false}
         size={ModalSize.LARGE}
-        close={close}
+        close={() => {}}
         show={show}
       >
         <div className="m-5">
