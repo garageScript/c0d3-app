@@ -10,7 +10,7 @@ export enum ModalSize {
 export interface ModalCardProps {
   show: boolean
   close: Function
-  hideable: boolean
+  hideable?: boolean
   size?: ModalSize
 }
 
@@ -30,7 +30,6 @@ export const ModalCard: React.FC<ModalCardProps> = ({
   )
   if (!hideable) {
     closeModalIcon = <></>
-    close = () => {}
   }
   return (
     <Modal show={show} onHide={close} dialogClassName={size}>
