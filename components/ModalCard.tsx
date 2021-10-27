@@ -32,7 +32,13 @@ export const ModalCard: React.FC<ModalCardProps> = ({
     closeModalIcon = <></>
   }
   return (
-    <Modal show={show} onHide={close} dialogClassName={size}>
+    <Modal
+      show={show}
+      onHide={close}
+      dialogClassName={size}
+      backdrop={hideable && 'static'}
+      keyboard={hideable}
+    >
       {closeModalIcon}
       {children}
     </Modal>
