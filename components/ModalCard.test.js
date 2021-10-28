@@ -15,14 +15,8 @@ describe('ModalCard Component', () => {
     expect(container).toMatchSnapshot()
   })
   test('should not show close modal image icon if hideable attribute is false', () => {
-    let res = ''
-    const expectedResult = 'potatus maximus'
     const { queryByRole } = render(
-      <ModalCard
-        show={true}
-        hideable={false}
-        close={() => (res = expectedResult)}
-      />
+      <ModalCard show={true} hideable={false} close={() => {}} />
     )
     expect(queryByRole('img')).toBeFalsy()
   })

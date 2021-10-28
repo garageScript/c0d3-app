@@ -9,6 +9,9 @@ exports[`GiveStarCard Component should display \`already given star to\` display
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -53,6 +56,9 @@ exports[`GiveStarCard Component should display error message when giving a star 
 >
   <div
     aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
   />
   <div
     aria-modal="true"
@@ -471,6 +477,9 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -887,6 +896,9 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -952,6 +964,9 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -996,6 +1011,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 >
   <div
     aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
   />
   <div
     aria-modal="true"
@@ -1414,6 +1432,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1492,6 +1513,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 >
   <div
     aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
   />
   <div
     aria-modal="true"
@@ -1574,6 +1598,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1637,6 +1664,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 >
   <div
     aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
   />
   <div
     aria-modal="true"
@@ -2055,6 +2085,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2471,6 +2504,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2534,6 +2570,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 >
   <div
     aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
   />
   <div
     aria-modal="true"
@@ -2601,6 +2640,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
+    class="fade modal-backdrop show"
+  />
+  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2664,6 +2706,9 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 >
   <div
     aria-hidden="true"
+  />
+  <div
+    class="fade modal-backdrop show"
   />
   <div
     aria-modal="true"
