@@ -14,6 +14,9 @@ export interface ModalCardProps {
   size?: ModalSize
 }
 
+// https://react-bootstrap.github.io/components/modal/#static-backdrop
+const STATIC = 'static'
+
 export const ModalCard: React.FC<ModalCardProps> = ({
   show,
   close,
@@ -21,20 +24,21 @@ export const ModalCard: React.FC<ModalCardProps> = ({
   size = 'medium',
   children
 }) => {
-  let closeModalIcon = (
-    <img
-      className="btn position-absolute exitBtn"
-      src={'/assets/curriculum/icons/exit.svg'}
-      onClick={() => close()}
-    />
-  )
-  if (!hideable) {
-    closeModalIcon = <></>
-    close = () => {}
-  }
   return (
-    <Modal show={show} onHide={close} dialogClassName={size}>
-      {closeModalIcon}
+    <Modal
+      show={show}
+      onHide={close}
+      dialogClassName={size}
+      backdrop={!hideable && STATIC}
+      keyboard={hideable}
+    >
+      {hideable && (
+        <img
+          className="btn position-absolute exitBtn"
+          src={'/assets/curriculum/icons/exit.svg'}
+          onClick={() => close()}
+        />
+      )}
       {children}
     </Modal>
   )
