@@ -24,16 +24,6 @@ export const ModalCard: React.FC<ModalCardProps> = ({
   size = 'medium',
   children
 }) => {
-  let closeModalIcon = (
-    <img
-      className="btn position-absolute exitBtn"
-      src={'/assets/curriculum/icons/exit.svg'}
-      onClick={() => close()}
-    />
-  )
-  if (!hideable) {
-    closeModalIcon = <></>
-  }
   return (
     <Modal
       show={show}
@@ -42,7 +32,13 @@ export const ModalCard: React.FC<ModalCardProps> = ({
       backdrop={!hideable && STATIC}
       keyboard={hideable}
     >
-      {closeModalIcon}
+      {hideable && (
+        <img
+          className="btn position-absolute exitBtn"
+          src={'/assets/curriculum/icons/exit.svg'}
+          onClick={() => close()}
+        />
+      )}
       {children}
     </Modal>
   )

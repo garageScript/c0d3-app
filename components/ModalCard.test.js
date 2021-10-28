@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { ModalCard } from './ModalCard'
 
 describe('ModalCard Component', () => {
@@ -18,6 +19,6 @@ describe('ModalCard Component', () => {
     const { queryByRole } = render(
       <ModalCard show={true} hideable={false} close={() => {}} />
     )
-    expect(queryByRole('img')).toBeFalsy()
+    expect(queryByRole('img')).not.toBeInTheDocument()
   })
 })
