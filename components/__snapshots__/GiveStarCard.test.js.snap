@@ -9,9 +9,6 @@ exports[`GiveStarCard Component should display \`already given star to\` display
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -25,7 +22,7 @@ exports[`GiveStarCard Component should display \`already given star to\` display
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -58,9 +55,6 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -74,7 +68,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -477,9 +471,6 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -493,7 +484,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -896,9 +887,6 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -912,7 +900,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -964,9 +952,6 @@ exports[`GiveStarCard Component should display error message when giving a star 
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -980,7 +965,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -1013,9 +998,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1029,7 +1011,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -1432,9 +1414,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1448,7 +1427,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -1515,9 +1494,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1531,7 +1507,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -1598,9 +1574,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1614,7 +1587,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -1666,9 +1639,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -1682,7 +1652,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -2085,9 +2055,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2101,7 +2068,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -2504,9 +2471,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2520,7 +2484,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -2572,9 +2536,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2588,7 +2549,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -2640,9 +2601,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2656,7 +2614,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div
@@ -2708,9 +2666,6 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
     aria-hidden="true"
   />
   <div
-    class="fade modal-backdrop show"
-  />
-  <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
@@ -2724,7 +2679,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
-          class=".img-fluid btn position-absolute exitBtn"
+          class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
         <div

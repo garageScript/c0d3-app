@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { ModalCard } from './ModalCard'
 
 describe('ModalCard Component', () => {
@@ -13,5 +14,11 @@ describe('ModalCard Component', () => {
     fireEvent.click(exitBtn)
     expect(res).toEqual(expectedResult)
     expect(container).toMatchSnapshot()
+  })
+  test('should not show close modal image icon if hideable attribute is false', () => {
+    const { queryByRole } = render(
+      <ModalCard show={true} hideable={false} close={() => {}} />
+    )
+    expect(queryByRole('img')).not.toBeInTheDocument()
   })
 })

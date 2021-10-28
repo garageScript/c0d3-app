@@ -10,22 +10,35 @@ export enum ModalSize {
 export interface ModalCardProps {
   show: boolean
   close: Function
+  hideable?: boolean
   size?: ModalSize
 }
+
+// https://react-bootstrap.github.io/components/modal/#static-backdrop
+const STATIC = 'static'
 
 export const ModalCard: React.FC<ModalCardProps> = ({
   show,
   close,
+  hideable = true,
   size = 'medium',
   children
 }) => {
   return (
-    <Modal show={show} onHide={close} dialogClassName={size}>
-      <img
-        className=".img-fluid btn position-absolute exitBtn"
-        src={'/assets/curriculum/icons/exit.svg'}
-        onClick={() => close()}
-      />
+    <Modal
+      show={show}
+      onHide={close}
+      dialogClassName={size}
+      backdrop={!hideable && STATIC}
+      keyboard={hideable}
+    >
+      {hideable && (
+        <img
+          className="btn position-absolute exitBtn"
+          src={'/assets/curriculum/icons/exit.svg'}
+          onClick={() => close()}
+        />
+      )}
       {children}
     </Modal>
   )
