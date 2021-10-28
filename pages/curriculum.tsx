@@ -10,7 +10,7 @@ import Error, { StatusCode } from '../components/Error'
 import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
-import ConnectToDiscordCard from '../components/ConnectToDiscordCard'
+import ConnectToDiscordModal from '../components/ConnectToDiscordModal'
 import {
   Alert,
   GetAppDocument,
@@ -171,7 +171,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   })
   return (
     <>
-      <ConnectToDiscordCard show={showConnectToDiscordModal} />
+      <ConnectToDiscordModal show={showConnectToDiscordModal} />
       <Layout title="Curriculum">
         {hasMounted &&
           typeof window !== 'undefined' &&
