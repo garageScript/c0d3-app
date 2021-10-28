@@ -106,7 +106,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     current: -1
   })
   const [showConnectToDiscordModal, setShowConnectToDiscordModal] =
-    useState<boolean>(false)
+    useState(false)
 
   if (!lessons || !alerts) {
     return <Error code={StatusCode.INTERNAL_SERVER_ERROR} message="Bad data" />

@@ -7,7 +7,7 @@ type ConnectToDiscordModalProps = {
   show: boolean
 }
 
-const discordConnectPage = `${process.env.DISCORD_CALLBACK_URI}`
+const discordConnectPage = `${process.env.NEXT_PUBLIC_DISCORD_CALLBACK_URI}`
 
 const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
   show
