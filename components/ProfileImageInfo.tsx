@@ -25,7 +25,12 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       <div className="d-flex ml-auto mr-auto mb-4">
         {user.discordUserId ? (
           <>
-            <Image src="/assets/discordClydeLogo.svg" height={20} width={20} />
+            <Image
+              src="/assets/discordClydeLogo.svg"
+              height={20}
+              width={20}
+              objectFit="contain"
+            />
             <h5 className="ml-2">
               <Link
                 href={`https://discordapp.com/users/${user.discordUserId}/`}
