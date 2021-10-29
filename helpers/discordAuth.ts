@@ -4,9 +4,9 @@ import { User } from '.prisma/client'
 import fetch from 'node-fetch'
 
 const discordAPI = 'https://discordapp.com/api'
-export const client_id = process.env.DISCORD_KEY
-export const client_secret = process.env.DISCORD_SECRET
-export const redirect_uri = process.env.DISCORD_REDIRECT_URI // {baseurl}/api/auth/callback/discord
+export const client_id = process.env.NEXT_PUBLIC_DISCORD_KEY
+export const client_secret = process.env.NEXT_PUBLIC_DISCORD_SECRET
+export const redirect_uri = process.env.NEXT_PUBLIC_DISCORD_REDIRECT_URI // {baseurl}/api/auth/callback/discord
 
 type AccessTokenResponse = {
   access_token: string
