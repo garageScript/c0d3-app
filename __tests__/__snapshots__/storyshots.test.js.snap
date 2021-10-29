@@ -9885,6 +9885,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     <img
       className="img-fluid"
       height={20}
+      objectFit="contain"
       src="/assets/discordClydeLogo.svg"
       width={20}
     />
