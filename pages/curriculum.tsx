@@ -135,7 +135,10 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   useEffect(() => {
     if (data && data.session) {
       if (data.session.user && !data.session.user.isConnectedToDiscord) {
-        setShowConnectToDiscordModal(true)
+        setShowConnectToDiscordModal(
+          // remove localStorage line when this works in production
+          !!localStorage.getItem('discordmodal') || true
+        )
       }
       setState({
         session: data.session,
