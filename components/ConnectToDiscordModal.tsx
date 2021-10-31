@@ -1,22 +1,23 @@
 import React from 'react'
 import { ModalCard, ModalSize } from './ModalCard'
 import NavLink from './NavLink'
-import LogoutContainer from './LogoutContainer'
 
 type ConnectToDiscordModalProps = {
   show: boolean
+  close: Function
 }
 
 const discordConnectPage = `${process.env.NEXT_PUBLIC_DISCORD_CALLBACK_URI}`
 
 const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
-  show
+  show,
+  close
 }) => {
   return (
     <ModalCard
       hideable={false}
       size={ModalSize.LARGE}
-      close={/* istanbul ignore next */ () => {}}
+      close={close}
       show={show}
     >
       <div className="m-5">
@@ -52,11 +53,9 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             Connect Now
           </button>
         </NavLink>
-        <LogoutContainer>
-          <div className="text-center">
-            <a href="#">No thanks, I&apos;ll study on my own.</a>
-          </div>
-        </LogoutContainer>
+        <div className="text-center" onClick={() => close()}>
+          <a href="#">No thanks, I&apos;ll study on my own.</a>
+        </div>
       </div>
     </ModalCard>
   )
