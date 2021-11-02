@@ -53,10 +53,7 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             Connect Now
           </button>
         </NavLink>
-        <div
-          className="text-center"
-          onClick={/* istanbul ignore next */ () => close()}
-        >
+        <div className="text-center" onClick={() => close()}>
           <a href="#">No thanks, I&apos;ll study on my own.</a>
         </div>
       </div>
