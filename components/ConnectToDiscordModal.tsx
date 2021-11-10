@@ -18,7 +18,9 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
 }) => {
   const [dismissalDate, setDismissalDate] = useState(0)
   useEffect(() => {
-    const prevDismissalDate = localStorage.getItem(CONNECT_TO_DISCORD_LOCALSTORAGE_KEY)
+    const prevDismissalDate = localStorage.getItem(
+      CONNECT_TO_DISCORD_LOCALSTORAGE_KEY
+    )
     if (!prevDismissalDate) {
       return
     }
@@ -74,10 +76,16 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             Connect Now
           </button>
         </NavLink>
-        <div className="text-center" onClick={() => {
-          localStorage.setItem(CONNECT_TO_DISCORD_LOCALSTORAGE_KEY, String(Date.now()))
-          close()
-        }}>
+        <div
+          className="text-center"
+          onClick={() => {
+            localStorage.setItem(
+              CONNECT_TO_DISCORD_LOCALSTORAGE_KEY,
+              String(Date.now())
+            )
+            close()
+          }}
+        >
           <a href="#">No thanks, I&apos;ll study on my own.</a>
         </div>
       </div>
