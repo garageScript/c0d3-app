@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ModalCard, ModalSize } from './ModalCard'
 import NavLink from './NavLink'
 
@@ -9,16 +9,37 @@ type ConnectToDiscordModalProps = {
 
 const discordConnectPage = `${process.env.NEXT_PUBLIC_DISCORD_CALLBACK_URI}`
 
+const CONNECT_TO_DISCORD_LOCALSTORAGE_KEY = 'connect-to-discord'
+const SEVEN_DAYS = 1000 * 60 * 60 * 24 * 7
+
 const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
   show,
   close
 }) => {
+  const [dismissalDate, setDismissalDate] = useState(0)
+  useEffect(() => {
+    const prevDismissalDate = localStorage.getItem(CONNECT_TO_DISCORD_LOCALSTORAGE_KEY)
+    if (!prevDismissalDate) {
+      return
+    }
+    setDismissalDate(Number(prevDismissalDate))
+  }, [])
+  const showAgain = Date.now() - SEVEN_DAYS > dismissalDate
+  /*
+    show = false // means connected to Discord
+
+    show | localStorage too old | Final
+    0    |  0  (doesn't matter) |  0
+    0    |  1  (doesn't matter) |  0
+    1    |  0                   |  0
+    1    |  1                   |  1
+  */
   return (
     <ModalCard
       hideable={false}
       size={ModalSize.LARGE}
       close={close}
-      show={show}
+      show={show && showAgain}
     >
       <div className="m-5">
         <h3 className="text-center">Connect to Discord</h3>
@@ -53,7 +74,10 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             Connect Now
           </button>
         </NavLink>
-        <div className="text-center" onClick={() => close()}>
+        <div className="text-center" onClick={() => {
+          localStorage.setItem(CONNECT_TO_DISCORD_LOCALSTORAGE_KEY, String(Date.now()))
+          close()
+        }}>
           <a href="#">No thanks, I&apos;ll study on my own.</a>
         </div>
       </div>
