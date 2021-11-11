@@ -207,4 +207,31 @@ describe('Curriculum Page', () => {
       expect(screen.getByText('Connect to Discord')).toBeTruthy()
     )
   })
+  test('should not show Connect to Discord modal if user is connected', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: {
+              ...dummySessionData,
+              user: { ...dummySessionData.user, isConnectedToDiscord: true }
+            },
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      expect(screen.queryByText('Connect to Discord')).toBeFalsy()
+    )
+  })
 })
