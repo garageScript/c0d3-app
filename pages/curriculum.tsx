@@ -173,9 +173,7 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
     <>
       <ConnectToDiscordModal
         show={showConnectToDiscordModal}
-        close={
-          /* istanbul ignore next */ () => setShowConnectToDiscordModal(false)
-        }
+        close={() => setShowConnectToDiscordModal(false)}
       />
       <Layout title="Curriculum">
         {hasMounted &&
