@@ -180,7 +180,7 @@ describe('Curriculum Page', () => {
     )
     expect(arrow.className.includes('left'))
   })
-  test('Should load Connect to Discord modal if user not connected to discord', async () => {
+  test('Should load Connect to Discord modal if user not connected to discord and close modal if user declines', async () => {
     const mocks = [
       {
         request: { query: GET_APP },
@@ -205,6 +205,39 @@ describe('Curriculum Page', () => {
 
     await waitFor(() =>
       expect(screen.getByText('Connect to Discord')).toBeTruthy()
+    )
+
+    // user clicks no thanks or escapes modal
+    await waitFor(() => fireEvent.click(screen.getByText(/No thanks/)))
+    await waitFor(() =>
+      expect(screen.queryByText('Connect to Discord')).toBeFalsy()
+    )
+  })
+  test('should not show Connect to Discord modal if user is connected', async () => {
+    const mocks = [
+      {
+        request: { query: GET_APP },
+        result: {
+          data: {
+            lessons: dummyLessonData,
+            session: {
+              ...dummySessionData,
+              user: { ...dummySessionData.user, isConnectedToDiscord: true }
+            },
+            alerts: []
+          }
+        }
+      }
+    ]
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Curriculum lessons={dummyLessonData} alerts={[]} />
+      </MockedProvider>
+    )
+
+    await waitFor(() =>
+      expect(screen.queryByText('Connect to Discord')).toBeFalsy()
     )
   })
 })
