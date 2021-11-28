@@ -30,7 +30,7 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
   /*
     show = false // means connected to Discord
 
-    show | localStorage too old | Final
+    show | showAgain            | Final
     0    |  0  (doesn't matter) |  0
     0    |  1  (doesn't matter) |  0
     1    |  0                   |  0
