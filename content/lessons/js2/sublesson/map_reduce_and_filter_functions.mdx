@@ -1061,7 +1061,7 @@ understand how it works before moving on.
      })
      it('should return 0 since given array is empty', () => {
        const result = fn.largest([])
-       expect(result).toEqual(0)
+       expect(result).toEqual(undefined)
      })
      it('should return first index of array if all numbers are same', () => {
        const result = fn.largest([10, 10, 10, 10])
