@@ -44,6 +44,22 @@ model Challenge {
   @@map("challenges")
 }
 
+model Project {
+  id          Int           @id @default(autoincrement())
+  slug        String        @unique @db.VarChar(50)
+  description String
+  docUrl      String?       @db.VarChar(255)
+  githubUrl   String?       @db.VarChar(255)
+  videoUrl    String?       @db.VarChar(255)
+  title       String        @db.VarChar(255)
+  createdAt   DateTime      @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime      @updatedAt @db.Timestamptz(6)
+  chatUrl     String?       @db.VarChar(255)
+  members     UserProject[]
+
+  @@map("projects")
+}
+
 model Lesson {
   id          Int          @id @default(autoincrement())
   slug        String       @unique @db.VarChar(50)
@@ -127,29 +143,42 @@ model UserLesson {
   @@map("userLessons")
 }
 
+model UserProject {
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+  projectId Int
+  userId    Int
+  project   Project  @relation(fields: [projectId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@id([projectId, userId])
+  @@map("userProjects")
+}
+
 model User {
-  id                        Int          @id @default(autoincrement())
-  name                      String       @db.VarChar(255)
-  username                  String       @db.VarChar(255)
-  password                  String?      @db.VarChar(255)
-  email                     String       @db.VarChar(255)
+  id                        Int           @id @default(autoincrement())
+  name                      String        @db.VarChar(255)
+  username                  String        @db.VarChar(255)
+  password                  String?       @db.VarChar(255)
+  email                     String        @db.VarChar(255)
   gsId                      Int?
   isOnline                  Boolean?
-  createdAt                 DateTime     @default(now()) @db.Timestamptz(6)
-  updatedAt                 DateTime     @updatedAt @db.Timestamptz(6)
-  isAdmin                   Boolean      @default(false)
-  forgotToken               String?      @db.VarChar(255)
-  cliToken                  String?      @db.VarChar(255)
-  emailVerificationToken    String?      @db.VarChar(255)
-  tokenExpiration           DateTime?    @db.Timestamptz(6)
-  discordRefreshToken       String?      @db.VarChar(255)
-  discordAccessToken        String?      @db.VarChar(255)
-  discordAccessTokenExpires DateTime?    @db.Timestamptz(6)
-  starsMentor               Star[]       @relation("starMentor")
-  starsGiven                Star[]       @relation("starStudent")
-  submissionsReviewed       Submission[] @relation("userReviewedSubmissions")
-  submissions               Submission[] @relation("userSubmissions")
+  createdAt                 DateTime      @default(now()) @db.Timestamptz(6)
+  updatedAt                 DateTime      @updatedAt @db.Timestamptz(6)
+  isAdmin                   Boolean       @default(false)
+  forgotToken               String?       @db.VarChar(255)
+  cliToken                  String?       @db.VarChar(255)
+  emailVerificationToken    String?       @db.VarChar(255)
+  tokenExpiration           DateTime?     @db.Timestamptz(6)
+  discordRefreshToken       String?       @db.VarChar(255)
+  discordAccessToken        String?       @db.VarChar(255)
+  discordAccessTokenExpires DateTime?     @db.Timestamptz(6)
+  starsMentor               Star[]        @relation("starMentor")
+  starsGiven                Star[]        @relation("starStudent")
+  submissionsReviewed       Submission[]  @relation("userReviewedSubmissions")
+  submissions               Submission[]  @relation("userSubmissions")
   userLessons               UserLesson[]
+  userProjects              UserProject[]
   comments                  Comment[]
 
   @@map("users")
