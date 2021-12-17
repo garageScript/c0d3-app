@@ -21,6 +21,7 @@ import {
 import { setStar } from '../helpers/controllers/starsController'
 import { alerts } from './queryResolvers/alerts'
 import { lessons } from './queryResolvers/lessons'
+import { projects } from './queryResolvers/projects'
 import { session } from './queryResolvers/session'
 import { allUsers } from './queryResolvers/allUsers'
 import { getLessonMentors } from './queryResolvers/getLessonMentors'
@@ -29,6 +30,7 @@ import {
   createLesson,
   updateLesson
 } from '../helpers/controllers/lessonsController'
+import { createProject } from '../helpers/controllers/projectsController'
 import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
 
 export default {
@@ -39,6 +41,7 @@ export default {
     isTokenValid,
     userInfo,
     lessons,
+    projects,
     session,
     alerts,
     getPreviousSubmissions
@@ -51,6 +54,7 @@ export default {
     createSubmission,
     acceptSubmission,
     rejectSubmission,
+    createProject,
     createLesson,
     updateLesson,
     login,
