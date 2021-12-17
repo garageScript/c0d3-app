@@ -102,6 +102,7 @@ export type Mutation = {
   rejectSubmission?: Maybe<Submission>
   addComment?: Maybe<Comment>
   createLesson: Array<Lesson>
+  createProject: Array<Project>
   updateLesson: Array<Lesson>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
@@ -188,6 +189,11 @@ export type MutationCreateLessonArgs = {
   slug: Scalars['String']
 }
 
+export type MutationCreateProjectArgs = {
+  title: Scalars['String']
+  description: Scalars['String']
+}
+
 export type MutationUpdateLessonArgs = {
   id: Scalars['Int']
   description: Scalars['String']
@@ -215,9 +221,19 @@ export type MutationUpdateChallengeArgs = {
   id: Scalars['Int']
 }
 
+export type Project = {
+  __typename?: 'Project'
+  id: Scalars['Int']
+  title: Scalars['String']
+  description: Scalars['String']
+  slug: Scalars['String']
+  members: Array<User>
+}
+
 export type Query = {
   __typename?: 'Query'
   lessons: Array<Lesson>
+  projects: Array<Project>
   session: Session
   allUsers?: Maybe<Array<Maybe<User>>>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
@@ -481,6 +497,23 @@ export type CreateLessonMutation = {
   }>
 }
 
+export type CreateProjectMutationVariables = Exact<{
+  title: Scalars['String']
+  description: Scalars['String']
+}>
+
+export type CreateProjectMutation = {
+  __typename?: 'Mutation'
+  createProject: Array<{
+    __typename?: 'Project'
+    id: number
+    title: string
+    description: string
+    slug: string
+    members: Array<{ __typename?: 'User'; id: number }>
+  }>
+}
+
 export type CreateSubmissionMutationVariables = Exact<{
   lessonId: Scalars['Int']
   challengeId: Scalars['Int']
@@ -663,6 +696,20 @@ export type GetPreviousSubmissionsQuery = {
       >
     }>
   >
+}
+
+export type GetProjectsQueryVariables = Exact<{ [key: string]: never }>
+
+export type GetProjectsQuery = {
+  __typename?: 'Query'
+  projects: Array<{
+    __typename?: 'Project'
+    id: number
+    title: string
+    description: string
+    slug: string
+    members: Array<{ __typename?: 'User'; id: number }>
+  }>
 }
 
 export type GetSessionQueryVariables = Exact<{ [key: string]: never }>
@@ -1115,6 +1162,7 @@ export type ResolversTypes = ResolversObject<{
   Comment: ResolverTypeWrapper<Comment>
   Lesson: ResolverTypeWrapper<Lesson>
   Mutation: ResolverTypeWrapper<{}>
+  Project: ResolverTypeWrapper<Project>
   Query: ResolverTypeWrapper<{}>
   Session: ResolverTypeWrapper<Session>
   Star: ResolverTypeWrapper<Star>
@@ -1137,6 +1185,7 @@ export type ResolversParentTypes = ResolversObject<{
   Comment: Comment
   Lesson: Lesson
   Mutation: {}
+  Project: Project
   Query: {}
   Session: Session
   Star: Star
@@ -1329,6 +1378,12 @@ export type MutationResolvers<
       'description' | 'title' | 'order' | 'slug'
     >
   >
+  createProject?: Resolver<
+    Array<ResolversTypes['Project']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationCreateProjectArgs, 'title' | 'description'>
+  >
   updateLesson?: Resolver<
     Array<ResolversTypes['Lesson']>,
     ParentType,
@@ -1358,11 +1413,24 @@ export type MutationResolvers<
   >
 }>
 
+export type ProjectResolvers<
+  ContextType = Context,
+  ParentType extends ResolversParentTypes['Project'] = ResolversParentTypes['Project']
+> = ResolversObject<{
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  slug?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  members?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}>
+
 export type QueryResolvers<
   ContextType = Context,
   ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']
 > = ResolversObject<{
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
+  projects?: Resolver<Array<ResolversTypes['Project']>, ParentType, ContextType>
   session?: Resolver<ResolversTypes['Session'], ParentType, ContextType>
   allUsers?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['User']>>>,
@@ -1531,6 +1599,7 @@ export type Resolvers<ContextType = Context> = ResolversObject<{
   Comment?: CommentResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
   Mutation?: MutationResolvers<ContextType>
+  Project?: ProjectResolvers<ContextType>
   Query?: QueryResolvers<ContextType>
   Session?: SessionResolvers<ContextType>
   Star?: StarResolvers<ContextType>
@@ -2212,6 +2281,95 @@ export type CreateLessonMutationOptions = Apollo.BaseMutationOptions<
   CreateLessonMutation,
   CreateLessonMutationVariables
 >
+export const CreateProjectDocument = gql`
+  mutation createProject($title: String!, $description: String!) {
+    createProject(title: $title, description: $description) {
+      id
+      title
+      description
+      slug
+      members {
+        id
+      }
+    }
+  }
+`
+export type CreateProjectMutationFn = Apollo.MutationFunction<
+  CreateProjectMutation,
+  CreateProjectMutationVariables
+>
+export type CreateProjectProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    CreateProjectMutation,
+    CreateProjectMutationVariables
+  >
+} &
+  TChildProps
+export function withCreateProject<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    CreateProjectMutation,
+    CreateProjectMutationVariables,
+    CreateProjectProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    CreateProjectMutation,
+    CreateProjectMutationVariables,
+    CreateProjectProps<TChildProps, TDataName>
+  >(CreateProjectDocument, {
+    alias: 'createProject',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useCreateProjectMutation__
+ *
+ * To run a mutation, you first call `useCreateProjectMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateProjectMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createProjectMutation, { data, loading, error }] = useCreateProjectMutation({
+ *   variables: {
+ *      title: // value for 'title'
+ *      description: // value for 'description'
+ *   },
+ * });
+ */
+export function useCreateProjectMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateProjectMutation,
+    CreateProjectMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    CreateProjectMutation,
+    CreateProjectMutationVariables
+  >(CreateProjectDocument, options)
+}
+export type CreateProjectMutationHookResult = ReturnType<
+  typeof useCreateProjectMutation
+>
+export type CreateProjectMutationResult =
+  Apollo.MutationResult<CreateProjectMutation>
+export type CreateProjectMutationOptions = Apollo.BaseMutationOptions<
+  CreateProjectMutation,
+  CreateProjectMutationVariables
+>
 export const CreateSubmissionDocument = gql`
   mutation createSubmission(
     $lessonId: Int!
@@ -2765,6 +2923,99 @@ export type GetPreviousSubmissionsLazyQueryHookResult = ReturnType<
 export type GetPreviousSubmissionsQueryResult = Apollo.QueryResult<
   GetPreviousSubmissionsQuery,
   GetPreviousSubmissionsQueryVariables
+>
+export const GetProjectsDocument = gql`
+  query getProjects {
+    projects {
+      id
+      title
+      description
+      slug
+      members {
+        id
+      }
+    }
+  }
+`
+export type GetProjectsProps<
+  TChildProps = {},
+  TDataName extends string = 'data'
+> = {
+  [key in TDataName]: ApolloReactHoc.DataValue<
+    GetProjectsQuery,
+    GetProjectsQueryVariables
+  >
+} &
+  TChildProps
+export function withGetProjects<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'data'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    GetProjectsQuery,
+    GetProjectsQueryVariables,
+    GetProjectsProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withQuery<
+    TProps,
+    GetProjectsQuery,
+    GetProjectsQueryVariables,
+    GetProjectsProps<TChildProps, TDataName>
+  >(GetProjectsDocument, {
+    alias: 'getProjects',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useGetProjectsQuery__
+ *
+ * To run a query within a React component, call `useGetProjectsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetProjectsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetProjectsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetProjectsQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GetProjectsQuery,
+    GetProjectsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetProjectsQuery, GetProjectsQueryVariables>(
+    GetProjectsDocument,
+    options
+  )
+}
+export function useGetProjectsLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetProjectsQuery,
+    GetProjectsQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetProjectsQuery, GetProjectsQueryVariables>(
+    GetProjectsDocument,
+    options
+  )
+}
+export type GetProjectsQueryHookResult = ReturnType<typeof useGetProjectsQuery>
+export type GetProjectsLazyQueryHookResult = ReturnType<
+  typeof useGetProjectsLazyQuery
+>
+export type GetProjectsQueryResult = Apollo.QueryResult<
+  GetProjectsQuery,
+  GetProjectsQueryVariables
 >
 export const GetSessionDocument = gql`
   query getSession {
@@ -4164,6 +4415,7 @@ export type MutationKeySpecifier = (
   | 'rejectSubmission'
   | 'addComment'
   | 'createLesson'
+  | 'createProject'
   | 'updateLesson'
   | 'createChallenge'
   | 'updateChallenge'
@@ -4184,12 +4436,29 @@ export type MutationFieldPolicy = {
   rejectSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   addComment?: FieldPolicy<any> | FieldReadFunction<any>
   createLesson?: FieldPolicy<any> | FieldReadFunction<any>
+  createProject?: FieldPolicy<any> | FieldReadFunction<any>
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
   createChallenge?: FieldPolicy<any> | FieldReadFunction<any>
   updateChallenge?: FieldPolicy<any> | FieldReadFunction<any>
 }
+export type ProjectKeySpecifier = (
+  | 'id'
+  | 'title'
+  | 'description'
+  | 'slug'
+  | 'members'
+  | ProjectKeySpecifier
+)[]
+export type ProjectFieldPolicy = {
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  title?: FieldPolicy<any> | FieldReadFunction<any>
+  description?: FieldPolicy<any> | FieldReadFunction<any>
+  slug?: FieldPolicy<any> | FieldReadFunction<any>
+  members?: FieldPolicy<any> | FieldReadFunction<any>
+}
 export type QueryKeySpecifier = (
   | 'lessons'
+  | 'projects'
   | 'session'
   | 'allUsers'
   | 'getLessonMentors'
@@ -4202,6 +4471,7 @@ export type QueryKeySpecifier = (
 )[]
 export type QueryFieldPolicy = {
   lessons?: FieldPolicy<any> | FieldReadFunction<any>
+  projects?: FieldPolicy<any> | FieldReadFunction<any>
   session?: FieldPolicy<any> | FieldReadFunction<any>
   allUsers?: FieldPolicy<any> | FieldReadFunction<any>
   getLessonMentors?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4378,6 +4648,13 @@ export type StrictTypedTypePolicies = {
       | MutationKeySpecifier
       | (() => undefined | MutationKeySpecifier)
     fields?: MutationFieldPolicy
+  }
+  Project?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | ProjectKeySpecifier
+      | (() => undefined | ProjectKeySpecifier)
+    fields?: ProjectFieldPolicy
   }
   Query?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
     keyFields?:

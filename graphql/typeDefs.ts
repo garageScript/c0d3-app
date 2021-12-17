@@ -3,6 +3,7 @@ import { gql } from '@apollo/client'
 export default gql`
   type Query {
     lessons: [Lesson!]!
+    projects: [Project!]!
     session: Session!
     allUsers: [User]
     getLessonMentors(lessonId: Int!): [User]
@@ -63,6 +64,7 @@ export default gql`
       order: Int!
       slug: String!
     ): [Lesson!]!
+    createProject(title: String!, description: String!): [Project!]!
     updateLesson(
       id: Int!
       description: String!
@@ -181,6 +183,14 @@ export default gql`
     users: [User]
     currentUser: User
     chatUrl: String
+  }
+
+  type Project {
+    id: Int!
+    title: String!
+    description: String!
+    slug: String!
+    members: [User!]!
   }
 
   type Challenge {
