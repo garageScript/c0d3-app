@@ -396,7 +396,7 @@ describe('Curriculum challenge page', () => {
     expect(copyProps.setShow).toBeCalledWith(false)
   })
 
-  test('Should be able to add comments', () => {
+  test('Should be able to add comments', async () => {
     const copyProps = getMockedProps()
     const { lessonStatus, userSubmissions } = copyProps
     lessonStatus.passedAt = null
@@ -412,7 +412,8 @@ describe('Curriculum challenge page', () => {
 
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     fireEvent.click(screen.getByText('Comment'))
-    expect(screen.findByText('A very unique test comment!')).toBeTruthy()
+
+    await waitFor(() => screen.queryByTestId('A very unique test comment!'))
   })
 
   test('Should return error component if there is no name in context', () => {
