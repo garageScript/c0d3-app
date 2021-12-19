@@ -413,7 +413,7 @@ describe('Curriculum challenge page', () => {
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     fireEvent.click(screen.getByText('Comment'))
 
-    await waitFor(() => screen.queryByTestId('A very unique test comment!'))
+    // TODO: add test to check that comment is rendered to screen after clicking
   })
 
   test('Should return error component if there is no name in context', () => {
