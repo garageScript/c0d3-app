@@ -32,6 +32,7 @@ const updateLessonMock = {
     data: { updateLesson: dummyLessonData }
   }
 }
+
 const createLessonMock = {
   request: {
     query: createLesson,
@@ -52,11 +53,14 @@ const createLessonMock = {
     }
   }
 }
+
 const mocks = [updateLessonMock, createLessonMock]
+
 describe('AdminLessonsInfo component', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
+
   test('Should create new lesson', async () => {
     delete window.location
     const reload = jest.fn()
@@ -91,6 +95,7 @@ describe('AdminLessonsInfo component', () => {
     expect(container).toMatchSnapshot()
     await waitFor(() => expect(reload).toBeCalled())
   })
+
   test('Should update lesson sucessfully', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -118,6 +123,7 @@ describe('AdminLessonsInfo component', () => {
     expect(description.textContent).toEqual('New description')
     await waitFor(() => expect(container).toMatchSnapshot())
   })
+
   test('Should refuse updating lesson without order', async () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -132,6 +138,7 @@ describe('AdminLessonsInfo component', () => {
     userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
     await waitFor(() => expect(screen.getByText('Required')).toBeTruthy())
   })
+
   test('Should refuse creating new lesson incomplete info', async () => {
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -150,6 +157,7 @@ describe('AdminLessonsInfo component', () => {
     )
     await waitFor(() => expect(screen.getAllByText('Required')).toBeTruthy())
   })
+
   test('Should render undefined lessons', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -158,6 +166,7 @@ describe('AdminLessonsInfo component', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
   test('Should render non-existent lesson', async () => {
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -170,6 +179,7 @@ describe('AdminLessonsInfo component', () => {
     )
     expect(container).toMatchSnapshot()
   })
+
   test('Should capture error when creating lesson', async () => {
     const errorMock = { ...createLessonMock, error: new Error('fail') }
     delete errorMock.result
@@ -197,6 +207,7 @@ describe('AdminLessonsInfo component', () => {
     )
     await waitFor(() => expect(Sentry.captureException).toBeCalled())
   })
+
   test('Should capture error when updating lesson', async () => {
     const errorMock = { ...updateLessonMock, error: new Error('fail') }
     delete errorMock.result
