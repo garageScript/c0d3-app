@@ -209,7 +209,7 @@ const getMockedProps = () => {
   }
 }
 
-describe('Curriculum challenge page', () => {
+xdescribe('Curriculum challenge page', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
