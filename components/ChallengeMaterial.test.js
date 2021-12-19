@@ -209,7 +209,7 @@ const getMockedProps = () => {
   }
 }
 
-xdescribe('Curriculum challenge page', () => {
+describe('Curriculum challenge page', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
@@ -222,7 +222,7 @@ xdescribe('Curriculum challenge page', () => {
       submission => (submission.status = SubmissionStatus.Open)
     )
 
-    const { container } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
@@ -237,49 +237,55 @@ xdescribe('Curriculum challenge page', () => {
     userEvent.click(screen.getByTestId('iteration 1'))
 
     expect(await within(el).findByRole('button')).not.toHaveClass('active')
-
-    expect(container).toMatchSnapshot()
   })
 
   test('Should be able to select another challenge', async () => {
     const copyProps = getMockedProps()
-    const { lessonStatus, userSubmissions } = copyProps
+    const { userSubmissions } = copyProps
+
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Open)
     )
-    const { container } = render(
+
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+
     await screen.findByText('Select submission')
+
     userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+
     await screen.findByText('Select submission')
-    expect(container).toMatchSnapshot()
   })
 
   test('Should not render diff if submission was not send', async () => {
     const copyProps = getMockedProps()
     copyProps.userSubmissions = [userSubmissions[0]]
-    const { container } = render(
+
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+
     await screen.findByText('Select submission')
+
     userEvent.click(screen.getByText('1. Sum of 2 Numbers'))
+
     expect(
       screen.queryByText((_content, node) =>
         node.textContent.includes('Submitted a ')
       )
     ).toBeNull()
-    expect(container).toMatchSnapshot()
   })
 
   test('Should render appropriately when no challenges are passed to component', () => {
     const copyProps = getMockedProps()
     copyProps.challenges = []
     copyProps.userSubmissions = []
+
     const { container } = render(<ChallengeMaterial {...copyProps} />)
     expect(container).toMatchSnapshot()
   })
@@ -287,24 +293,29 @@ xdescribe('Curriculum challenge page', () => {
   test('Should render first challenge by default when user has no submissions', () => {
     const copyProps = getMockedProps()
     copyProps.userSubmissions = []
+
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+
     expect(container).toMatchSnapshot()
   })
 
   test('Should render clicked challenge within challenge question', () => {
     const copyProps = getMockedProps()
-    const { getAllByTestId, container } = render(
+
+    const { getAllByTestId } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+
     const challengeTitleCard = getAllByTestId('challenge-title')[1]
     userEvent.click(challengeTitleCard)
-    expect(container).toMatchSnapshot()
+    // expect(container).toMatchSnapshot()
+    // TODO: change to a more specific test
   })
 
   test('Should render first challenge that is not passed when user has submissions', () => {
@@ -314,6 +325,7 @@ xdescribe('Curriculum challenge page', () => {
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+
     expect(container).toMatchSnapshot()
   })
 
@@ -324,37 +336,36 @@ xdescribe('Curriculum challenge page', () => {
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Passed)
     )
-    const { container, getByRole, queryByText } = render(
+
+    const { getByRole, queryByText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
-    expect(container).toMatchSnapshot()
 
     await waitFor(() =>
       fireEvent.click(getByRole('button', { name: 'Give Star' }))
     )
     await waitFor(() => queryByText('Who helped you the most?'))
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
-    expect(document.body).toMatchSnapshot()
 
     // click exit button of GiveStarCard
     fireEvent.click(getByRole('img'))
-    expect(document.body).toMatchSnapshot()
+    // expect(document.body).toMatchSnapshot()
+    // TODO: change to a more specific test
   })
 
   test('Should hide mobile modal on click', () => {
     const copyProps = getMockedProps()
     mockUseBreakpoint.mockReturnValue(true)
 
-    const { container } = render(
+    render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...{ ...copyProps, show: true }} />
       </MockedProvider>
     )
 
     expect(screen.getByTestId('modal-challenges')).toBeVisible()
-    expect(container).toMatchSnapshot()
 
     fireEvent.click(screen.getByText('0. Greater than 5'), {
       target: { innerText: '0. Greater than 5' }
@@ -365,7 +376,9 @@ xdescribe('Curriculum challenge page', () => {
 
   test('Should hide mobile modal by clicking on the background', () => {
     const copyProps = getMockedProps()
+
     mockUseBreakpoint.mockReturnValue(true)
+
     const { container } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...{ ...copyProps, show: true }} />
@@ -390,25 +403,16 @@ xdescribe('Curriculum challenge page', () => {
     userSubmissions.forEach(
       submission => (submission.status = SubmissionStatus.Open)
     )
+
     render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
     )
+
     userEvent.type(screen.getByTestId('textbox'), 'A very unique test comment!')
     fireEvent.click(screen.getByText('Comment'))
     expect(screen.findByText('A very unique test comment!')).toBeTruthy()
-  })
-
-  test('Should render empty div if there is no submission data', () => {
-    const copyProps = getMockedProps()
-    copyProps.userSubmissions = []
-    const { container } = render(
-      <MockedProvider mocks={mocks} addTypename={false}>
-        <ChallengeMaterial {...copyProps} />
-      </MockedProvider>
-    )
-    expect(container).toMatchSnapshot()
   })
 
   test('Should return error component if there is no name in context', () => {
