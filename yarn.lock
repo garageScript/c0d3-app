@@ -5333,10 +5333,10 @@ apollo-utilities@^1.0.1, apollo-utilities@^1.3.0:
     ts-invariant "^0.4.0"
     tslib "^1.10.0"
 
-apollo3-cache-persist@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/apollo3-cache-persist/-/apollo3-cache-persist-0.12.1.tgz#6641e398cb3285dbc8c6cbdd9ecea3e25bff79c7"
-  integrity sha512-bYh/OzhzR70URRRf0OkzkpTLB7+fwx1Ftiw8/MWW8NhEgF+K9u3FO786DSUcE6X2NqSObYKF0+CpM9K8vrJNxw==
+apollo3-cache-persist@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/apollo3-cache-persist/-/apollo3-cache-persist-0.13.0.tgz#64712f2a3e288326bf3bf657a6be19552e6f1c0c"
+  integrity sha512-3+npt3tyUvONliiZuO7dWhYd5JoxiKOzLfDzPJoIA/Tjexk19WCi9sgfjvhvvJVDyPNHiids5zS6xzW47gfJEA==
 
 app-root-dir@^1.0.2:
   version "1.0.2"
