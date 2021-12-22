@@ -271,6 +271,11 @@ object a value. Whatever value you set will be exported. `module.exports` is a
 keyword provided by nodeJS. You've seen it used to export solution files to a
 test file.
 
+> Some modules are dropping support for commonJS. You may have to use import
+> instead of require and write "type": "module" into your package.json file.
+> Read more
+> [ESM modules](https://www.digitalocean.com/community/tutorials/js-modules-es6)
+
 ```jsx
 module.exports = [1, 2, 3] // What is module.exports?
 // What type of data is module?
