@@ -205,6 +205,10 @@ re-run the tests (or leave them running with `--watch`).
        const result = fn.less3Diff('jk', 'lm')
        expect(result).toEqual(true)
      })
+     it('should return false on strings equal to 3 and that are different', () => {
+       const result = fn.less3Diff('cho', 'tis')
+       expect(result).toEqual(false)
+     })
    })
    ```
 
@@ -232,11 +236,11 @@ re-run the tests (or leave them running with `--watch`).
 
    ```jsx
    const less3Diff = (str1, str2, i = 0, differences = 0) => {
-     if (i === str1.length) {
-       return true
-     }
      if (differences > 2) {
        return false
+     }
+     if (i === str1.length) {
+       return true
      }
      if (str1[i] !== str2[i]) {
        differences = differences + 1
