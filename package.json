@@ -64,7 +64,7 @@
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "rehype-autolink-headings": "^5.1.0",
-    "sass": "^1.38.2",
+    "sass": "^1.45.1",
     "use-undo": "^1.0.5",
     "winston": "^3.3.3",
     "yup": "^0.32.8"
@@ -99,7 +99,7 @@
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.31.0",
-    "babel-jest": "^27.1.0",
+    "babel-jest": "^27.4.5",
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^9.0.1",
     "eslint": "^7.32.0",
