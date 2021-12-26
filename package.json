@@ -87,7 +87,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
-    "@testing-library/user-event": "^12.7.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/bcrypt": "^5.0.0",
     "@types/express-session": "^1.17.4",
     "@types/lodash": "^4.14.178",
