@@ -13143,10 +13143,10 @@ next-connect@^0.10.2:
   dependencies:
     trouter "^3.1.0"
 
-next-mdx-remote@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/next-mdx-remote/-/next-mdx-remote-3.0.4.tgz#c9b4aff4ec0780b08f34ccd6be966e569d6d4fda"
-  integrity sha512-n/xN6GaeBgJiuTJDrG6iqJ2EY5rEZ99Vf2H1nc75MNn1a6XnZLgT6uQJxqbSN84svc9aU3CSxfRlOqgqVVPHIg==
+next-mdx-remote@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/next-mdx-remote/-/next-mdx-remote-3.0.8.tgz#ea2e7f9f3c99a0ce8167976c547e621d5930e1e0"
+  integrity sha512-WFSxt0crxG5PN/0WvaunzxzqV3wh3dPBZyhkclxwyQfLSRKzsNSArzot/4gYTOOZ/GtyRfNjbI/HtDsW2S4fqQ==
   dependencies:
     "@mdx-js/mdx" "^1.6.22"
     "@mdx-js/react" "^1.6.22"
