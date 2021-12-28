@@ -69,7 +69,7 @@ Thanks goes to these wonderful people
     <td align="center"><a href="https://github.com/kondanna"><img src="https://avatars.githubusercontent.com/u/16906103?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charles</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=kondanna" title="Code">💻</a></td>
     <td align="center"><a href="http://zaeem.dev"><img src="https://avatars.githubusercontent.com/u/20666236?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JasirZaeem</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=JasirZaeem" title="Code">💻</a></td>
     <td align="center"><a href="http://www.thomasJherzog.com"><img src="https://avatars.githubusercontent.com/u/17365077?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Herzog</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=tomrule007" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=tomrule007" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/mino323"><img src="https://avatars.githubusercontent.com/u/86011419?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mino323</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=mino323" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mino323"><img src="https://avatars.githubusercontent.com/u/86011419?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mino323</b></sub></a><br /><a href="https://github.com/garageScript/c0d3-app/commits?author=mino323" title="Code">💻</a> <a href="https://github.com/garageScript/c0d3-app/commits?author=mino323" title="Documentation">📖</a></td>
   </tr>
 </table>
 
