@@ -76,15 +76,19 @@ describe('AdminLessonChallenges component', () => {
       </MockedProvider>
     )
     expect(container).toMatchSnapshot()
-    const titles = screen.getAllByTestId('input1')
-    const descriptions = screen.getAllByTestId('textbox')
-    const orders = screen.getAllByTestId('input3')
-    userEvent.clear(titles[0])
-    userEvent.clear(descriptions[0])
-    userEvent.clear(orders[0])
-    await userEvent.type(titles[0], 'New title', { delay: 1 })
-    await userEvent.type(descriptions[0], 'New description', { delay: 1 })
-    await userEvent.type(orders[0], '15', { delay: 1 })
+    const title = screen.getAllByTestId('input1')[0]
+    const description = screen.getAllByTestId('textbox')[0]
+    const order = screen.getAllByTestId('input3')[0]
+
+    title.setSelectionRange(0, title.value.length)
+    description.setSelectionRange(0, description.value.length)
+    order.setSelectionRange(0, order.value.length)
+
+    await userEvent.type(title, '{backspace}New title', { delay: 1 })
+    await userEvent.type(description, '{backspace}New description', {
+      delay: 1
+    })
+    await userEvent.type(order, '{backspace}15', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getAllByText('Update Challenge')[0])
     )
@@ -121,15 +125,17 @@ describe('AdminLessonChallenges component', () => {
         />
       </MockedProvider>
     )
-    const titles = screen.getAllByTestId('input1')
-    const descriptions = screen.getAllByTestId('textbox')
-    const orders = screen.getAllByTestId('input3')
-    userEvent.clear(titles[0])
-    userEvent.clear(descriptions[0])
-    userEvent.clear(orders[0])
-    await userEvent.type(titles[0], 'New title', { delay: 1 })
-    await userEvent.type(descriptions[0], 'New description', { delay: 1 })
-    await userEvent.type(orders[0], '', { delay: 1 })
+    const title = screen.getAllByTestId('input1')[0]
+    const description = screen.getAllByTestId('textbox')[0]
+    const order = screen.getAllByTestId('input3')[0]
+    title.setSelectionRange(0, title.value.length)
+    description.setSelectionRange(0, description.value.length)
+    order.setSelectionRange(0, order.value.length)
+    await userEvent.type(title, '{backspace}New title', { delay: 1 })
+    await userEvent.type(description, '{backspace}New description', {
+      delay: 1
+    })
+    await userEvent.type(order, '{backspace}', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getAllByText('Update Challenge')[0])
     )
@@ -152,7 +158,7 @@ describe('AdminLessonChallenges component', () => {
     const order = screen.getByTestId('input2')
     await userEvent.type(title, 'New challenge', { delay: 1 })
     await userEvent.type(description, 'New challenge description', { delay: 1 })
-    await userEvent.type(order, '', { delay: 1 })
+    await userEvent.type(order, '{backspace}', { delay: 1 })
     await waitFor(() => userEvent.click(screen.getByText('Create Challenge')))
     await waitFor(() => expect(reload).not.toBeCalled())
     await waitFor(() => expect(screen.getByText('Required')).toBeTruthy())

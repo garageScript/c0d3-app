@@ -106,8 +106,19 @@ describe('AdminLessonsInfo component', () => {
         />
       </MockedProvider>
     )
-    userEvent.clear(screen.getAllByTestId('input1')[1])
-    await userEvent.type(screen.getAllByTestId('input1')[1], 'New Lesson', {
+
+    const newLesson = screen.getAllByTestId('input1')[1]
+
+    /*
+     * Previously we were using the clear function from the userEvent library
+     * After updating to version 13.5.0, the clear function stopped working so
+     * to work around that I used setSelectionRange and with the type userEvent,
+     * I was able to modify the inputs. The link to the docs is below:
+     * https://testing-library.com/docs/ecosystem-user-event/#typeelement-text-options
+     */
+
+    newLesson.setSelectionRange(0, 16)
+    await userEvent.type(newLesson, 'New Lesson', {
       delay: 1
     })
     const description = screen.getByText(
@@ -115,8 +126,9 @@ describe('AdminLessonsInfo component', () => {
     )
     description.setSelectionRange(0, 52)
     await userEvent.type(description, 'New description', { delay: 1 })
-    userEvent.clear(screen.getByTestId('input6'))
-    await userEvent.type(screen.getByTestId('input6'), '10', { delay: 1 })
+    const order = screen.getByTestId('input6')
+    order.setSelectionRange(0, 1)
+    await userEvent.type(order, '10', { delay: 1 })
     await waitFor(() =>
       userEvent.click(screen.getByRole('button', { name: 'Update Lesson' }))
     )
