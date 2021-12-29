@@ -118,7 +118,7 @@
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^1.0.0",
     "remark-slug": "^6.1.0",
-    "remark-toc": "^7.2.0",
+    "remark-toc": "^8.0.1",
     "sass-loader": "^10.0.1",
     "svgo": "^2.8.0",
     "ts-node": "^10.4.0",
