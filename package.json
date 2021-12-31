@@ -113,7 +113,7 @@
     "jest": "^27.1.0",
     "jest-mock-extended": "^2.0.4",
     "lint-staged": "^12.1.4",
-    "prettier": "^2.3.2",
+    "prettier": "^2.5.1",
     "prisma": "^2.29.1",
     "react-test-renderer": "^17.0.1",
     "remark-gfm": "^1.0.0",
