@@ -6,7 +6,7 @@
   "scripts": {
     "db:init": "prisma migrate reset",
     "db:seed": "prisma db seed --preview-feature",
-    "db:up": "sudo docker-compose --file docker/docker-compose.yml up --detach postgres",
+    "db:up": "docker-compose --file docker/docker-compose.yml up --detach postgres",
     "db:down": "docker-compose --file docker/docker-compose.yml down",
     "dev": "next dev",
     "build": "next build",
