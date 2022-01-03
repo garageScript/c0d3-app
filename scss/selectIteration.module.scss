@@ -10,7 +10,8 @@
   min-height: 2.5rem;
   max-width: max-content;
 
-  &.active, &:hover {
+  &.active,
+  &:hover {
     // Warning variant button has non-white color
     color: white !important;
   }
