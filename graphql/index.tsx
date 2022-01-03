@@ -13,14 +13,15 @@ export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
 }
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]?: Maybe<T[SubKey]> }
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]: Maybe<T[SubKey]> }
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>
+}
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>
+}
 export type RequireFields<T, K extends keyof T> = {
   [X in Exclude<keyof T, K>]?: T[X]
-} &
-  { [P in K]-?: NonNullable<T[P]> }
+} & { [P in K]-?: NonNullable<T[P]> }
 const defaultOptions = {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -1570,8 +1571,7 @@ export type AcceptSubmissionProps<
     AcceptSubmissionMutation,
     AcceptSubmissionMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withAcceptSubmission<
   TProps,
   TChildProps = {},
@@ -1663,8 +1663,7 @@ export type AddAlertProps<
     AddAlertMutation,
     AddAlertMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withAddAlert<
   TProps,
   TChildProps = {},
@@ -1755,8 +1754,7 @@ export type AddCommentProps<
     AddCommentMutation,
     AddCommentMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withAddComment<
   TProps,
   TChildProps = {},
@@ -1834,8 +1832,7 @@ export const UsersDocument = gql`
 `
 export type UsersProps<TChildProps = {}, TDataName extends string = 'data'> = {
   [key in TDataName]: ApolloReactHoc.DataValue<UsersQuery, UsersQueryVariables>
-} &
-  TChildProps
+} & TChildProps
 export function withUsers<
   TProps,
   TChildProps = {},
@@ -1917,8 +1914,7 @@ export type ChangeAdminRightsProps<
     ChangeAdminRightsMutation,
     ChangeAdminRightsMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withChangeAdminRights<
   TProps,
   TChildProps = {},
@@ -2024,8 +2020,7 @@ export type CreateChallengeProps<
     CreateChallengeMutation,
     CreateChallengeMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withCreateChallenge<
   TProps,
   TChildProps = {},
@@ -2142,8 +2137,7 @@ export type CreateLessonProps<
     CreateLessonMutation,
     CreateLessonMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withCreateLesson<
   TProps,
   TChildProps = {},
@@ -2242,8 +2236,7 @@ export type CreateSubmissionProps<
     CreateSubmissionMutation,
     CreateSubmissionMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withCreateSubmission<
   TProps,
   TChildProps = {},
@@ -2387,8 +2380,7 @@ export type GetAppProps<TChildProps = {}, TDataName extends string = 'data'> = {
     GetAppQuery,
     GetAppQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withGetApp<
   TProps,
   TChildProps = {},
@@ -2468,8 +2460,7 @@ export type LessonMentorsProps<
     LessonMentorsQuery,
     LessonMentorsQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withLessonMentors<
   TProps,
   TChildProps = {},
@@ -2572,8 +2563,7 @@ export type GetLessonsProps<
     GetLessonsQuery,
     GetLessonsQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withGetLessons<
   TProps,
   TChildProps = {},
@@ -2690,8 +2680,7 @@ export type GetPreviousSubmissionsProps<
     GetPreviousSubmissionsQuery,
     GetPreviousSubmissionsQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withGetPreviousSubmissions<
   TProps,
   TChildProps = {},
@@ -2809,8 +2798,7 @@ export type GetSessionProps<
     GetSessionQuery,
     GetSessionQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withGetSession<
   TProps,
   TChildProps = {},
@@ -2927,8 +2915,7 @@ export type SubmissionsProps<
     SubmissionsQuery,
     SubmissionsQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withSubmissions<
   TProps,
   TChildProps = {},
@@ -3022,8 +3009,7 @@ export type LoginProps<
     LoginMutation,
     LoginMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withLogin<
   TProps,
   TChildProps = {},
@@ -3104,8 +3090,7 @@ export type LogoutProps<
     LogoutMutation,
     LogoutMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withLogout<
   TProps,
   TChildProps = {},
@@ -3192,8 +3177,7 @@ export type RejectSubmissionProps<
     RejectSubmissionMutation,
     RejectSubmissionMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withRejectSubmission<
   TProps,
   TChildProps = {},
@@ -3276,8 +3260,7 @@ export type RemoveAlertProps<
     RemoveAlertMutation,
     RemoveAlertMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withRemoveAlert<
   TProps,
   TChildProps = {},
@@ -3358,8 +3341,7 @@ export type ReqPwResetProps<
     ReqPwResetMutation,
     ReqPwResetMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withReqPwReset<
   TProps,
   TChildProps = {},
@@ -3439,8 +3421,7 @@ export type SetStarProps<
     SetStarMutation,
     SetStarMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withSetStar<
   TProps,
   TChildProps = {},
@@ -3533,8 +3514,7 @@ export type SignupProps<
     SignupMutation,
     SignupMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withSignup<
   TProps,
   TChildProps = {},
@@ -3641,8 +3621,7 @@ export type UpdateChallengeProps<
     UpdateChallengeMutation,
     UpdateChallengeMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withUpdateChallenge<
   TProps,
   TChildProps = {},
@@ -3762,8 +3741,7 @@ export type UpdateLessonProps<
     UpdateLessonMutation,
     UpdateLessonMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withUpdateLesson<
   TProps,
   TChildProps = {},
@@ -3852,8 +3830,7 @@ export type ChangePwProps<
     ChangePwMutation,
     ChangePwMutationVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withChangePw<
   TProps,
   TChildProps = {},
@@ -3984,8 +3961,7 @@ export type UserInfoProps<
     UserInfoQuery,
     UserInfoQueryVariables
   >
-} &
-  TChildProps
+} & TChildProps
 export function withUserInfo<
   TProps,
   TChildProps = {},
