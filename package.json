@@ -67,14 +67,14 @@
     "sass": "^1.46.0",
     "use-undo": "^1.0.5",
     "winston": "^3.3.3",
-    "yup": "^0.32.8"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.3.1",
     "@graphql-codegen/typescript": "^2.4.2",
     "@graphql-codegen/typescript-apollo-client-helpers": "^2.1.9",
     "@graphql-codegen/typescript-operations": "^2.1.2",
-    "@graphql-codegen/typescript-react-apollo": "^3.1.2",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.3",
     "@graphql-codegen/typescript-resolvers": "^2.3.2",
     "@jest/types": "^27.2.5",
     "@next/eslint-plugin-next": "^11.1.0",
