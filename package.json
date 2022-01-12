@@ -66,7 +66,7 @@
     "rehype-autolink-headings": "^5.1.0",
     "sass": "^1.46.0",
     "use-undo": "^1.0.5",
-    "winston": "^3.3.3",
+    "winston": "^3.4.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -82,7 +82,7 @@
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-storyshots": "^6.4.9",
     "@storybook/addon-storysource": "^6.4.9",
-    "@storybook/addon-viewport": "^6.4.9",
+    "@storybook/addon-viewport": "^6.4.12",
     "@storybook/react": "^6.4.9",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -99,7 +99,7 @@
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "babel-jest": "^27.4.5",
+    "babel-jest": "^27.4.6",
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^10.2.0",
     "eslint": "^7.32.0",
