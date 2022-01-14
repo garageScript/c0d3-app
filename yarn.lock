@@ -2933,18 +2933,18 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storysource@^6.4.9":
-  version "6.4.9"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.9.tgz#bf814304209a48d74631ac81eea1aaaa8fe5e89c"
-  integrity sha512-vLdRY7D2ECz8tjTMQUjI0C/qj7+4Zzh3+MX3rkJRgs6u8hUELO00AIXv3BZpo7gp5tw32jPSdHdj5a24Q242ig==
+"@storybook/addon-storysource@^6.4.12":
+  version "6.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.12.tgz#e01effa33eafcf981b0d4c4eb29bcc280088fa22"
+  integrity sha512-ijJvanEVsdzbbQ/fVcgV6/9iDb2hk7+MTmqEnQxlx2oDggLjCJurw6tTVzYiUgw/g7VMY9u5SfmuoXbnkvNw5Q==
   dependencies:
-    "@storybook/addons" "6.4.9"
-    "@storybook/api" "6.4.9"
-    "@storybook/client-logger" "6.4.9"
-    "@storybook/components" "6.4.9"
-    "@storybook/router" "6.4.9"
-    "@storybook/source-loader" "6.4.9"
-    "@storybook/theming" "6.4.9"
+    "@storybook/addons" "6.4.12"
+    "@storybook/api" "6.4.12"
+    "@storybook/client-logger" "6.4.12"
+    "@storybook/components" "6.4.12"
+    "@storybook/router" "6.4.12"
+    "@storybook/source-loader" "6.4.12"
+    "@storybook/theming" "6.4.12"
     core-js "^3.8.2"
     estraverse "^5.2.0"
     loader-utils "^2.0.0"
@@ -4013,6 +4013,22 @@
   dependencies:
     core-js "^3.6.5"
     find-up "^4.1.0"
+
+"@storybook/source-loader@6.4.12":
+  version "6.4.12"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.12.tgz#5cd828f02a50d09b7b46566583af47afca0b5083"
+  integrity sha512-K3gVGYjjZ3Azvy2SpwjyB7cQ3bZrBgTvdlRijXxLExjpgy7E9p4BzwpyaIBkUCSLBKTZLmhcUP3VJewoQuoUKA==
+  dependencies:
+    "@storybook/addons" "6.4.12"
+    "@storybook/client-logger" "6.4.12"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    core-js "^3.8.2"
+    estraverse "^5.2.0"
+    global "^4.4.0"
+    loader-utils "^2.0.0"
+    lodash "^4.17.21"
+    prettier "^2.2.1"
+    regenerator-runtime "^0.13.7"
 
 "@storybook/source-loader@6.4.9":
   version "6.4.9"
@@ -8603,12 +8619,7 @@ estraverse@^4.1.1:
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.3.0.tgz#398ad3f3c5a24948be7725e83d11a7de28cdbd1d"
   integrity sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==
 
-estraverse@^5.1.0, estraverse@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-5.2.0.tgz#307df42547e6cc7324d3cf03c155d5cdb8c53880"
-  integrity sha512-BxbNGGNm0RyRYvUdHpIwv9IWzeM9XClbOxwoATuFdOE7ZE6wHL+HQ5T8hoPM+zHvmKzzsEqhgy0GrQ5X13afiQ==
-
-estraverse@^5.3.0:
+estraverse@^5.1.0, estraverse@^5.2.0, estraverse@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-5.3.0.tgz#2eea5290702f26ab8fe5370370ff86c965d21123"
   integrity sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==
