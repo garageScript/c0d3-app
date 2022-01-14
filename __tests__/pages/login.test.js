@@ -131,7 +131,7 @@ describe('Login Page', () => {
           }
         },
         result: {
-          errors: [new GraphQLError('UserInputError: User does not exist!')]
+          errors: [new GraphQLError('User does not exist!')]
         }
       }
     ]
@@ -147,7 +147,7 @@ describe('Login Page', () => {
     await fillOutLoginForm(getByTestId)
     userEvent.click(submitButton)
 
-    await findByText(mocks[1].result.errors[0].message.split(':')[1].trim())
+    await findByText(mocks[1].result.errors[0].message)
     expect(container).toMatchSnapshot()
     expect(push).not.toBeCalled()
   })

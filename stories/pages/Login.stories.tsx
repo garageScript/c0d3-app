@@ -11,7 +11,7 @@ export default {
 
 const noop = () => {}
 
-const errorMessage = ['Incorrect username: Please try again!']
+const errorMessage = ['Please try again!']
 
 export const _Login: React.FC = () => {
   const mocks = [
