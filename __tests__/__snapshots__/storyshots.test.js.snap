@@ -24384,7 +24384,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
                 className="mr-3 alert-icon"
                 src="/assets/curriculum/icons/exclamation.svg"
               />
-               Please try again! 
+              Please try again! 
             </div>
           </div>
           <div
