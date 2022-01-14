@@ -119,7 +119,7 @@
     "remark-gfm": "^1.0.0",
     "remark-slug": "^6.1.0",
     "remark-toc": "^7.2.0",
-    "sass-loader": "^10.0.1",
+    "sass-loader": "^10.2.1",
     "svgo": "^2.8.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
