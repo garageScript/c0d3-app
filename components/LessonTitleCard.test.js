@@ -19,12 +19,12 @@ describe('LessonTitleCard Component', () => {
     jest.clearAllMocks()
   })
 
-  test('should call router.back() when clicking "go back"', async () => {
-    const { back } = useRouter()
+  test('should call router.push("/curriculum") when clicking "go back"', async () => {
+    const { push } = useRouter()
     const { container } = render(<LessonTitleCard {...props} />)
-    expect(back).not.toHaveBeenCalled()
+    expect(push).not.toHaveBeenCalled()
     userEvent.click(screen.getByText('Go Back'))
-    expect(back).toHaveBeenCalled()
+    expect(push).toHaveBeenCalledWith('/curriculum')
   })
   test('should not render lesson button if lessonUrl is undefined', () => {
     const noLessonUrl = { ...props, lessonUrl: undefined }

@@ -44,7 +44,8 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
                   // Link does not get correct styles without the href
                   // Prevent scroll to top before going back
                   e.preventDefault()
-                  router.back()
+
+                  router.push('/curriculum')
                 }}
               >
                 Go Back
