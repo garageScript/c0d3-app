@@ -208,7 +208,15 @@ export const MdInput: React.FC<MdInputProps> = ({
       {preview && (
         <>
           {value ? (
-            <Markdown data-testid="markdown" className={`${styles['preview']}`}>
+            <Markdown
+              data-testid="markdown"
+              style={{
+                minHeight:
+                  Math.min(textareaRef.current?.clientHeight || Infinity, 500) +
+                  'px'
+              }}
+              className={`${styles['preview']}`}
+            >
               {value}
             </Markdown>
           ) : (
