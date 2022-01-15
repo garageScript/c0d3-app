@@ -38,7 +38,7 @@ function createHttpLink() {
   })
 }
 
-export function createApolloClient() {
+function createApolloClient() {
   return new ApolloClient({
     ssrMode: false,
     link: createHttpLink(),
