@@ -45,7 +45,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
                   // Prevent scroll to top before going back
                   e.preventDefault()
 
-                  router.push('/curriculum')
+                  router.push('/')
                 }}
               >
                 Go Back

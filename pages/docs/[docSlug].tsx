@@ -36,7 +36,7 @@ const Docs: React.FC<Props> & WithLayout = ({
 
       <button
         className="btn btn-link text-primary p-0"
-        onClick={() => router.back()}
+        onClick={() => router.push('/')}
       >
         Go Back
       </button>
