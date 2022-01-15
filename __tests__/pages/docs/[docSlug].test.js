@@ -75,12 +75,12 @@ describe('[docSlug]', () => {
     })
 
     test('should render functioning "Go Back" button', () => {
-      const { back } = useRouter()
+      const { push } = useRouter()
       render(<Docs {...dummyParsedDocMdx} docFilePath={fakeGithubPath} />)
 
-      expect(back).not.toHaveBeenCalled()
+      expect(push).not.toHaveBeenCalled()
       userEvent.click(screen.getByRole('button', { name: 'Go Back' }))
-      expect(back).toHaveBeenCalled()
+      expect(push).toHaveBeenCalledWith('/')
     })
 
     test('should render EditPage component with link to docFilePath', () => {
