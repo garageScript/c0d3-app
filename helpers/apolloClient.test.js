@@ -41,18 +41,6 @@ describe('apolloClient', () => {
       expect(e).toBeTruthy()
     }
   })
-  test('should use Schema link on server', () => {
-    const mockSchema = jest.fn()
-    jest.mock('@apollo/client/link/schema', () => ({
-      SchemaLink: mockSchema
-    }))
-    jest.resetModules()
-    delete global.window
-    const apollo = require('./apolloClient')
-    apollo.initializeApollo()
-    expect(mockSchema).toBeCalled()
-  })
-
   test('should use HTTP link in browser', () => {
     const mockHTTP = jest.fn()
     jest.mock('@apollo/client/link/http', () => ({

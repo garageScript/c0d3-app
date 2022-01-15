@@ -24,23 +24,6 @@ describe('apolloClient', () => {
     expect(mockSchema).toBeCalled()
   })
 
-  test('should use HTTP link in browser', () => {
-    const mockHTTP = jest.fn()
-    jest.mock('@apollo/client/link/http', () => ({
-      HttpLink: jest.fn().mockImplementation(mockHTTP)
-    }))
-    global.window = window
-    apollo.initializeApollo()
-    expect(mockHTTP).toBeCalled()
-  })
-  test('should merge caches and return new client', () => {
-    expect(
-      apollo.initializeApollo({
-        foo: ['foo', 'bar'],
-        bar: ['bar', 'baz', 'zaz']
-      })
-    ).toBeTruthy()
-  })
   test('should return new client', () => {
     expect(apollo.initializeApollo()).toBeTruthy()
   })
