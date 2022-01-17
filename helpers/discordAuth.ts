@@ -4,9 +4,9 @@ import { User } from '.prisma/client'
 import fetch from 'node-fetch'
 
 const discordAPI = 'https://discordapp.com/api'
-export const client_id = process.env.DISCORD_KEY
-export const client_secret = process.env.DISCORD_SECRET
-export const redirect_uri = process.env.DISCORD_REDIRECT_URI // {baseurl}/api/auth/callback/discord
+export const client_id = process.env.DISCORD_KEY!
+export const client_secret = process.env.DISCORD_SECRET!
+export const redirect_uri = process.env.DISCORD_REDIRECT_URI! // {baseurl}/api/auth/callback/discord
 
 type AccessTokenResponse = {
   access_token: string
@@ -53,11 +53,11 @@ const updateRefreshandAccessTokens = (
   })
 }
 
-export const setTokenFromAuthCode = (
+export const setTokenFromAuthCode = async (
   userId: number,
   code: string
 ): Promise<User> => {
-  return fetch(`${discordAPI}/oauth2/token`, {
+  const r = await fetch(`${discordAPI}/oauth2/token`, {
     method: 'POST',
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -71,24 +71,20 @@ export const setTokenFromAuthCode = (
       scope: 'email guilds.join gdm.join identify'
     })
   })
-    .then(r => r.json())
-    .then(({ refresh_token, access_token, expires_in }) => {
-      const accessTokenExpiresAt = new Date(
-        Date.now() + (expires_in * 1000 || 0)
-      )
-      return updateRefreshandAccessTokens(
-        userId,
-        refresh_token,
-        access_token,
-        accessTokenExpiresAt
-      )
-    })
+  const { refresh_token, access_token, expires_in } = await r.json()
+  const accessTokenExpiresAt = new Date(Date.now() + (expires_in * 1000 || 0))
+  return await updateRefreshandAccessTokens(
+    userId,
+    refresh_token,
+    access_token,
+    accessTokenExpiresAt
+  )
 }
 
-const getTokenFromRefreshToken = (
+const getTokenFromRefreshToken = async (
   refresh_token: string
 ): Promise<AccessTokenResponse> => {
-  return fetch(`${discordAPI}/oauth2/token`, {
+  const r = await fetch(`${discordAPI}/oauth2/token`, {
     method: 'POST',
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -99,19 +95,21 @@ const getTokenFromRefreshToken = (
       grant_type: 'refresh_token',
       refresh_token
     })
-  }).then(r => r.json())
+  })
+  return await r.json()
 }
 
-const getUserInfoFromAccessToken = (
+const getUserInfoFromAccessToken = async (
   accessToken: string
 ): Promise<UserInfoResponse> => {
-  return fetch(`${discordAPI}/users/@me`, {
+  const r = await fetch(`${discordAPI}/users/@me`, {
     method: 'GET',
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
       Authorization: `Bearer ${accessToken}`
     }
-  }).then(r => r.json())
+  })
+  return await r.json()
 }
 
 export const getDiscordUserInfo = async (
