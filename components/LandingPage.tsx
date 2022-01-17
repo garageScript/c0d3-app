@@ -25,7 +25,7 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row justify-center mt-4">
           <div className="col-md-10 offset-md-1">
-            <p style={{ lineHeight: 1.5 }} className="font-weight-light h4">
+            <p style={{ lineHeight: 1.5 }} className="fw-light h4">
               Learn the right foundations you need to become a full stack
               software engineer. Our curriculum takes no shortcuts and
               effectively trains students with no technical background to become
@@ -42,14 +42,14 @@ const LandingPage: React.FC = () => {
         </div>
         <div className="row mt-5">
           <div className="col-md-6 offset-md-3">
-            <h1 className="display-4 font-weight-bold" id="learning">
+            <h1 className="display-4 fw-bold" id="learning">
               Learning Process
             </h1>
           </div>
         </div>
         <div className="row mt-5">
           <div className="col-md-10 offset-md-1">
-            <p className="font-weight-light h4" style={{ lineHeight: 1.5 }}>
+            <p className="fw-light h4" style={{ lineHeight: 1.5 }}>
               Our learning process is interactive and follows the same practice
               as a well functioning engineering team. From the first line of
               code you write, you will be code reviewed by engineers to ensure
@@ -66,8 +66,8 @@ const LandingPage: React.FC = () => {
               alt="Modern curriculum"
               width="163"
             />
-            <h4 className="mt-3 font-weight-bold">Modern Curriculum</h4>
-            <p className="mt-4 font-weight-light">
+            <h4 className="mt-3 fw-bold">Modern Curriculum</h4>
+            <p className="mt-4 fw-light">
               First the curriculum will help you achieve mastery in JavaScript.
               Using JavaScript, you will learn about different branches of
               software engineering: websites, mobile applications, servers, and
@@ -82,8 +82,8 @@ const LandingPage: React.FC = () => {
               alt="Support"
               width="259"
             />
-            <h4 className="mt-3 font-weight-bold">Support</h4>
-            <p className="mt-4 font-weight-light">
+            <h4 className="mt-3 fw-bold">Support</h4>
+            <p className="mt-4 fw-light">
               One of the most important skills in a challenging workplace is
               knowing how to ask for help. Our curriculum is intentionally
               difficult and we have dedicated mentors to answer your questions
@@ -98,8 +98,8 @@ const LandingPage: React.FC = () => {
               alt="Work Experience"
               layout="fixed"
             />
-            <h4 className="mt-3 font-weight-bold">Work Experience</h4>
-            <p className="mt-4 font-weight-light">
+            <h4 className="mt-3 fw-bold">Work Experience</h4>
+            <p className="mt-4 fw-light">
               Once you have completed our curriculum and learned to communicate
               effectively, you will be invited to contribute to this open-source
               project to improve the learning experience for future students.
@@ -112,14 +112,11 @@ const LandingPage: React.FC = () => {
         style={{ background: 'rgb(84,64,216)', color: 'white' }}
       >
         <div className="container mt-5">
-          <h1
-            id="journey"
-            className="mt-5 display-4 font-weight-bold text-center"
-          >
+          <h1 id="journey" className="mt-5 display-4 fw-bold text-center">
             Your Learning Journey
           </h1>
           <p
-            className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+            className="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
             style={{ lineHeight: 1.5 }}
           >
             Our learning process is interactive and follows the same practice as
@@ -138,8 +135,8 @@ const LandingPage: React.FC = () => {
               />
             </div>
             <div className="col-md-5 offset-md-1 order-md-1 align-self-center">
-              <h2 className="font-weight-bold">Creating an account</h2>
-              <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
+              <h2 className="fw-bold">Creating an account</h2>
+              <p className="mt-3 fw-light" style={{ lineHeight: 1.5 }}>
                 After creating an account, you will gain access to our code
                 reviewed curriculum and our community chat. You will be able to
                 setup c0d3.com CLI which will allow you to submit code for
@@ -159,8 +156,8 @@ const LandingPage: React.FC = () => {
               />
             </div>
             <div className="col-md-5 align-self-center">
-              <h2 className="font-weight-bold">Curriculum</h2>
-              <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
+              <h2 className="fw-bold">Curriculum</h2>
+              <p className="mt-3 fw-light" style={{ lineHeight: 1.5 }}>
                 Each lesson in our curriculum is designed to be hands on and you
                 will learn by working through the exercises in the curriculum.
                 All hosting will be provided for you so you can proudly share
@@ -191,8 +188,8 @@ const LandingPage: React.FC = () => {
               />
             </div>
             <div className="col-md-5 order-md-1 offset-md-1 align-self-center">
-              <h2 className="font-weight-bold">Pay It Forward</h2>
-              <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
+              <h2 className="fw-bold">Pay It Forward</h2>
+              <p className="mt-3 fw-light" style={{ lineHeight: 1.5 }}>
                 When you finish your lesson, you will have the opportunity to
                 help new students who are starting the lesson. By code reviewing
                 students to the same standard that you were code reviewed, you
@@ -214,8 +211,8 @@ const LandingPage: React.FC = () => {
               />
             </div>
             <div className="col-md-5 align-self-center">
-              <h2 className="font-weight-bold">Work Experience</h2>
-              <p className="mt-3 font-weight-light" style={{ lineHeight: 1.5 }}>
+              <h2 className="fw-bold">Work Experience</h2>
+              <p className="mt-3 fw-light" style={{ lineHeight: 1.5 }}>
                 After completing our curriculum, you will gain access to our
                 internal code repository that powers c0d3.com and have the
                 opportunity to work with our engineers and experience the entire
@@ -232,9 +229,9 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
       <div className="container mt-5 py-5 text-center">
-        <h1 className="display-4 font-weight-bold">Start Your Journey</h1>
+        <h1 className="display-4 fw-bold">Start Your Journey</h1>
         <p
-          className="mt-3 font-weight-light"
+          className="mt-3 fw-light"
           style={{ lineHeight: 1.5, fontSize: '1.5rem' }}
         >
           Become a full stack software engineer - 100% Free!

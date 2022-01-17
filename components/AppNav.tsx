@@ -90,16 +90,10 @@ const LoggedInAuthNav: React.FC<{ username: string }> = ({ username }) => {
 
 const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
-    <NavLink
-      path="/login"
-      className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-    >
+    <NavLink path="/login" className="btn btn-light border m-2 mr-lg-3">
       Login
     </NavLink>
-    <NavLink
-      path="/signup"
-      className="btn btn-secondary border m-2 mr-lg-3 bg-light"
-    >
+    <NavLink path="/signup" className="btn btn-light border m-2 mr-lg-3">
       Signup
     </NavLink>
   </div>
@@ -130,9 +124,7 @@ const AppNav: React.FC<{}> = () => {
     <Navbar expand="lg" bg="white">
       <Container>
         <Navbar.Brand href="/">
-          <div
-            className={`${styles['navbar-brand']} text-primary font-weight-bold`}
-          >
+          <div className={`${styles['navbar-brand']} text-primary fw-bold`}>
             C0D3
           </div>
         </Navbar.Brand>
