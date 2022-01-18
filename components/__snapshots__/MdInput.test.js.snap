@@ -36,7 +36,6 @@ exports[`MdInput Component Should display markdown preview text when switch to P
     <span
       class="preview"
       data-testid="markdown"
-      style="min-height: 500px;"
     >
       Some 
       <strong>
