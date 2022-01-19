@@ -56,7 +56,7 @@ export const Login: React.FC<LoginFormProps> = ({
         <Form data-testid="form">
           <div className="form-group">
             <ErrorMessages loginErrors={loginErrors} />
-            <div className="mt-3">
+            <div className="mt-3 d-grid">
               <Field
                 name="username"
                 placeholder="Username"
@@ -74,7 +74,7 @@ export const Login: React.FC<LoginFormProps> = ({
               />
 
               <button
-                className="btn btn-primary btn-lg btn-block mb-3"
+                className="btn btn-primary btn-lg btn mb-3"
                 type="submit"
                 data-testid="submit"
               >
@@ -84,7 +84,9 @@ export const Login: React.FC<LoginFormProps> = ({
           </div>
         </Form>
       </Formik>
-      <NavLink path="/forgotpassword">Forgot your password?</NavLink>
+      <NavLink path="/forgotpassword" hoverUnderline={true}>
+        Forgot your password?
+      </NavLink>
     </Card>
   )
 }

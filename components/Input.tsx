@@ -23,7 +23,7 @@ const Input: React.FC<Props> = ({ ...props }) => {
         className={classes}
       />
       <ErrorMessage
-        className="text-danger text-left pl-3 mt-n3"
+        className="text-danger text-start ps-3 mt-n3"
         component="div"
         name={props.name}
       />

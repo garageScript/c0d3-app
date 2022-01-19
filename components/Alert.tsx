@@ -3,6 +3,7 @@ import NavLink from './NavLink'
 import { Alert as AlertType } from '../graphql/'
 import _ from 'lodash'
 import styles from '../scss/alerts.module.scss'
+import Image from 'next/image'
 
 type Props = {
   alert: AlertType
@@ -30,8 +31,8 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
       className={`${styles['alert']} d-flex justify-content-between mt-3 ${alertClasses}`}
       role="alert"
     >
-      <div>
-        {icon && <img className={`mr-3 ${styles['alert-icon']}`} src={icon} />}
+      <div className="d-flex gap-3">
+        {icon && <Image src={icon} width={24} height={24} />}
         {text + ' '}
         {url && (
           <NavLink path={url} className={textColor} external>
@@ -44,9 +45,7 @@ const Alert: React.FC<Props> = ({ alert, onDismiss }) => {
           role="dismiss"
           className={`${styles['alert-dismiss']}`}
           data-testid={`dismiss-${type}`}
-          onClick={() => {
-            onDismiss(id)
-          }}
+          onClick={() => onDismiss(id)}
         >
           <img src={`/assets/curriculum/icons/dismiss-${type}.svg`} />
         </button>

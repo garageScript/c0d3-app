@@ -98,7 +98,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
         onSubmit={handleSubmit}
       >
         <Form data-testid="form">
-          <div className="form-group ">
+          <div className="form-group d-grid">
             <Field
               name="email"
               placeholder="Email address"
@@ -141,7 +141,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
       </Formik>
       <p className="text-black-50">
         Already have an account?{' '}
-        <NavLink path="/login" className="text-primary">
+        <NavLink path="/login" className="text-primary" hoverUnderline={true}>
           Login
         </NavLink>
       </p>
