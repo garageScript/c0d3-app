@@ -13,7 +13,7 @@ exports[`Users test Should be able to switch search options 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`Users test Should be able to switch search options 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`Users test Should be able to switch search options 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -118,7 +118,7 @@ exports[`Users test Should be able to switch search options 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -369,7 +369,7 @@ exports[`Users test Should be able to switch search options 2`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -392,13 +392,13 @@ exports[`Users test Should be able to switch search options 2`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -406,13 +406,13 @@ exports[`Users test Should be able to switch search options 2`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -474,7 +474,7 @@ exports[`Users test Should be able to switch search options 2`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -725,7 +725,7 @@ exports[`Users test Should be able to switch search options 3`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -748,13 +748,13 @@ exports[`Users test Should be able to switch search options 3`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -762,13 +762,13 @@ exports[`Users test Should be able to switch search options 3`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -830,7 +830,7 @@ exports[`Users test Should be able to switch search options 3`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -1081,7 +1081,7 @@ exports[`Users test Should be able to switch search options 4`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -1104,13 +1104,13 @@ exports[`Users test Should be able to switch search options 4`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1118,13 +1118,13 @@ exports[`Users test Should be able to switch search options 4`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1186,7 +1186,7 @@ exports[`Users test Should be able to switch search options 4`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername

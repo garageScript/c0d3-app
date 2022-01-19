@@ -12,7 +12,7 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
         class="text-center font-weight-bold align-self-center"
       />
       <a
-        class="text-white text-center "
+        class="text-white text-center  noUnderline"
         href="/docs/setup#submitting-challenges"
         rel="noopener noreferrer"
         target="_blank"

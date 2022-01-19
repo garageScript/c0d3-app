@@ -28,4 +28,18 @@ describe('NavLink Component', () => {
     const { container } = render(<NavLink path="">Link</NavLink>)
     expect(container.childNodes.length).toBe(0)
   })
+
+  test('Should render with noUnderline class when hoverUnderline is not passed', () => {
+    const { container } = render(<NavLink path="/">Link</NavLink>)
+    expect(container.querySelector('.noUnderline')).not.toBeNull()
+  })
+
+  test('Should render with link class when hoverUnderline is true', () => {
+    const { container } = render(
+      <NavLink path="/" hoverUnderline={true}>
+        Link
+      </NavLink>
+    )
+    expect(container.querySelector('.link')).not.toBeNull()
+  })
 })

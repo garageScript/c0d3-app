@@ -13,7 +13,7 @@ exports[`AdminLayout test Should render children 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`AdminLayout test Should render children 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`AdminLayout test Should render children 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -68,13 +68,13 @@ exports[`AdminLayout test Should render children 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
           >
             Signup

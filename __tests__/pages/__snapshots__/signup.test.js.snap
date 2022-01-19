@@ -34,7 +34,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
           data-testid="form"
         >
           <div
-            class="form-group "
+            class="form-group d-grid"
           >
             <input
               class="form-control form-control-lg font-weight-light mb-3 "
@@ -80,7 +80,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
           Already have an account?
            
           <a
-            class="text-primary"
+            class="text-primary link"
             href="/login"
           >
             Login
@@ -119,7 +119,7 @@ exports[`Signup Page Should render success component on success 1`] = `
           class="card-text"
         />
         <a
-          class="btn btn-primary"
+          class="btn btn-primary noUnderline"
           href="/confirm/undefined"
         >
           Click here to set your password.

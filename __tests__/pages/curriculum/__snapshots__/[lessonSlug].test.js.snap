@@ -14,7 +14,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
           href="/"
         >
           <div
-            class="navbar-brand text-primary font-weight-bold"
+            class="navbar-brand text-primary fw-bold"
           >
             C0D3
           </div>
@@ -37,13 +37,13 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="m-auto navbar-nav"
           >
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -51,13 +51,13 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               Repo
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
@@ -119,7 +119,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
             class="nav-buttons"
           >
             <a
-              class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+              class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
               href="/profile/fakeusername"
             >
               Fakeusername
@@ -181,7 +181,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               >
                 
                 <a
-                  class="btn border-right rounded-0 px-4 py-3"
+                  class="btn border-right rounded-0 px-4 py-3 noUnderline"
                   href="/curriculum/js8"
                 >
                   CHALLENGES
@@ -196,14 +196,17 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               class="alert d-flex justify-content-between mt-3 bg-primary text-white"
               role="alert"
             >
-              <div>
+              <div
+                class="d-flex gap-3"
+              >
                 <img
-                  class="mr-3 alert-icon"
+                  height="24"
                   src="/assets/curriculum/icons/icon-tip.svg"
+                  width="24"
                 />
                 Set up your computer to submit challenges. 
                 <a
-                  class="text-white"
+                  class="text-white noUnderline"
                   href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -225,10 +228,13 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               class="alert d-flex justify-content-between mt-3 alert-danger"
               role="alert"
             >
-              <div>
+              <div
+                class="d-flex gap-3"
+              >
                 <img
-                  class="mr-3 alert-icon"
+                  height="24"
                   src="/assets/curriculum/icons/exclamation.svg"
+                  width="24"
                 />
                 Please upgrade your CLI client by running npm update c0d3. 
                 
@@ -461,7 +467,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -484,13 +490,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -498,13 +504,13 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -566,7 +572,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -611,7 +617,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
               Lesson not found
             </div>
             <a
-              class="btn btn-primary py-3 px-5 mt-3"
+              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
               href="/"
             >
               <h3
@@ -657,7 +663,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
           href="/"
         >
           <div
-            class="navbar-brand text-primary font-weight-bold"
+            class="navbar-brand text-primary fw-bold"
           >
             C0D3
           </div>
@@ -680,13 +686,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="m-auto navbar-nav"
           >
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="/curriculum"
             >
               Curriculum
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="https://github.com/garageScript/c0d3-app"
               rel="noopener noreferrer"
               target="_blank"
@@ -694,13 +700,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               Repo
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="/docs/learn"
             >
               Learn
             </a>
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link noUnderline"
               href="https://discord.gg/c0d3"
               rel="noopener noreferrer"
               target="_blank"
@@ -762,7 +768,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
             class="nav-buttons"
           >
             <a
-              class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+              class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
               href="/profile/fakeusername"
             >
               Fakeusername
@@ -823,7 +829,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                 class="card-footer bg-white p-0"
               >
                 <a
-                  class="btn border-right rounded-0 px-4 py-3"
+                  class="btn border-right rounded-0 px-4 py-3 noUnderline"
                   href="https://www.notion.so/garagescript/JS-1-Functions-01dd8400b85f40d083966908acbfa184"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -831,7 +837,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
                   LESSON
                 </a>
                 <a
-                  class="btn border-right rounded-0 px-4 py-3"
+                  class="btn border-right rounded-0 px-4 py-3 noUnderline"
                   href="/curriculum/js1"
                 >
                   CHALLENGES
@@ -846,14 +852,17 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               class="alert d-flex justify-content-between mt-3 bg-primary text-white"
               role="alert"
             >
-              <div>
+              <div
+                class="d-flex gap-3"
+              >
                 <img
-                  class="mr-3 alert-icon"
+                  height="24"
                   src="/assets/curriculum/icons/icon-tip.svg"
+                  width="24"
                 />
                 Set up your computer to submit challenges. 
                 <a
-                  class="text-white"
+                  class="text-white noUnderline"
                   href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -875,10 +884,13 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               class="alert d-flex justify-content-between mt-3 alert-danger"
               role="alert"
             >
-              <div>
+              <div
+                class="d-flex gap-3"
+              >
                 <img
-                  class="mr-3 alert-icon"
+                  height="24"
                   src="/assets/curriculum/icons/exclamation.svg"
+                  width="24"
                 />
                 Please upgrade your CLI client by running npm update c0d3. 
                 
@@ -1131,7 +1143,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -1154,13 +1166,13 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1168,13 +1180,13 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1236,7 +1248,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -1281,7 +1293,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
               Bad data
             </div>
             <a
-              class="btn btn-primary py-3 px-5 mt-3"
+              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
               href="/"
             >
               <h3

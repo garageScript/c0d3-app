@@ -13,7 +13,7 @@ exports[`Index Page Should render index page 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`Index Page Should render index page 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`Index Page Should render index page 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -68,13 +68,13 @@ exports[`Index Page Should render index page 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -123,7 +123,7 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-10 offset-md-1"
         >
           <p
-            class="font-weight-light h4"
+            class="fw-light h4"
             style="line-height: 1.5;"
           >
             Learn the right foundations you need to become a full stack software engineer. Our curriculum takes no shortcuts and effectively trains students with no technical background to become great software engineers.
@@ -137,7 +137,7 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-6 offset-md-3 mb-5"
         >
           <a
-            class="btn btn-primary py-3 px-5"
+            class="btn btn-primary py-3 px-5 noUnderline"
             href="/curriculum"
           >
             Get Started
@@ -151,7 +151,7 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-6 offset-md-3"
         >
           <h1
-            class="display-4 font-weight-bold"
+            class="display-4 fw-bold"
             id="learning"
           >
             Learning Process
@@ -165,7 +165,7 @@ exports[`Index Page Should render index page 1`] = `
           class="col-md-10 offset-md-1"
         >
           <p
-            class="font-weight-light h4"
+            class="fw-light h4"
             style="line-height: 1.5;"
           >
             Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practices.
@@ -186,12 +186,12 @@ exports[`Index Page Should render index page 1`] = `
             width="163"
           />
           <h4
-            class="mt-3 font-weight-bold"
+            class="mt-3 fw-bold"
           >
             Modern Curriculum
           </h4>
           <p
-            class="mt-4 font-weight-light"
+            class="mt-4 fw-light"
           >
             First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
           </p>
@@ -207,12 +207,12 @@ exports[`Index Page Should render index page 1`] = `
             width="259"
           />
           <h4
-            class="mt-3 font-weight-bold"
+            class="mt-3 fw-bold"
           >
             Support
           </h4>
           <p
-            class="mt-4 font-weight-light"
+            class="mt-4 fw-light"
           >
             One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
           </p>
@@ -228,12 +228,12 @@ exports[`Index Page Should render index page 1`] = `
             width="93"
           />
           <h4
-            class="mt-3 font-weight-bold"
+            class="mt-3 fw-bold"
           >
             Work Experience
           </h4>
           <p
-            class="mt-4 font-weight-light"
+            class="mt-4 fw-light"
           >
             Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
           </p>
@@ -248,13 +248,13 @@ exports[`Index Page Should render index page 1`] = `
         class="container mt-5"
       >
         <h1
-          class="mt-5 display-4 font-weight-bold text-center"
+          class="mt-5 display-4 fw-bold text-center"
           id="journey"
         >
           Your Learning Journey
         </h1>
         <p
-          class="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+          class="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
           style="line-height: 1.5;"
         >
           Our learning process is interactive and follows the same practice as a well functioning engineering team. From the first line of code you write, you will be code reviewed by engineers to ensure you are always following industry best practice
@@ -277,12 +277,12 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 offset-md-1 order-md-1 align-self-center"
           >
             <h2
-              class="font-weight-bold"
+              class="fw-bold"
             >
               Creating an account
             </h2>
             <p
-              class="mt-3 font-weight-light"
+              class="mt-3 fw-light"
               style="line-height: 1.5;"
             >
               After creating an account, you will gain access to our code reviewed curriculum and our community chat. You will be able to setup c0d3.com CLI which will allow you to submit code for review. The CLI allows you to code in Javascript from any code editor of your choice.
@@ -307,18 +307,18 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 align-self-center"
           >
             <h2
-              class="font-weight-bold"
+              class="fw-bold"
             >
               Curriculum
             </h2>
             <p
-              class="mt-3 font-weight-light"
+              class="mt-3 fw-light"
               style="line-height: 1.5;"
             >
               Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
                
               <a
-                class="text-warning"
+                class="text-warning noUnderline"
                 href="https://www.meetup.com/San-Jose-C0D3/"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -347,12 +347,12 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 order-md-1 offset-md-1 align-self-center"
           >
             <h2
-              class="font-weight-bold"
+              class="fw-bold"
             >
               Pay It Forward
             </h2>
             <p
-              class="mt-3 font-weight-light"
+              class="mt-3 fw-light"
               style="line-height: 1.5;"
             >
               When you finish your lesson, you will have the opportunity to help new students who are starting the lesson. By code reviewing students to the same standard that you were code reviewed, you help ensure that new students are writing good code and becoming better engineers. At the same time, conducting regular code reviews helps you improve your ability to read/debug code as well as understand the lesson concepts at a deeper level.
@@ -377,12 +377,12 @@ exports[`Index Page Should render index page 1`] = `
             class="col-md-5 align-self-center"
           >
             <h2
-              class="font-weight-bold"
+              class="fw-bold"
             >
               Work Experience
             </h2>
             <p
-              class="mt-3 font-weight-light"
+              class="mt-3 fw-light"
               style="line-height: 1.5;"
             >
               After completing our curriculum, you will gain access to our internal code repository that powers c0d3.com and have the opportunity to work with our engineers and experience the entire workflow of a full stack software engineer. There will be bugs and feature list on our issue board for you to contribute to and you will be held to the same expectations as any respected engineer: high quality code and proper testing. Every feature contribution will be documented and recognized on our contribution list and you would be able to list your contributions as work experience on your resume.
@@ -395,18 +395,18 @@ exports[`Index Page Should render index page 1`] = `
       class="container mt-5 py-5 text-center"
     >
       <h1
-        class="display-4 font-weight-bold"
+        class="display-4 fw-bold"
       >
         Start Your Journey
       </h1>
       <p
-        class="mt-3 font-weight-light"
+        class="mt-3 fw-light"
         style="line-height: 1.5; font-size: 1.5rem;"
       >
         Become a full stack software engineer - 100% Free!
       </p>
       <a
-        class="btn btn-primary py-3 px-5 mt-4"
+        class="btn btn-primary py-3 px-5 mt-4 noUnderline"
         href="/curriculum"
       >
         Get Started

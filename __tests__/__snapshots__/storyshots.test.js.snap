@@ -10,7 +10,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     ADDITIONAL RESOURCES
   </h1>
   <a
-    className="additional-resources_link mr-1"
+    className="additional-resources_link mr-1 noUnderline"
     href="https://developer.mozilla.org/en-US/"
     rel="noopener noreferrer"
     target="_blank"
@@ -30,7 +30,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="additional-resources_link mr-1"
+    className="additional-resources_link mr-1 noUnderline"
     href="https://javascript.info/"
     rel="noopener noreferrer"
     target="_blank"
@@ -50,7 +50,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="additional-resources_link mr-1"
+    className="additional-resources_link mr-1 noUnderline"
     href="https://missing.csail.mit.edu/"
     rel="noopener noreferrer"
     target="_blank"
@@ -70,7 +70,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     className="my-2"
   />
   <a
-    className="additional-resources_link mr-1"
+    className="additional-resources_link mr-1 noUnderline"
     href="https://teachyourselfcs.com/"
     rel="noopener noreferrer"
     target="_blank"
@@ -97,10 +97,14 @@ exports[`Storyshots Components/Alert Info 1`] = `
   className="alert d-flex justify-content-between mt-3 bg-primary text-white"
   role="alert"
 >
-  <div>
+  <div
+    className="d-flex gap-3"
+  >
     <img
-      className="mr-3 alert-icon"
+      className="img-fluid"
+      height={24}
       src="/assets/curriculum/icons/icon-tip.svg"
+      width={24}
     />
     Set up your computer to submit challenges. 
   </div>
@@ -112,14 +116,18 @@ exports[`Storyshots Components/Alert Info With Link And Dismiss 1`] = `
   className="alert d-flex justify-content-between mt-3 bg-primary text-white"
   role="alert"
 >
-  <div>
+  <div
+    className="d-flex gap-3"
+  >
     <img
-      className="mr-3 alert-icon"
+      className="img-fluid"
+      height={24}
       src="/assets/curriculum/icons/icon-tip.svg"
+      width={24}
     />
     Set up your computer to submit challenges. 
     <a
-      className="text-white"
+      className="text-white noUnderline"
       href="https://www.notion.so/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672#b45ed85a95e24c9d9fb784afb7a46bcc"
       rel="noopener noreferrer"
       target="_blank"
@@ -145,10 +153,14 @@ exports[`Storyshots Components/Alert Urgent 1`] = `
   className="alert d-flex justify-content-between mt-3 alert-danger"
   role="alert"
 >
-  <div>
+  <div
+    className="d-flex gap-3"
+  >
     <img
-      className="mr-3 alert-icon"
+      className="img-fluid"
+      height={24}
       src="/assets/curriculum/icons/exclamation.svg"
+      width={24}
     />
     Invalid password 
   </div>
@@ -160,14 +172,18 @@ exports[`Storyshots Components/Alert Urgent With Icon And Dismiss 1`] = `
   className="alert d-flex justify-content-between mt-3 alert-danger"
   role="alert"
 >
-  <div>
+  <div
+    className="d-flex gap-3"
+  >
     <img
-      className="mr-3 alert-icon"
+      className="img-fluid"
+      height={24}
       src="/assets/curriculum/icons/exclamation.svg"
+      width={24}
     />
     Please upgrade your CLI client by running npm update c0d3. 
     <a
-      className="text-danger"
+      className="text-danger noUnderline"
       href="https://www.npmjs.com/package/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -245,7 +261,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
       href="/"
     >
       <div
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand text-primary fw-bold"
       >
         C0D3
       </div>
@@ -271,7 +287,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
         onKeyDown={[Function]}
       >
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -279,7 +295,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Curriculum
         </a>
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="https://github.com/garageScript/c0d3-app"
           rel="noopener noreferrer"
           target="_blank"
@@ -287,7 +303,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Repo
         </a>
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -295,7 +311,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Learn
         </a>
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
@@ -307,7 +323,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
         className="nav-buttons"
       >
         <a
-          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          className="btn btn-light border m-2 mr-lg-3 noUnderline"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -315,7 +331,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Login
         </a>
         <a
-          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          className="btn btn-light border m-2 mr-lg-3 noUnderline"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -340,7 +356,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
       href="/"
     >
       <div
-        className="navbar-brand text-primary font-weight-bold"
+        className="navbar-brand text-primary fw-bold"
       >
         C0D3
       </div>
@@ -366,7 +382,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
         onKeyDown={[Function]}
       >
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -374,7 +390,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Curriculum
         </a>
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="https://github.com/garageScript/c0d3-app"
           rel="noopener noreferrer"
           target="_blank"
@@ -382,7 +398,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Repo
         </a>
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="/docs/learn"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -390,7 +406,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Learn
         </a>
         <a
-          className="nav-item nav-link"
+          className="nav-item nav-link noUnderline"
           href="https://discord.gg/c0d3"
           rel="noopener noreferrer"
           target="_blank"
@@ -402,7 +418,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
         className="nav-buttons"
       >
         <a
-          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          className="btn btn-light border m-2 mr-lg-3 noUnderline"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -410,7 +426,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Login
         </a>
         <a
-          className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+          className="btn btn-light border m-2 mr-lg-3 noUnderline"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -793,7 +809,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
         >
           You can help your peers by
           <a
-            className="font-weight-bold mx-1"
+            className="font-weight-bold mx-1 noUnderline"
             href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
             rel="noopener noreferrer"
             target="_blank"
@@ -802,7 +818,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
           </a>
           they have in the lesson and
           <a
-            className="font-weight-bold mx-1"
+            className="font-weight-bold mx-1 noUnderline"
             href="https://www.c0d3.com/review/5"
             rel="noopener noreferrer"
             target="_blank"
@@ -2650,7 +2666,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = 
     >
       You can help your peers by
       <a
-        className="font-weight-bold mx-1"
+        className="font-weight-bold mx-1 noUnderline"
         href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
         rel="noopener noreferrer"
         target="_blank"
@@ -2659,7 +2675,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = 
       </a>
       they have in the lesson and
       <a
-        className="font-weight-bold mx-1"
+        className="font-weight-bold mx-1 noUnderline"
         href="https://c0d3.com/teacher/5"
         rel="noopener noreferrer"
         target="_blank"
@@ -2712,7 +2728,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
     >
       You can help your peers by
       <a
-        className="font-weight-bold mx-1"
+        className="font-weight-bold mx-1 noUnderline"
         href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
         rel="noopener noreferrer"
         target="_blank"
@@ -2721,7 +2737,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
       </a>
       they have in the lesson and
       <a
-        className="font-weight-bold mx-1"
+        className="font-weight-bold mx-1 noUnderline"
         href="https://c0d3.com/teacher/5"
         rel="noopener noreferrer"
         target="_blank"
@@ -4502,7 +4518,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -4528,7 +4544,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4536,7 +4552,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4544,7 +4560,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4552,7 +4568,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -4564,7 +4580,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4572,7 +4588,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4621,7 +4637,7 @@ Array [
               No data
             </div>
             <a
-              className="btn btn-primary py-3 px-5 mt-3"
+              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
               href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -4670,7 +4686,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -4696,7 +4712,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4704,7 +4720,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4712,7 +4728,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4720,7 +4736,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -4732,7 +4748,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4740,7 +4756,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4789,7 +4805,7 @@ Array [
               404 error
             </div>
             <a
-              className="btn btn-primary py-3 px-5 mt-3"
+              className="btn btn-primary py-3 px-5 mt-3 noUnderline"
               href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -7212,7 +7228,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -7238,7 +7254,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7246,7 +7262,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -7254,7 +7270,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7262,7 +7278,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -7274,7 +7290,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7282,7 +7298,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7351,7 +7367,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -7377,7 +7393,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7385,7 +7401,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -7393,7 +7409,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7401,7 +7417,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -7413,7 +7429,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7421,7 +7437,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7530,7 +7546,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           className="align-self-center"
         >
           <a
-            className=""
+            className=" noUnderline"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7593,7 +7609,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
-            className=""
+            className=" noUnderline"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7648,7 +7664,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           className="align-self-center"
         >
           <a
-            className=""
+            className=" noUnderline"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7751,7 +7767,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
-            className=""
+            className=" noUnderline"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7846,7 +7862,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           className="align-self-center"
         >
           <a
-            className=""
+            className=" noUnderline"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7909,7 +7925,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
           className="lesson-card__title font-weight-bold mt-3"
         >
           <a
-            className=""
+            className=" noUnderline"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7948,7 +7964,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     className="p-2 bg-primary"
   >
     <a
-      className="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+      className="lesson-card__button btn btn-light mr-2 my-1 text-primary noUnderline"
       href="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
       rel="noopener noreferrer"
       target="_blank"
@@ -7956,7 +7972,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       Start Lesson
     </a>
     <a
-      className="lesson-card__button btn bg-primary my-1 text-white border border-white"
+      className="lesson-card__button btn bg-primary my-1 text-white border border-white noUnderline"
       href="/curriculum/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -7980,7 +7996,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -8006,7 +8022,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8014,7 +8030,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -8022,7 +8038,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8030,7 +8046,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -8042,7 +8058,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8050,7 +8066,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8103,7 +8119,7 @@ Array [
             className="card-footer bg-white p-0"
           >
             <a
-              className="btn border-right rounded-0 px-4 py-3"
+              className="btn border-right rounded-0 px-4 py-3 noUnderline"
               href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
               rel="noopener noreferrer"
               target="_blank"
@@ -8111,7 +8127,7 @@ Array [
               LESSON
             </a>
             <a
-              className="btn border-right rounded-0 px-4 py-3"
+              className="btn border-right rounded-0 px-4 py-3 noUnderline"
               href="/curriculum/js0"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -8172,7 +8188,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
         className="card-footer bg-white p-0"
       >
         <a
-          className="btn border-right rounded-0 px-4 py-3"
+          className="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
           rel="noopener noreferrer"
           target="_blank"
@@ -8180,7 +8196,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
           LESSON
         </a>
         <a
-          className="btn border-right rounded-0 px-4 py-3"
+          className="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -8233,7 +8249,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
         className="card-footer bg-white p-0"
       >
         <a
-          className="btn border-right rounded-0 px-4 py-3"
+          className="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
           rel="noopener noreferrer"
           target="_blank"
@@ -8241,7 +8257,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
           LESSON
         </a>
         <a
-          className="btn border-right rounded-0 px-4 py-3"
+          className="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -8294,7 +8310,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       className="card-footer bg-white p-0"
     >
       <a
-        className="btn border-right rounded-0 px-4 py-3"
+        className="btn border-right rounded-0 px-4 py-3 noUnderline"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -8302,7 +8318,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3"
+        className="btn border-right rounded-0 px-4 py-3 noUnderline"
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -8351,7 +8367,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       className="card-footer bg-white p-0"
     >
       <a
-        className="btn border-right rounded-0 px-4 py-3"
+        className="btn border-right rounded-0 px-4 py-3 noUnderline"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -8359,7 +8375,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3"
+        className="btn border-right rounded-0 px-4 py-3 noUnderline"
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -8367,7 +8383,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         CHALLENGES
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3"
+        className="btn border-right rounded-0 px-4 py-3 noUnderline"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -9780,7 +9796,7 @@ exports[`Storyshots Components/ModalCard Small 1`] = `
 exports[`Storyshots Components/NavLink Active Link 1`] = `
 Array [
   <a
-    className="btn btn-primary active"
+    className="btn btn-primary active noUnderline"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -9793,7 +9809,7 @@ Array [
     Active Link
   </a>,
   <a
-    className="btn btn-primary"
+    className="btn btn-primary noUnderline"
     href="/other"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -9805,7 +9821,7 @@ Array [
 
 exports[`Storyshots Components/NavLink Basic 1`] = `
 <a
-  className=""
+  className=" noUnderline"
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
@@ -9816,7 +9832,7 @@ exports[`Storyshots Components/NavLink Basic 1`] = `
 
 exports[`Storyshots Components/NavLink Blank Link 1`] = `
 <a
-  className=""
+  className=" noUnderline"
   href="http://c0d3.com"
   rel="noopener noreferrer"
   target="_blank"
@@ -9827,7 +9843,7 @@ exports[`Storyshots Components/NavLink Blank Link 1`] = `
 
 exports[`Storyshots Components/NavLink External Link 1`] = `
 <a
-  className=""
+  className=" noUnderline"
   href="/"
   rel="noopener noreferrer"
   target="_blank"
@@ -9838,7 +9854,7 @@ exports[`Storyshots Components/NavLink External Link 1`] = `
 
 exports[`Storyshots Components/NavLink Styled Link 1`] = `
 <a
-  className="btn btn-primary"
+  className="btn btn-primary noUnderline"
   href="/"
   onClick={[Function]}
   onMouseEnter={[Function]}
@@ -11037,7 +11053,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
   >
     Join us on
     <a
-      className="progress-newuser__chatlink text-white"
+      className="progress-newuser__chatlink text-white noUnderline"
       href="https://discord.gg/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -11054,7 +11070,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
     className="mt-4 d-flex flex-column"
   >
     <a
-      className="btn btn-light progress-card__button mt-2 text-primary"
+      className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -11155,7 +11171,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
   >
     Join us on
     <a
-      className="progress-newuser__chatlink text-white"
+      className="progress-newuser__chatlink text-white noUnderline"
       href="https://discord.gg/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -11172,7 +11188,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
     className="mt-4 d-flex flex-column"
   >
     <a
-      className="btn btn-light progress-card__button mt-2 text-primary"
+      className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -11197,7 +11213,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
   >
     Join us on
     <a
-      className="progress-newuser__chatlink text-white"
+      className="progress-newuser__chatlink text-white noUnderline"
       href="https://discord.gg/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -11214,7 +11230,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
     className="mt-4 d-flex flex-column"
   >
     <a
-      className="btn btn-light progress-card__button mt-2 text-primary"
+      className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -11315,7 +11331,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
   >
     Join us on
     <a
-      className="progress-newuser__chatlink text-white"
+      className="progress-newuser__chatlink text-white noUnderline"
       href="https://discord.gg/c0d3"
       rel="noopener noreferrer"
       target="_blank"
@@ -11332,7 +11348,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
     className="mt-4 d-flex flex-column"
   >
     <a
-      className="btn btn-light progress-card__button mt-2 text-primary"
+      className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
       href="/docs/setup"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -18749,7 +18765,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -18775,7 +18791,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -18783,7 +18799,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -18791,7 +18807,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -18799,7 +18815,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -18811,7 +18827,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -18819,7 +18835,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -18999,7 +19015,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -19025,7 +19041,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19033,7 +19049,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -19041,7 +19057,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19049,7 +19065,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -19061,7 +19077,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19069,7 +19085,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19101,7 +19117,7 @@ Array [
             >
               Join us on
               <a
-                className="progress-newuser__chatlink text-white"
+                className="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -19118,7 +19134,7 @@ Array [
               className="mt-4 d-flex flex-column"
             >
               <a
-                className="btn btn-light progress-card__button mt-2 text-primary"
+                className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -19144,7 +19160,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19207,7 +19223,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19259,7 +19275,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19322,7 +19338,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19374,7 +19390,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19437,7 +19453,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19489,7 +19505,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19552,7 +19568,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19604,7 +19620,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19667,7 +19683,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19719,7 +19735,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19782,7 +19798,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19834,7 +19850,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19897,7 +19913,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19949,7 +19965,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20012,7 +20028,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20064,7 +20080,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20127,7 +20143,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20179,7 +20195,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20242,7 +20258,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20337,7 +20353,7 @@ Array [
             >
               Join us on
               <a
-                className="progress-newuser__chatlink text-white"
+                className="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -20354,7 +20370,7 @@ Array [
               className="mt-4 d-flex flex-column"
             >
               <a
-                className="btn btn-light progress-card__button mt-2 text-primary"
+                className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -20415,7 +20431,7 @@ Array [
             ADDITIONAL RESOURCES
           </h1>
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20435,7 +20451,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20455,7 +20471,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20475,7 +20491,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20519,7 +20535,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -20545,7 +20561,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20553,7 +20569,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -20561,7 +20577,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20569,7 +20585,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -20581,7 +20597,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20589,7 +20605,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20621,7 +20637,7 @@ Array [
             >
               Join us on
               <a
-                className="progress-newuser__chatlink text-white"
+                className="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -20638,7 +20654,7 @@ Array [
               className="mt-4 d-flex flex-column"
             >
               <a
-                className="btn btn-light progress-card__button mt-2 text-primary"
+                className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -20664,7 +20680,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20727,7 +20743,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20779,7 +20795,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20842,7 +20858,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20894,7 +20910,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20957,7 +20973,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21009,7 +21025,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21072,7 +21088,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21124,7 +21140,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21187,7 +21203,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21239,7 +21255,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21302,7 +21318,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21354,7 +21370,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21417,7 +21433,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21469,7 +21485,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21532,7 +21548,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21584,7 +21600,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21647,7 +21663,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21699,7 +21715,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21762,7 +21778,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21857,7 +21873,7 @@ Array [
             >
               Join us on
               <a
-                className="progress-newuser__chatlink text-white"
+                className="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -21874,7 +21890,7 @@ Array [
               className="mt-4 d-flex flex-column"
             >
               <a
-                className="btn btn-light progress-card__button mt-2 text-primary"
+                className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -21935,7 +21951,7 @@ Array [
             ADDITIONAL RESOURCES
           </h1>
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
@@ -21955,7 +21971,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -21975,7 +21991,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -21995,7 +22011,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -22039,7 +22055,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -22065,7 +22081,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22073,7 +22089,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -22081,7 +22097,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22089,7 +22105,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -22101,7 +22117,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22109,7 +22125,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22141,7 +22157,7 @@ Array [
             >
               Join us on
               <a
-                className="progress-newuser__chatlink text-white"
+                className="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -22158,7 +22174,7 @@ Array [
               className="mt-4 d-flex flex-column"
             >
               <a
-                className="btn btn-light progress-card__button mt-2 text-primary"
+                className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -22184,7 +22200,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22247,7 +22263,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22299,7 +22315,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22362,7 +22378,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22414,7 +22430,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22477,7 +22493,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22529,7 +22545,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22592,7 +22608,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22644,7 +22660,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22707,7 +22723,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22759,7 +22775,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22822,7 +22838,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22874,7 +22890,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22937,7 +22953,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22989,7 +23005,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23052,7 +23068,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23104,7 +23120,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23167,7 +23183,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23219,7 +23235,7 @@ Array [
                   className="align-self-center"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23282,7 +23298,7 @@ Array [
                   className="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    className=""
+                    className=" noUnderline"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23377,7 +23393,7 @@ Array [
             >
               Join us on
               <a
-                className="progress-newuser__chatlink text-white"
+                className="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -23394,7 +23410,7 @@ Array [
               className="mt-4 d-flex flex-column"
             >
               <a
-                className="btn btn-light progress-card__button mt-2 text-primary"
+                className="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
@@ -23455,7 +23471,7 @@ Array [
             ADDITIONAL RESOURCES
           </h1>
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23475,7 +23491,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23495,7 +23511,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23515,7 +23531,7 @@ Array [
             className="my-2"
           />
           <a
-            className="additional-resources_link mr-1"
+            className="additional-resources_link mr-1 noUnderline"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23559,7 +23575,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -23585,7 +23601,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23593,7 +23609,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -23601,7 +23617,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23609,7 +23625,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -23621,7 +23637,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23629,7 +23645,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23753,7 +23769,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="font-weight-light h4"
+          className="fw-light h4"
           style={
             Object {
               "lineHeight": 1.5,
@@ -23771,7 +23787,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-6 offset-md-3 mb-5"
       >
         <a
-          className="btn btn-primary py-3 px-5"
+          className="btn btn-primary py-3 px-5 noUnderline"
           href="/curriculum"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -23787,7 +23803,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-6 offset-md-3"
       >
         <h1
-          className="display-4 font-weight-bold"
+          className="display-4 fw-bold"
           id="learning"
         >
           Learning Process
@@ -23801,7 +23817,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
         className="col-md-10 offset-md-1"
       >
         <p
-          className="font-weight-light h4"
+          className="fw-light h4"
           style={
             Object {
               "lineHeight": 1.5,
@@ -23827,12 +23843,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           width="163"
         />
         <h4
-          className="mt-3 font-weight-bold"
+          className="mt-3 fw-bold"
         >
           Modern Curriculum
         </h4>
         <p
-          className="mt-4 font-weight-light"
+          className="mt-4 fw-light"
         >
           First the curriculum will help you achieve mastery in JavaScript. Using JavaScript, you will learn about different branches of software engineering: websites, mobile applications, servers, and machine learning.
         </p>
@@ -23849,12 +23865,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           width="259"
         />
         <h4
-          className="mt-3 font-weight-bold"
+          className="mt-3 fw-bold"
         >
           Support
         </h4>
         <p
-          className="mt-4 font-weight-light"
+          className="mt-4 fw-light"
         >
           One of the most important skills in a challenging workplace is knowing how to ask for help. Our curriculum is intentionally difficult and we have dedicated mentors to answer your questions and guide you how to communicate effectively.
         </p>
@@ -23871,12 +23887,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           width="93"
         />
         <h4
-          className="mt-3 font-weight-bold"
+          className="mt-3 fw-bold"
         >
           Work Experience
         </h4>
         <p
-          className="mt-4 font-weight-light"
+          className="mt-4 fw-light"
         >
           Once you have completed our curriculum and learned to communicate effectively, you will be invited to contribute to this open-source project to improve the learning experience for future students.
         </p>
@@ -23896,13 +23912,13 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       className="container mt-5"
     >
       <h1
-        className="mt-5 display-4 font-weight-bold text-center"
+        className="mt-5 display-4 fw-bold text-center"
         id="journey"
       >
         Your Learning Journey
       </h1>
       <p
-        className="mt-5 font-weight-light col-md-8 offset-md-2 pb-5 text-center h4"
+        className="mt-5 fw-light col-md-8 offset-md-2 pb-5 text-center h4"
         style={
           Object {
             "lineHeight": 1.5,
@@ -23930,12 +23946,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 offset-md-1 order-md-1 align-self-center"
         >
           <h2
-            className="font-weight-bold"
+            className="fw-bold"
           >
             Creating an account
           </h2>
           <p
-            className="mt-3 font-weight-light"
+            className="mt-3 fw-light"
             style={
               Object {
                 "lineHeight": 1.5,
@@ -23965,12 +23981,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 align-self-center"
         >
           <h2
-            className="font-weight-bold"
+            className="fw-bold"
           >
             Curriculum
           </h2>
           <p
-            className="mt-3 font-weight-light"
+            className="mt-3 fw-light"
             style={
               Object {
                 "lineHeight": 1.5,
@@ -23980,7 +23996,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
             Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
              
             <a
-              className="text-warning"
+              className="text-warning noUnderline"
               href="https://www.meetup.com/San-Jose-C0D3/"
               rel="noopener noreferrer"
               target="_blank"
@@ -24010,12 +24026,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 order-md-1 offset-md-1 align-self-center"
         >
           <h2
-            className="font-weight-bold"
+            className="fw-bold"
           >
             Pay It Forward
           </h2>
           <p
-            className="mt-3 font-weight-light"
+            className="mt-3 fw-light"
             style={
               Object {
                 "lineHeight": 1.5,
@@ -24045,12 +24061,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
           className="col-md-5 align-self-center"
         >
           <h2
-            className="font-weight-bold"
+            className="fw-bold"
           >
             Work Experience
           </h2>
           <p
-            className="mt-3 font-weight-light"
+            className="mt-3 fw-light"
             style={
               Object {
                 "lineHeight": 1.5,
@@ -24067,12 +24083,12 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
     className="container mt-5 py-5 text-center"
   >
     <h1
-      className="display-4 font-weight-bold"
+      className="display-4 fw-bold"
     >
       Start Your Journey
     </h1>
     <p
-      className="mt-3 font-weight-light"
+      className="mt-3 fw-light"
       style={
         Object {
           "fontSize": "1.5rem",
@@ -24083,7 +24099,7 @@ exports[`Storyshots Pages/Landing Landing 1`] = `
       Become a full stack software engineer - 100% Free!
     </p>
     <a
-      className="btn btn-primary py-3 px-5 mt-4"
+      className="btn btn-primary py-3 px-5 mt-4 noUnderline"
       href="/curriculum"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -24230,7 +24246,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
           className="form-group"
         >
           <div
-            className="mt-3"
+            className="mt-3 d-grid"
           >
             <input
               autoFocus={true}
@@ -24253,7 +24269,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
               value=""
             />
             <button
-              className="btn btn-primary btn-lg btn-block mb-3"
+              className="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
               type="submit"
             >
@@ -24263,7 +24279,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
         </div>
       </form>
       <a
-        className=""
+        className=" link"
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -24303,7 +24319,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
           className="form-group"
         >
           <div
-            className="mt-3"
+            className="mt-3 d-grid"
           >
             <input
               autoFocus={true}
@@ -24326,7 +24342,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
               value=""
             />
             <button
-              className="btn btn-primary btn-lg btn-block mb-3"
+              className="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
               type="submit"
             >
@@ -24336,7 +24352,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
         </div>
       </form>
       <a
-        className=""
+        className=" link"
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -24379,16 +24395,20 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
             className="alert d-flex justify-content-between mt-3 alert-danger"
             role="alert"
           >
-            <div>
+            <div
+              className="d-flex gap-3"
+            >
               <img
-                className="mr-3 alert-icon"
+                className="img-fluid"
+                height={24}
                 src="/assets/curriculum/icons/exclamation.svg"
+                width={24}
               />
               Please try again! 
             </div>
           </div>
           <div
-            className="mt-3"
+            className="mt-3 d-grid"
           >
             <input
               autoFocus={true}
@@ -24411,7 +24431,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
               value=""
             />
             <button
-              className="btn btn-primary btn-lg btn-block mb-3"
+              className="btn btn-primary btn-lg btn mb-3"
               data-testid="submit"
               type="submit"
             >
@@ -24421,7 +24441,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
         </div>
       </form>
       <a
-        className=""
+        className=" link"
         href="/forgotpassword"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -24446,7 +24466,7 @@ Array [
         href="/"
       >
         <div
-          className="navbar-brand text-primary font-weight-bold"
+          className="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -24472,7 +24492,7 @@ Array [
           onKeyDown={[Function]}
         >
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/curriculum"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24480,7 +24500,7 @@ Array [
             Curriculum
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -24488,7 +24508,7 @@ Array [
             Repo
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="/docs/learn"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24496,7 +24516,7 @@ Array [
             Learn
           </a>
           <a
-            className="nav-item nav-link"
+            className="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -24508,7 +24528,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24516,7 +24536,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            className="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24628,7 +24648,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group "
+          className="form-group d-grid"
         >
           <input
             autoFocus={true}
@@ -24683,7 +24703,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
         Already have an account?
          
         <a
-          className="text-primary"
+          className="text-primary link"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -24721,7 +24741,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group "
+          className="form-group d-grid"
         >
           <input
             autoFocus={true}
@@ -24776,7 +24796,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
         Already have an account?
          
         <a
-          className="text-primary"
+          className="text-primary link"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -24824,7 +24844,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group "
+          className="form-group d-grid"
         >
           <input
             autoFocus={true}
@@ -24879,7 +24899,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         Already have an account?
          
         <a
-          className="text-primary"
+          className="text-primary link"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -24927,7 +24947,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group "
+          className="form-group d-grid"
         >
           <input
             autoFocus={true}
@@ -24982,7 +25002,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
         Already have an account?
          
         <a
-          className="text-primary"
+          className="text-primary link"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -25021,7 +25041,7 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
         className="card-text"
       />
       <a
-        className="btn btn-primary"
+        className="btn btn-primary noUnderline"
         href="/confirm/undefined"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -25453,7 +25473,7 @@ exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
       Master your skill by solving challenges
     </h1>
     <a
-      className="text-white text-center "
+      className="text-white text-center  noUnderline"
       href="/docs/setup#submitting-challenges"
       rel="noopener noreferrer"
       target="_blank"
@@ -25469,7 +25489,7 @@ exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
       className="text-center"
     >
       <a
-        className="btn btn-light mt-2 text-primary "
+        className="btn btn-light mt-2 text-primary  noUnderline"
         href="/"
         rel="noopener noreferrer"
         target="_blank"

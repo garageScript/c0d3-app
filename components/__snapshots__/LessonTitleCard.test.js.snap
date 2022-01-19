@@ -37,7 +37,7 @@ exports[`LessonTitleCard Component should display "challenges" button on wider s
         class="card-footer bg-white p-0"
       >
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="lessonUrl"
           rel="noopener noreferrer"
           target="_blank"
@@ -45,13 +45,13 @@ exports[`LessonTitleCard Component should display "challenges" button on wider s
           LESSON
         </a>
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
         >
           CHALLENGES
         </a>
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/review/js0"
         >
           REVIEW
@@ -99,7 +99,7 @@ exports[`LessonTitleCard Component should display "show challenges" button on sm
         class="card-footer bg-white p-0"
       >
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="lessonUrl"
           rel="noopener noreferrer"
           target="_blank"
@@ -112,7 +112,7 @@ exports[`LessonTitleCard Component should display "show challenges" button on sm
           SHOW CHALLENGES
         </div>
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/review/js0"
         >
           REVIEW
@@ -160,7 +160,7 @@ exports[`LessonTitleCard Component should renders default layout 1`] = `
         class="card-footer bg-white p-0"
       >
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="lessonUrl"
           rel="noopener noreferrer"
           target="_blank"
@@ -168,13 +168,13 @@ exports[`LessonTitleCard Component should renders default layout 1`] = `
           LESSON
         </a>
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
         >
           CHALLENGES
         </a>
         <a
-          class="btn border-right rounded-0 px-4 py-3"
+          class="btn border-right rounded-0 px-4 py-3 noUnderline"
           href="/review/js0"
         >
           REVIEW

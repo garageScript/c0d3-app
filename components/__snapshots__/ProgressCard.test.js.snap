@@ -82,7 +82,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
@@ -99,7 +99,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -192,7 +192,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
@@ -209,7 +209,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -302,7 +302,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
@@ -319,7 +319,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -412,7 +412,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
@@ -429,7 +429,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -454,7 +454,7 @@ exports[`ProgressCard component renders correctly when user is not logged in sho
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
@@ -471,7 +471,7 @@ exports[`ProgressCard component renders correctly when user is not logged in sho
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment

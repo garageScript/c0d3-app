@@ -13,7 +13,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -68,13 +68,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 mr-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -117,7 +117,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -134,7 +134,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -158,7 +158,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -217,7 +217,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -267,7 +267,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -326,7 +326,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -376,7 +376,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -435,7 +435,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -485,7 +485,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -544,7 +544,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -594,7 +594,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -653,7 +653,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -703,7 +703,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -762,7 +762,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -812,7 +812,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -871,7 +871,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -921,7 +921,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -980,7 +980,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -1030,7 +1030,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -1089,7 +1089,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -1139,7 +1139,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -1198,7 +1198,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -1296,7 +1296,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -1313,7 +1313,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -1372,7 +1372,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             ADDITIONAL RESOURCES
           </h1>
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1392,7 +1392,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1412,7 +1412,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1432,7 +1432,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1476,7 +1476,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -1499,13 +1499,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1513,13 +1513,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1581,7 +1581,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -1699,7 +1699,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -1716,7 +1716,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -1740,7 +1740,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -1799,7 +1799,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -1836,7 +1836,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="p-2 bg-primary"
           >
             <a
-              class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+              class="lesson-card__button btn btn-light mr-2 my-1 text-primary noUnderline"
               href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
               rel="noopener noreferrer"
               target="_blank"
@@ -1844,7 +1844,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               Start Lesson
             </a>
             <a
-              class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+              class="lesson-card__button btn bg-primary my-1 text-white border border-white noUnderline"
               href="/curriculum/js0"
             >
               View Challenges
@@ -1867,7 +1867,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -1926,7 +1926,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -1976,7 +1976,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -2035,7 +2035,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -2085,7 +2085,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -2144,7 +2144,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -2194,7 +2194,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -2253,7 +2253,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -2303,7 +2303,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -2362,7 +2362,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -2412,7 +2412,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -2471,7 +2471,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -2521,7 +2521,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -2580,7 +2580,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -2630,7 +2630,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -2689,7 +2689,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -2739,7 +2739,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -2798,7 +2798,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -2963,7 +2963,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -2980,7 +2980,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -3039,7 +3039,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             ADDITIONAL RESOURCES
           </h1>
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3059,7 +3059,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3079,7 +3079,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3099,7 +3099,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3143,7 +3143,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -3166,13 +3166,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -3180,13 +3180,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -3248,7 +3248,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
@@ -3367,7 +3367,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -3384,7 +3384,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -3408,7 +3408,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -3504,7 +3504,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -3591,7 +3591,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -3687,7 +3687,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -3774,7 +3774,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -3870,7 +3870,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -3957,7 +3957,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -4016,7 +4016,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -4053,7 +4053,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="p-2 bg-primary"
           >
             <a
-              class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+              class="lesson-card__button btn btn-light mr-2 my-1 text-primary noUnderline"
               href="https://www.notion.so/garagescript/JS-3-Objects-3df846eaf0404fe6b012208773063a04"
               rel="noopener noreferrer"
               target="_blank"
@@ -4061,7 +4061,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               Start Lesson
             </a>
             <a
-              class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+              class="lesson-card__button btn bg-primary my-1 text-white border border-white noUnderline"
               href="/curriculum/js3"
             >
               View Challenges
@@ -4084,7 +4084,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -4143,7 +4143,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -4193,7 +4193,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -4252,7 +4252,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -4302,7 +4302,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -4361,7 +4361,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -4411,7 +4411,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -4470,7 +4470,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -4520,7 +4520,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -4579,7 +4579,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -4629,7 +4629,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -4688,7 +4688,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="lesson-card__title font-weight-bold mt-3"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -4854,7 +4854,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -4871,7 +4871,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -4930,7 +4930,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             ADDITIONAL RESOURCES
           </h1>
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
@@ -4950,7 +4950,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -4970,7 +4970,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -4990,7 +4990,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="my-2"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link mr-1 noUnderline"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"

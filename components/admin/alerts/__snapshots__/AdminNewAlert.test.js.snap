@@ -15,10 +15,13 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
           class="alert d-flex justify-content-between mt-3 bg-primary text-white"
           role="alert"
         >
-          <div>
+          <div
+            class="d-flex gap-3"
+          >
             <img
-              class="mr-3 alert-icon"
+              height="24"
               src="/assets/curriculum/icons/icon-tip.svg"
+              width="24"
             />
              
             
@@ -178,14 +181,17 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
           class="alert d-flex justify-content-between mt-3 bg-primary text-white"
           role="alert"
         >
-          <div>
+          <div
+            class="d-flex gap-3"
+          >
             <img
-              class="mr-3 alert-icon"
+              height="24"
               src="/assets/curriculum/icons/icon-tip.svg"
+              width="24"
             />
              
             <a
-              class="text-white"
+              class="text-white noUnderline"
               href="url"
               rel="noopener noreferrer"
               target="_blank"
