@@ -224,7 +224,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                   </Text>
                 )}
               </div>
-              <div className="text-right">
+              <div className="text-end">
                 <SelectIteration
                   data={previousSubmissions}
                   loading={loading}

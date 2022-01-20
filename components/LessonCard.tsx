@@ -62,7 +62,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
-  let style = 'btn btn-sm bg-primary text-white float-right mb-2 mr-2'
+  let style = 'btn btn-sm bg-primary text-white float-end mb-2 mr-2'
   if (props.className) style += props.className
   if (!props.isCompleted) {
     return null
