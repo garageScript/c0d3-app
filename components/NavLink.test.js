@@ -29,17 +29,31 @@ describe('NavLink Component', () => {
     expect(container.childNodes.length).toBe(0)
   })
 
-  test('Should render with noUnderline class when hoverUnderline is not passed', () => {
-    const { container } = render(<NavLink path="/">Link</NavLink>)
-    expect(container.querySelector('.noUnderline')).not.toBeNull()
+  test('Should render with noUnderline class when hoverUnderline is not passed and path doesnt start with "/"', () => {
+    const { container } = render(<NavLink path="notLocal">Link</NavLink>)
+    expect(container.firstChild.classList.contains('noUnderline')).toBe(true)
   })
 
-  test('Should render with link class when hoverUnderline is true', () => {
+  test('Should render with link class when hoverUnderline is true and path doesnt start with "/"', () => {
+    const { container } = render(
+      <NavLink path="notLocal" hoverUnderline={true}>
+        Link
+      </NavLink>
+    )
+    expect(container.firstChild.classList.contains('link')).toBe(true)
+  })
+
+  test('Should render with noUnderline class when hoverUnderline is not passed and path start with "/"', () => {
+    const { container } = render(<NavLink path="/">Link</NavLink>)
+    expect(container.firstChild.classList.contains('noUnderline')).toBe(true)
+  })
+
+  test('Should render with link class when hoverUnderline is true and path start with "/"', () => {
     const { container } = render(
       <NavLink path="/" hoverUnderline={true}>
         Link
       </NavLink>
     )
-    expect(container.querySelector('.link')).not.toBeNull()
+    expect(container.firstChild.classList.contains('link')).toBe(true)
   })
 })
