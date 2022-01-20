@@ -170,7 +170,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
             Submitted {dayjs(parseInt(submission.createdAt)).fromNow()}
           </div>
         )}
-        <div className="text-left ml-2">
+        <div className="text-start ml-2">
           <SelectIteration
             data={data}
             loading={loading}

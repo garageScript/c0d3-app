@@ -122,7 +122,7 @@ export const FormCard: React.FC<FormCardProps> = ({
             <h2 className="card-title font-weight-bold mb-3">{title}</h2>
           )}
         </div>
-        <div className="text-left">{optionsList}</div>
+        <div className="text-start">{optionsList}</div>
         {submitError && <h6 className="text-danger">{submitError}</h6>}
         <div className="text-center mb-4">
           <Button onClick={btnOnClick} type="primary" color="white">

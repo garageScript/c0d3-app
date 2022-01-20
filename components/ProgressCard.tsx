@@ -9,7 +9,7 @@ const ProgressBar: React.FC<{ progressCount: number }> = ({
     <div className="bg-white my-3 rounded">
       <div
         className={`${styles['progress-card__horizontal']} bg-primary d-flex ${
-          progressCount >= 100 ? 'rounded' : 'rounded-left'
+          progressCount >= 100 ? 'rounded' : 'rounded-start'
         }`}
         style={{
           width: progressCount <= 0 ? 'min-content' : `${progressCount}%`

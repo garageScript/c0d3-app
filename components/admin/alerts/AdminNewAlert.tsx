@@ -83,7 +83,7 @@ export const NewAlert: React.FC<NewAlertProps> = ({ setAlerts }) => {
             onDismiss={noop}
           />
         </div>
-        <div className="text-left">
+        <div className="text-start">
           <FormCard
             values={alertProperties}
             onSubmit={{ title: 'Create New Alert', onClick: alter }}
