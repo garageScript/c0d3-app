@@ -91,7 +91,7 @@ const LessonCard: React.FC<Props> = props => {
           </div>
           {props.currentState === 'completed' && (
             <span
-              className={`${styles['lesson-card__badge']} badge badge-pill badge-success p-0`}
+              className={`${styles['lesson-card__badge']} badge rounded-pill bg-success p-0`}
             >
               <CheckCircle size="15" />
               <span className="mx-1 d-none d-md-block">COMPLETED</span>
@@ -142,7 +142,7 @@ const LessonCard: React.FC<Props> = props => {
       />
 
       <div
-        className={`${styles['lesson-card__description']} pl-4 d-none d-sm-block`}
+        className={`${styles['lesson-card__description']} ps-4 d-none d-sm-block`}
       >
         <div className="d-flex">
           <h4
@@ -152,7 +152,7 @@ const LessonCard: React.FC<Props> = props => {
           </h4>
           {props.currentState === 'completed' && (
             <span
-              className={`${styles['lesson-card__badge']} badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center`}
+              className={`${styles['lesson-card__badge']} badge rounded-pill bg-success mt-2 ms-2 py-2 d-flex align-items-center`}
             >
               <CheckCircle size="15" />
               <span className="mx-1 d-none d-md-block">COMPLETED</span>
