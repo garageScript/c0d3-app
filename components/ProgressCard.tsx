@@ -15,7 +15,7 @@ const ProgressBar: React.FC<{ progressCount: number }> = ({
           width: progressCount <= 0 ? 'min-content' : `${progressCount}%`
         }}
       >
-        <div className="align-self-center px-1 ms-auto font-weight-bold">
+        <div className="align-self-center px-1 ms-auto fw-bold">
           {progressCount}%
         </div>
       </div>
@@ -134,7 +134,7 @@ const ProgressCard: React.FC<{
           path="https://discord.gg/c0d3"
           external
         >
-          <p className="font-weight-bold d-inline">Discord</p>
+          <p className="fw-bold d-inline">Discord</p>
         </NavLink>
         to ask your questions. Start by setting up your development environment
         and then follow the lessons in the course.

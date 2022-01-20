@@ -9,9 +9,7 @@ const ChallengeBar: React.FC<{
   return (
     <div className="d-flex justify-content-center my-3">
       <div className="card shadow-sm bg-primary text-white px-4 py-2 border-0">
-        <h1 className="text-center font-weight-bold align-self-center">
-          {title}
-        </h1>
+        <h1 className="text-center fw-bold align-self-center">{title}</h1>
         <NavLink
           path="/docs/setup#submitting-challenges"
           className="text-white text-center "
@@ -19,7 +17,7 @@ const ChallengeBar: React.FC<{
         >
           Submitting challenges
         </NavLink>
-        <p className="px-2 m-0 text-center font-weight-bold">{description}</p>
+        <p className="px-2 m-0 text-center fw-bold">{description}</p>
 
         <div className="text-center">
           <NavLink

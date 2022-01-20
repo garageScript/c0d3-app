@@ -291,15 +291,11 @@ export const ChallengesCompletedCard: React.FC<
           </p>
           <p className="review-message">
             You can help your peers by
-            <NavLink path={chatUrl} className="font-weight-bold mx-1" external>
+            <NavLink path={chatUrl} className="fw-bold mx-1" external>
               answering questions
             </NavLink>
             they have in the lesson and
-            <NavLink
-              path={reviewUrl}
-              className="font-weight-bold mx-1"
-              external
-            >
+            <NavLink path={reviewUrl} className="fw-bold mx-1" external>
               reviewing challenge submissions
             </NavLink>
           </p>
@@ -310,7 +306,7 @@ export const ChallengesCompletedCard: React.FC<
             by giving them a star
           </p>
           <button
-            className="btn btn-light text-primary font-weight-bold ms-auto"
+            className="btn btn-light text-primary fw-bold ms-auto"
             onClick={() => setShow(true)}
           >
             Give Star

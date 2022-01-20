@@ -118,9 +118,7 @@ export const FormCard: React.FC<FormCardProps> = ({
     <div className={`row${border ? ' border' : ''}`}>
       <div className={`card shadow-sm col-12`}>
         <div className="card-body text-center">
-          {title && (
-            <h2 className="card-title font-weight-bold mb-3">{title}</h2>
-          )}
+          {title && <h2 className="card-title fw-bold mb-3">{title}</h2>}
         </div>
         <div className="text-start">{optionsList}</div>
         {submitError && <h6 className="text-danger">{submitError}</h6>}

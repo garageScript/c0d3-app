@@ -84,7 +84,7 @@ const LessonCard: React.FC<Props> = props => {
       : 'border-0'
   const mobile = (
     <>
-      <h4 className={`${styles['lesson-card__title']} font-weight-bold mt-3 `}>
+      <h4 className={`${styles['lesson-card__title']} fw-bold mt-3 `}>
         <div className="d-flex justify-content-center">
           <div className="align-self-center">
             <NavLink path={props.challengesUrl}>{props.title}</NavLink>
@@ -145,9 +145,7 @@ const LessonCard: React.FC<Props> = props => {
         className={`${styles['lesson-card__description']} ps-4 d-none d-sm-block`}
       >
         <div className="d-flex">
-          <h4
-            className={`${styles['lesson-card__title']} font-weight-bold mt-3`}
-          >
+          <h4 className={`${styles['lesson-card__title']} fw-bold mt-3`}>
             <NavLink path={props.challengesUrl}>{props.title}</NavLink>
           </h4>
           {props.currentState === 'completed' && (

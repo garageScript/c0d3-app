@@ -32,11 +32,9 @@ const MentorCard: React.FC<MentorCardProps> = ({
     >
       <h5 className="mt-0 mb-0">Send Star</h5>
     </div>
-    <h6 className={`mb-0 mt-0 font-weight-light pe-3 ps-3 ${styles['long']}`}>
-      {name}
-    </h6>
+    <h6 className={`mb-0 mt-0 fw-light pe-3 ps-3 ${styles['long']}`}>{name}</h6>
     <span
-      className={`text-muted font-weight-light mt-0 mb-0 pe-3 ps-3 ${styles['long']}`}
+      className={`text-muted fw-light mt-0 mb-0 pe-3 ps-3 ${styles['long']}`}
     >
       @{username}
     </span>
@@ -70,13 +68,13 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
   return (
     <div className="chooseMentor d-flex flex-column">
       <div className={`pt-2 pt-4 ps-5 pe-5 pb-4 ${styles['searchBar']}`}>
-        <h4 className="font-weight-bold mt-2 mb-4 pt-2 pb-1">
+        <h4 className="fw-bold mt-2 mb-4 pt-2 pb-1">
           Who helped you the most?
         </h4>
         <input
           data-testid="giveStarInput"
           onChange={e => setSearch(e.target.value)}
-          className="pb-4 form-control-lg form-control font-weight-light"
+          className="pb-4 form-control-lg form-control fw-light"
         />
       </div>
       <div className={`pt-4 pb-3 ${styles['mentorsList']}`}>

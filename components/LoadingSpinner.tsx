@@ -13,7 +13,7 @@ const LoadingSpinner = () => {
       className="container-fluid bg-primary d-flex flex-column justify-content-center align-items-center"
     >
       <h1
-        className="text-white font-weight-bold display-3"
+        className="text-white fw-bold display-3"
         style={{ fontFamily: "'PT Mono', sans-serif" }}
       >
         C0D3

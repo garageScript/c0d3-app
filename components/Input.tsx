@@ -12,7 +12,7 @@ const Input: React.FC<Props> = ({ ...props }) => {
   const hasErrorStyle = error && touched ? 'outline-danger' : ''
   const classes =
     props.classes ||
-    `form-control form-control-lg font-weight-light mb-3 ${hasErrorStyle}`
+    `form-control form-control-lg fw-light mb-3 ${hasErrorStyle}`
   return (
     <>
       <input

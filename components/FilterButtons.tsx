@@ -33,7 +33,7 @@ export const FilterButtons: React.FC<FilterProps> = ({
 
   return (
     <div className="d-flex flex-row">
-      <h4 className={`text-${theme} font-weight-bold me-1`}>{children}</h4>
+      <h4 className={`text-${theme} fw-bold me-1`}>{children}</h4>
       {filters}
     </div>
   )
