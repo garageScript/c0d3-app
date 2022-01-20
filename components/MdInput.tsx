@@ -194,7 +194,7 @@ export const MdInput: React.FC<MdInputProps> = ({
             isMac={isMac}
             inputRef={textareaRef}
             onChange={updateState}
-            className="ml-auto"
+            className="ms-auto"
           />
         )}
       </Nav>

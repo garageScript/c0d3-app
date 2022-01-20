@@ -4,7 +4,7 @@ import styles from '../scss/additionalResources.module.scss'
 
 const AdditionalResources: React.FC = () => {
   return (
-    <div className="additional-resources__container ml-4 d-flex flex-column justify-content-around">
+    <div className="additional-resources__container ms-4 d-flex flex-column justify-content-around">
       <h1
         className={`${styles['additional-resources__title']} font-weight-bold`}
       >

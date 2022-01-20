@@ -15,7 +15,7 @@ const ProgressBar: React.FC<{ progressCount: number }> = ({
           width: progressCount <= 0 ? 'min-content' : `${progressCount}%`
         }}
       >
-        <div className="align-self-center px-1 ml-auto font-weight-bold">
+        <div className="align-self-center px-1 ms-auto font-weight-bold">
           {progressCount}%
         </div>
       </div>

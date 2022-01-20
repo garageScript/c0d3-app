@@ -64,7 +64,7 @@ const ProfileSubmissions: React.FC<LessonChallengeProps> = ({ lessons }) => {
           className={`${styles['lesson_image_star_badge']} badge badge-pill badge-primary`}
         >
           {lesson.starsReceived && lesson.starsReceived.length}
-          <span className="ml-1">
+          <span className="ms-1">
             <Star size={15} fill="yellow" />
           </span>
         </p>

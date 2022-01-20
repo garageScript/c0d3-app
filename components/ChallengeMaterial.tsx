@@ -170,7 +170,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
             Submitted {dayjs(parseInt(submission.createdAt)).fromNow()}
           </div>
         )}
-        <div className="text-start ml-2">
+        <div className="text-start ms-2">
           <SelectIteration
             data={data}
             loading={loading}
@@ -310,7 +310,7 @@ export const ChallengesCompletedCard: React.FC<
             by giving them a star
           </p>
           <button
-            className="btn btn-light text-primary font-weight-bold ml-auto"
+            className="btn btn-light text-primary font-weight-bold ms-auto"
             onClick={() => setShow(true)}
           >
             Give Star

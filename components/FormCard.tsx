@@ -83,7 +83,7 @@ const OptionInfo: React.FC<OptionInfoProps> = ({
   const { title, error } = option
   if (title === 'id') return <></>
   return (
-    <div className="d-flex flex-column ml-3 mr-3 mb-4">
+    <div className="d-flex flex-column ms-3 mr-3 mb-4">
       <h5 data-testid={`h5${title}${index}`}>
         {`${(capitalizeTitle && _.capitalize(title)) || title}`}
       </h5>

@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
   if (border) classes.push('border')
   if (type) classes.push(`bg-${type}`)
   if (m) classes.push(`m-${m}`)
-  if (ml) classes.push(`ml-${ml}`)
+  if (ml) classes.push(`ms-${ml}`)
   if (size) classes.push(`btn-${size}`)
 
   return (

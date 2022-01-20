@@ -49,7 +49,7 @@ export const ReviewStatus: React.FC<{
           className={`${styles[`icon__${status}`]} ${styles['icon']}`}
         />
         <ReviewerProfile name={name} username={username} />
-        <div className="ml-1">{message}</div>
+        <div className="ms-1">{message}</div>
       </div>
       {comment && (
         <>
