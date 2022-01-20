@@ -238,7 +238,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-body">
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-3 overflow-hidden">
               <DiffView submission={submissionState} generalStatus={status} />
             </div>
           </div>

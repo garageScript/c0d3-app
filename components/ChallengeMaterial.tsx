@@ -184,7 +184,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
           />
         </div>
         <div className="card-body">
-          <div className="rounded-lg overflow-hidden">
+          <div className="rounded-3 overflow-hidden">
             <DiffView
               submission={submission}
               generalStatus={currentChallenge.submission?.status}

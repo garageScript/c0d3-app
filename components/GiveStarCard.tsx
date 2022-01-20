@@ -24,7 +24,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
   setMentor
 }) => (
   <div
-    className={`mb-3 rounded-lg d-flex justify-content-center align-items-center flex-column ${styles['mentor']} position-relative`}
+    className={`mb-3 rounded-3 d-flex justify-content-center align-items-center flex-column ${styles['mentor']} position-relative`}
     onClick={() => setMentor({ username, mentorId })}
   >
     <div
