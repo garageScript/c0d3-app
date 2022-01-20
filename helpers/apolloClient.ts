@@ -18,6 +18,7 @@ const whiteList = ['/curriculum']
 
 //there is no global await and this logic can't be refactored into other functions because pages/_app.tsx can't be async
 ;(async function () {
+  if (typeof window === 'undefined') return
   if (whiteList.includes(window.location.pathname)) {
     try {
       await persistCache({
