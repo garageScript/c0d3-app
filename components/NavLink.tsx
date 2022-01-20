@@ -43,7 +43,7 @@ const NavLink: React.FC<NavLinkProps> = ({
           styles[hoverUnderline ? 'link' : 'noUnderline']
         }`}
       >
-        {activePath && <span className="sr-only">(current)</span>}
+        {activePath && <span className="visually-hidden">(current)</span>}
         {children}
       </a>
     </Link>
