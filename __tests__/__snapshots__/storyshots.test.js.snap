@@ -9802,7 +9802,7 @@ Array [
     onMouseEnter={[Function]}
   >
     <span
-      className="sr-only"
+      className="visually-hidden"
     >
       (current)
     </span>
