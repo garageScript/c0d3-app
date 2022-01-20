@@ -62,7 +62,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
-  let style = 'btn btn-sm bg-primary text-white float-end mb-2 me-2'
+  let style = 'btn btn-sm btn-primary text-white float-end mb-2 me-2'
   if (props.className) style += props.className
   if (!props.isCompleted) {
     return null
@@ -146,11 +146,13 @@ const LessonCard: React.FC<Props> = props => {
       >
         <div className="d-flex">
           <h4 className={`${styles['lesson-card__title']} fw-bold mt-3`}>
-            <NavLink path={props.challengesUrl}>{props.title}</NavLink>
+            <NavLink path={props.challengesUrl} className="text-primary">
+              {props.title}
+            </NavLink>
           </h4>
           {props.currentState === 'completed' && (
             <span
-              className={`${styles['lesson-card__badge']} badge rounded-pill bg-success mt-2 ms-2 py-2 d-flex align-items-center`}
+              className={`${styles['lesson-card__badge']} badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center`}
             >
               <CheckCircle size="15" />
               <span className="mx-1 d-none d-md-block">COMPLETED</span>
