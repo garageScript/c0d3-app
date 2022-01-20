@@ -74,15 +74,17 @@ const LoggedInAuthNav: React.FC<{ username: string }> = ({ username }) => {
       <NavLink
         path="/profile/[username]"
         as={`/profile/${username}`}
-        className="btn btn-secondary border overflow-hidden text-truncate bg-light"
+        className="btn btn-light border overflow-hidden text-truncate"
       >
         {capitalized}
       </NavLink>
 
       <LogoutContainer>
-        <Button border ml="2" type="light">
-          Logout
-        </Button>
+        <div className={`${styles['light-button']} d-inline`}>
+          <Button border ml="2" type="light">
+            Logout
+          </Button>
+        </div>
       </LogoutContainer>
     </div>
   )
