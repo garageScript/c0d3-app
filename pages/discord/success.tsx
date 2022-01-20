@@ -136,7 +136,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
       <Title title="Success!" />
       <Card title="Success!">
         <>
-          <div className="ms-auto mr-auto">
+          <div className="ms-auto me-auto">
             <Image
               className="avatar"
               src={userInfo.avatarUrl}

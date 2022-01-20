@@ -12,10 +12,10 @@ const AdditionalResources: React.FC = () => {
       </h1>
       <NavLink
         path="https://developer.mozilla.org/en-US/"
-        className={`${styles['additional-resources_link']} mr-1`}
+        className={`${styles['additional-resources_link']} me-1`}
         external
       >
-        <h2 className={`${styles['additional-resources__subtitle']} mr-0`}>
+        <h2 className={`${styles['additional-resources__subtitle']} me-0`}>
           MDN Web Docs
         </h2>
       </NavLink>
@@ -26,7 +26,7 @@ const AdditionalResources: React.FC = () => {
       <hr className="my-2" />
       <NavLink
         path="https://javascript.info/"
-        className={`${styles['additional-resources_link']} mr-1`}
+        className={`${styles['additional-resources_link']} me-1`}
         external
       >
         <h2 className={`${styles['additional-resources__subtitle']}`}>
@@ -40,7 +40,7 @@ const AdditionalResources: React.FC = () => {
       <hr className="my-2" />
       <NavLink
         path="https://missing.csail.mit.edu/"
-        className={`${styles['additional-resources_link']} mr-1`}
+        className={`${styles['additional-resources_link']} me-1`}
         external
       >
         <h2 className={`${styles['additional-resources__subtitle']} `}>
@@ -54,7 +54,7 @@ const AdditionalResources: React.FC = () => {
       <hr className="my-2" />
       <NavLink
         path="https://teachyourselfcs.com/"
-        className={`${styles['additional-resources_link']} mr-1`}
+        className={`${styles['additional-resources_link']} me-1`}
         external
       >
         <h2 className={`${styles['additional-resources__subtitle']}`}>

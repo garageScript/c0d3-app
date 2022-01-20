@@ -305,7 +305,7 @@ export const ChallengesCompletedCard: React.FC<
           </p>
         </div>
         <div className="card-footer d-flex bg-primary">
-          <p className="text-white mr-3 my-2">
+          <p className="text-white me-3 my-2">
             You can show your appreciation to the user that helped you the most
             by giving them a star
           </p>

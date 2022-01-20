@@ -62,7 +62,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
 }
 
 const ReviewButton: React.FC<ReviewButtonProps> = props => {
-  let style = 'btn btn-sm bg-primary text-white float-end mb-2 mr-2'
+  let style = 'btn btn-sm bg-primary text-white float-end mb-2 me-2'
   if (props.className) style += props.className
   if (!props.isCompleted) {
     return null
@@ -111,7 +111,7 @@ const LessonCard: React.FC<Props> = props => {
       <div>
         <div className="d-inline-block mt-3">
           <img
-            className="mr-2"
+            className="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
             alt="icon-challenge"
           />
@@ -125,7 +125,7 @@ const LessonCard: React.FC<Props> = props => {
         isCompleted={props.currentState === 'completed'}
         reviewUrl={props.reviewUrl}
         lessonId={props.lessonId}
-        className="mr-0"
+        className="me-0"
       />
     </>
   )
@@ -161,9 +161,9 @@ const LessonCard: React.FC<Props> = props => {
         </div>
         <div>
           <div>
-            <div className="d-inline-block mr-4">
+            <div className="d-inline-block me-4">
               <img
-                className="mr-2"
+                className="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
                 alt="icon-challenge"
               />
@@ -190,7 +190,7 @@ const LessonCard: React.FC<Props> = props => {
         <div className="p-2 bg-primary">
           <NavLink
             path={props.docUrl}
-            className={`${styles['lesson-card__button']} btn btn-light mr-2 my-1 text-primary`}
+            className={`${styles['lesson-card__button']} btn btn-light me-2 my-1 text-primary`}
             external
           >
             Start Lesson

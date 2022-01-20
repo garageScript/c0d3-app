@@ -32,7 +32,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
       <div className="card-body p-0">
         <div className="d-flex mb-3 px-3">
           <img
-            className={`${styles['lessonTitleCard__lesson-cover']} mr-3`}
+            className={`${styles['lessonTitleCard__lesson-cover']} me-3`}
             src={`/assets/curriculum/${lessonCoverUrl}`}
             alt="lesson-cover"
           />

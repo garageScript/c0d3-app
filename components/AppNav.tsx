@@ -90,10 +90,10 @@ const LoggedInAuthNav: React.FC<{ username: string }> = ({ username }) => {
 
 const NotLoggedInAuthNav = () => (
   <div className={`${styles['nav-buttons']}`}>
-    <NavLink path="/login" className="btn btn-light border m-2 mr-lg-3">
+    <NavLink path="/login" className="btn btn-light border m-2 me-lg-3">
       Login
     </NavLink>
-    <NavLink path="/signup" className="btn btn-light border m-2 mr-lg-3">
+    <NavLink path="/signup" className="btn btn-light border m-2 me-lg-3">
       Signup
     </NavLink>
   </div>

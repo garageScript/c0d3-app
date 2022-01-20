@@ -12,7 +12,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
   return (
     <div className="card shadow-sm">
       <div
-        className={`ms-auto mr-auto mt-4 ${styles['profile_image_container']}`}
+        className={`ms-auto me-auto mt-4 ${styles['profile_image_container']}`}
       >
         <UserInfoImage user={user} />
       </div>
@@ -22,7 +22,7 @@ const ProfileImageInfo: React.FC<ProfileImageInfoProps> = ({ user }) => {
       <div className="d-flex justify-content-center">
         <h4 className="text-muted">{'@' + user.username}</h4>
       </div>
-      <div className="d-flex ms-auto mr-auto mb-4">
+      <div className="d-flex ms-auto me-auto mb-4">
         {user.discordUserId ? (
           <>
             <Image

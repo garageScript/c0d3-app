@@ -99,7 +99,7 @@ const ReviewButtons: React.FC<{
               checked={commentType === 'accept'}
               value="accept"
               onChange={onChange}
-              className="mr-2"
+              className="me-2"
             />
             <p className="font-weight-bold d-inline">Accept</p>
             <p className="text-muted">Submit feedback and approve submission</p>
@@ -110,7 +110,7 @@ const ReviewButtons: React.FC<{
               checked={commentType === 'reject'}
               value="reject"
               onChange={onChange}
-              className="mr-2"
+              className="me-2"
             />
             <p className="font-weight-bold d-inline">Reject</p>
             <p className="text-muted">Request changes and reject submission</p>
@@ -129,7 +129,7 @@ const ReviewButtons: React.FC<{
             checked={commentType === 'comment'}
             value="comment"
             onChange={onChange}
-            className="mr-2"
+            className="me-2"
           />
           <p className="font-weight-bold d-inline">Comment</p>
           <p className="text-muted">

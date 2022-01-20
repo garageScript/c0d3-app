@@ -80,7 +80,7 @@ const SearchMentor: React.FC<SearchMentorProps> = ({ setMentor, mentors }) => {
         />
       </div>
       <div className={`pt-4 pb-3 ${styles['mentorsList']}`}>
-        <div className="row mr-5 ms-5 mt-1 mb-2 d-flex flex-wrap justify-content-between">
+        <div className="row me-5 ms-5 mt-1 mb-2 d-flex flex-wrap justify-content-between">
           {mentorsList}
         </div>
       </div>
