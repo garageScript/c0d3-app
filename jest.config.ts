@@ -28,6 +28,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy'
   },
+  setupFilesAfterEnv: ['<rootDir>/jest.env.js'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['__tests__/utils/', 'node_modules/', '.next/'],
   transformIgnorePatterns: ['node_modules/']

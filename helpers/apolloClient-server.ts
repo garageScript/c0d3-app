@@ -1,5 +1,3 @@
-//from https://github.com/vercel/next.js/tree/canary/examples/with-apollo
-import { useMemo } from 'react'
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,36 +5,14 @@ import {
 } from '@apollo/client'
 import merge from 'deepmerge'
 import isEqual from 'lodash/isEqual'
+import { SchemaLink } from '@apollo/client/link/schema'
+import { schema } from '../graphql/schema'
 
-export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 let apolloClient: ApolloClient<NormalizedCacheObject>
 const cache = new InMemoryCache()
 
-import { persistCache } from 'apollo3-cache-persist'
-//restoring cache doesn't work with loading spinner, so it's enabled in page by page basis
-const whiteList = ['/curriculum']
-
-//there is no global await and this logic can't be refactored into other functions because pages/_app.tsx can't be async
-;(async function () {
-  if (
-    typeof window !== 'undefined' &&
-    whiteList.includes(window.location.pathname)
-  ) {
-    try {
-      await persistCache({
-        cache,
-        storage: window.localStorage
-      })
-    } catch (error) {
-      console.error('Error restoring Apollo cache', error)
-    }
-  }
-})()
-
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
-    const { SchemaLink } = require('@apollo/client/link/schema')
-    const { schema } = require('../graphql/schema')
     return new SchemaLink({ schema })
   } else {
     const { HttpLink } = require('@apollo/client/link/http')
@@ -47,7 +23,7 @@ function createIsomorphLink() {
   }
 }
 
-export function createApolloClient() {
+function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: createIsomorphLink(),
@@ -84,21 +60,4 @@ export function initializeApollo(
   if (!apolloClient) apolloClient = _apolloClient
 
   return _apolloClient
-}
-
-export function addApolloState(
-  client: ApolloClient<NormalizedCacheObject>,
-  pageProps: Record<string, any>
-) {
-  if (pageProps && pageProps.props) {
-    pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract()
-  }
-
-  return pageProps
-}
-
-export function useApollo(pageProps: Record<string, any>) {
-  const state = pageProps[APOLLO_STATE_PROP_NAME]
-  const store = useMemo(() => initializeApollo(state), [state])
-  return store
 }
