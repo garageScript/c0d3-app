@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ModalCard, ModalSize } from './ModalCard'
 import NavLink from './NavLink'
-
+import styles from '../scss/connectToDiscordModal.module.scss'
 type ConnectToDiscordModalProps = {
   show: boolean
   close: Function
@@ -48,7 +48,10 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
         <div className="mt-3">
           <p>
             Please{' '}
-            <a href={discordConnectPage} className="button">
+            <a
+              href={discordConnectPage}
+              className={`${styles['link']} link-primary button`}
+            >
               connect your Discord account
             </a>
             , or create one if you don&apos;t already have one. Our students and
@@ -68,7 +71,7 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             alternative.
           </p>
         </div>
-        <NavLink path={discordConnectPage}>
+        <NavLink path={discordConnectPage} className="d-grid">
           <button
             type="button"
             className="btn btn-primary btn-lg btn-block mb-3"
@@ -86,7 +89,9 @@ const ConnectToDiscordModal: React.FC<ConnectToDiscordModalProps> = ({
             close()
           }}
         >
-          <a href="#">No thanks, I&apos;ll study on my own.</a>
+          <a href="#" className={`${styles['link']} link-primary`}>
+            No thanks, I&apos;ll study on my own.
+          </a>
         </div>
       </div>
     </ModalCard>
