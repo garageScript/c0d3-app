@@ -46,6 +46,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
                   e.preventDefault()
                   router.back()
                 }}
+                className={`${styles['link']} link-primary`}
               >
                 Go Back
               </a>
