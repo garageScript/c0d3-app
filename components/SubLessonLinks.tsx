@@ -25,7 +25,7 @@ const SubLessonLinks: React.FC<Props> = ({
         >
           <a
             className={`${styles['subtitle']} ${
-              isSelected ? `text-dark dark` : 'text-muted'
+              isSelected ? `link-dark dark` : 'text-muted'
             } d-block`}
             aria-current={isSelected ? 'page' : undefined}
           >

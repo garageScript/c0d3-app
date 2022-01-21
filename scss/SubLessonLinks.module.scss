@@ -1,9 +1,14 @@
 .subtitle {
   font-size: 1.5rem;
+  text-decoration: none;
   @media (max-width: 768px) {
     font-size: 1.3rem;
   }
   .dark {
+    text-decoration: underline;
+  }
+
+  &:hover {
     text-decoration: underline;
   }
 }
