@@ -15,7 +15,7 @@ exports[`DiscordBar component Should render one user 1`] = `
         class="text-primary mt-n3 text-center"
       >
         <span
-          class="font-weight-bold"
+          class="fw-bold"
         >
           1
         </span>
@@ -29,7 +29,7 @@ exports[`DiscordBar component Should render one user 1`] = `
         class="discord-list"
       >
         <div
-          class="text-center font-weight-bold text-primary"
+          class="text-center fw-bold text-primary"
         >
           <div
             class="d-inline-block"
@@ -43,7 +43,7 @@ exports[`DiscordBar component Should render one user 1`] = `
       </div>
     </div>
     <a
-      class="discord_link font-weight-bold text-white"
+      class="discord_link fw-bold text-white"
       href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"
@@ -73,7 +73,7 @@ exports[`DiscordBar component Should render two users 1`] = `
         class="text-primary mt-n3 text-center"
       >
         <span
-          class="font-weight-bold"
+          class="fw-bold"
         >
           2
         </span>
@@ -87,7 +87,7 @@ exports[`DiscordBar component Should render two users 1`] = `
         class="discord-list"
       >
         <div
-          class="text-center font-weight-bold text-primary"
+          class="text-center fw-bold text-primary"
         >
           <div
             class="d-inline-block"
@@ -109,7 +109,7 @@ exports[`DiscordBar component Should render two users 1`] = `
       </div>
     </div>
     <a
-      class="discord_link font-weight-bold text-white"
+      class="discord_link fw-bold text-white"
       href="https://discord.gg/c0d3"
       rel="noreferrer"
       target="_blank"

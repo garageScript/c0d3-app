@@ -33,7 +33,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
           </div>
         </div>
         <div
-          class="text-right"
+          class="text-end"
         >
           <div
             class="selection__card"
@@ -55,7 +55,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden"
+        class="rounded-3 overflow-hidden"
       >
         <table
           class="css-1n5o7vh-diff-container"
@@ -467,7 +467,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             </a>
           </div>
           <div
-            class="ml-1"
+            class="ms-1"
           >
              requested changes on November 6, 2000 12:00 AM.
           </div>
@@ -510,7 +510,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             </a>
           </div>
           <div
-            class="ml-auto btn-toolbar"
+            class="ms-auto btn-toolbar"
             role="toolbar"
           >
             <button
@@ -688,12 +688,12 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
         <label>
           <input
             checked=""
-            class="mr-2"
+            class="me-2"
             type="radio"
             value="comment"
           />
           <p
-            class="font-weight-bold d-inline"
+            class="fw-bold d-inline"
           >
             Comment
           </p>
@@ -705,7 +705,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
         </label>
       </div>
       <button
-        class="btn bg-success"
+        class="btn btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -748,7 +748,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
           </div>
         </div>
         <div
-          class="text-right"
+          class="text-end"
         >
           <div
             class="selection__card"
@@ -769,7 +769,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 >
                   1
                   <span
-                    class="sr-only"
+                    class="visually-hidden"
                   >
                     comment count
                   </span>
@@ -785,7 +785,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 >
                   2
                   <span
-                    class="sr-only"
+                    class="visually-hidden"
                   >
                     comment count
                   </span>
@@ -801,12 +801,12 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                 >
                   3
                   <span
-                    class="badge badge badge-light"
+                    class="badge bg-light badge badge-light"
                   >
                     2
                   </span>
                   <span
-                    class="sr-only"
+                    class="visually-hidden"
                   >
                     comment count
                   </span>
@@ -821,7 +821,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden"
+        class="rounded-3 overflow-hidden"
       >
         <table
           class="css-1n5o7vh-diff-container"
@@ -1233,7 +1233,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             </a>
           </div>
           <div
-            class="ml-1"
+            class="ms-1"
           >
              requested changes on November 6, 2000 12:00 AM.
           </div>
@@ -1276,7 +1276,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             </a>
           </div>
           <div
-            class="ml-auto btn-toolbar"
+            class="ms-auto btn-toolbar"
             role="toolbar"
           >
             <button
@@ -1454,12 +1454,12 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
         <label>
           <input
             checked=""
-            class="mr-2"
+            class="me-2"
             type="radio"
             value="comment"
           />
           <p
-            class="font-weight-bold d-inline"
+            class="fw-bold d-inline"
           >
             Comment
           </p>
@@ -1471,7 +1471,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
         </label>
       </div>
       <button
-        class="btn bg-success"
+        class="btn btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -1514,7 +1514,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
           </div>
         </div>
         <div
-          class="text-right"
+          class="text-end"
         >
           <div
             class="selection__card"
@@ -1536,7 +1536,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden"
+        class="rounded-3 overflow-hidden"
       >
         <table
           class="css-1n5o7vh-diff-container"
@@ -2749,7 +2749,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             </a>
           </div>
           <div
-            class="ml-1"
+            class="ms-1"
           >
              requested changes on November 6, 2000 12:00 AM.
           </div>
@@ -2792,7 +2792,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             </a>
           </div>
           <div
-            class="ml-auto btn-toolbar"
+            class="ms-auto btn-toolbar"
             role="toolbar"
           >
             <button
@@ -2970,12 +2970,12 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
         <label>
           <input
             checked=""
-            class="mr-2"
+            class="me-2"
             type="radio"
             value="comment"
           />
           <p
-            class="font-weight-bold d-inline"
+            class="fw-bold d-inline"
           >
             Comment
           </p>
@@ -2987,7 +2987,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
         </label>
       </div>
       <button
-        class="btn bg-success"
+        class="btn btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -3030,7 +3030,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
           </div>
         </div>
         <div
-          class="text-right"
+          class="text-end"
         >
           <div
             class="selection__card"
@@ -3052,7 +3052,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden"
+        class="rounded-3 overflow-hidden"
       >
         <table
           class="css-1n5o7vh-diff-container"
@@ -4265,7 +4265,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             </a>
           </div>
           <div
-            class="ml-1"
+            class="ms-1"
           >
              requested changes on November 6, 2000 12:00 AM.
           </div>
@@ -4308,7 +4308,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             </a>
           </div>
           <div
-            class="ml-auto btn-toolbar"
+            class="ms-auto btn-toolbar"
             role="toolbar"
           >
             <button
@@ -4486,12 +4486,12 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
         <label>
           <input
             checked=""
-            class="mr-2"
+            class="me-2"
             type="radio"
             value="comment"
           />
           <p
-            class="font-weight-bold d-inline"
+            class="fw-bold d-inline"
           >
             Comment
           </p>
@@ -4503,7 +4503,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
         </label>
       </div>
       <button
-        class="btn bg-success"
+        class="btn btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -4546,7 +4546,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
           </div>
         </div>
         <div
-          class="text-right"
+          class="text-end"
         >
           <div
             class="selection__card"
@@ -4568,7 +4568,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden"
+        class="rounded-3 overflow-hidden"
       />
     </div>
     <div
@@ -4604,7 +4604,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             </a>
           </div>
           <div
-            class="ml-1"
+            class="ms-1"
           >
              requested changes on November 6, 2000 12:00 AM.
           </div>
@@ -4647,7 +4647,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             </a>
           </div>
           <div
-            class="ml-auto btn-toolbar"
+            class="ms-auto btn-toolbar"
             role="toolbar"
           >
             <button
@@ -4825,12 +4825,12 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
         <label>
           <input
             checked=""
-            class="mr-2"
+            class="me-2"
             type="radio"
             value="comment"
           />
           <p
-            class="font-weight-bold d-inline"
+            class="fw-bold d-inline"
           >
             Comment
           </p>
@@ -4842,7 +4842,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
         </label>
       </div>
       <button
-        class="btn bg-success"
+        class="btn btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -4885,7 +4885,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
           </div>
         </div>
         <div
-          class="text-right"
+          class="text-end"
         >
           <div
             class="selection__card"
@@ -4907,7 +4907,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden"
+        class="rounded-3 overflow-hidden"
       >
         <table
           class="css-1n5o7vh-diff-container"
@@ -6120,7 +6120,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             </a>
           </div>
           <div
-            class="ml-1"
+            class="ms-1"
           >
              requested changes on November 6, 2000 12:00 AM.
           </div>
@@ -6163,7 +6163,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             </a>
           </div>
           <div
-            class="ml-auto btn-toolbar"
+            class="ms-auto btn-toolbar"
             role="toolbar"
           >
             <button
@@ -6341,12 +6341,12 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
         <label>
           <input
             checked=""
-            class="mr-2"
+            class="me-2"
             type="radio"
             value="comment"
           />
           <p
-            class="font-weight-bold d-inline"
+            class="fw-bold d-inline"
           >
             Comment
           </p>
@@ -6358,7 +6358,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
         </label>
       </div>
       <button
-        class="btn bg-success"
+        class="btn btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit

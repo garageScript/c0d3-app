@@ -83,7 +83,7 @@ exports[`Alerts page Should remove alert 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -93,7 +93,7 @@ exports[`Alerts page Should remove alert 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -103,7 +103,7 @@ exports[`Alerts page Should remove alert 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -118,18 +118,22 @@ exports[`Alerts page Should remove alert 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -148,7 +152,7 @@ exports[`Alerts page Should remove alert 1`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5 text-primary"
+            class="card-title h2 fw-bold mb-5 text-primary"
           >
             Alerts
           </h1>
@@ -170,7 +174,7 @@ exports[`Alerts page Should remove alert 1`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5 text-primary"
+            class="card-title h2 fw-bold mb-5 text-primary"
           >
             Create New Alert
           </h1>
@@ -215,7 +219,7 @@ exports[`Alerts page Should remove alert 1`] = `
                 </div>
               </div>
               <div
-                class="text-left"
+                class="text-start"
               >
                 <div
                   class="row"
@@ -227,10 +231,10 @@ exports[`Alerts page Should remove alert 1`] = `
                       class="card-body text-center"
                     />
                     <div
-                      class="text-left"
+                      class="text-start"
                     >
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5text0"
@@ -246,7 +250,7 @@ exports[`Alerts page Should remove alert 1`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5type1"
@@ -273,7 +277,7 @@ exports[`Alerts page Should remove alert 1`] = `
                           class="d-lg-none"
                         >
                           <div
-                            class="text-center text-xl-left py-2 px-4"
+                            class="text-center text-xl-start py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -282,7 +286,7 @@ exports[`Alerts page Should remove alert 1`] = `
                             </button>
                           </div>
                           <div
-                            class="text-center text-xl-left py-2 px-4"
+                            class="text-center text-xl-start py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -293,7 +297,7 @@ exports[`Alerts page Should remove alert 1`] = `
                         </div>
                       </div>
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5url2"
@@ -309,7 +313,7 @@ exports[`Alerts page Should remove alert 1`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5urlCaption3"
@@ -329,7 +333,7 @@ exports[`Alerts page Should remove alert 1`] = `
                       class="text-center mb-4"
                     >
                       <button
-                        class="btn bg-primary"
+                        class="btn btn-primary"
                         style="color: rgb(255, 255, 255);"
                       >
                         Create New Alert
@@ -353,7 +357,7 @@ exports[`Alerts page Should remove alert 1`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5 text-primary"
+            class="card-title h2 fw-bold mb-5 text-primary"
           >
             Current Alerts
           </h1>
@@ -405,7 +409,7 @@ exports[`Alerts page Should remove alert 1`] = `
               class="d-flex flex-column col-2 mt-3 justify-content-center"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(255, 255, 255);"
               >
                 Remove Alert
@@ -448,7 +452,7 @@ exports[`Alerts page Should remove alert 1`] = `
               class="d-flex flex-column col-2 mt-3 justify-content-center"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(255, 255, 255);"
               >
                 Remove Alert
@@ -460,7 +464,7 @@ exports[`Alerts page Should remove alert 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -550,7 +554,7 @@ exports[`Alerts page Should remove alert 2`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -560,7 +564,7 @@ exports[`Alerts page Should remove alert 2`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -570,7 +574,7 @@ exports[`Alerts page Should remove alert 2`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -585,18 +589,22 @@ exports[`Alerts page Should remove alert 2`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light noUnderline"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -615,7 +623,7 @@ exports[`Alerts page Should remove alert 2`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5 text-primary"
+            class="card-title h2 fw-bold mb-5 text-primary"
           >
             Alerts
           </h1>
@@ -637,7 +645,7 @@ exports[`Alerts page Should remove alert 2`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5 text-primary"
+            class="card-title h2 fw-bold mb-5 text-primary"
           >
             Create New Alert
           </h1>
@@ -682,7 +690,7 @@ exports[`Alerts page Should remove alert 2`] = `
                 </div>
               </div>
               <div
-                class="text-left"
+                class="text-start"
               >
                 <div
                   class="row"
@@ -694,10 +702,10 @@ exports[`Alerts page Should remove alert 2`] = `
                       class="card-body text-center"
                     />
                     <div
-                      class="text-left"
+                      class="text-start"
                     >
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5text0"
@@ -713,7 +721,7 @@ exports[`Alerts page Should remove alert 2`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5type1"
@@ -740,7 +748,7 @@ exports[`Alerts page Should remove alert 2`] = `
                           class="d-lg-none"
                         >
                           <div
-                            class="text-center text-xl-left py-2 px-4"
+                            class="text-center text-xl-start py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -749,7 +757,7 @@ exports[`Alerts page Should remove alert 2`] = `
                             </button>
                           </div>
                           <div
-                            class="text-center text-xl-left py-2 px-4"
+                            class="text-center text-xl-start py-2 px-4"
                           >
                             <button
                               class="dropdown-item"
@@ -760,7 +768,7 @@ exports[`Alerts page Should remove alert 2`] = `
                         </div>
                       </div>
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5url2"
@@ -776,7 +784,7 @@ exports[`Alerts page Should remove alert 2`] = `
                         />
                       </div>
                       <div
-                        class="d-flex flex-column ml-3 mr-3 mb-4"
+                        class="d-flex flex-column ms-3 me-3 mb-4"
                       >
                         <h5
                           data-testid="h5urlCaption3"
@@ -796,7 +804,7 @@ exports[`Alerts page Should remove alert 2`] = `
                       class="text-center mb-4"
                     >
                       <button
-                        class="btn bg-primary"
+                        class="btn btn-primary"
                         style="color: rgb(255, 255, 255);"
                       >
                         Create New Alert
@@ -820,7 +828,7 @@ exports[`Alerts page Should remove alert 2`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5 text-primary"
+            class="card-title h2 fw-bold mb-5 text-primary"
           >
             Current Alerts
           </h1>
@@ -865,7 +873,7 @@ exports[`Alerts page Should remove alert 2`] = `
               class="d-flex flex-column col-2 mt-3 justify-content-center"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(255, 255, 255);"
               >
                 Remove Alert
@@ -877,7 +885,7 @@ exports[`Alerts page Should remove alert 2`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

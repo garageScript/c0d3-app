@@ -9,7 +9,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
       class="mb-2"
     >
       <span
-        class="text-primary font-weight-bold display-3"
+        class="text-primary fw-bold display-3"
       >
         Create New Lesson
       </span>
@@ -24,10 +24,10 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
           class="card-body text-center"
         />
         <div
-          class="text-left"
+          class="text-start"
         >
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5title0"
@@ -43,7 +43,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5description1"
@@ -83,7 +83,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
                   </a>
                 </div>
                 <div
-                  class="ml-auto btn-toolbar"
+                  class="ms-auto btn-toolbar"
                   role="toolbar"
                 >
                   <button
@@ -257,7 +257,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5docUrl2"
@@ -273,7 +273,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5githubUrl3"
@@ -289,7 +289,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5videoUrl4"
@@ -305,7 +305,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5order5"
@@ -321,7 +321,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5slug6"
@@ -337,7 +337,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5chatUrl7"
@@ -357,7 +357,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn bg-primary"
+            class="btn btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Lesson
@@ -378,7 +378,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
       class="mb-2"
     >
       <span
-        class="text-primary font-weight-bold display-3"
+        class="text-primary fw-bold display-3"
       >
         Create New Lesson
       </span>
@@ -393,10 +393,10 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
           class="card-body text-center"
         />
         <div
-          class="text-left"
+          class="text-start"
         >
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5title0"
@@ -412,7 +412,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5description1"
@@ -452,7 +452,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
                   </a>
                 </div>
                 <div
-                  class="ml-auto btn-toolbar"
+                  class="ms-auto btn-toolbar"
                   role="toolbar"
                 >
                   <button
@@ -628,7 +628,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5docUrl2"
@@ -644,7 +644,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5githubUrl3"
@@ -660,7 +660,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5videoUrl4"
@@ -676,7 +676,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5order5"
@@ -692,7 +692,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5slug6"
@@ -708,7 +708,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5chatUrl7"
@@ -728,7 +728,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn bg-primary"
+            class="btn btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Lesson
@@ -746,7 +746,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
     class="col-8 text-center"
   >
     <span
-      class="text-primary font-weight-bold display-3"
+      class="text-primary fw-bold display-3"
     >
       Lesson Info
     </span>
@@ -763,16 +763,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Foundations of JavaScript
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -788,7 +788,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -828,7 +828,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -1004,7 +1004,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5docUrl3"
@@ -1020,7 +1020,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5githubUrl4"
@@ -1036,7 +1036,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5videoUrl5"
@@ -1052,7 +1052,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order6"
@@ -1068,7 +1068,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5slug7"
@@ -1084,7 +1084,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5chatUrl8"
@@ -1104,7 +1104,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Lesson
@@ -1121,7 +1121,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
         class="mb-3 text-center"
       >
         <span
-          class="text-primary font-weight-bold display-3"
+          class="text-primary fw-bold display-3"
         >
           Create New Challenge
         </span>
@@ -1136,10 +1136,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="card-body text-center"
           />
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title0"
@@ -1155,7 +1155,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description1"
@@ -1195,7 +1195,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -1369,7 +1369,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order2"
@@ -1389,7 +1389,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Create Challenge
@@ -1400,7 +1400,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
     </div>
     <hr />
     <span
-      class="text-primary font-weight-bold display-3"
+      class="text-primary fw-bold display-3"
     >
       Lesson Challenges
     </span>
@@ -1417,16 +1417,16 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Sum of 2 Numbers
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -1442,7 +1442,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -1482,7 +1482,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -1665,7 +1665,7 @@ solution(4,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -1685,7 +1685,7 @@ solution(4,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -1707,16 +1707,16 @@ solution(4,1) // Should return 5
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Sum of 3 Numbers
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -1732,7 +1732,7 @@ solution(4,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -1772,7 +1772,7 @@ solution(4,1) // Should return 5
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -1955,7 +1955,7 @@ solution(4,1,9) // Should return 14
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -1975,7 +1975,7 @@ solution(4,1,9) // Should return 14
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -1997,16 +1997,16 @@ solution(4,1,9) // Should return 14
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Greater than 5
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -2022,7 +2022,7 @@ solution(4,1,9) // Should return 14
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -2062,7 +2062,7 @@ solution(4,1,9) // Should return 14
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -2245,7 +2245,7 @@ solution(4) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -2265,7 +2265,7 @@ solution(4) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -2287,16 +2287,16 @@ solution(4) // Should return false
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Biggest Num out of 2
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -2312,7 +2312,7 @@ solution(4) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -2352,7 +2352,7 @@ solution(4) // Should return false
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -2535,7 +2535,7 @@ solution(4,1) // Should return 4
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -2555,7 +2555,7 @@ solution(4,1) // Should return 4
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -2577,16 +2577,16 @@ solution(4,1) // Should return 4
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Biggest Num Out of 3
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -2602,7 +2602,7 @@ solution(4,1) // Should return 4
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -2642,7 +2642,7 @@ solution(4,1) // Should return 4
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -2826,7 +2826,7 @@ solution(4,5,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -2846,7 +2846,7 @@ solution(4,5,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -2868,16 +2868,16 @@ solution(4,5,1) // Should return 5
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Is First Num Bigger
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -2893,7 +2893,7 @@ solution(4,5,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -2933,7 +2933,7 @@ solution(4,5,1) // Should return 5
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -3116,7 +3116,7 @@ solution(4,1) // Should return true
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -3136,7 +3136,7 @@ solution(4,1) // Should return true
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -3158,16 +3158,16 @@ solution(4,1) // Should return true
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Is Sum &gt; 10
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -3183,7 +3183,7 @@ solution(4,1) // Should return true
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -3223,7 +3223,7 @@ solution(4,1) // Should return true
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -3406,7 +3406,7 @@ solution(4,1) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -3426,7 +3426,7 @@ solution(4,1) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -3448,16 +3448,16 @@ solution(4,1) // Should return false
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Functional Sum
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -3473,7 +3473,7 @@ solution(4,1) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -3513,7 +3513,7 @@ solution(4,1) // Should return false
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -3695,7 +3695,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -3715,7 +3715,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -3737,16 +3737,16 @@ const a = solution(5,6) // a is a function, and a() will return 11
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Functional 3 Sum
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -3762,7 +3762,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -3802,7 +3802,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -3986,7 +3986,7 @@ const a = solution(1,2); // a is a function
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -4006,7 +4006,7 @@ const a = solution(1,2); // a is a function
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -4028,16 +4028,16 @@ const a = solution(1,2); // a is a function
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Functional Sums
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -4053,7 +4053,7 @@ const a = solution(1,2); // a is a function
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -4093,7 +4093,7 @@ const a = solution(1,2); // a is a function
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -4276,7 +4276,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -4296,7 +4296,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -4318,7 +4318,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
       class="mb-2"
     >
       <span
-        class="text-primary font-weight-bold display-3"
+        class="text-primary fw-bold display-3"
       >
         Create New Lesson
       </span>
@@ -4333,10 +4333,10 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
           class="card-body text-center"
         />
         <div
-          class="text-left"
+          class="text-start"
         >
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5title0"
@@ -4352,7 +4352,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5description1"
@@ -4392,7 +4392,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
                   </a>
                 </div>
                 <div
-                  class="ml-auto btn-toolbar"
+                  class="ms-auto btn-toolbar"
                   role="toolbar"
                 >
                   <button
@@ -4566,7 +4566,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             </div>
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5docUrl2"
@@ -4582,7 +4582,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5githubUrl3"
@@ -4598,7 +4598,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5videoUrl4"
@@ -4614,7 +4614,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5order5"
@@ -4630,7 +4630,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5slug6"
@@ -4646,7 +4646,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
             />
           </div>
           <div
-            class="d-flex flex-column ml-3 mr-3 mb-4"
+            class="d-flex flex-column ms-3 me-3 mb-4"
           >
             <h5
               data-testid="h5chatUrl7"
@@ -4666,7 +4666,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn bg-primary"
+            class="btn btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Lesson
@@ -4684,7 +4684,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
     class="col-8 text-center"
   >
     <span
-      class="text-primary font-weight-bold display-3"
+      class="text-primary fw-bold display-3"
     >
       Lesson Info
     </span>
@@ -4701,16 +4701,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Foundations of JavaScript
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -4726,7 +4726,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -4766,7 +4766,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -4942,7 +4942,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5docUrl3"
@@ -4958,7 +4958,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5githubUrl4"
@@ -4974,7 +4974,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5videoUrl5"
@@ -4990,7 +4990,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order6"
@@ -5006,7 +5006,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5slug7"
@@ -5022,7 +5022,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5chatUrl8"
@@ -5042,7 +5042,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Lesson
@@ -5059,7 +5059,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
         class="mb-3 text-center"
       >
         <span
-          class="text-primary font-weight-bold display-3"
+          class="text-primary fw-bold display-3"
         >
           Create New Challenge
         </span>
@@ -5074,10 +5074,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="card-body text-center"
           />
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title0"
@@ -5093,7 +5093,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description1"
@@ -5133,7 +5133,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -5307,7 +5307,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order2"
@@ -5327,7 +5327,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Create Challenge
@@ -5338,7 +5338,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
     </div>
     <hr />
     <span
-      class="text-primary font-weight-bold display-3"
+      class="text-primary fw-bold display-3"
     >
       Lesson Challenges
     </span>
@@ -5355,16 +5355,16 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Sum of 2 Numbers
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -5380,7 +5380,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -5420,7 +5420,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -5603,7 +5603,7 @@ solution(4,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -5623,7 +5623,7 @@ solution(4,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -5645,16 +5645,16 @@ solution(4,1) // Should return 5
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Sum of 3 Numbers
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -5670,7 +5670,7 @@ solution(4,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -5710,7 +5710,7 @@ solution(4,1) // Should return 5
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -5893,7 +5893,7 @@ solution(4,1,9) // Should return 14
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -5913,7 +5913,7 @@ solution(4,1,9) // Should return 14
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -5935,16 +5935,16 @@ solution(4,1,9) // Should return 14
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Greater than 5
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -5960,7 +5960,7 @@ solution(4,1,9) // Should return 14
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -6000,7 +6000,7 @@ solution(4,1,9) // Should return 14
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -6183,7 +6183,7 @@ solution(4) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -6203,7 +6203,7 @@ solution(4) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -6225,16 +6225,16 @@ solution(4) // Should return false
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Biggest Num out of 2
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -6250,7 +6250,7 @@ solution(4) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -6290,7 +6290,7 @@ solution(4) // Should return false
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -6473,7 +6473,7 @@ solution(4,1) // Should return 4
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -6493,7 +6493,7 @@ solution(4,1) // Should return 4
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -6515,16 +6515,16 @@ solution(4,1) // Should return 4
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Biggest Num Out of 3
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -6540,7 +6540,7 @@ solution(4,1) // Should return 4
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -6580,7 +6580,7 @@ solution(4,1) // Should return 4
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -6764,7 +6764,7 @@ solution(4,5,1) // Should return 5
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -6784,7 +6784,7 @@ solution(4,5,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -6806,16 +6806,16 @@ solution(4,5,1) // Should return 5
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Is First Num Bigger
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -6831,7 +6831,7 @@ solution(4,5,1) // Should return 5
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -6871,7 +6871,7 @@ solution(4,5,1) // Should return 5
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -7054,7 +7054,7 @@ solution(4,1) // Should return true
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -7074,7 +7074,7 @@ solution(4,1) // Should return true
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7096,16 +7096,16 @@ solution(4,1) // Should return true
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Is Sum &gt; 10
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -7121,7 +7121,7 @@ solution(4,1) // Should return true
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -7161,7 +7161,7 @@ solution(4,1) // Should return true
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -7344,7 +7344,7 @@ solution(4,1) // Should return false
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -7364,7 +7364,7 @@ solution(4,1) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7386,16 +7386,16 @@ solution(4,1) // Should return false
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Functional Sum
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -7411,7 +7411,7 @@ solution(4,1) // Should return false
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -7451,7 +7451,7 @@ solution(4,1) // Should return false
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -7633,7 +7633,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -7653,7 +7653,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7675,16 +7675,16 @@ const a = solution(5,6) // a is a function, and a() will return 11
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Functional 3 Sum
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -7700,7 +7700,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -7740,7 +7740,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -7924,7 +7924,7 @@ const a = solution(1,2); // a is a function
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -7944,7 +7944,7 @@ const a = solution(1,2); // a is a function
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7966,16 +7966,16 @@ const a = solution(1,2); // a is a function
             class="card-body text-center"
           >
             <h2
-              class="card-title font-weight-bold mb-3"
+              class="card-title fw-bold mb-3"
             >
               Functional Sums
             </h2>
           </div>
           <div
-            class="text-left"
+            class="text-start"
           >
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5title1"
@@ -7991,7 +7991,7 @@ const a = solution(1,2); // a is a function
               />
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5description2"
@@ -8031,7 +8031,7 @@ const a = solution(1,2); // a is a function
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -8214,7 +8214,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
               </div>
             </div>
             <div
-              class="d-flex flex-column ml-3 mr-3 mb-4"
+              class="d-flex flex-column ms-3 me-3 mb-4"
             >
               <h5
                 data-testid="h5order3"
@@ -8234,7 +8234,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
             class="text-center mb-4"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge

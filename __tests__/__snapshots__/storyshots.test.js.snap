@@ -2,21 +2,21 @@
 
 exports[`Storyshots Components/AdditionalResources Basic 1`] = `
 <div
-  className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+  className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
 >
   <h1
-    className="additional-resources__title font-weight-bold"
+    className="additional-resources__title fw-bold"
   >
     ADDITIONAL RESOURCES
   </h1>
   <a
-    className="additional-resources_link mr-1 noUnderline"
+    className="additional-resources_link me-1 link"
     href="https://developer.mozilla.org/en-US/"
     rel="noopener noreferrer"
     target="_blank"
   >
     <h2
-      className="additional-resources__subtitle mr-0"
+      className="additional-resources__subtitle me-0"
     >
       MDN Web Docs
     </h2>
@@ -27,10 +27,10 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     The encyclopedia of web development
   </h3>
   <hr
-    className="my-2"
+    className="my-2 h-auto"
   />
   <a
-    className="additional-resources_link mr-1 noUnderline"
+    className="additional-resources_link me-1 link"
     href="https://javascript.info/"
     rel="noopener noreferrer"
     target="_blank"
@@ -47,10 +47,10 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     In-depth overview of javascript language
   </h3>
   <hr
-    className="my-2"
+    className="my-2 h-auto"
   />
   <a
-    className="additional-resources_link mr-1 noUnderline"
+    className="additional-resources_link me-1 link"
     href="https://missing.csail.mit.edu/"
     rel="noopener noreferrer"
     target="_blank"
@@ -67,10 +67,10 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     Introduction to shell, git, vim, tmux and etc.
   </h3>
   <hr
-    className="my-2"
+    className="my-2 h-auto"
   />
   <a
-    className="additional-resources_link mr-1 noUnderline"
+    className="additional-resources_link me-1 link"
     href="https://teachyourselfcs.com/"
     rel="noopener noreferrer"
     target="_blank"
@@ -87,7 +87,7 @@ exports[`Storyshots Components/AdditionalResources Basic 1`] = `
     Self-study guide
   </h3>
   <hr
-    className="my-2"
+    className="my-2 h-auto"
   />
 </div>
 `;
@@ -212,7 +212,7 @@ exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
     className="card-body"
   >
     <h1
-      className="announcement-card__title font-weight-bold"
+      className="announcement-card__title fw-bold"
     >
       General Announcements
     </h1>
@@ -220,7 +220,7 @@ exports[`Storyshots Components/AnnouncementCard Basic 1`] = `
       className="mt-3"
     >
       <p
-        className="announcement-card__subtitle font-weight-bold"
+        className="announcement-card__subtitle fw-bold"
       >
         Updates and Guidelines
       </p>
@@ -323,7 +323,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
         className="nav-buttons"
       >
         <a
-          className="btn btn-light border m-2 mr-lg-3 noUnderline"
+          className="btn btn-light border m-2 me-lg-3 noUnderline"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -331,7 +331,7 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Login
         </a>
         <a
-          className="btn btn-light border m-2 mr-lg-3 noUnderline"
+          className="btn btn-light border m-2 me-lg-3 noUnderline"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -418,7 +418,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
         className="nav-buttons"
       >
         <a
-          className="btn btn-light border m-2 mr-lg-3 noUnderline"
+          className="btn btn-light border m-2 me-lg-3 noUnderline"
           href="/login"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -426,7 +426,7 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           Login
         </a>
         <a
-          className="btn btn-light border m-2 mr-lg-3 noUnderline"
+          className="btn btn-light border m-2 me-lg-3 noUnderline"
           href="/signup"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -450,7 +450,7 @@ exports[`Storyshots Components/Card Basic 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Title of the card
       </h1>
@@ -473,7 +473,7 @@ exports[`Storyshots Components/Card With Children 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Title of the card
       </h1>
@@ -528,7 +528,7 @@ exports[`Storyshots Components/Card With Classes 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Title of the card
       </h1>
@@ -560,7 +560,7 @@ exports[`Storyshots Components/Card With Fail 1`] = `
         width="100px"
       />
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Title of the card
       </h1>
@@ -585,7 +585,7 @@ exports[`Storyshots Components/Card With Primary 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5 text-primary"
+        className="card-title h2 fw-bold mb-5 text-primary"
       >
         Title of the card
       </h1>
@@ -615,7 +615,7 @@ exports[`Storyshots Components/Card With Success 1`] = `
         width="100px"
       />
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Title of the card
       </h1>
@@ -640,7 +640,7 @@ exports[`Storyshots Components/Card With Text 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Title of the card
       </h1>
@@ -809,7 +809,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
         >
           You can help your peers by
           <a
-            className="font-weight-bold mx-1 noUnderline"
+            className="fw-bold mx-1 noUnderline"
             href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
             rel="noopener noreferrer"
             target="_blank"
@@ -818,7 +818,7 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
           </a>
           they have in the lesson and
           <a
-            className="font-weight-bold mx-1 noUnderline"
+            className="fw-bold mx-1 noUnderline"
             href="https://www.c0d3.com/review/5"
             rel="noopener noreferrer"
             target="_blank"
@@ -831,12 +831,12 @@ exports[`Storyshots Components/ChallengeMaterial Final Challenge 1`] = `
         className="card-footer d-flex bg-primary"
       >
         <p
-          className="text-white mr-3 my-2"
+          className="text-white me-3 my-2"
         >
           You can show your appreciation to the user that helped you the most by giving them a star
         </p>
         <button
-          className="btn btn-light text-primary font-weight-bold ml-auto"
+          className="btn btn-light text-primary fw-bold ms-auto"
           onClick={[Function]}
         >
           Give Star
@@ -928,7 +928,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
     >
       
       <div
-        className="text-left ml-2"
+        className="text-start ms-2"
       >
         <div
           className="selection__card"
@@ -949,7 +949,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
         className="card-body"
       >
         <div
-          className="rounded-lg overflow-hidden"
+          className="rounded-3 overflow-hidden"
         >
           <table
             className="css-1n5o7vh-diff-container"
@@ -1306,7 +1306,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 </a>
               </div>
               <div
-                className="ml-1"
+                className="ms-1"
               >
                 Your submission is currently waiting to be reviewed.
               </div>
@@ -1366,7 +1366,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 </a>
               </div>
               <div
-                className="ml-auto btn-toolbar"
+                className="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -1638,7 +1638,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             />
           </div>
           <button
-            className="btn bg-success m-1"
+            className="btn btn-success m-1"
             onClick={[Function]}
             style={
               Object {
@@ -1730,7 +1730,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
     >
       
       <div
-        className="text-left ml-2"
+        className="text-start ms-2"
       >
         <div
           className="selection__card"
@@ -1751,7 +1751,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
         className="card-body"
       >
         <div
-          className="rounded-lg overflow-hidden"
+          className="rounded-3 overflow-hidden"
         >
           <table
             className="css-1n5o7vh-diff-container"
@@ -2108,7 +2108,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 </a>
               </div>
               <div
-                className="ml-1"
+                className="ms-1"
               >
                 Your submission is currently waiting to be reviewed.
               </div>
@@ -2168,7 +2168,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 </a>
               </div>
               <div
-                className="ml-auto btn-toolbar"
+                className="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -2440,7 +2440,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             />
           </div>
           <button
-            className="btn bg-success m-1"
+            className="btn btn-success m-1"
             onClick={[Function]}
             style={
               Object {
@@ -2666,7 +2666,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = 
     >
       You can help your peers by
       <a
-        className="font-weight-bold mx-1 noUnderline"
+        className="fw-bold mx-1 noUnderline"
         href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
         rel="noopener noreferrer"
         target="_blank"
@@ -2675,7 +2675,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = 
       </a>
       they have in the lesson and
       <a
-        className="font-weight-bold mx-1 noUnderline"
+        className="fw-bold mx-1 noUnderline"
         href="https://c0d3.com/teacher/5"
         rel="noopener noreferrer"
         target="_blank"
@@ -2688,12 +2688,12 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Given Already 1`] = 
     className="card-footer d-flex bg-primary"
   >
     <p
-      className="text-white mr-3 my-2"
+      className="text-white me-3 my-2"
     >
       You can show your appreciation to the user that helped you the most by giving them a star
     </p>
     <button
-      className="btn btn-light text-primary font-weight-bold ml-auto"
+      className="btn btn-light text-primary fw-bold ms-auto"
       onClick={[Function]}
     >
       Give Star
@@ -2728,7 +2728,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
     >
       You can help your peers by
       <a
-        className="font-weight-bold mx-1 noUnderline"
+        className="fw-bold mx-1 noUnderline"
         href="https://chat.c0d3.com/c0d3/channels/js0-foundations"
         rel="noopener noreferrer"
         target="_blank"
@@ -2737,7 +2737,7 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
       </a>
       they have in the lesson and
       <a
-        className="font-weight-bold mx-1 noUnderline"
+        className="fw-bold mx-1 noUnderline"
         href="https://c0d3.com/teacher/5"
         rel="noopener noreferrer"
         target="_blank"
@@ -2750,12 +2750,12 @@ exports[`Storyshots Components/ChallengesCompletedCard Star Not Given Yet 1`] = 
     className="card-footer d-flex bg-primary"
   >
     <p
-      className="text-white mr-3 my-2"
+      className="text-white me-3 my-2"
     >
       You can show your appreciation to the user that helped you the most by giving them a star
     </p>
     <button
-      className="btn btn-light text-primary font-weight-bold ml-auto"
+      className="btn btn-light text-primary fw-bold ms-auto"
       onClick={[Function]}
     >
       Give Star
@@ -2793,7 +2793,7 @@ Array [
       className="border border-lightgray rounded my-1"
     >
       <div
-        className="ml-3"
+        className="ms-3"
       >
         <span
           wrapper="code_wrapper"
@@ -2825,7 +2825,7 @@ Array [
       className="border border-lightgray rounded my-1"
     >
       <div
-        className="ml-3"
+        className="ms-3"
       >
         <span
           wrapper="code_wrapper"
@@ -2862,7 +2862,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
   className="card shadow-sm mb-3"
 >
   <div
-    className="ml-auto mr-auto mt-4 contributorCard__avatarContainer"
+    className="ms-auto me-auto mt-4 contributorCard__avatarContainer"
   >
     <div
       className="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -2885,7 +2885,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
   >
     <p>
       <svg
-        className="mr-2"
+        className="me-2"
         fill="none"
         height={24}
         stroke="currentColor"
@@ -2919,7 +2919,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
     </p>
     <p>
       <svg
-        className="mr-2"
+        className="me-2"
         fill="none"
         height={24}
         stroke="currentColor"
@@ -2942,7 +2942,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
     </p>
     <p>
       <svg
-        className="mr-2"
+        className="me-2"
         fill="none"
         height={24}
         stroke="currentColor"
@@ -2968,7 +2968,7 @@ exports[`Storyshots Components/ContributorCard Basic 1`] = `
     </p>
     <p>
       <svg
-        className="mr-2"
+        className="me-2"
         fill="none"
         height={24}
         stroke="currentColor"
@@ -3678,7 +3678,7 @@ Array [
     className="d-lg-none"
   >
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -3690,7 +3690,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -3702,7 +3702,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -3748,7 +3748,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3760,7 +3760,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3772,7 +3772,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3814,7 +3814,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3826,7 +3826,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3838,7 +3838,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3880,7 +3880,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3892,7 +3892,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3904,7 +3904,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3946,7 +3946,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3958,7 +3958,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -3970,7 +3970,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4012,7 +4012,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4024,7 +4024,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4036,7 +4036,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4078,7 +4078,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4090,7 +4090,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4102,7 +4102,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4156,7 +4156,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4168,7 +4168,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4180,7 +4180,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4222,7 +4222,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4234,7 +4234,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4246,7 +4246,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4288,7 +4288,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4300,7 +4300,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4312,7 +4312,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4354,7 +4354,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4366,7 +4366,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4378,7 +4378,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-left py-2 px-4"
+        className="text-center text-xl-start py-2 px-4"
       >
         <a
           className="dropdown-item"
@@ -4418,7 +4418,7 @@ Array [
     className="d-lg-none"
   >
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -4434,7 +4434,7 @@ Array [
       role="separator"
     />
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -4450,7 +4450,7 @@ Array [
       role="separator"
     />
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -4462,7 +4462,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -4474,7 +4474,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -4490,7 +4490,7 @@ Array [
       role="separator"
     />
     <div
-      className="text-center text-xl-left py-2 px-4"
+      className="text-center text-xl-start py-2 px-4"
     >
       <a
         className="dropdown-item"
@@ -4580,7 +4580,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4588,7 +4588,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4643,7 +4643,7 @@ Array [
               onMouseEnter={[Function]}
             >
               <h3
-                className="font-weight-bold"
+                className="fw-bold"
               >
                 Back
               </h3>
@@ -4666,7 +4666,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -4748,7 +4748,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4756,7 +4756,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -4811,7 +4811,7 @@ Array [
               onMouseEnter={[Function]}
             >
               <h3
-                className="font-weight-bold"
+                className="fw-bold"
               >
                 Back
               </h3>
@@ -4834,7 +4834,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -4846,7 +4846,7 @@ exports[`Storyshots Components/FilterButtons Basic 1`] = `
   className="d-flex flex-row"
 >
   <h4
-    className="text-primary font-weight-bold mr-1"
+    className="text-primary fw-bold me-1"
   >
     Filter By:
   </h4>
@@ -4877,7 +4877,7 @@ exports[`Storyshots Components/FilterButtons Basic 1`] = `
     }
   >
     <button
-      className="btn bg-primary"
+      className="btn btn-primary"
       onClick={[Function]}
       style={
         Object {
@@ -4916,7 +4916,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
     className="d-flex flex-row"
   >
     <h4
-      className="text-success font-weight-bold mr-1"
+      className="text-success fw-bold me-1"
     >
       Success:
     </h4>
@@ -4928,7 +4928,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn bg-success"
+        className="btn btn-success"
         onClick={[Function]}
         style={
           Object {
@@ -4982,7 +4982,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
     className="d-flex flex-row"
   >
     <h4
-      className="text-danger font-weight-bold mr-1"
+      className="text-danger fw-bold me-1"
     >
       Danger:
     </h4>
@@ -4994,7 +4994,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn bg-danger"
+        className="btn btn-danger"
         onClick={[Function]}
         style={
           Object {
@@ -5048,7 +5048,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
     className="d-flex flex-row"
   >
     <h4
-      className="text-primary font-weight-bold mr-1"
+      className="text-primary fw-bold me-1"
     >
       Primary:
     </h4>
@@ -5060,7 +5060,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn bg-primary"
+        className="btn btn-primary"
         onClick={[Function]}
         style={
           Object {
@@ -5115,7 +5115,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
 
 exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
-  className="mt-5 font-weight-light text-center pb-5 text-muted"
+  className="mt-5 fw-light text-center pb-5 text-muted"
 >
   © Copyright 2021 GarageScript
 </footer>
@@ -5123,7 +5123,7 @@ exports[`Storyshots Components/Footer Footer 1`] = `
 
 exports[`Storyshots Components/Footer Footer With Class 1`] = `
 <footer
-  className="font-weight-light text-center py-5 bg-white text-muted"
+  className="fw-light text-center py-5 bg-white text-muted"
 >
   © Copyright 2021 GarageScript
 </footer>
@@ -5143,10 +5143,10 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
         className="card-body text-center"
       />
       <div
-        className="text-left"
+        className="text-start"
       >
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5nickname0"
@@ -5168,7 +5168,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </h6>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5description1"
@@ -5185,7 +5185,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5title2"
@@ -5242,7 +5242,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
                 </a>
               </div>
               <div
-                className="ml-auto btn-toolbar"
+                className="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -5515,7 +5515,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5level3"
@@ -5532,7 +5532,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5Swiggity Swag4"
@@ -5561,7 +5561,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             className="d-lg-none"
           >
             <div
-              className="text-center text-xl-left py-2 px-4"
+              className="text-center text-xl-start py-2 px-4"
             >
               <button
                 className="dropdown-item"
@@ -5572,7 +5572,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
               </button>
             </div>
             <div
-              className="text-center text-xl-left py-2 px-4"
+              className="text-center text-xl-start py-2 px-4"
             >
               <button
                 className="dropdown-item"
@@ -5585,7 +5585,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5suupa5"
@@ -5606,7 +5606,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -5636,16 +5636,16 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
         className="card-body text-center"
       >
         <h2
-          className="card-title font-weight-bold mb-3"
+          className="card-title fw-bold mb-3"
         >
           clownfish
         </h2>
       </div>
       <div
-        className="text-left"
+        className="text-start"
       >
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5nickname0"
@@ -5667,7 +5667,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
           </h6>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5description1"
@@ -5684,7 +5684,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5title2"
@@ -5741,7 +5741,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
                 </a>
               </div>
               <div
-                className="ml-auto btn-toolbar"
+                className="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -6014,7 +6014,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5level3"
@@ -6035,7 +6035,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6065,16 +6065,16 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
         className="card-body text-center"
       >
         <h2
-          className="card-title font-weight-bold mb-3"
+          className="card-title fw-bold mb-3"
         >
           clownfish
         </h2>
       </div>
       <div
-        className="text-left"
+        className="text-start"
       >
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5nickname0"
@@ -6096,7 +6096,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
           </h6>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5description1"
@@ -6113,7 +6113,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5title2"
@@ -6170,7 +6170,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
                 </a>
               </div>
               <div
-                className="ml-auto btn-toolbar"
+                className="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -6443,7 +6443,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5level3"
@@ -6464,7 +6464,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6494,16 +6494,16 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
         className="card-body text-center"
       >
         <h2
-          className="card-title font-weight-bold mb-3"
+          className="card-title fw-bold mb-3"
         >
           clownfish
         </h2>
       </div>
       <div
-        className="text-left"
+        className="text-start"
       >
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5nickname0"
@@ -6525,7 +6525,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
           </h6>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5description1"
@@ -6542,7 +6542,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
           />
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5title2"
@@ -6599,7 +6599,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
                 </a>
               </div>
               <div
-                className="ml-auto btn-toolbar"
+                className="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -6872,7 +6872,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
           </div>
         </div>
         <div
-          className="d-flex flex-column ml-3 mr-3 mb-4"
+          className="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5level3"
@@ -6893,7 +6893,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6937,7 +6937,7 @@ Array [
     Launch demo modal
   </button>,
   <button
-    className="btn bg-primary"
+    className="btn btn-primary"
     onClick={[Function]}
     style={
       Object {
@@ -6977,7 +6977,7 @@ Array [
     }
   >
     <h1
-      className="text-white font-weight-bold display-3"
+      className="text-white fw-bold display-3"
       style={
         Object {
           "fontFamily": "'PT Mono', sans-serif",
@@ -6991,7 +6991,7 @@ Array [
       role="status"
     >
       <h1
-        className="sr-only"
+        className="visually-hidden"
       >
         Loading...
       </h1>
@@ -7007,7 +7007,7 @@ exports[`Storyshots Components/Input Email Input 1`] = `
   onSubmit={[Function]}
 >
   <input
-    className="form-control form-control-lg font-weight-light mb-3 "
+    className="form-control form-control-lg fw-light mb-3 "
     name="email"
     onBlur={[Function]}
     onChange={[Function]}
@@ -7016,7 +7016,7 @@ exports[`Storyshots Components/Input Email Input 1`] = `
     value="email@domain.com"
   />
   <input
-    className="form-control form-control-lg font-weight-light mb-3 "
+    className="form-control form-control-lg fw-light mb-3 "
     name="emailError"
     onBlur={[Function]}
     onChange={[Function]}
@@ -7040,7 +7040,7 @@ exports[`Storyshots Components/Input Password Input 1`] = `
   onSubmit={[Function]}
 >
   <input
-    className="form-control form-control-lg font-weight-light mb-3 "
+    className="form-control form-control-lg fw-light mb-3 "
     name="password"
     onBlur={[Function]}
     onChange={[Function]}
@@ -7049,7 +7049,7 @@ exports[`Storyshots Components/Input Password Input 1`] = `
     value="password"
   />
   <input
-    className="form-control form-control-lg font-weight-light mb-3 "
+    className="form-control form-control-lg fw-light mb-3 "
     name="passwordError"
     onBlur={[Function]}
     onChange={[Function]}
@@ -7073,7 +7073,7 @@ exports[`Storyshots Components/Input Text Input 1`] = `
   onSubmit={[Function]}
 >
   <input
-    className="form-control form-control-lg font-weight-light mb-3 "
+    className="form-control form-control-lg fw-light mb-3 "
     name="text"
     onBlur={[Function]}
     onChange={[Function]}
@@ -7082,7 +7082,7 @@ exports[`Storyshots Components/Input Text Input 1`] = `
     value="Some text"
   />
   <input
-    className="form-control form-control-lg font-weight-light mb-3 "
+    className="form-control form-control-lg fw-light mb-3 "
     name="textError"
     onBlur={[Function]}
     onChange={[Function]}
@@ -7290,7 +7290,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7298,7 +7298,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7347,7 +7347,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -7429,7 +7429,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7437,7 +7437,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7486,7 +7486,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -7537,7 +7537,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
     className="d-flex d-sm-none flex-column px-3"
   >
     <h4
-      className="lesson-card__title font-weight-bold mt-3 "
+      className="lesson-card__title fw-bold mt-3 "
     >
       <div
         className="d-flex justify-content-center"
@@ -7571,7 +7571,7 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       >
         <img
           alt="icon-challenge"
-          className="mr-2"
+          className="me-2"
           src="/assets/curriculum/icons/icon-challenge.svg"
         />
         <span
@@ -7600,16 +7600,16 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4 d-none d-sm-block"
+      className="lesson-card__description ps-4 d-none d-sm-block"
     >
       <div
         className="d-flex"
       >
         <h4
-          className="lesson-card__title font-weight-bold mt-3"
+          className="lesson-card__title fw-bold mt-3"
         >
           <a
-            className=" noUnderline"
+            className="text-primary link"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7621,11 +7621,11 @@ exports[`Storyshots Components/LessonCard Basic 1`] = `
       <div>
         <div>
           <div
-            className="d-inline-block mr-4"
+            className="d-inline-block me-4"
           >
             <img
               alt="icon-challenge"
-              className="mr-2"
+              className="me-2"
               src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
@@ -7655,7 +7655,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
     className="d-flex d-sm-none flex-column px-3"
   >
     <h4
-      className="lesson-card__title font-weight-bold mt-3 "
+      className="lesson-card__title fw-bold mt-3 "
     >
       <div
         className="d-flex justify-content-center"
@@ -7673,7 +7673,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           </a>
         </div>
         <span
-          className="lesson-card__badge badge badge-pill badge-success p-0"
+          className="lesson-card__badge badge rounded-pill bg-success p-0"
         >
           <svg
             fill="none"
@@ -7716,7 +7716,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       >
         <img
           alt="icon-challenge"
-          className="mr-2"
+          className="me-2"
           src="/assets/curriculum/icons/icon-challenge.svg"
         />
         <span
@@ -7733,7 +7733,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       Create basic Front-End Mini-Projects that demonstrate User Interface logic and understanding of Web Development.
     </p>
     <a
-      className="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+      className="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
       href="/review/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -7758,16 +7758,16 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4 d-none d-sm-block"
+      className="lesson-card__description ps-4 d-none d-sm-block"
     >
       <div
         className="d-flex"
       >
         <h4
-          className="lesson-card__title font-weight-bold mt-3"
+          className="lesson-card__title fw-bold mt-3"
         >
           <a
-            className=" noUnderline"
+            className="text-primary link"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7776,7 +7776,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           </a>
         </h4>
         <span
-          className="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+          className="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -7806,11 +7806,11 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
       <div>
         <div>
           <div
-            className="d-inline-block mr-4"
+            className="d-inline-block me-4"
           >
             <img
               alt="icon-challenge"
-              className="mr-2"
+              className="me-2"
               src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
@@ -7828,7 +7828,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
         </p>
       </div>
       <a
-        className="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+        className="btn btn-sm btn-primary text-white float-end mb-2 me-2"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -7853,7 +7853,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     className="d-flex d-sm-none flex-column px-3"
   >
     <h4
-      className="lesson-card__title font-weight-bold mt-3 "
+      className="lesson-card__title fw-bold mt-3 "
     >
       <div
         className="d-flex justify-content-center"
@@ -7887,7 +7887,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       >
         <img
           alt="icon-challenge"
-          className="mr-2"
+          className="me-2"
           src="/assets/curriculum/icons/icon-challenge.svg"
         />
         <span
@@ -7916,16 +7916,16 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       width="116"
     />
     <div
-      className="lesson-card__description pl-4 d-none d-sm-block"
+      className="lesson-card__description ps-4 d-none d-sm-block"
     >
       <div
         className="d-flex"
       >
         <h4
-          className="lesson-card__title font-weight-bold mt-3"
+          className="lesson-card__title fw-bold mt-3"
         >
           <a
-            className=" noUnderline"
+            className="text-primary link"
             href="/curriculum/js0"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -7937,11 +7937,11 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       <div>
         <div>
           <div
-            className="d-inline-block mr-4"
+            className="d-inline-block me-4"
           >
             <img
               alt="icon-challenge"
-              className="mr-2"
+              className="me-2"
               src="/assets/curriculum/icons/icon-challenge.svg"
             />
             <span
@@ -7964,7 +7964,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
     className="p-2 bg-primary"
   >
     <a
-      className="lesson-card__button btn btn-light mr-2 my-1 text-primary noUnderline"
+      className="lesson-card__button btn btn-light me-2 my-1 text-primary noUnderline"
       href="https://www.notion.so/JS-4-Front-End-Engineering-c59fbdd58dcc4214956f7856e0892b52"
       rel="noopener noreferrer"
       target="_blank"
@@ -7972,7 +7972,7 @@ exports[`Storyshots Components/LessonCard With In Progress 1`] = `
       Start Lesson
     </a>
     <a
-      className="lesson-card__button btn bg-primary my-1 text-white border border-white noUnderline"
+      className="lesson-card__button btn btn-primary my-1 text-white border border-white noUnderline"
       href="/curriculum/js0"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -8058,7 +8058,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8066,7 +8066,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -8094,7 +8094,7 @@ Array [
           >
             <img
               alt="lesson-cover"
-              className="lessonTitleCard__lesson-cover mr-3"
+              className="lessonTitleCard__lesson-cover me-3"
               src="/assets/curriculum/js-0-cover.svg"
             />
             <div>
@@ -8102,6 +8102,7 @@ Array [
                 className="m-0"
               >
                 <a
+                  className="link link-primary"
                   href="#"
                   onClick={[Function]}
                 >
@@ -8119,7 +8120,7 @@ Array [
             className="card-footer bg-white p-0"
           >
             <a
-              className="btn border-right rounded-0 px-4 py-3 noUnderline"
+              className="btn border-end rounded-0 px-4 py-3 noUnderline"
               href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
               rel="noopener noreferrer"
               target="_blank"
@@ -8127,7 +8128,7 @@ Array [
               LESSON
             </a>
             <a
-              className="btn border-right rounded-0 px-4 py-3 noUnderline"
+              className="btn border-end rounded-0 px-4 py-3 noUnderline"
               href="/curriculum/js0"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -8141,7 +8142,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -8163,7 +8164,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
       >
         <img
           alt="lesson-cover"
-          className="lessonTitleCard__lesson-cover mr-3"
+          className="lessonTitleCard__lesson-cover me-3"
           src="/assets/curriculum/js-0-cover.svg"
         />
         <div>
@@ -8171,6 +8172,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
             className="m-0"
           >
             <a
+              className="link link-primary"
               href="#"
               onClick={[Function]}
             >
@@ -8188,7 +8190,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
         className="card-footer bg-white p-0"
       >
         <a
-          className="btn border-right rounded-0 px-4 py-3 noUnderline"
+          className="btn border-end rounded-0 px-4 py-3 noUnderline"
           href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
           rel="noopener noreferrer"
           target="_blank"
@@ -8196,7 +8198,7 @@ exports[`Storyshots Components/LessonLayout Just Lesson Layout 1`] = `
           LESSON
         </a>
         <a
-          className="btn border-right rounded-0 px-4 py-3 noUnderline"
+          className="btn border-end rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -8224,7 +8226,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
       >
         <img
           alt="lesson-cover"
-          className="lessonTitleCard__lesson-cover mr-3"
+          className="lessonTitleCard__lesson-cover me-3"
           src="/assets/curriculum/js-0-cover.svg"
         />
         <div>
@@ -8232,6 +8234,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
             className="m-0"
           >
             <a
+              className="link link-primary"
               href="#"
               onClick={[Function]}
             >
@@ -8249,7 +8252,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
         className="card-footer bg-white p-0"
       >
         <a
-          className="btn border-right rounded-0 px-4 py-3 noUnderline"
+          className="btn border-end rounded-0 px-4 py-3 noUnderline"
           href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
           rel="noopener noreferrer"
           target="_blank"
@@ -8257,7 +8260,7 @@ exports[`Storyshots Components/LessonLayout With Text 1`] = `
           LESSON
         </a>
         <a
-          className="btn border-right rounded-0 px-4 py-3 noUnderline"
+          className="btn border-end rounded-0 px-4 py-3 noUnderline"
           href="/curriculum/js0"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -8285,7 +8288,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
     >
       <img
         alt="lesson-cover"
-        className="lessonTitleCard__lesson-cover mr-3"
+        className="lessonTitleCard__lesson-cover me-3"
         src="/assets/curriculum/js-0-cover.svg"
       />
       <div>
@@ -8293,6 +8296,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
           className="m-0"
         >
           <a
+            className="link link-primary"
             href="#"
             onClick={[Function]}
           >
@@ -8310,7 +8314,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
       className="card-footer bg-white p-0"
     >
       <a
-        className="btn border-right rounded-0 px-4 py-3 noUnderline"
+        className="btn border-end rounded-0 px-4 py-3 noUnderline"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -8318,7 +8322,7 @@ exports[`Storyshots Components/LessonTitleCard Basic 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3 noUnderline"
+        className="btn border-end rounded-0 px-4 py-3 noUnderline"
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -8342,7 +8346,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
     >
       <img
         alt="lesson-cover"
-        className="lessonTitleCard__lesson-cover mr-3"
+        className="lessonTitleCard__lesson-cover me-3"
         src="/assets/curriculum/js-0-cover.svg"
       />
       <div>
@@ -8350,6 +8354,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
           className="m-0"
         >
           <a
+            className="link link-primary"
             href="#"
             onClick={[Function]}
           >
@@ -8367,7 +8372,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
       className="card-footer bg-white p-0"
     >
       <a
-        className="btn border-right rounded-0 px-4 py-3 noUnderline"
+        className="btn border-end rounded-0 px-4 py-3 noUnderline"
         href="#"
         rel="noopener noreferrer"
         target="_blank"
@@ -8375,7 +8380,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         LESSON
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3 noUnderline"
+        className="btn border-end rounded-0 px-4 py-3 noUnderline"
         href="/curriculum/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -8383,7 +8388,7 @@ exports[`Storyshots Components/LessonTitleCard Passed Lesson 1`] = `
         CHALLENGES
       </a>
       <a
-        className="btn border-right rounded-0 px-4 py-3 noUnderline"
+        className="btn border-end rounded-0 px-4 py-3 noUnderline"
         href="/review/js0"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -8409,7 +8414,7 @@ exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -8423,7 +8428,7 @@ exports[`Storyshots Components/LoadingSpinner Basic 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -8482,7 +8487,7 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
       </a>
     </div>
     <div
-      className="ml-auto btn-toolbar"
+      className="ms-auto btn-toolbar"
       role="toolbar"
     >
       <button
@@ -8806,7 +8811,7 @@ exports[`Storyshots Components/MdInput White 1`] = `
       </a>
     </div>
     <div
-      className="ml-auto btn-toolbar"
+      className="ms-auto btn-toolbar"
       role="toolbar"
     >
       <button
@@ -9130,7 +9135,7 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
       </a>
     </div>
     <div
-      className="ml-auto btn-toolbar"
+      className="ms-auto btn-toolbar"
       role="toolbar"
     >
       <button
@@ -9455,7 +9460,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
         </a>
       </div>
       <div
-        className="ml-auto btn-toolbar"
+        className="ms-auto btn-toolbar"
         role="toolbar"
       >
         <button
@@ -9727,7 +9732,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
     />
   </div>
   <button
-    className="btn bg-success m-1"
+    className="btn btn-success m-1"
     onClick={[Function]}
     style={
       Object {
@@ -9738,7 +9743,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
     Accept
   </button>
   <button
-    className="btn bg-danger m-1"
+    className="btn btn-danger m-1"
     onClick={[Function]}
     style={
       Object {
@@ -9868,10 +9873,10 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
   className="card shadow-sm"
 >
   <div
-    className="ml-auto mr-auto mt-4 profile_image_container"
+    className="ms-auto me-auto mt-4 profile_image_container"
   >
     <div
-      className="jsx-3123111835 ml-auto mr-auto mt-4"
+      className="jsx-3123111835 ms-auto me-auto mt-4"
     >
       <img
         className="img-fluid"
@@ -9896,7 +9901,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
     </h4>
   </div>
   <div
-    className="d-flex ml-auto mr-auto mb-4"
+    className="d-flex ms-auto me-auto mb-4"
   >
     <img
       className="img-fluid"
@@ -9906,7 +9911,7 @@ exports[`Storyshots Components/ProfileImageInfo Profile Image Info 1`] = `
       width={20}
     />
     <h5
-      className="ml-2"
+      className="ms-2"
     >
       <a
         href="https://discordapp.com/users/fakeDiscordId/"
@@ -10065,12 +10070,12 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
               </h6>
               <div>
                 <h6
-                  className="text-md-left text-muted font-weight-bold mb-0"
+                  className="text-md-start text-muted fw-bold mb-0"
                 >
                   @cko
                 </h6>
                 <h6
-                  className="comment-lesson-title text-muted text-left"
+                  className="comment-lesson-title text-muted text-start"
                 >
                   End to End
                 </h6>
@@ -10120,12 +10125,12 @@ exports[`Storyshots Components/ProfileStarComments Profile Star Comments 1`] = `
               </h6>
               <div>
                 <h6
-                  className="text-md-left text-muted font-weight-bold mb-0"
+                  className="text-md-start text-muted fw-bold mb-0"
                 >
                   @ale
                 </h6>
                 <h6
-                  className="comment-lesson-title text-muted text-left"
+                  className="comment-lesson-title text-muted text-start"
                 >
                   Objects
                 </h6>
@@ -10189,7 +10194,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10270,7 +10275,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10357,7 +10362,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10441,7 +10446,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10522,7 +10527,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10594,7 +10599,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10681,7 +10686,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10756,7 +10761,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10840,7 +10845,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           >
             2
             <span
-              className="ml-1"
+              className="ms-1"
             >
               <svg
                 fill="yellow"
@@ -10979,7 +10984,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       className="bg-white my-3 rounded"
     >
       <div
-        className="progress-card__horizontal bg-primary d-flex rounded-left"
+        className="progress-card__horizontal bg-primary d-flex rounded-start"
         style={
           Object {
             "width": "min-content",
@@ -10987,7 +10992,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
         }
       >
         <div
-          className="align-self-center px-1 ml-auto font-weight-bold"
+          className="align-self-center px-1 ms-auto fw-bold"
         >
           0
           %
@@ -11059,7 +11064,7 @@ exports[`Storyshots Components/ProgressCard Basic 1`] = `
       target="_blank"
     >
       <p
-        className="font-weight-bold d-inline"
+        className="fw-bold d-inline"
       >
         Discord
       </p>
@@ -11105,7 +11110,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
         }
       >
         <div
-          className="align-self-center px-1 ml-auto font-weight-bold"
+          className="align-self-center px-1 ms-auto fw-bold"
         >
           100
           %
@@ -11177,7 +11182,7 @@ exports[`Storyshots Components/ProgressCard Completed Progress 1`] = `
       target="_blank"
     >
       <p
-        className="font-weight-bold d-inline"
+        className="fw-bold d-inline"
       >
         Discord
       </p>
@@ -11219,7 +11224,7 @@ exports[`Storyshots Components/ProgressCard Logged Out 1`] = `
       target="_blank"
     >
       <p
-        className="font-weight-bold d-inline"
+        className="fw-bold d-inline"
       >
         Discord
       </p>
@@ -11257,7 +11262,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
       className="bg-white my-3 rounded"
     >
       <div
-        className="progress-card__horizontal bg-primary d-flex rounded-left"
+        className="progress-card__horizontal bg-primary d-flex rounded-start"
         style={
           Object {
             "width": "40%",
@@ -11265,7 +11270,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
         }
       >
         <div
-          className="align-self-center px-1 ml-auto font-weight-bold"
+          className="align-self-center px-1 ms-auto fw-bold"
         >
           40
           %
@@ -11337,7 +11342,7 @@ exports[`Storyshots Components/ProgressCard Progress 1`] = `
       target="_blank"
     >
       <p
-        className="font-weight-bold d-inline"
+        className="fw-bold d-inline"
       >
         Discord
       </p>
@@ -11396,7 +11401,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         </div>
       </div>
       <div
-        className="text-right"
+        className="text-end"
       >
         <div
           className="selection__card"
@@ -11419,7 +11424,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden"
+      className="rounded-3 overflow-hidden"
     >
       <table
         className="css-1n5o7vh-diff-container"
@@ -12330,7 +12335,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           </a>
         </div>
         <div
-          className="ml-auto btn-toolbar"
+          className="ms-auto btn-toolbar"
           role="toolbar"
         >
           <button
@@ -12607,13 +12612,13 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="accept"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Accept
         </p>
@@ -12626,13 +12631,13 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="reject"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Reject
         </p>
@@ -12645,13 +12650,13 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       <label>
         <input
           checked={true}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="comment"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Comment
         </p>
@@ -12663,7 +12668,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       </label>
     </div>
     <button
-      className="btn bg-success"
+      className="btn btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -12716,7 +12721,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         </div>
       </div>
       <div
-        className="text-right"
+        className="text-end"
       >
         <div
           className="selection__card"
@@ -12739,7 +12744,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden"
+      className="rounded-3 overflow-hidden"
     >
       <table
         className="css-1n5o7vh-diff-container"
@@ -13650,7 +13655,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           </a>
         </div>
         <div
-          className="ml-auto btn-toolbar"
+          className="ms-auto btn-toolbar"
           role="toolbar"
         >
           <button
@@ -13927,13 +13932,13 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="accept"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Accept
         </p>
@@ -13946,13 +13951,13 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="reject"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Reject
         </p>
@@ -13965,13 +13970,13 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       <label>
         <input
           checked={true}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="comment"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Comment
         </p>
@@ -13983,7 +13988,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       </label>
     </div>
     <button
-      className="btn bg-success"
+      className="btn btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -14034,7 +14039,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         </div>
       </div>
       <div
-        className="text-right"
+        className="text-end"
       >
         <div
           className="selection__card"
@@ -14057,7 +14062,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden"
+      className="rounded-3 overflow-hidden"
     >
       <table
         className="css-1n5o7vh-diff-container"
@@ -14968,7 +14973,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           </a>
         </div>
         <div
-          className="ml-auto btn-toolbar"
+          className="ms-auto btn-toolbar"
           role="toolbar"
         >
           <button
@@ -15245,13 +15250,13 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="accept"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Accept
         </p>
@@ -15264,13 +15269,13 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="reject"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Reject
         </p>
@@ -15283,13 +15288,13 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       <label>
         <input
           checked={true}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="comment"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Comment
         </p>
@@ -15301,7 +15306,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       </label>
     </div>
     <button
-      className="btn bg-success"
+      className="btn btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -15352,7 +15357,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         </div>
       </div>
       <div
-        className="text-right"
+        className="text-end"
       >
         <div
           className="selection__card"
@@ -15375,7 +15380,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden"
+      className="rounded-3 overflow-hidden"
     >
       <table
         className="css-1n5o7vh-diff-container"
@@ -16286,7 +16291,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           </a>
         </div>
         <div
-          className="ml-auto btn-toolbar"
+          className="ms-auto btn-toolbar"
           role="toolbar"
         >
           <button
@@ -16563,13 +16568,13 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="accept"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Accept
         </p>
@@ -16582,13 +16587,13 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="reject"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Reject
         </p>
@@ -16601,13 +16606,13 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       <label>
         <input
           checked={true}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="comment"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Comment
         </p>
@@ -16619,7 +16624,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       </label>
     </div>
     <button
-      className="btn bg-success"
+      className="btn btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -16670,7 +16675,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         </div>
       </div>
       <div
-        className="text-right"
+        className="text-end"
       >
         <div
           className="selection__card"
@@ -16693,7 +16698,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden"
+      className="rounded-3 overflow-hidden"
     >
       <table
         className="css-1n5o7vh-diff-container"
@@ -17604,7 +17609,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           </a>
         </div>
         <div
-          className="ml-auto btn-toolbar"
+          className="ms-auto btn-toolbar"
           role="toolbar"
         >
           <button
@@ -17881,13 +17886,13 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="accept"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Accept
         </p>
@@ -17900,13 +17905,13 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       <label>
         <input
           checked={false}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="reject"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Reject
         </p>
@@ -17919,13 +17924,13 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       <label>
         <input
           checked={true}
-          className="mr-2"
+          className="me-2"
           onChange={[Function]}
           type="radio"
           value="comment"
         />
         <p
-          className="font-weight-bold d-inline"
+          className="fw-bold d-inline"
         >
           Comment
         </p>
@@ -17937,7 +17942,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       </label>
     </div>
     <button
-      className="btn bg-success"
+      className="btn btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -17982,7 +17987,7 @@ exports[`Storyshots Components/ReviewStatus Accepted 1`] = `
       </a>
     </div>
     <div
-      className="ml-1"
+      className="ms-1"
     >
        accepted submission on January 1, 1970 12:00 AM.
     </div>
@@ -18025,7 +18030,7 @@ exports[`Storyshots Components/ReviewStatus Accepted Without Comment 1`] = `
       </a>
     </div>
     <div
-      className="ml-1"
+      className="ms-1"
     >
        accepted submission on January 1, 1970 12:00 AM.
     </div>
@@ -18063,7 +18068,7 @@ exports[`Storyshots Components/ReviewStatus Open For Student 1`] = `
       </a>
     </div>
     <div
-      className="ml-1"
+      className="ms-1"
     >
       Your submission is currently waiting to be reviewed.
     </div>
@@ -18101,7 +18106,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Reviewer 1`] = `
       </a>
     </div>
     <div
-      className="ml-1"
+      className="ms-1"
     >
       Student has overwritten this submission on January 1, 1970 12:00 AM.
     </div>
@@ -18139,7 +18144,7 @@ exports[`Storyshots Components/ReviewStatus Overwritten Student 1`] = `
       </a>
     </div>
     <div
-      className="ml-1"
+      className="ms-1"
     >
       You have overwritten this submission on January 1, 1970 12:00 AM.
     </div>
@@ -18178,7 +18183,7 @@ exports[`Storyshots Components/ReviewStatus Rejected 1`] = `
       </a>
     </div>
     <div
-      className="ml-1"
+      className="ms-1"
     >
        requested changes on January 1, 1970 12:00 AM.
     </div>
@@ -18212,7 +18217,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       >
         1
         <span
-          className="sr-only"
+          className="visually-hidden"
         >
           comment count
         </span>
@@ -18230,7 +18235,7 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       >
         2
         <span
-          className="sr-only"
+          className="visually-hidden"
         >
           comment count
         </span>
@@ -18248,12 +18253,12 @@ exports[`Storyshots Components/SelectIteration Active 1`] = `
       >
         3
         <span
-          className="badge badge badge-light"
+          className="badge bg-light badge badge-light"
         >
           2
         </span>
         <span
-          className="sr-only"
+          className="visually-hidden"
         >
           comment count
         </span>
@@ -18303,7 +18308,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
   className="card-group"
 >
   <div
-    className="card shadow-sm mr-3"
+    className="card shadow-sm me-3"
   >
     <div
       className="card-header bg-white"
@@ -18312,7 +18317,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         className="row no-gutters"
       >
         <div
-          className="col-0 mr-3"
+          className="col-0 me-3"
         >
           <div
             className="submissioncard_user_info_image_container"
@@ -18356,7 +18361,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -18370,7 +18375,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
     </div>
   </div>
   <div
-    className="card shadow-sm mr-3"
+    className="card shadow-sm me-3"
   >
     <div
       className="card-header bg-white"
@@ -18379,7 +18384,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         className="row no-gutters"
       >
         <div
-          className="col-0 mr-3"
+          className="col-0 me-3"
         >
           <div
             className="submissioncard_user_info_image_container"
@@ -18423,7 +18428,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -18437,7 +18442,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
     </div>
   </div>
   <div
-    className="card shadow-sm mr-3"
+    className="card shadow-sm me-3"
   >
     <div
       className="card-header bg-white"
@@ -18446,7 +18451,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         className="row no-gutters"
       >
         <div
-          className="col-0 mr-3"
+          className="col-0 me-3"
         >
           <div
             className="submissioncard_user_info_image_container"
@@ -18490,7 +18495,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn bg-primary"
+          className="btn btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -18508,7 +18513,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
 
 exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
 <div
-  className="card shadow-sm mr-3"
+  className="card shadow-sm me-3"
 >
   <div
     className="card-header bg-white"
@@ -18517,7 +18522,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
       className="row no-gutters"
     >
       <div
-        className="col-0 mr-3"
+        className="col-0 me-3"
       >
         <div
           className="submissioncard_user_info_image_container"
@@ -18561,7 +18566,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
       href="#"
     >
       <button
-        className="btn bg-primary"
+        className="btn btn-primary"
         onClick={[Function]}
         style={
           Object {
@@ -18582,7 +18587,7 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ml-3"
+      className="ms-3"
     >
       <span
         wrapper="code_wrapper"
@@ -18614,7 +18619,7 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ml-3"
+      className="ms-3"
     >
       <span
         wrapper="code_wrapper"
@@ -18646,7 +18651,7 @@ Array [
     className="border border-lightgray rounded my-1"
   >
     <div
-      className="ml-3"
+      className="ms-3"
     >
       <span
         wrapper="code_wrapper"
@@ -18685,7 +18690,7 @@ exports[`Storyshots Components/Thanks Basic 1`] = `
     className="card shadow-sm"
   >
     <div
-      className="text-center pl-4 pr-4"
+      className="text-center ps-4 pe-4"
     >
       <div
         className="d-flex justify-content-center align-items-center flex-column modal-height-med"
@@ -18695,12 +18700,12 @@ exports[`Storyshots Components/Thanks Basic 1`] = `
           src="/assets/curriculum/icons/success.svg"
         />
         <h2
-          className="mt-4 mb-4 pt-3 pb-3 font-weight-bold text-center"
+          className="mt-4 mb-4 pt-3 pb-3 fw-bold text-center"
         >
           Thanks for letting us know!
         </h2>
         <button
-          className="btn bg-primary btn-lg"
+          className="btn btn-primary btn-lg"
           onClick={[Function]}
           style={
             Object {
@@ -18740,7 +18745,7 @@ exports[`Storyshots Components/UserInfoImage User Info Image 1`] = `
   }
 >
   <div
-    className="jsx-3123111835 ml-auto mr-auto mt-4"
+    className="jsx-3123111835 ms-auto me-auto mt-4"
   >
     <img
       className="img-fluid"
@@ -18827,7 +18832,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -18835,7 +18840,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -18859,7 +18864,7 @@ Array [
           className="card shadow-sm mb-3"
         >
           <div
-            className="ml-auto mr-auto mt-4 contributorCard__avatarContainer"
+            className="ms-auto me-auto mt-4 contributorCard__avatarContainer"
           >
             <div
               className="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -18882,7 +18887,7 @@ Array [
           >
             <p>
               <svg
-                className="mr-2"
+                className="me-2"
                 fill="none"
                 height={24}
                 stroke="currentColor"
@@ -18916,7 +18921,7 @@ Array [
             </p>
             <p>
               <svg
-                className="mr-2"
+                className="me-2"
                 fill="none"
                 height={24}
                 stroke="currentColor"
@@ -18939,7 +18944,7 @@ Array [
             </p>
             <p>
               <svg
-                className="mr-2"
+                className="me-2"
                 fill="none"
                 height={24}
                 stroke="currentColor"
@@ -18965,7 +18970,7 @@ Array [
             </p>
             <p>
               <svg
-                className="mr-2"
+                className="me-2"
                 fill="none"
                 height={24}
                 stroke="currentColor"
@@ -18995,7 +19000,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -19077,7 +19082,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19085,7 +19090,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -19123,7 +19128,7 @@ Array [
                 target="_blank"
               >
                 <p
-                  className="font-weight-bold d-inline"
+                  className="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -19151,7 +19156,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19185,7 +19190,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19214,16 +19219,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19235,11 +19240,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19266,7 +19271,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19300,7 +19305,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19329,16 +19334,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19350,11 +19355,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19381,7 +19386,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19415,7 +19420,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19444,16 +19449,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19465,11 +19470,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19496,7 +19501,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19530,7 +19535,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19559,16 +19564,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19580,11 +19585,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19611,7 +19616,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19645,7 +19650,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19674,16 +19679,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19695,11 +19700,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19726,7 +19731,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19760,7 +19765,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19789,16 +19794,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19810,11 +19815,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19841,7 +19846,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19875,7 +19880,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -19904,16 +19909,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -19925,11 +19930,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -19956,7 +19961,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -19990,7 +19995,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -20019,16 +20024,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20040,11 +20045,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -20071,7 +20076,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -20105,7 +20110,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -20134,16 +20139,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20155,11 +20160,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -20186,7 +20191,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -20220,7 +20225,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -20249,16 +20254,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20270,11 +20275,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -20311,7 +20316,7 @@ Array [
               className="text-primary mt-n3 text-center"
             >
               <span
-                className="font-weight-bold"
+                className="fw-bold"
               >
                 0
               </span>
@@ -20325,12 +20330,12 @@ Array [
               className="discord-list"
             >
               <div
-                className="text-center font-weight-bold text-primary"
+                className="text-center fw-bold text-primary"
               />
             </div>
           </div>
           <a
-            className="discord_link font-weight-bold text-white"
+            className="discord_link fw-bold text-white"
             href="https://discord.gg/c0d3"
             rel="noreferrer"
             target="_blank"
@@ -20359,7 +20364,7 @@ Array [
                 target="_blank"
               >
                 <p
-                  className="font-weight-bold d-inline"
+                  className="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -20387,7 +20392,7 @@ Array [
             className="card-body"
           >
             <h1
-              className="announcement-card__title font-weight-bold"
+              className="announcement-card__title fw-bold"
             >
               General Announcements
             </h1>
@@ -20395,7 +20400,7 @@ Array [
               className="mt-3"
             >
               <p
-                className="announcement-card__subtitle font-weight-bold"
+                className="announcement-card__subtitle fw-bold"
               >
                 Updates and Guidelines
               </p>
@@ -20423,21 +20428,21 @@ Array [
           </div>
         </div>
         <div
-          className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
         >
           <h1
-            className="additional-resources__title font-weight-bold"
+            className="additional-resources__title fw-bold"
           >
             ADDITIONAL RESOURCES
           </h1>
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <h2
-              className="additional-resources__subtitle mr-0"
+              className="additional-resources__subtitle me-0"
             >
               MDN Web Docs
             </h2>
@@ -20448,10 +20453,10 @@ Array [
             The encyclopedia of web development
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20468,10 +20473,10 @@ Array [
             In-depth overview of javascript language
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20488,10 +20493,10 @@ Array [
             Introduction to shell, git, vim, tmux and etc.
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -20508,14 +20513,14 @@ Array [
             Self-study guide
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
         </div>
       </div>
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -20597,7 +20602,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20605,7 +20610,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -20643,7 +20648,7 @@ Array [
                 target="_blank"
               >
                 <p
-                  className="font-weight-bold d-inline"
+                  className="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -20671,7 +20676,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -20705,7 +20710,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -20734,16 +20739,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20755,11 +20760,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -20786,7 +20791,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -20820,7 +20825,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -20849,16 +20854,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20870,11 +20875,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -20901,7 +20906,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -20935,7 +20940,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -20964,16 +20969,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -20985,11 +20990,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21016,7 +21021,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21050,7 +21055,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21079,16 +21084,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21100,11 +21105,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21131,7 +21136,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21165,7 +21170,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21194,16 +21199,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21215,11 +21220,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21246,7 +21251,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21280,7 +21285,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21309,16 +21314,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21330,11 +21335,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21361,7 +21366,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21395,7 +21400,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21424,16 +21429,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21445,11 +21450,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21476,7 +21481,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21510,7 +21515,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21539,16 +21544,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21560,11 +21565,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21591,7 +21596,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21625,7 +21630,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21654,16 +21659,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21675,11 +21680,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21706,7 +21711,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -21740,7 +21745,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -21769,16 +21774,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -21790,11 +21795,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -21831,7 +21836,7 @@ Array [
               className="text-primary mt-n3 text-center"
             >
               <span
-                className="font-weight-bold"
+                className="fw-bold"
               >
                 0
               </span>
@@ -21845,12 +21850,12 @@ Array [
               className="discord-list"
             >
               <div
-                className="text-center font-weight-bold text-primary"
+                className="text-center fw-bold text-primary"
               />
             </div>
           </div>
           <a
-            className="discord_link font-weight-bold text-white"
+            className="discord_link fw-bold text-white"
             href="https://discord.gg/c0d3"
             rel="noreferrer"
             target="_blank"
@@ -21879,7 +21884,7 @@ Array [
                 target="_blank"
               >
                 <p
-                  className="font-weight-bold d-inline"
+                  className="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -21907,7 +21912,7 @@ Array [
             className="card-body"
           >
             <h1
-              className="announcement-card__title font-weight-bold"
+              className="announcement-card__title fw-bold"
             >
               General Announcements
             </h1>
@@ -21915,7 +21920,7 @@ Array [
               className="mt-3"
             >
               <p
-                className="announcement-card__subtitle font-weight-bold"
+                className="announcement-card__subtitle fw-bold"
               >
                 Updates and Guidelines
               </p>
@@ -21943,21 +21948,21 @@ Array [
           </div>
         </div>
         <div
-          className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
         >
           <h1
-            className="additional-resources__title font-weight-bold"
+            className="additional-resources__title fw-bold"
           >
             ADDITIONAL RESOURCES
           </h1>
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <h2
-              className="additional-resources__subtitle mr-0"
+              className="additional-resources__subtitle me-0"
             >
               MDN Web Docs
             </h2>
@@ -21968,10 +21973,10 @@ Array [
             The encyclopedia of web development
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -21988,10 +21993,10 @@ Array [
             In-depth overview of javascript language
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -22008,10 +22013,10 @@ Array [
             Introduction to shell, git, vim, tmux and etc.
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -22028,14 +22033,14 @@ Array [
             Self-study guide
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
         </div>
       </div>
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -22117,7 +22122,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22125,7 +22130,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -22163,7 +22168,7 @@ Array [
                 target="_blank"
               >
                 <p
-                  className="font-weight-bold d-inline"
+                  className="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -22191,7 +22196,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22225,7 +22230,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22254,16 +22259,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js0"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22275,11 +22280,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22306,7 +22311,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22340,7 +22345,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22369,16 +22374,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js1"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22390,11 +22395,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22421,7 +22426,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22455,7 +22460,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22484,16 +22489,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js2"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22505,11 +22510,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22536,7 +22541,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22570,7 +22575,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22599,16 +22604,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js3"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22620,11 +22625,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22651,7 +22656,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22685,7 +22690,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22714,16 +22719,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js4"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22735,11 +22740,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22766,7 +22771,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22800,7 +22805,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22829,16 +22834,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js5"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22850,11 +22855,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22881,7 +22886,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -22915,7 +22920,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -22944,16 +22949,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js6"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -22965,11 +22970,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -22996,7 +23001,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -23030,7 +23035,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -23059,16 +23064,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js7"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23080,11 +23085,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -23111,7 +23116,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -23145,7 +23150,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -23174,16 +23179,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js8"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23195,11 +23200,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -23226,7 +23231,7 @@ Array [
             className="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              className="lesson-card__title font-weight-bold mt-3 "
+              className="lesson-card__title fw-bold mt-3 "
             >
               <div
                 className="d-flex justify-content-center"
@@ -23260,7 +23265,7 @@ Array [
               >
                 <img
                   alt="icon-challenge"
-                  className="mr-2"
+                  className="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -23289,16 +23294,16 @@ Array [
               width="116"
             />
             <div
-              className="lesson-card__description pl-4 d-none d-sm-block"
+              className="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 className="d-flex"
               >
                 <h4
-                  className="lesson-card__title font-weight-bold mt-3"
+                  className="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    className=" noUnderline"
+                    className="text-primary link"
                     href="/curriculum/js9"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
@@ -23310,11 +23315,11 @@ Array [
               <div>
                 <div>
                   <div
-                    className="d-inline-block mr-4"
+                    className="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      className="mr-2"
+                      className="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -23351,7 +23356,7 @@ Array [
               className="text-primary mt-n3 text-center"
             >
               <span
-                className="font-weight-bold"
+                className="fw-bold"
               >
                 0
               </span>
@@ -23365,12 +23370,12 @@ Array [
               className="discord-list"
             >
               <div
-                className="text-center font-weight-bold text-primary"
+                className="text-center fw-bold text-primary"
               />
             </div>
           </div>
           <a
-            className="discord_link font-weight-bold text-white"
+            className="discord_link fw-bold text-white"
             href="https://discord.gg/c0d3"
             rel="noreferrer"
             target="_blank"
@@ -23399,7 +23404,7 @@ Array [
                 target="_blank"
               >
                 <p
-                  className="font-weight-bold d-inline"
+                  className="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -23427,7 +23432,7 @@ Array [
             className="card-body"
           >
             <h1
-              className="announcement-card__title font-weight-bold"
+              className="announcement-card__title fw-bold"
             >
               General Announcements
             </h1>
@@ -23435,7 +23440,7 @@ Array [
               className="mt-3"
             >
               <p
-                className="announcement-card__subtitle font-weight-bold"
+                className="announcement-card__subtitle fw-bold"
               >
                 Updates and Guidelines
               </p>
@@ -23463,21 +23468,21 @@ Array [
           </div>
         </div>
         <div
-          className="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          className="additional-resources__container ms-4 d-flex flex-column justify-content-around"
         >
           <h1
-            className="additional-resources__title font-weight-bold"
+            className="additional-resources__title fw-bold"
           >
             ADDITIONAL RESOURCES
           </h1>
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <h2
-              className="additional-resources__subtitle mr-0"
+              className="additional-resources__subtitle me-0"
             >
               MDN Web Docs
             </h2>
@@ -23488,10 +23493,10 @@ Array [
             The encyclopedia of web development
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23508,10 +23513,10 @@ Array [
             In-depth overview of javascript language
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23528,10 +23533,10 @@ Array [
             Introduction to shell, git, vim, tmux and etc.
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
           <a
-            className="additional-resources_link mr-1 noUnderline"
+            className="additional-resources_link me-1 link"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -23548,14 +23553,14 @@ Array [
             Self-study guide
           </h3>
           <hr
-            className="my-2"
+            className="my-2 h-auto"
           />
         </div>
       </div>
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -23637,7 +23642,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23645,7 +23650,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -23669,7 +23674,7 @@ Array [
           className="card-body text-center pt-5 pb-5"
         >
           <h1
-            className="card-title h2 font-weight-bold mb-5"
+            className="card-title h2 fw-bold mb-5"
           >
             Reset your password
           </h1>
@@ -23692,7 +23697,7 @@ Array [
             >
               <input
                 autoFocus={true}
-                className="form-control form-control-lg font-weight-light mb-3 "
+                className="form-control form-control-lg fw-light mb-3 "
                 data-testid="userOrEmail"
                 name="userOrEmail"
                 onBlur={[Function]}
@@ -23715,7 +23720,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -24124,7 +24129,7 @@ exports[`Storyshots Pages/Lesson Basic 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -24138,7 +24143,7 @@ exports[`Storyshots Pages/Lesson Basic 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -24160,7 +24165,7 @@ exports[`Storyshots Pages/Lesson Completed Challenges 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -24174,7 +24179,7 @@ exports[`Storyshots Pages/Lesson Completed Challenges 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -24196,7 +24201,7 @@ exports[`Storyshots Pages/Lesson With Alerts 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -24210,7 +24215,7 @@ exports[`Storyshots Pages/Lesson With Alerts 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -24229,7 +24234,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Login
       </h1>
@@ -24250,7 +24255,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
           >
             <input
               autoFocus={true}
-              className="form-control form-control-lg font-weight-light mb-3 "
+              className="form-control form-control-lg fw-light mb-3 "
               data-testid="username"
               name="username"
               onBlur={[Function]}
@@ -24259,7 +24264,7 @@ exports[`Storyshots Pages/Login Login 1`] = `
               value=""
             />
             <input
-              className="form-control form-control-lg font-weight-light mb-3 "
+              className="form-control form-control-lg fw-light mb-3 "
               data-testid="password"
               name="password"
               onBlur={[Function]}
@@ -24302,7 +24307,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Login
       </h1>
@@ -24323,7 +24328,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
           >
             <input
               autoFocus={true}
-              className="form-control form-control-lg font-weight-light mb-3 "
+              className="form-control form-control-lg fw-light mb-3 "
               data-testid="username"
               name="username"
               onBlur={[Function]}
@@ -24332,7 +24337,7 @@ exports[`Storyshots Pages/Login Login Basic 1`] = `
               value=""
             />
             <input
-              className="form-control form-control-lg font-weight-light mb-3 "
+              className="form-control form-control-lg fw-light mb-3 "
               data-testid="password"
               name="password"
               onBlur={[Function]}
@@ -24375,7 +24380,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Login
       </h1>
@@ -24412,7 +24417,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
           >
             <input
               autoFocus={true}
-              className="form-control form-control-lg font-weight-light mb-3 "
+              className="form-control form-control-lg fw-light mb-3 "
               data-testid="username"
               name="username"
               onBlur={[Function]}
@@ -24421,7 +24426,7 @@ exports[`Storyshots Pages/Login Login Error 1`] = `
               value=""
             />
             <input
-              className="form-control form-control-lg font-weight-light mb-3 "
+              className="form-control form-control-lg fw-light mb-3 "
               data-testid="password"
               name="password"
               onBlur={[Function]}
@@ -24528,7 +24533,7 @@ Array [
           className="nav-buttons"
         >
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24536,7 +24541,7 @@ Array [
             Login
           </a>
           <a
-            className="btn btn-light border m-2 mr-lg-3 noUnderline"
+            className="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -24560,7 +24565,7 @@ Array [
           className="card-body text-center pt-5 pb-5"
         >
           <h1
-            className="card-title h2 font-weight-bold mb-5"
+            className="card-title h2 fw-bold mb-5"
           >
             Enter new password
           </h1>
@@ -24583,7 +24588,7 @@ Array [
             >
               <input
                 autoFocus={true}
-                className="form-control form-control-lg font-weight-light mb-3 "
+                className="form-control form-control-lg fw-light mb-3 "
                 data-testid="password"
                 name="password"
                 onBlur={[Function]}
@@ -24593,7 +24598,7 @@ Array [
                 value=""
               />
               <input
-                className="form-control form-control-lg font-weight-light mb-3 "
+                className="form-control form-control-lg fw-light mb-3 "
                 data-testid="confirmPassword"
                 name="confirmPassword"
                 onBlur={[Function]}
@@ -24616,7 +24621,7 @@ Array [
     </div>
   </div>,
   <footer
-    className="mt-5 font-weight-light text-center pb-5 text-muted"
+    className="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>,
@@ -24634,7 +24639,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Create Account
       </h1>
@@ -24652,7 +24657,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
         >
           <input
             autoFocus={true}
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="email"
             name="email"
             onBlur={[Function]}
@@ -24662,7 +24667,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="username"
             name="username"
             onBlur={[Function]}
@@ -24671,7 +24676,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="firstName"
             name="firstName"
             onBlur={[Function]}
@@ -24680,7 +24685,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="lastName"
             name="lastName"
             onBlur={[Function]}
@@ -24727,7 +24732,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Create Account
       </h1>
@@ -24745,7 +24750,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
         >
           <input
             autoFocus={true}
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="email"
             name="email"
             onBlur={[Function]}
@@ -24755,7 +24760,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="username"
             name="username"
             onBlur={[Function]}
@@ -24764,7 +24769,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="firstName"
             name="firstName"
             onBlur={[Function]}
@@ -24773,7 +24778,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="lastName"
             name="lastName"
             onBlur={[Function]}
@@ -24820,7 +24825,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Create Account
       </h1>
@@ -24848,7 +24853,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         >
           <input
             autoFocus={true}
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="email"
             name="email"
             onBlur={[Function]}
@@ -24858,7 +24863,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="username"
             name="username"
             onBlur={[Function]}
@@ -24867,7 +24872,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="firstName"
             name="firstName"
             onBlur={[Function]}
@@ -24876,7 +24881,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="lastName"
             name="lastName"
             onBlur={[Function]}
@@ -24923,7 +24928,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
       className="card-body text-center pt-5 pb-5"
     >
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Create Account
       </h1>
@@ -24951,7 +24956,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
         >
           <input
             autoFocus={true}
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="email"
             name="email"
             onBlur={[Function]}
@@ -24961,7 +24966,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="username"
             name="username"
             onBlur={[Function]}
@@ -24970,7 +24975,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="firstName"
             name="firstName"
             onBlur={[Function]}
@@ -24979,7 +24984,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             value=""
           />
           <input
-            className="form-control form-control-lg font-weight-light mb-3 "
+            className="form-control form-control-lg fw-light mb-3 "
             data-testid="lastName"
             name="lastName"
             onBlur={[Function]}
@@ -25033,7 +25038,7 @@ exports[`Storyshots Pages/Signup Signup Success 1`] = `
         width="100px"
       />
       <h1
-        className="card-title h2 font-weight-bold mb-5"
+        className="card-title h2 fw-bold mb-5"
       >
         Account created successfully!
       </h1>
@@ -25067,7 +25072,7 @@ exports[`Storyshots Pages/UserProfile User Profile Few Comments 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -25081,7 +25086,7 @@ exports[`Storyshots Pages/UserProfile User Profile Few Comments 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -25103,7 +25108,7 @@ exports[`Storyshots Pages/UserProfile User Profile Many Comments 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -25117,7 +25122,7 @@ exports[`Storyshots Pages/UserProfile User Profile Many Comments 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -25139,7 +25144,7 @@ exports[`Storyshots Pages/UserProfile User Profile Zero Comments 1`] = `
   }
 >
   <h1
-    className="text-white font-weight-bold display-3"
+    className="text-white fw-bold display-3"
     style={
       Object {
         "fontFamily": "'PT Mono', sans-serif",
@@ -25153,7 +25158,7 @@ exports[`Storyshots Pages/UserProfile User Profile Zero Comments 1`] = `
     role="status"
   >
     <h1
-      className="sr-only"
+      className="visually-hidden"
     >
       Loading...
     </h1>
@@ -25283,7 +25288,7 @@ exports[`Storyshots Theme/Button Small Button 1`] = `
 exports[`Storyshots Theme/Button Typed Button 1`] = `
 Array [
   <button
-    className="btn bg-primary"
+    className="btn btn-primary"
     onClick={[Function]}
     style={
       Object {
@@ -25294,7 +25299,7 @@ Array [
     Primary Button
   </button>,
   <button
-    className="btn bg-success"
+    className="btn btn-success"
     onClick={[Function]}
     style={
       Object {
@@ -25305,7 +25310,7 @@ Array [
     Success Button
   </button>,
   <button
-    className="btn bg-danger"
+    className="btn btn-danger"
     onClick={[Function]}
     style={
       Object {
@@ -25451,7 +25456,7 @@ exports[`Storyshots mdx/BlockQuote Quote 1`] = `
   className="blockQuote d-flex flex-column flex-md-row"
 >
   <img
-    className="blockQuote__bulb mr-3"
+    className="blockQuote__bulb me-3"
     src="/assets/mdx/lightBulb.svg"
   />
   <p>
@@ -25468,7 +25473,7 @@ exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
     className="card shadow-sm bg-primary text-white px-4 py-2 border-0"
   >
     <h1
-      className="text-center font-weight-bold align-self-center"
+      className="text-center fw-bold align-self-center"
     >
       Master your skill by solving challenges
     </h1>
@@ -25481,7 +25486,7 @@ exports[`Storyshots mdx/ChallengeBar Standart 1`] = `
       Submitting challenges
     </a>
     <p
-      className="px-2 m-0 text-center font-weight-bold"
+      className="px-2 m-0 text-center fw-bold"
     >
       Complete the first seven of JS0 challenges
     </p>

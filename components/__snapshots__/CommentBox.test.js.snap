@@ -14,7 +14,7 @@ exports[`CommentBox component Should render commentBox with comments 1`] = `
       class="border border-lightgray rounded my-1"
     >
       <div
-        class="ml-3"
+        class="ms-3"
       >
         <span
           wrapper="code_wrapper"
@@ -46,7 +46,7 @@ exports[`CommentBox component Should render commentBox with comments 1`] = `
       class="border border-lightgray rounded my-1"
     >
       <div
-        class="ml-3"
+        class="ms-3"
       >
         <span
           wrapper="code_wrapper"

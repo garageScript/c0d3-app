@@ -38,7 +38,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
         </div>
       </div>
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
           class="row"
@@ -50,10 +50,10 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
               class="card-body text-center"
             />
             <div
-              class="text-left"
+              class="text-start"
             >
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5text0"
@@ -69,7 +69,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                 />
               </div>
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5type1"
@@ -96,7 +96,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   class="d-lg-none"
                 >
                   <div
-                    class="text-center text-xl-left py-2 px-4"
+                    class="text-center text-xl-start py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -105,7 +105,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                     </button>
                   </div>
                   <div
-                    class="text-center text-xl-left py-2 px-4"
+                    class="text-center text-xl-start py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -116,7 +116,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                 </div>
               </div>
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5url2"
@@ -132,7 +132,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                 />
               </div>
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5urlCaption3"
@@ -152,7 +152,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
               class="text-center mb-4"
             >
               <button
-                class="btn bg-primary"
+                class="btn btn-primary"
                 style="color: rgb(255, 255, 255);"
               >
                 Create New Alert
@@ -211,7 +211,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
         </div>
       </div>
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
           class="row"
@@ -223,10 +223,10 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
               class="card-body text-center"
             />
             <div
-              class="text-left"
+              class="text-start"
             >
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5text0"
@@ -247,7 +247,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 </h6>
               </div>
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5type1"
@@ -274,7 +274,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   class="d-lg-none"
                 >
                   <div
-                    class="text-center text-xl-left py-2 px-4"
+                    class="text-center text-xl-start py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -283,7 +283,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                     </button>
                   </div>
                   <div
-                    class="text-center text-xl-left py-2 px-4"
+                    class="text-center text-xl-start py-2 px-4"
                   >
                     <button
                       class="dropdown-item"
@@ -294,7 +294,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 </div>
               </div>
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5url2"
@@ -310,7 +310,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                 />
               </div>
               <div
-                class="d-flex flex-column ml-3 mr-3 mb-4"
+                class="d-flex flex-column ms-3 me-3 mb-4"
               >
                 <h5
                   data-testid="h5urlCaption3"
@@ -330,7 +330,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
               class="text-center mb-4"
             >
               <button
-                class="btn bg-primary"
+                class="btn btn-primary"
                 style="color: rgb(255, 255, 255);"
               >
                 Create New Alert

@@ -68,13 +68,13 @@ exports[`_error page Should capture error when component is loading 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -113,7 +113,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
               href="/"
             >
               <h3
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Back
               </h3>
@@ -134,7 +134,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -209,13 +209,13 @@ exports[`_error page Should return Error 500 component 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -254,7 +254,7 @@ exports[`_error page Should return Error 500 component 1`] = `
               href="/"
             >
               <h3
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Back
               </h3>
@@ -275,7 +275,7 @@ exports[`_error page Should return Error 500 component 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

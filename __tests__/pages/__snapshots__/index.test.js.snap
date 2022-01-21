@@ -68,13 +68,13 @@ exports[`Index Page Should render index page 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -414,7 +414,7 @@ exports[`Index Page Should render index page 1`] = `
     </div>
   </div>
   <footer
-    class="font-weight-light text-center py-5 bg-white text-muted"
+    class="fw-light text-center py-5 bg-white text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

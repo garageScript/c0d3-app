@@ -12,7 +12,7 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
         class="card-body text-center pt-5 pb-5"
       >
         <h1
-          class="card-title h2 font-weight-bold mb-5"
+          class="card-title h2 fw-bold mb-5"
         >
           Login
         </h1>
@@ -45,14 +45,14 @@ exports[`Login Page Should set alert visible on invalid credentials 1`] = `
               class="mt-3 d-grid"
             >
               <input
-                class="form-control form-control-lg font-weight-light mb-3 "
+                class="form-control form-control-lg fw-light mb-3 "
                 data-testid="username"
                 name="username"
                 placeholder="Username"
                 value="fake username"
               />
               <input
-                class="form-control form-control-lg font-weight-light mb-3 "
+                class="form-control form-control-lg fw-light mb-3 "
                 data-testid="password"
                 name="password"
                 placeholder="Password"

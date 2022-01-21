@@ -10,7 +10,7 @@ exports[`[subLessonSlug] Page should match screenshot 1`] = `
     >
       <a
         aria-current="page"
-        class="subtitle text-dark dark d-block"
+        class="subtitle link-dark dark d-block"
         href="/curriculum/js0/first_sub_lesson"
       >
         Part 1: first sub lesson

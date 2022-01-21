@@ -6,7 +6,7 @@ exports[`FilterButtons Component Should call function with updated array as para
     class="d-flex flex-row"
   >
     <h4
-      class="text-primary font-weight-bold mr-1"
+      class="text-primary fw-bold me-1"
     >
       Filter By:
     </h4>
@@ -14,7 +14,7 @@ exports[`FilterButtons Component Should call function with updated array as para
       style="margin-top: -1.57px;"
     >
       <button
-        class="btn bg-primary"
+        class="btn btn-primary"
         style="color: rgb(255, 255, 255);"
       >
         Admins

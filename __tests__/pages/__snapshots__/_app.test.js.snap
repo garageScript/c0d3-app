@@ -68,13 +68,13 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -96,7 +96,7 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
           class="card-body text-center pt-5 pb-5"
         >
           <h1
-            class="card-title h2 font-weight-bold mb-5"
+            class="card-title h2 fw-bold mb-5"
           >
             Login
           </h1>
@@ -114,14 +114,14 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
                 class="mt-3 d-grid"
               >
                 <input
-                  class="form-control form-control-lg font-weight-light mb-3 "
+                  class="form-control form-control-lg fw-light mb-3 "
                   data-testid="username"
                   name="username"
                   placeholder="Username"
                   value=""
                 />
                 <input
-                  class="form-control form-control-lg font-weight-light mb-3 "
+                  class="form-control form-control-lg fw-light mb-3 "
                   data-testid="password"
                   name="password"
                   placeholder="Password"
@@ -149,7 +149,7 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

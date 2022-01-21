@@ -68,13 +68,13 @@ exports[`500 Error Page should render 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-light border m-2 mr-lg-3 noUnderline"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -113,7 +113,7 @@ exports[`500 Error Page should render 1`] = `
               href="/"
             >
               <h3
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Back
               </h3>
@@ -134,7 +134,7 @@ exports[`500 Error Page should render 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

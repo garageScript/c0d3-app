@@ -6,7 +6,7 @@ exports[`[docSlug] Page should match screenshot 1`] = `
     class="lesson-wrapper card shadow-sm mt-3 d-block border-0 p-3 p-md-4 bg-white"
   >
     <button
-      class="btn btn-link text-primary p-0"
+      class="link btn btn-link link-primary p-0"
     >
       Go Back
     </button>
