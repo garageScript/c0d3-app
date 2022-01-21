@@ -15,10 +15,10 @@ $theme-colors: (
   'dark': #343a40
 );
 
+// Workaround for btn-light hover color
 .btn-light {
   background-color: #fff !important;
 }
-
 .btn-light:hover {
   background-color: hsl(0deg, 0%, 95%) !important;
 }
