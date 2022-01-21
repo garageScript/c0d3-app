@@ -11077,10 +11077,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@^12.2.1:
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.2.1.tgz#e37b5a81deaabf5823f43b3aa903a70c15c9d0b3"
-  integrity sha512-VCVcA9C2Vt5HHxSR4EZVZFJcQRJH984CGBeY+cJ/xed4mBd+JidbM/xbKcCq5ASaygAV0iITtdsCTnID7h/1OQ==
+lint-staged@^12.2.2:
+  version "12.2.2"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-12.2.2.tgz#e03d93b41092316e0f38b37c9630da807aae3cca"
+  integrity sha512-bcHEoM1M/f+K1BYdHcEuIn8K+zMOSJR3mkny6PAuQiTgcSUcRbUWaUD6porAYypxF4k1vYZZ2HutZt1p94Z1jQ==
   dependencies:
     cli-truncate "^3.1.0"
     colorette "^2.0.16"
@@ -13128,10 +13128,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.17.1:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.17.1.tgz#e04c5bab6d5c80a8907c14275881f65becbbe62f"
-  integrity sha512-pQCCI0id8tFwOdHFj8CffAdm+p9w/7cwb7hDPRRoO+qYN+9WYgtZHlcjyd8y/5fpS3hTIAfYUZa3FM26NR+X1Q==
+posthog-js@^1.17.3:
+  version "1.17.3"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.17.3.tgz#e452a7d0001a1c60ceb5384d955b14a0230107d9"
+  integrity sha512-JRpnRdxHa1kmMhQqF//R+xm/6gpDdA2H7ZUnyiouRYQatShBNPytonvOkzydXQXR9XpU6NaYCLf7f0VL6XAjhg==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
@@ -15926,10 +15926,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.5.4:
-  version "4.5.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.4.tgz#a17d3a0263bf5c8723b9c52f43c5084edf13c2e8"
-  integrity sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
+typescript@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
+  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
 
 ua-parser-js@^0.7.18:
   version "0.7.28"
