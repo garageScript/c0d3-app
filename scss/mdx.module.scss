@@ -82,3 +82,11 @@
     font-size: 2.5rem;
   }
 }
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
