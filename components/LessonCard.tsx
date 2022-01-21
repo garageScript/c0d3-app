@@ -146,7 +146,11 @@ const LessonCard: React.FC<Props> = props => {
       >
         <div className="d-flex">
           <h4 className={`${styles['lesson-card__title']} fw-bold mt-3`}>
-            <NavLink path={props.challengesUrl} className="text-primary">
+            <NavLink
+              path={props.challengesUrl}
+              className="text-primary"
+              hoverUnderline
+            >
               {props.title}
             </NavLink>
           </h4>
@@ -197,7 +201,7 @@ const LessonCard: React.FC<Props> = props => {
           </NavLink>
           <NavLink
             path={props.challengesUrl}
-            className={`${styles['lesson-card__button']} btn bg-primary my-1 text-white border border-white`}
+            className={`${styles['lesson-card__button']} btn btn-primary my-1 text-white border border-white`}
           >
             View Challenges
           </NavLink>
