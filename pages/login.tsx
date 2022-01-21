@@ -84,7 +84,7 @@ export const Login: React.FC<LoginFormProps> = ({
           </div>
         </Form>
       </Formik>
-      <NavLink path="/forgotpassword" hoverUnderline={true}>
+      <NavLink path="/forgotpassword" hoverUnderline>
         Forgot your password?
       </NavLink>
     </Card>

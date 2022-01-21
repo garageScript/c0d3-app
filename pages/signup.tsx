@@ -141,7 +141,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
       </Formik>
       <p className="text-black-50">
         Already have an account?{' '}
-        <NavLink path="/login" className="text-primary" hoverUnderline={true}>
+        <NavLink path="/login" className="text-primary" hoverUnderline>
           Login
         </NavLink>
       </p>
