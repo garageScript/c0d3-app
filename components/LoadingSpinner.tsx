@@ -19,7 +19,7 @@ const LoadingSpinner = () => {
         C0D3
       </h1>
       <div className="spinner-border text-white" role="status">
-        <h1 className="sr-only">Loading...</h1>
+        <h1 className="visually-hidden">Loading...</h1>
       </div>
     </div>
   )
