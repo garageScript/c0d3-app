@@ -2,11 +2,13 @@
   font-size: 1.2rem;
   color: rgb(66, 66, 66);
   max-width: max(200px, 20vw);
+  text-decoration: none;
   > span {
     font-weight: bold;
   }
   &:hover {
     color: black;
+    text-decoration: underline;
   }
 }
 .next {
