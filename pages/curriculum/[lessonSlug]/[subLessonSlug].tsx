@@ -13,7 +13,7 @@ import {
   SubLesson
 } from '../../../helpers/static/lessons'
 import { parseMDX } from '../../../helpers/static/parseMDX'
-import { initializeApollo } from '../../../helpers/apolloClient'
+import { initializeApollo } from '../../../helpers/apolloClient-server'
 
 import NextPreviousLessons from '../../../components/NextPreviousLessons'
 import SubLessonLinks from '../../../components/SubLessonLinks'

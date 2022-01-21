@@ -33,24 +33,18 @@ const whiteList = ['/curriculum']
   }
 })()
 
-function createIsomorphLink() {
-  if (typeof window === 'undefined') {
-    const { SchemaLink } = require('@apollo/client/link/schema')
-    const { schema } = require('../graphql/schema')
-    return new SchemaLink({ schema })
-  } else {
-    const { HttpLink } = require('@apollo/client/link/http')
-    return new HttpLink({
-      uri: '/api/graphql',
-      credentials: 'same-origin'
-    })
-  }
+function createHttpLink() {
+  const { HttpLink } = require('@apollo/client/link/http')
+  return new HttpLink({
+    uri: '/api/graphql',
+    credentials: 'same-origin'
+  })
 }
 
 function createApolloClient() {
   return new ApolloClient({
-    ssrMode: typeof window === 'undefined',
-    link: createIsomorphLink(),
+    ssrMode: false,
+    link: createHttpLink(),
     cache
   })
 }
@@ -78,8 +72,7 @@ export function initializeApollo(
     // Restore the cache with the merged data
     _apolloClient.cache.restore(data)
   }
-  // For SSG and SSR always create a new Apollo Client
-  if (typeof window === 'undefined') return _apolloClient
+
   // Create the Apollo Client once in the client
   if (!apolloClient) apolloClient = _apolloClient
 

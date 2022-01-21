@@ -12,8 +12,8 @@ import {
 } from '../../../../__dummy__/mdx'
 import { useRouter } from 'next/router' // Auto mocked
 import { getLayout } from '../../../../components/LessonLayout'
-import { initializeApollo } from '../../../../helpers/apolloClient'
-jest.mock('../../../../helpers/apolloClient')
+jest.mock('../../../../helpers/apolloClient-server')
+import { initializeApollo } from '../../../../helpers/apolloClient-server'
 import Title from '../../../../components/Title'
 jest.mock('../../../../components/Title', () => {
   return jest.fn(() => null)

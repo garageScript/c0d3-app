@@ -19,7 +19,7 @@ import {
   Lesson,
   useGetSessionQuery
 } from '../graphql/'
-import { initializeApollo } from '../helpers/apolloClient'
+import { initializeApollo } from '../helpers/apolloClient-server'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
 
