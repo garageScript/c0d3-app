@@ -54,7 +54,7 @@ exports[`AdminUsersTable test Should add admin rights 1`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-danger"
+            class="btn btn-danger"
             style="color: rgb(41, 41, 41);"
           >
             Remove
@@ -88,7 +88,7 @@ exports[`AdminUsersTable test Should add admin rights 1`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-success"
+            class="btn btn-success"
             style="color: rgb(41, 41, 41);"
           >
             Add
@@ -154,7 +154,7 @@ exports[`AdminUsersTable test Should add admin rights 2`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-danger"
+            class="btn btn-danger"
             style="color: rgb(41, 41, 41);"
           >
             Remove
@@ -188,7 +188,7 @@ exports[`AdminUsersTable test Should add admin rights 2`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-success"
+            class="btn btn-success"
             style="color: rgb(41, 41, 41);"
           >
             Add
@@ -256,7 +256,7 @@ exports[`AdminUsersTable test Should render successful search 1`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-success"
+            class="btn btn-success"
             style="color: rgb(41, 41, 41);"
           >
             Add
@@ -322,7 +322,7 @@ exports[`AdminUsersTable test Should search by admin role 1`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-danger"
+            class="btn btn-danger"
             style="color: rgb(41, 41, 41);"
           >
             Remove
@@ -388,7 +388,7 @@ exports[`AdminUsersTable test Should search by non-admin role 1`] = `
           class="align-middle"
         >
           <button
-            class="btn bg-success"
+            class="btn btn-success"
             style="color: rgb(41, 41, 41);"
           >
             Add

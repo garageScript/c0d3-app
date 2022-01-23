@@ -11,15 +11,11 @@ const AnnouncementCard: React.FC<Props> = ({ announcements }) => {
       className={`${styles['announcement-card__container']} card shadow-sm mt-3 p-2 d-flex border-0`}
     >
       <div className="card-body">
-        <h1
-          className={`${styles['announcement-card__title']} font-weight-bold`}
-        >
+        <h1 className={`${styles['announcement-card__title']} fw-bold`}>
           General Announcements
         </h1>
         <div className="mt-3">
-          <p
-            className={`${styles['announcement-card__subtitle']} font-weight-bold`}
-          >
+          <p className={`${styles['announcement-card__subtitle']} fw-bold`}>
             Updates and Guidelines
           </p>
           {announcements.map((announcement, i) => (

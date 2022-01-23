@@ -13,7 +13,7 @@ exports[`user profile test Should render anonymous users 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`user profile test Should render anonymous users 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`user profile test Should render anonymous users 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -83,7 +83,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -93,7 +93,7 @@ exports[`user profile test Should render anonymous users 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -103,7 +103,7 @@ exports[`user profile test Should render anonymous users 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -118,18 +118,22 @@ exports[`user profile test Should render anonymous users 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -148,7 +152,7 @@ exports[`user profile test Should render anonymous users 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ml-auto mr-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -171,7 +175,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             </h4>
           </div>
           <div
-            class="d-flex ml-auto mr-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4"
           />
         </div>
       </div>
@@ -835,7 +839,7 @@ exports[`user profile test Should render anonymous users 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -855,7 +859,7 @@ exports[`user profile test Should render if no stars received 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -878,13 +882,13 @@ exports[`user profile test Should render if no stars received 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -892,13 +896,13 @@ exports[`user profile test Should render if no stars received 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -925,7 +929,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -935,7 +939,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -945,7 +949,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -960,18 +964,22 @@ exports[`user profile test Should render if no stars received 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -990,7 +998,7 @@ exports[`user profile test Should render if no stars received 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ml-auto mr-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -1013,7 +1021,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             </h4>
           </div>
           <div
-            class="d-flex ml-auto mr-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4"
           />
         </div>
       </div>
@@ -1682,7 +1690,7 @@ exports[`user profile test Should render if no stars received 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -1702,7 +1710,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -1725,13 +1733,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1739,13 +1747,13 @@ exports[`user profile test Should render nulled challenges 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1772,7 +1780,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1782,7 +1790,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1792,7 +1800,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1807,18 +1815,22 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -1837,7 +1849,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ml-auto mr-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -1860,7 +1872,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             </h4>
           </div>
           <div
-            class="d-flex ml-auto mr-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4"
           />
         </div>
       </div>
@@ -2565,7 +2577,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -2585,7 +2597,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -2608,13 +2620,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -2622,13 +2634,13 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -2655,7 +2667,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -2665,7 +2677,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -2675,7 +2687,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -2690,18 +2702,22 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -2720,7 +2736,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ml-auto mr-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -2743,7 +2759,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             </h4>
           </div>
           <div
-            class="d-flex ml-auto mr-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4"
           />
         </div>
       </div>
@@ -3407,7 +3423,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -3427,7 +3443,7 @@ exports[`user profile test Should render profile 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -3450,13 +3466,13 @@ exports[`user profile test Should render profile 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -3464,13 +3480,13 @@ exports[`user profile test Should render profile 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -3497,7 +3513,7 @@ exports[`user profile test Should render profile 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -3507,7 +3523,7 @@ exports[`user profile test Should render profile 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -3517,7 +3533,7 @@ exports[`user profile test Should render profile 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -3532,18 +3548,22 @@ exports[`user profile test Should render profile 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -3562,7 +3582,7 @@ exports[`user profile test Should render profile 1`] = `
           class="card shadow-sm"
         >
           <div
-            class="ml-auto mr-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
               class="text-uppercase bg-primary rounded-circle text-light user_info_image"
@@ -3585,7 +3605,7 @@ exports[`user profile test Should render profile 1`] = `
             </h4>
           </div>
           <div
-            class="d-flex ml-auto mr-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4"
           />
         </div>
         <div
@@ -3621,12 +3641,12 @@ exports[`user profile test Should render profile 1`] = `
                       </h6>
                       <div>
                         <h6
-                          class="text-md-left text-muted font-weight-bold mb-0"
+                          class="text-md-start text-muted fw-bold mb-0"
                         >
                           @newbie
                         </h6>
                         <h6
-                          class="comment-lesson-title text-muted text-left"
+                          class="comment-lesson-title text-muted text-start"
                         >
                           Foundations of JavaScript
                         </h6>
@@ -3676,12 +3696,12 @@ exports[`user profile test Should render profile 1`] = `
                       </h6>
                       <div>
                         <h6
-                          class="text-md-left text-muted font-weight-bold mb-0"
+                          class="text-md-start text-muted fw-bold mb-0"
                         >
                           @newbie
                         </h6>
                         <h6
-                          class="comment-lesson-title text-muted text-left"
+                          class="comment-lesson-title text-muted text-start"
                         >
                           Variables & Functions
                         </h6>
@@ -3731,12 +3751,12 @@ exports[`user profile test Should render profile 1`] = `
                       </h6>
                       <div>
                         <h6
-                          class="text-md-left text-muted font-weight-bold mb-0"
+                          class="text-md-start text-muted fw-bold mb-0"
                         >
                           @anonymous
                         </h6>
                         <h6
-                          class="comment-lesson-title text-muted text-left"
+                          class="comment-lesson-title text-muted text-start"
                         >
                           Variables & Functions
                         </h6>
@@ -3879,7 +3899,7 @@ exports[`user profile test Should render profile 1`] = `
                   >
                     1
                     <span
-                      class="ml-1"
+                      class="ms-1"
                     >
                       <svg
                         fill="yellow"
@@ -3960,7 +3980,7 @@ exports[`user profile test Should render profile 1`] = `
                   >
                     1
                     <span
-                      class="ml-1"
+                      class="ms-1"
                     >
                       <svg
                         fill="yellow"
@@ -4047,7 +4067,7 @@ exports[`user profile test Should render profile 1`] = `
                   >
                     1
                     <span
-                      class="ml-1"
+                      class="ms-1"
                     >
                       <svg
                         fill="yellow"
@@ -4502,7 +4522,7 @@ exports[`user profile test Should render profile 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -4522,7 +4542,7 @@ exports[`user profile test should render discord avatar and username if user con
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -4545,13 +4565,13 @@ exports[`user profile test should render discord avatar and username if user con
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -4559,13 +4579,13 @@ exports[`user profile test should render discord avatar and username if user con
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -4577,13 +4597,13 @@ exports[`user profile test should render discord avatar and username if user con
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -4605,10 +4625,10 @@ exports[`user profile test should render discord avatar and username if user con
           class="card shadow-sm"
         >
           <div
-            class="ml-auto mr-auto mt-4 profile_image_container"
+            class="ms-auto me-auto mt-4 profile_image_container"
           >
             <div
-              class="jsx-3123111835 ml-auto mr-auto mt-4"
+              class="jsx-3123111835 ms-auto me-auto mt-4"
             >
               <img
                 class="avatar"
@@ -4633,7 +4653,7 @@ exports[`user profile test should render discord avatar and username if user con
             </h4>
           </div>
           <div
-            class="d-flex ml-auto mr-auto mb-4"
+            class="d-flex ms-auto me-auto mb-4"
           >
             <img
               height="20"
@@ -4641,7 +4661,7 @@ exports[`user profile test should render discord avatar and username if user con
               width="20"
             />
             <h5
-              class="ml-2"
+              class="ms-2"
             >
               <a
                 href="https://discordapp.com/users/fakeDiscordId/"
@@ -4684,12 +4704,12 @@ exports[`user profile test should render discord avatar and username if user con
                       </h6>
                       <div>
                         <h6
-                          class="text-md-left text-muted font-weight-bold mb-0"
+                          class="text-md-start text-muted fw-bold mb-0"
                         >
                           @newbie
                         </h6>
                         <h6
-                          class="comment-lesson-title text-muted text-left"
+                          class="comment-lesson-title text-muted text-start"
                         >
                           Foundations of JavaScript
                         </h6>
@@ -4739,12 +4759,12 @@ exports[`user profile test should render discord avatar and username if user con
                       </h6>
                       <div>
                         <h6
-                          class="text-md-left text-muted font-weight-bold mb-0"
+                          class="text-md-start text-muted fw-bold mb-0"
                         >
                           @newbie
                         </h6>
                         <h6
-                          class="comment-lesson-title text-muted text-left"
+                          class="comment-lesson-title text-muted text-start"
                         >
                           Variables & Functions
                         </h6>
@@ -4794,12 +4814,12 @@ exports[`user profile test should render discord avatar and username if user con
                       </h6>
                       <div>
                         <h6
-                          class="text-md-left text-muted font-weight-bold mb-0"
+                          class="text-md-start text-muted fw-bold mb-0"
                         >
                           @anonymous
                         </h6>
                         <h6
-                          class="comment-lesson-title text-muted text-left"
+                          class="comment-lesson-title text-muted text-start"
                         >
                           Variables & Functions
                         </h6>
@@ -4942,7 +4962,7 @@ exports[`user profile test should render discord avatar and username if user con
                   >
                     1
                     <span
-                      class="ml-1"
+                      class="ms-1"
                     >
                       <svg
                         fill="yellow"
@@ -5023,7 +5043,7 @@ exports[`user profile test should render discord avatar and username if user con
                   >
                     1
                     <span
-                      class="ml-1"
+                      class="ms-1"
                     >
                       <svg
                         fill="yellow"
@@ -5110,7 +5130,7 @@ exports[`user profile test should render discord avatar and username if user con
                   >
                     1
                     <span
-                      class="ml-1"
+                      class="ms-1"
                     >
                       <svg
                         fill="yellow"
@@ -5565,7 +5585,7 @@ exports[`user profile test should render discord avatar and username if user con
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

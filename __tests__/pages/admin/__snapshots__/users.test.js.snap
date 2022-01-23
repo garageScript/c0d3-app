@@ -13,7 +13,7 @@ exports[`Users test Should be able to switch search options 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`Users test Should be able to switch search options 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`Users test Should be able to switch search options 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -83,7 +83,7 @@ exports[`Users test Should be able to switch search options 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -93,7 +93,7 @@ exports[`Users test Should be able to switch search options 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -103,7 +103,7 @@ exports[`Users test Should be able to switch search options 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -118,18 +118,22 @@ exports[`Users test Should be able to switch search options 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -142,7 +146,7 @@ exports[`Users test Should be able to switch search options 1`] = `
       class="d-flex flex-column col-12"
     >
       <h1
-        class="text-primary text-center font-weight-bold display-1"
+        class="text-primary text-center fw-bold display-1"
       >
         Users
       </h1>
@@ -153,7 +157,7 @@ exports[`Users test Should be able to switch search options 1`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             <label
               for="search"
@@ -175,7 +179,7 @@ exports[`Users test Should be able to switch search options 1`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Username
@@ -215,7 +219,7 @@ exports[`Users test Should be able to switch search options 1`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             Filter By:
           </h4>
@@ -243,7 +247,7 @@ exports[`Users test Should be able to switch search options 1`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               None
@@ -303,7 +307,7 @@ exports[`Users test Should be able to switch search options 1`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(41, 41, 41);"
               >
                 Remove
@@ -337,7 +341,7 @@ exports[`Users test Should be able to switch search options 1`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-success"
+                class="btn btn-success"
                 style="color: rgb(41, 41, 41);"
               >
                 Add
@@ -349,7 +353,7 @@ exports[`Users test Should be able to switch search options 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -369,7 +373,7 @@ exports[`Users test Should be able to switch search options 2`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -392,13 +396,13 @@ exports[`Users test Should be able to switch search options 2`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -406,13 +410,13 @@ exports[`Users test Should be able to switch search options 2`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -439,7 +443,7 @@ exports[`Users test Should be able to switch search options 2`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -449,7 +453,7 @@ exports[`Users test Should be able to switch search options 2`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -459,7 +463,7 @@ exports[`Users test Should be able to switch search options 2`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -474,18 +478,22 @@ exports[`Users test Should be able to switch search options 2`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -498,7 +506,7 @@ exports[`Users test Should be able to switch search options 2`] = `
       class="d-flex flex-column col-12"
     >
       <h1
-        class="text-primary text-center font-weight-bold display-1"
+        class="text-primary text-center fw-bold display-1"
       >
         Users
       </h1>
@@ -509,7 +517,7 @@ exports[`Users test Should be able to switch search options 2`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             <label
               for="search"
@@ -531,7 +539,7 @@ exports[`Users test Should be able to switch search options 2`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Username
@@ -571,7 +579,7 @@ exports[`Users test Should be able to switch search options 2`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             Filter By:
           </h4>
@@ -599,7 +607,7 @@ exports[`Users test Should be able to switch search options 2`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               None
@@ -659,7 +667,7 @@ exports[`Users test Should be able to switch search options 2`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(41, 41, 41);"
               >
                 Remove
@@ -693,7 +701,7 @@ exports[`Users test Should be able to switch search options 2`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-success"
+                class="btn btn-success"
                 style="color: rgb(41, 41, 41);"
               >
                 Add
@@ -705,7 +713,7 @@ exports[`Users test Should be able to switch search options 2`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -725,7 +733,7 @@ exports[`Users test Should be able to switch search options 3`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -748,13 +756,13 @@ exports[`Users test Should be able to switch search options 3`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -762,13 +770,13 @@ exports[`Users test Should be able to switch search options 3`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -795,7 +803,7 @@ exports[`Users test Should be able to switch search options 3`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -805,7 +813,7 @@ exports[`Users test Should be able to switch search options 3`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -815,7 +823,7 @@ exports[`Users test Should be able to switch search options 3`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -830,18 +838,22 @@ exports[`Users test Should be able to switch search options 3`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -854,7 +866,7 @@ exports[`Users test Should be able to switch search options 3`] = `
       class="d-flex flex-column col-12"
     >
       <h1
-        class="text-primary text-center font-weight-bold display-1"
+        class="text-primary text-center fw-bold display-1"
       >
         Users
       </h1>
@@ -865,7 +877,7 @@ exports[`Users test Should be able to switch search options 3`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             <label
               for="search"
@@ -897,7 +909,7 @@ exports[`Users test Should be able to switch search options 3`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Name
@@ -927,7 +939,7 @@ exports[`Users test Should be able to switch search options 3`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             Filter By:
           </h4>
@@ -955,7 +967,7 @@ exports[`Users test Should be able to switch search options 3`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               None
@@ -1015,7 +1027,7 @@ exports[`Users test Should be able to switch search options 3`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(41, 41, 41);"
               >
                 Remove
@@ -1049,7 +1061,7 @@ exports[`Users test Should be able to switch search options 3`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-success"
+                class="btn btn-success"
                 style="color: rgb(41, 41, 41);"
               >
                 Add
@@ -1061,7 +1073,7 @@ exports[`Users test Should be able to switch search options 3`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -1081,7 +1093,7 @@ exports[`Users test Should be able to switch search options 4`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -1104,13 +1116,13 @@ exports[`Users test Should be able to switch search options 4`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1118,13 +1130,13 @@ exports[`Users test Should be able to switch search options 4`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1151,7 +1163,7 @@ exports[`Users test Should be able to switch search options 4`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1161,7 +1173,7 @@ exports[`Users test Should be able to switch search options 4`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1171,7 +1183,7 @@ exports[`Users test Should be able to switch search options 4`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1186,18 +1198,22 @@ exports[`Users test Should be able to switch search options 4`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -1210,7 +1226,7 @@ exports[`Users test Should be able to switch search options 4`] = `
       class="d-flex flex-column col-12"
     >
       <h1
-        class="text-primary text-center font-weight-bold display-1"
+        class="text-primary text-center fw-bold display-1"
       >
         Users
       </h1>
@@ -1221,7 +1237,7 @@ exports[`Users test Should be able to switch search options 4`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             <label
               for="search"
@@ -1253,7 +1269,7 @@ exports[`Users test Should be able to switch search options 4`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Name
@@ -1283,7 +1299,7 @@ exports[`Users test Should be able to switch search options 4`] = `
           class="d-flex flex-row"
         >
           <h4
-            class="text-primary font-weight-bold mr-1"
+            class="text-primary fw-bold me-1"
           >
             Filter By:
           </h4>
@@ -1291,7 +1307,7 @@ exports[`Users test Should be able to switch search options 4`] = `
             style="margin-top: -1.57px;"
           >
             <button
-              class="btn bg-primary"
+              class="btn btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Admins
@@ -1371,7 +1387,7 @@ exports[`Users test Should be able to switch search options 4`] = `
               class="align-middle"
             >
               <button
-                class="btn bg-danger"
+                class="btn btn-danger"
                 style="color: rgb(41, 41, 41);"
               >
                 Remove
@@ -1383,7 +1399,7 @@ exports[`Users test Should be able to switch search options 4`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

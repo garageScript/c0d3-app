@@ -52,7 +52,7 @@ const DiscordBar: React.FC = () => {
       return <Member avatar={member.avatar_url} key={member.avatar_url} />
     })
     return (
-      <div className="text-center font-weight-bold text-primary">
+      <div className="text-center fw-bold text-primary">
         {profiles}
         {remaining > 0 && `+${data.members.length - 5}`}
       </div>
@@ -63,9 +63,7 @@ const DiscordBar: React.FC = () => {
       <div className="container">
         <img src="/assets/discordLogo.svg" />
         <div className="text-primary mt-n3 text-center">
-          <span className="font-weight-bold">
-            {data.error || data.members.length}
-          </span>
+          <span className="fw-bold">{data.error || data.members.length}</span>
           {data.error
             ? ''
             : data.members.length === 1
@@ -77,7 +75,7 @@ const DiscordBar: React.FC = () => {
         <div className={`${styles['discord-list']}`}>{reshuffle(data)}</div>
       </div>
       <a
-        className={`${styles['discord_link']} font-weight-bold text-white`}
+        className={`${styles['discord_link']} fw-bold text-white`}
         href="https://discord.gg/c0d3"
         target="_blank"
         rel="noreferrer"

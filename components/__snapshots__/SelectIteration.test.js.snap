@@ -59,7 +59,7 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         >
           1
           <span
-            class="sr-only"
+            class="visually-hidden"
           >
             comment count
           </span>
@@ -75,7 +75,7 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         >
           2
           <span
-            class="sr-only"
+            class="visually-hidden"
           >
             comment count
           </span>
@@ -91,12 +91,12 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
         >
           3
           <span
-            class="badge badge badge-light"
+            class="badge bg-light badge badge-light"
           >
             2
           </span>
           <span
-            class="sr-only"
+            class="visually-hidden"
           >
             comment count
           </span>
@@ -128,7 +128,7 @@ exports[`SelectIteration component Should treat negative index as last iteration
         >
           1
           <span
-            class="sr-only"
+            class="visually-hidden"
           >
             comment count
           </span>
@@ -144,7 +144,7 @@ exports[`SelectIteration component Should treat negative index as last iteration
         >
           2
           <span
-            class="sr-only"
+            class="visually-hidden"
           >
             comment count
           </span>
@@ -160,12 +160,12 @@ exports[`SelectIteration component Should treat negative index as last iteration
         >
           3
           <span
-            class="badge badge badge-light"
+            class="badge bg-light badge badge-light"
           >
             2
           </span>
           <span
-            class="sr-only"
+            class="visually-hidden"
           >
             comment count
           </span>

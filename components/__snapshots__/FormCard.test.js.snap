@@ -12,10 +12,10 @@ exports[`FormCard Component Should call function with updated array as parameter
         class="card-body text-center"
       />
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
-          class="d-flex flex-column ml-3 mr-3 mb-4"
+          class="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5fireStarter0"
@@ -55,7 +55,7 @@ exports[`FormCard Component Should call function with updated array as parameter
                 </a>
               </div>
               <div
-                class="ml-auto btn-toolbar"
+                class="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -233,7 +233,7 @@ exports[`FormCard Component Should call function with updated array as parameter
         class="text-center mb-4"
       >
         <button
-          class="btn bg-primary"
+          class="btn btn-primary"
           style="color: rgb(255, 255, 255);"
         >
           Create New Challenge
@@ -256,10 +256,10 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
         class="card-body text-center"
       />
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
-          class="d-flex flex-column ml-3 mr-3 mb-4"
+          class="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h50"
@@ -277,7 +277,7 @@ exports[`FormCard Component Should output empty title when title is empty 1`] = 
         class="text-center mb-4"
       >
         <button
-          class="btn bg-primary"
+          class="btn btn-primary"
           style="color: rgb(255, 255, 255);"
         >
           Create New Challenge
@@ -300,10 +300,10 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
         class="card-body text-center"
       />
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
-          class="d-flex flex-column ml-3 mr-3 mb-4"
+          class="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5fireStarter0"
@@ -343,7 +343,7 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
                 </a>
               </div>
               <div
-                class="ml-auto btn-toolbar"
+                class="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -521,7 +521,7 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
         class="text-center mb-4"
       >
         <button
-          class="btn bg-primary"
+          class="btn btn-primary"
           style="color: rgb(255, 255, 255);"
         >
           Create New Challenge
@@ -544,13 +544,13 @@ exports[`FormCard Component Should render nothing if id is a title 1`] = `
         class="card-body text-center"
       />
       <div
-        class="text-left"
+        class="text-start"
       />
       <div
         class="text-center mb-4"
       >
         <button
-          class="btn bg-primary"
+          class="btn btn-primary"
           style="color: rgb(255, 255, 255);"
         >
           Create New Challenge
@@ -573,10 +573,10 @@ exports[`FormCard Component Should update testing onChange variable when person 
         class="card-body text-center"
       />
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
-          class="d-flex flex-column ml-3 mr-3 mb-4"
+          class="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5fireStarter0"
@@ -596,7 +596,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
         class="text-center mb-4"
       >
         <button
-          class="btn bg-primary"
+          class="btn btn-primary"
           style="color: rgb(255, 255, 255);"
         >
           Create New Challenge
@@ -619,10 +619,10 @@ exports[`FormCard Component Should update testing onChange variable when person 
         class="card-body text-center"
       />
       <div
-        class="text-left"
+        class="text-start"
       >
         <div
-          class="d-flex flex-column ml-3 mr-3 mb-4"
+          class="d-flex flex-column ms-3 me-3 mb-4"
         >
           <h5
             data-testid="h5fireStarter0"
@@ -662,7 +662,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
                 </a>
               </div>
               <div
-                class="ml-auto btn-toolbar"
+                class="ms-auto btn-toolbar"
                 role="toolbar"
               >
                 <button
@@ -840,7 +840,7 @@ exports[`FormCard Component Should update testing onChange variable when person 
         class="text-center mb-4"
       >
         <button
-          class="btn bg-primary"
+          class="btn btn-primary"
           style="color: rgb(255, 255, 255);"
         >
           Create New Challenge

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import styles from '../scss/navLink.module.scss'
 
 export type NavLinkProps = {
   path: string
@@ -7,6 +8,7 @@ export type NavLinkProps = {
   external?: true
   as?: string
   className?: string
+  hoverUnderline?: boolean
 }
 
 const NavLink: React.FC<NavLinkProps> = ({
@@ -15,7 +17,8 @@ const NavLink: React.FC<NavLinkProps> = ({
   activePath,
   as,
   external,
-  className = ''
+  className = '',
+  hoverUnderline = false
 }) => {
   if (!path) return null
   if (activePath) className += ' active'
@@ -25,7 +28,9 @@ const NavLink: React.FC<NavLinkProps> = ({
         rel="noopener noreferrer"
         target="_blank"
         href={path}
-        className={className}
+        className={`${className} ${
+          styles[hoverUnderline ? 'link' : 'noUnderline']
+        }`}
       >
         {children}
       </a>
@@ -33,8 +38,12 @@ const NavLink: React.FC<NavLinkProps> = ({
   }
   return (
     <Link href={path} as={as}>
-      <a className={className}>
-        {activePath && <span className="sr-only">(current)</span>}
+      <a
+        className={`${className} ${
+          styles[hoverUnderline ? 'link' : 'noUnderline']
+        }`}
+      >
+        {activePath && <span className="visually-hidden">(current)</span>}
         {children}
       </a>
     </Link>

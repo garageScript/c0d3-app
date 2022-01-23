@@ -13,7 +13,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -68,13 +68,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -117,13 +117,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <p
-                  class="font-weight-bold d-inline"
+                  class="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -134,7 +134,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -149,7 +149,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -158,7 +158,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -180,7 +180,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -208,16 +208,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -227,11 +227,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -258,7 +258,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -267,7 +267,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -289,7 +289,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -317,16 +317,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -336,11 +336,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -367,7 +367,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -376,7 +376,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -398,7 +398,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -426,16 +426,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -445,11 +445,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -476,7 +476,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -485,7 +485,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -507,7 +507,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -535,16 +535,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -554,11 +554,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -585,7 +585,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -594,7 +594,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -616,7 +616,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -644,16 +644,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -663,11 +663,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -694,7 +694,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -703,7 +703,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -725,7 +725,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -753,16 +753,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -772,11 +772,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -803,7 +803,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -812,7 +812,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -834,7 +834,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -862,16 +862,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -881,11 +881,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -912,7 +912,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -921,7 +921,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -943,7 +943,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -971,16 +971,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -990,11 +990,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -1021,7 +1021,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -1030,7 +1030,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -1052,7 +1052,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -1080,16 +1080,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -1099,11 +1099,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -1130,7 +1130,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -1139,7 +1139,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -1161,7 +1161,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -1189,16 +1189,16 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -1208,11 +1208,11 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -1249,7 +1249,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="text-primary mt-n3 text-center"
             >
               <span
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Error fetching data...
               </span>
@@ -1263,12 +1263,12 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="discord-list"
             >
               <div
-                class="text-center font-weight-bold text-primary"
+                class="text-center fw-bold text-primary"
               />
             </div>
           </div>
           <a
-            class="discord_link font-weight-bold text-white"
+            class="discord_link fw-bold text-white"
             href="https://discord.gg/c0d3"
             rel="noreferrer"
             target="_blank"
@@ -1296,13 +1296,13 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <p
-                  class="font-weight-bold d-inline"
+                  class="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -1313,7 +1313,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -1328,7 +1328,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             class="card-body"
           >
             <h1
-              class="announcement-card__title font-weight-bold"
+              class="announcement-card__title fw-bold"
             >
               General Announcements
             </h1>
@@ -1336,7 +1336,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
               class="mt-3"
             >
               <p
-                class="announcement-card__subtitle font-weight-bold"
+                class="announcement-card__subtitle fw-bold"
               >
                 Updates and Guidelines
               </p>
@@ -1364,21 +1364,21 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
           </div>
         </div>
         <div
-          class="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          class="additional-resources__container ms-4 d-flex flex-column justify-content-around"
         >
           <h1
-            class="additional-resources__title font-weight-bold"
+            class="additional-resources__title fw-bold"
           >
             ADDITIONAL RESOURCES
           </h1>
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <h2
-              class="additional-resources__subtitle mr-0"
+              class="additional-resources__subtitle me-0"
             >
               MDN Web Docs
             </h2>
@@ -1389,10 +1389,10 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             The encyclopedia of web development
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1409,10 +1409,10 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             In-depth overview of javascript language
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1429,10 +1429,10 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             Introduction to shell, git, vim, tmux and etc.
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -1449,14 +1449,14 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
             Self-study guide
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
         </div>
       </div>
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -1476,7 +1476,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -1499,13 +1499,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -1513,13 +1513,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -1546,7 +1546,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1556,7 +1556,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1566,7 +1566,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -1581,18 +1581,22 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -1634,10 +1638,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 class="bg-white my-3 rounded"
               >
                 <div
-                  class="progress-card__horizontal bg-primary d-flex rounded-left"
+                  class="progress-card__horizontal bg-primary d-flex rounded-start"
                 >
                   <div
-                    class="align-self-center px-1 ml-auto font-weight-bold"
+                    class="align-self-center px-1 ms-auto fw-bold"
                   >
                     0
                     %
@@ -1699,13 +1703,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <p
-                  class="font-weight-bold d-inline"
+                  class="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -1716,7 +1720,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -1731,7 +1735,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -1740,7 +1744,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -1762,7 +1766,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -1790,16 +1794,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
@@ -1809,11 +1813,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -1836,7 +1840,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="p-2 bg-primary"
           >
             <a
-              class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+              class="lesson-card__button btn btn-light me-2 my-1 text-primary noUnderline"
               href="https://www.notion.so/garagescript/JS-0-Foundations-a43ca620e54945b2b620bcda5f3cf672"
               rel="noopener noreferrer"
               target="_blank"
@@ -1844,7 +1848,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               Start Lesson
             </a>
             <a
-              class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+              class="lesson-card__button btn btn-primary my-1 text-white border border-white noUnderline"
               href="/curriculum/js0"
             >
               View Challenges
@@ -1858,7 +1862,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -1867,7 +1871,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -1889,7 +1893,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -1917,16 +1921,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
@@ -1936,11 +1940,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -1967,7 +1971,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -1976,7 +1980,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -1998,7 +2002,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2026,16 +2030,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js2"
                   >
                     Arrays
@@ -2045,11 +2049,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2076,7 +2080,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2085,7 +2089,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -2107,7 +2111,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2135,16 +2139,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -2154,11 +2158,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2185,7 +2189,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2194,7 +2198,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -2216,7 +2220,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2244,16 +2248,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -2263,11 +2267,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2294,7 +2298,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2303,7 +2307,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -2325,7 +2329,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2353,16 +2357,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -2372,11 +2376,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2403,7 +2407,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2412,7 +2416,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -2434,7 +2438,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2462,16 +2466,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -2481,11 +2485,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2512,7 +2516,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2521,7 +2525,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -2543,7 +2547,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2571,16 +2575,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -2590,11 +2594,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2621,7 +2625,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2630,7 +2634,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -2652,7 +2656,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2680,16 +2684,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -2699,11 +2703,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2730,7 +2734,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -2739,7 +2743,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -2761,7 +2765,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -2789,16 +2793,16 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -2808,11 +2812,11 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -2849,7 +2853,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="text-primary mt-n3 text-center"
             >
               <span
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Error fetching data...
               </span>
@@ -2863,12 +2867,12 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="discord-list"
             >
               <div
-                class="text-center font-weight-bold text-primary"
+                class="text-center fw-bold text-primary"
               />
             </div>
           </div>
           <a
-            class="discord_link font-weight-bold text-white"
+            class="discord_link fw-bold text-white"
             href="https://discord.gg/c0d3"
             rel="noreferrer"
             target="_blank"
@@ -2898,10 +2902,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
                 class="bg-white my-3 rounded"
               >
                 <div
-                  class="progress-card__horizontal bg-primary d-flex rounded-left"
+                  class="progress-card__horizontal bg-primary d-flex rounded-start"
                 >
                   <div
-                    class="align-self-center px-1 ml-auto font-weight-bold"
+                    class="align-self-center px-1 ms-auto fw-bold"
                   >
                     0
                     %
@@ -2963,13 +2967,13 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <p
-                  class="font-weight-bold d-inline"
+                  class="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -2980,7 +2984,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -2995,7 +2999,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             class="card-body"
           >
             <h1
-              class="announcement-card__title font-weight-bold"
+              class="announcement-card__title fw-bold"
             >
               General Announcements
             </h1>
@@ -3003,7 +3007,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
               class="mt-3"
             >
               <p
-                class="announcement-card__subtitle font-weight-bold"
+                class="announcement-card__subtitle fw-bold"
               >
                 Updates and Guidelines
               </p>
@@ -3031,21 +3035,21 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
           </div>
         </div>
         <div
-          class="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          class="additional-resources__container ms-4 d-flex flex-column justify-content-around"
         >
           <h1
-            class="additional-resources__title font-weight-bold"
+            class="additional-resources__title fw-bold"
           >
             ADDITIONAL RESOURCES
           </h1>
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <h2
-              class="additional-resources__subtitle mr-0"
+              class="additional-resources__subtitle me-0"
             >
               MDN Web Docs
             </h2>
@@ -3056,10 +3060,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             The encyclopedia of web development
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3076,10 +3080,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             In-depth overview of javascript language
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3096,10 +3100,10 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             Introduction to shell, git, vim, tmux and etc.
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -3116,14 +3120,14 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             Self-study guide
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
         </div>
       </div>
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -3143,7 +3147,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -3166,13 +3170,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -3180,13 +3184,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -3213,7 +3217,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -3223,7 +3227,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -3233,7 +3237,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-left py-2 px-4"
+              class="text-center text-xl-start py-2 px-4"
             >
               <a
                 class="dropdown-item"
@@ -3248,18 +3252,22 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border overflow-hidden text-truncate bg-light"
+            class="btn btn-light border overflow-hidden text-truncate noUnderline"
             href="/profile/fakeusername"
           >
             Fakeusername
           </a>
           <span>
-            <button
-              class="btn border bg-light ml-2"
-              style="color: rgb(41, 41, 41);"
+            <div
+              class="light-button d-inline"
             >
-              Logout
-            </button>
+              <button
+                class="btn border btn-light ms-2"
+                style="color: rgb(41, 41, 41);"
+              >
+                Logout
+              </button>
+            </div>
           </span>
         </div>
       </div>
@@ -3301,11 +3309,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 class="bg-white my-3 rounded"
               >
                 <div
-                  class="progress-card__horizontal bg-primary d-flex rounded-left"
+                  class="progress-card__horizontal bg-primary d-flex rounded-start"
                   style="width: 42%;"
                 >
                   <div
-                    class="align-self-center px-1 ml-auto font-weight-bold"
+                    class="align-self-center px-1 ms-auto fw-bold"
                   >
                     42
                     %
@@ -3367,13 +3375,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <p
-                  class="font-weight-bold d-inline"
+                  class="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -3384,7 +3392,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -3399,7 +3407,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -3408,14 +3416,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
                 </div>
                 <span
-                  class="lesson-card__badge badge badge-pill badge-success p-0"
+                  class="lesson-card__badge badge rounded-pill bg-success p-0"
                 >
                   <svg
                     fill="none"
@@ -3457,7 +3465,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -3474,7 +3482,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               A super simple introduction to help you get started!
             </p>
             <a
-              class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+              class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
               href="/review/js0"
             >
               Review 
@@ -3495,23 +3503,23 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js0"
                   >
                     Foundations of JavaScript
                   </a>
                 </h4>
                 <span
-                  class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+                  class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
                 >
                   <svg
                     fill="none"
@@ -3541,11 +3549,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -3563,7 +3571,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </div>
               <a
-                class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+                class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
                 href="/review/js0"
               >
                 Review 
@@ -3582,7 +3590,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -3591,14 +3599,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
                 </div>
                 <span
-                  class="lesson-card__badge badge badge-pill badge-success p-0"
+                  class="lesson-card__badge badge rounded-pill bg-success p-0"
                 >
                   <svg
                     fill="none"
@@ -3640,7 +3648,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -3657,7 +3665,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               Learn how to solve simple algorithm problems recursively with the following exercises. 
             </p>
             <a
-              class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+              class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
               href="/review/js1"
             >
               Review 
@@ -3678,23 +3686,23 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js1"
                   >
                     Variables & Functions
                   </a>
                 </h4>
                 <span
-                  class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+                  class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
                 >
                   <svg
                     fill="none"
@@ -3724,11 +3732,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -3746,7 +3754,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </div>
               <a
-                class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+                class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
                 href="/review/js1"
               >
                 Review 
@@ -3765,7 +3773,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -3774,14 +3782,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js2"
                   >
                     Arrays
                   </a>
                 </div>
                 <span
-                  class="lesson-card__badge badge badge-pill badge-success p-0"
+                  class="lesson-card__badge badge rounded-pill bg-success p-0"
                 >
                   <svg
                     fill="none"
@@ -3823,7 +3831,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -3840,7 +3848,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               These exercises will help you gain a better understanding of what it means for a data structure to be non-primitive.
             </p>
             <a
-              class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+              class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
               href="/review/js2"
             >
               Review 
@@ -3861,23 +3869,23 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js2"
                   >
                     Arrays
                   </a>
                 </h4>
                 <span
-                  class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+                  class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
                 >
                   <svg
                     fill="none"
@@ -3907,11 +3915,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -3929,7 +3937,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 </p>
               </div>
               <a
-                class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+                class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
                 href="/review/js2"
               >
                 Review 
@@ -3948,7 +3956,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -3957,7 +3965,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -3979,7 +3987,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4007,16 +4015,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js3"
                   >
                     Objects
@@ -4026,11 +4034,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4053,7 +4061,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="p-2 bg-primary"
           >
             <a
-              class="lesson-card__button btn btn-light mr-2 my-1 text-primary"
+              class="lesson-card__button btn btn-light me-2 my-1 text-primary noUnderline"
               href="https://www.notion.so/garagescript/JS-3-Objects-3df846eaf0404fe6b012208773063a04"
               rel="noopener noreferrer"
               target="_blank"
@@ -4061,7 +4069,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               Start Lesson
             </a>
             <a
-              class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+              class="lesson-card__button btn btn-primary my-1 text-white border border-white noUnderline"
               href="/curriculum/js3"
             >
               View Challenges
@@ -4075,7 +4083,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -4084,7 +4092,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -4106,7 +4114,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4134,16 +4142,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js4"
                   >
                     Front End Engineering
@@ -4153,11 +4161,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4184,7 +4192,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -4193,7 +4201,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -4215,7 +4223,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4243,16 +4251,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js5"
                   >
                     End To End
@@ -4262,11 +4270,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4293,7 +4301,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -4302,7 +4310,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -4324,7 +4332,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4352,16 +4360,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js6"
                   >
                     React, GraphQL, SocketIO
@@ -4371,11 +4379,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4402,7 +4410,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -4411,7 +4419,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -4433,7 +4441,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4461,16 +4469,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js7"
                   >
                     JavaScript Algorithms
@@ -4480,11 +4488,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4511,7 +4519,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -4520,7 +4528,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -4542,7 +4550,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4570,16 +4578,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js8"
                   >
                     Trees
@@ -4589,11 +4597,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4620,7 +4628,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="d-flex d-sm-none flex-column px-3"
           >
             <h4
-              class="lesson-card__title font-weight-bold mt-3 "
+              class="lesson-card__title fw-bold mt-3 "
             >
               <div
                 class="d-flex justify-content-center"
@@ -4629,7 +4637,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   class="align-self-center"
                 >
                   <a
-                    class=""
+                    class=" noUnderline"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -4651,7 +4659,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               >
                 <img
                   alt="icon-challenge"
-                  class="mr-2"
+                  class="me-2"
                   src="/assets/curriculum/icons/icon-challenge.svg"
                 />
                 <span
@@ -4679,16 +4687,16 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               width="116"
             />
             <div
-              class="lesson-card__description pl-4 d-none d-sm-block"
+              class="lesson-card__description ps-4 d-none d-sm-block"
             >
               <div
                 class="d-flex"
               >
                 <h4
-                  class="lesson-card__title font-weight-bold mt-3"
+                  class="lesson-card__title fw-bold mt-3"
                 >
                   <a
-                    class=""
+                    class="text-primary link"
                     href="/curriculum/js9"
                   >
                     General Algorithms
@@ -4698,11 +4706,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               <div>
                 <div>
                   <div
-                    class="d-inline-block mr-4"
+                    class="d-inline-block me-4"
                   >
                     <img
                       alt="icon-challenge"
-                      class="mr-2"
+                      class="me-2"
                       src="/assets/curriculum/icons/icon-challenge.svg"
                     />
                     <span
@@ -4739,7 +4747,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="text-primary mt-n3 text-center"
             >
               <span
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Error fetching data...
               </span>
@@ -4753,12 +4761,12 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="discord-list"
             >
               <div
-                class="text-center font-weight-bold text-primary"
+                class="text-center fw-bold text-primary"
               />
             </div>
           </div>
           <a
-            class="discord_link font-weight-bold text-white"
+            class="discord_link fw-bold text-white"
             href="https://discord.gg/c0d3"
             rel="noreferrer"
             target="_blank"
@@ -4788,11 +4796,11 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                 class="bg-white my-3 rounded"
               >
                 <div
-                  class="progress-card__horizontal bg-primary d-flex rounded-left"
+                  class="progress-card__horizontal bg-primary d-flex rounded-start"
                   style="width: 42%;"
                 >
                   <div
-                    class="align-self-center px-1 ml-auto font-weight-bold"
+                    class="align-self-center px-1 ms-auto fw-bold"
                   >
                     42
                     %
@@ -4854,13 +4862,13 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               Join us on
               <a
-                class="progress-newuser__chatlink text-white"
+                class="progress-newuser__chatlink text-white noUnderline"
                 href="https://discord.gg/c0d3"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <p
-                  class="font-weight-bold d-inline"
+                  class="fw-bold d-inline"
                 >
                   Discord
                 </p>
@@ -4871,7 +4879,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="mt-4 d-flex flex-column"
             >
               <a
-                class="btn btn-light progress-card__button mt-2 text-primary"
+                class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
                 href="/docs/setup"
               >
                 Setup Development Environment
@@ -4886,7 +4894,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             class="card-body"
           >
             <h1
-              class="announcement-card__title font-weight-bold"
+              class="announcement-card__title fw-bold"
             >
               General Announcements
             </h1>
@@ -4894,7 +4902,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
               class="mt-3"
             >
               <p
-                class="announcement-card__subtitle font-weight-bold"
+                class="announcement-card__subtitle fw-bold"
               >
                 Updates and Guidelines
               </p>
@@ -4922,21 +4930,21 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
           </div>
         </div>
         <div
-          class="additional-resources__container ml-4 d-flex flex-column justify-content-around"
+          class="additional-resources__container ms-4 d-flex flex-column justify-content-around"
         >
           <h1
-            class="additional-resources__title font-weight-bold"
+            class="additional-resources__title fw-bold"
           >
             ADDITIONAL RESOURCES
           </h1>
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://developer.mozilla.org/en-US/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <h2
-              class="additional-resources__subtitle mr-0"
+              class="additional-resources__subtitle me-0"
             >
               MDN Web Docs
             </h2>
@@ -4947,10 +4955,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             The encyclopedia of web development
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://javascript.info/"
             rel="noopener noreferrer"
             target="_blank"
@@ -4967,10 +4975,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             In-depth overview of javascript language
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://missing.csail.mit.edu/"
             rel="noopener noreferrer"
             target="_blank"
@@ -4987,10 +4995,10 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             Introduction to shell, git, vim, tmux and etc.
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
           <a
-            class="additional-resources_link mr-1"
+            class="additional-resources_link me-1 link"
             href="https://teachyourselfcs.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -5007,14 +5015,14 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             Self-study guide
           </h3>
           <hr
-            class="my-2"
+            class="my-2 h-auto"
           />
         </div>
       </div>
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

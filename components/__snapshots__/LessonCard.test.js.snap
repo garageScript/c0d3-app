@@ -9,7 +9,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -18,12 +18,12 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
           <span
-            class="lesson-card__badge badge badge-pill badge-success p-0"
+            class="lesson-card__badge badge rounded-pill bg-success p-0"
           >
             <svg
               fill="none"
@@ -64,7 +64,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -78,7 +78,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         class="mt-2"
       />
       <a
-        class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+        class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
         href="/reviewUrl"
       >
         Review 
@@ -99,21 +99,21 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
           <span
-            class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+            class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
           >
             <svg
               fill="none"
@@ -143,11 +143,11 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -162,7 +162,7 @@ exports[`Lesson Card Complete State Should render lessonCard with loading... 1`]
           />
         </div>
         <a
-          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
           href="/reviewUrl"
         >
           Review 
@@ -187,7 +187,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -196,12 +196,12 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
           <span
-            class="lesson-card__badge badge badge-pill badge-success p-0"
+            class="lesson-card__badge badge rounded-pill bg-success p-0"
           >
             <svg
               fill="none"
@@ -242,7 +242,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -256,7 +256,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         class="mt-2"
       />
       <a
-        class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+        class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
         href="/reviewUrl"
       >
         Review 
@@ -276,21 +276,21 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
           <span
-            class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+            class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
           >
             <svg
               fill="none"
@@ -320,11 +320,11 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -339,7 +339,7 @@ exports[`Lesson Card Complete State Should render lessonCard with null if no dat
           />
         </div>
         <a
-          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
           href="/reviewUrl"
         >
           Review 
@@ -363,7 +363,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -372,12 +372,12 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
           <span
-            class="lesson-card__badge badge badge-pill badge-success p-0"
+            class="lesson-card__badge badge rounded-pill bg-success p-0"
           >
             <svg
               fill="none"
@@ -418,7 +418,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -432,7 +432,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         class="mt-2"
       />
       <a
-        class="btn btn-sm bg-primary text-white float-right mb-2 mr-2mr-0"
+        class="btn btn-sm btn-primary text-white float-end mb-2 me-2me-0"
         href="/reviewUrl"
       >
         Review 
@@ -452,21 +452,21 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
           <span
-            class="lesson-card__badge badge badge-pill badge-success mt-2 mr-2 ml-auto py-2 d-flex align-items-center"
+            class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
           >
             <svg
               fill="none"
@@ -496,11 +496,11 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -515,7 +515,7 @@ exports[`Lesson Card Complete State Should render lessonCard with submission cou
           />
         </div>
         <a
-          class="btn btn-sm bg-primary text-white float-right mb-2 mr-2"
+          class="btn btn-sm btn-primary text-white float-end mb-2 me-2"
           href="/reviewUrl"
         >
           Review 
@@ -539,7 +539,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -548,7 +548,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
@@ -567,7 +567,7 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -591,16 +591,16 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
@@ -608,11 +608,11 @@ exports[`Lesson Card Should render ellpsis when no data is present 1`] = `
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -641,7 +641,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -650,7 +650,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
@@ -669,7 +669,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -693,16 +693,16 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
@@ -710,11 +710,11 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -734,7 +734,7 @@ exports[`Lesson Card Should render lessonCard with inProgress currentState prop 
       class="p-2 bg-primary"
     >
       <a
-        class="lesson-card__button btn bg-primary my-1 text-white border border-white"
+        class="lesson-card__button btn btn-primary my-1 text-white border border-white noUnderline"
         href="/challengeUrl"
       >
         View Challenges
@@ -753,7 +753,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -762,7 +762,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
@@ -781,7 +781,7 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -805,16 +805,16 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
@@ -822,11 +822,11 @@ exports[`Lesson Card Should render lessonCard with lessonId prop 1`] = `
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -855,7 +855,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -864,7 +864,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
@@ -883,7 +883,7 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -907,16 +907,16 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
@@ -924,11 +924,11 @@ exports[`Lesson Card Should render lessonCard with no submission count 1`] = `
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span
@@ -957,7 +957,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
       class="d-flex d-sm-none flex-column px-3"
     >
       <h4
-        class="lesson-card__title font-weight-bold mt-3 "
+        class="lesson-card__title fw-bold mt-3 "
       >
         <div
           class="d-flex justify-content-center"
@@ -966,7 +966,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
             class="align-self-center"
           >
             <a
-              class=""
+              class=" noUnderline"
               href="/challengeUrl"
             />
           </div>
@@ -985,7 +985,7 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
         >
           <img
             alt="icon-challenge"
-            class="mr-2"
+            class="me-2"
             src="/assets/curriculum/icons/icon-challenge.svg"
           />
           <span
@@ -1009,16 +1009,16 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
         width="116"
       />
       <div
-        class="lesson-card__description pl-4 d-none d-sm-block"
+        class="lesson-card__description ps-4 d-none d-sm-block"
       >
         <div
           class="d-flex"
         >
           <h4
-            class="lesson-card__title font-weight-bold mt-3"
+            class="lesson-card__title fw-bold mt-3"
           >
             <a
-              class=""
+              class="text-primary link"
               href="/challengeUrl"
             />
           </h4>
@@ -1026,11 +1026,11 @@ exports[`Lesson Card Should render loading card when loading 1`] = `
         <div>
           <div>
             <div
-              class="d-inline-block mr-4"
+              class="d-inline-block me-4"
             >
               <img
                 alt="icon-challenge"
-                class="mr-2"
+                class="me-2"
                 src="/assets/curriculum/icons/icon-challenge.svg"
               />
               <span

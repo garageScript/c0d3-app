@@ -5,7 +5,7 @@ const BlockQuote: React.FC = ({ children }) => {
     <div className={`${styles['blockQuote']} d-flex flex-column flex-md-row`}>
       <img
         src="/assets/mdx/lightBulb.svg"
-        className={`${styles['blockQuote__bulb']} mr-3`}
+        className={`${styles['blockQuote__bulb']} me-3`}
       />
       {children}
     </div>

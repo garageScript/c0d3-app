@@ -81,7 +81,7 @@ export const NewChallenge: React.FC<NewChallengeProps> = ({
   return (
     <div className="mb-2">
       <div className="mb-3 text-center">
-        <span className="text-primary font-weight-bold display-3">
+        <span className="text-primary fw-bold display-3">
           Create New Challenge
         </span>
       </div>

@@ -12,7 +12,7 @@ export const SubmissionComments: React.FC<{
           key={`${c.content}${i}`}
           className="border border-lightgray rounded my-1"
         >
-          <div className="ml-3">
+          <div className="ms-3">
             <Markdown wrapper="code_wrapper">{c.content}</Markdown>
           </div>
           <ReviewerProfile

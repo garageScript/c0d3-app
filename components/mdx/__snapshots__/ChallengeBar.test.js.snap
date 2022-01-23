@@ -9,10 +9,10 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
       class="card shadow-sm bg-primary text-white px-4 py-2 border-0"
     >
       <h1
-        class="text-center font-weight-bold align-self-center"
+        class="text-center fw-bold align-self-center"
       />
       <a
-        class="text-white text-center "
+        class="text-white text-center  noUnderline"
         href="/docs/setup#submitting-challenges"
         rel="noopener noreferrer"
         target="_blank"
@@ -20,7 +20,7 @@ exports[`ChallengeBar component Should created redirect based on input 1`] = `
         Submitting challenges
       </a>
       <p
-        class="px-2 m-0 text-center font-weight-bold"
+        class="px-2 m-0 text-center fw-bold"
       />
       <div
         class="text-center"

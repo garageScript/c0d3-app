@@ -32,7 +32,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
       <div className="card-body p-0">
         <div className="d-flex mb-3 px-3">
           <img
-            className={`${styles['lessonTitleCard__lesson-cover']} mr-3`}
+            className={`${styles['lessonTitleCard__lesson-cover']} me-3`}
             src={`/assets/curriculum/${lessonCoverUrl}`}
             alt="lesson-cover"
           />
@@ -46,6 +46,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
                   e.preventDefault()
                   router.back()
                 }}
+                className={`${styles['link']} link-primary`}
               >
                 Go Back
               </a>
@@ -59,7 +60,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
           {lessonUrl && (
             <NavLink
               path={lessonUrl}
-              className="btn border-right rounded-0 px-4 py-3"
+              className="btn border-end rounded-0 px-4 py-3"
             >
               LESSON
             </NavLink>
@@ -67,14 +68,14 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
           {isSmallDownBreakpoint && setShow ? (
             <div
               onClick={() => setShow!(!show)}
-              className="btn border-right rounded-0 px-4 py-3"
+              className="btn border-end rounded-0 px-4 py-3"
             >
               SHOW CHALLENGES
             </div>
           ) : (
             <NavLink
               path={`/curriculum/${lessonSlug}`}
-              className="btn border-right rounded-0 px-4 py-3"
+              className="btn border-end rounded-0 px-4 py-3"
             >
               CHALLENGES
             </NavLink>
@@ -82,7 +83,7 @@ const LessonTitleCard: React.FC<LessonTitleProps> = ({
           {isPassed && (
             <NavLink
               path={`/review/${lessonSlug}`}
-              className="btn border-right rounded-0 px-4 py-3"
+              className="btn border-end rounded-0 px-4 py-3"
             >
               REVIEW
             </NavLink>

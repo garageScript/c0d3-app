@@ -12,7 +12,7 @@ export default {
 const MockBasic = () => (
   <div className="row mt-5 d-flex justify-content-center">
     <div className="card shadow-sm">
-      <div className="text-center pl-4 pr-4">
+      <div className="text-center ps-4 pe-4">
         <Thanks close={noop} />
       </div>
     </div>

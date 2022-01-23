@@ -35,7 +35,7 @@ const Docs: React.FC<Props> & WithLayout = ({
       <Title title={`C0D3 | ${frontMatter?.title ?? 'Docs'}`} />
 
       <button
-        className="btn btn-link text-primary p-0"
+        className={`${styles['link']} btn btn-link link-primary p-0`}
         onClick={() => router.back()}
       >
         Go Back

@@ -88,7 +88,7 @@ exports[`MdInput Component Should render text onto textbox when user types 1`] =
         </a>
       </div>
       <div
-        class="ml-auto btn-toolbar"
+        class="ms-auto btn-toolbar"
         role="toolbar"
       >
         <button
@@ -298,7 +298,7 @@ exports[`MdInput Component Should switch to Write mode when user clicks Write bu
         </a>
       </div>
       <div
-        class="ml-auto btn-toolbar"
+        class="ms-auto btn-toolbar"
         role="toolbar"
       >
         <button

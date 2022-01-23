@@ -55,11 +55,11 @@ const IterationLink: React.FC<IterationLink | { loading: boolean }> = props => {
     >
       {props.iteration}
       {props.comments !== 0 && (
-        <Badge variant="light" className={styles['badge']}>
+        <Badge variant="light" className={`${styles['badge']} bg-light`}>
           {props.comments}
         </Badge>
       )}
-      <span className="sr-only">comment count</span>
+      <span className="visually-hidden">comment count</span>
     </Button>
   )
 }

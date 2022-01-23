@@ -22,7 +22,7 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ user }) => {
   return (
     <div className="card shadow-sm mb-3">
       <div
-        className={`ml-auto mr-auto mt-4 ${styles['contributorCard__avatarContainer']}`}
+        className={`ms-auto me-auto mt-4 ${styles['contributorCard__avatarContainer']}`}
       >
         <UserInfoImage user={user} />
       </div>
@@ -32,19 +32,19 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ user }) => {
       <h4 className="text-center text-muted mb-4">{'@' + user.username}</h4>
       <div className="card-footer">
         <p>
-          <Linkedin className="mr-2" />
+          <Linkedin className="me-2" />
           <a href={user.linkedinUrl}>LinkedIn</a>
         </p>
         <p>
-          <GitHub className="mr-2" />
+          <GitHub className="me-2" />
           <a href={user.githubPRsUrl}>Github Contributions</a>
         </p>
         <p>
-          <File className="mr-2" />
+          <File className="me-2" />
           <a href={user.resume}>Resume</a>
         </p>
         <p>
-          <Code className="mr-2" />
+          <Code className="me-2" />
           <a href={user.codeSample}>Code Sample</a>
         </p>
       </div>

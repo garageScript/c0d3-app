@@ -12,9 +12,7 @@
   flex-shrink: 0;
   & > * {
     min-width: 5em;
-    @media (min-width: 992px) {
-      background-color: white !important;
-    }
+    background-color: white;
   }
 }
 
@@ -24,4 +22,8 @@
     color: #4c4c4c;
     text-decoration: none;
   }
+}
+
+.light-button > * {
+  background-color: #fff;
 }

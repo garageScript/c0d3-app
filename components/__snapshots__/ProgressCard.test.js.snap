@@ -17,10 +17,10 @@ exports[`ProgressCard component renders correctly when user is logged in should 
         class="bg-white my-3 rounded"
       >
         <div
-          class="progress-card__horizontal bg-primary d-flex rounded-left"
+          class="progress-card__horizontal bg-primary d-flex rounded-start"
         >
           <div
-            class="align-self-center px-1 ml-auto font-weight-bold"
+            class="align-self-center px-1 ms-auto fw-bold"
           >
             0
             %
@@ -82,13 +82,13 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
         <p
-          class="font-weight-bold d-inline"
+          class="fw-bold d-inline"
         >
           Discord
         </p>
@@ -99,7 +99,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -126,11 +126,11 @@ exports[`ProgressCard component renders correctly when user is logged in should 
         class="bg-white my-3 rounded"
       >
         <div
-          class="progress-card__horizontal bg-primary d-flex rounded-left"
+          class="progress-card__horizontal bg-primary d-flex rounded-start"
           style="width: 25%;"
         >
           <div
-            class="align-self-center px-1 ml-auto font-weight-bold"
+            class="align-self-center px-1 ms-auto fw-bold"
           >
             25
             %
@@ -192,13 +192,13 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
         <p
-          class="font-weight-bold d-inline"
+          class="fw-bold d-inline"
         >
           Discord
         </p>
@@ -209,7 +209,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -236,11 +236,11 @@ exports[`ProgressCard component renders correctly when user is logged in should 
         class="bg-white my-3 rounded"
       >
         <div
-          class="progress-card__horizontal bg-primary d-flex rounded-left"
+          class="progress-card__horizontal bg-primary d-flex rounded-start"
           style="width: 75%;"
         >
           <div
-            class="align-self-center px-1 ml-auto font-weight-bold"
+            class="align-self-center px-1 ms-auto fw-bold"
           >
             75
             %
@@ -302,13 +302,13 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
         <p
-          class="font-weight-bold d-inline"
+          class="fw-bold d-inline"
         >
           Discord
         </p>
@@ -319,7 +319,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -350,7 +350,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
           style="width: 100%;"
         >
           <div
-            class="align-self-center px-1 ml-auto font-weight-bold"
+            class="align-self-center px-1 ms-auto fw-bold"
           >
             100
             %
@@ -412,13 +412,13 @@ exports[`ProgressCard component renders correctly when user is logged in should 
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
         <p
-          class="font-weight-bold d-inline"
+          class="fw-bold d-inline"
         >
           Discord
         </p>
@@ -429,7 +429,7 @@ exports[`ProgressCard component renders correctly when user is logged in should 
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment
@@ -454,13 +454,13 @@ exports[`ProgressCard component renders correctly when user is not logged in sho
     >
       Join us on
       <a
-        class="progress-newuser__chatlink text-white"
+        class="progress-newuser__chatlink text-white noUnderline"
         href="https://discord.gg/c0d3"
         rel="noopener noreferrer"
         target="_blank"
       >
         <p
-          class="font-weight-bold d-inline"
+          class="fw-bold d-inline"
         >
           Discord
         </p>
@@ -471,7 +471,7 @@ exports[`ProgressCard component renders correctly when user is not logged in sho
       class="mt-4 d-flex flex-column"
     >
       <a
-        class="btn btn-light progress-card__button mt-2 text-primary"
+        class="btn btn-light progress-card__button mt-2 text-primary noUnderline"
         href="/docs/setup"
       >
         Setup Development Environment

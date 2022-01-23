@@ -150,7 +150,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           in 19 years
         </div>
         <div
-          class="text-left ml-2"
+          class="text-start ms-2"
         >
           <div
             class="selection__card"
@@ -170,7 +170,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
           class="card-body"
         >
           <div
-            class="rounded-lg overflow-hidden"
+            class="rounded-3 overflow-hidden"
           >
             <table
               class="css-1n5o7vh-diff-container"
@@ -571,7 +571,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               class="border border-lightgray rounded my-1"
             >
               <div
-                class="ml-3"
+                class="ms-3"
               >
                 <span
                   wrapper="code_wrapper"
@@ -626,7 +626,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   </a>
                 </div>
                 <div
-                  class="ml-1"
+                  class="ms-1"
                 >
                   Your submission is currently waiting to be reviewed.
                 </div>
@@ -665,7 +665,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                   </a>
                 </div>
                 <div
-                  class="ml-auto btn-toolbar"
+                  class="ms-auto btn-toolbar"
                   role="toolbar"
                 >
                   <button
@@ -838,7 +838,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               />
             </div>
             <button
-              class="btn bg-success m-1"
+              class="btn btn-success m-1"
               style="color: rgb(255, 255, 255);"
             >
               Comment

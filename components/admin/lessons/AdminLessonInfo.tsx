@@ -69,9 +69,7 @@ const EditLesson: React.FC<EditLessonProps> = ({ setLessons, lesson }) => {
 
   return (
     <>
-      <span className="text-primary font-weight-bold display-3">
-        Lesson Info
-      </span>
+      <span className="text-primary fw-bold display-3">Lesson Info</span>
       <div className="mt-3">
         <FormCard
           onChange={handleChange}
@@ -137,7 +135,7 @@ const NewLesson: React.FC<NewLessonProps> = ({ setLessons }) => {
   return (
     <div className="col-8 text-center">
       <div className="mb-2">
-        <span className="text-primary font-weight-bold display-3">
+        <span className="text-primary fw-bold display-3">
           Create New Lesson
         </span>
       </div>
@@ -172,9 +170,7 @@ export const AdminLessonInfo: React.FC<LessonInfoProps> = ({
       <hr />
       <NewChallenge setLessons={setLessons} lessonId={lessonId} />
       <hr />
-      <span className="text-primary font-weight-bold display-3">
-        Lesson Challenges
-      </span>
+      <span className="text-primary fw-bold display-3">Lesson Challenges</span>
       <AdminLessonChallenges
         challenges={lesson && lesson.challenges}
         lessonId={lessonId}

@@ -284,7 +284,7 @@ exports[`DiffView component Should add comment box 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -457,7 +457,7 @@ exports[`DiffView component Should add comment box 1`] = `
                 />
               </div>
               <button
-                class="btn bg-success"
+                class="btn btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Add comment
@@ -2848,7 +2848,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 class="border border-lightgray rounded my-1"
               >
                 <div
-                  class="ml-3"
+                  class="ms-3"
                 >
                   <span
                     wrapper="code_wrapper"
@@ -2909,7 +2909,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -3082,7 +3082,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 />
               </div>
               <button
-                class="btn bg-success"
+                class="btn btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Add comment
@@ -3143,7 +3143,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 class="border border-lightgray rounded my-1"
               >
                 <div
-                  class="ml-3"
+                  class="ms-3"
                 >
                   <span
                     wrapper="code_wrapper"
@@ -3204,7 +3204,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                     </a>
                   </div>
                   <div
-                    class="ml-auto btn-toolbar"
+                    class="ms-auto btn-toolbar"
                     role="toolbar"
                   >
                     <button
@@ -3377,7 +3377,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 />
               </div>
               <button
-                class="btn bg-success"
+                class="btn btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Add comment

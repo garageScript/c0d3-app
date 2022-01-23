@@ -12,7 +12,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
         class="card-body text-center pt-5 pb-5"
       >
         <h1
-          class="card-title h2 font-weight-bold mb-5"
+          class="card-title h2 fw-bold mb-5"
         >
           Create Account
         </h1>
@@ -34,10 +34,10 @@ exports[`Signup Page Should render errors on fail 1`] = `
           data-testid="form"
         >
           <div
-            class="form-group "
+            class="form-group d-grid"
           >
             <input
-              class="form-control form-control-lg font-weight-light mb-3 "
+              class="form-control form-control-lg fw-light mb-3 "
               data-testid="email"
               name="email"
               placeholder="Email address"
@@ -45,21 +45,21 @@ exports[`Signup Page Should render errors on fail 1`] = `
               value="fake@email.com"
             />
             <input
-              class="form-control form-control-lg font-weight-light mb-3 "
+              class="form-control form-control-lg fw-light mb-3 "
               data-testid="username"
               name="username"
               placeholder="Username"
               value="fakeusername"
             />
             <input
-              class="form-control form-control-lg font-weight-light mb-3 "
+              class="form-control form-control-lg fw-light mb-3 "
               data-testid="firstName"
               name="firstName"
               placeholder="First name"
               value="fakefirstname"
             />
             <input
-              class="form-control form-control-lg font-weight-light mb-3 "
+              class="form-control form-control-lg fw-light mb-3 "
               data-testid="lastName"
               name="lastName"
               placeholder="Last name"
@@ -80,7 +80,7 @@ exports[`Signup Page Should render errors on fail 1`] = `
           Already have an account?
            
           <a
-            class="text-primary"
+            class="text-primary link"
             href="/login"
           >
             Login
@@ -111,7 +111,7 @@ exports[`Signup Page Should render success component on success 1`] = `
           width="100px"
         />
         <h1
-          class="card-title h2 font-weight-bold mb-5"
+          class="card-title h2 fw-bold mb-5"
         >
           Account created successfully!
         </h1>
@@ -119,7 +119,7 @@ exports[`Signup Page Should render success component on success 1`] = `
           class="card-text"
         />
         <a
-          class="btn btn-primary"
+          class="btn btn-primary noUnderline"
           href="/confirm/undefined"
         >
           Click here to set your password.

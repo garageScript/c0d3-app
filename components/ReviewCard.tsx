@@ -99,9 +99,9 @@ const ReviewButtons: React.FC<{
               checked={commentType === 'accept'}
               value="accept"
               onChange={onChange}
-              className="mr-2"
+              className="me-2"
             />
-            <p className="font-weight-bold d-inline">Accept</p>
+            <p className="fw-bold d-inline">Accept</p>
             <p className="text-muted">Submit feedback and approve submission</p>
           </label>
           <label>
@@ -110,9 +110,9 @@ const ReviewButtons: React.FC<{
               checked={commentType === 'reject'}
               value="reject"
               onChange={onChange}
-              className="mr-2"
+              className="me-2"
             />
-            <p className="font-weight-bold d-inline">Reject</p>
+            <p className="fw-bold d-inline">Reject</p>
             <p className="text-muted">Request changes and reject submission</p>
           </label>
         </>
@@ -129,9 +129,9 @@ const ReviewButtons: React.FC<{
             checked={commentType === 'comment'}
             value="comment"
             onChange={onChange}
-            className="mr-2"
+            className="me-2"
           />
-          <p className="font-weight-bold d-inline">Comment</p>
+          <p className="fw-bold d-inline">Comment</p>
           <p className="text-muted">
             Submit general feedback without explicit approval
           </p>
@@ -224,7 +224,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
                   </Text>
                 )}
               </div>
-              <div className="text-right">
+              <div className="text-end">
                 <SelectIteration
                   data={previousSubmissions}
                   loading={loading}
@@ -238,7 +238,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-body">
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-3 overflow-hidden">
               <DiffView submission={submissionState} generalStatus={status} />
             </div>
           </div>

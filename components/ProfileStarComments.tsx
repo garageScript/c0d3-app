@@ -29,11 +29,11 @@ const StarComment: React.FC<StarCommentProps> = ({ star }) => {
             {firstName[0] + lastName[0]}
           </h6>
           <div>
-            <h6 className="text-md-left text-muted font-weight-bold mb-0">
+            <h6 className="text-md-start text-muted fw-bold mb-0">
               {'@' + username}
             </h6>
             <h6
-              className={`${styles['comment-lesson-title']} text-muted text-left`}
+              className={`${styles['comment-lesson-title']} text-muted text-start`}
             >
               {lessonTitle}
             </h6>

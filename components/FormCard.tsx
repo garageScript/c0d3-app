@@ -83,7 +83,7 @@ const OptionInfo: React.FC<OptionInfoProps> = ({
   const { title, error } = option
   if (title === 'id') return <></>
   return (
-    <div className="d-flex flex-column ml-3 mr-3 mb-4">
+    <div className="d-flex flex-column ms-3 me-3 mb-4">
       <h5 data-testid={`h5${title}${index}`}>
         {`${(capitalizeTitle && _.capitalize(title)) || title}`}
       </h5>
@@ -118,11 +118,9 @@ export const FormCard: React.FC<FormCardProps> = ({
     <div className={`row${border ? ' border' : ''}`}>
       <div className={`card shadow-sm col-12`}>
         <div className="card-body text-center">
-          {title && (
-            <h2 className="card-title font-weight-bold mb-3">{title}</h2>
-          )}
+          {title && <h2 className="card-title fw-bold mb-3">{title}</h2>}
         </div>
-        <div className="text-left">{optionsList}</div>
+        <div className="text-start">{optionsList}</div>
         {submitError && <h6 className="text-danger">{submitError}</h6>}
         <div className="text-center mb-4">
           <Button onClick={btnOnClick} type="primary" color="white">

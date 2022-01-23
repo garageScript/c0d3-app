@@ -1,19 +1,37 @@
 // Override default variables before the import
 $body-bg: rgba(84, 56, 220, 0.03);
 
+// If the theme-color colors are missing, make sure to add it here first
+// e.g., 'success': #faj2;
+
 $theme-colors: (
   'primary': rgb(84, 64, 216),
   'secondary': #fff,
   'warning': #ffae28,
-  'gray': #6c757d
+  'gray': #6c757d,
+  'light': hsl(0deg, 0%, 97%),
+  'danger': #721c24,
+  'success': #00cf92,
+  'dark': #343a40
 );
+
+// Workaround for btn-light hover color
+.btn-light {
+  background-color: #fff !important;
+}
+.btn-light:hover {
+  background-color: hsl(0deg, 0%, 95%) !important;
+}
 
 $font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI',
   'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
   'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-// available variables: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+// Available variables: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
 $green: #00cf92 !default;
+
+// Enable negative margins
+$enable-negative-margins: true;
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

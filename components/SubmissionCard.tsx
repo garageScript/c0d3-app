@@ -20,10 +20,10 @@ const SubmissionCard: React.FC<Props> = ({
   reviewUrl
 }) => {
   return (
-    <div className="card shadow-sm mr-3">
+    <div className="card shadow-sm me-3">
       <div className="card-header bg-white">
         <div className="row no-gutters">
-          <div className="col-0 mr-3">
+          <div className="col-0 me-3">
             <div
               className={`${styles['submissioncard_user_info_image_container']}`}
             >

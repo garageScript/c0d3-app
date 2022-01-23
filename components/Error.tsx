@@ -28,7 +28,7 @@ const Error: React.FC<ErrorProps> = ({ code, message }) => {
               </Text>
               <Text size="md">{message}</Text>
               <NavLink path="/" className="btn btn-primary py-3 px-5 mt-3">
-                <h3 className="font-weight-bold">Back</h3>
+                <h3 className="fw-bold">Back</h3>
               </NavLink>
             </div>
           </div>

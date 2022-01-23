@@ -12,7 +12,7 @@ const Input: React.FC<Props> = ({ ...props }) => {
   const hasErrorStyle = error && touched ? 'outline-danger' : ''
   const classes =
     props.classes ||
-    `form-control form-control-lg font-weight-light mb-3 ${hasErrorStyle}`
+    `form-control form-control-lg fw-light mb-3 ${hasErrorStyle}`
   return (
     <>
       <input
@@ -23,7 +23,7 @@ const Input: React.FC<Props> = ({ ...props }) => {
         className={classes}
       />
       <ErrorMessage
-        className="text-danger text-left pl-3 mt-n3"
+        className="text-danger text-start ps-3 mt-n3"
         component="div"
         name={props.name}
       />

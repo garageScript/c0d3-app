@@ -61,9 +61,7 @@ const AdminUsers: React.FC<QueryDataProps<AllUsersData>> = ({ queryData }) => {
 
   return (
     <div className="d-flex flex-column col-12">
-      <h1 className="text-primary text-center font-weight-bold display-1">
-        Users
-      </h1>
+      <h1 className="text-primary text-center fw-bold display-1">Users</h1>
       <div className="mb-2">
         <FilterButtons
           options={searchHeaders}

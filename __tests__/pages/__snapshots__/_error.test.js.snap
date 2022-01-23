@@ -13,7 +13,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -36,13 +36,13 @@ exports[`_error page Should capture error when component is loading 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -50,13 +50,13 @@ exports[`_error page Should capture error when component is loading 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -68,13 +68,13 @@ exports[`_error page Should capture error when component is loading 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -109,11 +109,11 @@ exports[`_error page Should capture error when component is loading 1`] = `
               style="color: rgb(41, 41, 41); font-size: 1rem;"
             />
             <a
-              class="btn btn-primary py-3 px-5 mt-3"
+              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
               href="/"
             >
               <h3
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Back
               </h3>
@@ -134,7 +134,7 @@ exports[`_error page Should capture error when component is loading 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>
@@ -154,7 +154,7 @@ exports[`_error page Should return Error 500 component 1`] = `
         href="/"
       >
         <div
-          class="navbar-brand text-primary font-weight-bold"
+          class="navbar-brand text-primary fw-bold"
         >
           C0D3
         </div>
@@ -177,13 +177,13 @@ exports[`_error page Should return Error 500 component 1`] = `
           class="m-auto navbar-nav"
         >
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/curriculum"
           >
             Curriculum
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://github.com/garageScript/c0d3-app"
             rel="noopener noreferrer"
             target="_blank"
@@ -191,13 +191,13 @@ exports[`_error page Should return Error 500 component 1`] = `
             Repo
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="/docs/learn"
           >
             Learn
           </a>
           <a
-            class="nav-item nav-link"
+            class="nav-item nav-link noUnderline"
             href="https://discord.gg/c0d3"
             rel="noopener noreferrer"
             target="_blank"
@@ -209,13 +209,13 @@ exports[`_error page Should return Error 500 component 1`] = `
           class="nav-buttons"
         >
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/login"
           >
             Login
           </a>
           <a
-            class="btn btn-secondary border m-2 mr-lg-3 bg-light"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
             href="/signup"
           >
             Signup
@@ -250,11 +250,11 @@ exports[`_error page Should return Error 500 component 1`] = `
               style="color: rgb(41, 41, 41); font-size: 1rem;"
             />
             <a
-              class="btn btn-primary py-3 px-5 mt-3"
+              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
               href="/"
             >
               <h3
-                class="font-weight-bold"
+                class="fw-bold"
               >
                 Back
               </h3>
@@ -275,7 +275,7 @@ exports[`_error page Should return Error 500 component 1`] = `
     </div>
   </div>
   <footer
-    class="mt-5 font-weight-light text-center pb-5 text-muted"
+    class="mt-5 fw-light text-center pb-5 text-muted"
   >
     © Copyright 2021 GarageScript
   </footer>

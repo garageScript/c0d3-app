@@ -170,7 +170,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
             Submitted {dayjs(parseInt(submission.createdAt)).fromNow()}
           </div>
         )}
-        <div className="text-left ml-2">
+        <div className="text-start ms-2">
           <SelectIteration
             data={data}
             loading={loading}
@@ -184,7 +184,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
           />
         </div>
         <div className="card-body">
-          <div className="rounded-lg overflow-hidden">
+          <div className="rounded-3 overflow-hidden">
             <DiffView
               submission={submission}
               generalStatus={currentChallenge.submission?.status}
@@ -291,26 +291,22 @@ export const ChallengesCompletedCard: React.FC<
           </p>
           <p className="review-message">
             You can help your peers by
-            <NavLink path={chatUrl} className="font-weight-bold mx-1" external>
+            <NavLink path={chatUrl} className="fw-bold mx-1" external>
               answering questions
             </NavLink>
             they have in the lesson and
-            <NavLink
-              path={reviewUrl}
-              className="font-weight-bold mx-1"
-              external
-            >
+            <NavLink path={reviewUrl} className="fw-bold mx-1" external>
               reviewing challenge submissions
             </NavLink>
           </p>
         </div>
         <div className="card-footer d-flex bg-primary">
-          <p className="text-white mr-3 my-2">
+          <p className="text-white me-3 my-2">
             You can show your appreciation to the user that helped you the most
             by giving them a star
           </p>
           <button
-            className="btn btn-light text-primary font-weight-bold ml-auto"
+            className="btn btn-light text-primary fw-bold ms-auto"
             onClick={() => setShow(true)}
           >
             Give Star
