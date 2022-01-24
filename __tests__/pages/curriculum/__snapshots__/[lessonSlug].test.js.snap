@@ -72,7 +72,6 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               >
                 <button
                   aria-expanded="false"
-                  aria-haspopup="true"
                   class="dropdown-toggle title title-none"
                   type="button"
                 >
@@ -88,6 +87,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               >
                 <a
                   class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
                   href="/admin/lessons"
                 >
                   Lessons
@@ -98,6 +98,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               >
                 <a
                   class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
                   href="/admin/users"
                 >
                   Users
@@ -108,6 +109,7 @@ exports[`Lesson Page Should correctly render challenges page for students who ha
               >
                 <a
                   class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
                   href="/admin/alerts"
                 >
                   Alerts
@@ -530,7 +532,6 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-haspopup="true"
                 class="dropdown-toggle title title-none"
                 type="button"
               >
@@ -546,6 +547,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
@@ -556,6 +558,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
@@ -566,6 +569,7 @@ exports[`Lesson Page Should render correctly with invalid lesson route 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
@@ -730,7 +734,6 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               >
                 <button
                   aria-expanded="false"
-                  aria-haspopup="true"
                   class="dropdown-toggle title title-none"
                   type="button"
                 >
@@ -746,6 +749,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               >
                 <a
                   class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
                   href="/admin/lessons"
                 >
                   Lessons
@@ -756,6 +760,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               >
                 <a
                   class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
                   href="/admin/users"
                 >
                   Users
@@ -766,6 +771,7 @@ exports[`Lesson Page Should render correctly with valid lesson route 1`] = `
               >
                 <a
                   class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
                   href="/admin/alerts"
                 >
                   Alerts
@@ -1215,7 +1221,6 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             >
               <button
                 aria-expanded="false"
-                aria-haspopup="true"
                 class="dropdown-toggle title title-none"
                 type="button"
               >
@@ -1231,6 +1236,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
@@ -1241,6 +1247,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
@@ -1251,6 +1258,7 @@ exports[`Lesson Page Should return Internal server Error if alerts or lessons ar
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts

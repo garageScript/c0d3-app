@@ -1534,7 +1534,6 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-haspopup="true"
                 class="dropdown-toggle title title-none"
                 type="button"
               >
@@ -1550,6 +1549,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
@@ -1560,6 +1560,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
@@ -1570,6 +1571,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts
@@ -3205,7 +3207,6 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               <button
                 aria-expanded="false"
-                aria-haspopup="true"
                 class="dropdown-toggle title title-none"
                 type="button"
               >
@@ -3221,6 +3222,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/lessons"
               >
                 Lessons
@@ -3231,6 +3233,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/users"
               >
                 Users
@@ -3241,6 +3244,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
             >
               <a
                 class="dropdown-item"
+                data-rr-ui-dropdown-item=""
                 href="/admin/alerts"
               >
                 Alerts

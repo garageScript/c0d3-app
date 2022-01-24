@@ -61,10 +61,10 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
                 >
                   <a
                     class="nav-link active"
-                    data-rb-event-key="Write"
-                    href="#"
+                    data-rr-ui-event-key="Write"
                     role="button"
                     style="color: rgb(41, 41, 41);"
+                    tabindex="0"
                   >
                     Write
                   </a>
@@ -74,10 +74,10 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
                 >
                   <a
                     class="nav-link"
-                    data-rb-event-key="Preview"
-                    href="#"
+                    data-rr-ui-event-key="Preview"
                     role="button"
                     style="color: rgb(142, 142, 142);"
+                    tabindex="0"
                   >
                     Preview
                   </a>
@@ -430,10 +430,10 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
                 >
                   <a
                     class="nav-link active"
-                    data-rb-event-key="Write"
-                    href="#"
+                    data-rr-ui-event-key="Write"
                     role="button"
                     style="color: rgb(41, 41, 41);"
+                    tabindex="0"
                   >
                     Write
                   </a>
@@ -443,10 +443,10 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
                 >
                   <a
                     class="nav-link"
-                    data-rb-event-key="Preview"
-                    href="#"
+                    data-rr-ui-event-key="Preview"
                     role="button"
                     style="color: rgb(142, 142, 142);"
+                    tabindex="0"
                   >
                     Preview
                   </a>
@@ -806,10 +806,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -819,10 +819,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -1173,10 +1173,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -1186,10 +1186,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -1460,10 +1460,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -1473,10 +1473,10 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -1750,10 +1750,10 @@ solution(4,1) // Should return 5
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -1763,10 +1763,10 @@ solution(4,1) // Should return 5
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -2040,10 +2040,10 @@ solution(4,1,9) // Should return 14
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -2053,10 +2053,10 @@ solution(4,1,9) // Should return 14
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -2330,10 +2330,10 @@ solution(4) // Should return false
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -2343,10 +2343,10 @@ solution(4) // Should return false
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -2620,10 +2620,10 @@ solution(4,1) // Should return 4
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -2633,10 +2633,10 @@ solution(4,1) // Should return 4
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -2911,10 +2911,10 @@ solution(4,5,1) // Should return 5
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -2924,10 +2924,10 @@ solution(4,5,1) // Should return 5
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -3201,10 +3201,10 @@ solution(4,1) // Should return true
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -3214,10 +3214,10 @@ solution(4,1) // Should return true
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -3491,10 +3491,10 @@ solution(4,1) // Should return false
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -3504,10 +3504,10 @@ solution(4,1) // Should return false
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -3780,10 +3780,10 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -3793,10 +3793,10 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -4071,10 +4071,10 @@ const a = solution(1,2); // a is a function
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -4084,10 +4084,10 @@ const a = solution(1,2); // a is a function
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -4370,10 +4370,10 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
                 >
                   <a
                     class="nav-link active"
-                    data-rb-event-key="Write"
-                    href="#"
+                    data-rr-ui-event-key="Write"
                     role="button"
                     style="color: rgb(41, 41, 41);"
+                    tabindex="0"
                   >
                     Write
                   </a>
@@ -4383,10 +4383,10 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
                 >
                   <a
                     class="nav-link"
-                    data-rb-event-key="Preview"
-                    href="#"
+                    data-rr-ui-event-key="Preview"
                     role="button"
                     style="color: rgb(142, 142, 142);"
+                    tabindex="0"
                   >
                     Preview
                   </a>
@@ -4744,10 +4744,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -4757,10 +4757,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -5111,10 +5111,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -5124,10 +5124,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -5398,10 +5398,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -5411,10 +5411,10 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -5688,10 +5688,10 @@ solution(4,1) // Should return 5
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -5701,10 +5701,10 @@ solution(4,1) // Should return 5
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -5978,10 +5978,10 @@ solution(4,1,9) // Should return 14
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -5991,10 +5991,10 @@ solution(4,1,9) // Should return 14
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -6268,10 +6268,10 @@ solution(4) // Should return false
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -6281,10 +6281,10 @@ solution(4) // Should return false
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -6558,10 +6558,10 @@ solution(4,1) // Should return 4
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -6571,10 +6571,10 @@ solution(4,1) // Should return 4
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -6849,10 +6849,10 @@ solution(4,5,1) // Should return 5
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -6862,10 +6862,10 @@ solution(4,5,1) // Should return 5
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -7139,10 +7139,10 @@ solution(4,1) // Should return true
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -7152,10 +7152,10 @@ solution(4,1) // Should return true
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -7429,10 +7429,10 @@ solution(4,1) // Should return false
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -7442,10 +7442,10 @@ solution(4,1) // Should return false
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -7718,10 +7718,10 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -7731,10 +7731,10 @@ const a = solution(5,6) // a is a function, and a() will return 11
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
@@ -8009,10 +8009,10 @@ const a = solution(1,2); // a is a function
                   >
                     <a
                       class="nav-link active"
-                      data-rb-event-key="Write"
-                      href="#"
+                      data-rr-ui-event-key="Write"
                       role="button"
                       style="color: rgb(41, 41, 41);"
+                      tabindex="0"
                     >
                       Write
                     </a>
@@ -8022,10 +8022,10 @@ const a = solution(1,2); // a is a function
                   >
                     <a
                       class="nav-link"
-                      data-rb-event-key="Preview"
-                      href="#"
+                      data-rr-ui-event-key="Preview"
                       role="button"
                       style="color: rgb(142, 142, 142);"
+                      tabindex="0"
                     >
                       Preview
                     </a>
