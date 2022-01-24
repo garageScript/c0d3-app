@@ -17,7 +17,9 @@ import { SubmissionComments } from './SubmissionComments'
 import _ from 'lodash'
 import { Button } from './theme/Button'
 import { Text } from './theme/Text'
+import { Accordion } from 'react-bootstrap'
 import { MdInput } from './MdInput'
+import Markdown from 'markdown-to-jsx'
 import DiffView from './DiffView'
 import { updateCache } from '../helpers/updateCache'
 import { SelectIteration } from './SelectIteration'
@@ -158,6 +160,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
       />
     )
   }
+
   const [index, setIndex] = useState(-1)
   const [commentValue, setCommentValue] = useState('')
   const [commentType, setCommentType] = useState<CommentType>('comment')
@@ -238,7 +241,19 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-body">
-            <div className="rounded-3 overflow-hidden">
+            <div className="rounded-lg overflow-hidden">
+              <Accordion>
+                <Accordion.Item
+                  eventKey="0"
+                  className="bg-white mb-2"
+                  style={{ borderColor: '#eee !important' }}
+                >
+                  <Accordion.Header>Challenge Description</Accordion.Header>
+                  <Accordion.Body>
+                    <Markdown>{challenge?.description}</Markdown>
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion>
               <DiffView submission={submissionState} generalStatus={status} />
             </div>
           </div>
