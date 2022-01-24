@@ -9,6 +9,7 @@ const GET_SUBMISSIONS = gql`
       comment
       challenge {
         title
+        description
       }
       challengeId
       lessonId
