@@ -3,16 +3,15 @@
 exports[`GiveStarCard Component should display \`already given star to\` display when starGiven prop does not equal empty string 1`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 1024px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -22,6 +21,7 @@ exports[`GiveStarCard Component should display \`already given star to\` display
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -49,16 +49,15 @@ exports[`GiveStarCard Component should display \`already given star to\` display
 exports[`GiveStarCard Component should display error message when giving a star fails 1`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -68,6 +67,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -465,16 +465,15 @@ exports[`GiveStarCard Component should display error message when giving a star 
 exports[`GiveStarCard Component should display error message when giving a star fails 2`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -484,6 +483,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -881,16 +881,15 @@ exports[`GiveStarCard Component should display error message when giving a star 
 exports[`GiveStarCard Component should display error message when giving a star fails 3`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -900,6 +899,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -946,16 +946,15 @@ exports[`GiveStarCard Component should display error message when giving a star 
 exports[`GiveStarCard Component should display error message when giving a star fails 4`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -965,6 +964,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -992,16 +992,15 @@ exports[`GiveStarCard Component should display nothing when show prop is false 1
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 1`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -1011,6 +1010,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -1408,16 +1408,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 2`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -1427,6 +1426,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -1488,16 +1488,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 3`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -1507,6 +1506,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -1568,16 +1568,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 4`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -1587,6 +1586,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -1633,16 +1633,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 5`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -1652,6 +1651,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -2049,16 +2049,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 6`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -2068,6 +2067,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -2465,16 +2465,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 7`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -2484,6 +2483,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -2530,16 +2530,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 8`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -2549,6 +2548,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -2595,16 +2595,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 9`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -2614,6 +2613,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />
@@ -2660,16 +2660,15 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
 exports[`GiveStarCard Component should successfully search for and give mentor a Star 10`] = `
 <body
   class="modal-open"
-  style="padding-right: 0px;"
+  data-rr-ui-modal-open=""
+  style="padding-right: 2048px;"
 >
-  <div
-    aria-hidden="true"
-  />
+  <div />
   <div
     aria-modal="true"
     class="fade modal show"
     role="dialog"
-    style="display: block;"
+    style="display: block; padding-right: 0px;"
     tabindex="-1"
   >
     <div
@@ -2679,6 +2678,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
         class="modal-content"
       >
         <img
+          alt="exit"
           class="btn position-absolute exitBtn"
           src="/assets/curriculum/icons/exit.svg"
         />

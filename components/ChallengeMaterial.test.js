@@ -337,7 +337,7 @@ describe('Curriculum challenge page', () => {
       submission => (submission.status = SubmissionStatus.Passed)
     )
 
-    const { getByRole, queryByText } = render(
+    const { getByRole, queryByText, queryByAltText } = render(
       <MockedProvider mocks={mocks} addTypename={false}>
         <ChallengeMaterial {...copyProps} />
       </MockedProvider>
@@ -350,7 +350,7 @@ describe('Curriculum challenge page', () => {
     await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
 
     // click exit button of GiveStarCard
-    fireEvent.click(getByRole('img'))
+    fireEvent.click(queryByAltText('exit'))
     // expect(document.body).toMatchSnapshot()
     // TODO: change to a more specific test
   })

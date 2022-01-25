@@ -9,7 +9,7 @@ export enum ModalSize {
 
 export interface ModalCardProps {
   show: boolean
-  close: Function
+  close: () => void
   hideable?: boolean
   size?: ModalSize
 }
@@ -37,6 +37,7 @@ export const ModalCard: React.FC<ModalCardProps> = ({
           className="btn position-absolute exitBtn"
           src={'/assets/curriculum/icons/exit.svg'}
           onClick={() => close()}
+          alt="exit"
         />
       )}
       {children}

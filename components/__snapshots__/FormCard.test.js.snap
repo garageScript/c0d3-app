@@ -33,10 +33,10 @@ exports[`FormCard Component Should call function with updated array as parameter
               >
                 <a
                   class="nav-link active"
-                  data-rb-event-key="Write"
-                  href="#"
+                  data-rr-ui-event-key="Write"
                   role="button"
                   style="color: rgb(41, 41, 41);"
+                  tabindex="0"
                 >
                   Write
                 </a>
@@ -46,10 +46,10 @@ exports[`FormCard Component Should call function with updated array as parameter
               >
                 <a
                   class="nav-link"
-                  data-rb-event-key="Preview"
-                  href="#"
+                  data-rr-ui-event-key="Preview"
                   role="button"
                   style="color: rgb(142, 142, 142);"
+                  tabindex="0"
                 >
                   Preview
                 </a>
@@ -321,10 +321,10 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
               >
                 <a
                   class="nav-link active"
-                  data-rb-event-key="Write"
-                  href="#"
+                  data-rr-ui-event-key="Write"
                   role="button"
                   style="color: rgb(41, 41, 41);"
+                  tabindex="0"
                 >
                   Write
                 </a>
@@ -334,10 +334,10 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
               >
                 <a
                   class="nav-link"
-                  data-rb-event-key="Preview"
-                  href="#"
+                  data-rr-ui-event-key="Preview"
                   role="button"
                   style="color: rgb(142, 142, 142);"
+                  tabindex="0"
                 >
                   Preview
                 </a>
@@ -640,10 +640,10 @@ exports[`FormCard Component Should update testing onChange variable when person 
               >
                 <a
                   class="nav-link active"
-                  data-rb-event-key="Write"
-                  href="#"
+                  data-rr-ui-event-key="Write"
                   role="button"
                   style="color: rgb(41, 41, 41);"
+                  tabindex="0"
                 >
                   Write
                 </a>
@@ -653,10 +653,10 @@ exports[`FormCard Component Should update testing onChange variable when person 
               >
                 <a
                   class="nav-link"
-                  data-rb-event-key="Preview"
-                  href="#"
+                  data-rr-ui-event-key="Preview"
                   role="button"
                   style="color: rgb(142, 142, 142);"
+                  tabindex="0"
                 >
                   Preview
                 </a>
