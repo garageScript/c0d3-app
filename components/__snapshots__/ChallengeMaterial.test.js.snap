@@ -161,7 +161,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               Loading previous submissions...
             </p>
             <button
-              class="button loading btn btn-light"
+              class="button loading btn btn-primary"
               type="button"
             />
           </div>

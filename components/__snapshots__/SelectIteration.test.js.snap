@@ -31,7 +31,7 @@ exports[`SelectIteration component It should render loading state 1`] = `
       Loading previous submissions...
     </p>
     <button
-      class="button loading btn btn-light"
+      class="button loading btn btn-primary"
       type="button"
     />
   </div>
@@ -92,7 +92,6 @@ exports[`SelectIteration component Should be able to select submissions 1`] = `
           3
           <span
             class="badge bg-light badge bg-primary"
-            variant="light"
           >
             2
           </span>
@@ -162,7 +161,6 @@ exports[`SelectIteration component Should treat negative index as last iteration
           3
           <span
             class="badge bg-light badge bg-primary"
-            variant="light"
           >
             2
           </span>

@@ -715,7 +715,6 @@ exports[`Lesson Page Should render new submissions 1`] = `
                           3
                           <span
                             class="badge bg-light badge bg-primary"
-                            variant="light"
                           >
                             2
                           </span>
