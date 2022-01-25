@@ -11411,8 +11411,45 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-3 overflow-hidden"
+      className="rounded-lg overflow-hidden"
     >
+      <div
+        className="accordion"
+      >
+        <div
+          className="bg-white mb-2 accordion-item"
+          style={
+            Object {
+              "borderColor": "#eee !important",
+            }
+          }
+        >
+          <h2
+            className="accordion-header"
+          >
+            <button
+              aria-expanded={false}
+              className="accordion-button collapsed"
+              onClick={[Function]}
+              type="button"
+            >
+              Challenge Description
+            </button>
+          </h2>
+          <div
+            aria-expanded={null}
+            className="accordion-collapse collapse"
+          >
+            <div
+              className="accordion-body"
+            >
+              <span>
+                fake description
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <table
         className="css-1n5o7vh-diff-container"
       >
@@ -12731,8 +12768,45 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-3 overflow-hidden"
+      className="rounded-lg overflow-hidden"
     >
+      <div
+        className="accordion"
+      >
+        <div
+          className="bg-white mb-2 accordion-item"
+          style={
+            Object {
+              "borderColor": "#eee !important",
+            }
+          }
+        >
+          <h2
+            className="accordion-header"
+          >
+            <button
+              aria-expanded={false}
+              className="accordion-button collapsed"
+              onClick={[Function]}
+              type="button"
+            >
+              Challenge Description
+            </button>
+          </h2>
+          <div
+            aria-expanded={null}
+            className="accordion-collapse collapse"
+          >
+            <div
+              className="accordion-body"
+            >
+              <span>
+                fake description
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <table
         className="css-1n5o7vh-diff-container"
       >
@@ -14049,8 +14123,45 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-3 overflow-hidden"
+      className="rounded-lg overflow-hidden"
     >
+      <div
+        className="accordion"
+      >
+        <div
+          className="bg-white mb-2 accordion-item"
+          style={
+            Object {
+              "borderColor": "#eee !important",
+            }
+          }
+        >
+          <h2
+            className="accordion-header"
+          >
+            <button
+              aria-expanded={false}
+              className="accordion-button collapsed"
+              onClick={[Function]}
+              type="button"
+            >
+              Challenge Description
+            </button>
+          </h2>
+          <div
+            aria-expanded={null}
+            className="accordion-collapse collapse"
+          >
+            <div
+              className="accordion-body"
+            >
+              <span>
+                fake description
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <table
         className="css-1n5o7vh-diff-container"
       >
@@ -15367,8 +15478,45 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-3 overflow-hidden"
+      className="rounded-lg overflow-hidden"
     >
+      <div
+        className="accordion"
+      >
+        <div
+          className="bg-white mb-2 accordion-item"
+          style={
+            Object {
+              "borderColor": "#eee !important",
+            }
+          }
+        >
+          <h2
+            className="accordion-header"
+          >
+            <button
+              aria-expanded={false}
+              className="accordion-button collapsed"
+              onClick={[Function]}
+              type="button"
+            >
+              Challenge Description
+            </button>
+          </h2>
+          <div
+            aria-expanded={null}
+            className="accordion-collapse collapse"
+          >
+            <div
+              className="accordion-body"
+            >
+              <span>
+                fake description
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <table
         className="css-1n5o7vh-diff-container"
       >
@@ -16685,8 +16833,45 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-3 overflow-hidden"
+      className="rounded-lg overflow-hidden"
     >
+      <div
+        className="accordion"
+      >
+        <div
+          className="bg-white mb-2 accordion-item"
+          style={
+            Object {
+              "borderColor": "#eee !important",
+            }
+          }
+        >
+          <h2
+            className="accordion-header"
+          >
+            <button
+              aria-expanded={false}
+              className="accordion-button collapsed"
+              onClick={[Function]}
+              type="button"
+            >
+              Challenge Description
+            </button>
+          </h2>
+          <div
+            aria-expanded={null}
+            className="accordion-collapse collapse"
+          >
+            <div
+              className="accordion-body"
+            >
+              <span>
+                fake description
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <table
         className="css-1n5o7vh-diff-container"
       >

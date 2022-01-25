@@ -55,8 +55,41 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-3 overflow-hidden"
+        class="rounded-lg overflow-hidden"
       >
+        <div
+          class="accordion"
+        >
+          <div
+            class="bg-white mb-2 accordion-item"
+          >
+            <h2
+              class="accordion-header"
+            >
+              <button
+                aria-expanded="false"
+                class="accordion-button collapsed"
+                type="button"
+              >
+                Challenge Description
+              </button>
+            </h2>
+            <div
+              class="accordion-collapse collapse"
+            >
+              <div
+                class="accordion-body"
+              >
+                <span>
+                  Takes in 2 numbers, return a function that returns the sum when the function is called Example: 
+                  <code>
+                    const a = solution(5,6) // a is a function, and a() will return 11
+                  </code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
         <table
           class="css-1n5o7vh-diff-container"
         >
@@ -821,8 +854,41 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
       class="card-body"
     >
       <div
-        class="rounded-3 overflow-hidden"
+        class="rounded-lg overflow-hidden"
       >
+        <div
+          class="accordion"
+        >
+          <div
+            class="bg-white mb-2 accordion-item"
+          >
+            <h2
+              class="accordion-header"
+            >
+              <button
+                aria-expanded="false"
+                class="accordion-button collapsed"
+                type="button"
+              >
+                Challenge Description
+              </button>
+            </h2>
+            <div
+              class="accordion-collapse collapse"
+            >
+              <div
+                class="accordion-body"
+              >
+                <span>
+                  Takes in 2 numbers, return a function that returns the sum when the function is called Example: 
+                  <code>
+                    const a = solution(5,6) // a is a function, and a() will return 11
+                  </code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
         <table
           class="css-1n5o7vh-diff-container"
         >
@@ -1536,8 +1602,41 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-3 overflow-hidden"
+        class="rounded-lg overflow-hidden"
       >
+        <div
+          class="accordion"
+        >
+          <div
+            class="bg-white mb-2 accordion-item"
+          >
+            <h2
+              class="accordion-header"
+            >
+              <button
+                aria-expanded="false"
+                class="accordion-button collapsed"
+                type="button"
+              >
+                Challenge Description
+              </button>
+            </h2>
+            <div
+              class="accordion-collapse collapse"
+            >
+              <div
+                class="accordion-body"
+              >
+                <span>
+                  Takes in 2 numbers, return a function that returns the sum when the function is called Example: 
+                  <code>
+                    const a = solution(5,6) // a is a function, and a() will return 11
+                  </code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
         <table
           class="css-1n5o7vh-diff-container"
         >
@@ -3052,8 +3151,41 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-3 overflow-hidden"
+        class="rounded-lg overflow-hidden"
       >
+        <div
+          class="accordion"
+        >
+          <div
+            class="bg-white mb-2 accordion-item"
+          >
+            <h2
+              class="accordion-header"
+            >
+              <button
+                aria-expanded="false"
+                class="accordion-button collapsed"
+                type="button"
+              >
+                Challenge Description
+              </button>
+            </h2>
+            <div
+              class="accordion-collapse collapse"
+            >
+              <div
+                class="accordion-body"
+              >
+                <span>
+                  Takes in 2 numbers, return a function that returns the sum when the function is called Example: 
+                  <code>
+                    const a = solution(5,6) // a is a function, and a() will return 11
+                  </code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
         <table
           class="css-1n5o7vh-diff-container"
         >
@@ -4568,8 +4700,42 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-3 overflow-hidden"
-      />
+        class="rounded-lg overflow-hidden"
+      >
+        <div
+          class="accordion"
+        >
+          <div
+            class="bg-white mb-2 accordion-item"
+          >
+            <h2
+              class="accordion-header"
+            >
+              <button
+                aria-expanded="false"
+                class="accordion-button collapsed"
+                type="button"
+              >
+                Challenge Description
+              </button>
+            </h2>
+            <div
+              class="accordion-collapse collapse"
+            >
+              <div
+                class="accordion-body"
+              >
+                <span>
+                  Takes in 2 numbers, return a function that returns the sum when the function is called Example: 
+                  <code>
+                    const a = solution(5,6) // a is a function, and a() will return 11
+                  </code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="card-footer bg-white"
@@ -4907,8 +5073,41 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       class="card-body"
     >
       <div
-        class="rounded-3 overflow-hidden"
+        class="rounded-lg overflow-hidden"
       >
+        <div
+          class="accordion"
+        >
+          <div
+            class="bg-white mb-2 accordion-item"
+          >
+            <h2
+              class="accordion-header"
+            >
+              <button
+                aria-expanded="false"
+                class="accordion-button collapsed"
+                type="button"
+              >
+                Challenge Description
+              </button>
+            </h2>
+            <div
+              class="accordion-collapse collapse"
+            >
+              <div
+                class="accordion-body"
+              >
+                <span>
+                  Takes in 2 numbers, return a function that returns the sum when the function is called Example: 
+                  <code>
+                    const a = solution(5,6) // a is a function, and a() will return 11
+                  </code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
         <table
           class="css-1n5o7vh-diff-container"
         >

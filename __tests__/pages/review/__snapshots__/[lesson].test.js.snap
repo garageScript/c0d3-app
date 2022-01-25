@@ -647,7 +647,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     <span
                       class="text-primary"
                     >
-                      Sum of 1 Numbers
+                      Sum of 2 Numbers
                     </span>
                   </h4>
                   <div
@@ -734,8 +734,38 @@ exports[`Lesson Page Should render new submissions 1`] = `
               class="card-body"
             >
               <div
-                class="rounded-3 overflow-hidden"
+                class="rounded-lg overflow-hidden"
               >
+                <div
+                  class="accordion"
+                >
+                  <div
+                    class="bg-white mb-2 accordion-item"
+                  >
+                    <h2
+                      class="accordion-header"
+                    >
+                      <button
+                        aria-expanded="false"
+                        class="accordion-button collapsed"
+                        type="button"
+                      >
+                        Challenge Description
+                      </button>
+                    </h2>
+                    <div
+                      class="accordion-collapse collapse"
+                    >
+                      <div
+                        class="accordion-body"
+                      >
+                        <span>
+                          Write a function that takes in 2 numbers and returns their sum. Here's how another developer might use your function: solution(5,9) // Should return 14 solution(4,1) // Should return 5
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <table
                   class="css-1n5o7vh-diff-container"
                 >
