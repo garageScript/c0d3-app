@@ -939,7 +939,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -1741,7 +1741,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -11399,7 +11399,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -12719,7 +12719,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -14037,7 +14037,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -15355,7 +15355,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -16673,7 +16673,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             Loading previous submissions...
           </p>
           <button
-            className="button loading btn btn-primary"
+            className="button loading btn btn-light"
             disabled={false}
             type="button"
           />
@@ -18283,7 +18283,7 @@ exports[`Storyshots Components/SelectIteration Loading 1`] = `
     Loading previous submissions...
   </p>
   <button
-    className="button loading btn btn-primary"
+    className="button loading btn btn-light"
     disabled={false}
     type="button"
   />

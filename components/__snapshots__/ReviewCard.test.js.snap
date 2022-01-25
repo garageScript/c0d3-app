@@ -44,7 +44,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               Loading previous submissions...
             </p>
             <button
-              class="button loading btn btn-primary"
+              class="button loading btn btn-light"
               type="button"
             />
           </div>
@@ -1525,7 +1525,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               Loading previous submissions...
             </p>
             <button
-              class="button loading btn btn-primary"
+              class="button loading btn btn-light"
               type="button"
             />
           </div>
@@ -3041,7 +3041,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               Loading previous submissions...
             </p>
             <button
-              class="button loading btn btn-primary"
+              class="button loading btn btn-light"
               type="button"
             />
           </div>
@@ -4557,7 +4557,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
               Loading previous submissions...
             </p>
             <button
-              class="button loading btn btn-primary"
+              class="button loading btn btn-light"
               type="button"
             />
           </div>
@@ -4896,7 +4896,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               Loading previous submissions...
             </p>
             <button
-              class="button loading btn btn-primary"
+              class="button loading btn btn-light"
               type="button"
             />
           </div>

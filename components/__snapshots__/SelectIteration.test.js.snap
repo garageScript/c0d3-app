@@ -31,7 +31,7 @@ exports[`SelectIteration component It should render loading state 1`] = `
       Loading previous submissions...
     </p>
     <button
-      class="button loading btn btn-primary"
+      class="button loading btn btn-light"
       type="button"
     />
   </div>
