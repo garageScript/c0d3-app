@@ -11418,11 +11418,6 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       >
         <div
           className="bg-white mb-2 accordion-item"
-          style={
-            Object {
-              "borderColor": "#eee !important",
-            }
-          }
         >
           <h2
             className="accordion-header"
@@ -12775,11 +12770,6 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       >
         <div
           className="bg-white mb-2 accordion-item"
-          style={
-            Object {
-              "borderColor": "#eee !important",
-            }
-          }
         >
           <h2
             className="accordion-header"
@@ -14130,11 +14120,6 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       >
         <div
           className="bg-white mb-2 accordion-item"
-          style={
-            Object {
-              "borderColor": "#eee !important",
-            }
-          }
         >
           <h2
             className="accordion-header"
@@ -15485,11 +15470,6 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       >
         <div
           className="bg-white mb-2 accordion-item"
-          style={
-            Object {
-              "borderColor": "#eee !important",
-            }
-          }
         >
           <h2
             className="accordion-header"
@@ -16840,11 +16820,6 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       >
         <div
           className="bg-white mb-2 accordion-item"
-          style={
-            Object {
-              "borderColor": "#eee !important",
-            }
-          }
         >
           <h2
             className="accordion-header"
