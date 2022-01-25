@@ -4,7 +4,7 @@ import NavLink from './NavLink'
 import styles from '../scss/connectToDiscordModal.module.scss'
 type ConnectToDiscordModalProps = {
   show: boolean
-  close: Function
+  close: () => void
 }
 
 const discordConnectPage = `${process.env.NEXT_PUBLIC_DISCORD_CALLBACK_URI}`
