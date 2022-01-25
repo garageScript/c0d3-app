@@ -13,7 +13,9 @@ const dummyPreviousSubmissionsData: GetPreviousSubmissionsQuery = {
       comment: "Previous submission wasn't good enough",
       challenge: {
         __typename: 'Challenge',
-        title: 'Functional 3 Sum'
+        title: 'Functional 3 Sum',
+        description:
+          'Takes in 2 numbers, return a function that returns the sum when the function is called Example: ```const a = solution(5,6) // a is a function, and a() will return 11```'
       },
       challengeId: 9,
       lessonId: 1,
@@ -35,7 +37,9 @@ const dummyPreviousSubmissionsData: GetPreviousSubmissionsQuery = {
       comment: null,
       challenge: {
         __typename: 'Challenge',
-        title: 'Functional 3 Sum'
+        title: 'Functional 3 Sum',
+        description:
+          'Takes in 2 numbers, return a function that returns the sum when the function is called Example: ```const a = solution(5,6) // a is a function, and a() will return 11```'
       },
       challengeId: 9,
       lessonId: 1,
@@ -57,7 +61,9 @@ const dummyPreviousSubmissionsData: GetPreviousSubmissionsQuery = {
       comment: null,
       challenge: {
         __typename: 'Challenge',
-        title: 'Functional 3 Sum'
+        title: 'Functional 3 Sum',
+        description:
+          'Takes in 2 numbers, return a function that returns the sum when the function is called Example: ```const a = solution(5,6) // a is a function, and a() will return 11```'
       },
       challengeId: 9,
       lessonId: 1,
