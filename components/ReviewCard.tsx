@@ -243,11 +243,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           <div className="card-body">
             <div className="rounded-lg overflow-hidden">
               <Accordion>
-                <Accordion.Item
-                  eventKey="0"
-                  className="bg-white mb-2"
-                  style={{ borderColor: '#eee !important' }}
-                >
+                <Accordion.Item eventKey="0" className="bg-white mb-2">
                   <Accordion.Header>Challenge Description</Accordion.Header>
                   <Accordion.Body>
                     <Markdown>{challenge?.description}</Markdown>
