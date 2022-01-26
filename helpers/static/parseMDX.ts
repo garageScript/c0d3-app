@@ -1,11 +1,11 @@
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import matter from 'gray-matter'
+import toc from 'remark-toc'
+import gfm from 'remark-gfm'
+import autolink from 'rehype-autolink-headings'
 
-const autolink = require('rehype-autolink-headings')
 const slug = require('remark-slug')
-const toc = require('remark-toc')
-const gfm = require('remark-gfm')
 
 type ParsedMDX = {
   (fileContents: Buffer, onlyFront?: boolean): Promise<{
