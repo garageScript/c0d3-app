@@ -84,7 +84,6 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="true"
                       class="dropdown-toggle title title-none"
                       type="button"
                     >
@@ -100,6 +99,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   >
                     <button
                       class="dropdown-item"
+                      data-rr-ui-dropdown-item=""
                     >
                       info
                     </button>
@@ -109,6 +109,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
                   >
                     <button
                       class="dropdown-item"
+                      data-rr-ui-dropdown-item=""
                     >
                       urgent
                     </button>
@@ -262,7 +263,6 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   >
                     <button
                       aria-expanded="false"
-                      aria-haspopup="true"
                       class="dropdown-toggle title title-none"
                       type="button"
                     >
@@ -278,6 +278,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   >
                     <button
                       class="dropdown-item"
+                      data-rr-ui-dropdown-item=""
                     >
                       info
                     </button>
@@ -287,6 +288,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
                   >
                     <button
                       class="dropdown-item"
+                      data-rr-ui-dropdown-item=""
                     >
                       urgent
                     </button>
