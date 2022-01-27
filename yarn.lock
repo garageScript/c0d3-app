@@ -2655,15 +2655,10 @@
     "@sentry/utils" "6.17.2"
     tslib "^1.9.3"
 
-"@sentry/types@6.17.2":
+"@sentry/types@6.17.2", "@sentry/types@^6.11.0":
   version "6.17.2"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.17.2.tgz#4dde3423db5953e798b19ed29618c28fc7bf2e30"
   integrity sha512-UrFLRDz5mn253O8k/XftLxoldF+NyZdkqKLGIQmST5HEVr7ub9nQJ4Y5ZFA3zJYWpraaW8faIbuw+pgetC8hmQ==
-
-"@sentry/types@^6.11.0":
-  version "6.13.3"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.13.3.tgz#63ad5b6735b0dfd90b3a256a9f8e77b93f0f66b2"
-  integrity sha512-Vrz5CdhaTRSvCQjSyIFIaV9PodjAVFkzJkTRxyY7P77RcegMsRSsG1yzlvCtA99zG9+e6MfoJOgbOCwuZids5A==
 
 "@sentry/utils@6.17.2":
   version "6.17.2"
@@ -13235,10 +13230,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.17.3:
-  version "1.17.3"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.17.3.tgz#e452a7d0001a1c60ceb5384d955b14a0230107d9"
-  integrity sha512-JRpnRdxHa1kmMhQqF//R+xm/6gpDdA2H7ZUnyiouRYQatShBNPytonvOkzydXQXR9XpU6NaYCLf7f0VL6XAjhg==
+posthog-js@^1.17.5:
+  version "1.17.5"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.17.5.tgz#50045b4abaf7b0fa23fbfc9ede1b74ddcbf5c385"
+  integrity sha512-KQzgRObuxRztp5h1VvcHbWt8HtoI9NanyLc3BcAyRgzqgBiTKW2QfFvzJ6ddmD4kCADCxJqNEmoCMnXbYdICxw==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
