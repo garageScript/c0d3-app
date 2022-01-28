@@ -60,6 +60,7 @@ model Lesson {
   starLesson  Star[]       @relation("starLesson")
   submissions Submission[]
   userLessons UserLesson[]
+  modules     Module[]
 
   @@map("lessons")
 }
@@ -151,6 +152,21 @@ model User {
   submissions               Submission[] @relation("userSubmissions")
   userLessons               UserLesson[]
   comments                  Comment[]
+  modules                   Module[]
 
   @@map("users")
+}
+
+model Module {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+  lesson    Lesson   @relation(fields: [lessonId], references: [id])
+  lessonId  Int
+  name      String   @db.VarChar(255)
+  content   String
+
+  @@map("modules")
 }
