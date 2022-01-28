@@ -5,6 +5,7 @@ export default gql`
     lessons: [Lesson!]!
     session: Session!
     allUsers: [User]
+    allModules: [Module]
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
@@ -53,6 +54,13 @@ export default gql`
       submissionId: Int!
       content: String!
     ): Comment
+    addModule(
+      authorId: Int!
+      lessonId: Int!
+      name: String!
+      content: String!
+    ): Module
+    deleteModule(id: Int, name: String!): SuccessResponse
     createLesson(
       description: String!
       docUrl: String
@@ -205,5 +213,15 @@ export default gql`
     comment: String
     student: User!
     lesson: Lesson!
+  }
+
+  type Module {
+    id: Int!
+    author: User!
+    authorId: Int!
+    lesson: Lesson!
+    lessonId: Int!
+    name: String!
+    content: String!
   }
 `
