@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalCard Component should call callback function when exit button is clicked 1`] = `
-<div
-  aria-hidden="true"
-/>
-`;
+exports[`ModalCard Component should call callback function when exit button is clicked 1`] = `<div />`;

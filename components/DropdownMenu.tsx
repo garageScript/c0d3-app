@@ -2,6 +2,7 @@ import React from 'react'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import styles from '../scss/dropDown.module.scss'
+import { DropDirection } from 'react-bootstrap/esm/DropdownContext'
 
 //a null item indicates a dropdown divider
 export type Item = {
@@ -12,7 +13,7 @@ export type Item = {
 } | null
 
 type DropDownMenuProps = {
-  drop?: 'down' | 'right' | 'up' | 'left'
+  drop?: DropDirection
   items: Item[]
   title: string
   size?: 'sm' | 'lg' | undefined

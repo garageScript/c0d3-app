@@ -55,7 +55,7 @@ const IterationLink: React.FC<IterationLink | { loading: boolean }> = props => {
     >
       {props.iteration}
       {props.comments !== 0 && (
-        <Badge variant="light" className={`${styles['badge']} bg-light`}>
+        <Badge className={`${styles['badge']} bg-light`}>
           {props.comments}
         </Badge>
       )}

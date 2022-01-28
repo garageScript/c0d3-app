@@ -31,7 +31,7 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ['<rootDir>/jest.env.js'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['__tests__/utils/', 'node_modules/', '.next/'],
-  transformIgnorePatterns: ['node_modules/']
+  transformIgnorePatterns: ['node_modules/(?!(remark-toc)/)']
 }
 
 export default config

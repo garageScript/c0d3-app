@@ -643,10 +643,10 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 >
                   <a
                     class="nav-link active"
-                    data-rb-event-key="Write"
-                    href="#"
+                    data-rr-ui-event-key="Write"
                     role="button"
                     style="color: rgb(41, 41, 41);"
+                    tabindex="0"
                   >
                     Write
                   </a>
@@ -656,10 +656,10 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 >
                   <a
                     class="nav-link"
-                    data-rb-event-key="Preview"
-                    href="#"
+                    data-rr-ui-event-key="Preview"
                     role="button"
                     style="color: rgb(142, 142, 142);"
+                    tabindex="0"
                   >
                     Preview
                   </a>
