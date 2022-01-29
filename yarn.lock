@@ -2536,14 +2536,14 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@sentry/browser@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-6.17.2.tgz#8e794b846f43a341068c83420918d896683d903e"
-  integrity sha512-4Ow5z9GxK5dG9+stBNKb7s6NoxE4wgEcHRmO66QTK4gH2NNmzV4R/aaZ7iDoS/lD86sH0M86jm76dpg9uiJPmw==
+"@sentry/browser@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-6.17.3.tgz#53a869ed9471448c27242ca6ea1ad49ce7f2ae3d"
+  integrity sha512-UElPk6/Q/78eL8tHGHy080uHVQAuieWXlSMSzrJMVNa+vwXPwEeyL+WbPtKkND2jGwdODjg+pSj960RqhIv+ig==
   dependencies:
-    "@sentry/core" "6.17.2"
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/core" "6.17.3"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     tslib "^1.9.3"
 
 "@sentry/cli@^1.70.1":
@@ -2558,109 +2558,114 @@
     progress "^2.0.3"
     proxy-from-env "^1.1.0"
 
-"@sentry/core@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.17.2.tgz#f218920f269ccdbaee20a092bbc90a71a007cc88"
-  integrity sha512-Uew0CNMr+QvowrF4EJYjOUgHep/sZJ3l5zevPEELugIgqWBodd+ZDCV3fQFR7cr6KOqx1rMgVrgcKIkLl0l+RA==
+"@sentry/core@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-6.17.3.tgz#44375d8e9f4857bb630d7aebaecc97cfe42052df"
+  integrity sha512-h7WgrNL0RVlr8Dceh97ZiXNdmEumDutpoqFijjiX4x72IiC6zSaVD4IsqrdGln+v8iJ3l3lX44HHqzubDub1OQ==
   dependencies:
-    "@sentry/hub" "6.17.2"
-    "@sentry/minimal" "6.17.2"
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/hub" "6.17.3"
+    "@sentry/minimal" "6.17.3"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     tslib "^1.9.3"
 
-"@sentry/hub@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.17.2.tgz#d92accada845fa21fff1b2b491d3c6964851693b"
-  integrity sha512-CMi6jU920bTwRTmGHjP4u8toOx4gm1dsx+rsxvp+FKzqRwpwoyi9mOw8oEYERVzaqaYceGdFylyRUrjdf0f77g==
+"@sentry/hub@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-6.17.3.tgz#9c75f0ce486cfed0635f48c875d92f655c1e5710"
+  integrity sha512-TDxv8nRvk45xvfQg6zs8GYzQzgo0EMhI3wjQZLiNfW2rzybKmIwVp2x3O4PAc3WPzwg4bYNgSAkYKVlHmYjRCg==
   dependencies:
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     tslib "^1.9.3"
 
-"@sentry/integrations@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.17.2.tgz#09fa2411cb0aeabe8d6b30b15f9723d0c64cc6cb"
-  integrity sha512-6UINdiJpXs3AeJVwVMuRjo94ZJB9jJaywfEe2ZgwEmnmjsVTCXcfeJMbn45z6IJbks62J0RlmXK4v/aW5CvfXw==
+"@sentry/integrations@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/integrations/-/integrations-6.17.3.tgz#998f6077bfcd46483eee84e7a0acaa66dbeed8ca"
+  integrity sha512-Jxubla4TUAdx4ZfjL1MWurbfGYn7Eo+aDTkun8Lpns6abTcHbRAysQ/IP+j/VycQR77m3flCFRuoZbSIhywrTg==
   dependencies:
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     localforage "^1.8.1"
     tslib "^1.9.3"
 
-"@sentry/minimal@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.17.2.tgz#3b482a0d76aa33b6c9441dd21acbcc3a113e5120"
-  integrity sha512-Cdh+iM6QhLKfxwUWWP4mk2K7+EsQj4tuF2dGQke4Zcbp7zQ7wbcMruUcZHiZfvg5kiSYxwNVkH7cXMzcO7AJsg==
+"@sentry/minimal@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-6.17.3.tgz#3e9f0b017f639776c9eaa58694b9be3f03429c78"
+  integrity sha512-zvGGfHNNA92Lqx6P8ZwOUkmRmAiQl0AQFRXl9So1Ayq9bJRnFLJZv4YFVnp2wE4HXYIlfBYb51+GlGB5LIuPmw==
   dependencies:
-    "@sentry/hub" "6.17.2"
-    "@sentry/types" "6.17.2"
+    "@sentry/hub" "6.17.3"
+    "@sentry/types" "6.17.3"
     tslib "^1.9.3"
 
-"@sentry/nextjs@^6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/nextjs/-/nextjs-6.17.2.tgz#e11b20380022fe5f8d88efbd1827acecc0c2676f"
-  integrity sha512-L/whslUojHNUC5+YFchF1PBYqL+aICO4AUyaluuyfVkWEKfz2KmmONxHeIPXD+sbxQnv4C02qhh/XNjwkOKZ3Q==
+"@sentry/nextjs@^6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/nextjs/-/nextjs-6.17.3.tgz#93a8a41e2ee921fca925d24de0692fab2f6fa338"
+  integrity sha512-uDfvriFY2ho/i9SMqeI5QxNOM0y11AMnJrvMtG0RkSxwwJIEtjeYhaFhhZw5mT9RFL0koNjAw1c+2TOkF1cSIw==
   dependencies:
-    "@sentry/core" "6.17.2"
-    "@sentry/hub" "6.17.2"
-    "@sentry/integrations" "6.17.2"
-    "@sentry/node" "6.17.2"
-    "@sentry/react" "6.17.2"
-    "@sentry/tracing" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/core" "6.17.3"
+    "@sentry/hub" "6.17.3"
+    "@sentry/integrations" "6.17.3"
+    "@sentry/node" "6.17.3"
+    "@sentry/react" "6.17.3"
+    "@sentry/tracing" "6.17.3"
+    "@sentry/utils" "6.17.3"
     "@sentry/webpack-plugin" "1.18.3"
     tslib "^1.9.3"
 
-"@sentry/node@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-6.17.2.tgz#32a5fa00b64a331073daf1e44f500c8c57184eb1"
-  integrity sha512-358z45WaejnsE8RZVpuLJJiFVCSEi0TRY7P60CljZuz8rnvniD3G0tuXChvu4djVty8NScWZHT/QoxvuJdTHgQ==
+"@sentry/node@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-6.17.3.tgz#517ca6a88ca033320a301bffa097111bbb344f25"
+  integrity sha512-LvpB6bCQTytoOlrcQgR80aeEEBi2Sm1hNf+VvoPT6CW7tKI1/6pMWXaNnRu2dpyWS/j6tooz8rd/3dl1SZoGvg==
   dependencies:
-    "@sentry/core" "6.17.2"
-    "@sentry/hub" "6.17.2"
-    "@sentry/tracing" "6.17.2"
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/core" "6.17.3"
+    "@sentry/hub" "6.17.3"
+    "@sentry/tracing" "6.17.3"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     cookie "^0.4.1"
     https-proxy-agent "^5.0.0"
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/react@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-6.17.2.tgz#ba2a65141ef3f3c2416313b448e06f6764a9f274"
-  integrity sha512-/5mcHLxBhdh67EI6mGj20NwGCZbBjJdEOmTNTUydvNGXa9Rvrluf1iz2hNSH4sju0d/Qt1rakxC5y8gWy1E5Kw==
+"@sentry/react@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/react/-/react-6.17.3.tgz#e090d5b28fd624a310f53606b8d5b1b437d048c4"
+  integrity sha512-m6QtNT7U3k5UBeVfrFheTKNvglmEI90c/H2P6NYHhZMflnDngq/EDTbC+pE8VPtvdv7ZcXuxZNSHi6qkXvIkQA==
   dependencies:
-    "@sentry/browser" "6.17.2"
-    "@sentry/minimal" "6.17.2"
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/browser" "6.17.3"
+    "@sentry/minimal" "6.17.3"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     hoist-non-react-statics "^3.3.2"
     tslib "^1.9.3"
 
-"@sentry/tracing@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-6.17.2.tgz#437337071fdeffa319746905b3706518b099ec6b"
-  integrity sha512-oWY2Ga+5D5f90utvfF2Y0eQvme+eS768ZWjR+klRYgZWoY8r1v8uWwWsvroYU1g+h6X0G/xh3giFjsdOWtRENw==
+"@sentry/tracing@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-6.17.3.tgz#b3841ad3fb1c7df1e21521da0d99c1496038a970"
+  integrity sha512-GnHugxw5qkWwYmeQbbrswuWpb0bpYqyJr/dO25QQOCwp+cckQrvBYTMC8zGJG10u94O4el0lQaQnNFz9WF3r6g==
   dependencies:
-    "@sentry/hub" "6.17.2"
-    "@sentry/minimal" "6.17.2"
-    "@sentry/types" "6.17.2"
-    "@sentry/utils" "6.17.2"
+    "@sentry/hub" "6.17.3"
+    "@sentry/minimal" "6.17.3"
+    "@sentry/types" "6.17.3"
+    "@sentry/utils" "6.17.3"
     tslib "^1.9.3"
 
-"@sentry/types@6.17.2", "@sentry/types@^6.11.0":
+"@sentry/types@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.17.3.tgz#c5b9bba8111ff26b26c4a056e2a083905e03e7dd"
+  integrity sha512-0AXCjYcfl8Vx26GfyLY4rBQ78Lyt1oND3UozTTMaVXlcKYIjzV+f7TOo5IZx+Kbr6EGUNDLdpA4xfbkWdW/1NA==
+
+"@sentry/types@^6.11.0":
   version "6.17.2"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.17.2.tgz#4dde3423db5953e798b19ed29618c28fc7bf2e30"
   integrity sha512-UrFLRDz5mn253O8k/XftLxoldF+NyZdkqKLGIQmST5HEVr7ub9nQJ4Y5ZFA3zJYWpraaW8faIbuw+pgetC8hmQ==
 
-"@sentry/utils@6.17.2":
-  version "6.17.2"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.17.2.tgz#e8044e753b47f86068053c8d79e4ae61a39b6732"
-  integrity sha512-ePWtO44KJQwUULOiU86fa1WU3Ird2TH0i39gqB2d3zNS3QyVp9qPlzSdPKSPJ9LdgadzBHw7ikEuE+GY8JTrhA==
+"@sentry/utils@6.17.3":
+  version "6.17.3"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-6.17.3.tgz#a3c4c35e18ffb304356288213797c47c2bfdce08"
+  integrity sha512-6/2awDIeHSj0JgiC7DDdV1lxvLmf+/BisWhw09dKvmhVQB3ADvQZbohjUgM+Qam5zE0xmZAfQhvuDwC41W8Wnw==
   dependencies:
-    "@sentry/types" "6.17.2"
+    "@sentry/types" "6.17.3"
     tslib "^1.9.3"
 
 "@sentry/webpack-plugin@1.18.3":
@@ -2911,7 +2916,7 @@
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-viewport@6.4.14", "@storybook/addon-viewport@^6.4.12":
+"@storybook/addon-viewport@6.4.14":
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.4.14.tgz#7e0988f9e8348712a334d1fa3df8fe6134d5d9ed"
   integrity sha512-nlRMrru40SlWQT319NrTuEglPRzYKEkFIC4DFK915RYGf97A1iTVxe33AH9Bck7kT7WAAo0gZmxskxogSBGK7w==
@@ -2922,6 +2927,23 @@
     "@storybook/components" "6.4.14"
     "@storybook/core-events" "6.4.14"
     "@storybook/theming" "6.4.14"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    memoizerific "^1.11.3"
+    prop-types "^15.7.2"
+    regenerator-runtime "^0.13.7"
+
+"@storybook/addon-viewport@^6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-6.4.15.tgz#194ad538fec236b61430127858db6fce243aba12"
+  integrity sha512-3kiGX70Y30bWrWKcHObGLDR8nmJ6+8xKA5STgp8RAumcHaupf3rRdBjRRE8Vv8+rtArViIPxLi7ghTMnebXrXA==
+  dependencies:
+    "@storybook/addons" "6.4.15"
+    "@storybook/api" "6.4.15"
+    "@storybook/client-logger" "6.4.15"
+    "@storybook/components" "6.4.15"
+    "@storybook/core-events" "6.4.15"
+    "@storybook/theming" "6.4.15"
     core-js "^3.8.2"
     global "^4.4.0"
     memoizerific "^1.11.3"
@@ -2945,6 +2967,23 @@
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
+"@storybook/addons@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.4.15.tgz#cf0dc7b82464baf96d1501f0ab69f18ad0e14f1a"
+  integrity sha512-sYytxqlCmJ2ZtOYAGXOZdLHtQjdtUn9KwxMqwdPS/uyENjvMEYmj5xsFfQomsCL4XQzpGBl7hzYJsRA+OHIxHA==
+  dependencies:
+    "@storybook/api" "6.4.15"
+    "@storybook/channels" "6.4.15"
+    "@storybook/client-logger" "6.4.15"
+    "@storybook/core-events" "6.4.15"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/router" "6.4.15"
+    "@storybook/theming" "6.4.15"
+    "@types/webpack-env" "^1.16.0"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/api@6.4.14":
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.4.14.tgz#a477646f7e020a362f044d2e614e3d1a86ba8f6f"
@@ -2957,6 +2996,29 @@
     "@storybook/router" "6.4.14"
     "@storybook/semver" "^7.3.2"
     "@storybook/theming" "6.4.14"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    regenerator-runtime "^0.13.7"
+    store2 "^2.12.0"
+    telejson "^5.3.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/api@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.4.15.tgz#781a066ae64424a2f85f08d68a46a628745ff395"
+  integrity sha512-oa9gQBauPUgXz/4Blb922M/bqaeV9JD161NI6lAxlWH0C8AVpExXFmKCVtmN3BNi3cRMmsY/o3WYd+/Uy7bfEQ==
+  dependencies:
+    "@storybook/channels" "6.4.15"
+    "@storybook/client-logger" "6.4.15"
+    "@storybook/core-events" "6.4.15"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/router" "6.4.15"
+    "@storybook/semver" "^7.3.2"
+    "@storybook/theming" "6.4.15"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
     global "^4.4.0"
@@ -3081,6 +3143,15 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
+"@storybook/channels@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-6.4.15.tgz#7f9befa8869324dd03b6bc0aed9d93e807e5e773"
+  integrity sha512-yy7xs/Zfm99zdC3eqEIfw2h34CGNPwP8i7Cy7AFWPjSKiSnX9jKqslGvokbgJjIVjQERJfLlJZwKgdhhTFwINQ==
+  dependencies:
+    core-js "^3.8.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/client-api@6.4.14":
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-6.4.14.tgz#d2053511971e06d70bba2accfbd1f6c0f2084e2a"
@@ -3115,6 +3186,14 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
+"@storybook/client-logger@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-6.4.15.tgz#e9809f08bdcaa3c73a8785f8351cbc9c8373c857"
+  integrity sha512-5U4rhl7cWxr8gX0/zmv9DAAbMxi8R36b5JSwL0Xw91S+SJr1Prc+S7k80by62Wj79/J4PjTb5U9wMgCPZTK+7w==
+  dependencies:
+    core-js "^3.8.2"
+    global "^4.4.0"
+
 "@storybook/components@6.4.14":
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.4.14.tgz#546b34fe3feb09e670b76ff71d889bf5f566f1e4"
@@ -3124,6 +3203,36 @@
     "@storybook/client-logger" "6.4.14"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
     "@storybook/theming" "6.4.14"
+    "@types/color-convert" "^2.0.0"
+    "@types/overlayscrollbars" "^1.12.0"
+    "@types/react-syntax-highlighter" "11.0.5"
+    color-convert "^2.0.1"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.21"
+    markdown-to-jsx "^7.1.3"
+    memoizerific "^1.11.3"
+    overlayscrollbars "^1.13.1"
+    polished "^4.0.5"
+    prop-types "^15.7.2"
+    react-colorful "^5.1.2"
+    react-popper-tooltip "^3.1.1"
+    react-syntax-highlighter "^13.5.3"
+    react-textarea-autosize "^8.3.0"
+    regenerator-runtime "^0.13.7"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/components@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-6.4.15.tgz#9ad7596a14429d458e780b74f03bed09ed9a04d7"
+  integrity sha512-IlNxLfjde5G9Sf3GK7CEyfKZRpPu03Q75mwmN4yw2D4znsxAcVKCYxqrDYwxI5lfOKvkeeVkfg2mPpDBwuAL4A==
+  dependencies:
+    "@popperjs/core" "^2.6.0"
+    "@storybook/client-logger" "6.4.15"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/theming" "6.4.15"
     "@types/color-convert" "^2.0.0"
     "@types/overlayscrollbars" "^1.12.0"
     "@types/react-syntax-highlighter" "11.0.5"
@@ -3230,6 +3339,13 @@
   version "6.4.14"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.4.14.tgz#37293c0fce703f2643cec6f24fc6ef7c40e30ded"
   integrity sha512-9QFltg2mxTDjMBfmVtFHtrAEPY/i0oVp2kVdTWo6g05cPffYKAjNUnUVjUl7yiqcQmdEcdqUUQ0ut3xgmcYi/A==
+  dependencies:
+    core-js "^3.8.2"
+
+"@storybook/core-events@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.4.15.tgz#93f0885fda54146a30556a8db5e89ccad9910870"
+  integrity sha512-0UIajTrD4xs5BW1SKTnkBLSGOWNyCcgzf2jXYO3PaZ3Oi0CTDIHR7Cuf0CQYspoevhjYn0E5iFDCzkcprWi4pA==
   dependencies:
     core-js "^3.8.2"
 
@@ -3461,6 +3577,23 @@
     react-router-dom "^6.0.0"
     ts-dedent "^2.0.0"
 
+"@storybook/router@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/router/-/router-6.4.15.tgz#8733006ab7d0b484baaddc7a4d9795635e78f963"
+  integrity sha512-dpAzPWHG9DxUsbnpQLWkhSq1bEIVDKhv0OmVX1Kt6Dej+VVFrPmgY4ayRlUeHuN2fcPMuBL1kNLs6n9+VZU6Xg==
+  dependencies:
+    "@storybook/client-logger" "6.4.15"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    history "5.0.0"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+    react-router "^6.0.0"
+    react-router-dom "^6.0.0"
+    ts-dedent "^2.0.0"
+
 "@storybook/semver@^7.3.2":
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/@storybook/semver/-/semver-7.3.2.tgz#f3b9c44a1c9a0b933c04e66d0048fcf2fa10dac0"
@@ -3515,6 +3648,24 @@
     "@emotion/is-prop-valid" "^0.8.6"
     "@emotion/styled" "^10.0.27"
     "@storybook/client-logger" "6.4.14"
+    core-js "^3.8.2"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.27"
+    global "^4.4.0"
+    memoizerific "^1.11.3"
+    polished "^4.0.5"
+    resolve-from "^5.0.0"
+    ts-dedent "^2.0.0"
+
+"@storybook/theming@6.4.15":
+  version "6.4.15"
+  resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-6.4.15.tgz#330c4d729c1b49c569b728e705ba6b5e9aab8e31"
+  integrity sha512-1968vqrvMRo6Ivpu9aWOZ9MdSXKxWB/yI8i3PAN+WaSDnkGf+w2b3Tjgcx9pJiIvO025tuhCg7vhU2snXVYOTg==
+  dependencies:
+    "@emotion/core" "^10.1.1"
+    "@emotion/is-prop-valid" "^0.8.6"
+    "@emotion/styled" "^10.0.27"
+    "@storybook/client-logger" "6.4.15"
     core-js "^3.8.2"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.27"
