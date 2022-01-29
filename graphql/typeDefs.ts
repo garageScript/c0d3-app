@@ -5,7 +5,7 @@ export default gql`
     lessons: [Lesson!]!
     session: Session!
     allUsers: [User]
-    allModules: [Module]
+    modules: [Module]!
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
@@ -60,7 +60,7 @@ export default gql`
       name: String!
       content: String!
     ): Module
-    deleteModule(id: Int, name: String!): SuccessResponse
+    deleteModule(id: Int!): SuccessResponse
     createLesson(
       description: String!
       docUrl: String
