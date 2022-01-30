@@ -1198,6 +1198,7 @@ export type ResolversTypes = ResolversObject<{
   Comment: ResolverTypeWrapper<Comment>
   Int: ResolverTypeWrapper<Scalars['Int']>
   Lesson: ResolverTypeWrapper<Lesson>
+  Module: ResolverTypeWrapper<Module>
   Mutation: ResolverTypeWrapper<{}>
   Query: ResolverTypeWrapper<{}>
   Session: ResolverTypeWrapper<Session>
@@ -1220,6 +1221,7 @@ export type ResolversParentTypes = ResolversObject<{
   Comment: Comment
   Int: Scalars['Int']
   Lesson: Lesson
+  Module: Module
   Mutation: {}
   Query: {}
   Session: Session
@@ -1615,6 +1617,7 @@ export type Resolvers<ContextType = Context> = ResolversObject<{
   Challenge?: ChallengeResolvers<ContextType>
   Comment?: CommentResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
+  Module?: ModuleResolvers<ContextType>
   Mutation?: MutationResolvers<ContextType>
   Query?: QueryResolvers<ContextType>
   Session?: SessionResolvers<ContextType>
@@ -4433,6 +4436,13 @@ export type StrictTypedTypePolicies = {
       | LessonKeySpecifier
       | (() => undefined | LessonKeySpecifier)
     fields?: LessonFieldPolicy
+  }
+  Module?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | ModuleKeySpecifier
+      | (() => undefined | ModuleKeySpecifier)
+    fields?: ModuleFieldPolicy
   }
   Mutation?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
     keyFields?:
