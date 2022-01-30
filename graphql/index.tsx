@@ -88,16 +88,29 @@ export type Lesson = {
   videoUrl?: Maybe<Scalars['String']>
 }
 
+export type Module = {
+  __typename?: 'Module'
+  author: User
+  authorId: Scalars['Int']
+  content: Scalars['String']
+  id: Scalars['Int']
+  lesson: Lesson
+  lessonId: Scalars['Int']
+  name: Scalars['String']
+}
+
 export type Mutation = {
   __typename?: 'Mutation'
   acceptSubmission?: Maybe<Submission>
   addAlert?: Maybe<Array<Maybe<Alert>>>
   addComment?: Maybe<Comment>
+  addModule?: Maybe<Module>
   changeAdminRights?: Maybe<SuccessResponse>
   changePw?: Maybe<AuthResponse>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   createLesson: Array<Lesson>
   createSubmission?: Maybe<Submission>
+  deleteModule?: Maybe<SuccessResponse>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   rejectSubmission?: Maybe<Submission>
@@ -127,6 +140,13 @@ export type MutationAddCommentArgs = {
   fileName?: InputMaybe<Scalars['String']>
   line?: InputMaybe<Scalars['Int']>
   submissionId: Scalars['Int']
+}
+
+export type MutationAddModuleArgs = {
+  authorId: Scalars['Int']
+  content: Scalars['String']
+  lessonId: Scalars['Int']
+  name: Scalars['String']
 }
 
 export type MutationChangeAdminRightsArgs = {
@@ -162,6 +182,10 @@ export type MutationCreateSubmissionArgs = {
   cliToken: Scalars['String']
   diff: Scalars['String']
   lessonId: Scalars['Int']
+}
+
+export type MutationDeleteModuleArgs = {
+  id: Scalars['Int']
 }
 
 export type MutationLoginArgs = {
@@ -225,6 +249,7 @@ export type Query = {
   getPreviousSubmissions?: Maybe<Array<Submission>>
   isTokenValid: Scalars['Boolean']
   lessons: Array<Lesson>
+  modules: Array<Maybe<Module>>
   session: Session
   submissions?: Maybe<Array<Submission>>
   userInfo?: Maybe<Session>
@@ -1320,6 +1345,20 @@ export type LessonResolvers<
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
+export type ModuleResolvers<
+  ContextType = Context,
+  ParentType extends ResolversParentTypes['Module'] = ResolversParentTypes['Module']
+> = ResolversObject<{
+  author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
+  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}>
+
 export type MutationResolvers<
   ContextType = Context,
   ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']
@@ -1341,6 +1380,15 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationAddCommentArgs, 'content' | 'submissionId'>
+  >
+  addModule?: Resolver<
+    Maybe<ResolversTypes['Module']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      MutationAddModuleArgs,
+      'authorId' | 'content' | 'lessonId' | 'name'
+    >
   >
   changeAdminRights?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -1380,6 +1428,12 @@ export type MutationResolvers<
       MutationCreateSubmissionArgs,
       'challengeId' | 'cliToken' | 'diff' | 'lessonId'
     >
+  >
+  deleteModule?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationDeleteModuleArgs, 'id'>
   >
   login?: Resolver<
     Maybe<ResolversTypes['AuthResponse']>,
@@ -1474,6 +1528,11 @@ export type QueryResolvers<
     RequireFields<QueryIsTokenValidArgs, 'cliToken'>
   >
   lessons?: Resolver<Array<ResolversTypes['Lesson']>, ParentType, ContextType>
+  modules?: Resolver<
+    Array<Maybe<ResolversTypes['Module']>>,
+    ParentType,
+    ContextType
+  >
   session?: Resolver<ResolversTypes['Session'], ParentType, ContextType>
   submissions?: Resolver<
     Maybe<Array<ResolversTypes['Submission']>>,
@@ -4214,15 +4273,36 @@ export type LessonFieldPolicy = {
   users?: FieldPolicy<any> | FieldReadFunction<any>
   videoUrl?: FieldPolicy<any> | FieldReadFunction<any>
 }
+export type ModuleKeySpecifier = (
+  | 'author'
+  | 'authorId'
+  | 'content'
+  | 'id'
+  | 'lesson'
+  | 'lessonId'
+  | 'name'
+  | ModuleKeySpecifier
+)[]
+export type ModuleFieldPolicy = {
+  author?: FieldPolicy<any> | FieldReadFunction<any>
+  authorId?: FieldPolicy<any> | FieldReadFunction<any>
+  content?: FieldPolicy<any> | FieldReadFunction<any>
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  lesson?: FieldPolicy<any> | FieldReadFunction<any>
+  lessonId?: FieldPolicy<any> | FieldReadFunction<any>
+  name?: FieldPolicy<any> | FieldReadFunction<any>
+}
 export type MutationKeySpecifier = (
   | 'acceptSubmission'
   | 'addAlert'
   | 'addComment'
+  | 'addModule'
   | 'changeAdminRights'
   | 'changePw'
   | 'createChallenge'
   | 'createLesson'
   | 'createSubmission'
+  | 'deleteModule'
   | 'login'
   | 'logout'
   | 'rejectSubmission'
@@ -4238,11 +4318,13 @@ export type MutationFieldPolicy = {
   acceptSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   addAlert?: FieldPolicy<any> | FieldReadFunction<any>
   addComment?: FieldPolicy<any> | FieldReadFunction<any>
+  addModule?: FieldPolicy<any> | FieldReadFunction<any>
   changeAdminRights?: FieldPolicy<any> | FieldReadFunction<any>
   changePw?: FieldPolicy<any> | FieldReadFunction<any>
   createChallenge?: FieldPolicy<any> | FieldReadFunction<any>
   createLesson?: FieldPolicy<any> | FieldReadFunction<any>
   createSubmission?: FieldPolicy<any> | FieldReadFunction<any>
+  deleteModule?: FieldPolicy<any> | FieldReadFunction<any>
   login?: FieldPolicy<any> | FieldReadFunction<any>
   logout?: FieldPolicy<any> | FieldReadFunction<any>
   rejectSubmission?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4260,6 +4342,7 @@ export type QueryKeySpecifier = (
   | 'getPreviousSubmissions'
   | 'isTokenValid'
   | 'lessons'
+  | 'modules'
   | 'session'
   | 'submissions'
   | 'userInfo'
@@ -4272,6 +4355,7 @@ export type QueryFieldPolicy = {
   getPreviousSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
   isTokenValid?: FieldPolicy<any> | FieldReadFunction<any>
   lessons?: FieldPolicy<any> | FieldReadFunction<any>
+  modules?: FieldPolicy<any> | FieldReadFunction<any>
   session?: FieldPolicy<any> | FieldReadFunction<any>
   submissions?: FieldPolicy<any> | FieldReadFunction<any>
   userInfo?: FieldPolicy<any> | FieldReadFunction<any>
