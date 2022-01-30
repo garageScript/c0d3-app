@@ -2908,18 +2908,18 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storysource@^6.4.15":
-  version "6.4.15"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.15.tgz#56b2210ec8c78bc939818e2839dd0e73fa202c06"
-  integrity sha512-LXImZXzDSM6xBpLY2fyimg4Ehw9RwzvJX2awDSwN1zlbBFZF8AOSNk7xuWREYwUsW4hABvG8GPkz7UtUypkgOg==
+"@storybook/addon-storysource@^6.4.16":
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.16.tgz#4fc854ab265d28e683f1428238f15b73c71507e3"
+  integrity sha512-bkdi6TeKChMH+Gi8Hek/H7DJqnBx3RzKYCPHA11CsK7TcmIw2xnvBRpq22lLsKeWXzl3KV3o0xyDYOjEigNVkw==
   dependencies:
-    "@storybook/addons" "6.4.15"
-    "@storybook/api" "6.4.15"
-    "@storybook/client-logger" "6.4.15"
-    "@storybook/components" "6.4.15"
-    "@storybook/router" "6.4.15"
-    "@storybook/source-loader" "6.4.15"
-    "@storybook/theming" "6.4.15"
+    "@storybook/addons" "6.4.16"
+    "@storybook/api" "6.4.16"
+    "@storybook/client-logger" "6.4.16"
+    "@storybook/components" "6.4.16"
+    "@storybook/router" "6.4.16"
+    "@storybook/source-loader" "6.4.16"
+    "@storybook/theming" "6.4.16"
     core-js "^3.8.2"
     estraverse "^5.2.0"
     loader-utils "^2.0.0"
@@ -4113,13 +4113,13 @@
     prettier ">=2.2.1 <=2.3.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/source-loader@6.4.15":
-  version "6.4.15"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.15.tgz#2219a41da4b20acb1b2f227ae8170a3aff1f9a1a"
-  integrity sha512-Yd20UynaBr6VL3YTgSOeNkBH0B9XOhaF4bHWaaG/QpECbFGE9z1j+EmzLr5WewtJticIXWZYmmHWfR6YG3bqgQ==
+"@storybook/source-loader@6.4.16":
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.16.tgz#d61e7f2d5150ffffec26630f88faea04e280c3f2"
+  integrity sha512-YPqdmH5YrcqXaulCSeXUta32m2VgOTudPQTzwqsLxbzZ2Fzl/uBkDDC00qav4G67/J0OP+PedYN09EWRAP/nDA==
   dependencies:
-    "@storybook/addons" "6.4.15"
-    "@storybook/client-logger" "6.4.15"
+    "@storybook/addons" "6.4.16"
+    "@storybook/client-logger" "6.4.16"
     "@storybook/csf" "0.0.2--canary.87bc651.0"
     core-js "^3.8.2"
     estraverse "^5.2.0"
