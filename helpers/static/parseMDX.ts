@@ -3,9 +3,8 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import matter from 'gray-matter'
 import toc from 'remark-toc'
 import gfm from 'remark-gfm'
+import slug from 'remark-slug'
 import autolink from 'rehype-autolink-headings'
-
-const slug = require('remark-slug')
 
 type ParsedMDX = {
   (fileContents: Buffer, onlyFront?: boolean): Promise<{
