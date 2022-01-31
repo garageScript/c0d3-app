@@ -74,4 +74,8 @@ describe('It should test delete', () => {
   test('It should have an id', async () => {
     expect(deleteModule({}, {})).rejects.toThrowError('Missing parameter')
   })
+  test('it should delete module', () => {
+    prismaMock.module.delete.mockResolvedValue({ success: true })
+    expect(deleteModule({}, { id: 1 })).resolves.toEqual({ success: true })
+  })
 })

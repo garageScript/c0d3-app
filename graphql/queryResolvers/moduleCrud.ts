@@ -1,7 +1,7 @@
-import { Context } from '../../@types/helpers'
+// import { Context } from '../../@types/helpers'
 import type { MutationDeleteModuleArgs, MutationAddModuleArgs } from '..'
 import prisma from '../../prisma'
-import { isAdminOrThrow } from '../../helpers/isAdmin'
+// import { isAdminOrThrow } from '../../helpers/isAdmin'
 
 export const modules = async () => {
   return prisma.module.findMany({
@@ -11,11 +11,7 @@ export const modules = async () => {
   })
 }
 
-export const addModule = async (
-  _parent: void,
-  args: MutationAddModuleArgs,
-  ctx: Context
-) => {
+export const addModule = async (_parent: void, args: MutationAddModuleArgs) => {
   //isAdminOrThrow(req) will add after, easier for testing
   // const authorId = ctx.req.user?.id
   const { authorId, content, lessonId, name } = args
@@ -29,8 +25,7 @@ export const addModule = async (
 
 export const deleteModule = async (
   _parent: void,
-  args: MutationDeleteModuleArgs,
-  { req }: Context
+  args: MutationDeleteModuleArgs
 ) => {
   // isAdminOrThrow(req)
   const { id } = args
