@@ -1,7 +1,5 @@
-// import { Context } from '../../@types/helpers'
 import type { MutationDeleteModuleArgs, MutationAddModuleArgs } from '..'
 import prisma from '../../prisma'
-// import { isAdminOrThrow } from '../../helpers/isAdmin'
 
 export const modules = async () => {
   return prisma.module.findMany({
@@ -12,8 +10,6 @@ export const modules = async () => {
 }
 
 export const addModule = async (_parent: void, args: MutationAddModuleArgs) => {
-  //isAdminOrThrow(req) will add after, easier for testing
-  // const authorId = ctx.req.user?.id
   const { authorId, content, lessonId, name } = args
   if (!authorId || !content || !name || !lessonId) {
     throw new Error('Missing parameters')
@@ -27,9 +23,7 @@ export const deleteModule = async (
   _parent: void,
   args: MutationDeleteModuleArgs
 ) => {
-  // isAdminOrThrow(req)
   const { id } = args
-  if (!id) throw new Error('Missing parameter')
   await prisma.module.delete({ where: { id } })
   return { success: true }
 }
