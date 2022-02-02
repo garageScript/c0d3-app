@@ -169,6 +169,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     variables: { challengeId, userId: user.id }
   })
   const [previousSubmissions, setPreviousSubmissions] = useState(data)
+  const [showAccordion, setShowAccordion] = useState(false)
   const update = updateCache(
     submissionState.id,
     commentValue,
@@ -243,8 +244,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           <div className="card-body">
             <div className="rounded-lg overflow-hidden position-relative pt-5">
               <Accordion className={styles['descAccordion']}>
-                <Accordion.Item eventKey="0" className="bg-white mb-2">
-                  <Accordion.Header>Challenge Description</Accordion.Header>
+                <Accordion.Item
+                  eventKey="0"
+                  className={`bg-white mb-2 ${
+                    showAccordion && styles['accordionItem']
+                  }`}
+                >
+                  <Accordion.Header
+                    onClick={() => setShowAccordion(prev => !prev)}
+                  >
+                    Challenge Description
+                  </Accordion.Header>
                   <Accordion.Body>
                     <Markdown>{challenge?.description}</Markdown>
                   </Accordion.Body>
