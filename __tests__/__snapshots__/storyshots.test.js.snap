@@ -11417,7 +11417,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
         className="descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 accordion-item"
+          className="bg-white mb-2 false accordion-item"
         >
           <h2
             className="accordion-header"
@@ -12773,7 +12773,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
         className="descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 accordion-item"
+          className="bg-white mb-2 false accordion-item"
         >
           <h2
             className="accordion-header"
@@ -14127,7 +14127,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
         className="descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 accordion-item"
+          className="bg-white mb-2 false accordion-item"
         >
           <h2
             className="accordion-header"
@@ -15481,7 +15481,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
         className="descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 accordion-item"
+          className="bg-white mb-2 false accordion-item"
         >
           <h2
             className="accordion-header"
@@ -16835,7 +16835,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
         className="descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 accordion-item"
+          className="bg-white mb-2 false accordion-item"
         >
           <h2
             className="accordion-header"

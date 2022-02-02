@@ -740,7 +740,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                   class="descAccordion accordion"
                 >
                   <div
-                    class="bg-white mb-2 accordion-item"
+                    class="bg-white mb-2 false accordion-item"
                   >
                     <h2
                       class="accordion-header"
