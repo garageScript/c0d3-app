@@ -3052,6 +3052,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                   <a
                                     class="nav-link active"
                                     data-rr-ui-event-key="Write"
+                                    href="#"
                                     role="button"
                                     style="color: rgb(41, 41, 41);"
                                     tabindex="0"
@@ -3065,6 +3066,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                   <a
                                     class="nav-link"
                                     data-rr-ui-event-key="Preview"
+                                    href="#"
                                     role="button"
                                     style="color: rgb(142, 142, 142);"
                                     tabindex="0"
@@ -3347,6 +3349,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                   <a
                                     class="nav-link active"
                                     data-rr-ui-event-key="Write"
+                                    href="#"
                                     role="button"
                                     style="color: rgb(41, 41, 41);"
                                     tabindex="0"
@@ -3360,6 +3363,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                   <a
                                     class="nav-link"
                                     data-rr-ui-event-key="Preview"
+                                    href="#"
                                     role="button"
                                     style="color: rgb(142, 142, 142);"
                                     tabindex="0"
@@ -6085,6 +6089,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     <a
                       class="nav-link active"
                       data-rr-ui-event-key="Write"
+                      href="#"
                       role="button"
                       style="color: rgb(41, 41, 41);"
                       tabindex="0"
@@ -6098,6 +6103,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     <a
                       class="nav-link"
                       data-rr-ui-event-key="Preview"
+                      href="#"
                       role="button"
                       style="color: rgb(142, 142, 142);"
                       tabindex="0"
