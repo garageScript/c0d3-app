@@ -334,7 +334,7 @@ describe('ReviewCard Component', () => {
       )
     ).toBeVisible()
   })
-  test('Should render Accordion with shadow when Accordion header is clicked', () => {
+  test('Accordion should be visible when accordion header is clicked', () => {
     const { container, getByText } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
