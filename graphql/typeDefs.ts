@@ -218,9 +218,7 @@ export default gql`
   type Module {
     id: Int!
     author: User!
-    authorId: Int!
     lesson: Lesson!
-    lessonId: Int!
     name: String!
     content: String!
   }

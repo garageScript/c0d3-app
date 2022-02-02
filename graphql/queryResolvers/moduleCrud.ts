@@ -4,7 +4,8 @@ import prisma from '../../prisma'
 export const modules = async () => {
   return prisma.module.findMany({
     include: {
-      author: true
+      author: true,
+      lesson: true
     }
   })
 }

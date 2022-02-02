@@ -30,7 +30,7 @@ import {
   updateLesson
 } from '../helpers/controllers/lessonsController'
 import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
-
+import { modules, addModule, deleteModule } from './queryResolvers/moduleCrud'
 export default {
   Query: {
     submissions,
@@ -39,6 +39,7 @@ export default {
     isTokenValid,
     userInfo,
     lessons,
+    modules,
     session,
     alerts,
     getPreviousSubmissions
@@ -53,6 +54,8 @@ export default {
     rejectSubmission,
     createLesson,
     updateLesson,
+    addModule,
+    deleteModule,
     login,
     logout,
     signup,
