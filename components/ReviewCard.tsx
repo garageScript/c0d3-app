@@ -25,6 +25,7 @@ import { updateCache } from '../helpers/updateCache'
 import { SelectIteration } from './SelectIteration'
 import Error, { StatusCode } from './Error'
 import { ReviewStatus } from './ReviewStatus'
+import styles from '../scss/reviewCard.module.scss'
 dayjs.extend(relativeTime)
 
 type ReviewCardProps = {
@@ -168,6 +169,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     variables: { challengeId, userId: user.id }
   })
   const [previousSubmissions, setPreviousSubmissions] = useState(data)
+  const [showAccordion, setShowAccordion] = useState(false)
   const update = updateCache(
     submissionState.id,
     commentValue,
@@ -240,16 +242,27 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-body">
-            <div className="rounded-lg overflow-hidden">
-              <Accordion>
-                <Accordion.Item eventKey="0" className="bg-white mb-2">
-                  <Accordion.Header>Challenge Description</Accordion.Header>
+            <div className="rounded-lg overflow-hidden position-relative pt-5">
+              <Accordion className={styles['descAccordion']}>
+                <Accordion.Item
+                  eventKey="0"
+                  className={`bg-white mb-2 ${
+                    showAccordion && styles['accordionItem']
+                  }`}
+                >
+                  <Accordion.Header
+                    onClick={() => setShowAccordion(prev => !prev)}
+                  >
+                    Challenge Description
+                  </Accordion.Header>
                   <Accordion.Body>
                     <Markdown>{challenge?.description}</Markdown>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-              <DiffView submission={submissionState} generalStatus={status} />
+              <div className="m-0 p-0 mt-4">
+                <DiffView submission={submissionState} generalStatus={status} />
+              </div>
             </div>
           </div>
           <div className="card-footer bg-white">

@@ -334,4 +334,21 @@ describe('ReviewCard Component', () => {
       )
     ).toBeVisible()
   })
+  test('Accordion should be visible when accordion header is clicked', () => {
+    const { container, getByText } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+
+    const accordionHeader = getByText('Challenge Description')
+    fireEvent.click(accordionHeader)
+
+    const accordionItem = container.querySelector('.accordionItem')
+
+    expect(accordionItem).toBeVisible()
+  })
 })
