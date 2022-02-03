@@ -2879,18 +2879,18 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storysource@^6.4.17":
-  version "6.4.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.17.tgz#b5ca9ab8307de18d8885bcb181a4c867991b5dee"
-  integrity sha512-LBUyk3JXr9qalQazUsYbV50v9S2aI162y8wprpk1hF5YBZp2gL07+59sYww4riHZ+jZA+2oR5+TcTs8sRFFuXg==
+"@storybook/addon-storysource@^6.4.18":
+  version "6.4.18"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.4.18.tgz#00f0fb919b6224bfa8379b7c4c66e0b32b443921"
+  integrity sha512-02hs9dnfJs5lihQ0c/Cv4+lQNmkR0Fd+isEL+oVNcWTE9g0LVSLzC3evzeQCJv0SDzei7T0N+G7pF1P2dmc5PQ==
   dependencies:
-    "@storybook/addons" "6.4.17"
-    "@storybook/api" "6.4.17"
-    "@storybook/client-logger" "6.4.17"
-    "@storybook/components" "6.4.17"
-    "@storybook/router" "6.4.17"
-    "@storybook/source-loader" "6.4.17"
-    "@storybook/theming" "6.4.17"
+    "@storybook/addons" "6.4.18"
+    "@storybook/api" "6.4.18"
+    "@storybook/client-logger" "6.4.18"
+    "@storybook/components" "6.4.18"
+    "@storybook/router" "6.4.18"
+    "@storybook/source-loader" "6.4.18"
+    "@storybook/theming" "6.4.18"
     core-js "^3.8.2"
     estraverse "^5.2.0"
     loader-utils "^2.0.0"
@@ -3939,22 +3939,6 @@
   dependencies:
     core-js "^3.6.5"
     find-up "^4.1.0"
-
-"@storybook/source-loader@6.4.17":
-  version "6.4.17"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.17.tgz#d17e73f88f8c2a714fe129bf66ad692b4d4e0c97"
-  integrity sha512-OAETI21mL/jwmb9e/JtFDIsLWoOOWOAIm3Cj89XHQz/5VkYljZxdh2icb6xDHR8PtEaXj4+sBWQUG3L+a/a9QQ==
-  dependencies:
-    "@storybook/addons" "6.4.17"
-    "@storybook/client-logger" "6.4.17"
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
-    core-js "^3.8.2"
-    estraverse "^5.2.0"
-    global "^4.4.0"
-    loader-utils "^2.0.0"
-    lodash "^4.17.21"
-    prettier ">=2.2.1 <=2.3.0"
-    regenerator-runtime "^0.13.7"
 
 "@storybook/source-loader@6.4.18":
   version "6.4.18"
