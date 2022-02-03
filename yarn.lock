@@ -3961,6 +3961,22 @@
     prettier ">=2.2.1 <=2.3.0"
     regenerator-runtime "^0.13.7"
 
+"@storybook/source-loader@6.4.18":
+  version "6.4.18"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.4.18.tgz#205423e56f7da752d64a0695f2b22ed94378e5d0"
+  integrity sha512-sjKvngCCYDbBwjjFTjAXO6VsAzKkjy+UctseeULXxEN3cKIsz/R3y7MrrN9yBrwyYcn0k3pqa9d9e3gE+Jv2Tw==
+  dependencies:
+    "@storybook/addons" "6.4.18"
+    "@storybook/client-logger" "6.4.18"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    core-js "^3.8.2"
+    estraverse "^5.2.0"
+    global "^4.4.0"
+    loader-utils "^2.0.0"
+    lodash "^4.17.21"
+    prettier ">=2.2.1 <=2.3.0"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/store@6.4.17":
   version "6.4.17"
   resolved "https://registry.yarnpkg.com/@storybook/store/-/store-6.4.17.tgz#a68b687628b82f8ca0ef2c74f5d65f5a30e94f86"
@@ -13751,10 +13767,10 @@ postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-posthog-js@^1.17.7:
-  version "1.17.7"
-  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.17.7.tgz#27ff79a9d972d5257dd446df78887a0db527ee3b"
-  integrity sha512-gsTBQNwb1z7S6pcIfvklNElzwPpTOaPVEaJfBKrm/6F9oPyNct+cl/zaPfm5xcLBWqP4AaTAvE1jCNN6Qc8FfA==
+posthog-js@^1.17.8:
+  version "1.17.8"
+  resolved "https://registry.yarnpkg.com/posthog-js/-/posthog-js-1.17.8.tgz#b09257964a1dbb91791299609790b55e574962e6"
+  integrity sha512-wx2ofd1aAzhCxBjsP4moFBLQ9tfTAQGZiVbW2JtJZ/qHU0hj5qHVobfcxTqEoaJAjvQr6PocBIetHGw8bBnA1g==
   dependencies:
     "@sentry/types" "^6.11.0"
     fflate "^0.4.1"
