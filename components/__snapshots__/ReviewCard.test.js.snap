@@ -523,6 +523,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             <a
               class="nav-link active"
               data-rr-ui-event-key="Write"
+              href="#"
               role="button"
               style="color: rgb(41, 41, 41);"
               tabindex="0"
@@ -536,6 +537,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             <a
               class="nav-link"
               data-rr-ui-event-key="Preview"
+              href="#"
               role="button"
               style="color: rgb(142, 142, 142);"
               tabindex="0"
@@ -1323,6 +1325,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             <a
               class="nav-link active"
               data-rr-ui-event-key="Write"
+              href="#"
               role="button"
               style="color: rgb(41, 41, 41);"
               tabindex="0"
@@ -1336,6 +1339,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             <a
               class="nav-link"
               data-rr-ui-event-key="Preview"
+              href="#"
               role="button"
               style="color: rgb(142, 142, 142);"
               tabindex="0"
@@ -2873,6 +2877,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             <a
               class="nav-link active"
               data-rr-ui-event-key="Write"
+              href="#"
               role="button"
               style="color: rgb(41, 41, 41);"
               tabindex="0"
@@ -2886,6 +2891,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             <a
               class="nav-link"
               data-rr-ui-event-key="Preview"
+              href="#"
               role="button"
               style="color: rgb(142, 142, 142);"
               tabindex="0"
@@ -4423,6 +4429,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             <a
               class="nav-link active"
               data-rr-ui-event-key="Write"
+              href="#"
               role="button"
               style="color: rgb(41, 41, 41);"
               tabindex="0"
@@ -4436,6 +4443,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             <a
               class="nav-link"
               data-rr-ui-event-key="Preview"
+              href="#"
               role="button"
               style="color: rgb(142, 142, 142);"
               tabindex="0"
@@ -4796,6 +4804,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             <a
               class="nav-link active"
               data-rr-ui-event-key="Write"
+              href="#"
               role="button"
               style="color: rgb(41, 41, 41);"
               tabindex="0"
@@ -4809,6 +4818,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
             <a
               class="nav-link"
               data-rr-ui-event-key="Preview"
+              href="#"
               role="button"
               style="color: rgb(142, 142, 142);"
               tabindex="0"
@@ -6346,6 +6356,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             <a
               class="nav-link active"
               data-rr-ui-event-key="Write"
+              href="#"
               role="button"
               style="color: rgb(41, 41, 41);"
               tabindex="0"
@@ -6359,6 +6370,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             <a
               class="nav-link"
               data-rr-ui-event-key="Preview"
+              href="#"
               role="button"
               style="color: rgb(142, 142, 142);"
               tabindex="0"

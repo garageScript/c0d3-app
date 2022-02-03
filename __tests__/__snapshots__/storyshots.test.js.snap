@@ -1333,6 +1333,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 <a
                   className="nav-link active"
                   data-rr-ui-event-key="Write"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -1352,6 +1353,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 <a
                   className="nav-link"
                   data-rr-ui-event-key="Preview"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -2135,6 +2137,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 <a
                   className="nav-link active"
                   data-rr-ui-event-key="Write"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -2154,6 +2157,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 <a
                   className="nav-link"
                   data-rr-ui-event-key="Preview"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -5197,6 +5201,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
                 <a
                   className="nav-link active"
                   data-rr-ui-event-key="Write"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -5216,6 +5221,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
                 <a
                   className="nav-link"
                   data-rr-ui-event-key="Preview"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -5695,6 +5701,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
                 <a
                   className="nav-link active"
                   data-rr-ui-event-key="Write"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -5714,6 +5721,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
                 <a
                   className="nav-link"
                   data-rr-ui-event-key="Preview"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -6124,6 +6132,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
                 <a
                   className="nav-link active"
                   data-rr-ui-event-key="Write"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -6143,6 +6152,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
                 <a
                   className="nav-link"
                   data-rr-ui-event-key="Preview"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -6553,6 +6563,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
                 <a
                   className="nav-link active"
                   data-rr-ui-event-key="Write"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -6572,6 +6583,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
                 <a
                   className="nav-link"
                   data-rr-ui-event-key="Preview"
+                  href="#"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="button"
@@ -8441,6 +8453,7 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
       <a
         className="nav-link active"
         data-rr-ui-event-key="Write"
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -8460,6 +8473,7 @@ exports[`Storyshots Components/MdInput Basic 1`] = `
       <a
         className="nav-link"
         data-rr-ui-event-key="Preview"
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -8765,6 +8779,7 @@ exports[`Storyshots Components/MdInput White 1`] = `
       <a
         className="nav-link active"
         data-rr-ui-event-key="Write"
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -8784,6 +8799,7 @@ exports[`Storyshots Components/MdInput White 1`] = `
       <a
         className="nav-link"
         data-rr-ui-event-key="Preview"
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -9089,6 +9105,7 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
       <a
         className="nav-link active"
         data-rr-ui-event-key="Write"
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -9108,6 +9125,7 @@ exports[`Storyshots Components/MdInput With Preset Value 1`] = `
       <a
         className="nav-link"
         data-rr-ui-event-key="Preview"
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -9414,6 +9432,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
         <a
           className="nav-link active"
           data-rr-ui-event-key="Write"
+          href="#"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -9433,6 +9452,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
         <a
           className="nav-link"
           data-rr-ui-event-key="Preview"
+          href="#"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -12325,6 +12345,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           <a
             className="nav-link active"
             data-rr-ui-event-key="Write"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -12344,6 +12365,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           <a
             className="nav-link"
             data-rr-ui-event-key="Preview"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -13681,6 +13703,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           <a
             className="nav-link active"
             data-rr-ui-event-key="Write"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -13700,6 +13723,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           <a
             className="nav-link"
             data-rr-ui-event-key="Preview"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -15035,6 +15059,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           <a
             className="nav-link active"
             data-rr-ui-event-key="Write"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -15054,6 +15079,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           <a
             className="nav-link"
             data-rr-ui-event-key="Preview"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -16389,6 +16415,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           <a
             className="nav-link active"
             data-rr-ui-event-key="Write"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -16408,6 +16435,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           <a
             className="nav-link"
             data-rr-ui-event-key="Preview"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -17743,6 +17771,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           <a
             className="nav-link active"
             data-rr-ui-event-key="Write"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -17762,6 +17791,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           <a
             className="nav-link"
             data-rr-ui-event-key="Preview"
+            href="#"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
