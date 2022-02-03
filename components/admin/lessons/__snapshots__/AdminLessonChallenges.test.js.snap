@@ -62,7 +62,6 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -76,7 +75,6 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -355,7 +353,6 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -369,7 +366,6 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -650,7 +646,6 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -664,7 +659,6 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -940,7 +934,6 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -954,7 +947,6 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -1215,7 +1207,6 @@ exports[`AdminLessonChallenges component Should render a challenge without title
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -1229,7 +1220,6 @@ exports[`AdminLessonChallenges component Should render a challenge without title
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -1516,7 +1506,6 @@ exports[`AdminLessonChallenges component Should update challenge 1`] = `
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -1530,7 +1519,6 @@ exports[`AdminLessonChallenges component Should update challenge 1`] = `
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -1808,7 +1796,6 @@ solution(4,1) // Should return 5
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -1822,7 +1809,6 @@ solution(4,1) // Should return 5
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -2105,7 +2091,6 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -2119,7 +2104,6 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"
@@ -2390,7 +2374,6 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
                   <a
                     class="nav-link active"
                     data-rr-ui-event-key="Write"
-                    href="#"
                     role="button"
                     style="color: rgb(41, 41, 41);"
                     tabindex="0"
@@ -2404,7 +2387,6 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
                   <a
                     class="nav-link"
                     data-rr-ui-event-key="Preview"
-                    href="#"
                     role="button"
                     style="color: rgb(142, 142, 142);"
                     tabindex="0"

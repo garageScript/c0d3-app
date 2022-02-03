@@ -34,7 +34,6 @@ exports[`FormCard Component Should call function with updated array as parameter
                 <a
                   class="nav-link active"
                   data-rr-ui-event-key="Write"
-                  href="#"
                   role="button"
                   style="color: rgb(41, 41, 41);"
                   tabindex="0"
@@ -48,7 +47,6 @@ exports[`FormCard Component Should call function with updated array as parameter
                 <a
                   class="nav-link"
                   data-rr-ui-event-key="Preview"
-                  href="#"
                   role="button"
                   style="color: rgb(142, 142, 142);"
                   tabindex="0"
@@ -324,7 +322,6 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
                 <a
                   class="nav-link active"
                   data-rr-ui-event-key="Write"
-                  href="#"
                   role="button"
                   style="color: rgb(41, 41, 41);"
                   tabindex="0"
@@ -338,7 +335,6 @@ exports[`FormCard Component Should render MdInput component when type is MD_INPU
                 <a
                   class="nav-link"
                   data-rr-ui-event-key="Preview"
-                  href="#"
                   role="button"
                   style="color: rgb(142, 142, 142);"
                   tabindex="0"
@@ -645,7 +641,6 @@ exports[`FormCard Component Should update testing onChange variable when person 
                 <a
                   class="nav-link active"
                   data-rr-ui-event-key="Write"
-                  href="#"
                   role="button"
                   style="color: rgb(41, 41, 41);"
                   tabindex="0"
@@ -659,7 +654,6 @@ exports[`FormCard Component Should update testing onChange variable when person 
                 <a
                   class="nav-link"
                   data-rr-ui-event-key="Preview"
-                  href="#"
                   role="button"
                   style="color: rgb(142, 142, 142);"
                   tabindex="0"

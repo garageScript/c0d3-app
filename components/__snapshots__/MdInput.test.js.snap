@@ -12,7 +12,6 @@ exports[`MdInput Component Should display markdown preview text when switch to P
         <a
           class="nav-link"
           data-rr-ui-event-key="Write"
-          href="#"
           role="button"
           style="color: rgb(142, 142, 142);"
           tabindex="0"
@@ -26,7 +25,6 @@ exports[`MdInput Component Should display markdown preview text when switch to P
         <a
           class="nav-link active"
           data-rr-ui-event-key="Preview"
-          href="#"
           role="button"
           style="color: rgb(41, 41, 41);"
           tabindex="0"
@@ -69,7 +67,6 @@ exports[`MdInput Component Should render text onto textbox when user types 1`] =
         <a
           class="nav-link active"
           data-rr-ui-event-key="Write"
-          href="#"
           role="button"
           style="color: rgb(41, 41, 41);"
           tabindex="0"
@@ -83,7 +80,6 @@ exports[`MdInput Component Should render text onto textbox when user types 1`] =
         <a
           class="nav-link"
           data-rr-ui-event-key="Preview"
-          href="#"
           role="button"
           style="color: rgb(142, 142, 142);"
           tabindex="0"
@@ -281,7 +277,6 @@ exports[`MdInput Component Should switch to Write mode when user clicks Write bu
         <a
           class="nav-link active"
           data-rr-ui-event-key="Write"
-          href="#"
           role="button"
           style="color: rgb(41, 41, 41);"
           tabindex="0"
@@ -295,7 +290,6 @@ exports[`MdInput Component Should switch to Write mode when user clicks Write bu
         <a
           class="nav-link"
           data-rr-ui-event-key="Preview"
-          href="#"
           role="button"
           style="color: rgb(142, 142, 142);"
           tabindex="0"
