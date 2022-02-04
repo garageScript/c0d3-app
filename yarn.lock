@@ -12220,12 +12220,12 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-connect@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.11.0.tgz#447c7b78937ff71f36c97d03f1623a6d0264ef49"
-  integrity sha512-7VW5z9MWOpd8wnbST9dXgVd0c0V76LLLk5mBDYLSMtEC2dj3v3YF/Bl3t58cJrzm4SZ0e/s3yeD361F888u0yg==
+next-connect@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.11.1.tgz#3bdca8a7b91c366f7d15c8f03cb39933f65a87cc"
+  integrity sha512-qdFXRVN8TP4vBtqcifc2E/OsLamp5gtBqMl3gWSW9bCO2TBJovjvvQGZEv7eSGxHoqvGGn8rO/t4qTUKPUCPFw==
   dependencies:
-    trouter "^3.1.0"
+    trouter "^3.2.0"
 
 next-mdx-remote@^3.0.8:
   version "3.0.8"
@@ -15735,7 +15735,7 @@ trough@^2.0.0:
   resolved "https://registry.yarnpkg.com/trough/-/trough-2.0.2.tgz#94a3aa9d5ce379fc561f6244905b3f36b7458d96"
   integrity sha512-FnHq5sTMxC0sk957wHDzRnemFnNBvt/gSY99HzK8F7UP5WAbvP70yX5bd7CjEQkN+TjdxwI7g7lJ6podqrG2/w==
 
-trouter@^3.1.0:
+trouter@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/trouter/-/trouter-3.2.0.tgz#a9c510fce21b8e659a28732c9de9d82871efe8df"
   integrity sha512-rLLXbhTObLy2MBVjLC+jTnoIKw99n0GuJs9ov10J870vDw5qhTurPzsDrudNtBf5w/CZ9ctZy2p2IMmhGcel2w==
