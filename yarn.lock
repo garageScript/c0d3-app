@@ -1728,22 +1728,6 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/visitor-plugin-common@2.5.2":
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.5.2.tgz#90aa4add41e17bca83f1c7c8ad674f2a06065efd"
-  integrity sha512-qDMraPmumG+vEGAz42/asRkdgIRmQWH5HTc320UX+I6CY6eE/Ey85cgzoqeQGLV8gu4sj3UkNx/3/r79eX4u+Q==
-  dependencies:
-    "@graphql-codegen/plugin-helpers" "^2.3.2"
-    "@graphql-tools/optimize" "^1.0.1"
-    "@graphql-tools/relay-operation-optimizer" "^6.3.7"
-    "@graphql-tools/utils" "^8.3.0"
-    auto-bind "~4.0.0"
-    change-case-all "1.0.14"
-    dependency-graph "^0.11.0"
-    graphql-tag "^2.11.0"
-    parse-filepath "^1.0.2"
-    tslib "~2.3.0"
-
 "@graphql-codegen/visitor-plugin-common@2.6.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/visitor-plugin-common/-/visitor-plugin-common-2.6.0.tgz#564a60399f2db9070a5569ba96ceb0f8c0a6c2a3"
@@ -12220,10 +12204,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-connect@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.11.1.tgz#3bdca8a7b91c366f7d15c8f03cb39933f65a87cc"
-  integrity sha512-qdFXRVN8TP4vBtqcifc2E/OsLamp5gtBqMl3gWSW9bCO2TBJovjvvQGZEv7eSGxHoqvGGn8rO/t4qTUKPUCPFw==
+next-connect@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.12.1.tgz#9e1c2b107544c27a26f00d11eb1d5e432b9853b4"
+  integrity sha512-pzW3oKCYAaNOxQncIIv53cHrRaZSeQ2KZ9chjYx/OHgASV8qDNlVvD3Mz9RTrO9TuJs3kjt0VeTBGJmoE/yl2g==
   dependencies:
     trouter "^3.2.0"
 
