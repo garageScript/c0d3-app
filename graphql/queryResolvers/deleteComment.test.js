@@ -34,16 +34,28 @@ describe('Delete comment resolver', () => {
       await deleteComment(
         {},
         {
-          line: 1,
-          submissionId: 1,
-          fileName: 'testFile.js',
-          content: 'testing'
+          id: 2
         },
 
         { req: {} }
       )
     } catch (e) {
       expect(e.message).toEqual('No authorId field')
+    }
+  })
+
+  test('should throw error if user.id not equal to the comment authorId', async () => {
+    try {
+      await deleteComment(
+        {},
+        {
+          authorId: 2
+        },
+
+        { req: { user: { id: 1 } } }
+      )
+    } catch (e) {
+      expect(e.message).toEqual('Comment is not by the user')
     }
   })
 })
