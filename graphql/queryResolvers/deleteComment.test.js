@@ -14,8 +14,8 @@ describe('Delete comment resolver', () => {
     prismaMock.comment.findUnique.mockResolvedValue({
       authorId: 1
     })
-    expect(
-      await deleteComment(
+    await expect(
+      deleteComment(
         {},
         {
           id: 2
@@ -23,15 +23,15 @@ describe('Delete comment resolver', () => {
 
         { req: { user: { id: 1 } } }
       )
-    ).toEqual({
+    ).resolves.toEqual({
       authorId: 1,
       id: 2
     })
   })
 
   test('should throw error if no user.id in context', async () => {
-    try {
-      await deleteComment(
+    await expect(
+      deleteComment(
         {},
         {
           id: 2
@@ -39,14 +39,12 @@ describe('Delete comment resolver', () => {
 
         { req: {} }
       )
-    } catch (e) {
-      expect(e.message).toEqual('No authorId field')
-    }
+    ).rejects.toThrow('No authorId field')
   })
 
   test('should throw error if user.id not equal to the comment authorId', async () => {
-    try {
-      await deleteComment(
+    await expect(
+      deleteComment(
         {},
         {
           authorId: 2
@@ -54,8 +52,6 @@ describe('Delete comment resolver', () => {
 
         { req: { user: { id: 1 } } }
       )
-    } catch (e) {
-      expect(e.message).toEqual('Comment is not by the user')
-    }
+    ).rejects.toThrow('Comment is not by the user')
   })
 })
