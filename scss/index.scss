@@ -1,3 +1,4 @@
+@use '_variables';
 // Override default variables before the import
 $body-bg: rgba(84, 56, 220, 0.03);
 
@@ -5,15 +6,15 @@ $body-bg: rgba(84, 56, 220, 0.03);
 // e.g., 'success': #faj2;
 
 $theme-colors: (
-  'primary': rgb(84, 64, 216),
-  'secondary': #fff,
-  'warning': #ffae28,
-  'gray': #6c757d,
-  'light': hsl(0deg, 0%, 97%),
-  'danger': #dc3545,
-  'success': #00cf92,
-  'info': #17a2b8,
-  'dark': #343a40
+  'primary': variables.$primary,
+  'secondary': variables.$secondary,
+  'warning': variables.$warning,
+  'gray': variables.$gray,
+  'light': variables.$light,
+  'danger': variables.$danger,
+  'success': variables.$success,
+  'info': variables.$info,
+  'dark': variables.$dark
 );
 
 // Workaround for btn-light hover color
