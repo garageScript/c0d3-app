@@ -18,7 +18,8 @@ export const deleteComment = async (
     }
   })
 
-  if (comment?.authorId !== authorId) throw new Error('Comment not by the user')
+  if (comment?.authorId !== authorId)
+    throw new Error('Comment is not by the user')
 
   return prisma.comment.delete({
     where: {
