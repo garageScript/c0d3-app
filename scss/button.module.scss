@@ -1,0 +1,12 @@
+@use 'sass:color';
+@use '_variables.module';
+
+.borderless {
+  border: 0;
+}
+
+@each $name, $color in variables.$colors {
+  .btn-outline-bg-#{$name}:hover {
+    background-color: rgba($color, 0.2);
+  }
+}
