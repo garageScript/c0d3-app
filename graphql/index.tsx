@@ -20,9 +20,9 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
   [SubKey in K]: Maybe<T[SubKey]>
 }
-export type RequireFields<T, K extends keyof T> = {
-  [X in Exclude<keyof T, K>]?: T[X]
-} & { [P in K]-?: NonNullable<T[P]> }
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & {
+  [P in K]-?: NonNullable<T[P]>
+}
 const defaultOptions = {} as const
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -364,15 +364,12 @@ export type AcceptSubmissionMutationVariables = Exact<{
 
 export type AcceptSubmissionMutation = {
   __typename?: 'Mutation'
-  acceptSubmission?:
-    | {
-        __typename?: 'Submission'
-        id: number
-        comment?: string | null | undefined
-        status: SubmissionStatus
-      }
-    | null
-    | undefined
+  acceptSubmission?: {
+    __typename?: 'Submission'
+    id: number
+    comment?: string | null
+    status: SubmissionStatus
+  } | null
 }
 
 export type AddAlertMutationVariables = Exact<{
@@ -384,21 +381,14 @@ export type AddAlertMutationVariables = Exact<{
 
 export type AddAlertMutation = {
   __typename?: 'Mutation'
-  addAlert?:
-    | Array<
-        | {
-            __typename?: 'Alert'
-            id: number
-            text?: string | null | undefined
-            type?: string | null | undefined
-            url?: string | null | undefined
-            urlCaption?: string | null | undefined
-          }
-        | null
-        | undefined
-      >
-    | null
-    | undefined
+  addAlert?: Array<{
+    __typename?: 'Alert'
+    id: number
+    text?: string | null
+    type?: string | null
+    url?: string | null
+    urlCaption?: string | null
+  } | null> | null
 }
 
 export type AddCommentMutationVariables = Exact<{
@@ -410,29 +400,22 @@ export type AddCommentMutationVariables = Exact<{
 
 export type AddCommentMutation = {
   __typename?: 'Mutation'
-  addComment?: { __typename?: 'Comment'; id: number } | null | undefined
+  addComment?: { __typename?: 'Comment'; id: number } | null
 }
 
 export type UsersQueryVariables = Exact<{ [key: string]: never }>
 
 export type UsersQuery = {
   __typename?: 'Query'
-  allUsers?:
-    | Array<
-        | {
-            __typename?: 'User'
-            id: number
-            username: string
-            name: string
-            isAdmin: boolean
-            email: string
-            cliToken?: string | null | undefined
-          }
-        | null
-        | undefined
-      >
-    | null
-    | undefined
+  allUsers?: Array<{
+    __typename?: 'User'
+    id: number
+    username: string
+    name: string
+    isAdmin: boolean
+    email: string
+    cliToken?: string | null
+  } | null> | null
 }
 
 export type ChangeAdminRightsMutationVariables = Exact<{
@@ -442,10 +425,10 @@ export type ChangeAdminRightsMutationVariables = Exact<{
 
 export type ChangeAdminRightsMutation = {
   __typename?: 'Mutation'
-  changeAdminRights?:
-    | { __typename?: 'SuccessResponse'; success?: boolean | null | undefined }
-    | null
-    | undefined
+  changeAdminRights?: {
+    __typename?: 'SuccessResponse'
+    success?: boolean | null
+  } | null
 }
 
 export type CreateChallengeMutationVariables = Exact<{
@@ -457,32 +440,25 @@ export type CreateChallengeMutationVariables = Exact<{
 
 export type CreateChallengeMutation = {
   __typename?: 'Mutation'
-  createChallenge?:
-    | Array<
-        | {
-            __typename?: 'Lesson'
-            id: number
-            docUrl?: string | null | undefined
-            githubUrl?: string | null | undefined
-            videoUrl?: string | null | undefined
-            chatUrl?: string | null | undefined
-            order: number
-            description: string
-            title: string
-            challenges: Array<{
-              __typename?: 'Challenge'
-              id: number
-              description: string
-              lessonId: number
-              title: string
-              order: number
-            }>
-          }
-        | null
-        | undefined
-      >
-    | null
-    | undefined
+  createChallenge?: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
+    chatUrl?: string | null
+    order: number
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  } | null> | null
 }
 
 export type CreateLessonMutationVariables = Exact<{
@@ -501,10 +477,10 @@ export type CreateLessonMutation = {
   createLesson: Array<{
     __typename?: 'Lesson'
     id: number
-    docUrl?: string | null | undefined
-    githubUrl?: string | null | undefined
-    videoUrl?: string | null | undefined
-    chatUrl?: string | null | undefined
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
+    chatUrl?: string | null
     order: number
     slug: string
     description: string
@@ -529,14 +505,11 @@ export type CreateSubmissionMutationVariables = Exact<{
 
 export type CreateSubmissionMutation = {
   __typename?: 'Mutation'
-  createSubmission?:
-    | {
-        __typename?: 'Submission'
-        id: number
-        diff?: string | null | undefined
-      }
-    | null
-    | undefined
+  createSubmission?: {
+    __typename?: 'Submission'
+    id: number
+    diff?: string | null
+  } | null
 }
 
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
@@ -548,12 +521,12 @@ export type GetAppQuery = {
     id: number
     title: string
     description: string
-    docUrl?: string | null | undefined
-    githubUrl?: string | null | undefined
-    videoUrl?: string | null | undefined
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
     order: number
     slug: string
-    chatUrl?: string | null | undefined
+    chatUrl?: string | null
     challenges: Array<{
       __typename?: 'Challenge'
       id: number
@@ -564,69 +537,54 @@ export type GetAppQuery = {
   }>
   session: {
     __typename?: 'Session'
-    user?:
-      | {
-          __typename?: 'User'
-          id: number
-          username: string
-          name: string
-          isAdmin: boolean
-          isConnectedToDiscord: boolean
-        }
-      | null
-      | undefined
-    submissions?:
-      | Array<{
-          __typename?: 'Submission'
-          id: number
-          status: SubmissionStatus
-          mrUrl?: string | null | undefined
-          diff?: string | null | undefined
-          viewCount?: number | null | undefined
-          comment?: string | null | undefined
-          order?: number | null | undefined
-          challengeId: number
-          lessonId: number
-          createdAt?: string | null | undefined
-          updatedAt: string
-          reviewer?:
-            | { __typename?: 'User'; id: number; username: string }
-            | null
-            | undefined
-          user: { __typename?: 'User'; id: number }
-          comments?:
-            | Array<{
-                __typename?: 'Comment'
-                content: string
-                submissionId: number
-                createdAt: string
-                authorId: number
-                line?: number | null | undefined
-                fileName?: string | null | undefined
-                author?:
-                  | { __typename?: 'User'; username: string; name: string }
-                  | null
-                  | undefined
-              }>
-            | null
-            | undefined
-        }>
-      | null
-      | undefined
+    user?: {
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+      isAdmin: boolean
+      isConnectedToDiscord: boolean
+    } | null
+    submissions?: Array<{
+      __typename?: 'Submission'
+      id: number
+      status: SubmissionStatus
+      mrUrl?: string | null
+      diff?: string | null
+      viewCount?: number | null
+      comment?: string | null
+      order?: number | null
+      challengeId: number
+      lessonId: number
+      createdAt?: string | null
+      updatedAt: string
+      reviewer?: { __typename?: 'User'; id: number; username: string } | null
+      user: { __typename?: 'User'; id: number }
+      comments?: Array<{
+        __typename?: 'Comment'
+        content: string
+        submissionId: number
+        createdAt: string
+        authorId: number
+        line?: number | null
+        fileName?: string | null
+        author?: { __typename?: 'User'; username: string; name: string } | null
+      }> | null
+    }> | null
     lessonStatus: Array<{
       __typename?: 'UserLesson'
       lessonId: number
-      passedAt?: string | null | undefined
-      starGiven?: string | null | undefined
+      passedAt?: string | null
+      starGiven?: string | null
     }>
   }
   alerts: Array<{
     __typename?: 'Alert'
     id: number
-    text?: string | null | undefined
-    type?: string | null | undefined
-    url?: string | null | undefined
-    urlCaption?: string | null | undefined
+    text?: string | null
+    type?: string | null
+    url?: string | null
+    urlCaption?: string | null
   }>
 }
 
@@ -636,14 +594,12 @@ export type LessonMentorsQueryVariables = Exact<{
 
 export type LessonMentorsQuery = {
   __typename?: 'Query'
-  getLessonMentors?:
-    | Array<
-        | { __typename?: 'User'; username: string; name: string; id: number }
-        | null
-        | undefined
-      >
-    | null
-    | undefined
+  getLessonMentors?: Array<{
+    __typename?: 'User'
+    username: string
+    name: string
+    id: number
+  } | null> | null
 }
 
 export type GetLessonsQueryVariables = Exact<{ [key: string]: never }>
@@ -656,11 +612,11 @@ export type GetLessonsQuery = {
     title: string
     slug: string
     description: string
-    docUrl?: string | null | undefined
-    githubUrl?: string | null | undefined
-    videoUrl?: string | null | undefined
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
     order: number
-    chatUrl?: string | null | undefined
+    chatUrl?: string | null
     challenges: Array<{
       __typename?: 'Challenge'
       id: number
@@ -678,46 +634,35 @@ export type GetPreviousSubmissionsQueryVariables = Exact<{
 
 export type GetPreviousSubmissionsQuery = {
   __typename?: 'Query'
-  getPreviousSubmissions?:
-    | Array<{
-        __typename?: 'Submission'
-        id: number
-        status: SubmissionStatus
-        diff?: string | null | undefined
-        comment?: string | null | undefined
-        challengeId: number
-        lessonId: number
-        createdAt?: string | null | undefined
-        updatedAt: string
-        challenge: {
-          __typename?: 'Challenge'
-          title: string
-          description: string
-        }
-        user: { __typename?: 'User'; id: number; username: string }
-        reviewer?:
-          | { __typename?: 'User'; id: number; username: string; name: string }
-          | null
-          | undefined
-        comments?:
-          | Array<{
-              __typename?: 'Comment'
-              content: string
-              submissionId: number
-              createdAt: string
-              authorId: number
-              line?: number | null | undefined
-              fileName?: string | null | undefined
-              author?:
-                | { __typename?: 'User'; username: string; name: string }
-                | null
-                | undefined
-            }>
-          | null
-          | undefined
-      }>
-    | null
-    | undefined
+  getPreviousSubmissions?: Array<{
+    __typename?: 'Submission'
+    id: number
+    status: SubmissionStatus
+    diff?: string | null
+    comment?: string | null
+    challengeId: number
+    lessonId: number
+    createdAt?: string | null
+    updatedAt: string
+    challenge: { __typename?: 'Challenge'; title: string; description: string }
+    user: { __typename?: 'User'; id: number; username: string }
+    reviewer?: {
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+    } | null
+    comments?: Array<{
+      __typename?: 'Comment'
+      content: string
+      submissionId: number
+      createdAt: string
+      authorId: number
+      line?: number | null
+      fileName?: string | null
+      author?: { __typename?: 'User'; username: string; name: string } | null
+    }> | null
+  }> | null
 }
 
 export type GetSessionQueryVariables = Exact<{ [key: string]: never }>
@@ -726,43 +671,34 @@ export type GetSessionQuery = {
   __typename?: 'Query'
   session: {
     __typename?: 'Session'
-    user?:
-      | {
-          __typename?: 'User'
-          id: number
-          username: string
-          name: string
-          isAdmin: boolean
-          isConnectedToDiscord: boolean
-        }
-      | null
-      | undefined
-    submissions?:
-      | Array<{
-          __typename?: 'Submission'
-          id: number
-          status: SubmissionStatus
-          mrUrl?: string | null | undefined
-          diff?: string | null | undefined
-          viewCount?: number | null | undefined
-          comment?: string | null | undefined
-          order?: number | null | undefined
-          challengeId: number
-          lessonId: number
-          createdAt?: string | null | undefined
-          updatedAt: string
-          reviewer?:
-            | { __typename?: 'User'; id: number; username: string }
-            | null
-            | undefined
-        }>
-      | null
-      | undefined
+    user?: {
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+      isAdmin: boolean
+      isConnectedToDiscord: boolean
+    } | null
+    submissions?: Array<{
+      __typename?: 'Submission'
+      id: number
+      status: SubmissionStatus
+      mrUrl?: string | null
+      diff?: string | null
+      viewCount?: number | null
+      comment?: string | null
+      order?: number | null
+      challengeId: number
+      lessonId: number
+      createdAt?: string | null
+      updatedAt: string
+      reviewer?: { __typename?: 'User'; id: number; username: string } | null
+    }> | null
     lessonStatus: Array<{
       __typename?: 'UserLesson'
       lessonId: number
-      passedAt?: string | null | undefined
-      starGiven?: string | null | undefined
+      passedAt?: string | null
+      starGiven?: string | null
     }>
   }
 }
@@ -773,46 +709,35 @@ export type SubmissionsQueryVariables = Exact<{
 
 export type SubmissionsQuery = {
   __typename?: 'Query'
-  submissions?:
-    | Array<{
-        __typename?: 'Submission'
-        id: number
-        status: SubmissionStatus
-        diff?: string | null | undefined
-        comment?: string | null | undefined
-        challengeId: number
-        lessonId: number
-        createdAt?: string | null | undefined
-        updatedAt: string
-        challenge: {
-          __typename?: 'Challenge'
-          title: string
-          description: string
-        }
-        user: { __typename?: 'User'; id: number; username: string }
-        reviewer?:
-          | { __typename?: 'User'; id: number; username: string; name: string }
-          | null
-          | undefined
-        comments?:
-          | Array<{
-              __typename?: 'Comment'
-              content: string
-              submissionId: number
-              createdAt: string
-              authorId: number
-              line?: number | null | undefined
-              fileName?: string | null | undefined
-              author?:
-                | { __typename?: 'User'; username: string; name: string }
-                | null
-                | undefined
-            }>
-          | null
-          | undefined
-      }>
-    | null
-    | undefined
+  submissions?: Array<{
+    __typename?: 'Submission'
+    id: number
+    status: SubmissionStatus
+    diff?: string | null
+    comment?: string | null
+    challengeId: number
+    lessonId: number
+    createdAt?: string | null
+    updatedAt: string
+    challenge: { __typename?: 'Challenge'; title: string; description: string }
+    user: { __typename?: 'User'; id: number; username: string }
+    reviewer?: {
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+    } | null
+    comments?: Array<{
+      __typename?: 'Comment'
+      content: string
+      submissionId: number
+      createdAt: string
+      authorId: number
+      line?: number | null
+      fileName?: string | null
+      author?: { __typename?: 'User'; username: string; name: string } | null
+    }> | null
+  }> | null
 }
 
 export type LoginMutationVariables = Exact<{
@@ -822,31 +747,25 @@ export type LoginMutationVariables = Exact<{
 
 export type LoginMutation = {
   __typename?: 'Mutation'
-  login?:
-    | {
-        __typename?: 'AuthResponse'
-        success?: boolean | null | undefined
-        username?: string | null | undefined
-        cliToken?: string | null | undefined
-        error?: string | null | undefined
-      }
-    | null
-    | undefined
+  login?: {
+    __typename?: 'AuthResponse'
+    success?: boolean | null
+    username?: string | null
+    cliToken?: string | null
+    error?: string | null
+  } | null
 }
 
 export type LogoutMutationVariables = Exact<{ [key: string]: never }>
 
 export type LogoutMutation = {
   __typename?: 'Mutation'
-  logout?:
-    | {
-        __typename?: 'AuthResponse'
-        success?: boolean | null | undefined
-        username?: string | null | undefined
-        error?: string | null | undefined
-      }
-    | null
-    | undefined
+  logout?: {
+    __typename?: 'AuthResponse'
+    success?: boolean | null
+    username?: string | null
+    error?: string | null
+  } | null
 }
 
 export type RejectSubmissionMutationVariables = Exact<{
@@ -857,15 +776,12 @@ export type RejectSubmissionMutationVariables = Exact<{
 
 export type RejectSubmissionMutation = {
   __typename?: 'Mutation'
-  rejectSubmission?:
-    | {
-        __typename?: 'Submission'
-        id: number
-        comment?: string | null | undefined
-        status: SubmissionStatus
-      }
-    | null
-    | undefined
+  rejectSubmission?: {
+    __typename?: 'Submission'
+    id: number
+    comment?: string | null
+    status: SubmissionStatus
+  } | null
 }
 
 export type RemoveAlertMutationVariables = Exact<{
@@ -874,10 +790,10 @@ export type RemoveAlertMutationVariables = Exact<{
 
 export type RemoveAlertMutation = {
   __typename?: 'Mutation'
-  removeAlert?:
-    | { __typename?: 'SuccessResponse'; success?: boolean | null | undefined }
-    | null
-    | undefined
+  removeAlert?: {
+    __typename?: 'SuccessResponse'
+    success?: boolean | null
+  } | null
 }
 
 export type ReqPwResetMutationVariables = Exact<{
@@ -886,10 +802,7 @@ export type ReqPwResetMutationVariables = Exact<{
 
 export type ReqPwResetMutation = {
   __typename?: 'Mutation'
-  reqPwReset: {
-    __typename?: 'SuccessResponse'
-    success?: boolean | null | undefined
-  }
+  reqPwReset: { __typename?: 'SuccessResponse'; success?: boolean | null }
 }
 
 export type SetStarMutationVariables = Exact<{
@@ -900,10 +813,7 @@ export type SetStarMutationVariables = Exact<{
 
 export type SetStarMutation = {
   __typename?: 'Mutation'
-  setStar: {
-    __typename?: 'SuccessResponse'
-    success?: boolean | null | undefined
-  }
+  setStar: { __typename?: 'SuccessResponse'; success?: boolean | null }
 }
 
 export type SignupMutationVariables = Exact<{
@@ -915,16 +825,13 @@ export type SignupMutationVariables = Exact<{
 
 export type SignupMutation = {
   __typename?: 'Mutation'
-  signup?:
-    | {
-        __typename?: 'AuthResponse'
-        success?: boolean | null | undefined
-        username?: string | null | undefined
-        error?: string | null | undefined
-        cliToken?: string | null | undefined
-      }
-    | null
-    | undefined
+  signup?: {
+    __typename?: 'AuthResponse'
+    success?: boolean | null
+    username?: string | null
+    error?: string | null
+    cliToken?: string | null
+  } | null
 }
 
 export type UpdateChallengeMutationVariables = Exact<{
@@ -937,32 +844,25 @@ export type UpdateChallengeMutationVariables = Exact<{
 
 export type UpdateChallengeMutation = {
   __typename?: 'Mutation'
-  updateChallenge?:
-    | Array<
-        | {
-            __typename?: 'Lesson'
-            id: number
-            docUrl?: string | null | undefined
-            githubUrl?: string | null | undefined
-            videoUrl?: string | null | undefined
-            chatUrl?: string | null | undefined
-            order: number
-            description: string
-            title: string
-            challenges: Array<{
-              __typename?: 'Challenge'
-              id: number
-              description: string
-              lessonId: number
-              title: string
-              order: number
-            }>
-          }
-        | null
-        | undefined
-      >
-    | null
-    | undefined
+  updateChallenge?: Array<{
+    __typename?: 'Lesson'
+    id: number
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
+    chatUrl?: string | null
+    order: number
+    description: string
+    title: string
+    challenges: Array<{
+      __typename?: 'Challenge'
+      id: number
+      description: string
+      lessonId: number
+      title: string
+      order: number
+    }>
+  } | null> | null
 }
 
 export type UpdateLessonMutationVariables = Exact<{
@@ -982,10 +882,10 @@ export type UpdateLessonMutation = {
   updateLesson: Array<{
     __typename?: 'Lesson'
     id: number
-    docUrl?: string | null | undefined
-    githubUrl?: string | null | undefined
-    videoUrl?: string | null | undefined
-    chatUrl?: string | null | undefined
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
+    chatUrl?: string | null
     order: number
     slug: string
     description: string
@@ -1008,10 +908,7 @@ export type ChangePwMutationVariables = Exact<{
 
 export type ChangePwMutation = {
   __typename?: 'Mutation'
-  changePw?:
-    | { __typename?: 'AuthResponse'; success?: boolean | null | undefined }
-    | null
-    | undefined
+  changePw?: { __typename?: 'AuthResponse'; success?: boolean | null } | null
 }
 
 export type UserInfoQueryVariables = Exact<{
@@ -1025,11 +922,11 @@ export type UserInfoQuery = {
     id: number
     title: string
     description: string
-    docUrl?: string | null | undefined
-    githubUrl?: string | null | undefined
-    videoUrl?: string | null | undefined
+    docUrl?: string | null
+    githubUrl?: string | null
+    videoUrl?: string | null
     order: number
-    chatUrl?: string | null | undefined
+    chatUrl?: string | null
     challenges: Array<{
       __typename?: 'Challenge'
       id: number
@@ -1038,72 +935,45 @@ export type UserInfoQuery = {
       order: number
     }>
   }>
-  userInfo?:
-    | {
-        __typename?: 'Session'
-        user?:
-          | {
-              __typename?: 'User'
-              id: number
-              username: string
-              name: string
-              discordUserId: string
-              discordUsername: string
-              discordAvatarUrl: string
-            }
-          | null
-          | undefined
-        submissions?:
-          | Array<{
-              __typename?: 'Submission'
-              id: number
-              status: SubmissionStatus
-              mrUrl?: string | null | undefined
-              diff?: string | null | undefined
-              viewCount?: number | null | undefined
-              comment?: string | null | undefined
-              order?: number | null | undefined
-              challengeId: number
-              lessonId: number
-              createdAt?: string | null | undefined
-              updatedAt: string
-              reviewer?:
-                | { __typename?: 'User'; id: number; username: string }
-                | null
-                | undefined
-            }>
-          | null
-          | undefined
-        lessonStatus: Array<{
-          __typename?: 'UserLesson'
-          lessonId: number
-          passedAt?: string | null | undefined
-          starsReceived?:
-            | Array<
-                | {
-                    __typename?: 'Star'
-                    lessonId: number
-                    comment?: string | null | undefined
-                    student: {
-                      __typename?: 'User'
-                      username: string
-                      name: string
-                    }
-                    lesson: {
-                      __typename?: 'Lesson'
-                      title: string
-                      order: number
-                    }
-                  }
-                | null
-                | undefined
-              >
-            | null
-            | undefined
-        }>
-      }
-    | null
-    | undefined
+  userInfo?: {
+    __typename?: 'Session'
+    user?: {
+      __typename?: 'User'
+      id: number
+      username: string
+      name: string
+      discordUserId: string
+      discordUsername: string
+      discordAvatarUrl: string
+    } | null
+    submissions?: Array<{
+      __typename?: 'Submission'
+      id: number
+      status: SubmissionStatus
+      mrUrl?: string | null
+      diff?: string | null
+      viewCount?: number | null
+      comment?: string | null
+      order?: number | null
+      challengeId: number
+      lessonId: number
+      createdAt?: string | null
+      updatedAt: string
+      reviewer?: { __typename?: 'User'; id: number; username: string } | null
+    }> | null
+    lessonStatus: Array<{
+      __typename?: 'UserLesson'
+      lessonId: number
+      passedAt?: string | null
+      starsReceived?: Array<{
+        __typename?: 'Star'
+        lessonId: number
+        comment?: string | null
+        student: { __typename?: 'User'; username: string; name: string }
+        lesson: { __typename?: 'Lesson'; title: string; order: number }
+      } | null> | null
+    }>
+  } | null
 }
 
 export type WithIndex<TObject> = TObject & Record<string, any>
