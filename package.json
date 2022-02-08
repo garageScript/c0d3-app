@@ -99,7 +99,7 @@
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "babel-jest": "^27.4.6",
+    "babel-jest": "^27.5.0",
     "babel-plugin-prismjs": "^2.1.0",
     "copy-webpack-plugin": "^10.2.4",
     "eslint": "^7.32.0",
