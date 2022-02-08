@@ -30,6 +30,7 @@ import {
   updateLesson
 } from '../helpers/controllers/lessonsController'
 import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
+import { deleteComment } from './queryResolvers/deleteComment'
 
 export default {
   Query: {
@@ -61,6 +62,7 @@ export default {
     reqPwReset,
     createChallenge,
     updateChallenge,
-    addComment
+    addComment,
+    deleteComment
   }
 }
