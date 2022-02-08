@@ -15,7 +15,7 @@ exports[`Thanks Component should call callback function when done button is clic
       Thanks for letting us know!
     </h2>
     <button
-      class="btn btn-primary btn-lg"
+      class="btn borderless btn-primary btn-lg"
       style="color: rgb(255, 255, 255);"
     >
       Done

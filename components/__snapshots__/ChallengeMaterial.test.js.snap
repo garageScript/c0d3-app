@@ -840,7 +840,7 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               />
             </div>
             <button
-              class="btn btn-success m-1"
+              class="btn borderless btn-success m-1"
               style="color: rgb(255, 255, 255);"
             >
               Comment
