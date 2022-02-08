@@ -110,6 +110,7 @@ export type Mutation = {
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
   createLesson: Array<Lesson>
   createSubmission?: Maybe<Submission>
+  deleteComment?: Maybe<Comment>
   deleteModule?: Maybe<SuccessResponse>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
@@ -182,6 +183,10 @@ export type MutationCreateSubmissionArgs = {
   cliToken: Scalars['String']
   diff: Scalars['String']
   lessonId: Scalars['Int']
+}
+
+export type MutationDeleteCommentArgs = {
+  id: Scalars['Int']
 }
 
 export type MutationDeleteModuleArgs = {
@@ -1298,6 +1303,12 @@ export type MutationResolvers<
       MutationCreateSubmissionArgs,
       'challengeId' | 'cliToken' | 'diff' | 'lessonId'
     >
+  >
+  deleteComment?: Resolver<
+    Maybe<ResolversTypes['Comment']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationDeleteCommentArgs, 'id'>
   >
   deleteModule?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -4172,6 +4183,7 @@ export type MutationKeySpecifier = (
   | 'createChallenge'
   | 'createLesson'
   | 'createSubmission'
+  | 'deleteComment'
   | 'deleteModule'
   | 'login'
   | 'logout'
@@ -4194,6 +4206,7 @@ export type MutationFieldPolicy = {
   createChallenge?: FieldPolicy<any> | FieldReadFunction<any>
   createLesson?: FieldPolicy<any> | FieldReadFunction<any>
   createSubmission?: FieldPolicy<any> | FieldReadFunction<any>
+  deleteComment?: FieldPolicy<any> | FieldReadFunction<any>
   deleteModule?: FieldPolicy<any> | FieldReadFunction<any>
   login?: FieldPolicy<any> | FieldReadFunction<any>
   logout?: FieldPolicy<any> | FieldReadFunction<any>
