@@ -41,3 +41,35 @@ export const SmallButton: React.FC = () => (
 export const LargeButton: React.FC = () => (
   <Button size="lg">Large Button</Button>
 )
+
+export const BorderlessButton: React.FC = () => (
+  <Button>Borderless Button</Button>
+)
+
+export const OutlinedButton: React.FC = () => (
+  <>
+    <Button outline type="primary">
+      Outlined Primary Button
+    </Button>
+    <Button outline type="success">
+      Outlined Success Button
+    </Button>
+    <Button outline type="danger">
+      Outlined Danger Button
+    </Button>
+  </>
+)
+
+export const OutlinedWithBorderButton: React.FC = () => (
+  <>
+    <Button outline border type="primary">
+      Outlined Primary Button
+    </Button>
+    <Button outline border type="success">
+      Outlined Success Button
+    </Button>
+    <Button outline border type="danger">
+      Outlined Danger Button
+    </Button>
+  </>
+)
