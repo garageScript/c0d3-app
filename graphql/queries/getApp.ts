@@ -47,6 +47,7 @@ const GET_APP = gql`
         createdAt
         updatedAt
         comments {
+          id
           content
           submissionId
           createdAt
