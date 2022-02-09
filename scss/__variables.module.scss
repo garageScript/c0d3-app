@@ -16,7 +16,7 @@ $lightgrey: hsl(0, 0%, 55.7%);
 // Used in @each to emit styles or evaluate code for each element of a list
 $colors: 'body-bg' $body-bg, 'primary' $primary, 'secondary' $secondary,
   'warning' $warning, 'gray' $gray, 'light' $light, 'danger' $danger,
-  'success' $success, 'info' $info, 'dark' $dark, 'black' $black,
+  'success' $success, 'info' $info, 'dark' $dark, 'white' $white, 'black' $black,
   'darkgrey' $darkgrey 'lightgrey' $lightgrey;
 
 // Allow importing colors in JS/TS
@@ -30,6 +30,7 @@ $colors: 'body-bg' $body-bg, 'primary' $primary, 'secondary' $secondary,
   danger: $danger;
   success: $success;
   info: $info;
+  white: $white;
   dark: $dark;
   black: $black;
   darkgrey: $darkgrey;
