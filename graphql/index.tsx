@@ -567,6 +567,7 @@ export type GetAppQuery = {
       user: { __typename?: 'User'; id: number }
       comments?: Array<{
         __typename?: 'Comment'
+        id: number
         content: string
         submissionId: number
         createdAt: string
@@ -659,6 +660,7 @@ export type GetPreviousSubmissionsQuery = {
     } | null
     comments?: Array<{
       __typename?: 'Comment'
+      id: number
       content: string
       submissionId: number
       createdAt: string
@@ -734,6 +736,7 @@ export type SubmissionsQuery = {
     } | null
     comments?: Array<{
       __typename?: 'Comment'
+      id: number
       content: string
       submissionId: number
       createdAt: string
@@ -2375,6 +2378,7 @@ export const GetAppDocument = gql`
         createdAt
         updatedAt
         comments {
+          id
           content
           submissionId
           createdAt
@@ -2684,6 +2688,7 @@ export const GetPreviousSubmissionsDocument = gql`
         name
       }
       comments {
+        id
         content
         submissionId
         createdAt
@@ -2920,6 +2925,7 @@ export const SubmissionsDocument = gql`
         name
       }
       comments {
+        id
         content
         submissionId
         createdAt

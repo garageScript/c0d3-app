@@ -75,6 +75,7 @@ const dummyPreviousSubmissionsData: GetPreviousSubmissionsQuery = {
       reviewer: null,
       comments: [
         {
+          id: 1,
           __typename: 'Comment',
           content: 'first line comment',
           submissionId: 108,
@@ -89,6 +90,7 @@ const dummyPreviousSubmissionsData: GetPreviousSubmissionsQuery = {
           }
         },
         {
+          id: 1,
           __typename: 'Comment',
           content: 'second line comment',
           submissionId: 108,
