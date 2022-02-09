@@ -1,6 +1,12 @@
 import styles from '../../scss/__variables.module.scss'
 
-export type ColorTypes = 'white' | 'black' | 'darkgrey' | 'lightgrey' | 'danger'
+export type ColorTypes =
+  | 'white'
+  | 'black'
+  | 'darkgrey'
+  | 'lightgrey'
+  | 'danger'
+  | 'primary'
 
 export const colors = {
   white: '#fff',
