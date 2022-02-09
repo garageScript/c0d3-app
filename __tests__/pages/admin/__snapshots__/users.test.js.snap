@@ -63,80 +63,22 @@ exports[`Users test Should be able to switch search options 1`] = `
           >
             Community
           </a>
-          <div
-            class="d-none d-lg-block"
-          >
-            <div
-              class="dropdown"
-            >
-              <button
-                aria-expanded="false"
-                class="dropdown-toggle title title-none"
-                type="button"
-              >
-                Admin
-              </button>
-            </div>
-          </div>
-          <div
-            class="d-lg-none"
-          >
-            <div
-              class="text-center text-xl-start py-2 px-4"
-            >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/lessons"
-              >
-                Lessons
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
-            >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/users"
-              >
-                Users
-              </a>
-            </div>
-            <div
-              class="text-center text-xl-start py-2 px-4"
-            >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="/admin/alerts"
-              >
-                Alerts
-              </a>
-            </div>
-          </div>
         </div>
         <div
           class="nav-buttons"
         >
           <a
-            class="btn btn-light border overflow-hidden text-truncate noUnderline"
-            href="/profile/fakeusername"
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
+            href="/login"
           >
-            Fakeusername
+            Login
           </a>
-          <span>
-            <div
-              class="light-button d-inline"
-            >
-              <button
-                class="btn border btn-light ms-2"
-                style="color: rgb(41, 41, 41);"
-              >
-                Logout
-              </button>
-            </div>
-          </span>
+          <a
+            class="btn btn-light border m-2 me-lg-3 noUnderline"
+            href="/signup"
+          >
+            Signup
+          </a>
         </div>
       </div>
     </div>
@@ -145,213 +87,50 @@ exports[`Users test Should be able to switch search options 1`] = `
     class="container-md"
   >
     <div
-      class="d-flex flex-column col-12"
+      class="container"
     >
-      <h1
-        class="text-primary text-center fw-bold display-1"
-      >
-        Users
-      </h1>
       <div
-        class="mb-2"
+        class="row"
       >
         <div
-          class="d-flex flex-row"
+          class="d-flex col-sm-3 align-items-center justify-content-center"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            <label
-              for="search"
-            >
-              Search By:
-            </label>
-          </h4>
           <div
-            style="margin-top: -1.57px;"
+            class="text-center mt-3"
           >
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1.5rem;"
             >
-              ID
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn btn-primary"
-              style="color: rgb(255, 255, 255);"
+              <strong>
+                Internal server error
+              </strong>
+            </div>
+            <div
+              style="color: rgb(41, 41, 41); font-size: 1rem;"
+            />
+            <a
+              class="btn btn-primary py-3 px-5 mt-3 noUnderline"
+              href="/"
             >
-              Username
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Name
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Email
-            </button>
+              <h3
+                class="fw-bold"
+              >
+                Back
+              </h3>
+            </a>
           </div>
         </div>
-      </div>
-      <input
-        class="form-control"
-        id="search"
-        type="text"
-      />
-      <div
-        class="mt-2 mb-2"
-      >
         <div
-          class="d-flex flex-row"
+          class="mb-3 col-sm-9"
         >
-          <h4
-            class="text-primary fw-bold me-1"
-          >
-            Filter By:
-          </h4>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn"
-              style="color: rgb(142, 142, 142);"
-            >
-              Non-Admins
-            </button>
-          </div>
-          <div
-            style="margin-top: -1.57px;"
-          >
-            <button
-              class="btn btn-primary"
-              style="color: rgb(255, 255, 255);"
-            >
-              None
-            </button>
-          </div>
+          <img
+            height="1200"
+            layout="responsive"
+            src="/assets/errors/500.svg"
+            width="1200"
+          />
         </div>
       </div>
-      <table
-        class="table table-striped"
-      >
-        <thead>
-          <tr
-            class="text-center"
-          >
-            <th>
-              ID
-            </th>
-            <th>
-              Username
-            </th>
-            <th>
-              Name
-            </th>
-            <th>
-              Email
-            </th>
-            <th>
-              Admin
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              5
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              admin admin
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
-            >
-              <button
-                class="btn btn-danger"
-                style="color: rgb(41, 41, 41);"
-              >
-                Remove
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="text-center"
-          >
-            <td
-              class="align-middle"
-            >
-              2
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              newbie newbie
-            </td>
-            <td
-              class="align-middle"
-            >
-              some@mail.com
-            </td>
-            <td
-              class="align-middle"
-            >
-              <button
-                class="btn btn-success"
-                style="color: rgb(41, 41, 41);"
-              >
-                Add
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
   <footer
