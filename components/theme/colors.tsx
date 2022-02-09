@@ -7,5 +7,6 @@ export const colors = {
   black: '#292929',
   darkgrey: '#5d656e',
   lightgrey: '#8e8e8e',
-  danger: styles.danger
+  danger: styles.danger,
+  primary: styles.primary
 }
