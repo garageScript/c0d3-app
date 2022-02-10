@@ -23,7 +23,6 @@ const GET_SUBMISSIONS = gql`
         name
       }
       comments {
-        id
         content
         submissionId
         createdAt
