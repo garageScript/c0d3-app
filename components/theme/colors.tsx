@@ -7,6 +7,8 @@ export type ColorTypes =
   | 'lightgrey'
   | 'danger'
   | 'primary'
+  | 'info'
+  | 'success'
 
 export const colors = {
   white: '#fff',
@@ -14,5 +16,7 @@ export const colors = {
   darkgrey: '#5d656e',
   lightgrey: '#8e8e8e',
   danger: styles.danger,
-  primary: styles.primary
+  primary: styles.primary,
+  info: styles.info,
+  success: styles.success
 }
