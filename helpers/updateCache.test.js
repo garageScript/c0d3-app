@@ -41,7 +41,21 @@ const submission = {
   },
   createdAt: '123',
   updatedAt: '123',
-  comments: []
+  comments: [
+    {
+      id: 1,
+      content: 'test comment',
+      submissionId: 0,
+      createdAt: '124',
+      authorId: 1,
+      line: 22,
+      fileName: 'js7/1.js',
+      author: {
+        username: 'fake reviewer',
+        name: 'fake reviewer'
+      }
+    }
+  ]
 }
 const submissionsData = [submission, { ...submission, id: 1 }]
 describe('updateCache helper', () => {
