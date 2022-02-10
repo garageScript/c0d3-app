@@ -125,10 +125,9 @@ describe('updateCache helper', () => {
       variables: { userId: 1, challengeId: 23 },
       data: { getPreviousSubmissions: submissionsData }
     })
-    expect(() => {
+    expect(() =>
       updateCache(
         11,
-        1,
         1,
         'Test comment!',
         'Test User',
@@ -139,6 +138,6 @@ describe('updateCache helper', () => {
         23,
         1
       )(cache)
-    })
+    )
   })
 })
