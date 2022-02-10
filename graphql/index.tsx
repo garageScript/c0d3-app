@@ -517,6 +517,15 @@ export type CreateSubmissionMutation = {
   } | null
 }
 
+export type DeleteCommentMutationVariables = Exact<{
+  id: Scalars['Int']
+}>
+
+export type DeleteCommentMutation = {
+  __typename?: 'Mutation'
+  deleteComment?: { __typename?: 'Comment'; id: number } | null
+}
+
 export type GetAppQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetAppQuery = {
@@ -567,6 +576,7 @@ export type GetAppQuery = {
       user: { __typename?: 'User'; id: number }
       comments?: Array<{
         __typename?: 'Comment'
+        id: number
         content: string
         submissionId: number
         createdAt: string
@@ -659,6 +669,7 @@ export type GetPreviousSubmissionsQuery = {
     } | null
     comments?: Array<{
       __typename?: 'Comment'
+      id: number
       content: string
       submissionId: number
       createdAt: string
@@ -734,6 +745,7 @@ export type SubmissionsQuery = {
     } | null
     comments?: Array<{
       __typename?: 'Comment'
+      id: number
       content: string
       submissionId: number
       createdAt: string
@@ -2328,6 +2340,87 @@ export type CreateSubmissionMutationOptions = Apollo.BaseMutationOptions<
   CreateSubmissionMutation,
   CreateSubmissionMutationVariables
 >
+export const DeleteCommentDocument = gql`
+  mutation deleteComment($id: Int!) {
+    deleteComment(id: $id) {
+      id
+    }
+  }
+`
+export type DeleteCommentMutationFn = Apollo.MutationFunction<
+  DeleteCommentMutation,
+  DeleteCommentMutationVariables
+>
+export type DeleteCommentProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    DeleteCommentMutation,
+    DeleteCommentMutationVariables
+  >
+} & TChildProps
+export function withDeleteComment<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    DeleteCommentMutation,
+    DeleteCommentMutationVariables,
+    DeleteCommentProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    DeleteCommentMutation,
+    DeleteCommentMutationVariables,
+    DeleteCommentProps<TChildProps, TDataName>
+  >(DeleteCommentDocument, {
+    alias: 'deleteComment',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useDeleteCommentMutation__
+ *
+ * To run a mutation, you first call `useDeleteCommentMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteCommentMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteCommentMutation, { data, loading, error }] = useDeleteCommentMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useDeleteCommentMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteCommentMutation,
+    DeleteCommentMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<
+    DeleteCommentMutation,
+    DeleteCommentMutationVariables
+  >(DeleteCommentDocument, options)
+}
+export type DeleteCommentMutationHookResult = ReturnType<
+  typeof useDeleteCommentMutation
+>
+export type DeleteCommentMutationResult =
+  Apollo.MutationResult<DeleteCommentMutation>
+export type DeleteCommentMutationOptions = Apollo.BaseMutationOptions<
+  DeleteCommentMutation,
+  DeleteCommentMutationVariables
+>
 export const GetAppDocument = gql`
   query getApp {
     lessons {
@@ -2375,6 +2468,7 @@ export const GetAppDocument = gql`
         createdAt
         updatedAt
         comments {
+          id
           content
           submissionId
           createdAt
@@ -2684,6 +2778,7 @@ export const GetPreviousSubmissionsDocument = gql`
         name
       }
       comments {
+        id
         content
         submissionId
         createdAt
@@ -2920,6 +3015,7 @@ export const SubmissionsDocument = gql`
         name
       }
       comments {
+        id
         content
         submissionId
         createdAt
