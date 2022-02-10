@@ -151,6 +151,7 @@ const ChallengeQuestionCardDisplay: React.FC<{
 
     const update = updateCache(
       submission.id,
+      undefined,
       commentValue,
       name,
       username,

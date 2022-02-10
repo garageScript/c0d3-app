@@ -172,6 +172,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   const [showAccordion, setShowAccordion] = useState(false)
   const update = updateCache(
     submissionState.id,
+    undefined,
     commentValue,
     name,
     username,

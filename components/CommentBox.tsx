@@ -35,6 +35,7 @@ const CommentBox: React.FC<{
   const [input, setInput] = useState('')
   const update = updateCache(
     submissionId,
+    undefined,
     input,
     name!,
     username!,

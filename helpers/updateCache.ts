@@ -15,9 +15,10 @@ import _ from 'lodash'
 */
 export const updateCache = (
   submissionId: number,
-  content: string,
-  name: string,
-  username: string,
+  commentToDeleteId?: number,
+  content?: string,
+  name?: string,
+  username?: string,
   lessonId?: number,
   line?: number,
   fileName?: string,
@@ -40,16 +41,22 @@ export const updateCache = (
     const copy = _.cloneDeep(current) as RecursivePartial<Submission>[]
     if (!copy.length)
       throw new Error('Incorrect submission id (no submission was found)')
-    copy[0].comments!.push({
-      content,
-      fileName,
-      line,
-      submissionId,
-      author: {
-        name,
-        username
-      }
-    })
+
+    if (commentToDeleteId) {
+      _.remove(copy[0].comments!, comment => comment!.id === commentToDeleteId)
+    } else {
+      copy[0].comments!.push({
+        content,
+        fileName,
+        line,
+        submissionId,
+        author: {
+          name,
+          username
+        }
+      })
+    }
+
     const newData = data?.getPreviousSubmissions?.map(s => {
       if (s.id === submissionId) return copy[0]
       return s
