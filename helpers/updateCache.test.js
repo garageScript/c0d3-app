@@ -119,25 +119,35 @@ describe('updateCache helper', () => {
     ).toThrow('Incorrect submission id (no submission was found)')
   })
   it('should delete previous submission comment in cache', () => {
+    expect.assertions(1)
+
     const cache = new InMemoryCache({ addTypename: false })
+
     cache.writeQuery({
       query: GET_PREVIOUS_SUBMISSIONS,
       variables: { userId: 1, challengeId: 23 },
       data: { getPreviousSubmissions: submissionsData }
     })
-    expect(() =>
-      updateCache(
-        11,
-        1,
-        'Test comment!',
-        'Test User',
-        'testuser',
-        2,
-        undefined,
-        undefined,
-        23,
-        1
-      )(cache)
-    )
+
+    updateCache(
+      0,
+      1,
+      'Test comment!',
+      'Test User',
+      'testuser',
+      2,
+      undefined,
+      undefined,
+      23,
+      1
+    )(cache)
+
+    const newCache = cache.readQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 1, challengeId: 23 },
+      data: { getPreviousSubmissions: submissionsData }
+    })
+
+    expect(newCache.getPreviousSubmissions[0].comments.length).toEqual(0)
   })
 })
