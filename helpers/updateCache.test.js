@@ -41,7 +41,21 @@ const submission = {
   },
   createdAt: '123',
   updatedAt: '123',
-  comments: []
+  comments: [
+    {
+      id: 1,
+      content: 'test comment',
+      submissionId: 0,
+      createdAt: '124',
+      authorId: 1,
+      line: 22,
+      fileName: 'js7/1.js',
+      author: {
+        username: 'fake reviewer',
+        name: 'fake reviewer'
+      }
+    }
+  ]
 }
 const submissionsData = [submission, { ...submission, id: 1 }]
 describe('updateCache helper', () => {
@@ -54,6 +68,7 @@ describe('updateCache helper', () => {
     })
     updateCache(
       0,
+      undefined,
       'Test comment!',
       'Test User',
       'testuser',
@@ -69,6 +84,7 @@ describe('updateCache helper', () => {
     expect(() => {
       updateCache(
         0,
+        undefined,
         'Test comment!',
         'Test User',
         'testuser',
@@ -90,6 +106,7 @@ describe('updateCache helper', () => {
     expect(() =>
       updateCache(
         11,
+        undefined,
         'Test comment!',
         'Test User',
         'testuser',
@@ -100,5 +117,37 @@ describe('updateCache helper', () => {
         1
       )(cache)
     ).toThrow('Incorrect submission id (no submission was found)')
+  })
+  it('should delete previous submission comment in cache', () => {
+    expect.assertions(1)
+
+    const cache = new InMemoryCache({ addTypename: false })
+
+    cache.writeQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 1, challengeId: 23 },
+      data: { getPreviousSubmissions: submissionsData }
+    })
+
+    updateCache(
+      0,
+      1,
+      'Test comment!',
+      'Test User',
+      'testuser',
+      2,
+      undefined,
+      undefined,
+      23,
+      1
+    )(cache)
+
+    const newCache = cache.readQuery({
+      query: GET_PREVIOUS_SUBMISSIONS,
+      variables: { userId: 1, challengeId: 23 },
+      data: { getPreviousSubmissions: submissionsData }
+    })
+
+    expect(newCache.getPreviousSubmissions[0].comments.length).toEqual(0)
   })
 })
