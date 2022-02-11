@@ -153,7 +153,7 @@ exports[`AdminLewAlert component Should create new alert 1`] = `
               class="text-center mb-4"
             >
               <button
-                class="btn btn-primary"
+                class="btn borderless btn-primary"
                 style="color: rgb(255, 255, 255);"
               >
                 Create New Alert
@@ -332,7 +332,7 @@ exports[`AdminLewAlert component Should refuse creating new alert with incomplet
               class="text-center mb-4"
             >
               <button
-                class="btn btn-primary"
+                class="btn borderless btn-primary"
                 style="color: rgb(255, 255, 255);"
               >
                 Create New Alert

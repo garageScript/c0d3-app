@@ -1640,7 +1640,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             />
           </div>
           <button
-            className="btn btn-success m-1"
+            className="btn borderless btn-success m-1"
             onClick={[Function]}
             style={
               Object {
@@ -2444,7 +2444,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             />
           </div>
           <button
-            className="btn btn-success m-1"
+            className="btn borderless btn-success m-1"
             onClick={[Function]}
             style={
               Object {
@@ -4850,7 +4850,7 @@ exports[`Storyshots Components/FilterButtons Basic 1`] = `
     }
   >
     <button
-      className="btn"
+      className="btn borderless"
       onClick={[Function]}
       style={
         Object {
@@ -4869,7 +4869,7 @@ exports[`Storyshots Components/FilterButtons Basic 1`] = `
     }
   >
     <button
-      className="btn btn-primary"
+      className="btn borderless btn-primary"
       onClick={[Function]}
       style={
         Object {
@@ -4888,7 +4888,7 @@ exports[`Storyshots Components/FilterButtons Basic 1`] = `
     }
   >
     <button
-      className="btn"
+      className="btn borderless"
       onClick={[Function]}
       style={
         Object {
@@ -4920,7 +4920,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn btn-success"
+        className="btn borderless btn-success"
         onClick={[Function]}
         style={
           Object {
@@ -4939,7 +4939,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn"
+        className="btn borderless"
         onClick={[Function]}
         style={
           Object {
@@ -4958,7 +4958,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn"
+        className="btn borderless"
         onClick={[Function]}
         style={
           Object {
@@ -4986,7 +4986,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn btn-danger"
+        className="btn borderless btn-danger"
         onClick={[Function]}
         style={
           Object {
@@ -5005,7 +5005,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn"
+        className="btn borderless"
         onClick={[Function]}
         style={
           Object {
@@ -5024,7 +5024,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn"
+        className="btn borderless"
         onClick={[Function]}
         style={
           Object {
@@ -5052,7 +5052,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn btn-primary"
+        className="btn borderless btn-primary"
         onClick={[Function]}
         style={
           Object {
@@ -5071,7 +5071,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn"
+        className="btn borderless"
         onClick={[Function]}
         style={
           Object {
@@ -5090,7 +5090,7 @@ exports[`Storyshots Components/FilterButtons Colors 1`] = `
       }
     >
       <button
-        className="btn"
+        className="btn borderless"
         onClick={[Function]}
         style={
           Object {
@@ -5599,7 +5599,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6030,7 +6030,7 @@ exports[`Storyshots Components/FormCard With Border 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6461,7 +6461,7 @@ exports[`Storyshots Components/FormCard With Title 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6892,7 +6892,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
         className="text-center mb-4"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -6910,7 +6910,7 @@ exports[`Storyshots Components/FormCard With Validation 1`] = `
 
 exports[`Storyshots Components/GiveStarCard Already Gave Star 1`] = `
 <button
-  className="btn"
+  className="btn borderless"
   onClick={[Function]}
   style={
     Object {
@@ -6925,7 +6925,7 @@ exports[`Storyshots Components/GiveStarCard Already Gave Star 1`] = `
 exports[`Storyshots Components/GiveStarCard Basic 1`] = `
 Array [
   <button
-    className="btn"
+    className="btn borderless"
     onClick={[Function]}
     style={
       Object {
@@ -6936,7 +6936,7 @@ Array [
     Launch demo modal
   </button>,
   <button
-    className="btn btn-primary"
+    className="btn borderless btn-primary"
     onClick={[Function]}
     style={
       Object {
@@ -9739,7 +9739,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
     />
   </div>
   <button
-    className="btn btn-success m-1"
+    className="btn borderless btn-success m-1"
     onClick={[Function]}
     style={
       Object {
@@ -9750,7 +9750,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
     Accept
   </button>
   <button
-    className="btn btn-danger m-1"
+    className="btn borderless btn-danger m-1"
     onClick={[Function]}
     style={
       Object {
@@ -9765,7 +9765,7 @@ exports[`Storyshots Components/MdInput With Submission Buttons 1`] = `
 
 exports[`Storyshots Components/ModalCard Large 1`] = `
 <button
-  className="btn"
+  className="btn borderless"
   onClick={[Function]}
   style={
     Object {
@@ -9779,7 +9779,7 @@ exports[`Storyshots Components/ModalCard Large 1`] = `
 
 exports[`Storyshots Components/ModalCard Medium 1`] = `
 <button
-  className="btn"
+  className="btn borderless"
   onClick={[Function]}
   style={
     Object {
@@ -9793,7 +9793,7 @@ exports[`Storyshots Components/ModalCard Medium 1`] = `
 
 exports[`Storyshots Components/ModalCard Small 1`] = `
 <button
-  className="btn"
+  className="btn borderless"
   onClick={[Function]}
   style={
     Object {
@@ -12713,7 +12713,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       </label>
     </div>
     <button
-      className="btn btn-success"
+      className="btn borderless btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -14071,7 +14071,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       </label>
     </div>
     <button
-      className="btn btn-success"
+      className="btn borderless btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -15427,7 +15427,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       </label>
     </div>
     <button
-      className="btn btn-success"
+      className="btn borderless btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -16783,7 +16783,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       </label>
     </div>
     <button
-      className="btn btn-success"
+      className="btn borderless btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -18139,7 +18139,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       </label>
     </div>
     <button
-      className="btn btn-success"
+      className="btn borderless btn-success"
       onClick={[Function]}
       style={
         Object {
@@ -18558,7 +18558,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -18625,7 +18625,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -18692,7 +18692,7 @@ exports[`Storyshots Components/SubmissionCard Multiple Cards 1`] = `
         href="#"
       >
         <button
-          className="btn btn-primary"
+          className="btn borderless btn-primary"
           onClick={[Function]}
           style={
             Object {
@@ -18763,7 +18763,7 @@ exports[`Storyshots Components/SubmissionCard Pending Submission 1`] = `
       href="#"
     >
       <button
-        className="btn btn-primary"
+        className="btn borderless btn-primary"
         onClick={[Function]}
         style={
           Object {
@@ -18902,7 +18902,7 @@ exports[`Storyshots Components/Thanks Basic 1`] = `
           Thanks for letting us know!
         </h2>
         <button
-          className="btn btn-primary btn-lg"
+          className="btn borderless btn-primary btn-lg"
           onClick={[Function]}
           style={
             Object {
@@ -18920,7 +18920,7 @@ exports[`Storyshots Components/Thanks Basic 1`] = `
 
 exports[`Storyshots Components/Thanks Modal 1`] = `
 <button
-  className="btn"
+  className="btn borderless"
   onClick={[Function]}
   style={
     Object {
@@ -25365,7 +25365,7 @@ exports[`Storyshots Pages/UserProfile User Profile Zero Comments 1`] = `
 
 exports[`Storyshots Theme/Button Basic 1`] = `
 <button
-  className="btn"
+  className="btn borderless"
   onClick={[Function]}
   style={
     Object {
@@ -25391,10 +25391,24 @@ exports[`Storyshots Theme/Button Border Button 1`] = `
 </button>
 `;
 
+exports[`Storyshots Theme/Button Borderless Button 1`] = `
+<button
+  className="btn borderless"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "#292929",
+    }
+  }
+>
+  Borderless Button
+</button>
+`;
+
 exports[`Storyshots Theme/Button Colored Button 1`] = `
 Array [
   <button
-    className="btn"
+    className="btn borderless"
     onClick={[Function]}
     style={
       Object {
@@ -25405,7 +25419,7 @@ Array [
     Colored Button
   </button>,
   <button
-    className="btn"
+    className="btn borderless"
     onClick={[Function]}
     style={
       Object {
@@ -25416,7 +25430,7 @@ Array [
     Colored Button
   </button>,
   <button
-    className="btn"
+    className="btn borderless"
     onClick={[Function]}
     style={
       Object {
@@ -25427,7 +25441,7 @@ Array [
     Colored Button
   </button>,
   <button
-    className="btn"
+    className="btn borderless"
     onClick={[Function]}
     style={
       Object {
@@ -25442,7 +25456,7 @@ Array [
 
 exports[`Storyshots Theme/Button Large Button 1`] = `
 <button
-  className="btn btn-lg"
+  className="btn borderless btn-lg"
   onClick={[Function]}
   style={
     Object {
@@ -25456,7 +25470,7 @@ exports[`Storyshots Theme/Button Large Button 1`] = `
 
 exports[`Storyshots Theme/Button Margined Button 1`] = `
 <button
-  className="btn m-1"
+  className="btn borderless m-1"
   onClick={[Function]}
   style={
     Object {
@@ -25468,9 +25482,85 @@ exports[`Storyshots Theme/Button Margined Button 1`] = `
 </button>
 `;
 
+exports[`Storyshots Theme/Button Outlined Button 1`] = `
+Array [
+  <button
+    className="btn borderless btn-outline-primary btn-outline-bg-primary"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Outlined Primary Button
+  </button>,
+  <button
+    className="btn borderless btn-outline-success btn-outline-bg-success"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Outlined Success Button
+  </button>,
+  <button
+    className="btn borderless btn-outline-danger btn-outline-bg-danger"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Outlined Danger Button
+  </button>,
+]
+`;
+
+exports[`Storyshots Theme/Button Outlined With Border Button 1`] = `
+Array [
+  <button
+    className="btn btn-outline-primary btn-outline-bg-primary"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Outlined Primary Button
+  </button>,
+  <button
+    className="btn btn-outline-success btn-outline-bg-success"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Outlined Success Button
+  </button>,
+  <button
+    className="btn btn-outline-danger btn-outline-bg-danger"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#292929",
+      }
+    }
+  >
+    Outlined Danger Button
+  </button>,
+]
+`;
+
 exports[`Storyshots Theme/Button Small Button 1`] = `
 <button
-  className="btn btn-sm"
+  className="btn borderless btn-sm"
   onClick={[Function]}
   style={
     Object {
@@ -25485,7 +25575,7 @@ exports[`Storyshots Theme/Button Small Button 1`] = `
 exports[`Storyshots Theme/Button Typed Button 1`] = `
 Array [
   <button
-    className="btn btn-primary"
+    className="btn borderless btn-primary"
     onClick={[Function]}
     style={
       Object {
@@ -25496,7 +25586,7 @@ Array [
     Primary Button
   </button>,
   <button
-    className="btn btn-success"
+    className="btn borderless btn-success"
     onClick={[Function]}
     style={
       Object {
@@ -25507,7 +25597,7 @@ Array [
     Success Button
   </button>,
   <button
-    className="btn btn-danger"
+    className="btn borderless btn-danger"
     onClick={[Function]}
     style={
       Object {

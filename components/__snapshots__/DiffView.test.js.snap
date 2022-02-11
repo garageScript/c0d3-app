@@ -459,7 +459,7 @@ exports[`DiffView component Should add comment box 1`] = `
                 />
               </div>
               <button
-                class="btn btn-success"
+                class="btn borderless btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Add comment
@@ -3086,7 +3086,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 />
               </div>
               <button
-                class="btn btn-success"
+                class="btn borderless btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Add comment
@@ -3383,7 +3383,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
                 />
               </div>
               <button
-                class="btn btn-success"
+                class="btn borderless btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Add comment

@@ -741,7 +741,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
         </label>
       </div>
       <button
-        class="btn btn-success"
+        class="btn borderless btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -1543,7 +1543,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
         </label>
       </div>
       <button
-        class="btn btn-success"
+        class="btn borderless btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -3095,7 +3095,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
         </label>
       </div>
       <button
-        class="btn btn-success"
+        class="btn borderless btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -4647,7 +4647,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
         </label>
       </div>
       <button
-        class="btn btn-success"
+        class="btn borderless btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -5022,7 +5022,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
         </label>
       </div>
       <button
-        class="btn btn-success"
+        class="btn borderless btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
@@ -6574,7 +6574,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
         </label>
       </div>
       <button
-        class="btn btn-success"
+        class="btn borderless btn-success"
         style="color: rgb(255, 255, 255);"
       >
         Submit
