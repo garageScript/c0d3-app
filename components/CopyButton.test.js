@@ -21,7 +21,7 @@ describe('Copy Button component', () => {
     const { container } = render(<CopyButton value={testText} />)
 
     const button = container.querySelector('.btn')
-    expect(button).toBeTruthy()
+    expect(button.classList.contains('btn-outline-bg-primary')).toBeTruthy()
   })
 
   test('Button type should be set to success on copy', async () => {
