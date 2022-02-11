@@ -51,25 +51,21 @@ describe('It should add a modules', () => {
       lessonId: 1
     })
   })
-})
-describe('It should check if user has id', () => {
-  test('should throw error if no user.id in context', async () => {
+  test('It should throw an Error if there is no user id', async () => {
+    prismaMock.module.create.mockRejectedValue(new Error('No User'))
     await expect(
       addModule(
         {},
         {
-          id: 2
+          content: 'testing',
+          name: 'Using functions to make pie',
+          lessonId: 1
         },
-
         {
-          req: {
-            user: {
-              isAdmin: true
-            }
-          }
+          req: { user: { isAdmin: true } }
         }
       )
-    ).rejects.toThrowError('No User')
+    ).resolves.toEqual(new Error('No User'))
   })
 })
 
