@@ -336,7 +336,7 @@ exports[`Alerts page Should remove alert 1`] = `
                       class="text-center mb-4"
                     >
                       <button
-                        class="btn btn-primary"
+                        class="btn borderless btn-primary"
                         style="color: rgb(255, 255, 255);"
                       >
                         Create New Alert
@@ -412,7 +412,7 @@ exports[`Alerts page Should remove alert 1`] = `
               class="d-flex flex-column col-2 mt-3 justify-content-center"
             >
               <button
-                class="btn btn-danger"
+                class="btn borderless btn-danger"
                 style="color: rgb(255, 255, 255);"
               >
                 Remove Alert
@@ -455,7 +455,7 @@ exports[`Alerts page Should remove alert 1`] = `
               class="d-flex flex-column col-2 mt-3 justify-content-center"
             >
               <button
-                class="btn btn-danger"
+                class="btn borderless btn-danger"
                 style="color: rgb(255, 255, 255);"
               >
                 Remove Alert
@@ -810,7 +810,7 @@ exports[`Alerts page Should remove alert 2`] = `
                       class="text-center mb-4"
                     >
                       <button
-                        class="btn btn-primary"
+                        class="btn borderless btn-primary"
                         style="color: rgb(255, 255, 255);"
                       >
                         Create New Alert
@@ -879,7 +879,7 @@ exports[`Alerts page Should remove alert 2`] = `
               class="d-flex flex-column col-2 mt-3 justify-content-center"
             >
               <button
-                class="btn btn-danger"
+                class="btn borderless btn-danger"
                 style="color: rgb(255, 255, 255);"
               >
                 Remove Alert

@@ -359,7 +359,7 @@ exports[`AdminLessonsInfo component Should create new lesson 1`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Lesson
@@ -732,7 +732,7 @@ exports[`AdminLessonsInfo component Should create new lesson 2`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Lesson
@@ -1110,7 +1110,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Lesson
@@ -1397,7 +1397,7 @@ exports[`AdminLessonsInfo component Should render non-existent lesson 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Create Challenge
@@ -1695,7 +1695,7 @@ solution(4,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -1987,7 +1987,7 @@ solution(4,1,9) // Should return 14
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -2279,7 +2279,7 @@ solution(4) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -2571,7 +2571,7 @@ solution(4,1) // Should return 4
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -2864,7 +2864,7 @@ solution(4,5,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -3156,7 +3156,7 @@ solution(4,1) // Should return true
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -3448,7 +3448,7 @@ solution(4,1) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -3739,7 +3739,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -4032,7 +4032,7 @@ const a = solution(1,2); // a is a function
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -4324,7 +4324,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -4696,7 +4696,7 @@ exports[`AdminLessonsInfo component Should render undefined lessons 1`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Lesson
@@ -5074,7 +5074,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Lesson
@@ -5361,7 +5361,7 @@ exports[`AdminLessonsInfo component Should update lesson sucessfully 1`] = `
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Create Challenge
@@ -5659,7 +5659,7 @@ solution(4,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -5951,7 +5951,7 @@ solution(4,1,9) // Should return 14
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -6243,7 +6243,7 @@ solution(4) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -6535,7 +6535,7 @@ solution(4,1) // Should return 4
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -6828,7 +6828,7 @@ solution(4,5,1) // Should return 5
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7120,7 +7120,7 @@ solution(4,1) // Should return true
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7412,7 +7412,7 @@ solution(4,1) // Should return false
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7703,7 +7703,7 @@ const a = solution(5,6) // a is a function, and a() will return 11
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -7996,7 +7996,7 @@ const a = solution(1,2); // a is a function
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge
@@ -8288,7 +8288,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
             class="text-center mb-4"
           >
             <button
-              class="btn btn-primary"
+              class="btn borderless btn-primary"
               style="color: rgb(255, 255, 255);"
             >
               Update Challenge

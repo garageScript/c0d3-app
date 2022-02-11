@@ -931,7 +931,7 @@ exports[`GiveStarCard Component should display error message when giving a star 
             placeholder="Give a comment along with your Star!"
           />
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Give Star!
@@ -1618,7 +1618,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             placeholder="Give a comment along with your Star!"
           />
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Give Star!
@@ -2515,7 +2515,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             placeholder="Give a comment along with your Star!"
           />
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Give Star!
@@ -2580,7 +2580,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             placeholder="Give a comment along with your Star!"
           />
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Give Star!
@@ -2645,7 +2645,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             placeholder="Give a comment along with your Star!"
           />
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Give Star!
@@ -2695,7 +2695,7 @@ exports[`GiveStarCard Component should successfully search for and give mentor a
             Thanks for letting us know!
           </h2>
           <button
-            class="btn btn-primary btn-lg"
+            class="btn borderless btn-primary btn-lg"
             style="color: rgb(255, 255, 255);"
           >
             Done

@@ -3326,7 +3326,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                                 />
                               </div>
                               <button
-                                class="btn btn-success"
+                                class="btn borderless btn-success"
                                 style="color: rgb(255, 255, 255);"
                               >
                                 Add comment
@@ -6123,7 +6123,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 </label>
               </div>
               <button
-                class="btn btn-success"
+                class="btn borderless btn-success"
                 style="color: rgb(255, 255, 255);"
               >
                 Submit

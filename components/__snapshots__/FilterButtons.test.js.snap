@@ -14,7 +14,7 @@ exports[`FilterButtons Component Should call function with updated array as para
       style="margin-top: -1.57px;"
     >
       <button
-        class="btn btn-primary"
+        class="btn borderless btn-primary"
         style="color: rgb(255, 255, 255);"
       >
         Admins
@@ -24,7 +24,7 @@ exports[`FilterButtons Component Should call function with updated array as para
       style="margin-top: -1.57px;"
     >
       <button
-        class="btn"
+        class="btn borderless"
         style="color: rgb(142, 142, 142);"
       >
         Non-Admins
@@ -34,7 +34,7 @@ exports[`FilterButtons Component Should call function with updated array as para
       style="margin-top: -1.57px;"
     >
       <button
-        class="btn"
+        class="btn borderless"
         style="color: rgb(142, 142, 142);"
       >
         None

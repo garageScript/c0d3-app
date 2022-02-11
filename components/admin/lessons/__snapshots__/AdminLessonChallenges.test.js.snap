@@ -281,7 +281,7 @@ exports[`AdminLessonChallenges component Should create challenge 1`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Challenge
@@ -579,7 +579,7 @@ exports[`AdminLessonChallenges component Should refuse creating  new challenge w
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Create Challenge
@@ -874,7 +874,7 @@ exports[`AdminLessonChallenges component Should refuse updating challenge with i
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge
@@ -1166,7 +1166,7 @@ solution(4,1,9) // Should return 14
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge
@@ -1441,7 +1441,7 @@ solution(4,1) // Should return 5
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge
@@ -1742,7 +1742,7 @@ solution(4,1) // Should return 5
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge
@@ -2034,7 +2034,7 @@ solution(4,1,9) // Should return 14
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge
@@ -2324,7 +2324,7 @@ exports[`AdminLessonChallenges component Should update challenge 2`] = `
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge
@@ -2616,7 +2616,7 @@ solution(4,1,9) // Should return 14
           class="text-center mb-4"
         >
           <button
-            class="btn btn-primary"
+            class="btn borderless btn-primary"
             style="color: rgb(255, 255, 255);"
           >
             Update Challenge

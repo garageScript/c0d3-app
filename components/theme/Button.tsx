@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from '../../scss/button.module.scss'
 
 import { ColorTypes, colors } from './colors'
 import noop from '../../helpers/noop'
@@ -11,6 +12,7 @@ type ButtonProps = {
   ml?: '2'
   size?: 'lg' | 'sm'
   onClick?: Function
+  outline?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -21,12 +23,18 @@ export const Button: React.FC<ButtonProps> = ({
   color = 'black',
   onClick = noop,
   children,
-  size
+  size,
+  outline
 }) => {
   const classes = ['btn']
 
-  if (border) classes.push('border')
-  if (type) classes.push(`btn-${type}`)
+  if (border && !outline) classes.push('border')
+  if (!border) classes.push(styles['borderless'])
+  if (type) {
+    if (outline)
+      classes.push(`btn-outline-${type} ${styles[`btn-outline-bg-${type}`]}`)
+    else classes.push(`btn-${type}`)
+  }
   if (m) classes.push(`m-${m}`)
   if (ml) classes.push(`ms-${ml}`)
   if (size) classes.push(`btn-${size}`)
