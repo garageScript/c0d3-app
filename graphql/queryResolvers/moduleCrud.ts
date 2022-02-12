@@ -13,19 +13,20 @@ export const modules = (): Promise<Module[]> => {
   })
 }
 
-export const addModule = (
+export const addModule = async (
   _parent: void,
   args: MutationAddModuleArgs,
   ctx: Context
 ): Promise<Module> => {
   const { req } = ctx
-  isAdminOrThrow(req)
+  await isAdminOrThrow(req)
   const { content, lessonId, name } = args
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
-  return prisma.module.create({
+  const module = await prisma.module.create({
     data: { authorId, content, lessonId, name }
   })
+  return module
 }
 
 export const deleteModule = async (

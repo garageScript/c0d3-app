@@ -26,7 +26,7 @@ describe('It should return modules', () => {
   })
 })
 
-describe('It should add a modules', () => {
+describe('It should add modules', () => {
   test('Should create module', async () => {
     prismaMock.module.create.mockResolvedValue({
       authorId: 1,
@@ -51,8 +51,7 @@ describe('It should add a modules', () => {
       lessonId: 1
     })
   })
-  test('It should throw an Error if there is no user id', async () => {
-    prismaMock.module.create.mockRejectedValue(new Error('No User'))
+  test('it should check user id when adding', async () => {
     await expect(
       addModule(
         {},
@@ -65,7 +64,22 @@ describe('It should add a modules', () => {
           req: { user: { isAdmin: true } }
         }
       )
-    ).resolves.toEqual(new Error('No User'))
+    ).rejects.toThrow(new Error('No User'))
+  })
+  test('it should check if user is an admin', async () => {
+    await expect(
+      addModule(
+        {},
+        {
+          content: 'testing',
+          name: 'Using functions to make pie',
+          lessonId: 1
+        },
+        {
+          req: { user: { isAdmin: false, id: 1 } }
+        }
+      )
+    ).rejects.toThrow(new Error('User is not an admin'))
   })
 })
 
@@ -73,5 +87,33 @@ describe('It should test delete', () => {
   test('it should delete module', () => {
     prismaMock.module.delete.mockResolvedValue({ success: true })
     expect(deleteModule({}, { id: 1 }, ctx)).resolves.toEqual({ success: true })
+  })
+  test('it should check if user is an admin', async () => {
+    await expect(
+      deleteModule(
+        {},
+        {
+          content: 'testing',
+          name: 'Using functions to make pie',
+          lessonId: 1
+        },
+        {
+          req: { user: { isAdmin: false, id: 1 } }
+        }
+      )
+    ).rejects.toThrow(new Error('User is not an admin'))
+  })
+  test('should check id when deleting', async () => {
+    await expect(
+      deleteModule(
+        {},
+        {
+          lessonId: 1
+        },
+        {
+          req: { user: { isAdmin: true } }
+        }
+      )
+    ).rejects.toThrow(new Error('No User'))
   })
 })
