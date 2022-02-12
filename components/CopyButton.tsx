@@ -16,7 +16,11 @@ enum ColorType {
   Success = 'success'
 }
 
-const CopyButton: React.FC<{ value: any }> = ({ value }: { value: any }) => {
+const CopyButton: React.FC<{ value: string }> = ({
+  value
+}: {
+  value: string
+}) => {
   const [copyState, setCopyState] = useState<State>(State.NotCopied)
   const [type, setType] = useState(ColorType.Primary)
 
