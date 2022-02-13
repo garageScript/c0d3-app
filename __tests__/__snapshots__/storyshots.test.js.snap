@@ -25861,7 +25861,13 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     <span
       className="token plain"
     >
-       CodeBlock
+       
+    </span>
+    <span
+      className="token literal-property property"
+      style={Object {}}
+    >
+      CodeBlock
     </span>
     <span
       className="token operator"
@@ -25933,111 +25939,9 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       &gt;
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
-       
-    </span>
-    <span
-      className="token operator"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
-        }
-      }
-    >
-      =
-    </span>
-    <span
-      className="token plain"
-    >
-       
-    </span>
-    <span
-      className="token punctuation"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(36, 41, 46)",
-        }
-      }
-    >
-      (
-    </span>
-    <span
-      className="token parameter punctuation"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(36, 41, 46)",
-        }
-      }
-    >
-      {
-    </span>
-    <span
-      className="token parameter"
-    >
-       children
-    </span>
-    <span
-      className="token parameter punctuation"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(36, 41, 46)",
-        }
-      }
-    >
-      ,
-    </span>
-    <span
-      className="token parameter"
-    >
-       className 
-    </span>
-    <span
-      className="token parameter punctuation"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(36, 41, 46)",
-        }
-      }
-    >
-      }
-    </span>
-    <span
-      className="token punctuation"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(36, 41, 46)",
-        }
-      }
-    >
-      )
-    </span>
-    <span
-      className="token plain"
-    >
-       
-    </span>
-    <span
-      className="token operator"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
-        }
-      }
-    >
-      =&gt;
-    </span>
-    <span
-      className="token plain"
-    >
-       
+       = ({ children, className }) =&gt; 
     </span>
     <span
       className="token punctuation"
@@ -26327,21 +26231,21 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token tag spread punctuation"
+      className="token tag spread operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(36, 41, 46)",
+          "color": "rgb(0, 92, 197)",
         }
       }
     >
       ...
     </span>
     <span
-      className="token tag spread attr-value"
+      className="token tag spread"
       style={
         Object {
-          "color": "rgb(0, 119, 170)",
+          "color": "rgb(153, 0, 85)",
         }
       }
     >
@@ -26649,7 +26553,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       &gt;
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
       
     </span>
@@ -26664,7 +26568,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     }
   >
     <span
-      className="token plain"
+      className="token plain-text"
     >
             
     </span>
@@ -27031,7 +26935,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
         }
       }
     >
-       padding
+       
+    </span>
+    <span
+      className="token tag script language-javascript literal-property property"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
+    >
+      padding
     </span>
     <span
       className="token tag script language-javascript operator"
@@ -27108,7 +27022,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       &gt;
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
       
     </span>
@@ -27123,7 +27037,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     }
   >
     <span
-      className="token plain"
+      className="token plain-text"
     >
                 
     </span>
@@ -27271,34 +27185,59 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
                   
     </span>
     <span
-      className="token operator"
+      className="token tag punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
+          "color": "rgb(36, 41, 46)",
         }
       }
     >
       &lt;
     </span>
     <span
-      className="token plain"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
-      div key
+      div
     </span>
     <span
-      className="token operator"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
+    >
+       
+    </span>
+    <span
+      className="token tag attr-name"
+      style={
+        Object {
+          "color": "rgb(102, 153, 0)",
+        }
+      }
+    >
+      key
+    </span>
+    <span
+      className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
+          "color": "rgb(36, 41, 46)",
         }
       }
     >
       =
     </span>
     <span
-      className="token punctuation"
+      className="token tag script language-javascript punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27309,12 +27248,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token plain"
+      className="token tag script language-javascript"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
       i
     </span>
     <span
-      className="token punctuation"
+      className="token tag script language-javascript punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27325,12 +27269,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token plain"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27341,7 +27290,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token operator"
+      className="token tag spread operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27352,7 +27301,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       ...
     </span>
     <span
-      className="token function"
+      className="token tag spread function"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
@@ -27362,7 +27311,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       getLineProps
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27373,7 +27322,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       (
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27384,12 +27333,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token plain"
+      className="token tag spread"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        line
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27400,12 +27354,27 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       ,
     </span>
     <span
-      className="token plain"
+      className="token tag spread"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
-       key
+       
     </span>
     <span
-      className="token operator"
+      className="token tag spread literal-property property"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
+    >
+      key
+    </span>
+    <span
+      className="token tag spread operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27416,12 +27385,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       :
     </span>
     <span
-      className="token plain"
+      className="token tag spread"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        i 
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27432,7 +27406,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27443,7 +27417,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       )
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27454,18 +27428,18 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token operator"
+      className="token tag punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
+          "color": "rgb(36, 41, 46)",
         }
       }
     >
       &gt;
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
       
     </span>
@@ -27480,7 +27454,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     }
   >
     <span
-      className="token plain"
+      className="token plain-text"
     >
                     
     </span>
@@ -27628,34 +27602,59 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
                       
     </span>
     <span
-      className="token operator"
+      className="token tag punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
+          "color": "rgb(36, 41, 46)",
         }
       }
     >
       &lt;
     </span>
     <span
-      className="token plain"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
-      span key
+      span
     </span>
     <span
-      className="token operator"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
+    >
+       
+    </span>
+    <span
+      className="token tag attr-name"
+      style={
+        Object {
+          "color": "rgb(102, 153, 0)",
+        }
+      }
+    >
+      key
+    </span>
+    <span
+      className="token tag script language-javascript script-punctuation punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
+          "color": "rgb(36, 41, 46)",
         }
       }
     >
       =
     </span>
     <span
-      className="token punctuation"
+      className="token tag script language-javascript punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27666,12 +27665,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token plain"
+      className="token tag script language-javascript"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
       key
     </span>
     <span
-      className="token punctuation"
+      className="token tag script language-javascript punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27682,12 +27686,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token plain"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27698,7 +27707,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token operator"
+      className="token tag spread operator"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27709,7 +27718,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       ...
     </span>
     <span
-      className="token function"
+      className="token tag spread function"
       style={
         Object {
           "color": "rgb(221, 74, 104)",
@@ -27719,7 +27728,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       getTokenProps
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27730,7 +27739,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       (
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27741,12 +27750,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       {
     </span>
     <span
-      className="token plain"
+      className="token tag spread"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        token
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27757,12 +27771,17 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       ,
     </span>
     <span
-      className="token plain"
+      className="token tag spread"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        key 
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27773,7 +27792,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27784,7 +27803,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       )
     </span>
     <span
-      className="token punctuation"
+      className="token tag spread punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
@@ -27795,31 +27814,25 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token plain"
+      className="token tag"
+      style={
+        Object {
+          "color": "rgb(153, 0, 85)",
+        }
+      }
     >
        
     </span>
     <span
-      className="token operator"
+      className="token tag punctuation"
       style={
         Object {
           "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
+          "color": "rgb(36, 41, 46)",
         }
       }
     >
-      /
-    </span>
-    <span
-      className="token operator"
-      style={
-        Object {
-          "backgroundColor": "#f7f6f3",
-          "color": "rgb(0, 92, 197)",
-        }
-      }
-    >
-      &gt;
+      /&gt;
     </span>
     <span
       className="token plain"
@@ -27875,7 +27888,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
       
     </span>
@@ -27890,7 +27903,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     }
   >
     <span
-      className="token plain"
+      className="token plain-text"
     >
                   
     </span>
@@ -27980,7 +27993,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
       
     </span>
@@ -27995,7 +28008,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     }
   >
     <span
-      className="token plain"
+      className="token plain-text"
     >
               
     </span>
@@ -28074,7 +28087,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
       }
     </span>
     <span
-      className="token plain"
+      className="token plain-text"
     >
       
     </span>
@@ -28089,7 +28102,7 @@ exports[`Storyshots mdx/Codeblock  Component 1`] = `
     }
   >
     <span
-      className="token plain"
+      className="token plain-text"
     >
           
     </span>
