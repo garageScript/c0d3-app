@@ -3,6 +3,7 @@ import prisma from '../../prisma'
 import { Context } from '../../@types/helpers'
 import { isAdminOrThrow } from '../../helpers/isAdmin'
 import type { Module } from '@prisma/client'
+import type { SuccessResponse } from '..'
 
 export const modules = (): Promise<Module[]> => {
   return prisma.module.findMany({
@@ -23,17 +24,16 @@ export const addModule = async (
   const { content, lessonId, name } = args
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
-  const module = await prisma.module.create({
+  return prisma.module.create({
     data: { authorId, content, lessonId, name }
   })
-  return module
 }
 
 export const deleteModule = async (
   _parent: void,
   arg: MutationDeleteModuleArgs,
   ctx: Context
-) => {
+): Promise<SuccessResponse> => {
   const { req } = ctx
   isAdminOrThrow(req)
   const authorId = req.user?.id
