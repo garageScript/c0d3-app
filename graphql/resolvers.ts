@@ -31,6 +31,7 @@ import {
 } from '../helpers/controllers/lessonsController'
 import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
 import { deleteComment } from './queryResolvers/deleteComment'
+import { addModule, modules, deleteModule } from './queryResolvers/moduleCrud'
 
 export default {
   Query: {
@@ -40,6 +41,7 @@ export default {
     isTokenValid,
     userInfo,
     lessons,
+    modules,
     session,
     alerts,
     getPreviousSubmissions
@@ -62,6 +64,8 @@ export default {
     reqPwReset,
     createChallenge,
     updateChallenge,
+    addModule,
+    deleteModule,
     addComment,
     deleteComment
   }
