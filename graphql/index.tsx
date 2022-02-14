@@ -72,6 +72,17 @@ export type Comment = {
   submissionId: Scalars['Int']
 }
 
+export type Exercise = {
+  __typename?: 'Exercise'
+  answer: Scalars['String']
+  author: User
+  description: Scalars['String']
+  id: Scalars['Int']
+  module: Module
+  testStr?: Maybe<Scalars['String']>
+  testable: Scalars['Boolean']
+}
+
 export type Lesson = {
   __typename?: 'Lesson'
   challenges: Array<Challenge>
@@ -91,11 +102,9 @@ export type Lesson = {
 export type Module = {
   __typename?: 'Module'
   author: User
-  authorId: Scalars['Int']
   content: Scalars['String']
   id: Scalars['Int']
   lesson: Lesson
-  lessonId: Scalars['Int']
   name: Scalars['String']
 }
 
@@ -104,6 +113,7 @@ export type Mutation = {
   acceptSubmission?: Maybe<Submission>
   addAlert?: Maybe<Array<Maybe<Alert>>>
   addComment?: Maybe<Comment>
+  addExercise?: Maybe<Exercise>
   addModule?: Maybe<Module>
   changeAdminRights?: Maybe<SuccessResponse>
   changePw?: Maybe<AuthResponse>
@@ -111,6 +121,7 @@ export type Mutation = {
   createLesson: Array<Lesson>
   createSubmission?: Maybe<Submission>
   deleteComment?: Maybe<Comment>
+  deleteExercise?: Maybe<SuccessResponse>
   deleteModule?: Maybe<SuccessResponse>
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
@@ -120,6 +131,7 @@ export type Mutation = {
   setStar: SuccessResponse
   signup?: Maybe<AuthResponse>
   updateChallenge?: Maybe<Array<Maybe<Lesson>>>
+  updateExercise: Exercise
   updateLesson: Array<Lesson>
 }
 
@@ -143,8 +155,15 @@ export type MutationAddCommentArgs = {
   submissionId: Scalars['Int']
 }
 
+export type MutationAddExerciseArgs = {
+  answer: Scalars['String']
+  description: Scalars['String']
+  moduleId: Scalars['Int']
+  testStr?: InputMaybe<Scalars['String']>
+  testable: Scalars['Boolean']
+}
+
 export type MutationAddModuleArgs = {
-  authorId: Scalars['Int']
   content: Scalars['String']
   lessonId: Scalars['Int']
   name: Scalars['String']
@@ -186,6 +205,10 @@ export type MutationCreateSubmissionArgs = {
 }
 
 export type MutationDeleteCommentArgs = {
+  id: Scalars['Int']
+}
+
+export type MutationDeleteExerciseArgs = {
   id: Scalars['Int']
 }
 
@@ -234,6 +257,15 @@ export type MutationUpdateChallengeArgs = {
   title: Scalars['String']
 }
 
+export type MutationUpdateExerciseArgs = {
+  answer?: InputMaybe<Scalars['String']>
+  description?: InputMaybe<Scalars['String']>
+  id: Scalars['Int']
+  moduleId?: InputMaybe<Scalars['Int']>
+  testStr?: InputMaybe<Scalars['String']>
+  testable?: InputMaybe<Scalars['Boolean']>
+}
+
 export type MutationUpdateLessonArgs = {
   chatUrl?: InputMaybe<Scalars['String']>
   description: Scalars['String']
@@ -250,6 +282,7 @@ export type Query = {
   __typename?: 'Query'
   alerts: Array<Alert>
   allUsers?: Maybe<Array<Maybe<User>>>
+  exercises: Array<Maybe<Exercise>>
   getLessonMentors?: Maybe<Array<Maybe<User>>>
   getPreviousSubmissions?: Maybe<Array<Submission>>
   isTokenValid: Scalars['Boolean']
@@ -1108,6 +1141,7 @@ export type ResolversTypes = ResolversObject<{
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>
   Challenge: ResolverTypeWrapper<Challenge>
   Comment: ResolverTypeWrapper<Comment>
+  Exercise: ResolverTypeWrapper<Exercise>
   Int: ResolverTypeWrapper<Scalars['Int']>
   Lesson: ResolverTypeWrapper<Lesson>
   Module: ResolverTypeWrapper<Module>
@@ -1131,6 +1165,7 @@ export type ResolversParentTypes = ResolversObject<{
   Boolean: Scalars['Boolean']
   Challenge: Challenge
   Comment: Comment
+  Exercise: Exercise
   Int: Scalars['Int']
   Lesson: Lesson
   Module: Module
@@ -1205,6 +1240,20 @@ export type CommentResolvers<
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
+export type ExerciseResolvers<
+  ContextType = Context,
+  ParentType extends ResolversParentTypes['Exercise'] = ResolversParentTypes['Exercise']
+> = ResolversObject<{
+  answer?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
+  description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
+  module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
+  testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
+  testable?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
+}>
+
 export type LessonResolvers<
   ContextType = Context,
   ParentType extends ResolversParentTypes['Lesson'] = ResolversParentTypes['Lesson']
@@ -1237,11 +1286,9 @@ export type ModuleResolvers<
   ParentType extends ResolversParentTypes['Module'] = ResolversParentTypes['Module']
 > = ResolversObject<{
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
-  authorId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   content?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   lesson?: Resolver<ResolversTypes['Lesson'], ParentType, ContextType>
-  lessonId?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
@@ -1268,14 +1315,20 @@ export type MutationResolvers<
     ContextType,
     RequireFields<MutationAddCommentArgs, 'content' | 'submissionId'>
   >
+  addExercise?: Resolver<
+    Maybe<ResolversTypes['Exercise']>,
+    ParentType,
+    ContextType,
+    RequireFields<
+      MutationAddExerciseArgs,
+      'answer' | 'description' | 'moduleId' | 'testable'
+    >
+  >
   addModule?: Resolver<
     Maybe<ResolversTypes['Module']>,
     ParentType,
     ContextType,
-    RequireFields<
-      MutationAddModuleArgs,
-      'authorId' | 'content' | 'lessonId' | 'name'
-    >
+    RequireFields<MutationAddModuleArgs, 'content' | 'lessonId' | 'name'>
   >
   changeAdminRights?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -1321,6 +1374,12 @@ export type MutationResolvers<
     ParentType,
     ContextType,
     RequireFields<MutationDeleteCommentArgs, 'id'>
+  >
+  deleteExercise?: Resolver<
+    Maybe<ResolversTypes['SuccessResponse']>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationDeleteExerciseArgs, 'id'>
   >
   deleteModule?: Resolver<
     Maybe<ResolversTypes['SuccessResponse']>,
@@ -1381,6 +1440,12 @@ export type MutationResolvers<
       'description' | 'id' | 'lessonId' | 'order' | 'title'
     >
   >
+  updateExercise?: Resolver<
+    ResolversTypes['Exercise'],
+    ParentType,
+    ContextType,
+    RequireFields<MutationUpdateExerciseArgs, 'id'>
+  >
   updateLesson?: Resolver<
     Array<ResolversTypes['Lesson']>,
     ParentType,
@@ -1399,6 +1464,11 @@ export type QueryResolvers<
   alerts?: Resolver<Array<ResolversTypes['Alert']>, ParentType, ContextType>
   allUsers?: Resolver<
     Maybe<Array<Maybe<ResolversTypes['User']>>>,
+    ParentType,
+    ContextType
+  >
+  exercises?: Resolver<
+    Array<Maybe<ResolversTypes['Exercise']>>,
     ParentType,
     ContextType
   >
@@ -1568,6 +1638,7 @@ export type Resolvers<ContextType = Context> = ResolversObject<{
   AuthResponse?: AuthResponseResolvers<ContextType>
   Challenge?: ChallengeResolvers<ContextType>
   Comment?: CommentResolvers<ContextType>
+  Exercise?: ExerciseResolvers<ContextType>
   Lesson?: LessonResolvers<ContextType>
   Module?: ModuleResolvers<ContextType>
   Mutation?: MutationResolvers<ContextType>
@@ -4221,6 +4292,25 @@ export type CommentFieldPolicy = {
   submission?: FieldPolicy<any> | FieldReadFunction<any>
   submissionId?: FieldPolicy<any> | FieldReadFunction<any>
 }
+export type ExerciseKeySpecifier = (
+  | 'answer'
+  | 'author'
+  | 'description'
+  | 'id'
+  | 'module'
+  | 'testStr'
+  | 'testable'
+  | ExerciseKeySpecifier
+)[]
+export type ExerciseFieldPolicy = {
+  answer?: FieldPolicy<any> | FieldReadFunction<any>
+  author?: FieldPolicy<any> | FieldReadFunction<any>
+  description?: FieldPolicy<any> | FieldReadFunction<any>
+  id?: FieldPolicy<any> | FieldReadFunction<any>
+  module?: FieldPolicy<any> | FieldReadFunction<any>
+  testStr?: FieldPolicy<any> | FieldReadFunction<any>
+  testable?: FieldPolicy<any> | FieldReadFunction<any>
+}
 export type LessonKeySpecifier = (
   | 'challenges'
   | 'chatUrl'
@@ -4252,27 +4342,24 @@ export type LessonFieldPolicy = {
 }
 export type ModuleKeySpecifier = (
   | 'author'
-  | 'authorId'
   | 'content'
   | 'id'
   | 'lesson'
-  | 'lessonId'
   | 'name'
   | ModuleKeySpecifier
 )[]
 export type ModuleFieldPolicy = {
   author?: FieldPolicy<any> | FieldReadFunction<any>
-  authorId?: FieldPolicy<any> | FieldReadFunction<any>
   content?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   lesson?: FieldPolicy<any> | FieldReadFunction<any>
-  lessonId?: FieldPolicy<any> | FieldReadFunction<any>
   name?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type MutationKeySpecifier = (
   | 'acceptSubmission'
   | 'addAlert'
   | 'addComment'
+  | 'addExercise'
   | 'addModule'
   | 'changeAdminRights'
   | 'changePw'
@@ -4280,6 +4367,7 @@ export type MutationKeySpecifier = (
   | 'createLesson'
   | 'createSubmission'
   | 'deleteComment'
+  | 'deleteExercise'
   | 'deleteModule'
   | 'login'
   | 'logout'
@@ -4289,6 +4377,7 @@ export type MutationKeySpecifier = (
   | 'setStar'
   | 'signup'
   | 'updateChallenge'
+  | 'updateExercise'
   | 'updateLesson'
   | MutationKeySpecifier
 )[]
@@ -4296,6 +4385,7 @@ export type MutationFieldPolicy = {
   acceptSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   addAlert?: FieldPolicy<any> | FieldReadFunction<any>
   addComment?: FieldPolicy<any> | FieldReadFunction<any>
+  addExercise?: FieldPolicy<any> | FieldReadFunction<any>
   addModule?: FieldPolicy<any> | FieldReadFunction<any>
   changeAdminRights?: FieldPolicy<any> | FieldReadFunction<any>
   changePw?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4303,6 +4393,7 @@ export type MutationFieldPolicy = {
   createLesson?: FieldPolicy<any> | FieldReadFunction<any>
   createSubmission?: FieldPolicy<any> | FieldReadFunction<any>
   deleteComment?: FieldPolicy<any> | FieldReadFunction<any>
+  deleteExercise?: FieldPolicy<any> | FieldReadFunction<any>
   deleteModule?: FieldPolicy<any> | FieldReadFunction<any>
   login?: FieldPolicy<any> | FieldReadFunction<any>
   logout?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4312,11 +4403,13 @@ export type MutationFieldPolicy = {
   setStar?: FieldPolicy<any> | FieldReadFunction<any>
   signup?: FieldPolicy<any> | FieldReadFunction<any>
   updateChallenge?: FieldPolicy<any> | FieldReadFunction<any>
+  updateExercise?: FieldPolicy<any> | FieldReadFunction<any>
   updateLesson?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type QueryKeySpecifier = (
   | 'alerts'
   | 'allUsers'
+  | 'exercises'
   | 'getLessonMentors'
   | 'getPreviousSubmissions'
   | 'isTokenValid'
@@ -4330,6 +4423,7 @@ export type QueryKeySpecifier = (
 export type QueryFieldPolicy = {
   alerts?: FieldPolicy<any> | FieldReadFunction<any>
   allUsers?: FieldPolicy<any> | FieldReadFunction<any>
+  exercises?: FieldPolicy<any> | FieldReadFunction<any>
   getLessonMentors?: FieldPolicy<any> | FieldReadFunction<any>
   getPreviousSubmissions?: FieldPolicy<any> | FieldReadFunction<any>
   isTokenValid?: FieldPolicy<any> | FieldReadFunction<any>
@@ -4492,6 +4586,13 @@ export type StrictTypedTypePolicies = {
       | CommentKeySpecifier
       | (() => undefined | CommentKeySpecifier)
     fields?: CommentFieldPolicy
+  }
+  Exercise?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
+    keyFields?:
+      | false
+      | ExerciseKeySpecifier
+      | (() => undefined | ExerciseKeySpecifier)
+    fields?: ExerciseFieldPolicy
   }
   Lesson?: Omit<TypePolicy, 'fields' | 'keyFields'> & {
     keyFields?:
