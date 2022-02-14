@@ -16,12 +16,11 @@ const styles: ReactDiffViewerStylesOverride = {
   gutter: {
     background: '#cdffd8',
     '&:hover': {
-      fontSize: '1.2rem',
       opacity: '0.75'
     }
   },
   emptyGutter: {
-    pointerEvents: 'none'
+    display: 'none'
   }
 }
 
