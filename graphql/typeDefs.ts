@@ -55,12 +55,7 @@ export default gql`
       content: String!
     ): Comment
     deleteComment(id: Int!): Comment
-    addModule(
-      authorId: Int!
-      lessonId: Int!
-      name: String!
-      content: String!
-    ): Module
+    addModule(lessonId: Int!, name: String!, content: String!): Module
     deleteModule(id: Int!): SuccessResponse
     createLesson(
       description: String!
@@ -219,9 +214,7 @@ export default gql`
   type Module {
     id: Int!
     author: User!
-    authorId: Int!
     lesson: Lesson!
-    lessonId: Int!
     name: String!
     content: String!
   }
