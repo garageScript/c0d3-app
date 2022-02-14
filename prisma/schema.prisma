@@ -153,20 +153,38 @@ model User {
   userLessons               UserLesson[]
   comments                  Comment[]
   modules                   Module[]
+  exercises                 Exercise[]
 
   @@map("users")
 }
 
 model Module {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now()) @db.Timestamptz(6)
-  updatedAt DateTime @updatedAt @db.Timestamptz(6)
-  author    User     @relation(fields: [authorId], references: [id])
+  id        Int        @id @default(autoincrement())
+  createdAt DateTime   @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime   @updatedAt @db.Timestamptz(6)
+  author    User       @relation(fields: [authorId], references: [id])
   authorId  Int
-  lesson    Lesson   @relation(fields: [lessonId], references: [id])
+  lesson    Lesson     @relation(fields: [lessonId], references: [id])
   lessonId  Int
-  name      String   @db.VarChar(255)
+  name      String     @db.VarChar(255)
   content   String
+  exercises Exercise[]
 
   @@map("modules")
+}
+
+model Exercise {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime @updatedAt @db.Timestamptz(6)
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
+  module      Module   @relation(fields: [moduleId], references: [id])
+  moduleId    Int
+  description String
+  answer      String
+  testable    Boolean
+  testStr     String
+
+  @@map("exercises")
 }
