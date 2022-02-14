@@ -190,7 +190,9 @@ const ChallengeQuestionCardDisplay: React.FC<{
               submission={submission}
               generalStatus={currentChallenge.submission?.status}
             />
-            {comments && <SubmissionComments comments={comments} />}
+            {comments && (
+              <SubmissionComments comments={comments} submission={submission} />
+            )}
             <ReviewStatus
               name={submission.reviewer?.name}
               username={submission.reviewer?.username}

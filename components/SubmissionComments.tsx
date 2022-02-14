@@ -1,9 +1,10 @@
 import React from 'react'
-import { Comment } from '../graphql'
+import { Comment, Submission } from '../graphql'
 import Markdown from 'markdown-to-jsx'
 import ReviewerProfile from './ReviewerProfile'
 export const SubmissionComments: React.FC<{
   comments: Comment[]
+  submission: Submission
 }> = ({ comments }) => {
   return (
     <>

@@ -84,6 +84,7 @@ const DiffView: React.FC<{
               status={generalStatus}
               challengeId={submission.challengeId}
               userId={submission.user.id}
+              submission={submission}
             />
           )}
         </>

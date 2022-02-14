@@ -201,7 +201,10 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
     if (underComments) {
       return (
         <div className="mt-1">
-          <SubmissionComments comments={underComments} />
+          <SubmissionComments
+            comments={underComments}
+            submission={submissionState}
+          />
         </div>
       )
     }

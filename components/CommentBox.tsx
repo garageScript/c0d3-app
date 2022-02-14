@@ -2,7 +2,12 @@ import React, { useState, useContext } from 'react'
 import { MdInput } from './MdInput'
 import { Button } from './theme/Button'
 import styles from '../scss/commentBox.module.scss'
-import { useAddCommentMutation, Comment, SubmissionStatus } from '../graphql'
+import {
+  useAddCommentMutation,
+  Comment,
+  SubmissionStatus,
+  Submission
+} from '../graphql'
 import _ from 'lodash'
 import { GlobalContext } from '../helpers/globalContext'
 import { updateCache } from '../helpers/updateCache'
@@ -17,6 +22,7 @@ const CommentBox: React.FC<{
   status?: string
   challengeId?: number
   userId?: number
+  submission: Submission
 }> = ({
   line,
   fileName,
@@ -25,7 +31,8 @@ const CommentBox: React.FC<{
   lessonId,
   status,
   challengeId,
-  userId
+  userId,
+  submission
 }) => {
   const context = useContext(GlobalContext)
   const name = context.session?.user?.name
@@ -60,7 +67,9 @@ const CommentBox: React.FC<{
           hidden ? 'none' : 'auto'
         }`}
       >
-        {comments && <SubmissionComments comments={comments} />}
+        {comments && (
+          <SubmissionComments comments={comments} submission={submission} />
+        )}
         {status === SubmissionStatus.Open && (
           <>
             <MdInput onChange={setInput} bgColor="white" value={input} />
