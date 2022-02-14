@@ -5,7 +5,7 @@ import ReviewerProfile from './ReviewerProfile'
 export const SubmissionComments: React.FC<{
   comments: Comment[]
   submission: Submission
-}> = ({ comments, submission }) => {
+}> = ({ comments }) => {
   return (
     <>
       {comments.map((c, i) => (
