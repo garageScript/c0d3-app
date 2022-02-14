@@ -1,5 +1,8 @@
 import React from 'react'
 import { SubmissionComments } from '../../components/SubmissionComments'
+import { Submission } from '../../graphql'
+import submissionData from '../../__dummy__/submission'
+import { MockedProvider } from '@apollo/client/testing'
 
 export default {
   component: SubmissionComments,
@@ -65,5 +68,12 @@ const comments = [
   }
 ]
 export const WithComments: React.FC = () => {
-  return <SubmissionComments comments={comments} />
+  return (
+    <MockedProvider>
+      <SubmissionComments
+        comments={comments}
+        submission={submissionData as unknown as Submission}
+      />
+    </MockedProvider>
+  )
 }
