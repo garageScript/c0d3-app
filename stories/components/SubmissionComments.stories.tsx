@@ -14,7 +14,7 @@ const comments = [
     submissionId: 1,
     content: 'First Comment',
     createdAt: '1620762267819',
-    authorId: 3,
+    authorId: 1,
     line: 4,
     author: {
       id: 2,
@@ -33,7 +33,7 @@ const comments = [
     submissionId: 1,
     content: 'Second Comment',
     createdAt: '1620762275096',
-    authorId: 3,
+    authorId: 1,
     line: 4,
     author: {
       id: 2,
@@ -52,7 +52,7 @@ const comments = [
     submissionId: 1,
     content: 'Second Comment',
     createdAt: '1620762275096',
-    authorId: 3,
+    authorId: 1,
     line: 5,
     author: {
       id: 1,
@@ -67,13 +67,12 @@ const comments = [
     }
   }
 ]
-export const WithComments: React.FC = () => {
-  return (
-    <MockedProvider>
-      <SubmissionComments
-        comments={comments}
-        submission={submissionData as unknown as Submission}
-      />
-    </MockedProvider>
-  )
-}
+
+export const WithComments: React.FC = () => (
+  <MockedProvider>
+    <SubmissionComments
+      comments={comments}
+      submission={submissionData as unknown as Submission}
+    />
+  </MockedProvider>
+)
