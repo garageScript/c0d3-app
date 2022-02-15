@@ -6,6 +6,7 @@ export default gql`
     session: Session!
     allUsers: [User]
     modules: [Module]!
+    exercises: [Exercise]!
     getLessonMentors(lessonId: Int!): [User]
     userInfo(username: String!): Session
     isTokenValid(cliToken: String!): Boolean!
@@ -57,6 +58,22 @@ export default gql`
     deleteComment(id: Int!): Comment
     addModule(lessonId: Int!, name: String!, content: String!): Module
     deleteModule(id: Int!): SuccessResponse
+    addExercise(
+      moduleId: Int!
+      description: String!
+      answer: String!
+      testable: Boolean!
+      testStr: String
+    ): Exercise
+    updateExercise(
+      id: Int!
+      moduleId: Int
+      description: String
+      answer: String
+      testable: Boolean
+      testStr: String
+    ): Exercise!
+    deleteExercise(id: Int!): SuccessResponse
     createLesson(
       description: String!
       docUrl: String
@@ -217,5 +234,15 @@ export default gql`
     lesson: Lesson!
     name: String!
     content: String!
+  }
+
+  type Exercise {
+    id: Int!
+    author: User!
+    module: Module!
+    description: String!
+    answer: String!
+    testable: Boolean!
+    testStr: String
   }
 `
