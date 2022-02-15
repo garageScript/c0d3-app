@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { SubmissionComments } from './SubmissionComments'
 import { fireEvent, waitFor, render } from '@testing-library/react'
 import { MockedProvider } from '@apollo/client/testing'
@@ -6,6 +6,8 @@ import GET_PREVIOUS_SUBMISSIONS from '../graphql/queries/getPreviousSubmissions'
 import { InMemoryCache } from '@apollo/client'
 import submissionData from '../__dummy__/submission'
 import DELETE_COMMENT from '../graphql/queries/deleteComment'
+import dummySessionData from '../__dummy__/sessionData'
+import { GlobalContext } from '../helpers/globalContext'
 
 const submissionsData = [submissionData, { ...submissionData, id: 101 }]
 
@@ -43,11 +45,11 @@ const comments = [
     content: 'test comment',
     submissionId: 101,
     createdAt: '124',
-    authorId: 3,
+    authorId: 1,
     line: 1,
     fileName: 'js7/1.js',
     author: {
-      username: 'newbie'
+      username: 'admin'
     }
   }
 ]
@@ -72,9 +74,25 @@ describe('Test SubmissionComments Component', () => {
       data: { getPreviousSubmissions: submissionsData }
     })
 
+    const Wrapper = ({ children }) => {
+      const context = useContext(GlobalContext)
+      const incorrectUserData = {
+        id: 1,
+        name: 'fake user',
+        email: 'fake@fakemail.com',
+        isAdmin: true
+      }
+      useEffect(() => {
+        context.setContext({ ...dummySessionData, user: incorrectUserData })
+      }, [])
+      return <>{children}</>
+    }
+
     const { container } = render(
       <MockedProvider cache={cache} addTypename={false} mocks={mocks}>
-        <SubmissionComments comments={comments} submission={submissionData} />
+        <Wrapper>
+          <SubmissionComments comments={comments} submission={submissionData} />
+        </Wrapper>
       </MockedProvider>
     )
 
