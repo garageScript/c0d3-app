@@ -13,6 +13,6 @@ export const getUserId = (req: LoggedRequest): number => {
 }
 
 export const getUserIdOrThrow = (req: LoggedRequest): void | number => {
-  if (!isSignedIn(req)) throw new Error('No user signed in')
+  isSignedInOrThrow(req)
   return req.user?.id
 }

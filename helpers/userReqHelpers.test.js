@@ -6,7 +6,7 @@ import {
   isSignedInOrThrow,
   getUserId,
   getUserIdOrThrow
-} from './getUserId'
+} from './userReqHelpers'
 
 const userSignedIn = { user: { id: 23 } }
 const userNotSignedIn = {}
