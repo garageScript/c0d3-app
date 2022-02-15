@@ -79,7 +79,7 @@
     "@jest/types": "^27.5.0",
     "@next/eslint-plugin-next": "^12.0.9",
     "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.18",
+    "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-storyshots": "^6.4.19",
     "@storybook/addon-storysource": "^6.4.19",
     "@storybook/addon-viewport": "^6.4.16",
