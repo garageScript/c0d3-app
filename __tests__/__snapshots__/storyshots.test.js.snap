@@ -2886,23 +2886,27 @@ Array [
         </span>
       </div>
       <div
-        className="wrapper"
+        className="wrapper d-flex justify-content-between align-items-center p-1"
       >
-        <a
-          className="comment_author__inline mt-2 "
-          href="/profile/newbie"
+        <div
+          className="wrapper"
         >
-          <div
-            className="d-inline"
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/newbie"
           >
-            Noob Newbie
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @newbie
-          </div>
-        </a>
+            <div
+              className="d-inline"
+            >
+              Noob Newbie
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @newbie
+            </div>
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -2918,23 +2922,27 @@ Array [
         </span>
       </div>
       <div
-        className="wrapper"
+        className="wrapper d-flex justify-content-between align-items-center p-1"
       >
-        <a
-          className="comment_author__inline mt-2 "
-          href="/profile/newbie"
+        <div
+          className="wrapper"
         >
-          <div
-            className="d-inline"
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/newbie"
           >
-            Noob Newbie
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @newbie
-          </div>
-        </a>
+            <div
+              className="d-inline"
+            >
+              Noob Newbie
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @newbie
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>,
@@ -19188,23 +19196,27 @@ Array [
       </span>
     </div>
     <div
-      className="wrapper"
+      className="wrapper d-flex justify-content-between align-items-center p-1"
     >
-      <a
-        className="comment_author__inline mt-2 "
-        href="/profile/newbie"
+      <div
+        className="wrapper"
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author__inline mt-2 "
+          href="/profile/newbie"
         >
-          Noob Newbie
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @newbie
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -19220,23 +19232,27 @@ Array [
       </span>
     </div>
     <div
-      className="wrapper"
+      className="wrapper d-flex justify-content-between align-items-center p-1"
     >
-      <a
-        className="comment_author__inline mt-2 "
-        href="/profile/newbie"
+      <div
+        className="wrapper"
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author__inline mt-2 "
+          href="/profile/newbie"
         >
-          Noob Newbie
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @newbie
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
     </div>
   </div>,
   <div
@@ -19252,23 +19268,27 @@ Array [
       </span>
     </div>
     <div
-      className="wrapper"
+      className="wrapper d-flex justify-content-between align-items-center p-1"
     >
-      <a
-        className="comment_author__inline mt-2 "
-        href="/profile/admin"
+      <div
+        className="wrapper"
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author__inline mt-2 "
+          href="/profile/admin"
         >
-          Admin Admin
-        </div>
-        <div
-          className="d-inline text-muted"
-        >
-           @admin
-        </div>
-      </a>
+          <div
+            className="d-inline"
+          >
+            Admin Admin
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @admin
+          </div>
+        </a>
+      </div>
     </div>
   </div>,
 ]
