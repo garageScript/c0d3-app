@@ -3427,7 +3427,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </a>
                 </div>
                 <span
-                  class="lesson-card__badge badge rounded-pill bg-success p-0"
+                  class="lesson-card__badge badge rounded-pill p-0"
                 >
                   <svg
                     fill="none"
@@ -3523,7 +3523,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </a>
                 </h4>
                 <span
-                  class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
+                  class="lesson-card__badge badge rounded-pill mt-2 me-2 py-2 d-flex align-items-center"
                 >
                   <svg
                     fill="none"
@@ -3610,7 +3610,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </a>
                 </div>
                 <span
-                  class="lesson-card__badge badge rounded-pill bg-success p-0"
+                  class="lesson-card__badge badge rounded-pill p-0"
                 >
                   <svg
                     fill="none"
@@ -3706,7 +3706,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </a>
                 </h4>
                 <span
-                  class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
+                  class="lesson-card__badge badge rounded-pill mt-2 me-2 py-2 d-flex align-items-center"
                 >
                   <svg
                     fill="none"
@@ -3793,7 +3793,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </a>
                 </div>
                 <span
-                  class="lesson-card__badge badge rounded-pill bg-success p-0"
+                  class="lesson-card__badge badge rounded-pill p-0"
                 >
                   <svg
                     fill="none"
@@ -3889,7 +3889,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
                   </a>
                 </h4>
                 <span
-                  class="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
+                  class="lesson-card__badge badge rounded-pill mt-2 me-2 py-2 d-flex align-items-center"
                 >
                   <svg
                     fill="none"

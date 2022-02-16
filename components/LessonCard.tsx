@@ -50,8 +50,7 @@ const ReviewCount: React.FC<ReviewCountProps> = props => {
   const pendingSubmissionsCount = data.submissions.reduce(
     (acc: number, val: any) => {
       if (val.status === SubmissionStatus.Open) {
-        acc = acc + 1
-        return acc
+        return acc + 1
       }
       return acc
     },
@@ -91,7 +90,7 @@ const LessonCard: React.FC<Props> = props => {
           </div>
           {props.currentState === 'completed' && (
             <span
-              className={`${styles['lesson-card__badge']} badge rounded-pill bg-success p-0`}
+              className={`${styles['lesson-card__badge']} badge rounded-pill p-0`}
             >
               <CheckCircle size="15" />
               <span className="mx-1 d-none d-md-block">COMPLETED</span>
@@ -156,7 +155,7 @@ const LessonCard: React.FC<Props> = props => {
           </h4>
           {props.currentState === 'completed' && (
             <span
-              className={`${styles['lesson-card__badge']} badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center`}
+              className={`${styles['lesson-card__badge']} badge rounded-pill mt-2 me-2 py-2 d-flex align-items-center`}
             >
               <CheckCircle size="15" />
               <span className="mx-1 d-none d-md-block">COMPLETED</span>

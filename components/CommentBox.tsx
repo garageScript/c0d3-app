@@ -40,18 +40,17 @@ const CommentBox: React.FC<{
   const comments = commentsData?.filter(comment => comment.line === line)
   const [hidden, setHidden] = useState(false)
   const [input, setInput] = useState('')
-  const update = updateCache(
+  const update = updateCache({
     submissionId,
-    undefined,
-    input,
-    name!,
-    username!,
-    lessonId,
+    content: input,
+    name,
+    username,
+    lessonId: lessonId!,
     line,
     fileName,
-    challengeId,
-    userId
-  )
+    challengeId: challengeId!,
+    userId: userId!
+  })
 
   const [addComment] = useAddCommentMutation()
   return (
