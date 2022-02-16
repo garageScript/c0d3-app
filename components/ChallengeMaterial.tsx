@@ -149,18 +149,16 @@ const ChallengeQuestionCardDisplay: React.FC<{
         />
       )
 
-    const update = updateCache(
-      submission.id,
-      undefined,
-      commentValue,
+    const update = updateCache({
+      submissionId: submission.id,
+      content: commentValue,
       name,
       username,
-      submission.lessonId,
-      undefined,
-      undefined,
-      submission.challengeId,
-      submission.user.id
-    )
+      lessonId: submission.lessonId,
+      challengeId: submission.challengeId,
+      userId: submission.user.id
+    })
+
     return (
       <div className="card shadow-sm border-0 mt-3">
         {submission.createdAt && (
