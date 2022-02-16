@@ -122,7 +122,7 @@ describe('updateCache helper', () => {
 
     updateCache({
       submissionId: 0,
-      commentToDelete: 1,
+      commentToDeleteId: 1,
       content: 'Test comment!',
       name: 'Test User',
       username: 'testuser',
