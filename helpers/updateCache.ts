@@ -13,18 +13,32 @@ import _ from 'lodash'
   closure is used because it's the only way to pass additional arguments to update function 
   (update has only two arguments - cache and result of query)
 */
-export const updateCache = (
-  submissionId: number,
-  commentToDeleteId?: number,
-  content?: string,
-  name?: string,
-  username?: string,
-  lessonId?: number,
-  line?: number,
-  fileName?: string,
-  challengeId?: number,
-  userId?: number
-) => {
+
+type UpdateCacheParams = {
+  submissionId: number
+  lessonId: number
+  challengeId: number
+  userId: number
+  commentToDeleteId?: number
+  content?: string
+  name?: string
+  username?: string
+  line?: number
+  fileName?: string
+}
+
+export const updateCache = ({
+  submissionId,
+  commentToDeleteId,
+  content,
+  name,
+  username,
+  lessonId,
+  line,
+  fileName,
+  challengeId,
+  userId
+}: UpdateCacheParams) => {
   return (cache: ApolloCache<AddCommentMutation>) => {
     const data = cache.readQuery<GetPreviousSubmissionsQuery>({
       query: GET_PREVIOUS_SUBMISSIONS,

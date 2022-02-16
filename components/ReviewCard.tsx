@@ -170,18 +170,17 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
   })
   const [previousSubmissions, setPreviousSubmissions] = useState(data)
   const [showAccordion, setShowAccordion] = useState(false)
-  const update = updateCache(
-    submissionState.id,
-    undefined,
-    commentValue,
+
+  const update = updateCache({
+    submissionId: submissionState.id,
+    content: commentValue,
     name,
     username,
-    lessonId,
-    undefined,
-    undefined,
-    challengeId,
-    user.id
-  )
+    lessonId: lessonId!,
+    challengeId: challengeId!,
+    userId: user.id!
+  })
+
   useEffect(() => {
     if (data?.getPreviousSubmissions) {
       setPreviousSubmissions(data)
