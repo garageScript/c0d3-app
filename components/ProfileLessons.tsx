@@ -20,7 +20,7 @@ const LessonImage: React.FC<LessonImageProps> = ({ progress = 0, order }) => {
       : `${styles['lessonimage_container']}`
   const progressContainer = (
     <p
-      className={`${styles['lessonimage_progressbadge']} badge badge-pill badge-${color}`}
+      className={`${styles['lessonimage_progressbadge']} badge badge-pill bg-${color}`}
     >
       {lessonProgress}
     </p>
