@@ -13,7 +13,7 @@
   padding-right: 1em;
   margin-left: auto;
   @media (max-width: 768px) {
-    background-color: transparent;
+    background-color: transparent !important;
     color: #00cf92;
     margin-left: auto;
     & > svg {
