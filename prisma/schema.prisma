@@ -184,7 +184,7 @@ model Exercise {
   description String
   answer      String
   testable    Boolean
-  testStr     String
+  testStr     String?
 
   @@map("exercises")
 }
