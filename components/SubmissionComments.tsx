@@ -18,18 +18,13 @@ export const SubmissionComments: React.FC<{
   const id = context.session?.user?.id
 
   const handleDeleteComment = (c: Comment) => {
-    const update = updateCache(
-      submission.id,
-      c.id,
-      undefined,
-      undefined,
-      undefined,
-      submission.lessonId,
-      undefined,
-      undefined,
-      submission.challengeId,
-      submission.user.id
-    )
+    const update = updateCache({
+      submissionId: submission.id,
+      commentToDeleteId: c.id,
+      lessonId: submission.lessonId,
+      challengeId: submission.challengeId,
+      userId: submission.user.id
+    })
 
     deleteComment({
       variables: {
