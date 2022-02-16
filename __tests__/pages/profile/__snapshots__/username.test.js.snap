@@ -1054,7 +1054,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               class="lessonimage_container"
             >
               <p
-                class="lessonimage_progressbadge badge badge-pill badge-primary"
+                class="lessonimage_progressbadge badge badge-pill bg-primary"
               >
                 8%
               </p>
@@ -3820,7 +3820,7 @@ exports[`user profile test Should render profile 1`] = `
               class="lessonimage_container"
             >
               <p
-                class="lessonimage_progressbadge badge badge-pill badge-primary"
+                class="lessonimage_progressbadge badge badge-pill bg-primary"
               >
                 16%
               </p>
@@ -4883,7 +4883,7 @@ exports[`user profile test should render discord avatar and username if user con
               class="lessonimage_container"
             >
               <p
-                class="lessonimage_progressbadge badge badge-pill badge-primary"
+                class="lessonimage_progressbadge badge badge-pill bg-primary"
               >
                 16%
               </p>

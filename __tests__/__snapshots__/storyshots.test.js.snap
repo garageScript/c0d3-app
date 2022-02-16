@@ -10143,7 +10143,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill bg-primary"
       >
         23%
       </p>
@@ -10162,7 +10162,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill bg-primary"
       >
         60%
       </p>
@@ -10174,7 +10174,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-success"
+        className="lessonimage_progressbadge badge badge-pill bg-success"
       >
         100%
       </p>
@@ -10200,7 +10200,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill bg-primary"
       >
         80%
       </p>
@@ -10219,7 +10219,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-success"
+        className="lessonimage_progressbadge badge badge-pill bg-success"
       >
         100%
       </p>
