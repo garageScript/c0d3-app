@@ -1,8 +1,13 @@
 import prisma from '../../prisma'
-import { MutationAddExerciseArgs, SuccessResponse } from '..'
+import {
+  MutationAddExerciseArgs,
+  MutationUpdateExerciseArgs,
+  MutationDeleteExerciseArgs,
+  SuccessResponse
+} from '..'
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
-import { isAdminOrThrow } from '../../helpers/isAdmin'
+import { isAdmin } from '../../helpers/isAdmin'
 
 export const exercises = async () => {
   return await prisma.exercise.findMany({
@@ -18,9 +23,10 @@ export const addExercise = async (
   args: MutationAddExerciseArgs,
   { req }: Context
 ): Promise<Exercise> => {
-  isAdminOrThrow(req)
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
+  const { testable, testStr } = args
+  if (testable && !testStr) throw new Error('Testable must have test string')
   return prisma.exercise.create({
     data: { authorId, ...args }
   })
@@ -28,17 +34,45 @@ export const addExercise = async (
 
 export const updateExercise = async (
   _parent: void,
-  args: MutationAddExerciseArgs,
+  args: MutationUpdateExerciseArgs,
   { req }: Context
-): Exercise => {
+): Promise<Exercise> => {
   const authorId = req.user?.id
+  const { id, testable, testStr, ...data } = args
+  if (testable && !testStr) throw new Error('Testable must have test string')
   if (!authorId) throw new Error('No user')
+  const exercise = await prisma.exercise.findUnique({
+    where: {
+      id
+    }
+  })
+  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+    throw new Error('Not authorized to change')
+  }
+  return prisma.exercise.update({
+    where: {
+      id
+    },
+    data: { testable, testStr, ...data }
+  })
 }
 
 export const deleteExercise = async (
   _parent: void,
-  args: MutationAddExerciseArgs,
+  arg: MutationDeleteExerciseArgs,
   { req }: Context
-): SuccessResponse => {
+): Promise<SuccessResponse> => {
+  const { id } = arg
+  const authorId = req.user?.id
+  if (!authorId) throw new Error('No user')
+  const exercise = await prisma.exercise.findUnique({
+    where: {
+      id
+    }
+  })
+  if (!isAdmin(req) && exercise?.authorId !== authorId) {
+    throw new Error('Not authorized to delete')
+  }
+  await prisma.exercise.delete({ where: { id } })
   return { success: true }
 }

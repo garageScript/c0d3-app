@@ -32,7 +32,12 @@ import {
 import { getPreviousSubmissions } from './queryResolvers/getPreviousSubmissions'
 import { deleteComment } from './queryResolvers/deleteComment'
 import { addModule, modules, deleteModule } from './queryResolvers/moduleCrud'
-import { exercises, addExercise } from './queryResolvers/exerciseCrud'
+import {
+  exercises,
+  addExercise,
+  updateExercise,
+  deleteExercise
+} from './queryResolvers/exerciseCrud'
 export default {
   Query: {
     submissions,
@@ -58,6 +63,8 @@ export default {
     createLesson,
     updateLesson,
     addExercise,
+    updateExercise,
+    deleteExercise,
     login,
     logout,
     signup,

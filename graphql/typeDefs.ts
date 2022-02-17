@@ -67,10 +67,10 @@ export default gql`
     ): Exercise!
     updateExercise(
       id: Int!
-      moduleId: Int
-      description: String
-      answer: String
-      testable: Boolean
+      moduleId: Int!
+      description: String!
+      answer: String!
+      testable: Boolean!
       testStr: String
     ): Exercise!
     deleteExercise(id: Int!): SuccessResponse
