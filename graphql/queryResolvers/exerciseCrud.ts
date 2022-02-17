@@ -1,7 +1,7 @@
 import prisma from '../../prisma'
-import { MutationAddExerciseArgs } from '..'
+import { MutationAddExerciseArgs, SuccessResponse } from '..'
 import { Context } from '../../@types/helpers'
-import { Exercise } from '..'
+import type { Exercise } from '@prisma/client'
 import { isAdminOrThrow } from '../../helpers/isAdmin'
 
 export const exercises = async () => {
@@ -21,8 +21,24 @@ export const addExercise = async (
   isAdminOrThrow(req)
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
-  const { moduleId, description, answer, testable, testStr } = args
   return prisma.exercise.create({
-    data: { authorId, moduleId, description, answer, testStr, testable }
+    data: { authorId, ...args }
   })
+}
+
+export const updateExercise = async (
+  _parent: void,
+  args: MutationAddExerciseArgs,
+  { req }: Context
+): Exercise => {
+  const authorId = req.user?.id
+  if (!authorId) throw new Error('No user')
+}
+
+export const deleteExercise = async (
+  _parent: void,
+  args: MutationAddExerciseArgs,
+  { req }: Context
+): SuccessResponse => {
+  return { success: true }
 }

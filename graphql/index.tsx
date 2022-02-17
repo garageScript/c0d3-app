@@ -113,7 +113,7 @@ export type Mutation = {
   acceptSubmission?: Maybe<Submission>
   addAlert?: Maybe<Array<Maybe<Alert>>>
   addComment?: Maybe<Comment>
-  addExercise?: Maybe<Exercise>
+  addExercise: Exercise
   addModule?: Maybe<Module>
   changeAdminRights?: Maybe<SuccessResponse>
   changePw?: Maybe<AuthResponse>
@@ -1316,7 +1316,7 @@ export type MutationResolvers<
     RequireFields<MutationAddCommentArgs, 'content' | 'submissionId'>
   >
   addExercise?: Resolver<
-    Maybe<ResolversTypes['Exercise']>,
+    ResolversTypes['Exercise'],
     ParentType,
     ContextType,
     RequireFields<
