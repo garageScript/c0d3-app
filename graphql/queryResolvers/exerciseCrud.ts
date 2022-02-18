@@ -9,8 +9,8 @@ import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
 import { isAdmin } from '../../helpers/isAdmin'
 
-export const exercises = async () => {
-  return await prisma.exercise.findMany({
+export const exercises = () => {
+  return prisma.exercise.findMany({
     include: {
       author: true,
       module: true
