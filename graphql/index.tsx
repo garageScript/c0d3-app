@@ -77,10 +77,10 @@ export type Exercise = {
   answer: Scalars['String']
   author: User
   description: Scalars['String']
+  explanation?: Maybe<Scalars['String']>
   id: Scalars['Int']
   module: Module
   testStr?: Maybe<Scalars['String']>
-  testable: Scalars['Boolean']
 }
 
 export type Lesson = {
@@ -114,7 +114,7 @@ export type Mutation = {
   addAlert?: Maybe<Array<Maybe<Alert>>>
   addComment?: Maybe<Comment>
   addExercise?: Maybe<Exercise>
-  addModule?: Maybe<Module>
+  addModule: Module
   changeAdminRights?: Maybe<SuccessResponse>
   changePw?: Maybe<AuthResponse>
   createChallenge?: Maybe<Array<Maybe<Lesson>>>
@@ -158,9 +158,9 @@ export type MutationAddCommentArgs = {
 export type MutationAddExerciseArgs = {
   answer: Scalars['String']
   description: Scalars['String']
+  explanation?: InputMaybe<Scalars['String']>
   moduleId: Scalars['Int']
   testStr?: InputMaybe<Scalars['String']>
-  testable: Scalars['Boolean']
 }
 
 export type MutationAddModuleArgs = {
@@ -260,10 +260,10 @@ export type MutationUpdateChallengeArgs = {
 export type MutationUpdateExerciseArgs = {
   answer?: InputMaybe<Scalars['String']>
   description?: InputMaybe<Scalars['String']>
+  explanation?: InputMaybe<Scalars['String']>
   id: Scalars['Int']
   moduleId?: InputMaybe<Scalars['Int']>
   testStr?: InputMaybe<Scalars['String']>
-  testable?: InputMaybe<Scalars['Boolean']>
 }
 
 export type MutationUpdateLessonArgs = {
@@ -1247,10 +1247,14 @@ export type ExerciseResolvers<
   answer?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>
   description?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  explanation?: Resolver<
+    Maybe<ResolversTypes['String']>,
+    ParentType,
+    ContextType
+  >
   id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>
   module?: Resolver<ResolversTypes['Module'], ParentType, ContextType>
   testStr?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
-  testable?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }>
 
@@ -1321,11 +1325,11 @@ export type MutationResolvers<
     ContextType,
     RequireFields<
       MutationAddExerciseArgs,
-      'answer' | 'description' | 'moduleId' | 'testable'
+      'answer' | 'description' | 'moduleId'
     >
   >
   addModule?: Resolver<
-    Maybe<ResolversTypes['Module']>,
+    ResolversTypes['Module'],
     ParentType,
     ContextType,
     RequireFields<MutationAddModuleArgs, 'content' | 'lessonId' | 'name'>
@@ -4296,20 +4300,20 @@ export type ExerciseKeySpecifier = (
   | 'answer'
   | 'author'
   | 'description'
+  | 'explanation'
   | 'id'
   | 'module'
   | 'testStr'
-  | 'testable'
   | ExerciseKeySpecifier
 )[]
 export type ExerciseFieldPolicy = {
   answer?: FieldPolicy<any> | FieldReadFunction<any>
   author?: FieldPolicy<any> | FieldReadFunction<any>
   description?: FieldPolicy<any> | FieldReadFunction<any>
+  explanation?: FieldPolicy<any> | FieldReadFunction<any>
   id?: FieldPolicy<any> | FieldReadFunction<any>
   module?: FieldPolicy<any> | FieldReadFunction<any>
   testStr?: FieldPolicy<any> | FieldReadFunction<any>
-  testable?: FieldPolicy<any> | FieldReadFunction<any>
 }
 export type LessonKeySpecifier = (
   | 'challenges'
