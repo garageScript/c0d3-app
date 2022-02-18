@@ -64,7 +64,7 @@ export default gql`
       answer: String!
       testStr: String
       explanation: String
-    ): Exercise
+    ): Exercise!
     updateExercise(
       id: Int!
       moduleId: Int
