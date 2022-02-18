@@ -8,11 +8,7 @@ import {
   addExercise,
   updateExercise
 } from './exerciseCrud'
-const unsigned = {
-  req: {
-    user: {}
-  }
-}
+
 const AdminCtx = {
   req: {
     user: { isAdmin: true, id: 1 }
@@ -66,9 +62,9 @@ describe('It should add exercises', () => {
       addExercise(
         {},
         {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
+          description: 'testing',
+          answer: 'Using functions to make pie',
+          moduleId: 1,
           testable: false
         },
         {
@@ -82,9 +78,9 @@ describe('It should add exercises', () => {
       addExercise(
         {},
         {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
+          description: 'Whats 2 + 3',
+          answer: 'Pie',
+          moduleId: 1,
           testable: true
         },
         {
@@ -116,9 +112,9 @@ describe('It should update an exercise', () => {
       updateExercise(
         {},
         {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
+          answer: 'testing',
+          description: 'Using functions to make pie',
+          moduleId: 1,
           testable: false
         },
         {
@@ -126,47 +122,15 @@ describe('It should update an exercise', () => {
         }
       )
     ).rejects.toThrowError()
-  })
-  test('It should check if user is signed in', () => {
-    expect(
-      updateExercise(
-        {},
-        {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
-          testable: false
-        },
-        {
-          req: {}
-        }
-      )
-    ).rejects.toThrowError()
-  })
-  test('It should check if user is signed in', () => {
-    expect(
-      updateExercise(
-        {},
-        {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
-          testable: false
-        },
-        {
-          AdminCtx
-        }
-      )
-    ).rejects.toThrow(new Error('Not authorized to change'))
   })
   test('it should check if testStr is present with testable ', () => {
     expect(
       updateExercise(
         {},
         {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
+          description: '333',
+          answer: 'number',
+          moduleId: 1,
           testable: true
         },
         {
@@ -175,7 +139,7 @@ describe('It should update an exercise', () => {
       )
     ).rejects.toThrow(new Error('Testable must have test string'))
   })
-  test('It should check user ', () => {
+  test('It should check user is author of exercise', () => {
     expect(
       updateExercise(
         {},
@@ -213,23 +177,7 @@ describe('It should test delete', () => {
       )
     ).rejects.toThrow(new Error('No User'))
   })
-  test('It should check if user is signed in', () => {
-    expect(
-      updateExercise(
-        {},
-        {
-          content: 'testing',
-          name: 'Using functions to make pie',
-          lessonId: 1,
-          testable: false
-        },
-        {
-          AdminCtx
-        }
-      )
-    ).rejects.toThrow(new Error('Not authorized to delete'))
-  })
-  test('It should check if user is signed in', () => {
+  test('It should check if user can delte their own exercise', () => {
     expect(
       deleteExercise(
         {},
