@@ -64,7 +64,7 @@ export const deleteExercise = async (
 ): Promise<SuccessResponse> => {
   const { id } = arg
   const authorId = req.user?.id
-  if (!authorId) throw new Error('No user')
+  if (!authorId) throw new Error('No User')
   const exercise = await prisma.exercise.findUnique({
     where: {
       id

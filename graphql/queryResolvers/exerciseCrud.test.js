@@ -154,7 +154,7 @@ describe('It should update an exercise', () => {
           req: { user: { id: 333 } }
         }
       )
-    ).rejects.toThrow(new Error('Not authorized to delete'))
+    ).rejects.toThrow(new Error('Not authorized to change'))
   })
 })
 describe('It should test delete', () => {
