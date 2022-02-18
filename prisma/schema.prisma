@@ -173,16 +173,17 @@ model Module {
 }
 
 model Exercise {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now()) @db.Timestamptz(6)
-  updatedAt   DateTime @updatedAt @db.Timestamptz(6)
-  author      User     @relation(fields: [authorId], references: [id])
-  authorId    Int
-  module      Module   @relation(fields: [moduleId], references: [id])
-  moduleId    Int
-  description String
-  answer      String
-  testStr     String?
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt    DateTime @updatedAt @db.Timestamptz(6)
+  author       User     @relation(fields: [authorId], references: [id])
+  authorId     Int
+  module       Module   @relation(fields: [moduleId], references: [id])
+  moduleId     Int
+  description  String
+  answer       String
+  testStr      String?
+  explaination String?
 
   @@map("exercises")
 }
