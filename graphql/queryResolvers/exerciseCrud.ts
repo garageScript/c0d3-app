@@ -38,9 +38,9 @@ export const updateExercise = async (
   { req }: Context
 ): Promise<Exercise> => {
   const authorId = req.user?.id
+  if (!authorId) throw new Error('No user')
   const { id, testable, testStr, description, answer, moduleId } = args
   if (testable && !testStr) throw new Error('Testable must have test string')
-  if (!authorId) throw new Error('No user')
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
