@@ -182,8 +182,8 @@ model Exercise {
   moduleId    Int
   description String
   answer      String
-  testable    Boolean
   testStr     String?
+  explanation String?
 
   @@map("exercises")
 }
