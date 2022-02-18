@@ -66,34 +66,28 @@ describe('updateCache helper', () => {
       variables: { userId: 1, challengeId: 23 },
       data: { getPreviousSubmissions: submissionsData }
     })
-    updateCache(
-      0,
-      undefined,
-      'Test comment!',
-      'Test User',
-      'testuser',
-      2,
-      undefined,
-      undefined,
-      23,
-      1
-    )(cache)
+    updateCache({
+      submissionId: 0,
+      content: 'Test comment!',
+      name: 'Test User',
+      username: 'testuser',
+      lessonId: 2,
+      challengeId: 23,
+      userId: 1
+    })(cache)
   })
   it('should throw an error if there is no cache to update', () => {
     const cache = new InMemoryCache({ addTypename: false })
     expect(() => {
-      updateCache(
-        0,
-        undefined,
-        'Test comment!',
-        'Test User',
-        'testuser',
-        2,
-        undefined,
-        undefined,
-        23,
-        1
-      )(cache)
+      updateCache({
+        submissionId: 0,
+        content: 'Test comment!',
+        name: 'Test User',
+        username: 'testuser',
+        lessonId: 2,
+        challengeId: 23,
+        userId: 1
+      })(cache)
     }).toThrow('No cache to update')
   })
   it('should throw if no submission is found', () => {
@@ -104,18 +98,15 @@ describe('updateCache helper', () => {
       data: { getPreviousSubmissions: submissionsData }
     })
     expect(() =>
-      updateCache(
-        11,
-        undefined,
-        'Test comment!',
-        'Test User',
-        'testuser',
-        2,
-        undefined,
-        undefined,
-        23,
-        1
-      )(cache)
+      updateCache({
+        submissionId: 11,
+        content: 'Test comment!',
+        name: 'Test User',
+        username: 'testuser',
+        lessonId: 2,
+        challengeId: 23,
+        userId: 1
+      })(cache)
     ).toThrow('Incorrect submission id (no submission was found)')
   })
   it('should delete previous submission comment in cache', () => {
@@ -129,18 +120,16 @@ describe('updateCache helper', () => {
       data: { getPreviousSubmissions: submissionsData }
     })
 
-    updateCache(
-      0,
-      1,
-      'Test comment!',
-      'Test User',
-      'testuser',
-      2,
-      undefined,
-      undefined,
-      23,
-      1
-    )(cache)
+    updateCache({
+      submissionId: 0,
+      commentToDeleteId: 1,
+      content: 'Test comment!',
+      name: 'Test User',
+      username: 'testuser',
+      lessonId: 2,
+      challengeId: 23,
+      userId: 1
+    })(cache)
 
     const newCache = cache.readQuery({
       query: GET_PREVIOUS_SUBMISSIONS,

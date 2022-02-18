@@ -2886,23 +2886,27 @@ Array [
         </span>
       </div>
       <div
-        className="wrapper"
+        className="wrapper d-flex justify-content-between align-items-center p-1"
       >
-        <a
-          className="comment_author__inline mt-2 "
-          href="/profile/newbie"
+        <div
+          className="wrapper"
         >
-          <div
-            className="d-inline"
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/newbie"
           >
-            Noob Newbie
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @newbie
-          </div>
-        </a>
+            <div
+              className="d-inline"
+            >
+              Noob Newbie
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @newbie
+            </div>
+          </a>
+        </div>
       </div>
     </div>
     <div
@@ -2918,23 +2922,27 @@ Array [
         </span>
       </div>
       <div
-        className="wrapper"
+        className="wrapper d-flex justify-content-between align-items-center p-1"
       >
-        <a
-          className="comment_author__inline mt-2 "
-          href="/profile/newbie"
+        <div
+          className="wrapper"
         >
-          <div
-            className="d-inline"
+          <a
+            className="comment_author__inline mt-2 "
+            href="/profile/newbie"
           >
-            Noob Newbie
-          </div>
-          <div
-            className="d-inline text-muted"
-          >
-             @newbie
-          </div>
-        </a>
+            <div
+              className="d-inline"
+            >
+              Noob Newbie
+            </div>
+            <div
+              className="d-inline text-muted"
+            >
+               @newbie
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>,
@@ -7867,7 +7875,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           </a>
         </div>
         <span
-          className="lesson-card__badge badge rounded-pill bg-success p-0"
+          className="lesson-card__badge badge rounded-pill p-0"
         >
           <svg
             fill="none"
@@ -7970,7 +7978,7 @@ exports[`Storyshots Components/LessonCard With Completed 1`] = `
           </a>
         </h4>
         <span
-          className="lesson-card__badge badge rounded-pill bg-success mt-2 me-2 py-2 d-flex align-items-center"
+          className="lesson-card__badge badge rounded-pill mt-2 me-2 py-2 d-flex align-items-center"
         >
           <svg
             fill="none"
@@ -10143,7 +10151,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill bg-primary"
       >
         23%
       </p>
@@ -10162,7 +10170,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill bg-primary"
       >
         60%
       </p>
@@ -10174,7 +10182,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-success"
+        className="lessonimage_progressbadge badge badge-pill bg-success"
       >
         100%
       </p>
@@ -10200,7 +10208,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-primary"
+        className="lessonimage_progressbadge badge badge-pill bg-primary"
       >
         80%
       </p>
@@ -10219,7 +10227,7 @@ exports[`Storyshots Components/ProfileLessons Profile Lessons 1`] = `
       className="lessonimage_container"
     >
       <p
-        className="lessonimage_progressbadge badge badge-pill badge-success"
+        className="lessonimage_progressbadge badge badge-pill bg-success"
       >
         100%
       </p>
@@ -19188,23 +19196,61 @@ Array [
       </span>
     </div>
     <div
-      className="wrapper"
+      className="wrapper d-flex justify-content-between align-items-center p-1"
     >
-      <a
-        className="comment_author__inline mt-2 "
-        href="/profile/newbie"
+      <div
+        className="wrapper"
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author__inline mt-2 "
+          href="/profile/newbie"
         >
-          Noob Newbie
-        </div>
-        <div
-          className="d-inline text-muted"
+          <div
+            className="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
+      <div>
+        <button
+          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "danger",
+            }
+          }
         >
-           @newbie
-        </div>
-      </a>
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-trash"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+      </div>
     </div>
   </div>,
   <div
@@ -19220,23 +19266,61 @@ Array [
       </span>
     </div>
     <div
-      className="wrapper"
+      className="wrapper d-flex justify-content-between align-items-center p-1"
     >
-      <a
-        className="comment_author__inline mt-2 "
-        href="/profile/newbie"
+      <div
+        className="wrapper"
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author__inline mt-2 "
+          href="/profile/newbie"
         >
-          Noob Newbie
-        </div>
-        <div
-          className="d-inline text-muted"
+          <div
+            className="d-inline"
+          >
+            Noob Newbie
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @newbie
+          </div>
+        </a>
+      </div>
+      <div>
+        <button
+          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "danger",
+            }
+          }
         >
-           @newbie
-        </div>
-      </a>
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-trash"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+      </div>
     </div>
   </div>,
   <div
@@ -19252,23 +19336,61 @@ Array [
       </span>
     </div>
     <div
-      className="wrapper"
+      className="wrapper d-flex justify-content-between align-items-center p-1"
     >
-      <a
-        className="comment_author__inline mt-2 "
-        href="/profile/admin"
+      <div
+        className="wrapper"
       >
-        <div
-          className="d-inline"
+        <a
+          className="comment_author__inline mt-2 "
+          href="/profile/admin"
         >
-          Admin Admin
-        </div>
-        <div
-          className="d-inline text-muted"
+          <div
+            className="d-inline"
+          >
+            Admin Admin
+          </div>
+          <div
+            className="d-inline text-muted"
+          >
+             @admin
+          </div>
+        </a>
+      </div>
+      <div>
+        <button
+          className="btn borderless btn-outline-danger btn-outline-bg-danger"
+          onClick={[Function]}
+          style={
+            Object {
+              "color": "danger",
+            }
+          }
         >
-           @admin
-        </div>
-      </a>
+          <svg
+            aria-hidden="true"
+            className="octicon octicon-trash"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path fill-rule=\\"evenodd\\" d=\\"M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z\\"></path>",
+              }
+            }
+            fill="currentColor"
+            height={16}
+            role="img"
+            style={
+              Object {
+                "display": "inline-block",
+                "overflow": "visible",
+                "userSelect": "none",
+                "verticalAlign": "text-bottom",
+              }
+            }
+            viewBox="0 0 16 16"
+            width={16}
+          />
+        </button>
+      </div>
     </div>
   </div>,
 ]

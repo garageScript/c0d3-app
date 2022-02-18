@@ -1,6 +1,5 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["orderByRelation"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -184,7 +183,7 @@ model Exercise {
   description String
   answer      String
   testable    Boolean
-  testStr     String
+  testStr     String?
 
   @@map("exercises")
 }
