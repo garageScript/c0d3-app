@@ -67,9 +67,9 @@ export default gql`
     ): Exercise!
     updateExercise(
       id: Int!
-      moduleId: Int
-      description: String
-      answer: String
+      moduleId: Int!
+      description: String!
+      answer: String!
       testStr: String
       explanation: String
     ): Exercise!

@@ -25,10 +25,9 @@ export const addExercise = async (
 ): Promise<Exercise> => {
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
-  const { testable, testStr, description, answer, moduleId } = args
-  if (testable && !testStr) throw new Error('Testable must have test string')
+  const { testStr, description, answer, moduleId, explanation } = args
   return prisma.exercise.create({
-    data: { authorId, testable, testStr, description, answer, moduleId }
+    data: { authorId, testStr, description, answer, moduleId, explanation }
   })
 }
 
@@ -39,8 +38,7 @@ export const updateExercise = async (
 ): Promise<Exercise> => {
   const authorId = req.user?.id
   if (!authorId) throw new Error('No user')
-  const { id, testable, testStr, description, answer, moduleId } = args
-  if (testable && !testStr) throw new Error('Testable must have test string')
+  const { id, testStr, description, answer, moduleId, explanation } = args
   const exercise = await prisma.exercise.findUnique({
     where: {
       id
@@ -53,7 +51,7 @@ export const updateExercise = async (
     where: {
       id
     },
-    data: { testable, testStr, description, answer, moduleId }
+    data: { explanation, testStr, description, answer, moduleId }
   })
 }
 

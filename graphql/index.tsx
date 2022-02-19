@@ -258,11 +258,11 @@ export type MutationUpdateChallengeArgs = {
 }
 
 export type MutationUpdateExerciseArgs = {
-  answer?: InputMaybe<Scalars['String']>
-  description?: InputMaybe<Scalars['String']>
+  answer: Scalars['String']
+  description: Scalars['String']
   explanation?: InputMaybe<Scalars['String']>
   id: Scalars['Int']
-  moduleId?: InputMaybe<Scalars['Int']>
+  moduleId: Scalars['Int']
   testStr?: InputMaybe<Scalars['String']>
 }
 
@@ -1448,7 +1448,10 @@ export type MutationResolvers<
     ResolversTypes['Exercise'],
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateExerciseArgs, 'id'>
+    RequireFields<
+      MutationUpdateExerciseArgs,
+      'answer' | 'description' | 'id' | 'moduleId'
+    >
   >
   updateLesson?: Resolver<
     Array<ResolversTypes['Lesson']>,

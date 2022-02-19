@@ -73,22 +73,6 @@ describe('It should add exercises', () => {
       )
     ).rejects.toThrowError()
   })
-  test('it should check if testStr is present with testable ', () => {
-    expect(
-      addExercise(
-        {},
-        {
-          description: 'Whats 2 + 3',
-          answer: 'Pie',
-          moduleId: 1,
-          testable: true
-        },
-        {
-          req: { user: { id: 3 } }
-        }
-      )
-    ).rejects.toThrow(new Error('Testable must have test string'))
-  })
 })
 
 describe('It should update an exercise', () => {
@@ -122,22 +106,6 @@ describe('It should update an exercise', () => {
         }
       )
     ).rejects.toThrowError()
-  })
-  test('it should check if testStr is present with testable ', () => {
-    expect(
-      updateExercise(
-        {},
-        {
-          description: '333',
-          answer: 'number',
-          moduleId: 1,
-          testable: true
-        },
-        {
-          req: { user: { id: 3 } }
-        }
-      )
-    ).rejects.toThrow(new Error('Testable must have test string'))
   })
   test('It should check user is author of exercise', () => {
     expect(
