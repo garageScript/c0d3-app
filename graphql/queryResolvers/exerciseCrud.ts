@@ -2,8 +2,7 @@ import prisma from '../../prisma'
 import {
   MutationAddExerciseArgs,
   MutationUpdateExerciseArgs,
-  MutationDeleteExerciseArgs,
-  SuccessResponse
+  MutationDeleteExerciseArgs
 } from '..'
 import { Context } from '../../@types/helpers'
 import type { Exercise } from '@prisma/client'
@@ -59,7 +58,7 @@ export const deleteExercise = async (
   _parent: void,
   arg: MutationDeleteExerciseArgs,
   { req }: Context
-): Promise<SuccessResponse> => {
+): Promise<Exercise> => {
   const { id } = arg
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
@@ -71,6 +70,5 @@ export const deleteExercise = async (
   if (!isAdmin(req) && exercise?.authorId !== authorId) {
     throw new Error('Not authorized to delete')
   }
-  await prisma.exercise.delete({ where: { id } })
-  return { success: true }
+  return prisma.exercise.delete({ where: { id } })
 }
