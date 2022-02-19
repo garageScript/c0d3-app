@@ -56,22 +56,22 @@ export default gql`
       content: String!
     ): Comment
     deleteComment(id: Int!): Comment
-    addModule(lessonId: Int!, name: String!, content: String!): Module
+    addModule(lessonId: Int!, name: String!, content: String!): Module!
     deleteModule(id: Int!): SuccessResponse
     addExercise(
       moduleId: Int!
       description: String!
       answer: String!
-      testable: Boolean!
       testStr: String
+      explanation: String
     ): Exercise!
     updateExercise(
       id: Int!
-      moduleId: Int!
-      description: String!
-      answer: String!
-      testable: Boolean!
+      moduleId: Int
+      description: String
+      answer: String
       testStr: String
+      explanation: String
     ): Exercise!
     deleteExercise(id: Int!): SuccessResponse
     createLesson(
@@ -242,7 +242,7 @@ export default gql`
     module: Module!
     description: String!
     answer: String!
-    testable: Boolean!
     testStr: String
+    explanation: String
   }
 `
