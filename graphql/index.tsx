@@ -121,8 +121,8 @@ export type Mutation = {
   createLesson: Array<Lesson>
   createSubmission?: Maybe<Submission>
   deleteComment?: Maybe<Comment>
-  deleteExercise?: Maybe<SuccessResponse>
-  deleteModule?: Maybe<SuccessResponse>
+  deleteExercise: Exercise
+  deleteModule: Module
   login?: Maybe<AuthResponse>
   logout?: Maybe<AuthResponse>
   rejectSubmission?: Maybe<Submission>
@@ -258,11 +258,11 @@ export type MutationUpdateChallengeArgs = {
 }
 
 export type MutationUpdateExerciseArgs = {
-  answer?: InputMaybe<Scalars['String']>
-  description?: InputMaybe<Scalars['String']>
+  answer: Scalars['String']
+  description: Scalars['String']
   explanation?: InputMaybe<Scalars['String']>
   id: Scalars['Int']
-  moduleId?: InputMaybe<Scalars['Int']>
+  moduleId: Scalars['Int']
   testStr?: InputMaybe<Scalars['String']>
 }
 
@@ -1380,13 +1380,13 @@ export type MutationResolvers<
     RequireFields<MutationDeleteCommentArgs, 'id'>
   >
   deleteExercise?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    ResolversTypes['Exercise'],
     ParentType,
     ContextType,
     RequireFields<MutationDeleteExerciseArgs, 'id'>
   >
   deleteModule?: Resolver<
-    Maybe<ResolversTypes['SuccessResponse']>,
+    ResolversTypes['Module'],
     ParentType,
     ContextType,
     RequireFields<MutationDeleteModuleArgs, 'id'>
@@ -1448,7 +1448,10 @@ export type MutationResolvers<
     ResolversTypes['Exercise'],
     ParentType,
     ContextType,
-    RequireFields<MutationUpdateExerciseArgs, 'id'>
+    RequireFields<
+      MutationUpdateExerciseArgs,
+      'answer' | 'description' | 'id' | 'moduleId'
+    >
   >
   updateLesson?: Resolver<
     Array<ResolversTypes['Lesson']>,

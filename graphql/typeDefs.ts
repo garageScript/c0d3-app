@@ -57,7 +57,7 @@ export default gql`
     ): Comment
     deleteComment(id: Int!): Comment
     addModule(lessonId: Int!, name: String!, content: String!): Module!
-    deleteModule(id: Int!): SuccessResponse
+    deleteModule(id: Int!): Module!
     addExercise(
       moduleId: Int!
       description: String!
@@ -67,13 +67,13 @@ export default gql`
     ): Exercise!
     updateExercise(
       id: Int!
-      moduleId: Int
-      description: String
-      answer: String
+      moduleId: Int!
+      description: String!
+      answer: String!
       testStr: String
       explanation: String
     ): Exercise!
-    deleteExercise(id: Int!): SuccessResponse
+    deleteExercise(id: Int!): Exercise!
     createLesson(
       description: String!
       docUrl: String
