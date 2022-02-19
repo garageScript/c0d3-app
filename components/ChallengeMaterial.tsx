@@ -211,6 +211,8 @@ const ChallengeQuestionCardDisplay: React.FC<{
                   type="success"
                   color="white"
                   onClick={() => {
+                    if (!commentValue) return
+
                     addComment({
                       variables: {
                         submissionId: submission!.id,
