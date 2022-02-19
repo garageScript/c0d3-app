@@ -161,13 +161,12 @@ const LandingPage: React.FC = () => {
                 Each lesson in our curriculum is designed to be hands on and you
                 will learn by working through the exercises in the curriculum.
                 All hosting will be provided for you so you can proudly share
-                your accomplishments with the world without spenxding a penny.
+                your accomplishments with the world without spending a penny.
                 The exercises and challenges are designed to be difficult to
-                force you to ask questions. chat channel. Students who have
-                passed the lessons are available in the chatroom to help you
-                with your questions.{' '}
+                force you to ask questions. Students who have passed the lessons
+                are available in the chatrooms to help you with your questions.{' '}
                 <span className="fw-light text-warning">
-                  (Meetups are unavailable due to COVID-19)
+                  (Meetups are currently unavailable due to COVID-19)
                 </span>
               </p>
             </div>
