@@ -14,6 +14,11 @@ import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import dummySessionData from '../__dummy__/sessionData'
 import previousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 import _ from 'lodash'
+import REJECT_SUBMISSION from '../graphql/queries/rejectSubmission'
+
+jest.mock('../helpers/updateCache')
+import { updateCache } from '../helpers/updateCache'
+
 jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 
 // a/js7/1.c b/js7/1.c instead of a/js7/1.js b/js7/1.js
@@ -50,6 +55,41 @@ const mocks = [
   {
     request: {
       query: ADD_COMMENT,
+      variables: { submissionId: 104, content: 'Good job!' }
+    },
+    result: {
+      data: {
+        addComment: {
+          id: 5
+        }
+      }
+    }
+  },
+  {
+    request: {
+      query: ADD_COMMENT,
+      variables: { submissionId: 104, content: '' }
+    },
+    result: {
+      data: {
+        addComment: {
+          __typename: 'Comment',
+          id: 5
+        }
+      }
+    },
+    newData: jest.fn(() => ({
+      data: {
+        addComment: {
+          __typename: 'Comment',
+          id: 5
+        }
+      }
+    }))
+  },
+  {
+    request: {
+      query: ADD_COMMENT,
       variables: {
         submissionId: 104,
         content: 'A very unique test comment!'
@@ -79,6 +119,23 @@ const mocks = [
         addComment: {
           __typename: 'Comment',
           id: 111
+        }
+      }
+    }
+  },
+  {
+    request: {
+      query: REJECT_SUBMISSION,
+      variables: {
+        submissionId: 104,
+        comment: "This won't work",
+        lessonId: 1
+      }
+    },
+    result: {
+      data: {
+        rejectSubmission: {
+          id: 104
         }
       }
     }
@@ -247,6 +304,9 @@ describe('ReviewCard Component', () => {
     )
   })
   test('Should be able to add comment', async () => {
+    const updateCacheMock = jest.fn()
+    updateCache.mockImplementation(() => updateCacheMock())
+
     const { container, getByRole } = render(
       <MockedProvider mocks={mocks} addTypeName={false}>
         <ReviewCard
@@ -266,6 +326,33 @@ describe('ReviewCard Component', () => {
         name: 'Submit'
       })
     )
+    expect(container).toMatchSnapshot()
+  })
+  test('Should not be able to add comment when comment value is empty', async () => {
+    const { container, getByRole } = render(
+      <MockedProvider mocks={mocks} addTypeName={false}>
+        <ReviewCard
+          submissionData={submissionData}
+          session={dummySessionData}
+        />
+      </MockedProvider>
+    )
+    userEvent.type(getByRole('textbox', { name: '' }), '')
+    userEvent.click(
+      getByRole('radio', {
+        name: 'Comment Submit general feedback without explicit approval'
+      })
+    )
+    userEvent.click(
+      getByRole('button', {
+        name: 'Submit'
+      })
+    )
+
+    const addDeleteMutation = mocks[2].newData
+
+    await waitFor(() => expect(addDeleteMutation).toHaveBeenCalledTimes(0))
+
     expect(container).toMatchSnapshot()
   })
   test('Should render reviewer with name', async () => {
