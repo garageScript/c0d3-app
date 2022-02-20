@@ -73,7 +73,6 @@ const ReviewButtons: React.FC<{
     switch (commentType) {
       case 'comment': {
         if (commentValue) {
-          console.log(commentValue)
           addComment({
             variables: {
               submissionId: submissionState.id,
