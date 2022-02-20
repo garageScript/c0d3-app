@@ -23,6 +23,10 @@ import getPreviousSubmissionsData from '../__dummy__/getPreviousSubmissionsData'
 import dummySessionData from '../__dummy__/sessionData'
 import { ContextProvider, GlobalContext } from '../helpers/globalContext'
 import _ from 'lodash'
+
+jest.mock('../helpers/updateCache')
+import { updateCache } from '../helpers/updateCache'
+
 jest.useFakeTimers('modern').setSystemTime(new Date('2000-11-22').getTime())
 
 const getPreviousSubmissionsMock = {
@@ -66,6 +70,30 @@ const mocks = [
         }
       }
     }
+  },
+  {
+    request: {
+      query: ADD_COMMENT,
+      variables: {
+        submissionId: 3502,
+        content: ''
+      }
+    },
+    result: {
+      data: {
+        addComment: {
+          id: 5
+        }
+      }
+    },
+    newData: jest.fn(() => ({
+      data: {
+        addComment: {
+          __typename: 'Comment',
+          id: 5
+        }
+      }
+    }))
   },
   {
     ...getPreviousSubmissionsMock,
@@ -397,6 +425,9 @@ describe('Curriculum challenge page', () => {
   })
 
   test('Should be able to add comments', async () => {
+    const updateCacheMock = jest.fn()
+    updateCache.mockImplementation(() => updateCacheMock())
+
     const copyProps = getMockedProps()
     const { lessonStatus, userSubmissions } = copyProps
     lessonStatus.passedAt = null
@@ -414,6 +445,30 @@ describe('Curriculum challenge page', () => {
     fireEvent.click(screen.getByText('Comment'))
 
     // TODO: add test to check that comment is rendered to screen after clicking
+  })
+
+  test('Should not be able to add comments when comment text is empty', async () => {
+    const copyProps = getMockedProps()
+    const { lessonStatus, userSubmissions } = copyProps
+    lessonStatus.passedAt = null
+    userSubmissions.forEach(
+      submission => (submission.status = SubmissionStatus.Open)
+    )
+
+    render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <ChallengeMaterial {...copyProps} />
+      </MockedProvider>
+    )
+
+    userEvent.type(screen.getByTestId('textbox'), '')
+    fireEvent.click(screen.getByText('Comment'))
+
+    const addCommentMutation = mocks[3].newData
+
+    await waitFor(() => {
+      expect(addCommentMutation).toHaveBeenCalledTimes(0)
+    })
   })
 
   test('Should return error component if there is no name in context', () => {
