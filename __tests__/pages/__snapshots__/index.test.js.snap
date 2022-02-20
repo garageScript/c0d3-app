@@ -315,17 +315,13 @@ exports[`Index Page Should render index page 1`] = `
               class="mt-3 fw-light"
               style="line-height: 1.5;"
             >
-              Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Support is available in our chat channel or in-person at one of our
+              Each lesson in our curriculum is designed to be hands on and you will learn by working through the exercises in the curriculum. All hosting will be provided for you so you can proudly share your accomplishments with the world without spending a penny. The exercises and challenges are designed to be difficult to force you to ask questions. Students who have passed the lessons are available in the chatrooms to help you with your questions.
                
-              <a
-                class="text-warning noUnderline"
-                href="https://www.meetup.com/San-Jose-C0D3/"
-                rel="noopener noreferrer"
-                target="_blank"
+              <span
+                class="fw-light text-warning"
               >
-                meetup groups
-              </a>
-              . Students who have passed the lessons may be available at the meetup or in the chatroom to help you with your questions.
+                (Meetups are currently unavailable due to COVID-19)
+              </span>
             </p>
           </div>
         </div>
