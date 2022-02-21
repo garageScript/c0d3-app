@@ -163,17 +163,11 @@ const LandingPage: React.FC = () => {
                 All hosting will be provided for you so you can proudly share
                 your accomplishments with the world without spending a penny.
                 The exercises and challenges are designed to be difficult to
-                force you to ask questions. Support is available in our chat
-                channel or in-person at one of our{' '}
-                <NavLink
-                  path="https://www.meetup.com/San-Jose-C0D3/"
-                  className="text-warning"
-                  external
-                >
-                  meetup groups
-                </NavLink>
-                . Students who have passed the lessons may be available at the
-                meetup or in the chatroom to help you with your questions.
+                force you to ask questions. Students who have passed the lessons
+                are available in the chatrooms to help you with your questions.{' '}
+                <span className="fw-light text-warning">
+                  (Meetups are currently unavailable due to COVID-19)
+                </span>
               </p>
             </div>
           </div>
