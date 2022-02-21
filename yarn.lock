@@ -12218,10 +12218,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-next-connect@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.12.1.tgz#9e1c2b107544c27a26f00d11eb1d5e432b9853b4"
-  integrity sha512-pzW3oKCYAaNOxQncIIv53cHrRaZSeQ2KZ9chjYx/OHgASV8qDNlVvD3Mz9RTrO9TuJs3kjt0VeTBGJmoE/yl2g==
+next-connect@^0.12.2:
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/next-connect/-/next-connect-0.12.2.tgz#8191db0f03c80f8f4dbbe80e643a48cb3c9a20b9"
+  integrity sha512-B/zKHPs5S7XWvAVsZVLvOeY2eL2U3g0W/BgCDetEJRcNDzxX2vi8rzqBuEoLLPlI8LvtHwujDVUFFjSgOEZTbA==
   dependencies:
     trouter "^3.2.0"
 
