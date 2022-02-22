@@ -72,14 +72,18 @@ const ReviewButtons: React.FC<{
   const submitReview = () => {
     switch (commentType) {
       case 'comment': {
-        addComment({
-          variables: {
-            submissionId: submissionState.id,
-            content: commentValue
-          },
-          update
-        })
-        setCommentValue('')
+        if (commentValue) {
+          addComment({
+            variables: {
+              submissionId: submissionState.id,
+              content: commentValue
+            },
+            update
+          })
+
+          setCommentValue('')
+        }
+
         return
       }
       case 'accept': {
