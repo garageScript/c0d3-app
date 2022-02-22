@@ -25404,7 +25404,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
             value=""
           />
           <button
-            className="btn btn-primary btn-lg btn-block mb-3"
+            className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
             type="submit"
           >
@@ -25497,7 +25497,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
             value=""
           />
           <button
-            className="btn btn-primary btn-lg btn-block mb-3"
+            className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
             type="submit"
           >
@@ -25600,7 +25600,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
             value=""
           />
           <button
-            className="btn btn-primary btn-lg btn-block mb-3"
+            className="btn btn-primary btn-lg btn mb-3"
             data-testid="submit"
             type="submit"
           >
@@ -25645,16 +25645,6 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
       <p
         className="card-text"
       />
-      <div
-        className="bg-light m-auto px-5 border-0"
-      >
-        <h5
-          className="text-warning"
-          data-testid="signup-loading"
-        >
-          Submitting...
-        </h5>
-      </div>
       <form
         action="#"
         data-testid="form"
@@ -25703,11 +25693,15 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
             value=""
           />
           <button
-            className="btn btn-primary btn-lg btn-block mb-3"
+            className="btn btn-dark btn-lg btn mb-3"
             data-testid="submit"
             type="submit"
           >
-            Create Account
+            <span
+              aria-hidden="true"
+              className="spinner-border"
+              role="status"
+            />
           </button>
         </div>
       </form>
