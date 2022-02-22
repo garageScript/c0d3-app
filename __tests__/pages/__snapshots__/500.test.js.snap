@@ -64,22 +64,6 @@ exports[`500 Error Page should render 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-          >
-            Login
-          </a>
-          <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>
