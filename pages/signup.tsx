@@ -16,6 +16,7 @@ import SIGNUP_USER from '../graphql/queries/signupUser'
 
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
+import { Spinner } from 'react-bootstrap'
 
 type Values = {
   email: string
@@ -84,13 +85,6 @@ const SignupForm: React.FC<SignupFormProps> = ({
   return (
     <Card title="Create Account">
       <ErrorMessage signupErrors={signupErrors} />
-      {isLoading && (
-        <div className="bg-light m-auto px-5 border-0">
-          <h5 data-testid="signup-loading" className="text-warning">
-            Submitting...
-          </h5>
-        </div>
-      )}
       <Formik
         validateOnBlur
         initialValues={initialValues}
@@ -130,11 +124,22 @@ const SignupForm: React.FC<SignupFormProps> = ({
             />
 
             <button
-              className="btn btn-primary btn-lg btn-block mb-3"
+              className={`btn ${
+                isLoading ? 'btn-dark' : 'btn-primary'
+              } btn-lg btn mb-3`}
               type="submit"
               data-testid="submit"
             >
-              Create Account
+              {isLoading ? (
+                <Spinner
+                  as="span"
+                  animation="border"
+                  role="status"
+                  aria-hidden="true"
+                />
+              ) : (
+                'Create Account'
+              )}
             </button>
           </div>
         </Form>
