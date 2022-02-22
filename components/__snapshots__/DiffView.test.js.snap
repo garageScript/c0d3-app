@@ -33,7 +33,7 @@ exports[`DiffView component Should add comment box 1`] = `
       </button>
     </div>
     <table
-      class="css-1n5o7vh-diff-container"
+      class="css-b02w0u-diff-container"
     >
       <tbody>
         <tr>
@@ -666,7 +666,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
       </button>
     </div>
     <table
-      class="css-1n5o7vh-diff-container"
+      class="css-b02w0u-diff-container"
     >
       <tbody>
         <tr>
@@ -2836,7 +2836,7 @@ exports[`DiffView component Should render diff with comments 1`] = `
       </button>
     </div>
     <table
-      class="css-1n5o7vh-diff-container"
+      class="css-b02w0u-diff-container"
     >
       <tbody>
         <tr>
