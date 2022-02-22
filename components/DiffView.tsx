@@ -22,6 +22,10 @@ const styles: ReactDiffViewerStylesOverride = {
   },
   emptyGutter: {
     display: 'none'
+  },
+  diffContainer: {
+    display: 'block',
+    overflowX: 'auto'
   }
 }
 
