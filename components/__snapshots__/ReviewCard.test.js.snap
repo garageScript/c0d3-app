@@ -121,7 +121,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               </button>
             </div>
             <table
-              class="css-1n5o7vh-diff-container"
+              class="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -954,7 +954,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
               </button>
             </div>
             <table
-              class="css-1n5o7vh-diff-container"
+              class="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -1736,7 +1736,7 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
               </button>
             </div>
             <table
-              class="css-1n5o7vh-diff-container"
+              class="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -2518,7 +2518,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               </button>
             </div>
             <table
-              class="css-1n5o7vh-diff-container"
+              class="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -4101,7 +4101,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               </button>
             </div>
             <table
-              class="css-1n5o7vh-diff-container"
+              class="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -6059,7 +6059,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               </button>
             </div>
             <table
-              class="css-1n5o7vh-diff-container"
+              class="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
