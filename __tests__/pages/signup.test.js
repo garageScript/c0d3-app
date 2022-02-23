@@ -128,7 +128,7 @@ describe('Signup Page', () => {
     await waitFor(() => {
       expect(
         getByText(
-          'Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+          'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
         )
       ).toBeTruthy()
       expect(container).toMatchSnapshot()

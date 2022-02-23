@@ -20,21 +20,26 @@ exports[`Signup Page Should render errors on fail 1`] = `
           class="card-text"
         />
         <div
-          class="bg-light m-auto px-5 border-0"
-          data-testid="error-message"
+          class="alert d-flex justify-content-between mt-3 alert-danger"
+          role="alert"
         >
-          <h5
-            class="text-danger"
+          <div
+            class="d-flex gap-3"
           >
-             Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com
-          </h5>
+            <img
+              height="24"
+              src="/assets/curriculum/icons/exclamation.svg"
+              width="24"
+            />
+            Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com 
+          </div>
         </div>
         <form
           action="#"
           data-testid="form"
         >
           <div
-            class="form-group d-grid"
+            class="form-group d-grid mt-3"
           >
             <input
               class="form-control form-control-lg fw-light mb-3 "
