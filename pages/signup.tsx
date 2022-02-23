@@ -17,6 +17,7 @@ import SIGNUP_USER from '../graphql/queries/signupUser'
 import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
+import Alert from '../components/Alert'
 
 type Values = {
   email: string
@@ -51,16 +52,7 @@ const initialValues: Values = {
 const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
   if (!signupErrors || !signupErrors.length) return <></>
   const errorMessages = signupErrors.map((message, idx) => {
-    const formattedMessage = message.split(':')[1]
-    return (
-      <div
-        key={idx}
-        data-testid="error-message"
-        className="bg-light m-auto px-5 border-0"
-      >
-        <h5 className="text-danger">{formattedMessage}</h5>
-      </div>
-    )
+    return <Alert key={idx} alert={{ id: -1, text: message, type: 'urgent' }} />
   })
   return <>{errorMessages}</>
 }
@@ -92,7 +84,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
         onSubmit={handleSubmit}
       >
         <Form data-testid="form">
-          <div className="form-group d-grid">
+          <div className="form-group d-grid mt-3">
             <Field
               name="email"
               placeholder="Email address"
