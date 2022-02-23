@@ -951,7 +951,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               </button>
             </div>
             <table
-              className="css-1n5o7vh-diff-container"
+              className="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -1795,7 +1795,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               </button>
             </div>
             <table
-              className="css-1n5o7vh-diff-container"
+              className="css-b02w0u-diff-container"
             >
               <tbody>
                 <tr>
@@ -3124,7 +3124,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
     </button>
   </div>
   <table
-    className="css-1n5o7vh-diff-container"
+    className="css-b02w0u-diff-container"
   >
     <tbody>
       <tr>
@@ -3493,7 +3493,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
     </button>
   </div>
   <table
-    className="css-1n5o7vh-diff-container"
+    className="css-b02w0u-diff-container"
   >
     <tbody>
       <tr>
@@ -11571,7 +11571,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             </button>
           </div>
           <table
-            className="css-1n5o7vh-diff-container"
+            className="css-b02w0u-diff-container"
           >
             <tbody>
               <tr>
@@ -12969,7 +12969,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             </button>
           </div>
           <table
-            className="css-1n5o7vh-diff-container"
+            className="css-b02w0u-diff-container"
           >
             <tbody>
               <tr>
@@ -14365,7 +14365,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             </button>
           </div>
           <table
-            className="css-1n5o7vh-diff-container"
+            className="css-b02w0u-diff-container"
           >
             <tbody>
               <tr>
@@ -15761,7 +15761,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             </button>
           </div>
           <table
-            className="css-1n5o7vh-diff-container"
+            className="css-b02w0u-diff-container"
           >
             <tbody>
               <tr>
@@ -17157,7 +17157,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             </button>
           </div>
           <table
-            className="css-1n5o7vh-diff-container"
+            className="css-b02w0u-diff-container"
           >
             <tbody>
               <tr>

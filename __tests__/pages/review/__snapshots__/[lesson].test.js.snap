@@ -800,7 +800,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       </button>
                     </div>
                     <table
-                      class="css-1n5o7vh-diff-container"
+                      class="css-b02w0u-diff-container"
                     >
                       <tbody>
                         <tr>
@@ -2970,7 +2970,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       </button>
                     </div>
                     <table
-                      class="css-1n5o7vh-diff-container"
+                      class="css-b02w0u-diff-container"
                     >
                       <tbody>
                         <tr>
