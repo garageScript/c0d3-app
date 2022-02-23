@@ -60,7 +60,7 @@ const DiffView: React.FC<{
     //rerunning useEffect on id rerenders submission when student clicks on another challenge
   }, [id, comments])
 
-  const renderFile = ({ hunks, newPath }: File) => {
+  const renderFile = ({ hunks, newPath }: File, fileIdx: number) => {
     const newValue: string[] = []
     if (!hunks.length || !newPath) return
     let extension = newPath.split('.').pop()!
@@ -104,7 +104,7 @@ const DiffView: React.FC<{
               className="form-check-input"
               type="checkbox"
               value=""
-              id={`flexCheckChecked-${id}`}
+              id={`checkBox-${id}-${fileIdx}`}
               checked={isViewable}
               onChange={() => {
                 setIsViewable(!isViewable)
@@ -112,7 +112,7 @@ const DiffView: React.FC<{
             ></input>
             <label
               className="form-check-label"
-              htmlFor={`flexCheckChecked-${id}`}
+              htmlFor={`checkBox-${id}-${fileIdx}`}
             >
               Viewed
             </label>
