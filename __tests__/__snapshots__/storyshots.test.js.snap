@@ -25103,7 +25103,7 @@ exports[`Storyshots Pages/Signup Signup 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group d-grid"
+          className="form-group d-grid mt-3"
         >
           <input
             autoFocus={true}
@@ -25196,7 +25196,7 @@ exports[`Storyshots Pages/Signup Signup Basic 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group d-grid"
+          className="form-group d-grid mt-3"
         >
           <input
             autoFocus={true}
@@ -25283,14 +25283,20 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         className="card-text"
       />
       <div
-        className="bg-light m-auto px-5 border-0"
-        data-testid="error-message"
+        className="alert d-flex justify-content-between mt-3 alert-danger"
+        role="alert"
       >
-        <h5
-          className="text-danger"
+        <div
+          className="d-flex gap-3"
         >
-           User does not exist
-        </h5>
+          <img
+            className="img-fluid"
+            height={24}
+            src="/assets/curriculum/icons/exclamation.svg"
+            width={24}
+          />
+          UserInput Error: User does not exist 
+        </div>
       </div>
       <form
         action="#"
@@ -25299,7 +25305,7 @@ exports[`Storyshots Pages/Signup Signup Errors 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group d-grid"
+          className="form-group d-grid mt-3"
         >
           <input
             autoFocus={true}
@@ -25402,7 +25408,7 @@ exports[`Storyshots Pages/Signup Signup Loading 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="form-group d-grid"
+          className="form-group d-grid mt-3"
         >
           <input
             autoFocus={true}
