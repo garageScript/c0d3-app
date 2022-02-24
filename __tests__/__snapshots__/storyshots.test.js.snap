@@ -319,26 +319,6 @@ exports[`Storyshots Components/AppNav Logged In 1`] = `
           Community
         </a>
       </div>
-      <div
-        className="nav-buttons"
-      >
-        <a
-          className="btn btn-light border m-2 me-lg-3 noUnderline"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-        <a
-          className="btn btn-light border m-2 me-lg-3 noUnderline"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Signup
-        </a>
-      </div>
     </div>
   </div>
 </nav>
@@ -412,26 +392,6 @@ exports[`Storyshots Components/AppNav Logged Out 1`] = `
           target="_blank"
         >
           Community
-        </a>
-      </div>
-      <div
-        className="nav-buttons"
-      >
-        <a
-          className="btn btn-light border m-2 me-lg-3 noUnderline"
-          href="/login"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Login
-        </a>
-        <a
-          className="btn btn-light border m-2 me-lg-3 noUnderline"
-          href="/signup"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Signup
         </a>
       </div>
     </div>
@@ -4771,26 +4731,6 @@ Array [
             Community
           </a>
         </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>,
@@ -4937,26 +4877,6 @@ Array [
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
           </a>
         </div>
       </div>
@@ -7488,26 +7408,6 @@ Array [
             Community
           </a>
         </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>,
@@ -7625,26 +7525,6 @@ Array [
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
           </a>
         </div>
       </div>
@@ -8254,26 +8134,6 @@ Array [
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
           </a>
         </div>
       </div>
@@ -19542,26 +19402,6 @@ Array [
             Community
           </a>
         </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>,
@@ -19790,26 +19630,6 @@ Array [
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
           </a>
         </div>
       </div>
@@ -21312,26 +21132,6 @@ Array [
             Community
           </a>
         </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>,
@@ -22830,26 +22630,6 @@ Array [
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
           </a>
         </div>
       </div>
@@ -24352,26 +24132,6 @@ Array [
             Community
           </a>
         </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>,
@@ -25237,26 +24997,6 @@ Array [
             target="_blank"
           >
             Community
-          </a>
-        </div>
-        <div
-          className="nav-buttons"
-        >
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Login
-          </a>
-          <a
-            className="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Signup
           </a>
         </div>
       </div>
