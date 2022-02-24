@@ -4863,7 +4863,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -5031,7 +5031,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -5312,7 +5312,7 @@ exports[`Storyshots Components/Footer Footer 1`] = `
 <footer
   className="mt-5 fw-light text-center pb-5 text-muted"
 >
-  © Copyright 2022 GarageScript
+  © Copyright 2021 GarageScript
 </footer>
 `;
 
@@ -5320,7 +5320,7 @@ exports[`Storyshots Components/Footer Footer With Class 1`] = `
 <footer
   className="fw-light text-center py-5 bg-white text-muted"
 >
-  © Copyright 2022 GarageScript
+  © Copyright 2021 GarageScript
 </footer>
 `;
 
@@ -7551,7 +7551,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -7690,7 +7690,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -8346,7 +8346,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -19716,7 +19716,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -21236,7 +21236,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -22756,7 +22756,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -24276,7 +24276,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -24436,7 +24436,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
@@ -25333,7 +25333,7 @@ Array [
   <footer
     className="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>,
 ]
 `;
