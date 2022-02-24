@@ -775,6 +775,22 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     <div
                       class="position-absolute w-100 d-flex justify-content-end p-1"
                     >
+                      <div
+                        class="form-check p-2"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="flexCheckChecked-108"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexCheckChecked-108"
+                        >
+                          Viewed
+                        </label>
+                      </div>
                       <button
                         class="btn borderless btn-outline-primary btn-outline-bg-primary"
                       >
@@ -2949,6 +2965,22 @@ exports[`Lesson Page Should render new submissions 1`] = `
                     <div
                       class="position-absolute w-100 d-flex justify-content-end p-1"
                     >
+                      <div
+                        class="form-check p-2"
+                      >
+                        <input
+                          class="form-check-input"
+                          id="flexCheckChecked-108"
+                          type="checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexCheckChecked-108"
+                        >
+                          Viewed
+                        </label>
+                      </div>
                       <button
                         class="btn borderless btn-outline-primary btn-outline-bg-primary"
                       >

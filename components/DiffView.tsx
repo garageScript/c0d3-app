@@ -104,13 +104,16 @@ const DiffView: React.FC<{
               className="form-check-input"
               type="checkbox"
               value=""
-              id="flexCheckChecked"
+              id={`flexCheckChecked-${id}`}
               checked={isViewable}
               onChange={() => {
                 setIsViewable(!isViewable)
               }}
             ></input>
-            <label className="form-check-label" htmlFor="flexCheckChecked">
+            <label
+              className="form-check-label"
+              htmlFor={`flexCheckChecked-${id}`}
+            >
               Viewed
             </label>
           </div>

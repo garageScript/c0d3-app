@@ -96,6 +96,22 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             <div
               class="position-absolute w-100 d-flex justify-content-end p-1"
             >
+              <div
+                class="form-check p-2"
+              >
+                <input
+                  class="form-check-input"
+                  id="flexCheckChecked-104"
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  class="form-check-label"
+                  for="flexCheckChecked-104"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 class="btn borderless btn-outline-primary btn-outline-bg-primary"
               >
@@ -933,6 +949,22 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             <div
               class="position-absolute w-100 d-flex justify-content-end p-1"
             >
+              <div
+                class="form-check p-2"
+              >
+                <input
+                  class="form-check-input"
+                  id="flexCheckChecked-104"
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  class="form-check-label"
+                  for="flexCheckChecked-104"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 class="btn borderless btn-outline-primary btn-outline-bg-primary"
               >
@@ -1719,6 +1751,22 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
             <div
               class="position-absolute w-100 d-flex justify-content-end p-1"
             >
+              <div
+                class="form-check p-2"
+              >
+                <input
+                  class="form-check-input"
+                  id="flexCheckChecked-104"
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  class="form-check-label"
+                  for="flexCheckChecked-104"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 class="btn borderless btn-outline-primary btn-outline-bg-primary"
               >
@@ -2505,6 +2553,22 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             <div
               class="position-absolute w-100 d-flex justify-content-end p-1"
             >
+              <div
+                class="form-check p-2"
+              >
+                <input
+                  class="form-check-input"
+                  id="flexCheckChecked-104"
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  class="form-check-label"
+                  for="flexCheckChecked-104"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 class="btn borderless btn-outline-primary btn-outline-bg-primary"
               >
@@ -4092,6 +4156,22 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             <div
               class="position-absolute w-100 d-flex justify-content-end p-1"
             >
+              <div
+                class="form-check p-2"
+              >
+                <input
+                  class="form-check-input"
+                  id="flexCheckChecked-104"
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  class="form-check-label"
+                  for="flexCheckChecked-104"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 class="btn borderless btn-outline-primary btn-outline-bg-primary"
               >
@@ -6054,6 +6134,22 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             <div
               class="position-absolute w-100 d-flex justify-content-end p-1"
             >
+              <div
+                class="form-check p-2"
+              >
+                <input
+                  class="form-check-input"
+                  id="flexCheckChecked-104"
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  class="form-check-label"
+                  for="flexCheckChecked-104"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 class="btn borderless btn-outline-primary btn-outline-bg-primary"
               >
