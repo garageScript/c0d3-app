@@ -6,6 +6,7 @@ import _ from 'lodash'
 import CommentBox from './CommentBox'
 import { Comment, Submission, SubmissionStatus } from '../graphql'
 import CopyButton from './CopyButton'
+import scssStyles from '../scss/diffView.module.scss'
 
 const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 
@@ -99,41 +100,43 @@ const DiffView: React.FC<{
         <div className="position-absolute w-100 d-flex justify-content-end p-1">
           <CopyButton value={newValue.join('\n')} />
         </div>
-        <ReactDiffViewer
-          key={_.uniqueId()}
-          newValue={newValue.join('\n')}
-          renderContent={syntaxHighlight}
-          splitView={false}
-          leftTitle={`${newPath}`}
-          styles={styles}
-          onLineNumberClick={(n: string) => {
-            if (generalStatus !== SubmissionStatus.Open) return
-            //number is a string in format of L-10, R-4 and etc (left-right split views)
-            const lineNumber = Number.parseInt(n.split('-')[1])
-            const index = `${id}:${newPath}`
-            if (!commentsState[index])
-              commentsState[index] = { lines: [], comments: [] }
-            //remove CommentBox on click if there are no comments for this line
-            if (
-              commentsState[index].lines.includes(lineNumber) &&
-              !commentsState[index].comments.filter(
-                comment => comment.line === lineNumber
-              )[0]
-            ) {
-              const copy = _.cloneDeep(commentsState)
-              copy[index].lines = copy[index].lines.filter(
-                line => line !== lineNumber
-              )
-              setCommentsState(copy)
-            }
-            //add new CommentBox on click
-            if (!commentsState[index].lines.includes(lineNumber)) {
-              const copy = _.cloneDeep(commentsState)
-              copy[index].lines.push(lineNumber)
-              setCommentsState(copy)
-            }
-          }}
-        />
+        <div className={scssStyles.diffView}>
+          <ReactDiffViewer
+            key={_.uniqueId()}
+            newValue={newValue.join('\n')}
+            renderContent={syntaxHighlight}
+            splitView={false}
+            leftTitle={`${newPath}`}
+            styles={styles}
+            onLineNumberClick={(n: string) => {
+              if (generalStatus !== SubmissionStatus.Open) return
+              //number is a string in format of L-10, R-4 and etc (left-right split views)
+              const lineNumber = Number.parseInt(n.split('-')[1])
+              const index = `${id}:${newPath}`
+              if (!commentsState[index])
+                commentsState[index] = { lines: [], comments: [] }
+              //remove CommentBox on click if there are no comments for this line
+              if (
+                commentsState[index].lines.includes(lineNumber) &&
+                !commentsState[index].comments.filter(
+                  comment => comment.line === lineNumber
+                )[0]
+              ) {
+                const copy = _.cloneDeep(commentsState)
+                copy[index].lines = copy[index].lines.filter(
+                  line => line !== lineNumber
+                )
+                setCommentsState(copy)
+              }
+              //add new CommentBox on click
+              if (!commentsState[index].lines.includes(lineNumber)) {
+                const copy = _.cloneDeep(commentsState)
+                copy[index].lines.push(lineNumber)
+                setCommentsState(copy)
+              }
+            }}
+          />
+        </div>
       </div>
     )
   }
