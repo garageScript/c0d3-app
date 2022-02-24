@@ -40,7 +40,9 @@ const DiffView: React.FC<{
   type fileComments = Record<string, { lines: number[]; comments: Comment[] }>
   //every file gets unique index in format of submissionId:fileName
   const [commentsState, setCommentsState] = React.useState<fileComments>({})
-  const [isViewable, setIsViewable] = React.useState(false)
+  const [viewableStates, setViewableStates] = React.useState(
+    new Array(files.length).fill(false)
+  )
 
   useEffect(() => {
     const commentsMap =
@@ -98,16 +100,18 @@ const DiffView: React.FC<{
 
     return (
       <div className="position-relative">
-        <div className="position-absolute w-100 d-flex justify-content-end p-1">
-          <div className="form-check p-2">
+        <div className="position-absolute w-100 d-flex flex-row justify-content-end p-1">
+          <div className="form-check mt-2 me-2">
             <input
               className="form-check-input"
               type="checkbox"
               value=""
               id={`checkBox-${id}-${fileIdx}`}
-              checked={isViewable}
+              checked={viewableStates[fileIdx]}
               onChange={() => {
-                setIsViewable(!isViewable)
+                const newViewableStates = [...viewableStates]
+                newViewableStates[fileIdx] = !newViewableStates[fileIdx]
+                setViewableStates(newViewableStates)
               }}
             ></input>
             <label
@@ -122,7 +126,7 @@ const DiffView: React.FC<{
         <div className={scssStyles.diffView}>
           <ReactDiffViewer
             key={_.uniqueId()}
-            newValue={!isViewable ? newValue.join('\n') : ''}
+            newValue={!viewableStates[fileIdx] ? newValue.join('\n') : ''}
             renderContent={syntaxHighlight}
             splitView={false}
             leftTitle={`${newPath}`}

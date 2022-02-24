@@ -94,10 +94,10 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex justify-content-end p-1"
+              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check p-2"
+                class="form-check mt-2 me-2"
               >
                 <input
                   class="form-check-input"
@@ -947,10 +947,10 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex justify-content-end p-1"
+              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check p-2"
+                class="form-check mt-2 me-2"
               >
                 <input
                   class="form-check-input"
@@ -1749,10 +1749,10 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex justify-content-end p-1"
+              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check p-2"
+                class="form-check mt-2 me-2"
               >
                 <input
                   class="form-check-input"
@@ -2551,10 +2551,10 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex justify-content-end p-1"
+              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check p-2"
+                class="form-check mt-2 me-2"
               >
                 <input
                   class="form-check-input"
@@ -4154,10 +4154,10 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex justify-content-end p-1"
+              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check p-2"
+                class="form-check mt-2 me-2"
               >
                 <input
                   class="form-check-input"
@@ -6132,10 +6132,10 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
             class="position-relative"
           >
             <div
-              class="position-absolute w-100 d-flex justify-content-end p-1"
+              class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check p-2"
+                class="form-check mt-2 me-2"
               >
                 <input
                   class="form-check-input"

@@ -176,10 +176,10 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
               class="position-relative"
             >
               <div
-                class="position-absolute w-100 d-flex justify-content-end p-1"
+                class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
               >
                 <div
-                  class="form-check p-2"
+                  class="form-check mt-2 me-2"
                 >
                   <input
                     class="form-check-input"
