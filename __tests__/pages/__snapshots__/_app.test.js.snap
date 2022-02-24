@@ -64,22 +64,6 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
             Community
           </a>
         </div>
-        <div
-          class="nav-buttons"
-        >
-          <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/login"
-          >
-            Login
-          </a>
-          <a
-            class="btn btn-light border m-2 me-lg-3 noUnderline"
-            href="/signup"
-          >
-            Signup
-          </a>
-        </div>
       </div>
     </div>
   </nav>
@@ -151,7 +135,7 @@ exports[`MyApp component should render Login component passed in as prop 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2021 GarageScript
+    © Copyright 2022 GarageScript
   </footer>
 </div>
 `;

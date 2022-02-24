@@ -105,13 +105,18 @@ const AppNav: React.FC<{}> = () => {
   const [session, setSession] = useState<GetAppQuery['session']>({
     lessonStatus: []
   })
-  const { data } = useGetAppQuery()
+
+  const { data, loading } = useGetAppQuery()
+
   useEffect(() => {
     if (data && data.session) {
       setSession(data.session)
     }
   }, [data])
+
   const renderButtons = () => {
+    if (loading) return <></>
+
     if (!session || _.get(session, 'user.username', null) === null) {
       return <NotLoggedInAuthNav />
     }
