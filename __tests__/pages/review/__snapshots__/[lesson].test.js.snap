@@ -196,7 +196,7 @@ exports[`Lesson Page Should render Error component if route is invalid 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -415,7 +415,7 @@ exports[`Lesson Page Should render empty submissions 1`] = `
     <footer
       class="mt-5 fw-light text-center pb-5 text-muted"
     >
-      © Copyright 2022 GarageScript
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
@@ -6248,7 +6248,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
     <footer
       class="mt-5 fw-light text-center pb-5 text-muted"
     >
-      © Copyright 2022 GarageScript
+      © Copyright 2021 GarageScript
     </footer>
   </div>
 </div>
