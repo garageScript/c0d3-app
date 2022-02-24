@@ -13,13 +13,13 @@ exports[`DiffView component Should add comment box 1`] = `
       >
         <input
           class="form-check-input"
-          id="flexCheckChecked-104"
+          id="checkBox-104-0"
           type="checkbox"
           value=""
         />
         <label
           class="form-check-label"
-          for="flexCheckChecked-104"
+          for="checkBox-104-0"
         >
           Viewed
         </label>
@@ -666,13 +666,13 @@ exports[`DiffView component Should render collapsed diff 1`] = `
       >
         <input
           class="form-check-input"
-          id="flexCheckChecked-104"
+          id="checkBox-104-0"
           type="checkbox"
           value=""
         />
         <label
           class="form-check-label"
-          for="flexCheckChecked-104"
+          for="checkBox-104-0"
         >
           Viewed
         </label>
@@ -740,13 +740,13 @@ exports[`DiffView component Should render diff with comments 1`] = `
       >
         <input
           class="form-check-input"
-          id="flexCheckChecked-108"
+          id="checkBox-108-0"
           type="checkbox"
           value=""
         />
         <label
           class="form-check-label"
-          for="flexCheckChecked-108"
+          for="checkBox-108-0"
         >
           Viewed
         </label>
@@ -2930,13 +2930,13 @@ exports[`DiffView component Should render diff with comments 1`] = `
       >
         <input
           class="form-check-input"
-          id="flexCheckChecked-108"
+          id="checkBox-108-1"
           type="checkbox"
           value=""
         />
         <label
           class="form-check-label"
-          for="flexCheckChecked-108"
+          for="checkBox-108-1"
         >
           Viewed
         </label>

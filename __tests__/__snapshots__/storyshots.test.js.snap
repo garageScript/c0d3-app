@@ -923,14 +923,14 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                 <input
                   checked={false}
                   className="form-check-input"
-                  id="flexCheckChecked-1"
+                  id="checkBox-1-0"
                   onChange={[Function]}
                   type="checkbox"
                   value=""
                 />
                 <label
                   className="form-check-label"
-                  htmlFor="flexCheckChecked-1"
+                  htmlFor="checkBox-1-0"
                 >
                   Viewed
                 </label>
@@ -1789,14 +1789,14 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                 <input
                   checked={false}
                   className="form-check-input"
-                  id="flexCheckChecked-1"
+                  id="checkBox-1-0"
                   onChange={[Function]}
                   type="checkbox"
                   value=""
                 />
                 <label
                   className="form-check-label"
-                  htmlFor="flexCheckChecked-1"
+                  htmlFor="checkBox-1-0"
                 >
                   Viewed
                 </label>
@@ -3140,14 +3140,14 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
       <input
         checked={false}
         className="form-check-input"
-        id="flexCheckChecked-1"
+        id="checkBox-1-0"
         onChange={[Function]}
         type="checkbox"
         value=""
       />
       <label
         className="form-check-label"
-        htmlFor="flexCheckChecked-1"
+        htmlFor="checkBox-1-0"
       >
         Viewed
       </label>
@@ -3531,14 +3531,14 @@ exports[`Storyshots Components/DiffView Default 1`] = `
       <input
         checked={false}
         className="form-check-input"
-        id="flexCheckChecked-1"
+        id="checkBox-1-0"
         onChange={[Function]}
         type="checkbox"
         value=""
       />
       <label
         className="form-check-label"
-        htmlFor="flexCheckChecked-1"
+        htmlFor="checkBox-1-0"
       >
         Viewed
       </label>
@@ -11631,14 +11631,14 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
               <input
                 checked={false}
                 className="form-check-input"
-                id="flexCheckChecked-1"
+                id="checkBox-1-0"
                 onChange={[Function]}
                 type="checkbox"
                 value=""
               />
               <label
                 className="form-check-label"
-                htmlFor="flexCheckChecked-1"
+                htmlFor="checkBox-1-0"
               >
                 Viewed
               </label>
@@ -13051,14 +13051,14 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
               <input
                 checked={false}
                 className="form-check-input"
-                id="flexCheckChecked-1"
+                id="checkBox-1-0"
                 onChange={[Function]}
                 type="checkbox"
                 value=""
               />
               <label
                 className="form-check-label"
-                htmlFor="flexCheckChecked-1"
+                htmlFor="checkBox-1-0"
               >
                 Viewed
               </label>
@@ -14469,14 +14469,14 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
               <input
                 checked={false}
                 className="form-check-input"
-                id="flexCheckChecked-1"
+                id="checkBox-1-0"
                 onChange={[Function]}
                 type="checkbox"
                 value=""
               />
               <label
                 className="form-check-label"
-                htmlFor="flexCheckChecked-1"
+                htmlFor="checkBox-1-0"
               >
                 Viewed
               </label>
@@ -15887,14 +15887,14 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
               <input
                 checked={false}
                 className="form-check-input"
-                id="flexCheckChecked-1"
+                id="checkBox-1-0"
                 onChange={[Function]}
                 type="checkbox"
                 value=""
               />
               <label
                 className="form-check-label"
-                htmlFor="flexCheckChecked-1"
+                htmlFor="checkBox-1-0"
               >
                 Viewed
               </label>
@@ -17305,14 +17305,14 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
               <input
                 checked={false}
                 className="form-check-input"
-                id="flexCheckChecked-1"
+                id="checkBox-1-0"
                 onChange={[Function]}
                 type="checkbox"
                 value=""
               />
               <label
                 className="form-check-label"
-                htmlFor="flexCheckChecked-1"
+                htmlFor="checkBox-1-0"
               >
                 Viewed
               </label>

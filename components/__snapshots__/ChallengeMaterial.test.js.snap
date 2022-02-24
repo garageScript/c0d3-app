@@ -183,13 +183,13 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 >
                   <input
                     class="form-check-input"
-                    id="flexCheckChecked-3502"
+                    id="checkBox-3502-0"
                     type="checkbox"
                     value=""
                   />
                   <label
                     class="form-check-label"
-                    for="flexCheckChecked-3502"
+                    for="checkBox-3502-0"
                   >
                     Viewed
                   </label>

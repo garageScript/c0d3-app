@@ -101,13 +101,13 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               >
                 <input
                   class="form-check-input"
-                  id="flexCheckChecked-104"
+                  id="checkBox-104-0"
                   type="checkbox"
                   value=""
                 />
                 <label
                   class="form-check-label"
-                  for="flexCheckChecked-104"
+                  for="checkBox-104-0"
                 >
                   Viewed
                 </label>
@@ -954,13 +954,13 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
               >
                 <input
                   class="form-check-input"
-                  id="flexCheckChecked-104"
+                  id="checkBox-104-0"
                   type="checkbox"
                   value=""
                 />
                 <label
                   class="form-check-label"
-                  for="flexCheckChecked-104"
+                  for="checkBox-104-0"
                 >
                   Viewed
                 </label>
@@ -1756,13 +1756,13 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
               >
                 <input
                   class="form-check-input"
-                  id="flexCheckChecked-104"
+                  id="checkBox-104-0"
                   type="checkbox"
                   value=""
                 />
                 <label
                   class="form-check-label"
-                  for="flexCheckChecked-104"
+                  for="checkBox-104-0"
                 >
                   Viewed
                 </label>
@@ -2558,13 +2558,13 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               >
                 <input
                   class="form-check-input"
-                  id="flexCheckChecked-104"
+                  id="checkBox-104-0"
                   type="checkbox"
                   value=""
                 />
                 <label
                   class="form-check-label"
-                  for="flexCheckChecked-104"
+                  for="checkBox-104-0"
                 >
                   Viewed
                 </label>
@@ -4161,13 +4161,13 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               >
                 <input
                   class="form-check-input"
-                  id="flexCheckChecked-104"
+                  id="checkBox-104-0"
                   type="checkbox"
                   value=""
                 />
                 <label
                   class="form-check-label"
-                  for="flexCheckChecked-104"
+                  for="checkBox-104-0"
                 >
                   Viewed
                 </label>
@@ -6139,13 +6139,13 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               >
                 <input
                   class="form-check-input"
-                  id="flexCheckChecked-104"
+                  id="checkBox-104-0"
                   type="checkbox"
                   value=""
                 />
                 <label
                   class="form-check-label"
-                  for="flexCheckChecked-104"
+                  for="checkBox-104-0"
                 >
                   Viewed
                 </label>

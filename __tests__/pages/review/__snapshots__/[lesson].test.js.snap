@@ -780,13 +780,13 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       >
                         <input
                           class="form-check-input"
-                          id="flexCheckChecked-108"
+                          id="checkBox-108-0"
                           type="checkbox"
                           value=""
                         />
                         <label
                           class="form-check-label"
-                          for="flexCheckChecked-108"
+                          for="checkBox-108-0"
                         >
                           Viewed
                         </label>
@@ -2970,13 +2970,13 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       >
                         <input
                           class="form-check-input"
-                          id="flexCheckChecked-108"
+                          id="checkBox-108-1"
                           type="checkbox"
                           value=""
                         />
                         <label
                           class="form-check-label"
-                          for="flexCheckChecked-108"
+                          for="checkBox-108-1"
                         >
                           Viewed
                         </label>
