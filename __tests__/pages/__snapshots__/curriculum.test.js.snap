@@ -1458,7 +1458,7 @@ exports[`Curriculum Page Should render curriculum with no session 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -3131,7 +3131,7 @@ exports[`Curriculum Page Should render with basic dummy data 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
@@ -5028,7 +5028,7 @@ exports[`Curriculum Page Should render with lessonStatus data 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;

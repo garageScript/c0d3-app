@@ -136,7 +136,7 @@ exports[`500 Error Page should render 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2021 GarageScript
   </footer>
 </div>
 `;
