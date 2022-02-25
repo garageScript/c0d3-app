@@ -776,7 +776,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
                     >
                       <div
-                        class="form-check mt-2 me-2"
+                        class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
                       >
                         <input
                           class="form-check-input"
@@ -785,7 +785,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                           value=""
                         />
                         <label
-                          class="form-check-label"
+                          class="form-check-label text-muted"
                           for="checkBox-108-0"
                         >
                           Viewed
@@ -2966,7 +2966,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                       class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
                     >
                       <div
-                        class="form-check mt-2 me-2"
+                        class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
                       >
                         <input
                           class="form-check-input"
@@ -2975,7 +2975,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
                           value=""
                         />
                         <label
-                          class="form-check-label"
+                          class="form-check-label text-muted"
                           for="checkBox-108-1"
                         >
                           Viewed

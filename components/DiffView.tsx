@@ -101,7 +101,9 @@ const DiffView: React.FC<{
     return (
       <div className="position-relative">
         <div className="position-absolute w-100 d-flex flex-row justify-content-end p-1">
-          <div className="form-check mt-2 me-2">
+          <div
+            className={`${scssStyles.checkBoxBorder} form-check pe-2 mt-2 me-2 border rounded`}
+          >
             <input
               className="form-check-input"
               type="checkbox"
@@ -115,7 +117,7 @@ const DiffView: React.FC<{
               }}
             ></input>
             <label
-              className="form-check-label"
+              className="form-check-label text-muted"
               htmlFor={`checkBox-${id}-${fileIdx}`}
             >
               Viewed

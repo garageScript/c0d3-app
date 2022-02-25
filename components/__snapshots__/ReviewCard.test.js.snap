@@ -97,7 +97,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check mt-2 me-2"
+                class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   class="form-check-input"
@@ -106,7 +106,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                   value=""
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-muted"
                   for="checkBox-104-0"
                 >
                   Viewed
@@ -950,7 +950,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
               class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check mt-2 me-2"
+                class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   class="form-check-input"
@@ -959,7 +959,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                   value=""
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-muted"
                   for="checkBox-104-0"
                 >
                   Viewed
@@ -1752,7 +1752,7 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
               class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check mt-2 me-2"
+                class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   class="form-check-input"
@@ -1761,7 +1761,7 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                   value=""
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-muted"
                   for="checkBox-104-0"
                 >
                   Viewed
@@ -2554,7 +2554,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check mt-2 me-2"
+                class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   class="form-check-input"
@@ -2563,7 +2563,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                   value=""
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-muted"
                   for="checkBox-104-0"
                 >
                   Viewed
@@ -4157,7 +4157,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check mt-2 me-2"
+                class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   class="form-check-input"
@@ -4166,7 +4166,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                   value=""
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-muted"
                   for="checkBox-104-0"
                 >
                   Viewed
@@ -6135,7 +6135,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               class="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                class="form-check mt-2 me-2"
+                class="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   class="form-check-input"
@@ -6144,7 +6144,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                   value=""
                 />
                 <label
-                  class="form-check-label"
+                  class="form-check-label text-muted"
                   for="checkBox-104-0"
                 >
                   Viewed

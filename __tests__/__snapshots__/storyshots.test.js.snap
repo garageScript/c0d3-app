@@ -918,7 +918,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
               className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                className="form-check mt-2 me-2"
+                className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   checked={false}
@@ -929,7 +929,7 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
                   value=""
                 />
                 <label
-                  className="form-check-label"
+                  className="form-check-label text-muted"
                   htmlFor="checkBox-1-0"
                 >
                   Viewed
@@ -1784,7 +1784,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
               className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
               <div
-                className="form-check mt-2 me-2"
+                className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
               >
                 <input
                   checked={false}
@@ -1795,7 +1795,7 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
                   value=""
                 />
                 <label
-                  className="form-check-label"
+                  className="form-check-label text-muted"
                   htmlFor="checkBox-1-0"
                 >
                   Viewed
@@ -3135,7 +3135,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
     className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
   >
     <div
-      className="form-check mt-2 me-2"
+      className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
     >
       <input
         checked={false}
@@ -3146,7 +3146,7 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
         value=""
       />
       <label
-        className="form-check-label"
+        className="form-check-label text-muted"
         htmlFor="checkBox-1-0"
       >
         Viewed
@@ -3526,7 +3526,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
     className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
   >
     <div
-      className="form-check mt-2 me-2"
+      className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
     >
       <input
         checked={false}
@@ -3537,7 +3537,7 @@ exports[`Storyshots Components/DiffView Default 1`] = `
         value=""
       />
       <label
-        className="form-check-label"
+        className="form-check-label text-muted"
         htmlFor="checkBox-1-0"
       >
         Viewed
@@ -11626,7 +11626,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="form-check mt-2 me-2"
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -11637,7 +11637,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
                 value=""
               />
               <label
-                className="form-check-label"
+                className="form-check-label text-muted"
                 htmlFor="checkBox-1-0"
               >
                 Viewed
@@ -13046,7 +13046,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="form-check mt-2 me-2"
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -13057,7 +13057,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
                 value=""
               />
               <label
-                className="form-check-label"
+                className="form-check-label text-muted"
                 htmlFor="checkBox-1-0"
               >
                 Viewed
@@ -14464,7 +14464,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="form-check mt-2 me-2"
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -14475,7 +14475,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
                 value=""
               />
               <label
-                className="form-check-label"
+                className="form-check-label text-muted"
                 htmlFor="checkBox-1-0"
               >
                 Viewed
@@ -15882,7 +15882,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="form-check mt-2 me-2"
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -15893,7 +15893,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
                 value=""
               />
               <label
-                className="form-check-label"
+                className="form-check-label text-muted"
                 htmlFor="checkBox-1-0"
               >
                 Viewed
@@ -17300,7 +17300,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
             className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
             <div
-              className="form-check mt-2 me-2"
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
             >
               <input
                 checked={false}
@@ -17311,7 +17311,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
                 value=""
               />
               <label
-                className="form-check-label"
+                className="form-check-label text-muted"
                 htmlFor="checkBox-1-0"
               >
                 Viewed
