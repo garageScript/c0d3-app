@@ -412,7 +412,7 @@ exports[`Index Page Should render index page 1`] = `
   <footer
     class="fw-light text-center py-5 bg-white text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;

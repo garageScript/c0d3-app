@@ -3849,7 +3849,7 @@ const c = solution(a, b) // c should be 11 because a() + b()
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -7751,7 +7751,7 @@ Example: Put this tag into an html file to display a picture of the cat.
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;

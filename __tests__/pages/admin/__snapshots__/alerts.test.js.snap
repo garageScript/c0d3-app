@@ -469,7 +469,7 @@ exports[`Alerts page Should remove alert 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -893,7 +893,7 @@ exports[`Alerts page Should remove alert 2`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;

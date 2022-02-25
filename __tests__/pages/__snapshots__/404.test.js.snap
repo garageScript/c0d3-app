@@ -138,7 +138,7 @@ exports[`404 Error Page should render 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;

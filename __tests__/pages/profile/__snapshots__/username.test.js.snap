@@ -843,7 +843,7 @@ exports[`user profile test Should render anonymous users 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -1696,7 +1696,7 @@ exports[`user profile test Should render if no stars received 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -2585,7 +2585,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -3433,7 +3433,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -4534,7 +4534,7 @@ exports[`user profile test Should render profile 1`] = `
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
@@ -5597,7 +5597,7 @@ exports[`user profile test should render discord avatar and username if user con
   <footer
     class="mt-5 fw-light text-center pb-5 text-muted"
   >
-    © Copyright 2022 GarageScript
+    © Copyright 2022 GarageScript. All rights reserved.
   </footer>
 </div>
 `;
