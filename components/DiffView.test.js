@@ -23,6 +23,19 @@ describe('DiffView component', () => {
     expect(container).toMatchSnapshot()
     expect(await screen.findByText('second line comment')).toBeVisible()
   })
+  test('Should render collapsed diff', async () => {
+    const { container } = render(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <DiffView
+          submission={dummySumissions[0]}
+          generalStatus={SubmissionStatus.Open}
+        />
+      </MockedProvider>
+    )
+    userEvent.click(screen.getByText('Viewed'))
+    expect(container).toMatchSnapshot()
+    expect(screen.queryByText('4')).toBeNull()
+  })
   test('Should render diff with no comments', () => {
     render(
       <MockedProvider mocks={[]} addTypename={false}>

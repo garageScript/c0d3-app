@@ -40,6 +40,9 @@ const DiffView: React.FC<{
   type fileComments = Record<string, { lines: number[]; comments: Comment[] }>
   //every file gets unique index in format of submissionId:fileName
   const [commentsState, setCommentsState] = React.useState<fileComments>({})
+  const [viewableStates, setViewableStates] = React.useState(
+    new Array(files.length).fill(false)
+  )
 
   useEffect(() => {
     const commentsMap =
@@ -59,7 +62,7 @@ const DiffView: React.FC<{
     //rerunning useEffect on id rerenders submission when student clicks on another challenge
   }, [id, comments])
 
-  const renderFile = ({ hunks, newPath }: File) => {
+  const renderFile = ({ hunks, newPath }: File, fileIdx: number) => {
     const newValue: string[] = []
     if (!hunks.length || !newPath) return
     let extension = newPath.split('.').pop()!
@@ -97,13 +100,35 @@ const DiffView: React.FC<{
 
     return (
       <div className="position-relative">
-        <div className="position-absolute w-100 d-flex justify-content-end p-1">
+        <div className="position-absolute w-100 d-flex flex-row justify-content-end p-1">
+          <div
+            className={`${scssStyles.checkBoxBorder} form-check pe-2 mt-2 me-2 border rounded`}
+          >
+            <input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id={`checkBox-${id}-${fileIdx}`}
+              checked={viewableStates[fileIdx]}
+              onChange={() => {
+                const newViewableStates = [...viewableStates]
+                newViewableStates[fileIdx] = !newViewableStates[fileIdx]
+                setViewableStates(newViewableStates)
+              }}
+            ></input>
+            <label
+              className="form-check-label text-muted"
+              htmlFor={`checkBox-${id}-${fileIdx}`}
+            >
+              Viewed
+            </label>
+          </div>
           <CopyButton value={newValue.join('\n')} />
         </div>
         <div className={scssStyles.diffView}>
           <ReactDiffViewer
             key={_.uniqueId()}
-            newValue={newValue.join('\n')}
+            newValue={!viewableStates[fileIdx] ? newValue.join('\n') : ''}
             renderContent={syntaxHighlight}
             splitView={false}
             leftTitle={`${newPath}`}

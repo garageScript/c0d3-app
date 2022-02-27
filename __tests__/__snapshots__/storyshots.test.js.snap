@@ -915,8 +915,26 @@ exports[`Storyshots Components/ChallengeMaterial With Comments 1`] = `
             className="position-relative"
           >
             <div
-              className="position-absolute w-100 d-flex justify-content-end p-1"
+              className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
+              <div
+                className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              >
+                <input
+                  checked={false}
+                  className="form-check-input"
+                  id="checkBox-1-0"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  className="form-check-label text-muted"
+                  htmlFor="checkBox-1-0"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 className="btn borderless btn-outline-primary btn-outline-bg-primary"
                 onClick={[Function]}
@@ -1763,8 +1781,26 @@ exports[`Storyshots Components/ChallengeMaterial With Diff 1`] = `
             className="position-relative"
           >
             <div
-              className="position-absolute w-100 d-flex justify-content-end p-1"
+              className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
             >
+              <div
+                className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+              >
+                <input
+                  checked={false}
+                  className="form-check-input"
+                  id="checkBox-1-0"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value=""
+                />
+                <label
+                  className="form-check-label text-muted"
+                  htmlFor="checkBox-1-0"
+                >
+                  Viewed
+                </label>
+              </div>
               <button
                 className="btn borderless btn-outline-primary btn-outline-bg-primary"
                 onClick={[Function]}
@@ -3096,8 +3132,26 @@ exports[`Storyshots Components/DiffView Closed 1`] = `
   className="position-relative"
 >
   <div
-    className="position-absolute w-100 d-flex justify-content-end p-1"
+    className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
   >
+    <div
+      className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        id="checkBox-1-0"
+        onChange={[Function]}
+        type="checkbox"
+        value=""
+      />
+      <label
+        className="form-check-label text-muted"
+        htmlFor="checkBox-1-0"
+      >
+        Viewed
+      </label>
+    </div>
     <button
       className="btn borderless btn-outline-primary btn-outline-bg-primary"
       onClick={[Function]}
@@ -3469,8 +3523,26 @@ exports[`Storyshots Components/DiffView Default 1`] = `
   className="position-relative"
 >
   <div
-    className="position-absolute w-100 d-flex justify-content-end p-1"
+    className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
   >
+    <div
+      className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        id="checkBox-1-0"
+        onChange={[Function]}
+        type="checkbox"
+        value=""
+      />
+      <label
+        className="form-check-label text-muted"
+        htmlFor="checkBox-1-0"
+      >
+        Viewed
+      </label>
+    </div>
     <button
       className="btn borderless btn-outline-primary btn-outline-bg-primary"
       onClick={[Function]}
@@ -11551,8 +11623,26 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex justify-content-end p-1"
+            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
+            <div
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
             <button
               className="btn borderless btn-outline-primary btn-outline-bg-primary"
               onClick={[Function]}
@@ -12953,8 +13043,26 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex justify-content-end p-1"
+            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
+            <div
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
             <button
               className="btn borderless btn-outline-primary btn-outline-bg-primary"
               onClick={[Function]}
@@ -14353,8 +14461,26 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex justify-content-end p-1"
+            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
+            <div
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
             <button
               className="btn borderless btn-outline-primary btn-outline-bg-primary"
               onClick={[Function]}
@@ -15753,8 +15879,26 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex justify-content-end p-1"
+            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
+            <div
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
             <button
               className="btn borderless btn-outline-primary btn-outline-bg-primary"
               onClick={[Function]}
@@ -17153,8 +17297,26 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
           className="position-relative"
         >
           <div
-            className="position-absolute w-100 d-flex justify-content-end p-1"
+            className="position-absolute w-100 d-flex flex-row justify-content-end p-1"
           >
+            <div
+              className="checkBoxBorder form-check pe-2 mt-2 me-2 border rounded"
+            >
+              <input
+                checked={false}
+                className="form-check-input"
+                id="checkBox-1-0"
+                onChange={[Function]}
+                type="checkbox"
+                value=""
+              />
+              <label
+                className="form-check-label text-muted"
+                htmlFor="checkBox-1-0"
+              >
+                Viewed
+              </label>
+            </div>
             <button
               className="btn borderless btn-outline-primary btn-outline-bg-primary"
               onClick={[Function]}
