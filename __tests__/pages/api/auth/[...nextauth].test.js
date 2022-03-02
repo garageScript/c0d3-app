@@ -1,3 +1,8 @@
+/**
+ * @jest-environment node
+ */
+
+jest.mock('next-auth')
 import nextAuthAPI from '../../../../pages/api/auth/[...nextauth]'
 
 describe('next-auth API', () => {
