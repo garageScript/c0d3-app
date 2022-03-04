@@ -142,6 +142,7 @@ model User {
   cliToken                  String?      @db.VarChar(255)
   emailVerificationToken    String?      @db.VarChar(255)
   tokenExpiration           DateTime?    @db.Timestamptz(6)
+  discordId                 String?      @db.VarChar(255)
   discordRefreshToken       String?      @db.VarChar(255)
   discordAccessToken        String?      @db.VarChar(255)
   discordAccessTokenExpires DateTime?    @db.Timestamptz(6)
