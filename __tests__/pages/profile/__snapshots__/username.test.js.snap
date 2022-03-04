@@ -3905,7 +3905,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <p
-                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                    class="lesson_image_star_badge badge badge-pill bg-primary"
                   >
                     1
                     <span
@@ -3986,7 +3986,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <p
-                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                    class="lesson_image_star_badge badge badge-pill bg-primary"
                   >
                     1
                     <span
@@ -4073,7 +4073,7 @@ exports[`user profile test Should render profile 1`] = `
                   class="lesson_image_container"
                 >
                   <p
-                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                    class="lesson_image_star_badge badge badge-pill bg-primary"
                   >
                     1
                     <span
@@ -4968,7 +4968,7 @@ exports[`user profile test should render discord avatar and username if user con
                   class="lesson_image_container"
                 >
                   <p
-                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                    class="lesson_image_star_badge badge badge-pill bg-primary"
                   >
                     1
                     <span
@@ -5049,7 +5049,7 @@ exports[`user profile test should render discord avatar and username if user con
                   class="lesson_image_container"
                 >
                   <p
-                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                    class="lesson_image_star_badge badge badge-pill bg-primary"
                   >
                     1
                     <span
@@ -5136,7 +5136,7 @@ exports[`user profile test should render discord avatar and username if user con
                   class="lesson_image_container"
                 >
                   <p
-                    class="lesson_image_star_badge badge badge-pill badge-primary"
+                    class="lesson_image_star_badge badge badge-pill bg-primary"
                   >
                     1
                     <span

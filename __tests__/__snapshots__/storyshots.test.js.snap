@@ -10348,7 +10348,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10429,7 +10429,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10516,7 +10516,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10600,7 +10600,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10681,7 +10681,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10753,7 +10753,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10840,7 +10840,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10915,7 +10915,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
@@ -10999,7 +10999,7 @@ exports[`Storyshots Components/ProfileSubmissions Profile Submissions Card 1`] =
           className="lesson_image_container"
         >
           <p
-            className="lesson_image_star_badge badge badge-pill badge-primary"
+            className="lesson_image_star_badge badge badge-pill bg-primary"
           >
             2
             <span
