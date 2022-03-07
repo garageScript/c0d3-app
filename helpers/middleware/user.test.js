@@ -12,7 +12,7 @@ const mockUserInfo = {
   password: '$2b$10$W9KwQ6Sbi0RJjD2GZYX9BugAtgSm/W999gNW1f/XiRcI6NiC9pTdK',
   email: 'superduperkamehameha@gmail.com',
   isAdmin: false,
-  cliToken: 'KfizzIlWp111fizzDbuzzr'
+  cliToken: 'W29iamVjdCBPYmplY3Rd'
 }
 
 const res = {}
@@ -26,15 +26,39 @@ const next = () => {}
 describe('User Middleware', () => {
   beforeEach(() => {
     prismaMock.user.findUnique.mockResolvedValue(mockUserInfo)
+    prismaMock.user.findFirst.mockResolvedValue(mockUserInfo)
   })
   test('Should return null when userId property of req.session is not there', async () => {
-    const req = { session: '' }
+    const req = {
+      session: '',
+      headers: {
+        authorization: null
+      }
+    }
     await userMiddleware(req, res, next)
     expect(req.user).toBeNull
   })
 
   test('Should return correct info from database if session.userId exists', async () => {
-    const req = { session: { userId: 'noob' } }
+    const req = {
+      session: {
+        userId: 'noob'
+      },
+      headers: {
+        authorization: null
+      }
+    }
+    await userMiddleware(req, res, next)
+    expect(req.user).toEqual(mockUserInfo)
+  })
+  test('Should return correct info from database if authorization header exists', async () => {
+    const req = {
+      session: { userId: 'noob' },
+      headers: {
+        authorization:
+          'Bearer eyJpZCI6MSwiY2xpVG9rZW4iOiJXMjlpYW1WamRDQlBZbXBsWTNSZCJ9'
+      }
+    }
     await userMiddleware(req, res, next)
     expect(req.user).toEqual(mockUserInfo)
   })
