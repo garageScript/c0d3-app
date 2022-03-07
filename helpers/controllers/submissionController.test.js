@@ -43,6 +43,7 @@ describe('Submissions Mutations', () => {
       diff: 'fakeDiff',
       lessonId: 1
     }
+    const ctx = { req: { user: { id: 2 } } }
 
     beforeEach(() => {
       prismaMock.submission.create.mockResolvedValue({
@@ -53,7 +54,7 @@ describe('Submissions Mutations', () => {
     })
 
     test('should save and return submission', async () => {
-      await expect(createSubmission(null, args)).resolves.toEqual({
+      await expect(createSubmission(null, args, ctx)).resolves.toEqual({
         id: 1,
         diff: 'fakeDiff',
         lesson: {
@@ -68,12 +69,12 @@ describe('Submissions Mutations', () => {
 
     test('should overwrite previous submission status if it exists', async () => {
       prismaMock.submission.findFirst.mockResolvedValue({ id: 1 })
-      await createSubmission(null, args)
+      await createSubmission(null, args, ctx)
       expect(prismaMock.submission.update).toBeCalled()
     })
 
     test('should throw error Invalid args', () => {
-      return expect(createSubmission(null, null)).rejects.toThrow(
+      return expect(createSubmission(null, null, ctx)).rejects.toThrow(
         'Invalid args'
       )
     })
