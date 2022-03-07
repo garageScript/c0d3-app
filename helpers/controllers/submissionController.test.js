@@ -78,6 +78,18 @@ describe('Submissions Mutations', () => {
         'Invalid args'
       )
     })
+
+    test('should set id to the decoded clientToken id when req.user is undefined', async () => {
+      await createSubmission(null, args, { ...ctx, req: { user: null } })
+      expect(prismaMock.submission.findFirst).toBeCalledWith({
+        where: {
+          challengeId: args.challengeId,
+          lessonId: args.lessonId,
+          user: { id: 1210 },
+          status: SubmissionStatus.Open
+        }
+      })
+    })
   })
 
   describe('acceptSubmission', () => {
