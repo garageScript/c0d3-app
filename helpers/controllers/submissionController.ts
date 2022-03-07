@@ -9,18 +9,20 @@ import {
   SubmissionStatus
 } from '../../graphql'
 import prisma from '../../prisma'
-import { decode } from '../encoding'
 import { hasPassedLesson } from '../hasPassedLesson'
 import { updateSubmission } from '../updateSubmission'
 import { sendSubmissionNotification, IdType } from '../discordBot'
 
 export const createSubmission = async (
   _parent: void,
-  args: MutationCreateSubmissionArgs
+  args: MutationCreateSubmissionArgs,
+  ctx: Context
 ): Promise<CreateSubmissionMutation['createSubmission']> => {
+  const { req } = ctx
+  const { id } = req.user!
+
   if (!args) throw new Error('Invalid args')
-  const { challengeId, cliToken, diff, lessonId } = args
-  const { id } = decode(cliToken)
+  const { challengeId, diff, lessonId } = args
   const previousSubmission = await prisma.submission.findFirst({
     where: {
       challengeId,
