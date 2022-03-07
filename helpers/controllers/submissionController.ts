@@ -12,6 +12,7 @@ import prisma from '../../prisma'
 import { hasPassedLesson } from '../hasPassedLesson'
 import { updateSubmission } from '../updateSubmission'
 import { sendSubmissionNotification, IdType } from '../discordBot'
+import { decode } from '../encoding'
 
 export const createSubmission = async (
   _parent: void,
@@ -19,10 +20,12 @@ export const createSubmission = async (
   ctx: Context
 ): Promise<CreateSubmissionMutation['createSubmission']> => {
   const { req } = ctx
-  const { id } = req.user!
 
   if (!args) throw new Error('Invalid args')
-  const { challengeId, diff, lessonId } = args
+  const { challengeId, cliToken, diff, lessonId } = args
+
+  const id = !req.user || !req.user.id ? decode(cliToken).id : req.user.id
+
   const previousSubmission = await prisma.submission.findFirst({
     where: {
       challengeId,
