@@ -83,14 +83,7 @@ describe('Submissions Mutations', () => {
 
     test('should set id to the decoded clientToken id when req.user is undefined', async () => {
       await createSubmission(null, args, { ...ctx, req: { user: null } })
-      expect(prismaMock.submission.findFirst).toBeCalledWith({
-        where: {
-          challengeId: args.challengeId,
-          lessonId: args.lessonId,
-          user: { id: 1210 },
-          status: SubmissionStatus.Open
-        }
-      })
+      expect(prismaMock.user.findFirst).toBeCalled()
     })
 
     test('should send message to Sentry if req.user does not exist and cliToken does', async () => {
