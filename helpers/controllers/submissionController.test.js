@@ -5,6 +5,7 @@
 jest.mock('../discordBot.ts')
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
+jest.mock('@sentry/node')
 import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { hasPassedLesson } from '../hasPassedLesson'
@@ -16,6 +17,7 @@ import {
   rejectSubmission,
   submissions
 } from './submissionController'
+import * as Sentry from '@sentry/node'
 
 describe('Submissions Mutations', () => {
   hasPassedLesson.mockResolvedValue(true)
@@ -88,6 +90,17 @@ describe('Submissions Mutations', () => {
           user: { id: 1210 },
           status: SubmissionStatus.Open
         }
+      })
+    })
+
+    test('should send message to Sentry if req.user does not exist and cliToken does', async () => {
+      prismaMock.user.findFirst.mockResolvedValue({
+        id: 1210,
+        username: 'noob'
+      })
+      await createSubmission(null, args, { ...ctx, req: { user: null } })
+      expect(Sentry.captureException).toHaveBeenCalledWith({
+        message: `${1210}/${'noob'} is using the wrong CLI version. Must be 2.2.5`
       })
     })
   })

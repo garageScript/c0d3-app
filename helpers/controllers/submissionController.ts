@@ -13,6 +13,8 @@ import { hasPassedLesson } from '../hasPassedLesson'
 import { updateSubmission } from '../updateSubmission'
 import { sendSubmissionNotification, IdType } from '../discordBot'
 import { decode } from '../encoding'
+import * as Sentry from '@sentry/node'
+import { CliToken } from '../../@types/user'
 
 export const createSubmission = async (
   _parent: void,
@@ -24,7 +26,18 @@ export const createSubmission = async (
   if (!args) throw new Error('Invalid args')
   const { challengeId, cliToken, diff, lessonId } = args
 
-  const id = !req.user || !req.user.id ? decode(cliToken).id : req.user.id
+  const decodedCliToken: CliToken = cliToken && decode(cliToken)
+  const id = !req.user || !req.user.id ? decodedCliToken.id : req.user.id
+
+  if (!req.user && cliToken) {
+    const user = await prisma.user.findFirst({
+      where: { cliToken: decodedCliToken.cliToken }
+    })
+
+    Sentry.captureException({
+      message: `${user?.id}/${user?.username} is using the wrong CLI version. Must be 2.2.5`
+    })
+  }
 
   const previousSubmission = await prisma.submission.findFirst({
     where: {
