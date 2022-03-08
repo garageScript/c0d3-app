@@ -27,12 +27,14 @@ export const createSubmission = async (
   const { challengeId, cliToken, diff, lessonId } = args
 
   const decodedCliToken: CliToken = cliToken && decode(cliToken)
-  const id = !req.user || !req.user.id ? decodedCliToken.id : req.user.id
+  let id = !req.user ? decodedCliToken.id : req.user.id
 
   if (!req.user && cliToken) {
     const user = await prisma.user.findFirst({
       where: { cliToken: decodedCliToken.cliToken }
     })
+
+    id = user!?.id
 
     Sentry.captureException({
       message: `${user?.id}/${user?.username} is using the wrong CLI version. Must be 2.2.5`
