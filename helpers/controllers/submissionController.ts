@@ -26,10 +26,10 @@ export const createSubmission = async (
   if (!args) throw new Error('Invalid args')
   const { challengeId, cliToken, diff, lessonId } = args
 
-  const decodedCliToken: CliToken = cliToken && decode(cliToken)
-  let id = !req.user ? decodedCliToken.id : req.user.id
+  let id = req.user!?.id
 
-  if (!req.user && cliToken) {
+  if (!id && cliToken) {
+    const decodedCliToken: CliToken = cliToken && decode(cliToken)
     const user = await prisma.user.findFirst({
       where: { cliToken: decodedCliToken.cliToken }
     })
