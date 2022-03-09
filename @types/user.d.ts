@@ -6,3 +6,8 @@ export type UserInfo = {
   discordUsername: string
   discordAvatarUrl: string
 }
+
+export type CliToken = {
+  id: number
+  cliToken: string
+}

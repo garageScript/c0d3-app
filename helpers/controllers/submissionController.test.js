@@ -5,6 +5,7 @@
 jest.mock('../discordBot.ts')
 jest.mock('../hasPassedLesson')
 jest.mock('../updateSubmission')
+jest.mock('@sentry/node')
 import { SubmissionStatus } from '../../graphql'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { hasPassedLesson } from '../hasPassedLesson'
@@ -16,6 +17,7 @@ import {
   rejectSubmission,
   submissions
 } from './submissionController'
+import * as Sentry from '@sentry/node'
 
 describe('Submissions Mutations', () => {
   hasPassedLesson.mockResolvedValue(true)
@@ -43,6 +45,7 @@ describe('Submissions Mutations', () => {
       diff: 'fakeDiff',
       lessonId: 1
     }
+    const ctx = { req: { user: { id: 2 } } }
 
     beforeEach(() => {
       prismaMock.submission.create.mockResolvedValue({
@@ -53,7 +56,7 @@ describe('Submissions Mutations', () => {
     })
 
     test('should save and return submission', async () => {
-      await expect(createSubmission(null, args)).resolves.toEqual({
+      await expect(createSubmission(null, args, ctx)).resolves.toEqual({
         id: 1,
         diff: 'fakeDiff',
         lesson: {
@@ -68,14 +71,30 @@ describe('Submissions Mutations', () => {
 
     test('should overwrite previous submission status if it exists', async () => {
       prismaMock.submission.findFirst.mockResolvedValue({ id: 1 })
-      await createSubmission(null, args)
+      await createSubmission(null, args, ctx)
       expect(prismaMock.submission.update).toBeCalled()
     })
 
     test('should throw error Invalid args', () => {
-      return expect(createSubmission(null, null)).rejects.toThrow(
+      return expect(createSubmission(null, null, ctx)).rejects.toThrow(
         'Invalid args'
       )
+    })
+
+    test('should set id to the decoded clientToken id when req.user is undefined', async () => {
+      await createSubmission(null, args, { ...ctx, req: { user: null } })
+      expect(prismaMock.user.findFirst).toBeCalled()
+    })
+
+    test('should send message to Sentry if req.user does not exist and cliToken does', async () => {
+      prismaMock.user.findFirst.mockResolvedValue({
+        id: 1210,
+        username: 'noob'
+      })
+      await createSubmission(null, args, { ...ctx, req: { user: null } })
+      expect(Sentry.captureException).toHaveBeenCalledWith({
+        message: `${1210}/${'noob'} is using the wrong CLI version. Must be 2.2.5`
+      })
     })
   })
 

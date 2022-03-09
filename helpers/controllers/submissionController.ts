@@ -9,18 +9,38 @@ import {
   SubmissionStatus
 } from '../../graphql'
 import prisma from '../../prisma'
-import { decode } from '../encoding'
 import { hasPassedLesson } from '../hasPassedLesson'
 import { updateSubmission } from '../updateSubmission'
 import { sendSubmissionNotification, IdType } from '../discordBot'
+import { decode } from '../encoding'
+import * as Sentry from '@sentry/node'
+import { CliToken } from '../../@types/user'
 
 export const createSubmission = async (
   _parent: void,
-  args: MutationCreateSubmissionArgs
+  args: MutationCreateSubmissionArgs,
+  ctx: Context
 ): Promise<CreateSubmissionMutation['createSubmission']> => {
+  const { req } = ctx
+
   if (!args) throw new Error('Invalid args')
   const { challengeId, cliToken, diff, lessonId } = args
-  const { id } = decode(cliToken)
+
+  let id = req.user!?.id
+
+  if (!id && cliToken) {
+    const decodedCliToken: CliToken = cliToken && decode(cliToken)
+    const user = await prisma.user.findFirst({
+      where: { cliToken: decodedCliToken.cliToken }
+    })
+
+    id = user!?.id
+
+    Sentry.captureException({
+      message: `${user?.id}/${user?.username} is using the wrong CLI version. Must be 2.2.5`
+    })
+  }
+
   const previousSubmission = await prisma.submission.findFirst({
     where: {
       challengeId,
