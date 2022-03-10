@@ -55,7 +55,7 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
@@ -908,7 +908,7 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
@@ -1710,7 +1710,7 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
@@ -2512,7 +2512,7 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
@@ -4115,7 +4115,7 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
@@ -5718,7 +5718,7 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
@@ -6093,7 +6093,7 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
       class="card-body"
     >
       <div
-        class="rounded-lg overflow-hidden position-relative pt-5"
+        class="rounded-lg position-relative pt-5"
       >
         <div
           class="descAccordion accordion"
