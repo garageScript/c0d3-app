@@ -249,7 +249,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
             </div>
           </div>
           <div className="card-body">
-            <div className="rounded-lg overflow-hidden position-relative pt-5">
+            <div className="rounded-lg position-relative pt-5">
               <Accordion className={styles['descAccordion']}>
                 <Accordion.Item
                   eventKey="0"
