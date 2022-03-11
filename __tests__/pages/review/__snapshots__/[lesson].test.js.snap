@@ -734,7 +734,7 @@ exports[`Lesson Page Should render new submissions 1`] = `
               class="card-body"
             >
               <div
-                class="rounded-lg overflow-hidden position-relative pt-5"
+                class="rounded-lg position-relative pt-5"
               >
                 <div
                   class="descAccordion accordion"
