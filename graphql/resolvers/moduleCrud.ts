@@ -24,7 +24,11 @@ export const addModule = async (
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
   return prisma.module.create({
-    data: { authorId, content, lessonId, name }
+    data: { authorId, content, lessonId, name },
+    include: {
+      author: true,
+      lesson: true
+    }
   })
 }
 
@@ -38,5 +42,11 @@ export const deleteModule = async (
   const authorId = req.user?.id
   if (!authorId) throw new Error('No User')
   const { id } = arg
-  return prisma.module.delete({ where: { id } })
+  return prisma.module.delete({
+    where: { id },
+    include: {
+      author: true,
+      lesson: true
+    }
+  })
 }

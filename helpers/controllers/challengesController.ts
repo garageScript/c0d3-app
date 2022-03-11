@@ -3,7 +3,7 @@ import type {
   CreateChallengeMutationVariables,
   UpdateChallengeMutationVariables
 } from '../../graphql'
-import { lessons } from '../../graphql/queryResolvers/lessons'
+import { lessons } from '../../graphql/resolvers/lessons'
 import prisma from '../../prisma'
 import { isAdminOrThrow } from '../isAdmin'
 import { validateLessonId } from '../validation/validateLessonId'
