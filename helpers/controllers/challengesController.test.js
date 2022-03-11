@@ -3,8 +3,8 @@
  */
 
 jest.mock('../validation/validateLessonId')
-jest.mock('../../graphql/queryResolvers/lessons')
-import { lessons } from '../../graphql/queryResolvers/lessons'
+jest.mock('../../graphql/resolvers/lessons')
+import { lessons } from '../../graphql/resolvers/lessons'
 import lessonData from '../../__dummy__/lessonData'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { validateLessonId } from '../validation/validateLessonId'
