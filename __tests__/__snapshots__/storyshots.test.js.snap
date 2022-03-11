@@ -11582,7 +11582,7 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
         className="descAccordion accordion"
@@ -13002,7 +13002,7 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
         className="descAccordion accordion"
@@ -14420,7 +14420,7 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
         className="descAccordion accordion"
@@ -15838,7 +15838,7 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
         className="descAccordion accordion"
@@ -17256,7 +17256,7 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
     className="card-body"
   >
     <div
-      className="rounded-lg overflow-hidden position-relative pt-5"
+      className="rounded-lg position-relative pt-5"
     >
       <div
         className="descAccordion accordion"
