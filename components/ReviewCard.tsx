@@ -250,12 +250,12 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ submissionData }) => {
           </div>
           <div className="card-body">
             <div className="rounded-lg position-relative pt-5">
-              <Accordion className={styles['descAccordion']}>
+              <Accordion className={styles.descAccordion}>
                 <Accordion.Item
                   eventKey="0"
                   className={`bg-white mb-2 ${
-                    showAccordion && styles['accordionItem']
-                  }`}
+                    showAccordion && styles.accordionItemShow
+                  } ${styles.accordionItem}`}
                 >
                   <Accordion.Header
                     onClick={() => setShowAccordion(prev => !prev)}
