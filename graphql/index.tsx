@@ -441,6 +441,17 @@ export type AddCommentMutation = {
   addComment?: { __typename?: 'Comment'; id: number } | null
 }
 
+export type AddModuleMutationVariables = Exact<{
+  content: Scalars['String']
+  lessonId: Scalars['Int']
+  name: Scalars['String']
+}>
+
+export type AddModuleMutation = {
+  __typename?: 'Mutation'
+  addModule: { __typename?: 'Module'; id: number }
+}
+
 export type UsersQueryVariables = Exact<{ [key: string]: never }>
 
 export type UsersQuery = {
@@ -1934,6 +1945,88 @@ export type AddCommentMutationResult = Apollo.MutationResult<AddCommentMutation>
 export type AddCommentMutationOptions = Apollo.BaseMutationOptions<
   AddCommentMutation,
   AddCommentMutationVariables
+>
+export const AddModuleDocument = gql`
+  mutation addModule($content: String!, $lessonId: Int!, $name: String!) {
+    addModule(content: $content, lessonId: $lessonId, name: $name) {
+      id
+    }
+  }
+`
+export type AddModuleMutationFn = Apollo.MutationFunction<
+  AddModuleMutation,
+  AddModuleMutationVariables
+>
+export type AddModuleProps<
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+> = {
+  [key in TDataName]: Apollo.MutationFunction<
+    AddModuleMutation,
+    AddModuleMutationVariables
+  >
+} & TChildProps
+export function withAddModule<
+  TProps,
+  TChildProps = {},
+  TDataName extends string = 'mutate'
+>(
+  operationOptions?: ApolloReactHoc.OperationOption<
+    TProps,
+    AddModuleMutation,
+    AddModuleMutationVariables,
+    AddModuleProps<TChildProps, TDataName>
+  >
+) {
+  return ApolloReactHoc.withMutation<
+    TProps,
+    AddModuleMutation,
+    AddModuleMutationVariables,
+    AddModuleProps<TChildProps, TDataName>
+  >(AddModuleDocument, {
+    alias: 'addModule',
+    ...operationOptions
+  })
+}
+
+/**
+ * __useAddModuleMutation__
+ *
+ * To run a mutation, you first call `useAddModuleMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddModuleMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addModuleMutation, { data, loading, error }] = useAddModuleMutation({
+ *   variables: {
+ *      content: // value for 'content'
+ *      lessonId: // value for 'lessonId'
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useAddModuleMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    AddModuleMutation,
+    AddModuleMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useMutation<AddModuleMutation, AddModuleMutationVariables>(
+    AddModuleDocument,
+    options
+  )
+}
+export type AddModuleMutationHookResult = ReturnType<
+  typeof useAddModuleMutation
+>
+export type AddModuleMutationResult = Apollo.MutationResult<AddModuleMutation>
+export type AddModuleMutationOptions = Apollo.BaseMutationOptions<
+  AddModuleMutation,
+  AddModuleMutationVariables
 >
 export const UsersDocument = gql`
   query users {
