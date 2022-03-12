@@ -4,7 +4,7 @@ import {
   AddAlertMutationVariables,
   RemoveAlertMutationVariables
 } from '../../graphql'
-import { alerts } from '../../graphql/queryResolvers/alerts'
+import { alerts } from '../../graphql/resolvers/alerts'
 import prisma from '../../prisma'
 import { isAdminOrThrow } from '../isAdmin'
 
