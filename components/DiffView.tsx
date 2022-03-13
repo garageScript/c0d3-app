@@ -13,7 +13,7 @@ const prismLanguages = ['js', 'javascript', 'html', 'css', 'json', 'jsx']
 const styles: ReactDiffViewerStylesOverride = {
   lineNumber: {
     fontWeight: 'bold',
-    color: '#364d3b'
+    color: '#525252'
   },
   gutter: {
     background: '#cdffd8',
@@ -26,7 +26,15 @@ const styles: ReactDiffViewerStylesOverride = {
   },
   diffContainer: {
     display: 'block',
-    overflowX: 'auto'
+    overflowX: 'auto',
+    marginBottom: '14px',
+    borderBottomLeftRadius: '8px',
+    borderBottomRightRadius: '8px'
+  },
+  titleBlock: {
+    borderTopLeftRadius: '8px',
+    borderTopRightRadius: '8px',
+    border: '1px solid #eee'
   }
 }
 
@@ -132,7 +140,17 @@ const DiffView: React.FC<{
             renderContent={syntaxHighlight}
             splitView={false}
             leftTitle={`${newPath}`}
-            styles={styles}
+            styles={
+              viewableStates[fileIdx]
+                ? {
+                    ...styles,
+                    titleBlock: {
+                      border: '1px solid #eee',
+                      borderRadius: '8px'
+                    }
+                  }
+                : styles
+            }
             onLineNumberClick={(n: string) => {
               if (generalStatus !== SubmissionStatus.Open) return
               //number is a string in format of L-10, R-4 and etc (left-right split views)

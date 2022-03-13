@@ -434,7 +434,7 @@ describe('ReviewCard Component', () => {
     const accordionHeader = getByText('Challenge Description')
     fireEvent.click(accordionHeader)
 
-    const accordionItem = container.querySelector('.accordionItem')
+    const accordionItem = container.querySelector('.accordion__item')
 
     expect(accordionItem).toBeVisible()
   })
