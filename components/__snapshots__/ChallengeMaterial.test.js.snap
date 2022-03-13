@@ -222,12 +222,12 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                 class="diffView"
               >
                 <table
-                  class="css-b02w0u-diff-container"
+                  class="css-1p5fn6o-diff-container"
                 >
                   <tbody>
                     <tr>
                       <td
-                        class="css-1rwygp7-title-block"
+                        class="css-1gyvngn-title-block"
                         colspan="4"
                       >
                         <pre
@@ -244,14 +244,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           1
                         </pre>
@@ -292,14 +292,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           2
                         </pre>
@@ -328,14 +328,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           3
                         </pre>
@@ -422,14 +422,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           4
                         </pre>
@@ -483,14 +483,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           5
                         </pre>
@@ -530,14 +530,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           6
                         </pre>
@@ -566,14 +566,14 @@ exports[`Curriculum challenge page Should render first challenge that is not pas
                         class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         />
                       </td>
                       <td
                         class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                       >
                         <pre
-                          class="css-14p8zw1-line-number"
+                          class="css-iepx6s-line-number"
                         >
                           7
                         </pre>

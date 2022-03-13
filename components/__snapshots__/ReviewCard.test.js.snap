@@ -58,10 +58,10 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -140,12 +140,12 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
               class="diffView"
             >
               <table
-                class="css-b02w0u-diff-container"
+                class="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      class="css-1rwygp7-title-block"
+                      class="css-1gyvngn-title-block"
                       colspan="4"
                     >
                       <pre
@@ -162,14 +162,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -217,14 +217,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -265,14 +265,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -301,14 +301,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -390,14 +390,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -426,14 +426,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -481,14 +481,14 @@ exports[`ReviewCard Component Should be able to add comment 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -911,10 +911,10 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -993,12 +993,12 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
               class="diffView"
             >
               <table
-                class="css-b02w0u-diff-container"
+                class="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      class="css-1rwygp7-title-block"
+                      class="css-1gyvngn-title-block"
                       colspan="4"
                     >
                       <pre
@@ -1015,14 +1015,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -1070,14 +1070,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -1118,14 +1118,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -1154,14 +1154,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -1243,14 +1243,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -1279,14 +1279,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -1334,14 +1334,14 @@ exports[`ReviewCard Component Should be able to select previous submissions 1`] 
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -1713,10 +1713,10 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -1795,12 +1795,12 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
               class="diffView"
             >
               <table
-                class="css-b02w0u-diff-container"
+                class="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      class="css-1rwygp7-title-block"
+                      class="css-1gyvngn-title-block"
                       colspan="4"
                     >
                       <pre
@@ -1817,14 +1817,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -1872,14 +1872,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -1920,14 +1920,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -1956,14 +1956,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -2045,14 +2045,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -2081,14 +2081,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -2136,14 +2136,14 @@ exports[`ReviewCard Component Should not be able to add comment when comment val
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -2515,10 +2515,10 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -2597,12 +2597,12 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
               class="diffView"
             >
               <table
-                class="css-b02w0u-diff-container"
+                class="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      class="css-1rwygp7-title-block"
+                      class="css-1gyvngn-title-block"
                       colspan="4"
                     >
                       <pre
@@ -2619,14 +2619,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -2696,14 +2696,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -2761,14 +2761,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -2816,14 +2816,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -2904,14 +2904,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -2981,14 +2981,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -3045,14 +3045,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -3094,14 +3094,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         8
                       </pre>
@@ -3142,14 +3142,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         9
                       </pre>
@@ -3219,14 +3219,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         10
                       </pre>
@@ -3286,14 +3286,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         11
                       </pre>
@@ -3365,14 +3365,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         12
                       </pre>
@@ -3408,14 +3408,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         13
                       </pre>
@@ -3456,14 +3456,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         14
                       </pre>
@@ -3528,14 +3528,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         15
                       </pre>
@@ -3591,14 +3591,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         16
                       </pre>
@@ -3639,14 +3639,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         17
                       </pre>
@@ -3686,14 +3686,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         18
                       </pre>
@@ -3722,14 +3722,14 @@ exports[`ReviewCard Component Should render incomplete diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         19
                       </pre>
@@ -4118,10 +4118,10 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -4200,12 +4200,12 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
               class="diffView"
             >
               <table
-                class="css-b02w0u-diff-container"
+                class="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      class="css-1rwygp7-title-block"
+                      class="css-1gyvngn-title-block"
                       colspan="4"
                     >
                       <pre
@@ -4222,14 +4222,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -4299,14 +4299,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -4364,14 +4364,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -4419,14 +4419,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -4507,14 +4507,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -4584,14 +4584,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -4648,14 +4648,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -4697,14 +4697,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         8
                       </pre>
@@ -4745,14 +4745,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         9
                       </pre>
@@ -4822,14 +4822,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         10
                       </pre>
@@ -4889,14 +4889,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         11
                       </pre>
@@ -4968,14 +4968,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         12
                       </pre>
@@ -5011,14 +5011,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         13
                       </pre>
@@ -5059,14 +5059,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         14
                       </pre>
@@ -5131,14 +5131,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         15
                       </pre>
@@ -5194,14 +5194,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         16
                       </pre>
@@ -5242,14 +5242,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         17
                       </pre>
@@ -5289,14 +5289,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         18
                       </pre>
@@ -5325,14 +5325,14 @@ exports[`ReviewCard Component Should render incorrect diff 1`] = `
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         19
                       </pre>
@@ -5721,10 +5721,10 @@ exports[`ReviewCard Component Should render single path submission 1`] = `
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -6096,10 +6096,10 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
         class="rounded-lg position-relative pt-5"
       >
         <div
-          class="descAccordion accordion"
+          class="card__descAccordion accordion"
         >
           <div
-            class="bg-white mb-2 false accordion-item"
+            class="bg-white mb-2 false accordion__item accordion-item"
           >
             <h2
               class="accordion-header"
@@ -6178,12 +6178,12 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
               class="diffView"
             >
               <table
-                class="css-b02w0u-diff-container"
+                class="css-1p5fn6o-diff-container"
               >
                 <tbody>
                   <tr>
                     <td
-                      class="css-1rwygp7-title-block"
+                      class="css-1gyvngn-title-block"
                       colspan="4"
                     >
                       <pre
@@ -6200,14 +6200,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         1
                       </pre>
@@ -6277,14 +6277,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         2
                       </pre>
@@ -6342,14 +6342,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         3
                       </pre>
@@ -6397,14 +6397,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         4
                       </pre>
@@ -6485,14 +6485,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         5
                       </pre>
@@ -6562,14 +6562,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         6
                       </pre>
@@ -6626,14 +6626,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         7
                       </pre>
@@ -6675,14 +6675,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         8
                       </pre>
@@ -6723,14 +6723,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         9
                       </pre>
@@ -6800,14 +6800,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         10
                       </pre>
@@ -6867,14 +6867,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         11
                       </pre>
@@ -6946,14 +6946,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         12
                       </pre>
@@ -6989,14 +6989,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         13
                       </pre>
@@ -7037,14 +7037,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         14
                       </pre>
@@ -7109,14 +7109,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         15
                       </pre>
@@ -7172,14 +7172,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         16
                       </pre>
@@ -7220,14 +7220,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         17
                       </pre>
@@ -7267,14 +7267,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         18
                       </pre>
@@ -7303,14 +7303,14 @@ exports[`ReviewCard Component Should render submissions in other languages 1`] =
                       class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       />
                     </td>
                     <td
                       class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
                     >
                       <pre
-                        class="css-14p8zw1-line-number"
+                        class="css-iepx6s-line-number"
                       >
                         19
                       </pre>
