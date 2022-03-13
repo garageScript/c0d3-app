@@ -55,7 +55,8 @@ export const login = async (
   return {
     success: true,
     username: user.username,
-    cliToken: encode(cliToken)
+    cliToken: encode(cliToken),
+    id: user.id
   }
 }
 
@@ -170,7 +171,8 @@ export const signup = async (
   return {
     success: true,
     username: newUser.username,
-    cliToken: forgotToken
+    cliToken: forgotToken,
+    id: newUser.id
   }
 }
 
