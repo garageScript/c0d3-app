@@ -51,14 +51,16 @@ describe('auth controller', () => {
       prismaMock.user.findFirst.mockResolvedValue({
         username: 'testuser',
         password: 'fakepassword',
-        cliToken: 'fakeCliToken'
+        cliToken: 'fakeCliToken',
+        id: 1
       })
       bcrypt.compare = jest.fn().mockReturnValue(true)
       const result = login({}, userArgs, { req: { session: {} } })
       expect(result).resolves.toEqual({
         success: true,
         username: 'testuser',
-        cliToken: 'eyJjbGlUb2tlbiI6ImZha2VDbGlUb2tlbiJ9'
+        cliToken: expect.any(String),
+        id: 1
       })
     })
 
@@ -162,7 +164,8 @@ describe('auth controller', () => {
       expect(result).toEqual({
         username: user.username,
         success: true,
-        cliToken: expect.any(String)
+        cliToken: expect.any(String),
+        id: user.id
       })
       expect(prismaMock.user.update).toBeCalled()
     })
