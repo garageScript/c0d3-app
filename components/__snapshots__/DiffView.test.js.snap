@@ -52,12 +52,12 @@ exports[`DiffView component Should add comment box 1`] = `
       class="diffView"
     >
       <table
-        class="css-b02w0u-diff-container"
+        class="css-1p5fn6o-diff-container"
       >
         <tbody>
           <tr>
             <td
-              class="css-1rwygp7-title-block"
+              class="css-1gyvngn-title-block"
               colspan="4"
             >
               <pre
@@ -74,14 +74,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 1
               </pre>
@@ -129,14 +129,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 2
               </pre>
@@ -177,14 +177,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 3
               </pre>
@@ -213,14 +213,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 4
               </pre>
@@ -524,14 +524,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 5
               </pre>
@@ -560,14 +560,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 6
               </pre>
@@ -615,14 +615,14 @@ exports[`DiffView component Should add comment box 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 7
               </pre>
@@ -705,12 +705,12 @@ exports[`DiffView component Should render collapsed diff 1`] = `
       class="diffView"
     >
       <table
-        class="css-b02w0u-diff-container"
+        class="css-1p5fn6o-diff-container"
       >
         <tbody>
           <tr>
             <td
-              class="css-1rwygp7-title-block"
+              class="css-dfkv5k-title-block"
               colspan="4"
             >
               <pre
@@ -779,12 +779,12 @@ exports[`DiffView component Should render diff with comments 1`] = `
       class="diffView"
     >
       <table
-        class="css-b02w0u-diff-container"
+        class="css-1p5fn6o-diff-container"
       >
         <tbody>
           <tr>
             <td
-              class="css-1rwygp7-title-block"
+              class="css-1gyvngn-title-block"
               colspan="4"
             >
               <pre
@@ -801,14 +801,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 1
               </pre>
@@ -843,14 +843,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 2
               </pre>
@@ -891,14 +891,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 3
               </pre>
@@ -975,14 +975,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 4
               </pre>
@@ -1011,14 +1011,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 5
               </pre>
@@ -1082,14 +1082,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 6
               </pre>
@@ -1129,14 +1129,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 7
               </pre>
@@ -1165,14 +1165,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 8
               </pre>
@@ -1239,14 +1239,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 9
               </pre>
@@ -1275,14 +1275,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 10
               </pre>
@@ -1349,14 +1349,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 11
               </pre>
@@ -1385,14 +1385,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 12
               </pre>
@@ -1442,14 +1442,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 13
               </pre>
@@ -1522,14 +1522,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 14
               </pre>
@@ -1591,14 +1591,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 15
               </pre>
@@ -1639,14 +1639,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 16
               </pre>
@@ -1719,14 +1719,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 17
               </pre>
@@ -1817,14 +1817,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 18
               </pre>
@@ -1925,14 +1925,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 19
               </pre>
@@ -1994,14 +1994,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 20
               </pre>
@@ -2047,14 +2047,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 21
               </pre>
@@ -2100,14 +2100,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 22
               </pre>
@@ -2136,14 +2136,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 23
               </pre>
@@ -2195,14 +2195,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 24
               </pre>
@@ -2275,14 +2275,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 25
               </pre>
@@ -2367,14 +2367,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 26
               </pre>
@@ -2508,14 +2508,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 27
               </pre>
@@ -2581,14 +2581,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 28
               </pre>
@@ -2629,14 +2629,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 29
               </pre>
@@ -2709,14 +2709,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 30
               </pre>
@@ -2816,14 +2816,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 31
               </pre>
@@ -2869,14 +2869,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 32
               </pre>
@@ -2969,12 +2969,12 @@ exports[`DiffView component Should render diff with comments 1`] = `
       class="diffView"
     >
       <table
-        class="css-b02w0u-diff-container"
+        class="css-1p5fn6o-diff-container"
       >
         <tbody>
           <tr>
             <td
-              class="css-1rwygp7-title-block"
+              class="css-1gyvngn-title-block"
               colspan="4"
             >
               <pre
@@ -2991,14 +2991,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 1
               </pre>
@@ -3352,14 +3352,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 2
               </pre>
@@ -3674,14 +3674,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 3
               </pre>
@@ -3751,14 +3751,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 4
               </pre>
@@ -3816,14 +3816,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 5
               </pre>
@@ -3900,14 +3900,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 6
               </pre>
@@ -4003,14 +4003,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 7
               </pre>
@@ -4063,14 +4063,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 8
               </pre>
@@ -4112,14 +4112,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 9
               </pre>
@@ -4161,14 +4161,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 10
               </pre>
@@ -4267,14 +4267,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 11
               </pre>
@@ -4374,14 +4374,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 12
               </pre>
@@ -4437,14 +4437,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 13
               </pre>
@@ -4480,14 +4480,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 14
               </pre>
@@ -4564,14 +4564,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 15
               </pre>
@@ -4632,14 +4632,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 16
               </pre>
@@ -4675,14 +4675,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 17
               </pre>
@@ -4747,14 +4747,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 18
               </pre>
@@ -4831,14 +4831,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 19
               </pre>
@@ -4923,14 +4923,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 20
               </pre>
@@ -4983,14 +4983,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 21
               </pre>
@@ -5026,14 +5026,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 22
               </pre>
@@ -5129,14 +5129,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 23
               </pre>
@@ -5221,14 +5221,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 24
               </pre>
@@ -5281,14 +5281,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 25
               </pre>
@@ -5342,14 +5342,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 26
               </pre>
@@ -5385,14 +5385,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 27
               </pre>
@@ -5428,14 +5428,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 28
               </pre>
@@ -5471,14 +5471,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 29
               </pre>
@@ -5520,14 +5520,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 30
               </pre>
@@ -5568,14 +5568,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 31
               </pre>
@@ -5633,14 +5633,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 32
               </pre>
@@ -5775,14 +5775,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 33
               </pre>
@@ -5939,14 +5939,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 34
               </pre>
@@ -6049,14 +6049,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 35
               </pre>
@@ -6096,14 +6096,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 36
               </pre>
@@ -6132,14 +6132,14 @@ exports[`DiffView component Should render diff with comments 1`] = `
               class="css-1k5tuhz-gutter css-9w79dj-empty-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               />
             </td>
             <td
               class="css-1k5tuhz-gutter css-cnnxkz-diff-added"
             >
               <pre
-                class="css-14p8zw1-line-number"
+                class="css-iepx6s-line-number"
               >
                 37
               </pre>
