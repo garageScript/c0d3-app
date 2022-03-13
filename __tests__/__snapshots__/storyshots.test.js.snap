@@ -11585,10 +11585,10 @@ exports[`Storyshots Components/ReviewCard Active Card 1`] = `
       className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordionItem accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -13005,10 +13005,10 @@ exports[`Storyshots Components/ReviewCard No Last Name 1`] = `
       className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordionItem accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -14423,10 +14423,10 @@ exports[`Storyshots Components/ReviewCard With Long Comment 1`] = `
       className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordionItem accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -15841,10 +15841,10 @@ exports[`Storyshots Components/ReviewCard Without Comment 1`] = `
       className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordionItem accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"
@@ -17259,10 +17259,10 @@ exports[`Storyshots Components/ReviewCard Without Username 1`] = `
       className="rounded-lg position-relative pt-5"
     >
       <div
-        className="descAccordion accordion"
+        className="card__descAccordion accordion"
       >
         <div
-          className="bg-white mb-2 false accordionItem accordion-item"
+          className="bg-white mb-2 false accordion__item accordion-item"
         >
           <h2
             className="accordion-header"

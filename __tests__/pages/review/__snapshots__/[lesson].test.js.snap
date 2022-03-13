@@ -737,10 +737,10 @@ exports[`Lesson Page Should render new submissions 1`] = `
                 class="rounded-lg position-relative pt-5"
               >
                 <div
-                  class="descAccordion accordion"
+                  class="card__descAccordion accordion"
                 >
                   <div
-                    class="bg-white mb-2 false accordionItem accordion-item"
+                    class="bg-white mb-2 false accordion__item accordion-item"
                   >
                     <h2
                       class="accordion-header"
