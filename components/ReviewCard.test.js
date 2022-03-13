@@ -337,7 +337,6 @@ describe('ReviewCard Component', () => {
         />
       </MockedProvider>
     )
-    userEvent.type(getByRole('textbox', { name: '' }), '')
     userEvent.click(
       getByRole('radio', {
         name: 'Comment Submit general feedback without explicit approval'

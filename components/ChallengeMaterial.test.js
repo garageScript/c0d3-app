@@ -461,7 +461,6 @@ describe('Curriculum challenge page', () => {
       </MockedProvider>
     )
 
-    userEvent.type(screen.getByTestId('textbox'), '')
     fireEvent.click(screen.getByText('Comment'))
 
     const addCommentMutation = mocks[3].newData
