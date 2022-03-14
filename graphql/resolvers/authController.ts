@@ -7,9 +7,9 @@ import type {
   SignupMutationVariables
 } from '../../graphql'
 import prisma from '../../prisma'
-import { decode, encode } from '../encoding'
-import { signupValidation } from '../formValidation'
-import { sendSignupEmail } from '../mail'
+import { decode, encode } from '../../helpers/encoding'
+import { signupValidation } from '../../helpers/formValidation'
+import { sendSignupEmail } from '../../helpers/mail'
 
 const THREE_DAYS = 1000 * 60 * 60 * 24 * 3
 
