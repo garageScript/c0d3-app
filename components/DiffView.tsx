@@ -107,7 +107,7 @@ const DiffView: React.FC<{
     }
 
     return (
-      <div className="position-relative">
+      <div className="position-relative" key={fileIdx}>
         <div className="position-absolute w-100 d-flex flex-row justify-content-end p-1">
           <div
             className={`${scssStyles.checkBoxBorder} form-check pe-2 mt-2 me-2 border rounded`}
