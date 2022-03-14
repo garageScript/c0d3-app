@@ -11,17 +11,12 @@ import Layout from '../components/Layout'
 import LessonCard from '../components/LessonCard'
 import ProgressCard from '../components/ProgressCard'
 import ConnectToDiscordModal from '../components/ConnectToDiscordModal'
-import {
-  Alert,
-  GetAppDocument,
-  GetAppQuery,
-  GetSessionQuery,
-  Lesson,
-  useGetSessionQuery
-} from '../graphql/'
+import { Alert, GetAppDocument, GetAppQuery, Lesson } from '../graphql/'
 import { initializeApollo } from '../helpers/apolloClient-server'
 import styles from '../scss/curriculum.module.scss'
 import useHasMounted from '../helpers/useHasMounted'
+import { useSession } from 'next-auth/react'
+import { Session, SessionContext } from '../@types/auth'
 
 const announcements = [
   'To make space for other students on our servers, your account will be deleted after 30 days of inactivity.',
@@ -35,13 +30,13 @@ type Props = {
 }
 
 interface State {
-  session: GetSessionQuery['session']
+  session: Session
   progress: number
   current: number
 }
 
 const generateMap = (
-  session: GetSessionQuery['session']
+  session: Session
 ): { [id: string]: ArrayElement<typeof session.lessonStatus> } => {
   return session.lessonStatus.reduce((map, userLesson) => {
     map[userLesson.lessonId] = userLesson
@@ -52,10 +47,7 @@ const generateMap = (
 // Progress Percentage should be calculated from lessons 0-6 because thats our current standard of finishing the curriculum.
 const TOTAL_LESSONS = 7
 
-const calculateProgress = (
-  session: GetSessionQuery['session'],
-  lessons: Lesson[]
-): number => {
+const calculateProgress = (session: Session, lessons: Lesson[]): number => {
   const lessonInProgressIdx = calculateCurrent(session, lessons)
   return Math.floor((lessonInProgressIdx * 100) / TOTAL_LESSONS)
 }
@@ -66,10 +58,7 @@ const calculateProgress = (
  * @param lessons
  * @returns current lesson index
  */
-const calculateCurrent = (
-  session: GetSessionQuery['session'],
-  lessons: Lesson[]
-): number => {
+const calculateCurrent = (session: Session, lessons: Lesson[]): number => {
   const lessonStatusMap = generateMap(session)
   const lessonIndex = lessons.findIndex(
     ({ id }) => Boolean(lessonStatusMap[id]?.passedAt) === false
@@ -95,13 +84,20 @@ const ScrollArrow: React.FC<{ scrolledRight: boolean }> = ({
 }
 export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
   const hasMounted = useHasMounted()
-  //fallback in case if localStorage (which is used by persistent cache) is disabled
-  const { data, loading } = useGetSessionQuery({
-    fetchPolicy: 'cache-and-network',
-    ssr: false
-  })
+  const { data: session } = useSession()
+
+  console.log(session)
+
+  const { data, status } = useSession() as SessionContext
+  const loading = status === 'loading'
+
   const [state, setState] = useState<State>({
-    session: { lessonStatus: [] },
+    session: {
+      lessonStatus: [],
+      user: {} as Session['user'],
+      submissions: [] as Session['submissions'],
+      expires: ''
+    },
     progress: -1,
     current: -1
   })
@@ -133,14 +129,14 @@ export const Curriculum: React.FC<Props> = ({ lessons, alerts }) => {
       )
   }, [])
   useEffect(() => {
-    if (data && data.session) {
-      if (data.session.user && !data.session.user.isConnectedToDiscord) {
+    if (data) {
+      if (data.user && !data.user.isConnectedToDiscord) {
         setShowConnectToDiscordModal(true)
       }
       setState({
-        session: data.session,
-        progress: calculateProgress(data.session, lessons),
-        current: calculateCurrent(data.session, lessons)
+        session: data,
+        progress: calculateProgress(data, lessons),
+        current: calculateCurrent(data, lessons)
       })
     }
   }, [data])

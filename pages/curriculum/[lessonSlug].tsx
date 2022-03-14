@@ -18,9 +18,12 @@ import withQueryLoader, {
 } from '../../containers/withQueryLoader'
 import _ from 'lodash'
 import { GlobalContext } from '../../helpers/globalContext'
+import { useSession } from 'next-auth/react'
 
 const Challenges: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
-  const { lessons, session, alerts } = queryData
+  const { data: session } = useSession()
+
+  const { lessons, alerts } = queryData
   const context = useContext(GlobalContext)
   useEffect(() => {
     session && context.setContext(session)

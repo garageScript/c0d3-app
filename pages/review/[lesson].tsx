@@ -15,6 +15,8 @@ import withQueryLoader, {
 import _ from 'lodash'
 import { SubmissionStatus } from '../../graphql'
 import { GlobalContext } from '../../helpers/globalContext'
+import { useSession } from 'next-auth/react'
+import { SessionContext } from '../../@types/auth'
 
 type SubmissionDisplayProps = {
   submissions: Submission[]
@@ -31,7 +33,9 @@ const SubmissionDisplay: React.FC<SubmissionDisplayProps> = ({
 )
 
 const Review: React.FC<QueryDataProps<GetAppQuery>> = ({ queryData }) => {
-  const { lessons, session } = queryData
+  const { data: session } = useSession() as SessionContext
+
+  const { lessons } = queryData
   const router = useRouter()
   const context = useContext(GlobalContext)
   const slug = router.query.lesson as string

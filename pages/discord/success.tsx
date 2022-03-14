@@ -6,18 +6,18 @@ import Card from '../../components/Card'
 import NavLink from '../../components/NavLink'
 import { NextApiResponse } from 'next'
 import { Request, Response } from 'express'
-import loggingMiddleware from '../../helpers/middleware/logger'
-import sessionMiddleware from '../../helpers/middleware/session'
-import userMiddleware from '../../helpers/middleware/user'
 import { LoggedRequest } from '../../@types/helpers'
-import runMiddlewares from '../../helpers/runMiddlewares'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
   DiscordUserInfo,
   setTokenFromAuthCode,
-  getDiscordUserInfo
+  getDiscordUserInfo,
+  updateRefreshandAccessTokens
 } from '../../helpers/discordAuth'
+import { getSession } from 'next-auth/react'
+import { Session } from '../../@types/auth'
+import { PrismaClient } from '@prisma/client'
 
 type ConnectToDiscordSuccessProps = {
   errorCode: number
@@ -174,9 +174,7 @@ export const ConnectToDiscordSuccess: React.FC<ConnectToDiscordSuccessProps> &
 // because NextJS throws an error when trying to res.redirect from that path
 
 export const getServerSideProps = async ({
-  req,
-  res,
-  query
+  req
 }: {
   // NextJS request and response types are extended with Express request and response types
   // request type is initially NextApiRequest until it goes through all the middlewares
@@ -184,43 +182,19 @@ export const getServerSideProps = async ({
   res: NextApiResponse & Response
   query?: Query
 }) => {
-  return new Promise(resolve => {
-    const middlewares = [loggingMiddleware, sessionMiddleware(), userMiddleware]
+  const prisma = new PrismaClient()
 
-    runMiddlewares(middlewares, req, res, async () => {
-      if (!req.user?.id) {
-        return resolve({
-          props: {
-            errorCode: ErrorCode.USER_NOT_LOGGED_IN
-          }
-        })
-      }
-      try {
-        const { code } = query || {}
-        const user = await setTokenFromAuthCode(req.user.id, code as string)
-        const userInfo = await getDiscordUserInfo(user)
-        if (!userInfo.username) {
-          return resolve({
-            props: {
-              error: '',
-              errorCode: ErrorCode.DISCORD_ERROR,
-              username: req.user.username
-            }
-          })
-        }
-        resolve({ props: { userInfo, username: req.user.username } })
-      } catch (error) {
-        const errorMessage = (error as Error).message
-        resolve({
-          props: {
-            error: errorMessage,
-            errorCode: ErrorCode.DISCORD_ERROR, // auth code expired
-            username: req.user.username
-          }
-        })
-      }
-    })
+  const session = (await getSession({ req })) as Session
+
+  if (!session) return { props: { errorCode: ErrorCode.USER_NOT_LOGGED_IN } }
+
+  const user = await prisma.user.findUnique({
+    where: { id: session?.user.id }
   })
+
+  const userInfo = await getDiscordUserInfo(user!)
+
+  return { props: { userInfo, username: session.user.username } }
 }
 
 ConnectToDiscordSuccess.getLayout = getLayout

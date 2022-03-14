@@ -18,13 +18,13 @@ export const login = async (
   arg: LoginMutationVariables,
   ctx: Context
 ) => {
-  const { req } = ctx
-  const { session } = req
+  // const { req } = ctx
+  // const { session } = req
   const { username, password } = arg
 
-  if (!session) {
-    throw new Error('Session Error')
-  }
+  // if (!session) {
+  //   throw new Error('Session Error')
+  // }
 
   let user = await prisma.user.findFirst({ where: { username } })
   // TODO change username column to be unique
@@ -51,11 +51,12 @@ export const login = async (
 
   const cliToken = { id: user.id, cliToken: user.cliToken }
 
-  session.userId = user.id
+  // session.userId = user.id
   return {
     success: true,
     username: user.username,
-    cliToken: encode(cliToken)
+    cliToken: encode(cliToken),
+    id: user.id
   }
 }
 
@@ -92,12 +93,12 @@ export const signup = async (
 ) => {
   const { req } = ctx
 
-  const { session } = req
+  // const { session } = req
   const { firstName, lastName, username, email } = arg
 
-  if (!session) {
-    throw new Error('Session Error')
-  }
+  // if (!session) {
+  //   throw new Error('Session Error')
+  // }
 
   const validEntry = await signupValidation.isValid({
     firstName,
@@ -170,7 +171,8 @@ export const signup = async (
   return {
     success: true,
     username: newUser.username,
-    cliToken: forgotToken
+    cliToken: forgotToken,
+    id: newUser.id
   }
 }
 

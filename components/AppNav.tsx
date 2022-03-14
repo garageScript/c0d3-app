@@ -9,6 +9,8 @@ import _ from 'lodash'
 import styles from '../scss/appNav.module.scss'
 import { Button } from './theme/Button'
 import LogoutContainer from './LogoutContainer'
+import { useSession } from 'next-auth/react'
+import { Session } from '../@types/auth'
 
 type AuthLinkProps = {
   session: any
@@ -102,27 +104,22 @@ const NotLoggedInAuthNav = () => (
 )
 
 const AppNav: React.FC<{}> = () => {
-  const [session, setSession] = useState<GetAppQuery['session']>({
-    lessonStatus: []
-  })
+  const { data: session, status } = useSession() as unknown as {
+    data: Session
+    status: 'loading' | 'authenticated' | 'unauthenticated'
+  }
 
-  const { data, loading } = useGetAppQuery()
-
-  useEffect(() => {
-    if (data && data.session) {
-      setSession(data.session)
-    }
-  }, [data])
+  // const { data, loading } = useGetAppQuery()
 
   const renderButtons = () => {
-    if (loading) return <></>
+    if (status === 'loading') return <></>
 
     if (!session || _.get(session, 'user.username', null) === null) {
       return <NotLoggedInAuthNav />
     }
 
     // TODO: replace with typing
-    const username = _.get(session, 'user.username', '')
+    const username = session.user.username
 
     return <LoggedInAuthNav username={username} />
   }

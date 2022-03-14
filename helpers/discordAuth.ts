@@ -35,8 +35,9 @@ export type DiscordUserInfo = {
   refreshToken: string
 }
 
-const updateRefreshandAccessTokens = (
+export const updateRefreshandAccessTokens = (
   userId: number,
+  discordId: string,
   refreshToken: string,
   accessToken: string,
   accessTokenExpiresAt: Date
@@ -48,7 +49,8 @@ const updateRefreshandAccessTokens = (
     data: {
       discordRefreshToken: refreshToken,
       discordAccessToken: accessToken,
-      discordAccessTokenExpires: accessTokenExpiresAt
+      discordAccessTokenExpires: accessTokenExpiresAt,
+      discordId: discordId
     }
   })
 }
@@ -72,12 +74,13 @@ export const setTokenFromAuthCode = (
     })
   })
     .then(r => r.json())
-    .then(({ refresh_token, access_token, expires_in }) => {
+    .then(({ refresh_token, access_token, expires_in, userId: discordId }) => {
       const accessTokenExpiresAt = new Date(
         Date.now() + (expires_in * 1000 || 0)
       )
       return updateRefreshandAccessTokens(
         userId,
+        discordId,
         refresh_token,
         access_token,
         accessTokenExpiresAt
@@ -102,7 +105,7 @@ const getTokenFromRefreshToken = (
   }).then(r => r.json())
 }
 
-const getUserInfoFromAccessToken = (
+export const getUserInfoFromAccessToken = (
   accessToken: string
 ): Promise<UserInfoResponse> => {
   return fetch(`${discordAPI}/users/@me`, {
@@ -149,6 +152,7 @@ export const getDiscordUserInfo = async (
       // if updatedRefreshToken is undefined, empty string is stored in db to remove invalid tokens
       await updateRefreshandAccessTokens(
         user.id,
+        user.discordId!,
         refreshToken,
         accessToken,
         accessTokenExpiresAt
