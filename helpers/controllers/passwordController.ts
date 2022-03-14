@@ -1,6 +1,7 @@
 import { AuthenticationError, UserInputError } from 'apollo-server-micro'
 import bcrypt from 'bcrypt'
 import { nanoid } from 'nanoid'
+import { getSession } from 'next-auth/react'
 import { Context } from '../../@types/helpers'
 import { ReqPwResetMutation, ReqPwResetMutationVariables } from '../../graphql'
 import prisma from '../../prisma'
@@ -63,8 +64,8 @@ export const changePw = async (
   },
   ctx: Context
 ) => {
-  const { req } = ctx
-  if (!req.session) {
+  const session = await getSession()
+  if (!session) {
     throw new Error('Session does not exist')
   }
 
@@ -98,7 +99,7 @@ export const changePw = async (
     }
   })
 
-  req.session.userId = user.id
+  // req.session.userId = user.id
   return {
     success: true
   }

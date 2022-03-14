@@ -1,6 +1,6 @@
 import { useMutation } from '@apollo/client'
 //import libraries
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field } from 'formik'
 import _ from 'lodash'
 
@@ -18,6 +18,9 @@ import { WithLayout } from '../@types/page'
 import Title from '../components/Title'
 import { Spinner } from 'react-bootstrap'
 import Alert from '../components/Alert'
+import { signIn } from 'next-auth/react'
+import router from 'next/router'
+import { SignInReturn } from '../@types/auth'
 
 type Values = {
   email: string
@@ -29,13 +32,13 @@ type Values = {
 type SignupFormProps = {
   handleSubmit: (values: Values) => void
   isLoading?: boolean
-  signupErrors?: string[]
+  signupError?: string
   isSuccess?: boolean
   forgotToken?: string
 }
 
 type ErrorDisplayProps = {
-  signupErrors?: string[]
+  signupError?: string
 }
 
 type SignupSuccessProps = {
@@ -49,12 +52,12 @@ const initialValues: Values = {
   lastName: ''
 }
 
-const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupErrors }) => {
-  if (!signupErrors || !signupErrors.length) return <></>
-  const errorMessages = signupErrors.map((message, idx) => {
-    return <Alert key={idx} alert={{ id: -1, text: message, type: 'urgent' }} />
-  })
-  return <>{errorMessages}</>
+const ErrorMessage: React.FC<ErrorDisplayProps> = ({ signupError }) => {
+  if (!signupError || !signupError.length) return <></>
+
+  const message = signupError.split(':')[1]
+
+  return <Alert alert={{ id: -1, text: message, type: 'urgent' }} />
 }
 
 const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
@@ -70,13 +73,13 @@ const SignupSuccess: React.FC<SignupSuccessProps> = ({ forgotToken }) => (
 )
 
 const SignupForm: React.FC<SignupFormProps> = ({
-  signupErrors,
+  signupError,
   isLoading,
   handleSubmit
 }) => {
   return (
     <Card title="Create Account">
-      <ErrorMessage signupErrors={signupErrors} />
+      <ErrorMessage signupError={signupError} />
       <Formik
         validateOnBlur
         initialValues={initialValues}
@@ -150,31 +153,58 @@ const SignUpPage: React.FC & WithLayout = () => {
   const [signupSuccess, setSignupSuccess] = useState(false)
   const [forgotToken, setForgotToken] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [signupErrors, setSignupErrors] = useState<string[]>([])
-  const [signupUser] = useMutation(SIGNUP_USER)
-  const handleSubmit = async (values: Values) => {
-    setIsSubmitting(true)
-    try {
-      const { data } = await signupUser({ variables: values })
-      if (data.signup.success) {
-        setForgotToken(data.signup.cliToken)
-        return setSignupSuccess(true)
-      }
-      const err = new Error(
-        'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
-      )
-      throw err
-    } catch (error) {
-      const graphQLErrors = _.get(error, 'graphQLErrors', [error])
-      const errorMessages = graphQLErrors.reduce(
-        (messages: any, error: any) => {
-          return [...messages, error.message]
-        },
-        []
-      )
-      setSignupErrors([...errorMessages])
+  const [error, setError] = useState('')
+  const [signupResult, setSignupResult] = useState<SignInReturn>({
+    ok: false,
+    url: '',
+    error: '',
+    status: 200
+  })
+  // const [session, ]
+  // const handleSubmit = async (values: Values) => {
+  //   setIsSubmitting(true)
+  //   try {
+  //     const { data } = await signupUser({ variables: values })
+  //     if (data.signup.success) {
+  //       setForgotToken(data.signup.cliToken)
+  //       return setSignupSuccess(true)
+  //     }
+  //     const err = new Error(
+  //       'Server Error: Server cannot be reached. Please try again. If this problem persists, please send an email to support@c0d3.com'
+  //     )
+  //     throw err
+  //   } catch (error) {
+  //     const graphQLErrors = _.get(error, 'graphQLErrors', [error])
+  //     const errorMessages = graphQLErrors.reduce(
+  //       (messages: any, error: any) => {
+  //         return [...messages, error.message]
+  //       },
+  //       []
+  //     )
+  //     setsignupError([...errorMessages])
+  //   }
+  //   setIsSubmitting(false)
+  // }
+  useEffect(() => {
+    if (signupResult.error) {
+      setError(signupResult.error)
+      return
     }
-    setIsSubmitting(false)
+
+    if (signupResult.ok) {
+      setForgotToken(signupResult.user.cliToken)
+      return setSignupSuccess(true)
+    }
+  }, [signupResult])
+
+  const handleSubmit = async (values: Values) => {
+    console.log(values)
+    const response = (await signIn('credentials', {
+      redirect: false,
+      ...values
+    })) as unknown as SignInReturn
+
+    setSignupResult(response)
   }
   return (
     <>
@@ -184,7 +214,7 @@ const SignUpPage: React.FC & WithLayout = () => {
         isLoading={isSubmitting}
         isSuccess={signupSuccess}
         forgotToken={forgotToken}
-        signupErrors={signupErrors}
+        signupError={error}
       />
     </>
   )
@@ -193,7 +223,7 @@ const SignUpPage: React.FC & WithLayout = () => {
 export const Signup: React.FC<SignupFormProps> = ({
   handleSubmit,
   isSuccess,
-  signupErrors,
+  signupError,
   isLoading,
   forgotToken
 }) => {
@@ -204,7 +234,7 @@ export const Signup: React.FC<SignupFormProps> = ({
       ) : (
         <SignupForm
           handleSubmit={handleSubmit}
-          signupErrors={signupErrors}
+          signupError={signupError}
           isLoading={isLoading}
         />
       )}
