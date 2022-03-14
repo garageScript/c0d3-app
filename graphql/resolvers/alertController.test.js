@@ -2,8 +2,8 @@
  * @jest-environment node
  */
 
-jest.mock('../../graphql/resolvers/alerts')
-import { alerts } from '../../graphql/resolvers/alerts'
+jest.mock('./alerts')
+import { alerts } from './alerts'
 import prismaMock from '../../__tests__/utils/prismaMock'
 import { addAlert, removeAlert } from './alertController'
 

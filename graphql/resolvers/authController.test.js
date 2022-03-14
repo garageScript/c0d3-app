@@ -4,10 +4,10 @@
 
 jest.mock('bcrypt')
 jest.mock('nodemailer')
-jest.mock('../mail')
+jest.mock('../../helpers/mail')
 import bcrypt from 'bcrypt'
 import prismaMock from '../../__tests__/utils/prismaMock'
-import { sendSignupEmail } from '../mail'
+import { sendSignupEmail } from '../../helpers/mail'
 import { isTokenValid, login, logout, signup } from './authController'
 
 describe('auth controller', () => {
