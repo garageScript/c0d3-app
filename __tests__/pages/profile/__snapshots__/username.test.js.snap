@@ -82,7 +82,7 @@ exports[`user profile test Should render anonymous users 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -93,7 +93,7 @@ exports[`user profile test Should render anonymous users 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -104,7 +104,7 @@ exports[`user profile test Should render anonymous users 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -930,7 +930,7 @@ exports[`user profile test Should render if no stars received 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -941,7 +941,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -952,7 +952,7 @@ exports[`user profile test Should render if no stars received 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -1783,7 +1783,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -1794,7 +1794,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -1805,7 +1805,7 @@ exports[`user profile test Should render nulled challenges 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -2672,7 +2672,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -2683,7 +2683,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -2694,7 +2694,7 @@ exports[`user profile test Should render nulled submission lessonIds 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -3520,7 +3520,7 @@ exports[`user profile test Should render profile 1`] = `
             class="d-lg-none"
           >
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -3531,7 +3531,7 @@ exports[`user profile test Should render profile 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"
@@ -3542,7 +3542,7 @@ exports[`user profile test Should render profile 1`] = `
               </a>
             </div>
             <div
-              class="text-center text-xl-start py-2 px-4"
+              class="text-center px-4"
             >
               <a
                 class="dropdown-item"

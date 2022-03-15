@@ -3932,7 +3932,7 @@ Array [
     className="d-lg-none"
   >
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -3944,7 +3944,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -3956,7 +3956,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -4001,7 +4001,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4013,7 +4013,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4025,7 +4025,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4066,7 +4066,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4078,7 +4078,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4090,7 +4090,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4131,7 +4131,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4143,7 +4143,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4155,7 +4155,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4196,7 +4196,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4208,7 +4208,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4220,7 +4220,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4261,7 +4261,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4273,7 +4273,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4285,7 +4285,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4326,7 +4326,7 @@ Array [
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4338,7 +4338,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4350,7 +4350,7 @@ Array [
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4403,7 +4403,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4415,7 +4415,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4427,7 +4427,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4468,7 +4468,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4480,7 +4480,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4492,7 +4492,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4533,7 +4533,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4545,7 +4545,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4557,7 +4557,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4598,7 +4598,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
       className="d-lg-none"
     >
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4610,7 +4610,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4622,7 +4622,7 @@ exports[`Storyshots Components/DropdownMenu Directions 1`] = `
         </a>
       </div>
       <div
-        className="text-center text-xl-start py-2 px-4"
+        className="text-center px-4"
       >
         <a
           className="dropdown-item"
@@ -4661,7 +4661,7 @@ Array [
     className="d-lg-none"
   >
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -4677,7 +4677,7 @@ Array [
       role="separator"
     />
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -4693,7 +4693,7 @@ Array [
       role="separator"
     />
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -4705,7 +4705,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -4717,7 +4717,7 @@ Array [
       </a>
     </div>
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -4733,7 +4733,7 @@ Array [
       role="separator"
     />
     <div
-      className="text-center text-xl-start py-2 px-4"
+      className="text-center px-4"
     >
       <a
         className="dropdown-item"
@@ -5765,7 +5765,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
             className="d-lg-none"
           >
             <div
-              className="text-center text-xl-start py-2 px-4"
+              className="text-center px-4"
             >
               <button
                 className="dropdown-item"
@@ -5776,7 +5776,7 @@ exports[`Storyshots Components/FormCard Basic 1`] = `
               </button>
             </div>
             <div
-              className="text-center text-xl-start py-2 px-4"
+              className="text-center px-4"
             >
               <button
                 className="dropdown-item"
